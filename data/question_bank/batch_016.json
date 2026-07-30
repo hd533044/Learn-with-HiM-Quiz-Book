@@ -1,0 +1,266 @@
+[
+  {
+    "id": 404,
+    "question": "What is the function of Ctrl+F4 in Word?",
+    "options": [
+      "Closes the current document",
+      "Closes Word",
+      "Displays the Go To dialog box",
+      "Restores the document window size"
+    ],
+    "correct_option": 0,
+    "explanation": "Ctrl+F4 is used to close the current document in Word."
+  },
+  {
+    "id": 405,
+    "question": "What happens when you press F5 alone in Word?",
+    "options": [
+      "Displays the Bookmark dialog box",
+      "Moves the cursor to the last change",
+      "Displays the Go To dialog box",
+      "Restores the document window size"
+    ],
+    "correct_option": 2,
+    "explanation": "F5 alone displays the Go To dialog box in Word."
+  },
+  {
+    "id": 406,
+    "question": "How do you switch between the document, task pane, status bar, and ribbon in Word?",
+    "options": [
+      "Press F5",
+      "Press Shift+F5",
+      "Press F6",
+      "Press Ctrl+Shift+F5"
+    ],
+    "correct_option": 2,
+    "explanation": "F6 alone is used to switch between the document, task pane, status bar, and ribbon in Word."
+  },
+  {
+    "id": 407,
+    "question": "What is the function of Shift+F6 in Word?",
+    "options": [
+      "Switches to the next document window",
+      "Switches between the document, ribbon, status bar, and task pane",
+      "Moves the cursor to the last change",
+      "Displays the Bookmark dialog box"
+    ],
+    "correct_option": 1,
+    "explanation": "Shift+F6 switches between the document, ribbon, status bar, and task pane in Word."
+  },
+  {
+    "id": 408,
+    "question": "How do you move from an open dialog box back to the document in Word?",
+    "options": [
+      "Alt+F4",
+      "Alt+F6",
+      "Ctrl+Shift+F5",
+      "Shift+F6"
+    ],
+    "correct_option": 1,
+    "explanation": "Pressing Alt+F6 moves focus from an open dialog box back to the main document in Microsoft Word (for dialog boxes that support this functionality)."
+  },
+  {
+    "id": 409,
+    "question": "What happens when you press Ctrl+Shift+F5 in Word?",
+    "options": [
+      "Displays the Bookmark dialog box",
+      "Switches to the previous document window",
+      "Moves the cursor to the last change",
+      "Restores the document window size"
+    ],
+    "correct_option": 0,
+    "explanation": "Ctrl+Shift+F5 displays the Bookmark dialog box in Word."
+  },
+  {
+    "id": 410,
+    "question": "What is the function of Alt+F4 in Word?",
+    "options": [
+      "Closes the current document",
+      "Closes Word",
+      "Displays the Go To dialog box",
+      "Restores the document window size"
+    ],
+    "correct_option": 1,
+    "explanation": "Alt+F4 is used to close Word."
+  },
+  {
+    "id": 411,
+    "question": "How do you switch to the next document window when more than one document is open in Word?",
+    "options": [
+      "Press Ctrl+F6",
+      "Press Ctrl+Shift+F6",
+      "Press Shift+F6",
+      "Press F6"
+    ],
+    "correct_option": 0,
+    "explanation": "Ctrl+F6 is used to switch to the next document window when more than one document is open in Word."
+  },
+  {
+    "id": 412,
+    "question": "What happens when you press Shift+F5 in Word?",
+    "options": [
+      "Moves the cursor to the last change",
+      "Displays the Go To dialog box",
+      "Displays the Bookmark dialog box",
+      "Restores the document window size"
+    ],
+    "correct_option": 0,
+    "explanation": "Shift+F5 moves the cursor to the last change in Word."
+  },
+  {
+    "id": 413,
+    "question": "What is the function of F6 in a document that has been split in Word?",
+    "options": [
+      "Switches between the document, task pane, status bar, and ribbon, excluding split panes",
+      "Switches between the document, task pane, status bar, and ribbon, including split panes",
+      "Switches to the next document window",
+      "Moves the cursor to the last change"
+    ],
+    "correct_option": 1,
+    "explanation": "F6 switches between the document, task pane, status bar, and ribbon, including split panes in a document that has been split."
+  },
+  {
+    "id": 414,
+    "question": "How do you restore the document window size in Word?",
+    "options": [
+      "Press Alt+F4",
+      "Press Alt+F5",
+      "Press Ctrl+Shift+F5",
+      "Press Shift+F6"
+    ],
+    "correct_option": 1,
+    "explanation": "Alt+F5 is used to restore the document window size in Word."
+  },
+  {
+    "id": 415,
+    "question": "What happens when you press Ctrl+Shift+F6 in Word?",
+    "options": [
+      "Switches to the next document window",
+      "Switches to the previous document window",
+      "Moves the cursor to the last change",
+      "Displays the Bookmark dialog box"
+    ],
+    "correct_option": 1,
+    "explanation": "Ctrl+Shift+F6 switches to the previous document window when more than one document is open in Word."
+  },
+  {
+    "id": 416,
+    "question": "How do you display the Go To dialog box in Word?",
+    "options": [
+      "Press F5",
+      "Press Shift+F5",
+      "Press Ctrl+Shift+F5",
+      "Press Alt+F5"
+    ],
+    "correct_option": 0,
+    "explanation": "F5 alone displays the Go To dialog box in Word."
+  },
+  {
+    "id": 417,
+    "question": "What happens when you press Alt+F5 in Word?",
+    "options": [
+      "Restores the document window size",
+      "Moves from an open dialog box back to the document",
+      "Closes Word",
+      "Displays the Go To dialog box"
+    ],
+    "correct_option": 0,
+    "explanation": "Alt+F5 restores the document window size in Word."
+  },
+  {
+    "id": 418,
+    "question": "How do you move the cursor to the last change in Word?",
+    "options": [
+      "Press F5",
+      "Press Shift+F5",
+      "Press Ctrl+Shift+F5",
+      "Press Alt+F5"
+    ],
+    "correct_option": 1,
+    "explanation": "Shift+F5 moves the cursor to the last change in Word."
+  },
+  {
+    "id": 419,
+    "question": "What happens when you press Ctrl+F6 in Word?",
+    "options": [
+      "Switches to the next document window",
+      "Switches to the previous document window",
+      "Moves the cursor to the last change",
+      "Displays the Bookmark dialog box"
+    ],
+    "correct_option": 0,
+    "explanation": "Ctrl+F6 switches to the next document window when more than one document is open in Word."
+  },
+  {
+    "id": 420,
+    "question": "How do you display the Bookmark dialog box in Word?",
+    "options": [
+      "Press F5",
+      "Press Shift+F5",
+      "Press Ctrl+Shift+F5",
+      "Press Alt+F5"
+    ],
+    "correct_option": 2,
+    "explanation": "Ctrl+Shift+F5 displays the Bookmark dialog box in Word."
+  },
+  {
+    "id": 421,
+    "question": "What happens when you press F6 in Word?",
+    "options": [
+      "Switches between the document, task pane, status bar, and ribbon",
+      "Switches to the next document window",
+      "Moves the cursor to the last change",
+      "Displays the Bookmark dialog box"
+    ],
+    "correct_option": 0,
+    "explanation": "F6 switches between the document, task pane, status bar, and ribbon in Word."
+  },
+  {
+    "id": 422,
+    "question": "What is the function of Ctrl+Shift+F6 in Word?",
+    "options": [
+      "Switches to the next document window",
+      "Switches to the previous document window",
+      "Moves the cursor to the last change",
+      "Displays the Bookmark dialog box"
+    ],
+    "correct_option": 1,
+    "explanation": "Ctrl+Shift+F6 switches to the previous document window when more than one document is open in Word."
+  },
+  {
+    "id": 423,
+    "question": "How do you close the current document in Word?",
+    "options": [
+      "Press Ctrl+F4",
+      "Press Alt+F4",
+      "Press F5",
+      "Press Shift+F5"
+    ],
+    "correct_option": 0,
+    "explanation": "Ctrl+F4 is used to close the current document in Word."
+  },
+  {
+    "id": 424,
+    "question": "What is the function of F5 in Word?",
+    "options": [
+      "Displays the Go To dialog box",
+      "Moves the cursor to the last change",
+      "Displays the Bookmark dialog box",
+      "Restores the document window size"
+    ],
+    "correct_option": 0,
+    "explanation": "F5 alone displays the Go To dialog box in Word."
+  },
+  {
+    "id": 425,
+    "question": "How do you switch between the document, ribbon, status bar, and task pane in Word?",
+    "options": [
+      "Press F6",
+      "Press Shift+F6",
+      "Press Ctrl+F6",
+      "Press Ctrl+Shift+F6"
+    ],
+    "correct_option": 1,
+    "explanation": "Shift+F6 switches between the document, ribbon, status bar, and task pane in Word."
+  }
+]

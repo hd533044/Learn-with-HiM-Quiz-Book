@@ -1,0 +1,350 @@
+[
+  {
+    "id": 35,
+    "question": "What is the primary function of the main server in a small network?",
+    "options": [
+      "To manage files and process data",
+      "To provide internet connectivity",
+      "To connect to other client servers",
+      "To provide security to the network"
+    ],
+    "correct_option": 0,
+    "explanation": "The main server is responsible for managing files, processing data, and providing access to shared files."
+  },
+  {
+    "id": 36,
+    "question": "What is the purpose of a mobile operating system?",
+    "options": [
+      "To manage files and process data",
+      "To provide security to the network",
+      "To help small devices like smartphones work efficiently",
+      "To connect to other client servers"
+    ],
+    "correct_option": 2,
+    "explanation": "Mobile operating systems are designed to help small devices like smartphones work efficiently."
+  },
+  {
+    "id": 37,
+    "question": "What is the shortcut to capture a screenshot in Windows?",
+    "options": [
+      "Win Keys + Pause break",
+      "Win Keys + Print Screen",
+      "Alt + Space + X",
+      "Alt + Tab"
+    ],
+    "correct_option": 1,
+    "explanation": "The shortcut to capture a screenshot in Windows is Win Keys + Print Screen."
+  },
+  {
+    "id": 38,
+    "question": "What is the function of Win Keys + E?",
+    "options": [
+      "To open My Computer",
+      "To open System Configuration",
+      "To switch to user mode",
+      "To minimize all active windows"
+    ],
+    "correct_option": 0,
+    "explanation": "The function of Win Keys + E is to open File Explorer / My Computer."
+  },
+  {
+    "id": 39,
+    "question": "What is the purpose of Alt + Space + X?",
+    "options": [
+      "To maximize a window",
+      "To restore a window",
+      "To minimize a window",
+      "To close a window"
+    ],
+    "correct_option": 0,
+    "explanation": "The purpose of Alt + Space + X is to maximize a window."
+  },
+  {
+    "id": 40,
+    "question": "What is the function of Win Keys + L?",
+    "options": [
+      "To switch to user mode",
+      "To open System Configuration",
+      "To minimize all active windows",
+      "To show the Desktop"
+    ],
+    "correct_option": 0,
+    "explanation": "The function of Win Keys + L is to lock the computer or switch users."
+  },
+  {
+    "id": 41,
+    "question": "What is the function of Win Keys + M?",
+    "options": [
+      "To minimize all active windows",
+      "To show the Desktop",
+      "To open My Computer",
+      "To switch to user mode"
+    ],
+    "correct_option": 0,
+    "explanation": "The function of Win Keys + M is to minimize all active windows."
+  },
+  {
+    "id": 42,
+    "question": "What is the purpose of Win Keys + No. 1,2,3,4,5?",
+    "options": [
+      "To show the active window one by one",
+      "To open System Configuration",
+      "To switch to user mode",
+      "To minimize all active windows"
+    ],
+    "correct_option": 0,
+    "explanation": "The purpose of Win Keys + No. 1,2,3,4,5 is to launch or switch to pinned taskbar programs."
+  },
+  {
+    "id": 43,
+    "question": "What is the function of Win Keys + R?",
+    "options": [
+      "To open Run Dialogue Box",
+      "To open System Configuration",
+      "To switch to user mode",
+      "To minimize all active windows"
+    ],
+    "correct_option": 0,
+    "explanation": "The function of Win Keys + R is to open Run Dialogue Box."
+  },
+  {
+    "id": 44,
+    "question": "What is the purpose of Alt + Tab?",
+    "options": [
+      "To show the screen",
+      "To maximize a window",
+      "To restore a window",
+      "To minimize a window"
+    ],
+    "correct_option": 0,
+    "explanation": "The purpose of Alt + Tab is to switch between open applications."
+  },
+  {
+    "id": 45,
+    "question": "What is the function of Alt + F4?",
+    "options": [
+      "To close the software or system shut down",
+      "To open System Configuration",
+      "To switch to user mode",
+      "To minimize all active windows"
+    ],
+    "correct_option": 0,
+    "explanation": "The function of Alt + F4 is to close the active window or trigger the shut down dialog."
+  },
+  {
+    "id": 46,
+    "question": "What does the acronym WINDOWS stand for?",
+    "options": [
+      "Wide interactive network development for office work solution",
+      "Windows internet network development for office work solution",
+      "Wide internet network development for office work solution",
+      "Windows interactive network development for office work solution"
+    ],
+    "correct_option": 0,
+    "explanation": "In general computer knowledge exams, WINDOWS stands for Wide Interactive Network Development for Office Work Solution."
+  },
+  {
+    "id": 47,
+    "question": "What is the inbuilt web browser in Windows?",
+    "options": [
+      "Google Chrome",
+      "Internet Explorer",
+      "Mozilla Firefox",
+      "Microsoft Edge"
+    ],
+    "correct_option": 1,
+    "explanation": "The traditional inbuilt web browser in older Windows versions is Internet Explorer."
+  },
+  {
+    "id": 48,
+    "question": "What is the browser for Windows 10?",
+    "options": [
+      "Internet Explorer",
+      "Microsoft Edge",
+      "Google Chrome",
+      "Mozilla Firefox"
+    ],
+    "correct_option": 1,
+    "explanation": "The primary default browser introduced with Windows 10 is Microsoft Edge."
+  },
+  {
+    "id": 49,
+    "question": "What is the purpose of a client server in a small network?",
+    "options": [
+      "To manage files and process data",
+      "To provide internet connectivity",
+      "To connect to the main server",
+      "To provide security to the network"
+    ],
+    "correct_option": 2,
+    "explanation": "The purpose of a client in a small network is to request resources and connect to the main server."
+  },
+  {
+    "id": 50,
+    "question": "What is the function of Win Keys + D?",
+    "options": [
+      "To show the Desktop",
+      "To open My Computer",
+      "To switch to user mode",
+      "To minimize all active windows"
+    ],
+    "correct_option": 0,
+    "explanation": "The function of Win Keys + D is to show or hide the Desktop."
+  },
+  {
+    "id": 51,
+    "question": "What is the purpose of Alt + Space + R?",
+    "options": [
+      "To restore a window",
+      "To maximize a window",
+      "To minimize a window",
+      "To close a window"
+    ],
+    "correct_option": 0,
+    "explanation": "The purpose of Alt + Space + R is to restore a maximized window."
+  },
+  {
+    "id": 52,
+    "question": "What is the function of Win Keys + Pause break?",
+    "options": [
+      "To open System Configuration / System Properties",
+      "To switch to user mode",
+      "To minimize all active windows",
+      "To show the Desktop"
+    ],
+    "correct_option": 0,
+    "explanation": "The function of Win Keys + Pause break is to open System Properties."
+  },
+  {
+    "id": 53,
+    "question": "What is the purpose of a mobile operating system in a small device?",
+    "options": [
+      "To manage files and process data",
+      "To provide internet connectivity",
+      "To help the device work efficiently",
+      "To provide security to the network"
+    ],
+    "correct_option": 2,
+    "explanation": "The purpose of a mobile operating system in a small device is to help the device work efficiently."
+  },
+  {
+    "id": 54,
+    "question": "What is the function of Alt + Space + N?",
+    "options": [
+      "To minimize a window",
+      "To maximize a window",
+      "To restore a window",
+      "To close a window"
+    ],
+    "correct_option": 0,
+    "explanation": "The function of Alt + Space + N is to minimize a window."
+  },
+  {
+    "id": 55,
+    "question": "What is the purpose of Win Keys + No. 1,2,3,4,5 in a Windows system?",
+    "options": [
+      "To show the active window one by one",
+      "To open System Configuration",
+      "To switch to user mode",
+      "To minimize all active windows"
+    ],
+    "correct_option": 0,
+    "explanation": "The purpose of Win Keys + No. 1,2,3,4,5 is to open or switch to taskbar apps."
+  },
+  {
+    "id": 56,
+    "question": "What is the function of Win Keys + L in a Windows system?",
+    "options": [
+      "To switch to user mode",
+      "To open System Configuration",
+      "To minimize all active windows",
+      "To show the Desktop"
+    ],
+    "correct_option": 0,
+    "explanation": "The function of Win Keys + L is to lock the screen/switch user."
+  },
+  {
+    "id": 57,
+    "question": "What is the purpose of Alt + Tab in a Windows system?",
+    "options": [
+      "To show the screen",
+      "To maximize a window",
+      "To restore a window",
+      "To minimize a window"
+    ],
+    "correct_option": 0,
+    "explanation": "The purpose of Alt + Tab is to switch between open applications."
+  },
+  {
+    "id": 58,
+    "question": "What is the function of Win Keys + R in a Windows system?",
+    "options": [
+      "To open Run Dialogue Box",
+      "To open System Configuration",
+      "To switch to user mode",
+      "To minimize all active windows"
+    ],
+    "correct_option": 0,
+    "explanation": "The function of Win Keys + R is to open Run Dialogue Box."
+  },
+  {
+    "id": 59,
+    "question": "What is the purpose of a client server in a network?",
+    "options": [
+      "To manage files and process data",
+      "To provide internet connectivity",
+      "To connect to the main server",
+      "To provide security to the network"
+    ],
+    "correct_option": 2,
+    "explanation": "The purpose of a client server in a network is to connect to the main server."
+  },
+  {
+    "id": 60,
+    "question": "What is the function of Win Keys + D in a Windows system?",
+    "options": [
+      "To show the Desktop",
+      "To open My Computer",
+      "To switch to user mode",
+      "To minimize all active windows"
+    ],
+    "correct_option": 0,
+    "explanation": "The function of Win Keys + D is to show the Desktop."
+  },
+  {
+    "id": 61,
+    "question": "What is the purpose of Alt + Space + X in a Windows system?",
+    "options": [
+      "To maximize a window",
+      "To restore a window",
+      "To minimize a window",
+      "To close a window"
+    ],
+    "correct_option": 0,
+    "explanation": "The purpose of Alt + Space + X is to maximize a window."
+  },
+  {
+    "id": 62,
+    "question": "What is the function of Win Keys + Pause break in a Windows system?",
+    "options": [
+      "To open System Configuration",
+      "To switch to user mode",
+      "To minimize all active windows",
+      "To show the Desktop"
+    ],
+    "correct_option": 0,
+    "explanation": "The function of Win Keys + Pause break is to open System Configuration."
+  },
+  {
+    "id": 63,
+    "question": "What is the function of Alt + F4 in a Windows system?",
+    "options": [
+      "To close the software or system shut down",
+      "To open System Configuration",
+      "To switch to user mode",
+      "To minimize all active windows"
+    ],
+    "correct_option": 0,
+    "explanation": "The function of Alt + F4 is to close the software or system shut down."
+  }
+]

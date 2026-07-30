@@ -1,0 +1,326 @@
+[
+  {
+    "id": 479,
+    "question": "What does CDMA stand for?",
+    "options": [
+      "Code Division Multiple Access",
+      "Central Division Multiple Access",
+      "Command Division Multiple Access",
+      "Control Division Multiple Access"
+    ],
+    "correct_option": 0,
+    "explanation": "CDMA is a wireless technology used for secure signal transmission."
+  },
+  {
+    "id": 480,
+    "question": "What principle is used in CDMA to work?",
+    "options": [
+      "Spread spectrum",
+      "Frequency division",
+      "Time division",
+      "Code division"
+    ],
+    "correct_option": 0,
+    "explanation": "CDMA uses the principle of spread spectrum to work."
+  },
+  {
+    "id": 481,
+    "question": "What is the full form of OSI?",
+    "options": [
+      "Open System Interconnection",
+      "Open Source Interface",
+      "Operating System Interface",
+      "Online System Interface"
+    ],
+    "correct_option": 0,
+    "explanation": "OSI is a standard for communication between devices."
+  },
+  {
+    "id": 482,
+    "question": "Where is the headquarters of IBM located?",
+    "options": [
+      "Armonk, NY",
+      "New York City",
+      "Los Angeles",
+      "Chicago"
+    ],
+    "correct_option": 0,
+    "explanation": "IBM's headquarters is located in Armonk, NY."
+  },
+  {
+    "id": 483,
+    "question": "Who is the Chairman and CEO of IBM?",
+    "options": [
+      "Arvind Krishna",
+      "Bill Gates",
+      "Steve Jobs",
+      "Mark Zuckerberg"
+    ],
+    "correct_option": 0,
+    "explanation": "Arvind Krishna is the current Chairman and CEO of IBM."
+  },
+  {
+    "id": 484,
+    "question": "What does DDL stand for?",
+    "options": [
+      "Data Definition Language",
+      "Data Description Language",
+      "Data Development Language",
+      "Data Design Language"
+    ],
+    "correct_option": 0,
+    "explanation": "DDL is used for creating and modifying database objects."
+  },
+  {
+    "id": 485,
+    "question": "What is the full form of FDDI?",
+    "options": [
+      "Fiber Distributed Data Interface",
+      "Fast Data Distribution Interface",
+      "File Data Distribution Interface",
+      "Flexible Data Distribution Interface"
+    ],
+    "correct_option": 0,
+    "explanation": "FDDI is a standard for high-speed data transmission."
+  },
+  {
+    "id": 486,
+    "question": "What is CLI also known as?",
+    "options": [
+      "Line User Interface",
+      "Command Language Interpreter",
+      "Character Line Interface",
+      "Control Line Interface"
+    ],
+    "correct_option": 1,
+    "explanation": "CLI stands for Command Line Interface and is also commonly referred to as Command Language Interpreter or Console User Interface (CUI)."
+  },
+  {
+    "id": 487,
+    "question": "How do users interact with a system using CLI?",
+    "options": [
+      "By typing text",
+      "By clicking icons",
+      "By voice commands",
+      "By gestures"
+    ],
+    "correct_option": 0,
+    "explanation": "Users interact with a system by typing text using CLI."
+  },
+  {
+    "id": 488,
+    "question": "What is the primary function of CDMA?",
+    "options": [
+      "Secure signal transmission",
+      "Fast data transmission",
+      "Reliable data storage",
+      "Efficient network management"
+    ],
+    "correct_option": 0,
+    "explanation": "CDMA is used for secure signal transmission."
+  },
+  {
+    "id": 489,
+    "question": "What type of organization is IBM?",
+    "options": [
+      "Multinational technology and consulting organization",
+      "National technology and consulting organization",
+      "International business organization",
+      "Local technology organization"
+    ],
+    "correct_option": 0,
+    "explanation": "IBM is a multinational technology and consulting organization."
+  },
+  {
+    "id": 490,
+    "question": "What services does IBM offer?",
+    "options": [
+      "Infrastructure, hosting, and consulting services",
+      "Software development and data storage services",
+      "Network management and security services",
+      "Hardware manufacturing and sales services"
+    ],
+    "correct_option": 0,
+    "explanation": "IBM offers infrastructure, hosting, and consulting services."
+  },
+  {
+    "id": 491,
+    "question": "What is the syntax used for creating database objects?",
+    "options": [
+      "DDL",
+      "SQL",
+      "HTML",
+      "CSS"
+    ],
+    "correct_option": 0,
+    "explanation": "DDL is used for creating and modifying database objects."
+  },
+  {
+    "id": 492,
+    "question": "What is the full form of URL?",
+    "options": [
+      "Uniform Resource Locator",
+      "Universal Resource Link",
+      "Unique Resource Link",
+      "Universal Resource Location"
+    ],
+    "correct_option": 0,
+    "explanation": "URL is used to locate resources on the internet."
+  },
+  {
+    "id": 493,
+    "question": "What is the purpose of OSI?",
+    "options": [
+      "To standardize communication between devices",
+      "To develop new software applications",
+      "To manage network security",
+      "To optimize data storage"
+    ],
+    "correct_option": 0,
+    "explanation": "OSI is a standard for communication between devices."
+  },
+  {
+    "id": 494,
+    "question": "What type of interface is CLI?",
+    "options": [
+      "Command Line Interface",
+      "Graphical User Interface",
+      "Voice User Interface",
+      "Gesture User Interface"
+    ],
+    "correct_option": 0,
+    "explanation": "CLI is a type of command line interface."
+  },
+  {
+    "id": 495,
+    "question": "What is FDDI used for?",
+    "options": [
+      "High-speed data transmission",
+      "Secure signal transmission",
+      "Reliable data storage",
+      "Efficient network management"
+    ],
+    "correct_option": 0,
+    "explanation": "FDDI is used for high-speed data transmission."
+  },
+  {
+    "id": 496,
+    "question": "What is the role of the Chairman and CEO of IBM?",
+    "options": [
+      "To oversee the overall strategy and direction of the company",
+      "To manage the company's financial operations",
+      "To develop new software applications",
+      "To manage the company's marketing efforts"
+    ],
+    "correct_option": 0,
+    "explanation": "The Chairman and CEO of IBM oversees the overall strategy and direction of the company."
+  },
+  {
+    "id": 497,
+    "question": "What is the primary function of DDL?",
+    "options": [
+      "To create and modify database objects",
+      "To manage network security",
+      "To optimize data storage",
+      "To develop new software applications"
+    ],
+    "correct_option": 0,
+    "explanation": "DDL is used to create and modify database objects."
+  },
+  {
+    "id": 498,
+    "question": "What is the difference between CDMA and FDDI?",
+    "options": [
+      "CDMA is used for secure signal transmission, while FDDI is used for high-speed data transmission",
+      "CDMA is used for high-speed data transmission, while FDDI is used for secure signal transmission",
+      "CDMA is used for reliable data storage, while FDDI is used for efficient network management",
+      "CDMA is used for efficient network management, while FDDI is used for reliable data storage"
+    ],
+    "correct_option": 0,
+    "explanation": "CDMA is used for secure signal transmission, while FDDI is used for high-speed data transmission."
+  },
+  {
+    "id": 499,
+    "question": "What is the relationship between IBM and its services?",
+    "options": [
+      "IBM offers infrastructure, hosting, and consulting services",
+      "IBM offers software development and data storage services",
+      "IBM offers network management and security services",
+      "IBM offers hardware manufacturing and sales services"
+    ],
+    "correct_option": 0,
+    "explanation": "IBM offers infrastructure, hosting, and consulting services."
+  },
+  {
+    "id": 500,
+    "question": "What is the purpose of CLI?",
+    "options": [
+      "To allow users to interact with a system by typing text",
+      "To allow users to interact with a system by clicking icons",
+      "To allow users to interact with a system by voice commands",
+      "To allow users to interact with a system by gestures"
+    ],
+    "correct_option": 0,
+    "explanation": "CLI allows users to interact with a system by typing text."
+  },
+  {
+    "id": 501,
+    "question": "What is the full form of DDL?",
+    "options": [
+      "Data Definition Language",
+      "Data Description Language",
+      "Data Development Language",
+      "Data Design Language"
+    ],
+    "correct_option": 0,
+    "explanation": "DDL is used for creating and modifying database objects."
+  },
+  {
+    "id": 502,
+    "question": "What type of technology is CDMA?",
+    "options": [
+      "Wireless technology",
+      "Network technology",
+      "Database technology",
+      "Software technology"
+    ],
+    "correct_option": 0,
+    "explanation": "CDMA is a type of wireless technology."
+  },
+  {
+    "id": 503,
+    "question": "What is the role of the Chairman and CEO of IBM in the company?",
+    "options": [
+      "To oversee the overall strategy and direction of the company",
+      "To manage the company's financial operations",
+      "To develop new software applications",
+      "To manage the company's marketing efforts"
+    ],
+    "correct_option": 0,
+    "explanation": "The Chairman and CEO of IBM oversees the overall strategy and direction of the company."
+  },
+  {
+    "id": 504,
+    "question": "What is the difference between OSI and FDDI?",
+    "options": [
+      "OSI is a standard for communication between devices, while FDDI is a standard for high-speed data transmission",
+      "OSI is a standard for high-speed data transmission, while FDDI is a standard for communication between devices",
+      "OSI is a standard for reliable data storage, while FDDI is a standard for efficient network management",
+      "OSI is a standard for efficient network management, while FDDI is a standard for reliable data storage"
+    ],
+    "correct_option": 0,
+    "explanation": "OSI is a standard for communication between devices, while FDDI is a standard for high-speed data transmission."
+  },
+  {
+    "id": 505,
+    "question": "What is the primary function of URL?",
+    "options": [
+      "To locate resources on the internet",
+      "To manage network security",
+      "To optimize data storage",
+      "To develop new software applications"
+    ],
+    "correct_option": 0,
+    "explanation": "URL is used to locate resources on the internet."
+  }
+]

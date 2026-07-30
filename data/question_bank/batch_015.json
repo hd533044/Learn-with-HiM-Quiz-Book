@@ -1,0 +1,254 @@
+[
+  {
+    "id": 383,
+    "question": "What is the primary purpose of the disk rearrangement programme in Microsoft Windows?",
+    "options": [
+      "To increase data access speed",
+      "To decrease data access speed",
+      "To rearrange files for security purposes",
+      "To free up disk space"
+    ],
+    "correct_option": 0,
+    "explanation": "The programme is designed to increase data access speed by rearranging files to occupy contiguous storage locations."
+  },
+  {
+    "id": 384,
+    "question": "When was Microsoft 365 first made available?",
+    "options": [
+      "2010",
+      "2011",
+      "2012",
+      "2015"
+    ],
+    "correct_option": 1,
+    "explanation": "Microsoft 365 was first made available in 2011."
+  },
+  {
+    "id": 385,
+    "question": "How is Microsoft 365 sold?",
+    "options": [
+      "As a one-time purchase",
+      "As a subscription",
+      "As a free service",
+      "As a trial version"
+    ],
+    "correct_option": 1,
+    "explanation": "Microsoft 365 is sold as a subscription, billed monthly or yearly."
+  },
+  {
+    "id": 386,
+    "question": "What is included in the Microsoft 365 suite of online services?",
+    "options": [
+      "Only desktop apps",
+      "Only online services",
+      "Business-class email, cloud file storage, and secure communication tools",
+      "Only word processor and spreadsheet programme"
+    ],
+    "correct_option": 2,
+    "explanation": "Microsoft 365 combines a suite of online services, including business-class email, cloud file storage, and secure communication tools along with traditional desktop apps."
+  },
+  {
+    "id": 387,
+    "question": "What are the two editions of Microsoft 365 available for personal use?",
+    "options": [
+      "Family and Student",
+      "Personal and Professional",
+      "Family and Personal",
+      "Home and Business"
+    ],
+    "correct_option": 2,
+    "explanation": "Microsoft 365 is available in Family and Personal editions for personal, non-commercial use."
+  },
+  {
+    "id": 388,
+    "question": "What application is used for editing documents in Microsoft 365?",
+    "options": [
+      "Excel",
+      "PowerPoint",
+      "Word",
+      "Access"
+    ],
+    "correct_option": 2,
+    "explanation": "Microsoft Word is a word processing application for editing documents."
+  },
+  {
+    "id": 389,
+    "question": "What is the primary function of Microsoft Excel?",
+    "options": [
+      "Word processing",
+      "Spreadsheet editing",
+      "Presentation creation",
+      "Database management"
+    ],
+    "correct_option": 1,
+    "explanation": "Microsoft Excel is a spreadsheet editor."
+  },
+  {
+    "id": 390,
+    "question": "What is the purpose of Microsoft PowerPoint?",
+    "options": [
+      "Word processing",
+      "Spreadsheet editing",
+      "Presentation creation",
+      "Database management"
+    ],
+    "correct_option": 2,
+    "explanation": "Microsoft PowerPoint is a presentation program."
+  },
+  {
+    "id": 391,
+    "question": "What is Microsoft OneNote used for?",
+    "options": [
+      "Email client",
+      "Database management",
+      "Notetaking and note sharing",
+      "Desktop publishing"
+    ],
+    "correct_option": 2,
+    "explanation": "Microsoft OneNote is a notetaking program that gathers handwritten or typed notes, drawings, screen clippings, and audio commentaries, and allows notes to be shared with other OneNote users."
+  },
+  {
+    "id": 392,
+    "question": "What is the difference between Microsoft 365 and the old-fashioned bundle?",
+    "options": [
+      "Microsoft 365 is only available for personal use",
+      "Microsoft 365 is sold as a one-time purchase",
+      "Microsoft 365 is sold as a subscription and combines online services",
+      "Microsoft 365 only includes desktop apps"
+    ],
+    "correct_option": 2,
+    "explanation": "Microsoft 365 differs from the old-fashioned bundle in that it is sold as a subscription and combines a suite of online services with traditional desktop apps."
+  },
+  {
+    "id": 393,
+    "question": "What is included in Microsoft 365 for personal, non-commercial use?",
+    "options": [
+      "Only word processor and spreadsheet programme",
+      "Only email client and database management system",
+      "Word processor, spreadsheet programme, presentation programme, email client, database management system, and desktop publishing app",
+      "Only desktop publishing app and notetaking program"
+    ],
+    "correct_option": 2,
+    "explanation": "Microsoft 365 for personal, non-commercial use includes a word processor, spreadsheet programme, presentation programme, email client, database management system, and desktop publishing app."
+  },
+  {
+    "id": 394,
+    "question": "What is the name of the notetaking program in Microsoft 365?",
+    "options": [
+      "Microsoft Word",
+      "Microsoft Excel",
+      "Microsoft OneNote",
+      "Microsoft PowerPoint"
+    ],
+    "correct_option": 2,
+    "explanation": "Microsoft OneNote is the notetaking program in Microsoft 365."
+  },
+  {
+    "id": 395,
+    "question": "What can be shared with other OneNote users?",
+    "options": [
+      "Only handwritten notes",
+      "Only typed notes",
+      "Notes, including handwritten or typed notes, drawings, screen clippings, and audio commentaries",
+      "Only drawings and screen clippings"
+    ],
+    "correct_option": 2,
+    "explanation": "Notes, including handwritten or typed notes, drawings, screen clippings, and audio commentaries, can be shared with other OneNote users."
+  },
+  {
+    "id": 396,
+    "question": "What is the primary function of Microsoft Access?",
+    "options": [
+      "Word processing",
+      "Spreadsheet editing",
+      "Presentation creation",
+      "Database management"
+    ],
+    "correct_option": 3,
+    "explanation": "Microsoft Access is a database management system."
+  },
+  {
+    "id": 397,
+    "question": "What is the primary function of Microsoft Publisher?",
+    "options": [
+      "Word processing",
+      "Spreadsheet editing",
+      "Presentation creation",
+      "Desktop publishing"
+    ],
+    "correct_option": 3,
+    "explanation": "Microsoft Publisher is a desktop publishing app."
+  },
+  {
+    "id": 398,
+    "question": "What is the name of the email client in Microsoft 365?",
+    "options": [
+      "Microsoft Word",
+      "Microsoft Excel",
+      "Microsoft Outlook",
+      "Microsoft PowerPoint"
+    ],
+    "correct_option": 2,
+    "explanation": "Microsoft Outlook is the email client in Microsoft 365."
+  },
+  {
+    "id": 399,
+    "question": "What is the purpose of the disk rearrangement programme in Microsoft Windows?",
+    "options": [
+      "To increase data access speed by rearranging files",
+      "To decrease data access speed by rearranging files",
+      "To free up disk space by deleting files",
+      "To increase disk space by adding new files"
+    ],
+    "correct_option": 0,
+    "explanation": "The programme is designed to increase data access speed by rearranging files to occupy contiguous storage locations."
+  },
+  {
+    "id": 400,
+    "question": "How does Microsoft 365 differ from the old-fashioned bundle in terms of payment?",
+    "options": [
+      "Microsoft 365 is a one-time purchase",
+      "Microsoft 365 is a subscription",
+      "Microsoft 365 is free",
+      "Microsoft 365 is a trial version"
+    ],
+    "correct_option": 1,
+    "explanation": "Microsoft 365 is sold as a subscription, billed monthly or yearly, whereas the old-fashioned bundle was a one-time purchase."
+  },
+  {
+    "id": 401,
+    "question": "What is the name of the presentation program in Microsoft 365?",
+    "options": [
+      "Microsoft Word",
+      "Microsoft Excel",
+      "Microsoft PowerPoint",
+      "Microsoft Access"
+    ],
+    "correct_option": 2,
+    "explanation": "Microsoft PowerPoint is the presentation program in Microsoft 365."
+  },
+  {
+    "id": 402,
+    "question": "What is the purpose of Microsoft OneNote?",
+    "options": [
+      "Email client",
+      "Database management",
+      "Notetaking and note sharing",
+      "Desktop publishing"
+    ],
+    "correct_option": 2,
+    "explanation": "Microsoft OneNote is a notetaking program that gathers handwritten or typed notes, drawings, screen clippings, and audio commentaries, and allows notes to be shared with other OneNote users."
+  },
+  {
+    "id": 403,
+    "question": "What is the name of the word processing application in Microsoft 365?",
+    "options": [
+      "Microsoft Excel",
+      "Microsoft PowerPoint",
+      "Microsoft Word",
+      "Microsoft Access"
+    ],
+    "correct_option": 2,
+    "explanation": "Microsoft Word is the word processing application in Microsoft 365."
+  }
+]

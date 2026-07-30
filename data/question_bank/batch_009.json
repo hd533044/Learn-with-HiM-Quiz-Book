@@ -1,0 +1,206 @@
+[
+  {
+    "id": 232,
+    "question": "What is the primary function of a router in a network?",
+    "options": [
+      "To connect multiple devices within a network",
+      "To analyse and alter data packets for transmission over different networks",
+      "To provide internet connectivity to devices",
+      "To serve as a gateway for incoming and outgoing network traffic"
+    ],
+    "correct_option": 1,
+    "explanation": "A router's primary function is to analyse the data being carried over a network, decide and alter how it is packaged, and send it to another network of a different type."
+  },
+  {
+    "id": 233,
+    "question": "What happens to data packets when they are sent over a network that cannot handle larger packets?",
+    "options": [
+      "They are discarded and lost",
+      "They are repackaged as smaller packets and sent over the network",
+      "They are stored in a buffer until the network can handle them",
+      "They are routed through a different network"
+    ],
+    "correct_option": 1,
+    "explanation": "When data packets are sent over a network that cannot handle larger packets, they are repackaged as smaller packets and then sent over the network by a router."
+  },
+  {
+    "id": 234,
+    "question": "What is a gateway in the context of networking?",
+    "options": [
+      "A type of network protocol",
+      "A combination of software and hardware used to connect different networks",
+      "A device used to connect multiple devices within a network",
+      "A type of network architecture"
+    ],
+    "correct_option": 1,
+    "explanation": "A gateway is a combination of software and hardware used to connect different types of two or more networks having different protocols, services, and environments."
+  },
+  {
+    "id": 235,
+    "question": "What is the role of a gateway in a network?",
+    "options": [
+      "To provide internet connectivity to devices",
+      "To serve as the entry and exit point of a network",
+      "To analyse and alter data packets for transmission",
+      "To connect multiple devices within a network"
+    ],
+    "correct_option": 1,
+    "explanation": "A gateway serves as the entry and exit point of a network, as all data coming in or going out of a network must first pass through the gateway in order to use routing paths."
+  },
+  {
+    "id": 236,
+    "question": "How does a node from one network communicate with a node from a foreign network?",
+    "options": [
+      "By directly sending data packets to the destination node",
+      "By passing the data packet to a router, which then routes it to the destination",
+      "By passing the data packet to a gateway, which then routes it to the destination",
+      "By using a different network protocol"
+    ],
+    "correct_option": 2,
+    "explanation": "If a node from one network wants to communicate with a node of a foreign network, it will pass the data packet to the gateway, which then routes it to the destination using the best possible route."
+  },
+  {
+    "id": 237,
+    "question": "What is the purpose of a router in repackaging data packets?",
+    "options": [
+      "To reduce the size of the packets",
+      "To increase the size of the packets",
+      "To change the protocol of the packets",
+      "To improve the security of the packets"
+    ],
+    "correct_option": 0,
+    "explanation": "A router repackages data packets to reduce their size so that they can be transmitted over a network that cannot handle larger packets."
+  },
+  {
+    "id": 238,
+    "question": "How does a gateway connect different types of networks?",
+    "options": [
+      "By using a common network protocol",
+      "By using a combination of software and hardware",
+      "By using a different network architecture",
+      "By using a different type of network device"
+    ],
+    "correct_option": 1,
+    "explanation": "A gateway connects different types of two or more networks having different protocols, services, and environments by using a combination of software and hardware."
+  },
+  {
+    "id": 239,
+    "question": "What is the function of a gateway in routing data packets?",
+    "options": [
+      "To route data packets to the destination node",
+      "To analyse and alter data packets for transmission",
+      "To connect multiple devices within a network",
+      "To provide internet connectivity to devices"
+    ],
+    "correct_option": 0,
+    "explanation": "A gateway routes data packets to the destination node using the best possible route."
+  },
+  {
+    "id": 240,
+    "question": "What is the role of a router in a network?",
+    "options": [
+      "To connect multiple devices within a network",
+      "To analyse and alter data packets for transmission over different networks",
+      "To provide internet connectivity to devices",
+      "To serve as a gateway for incoming and outgoing network traffic"
+    ],
+    "correct_option": 1,
+    "explanation": "A router's primary function is to analyse the data being carried over a network, decide and alter how it is packaged, and send it to another network of a different type."
+  },
+  {
+    "id": 241,
+    "question": "How does a router handle data packets that are too large for a network?",
+    "options": [
+      "It discards the packets",
+      "It repackages the packets as smaller packets",
+      "It stores the packets in a buffer until the network can handle them",
+      "It routes the packets through a different network"
+    ],
+    "correct_option": 1,
+    "explanation": "A router repackages data packets as smaller packets so that they can be transmitted over a network that cannot handle larger packets."
+  },
+  {
+    "id": 242,
+    "question": "What is the purpose of a gateway in a network?",
+    "options": [
+      "To provide internet connectivity to devices",
+      "To connect multiple devices within a network",
+      "To serve as the entry and exit point of a network",
+      "To analyse and alter data packets for transmission"
+    ],
+    "correct_option": 2,
+    "explanation": "A gateway serves as the entry and exit point of a network, as all data coming in or going out of a network must first pass through the gateway in order to use routing paths."
+  },
+  {
+    "id": 243,
+    "question": "How does a node from one network communicate with a node from another network?",
+    "options": [
+      "By directly sending data packets to the destination node",
+      "By passing the data packet to a router, which then routes it to the destination",
+      "By passing the data packet to a gateway, which then routes it to the destination",
+      "By using a different network protocol"
+    ],
+    "correct_option": 2,
+    "explanation": "If a node from one network wants to communicate with a node of a foreign network, it will pass the data packet to the gateway, which then routes it to the destination using the best possible route."
+  },
+  {
+    "id": 244,
+    "question": "What is the function of a router in a network?",
+    "options": [
+      "To connect multiple devices within a network",
+      "To analyse and alter data packets for transmission over different networks",
+      "To provide internet connectivity to devices",
+      "To serve as a gateway for incoming and outgoing network traffic"
+    ],
+    "correct_option": 1,
+    "explanation": "A router's primary function is to analyse the data being carried over a network, decide and alter how it is packaged, and send it to another network of a different type."
+  },
+  {
+    "id": 245,
+    "question": "What is the role of a gateway in connecting different networks?",
+    "options": [
+      "To connect multiple devices within a network",
+      "To serve as the entry and exit point of a network",
+      "To analyse and alter data packets for transmission",
+      "To connect different types of networks having different protocols"
+    ],
+    "correct_option": 3,
+    "explanation": "A gateway connects different types of two or more networks having different protocols, services, and environments."
+  },
+  {
+    "id": 246,
+    "question": "How does a router repackage data packets?",
+    "options": [
+      "It reduces the size of the packets",
+      "It increases the size of the packets",
+      "It changes the protocol of the packets",
+      "It improves the security of the packets"
+    ],
+    "correct_option": 0,
+    "explanation": "A router repackages data packets to reduce their size so that they can be transmitted over a network that cannot handle larger packets."
+  },
+  {
+    "id": 247,
+    "question": "What is the purpose of a gateway in connecting different networks?",
+    "options": [
+      "To connect multiple devices within a network",
+      "To serve as the entry and exit point of a network",
+      "To analyse and alter data packets for transmission",
+      "To connect different types of networks having different protocols"
+    ],
+    "correct_option": 3,
+    "explanation": "A gateway connects different types of two or more networks having different protocols, services, and environments."
+  },
+  {
+    "id": 248,
+    "question": "What is the function of a router in repackaging data packets?",
+    "options": [
+      "To reduce the size of the packets",
+      "To increase the size of the packets",
+      "To change the protocol of the packets",
+      "To improve the security of the packets"
+    ],
+    "correct_option": 0,
+    "explanation": "A router repackages data packets to reduce their size so that they can be transmitted over a network that cannot handle larger packets."
+  }
+]

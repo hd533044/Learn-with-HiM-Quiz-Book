@@ -1,0 +1,294 @@
+import sqlite3
+import json
+import os
+import logging
+from datetime import datetime
+import pytz
+from app.config import DB_FILE, USER_PROFILES_DIR
+
+logger = logging.getLogger(__name__)
+IST = pytz.timezone("Asia/Kolkata")
+
+def get_ist_now():
+    return datetime.now(IST)
+
+def get_ist_date_str():
+    return get_ist_now().strftime("%Y-%m-%d")
+
+def get_ist_timestamp_str():
+    return get_ist_now().strftime("%Y-%m-%d %H:%M:%S IST")
+
+def get_db():
+    conn = sqlite3.connect(DB_FILE)
+    conn.row_factory = sqlite3.Row
+    return conn
+
+def init_db():
+    conn = get_db()
+    cursor = conn.cursor()
+    
+    # Users Table
+    cursor.execute('''
+        CREATE TABLE IF NOT EXISTS users (
+            user_id INTEGER PRIMARY KEY,
+            full_name TEXT,
+            username TEXT,
+            phone_number TEXT,
+            target_exam TEXT,
+            age INTEGER,
+            gender TEXT,
+            country TEXT DEFAULT 'India',
+            state TEXT DEFAULT 'N/A',
+            referred_by INTEGER,
+            referral_count INTEGER DEFAULT 0,
+            bonus_quota INTEGER DEFAULT 0,
+            last_profile_edit TEXT,
+            is_verified INTEGER DEFAULT 1,
+            created_at TEXT
+        )
+    ''')
+    
+    # Ensure schema migrations for existing databases
+    cursor.execute("PRAGMA table_info(users)")
+    columns = [row[1] for row in cursor.fetchall()]
+    if 'country' not in columns:
+        cursor.execute("ALTER TABLE users ADD COLUMN country TEXT DEFAULT 'India'")
+    if 'state' not in columns:
+        cursor.execute("ALTER TABLE users ADD COLUMN state TEXT DEFAULT 'N/A'")
+    if 'last_profile_edit' not in columns:
+        cursor.execute("ALTER TABLE users ADD COLUMN last_profile_edit TEXT")
+
+    # Quiz Attempts Log
+    cursor.execute('''
+        CREATE TABLE IF NOT EXISTS quiz_attempts (
+            id INTEGER PRIMARY KEY AUTOINCREMENT,
+            user_id INTEGER,
+            quiz_id TEXT DEFAULT 'computer_awareness_mock',
+            questions_attempted INTEGER DEFAULT 0,
+            total_questions INTEGER DEFAULT 0,
+            correct_answers INTEGER DEFAULT 0,
+            wrong_answers INTEGER DEFAULT 0,
+            skipped_count INTEGER DEFAULT 0,
+            score REAL DEFAULT 0.0,
+            time_taken INTEGER DEFAULT 0,
+            attempt_timestamp TEXT,
+            attempt_date TEXT,
+            FOREIGN KEY (user_id) REFERENCES users (user_id)
+        )
+    ''')
+
+    # Seen Questions Deduplication
+    cursor.execute('''
+        CREATE TABLE IF NOT EXISTS seen_questions (
+            id INTEGER PRIMARY KEY AUTOINCREMENT,
+            user_id INTEGER,
+            question_id TEXT,
+            seen_at TEXT,
+            UNIQUE(user_id, question_id)
+        )
+    ''')
+
+    # Student Feedback Table
+    cursor.execute('''
+        CREATE TABLE IF NOT EXISTS student_feedback (
+            id INTEGER PRIMARY KEY AUTOINCREMENT,
+            user_id INTEGER,
+            full_name TEXT,
+            feedback_text TEXT,
+            submitted_at TEXT
+        )
+    ''')
+    
+    # Maintenance Mode System Table
+    cursor.execute('''
+        CREATE TABLE IF NOT EXISTS bot_settings (
+            key TEXT PRIMARY KEY,
+            value TEXT
+        )
+    ''')
+    
+    cursor.execute("INSERT OR IGNORE INTO bot_settings (key, value) VALUES ('maintenance_until', '0')")
+    
+    conn.commit()
+    conn.close()
+
+def sync_user_json_profile(user_id: int):
+    """Syncs SQLite user profile and test logs into data/user_profiles/{user_id}.json."""
+    conn = get_db()
+    cursor = conn.cursor()
+    
+    cursor.execute("SELECT * FROM users WHERE user_id = ?", (user_id,))
+    user_row = cursor.fetchone()
+    if not user_row:
+        conn.close()
+        return
+
+    cursor.execute("SELECT * FROM quiz_attempts WHERE user_id = ? ORDER BY id DESC", (user_id,))
+    attempts_rows = cursor.fetchall()
+    conn.close()
+
+    user_dict = dict(user_row)
+    attempts_list = [dict(a) for a in attempts_rows]
+
+    profile_data = {
+        "profile_info": user_dict,
+        "quiz_history": attempts_list,
+        "last_synced": get_ist_timestamp_str()
+    }
+
+    filepath = os.path.join(USER_PROFILES_DIR, f"{user_id}.json")
+    try:
+        with open(filepath, "w", encoding="utf-8") as f:
+            json.dump(profile_data, f, indent=4, ensure_ascii=False)
+    except Exception as e:
+        logger.error(f"Failed to sync JSON profile for user {user_id}: {e}")
+
+def save_user_profile(user_id, full_name, username, phone, target_exam, age, gender, country="India", state="N/A", referred_by=None):
+    conn = get_db()
+    cursor = conn.cursor()
+    now_str = get_ist_timestamp_str()
+    
+    cursor.execute('''
+        INSERT INTO users (user_id, full_name, username, phone_number, target_exam, age, gender, country, state, referred_by, last_profile_edit, is_verified, created_at)
+        VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, 1, ?)
+        ON CONFLICT(user_id) DO UPDATE SET
+            full_name=excluded.full_name,
+            username=excluded.username,
+            phone_number=excluded.phone_number,
+            target_exam=excluded.target_exam,
+            age=excluded.age,
+            gender=excluded.gender,
+            country=excluded.country,
+            state=excluded.state,
+            last_profile_edit=?,
+            is_verified=1
+    ''', (user_id, full_name, username, phone, target_exam, age, gender, country, state, referred_by, now_str, now_str, now_str))
+    
+    if referred_by and referred_by != user_id:
+        cursor.execute("UPDATE users SET referral_count = referral_count + 1 WHERE user_id = ?", (referred_by,))
+        cursor.execute("SELECT referral_count FROM users WHERE user_id = ?", (referred_by,))
+        row = cursor.fetchone()
+        if row and row['referral_count'] >= 4:
+            cursor.execute("UPDATE users SET bonus_quota = bonus_quota + 10 WHERE user_id = ?", (referred_by,))
+            
+    conn.commit()
+    conn.close()
+    
+    sync_user_json_profile(user_id)
+    if referred_by:
+        sync_user_json_profile(referred_by)
+
+def can_user_edit_profile(user_id: int) -> tuple[bool, int]:
+    """Checks if 30 days have passed since the user's last profile update."""
+    conn = get_db()
+    cursor = conn.cursor()
+    cursor.execute("SELECT last_profile_edit FROM users WHERE user_id = ?", (user_id,))
+    row = cursor.fetchone()
+    conn.close()
+
+    if not row or not row['last_profile_edit']:
+        return True, 0
+
+    try:
+        last_edit_date = datetime.strptime(row['last_profile_edit'].split(" ")[0], "%Y-%m-%d")
+        days_passed = (datetime.now() - last_edit_date).days
+        if days_passed >= 30:
+            return True, 0
+        return False, 30 - days_passed
+    except Exception:
+        return True, 0
+
+def get_user_profile(user_id):
+    conn = get_db()
+    cursor = conn.cursor()
+    cursor.execute("SELECT * FROM users WHERE user_id = ?", (user_id,))
+    row = cursor.fetchone()
+    conn.close()
+    return dict(row) if row else None
+
+def get_all_users():
+    conn = get_db()
+    cursor = conn.cursor()
+    cursor.execute("SELECT * FROM users ORDER BY created_at DESC")
+    rows = cursor.fetchall()
+    conn.close()
+    return [dict(r) for r in rows]
+
+def get_today_attempts(user_id):
+    conn = get_db()
+    cursor = conn.cursor()
+    today_date = get_ist_date_str()
+    cursor.execute('''
+        SELECT SUM(questions_attempted) as total 
+        FROM quiz_attempts 
+        WHERE user_id = ? AND attempt_date = ?
+    ''', (user_id, today_date))
+    row = cursor.fetchone()
+    conn.close()
+    return row['total'] if row and row['total'] else 0
+
+def record_quiz_result(user_id, quiz_id="computer_awareness_mock", score=0.0, total_questions=0, correct_count=0, wrong_count=0, skipped_count=0, time_taken=0):
+    conn = get_db()
+    cursor = conn.cursor()
+    today_date = get_ist_date_str()
+    timestamp_str = get_ist_timestamp_str()
+    
+    cursor.execute('''
+        INSERT INTO quiz_attempts (user_id, quiz_id, questions_attempted, total_questions, correct_answers, wrong_answers, skipped_count, score, time_taken, attempt_timestamp, attempt_date)
+        VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
+    ''', (user_id, quiz_id, total_questions, total_questions, correct_count, wrong_count, skipped_count, score, time_taken, timestamp_str, today_date))
+    conn.commit()
+    conn.close()
+    
+    sync_user_json_profile(user_id)
+
+def get_seen_question_ids(user_id):
+    conn = get_db()
+    cursor = conn.cursor()
+    cursor.execute("SELECT question_id FROM seen_questions WHERE user_id = ?", (user_id,))
+    rows = cursor.fetchall()
+    conn.close()
+    return {str(r['question_id']) for r in rows}
+
+def mark_questions_as_seen(user_id, question_ids):
+    conn = get_db()
+    cursor = conn.cursor()
+    now_str = get_ist_timestamp_str()
+    for qid in question_ids:
+        cursor.execute("INSERT OR IGNORE INTO seen_questions (user_id, question_id, seen_at) VALUES (?, ?, ?)", (user_id, str(qid), now_str))
+    conn.commit()
+    conn.close()
+
+def save_student_feedback(user_id: int, full_name: str, feedback_text: str):
+    conn = get_db()
+    cursor = conn.cursor()
+    now_str = get_ist_timestamp_str()
+    cursor.execute('''
+        INSERT INTO student_feedback (user_id, full_name, feedback_text, submitted_at)
+        VALUES (?, ?, ?, ?)
+    ''', (user_id, full_name, feedback_text, now_str))
+    conn.commit()
+    conn.close()
+
+def get_all_student_feedbacks(limit: int = 15):
+    conn = get_db()
+    cursor = conn.cursor()
+    cursor.execute("SELECT full_name, feedback_text, submitted_at FROM student_feedback ORDER BY id DESC LIMIT ?", (limit,))
+    rows = cursor.fetchall()
+    conn.close()
+    return [dict(r) for r in rows]
+
+def set_maintenance_until(epoch_timestamp: int):
+    conn = get_db()
+    cursor = conn.cursor()
+    cursor.execute("UPDATE bot_settings SET value = ? WHERE key = 'maintenance_until'", (str(epoch_timestamp),))
+    conn.commit()
+    conn.close()
+
+def get_maintenance_until() -> int:
+    conn = get_db()
+    cursor = conn.cursor()
+    cursor.execute("SELECT value FROM bot_settings WHERE key = 'maintenance_until'")
+    row = cursor.fetchone()
+    conn.close()
+    return int(row['value']) if row and row['value'].isdigit() else 0

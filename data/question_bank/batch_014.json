@@ -1,0 +1,338 @@
+[
+  {
+    "id": 355,
+    "question": "What is the ranking of the supercomputer that entered the top 500 list of supercomputers of the world?",
+    "options": [
+      "Ranked 100",
+      "Ranked 171",
+      "Ranked 200",
+      "Ranked 250"
+    ],
+    "correct_option": 1,
+    "explanation": "The supercomputer entered the top 500 list of supercomputers of the world with a ranking of 171."
+  },
+  {
+    "id": 356,
+    "question": "What is the teraflop capacity of the Param Yuva supercomputer?",
+    "options": [
+      "10 teraflop",
+      "20 teraflop",
+      "54 teraflop",
+      "100 teraflop"
+    ],
+    "correct_option": 2,
+    "explanation": "The Param Yuva supercomputer has a capacity of 54 teraflops."
+  },
+  {
+    "id": 357,
+    "question": "In what year was the Param Yuva II supercomputer launched?",
+    "options": [
+      "2008",
+      "2010",
+      "2012",
+      "2013"
+    ],
+    "correct_option": 3,
+    "explanation": "The Param Yuva II supercomputer was launched in 2013."
+  },
+  {
+    "id": 358,
+    "question": "What is the capacity of the Param Biochrome HPC cluster?",
+    "options": [
+      "1 teraflop",
+      "5 teraflops",
+      "10 teraflops",
+      "20 teraflops"
+    ],
+    "correct_option": 1,
+    "explanation": "The Param Biochrome HPC cluster has a capacity of 5 teraflops."
+  },
+  {
+    "id": 359,
+    "question": "What is the supercomputing power of the Param Bio-blaze?",
+    "options": [
+      "5 TF",
+      "10 TF",
+      "10.65 TF",
+      "20 TF"
+    ],
+    "correct_option": 2,
+    "explanation": "The Param Bio-blaze has a supercomputing power of 10.65 TF."
+  },
+  {
+    "id": 360,
+    "question": "In what year was the Param Bio-blaze launched?",
+    "options": [
+      "2012",
+      "2013",
+      "2014",
+      "2015"
+    ],
+    "correct_option": 2,
+    "explanation": "The Param Bio-blaze was launched in 2014."
+  },
+  {
+    "id": 361,
+    "question": "What does SEAC stand for?",
+    "options": [
+      "Standards Eastern Automatic Computer",
+      "Standards Electronic Automatic Computer",
+      "Both A and B",
+      "None of the above"
+    ],
+    "correct_option": 0,
+    "explanation": "SEAC stands for Standards Eastern Automatic Computer."
+  },
+  {
+    "id": 362,
+    "question": "What is the full form of SMPS?",
+    "options": [
+      "Switched Mode Power Supply",
+      "Static Mode Power Supply",
+      "Simple Mode Power Supply",
+      "Standard Mode Power Supply"
+    ],
+    "correct_option": 0,
+    "explanation": "The full form of SMPS is Switched Mode Power Supply."
+  },
+  {
+    "id": 363,
+    "question": "What is the main use of SMPS?",
+    "options": [
+      "In computers",
+      "In televisions",
+      "In radios",
+      "In mobile phones"
+    ],
+    "correct_option": 0,
+    "explanation": "SMPS is mainly used in computers."
+  },
+  {
+    "id": 364,
+    "question": "What is the full form of HTML?",
+    "options": [
+      "Hyper Text Markup Language",
+      "Hyper Text Making Language",
+      "Hyper Text Managing Language",
+      "Hyper Text Mapping Language"
+    ],
+    "correct_option": 0,
+    "explanation": "The full form of HTML is Hyper Text Markup Language."
+  },
+  {
+    "id": 365,
+    "question": "Who invented HTML?",
+    "options": [
+      "Tim Berners Lee",
+      "Steve Jobs",
+      "Bill Gates",
+      "Vinod Khosla"
+    ],
+    "correct_option": 0,
+    "explanation": "HTML was invented by Tim Berners Lee."
+  },
+  {
+    "id": 366,
+    "question": "In what year was HTML invented?",
+    "options": [
+      "1980",
+      "1990",
+      "2000",
+      "2010"
+    ],
+    "correct_option": 1,
+    "explanation": "HTML was invented in 1990."
+  },
+  {
+    "id": 367,
+    "question": "What is the name of the company founded by Vinod Khosla?",
+    "options": [
+      "Sun Microsystems",
+      "Apple Inc.",
+      "Google",
+      "Microsoft"
+    ],
+    "correct_option": 0,
+    "explanation": "Sun Microsystems was founded by Vinod Khosla."
+  },
+  {
+    "id": 368,
+    "question": "Which company was acquired by Oracle?",
+    "options": [
+      "Sun Microsystems",
+      "Apple Inc.",
+      "Google",
+      "Microsoft"
+    ],
+    "correct_option": 0,
+    "explanation": "Sun Microsystems was acquired by Oracle."
+  },
+  {
+    "id": 369,
+    "question": "What is the former name of Apple Inc.?",
+    "options": [
+      "Apple Computer Company",
+      "Apple Electronics Company",
+      "Apple Technology Company",
+      "Apple Software Company"
+    ],
+    "correct_option": 0,
+    "explanation": "The former name of Apple Inc. is Apple Computer Company."
+  },
+  {
+    "id": 370,
+    "question": "Who are the founders of Apple Inc.?",
+    "options": [
+      "Steve Jobs and Steve Wozniac",
+      "Steve Jobs, Steve Wozniac, and Ronald Wayne",
+      "Bill Gates and Paul Allen",
+      "Vinod Khosla and Tim Berners Lee"
+    ],
+    "correct_option": 1,
+    "explanation": "The founders of Apple Inc. are Steve Jobs, Steve Wozniac, and Ronald Wayne."
+  },
+  {
+    "id": 371,
+    "question": "In what year was Apple Inc. founded?",
+    "options": [
+      "1975",
+      "1976",
+      "1977",
+      "1978"
+    ],
+    "correct_option": 1,
+    "explanation": "Apple Inc. was founded in 1976."
+  },
+  {
+    "id": 372,
+    "question": "What is the teraflop capacity of the Param Yuva II supercomputer?",
+    "options": [
+      "100 teraflop",
+      "200 teraflop",
+      "529 teraflop",
+      "1000 teraflop"
+    ],
+    "correct_option": 2,
+    "explanation": "The Param Yuva II supercomputer has a capacity of 529 teraflops."
+  },
+  {
+    "id": 373,
+    "question": "What is the ranking of the Param Yuva supercomputer in November 2008?",
+    "options": [
+      "Ranked 50",
+      "Ranked 69",
+      "Ranked 100",
+      "Ranked 200"
+    ],
+    "correct_option": 1,
+    "explanation": "The Param Yuva supercomputer was ranked 69 in November 2008."
+  },
+  {
+    "id": 374,
+    "question": "What is the ranking of the Param Yuva II supercomputer?",
+    "options": [
+      "Ranked 50",
+      "Ranked 69",
+      "Ranked 100",
+      "Ranked 200"
+    ],
+    "correct_option": 1,
+    "explanation": "The Param Yuva II supercomputer was ranked 69."
+  },
+  {
+    "id": 375,
+    "question": "What type of computer is SEAC?",
+    "options": [
+      "First generation",
+      "Second generation",
+      "Third generation",
+      "Fourth generation"
+    ],
+    "correct_option": 0,
+    "explanation": "SEAC is a first-generation computer."
+  },
+  {
+    "id": 376,
+    "question": "Who built the SEAC computer?",
+    "options": [
+      "U.S. National Bureau of Standards (NBS)",
+      "IBM",
+      "Apple Inc.",
+      "Google"
+    ],
+    "correct_option": 0,
+    "explanation": "The SEAC computer was built by the U.S. National Bureau of Standards (NBS)."
+  },
+  {
+    "id": 377,
+    "question": "In what year was the SEAC computer built?",
+    "options": [
+      "1940",
+      "1950",
+      "1960",
+      "1970"
+    ],
+    "correct_option": 1,
+    "explanation": "The SEAC computer was built in 1950."
+  },
+  {
+    "id": 378,
+    "question": "What is the supercomputing power of the Param Bio-blaze in TF?",
+    "options": [
+      "5 TF",
+      "10 TF",
+      "10.65 TF",
+      "20 TF"
+    ],
+    "correct_option": 2,
+    "explanation": "The Param Bio-blaze has a supercomputing power of 10.65 TF."
+  },
+  {
+    "id": 379,
+    "question": "What is the capacity of the Param Biochrome HPC cluster in teraflops?",
+    "options": [
+      "1 teraflop",
+      "5 teraflops",
+      "10 teraflops",
+      "20 teraflops"
+    ],
+    "correct_option": 1,
+    "explanation": "The Param Biochrome HPC cluster has a capacity of 5 teraflops."
+  },
+  {
+    "id": 380,
+    "question": "What does HTML stand for?",
+    "options": [
+      "Hyper Text Markup Language",
+      "Hyper Text Making Language",
+      "Hyper Text Managing Language",
+      "Hyper Text Mapping Language"
+    ],
+    "correct_option": 0,
+    "explanation": "HTML stands for Hyper Text Markup Language."
+  },
+  {
+    "id": 381,
+    "question": "Who invented HTML in 1990?",
+    "options": [
+      "Tim Berners Lee",
+      "Steve Jobs",
+      "Bill Gates",
+      "Vinod Khosla"
+    ],
+    "correct_option": 0,
+    "explanation": "Tim Berners Lee invented HTML in 1990."
+  },
+  {
+    "id": 382,
+    "question": "What company was founded by Steve Jobs, Steve Wozniac, and Ronald Wayne in 1976?",
+    "options": [
+      "Apple Inc.",
+      "Google",
+      "Microsoft",
+      "Sun Microsystems"
+    ],
+    "correct_option": 0,
+    "explanation": "Apple Inc. was founded by Steve Jobs, Steve Wozniac, and Ronald Wayne in 1976."
+  }
+]

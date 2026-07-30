@@ -1,0 +1,350 @@
+[
+  {
+    "id": 203,
+    "question": "What is the primary function of IMPS?",
+    "options": [
+      "To provide internet services",
+      "To offer instant electronic fund transfer",
+      "To provide email services",
+      "To provide web browsing services"
+    ],
+    "correct_option": 1,
+    "explanation": "IMPS offers an instant, 24x7, interbank electronic fund transfer service through mobile and electronic banking."
+  },
+  {
+    "id": 204,
+    "question": "What is the term for transferring data from the customer's machine to the server?",
+    "options": [
+      "Downloading",
+      "Uploading",
+      "Emailing",
+      "Booking"
+    ],
+    "correct_option": 1,
+    "explanation": "Uploading is the process of transmitting data from a local machine/client to a remote server."
+  },
+  {
+    "id": 205,
+    "question": "Which of the following is NOT an example of an email service provider?",
+    "options": [
+      "Outlook",
+      "Gmail",
+      "Yandex",
+      "None of the above"
+    ],
+    "correct_option": 3,
+    "explanation": "Outlook, Gmail, and Yandex are all valid email service providers, so 'None of the above' is the correct choice."
+  },
+  {
+    "id": 206,
+    "question": "What is the keyboard shortcut to reload the current page in Google search engine?",
+    "options": [
+      "F1",
+      "F5",
+      "Ctrl + R",
+      "Alt + F4"
+    ],
+    "correct_option": 1,
+    "explanation": "F5 (as well as Ctrl + R) refreshes or reloads the active webpage."
+  },
+  {
+    "id": 207,
+    "question": "What keyboard shortcut is used to bookmark the current webpage on the web browser?",
+    "options": [
+      "Ctrl + C",
+      "Ctrl + D",
+      "Ctrl + V",
+      "Ctrl + A"
+    ],
+    "correct_option": 1,
+    "explanation": "Ctrl + D saves the active webpage to the browser bookmarks."
+  },
+  {
+    "id": 208,
+    "question": "What option is pressed to create a new email message in Gmail?",
+    "options": [
+      "Reply",
+      "Forward",
+      "Compose",
+      "Delete"
+    ],
+    "correct_option": 2,
+    "explanation": "The 'Compose' button is used to write and send a new email in Gmail."
+  },
+  {
+    "id": 209,
+    "question": "What is responsible for displaying the web page in a web browser?",
+    "options": [
+      "Rendering Engine",
+      "Browser Engine",
+      "Search Engine",
+      "Database Engine"
+    ],
+    "correct_option": 0,
+    "explanation": "The Rendering Engine parses HTML and CSS to render content visually on screen."
+  },
+  {
+    "id": 210,
+    "question": "Which Internet protocol specifies how data is broken down into packets and exchanged over the Internet?",
+    "options": [
+      "TCP",
+      "IP",
+      "HTTP",
+      "FTP"
+    ],
+    "correct_option": 0,
+    "explanation": "TCP (Transmission Control Protocol) handles segmenting data into packets and ensuring reliable delivery."
+  },
+  {
+    "id": 211,
+    "question": "What do you use in Gmail when you want to send a mail in response to the original mail and to the original sender only?",
+    "options": [
+      "Reply All",
+      "Forward",
+      "Reply",
+      "Compose"
+    ],
+    "correct_option": 2,
+    "explanation": "Reply responds solely to the original sender."
+  },
+  {
+    "id": 212,
+    "question": "Which folder is used to store deleted emails?",
+    "options": [
+      "Inbox",
+      "Spam",
+      "Trash",
+      "Drafts"
+    ],
+    "correct_option": 2,
+    "explanation": "The Trash folder holds deleted emails for 30 days before permanent deletion."
+  },
+  {
+    "id": 213,
+    "question": "Which browser was the first to display images inline with text instead of displaying images in a separate window?",
+    "options": [
+      "Internet Explorer",
+      "Mozilla",
+      "Mosaic",
+      "Chrome"
+    ],
+    "correct_option": 2,
+    "explanation": "NCSA Mosaic was the first popular browser to display images inline with text."
+  },
+  {
+    "id": 214,
+    "question": "Which of the following is a web browser created and developed by Microsoft?",
+    "options": [
+      "Edge",
+      "Chrome",
+      "Firefox",
+      "Safari"
+    ],
+    "correct_option": 0,
+    "explanation": "Microsoft Edge is the web browser developed by Microsoft."
+  },
+  {
+    "id": 215,
+    "question": "What is the physical network of computers all over the world?",
+    "options": [
+      "Intranet",
+      "Internet",
+      "Extranet",
+      "LAN"
+    ],
+    "correct_option": 1,
+    "explanation": "The Internet is the global interconnection of computer networks."
+  },
+  {
+    "id": 216,
+    "question": "What does IMPS stand for?",
+    "options": [
+      "Instant Money Payment Service",
+      "Immediate Payment Service",
+      "Internet Money Payment Service",
+      "Interbank Money Payment Service"
+    ],
+    "correct_option": 1,
+    "explanation": "IMPS stands for Immediate Payment Service."
+  },
+  {
+    "id": 217,
+    "question": "What is the primary mode of transaction in IMPS?",
+    "options": [
+      "Card-based",
+      "Cash-based",
+      "Mobile-based",
+      "Internet-based"
+    ],
+    "correct_option": 2,
+    "explanation": "IMPS was built primarily around mobile devices using MMID and phone numbers."
+  },
+  {
+    "id": 218,
+    "question": "What is the benefit of using IMPS?",
+    "options": [
+      "It is time-consuming",
+      "It is expensive",
+      "It is safe and economical",
+      "It is limited to certain banks"
+    ],
+    "correct_option": 2,
+    "explanation": "IMPS is real-time, secure, cost-effective, and operational 24x7."
+  },
+  {
+    "id": 219,
+    "question": "Which of the following is a feature of IMPS?",
+    "options": [
+      "It is available only during banking hours",
+      "It is available 24X7",
+      "It requires a physical visit to the bank",
+      "It requires a minimum transaction amount"
+    ],
+    "correct_option": 1,
+    "explanation": "IMPS operates 24/7, including weekends and public holidays."
+  },
+  {
+    "id": 220,
+    "question": "What type of fund transfer does IMPS facilitate?",
+    "options": [
+      "Interbank",
+      "Intrabank",
+      "International",
+      "Interstate"
+    ],
+    "correct_option": 0,
+    "explanation": "IMPS facilitates instant interbank electronic fund transfers."
+  },
+  {
+    "id": 221,
+    "question": "What is the purpose of the Rendering Engine in a web browser?",
+    "options": [
+      "To display web pages",
+      "To send emails",
+      "To transfer files",
+      "To connect to the internet"
+    ],
+    "correct_option": 0,
+    "explanation": "The Rendering Engine processes HTML, XML, images, and formatting to render web content visually."
+  },
+  {
+    "id": 222,
+    "question": "Which protocol is used for breaking data into IP packets?",
+    "options": [
+      "TCP",
+      "IP",
+      "HTTP",
+      "FTP"
+    ],
+    "correct_option": 0,
+    "explanation": "TCP divides data streams into individual packets prior to IP routing."
+  },
+  {
+    "id": 223,
+    "question": "What is the definition of uploading?",
+    "options": [
+      "Uploading is faster than downloading",
+      "Downloading is faster than uploading",
+      "Uploading is transferring data from server to client",
+      "Uploading is transferring data from client to server"
+    ],
+    "correct_option": 3,
+    "explanation": "Uploading refers specifically to transmitting data from a local client machine to a remote system/server."
+  },
+  {
+    "id": 224,
+    "question": "Which of the following is an example of an email service provider?",
+    "options": [
+      "Google Search",
+      "Google Maps",
+      "Gmail",
+      "Google Drive"
+    ],
+    "correct_option": 2,
+    "explanation": "Gmail is Google's webmail service."
+  },
+  {
+    "id": 225,
+    "question": "What is the purpose of the Compose option in Gmail?",
+    "options": [
+      "To reply to an email",
+      "To forward an email",
+      "To create a new email",
+      "To delete an email"
+    ],
+    "correct_option": 2,
+    "explanation": "Compose opens a dialog to draft a new email message."
+  },
+  {
+    "id": 226,
+    "question": "Which of the following is a web browser?",
+    "options": [
+      "Microsoft Office",
+      "Google Chrome",
+      "Adobe Photoshop",
+      "Skype"
+    ],
+    "correct_option": 1,
+    "explanation": "Google Chrome is a web browser."
+  },
+  {
+    "id": 227,
+    "question": "What is the term for a network of networks connected globally?",
+    "options": [
+      "Intranet",
+      "Internet",
+      "Extranet",
+      "LAN"
+    ],
+    "correct_option": 1,
+    "explanation": "The Internet is the global interconnection of autonomous networks."
+  },
+  {
+    "id": 228,
+    "question": "Which of the following is a benefit of using IMPS?",
+    "options": [
+      "It is expensive",
+      "It is time-consuming",
+      "It is safe and economical",
+      "It is limited to certain banks"
+    ],
+    "correct_option": 2,
+    "explanation": "IMPS is instant, safe, and economical."
+  },
+  {
+    "id": 229,
+    "question": "What is the primary function of the Reply option in Gmail?",
+    "options": [
+      "To create a new email",
+      "To forward an email",
+      "To reply to an email",
+      "To delete an email"
+    ],
+    "correct_option": 2,
+    "explanation": "Reply is used to write back to the sender of an email."
+  },
+  {
+    "id": 230,
+    "question": "Which of the following is an example of a keyboard shortcut?",
+    "options": [
+      "Mouse click",
+      "Touchscreen tap",
+      "Ctrl + D",
+      "Voice command"
+    ],
+    "correct_option": 2,
+    "explanation": "Ctrl + D is a keyboard shortcut combination."
+  },
+  {
+    "id": 231,
+    "question": "What is the purpose of the Spam folder in Gmail?",
+    "options": [
+      "To store deleted emails",
+      "To store sent emails",
+      "To store spam emails",
+      "To store draft emails"
+    ],
+    "correct_option": 2,
+    "explanation": "The Spam folder isolates unsolicited or potentially harmful emails automatically."
+  }
+]

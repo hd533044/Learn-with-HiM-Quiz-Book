@@ -1,0 +1,326 @@
+[
+  {
+    "id": 118,
+    "question": "What is the shortcut to save a new workbook and display the Save As dialog box?",
+    "options": [
+      "Shift + F12",
+      "Ctrl + F1",
+      "Alt + F2",
+      "Shift + F2"
+    ],
+    "correct_option": 2,
+    "explanation": "Alt + F2 displays the File Save As dialog box in Microsoft Excel."
+  },
+  {
+    "id": 119,
+    "question": "What is the function of Ctrl + F2?",
+    "options": [
+      "Print Preview",
+      "Closes and reopens the current task pane",
+      "Displays the Insert Name Define dialog box",
+      "Activates the Move window command"
+    ],
+    "correct_option": 0,
+    "explanation": "Ctrl + F2 displays the Print Preview window in Microsoft Excel."
+  },
+  {
+    "id": 120,
+    "question": "What is the purpose of using Alt + F1?",
+    "options": [
+      "Creates a new worksheet",
+      "Creates an embedded chart using the highlighted range",
+      "Displays the File Open dialog box",
+      "Minimizes the size of the active workbook or window"
+    ],
+    "correct_option": 1,
+    "explanation": "Alt + F1 creates an embedded chart of the data in the current range."
+  },
+  {
+    "id": 121,
+    "question": "What is the shortcut to close all workbooks and exit Excel?",
+    "options": [
+      "Alt + F4",
+      "Alt + F8",
+      "Alt + Shift + F2",
+      "Alt + Shift + F4"
+    ],
+    "correct_option": 0,
+    "explanation": "Alt + F4 closes all open workbooks and exits the Excel application."
+  },
+  {
+    "id": 122,
+    "question": "What is the function of Ctrl + F6?",
+    "options": [
+      "Moves to the previous open workbook or window",
+      "Moves to the next open workbook or window",
+      "Restores the size of the active workbook or window",
+      "Minimizes the size of the active workbook or window"
+    ],
+    "correct_option": 1,
+    "explanation": "Ctrl + F6 switches to the next open workbook or window."
+  },
+  {
+    "id": 123,
+    "question": "What is the purpose of using Ctrl + F9?",
+    "options": [
+      "Minimizes the size of the active workbook or window",
+      "Maximizes the size of the active workbook or window",
+      "Restores the size of the active workbook or window",
+      "Closes the selected workbook window"
+    ],
+    "correct_option": 0,
+    "explanation": "Ctrl + F9 minimizes a workbook window to an icon."
+  },
+  {
+    "id": 124,
+    "question": "What is the shortcut to display the Open dialog box?",
+    "options": [
+      "Ctrl + F12",
+      "Alt + F1",
+      "Ctrl + F1",
+      "Alt + F2"
+    ],
+    "correct_option": 0,
+    "explanation": "Ctrl + F12 displays the Open dialog box."
+  },
+  {
+    "id": 125,
+    "question": "What is the function of Alt + Shift + F2?",
+    "options": [
+      "Displays the Save As dialog box",
+      "Displays the Open dialog box",
+      "Creates a new worksheet",
+      "Closes all workbooks and exits Excel"
+    ],
+    "correct_option": 0,
+    "explanation": "Alt + Shift + F2 acts as a shortcut to display the Save As dialog box."
+  },
+  {
+    "id": 126,
+    "question": "What is the purpose of using Ctrl + F4?",
+    "options": [
+      "Closes the selected workbook window",
+      "Restores the size of the active workbook or window",
+      "Minimizes the size of the active workbook or window",
+      "Maximizes the size of the active workbook or window"
+    ],
+    "correct_option": 0,
+    "explanation": "Ctrl + F4 closes the currently selected workbook window."
+  },
+  {
+    "id": 127,
+    "question": "What is the shortcut to activate the Move window command?",
+    "options": [
+      "Ctrl + F6",
+      "Ctrl + F7",
+      "Ctrl + F8",
+      "Alt + F8"
+    ],
+    "correct_option": 1,
+    "explanation": "Ctrl + F7 performs the Move command on the workbook window when it is not maximized."
+  },
+  {
+    "id": 128,
+    "question": "What is the function of Alt + F8?",
+    "options": [
+      "Displays the Macro dialog box",
+      "Creates a chart on a chart sheet using the highlighted range",
+      "Displays the Save As dialog box",
+      "Closes all workbooks and exits Excel"
+    ],
+    "correct_option": 0,
+    "explanation": "Alt + F8 opens the Macro dialog box to create, run, or delete a macro."
+  },
+  {
+    "id": 129,
+    "question": "What is the purpose of using Ctrl + F1?",
+    "options": [
+      "Displays or hides the Ribbon",
+      "Restores the size of the active workbook or window",
+      "Minimizes the size of the active workbook or window",
+      "Maximizes the size of the active workbook or window"
+    ],
+    "correct_option": 0,
+    "explanation": "Ctrl + F1 displays or hides the Ribbon in Microsoft Excel."
+  },
+  {
+    "id": 130,
+    "question": "What is the shortcut to calculate all cells on all worksheets in all workbooks?",
+    "options": [
+      "Alt + F9",
+      "Alt + Ctrl + F9",
+      "Ctrl + F9",
+      "Alt + Shift + F9"
+    ],
+    "correct_option": 1,
+    "explanation": "Ctrl + Alt + F9 calculates all worksheets in all open workbooks, regardless of whether they have changed."
+  },
+  {
+    "id": 131,
+    "question": "What is the function of Ctrl + F5?",
+    "options": [
+      "Restores the size of the active workbook or window",
+      "Minimizes the size of the active workbook or window",
+      "Maximizes the size of the active workbook or window",
+      "Closes the selected workbook window"
+    ],
+    "correct_option": 0,
+    "explanation": "Ctrl + F5 restores the window size of the selected workbook window."
+  },
+  {
+    "id": 132,
+    "question": "What is the purpose of using Alt + F11?",
+    "options": [
+      "Toggles between the Visual Basic Editor window and the Excel window",
+      "Creates a chart on a chart sheet using the highlighted range",
+      "Displays the Save As dialog box",
+      "Closes all workbooks and exits Excel"
+    ],
+    "correct_option": 0,
+    "explanation": "Alt + F11 opens the Microsoft Visual Basic for Applications Editor."
+  },
+  {
+    "id": 133,
+    "question": "What is the shortcut to display the drop-down menu for the corresponding smart tag?",
+    "options": [
+      "Alt + Shift + F1",
+      "Alt + Shift + F2",
+      "Alt + Shift + F4",
+      "Alt + Shift + F10"
+    ],
+    "correct_option": 3,
+    "explanation": "Alt + Shift + F10 displays the menu or message for a Smart Tag or AutoCorrect action."
+  },
+  {
+    "id": 134,
+    "question": "What is the function of Ctrl + F3?",
+    "options": [
+      "Displays the Name Manager dialog box",
+      "Activates the Move window command",
+      "Displays the Print Preview",
+      "Minimizes the size of the active workbook or window"
+    ],
+    "correct_option": 0,
+    "explanation": "Ctrl + F3 opens the Excel Name Manager dialog box."
+  },
+  {
+    "id": 135,
+    "question": "What is the purpose of using Shift + F12?",
+    "options": [
+      "Saves the active workbook",
+      "Creates a chart on a chart sheet using the highlighted range",
+      "Displays the Save As dialog box",
+      "Closes all workbooks and exits Excel"
+    ],
+    "correct_option": 0,
+    "explanation": "Shift + F12 performs a Save operation on the current active workbook."
+  },
+  {
+    "id": 136,
+    "question": "What is the shortcut to maximize the size of the active workbook or window?",
+    "options": [
+      "Ctrl + F9",
+      "Ctrl + F10",
+      "Ctrl + F12",
+      "Alt + F10"
+    ],
+    "correct_option": 1,
+    "explanation": "Ctrl + F10 maximizes or restores the selected workbook window."
+  },
+  {
+    "id": 137,
+    "question": "What is the function of Alt + Shift + F4?",
+    "options": [
+      "Closes all workbooks and exits Excel",
+      "Displays the Save As dialog box",
+      "Creates a chart on a chart sheet using the highlighted range",
+      "Displays the Open dialog box"
+    ],
+    "correct_option": 0,
+    "explanation": "Alt + Shift + F4 closes all workbooks and exits the application."
+  },
+  {
+    "id": 138,
+    "question": "What is the purpose of using Ctrl + F7?",
+    "options": [
+      "Activates the Resize window command",
+      "Activates the Move window command",
+      "Restores the size of the active workbook or window",
+      "Minimizes the size of the active workbook or window"
+    ],
+    "correct_option": 1,
+    "explanation": "Ctrl + F7 activates the Move window command for windows that are not maximized."
+  },
+  {
+    "id": 139,
+    "question": "What is the shortcut to display the Macro dialog box?",
+    "options": [
+      "Alt + F8",
+      "Alt + F11",
+      "Ctrl + F8",
+      "Alt + Shift + F8"
+    ],
+    "correct_option": 0,
+    "explanation": "Alt + F8 opens the Macro dialog box."
+  },
+  {
+    "id": 140,
+    "question": "What is the function of Ctrl + F8?",
+    "options": [
+      "Activates the Resize window command",
+      "Activates the Move window command",
+      "Restores the size of the active workbook or window",
+      "Minimizes the size of the active workbook or window"
+    ],
+    "correct_option": 0,
+    "explanation": "Ctrl + F8 activates the Resize window command on non-maximized windows."
+  },
+  {
+    "id": 141,
+    "question": "What is the purpose of using Alt + F2?",
+    "options": [
+      "Displays the Save As dialog box",
+      "Creates a chart on a chart sheet using the highlighted range",
+      "Displays the Open dialog box",
+      "Closes all workbooks and exits Excel"
+    ],
+    "correct_option": 0,
+    "explanation": "Alt + F2 opens the Save As dialog box."
+  },
+  {
+    "id": 142,
+    "question": "What is the shortcut to create a chart on a chart sheet using the highlighted range?",
+    "options": [
+      "Alt + F1",
+      "Alt + F2",
+      "Ctrl + F1",
+      "Ctrl + F2"
+    ],
+    "correct_option": 0,
+    "explanation": "Alt + F1 creates an embedded chart of the data in the current range."
+  },
+  {
+    "id": 143,
+    "question": "What is the function of Ctrl + F12?",
+    "options": [
+      "Displays the Open dialog box",
+      "Displays the Save As dialog box",
+      "Creates a new worksheet",
+      "Closes all workbooks and exits Excel"
+    ],
+    "correct_option": 0,
+    "explanation": "Ctrl + F12 displays the File Open dialog box."
+  },
+  {
+    "id": 144,
+    "question": "What is the purpose of using Alt + F4?",
+    "options": [
+      "Closes all workbooks and exits Excel",
+      "Displays the Save As dialog box",
+      "Creates a chart on a chart sheet using the highlighted range",
+      "Displays the Open dialog box"
+    ],
+    "correct_option": 0,
+    "explanation": "Alt + F4 exits Microsoft Excel and prompts to save unsaved files."
+  }
+]

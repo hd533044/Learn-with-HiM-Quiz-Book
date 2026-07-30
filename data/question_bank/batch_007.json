@@ -1,0 +1,350 @@
+[
+  {
+    "id": 174,
+    "question": "What is the effect of using the keyboard shortcut Ctrl + Shift + # on a selection?",
+    "options": [
+      "Applies the General format to the selection",
+      "Applies the Date format (day, month, and year) to the selection",
+      "Applies the outline border to the selection",
+      "Removes all the borders from the selection"
+    ],
+    "correct_option": 1,
+    "explanation": "The keyboard shortcut Ctrl + Shift + # applies the Date format with the day, month, and year to the selection."
+  },
+  {
+    "id": 175,
+    "question": "What is the function of the keyboard shortcut Ctrl + Shift + & (or 7)?",
+    "options": [
+      "Applies the General format to the selection",
+      "Applies the Custom Date format 'DD-MM-YY' to the selection",
+      "Applies the outline border to the selection",
+      "Removes all the borders from the selection"
+    ],
+    "correct_option": 2,
+    "explanation": "The keyboard shortcut Ctrl + Shift + & applies an outline border to the selected cells."
+  },
+  {
+    "id": 176,
+    "question": "What is the effect of using the keyboard shortcut Ctrl + Shift + _ (underline) on a selection?",
+    "options": [
+      "Applies the General format to the selection",
+      "Applies the Custom Date format 'DD-MM-YY' to the selection",
+      "Applies the outline border to the selection",
+      "Removes all the borders from the selection"
+    ],
+    "correct_option": 3,
+    "explanation": "The keyboard shortcut Ctrl + Shift + _ removes all borders from the selected cells."
+  },
+  {
+    "id": 177,
+    "question": "What is the function of the keyboard shortcut Ctrl + Tab?",
+    "options": [
+      "Moves to the previous open workbook or window",
+      "Moves to the next open workbook or window",
+      "Moves to the previous application open on your computer",
+      "Moves to the next application open on your computer"
+    ],
+    "correct_option": 1,
+    "explanation": "The keyboard shortcut Ctrl + Tab switches to the next tab or workbook window."
+  },
+  {
+    "id": 178,
+    "question": "What is the effect of using the keyboard shortcut Alt + Tab on the computer?",
+    "options": [
+      "Moves to the previous open workbook or window",
+      "Moves to the next open workbook or window",
+      "Moves to the previous application open on your computer",
+      "Moves to the next application open on your computer"
+    ],
+    "correct_option": 3,
+    "explanation": "Alt + Tab switches between open applications in Windows."
+  },
+  {
+    "id": 179,
+    "question": "What is the function of the keyboard shortcut Alt + Shift + Tab?",
+    "options": [
+      "Moves to the previous open workbook or window",
+      "Moves to the next open workbook or window",
+      "Moves to the previous application open on your computer",
+      "Moves to the next application open on your computer"
+    ],
+    "correct_option": 2,
+    "explanation": "Alt + Shift + Tab switches backward through active open applications."
+  },
+  {
+    "id": 180,
+    "question": "What is the effect of using the keyboard shortcut End + Arrow Keys on a worksheet?",
+    "options": [
+      "Moves to the first non-empty cell in that direction",
+      "Moves to the next non-empty cell in that direction",
+      "Moves to the last non-empty cell in that direction",
+      "Moves to the previous non-empty cell in that direction"
+    ],
+    "correct_option": 2,
+    "explanation": "Pressing End followed by an arrow key jumps to the last non-blank cell in the same column or row as the active cell."
+  },
+  {
+    "id": 181,
+    "question": "What is the function of the keyboard shortcut End + Enter on a worksheet?",
+    "options": [
+      "Moves to the first cell in the current row that is not blank",
+      "Moves to the last cell in the current row that is not blank",
+      "Moves to the first cell in the current column that is not blank",
+      "Moves to the last cell in the current column that is not blank"
+    ],
+    "correct_option": 1,
+    "explanation": "The key sequence End + Enter moves to the last non-blank cell in the current row."
+  },
+  {
+    "id": 182,
+    "question": "What is the effect of using the keyboard shortcut End + Home on a worksheet?",
+    "options": [
+      "Moves to the first cell in the current row that is not blank",
+      "Moves to the last cell in the current row that is not blank",
+      "Moves to the first cell in the current column that is not blank",
+      "Moves to the last used cell on the active worksheet"
+    ],
+    "correct_option": 3,
+    "explanation": "End + Home jumps to the last cell used on the worksheet in the bottom-right region."
+  },
+  {
+    "id": 183,
+    "question": "What is the function of the keyboard shortcut Page Down on a worksheet?",
+    "options": [
+      "Moves to the previous screen of rows up",
+      "Moves to the next screen of rows down",
+      "Moves to the previous screen of columns to the left",
+      "Moves to the next screen of columns to the right"
+    ],
+    "correct_option": 1,
+    "explanation": "Page Down scrolls down one screen of rows on the worksheet."
+  },
+  {
+    "id": 184,
+    "question": "What is the effect of using the keyboard shortcut Page Up on a worksheet?",
+    "options": [
+      "Moves to the previous screen of rows up",
+      "Moves to the next screen of rows down",
+      "Moves to the previous screen of columns to the left",
+      "Moves to the next screen of columns to the right"
+    ],
+    "correct_option": 0,
+    "explanation": "Page Up scrolls up one screen of rows on the worksheet."
+  },
+  {
+    "id": 185,
+    "question": "What is the function of the keyboard shortcut Shift + Enter on a worksheet?",
+    "options": [
+      "Moves to the cell directly below",
+      "Moves to the cell directly above",
+      "Moves to the cell directly to the left",
+      "Moves to the cell directly to the right"
+    ],
+    "correct_option": 1,
+    "explanation": "Shift + Enter completes cell entry and selects the cell above."
+  },
+  {
+    "id": 186,
+    "question": "What is the effect of using the keyboard shortcut Shift + Tab on a worksheet?",
+    "options": [
+      "Moves to the cell directly to the right",
+      "Moves to the cell directly to the left",
+      "Moves to the cell directly above",
+      "Moves to the cell directly below"
+    ],
+    "correct_option": 1,
+    "explanation": "Shift + Tab completes cell entry and selects the cell to the left."
+  },
+  {
+    "id": 187,
+    "question": "What is the function of the keyboard shortcut Alt + Page Down on a worksheet?",
+    "options": [
+      "Moves one screen of columns to the left",
+      "Moves one screen of columns to the right",
+      "Moves one screen of rows up",
+      "Moves one screen of rows down"
+    ],
+    "correct_option": 1,
+    "explanation": "Alt + Page Down moves one screen to the right in the worksheet."
+  },
+  {
+    "id": 188,
+    "question": "What is the effect of using the keyboard shortcut Alt + Page Up on a worksheet?",
+    "options": [
+      "Moves one screen of columns to the left",
+      "Moves one screen of columns to the right",
+      "Moves one screen of rows up",
+      "Moves one screen of rows down"
+    ],
+    "correct_option": 0,
+    "explanation": "Alt + Page Up moves one screen to the left in the worksheet."
+  },
+  {
+    "id": 189,
+    "question": "What is the function of the keyboard shortcut Ctrl + Home on a worksheet?",
+    "options": [
+      "Moves to the last used cell on the active worksheet",
+      "Moves to the first used cell on the active worksheet",
+      "Moves to cell 'A1' on the active sheet",
+      "Moves to the last cell in the current row that is not blank"
+    ],
+    "correct_option": 2,
+    "explanation": "Ctrl + Home jumps to cell A1 or the top-leftmost available cell."
+  },
+  {
+    "id": 190,
+    "question": "What is the effect of using the keyboard shortcut Ctrl + End on a worksheet?",
+    "options": [
+      "Moves to the first used cell on the active worksheet",
+      "Moves to the last used cell on the active worksheet",
+      "Moves to cell 'A1' on the active sheet",
+      "Moves to the first cell in the current row that is not blank"
+    ],
+    "correct_option": 1,
+    "explanation": "Ctrl + End moves to the bottom-rightmost cell with contents or formatting."
+  },
+  {
+    "id": 191,
+    "question": "What is the function of the keyboard shortcut Ctrl + Up Arrow on a worksheet?",
+    "options": [
+      "Moves to the last row in the current region",
+      "Moves to the top boundary of the current data region",
+      "Moves to the last column in the current region",
+      "Moves to the first column in the current region"
+    ],
+    "correct_option": 1,
+    "explanation": "Ctrl + Up Arrow moves to the top edge of the active data block."
+  },
+  {
+    "id": 192,
+    "question": "What is the effect of using the keyboard shortcut Ctrl + Down Arrow on a worksheet?",
+    "options": [
+      "Moves to the first row in the current region",
+      "Moves to the bottom boundary of the current data region",
+      "Moves to the first column in the current region",
+      "Moves to the last column in the current region"
+    ],
+    "correct_option": 1,
+    "explanation": "Ctrl + Down Arrow moves to the bottom edge of the active data block."
+  },
+  {
+    "id": 193,
+    "question": "What is the function of the keyboard shortcut Ctrl + Left Arrow on a worksheet?",
+    "options": [
+      "Moves to the last column in the current region",
+      "Moves to the left boundary of the current data region",
+      "Moves to the last row in the current region",
+      "Moves to the first row in the current region"
+    ],
+    "correct_option": 1,
+    "explanation": "Ctrl + Left Arrow moves to the leftmost cell in the current region."
+  },
+  {
+    "id": 194,
+    "question": "What is the effect of using the keyboard shortcut Ctrl + Right Arrow on a worksheet?",
+    "options": [
+      "Moves to the first column in the current region",
+      "Moves to the right boundary of the current data region",
+      "Moves to the first row in the current region",
+      "Moves to the last row in the current region"
+    ],
+    "correct_option": 1,
+    "explanation": "Ctrl + Right Arrow moves to the rightmost cell in the current region."
+  },
+  {
+    "id": 195,
+    "question": "What is the function of the keyboard shortcut Ctrl + Page Up on a worksheet?",
+    "options": [
+      "Moves to the next worksheet in the workbook",
+      "Moves to the previous worksheet in the workbook",
+      "Moves to the next open workbook or window",
+      "Moves to the previous open workbook or window"
+    ],
+    "correct_option": 1,
+    "explanation": "Ctrl + Page Up switches to the previous worksheet tab."
+  },
+  {
+    "id": 196,
+    "question": "What is the effect of using the keyboard shortcut Ctrl + Page Down on a worksheet?",
+    "options": [
+      "Moves to the previous worksheet in the workbook",
+      "Moves to the next worksheet in the workbook",
+      "Moves to the previous open workbook or window",
+      "Moves to the next open workbook or window"
+    ],
+    "correct_option": 1,
+    "explanation": "Ctrl + Page Down switches to the next worksheet tab."
+  },
+  {
+    "id": 197,
+    "question": "What is the function of the keyboard shortcut Ctrl + Shift + Tab on a worksheet?",
+    "options": [
+      "Moves to the next open workbook or window",
+      "Moves to the previous open workbook or window",
+      "Moves to the next application open on your computer",
+      "Moves to the previous application open on your computer"
+    ],
+    "correct_option": 1,
+    "explanation": "Ctrl + Shift + Tab moves backward to the previous open workbook/window."
+  },
+  {
+    "id": 198,
+    "question": "What is the effect of using the keyboard shortcut Scroll Lock + Arrow Keys on a worksheet?",
+    "options": [
+      "Moves the cell cursor one cell in the corresponding direction",
+      "Scrolls the screen one row or column in that direction without changing active cell",
+      "Moves to the first non-empty cell in that direction",
+      "Moves to the last non-empty cell in that direction"
+    ],
+    "correct_option": 1,
+    "explanation": "When Scroll Lock is enabled, arrow keys scroll the worksheet view rather than moving cell selection."
+  },
+  {
+    "id": 199,
+    "question": "What is the function of the keyboard shortcut Ctrl + Shift + ~ on a selection?",
+    "options": [
+      "Applies the General format to the selection",
+      "Applies the Custom Date format 'DD-MM-YY' to the selection",
+      "Applies the outline border to the selection",
+      "Removes all the borders from the selection"
+    ],
+    "correct_option": 0,
+    "explanation": "The keyboard shortcut Ctrl + Shift + ~ applies the General number format."
+  },
+  {
+    "id": 200,
+    "question": "What is the effect of using the keyboard shortcut Ctrl + Tab on multiple open workbooks?",
+    "options": [
+      "Moves to the previous open workbook or window",
+      "Moves to the next open workbook or window",
+      "Moves to the previous application open on your computer",
+      "Moves to the next application open on your computer"
+    ],
+    "correct_option": 1,
+    "explanation": "Ctrl + Tab switches to the next open workbook window."
+  },
+  {
+    "id": 201,
+    "question": "What is the function of the keyboard shortcut Alt + Tab on multiple open applications?",
+    "options": [
+      "Moves to the previous open workbook or window",
+      "Moves to the next open workbook or window",
+      "Moves to the previous application open on your computer",
+      "Moves to the next application open on your computer"
+    ],
+    "correct_option": 3,
+    "explanation": "Alt + Tab switches to the next open application in Windows."
+  },
+  {
+    "id": 202,
+    "question": "What is the effect of using the keyboard shortcut End + Home on a worksheet to move to a specific cell?",
+    "options": [
+      "Moves to the first cell in the current row that is not blank",
+      "Moves to the last cell in the current row that is not blank",
+      "Moves to the first cell in the current column that is not blank",
+      "Moves to the last used cell on the active worksheet"
+    ],
+    "correct_option": 3,
+    "explanation": "End + Home jumps directly to the last active cell on the worksheet."
+  }
+]

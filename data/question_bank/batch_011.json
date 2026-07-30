@@ -1,0 +1,326 @@
+[
+  {
+    "id": 276,
+    "question": "What is the primary function of a protocol in a telecommunication connection?",
+    "options": [
+      "To connect multiple devices",
+      "To filter network traffic",
+      "To define a set of rules for data communication",
+      "To provide dedicated file storage"
+    ],
+    "correct_option": 2,
+    "explanation": "A protocol is a set of rules and standards that govern data communication between devices in a telecommunication connection."
+  },
+  {
+    "id": 277,
+    "question": "Which networking device filters network traffic while connecting multiple computers?",
+    "options": [
+      "Router",
+      "Switch",
+      "Hub",
+      "Modem"
+    ],
+    "correct_option": 1,
+    "explanation": "A switch is a networking device that filters network traffic while connecting multiple computers or communicating devices."
+  },
+  {
+    "id": 278,
+    "question": "What type of device provides centralized disk storage through a standard Ethernet connection?",
+    "options": [
+      "Network Attached Storage (NAS)",
+      "Storage Area Network (SAN)",
+      "Cloud Storage",
+      "External Hard Drive"
+    ],
+    "correct_option": 0,
+    "explanation": "Network Attached Storage (NAS) is a type of dedicated file storage device that provides local-area network (LAN) users with centralized, consolidated disk storage through a standard Ethernet connection."
+  },
+  {
+    "id": 279,
+    "question": "What type of malware records everything you type on your PC to obtain sensitive information?",
+    "options": [
+      "Trojan",
+      "Virus",
+      "Keyloggers",
+      "Spyware"
+    ],
+    "correct_option": 2,
+    "explanation": "Keyloggers are a type of malware that records everything you type on your PC in order to obtain your log-in name, passwords, and other sensitive information."
+  },
+  {
+    "id": 280,
+    "question": "What type of cyber threat is Crypto Locker an example of?",
+    "options": [
+      "Phishing",
+      "Ransomware",
+      "Malware",
+      "Spyware"
+    ],
+    "correct_option": 1,
+    "explanation": "Crypto Locker is a form of Ransomware, which is a type of cyber threat that demands payment in exchange for restoring access to encrypted data."
+  },
+  {
+    "id": 281,
+    "question": "In which mode of data transmission can data flow in both directions, but only one direction at a time?",
+    "options": [
+      "Simplex",
+      "Half-duplex",
+      "Full-duplex",
+      "Multiplex"
+    ],
+    "correct_option": 1,
+    "explanation": "In Half-duplex mode, data can flow in both directions, but only one direction at a time."
+  },
+  {
+    "id": 282,
+    "question": "What is the term for data transmission that allows data to flow in both directions simultaneously?",
+    "options": [
+      "Simplex",
+      "Half-duplex",
+      "Full-duplex",
+      "Multiplex"
+    ],
+    "correct_option": 2,
+    "explanation": "Full-duplex is a mode of data transmission that allows data to flow in both directions simultaneously."
+  },
+  {
+    "id": 283,
+    "question": "Which of the following is a characteristic of a Switch?",
+    "options": [
+      "It connects multiple devices",
+      "It filters network traffic",
+      "It provides dedicated file storage",
+      "It connects to the internet"
+    ],
+    "correct_option": 1,
+    "explanation": "A Switch is a networking device that filters network traffic while connecting multiple computers or communicating devices."
+  },
+  {
+    "id": 284,
+    "question": "What is the primary purpose of Network Attached Storage (NAS)?",
+    "options": [
+      "To provide a backup of data",
+      "To provide a centralized disk storage",
+      "To connect multiple devices",
+      "To filter network traffic"
+    ],
+    "correct_option": 1,
+    "explanation": "The primary purpose of Network Attached Storage (NAS) is to provide centralized, consolidated disk storage through a standard Ethernet connection."
+  },
+  {
+    "id": 285,
+    "question": "What type of malware is designed to extort money from victims by encrypting their data?",
+    "options": [
+      "Virus",
+      "Trojan",
+      "Ransomware",
+      "Spyware"
+    ],
+    "correct_option": 2,
+    "explanation": "Ransomware is a type of malware that is designed to extort money from victims by encrypting their data and demanding payment in exchange for the decryption key."
+  },
+  {
+    "id": 286,
+    "question": "In which mode of data transmission is data transmitted in one direction only?",
+    "options": [
+      "Simplex",
+      "Half-duplex",
+      "Full-duplex",
+      "Multiplex"
+    ],
+    "correct_option": 0,
+    "explanation": "In Simplex mode, data is transmitted in one direction only."
+  },
+  {
+    "id": 287,
+    "question": "What is the function of a Keylogger?",
+    "options": [
+      "To record keystrokes",
+      "To filter network traffic",
+      "To provide dedicated file storage",
+      "To connect multiple devices"
+    ],
+    "correct_option": 0,
+    "explanation": "A Keylogger is a type of malware that records everything you type on your PC in order to obtain your log-in name, passwords, and other sensitive information."
+  },
+  {
+    "id": 288,
+    "question": "Which of the following is an example of a dedicated file storage device?",
+    "options": [
+      "Network Attached Storage (NAS)",
+      "Storage Area Network (SAN)",
+      "Cloud Storage",
+      "External Hard Drive"
+    ],
+    "correct_option": 0,
+    "explanation": "Network Attached Storage (NAS) is a type of dedicated file storage device that provides local-area network (LAN) users with centralized, consolidated disk storage through a standard Ethernet connection."
+  },
+  {
+    "id": 289,
+    "question": "What is the term for a networking device that connects multiple devices?",
+    "options": [
+      "Switch",
+      "Router",
+      "Hub",
+      "Modem"
+    ],
+    "correct_option": 0,
+    "explanation": "A Switch is a networking device that connects multiple computers or communicating devices."
+  },
+  {
+    "id": 290,
+    "question": "In which mode of data transmission can data flow in both directions, but with a delay?",
+    "options": [
+      "Simplex",
+      "Half-duplex",
+      "Full-duplex",
+      "Multiplex"
+    ],
+    "correct_option": 1,
+    "explanation": "In Half-duplex mode, data can flow in both directions, but only one direction at a time, which may cause a delay."
+  },
+  {
+    "id": 291,
+    "question": "What is the primary function of a Router?",
+    "options": [
+      "To filter network traffic",
+      "To connect multiple devices",
+      "To provide dedicated file storage",
+      "To connect to the internet"
+    ],
+    "correct_option": 1,
+    "explanation": "A Router is a networking device that connects multiple devices and routes traffic between them."
+  },
+  {
+    "id": 292,
+    "question": "Which of the following is a type of cyber threat?",
+    "options": [
+      "Virus",
+      "Trojan",
+      "Ransomware",
+      "All of the above"
+    ],
+    "correct_option": 3,
+    "explanation": "All of the above options are types of cyber threats."
+  },
+  {
+    "id": 293,
+    "question": "What is the term for a device that provides centralized disk storage?",
+    "options": [
+      "Network Attached Storage (NAS)",
+      "Storage Area Network (SAN)",
+      "Cloud Storage",
+      "External Hard Drive"
+    ],
+    "correct_option": 0,
+    "explanation": "Network Attached Storage (NAS) is a type of dedicated file storage device that provides local-area network (LAN) users with centralized, consolidated disk storage through a standard Ethernet connection."
+  },
+  {
+    "id": 294,
+    "question": "In which mode of data transmission is data transmitted in both directions simultaneously?",
+    "options": [
+      "Simplex",
+      "Half-duplex",
+      "Full-duplex",
+      "Multiplex"
+    ],
+    "correct_option": 2,
+    "explanation": "In Full-duplex mode, data is transmitted in both directions simultaneously."
+  },
+  {
+    "id": 295,
+    "question": "What is the function of a Switch?",
+    "options": [
+      "To filter network traffic",
+      "To connect multiple devices",
+      "To provide dedicated file storage",
+      "To connect to the internet"
+    ],
+    "correct_option": 0,
+    "explanation": "A Switch is a networking device that filters network traffic while connecting multiple computers or communicating devices."
+  },
+  {
+    "id": 296,
+    "question": "Which of the following is an example of a networking device?",
+    "options": [
+      "Switch",
+      "Router",
+      "Hub",
+      "All of the above"
+    ],
+    "correct_option": 3,
+    "explanation": "All of the above options are examples of networking devices."
+  },
+  {
+    "id": 297,
+    "question": "What is the term for a type of malware that records keystrokes?",
+    "options": [
+      "Keyloggers",
+      "Trojan",
+      "Virus",
+      "Spyware"
+    ],
+    "correct_option": 0,
+    "explanation": "Keyloggers are a type of malware that records everything you type on your PC in order to obtain your log-in name, passwords, and other sensitive information."
+  },
+  {
+    "id": 298,
+    "question": "In which mode of data transmission can data flow in one direction only?",
+    "options": [
+      "Simplex",
+      "Half-duplex",
+      "Full-duplex",
+      "Multiplex"
+    ],
+    "correct_option": 0,
+    "explanation": "In Simplex mode, data is transmitted in one direction only."
+  },
+  {
+    "id": 299,
+    "question": "What is the primary function of Network Attached Storage (NAS)?",
+    "options": [
+      "To provide a backup of data",
+      "To provide a centralized disk storage",
+      "To connect multiple devices",
+      "To filter network traffic"
+    ],
+    "correct_option": 1,
+    "explanation": "The primary purpose of Network Attached Storage (NAS) is to provide centralized, consolidated disk storage through a standard Ethernet connection."
+  },
+  {
+    "id": 300,
+    "question": "Which of the following is a type of cyber threat that demands payment in exchange for restoring access to encrypted data?",
+    "options": [
+      "Virus",
+      "Trojan",
+      "Ransomware",
+      "Spyware"
+    ],
+    "correct_option": 2,
+    "explanation": "Ransomware is a type of cyber threat that demands payment in exchange for restoring access to encrypted data."
+  },
+  {
+    "id": 301,
+    "question": "What is the term for a mode of data transmission that allows data to flow in both directions simultaneously?",
+    "options": [
+      "Simplex",
+      "Half-duplex",
+      "Full-duplex",
+      "Multiplex"
+    ],
+    "correct_option": 2,
+    "explanation": "Full-duplex is a mode of data transmission that allows data to flow in both directions simultaneously."
+  },
+  {
+    "id": 302,
+    "question": "What is the function of a Router?",
+    "options": [
+      "To filter network traffic",
+      "To connect multiple devices",
+      "To provide dedicated file storage",
+      "To connect to the internet"
+    ],
+    "correct_option": 1,
+    "explanation": "A Router is a networking device that connects multiple devices and routes traffic between them."
+  }
+]

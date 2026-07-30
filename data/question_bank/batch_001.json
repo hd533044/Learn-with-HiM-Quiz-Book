@@ -1,0 +1,386 @@
+[
+  {
+    "id": 3,
+    "question": "What is the primary function of a Serial Port?",
+    "options": [
+      "Used for scanners and printers",
+      "Used for external modems and older computer mouse",
+      "Used for connecting camcorders and video equipment",
+      "Used for connecting external hard disks and keyboards"
+    ],
+    "correct_option": 1,
+    "explanation": "Serial Port is used for external modems and older computer mouse."
+  },
+  {
+    "id": 4,
+    "question": "How many versions of Serial Port are available?",
+    "options": [
+      "1 version- 9pin",
+      "2 versions- 9pin, 25pin",
+      "3 versions- 9pin, 25pin, 50pin",
+      "4 versions- 9pin, 25pin, 50pin, 100pin"
+    ],
+    "correct_option": 1,
+    "explanation": "There are two versions of Serial Port available: 9pin and 25pin."
+  },
+  {
+    "id": 5,
+    "question": "What is the data transfer speed of a Serial Port?",
+    "options": [
+      "12 megabits per second",
+      "115 kilobits per second",
+      "400 megabits per second",
+      "800 megabits per second"
+    ],
+    "correct_option": 1,
+    "explanation": "The data transfer speed of a Serial Port is 115 kilobits per second."
+  },
+  {
+    "id": 6,
+    "question": "What type of data transmission is supported by a Serial Port?",
+    "options": [
+      "Multiple data streams at a time",
+      "Single stream of data at a time",
+      "Both multiple and single data streams",
+      "None of the above"
+    ],
+    "correct_option": 1,
+    "explanation": "A Serial Port transmits a single stream of data at a time."
+  },
+  {
+    "id": 7,
+    "question": "What is the primary function of a Parallel Port?",
+    "options": [
+      "Used for external modems and older computer mouse",
+      "Used for scanners and printers",
+      "Used for connecting camcorders and video equipment",
+      "Used for connecting external hard disks and keyboards"
+    ],
+    "correct_option": 1,
+    "explanation": "Parallel Port is used for scanners and printers."
+  },
+  {
+    "id": 8,
+    "question": "How many pins are available in a Parallel Port?",
+    "options": [
+      "9 pin",
+      "25 pin",
+      "50 pin",
+      "100 pin"
+    ],
+    "correct_option": 1,
+    "explanation": "A Parallel Port has 25 pins."
+  },
+  {
+    "id": 9,
+    "question": "What type of data transmission is supported by a Parallel Port?",
+    "options": [
+      "Single stream of data at a time",
+      "Multiple data streams at a time",
+      "Both multiple and single data streams",
+      "None of the above"
+    ],
+    "correct_option": 1,
+    "explanation": "A Parallel Port transmits multiple data streams at a time."
+  },
+  {
+    "id": 10,
+    "question": "What is the primary function of a Universal Serial Bus (USB) Port?",
+    "options": [
+      "Used for external modems and older computer mouse",
+      "Used for scanners and printers",
+      "Used for connecting all kinds of external USB devices",
+      "Used for connecting camcorders and video equipment"
+    ],
+    "correct_option": 2,
+    "explanation": "A Universal Serial Bus (USB) Port is used for connecting all kinds of external USB devices."
+  },
+  {
+    "id": 11,
+    "question": "What is the data transfer speed of a Universal Serial Bus (USB) Port?",
+    "options": [
+      "12 kilobits per second",
+      "12 megabits per second",
+      "400 megabits per second",
+      "800 megabits per second"
+    ],
+    "correct_option": 1,
+    "explanation": "The data transfer speed of a USB 1.1 Port is 12 megabits per second."
+  },
+  {
+    "id": 12,
+    "question": "What type of devices can be connected to a Universal Serial Bus (USB) Port?",
+    "options": [
+      "Only external hard disks and keyboards",
+      "Only scanners and printers",
+      "All kinds of external USB devices",
+      "Only camcorders and video equipment"
+    ],
+    "correct_option": 2,
+    "explanation": "A Universal Serial Bus (USB) Port can connect all kinds of external USB devices."
+  },
+  {
+    "id": 13,
+    "question": "What is the primary function of a Firewire Port?",
+    "options": [
+      "Used for external modems and older computer mouse",
+      "Used for scanners and printers",
+      "Used for connecting camcorders and video equipment",
+      "Used for connecting external hard disks and keyboards"
+    ],
+    "correct_option": 2,
+    "explanation": "A Firewire Port is used for connecting camcorders and video equipment."
+  },
+  {
+    "id": 14,
+    "question": "What is the data transfer speed of a Firewire Port?",
+    "options": [
+      "12 megabits per second",
+      "115 kilobits per second",
+      "400 to 800 megabits per second",
+      "1 gigabit per second"
+    ],
+    "correct_option": 2,
+    "explanation": "The data transfer speed of a Firewire Port is 400 to 800 megabits per second."
+  },
+  {
+    "id": 15,
+    "question": "Which port is used for transferring large amounts of data at a very fast speed?",
+    "options": [
+      "Serial Port",
+      "Parallel Port",
+      "Universal Serial Bus (USB) Port",
+      "Firewire Port"
+    ],
+    "correct_option": 3,
+    "explanation": "A Firewire Port is used for transferring large amounts of data at a very fast speed."
+  },
+  {
+    "id": 16,
+    "question": "Which of the following ports supports single stream data transmission?",
+    "options": [
+      "Parallel Port",
+      "Universal Serial Bus (USB) Port",
+      "Firewire Port",
+      "Serial Port"
+    ],
+    "correct_option": 3,
+    "explanation": "A Serial Port supports single stream data transmission."
+  },
+  {
+    "id": 17,
+    "question": "Which of the following ports has a data transfer speed of 115 kilobits per second?",
+    "options": [
+      "Parallel Port",
+      "Universal Serial Bus (USB) Port",
+      "Firewire Port",
+      "Serial Port"
+    ],
+    "correct_option": 3,
+    "explanation": "A Serial Port has a data transfer speed of 115 kilobits per second."
+  },
+  {
+    "id": 18,
+    "question": "Which port is used for connecting external hard disks and keyboards?",
+    "options": [
+      "Serial Port",
+      "Parallel Port",
+      "Universal Serial Bus (USB) Port",
+      "Firewire Port"
+    ],
+    "correct_option": 2,
+    "explanation": "A Universal Serial Bus (USB) Port is used for connecting external hard disks and keyboards."
+  },
+  {
+    "id": 19,
+    "question": "Which of the following ports has 25 pins?",
+    "options": [
+      "Serial Port",
+      "Parallel Port",
+      "Universal Serial Bus (USB) Port",
+      "Firewire Port"
+    ],
+    "correct_option": 1,
+    "explanation": "A Parallel Port has 25 pins."
+  },
+  {
+    "id": 20,
+    "question": "Which port is used for scanners and printers?",
+    "options": [
+      "Serial Port",
+      "Parallel Port",
+      "Universal Serial Bus (USB) Port",
+      "Firewire Port"
+    ],
+    "correct_option": 1,
+    "explanation": "A Parallel Port is used for scanners and printers."
+  },
+  {
+    "id": 21,
+    "question": "Which of the following ports supports multiple data streams at a time?",
+    "options": [
+      "Serial Port",
+      "Parallel Port",
+      "Universal Serial Bus (USB) Port",
+      "Firewire Port"
+    ],
+    "correct_option": 1,
+    "explanation": "A Parallel Port supports multiple data streams at a time."
+  },
+  {
+    "id": 22,
+    "question": "Which port has a data transfer speed of 12 megabits per second?",
+    "options": [
+      "Serial Port",
+      "Parallel Port",
+      "Universal Serial Bus (USB) Port",
+      "Firewire Port"
+    ],
+    "correct_option": 2,
+    "explanation": "A Universal Serial Bus (USB) Port has a data transfer speed of 12 megabits per second."
+  },
+  {
+    "id": 23,
+    "question": "Which of the following ports is used for external modems and older computer mouse?",
+    "options": [
+      "Parallel Port",
+      "Universal Serial Bus (USB) Port",
+      "Firewire Port",
+      "Serial Port"
+    ],
+    "correct_option": 3,
+    "explanation": "A Serial Port is used for external modems and older computer mouse."
+  },
+  {
+    "id": 24,
+    "question": "Which port has 9 pins and 25 pins versions?",
+    "options": [
+      "Parallel Port",
+      "Universal Serial Bus (USB) Port",
+      "Firewire Port",
+      "Serial Port"
+    ],
+    "correct_option": 3,
+    "explanation": "A Serial Port has 9 pins and 25 pins versions."
+  },
+  {
+    "id": 25,
+    "question": "Which of the following ports is used for connecting camcorders and video equipment?",
+    "options": [
+      "Serial Port",
+      "Parallel Port",
+      "Universal Serial Bus (USB) Port",
+      "Firewire Port"
+    ],
+    "correct_option": 3,
+    "explanation": "A Firewire Port is used for connecting camcorders and video equipment."
+  },
+  {
+    "id": 26,
+    "question": "Which port has a data transfer speed of 400 to 800 megabits per second?",
+    "options": [
+      "Serial Port",
+      "Parallel Port",
+      "Universal Serial Bus (USB) Port",
+      "Firewire Port"
+    ],
+    "correct_option": 3,
+    "explanation": "A Firewire Port has a data transfer speed of 400 to 800 megabits per second."
+  },
+  {
+    "id": 27,
+    "question": "Which of the following ports supports single stream data transmission and has a data transfer speed of 115 kilobits per second?",
+    "options": [
+      "Parallel Port",
+      "Universal Serial Bus (USB) Port",
+      "Firewire Port",
+      "Serial Port"
+    ],
+    "correct_option": 3,
+    "explanation": "A Serial Port supports single stream data transmission and has a data transfer speed of 115 kilobits per second."
+  },
+  {
+    "id": 28,
+    "question": "Which port is used for connecting all kinds of external USB devices and has a data transfer speed of 12 megabits per second?",
+    "options": [
+      "Serial Port",
+      "Parallel Port",
+      "Universal Serial Bus (USB) Port",
+      "Firewire Port"
+    ],
+    "correct_option": 2,
+    "explanation": "A Universal Serial Bus (USB) Port is used for connecting all kinds of external USB devices and has a data transfer speed of 12 megabits per second."
+  },
+  {
+    "id": 29,
+    "question": "Which of the following ports has 25 pins and is used for scanners and printers?",
+    "options": [
+      "Serial Port",
+      "Parallel Port",
+      "Universal Serial Bus (USB) Port",
+      "Firewire Port"
+    ],
+    "correct_option": 1,
+    "explanation": "A Parallel Port has 25 pins and is used for scanners and printers."
+  },
+  {
+    "id": 30,
+    "question": "Which port is used for transferring large amounts of data at a very fast speed and has a data transfer speed of 400 to 800 megabits per second?",
+    "options": [
+      "Serial Port",
+      "Parallel Port",
+      "Universal Serial Bus (USB) Port",
+      "Firewire Port"
+    ],
+    "correct_option": 3,
+    "explanation": "A Firewire Port is used for transferring large amounts of data at a very fast speed and has a data transfer speed of 400 to 800 megabits per second."
+  },
+  {
+    "id": 31,
+    "question": "Which of the following ports supports multiple data streams at a time and has 25 pins?",
+    "options": [
+      "Serial Port",
+      "Parallel Port",
+      "Universal Serial Bus (USB) Port",
+      "Firewire Port"
+    ],
+    "correct_option": 1,
+    "explanation": "A Parallel Port supports multiple data streams at a time and has 25 pins."
+  },
+  {
+    "id": 32,
+    "question": "Which port is used for external modems and older computer mouse and has 9 pins and 25 pins versions?",
+    "options": [
+      "Parallel Port",
+      "Universal Serial Bus (USB) Port",
+      "Firewire Port",
+      "Serial Port"
+    ],
+    "correct_option": 3,
+    "explanation": "A Serial Port is used for external modems and older computer mouse and has 9 pins and 25 pins versions."
+  },
+  {
+    "id": 33,
+    "question": "Which of the following ports has a data transfer speed of 12 megabits per second and is used for connecting all kinds of external USB devices?",
+    "options": [
+      "Serial Port",
+      "Parallel Port",
+      "Universal Serial Bus (USB) Port",
+      "Firewire Port"
+    ],
+    "correct_option": 2,
+    "explanation": "A Universal Serial Bus (USB) Port has a data transfer speed of 12 megabits per second and is used for connecting all kinds of external USB devices."
+  },
+  {
+    "id": 34,
+    "question": "Which port is used for connecting camcorders and video equipment and has a data transfer speed of 400 to 800 megabits per second?",
+    "options": [
+      "Serial Port",
+      "Parallel Port",
+      "Universal Serial Bus (USB) Port",
+      "Firewire Port"
+    ],
+    "correct_option": 3,
+    "explanation": "A Firewire Port is used for connecting camcorders and video equipment and has a data transfer speed of 400 to 800 megabits per second."
+  }
+]

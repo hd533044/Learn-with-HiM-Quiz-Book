@@ -272,7 +272,6 @@ async def state_callback(update: Update, context: ContextTypes.DEFAULT_TYPE):
     return PHONE
 
 async def phone_contact_step(update: Update, context: ContextTypes.DEFAULT_TYPE):
-    # ZERO-BYPASS SECURITY: Strictly block typed mobile numbers
     if not update.message.contact:
         contact_btn = KeyboardButton(text="📱 Share Verified Mobile Number", request_contact=True)
         markup = ReplyKeyboardMarkup([[contact_btn]], one_time_keyboard=True, resize_keyboard=True)
@@ -325,7 +324,6 @@ async def age_step(update: Update, context: ContextTypes.DEFAULT_TYPE):
     user = update.effective_user
     context.user_data["is_editing_profile"] = False
 
-    # Save to SQLite and automatically write to unique data/user_profiles/{student_id}.json file
     student_id, login_pass = save_user_profile(
         user_id=user.id,
         full_name=context.user_data.get("full_name", user.full_name),
@@ -351,8 +349,7 @@ async def age_step(update: Update, context: ContextTypes.DEFAULT_TYPE):
         f"📍 **Location:** `{context.user_data.get('state')}, {context.user_data.get('country')}`\n"
         f"📱 **Verified Mobile:** `{context.user_data.get('phone_number')}`\n\n"
         f"🔐 **SECURITY NOTICE:**\n"
-        f"• Your complete data file is saved as `data/user_profiles/{student_id}.json`\n"
-        f"• **Remember your Student ID & Password!** If you remain inactive for more than 4 Hours, you will need these credentials to log back in.\n"
+        f"🚨 **REMEMBER YOUR STUDENT ID & PASSWORD! IF YOU REMAIN INACTIVE FOR MORE THAN 4 HOURS, YOU WILL NEED THESE CREDENTIALS TO LOG BACK IN.**\n"
         f"━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\n"
         f"👉 Tap **Launch Quiz** below to start practicing!"
     )

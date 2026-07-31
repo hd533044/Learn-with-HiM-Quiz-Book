@@ -214,9 +214,10 @@ async def viewfeedbacks_command(update: Update, context: ContextTypes.DEFAULT_TY
         await send_response(update, "📖 No student reviews submitted yet. Be the first to leave feedback using /feedback!")
         return
 
-    lines = ["📖 **STUDENT REVIEWS & FEEDBACK BOARD**\n━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\n"]
+    lines = ["📖 **STUDENT REVIEWS & APPRECIATION BOARD**\n━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\n"]
     for idx, fb in enumerate(feedbacks, start=1):
-        lines.append(f"**{idx}. {fb['full_name']}**:\n 💬 *\"{fb['feedback_text']}\"*\n")
+        date_str = fb.get('submitted_at', '').split(' ')[0] if fb.get('submitted_at') else 'Verified Student'
+        lines.append(f"**{idx}. {fb['full_name']}** (`{date_str}`):\n💬 *\"{fb['feedback_text']}\"*\n")
 
     lines.append(
         "━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\n"

@@ -3,15 +3,17 @@ import logging
 from telegram import Update, InlineKeyboardMarkup, InlineKeyboardButton
 from telegram.ext import ContextTypes
 from app.config import PRIMARY_ADMIN_ID
-from app.database import get_all_users, set_maintenance_until, get_maintenance_until
+from app.database import get_all_users, set_maintenance_until, get_maintenance_until, get_user_profile
 from app.stats import get_user_performance_summary
 
 logger = logging.getLogger(__name__)
 
+async def is_primary_admin(user_id: int) -> bool:
+    return user_id == PRIMARY_ADMIN_ID
+
 async def admin_portal_command(update: Update, context: ContextTypes.DEFAULT_TYPE):
-    user_id = update.effective_user.id
-    if user_id != PRIMARY_ADMIN_ID:
-        # Secret command: pretend command doesn't exist for non-admin users
+    user = update.effective_user
+    if user.id != PRIMARY_ADMIN_ID:
         return
 
     users = get_all_users()
@@ -84,28 +86,49 @@ async def admin_callback_handler(update: Update, context: ContextTypes.DEFAULT_T
                 pass
 
     elif data == "admin_view_users":
-        if not users:
-            await query.edit_message_text("📁 No registered users found.")
-            return
-
-        report_lines = ["📋 **FULL STUDENT DATABASE REPORT**\n━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\n"]
-        for idx, u in enumerate(users[:15], start=1):
-            perf = get_user_performance_summary(u['user_id'])
-            avg_score = round(perf.get('avg_score', 0.0) or 0.0, 2)
-            
-            student_card = (
-                f"👤 **{idx}. {u['full_name']}** (@{u['username'] or 'N/A'})\n"
-                f" • **Telegram ID:** `{u['user_id']}`\n"
-                f" • **Phone:** `{u['phone_number'] or 'Not Provided'}`\n"
-                f" • **Target Exam:** `{u['target_exam']}`\n"
-                f" • **Age / Gender:** `{u['age']}` / `{u['gender']}`\n"
-                f" • **Location:** `{u.get('state', 'N/A')}, {u.get('country', 'India')}`\n"
-                f" • **Average Score:** `{avg_score}` | **Mocks:** `{perf.get('total_tests', 0)}`"
-            )
-            report_lines.append(student_card)
-
-        await query.edit_message_text("\n\n".join(report_lines), parse_mode="Markdown")
+        await show_all_users_admin(update, context)
 
     elif data == "admin_broadcast":
         context.user_data["awaiting_broadcast"] = True
         await query.edit_message_text("📢 Send the message text you wish to broadcast to all registered users:")
+
+async def show_all_users_admin(update: Update, context: ContextTypes.DEFAULT_TYPE):
+    users = get_all_users()
+    if not users:
+        await update.callback_query.edit_message_text("👥 No registered users found in database.")
+        return
+
+    total_count = len(users)
+    header = f"👥 **REGISTERED STUDENT DIRECTORY ({total_count} Total Users)**\n━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\n\n"
+    
+    chunks = []
+    current_chunk = header
+    
+    for idx, u in enumerate(users, start=1):
+        perf = get_user_performance_summary(u['user_id'])
+        avg_score = round(perf.get('avg_score', 0.0) or 0.0, 2)
+
+        entry = (
+            f"**{idx}. {u['full_name']}** (@{u['username'] or 'N/A'})\n"
+            f"• **Telegram ID:** `{u['user_id']}` | **Phone:** `{u['phone_number'] or 'N/A'}`\n"
+            f"• **Target Exam:** `{u['target_exam']}`\n"
+            f"• **Location:** `{u.get('state', 'N/A')}, {u.get('country', 'India')}`\n"
+            f"• **Age/Gender:** `{u['age']}` / `{u['gender']}`\n"
+            f"• **Stats:** Avg Score `{avg_score}` | Mocks `{perf.get('total_tests', 0)}`\n"
+            f"• **Joined:** `{u.get('created_at', 'N/A')}`\n\n"
+        )
+        
+        if len(current_chunk) + len(entry) > 3800:
+            chunks.append(current_chunk)
+            current_chunk = entry
+        else:
+            current_chunk += entry
+
+    if current_chunk:
+        chunks.append(current_chunk)
+
+    for i, chunk in enumerate(chunks):
+        if i == 0 and update.callback_query:
+            await update.callback_query.edit_message_text(chunk, parse_mode="Markdown")
+        else:
+            await context.bot.send_message(chat_id=update.effective_chat.id, text=chunk, parse_mode="Markdown")

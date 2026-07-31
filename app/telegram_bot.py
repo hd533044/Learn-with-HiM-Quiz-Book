@@ -16,7 +16,10 @@ from app.database import (
     get_all_users, get_today_attempts, save_student_feedback, get_all_student_feedbacks
 )
 from app.onboarding import get_onboarding_handler
-from app.quiz_engine import launch_quiz_setup, quiz_count_callback, quiz_timer_callback, handle_poll_answer
+from app.quiz_engine import (
+    launch_quiz_setup, quiz_count_callback, quiz_timer_callback, handle_poll_answer,
+    stop_quiz_command, resume_quiz_command, download_quiz_pdf_callback
+)
 from app.stats import (
     get_overall_leaderboard, calculate_user_percentile, calculate_user_rank, 
     get_user_performance_summary, get_datewise_quiz_history, get_user_badges
@@ -28,6 +31,8 @@ NEGATIVE_WORDS = ["bad", "worst", "useless", "trash", "fake", "hate", "terrible"
 
 ALLOWED_COMMANDS = [
     BotCommand("quiz", "🚀 Start Computer Quiz"),
+    BotCommand("stop", "⏸ Pause / Stop Active Quiz"),
+    BotCommand("resume", "▶️ Resume Paused Quiz"),
     BotCommand("profilebook", "📖 View & Download Profile Stats Book"),
     BotCommand("myprofile", "👤 View Student Profile"),
     BotCommand("editprofile", "✏️ Edit Profile Details"),
@@ -39,7 +44,6 @@ ALLOWED_COMMANDS = [
 ]
 
 async def sync_user_chat_menu(context: ContextTypes.DEFAULT_TYPE, chat_id: int):
-    """FORCES Telegram to sync the left-side [≡ Menu] button for a specific user chat instantly."""
     try:
         await context.bot.set_my_commands(ALLOWED_COMMANDS, scope=BotCommandScopeChat(chat_id=chat_id))
         await context.bot.set_chat_menu_button(chat_id=chat_id, menu_button=MenuButtonCommands())
@@ -47,7 +51,6 @@ async def sync_user_chat_menu(context: ContextTypes.DEFAULT_TYPE, chat_id: int):
         logging.warning(f"Note on chat menu sync: {e}")
 
 async def maintenance_guard(update: Update, context: ContextTypes.DEFAULT_TYPE) -> bool:
-    """STRICT MAINTENANCE GUARD: Hard blocks ALL user commands & callbacks if bot is paused."""
     m_until = get_maintenance_until()
     if int(time.time()) < m_until:
         remaining_sec = m_until - int(time.time())
@@ -82,6 +85,8 @@ async def help_command(update: Update, context: ContextTypes.DEFAULT_TYPE):
         "⚡ *Powered by @LearnwithHiM*\n"
         "━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\n\n"
         "• 🚀 **/quiz** — Start a new computer quiz\n"
+        "• ⏸ **/stop** — Pause running quiz\n"
+        "• ▶️ **/resume** — Resume paused quiz\n"
         "• 📖 **/profilebook** — View & download Profile Stats Book\n"
         "• 👤 **/myprofile** — View verified student card\n"
         "• ✏️ **/editprofile** — Update profile details (1x / 30 days)\n"
@@ -389,6 +394,14 @@ async def button_router(update: Update, context: ContextTypes.DEFAULT_TYPE):
 
     if data == "cmd_quiz":
         await launch_quiz_setup(update, context)
+    elif data == "cmd_stop_quiz":
+        await stop_quiz_command(update, context)
+    elif data == "cmd_resume_quiz":
+        await resume_quiz_command(update, context)
+    elif data == "cmd_start_fresh_quiz":
+        from app.database import clear_paused_quiz
+        clear_paused_quiz(user.id)
+        await launch_quiz_setup(update, context)
     elif data == "cmd_profile":
         await myprofile_command(update, context)
     elif data == "cmd_profilebook":
@@ -408,6 +421,8 @@ async def button_router(update: Update, context: ContextTypes.DEFAULT_TYPE):
         await edit_profile_command(update, context)
     elif data.startswith("pdf_profilebook_"):
         await download_pdf_callback(update, context)
+    elif data == "pdf_recent_quiz":
+        await download_quiz_pdf_callback(update, context)
     elif data.startswith("fb_p"):
         presets = {
             "fb_p1": "10/10 Bot! The quizzes are top quality 🚀",
@@ -479,9 +494,6 @@ async def global_error_handler(update: object, context: ContextTypes.DEFAULT_TYP
     logging.debug(f"Exception caught in global error handler: {context.error}")
 
 async def post_init(application: Application):
-    """
-    PURGES ALL CACHED TELEGRAM COMMAND SCOPES AND REGISTERS THE EXACT PROJECT COMMANDS.
-    """
     try:
         await application.bot.delete_my_commands(scope=BotCommandScopeDefault())
         await application.bot.delete_my_commands(scope=BotCommandScopeAllPrivateChats())
@@ -501,6 +513,8 @@ def build_application() -> Application:
     
     # Core Project Commands
     app.add_handler(CommandHandler("quiz", launch_quiz_setup))
+    app.add_handler(CommandHandler("stop", stop_quiz_command))
+    app.add_handler(CommandHandler("resume", resume_quiz_command))
     app.add_handler(CommandHandler("profilebook", profilebook_command))
     app.add_handler(CommandHandler("profilecard", profilebook_command))
     app.add_handler(CommandHandler("myprofilebook", profilebook_command))

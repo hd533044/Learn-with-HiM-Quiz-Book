@@ -3,7 +3,8 @@ import logging
 from telegram import (
     Update, InlineKeyboardMarkup, InlineKeyboardButton, 
     BotCommand, BotCommandScopeDefault, BotCommandScopeAllPrivateChats, 
-    BotCommandScopeAllGroupChats, ReplyKeyboardRemove
+    BotCommandScopeAllGroupChats, BotCommandScopeChat,
+    MenuButtonCommands, ReplyKeyboardRemove
 )
 from telegram.ext import (
     Application, CommandHandler, CallbackQueryHandler, PollAnswerHandler, 
@@ -24,6 +25,26 @@ from app.pdf_generator import generate_profile_book_pdf
 from app.admin import admin_portal_command, admin_callback_handler
 
 NEGATIVE_WORDS = ["bad", "worst", "useless", "trash", "fake", "hate", "terrible", "waste", "horrible", "fraud", "stupid", "scam"]
+
+ALLOWED_COMMANDS = [
+    BotCommand("quiz", "🚀 Start Computer Quiz"),
+    BotCommand("profilebook", "📖 View & Download Profile Stats Book"),
+    BotCommand("myprofile", "👤 View Student Profile"),
+    BotCommand("editprofile", "✏️ Edit Profile Details"),
+    BotCommand("mywholestate", "📊 View Performance & Rank"),
+    BotCommand("toppername", "🏆 Global Leaderboard"),
+    BotCommand("feedback", "💬 Submit Feedback"),
+    BotCommand("reviews", "📖 View Student Reviews"),
+    BotCommand("invite", "🤝 Invite Friends (+10 Limit)")
+]
+
+async def sync_user_chat_menu(context: ContextTypes.DEFAULT_TYPE, chat_id: int):
+    """FORCES Telegram to sync the left-side [≡ Menu] button for a specific user chat instantly."""
+    try:
+        await context.bot.set_my_commands(ALLOWED_COMMANDS, scope=BotCommandScopeChat(chat_id=chat_id))
+        await context.bot.set_chat_menu_button(chat_id=chat_id, menu_button=MenuButtonCommands())
+    except Exception as e:
+        logging.warning(f"Note on chat menu sync: {e}")
 
 async def maintenance_guard(update: Update, context: ContextTypes.DEFAULT_TYPE) -> bool:
     """STRICT MAINTENANCE GUARD: Hard blocks ALL user commands & callbacks if bot is paused."""
@@ -53,6 +74,8 @@ async def send_response(update: Update, text: str, reply_markup=None):
 
 async def help_command(update: Update, context: ContextTypes.DEFAULT_TYPE):
     if not await maintenance_guard(update, context): return
+    if update.effective_chat:
+        await sync_user_chat_menu(context, update.effective_chat.id)
 
     msg = (
         "🤖 **LEARN WITH HIM QUIZ BOOK — DIRECTORY**\n"
@@ -80,6 +103,9 @@ async def help_command(update: Update, context: ContextTypes.DEFAULT_TYPE):
 
 async def profilebook_command(update: Update, context: ContextTypes.DEFAULT_TYPE):
     if not await maintenance_guard(update, context): return
+    if update.effective_chat:
+        await sync_user_chat_menu(context, update.effective_chat.id)
+
     user = update.effective_user
     profile = get_user_profile(user.id)
 
@@ -147,7 +173,6 @@ async def download_pdf_callback(update: Update, context: ContextTypes.DEFAULT_TY
     pdf_buffer = generate_profile_book_pdf(profile)
     file_name = f"Profile_Book_{profile['full_name'].replace(' ', '_')}.pdf"
 
-    # Navigation buttons attached directly below the PDF document
     post_pdf_buttons = [
         [InlineKeyboardButton("🚀 Launch Quiz (/quiz)", callback_data="cmd_quiz"), InlineKeyboardButton("📊 My Stats (/mywholestate)", callback_data="cmd_wholestate")],
         [InlineKeyboardButton("🏆 Leaderboard (/toppername)", callback_data="cmd_toppers"), InlineKeyboardButton("👤 Profile (/myprofile)", callback_data="cmd_profile")],
@@ -173,6 +198,9 @@ async def download_pdf_callback(update: Update, context: ContextTypes.DEFAULT_TY
 
 async def myprofile_command(update: Update, context: ContextTypes.DEFAULT_TYPE):
     if not await maintenance_guard(update, context): return
+    if update.effective_chat:
+        await sync_user_chat_menu(context, update.effective_chat.id)
+
     user = update.effective_user
     profile = get_user_profile(user.id)
 
@@ -212,6 +240,9 @@ async def myprofile_command(update: Update, context: ContextTypes.DEFAULT_TYPE):
 
 async def wholestate_command(update: Update, context: ContextTypes.DEFAULT_TYPE):
     if not await maintenance_guard(update, context): return
+    if update.effective_chat:
+        await sync_user_chat_menu(context, update.effective_chat.id)
+
     user = update.effective_user
     profile = get_user_profile(user.id)
     
@@ -248,6 +279,9 @@ async def wholestate_command(update: Update, context: ContextTypes.DEFAULT_TYPE)
 
 async def toppers_command(update: Update, context: ContextTypes.DEFAULT_TYPE):
     if not await maintenance_guard(update, context): return
+    if update.effective_chat:
+        await sync_user_chat_menu(context, update.effective_chat.id)
+
     toppers = get_overall_leaderboard(limit=10)
     
     if not toppers:
@@ -275,6 +309,8 @@ async def toppers_command(update: Update, context: ContextTypes.DEFAULT_TYPE):
 
 async def feedback_command(update: Update, context: ContextTypes.DEFAULT_TYPE):
     if not await maintenance_guard(update, context): return
+    if update.effective_chat:
+        await sync_user_chat_menu(context, update.effective_chat.id)
 
     keyboard = [
         [InlineKeyboardButton("🌟 10/10 Bot! Top quality quizzes 🚀", callback_data="fb_p1")],
@@ -296,6 +332,9 @@ async def feedback_command(update: Update, context: ContextTypes.DEFAULT_TYPE):
 
 async def viewfeedbacks_command(update: Update, context: ContextTypes.DEFAULT_TYPE):
     if not await maintenance_guard(update, context): return
+    if update.effective_chat:
+        await sync_user_chat_menu(context, update.effective_chat.id)
+
     feedbacks = get_all_student_feedbacks(limit=15)
 
     if not feedbacks:
@@ -318,6 +357,9 @@ async def viewfeedbacks_command(update: Update, context: ContextTypes.DEFAULT_TY
 
 async def referral_command(update: Update, context: ContextTypes.DEFAULT_TYPE):
     if not await maintenance_guard(update, context): return
+    if update.effective_chat:
+        await sync_user_chat_menu(context, update.effective_chat.id)
+
     user = update.effective_user
     bot_username = context.bot.username
     ref_link = f"https://t.me/{bot_username}?start=ref_{user.id}"
@@ -438,7 +480,7 @@ async def global_error_handler(update: object, context: ContextTypes.DEFAULT_TYP
 
 async def post_init(application: Application):
     """
-    PURGES ALL CACHED TELEGRAM COMMAND SCOPES AND REGISTERS ONLY THE EXACT PROJECT COMMANDS.
+    PURGES ALL CACHED TELEGRAM COMMAND SCOPES AND REGISTERS THE EXACT PROJECT COMMANDS.
     """
     try:
         await application.bot.delete_my_commands(scope=BotCommandScopeDefault())
@@ -447,21 +489,9 @@ async def post_init(application: Application):
     except Exception as e:
         logging.warning(f"Note on command purge: {e}")
 
-    allowed_commands = [
-        BotCommand("quiz", "🚀 Start Computer Quiz"),
-        BotCommand("profilebook", "📖 View & Download Profile Stats Book"),
-        BotCommand("profilecard", "📖 View Profile Stats Book"),
-        BotCommand("myprofile", "👤 View Student Profile"),
-        BotCommand("editprofile", "✏️ Edit Profile Details"),
-        BotCommand("mywholestate", "📊 View Performance & Rank"),
-        BotCommand("toppername", "🏆 Global Leaderboard"),
-        BotCommand("feedback", "💬 Submit Feedback"),
-        BotCommand("reviews", "📖 View Student Reviews"),
-        BotCommand("invite", "🤝 Invite Friends (+10 Limit)")
-    ]
-    
-    await application.bot.set_my_commands(allowed_commands, scope=BotCommandScopeDefault())
-    await application.bot.set_my_commands(allowed_commands, scope=BotCommandScopeAllPrivateChats())
+    await application.bot.set_my_commands(ALLOWED_COMMANDS, scope=BotCommandScopeDefault())
+    await application.bot.set_my_commands(ALLOWED_COMMANDS, scope=BotCommandScopeAllPrivateChats())
+    await application.bot.set_chat_menu_button(menu_button=MenuButtonCommands())
 
 def build_application() -> Application:
     init_db()

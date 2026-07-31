@@ -1,11 +1,9 @@
 import time
 import logging
-from datetime import time as datetime_time
-import pytz
 from telegram import (
     Update, InlineKeyboardMarkup, InlineKeyboardButton, 
     BotCommand, BotCommandScopeDefault, BotCommandScopeAllPrivateChats, 
-    BotCommandScopeAllGroupChats, ReplyKeyboardRemove
+    BotCommandScopeAllGroupChats, ReplyKeyboardRemove, ReplyKeyboardMarkup, KeyboardButton
 )
 from telegram.ext import (
     Application, CommandHandler, CallbackQueryHandler, PollAnswerHandler, 
@@ -15,7 +13,8 @@ from app.config import BOT_TOKEN, PRIMARY_ADMIN_ID, DAILY_QUESTION_LIMIT
 from app.database import (
     init_db, get_maintenance_until, get_user_profile, 
     get_all_users, get_today_attempts, save_student_feedback, get_all_student_feedbacks,
-    clear_paused_quiz_state
+    clear_paused_quiz_state, is_user_session_expired, touch_user_activity, verify_student_login,
+    get_student_credentials_by_phone
 )
 from app.onboarding import get_onboarding_handler
 from app.quiz_engine import (
@@ -25,22 +24,51 @@ from app.quiz_engine import (
 from app.stats import get_overall_leaderboard, calculate_user_percentile, calculate_user_rank, get_user_performance_summary
 from app.admin import admin_portal_command, admin_callback_handler
 
-IST = pytz.timezone("Asia/Kolkata")
 NEGATIVE_WORDS = ["bad", "worst", "useless", "trash", "fake", "hate", "terrible", "waste", "horrible", "fraud", "stupid", "scam"]
 
-async def maintenance_guard(update: Update, context: ContextTypes.DEFAULT_TYPE) -> bool:
-    """STRICT MAINTENANCE GUARD: Hard blocks ALL user commands & callbacks if bot is paused."""
+async def session_and_maintenance_guard(update: Update, context: ContextTypes.DEFAULT_TYPE) -> bool:
+    """STRICT MAINTENANCE & 4-HOUR SESSION GUARD."""
+    user = update.effective_user
+    if not user:
+        return True
+
+    # 1. Maintenance Check
     m_until = get_maintenance_until()
-    if int(time.time()) < m_until:
+    if int(time.time()) < m_until and user.id != PRIMARY_ADMIN_ID:
         remaining_sec = m_until - int(time.time())
         mins_left = max(1, (remaining_sec + 59) // 60)
         msg = f"🛠 **ADMIN HAS PAUSED THE SERVICE CURRENTLY**\nService will resume in approximately `{mins_left} mins`. Please try again later!"
-        
         if update.callback_query:
             await update.callback_query.answer(f"🛠 Service Paused! Resuming in ~{mins_left} mins.", show_alert=True)
         elif update.message:
             await update.message.reply_text(msg, parse_mode="Markdown", reply_markup=ReplyKeyboardRemove())
         return False
+
+    # 2. 4-Hour Inactivity Expiry Check
+    profile = get_user_profile(user.id)
+    if profile and profile.get("is_verified"):
+        if is_user_session_expired(user.id) and not context.user_data.get("session_unlocked"):
+            login_msg = (
+                "🔒 **SESSION EXPIRED (4+ Hours Inactive)**\n"
+                "━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\n"
+                "For account security, please log back in to resume practicing.\n\n"
+                "👉 **Reply with your 6-Digit Student ID & 4-Digit Password:**\n"
+                "*(Example: `839201 A9K2`)*\n\n"
+                "💡 *Forgot credentials? Click the button below to recover!*"
+            )
+            buttons = InlineKeyboardMarkup([
+                [InlineKeyboardButton("🔑 Recover Student ID / Password", callback_data="cmd_forgot_credentials")]
+            ])
+            
+            if update.callback_query:
+                await update.callback_query.answer("🔒 Session Expired! Please login.", show_alert=True)
+                await context.bot.send_message(chat_id=user.id, text=login_msg, reply_markup=buttons, parse_mode="Markdown")
+            elif update.message:
+                await update.message.reply_text(login_msg, reply_markup=buttons, parse_mode="Markdown")
+            return False
+
+        touch_user_activity(user.id)
+
     return True
 
 async def send_response(update: Update, text: str, reply_markup=None):
@@ -54,42 +82,8 @@ async def send_response(update: Update, text: str, reply_markup=None):
         markup = reply_markup if reply_markup else ReplyKeyboardRemove()
         await update.message.reply_text(text, reply_markup=markup, parse_mode="Markdown")
 
-async def daily_quiz_reminder_job(context: ContextTypes.DEFAULT_TYPE):
-    """AUTOMATIC DAILY QUIZ REMINDER BROADCAST AT 9 AM & 6 PM IST."""
-    m_until = get_maintenance_until()
-    if int(time.time()) < m_until:
-        logging.info("Skipped automated quiz reminder broadcast due to maintenance mode.")
-        return
-
-    users = get_all_users()
-    reminder_text = (
-        "📢 **Attempt Your Today's Quiz!!**\n\n"
-        "✨ *Every step of hard-work always takes you to the Goal*\n"
-        "━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\n"
-        "👇 Tap the button below to start practicing now!"
-    )
-    keyboard = InlineKeyboardMarkup([
-        [InlineKeyboardButton("🚀 Launch Quiz Now", callback_data="cmd_quiz")]
-    ])
-
-    sent_count = 0
-    for u in users:
-        try:
-            await context.bot.send_message(
-                chat_id=u['user_id'],
-                text=reminder_text,
-                reply_markup=keyboard,
-                parse_mode="Markdown"
-            )
-            sent_count += 1
-            time.sleep(0.05) # Prevent hitting Telegram API rate limits
-        except Exception:
-            pass
-
-    logging.info(f"Daily quiz reminder broadcast sent to {sent_count}/{len(users)} users.")
-
 async def help_command(update: Update, context: ContextTypes.DEFAULT_TYPE):
-    if not await maintenance_guard(update, context): return
+    if not await session_and_maintenance_guard(update, context): return
 
     msg = (
         "🤖 **LEARN WITH HIM QUIZ BOOK — COMMAND DIRECTORY**\n"
@@ -117,7 +111,7 @@ async def help_command(update: Update, context: ContextTypes.DEFAULT_TYPE):
     await send_response(update, msg, reply_markup=InlineKeyboardMarkup(buttons))
 
 async def myprofile_command(update: Update, context: ContextTypes.DEFAULT_TYPE):
-    if not await maintenance_guard(update, context): return
+    if not await session_and_maintenance_guard(update, context): return
     user = update.effective_user
     profile = get_user_profile(user.id)
 
@@ -132,6 +126,9 @@ async def myprofile_command(update: Update, context: ContextTypes.DEFAULT_TYPE):
     msg = (
         f"👤 **STUDENT PROFILE CARD**\n"
         f"📚 *Learn with HiM Quiz Book*\n"
+        f"━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\n"
+        f"🆔 **Student ID:** `{profile.get('student_id', 'N/A')}`\n"
+        f"🔑 **Password:** `{profile.get('login_pass', 'N/A')}`\n"
         f"━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\n"
         f"• **Full Name:** {profile['full_name']}\n"
         f"• **Telegram ID:** `{profile['user_id']}`\n"
@@ -154,7 +151,7 @@ async def myprofile_command(update: Update, context: ContextTypes.DEFAULT_TYPE):
     await send_response(update, msg, reply_markup=InlineKeyboardMarkup(buttons))
 
 async def wholestate_command(update: Update, context: ContextTypes.DEFAULT_TYPE):
-    if not await maintenance_guard(update, context): return
+    if not await session_and_maintenance_guard(update, context): return
     user = update.effective_user
     profile = get_user_profile(user.id)
     
@@ -170,21 +167,21 @@ async def wholestate_command(update: Update, context: ContextTypes.DEFAULT_TYPE)
         f"🎓 **STUDENT ACADEMIC REPORT CARD**\n"
         f"━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\n"
         f"👤 **Name:** {profile['full_name']}\n"
+        f"🆔 **Student ID:** `{profile.get('student_id', 'N/A')}`\n"
         f"🎯 **Target Exam:** `{profile['target_exam']}`\n"
         f"📍 **Location:** `{profile.get('state', 'N/A')}, {profile.get('country', 'India')}`\n\n"
         f"📈 **Performance Metrics:**\n"
         f"• **Tests Completed:** `{perf.get('total_tests', 0)}`\n"
-        f"• **Total Quizzes Attempted:** `{perf.get('total_tests', 0)}` till date\n"
         f"• **Questions Attempted:** `{perf.get('total_qs', 0)}`\n"
         f"• **Global Rank:** `{rank}`\n"
-        f"• **Overall Percentile:** `{percentile}%` *(Calculated against all registered students)*"
+        f"• **Overall Percentile:** `{percentile}%`"
     )
 
     buttons = [[InlineKeyboardButton("🚀 Launch Quiz", callback_data="cmd_quiz"), InlineKeyboardButton("🏆 Leaderboard", callback_data="cmd_toppers")]]
     await send_response(update, msg, reply_markup=InlineKeyboardMarkup(buttons))
 
 async def toppers_command(update: Update, context: ContextTypes.DEFAULT_TYPE):
-    if not await maintenance_guard(update, context): return
+    if not await session_and_maintenance_guard(update, context): return
     toppers = get_overall_leaderboard(limit=10)
     
     if not toppers:
@@ -201,7 +198,7 @@ async def toppers_command(update: Update, context: ContextTypes.DEFAULT_TYPE):
     await send_response(update, msg, reply_markup=InlineKeyboardMarkup(buttons))
 
 async def feedback_command(update: Update, context: ContextTypes.DEFAULT_TYPE):
-    if not await maintenance_guard(update, context): return
+    if not await session_and_maintenance_guard(update, context): return
 
     keyboard = [
         [InlineKeyboardButton("🌟 10/10 Bot! The quizzes are top quality 🚀", callback_data="fb_p1")],
@@ -220,7 +217,7 @@ async def feedback_command(update: Update, context: ContextTypes.DEFAULT_TYPE):
     await send_response(update, msg, reply_markup=InlineKeyboardMarkup(keyboard))
 
 async def viewfeedbacks_command(update: Update, context: ContextTypes.DEFAULT_TYPE):
-    if not await maintenance_guard(update, context): return
+    if not await session_and_maintenance_guard(update, context): return
     feedbacks = get_all_student_feedbacks(limit=15)
 
     if not feedbacks:
@@ -234,7 +231,7 @@ async def viewfeedbacks_command(update: Update, context: ContextTypes.DEFAULT_TY
     await send_response(update, "\n".join(lines))
 
 async def referral_command(update: Update, context: ContextTypes.DEFAULT_TYPE):
-    if not await maintenance_guard(update, context): return
+    if not await session_and_maintenance_guard(update, context): return
     user = update.effective_user
     bot_username = context.bot.username
     ref_link = f"https://t.me/{bot_username}?start=ref_{user.id}"
@@ -248,13 +245,34 @@ async def referral_command(update: Update, context: ContextTypes.DEFAULT_TYPE):
     )
     await send_response(update, msg)
 
-async def button_router(update: Update, context: ContextTypes.DEFAULT_TYPE):
-    if not await maintenance_guard(update, context): return
+async def handle_forgot_credentials(update: Update, context: ContextTypes.DEFAULT_TYPE):
+    """OPTION 1 RECOVERY REQUEST: Prompts user to share contact to recover credentials."""
+    query = update.callback_query
+    await query.answer()
 
+    contact_btn = KeyboardButton(text="📱 Share Contact to Recover Credentials", request_contact=True)
+    markup = ReplyKeyboardMarkup([[contact_btn]], one_time_keyboard=True, resize_keyboard=True)
+
+    await context.bot.send_message(
+        chat_id=query.from_user.id,
+        text="🔑 **CREDENTIAL RECOVERY (Option 1)**\n"
+             "━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\n"
+             "Please click the **Share Contact** button below to verify your mobile number and recover your Student ID and Password:",
+        reply_markup=markup,
+        parse_mode="Markdown"
+    )
+
+async def button_router(update: Update, context: ContextTypes.DEFAULT_TYPE):
     query = update.callback_query
     data = query.data
-    user = query.from_user
 
+    if data == "cmd_forgot_credentials":
+        await handle_forgot_credentials(update, context)
+        return
+
+    if not await session_and_maintenance_guard(update, context): return
+
+    user = query.from_user
     if data == "cmd_quiz":
         await launch_quiz_setup(update, context)
     elif data == "cmd_pause_quiz":
@@ -287,28 +305,83 @@ async def button_router(update: Update, context: ContextTypes.DEFAULT_TYPE):
         name = profile.get("full_name") if profile else user.full_name
         save_student_feedback(user.id, name, fb_text)
         await query.edit_message_text(f"🎉 **Thank you, {name}!** Your feedback has been recorded:\n\n💬 *\"{fb_text}\"*", parse_mode="Markdown")
-
     elif data == "fb_custom":
         context.user_data["awaiting_custom_feedback"] = True
         await query.edit_message_text("✍️ Please reply with your custom feedback/review below:")
 
-async def handle_text_messages(update: Update, context: ContextTypes.DEFAULT_TYPE):
-    if not await maintenance_guard(update, context): return
-
+async def handle_text_and_contact_messages(update: Update, context: ContextTypes.DEFAULT_TYPE):
     user = update.effective_user
-    text = update.message.text.strip()
+    message = update.message
+
+    # 1. OPTION 1 RECOVERY: Handle Contact Sharing Verification
+    if message.contact:
+        phone = message.contact.phone_number
+        record = get_student_credentials_by_phone(phone)
+        
+        if record:
+            touch_user_activity(user.id)
+            context.user_data["session_unlocked"] = True
+            await message.reply_text(
+                f"✅ **IDENTITY VERIFIED SUCCESSFULLY!**\n"
+                f"━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\n"
+                f"👤 **Student Name:** {record['full_name']}\n"
+                f"🆔 **Your 6-Digit Student ID:** `{record['student_id']}`\n"
+                f"🔑 **Your 4-Digit Password:** `{record['login_pass']}`\n"
+                f"━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\n"
+                f"⚡ Your session is now unlocked! You can continue practicing.",
+                reply_markup=ReplyKeyboardRemove(),
+                parse_mode="Markdown"
+            )
+        else:
+            await message.reply_text(
+                "❌ **RECOVERY FAILED!**\n\n"
+                "No registered student account was found matching this phone number.\n"
+                "Please type /start to create a new student profile.",
+                reply_markup=ReplyKeyboardRemove(),
+                parse_mode="Markdown"
+            )
+        return
+
+    # 2. LOGIN VERIFIER: Handle Login Strings (e.g. "839201 A9K2")
+    text = message.text.strip()
+    parts = text.split()
+    if len(parts) == 2 and len(parts[0]) == 6 and len(parts[1]) == 4 and parts[0].isdigit():
+        student_id, pass_code = parts[0], parts[1]
+        if verify_student_login(user.id, student_id, pass_code):
+            context.user_data["session_unlocked"] = True
+            await message.reply_text(
+                f"🎉 **LOGIN SUCCESSFUL!**\n"
+                f"━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\n"
+                f"Welcome back! Your 4-hour session timer has been renewed.\n\n"
+                f"👉 Tap **/quiz** to start practicing now!",
+                reply_markup=ReplyKeyboardRemove(),
+                parse_mode="Markdown"
+            )
+            return
+        else:
+            await message.reply_text(
+                "❌ **INVALID CREDENTIALS!**\n\n"
+                "The Student ID or Password you entered does not match our records.\n"
+                "Please try again or tap below to recover your credentials:",
+                reply_markup=InlineKeyboardMarkup([[
+                    InlineKeyboardButton("🔑 Recover Credentials", callback_data="cmd_forgot_credentials")
+                ]]),
+                parse_mode="Markdown"
+            )
+            return
+
+    if not await session_and_maintenance_guard(update, context): return
 
     if context.user_data.get("awaiting_custom_feedback"):
         context.user_data["awaiting_custom_feedback"] = False
-        
         if any(bad_word in text.lower() for bad_word in NEGATIVE_WORDS):
-            await update.message.reply_text("🙏 Thank you for your feedback! We are constantly working hard to improve your experience.", reply_markup=ReplyKeyboardRemove())
+            await message.reply_text("🙏 Thank you for your feedback! We are constantly working hard to improve your experience.", reply_markup=ReplyKeyboardRemove())
             return
 
         profile = get_user_profile(user.id)
         name = profile.get("full_name") if profile else user.full_name
         save_student_feedback(user.id, name, text)
-        await update.message.reply_text(f"🎉 **Feedback Received!** Thank you *{name}* for your kind words:\n\n💬 *\"{text}\"*", reply_markup=ReplyKeyboardRemove(), parse_mode="Markdown")
+        await message.reply_text(f"🎉 **Feedback Received!** Thank you *{name}* for your kind words:\n\n💬 *\"{text}\"*", reply_markup=ReplyKeyboardRemove(), parse_mode="Markdown")
         return
 
     if context.user_data.get("awaiting_broadcast"):
@@ -321,15 +394,12 @@ async def handle_text_messages(update: Update, context: ContextTypes.DEFAULT_TYP
                 sent += 1
             except Exception:
                 pass
-        await update.message.reply_text(f"✅ Announcement sent to {sent} users!", reply_markup=ReplyKeyboardRemove())
+        await message.reply_text(f"✅ Announcement sent to {sent} users!", reply_markup=ReplyKeyboardRemove())
 
 async def global_error_handler(update: object, context: ContextTypes.DEFAULT_TYPE) -> None:
     logging.debug(f"Exception caught in global error handler: {context.error}")
 
 async def post_init(application: Application):
-    """
-    PURGES ALL CACHED TELEGRAM COMMAND SCOPES AND REGISTERS ONLY THE EXACT PROJECT COMMANDS.
-    """
     try:
         await application.bot.delete_my_commands(scope=BotCommandScopeDefault())
         await application.bot.delete_my_commands(scope=BotCommandScopeAllPrivateChats())
@@ -359,7 +429,6 @@ def build_application() -> Application:
 
     app.add_handler(get_onboarding_handler())
     
-    # Core Project Commands
     app.add_handler(CommandHandler("quiz", launch_quiz_setup))
     app.add_handler(CommandHandler("pause", pause_quiz_command))
     app.add_handler(CommandHandler("resume", resume_quiz_command))
@@ -373,7 +442,6 @@ def build_application() -> Application:
     app.add_handler(CommandHandler("help", help_command))
     app.add_handler(CommandHandler("invite", referral_command))
     
-    # Secret Admin Command
     app.add_handler(CommandHandler("admin", admin_portal_command))
     app.add_handler(CommandHandler("admit", admin_portal_command))
 
@@ -382,13 +450,8 @@ def build_application() -> Application:
     app.add_handler(CallbackQueryHandler(admin_callback_handler, pattern="^admin_"))
     app.add_handler(CallbackQueryHandler(button_router, pattern="^cmd_|^fb_"))
 
-    app.add_handler(MessageHandler(filters.TEXT & ~filters.COMMAND, handle_text_messages))
+    app.add_handler(MessageHandler(filters.CONTACT | (filters.TEXT & ~filters.COMMAND), handle_text_and_contact_messages))
     app.add_handler(PollAnswerHandler(handle_poll_answer))
     app.add_error_handler(global_error_handler)
-
-    # Automated 9:00 AM & 6:00 PM IST Daily Reminders
-    if app.job_queue:
-        app.job_queue.run_daily(daily_quiz_reminder_job, time=datetime_time(hour=9, minute=0, second=0, tzinfo=IST))
-        app.job_queue.run_daily(daily_quiz_reminder_job, time=datetime_time(hour=18, minute=0, second=0, tzinfo=IST))
 
     return app

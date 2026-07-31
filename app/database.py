@@ -26,7 +26,6 @@ def get_db():
     return conn
 
 def generate_unique_student_id() -> str:
-    """Generates a unique 6-digit Student ID."""
     conn = get_db()
     cursor = conn.cursor()
     while True:
@@ -39,7 +38,6 @@ def generate_unique_student_id() -> str:
             return candidate
 
 def generate_4digit_pass() -> str:
-    """Generates a 4-digit uppercase alphanumeric password."""
     chars = string.ascii_uppercase + string.digits
     return "".join(random.choices(chars, k=4))
 
@@ -70,7 +68,6 @@ def init_db():
         )
     ''')
     
-    # Schema migrations for safety
     cursor.execute("PRAGMA table_info(users)")
     cols = [r[1] for r in cursor.fetchall()]
     if 'student_id' not in cols:
@@ -135,12 +132,10 @@ def init_db():
     ''')
     
     cursor.execute("INSERT OR IGNORE INTO bot_settings (key, value) VALUES ('maintenance_until', '0')")
-    
     conn.commit()
     conn.close()
 
 def can_user_edit_profile(user_id: int) -> tuple:
-    """Checks if 30 days have passed since the user's last profile edit."""
     conn = get_db()
     cursor = conn.cursor()
     cursor.execute("SELECT last_profile_edit FROM users WHERE user_id = ?", (user_id,))
@@ -160,7 +155,6 @@ def can_user_edit_profile(user_id: int) -> tuple:
         return True, 0
 
 def sync_user_unique_file(user_id: int):
-    """Generates/updates JSON file in data/user_profiles/{student_id}.json."""
     conn = get_db()
     cursor = conn.cursor()
     
@@ -265,6 +259,7 @@ def touch_user_activity(user_id: int):
     conn.close()
 
 def is_user_session_expired(user_id: int) -> bool:
+    """Returns True if user has been inactive for more than 4 hours (14,400 seconds)."""
     conn = get_db()
     cursor = conn.cursor()
     cursor.execute("SELECT last_active_epoch FROM users WHERE user_id = ?", (user_id,))
@@ -278,10 +273,27 @@ def is_user_session_expired(user_id: int) -> bool:
     four_hours_sec = 4 * 3600
     return (now_epoch - row['last_active_epoch']) > four_hours_sec
 
-def verify_student_login(student_id: str, login_pass: str) -> dict:
+def verify_student_login(user_id: int, student_id: str, login_pass: str) -> bool:
+    """Verifies that the provided student_id and password match the user_id."""
     conn = get_db()
     cursor = conn.cursor()
-    cursor.execute("SELECT * FROM users WHERE student_id = ? AND login_pass = ?", (student_id.strip(), login_pass.strip().upper()))
+    cursor.execute(
+        "SELECT 1 FROM users WHERE user_id = ? AND student_id = ? AND UPPER(login_pass) = ?", 
+        (user_id, student_id.strip(), login_pass.strip().upper())
+    )
+    match = cursor.fetchone()
+    conn.close()
+    if match:
+        touch_user_activity(user_id)
+        return True
+    return False
+
+def get_student_credentials_by_phone(phone_number: str) -> dict:
+    """OPTION 1 RECOVERY: Finds credentials matching a verified contact phone number."""
+    clean_phone = phone_number.replace("+", "").strip()
+    conn = get_db()
+    cursor = conn.cursor()
+    cursor.execute("SELECT * FROM users WHERE REPLACE(phone_number, '+', '') = ?", (clean_phone,))
     row = cursor.fetchone()
     conn.close()
     return dict(row) if row else None

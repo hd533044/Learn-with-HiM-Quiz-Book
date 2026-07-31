@@ -1,7 +1,11 @@
 import re
 import logging
 import warnings
-from telegram import Update, InlineKeyboardMarkup, InlineKeyboardButton, ReplyKeyboardMarkup, KeyboardButton, ReplyKeyboardRemove
+import time
+from telegram import (
+    Update, InlineKeyboardMarkup, InlineKeyboardButton, 
+    ReplyKeyboardMarkup, KeyboardButton, ReplyKeyboardRemove
+)
 from telegram.warnings import PTBUserWarning
 from telegram.ext import (
     ConversationHandler, 
@@ -12,8 +16,10 @@ from telegram.ext import (
     ContextTypes
 )
 from app.config import WELCOME_CARD_TEXT, PRIMARY_ADMIN_ID
-from app.database import save_user_profile, get_user_profile, can_user_edit_profile, get_maintenance_until
-import time
+from app.database import (
+    save_user_profile, get_user_profile, can_user_edit_profile, 
+    get_maintenance_until, touch_user_activity
+)
 
 warnings.filterwarnings("ignore", category=PTBUserWarning)
 
@@ -69,11 +75,14 @@ async def start_onboarding(update: Update, context: ContextTypes.DEFAULT_TYPE):
 
     profile = get_user_profile(user.id)
     if profile and profile.get("is_verified") and not context.user_data.get("is_editing_profile"):
+        touch_user_activity(user.id)
+        student_id = profile.get('student_id') or 'N/A'
         await update.message.reply_text(
             f"⚡ **Welcome back, {profile['full_name']}!**\n\n"
+            f"🆔 **Student ID:** `{student_id}`\n"
             f"🎯 **Target Exam:** `{profile['target_exam']}`\n"
             f"📍 **Location:** `{profile.get('state', 'N/A')}, {profile.get('country', 'India')}`\n\n"
-            f"Click options below or use the square menu to start practicing!",
+            f"Click options below or use the menu to start practicing!",
             reply_markup=InlineKeyboardMarkup([
                 [InlineKeyboardButton("🚀 Launch Quiz", callback_data="cmd_quiz"), InlineKeyboardButton("👤 Profile", callback_data="cmd_profile")],
                 [InlineKeyboardButton("🥇 Leaderboard", callback_data="cmd_toppers"), InlineKeyboardButton("📊 My Stats", callback_data="cmd_wholestate")]
@@ -263,12 +272,14 @@ async def state_callback(update: Update, context: ContextTypes.DEFAULT_TYPE):
     return PHONE
 
 async def phone_contact_step(update: Update, context: ContextTypes.DEFAULT_TYPE):
+    # ZERO-BYPASS SECURITY: Strictly block typed mobile numbers
     if not update.message.contact:
         contact_btn = KeyboardButton(text="📱 Share Verified Mobile Number", request_contact=True)
         markup = ReplyKeyboardMarkup([[contact_btn]], one_time_keyboard=True, resize_keyboard=True)
         await update.message.reply_text(
-            "⚠️ **Verification Required!**\n\n"
-            "To prevent fake profiles, you MUST click the button below to share your verified Telegram mobile number:",
+            "🛑 **VERIFICATION REQUIRED — NO BYPASS ALLOWED!**\n\n"
+            "To ensure student authenticity, typing phone numbers manually is disabled.\n"
+            "You MUST click the **Share Verified Mobile Number** button below:",
             reply_markup=markup,
             parse_mode="Markdown"
         )
@@ -314,7 +325,8 @@ async def age_step(update: Update, context: ContextTypes.DEFAULT_TYPE):
     user = update.effective_user
     context.user_data["is_editing_profile"] = False
 
-    save_user_profile(
+    # Save to SQLite and automatically write to unique data/user_profiles/{student_id}.json file
+    student_id, login_pass = save_user_profile(
         user_id=user.id,
         full_name=context.user_data.get("full_name", user.full_name),
         username=user.username or "N/A",
@@ -327,14 +339,25 @@ async def age_step(update: Update, context: ContextTypes.DEFAULT_TYPE):
         referred_by=context.user_data.get("referred_by")
     )
 
-    await update.message.reply_text(
-        "🎉 **Student Registration Complete!**\n"
-        "━━━━━━━━━━━━━━━━━━━━━━━━━\n"
-        "Your student profile has been verified and synced successfully.\n\n"
-        "👉 Tap **Launch Quiz** below or use the square bot menu to begin!",
-        reply_markup=ReplyKeyboardRemove(),
-        parse_mode="Markdown"
+    summary_card = (
+        f"🎉 **STUDENT REGISTRATION COMPLETE!**\n"
+        f"📚 *Learn with HiM Official Student Profile Created*\n"
+        f"━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\n"
+        f"🆔 **Your 6-Digit Student ID:** `{student_id}`\n"
+        f"🔑 **Your 4-Digit Password:** `{login_pass}`\n"
+        f"━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\n"
+        f"👤 **Name:** {context.user_data.get('full_name', user.full_name)}\n"
+        f"🎯 **Target Exam:** `{context.user_data.get('target_exam')}`\n"
+        f"📍 **Location:** `{context.user_data.get('state')}, {context.user_data.get('country')}`\n"
+        f"📱 **Verified Mobile:** `{context.user_data.get('phone_number')}`\n\n"
+        f"🔐 **SECURITY NOTICE:**\n"
+        f"• Your complete data file is saved as `data/user_profiles/{student_id}.json`\n"
+        f"• **Remember your Student ID & Password!** If you remain inactive for more than 4 Hours, you will need these credentials to log back in.\n"
+        f"━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\n"
+        f"👉 Tap **Launch Quiz** below to start practicing!"
     )
+
+    await update.message.reply_text(summary_card, reply_markup=ReplyKeyboardRemove(), parse_mode="Markdown")
     await update.message.reply_text(
         "👇 **Quick Navigation:**",
         reply_markup=InlineKeyboardMarkup([
@@ -367,7 +390,7 @@ def get_onboarding_handler():
                 MessageHandler(filters.TEXT & ~filters.COMMAND, custom_country_text)
             ],
             STATE: [CallbackQueryHandler(state_callback, pattern="^st_")],
-            PHONE: [MessageHandler(filters.CONTACT | (filters.TEXT & ~filters.COMMAND), phone_contact_step)],
+            PHONE: [MessageHandler(filters.ALL & ~filters.COMMAND, phone_contact_step)],
             GENDER: [CallbackQueryHandler(gender_callback, pattern="^gen_")],
             AGE: [MessageHandler(filters.TEXT & ~filters.COMMAND, age_step)],
         },

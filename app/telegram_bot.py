@@ -27,7 +27,6 @@ from app.admin import admin_portal_command, admin_callback_handler
 NEGATIVE_WORDS = ["bad", "worst", "useless", "trash", "fake", "hate", "terrible", "waste", "horrible", "fraud", "stupid", "scam"]
 
 async def session_and_maintenance_guard(update: Update, context: ContextTypes.DEFAULT_TYPE) -> bool:
-    """STRICT MAINTENANCE & 4-HOUR SESSION GUARD."""
     user = update.effective_user
     if not user:
         return True
@@ -246,7 +245,6 @@ async def referral_command(update: Update, context: ContextTypes.DEFAULT_TYPE):
     await send_response(update, msg)
 
 async def handle_forgot_credentials(update: Update, context: ContextTypes.DEFAULT_TYPE):
-    """OPTION 1 RECOVERY REQUEST: Prompts user to share contact to recover credentials."""
     query = update.callback_query
     await query.answer()
 
@@ -313,7 +311,6 @@ async def handle_text_and_contact_messages(update: Update, context: ContextTypes
     user = update.effective_user
     message = update.message
 
-    # 1. OPTION 1 RECOVERY: Handle Contact Sharing Verification
     if message.contact:
         phone = message.contact.phone_number
         record = get_student_credentials_by_phone(phone)
@@ -342,7 +339,6 @@ async def handle_text_and_contact_messages(update: Update, context: ContextTypes
             )
         return
 
-    # 2. LOGIN VERIFIER: Handle Login Strings (e.g. "839201 A9K2")
     text = message.text.strip()
     parts = text.split()
     if len(parts) == 2 and len(parts[0]) == 6 and len(parts[1]) == 4 and parts[0].isdigit():

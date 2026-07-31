@@ -11,7 +11,6 @@ logger = logging.getLogger(__name__)
 async def admin_portal_command(update: Update, context: ContextTypes.DEFAULT_TYPE):
     user_id = update.effective_user.id
     if user_id != PRIMARY_ADMIN_ID:
-        # Secret command: pretend command doesn't exist for non-admin users
         return
 
     users = get_all_users()
@@ -22,7 +21,7 @@ async def admin_portal_command(update: Update, context: ContextTypes.DEFAULT_TYP
     keyboard = [
         [InlineKeyboardButton("⏸ Pause Bot 5 Mins", callback_data="admin_pause_5"), InlineKeyboardButton("⏸ Pause Bot 10 Mins", callback_data="admin_pause_10")],
         [InlineKeyboardButton("▶️ Resume Bot Now", callback_data="admin_resume_now")],
-        [InlineKeyboardButton("👥 View All Users (Full Details)", callback_data="admin_view_users")],
+        [InlineKeyboardButton("👥 View User Details (IDs & Passwords)", callback_data="admin_view_users")],
         [InlineKeyboardButton("📢 Global Broadcast", callback_data="admin_broadcast")]
     ]
 
@@ -85,22 +84,23 @@ async def admin_callback_handler(update: Update, context: ContextTypes.DEFAULT_T
 
     elif data == "admin_view_users":
         if not users:
-            await query.edit_message_text("📁 No registered users found.")
+            await query.edit_message_text("📁 No registered user files found.")
             return
 
-        report_lines = ["📋 **FULL STUDENT DATABASE REPORT**\n━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\n"]
+        report_lines = ["📋 **VIEW USER DETAILS — MASTER DATABASE & CREDENTIAL REPORT**\n━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\n"]
         for idx, u in enumerate(users[:15], start=1):
             perf = get_user_performance_summary(u['user_id'])
             avg_score = round(perf.get('avg_score', 0.0) or 0.0, 2)
             
             student_card = (
                 f"👤 **{idx}. {u['full_name']}** (@{u['username'] or 'N/A'})\n"
+                f" • **Student ID:** `{u.get('student_id', 'N/A')}`\n"
+                f" • **Login Password:** `{u.get('login_pass', 'N/A')}`\n"
                 f" • **Telegram ID:** `{u['user_id']}`\n"
                 f" • **Phone:** `{u['phone_number'] or 'Not Provided'}`\n"
                 f" • **Target Exam:** `{u['target_exam']}`\n"
-                f" • **Age / Gender:** `{u['age']}` / `{u['gender']}`\n"
                 f" • **Location:** `{u.get('state', 'N/A')}, {u.get('country', 'India')}`\n"
-                f" • **Average Score:** `{avg_score}` | **Mocks:** `{perf.get('total_tests', 0)}`"
+                f" • **Avg Score:** `{avg_score}` | **Mocks:** `{perf.get('total_tests', 0)}`"
             )
             report_lines.append(student_card)
 

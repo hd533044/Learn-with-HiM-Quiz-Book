@@ -370,8 +370,9 @@ async def handle_poll_answer(update: Update, context: ContextTypes.DEFAULT_TYPE)
             session["wrong"] += 1
 
         session["current_index"] += 1
-        await asyncio.sleep(0.5)
+        await asyncio.sleep(0.3)
         
+        # GUARANTEED DIRECT COMPLETION CHECK
         if session["current_index"] >= session["total"]:
             await finish_quiz_and_send_report(chat_id, user_id, context)
         else:
@@ -390,7 +391,7 @@ async def finish_quiz_and_send_report(chat_id: int, user_id: int, context: Conte
     score = session["score"]
     attempted = correct + wrong
 
-    # Save attempt log to SQLite and update the student's unique JSON file
+    # Record result to SQLite database & sync user JSON file
     record_quiz_result(
         user_id=user_id, 
         score=score, 
@@ -434,7 +435,7 @@ async def finish_quiz_and_send_report(chat_id: int, user_id: int, context: Conte
         f"━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\n"
         f"🔥 **MOTIVATION FOR YOU:**\n"
         f"{motivation_quote}\n\n"
-        f"👇 **Subscribe & Continue Practice:**"
+        f"👇 **Subscribe & Share for Competition:**"
     )
 
     clean_channel = CHANNEL_USERNAME.replace('@', '')
@@ -444,6 +445,7 @@ async def finish_quiz_and_send_report(chat_id: int, user_id: int, context: Conte
         [InlineKeyboardButton("🚀 Start Fresh Quiz (/quiz)", callback_data="cmd_quiz")]
     ]
 
+  # Direct delivery of the competition report card
     await context.bot.send_message(
         chat_id=chat_id, 
         text=report_card, 

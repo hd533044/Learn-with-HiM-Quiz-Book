@@ -26,6 +26,7 @@ def get_db():
     return conn
 
 def generate_unique_student_id() -> str:
+    """Generates a unique 6-digit Student ID."""
     conn = get_db()
     cursor = conn.cursor()
     while True:
@@ -38,6 +39,7 @@ def generate_unique_student_id() -> str:
             return candidate
 
 def generate_4digit_pass() -> str:
+    """Generates a 4-digit uppercase alphanumeric password."""
     chars = string.ascii_uppercase + string.digits
     return "".join(random.choices(chars, k=4))
 
@@ -155,6 +157,7 @@ def can_user_edit_profile(user_id: int) -> tuple:
         return True, 0
 
 def sync_user_unique_file(user_id: int):
+    """Saves every user in their unique file data/user_profiles/<student_id>.json."""
     conn = get_db()
     cursor = conn.cursor()
     
@@ -289,7 +292,7 @@ def verify_student_login(user_id: int, student_id: str, login_pass: str) -> bool
     return False
 
 def get_student_credentials_by_phone(phone_number: str) -> dict:
-    """OPTION 1 RECOVERY: Finds credentials matching a verified contact phone number."""
+    """Option 1 Phone Recovery."""
     clean_phone = phone_number.replace("+", "").strip()
     conn = get_db()
     cursor = conn.cursor()

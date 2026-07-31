@@ -1,5 +1,7 @@
 import time
 import logging
+from datetime import time as datetime_time
+import pytz
 from telegram import (
     Update, InlineKeyboardMarkup, InlineKeyboardButton, 
     BotCommand, BotCommandScopeDefault, BotCommandScopeAllPrivateChats, 
@@ -23,6 +25,7 @@ from app.quiz_engine import (
 from app.stats import get_overall_leaderboard, calculate_user_percentile, calculate_user_rank, get_user_performance_summary
 from app.admin import admin_portal_command, admin_callback_handler
 
+IST = pytz.timezone("Asia/Kolkata")
 NEGATIVE_WORDS = ["bad", "worst", "useless", "trash", "fake", "hate", "terrible", "waste", "horrible", "fraud", "stupid", "scam"]
 
 async def maintenance_guard(update: Update, context: ContextTypes.DEFAULT_TYPE) -> bool:
@@ -41,10 +44,6 @@ async def maintenance_guard(update: Update, context: ContextTypes.DEFAULT_TYPE) 
     return True
 
 async def send_response(update: Update, text: str, reply_markup=None):
-    """
-    CLEAN RESPONSE ENGINE:
-    Uses InlineKeyboardMarkup or ReplyKeyboardRemove() to ensure no persistent grid keyboards exist.
-    """
     if update.callback_query:
         await update.callback_query.answer()
         try:
@@ -54,6 +53,40 @@ async def send_response(update: Update, text: str, reply_markup=None):
     elif update.message:
         markup = reply_markup if reply_markup else ReplyKeyboardRemove()
         await update.message.reply_text(text, reply_markup=markup, parse_mode="Markdown")
+
+async def daily_quiz_reminder_job(context: ContextTypes.DEFAULT_TYPE):
+    """AUTOMATIC DAILY QUIZ REMINDER BROADCAST AT 9 AM & 6 PM IST."""
+    m_until = get_maintenance_until()
+    if int(time.time()) < m_until:
+        logging.info("Skipped automated quiz reminder broadcast due to maintenance mode.")
+        return
+
+    users = get_all_users()
+    reminder_text = (
+        "📢 **Attempt Your Today's Quiz!!**\n\n"
+        "✨ *Every step of hard-work always takes you to the Goal*\n"
+        "━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\n"
+        "👇 Tap the button below to start practicing now!"
+    )
+    keyboard = InlineKeyboardMarkup([
+        [InlineKeyboardButton("🚀 Launch Quiz Now", callback_data="cmd_quiz")]
+    ])
+
+    sent_count = 0
+    for u in users:
+        try:
+            await context.bot.send_message(
+                chat_id=u['user_id'],
+                text=reminder_text,
+                reply_markup=keyboard,
+                parse_mode="Markdown"
+            )
+            sent_count += 1
+            time.sleep(0.05) # Prevent hitting Telegram API rate limits
+        except Exception:
+            pass
+
+    logging.info(f"Daily quiz reminder broadcast sent to {sent_count}/{len(users)} users.")
 
 async def help_command(update: Update, context: ContextTypes.DEFAULT_TYPE):
     if not await maintenance_guard(update, context): return
@@ -352,5 +385,10 @@ def build_application() -> Application:
     app.add_handler(MessageHandler(filters.TEXT & ~filters.COMMAND, handle_text_messages))
     app.add_handler(PollAnswerHandler(handle_poll_answer))
     app.add_error_handler(global_error_handler)
+
+    # Automated 9:00 AM & 6:00 PM IST Daily Reminders
+    if app.job_queue:
+        app.job_queue.run_daily(daily_quiz_reminder_job, time=datetime_time(hour=9, minute=0, second=0, tzinfo=IST))
+        app.job_queue.run_daily(daily_quiz_reminder_job, time=datetime_time(hour=18, minute=0, second=0, tzinfo=IST))
 
     return app

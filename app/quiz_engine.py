@@ -139,6 +139,7 @@ async def quiz_timer_callback(update: Update, context: ContextTypes.DEFAULT_TYPE
 
     session = {
         "user_id": user_id,
+        "chat_id": query.message.chat_id,
         "questions": questions,
         "current_index": 0,
         "score": 0.0,
@@ -181,6 +182,7 @@ async def pause_quiz_command(update: Update, context: ContextTypes.DEFAULT_TYPE)
 
     save_state = {
         "user_id": user_id,
+        "chat_id": chat_id,
         "questions": session["questions"],
         "current_index": session["current_index"],
         "score": session["score"],
@@ -230,6 +232,7 @@ async def resume_quiz_command(update: Update, context: ContextTypes.DEFAULT_TYPE
 
     session = {
         "user_id": user_id,
+        "chat_id": chat_id,
         "questions": paused["questions"],
         "current_index": paused.get("current_index", 0),
         "score": paused["score"],
@@ -345,12 +348,21 @@ async def auto_skip_task(chat_id: int, user_id: int, poll_id: str, expected_idx:
 async def handle_poll_answer(update: Update, context: ContextTypes.DEFAULT_TYPE):
     answer = update.poll_answer
     poll_id = answer.poll_id
-    if poll_id not in POLL_MAP:
-        return
-
-    data = POLL_MAP.pop(poll_id)
-    user_id = data["user_id"]
-    chat_id = data["chat_id"]
+    
+    # Fallback lookup if poll_id isn't directly tracked, or use user identification
+    user_id = answer.user.id if answer.user else None
+    
+    # Check if poll_id is in POLL_MAP
+    if poll_id in POLL_MAP:
+        data = POLL_MAP.pop(poll_id)
+        user_id = data["user_id"]
+        chat_id = data["chat_id"]
+    else:
+        # Fallback for active session matching
+        session = ACTIVE_SESSIONS.get(user_id)
+        if not session:
+            return
+        chat_id = session.get("chat_id", user_id)
 
     if user_id in TIMER_TASKS and not TIMER_TASKS[user_id].done():
         TIMER_TASKS[user_id].cancel()
@@ -361,9 +373,12 @@ async def handle_poll_answer(update: Update, context: ContextTypes.DEFAULT_TYPE)
         return
 
     session = ACTIVE_SESSIONS.get(user_id)
-    if session and not session.get("is_paused") and session["current_index"] == data["q_idx"]:
+    if session and not session.get("is_paused"):
         selected = answer.option_ids[0] if answer.option_ids else -1
-        if selected == data["correct_id"]:
+        current_q = session["questions"][session["current_index"]]
+        correct_id = current_q.get("correct_option", 0)
+
+        if selected == correct_id:
             session["score"] += 1.0
             session["correct"] += 1
         else:
@@ -377,7 +392,7 @@ async def handle_poll_answer(update: Update, context: ContextTypes.DEFAULT_TYPE)
             await send_next_question(chat_id, user_id, context)
 
 async def finish_quiz_and_send_report(chat_id: int, user_id: int, context: ContextTypes.DEFAULT_TYPE):
-    """GENERATES AND SENDS COMPLETE DETAILED REPORT CARD AT QUIZ END INSTANTLY."""
+    """UNCONDITIONAL SAFEGUARD: Generates and forces delivery of the final competition report card."""
     session = ACTIVE_SESSIONS.pop(user_id, None)
     if not session:
         return

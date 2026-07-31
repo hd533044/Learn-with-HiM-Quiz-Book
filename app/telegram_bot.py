@@ -57,7 +57,7 @@ async def help_command(update: Update, context: ContextTypes.DEFAULT_TYPE):
     msg = (
         "🤖 **LEARN WITH HIM QUIZ BOOK — COMMAND DIRECTORY**\n"
         "━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\n"
-        "Tap any button below or open the blue **[≡ Menu]** button:\n\n"
+        "Tap any button below for instant navigation or use slash commands:\n\n"
         "• 🚀 **/quiz**: Start a new custom computer quiz\n"
         "• 👤 **/myprofile**: View your verified student card\n"
         "• ✏️ **/editprofile**: Update profile details (1x / 30 days)\n"
@@ -69,10 +69,10 @@ async def help_command(update: Update, context: ContextTypes.DEFAULT_TYPE):
     )
 
     buttons = [
-        [InlineKeyboardButton("🚀 /quiz", callback_data="cmd_quiz"), InlineKeyboardButton("👤 /myprofile", callback_data="cmd_profile")],
-        [InlineKeyboardButton("✏️ /editprofile", callback_data="cmd_editprofile"), InlineKeyboardButton("📊 /mywholestate", callback_data="cmd_wholestate")],
-        [InlineKeyboardButton("🏆 /toppername", callback_data="cmd_toppers"), InlineKeyboardButton("💬 /feedback", callback_data="cmd_feedback")],
-        [InlineKeyboardButton("🤝 /invite", callback_data="cmd_referral"), InlineKeyboardButton("📖 /reviews", callback_data="cmd_viewfeedbacks")]
+        [InlineKeyboardButton("🚀 Start Quiz (/quiz)", callback_data="cmd_quiz"), InlineKeyboardButton("👤 Profile (/myprofile)", callback_data="cmd_profile")],
+        [InlineKeyboardButton("📊 My Stats (/mywholestate)", callback_data="cmd_wholestate"), InlineKeyboardButton("🏆 Leaderboard (/toppername)", callback_data="cmd_toppers")],
+        [InlineKeyboardButton("💬 Feedback (/feedback)", callback_data="cmd_feedback"), InlineKeyboardButton("📖 Reviews (/reviews)", callback_data="cmd_viewfeedbacks")],
+        [InlineKeyboardButton("✏️ Edit Profile (/editprofile)", callback_data="cmd_editprofile"), InlineKeyboardButton("🤝 Invite Friends (/invite)", callback_data="cmd_referral")]
     ]
 
     await send_response(update, msg, reply_markup=InlineKeyboardMarkup(buttons))
@@ -104,12 +104,17 @@ async def myprofile_command(update: Update, context: ContextTypes.DEFAULT_TYPE):
         f"• **Used Today:** `{today_used}` / `{allowed_limit}` Qs\n"
         f"• **Remaining Today:** `{remaining}` Qs\n"
         f"• **Referrals:** `{profile.get('referral_count', 0)}` / 4 friends\n"
-        f"━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━"
+        f"━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\n"
+        f"👇 **Quick Navigation:**\n"
+        f"• `/mywholestate` — View academic stats & percentile\n"
+        f"• `/editprofile` — Edit profile details (1x/30 days)\n"
+        f"• `/invite` — Invite friends to unlock +10 limit"
     )
 
     buttons = [
-        [InlineKeyboardButton("🚀 Launch Quiz", callback_data="cmd_quiz"), InlineKeyboardButton("📊 Whole State", callback_data="cmd_wholestate")],
-        [InlineKeyboardButton("✏️ Edit Profile", callback_data="cmd_editprofile"), InlineKeyboardButton("🤝 Invite (+10 Quota)", callback_data="cmd_referral")]
+        [InlineKeyboardButton("📊 My Stats (/mywholestate)", callback_data="cmd_wholestate"), InlineKeyboardButton("🏆 Leaderboard (/toppername)", callback_data="cmd_toppers")],
+        [InlineKeyboardButton("✏️ Edit Profile (/editprofile)", callback_data="cmd_editprofile"), InlineKeyboardButton("🤝 Invite Friends (/invite)", callback_data="cmd_referral")],
+        [InlineKeyboardButton("🚀 Launch Quiz (/quiz)", callback_data="cmd_quiz"), InlineKeyboardButton("📖 Reviews (/reviews)", callback_data="cmd_viewfeedbacks")]
     ]
 
     await send_response(update, msg, reply_markup=InlineKeyboardMarkup(buttons))
@@ -138,10 +143,19 @@ async def wholestate_command(update: Update, context: ContextTypes.DEFAULT_TYPE)
         f"• **Total Quizzes Attempted:** `{perf.get('total_tests', 0)}` till date\n"
         f"• **Questions Attempted:** `{perf.get('total_qs', 0)}`\n"
         f"• **Global Rank:** `{rank}`\n"
-        f"• **Overall Percentile:** `{percentile}%` *(Calculated against all registered students)*"
+        f"• **Overall Percentile:** `{percentile}%` *(Calculated against all registered students)*\n"
+        f"━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\n"
+        f"👇 **Quick Navigation:**\n"
+        f"• `/toppername` — Check overall leaderboards\n"
+        f"• `/myprofile` — View student profile card\n"
+        f"• `/feedback` — Rate & review this platform"
     )
 
-    buttons = [[InlineKeyboardButton("🚀 Launch Quiz", callback_data="cmd_quiz"), InlineKeyboardButton("🏆 Leaderboard", callback_data="cmd_toppers")]]
+    buttons = [
+        [InlineKeyboardButton("🏆 Leaderboard (/toppername)", callback_data="cmd_toppers"), InlineKeyboardButton("👤 Profile (/myprofile)", callback_data="cmd_profile")],
+        [InlineKeyboardButton("💬 Write Review (/feedback)", callback_data="cmd_feedback"), InlineKeyboardButton("📖 See Reviews (/reviews)", callback_data="cmd_viewfeedbacks")],
+        [InlineKeyboardButton("🚀 Launch Quiz (/quiz)", callback_data="cmd_quiz")]
+    ]
     await send_response(update, msg, reply_markup=InlineKeyboardMarkup(buttons))
 
 async def toppers_command(update: Update, context: ContextTypes.DEFAULT_TYPE):
@@ -157,19 +171,31 @@ async def toppers_command(update: Update, context: ContextTypes.DEFAULT_TYPE):
         badge = " 🥇" if idx == 1 else " 🥈" if idx == 2 else " 🥉" if idx == 3 else ""
         lines.append(f"{idx}. **{t['full_name']}**{badge} — Avg Score: `{round(t['avg_score'], 2)}`")
 
-    msg = "🏆 **GLOBAL SCHOLAR LEADERBOARD**\n━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\n\n" + "\n".join(lines)
-    buttons = [[InlineKeyboardButton("🚀 Attempt Quiz", callback_data="cmd_quiz")]]
+    msg = (
+        "🏆 **GLOBAL SCHOLAR LEADERBOARD**\n"
+        "━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\n\n" 
+        + "\n".join(lines) + 
+        "\n\n━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\n"
+        "👇 **Quick Navigation:**\n"
+        "• `/mywholestate` — Compare your rank & percentile\n"
+        "• `/quiz` — Attempt a quiz to improve rank"
+    )
+    buttons = [
+        [InlineKeyboardButton("📊 My Stats (/mywholestate)", callback_data="cmd_wholestate"), InlineKeyboardButton("👤 Profile (/myprofile)", callback_data="cmd_profile")],
+        [InlineKeyboardButton("🚀 Launch Quiz (/quiz)", callback_data="cmd_quiz"), InlineKeyboardButton("💬 Write Review (/feedback)", callback_data="cmd_feedback")]
+    ]
     await send_response(update, msg, reply_markup=InlineKeyboardMarkup(buttons))
 
 async def feedback_command(update: Update, context: ContextTypes.DEFAULT_TYPE):
     if not await maintenance_guard(update, context): return
 
     keyboard = [
-        [InlineKeyboardButton("🌟 10/10 Bot! The quizzes are top quality 🚀", callback_data="fb_p1")],
-        [InlineKeyboardButton("✨ Learn with HiM is the best preparation portal 🎓", callback_data="fb_p2")],
+        [InlineKeyboardButton("🌟 10/10 Bot! Top quality quizzes 🚀", callback_data="fb_p1")],
+        [InlineKeyboardButton("✨ Best preparation portal 🎓", callback_data="fb_p2")],
         [InlineKeyboardButton("🔥 Daily target limits keep me disciplined! 📈", callback_data="fb_p3")],
         [InlineKeyboardButton("✍️ Write Custom Feedback", callback_data="fb_custom")],
-        [InlineKeyboardButton("📖 View Student Reviews", callback_data="cmd_viewfeedbacks")]
+        [InlineKeyboardButton("📖 See All Reviews (/reviews)", callback_data="cmd_viewfeedbacks")],
+        [InlineKeyboardButton("📊 My Stats (/mywholestate)", callback_data="cmd_wholestate"), InlineKeyboardButton("🚀 Quiz (/quiz)", callback_data="cmd_quiz")]
     ]
 
     msg = (
@@ -192,7 +218,20 @@ async def viewfeedbacks_command(update: Update, context: ContextTypes.DEFAULT_TY
     for idx, fb in enumerate(feedbacks, start=1):
         lines.append(f"**{idx}. {fb['full_name']}**:\n 💬 *\"{fb['feedback_text']}\"*\n")
 
-    await send_response(update, "\n".join(lines))
+    lines.append(
+        "━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\n"
+        "👇 **Quick Navigation:**\n"
+        "• `/feedback` — Leave your own review\n"
+        "• `/toppername` — View global leaderboards\n"
+        "• `/quiz` — Start a practice quiz"
+    )
+
+    buttons = [
+        [InlineKeyboardButton("💬 Write Review (/feedback)", callback_data="cmd_feedback"), InlineKeyboardButton("🚀 Launch Quiz (/quiz)", callback_data="cmd_quiz")],
+        [InlineKeyboardButton("🏆 Leaderboard (/toppername)", callback_data="cmd_toppers"), InlineKeyboardButton("📊 My Stats (/mywholestate)", callback_data="cmd_wholestate")]
+    ]
+
+    await send_response(update, "\n".join(lines), reply_markup=InlineKeyboardMarkup(buttons))
 
 async def referral_command(update: Update, context: ContextTypes.DEFAULT_TYPE):
     if not await maintenance_guard(update, context): return
@@ -205,9 +244,17 @@ async def referral_command(update: Update, context: ContextTypes.DEFAULT_TYPE):
         f"━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\n"
         f"Share your personal invite link below with **4 friends**:\n"
         f"`{ref_link}`\n\n"
-        f"When 4 friends register using your link, you automatically receive +10 questions added to your daily quota!"
+        f"When 4 friends register using your link, you automatically receive +10 questions added to your daily quota!\n"
+        f"━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\n"
+        f"👇 **Quick Navigation:**\n"
+        f"• `/myprofile` — View your active daily quota status\n"
+        f"• `/quiz` — Attempt today's quiz limit"
     )
-    await send_response(update, msg)
+    buttons = [
+        [InlineKeyboardButton("👤 View Profile (/myprofile)", callback_data="cmd_profile"), InlineKeyboardButton("🚀 Launch Quiz (/quiz)", callback_data="cmd_quiz")],
+        [InlineKeyboardButton("📊 My Stats (/mywholestate)", callback_data="cmd_wholestate"), InlineKeyboardButton("🏆 Leaderboard (/toppername)", callback_data="cmd_toppers")]
+    ]
+    await send_response(update, msg, reply_markup=InlineKeyboardMarkup(buttons))
 
 async def button_router(update: Update, context: ContextTypes.DEFAULT_TYPE):
     if not await maintenance_guard(update, context): return
@@ -230,6 +277,9 @@ async def button_router(update: Update, context: ContextTypes.DEFAULT_TYPE):
         await feedback_command(update, context)
     elif data == "cmd_viewfeedbacks":
         await viewfeedbacks_command(update, context)
+    elif data == "cmd_editprofile":
+        from app.onboarding import edit_profile_command
+        await edit_profile_command(update, context)
     elif data.startswith("fb_p"):
         presets = {
             "fb_p1": "10/10 Bot! The quizzes are top quality 🚀",
@@ -240,7 +290,17 @@ async def button_router(update: Update, context: ContextTypes.DEFAULT_TYPE):
         profile = get_user_profile(user.id)
         name = profile.get("full_name") if profile else user.full_name
         save_student_feedback(user.id, name, fb_text)
-        await query.edit_message_text(f"🎉 **Thank you, {name}!** Your feedback has been recorded:\n\n💬 *\"{fb_text}\"*", parse_mode="Markdown")
+        
+        post_fb_buttons = [
+            [InlineKeyboardButton("📖 See All Reviews (/reviews)", callback_data="cmd_viewfeedbacks"), InlineKeyboardButton("🚀 Start Quiz (/quiz)", callback_data="cmd_quiz")],
+            [InlineKeyboardButton("📊 My Stats (/mywholestate)", callback_data="cmd_wholestate"), InlineKeyboardButton("🏆 Leaderboard (/toppername)", callback_data="cmd_toppers")]
+        ]
+        await query.edit_message_text(
+            f"🎉 **Thank you, {name}!** Your feedback has been recorded:\n\n💬 *\"{fb_text}\"*\n\n"
+            f"━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\n👇 **What would you like to do next?**",
+            reply_markup=InlineKeyboardMarkup(post_fb_buttons),
+            parse_mode="Markdown"
+        )
 
     elif data == "fb_custom":
         context.user_data["awaiting_custom_feedback"] = True
@@ -262,7 +322,17 @@ async def handle_text_messages(update: Update, context: ContextTypes.DEFAULT_TYP
         profile = get_user_profile(user.id)
         name = profile.get("full_name") if profile else user.full_name
         save_student_feedback(user.id, name, text)
-        await update.message.reply_text(f"🎉 **Feedback Received!** Thank you *{name}* for your kind words:\n\n💬 *\"{text}\"*", reply_markup=ReplyKeyboardRemove(), parse_mode="Markdown")
+
+        post_fb_buttons = [
+            [InlineKeyboardButton("📖 See All Reviews (/reviews)", callback_data="cmd_viewfeedbacks"), InlineKeyboardButton("🚀 Start Quiz (/quiz)", callback_data="cmd_quiz")],
+            [InlineKeyboardButton("📊 My Stats (/mywholestate)", callback_data="cmd_wholestate"), InlineKeyboardButton("🏆 Leaderboard (/toppername)", callback_data="cmd_toppers")]
+        ]
+        await update.message.reply_text(
+            f"🎉 **Feedback Received!** Thank you *{name}* for your kind words:\n\n💬 *\"{text}\"*\n\n"
+            f"━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\n👇 **What would you like to do next?**",
+            reply_markup=InlineKeyboardMarkup(post_fb_buttons),
+            parse_mode="Markdown"
+        )
         return
 
     if context.user_data.get("awaiting_broadcast"):

@@ -147,6 +147,13 @@ async def download_pdf_callback(update: Update, context: ContextTypes.DEFAULT_TY
     pdf_buffer = generate_profile_book_pdf(profile)
     file_name = f"Profile_Book_{profile['full_name'].replace(' ', '_')}.pdf"
 
+    # Navigation buttons attached directly below the PDF document
+    post_pdf_buttons = [
+        [InlineKeyboardButton("🚀 Launch Quiz (/quiz)", callback_data="cmd_quiz"), InlineKeyboardButton("📊 My Stats (/mywholestate)", callback_data="cmd_wholestate")],
+        [InlineKeyboardButton("🏆 Leaderboard (/toppername)", callback_data="cmd_toppers"), InlineKeyboardButton("👤 Profile (/myprofile)", callback_data="cmd_profile")],
+        [InlineKeyboardButton("💬 Feedback (/feedback)", callback_data="cmd_feedback"), InlineKeyboardButton("📖 Reviews (/reviews)", callback_data="cmd_viewfeedbacks")]
+    ]
+
     await context.bot.send_document(
         chat_id=query.message.chat_id,
         document=pdf_buffer,
@@ -156,8 +163,11 @@ async def download_pdf_callback(update: Update, context: ContextTypes.DEFAULT_TY
             f"👤 **Student:** {profile['full_name']}\n"
             f"🎯 **Target Exam:** `{profile['target_exam']}`\n\n"
             f"⚡ **Powered by @LearnwithHiM**\n"
-            f"Keep practicing daily to unlock Gold & Diamond badges!"
+            f"Keep practicing daily to unlock Gold & Diamond badges!\n"
+            f"━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\n"
+            f"👇 **Continue exploring using the buttons below:**"
         ),
+        reply_markup=InlineKeyboardMarkup(post_pdf_buttons),
         parse_mode="Markdown"
     )
 
@@ -428,7 +438,7 @@ async def global_error_handler(update: object, context: ContextTypes.DEFAULT_TYP
 
 async def post_init(application: Application):
     """
-    PURGES ALL CACHED TELEGRAM COMMAND SCOPES AND REGISTERS ONLY THE EXACT 9 PROJECT COMMANDS.
+    PURGES ALL CACHED TELEGRAM COMMAND SCOPES AND REGISTERS ONLY THE EXACT PROJECT COMMANDS.
     """
     try:
         await application.bot.delete_my_commands(scope=BotCommandScopeDefault())
@@ -440,6 +450,7 @@ async def post_init(application: Application):
     allowed_commands = [
         BotCommand("quiz", "🚀 Start Computer Quiz"),
         BotCommand("profilebook", "📖 View & Download Profile Stats Book"),
+        BotCommand("profilecard", "📖 View Profile Stats Book"),
         BotCommand("myprofile", "👤 View Student Profile"),
         BotCommand("editprofile", "✏️ Edit Profile Details"),
         BotCommand("mywholestate", "📊 View Performance & Rank"),
@@ -461,6 +472,8 @@ def build_application() -> Application:
     # Core Project Commands
     app.add_handler(CommandHandler("quiz", launch_quiz_setup))
     app.add_handler(CommandHandler("profilebook", profilebook_command))
+    app.add_handler(CommandHandler("profilecard", profilebook_command))
+    app.add_handler(CommandHandler("myprofilebook", profilebook_command))
     app.add_handler(CommandHandler("myprofile", myprofile_command))
     app.add_handler(CommandHandler("mywholestate", wholestate_command))
     app.add_handler(CommandHandler("toppername", toppers_command))

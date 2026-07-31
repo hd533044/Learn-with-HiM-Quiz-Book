@@ -18,11 +18,6 @@ POLL_MAP = {}
 TIMER_TASKS = {}
 QUIZ_SETUP_CACHE = {}
 
-def get_pause_resume_keyboard():
-    return InlineKeyboardMarkup([
-        [InlineKeyboardButton("⏸ Pause (/pause)", callback_data="cmd_pause_quiz"), InlineKeyboardButton("▶️ Resume (/resume)", callback_data="cmd_resume_quiz")]
-    ])
-
 async def check_quiz_maintenance(update: Update) -> bool:
     m_until = get_maintenance_until()
     if int(time.time()) < m_until:
@@ -49,15 +44,17 @@ async def launch_quiz_setup(update: Update, context: ContextTypes.DEFAULT_TYPE):
 
     paused = get_paused_quiz_state(user.id)
     if paused:
+        remaining_count = len(paused.get('questions', [])) - paused.get('current_index', 0)
         text = (
             f"⏸ **YOU HAVE A PAUSED QUIZ SESSION!**\n"
             f"━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\n"
-            f"• **Remaining Questions:** `{len(paused.get('questions', []))}` Qs\n"
+            f"• **Resume Point:** Question `{paused.get('current_index', 0) + 1}` / `{paused.get('total', 0)}`\n"
+            f"• **Remaining Questions:** `{remaining_count}` Qs\n"
             f"• **Current Score:** `{paused.get('score', 0.0)}` / `{paused.get('total', 0)}`\n\n"
-            f"Tap **Resume** below to continue where you left off, or start a new quiz:"
+            f"Tap **Resume** below to continue where you left off, or start fresh:"
         )
         keyboard = InlineKeyboardMarkup([
-            [InlineKeyboardButton("▶️ Resume Paused Quiz", callback_data="cmd_resume_quiz")],
+            [InlineKeyboardButton("▶️ Resume Paused Quiz (/resume)", callback_data="cmd_resume_quiz")],
             [InlineKeyboardButton("🔄 Start New Quiz", callback_data="cmd_start_fresh_quiz")]
         ])
         if update.callback_query:
@@ -182,10 +179,10 @@ async def pause_quiz_command(update: Update, context: ContextTypes.DEFAULT_TYPE)
     if user_id in TIMER_TASKS and not TIMER_TASKS[user_id].done():
         TIMER_TASKS[user_id].cancel()
 
-    remaining_questions = session["questions"][session["current_index"]:]
     save_state = {
         "user_id": user_id,
-        "questions": remaining_questions,
+        "questions": session["questions"],
+        "current_index": session["current_index"],
         "score": session["score"],
         "correct": session["correct"],
         "wrong": session["wrong"],
@@ -197,10 +194,12 @@ async def pause_quiz_command(update: Update, context: ContextTypes.DEFAULT_TYPE)
     save_paused_quiz_state(user_id, save_state)
     ACTIVE_SESSIONS.pop(user_id, None)
 
+    remaining_qs = session["total"] - session["current_index"]
     msg = (
         f"⏸ **QUIZ PAUSED & SAVED**\n"
         f"━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\n"
-        f"• **Remaining Questions:** `{len(remaining_questions)}` Qs\n"
+        f"• **Paused At Question:** `{session['current_index'] + 1}` / `{session['total']}`\n"
+        f"• **Remaining Questions:** `{remaining_qs}` Qs\n"
         f"• **Current Score:** `{session['score']}` / `{session['total']}`\n\n"
         f"Type **/resume** or tap below whenever you wish to continue!"
     )
@@ -232,7 +231,7 @@ async def resume_quiz_command(update: Update, context: ContextTypes.DEFAULT_TYPE
     session = {
         "user_id": user_id,
         "questions": paused["questions"],
-        "current_index": 0,
+        "current_index": paused.get("current_index", 0),
         "score": paused["score"],
         "correct": paused["correct"],
         "wrong": paused["wrong"],
@@ -244,12 +243,33 @@ async def resume_quiz_command(update: Update, context: ContextTypes.DEFAULT_TYPE
     }
     ACTIVE_SESSIONS[user_id] = session
 
-    msg = f"▶️ **RESUMING QUIZ...**\n`{len(session['questions'])}` questions remaining."
     if update.callback_query:
-        await update.callback_query.answer("▶️ Resuming Quiz...")
-        await context.bot.send_message(chat_id=chat_id, text=msg, parse_mode="Markdown")
-    else:
-        await update.message.reply_text(msg, parse_mode="Markdown")
+        await update.callback_query.answer()
+
+    # 3-Second Interactive Countdown Timer
+    countdown_msg = await context.bot.send_message(
+        chat_id=chat_id, 
+        text=f"▶️ **RESUMING QUIZ...**\n━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\n⏳ **3...** Get ready for Question `{session['current_index'] + 1}/{session['total']}`!",
+        parse_mode="Markdown"
+    )
+    await asyncio.sleep(1)
+
+    try:
+        await context.bot.edit_message_text(
+            chat_id=chat_id, message_id=countdown_msg.message_id,
+            text=f"▶️ **RESUMING QUIZ...**\n━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\n⏳ **2...** Get ready for Question `{session['current_index'] + 1}/{session['total']}`!",
+            parse_mode="Markdown"
+        )
+        await asyncio.sleep(1)
+
+        await context.bot.edit_message_text(
+            chat_id=chat_id, message_id=countdown_msg.message_id,
+            text=f"▶️ **RESUMING QUIZ...**\n━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\n⚡ **1...** Launching Poll now!",
+            parse_mode="Markdown"
+        )
+        await asyncio.sleep(1)
+    except Exception:
+        pass
 
     await send_next_question(chat_id, user_id, context)
 
@@ -296,13 +316,6 @@ async def send_next_question(chat_id: int, user_id: int, context: ContextTypes.D
         
         poll_id = poll_msg.poll.id
         POLL_MAP[poll_id] = {"user_id": user_id, "chat_id": chat_id, "q_idx": session["current_index"], "correct_id": correct_id}
-
-        # Send inline pause/resume controls under every running question
-        await context.bot.send_message(
-            chat_id=chat_id,
-            text="👇 **Controls for current question:**",
-            reply_markup=get_pause_resume_keyboard()
-        )
 
         if user_id in TIMER_TASKS and not TIMER_TASKS[user_id].done():
             TIMER_TASKS[user_id].cancel()

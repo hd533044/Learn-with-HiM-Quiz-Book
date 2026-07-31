@@ -73,7 +73,7 @@ async def start_onboarding(update: Update, context: ContextTypes.DEFAULT_TYPE):
             f"⚡ **Welcome back, {profile['full_name']}!**\n\n"
             f"🎯 **Target Exam:** `{profile['target_exam']}`\n"
             f"📍 **Location:** `{profile.get('state', 'N/A')}, {profile.get('country', 'India')}`\n\n"
-            f"Click options below or use the square menu to start practicing!",
+            f"Click options below or use the menu to start practicing!",
             reply_markup=InlineKeyboardMarkup([
                 [InlineKeyboardButton("🚀 Launch Quiz", callback_data="cmd_quiz"), InlineKeyboardButton("👤 Profile", callback_data="cmd_profile")],
                 [InlineKeyboardButton("🥇 Leaderboard", callback_data="cmd_toppers"), InlineKeyboardButton("📊 My Stats", callback_data="cmd_wholestate")]
@@ -87,6 +87,7 @@ async def start_onboarding(update: Update, context: ContextTypes.DEFAULT_TYPE):
         f"━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\n"
         f"📝 **Student Registration (Step 1/6)**\n\n"
         f"Please enter your **Full Name** to setup your official student profile:",
+        reply_markup=ReplyKeyboardRemove(),
         parse_mode="Markdown"
     )
     return NAME
@@ -331,7 +332,7 @@ async def age_step(update: Update, context: ContextTypes.DEFAULT_TYPE):
         "🎉 **Student Registration Complete!**\n"
         "━━━━━━━━━━━━━━━━━━━━━━━━━\n"
         "Your student profile has been verified and synced successfully.\n\n"
-        "👉 Tap **Launch Quiz** below or use the square bot menu to begin!",
+        "👉 Tap **Launch Quiz** below or use the menu to begin!",
         reply_markup=ReplyKeyboardRemove(),
         parse_mode="Markdown"
     )
@@ -374,5 +375,6 @@ def get_onboarding_handler():
         fallbacks=[CommandHandler("cancel", cancel_onboarding)],
         per_chat=True,
         per_user=True,
-        per_message=False
+        per_message=False,
+        allow_reentry=True  # <--- CRITICAL FIX: Forces /start to reset and restart registration even if user is stuck in a state!
     )

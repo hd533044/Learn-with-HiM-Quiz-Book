@@ -1,11 +1,11 @@
 import sqlite3
 import logging
-from app.config import DB_PATH
+from app.config import SQLITE_DB_PATH
 
 logger = logging.getLogger(__name__)
 
 def get_db_connection():
-    conn = sqlite3.connect(DB_PATH)
+    conn = sqlite3.connect(SQLITE_DB_PATH)
     conn.row_factory = sqlite3.Row
     return conn
 

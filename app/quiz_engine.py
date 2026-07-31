@@ -13,7 +13,7 @@ from app.pdf_generator import generate_quiz_questions_pdf
 logger = logging.getLogger(__name__)
 
 async def launch_quiz_setup(update: Update, context: ContextTypes.DEFAULT_TYPE):
-    """Restored Original Quiz Entry Point."""
+    """Original Entry Point for Quiz Launch."""
     user = update.effective_user
     profile = get_user_profile(user.id)
 
@@ -39,7 +39,7 @@ async def launch_quiz_setup(update: Update, context: ContextTypes.DEFAULT_TYPE):
             f"━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\n"
             f"Saved Questions: `{len(paused.get('questions', []))}` Qs\n"
             f"Current Score: `{paused.get('score', 0)}`\n\n"
-            f"Would you like to resume your quiz or start a new session?"
+            f"Would you like to resume your quiz or start fresh?"
         )
         if update.callback_query:
             await update.callback_query.answer()
@@ -137,6 +137,7 @@ async def quiz_timer_callback(update: Update, context: ContextTypes.DEFAULT_TYPE
         'history': []
     }
 
+    await query.edit_message_text("🚀 **Starting quiz polls now... Get ready!**", parse_mode="Markdown")
     await send_next_quiz_question(update, context)
 
 async def stop_quiz_command(update: Update, context: ContextTypes.DEFAULT_TYPE):
@@ -153,7 +154,7 @@ async def stop_quiz_command(update: Update, context: ContextTypes.DEFAULT_TYPE):
 
     remaining_questions = active['questions'][active['current_idx']:]
     paused_state = {
-        'user_name': user.full_name,
+        'user_name': user.full_name if user else 'Student',
         'questions': remaining_questions,
         'score': active['score'],
         'timer_sec': active['timer_sec'],
@@ -170,7 +171,7 @@ async def stop_quiz_command(update: Update, context: ContextTypes.DEFAULT_TYPE):
         f"━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\n"
         f"• **Remaining Questions:** `{len(remaining_questions)}` Qs\n"
         f"• **Current Score:** `{paused_state['score']}`\n\n"
-        f"Type **/resume** whenever you're ready to continue!"
+        f"Type **/resume** whenever you are ready to continue!"
     )
     buttons = [
         [InlineKeyboardButton("▶️ Resume Quiz Now (/resume)", callback_data="cmd_resume_quiz")],
@@ -233,7 +234,12 @@ async def send_next_quiz_question(update: Update, context: ContextTypes.DEFAULT_
     q = active['questions'][idx]
     question_text = f"[{idx+1}/{total}] {q['question_text']}"
 
-    chat_id = update.effective_chat.id if update.effective_chat else update.callback_query.message.chat_id
+    if update.effective_chat:
+        chat_id = update.effective_chat.id
+    elif update.callback_query and update.callback_query.message:
+        chat_id = update.callback_query.message.chat_id
+    else:
+        chat_id = update.effective_user.id
 
     try:
         sent_poll = await context.bot.send_poll(
@@ -246,8 +252,13 @@ async def send_next_quiz_question(update: Update, context: ContextTypes.DEFAULT_
             is_anonymous=False,
             explanation=q.get('explanation', 'Learn with HiM Official Answer')
         )
+        
+        user_id = update.effective_user.id if update.effective_user else (
+            update.callback_query.from_user.id if update.callback_query else chat_id
+        )
+
         context.bot_data[f"poll_{sent_poll.poll.id}"] = {
-            'user_id': update.effective_user.id if update.effective_user else update.callback_query.from_user.id,
+            'user_id': user_id,
             'correct_option_id': q['correct_option_id'],
             'question_text': q['question_text'],
             'options': q['options'],

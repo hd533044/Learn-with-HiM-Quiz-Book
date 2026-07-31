@@ -1,4 +1,5 @@
 import os
+import time
 import sqlite3
 import json
 import logging
@@ -92,8 +93,8 @@ def save_user_profile(profile_data: dict):
 
     cursor.execute("""
         INSERT INTO users (
-            user_id, username, full_name, target_exam, age, gender, phone_number, state, country, referral_code, referred_by
-        ) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
+            user_id, username, full_name, target_exam, age, gender, phone_number, state, country, referral_code, referred_by, last_edit_timestamp
+        ) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
         ON CONFLICT(user_id) DO UPDATE SET
             username = excluded.username,
             full_name = excluded.full_name,
@@ -102,7 +103,8 @@ def save_user_profile(profile_data: dict):
             gender = excluded.gender,
             phone_number = excluded.phone_number,
             state = excluded.state,
-            country = excluded.country
+            country = excluded.country,
+            last_edit_timestamp = excluded.last_edit_timestamp
     """, (
         profile_data['user_id'],
         profile_data.get('username', ''),
@@ -114,7 +116,8 @@ def save_user_profile(profile_data: dict):
         profile_data.get('state', 'N/A'),
         profile_data.get('country', 'India'),
         profile_data.get('referral_code', ''),
-        profile_data.get('referred_by')
+        profile_data.get('referred_by'),
+        profile_data.get('last_edit_timestamp', int(time.time()))
     ))
 
     conn.commit()
@@ -127,6 +130,23 @@ def get_user_profile(user_id: int):
     row = cursor.fetchone()
     conn.close()
     return dict(row) if row else None
+
+def can_user_edit_profile(user_id: int) -> tuple:
+    """Checks if a student is allowed to edit their profile details (Limit: Once every 30 days)."""
+    profile = get_user_profile(user_id)
+    if not profile:
+        return True, 0
+
+    last_edit = profile.get('last_edit_timestamp', 0) or 0
+    now = int(time.time())
+    thirty_days_sec = 30 * 24 * 3600
+
+    if now - last_edit >= thirty_days_sec:
+        return True, 0
+    else:
+        remaining_sec = thirty_days_sec - (now - last_edit)
+        days_left = max(1, (remaining_sec + 86399) // 86400)
+        return False, days_left
 
 def get_all_users():
     conn = get_db_connection()

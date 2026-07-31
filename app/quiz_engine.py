@@ -13,6 +13,7 @@ from app.pdf_generator import generate_quiz_questions_pdf
 logger = logging.getLogger(__name__)
 
 async def launch_quiz_setup(update: Update, context: ContextTypes.DEFAULT_TYPE):
+    """Restored Original Quiz Entry Point."""
     user = update.effective_user
     profile = get_user_profile(user.id)
 
@@ -30,15 +31,15 @@ async def launch_quiz_setup(update: Update, context: ContextTypes.DEFAULT_TYPE):
     if paused:
         keyboard = [
             [InlineKeyboardButton("▶️ Resume Paused Quiz (/resume)", callback_data="cmd_resume_quiz")],
-            [InlineKeyboardButton("🔄 Start New Quiz (Discard Paused)", callback_data="cmd_start_fresh_quiz")]
+            [InlineKeyboardButton("🔄 Start New Quiz", callback_data="cmd_start_fresh_quiz")]
         ]
         text = (
-            f"⏸ **YOU HAVE A PAUSED QUIZ IN PROGRESS!**\n"
+            f"⏸ **PAUSED QUIZ FOUND**\n"
             f"⚡ *Powered by @LearnwithHiM*\n"
             f"━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\n"
-            f"Saved Qs Remaining: `{len(paused.get('questions', []))}`\n"
+            f"Saved Questions: `{len(paused.get('questions', []))}` Qs\n"
             f"Current Score: `{paused.get('score', 0)}`\n\n"
-            f"Would you like to resume your quiz or start fresh?"
+            f"Would you like to resume your quiz or start a new session?"
         )
         if update.callback_query:
             await update.callback_query.answer()
@@ -71,22 +72,22 @@ async def show_quiz_count_options(update: Update, context: ContextTypes.DEFAULT_
             await update.message.reply_text(msg, parse_mode="Markdown")
         return
 
-    buttons = []
     counts = [5, 10, 15, 20]
     valid_counts = [c for c in counts if c <= remaining]
     if not valid_counts and remaining > 0:
         valid_counts = [remaining]
 
+    buttons = []
     row = [InlineKeyboardButton(f"{c} Qs", callback_data=f"qcount_{c}") for c in valid_counts]
     buttons.append(row)
     buttons.append([InlineKeyboardButton("📖 Profile Book (/profilebook)", callback_data="cmd_profilebook")])
 
     text = (
-        f"🎯 **SELECT QUESTION COUNT FOR QUIZ**\n"
+        f"🎯 **SELECT QUESTION COUNT**\n"
         f"⚡ *Powered by @LearnwithHiM*\n"
         f"━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\n"
         f"• **Remaining Daily Quota:** `{remaining}` / `{allowed_limit}` Qs\n\n"
-        f"Select how many questions you wish to attempt:"
+        f"Select how many questions you want to attempt:"
     )
 
     if update.callback_query:
@@ -102,8 +103,8 @@ async def quiz_count_callback(update: Update, context: ContextTypes.DEFAULT_TYPE
     context.user_data['quiz_qcount'] = q_count
 
     buttons = [
-        [InlineKeyboardButton("⚡ 15 Sec / Q", callback_data="qtimer_15"), InlineKeyboardButton("⏱ 30 Sec / Q", callback_data="qtimer_30")],
-        [InlineKeyboardButton("⌛ 45 Sec / Q", callback_data="qtimer_45"), InlineKeyboardButton("🐢 60 Sec / Q", callback_data="qtimer_60")]
+        [InlineKeyboardButton("⚡ 15 Sec", callback_data="qtimer_15"), InlineKeyboardButton("⏱ 30 Sec", callback_data="qtimer_30")],
+        [InlineKeyboardButton("⌛ 45 Sec", callback_data="qtimer_45"), InlineKeyboardButton("🐢 60 Sec", callback_data="qtimer_60")]
     ]
 
     text = (
@@ -143,7 +144,7 @@ async def stop_quiz_command(update: Update, context: ContextTypes.DEFAULT_TYPE):
     active = context.user_data.get('active_quiz')
 
     if not active or active['current_idx'] >= active['total_qs']:
-        msg = "ℹ️ You do not have an active quiz in progress to pause."
+        msg = "ℹ️ No active quiz in progress to pause."
         if update.callback_query:
             await update.callback_query.answer(msg, show_alert=True)
         else:
@@ -164,16 +165,16 @@ async def stop_quiz_command(update: Update, context: ContextTypes.DEFAULT_TYPE):
     context.user_data.pop('active_quiz', None)
 
     msg = (
-        f"⏸ **QUIZ PAUSED & PROGRESS SAVED!**\n"
+        f"⏸ **QUIZ PAUSED & SAVED**\n"
         f"⚡ *Powered by @LearnwithHiM*\n"
         f"━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\n"
         f"• **Remaining Questions:** `{len(remaining_questions)}` Qs\n"
         f"• **Current Score:** `{paused_state['score']}`\n\n"
-        f"Whenever you are ready, use **/resume** (or tap below) to pick up exactly where you left off!"
+        f"Type **/resume** whenever you're ready to continue!"
     )
     buttons = [
         [InlineKeyboardButton("▶️ Resume Quiz Now (/resume)", callback_data="cmd_resume_quiz")],
-        [InlineKeyboardButton("📖 Profile Book (/profilebook)", callback_data="cmd_profilebook"), InlineKeyboardButton("🚀 New Quiz (/quiz)", callback_data="cmd_quiz")]
+        [InlineKeyboardButton("📖 Profile Book (/profilebook)", callback_data="cmd_profilebook")]
     ]
 
     if update.callback_query:
@@ -187,7 +188,7 @@ async def resume_quiz_command(update: Update, context: ContextTypes.DEFAULT_TYPE
     paused = get_paused_quiz(user.id)
 
     if not paused:
-        msg = "ℹ️ You don't have any paused quiz saved. Type /quiz to start a new test!"
+        msg = "ℹ️ No paused quiz found. Type /quiz to start a new test!"
         if update.callback_query:
             await update.callback_query.answer()
             await update.callback_query.edit_message_text(msg)
@@ -232,14 +233,11 @@ async def send_next_quiz_question(update: Update, context: ContextTypes.DEFAULT_
     q = active['questions'][idx]
     question_text = f"[{idx+1}/{total}] {q['question_text']}"
 
-    # Pause button under poll question
-    pause_keyboard = InlineKeyboardMarkup([
-        [InlineKeyboardButton("⏸ Pause / Stop Quiz (/stop)", callback_data="cmd_stop_quiz")]
-    ])
+    chat_id = update.effective_chat.id if update.effective_chat else update.callback_query.message.chat_id
 
     try:
         sent_poll = await context.bot.send_poll(
-            chat_id=update.effective_chat.id,
+            chat_id=chat_id,
             question=question_text,
             options=q['options'],
             type='quiz',
@@ -249,18 +247,12 @@ async def send_next_quiz_question(update: Update, context: ContextTypes.DEFAULT_
             explanation=q.get('explanation', 'Learn with HiM Official Answer')
         )
         context.bot_data[f"poll_{sent_poll.poll.id}"] = {
-            'user_id': update.effective_user.id,
+            'user_id': update.effective_user.id if update.effective_user else update.callback_query.from_user.id,
             'correct_option_id': q['correct_option_id'],
             'question_text': q['question_text'],
             'options': q['options'],
             'explanation': q.get('explanation', '')
         }
-        await context.bot.send_message(
-            chat_id=update.effective_chat.id,
-            text="👇 *Tap button below anytime to pause quiz:*",
-            reply_markup=pause_keyboard,
-            parse_mode="Markdown"
-        )
     except Exception as e:
         logger.error(f"Error sending poll: {e}")
 
@@ -288,20 +280,21 @@ async def handle_poll_answer(update: Update, context: ContextTypes.DEFAULT_TYPE)
             'explanation': poll_info['explanation']
         })
 
+        class FakeChat:
+            id = user_id
+        class FakeUser:
+            id = user_id
+            full_name = 'Student'
+        class FakeUpdate:
+            effective_chat = FakeChat()
+            effective_user = FakeUser()
+            callback_query = None
+            message = None
+
         if active['current_idx'] < active['total_qs']:
             time.sleep(1)
-            class FakeUpdate:
-                effective_chat = type('Chat', (), {'id': user_id})()
-                effective_user = type('User', (), {'id': user_id, 'full_name': 'Student'})()
-                callback_query = None
-                message = None
             await send_next_quiz_question(FakeUpdate(), context)
         else:
-            class FakeUpdate:
-                effective_chat = type('Chat', (), {'id': user_id})()
-                effective_user = type('User', (), {'id': user_id, 'full_name': 'Student'})()
-                callback_query = None
-                message = None
             await finish_quiz(FakeUpdate(), context)
 
 async def finish_quiz(update: Update, context: ContextTypes.DEFAULT_TYPE):
@@ -315,12 +308,13 @@ async def finish_quiz(update: Update, context: ContextTypes.DEFAULT_TYPE):
     total_qs = active['total_qs']
     history = active.get('history', [])
 
+    chat_id = update.effective_chat.id if update.effective_chat else user.id
+
     save_quiz_attempt(user.id, float(score), total_qs, score, total_qs - score, int(time.time()))
     context.user_data.pop('active_quiz', None)
 
-    # Store recent completed quiz for PDF export
     context.user_data['last_completed_quiz'] = {
-        'user_name': user.full_name,
+        'user_name': user.full_name if hasattr(user, 'full_name') else 'Student',
         'score': score,
         'total_qs': total_qs,
         'questions': history
@@ -330,7 +324,6 @@ async def finish_quiz(update: Update, context: ContextTypes.DEFAULT_TYPE):
         f"🎉 **QUIZ COMPLETED!**\n"
         f"⚡ *Powered by @LearnwithHiM*\n"
         f"━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\n"
-        f"👤 **Student:** {user.full_name}\n"
         f"📊 **Final Score:** `{score}` / `{total_qs}` Qs\n"
         f"🎯 **Accuracy:** `{round((score/max(1, total_qs))*100, 1)}%`\n"
         f"━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\n"
@@ -344,7 +337,7 @@ async def finish_quiz(update: Update, context: ContextTypes.DEFAULT_TYPE):
     ]
 
     await context.bot.send_message(
-        chat_id=update.effective_chat.id,
+        chat_id=chat_id,
         text=msg,
         reply_markup=InlineKeyboardMarkup(buttons),
         parse_mode="Markdown"

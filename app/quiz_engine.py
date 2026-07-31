@@ -322,10 +322,10 @@ async def send_next_question(chat_id: int, user_id: int, context: ContextTypes.D
         poll_id = poll_msg.poll.id
         POLL_MAP[poll_id] = {"user_id": user_id, "chat_id": chat_id, "q_idx": session["current_index"], "correct_id": correct_id}
 
-        # Send ONLY inline pause/resume buttons directly under the poll (no text label)
+        # Updated text string directly above the buttons
         await context.bot.send_message(
             chat_id=chat_id,
-            text="⚡",
+            text="You can Pause/Resume.",
             reply_markup=get_pause_resume_keyboard()
         )
 

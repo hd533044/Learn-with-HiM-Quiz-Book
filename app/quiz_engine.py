@@ -266,14 +266,32 @@ async def finish_quiz_and_send_report(chat_id: int, user_id: int, context: Conte
         f"• **Final Score:** `{score} / {total}`\n\n"
         f"🎖 **Overall Rank & Percentile:**\n"
         f"• **Global Rank:** `{rank_str}`\n"
-        f"• **Percentile Rating:** `{percentile}%`\n"
-        f"━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━"
+        f"• **Percentile Rating:** `{percentile}%` \n"
+        f"━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\n"
+        f"👇 **What would you like to do next?**\n"
+        f"• `/mywholestate` — View detailed academic stats & rank\n"
+        f"• `/toppername` — View global scholar leaderboard\n"
+        f"• `/feedback` — Submit feedback or review\n"
+        f"• `/reviews` — Read student reviews & appreciation\n"
+        f"• `/quiz` — Start another practice quiz"
     )
 
     buttons = [
-        [InlineKeyboardButton("📢 Join Telegram Channel", url=f"https://t.me/{CHANNEL_USERNAME.replace('@', '')}")],
-        [InlineKeyboardButton("📺 Join YouTube Channel", url=YOUTUBE_CHANNEL_URL)],
-        [InlineKeyboardButton("🚀 Attempt Another Quiz", callback_data="cmd_quiz")]
+        [
+            InlineKeyboardButton("📊 My Stats (/mywholestate)", callback_data="cmd_wholestate"),
+            InlineKeyboardButton("🏆 Leaderboard (/toppername)", callback_data="cmd_toppers")
+        ],
+        [
+            InlineKeyboardButton("💬 Write Review (/feedback)", callback_data="cmd_feedback"),
+            InlineKeyboardButton("📖 See Reviews (/reviews)", callback_data="cmd_viewfeedbacks")
+        ],
+        [
+            InlineKeyboardButton("🚀 Attempt Another Quiz", callback_data="cmd_quiz")
+        ],
+        [
+            InlineKeyboardButton("📢 Telegram Channel", url=f"https://t.me/{CHANNEL_USERNAME.replace('@', '')}"),
+            InlineKeyboardButton("📺 YouTube Channel", url=YOUTUBE_CHANNEL_URL)
+        ]
     ]
 
     await context.bot.send_message(chat_id=chat_id, text=report_card, reply_markup=InlineKeyboardMarkup(buttons), parse_mode="Markdown")

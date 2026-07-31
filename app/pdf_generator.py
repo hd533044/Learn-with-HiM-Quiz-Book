@@ -1,8 +1,9 @@
+import os
 import io
 from typing import Dict, Any, List
 from reportlab.lib.pagesizes import letter
 from reportlab.lib.colors import HexColor, white
-from reportlab.platypus import SimpleDocTemplate, Paragraph, Spacer, Table, TableStyle, HRFlowable
+from reportlab.platypus import SimpleDocTemplate, Paragraph, Spacer, Table, TableStyle, HRFlowable, Image
 from reportlab.lib.styles import getSampleStyleSheet, ParagraphStyle
 from app.stats import (
     get_user_performance_summary, 
@@ -13,7 +14,7 @@ from app.stats import (
 )
 
 def generate_profile_book_pdf(profile: Dict[str, Any]) -> io.BytesIO:
-    """Generates a downloadable branded PDF Profile Book in memory without any linter errors."""
+    """Generates an official branded PDF Profile Book with logo integration and readable headers."""
     user_id = profile.get('user_id', 0)
     perf = get_user_performance_summary(user_id)
     history = get_datewise_quiz_history(user_id)
@@ -33,31 +34,32 @@ def generate_profile_book_pdf(profile: Dict[str, Any]) -> io.BytesIO:
 
     styles = getSampleStyleSheet()
     
+    # Base Typography - Clean Sans-Serif
     title_style = ParagraphStyle(
         'DocTitle',
         parent=styles['Heading1'],
         fontName='Helvetica-Bold',
-        fontSize=20,
+        fontSize=18,
         textColor=HexColor('#1A2B4C'),
-        alignment=1,
-        spaceAfter=4
+        alignment=0,
+        spaceAfter=2
     )
     
     sig_style = ParagraphStyle(
         'SignatureStyle',
         parent=styles['Normal'],
         fontName='Helvetica-Bold',
-        fontSize=11,
+        fontSize=10,
         textColor=HexColor('#D9534F'),
-        alignment=1,
-        spaceAfter=15
+        alignment=0,
+        spaceAfter=4
     )
 
     h2_style = ParagraphStyle(
         'SectionHeading',
         parent=styles['Heading2'],
         fontName='Helvetica-Bold',
-        fontSize=13,
+        fontSize=12,
         textColor=HexColor('#1A2B4C'),
         spaceBefore=10,
         spaceAfter=6
@@ -67,19 +69,46 @@ def generate_profile_book_pdf(profile: Dict[str, Any]) -> io.BytesIO:
         'BodyTextCustom',
         parent=styles['Normal'],
         fontName='Helvetica',
-        fontSize=10,
-        textColor=HexColor('#333333'),
-        leading=14
+        fontSize=9,
+        textColor=HexColor('#222222'),
+        leading=13
+    )
+
+    header_text_style = ParagraphStyle(
+        'TableHeaderCustom',
+        parent=styles['Normal'],
+        fontName='Helvetica-Bold',
+        fontSize=9,
+        textColor=white,
+        leading=13,
+        alignment=1
     )
 
     elements: List[Any] = []
 
-    # 1. Header & Signature
-    elements.append(Paragraph("📖 OFFICIAL STUDENT PROFILE STATS BOOK", title_style))
-    elements.append(Paragraph("⚡ Powered by @LearnwithHiM", sig_style))
-    elements.append(HRFlowable(width="100%", thickness=1.5, color=HexColor('#1A2B4C'), spaceAfter=15))
+    # 1. Header with Official Logo & Title
+    logo_path = os.path.join(os.path.dirname(os.path.dirname(os.path.abspath(__file__))), "assets", "logo.png")
+    
+    header_text_block = [
+        Paragraph("📖 OFFICIAL STUDENT PROFILE STATS BOOK", title_style),
+        Paragraph("⚡ Powered by @LearnwithHiM | YouTube: Learn with HiM", sig_style)
+    ]
 
-    # 2. Student Identity Details
+    if os.path.exists(logo_path):
+        logo_img = Image(logo_path, width=50, height=50)
+        header_table = Table([[logo_img, header_text_block]], colWidths=[60, 480])
+        header_table.setStyle(TableStyle([
+            ('VALIGN', (0,0), (-1,-1), 'MIDDLE'),
+            ('PADDING', (0,0), (-1,-1), 0),
+        ]))
+        elements.append(header_table)
+    else:
+        elements.extend(header_text_block)
+
+    elements.append(Spacer(1, 8))
+    elements.append(HRFlowable(width="100%", thickness=1.5, color=HexColor('#1A2B4C'), spaceAfter=12))
+
+    # 2. Student Identity Card Table
     elements.append(Paragraph("👤 Student Personal Card", h2_style))
     full_name = profile.get('full_name', 'Student')
     target_exam = profile.get('target_exam', 'N/A')
@@ -95,7 +124,7 @@ def generate_profile_book_pdf(profile: Dict[str, Any]) -> io.BytesIO:
     ]
     t_student = Table(student_data, colWidths=[270, 270])
     t_student.setStyle(TableStyle([
-        ('BACKGROUND', (0, 0), (-1, -1), HexColor('#F4F6F9')),
+        ('BACKGROUND', (0, 0), (-1, -1), HexColor('#F8F9FA')),
         ('PADDING', (0, 0), (-1, -1), 6),
         ('BOX', (0, 0), (-1, -1), 1, HexColor('#D0D7DE')),
         ('INNERGRID', (0, 0), (-1, -1), 0.5, HexColor('#E1E4E8')),
@@ -115,16 +144,25 @@ def generate_profile_book_pdf(profile: Dict[str, Any]) -> io.BytesIO:
     elements.append(t_badge)
     elements.append(Spacer(1, 10))
 
-    # 4. Overall Performance Summary
+    # 4. Overall Academic Metrics (WITH FIXED WHITE HEADERS)
     elements.append(Paragraph("📊 Overall Academic Metrics", h2_style))
     metrics_data = [
-        [Paragraph("<b>Tests Attempted</b>", body_style), Paragraph("<b>Total Questions</b>", body_style), Paragraph("<b>Correct Answers</b>", body_style), Paragraph("<b>Average Score</b>", body_style)],
-        [Paragraph(str(perf.get('total_tests', 0)), body_style), Paragraph(str(perf.get('total_qs', 0)), body_style), Paragraph(str(perf.get('total_correct', 0)), body_style), Paragraph(f"{round(perf.get('avg_score', 0.0), 2)}", body_style)]
+        [
+            Paragraph("Tests Attempted", header_text_style), 
+            Paragraph("Total Questions", header_text_style), 
+            Paragraph("Correct Answers", header_text_style), 
+            Paragraph("Average Score", header_text_style)
+        ],
+        [
+            Paragraph(str(perf.get('total_tests', 0)), body_style), 
+            Paragraph(str(perf.get('total_qs', 0)), body_style), 
+            Paragraph(str(perf.get('total_correct', 0)), body_style), 
+            Paragraph(f"{round(perf.get('avg_score', 0.0), 2)}", body_style)
+        ]
     ]
     t_metrics = Table(metrics_data, colWidths=[135, 135, 135, 135])
     t_metrics.setStyle(TableStyle([
         ('BACKGROUND', (0, 0), (-1, 0), HexColor('#1A2B4C')),
-        ('TEXTCOLOR', (0, 0), (-1, 0), white),
         ('PADDING', (0, 0), (-1, -1), 6),
         ('ALIGN', (0, 0), (-1, -1), 'CENTER'),
         ('BOX', (0, 0), (-1, -1), 1, HexColor('#1A2B4C')),
@@ -133,15 +171,15 @@ def generate_profile_book_pdf(profile: Dict[str, Any]) -> io.BytesIO:
     elements.append(t_metrics)
     elements.append(Spacer(1, 12))
 
-    # 5. Date-Wise History Table
+    # 5. Date-Wise History Table (WITH FIXED WHITE HEADERS)
     elements.append(Paragraph("📅 Date-Wise Quiz History Summary", h2_style))
     if history:
         hist_table_data = [[
-            Paragraph("<b>Date</b>", body_style), 
-            Paragraph("<b>Quizzes</b>", body_style), 
-            Paragraph("<b>Questions</b>", body_style), 
-            Paragraph("<b>Correct</b>", body_style), 
-            Paragraph("<b>Avg Score</b>", body_style)
+            Paragraph("Date", header_text_style), 
+            Paragraph("Quizzes", header_text_style), 
+            Paragraph("Questions", header_text_style), 
+            Paragraph("Correct", header_text_style), 
+            Paragraph("Avg Score", header_text_style)
         ]]
         for h in history[:15]:
             hist_table_data.append([
@@ -154,7 +192,6 @@ def generate_profile_book_pdf(profile: Dict[str, Any]) -> io.BytesIO:
         t_hist = Table(hist_table_data, colWidths=[120, 100, 105, 105, 110])
         t_hist.setStyle(TableStyle([
             ('BACKGROUND', (0, 0), (-1, 0), HexColor('#2C3E50')),
-            ('TEXTCOLOR', (0, 0), (-1, 0), white),
             ('PADDING', (0, 0), (-1, -1), 5),
             ('BOX', (0, 0), (-1, -1), 1, HexColor('#2C3E50')),
             ('INNERGRID', (0, 0), (-1, -1), 0.5, HexColor('#E1E4E8')),

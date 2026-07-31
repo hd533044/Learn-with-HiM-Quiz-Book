@@ -55,19 +55,18 @@ async def help_command(update: Update, context: ContextTypes.DEFAULT_TYPE):
     if not await maintenance_guard(update, context): return
 
     msg = (
-        "🤖 **LEARN WITH HIM QUIZ BOOK — COMMAND DIRECTORY**\n"
-        "⚡ Powered by @LearnwithHiM\n"
-        "━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\n"
-        "Tap any button below for instant navigation or use slash commands:\n\n"
-        "• 🚀 **/quiz**: Start a new custom computer quiz\n"
-        "• 📖 **/profilebook**: View & download your official Profile Stats Card\n"
-        "• 👤 **/myprofile**: View your verified student card\n"
-        "• ✏️ **/editprofile**: Update profile details (1x / 30 days)\n"
-        "• 📊 **/mywholestate**: View detailed rank & percentile\n"
-        "• 🏆 **/toppername**: Inspect the global scholar leaderboard\n"
-        "• 💬 **/feedback**: Rate the bot or leave feedback\n"
-        "• 📖 **/reviews**: View student reviews\n"
-        "• 🤝 **/invite**: Share referral link to unlock +10 limit"
+        "🤖 **LEARN WITH HIM QUIZ BOOK — DIRECTORY**\n"
+        "⚡ *Powered by @LearnwithHiM*\n"
+        "━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\n\n"
+        "• 🚀 **/quiz** — Start a new computer quiz\n"
+        "• 📖 **/profilebook** — View & download Profile Stats Book\n"
+        "• 👤 **/myprofile** — View verified student card\n"
+        "• ✏️ **/editprofile** — Update profile details (1x / 30 days)\n"
+        "• 📊 **/mywholestate** — Detailed rank & percentile\n"
+        "• 🏆 **/toppername** — Global scholar leaderboard\n"
+        "• 💬 **/feedback** — Rate bot or leave feedback\n"
+        "• 📖 **/reviews** — View student reviews\n"
+        "• 🤝 **/invite** — Invite friends to unlock +10 limit"
     )
 
     buttons = [
@@ -94,35 +93,36 @@ async def profilebook_command(update: Update, context: ContextTypes.DEFAULT_TYPE
     rank = calculate_user_rank(user.id)
     percentile = calculate_user_percentile(user.id)
 
-    badge_str = "\n".join([f"• {b}" for b in badges])
+    badge_str = "\n".join([f"  • {b}" for b in badges])
     
     history_lines = []
     if history:
         for h in history[:5]:
-            history_lines.append(f"• `{h['date']}`: `{h['tests']}` Quizzes | Avg Score: `{h['avg_score']}`")
+            history_lines.append(f"  • `{h['date']}`: `{h['tests']}` Quizzes | Avg Score: `{h['avg_score']}`")
         hist_str = "\n".join(history_lines)
     else:
-        hist_str = "• *No quiz attempts recorded yet.*"
+        hist_str = "  • *No quiz attempts recorded yet.*"
 
     msg = (
-        f"⚡ **Powered by @LearnwithHiM**\n"
-        f"📖 **OFFICIAL STUDENT PROFILE STATS BOOK**\n"
-        f"━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\n"
-        f"👤 **Student Name:** {profile['full_name']}\n"
-        f"🎯 **Target Exam:** `{profile['target_exam']}`\n"
-        f"🚻 **Gender / Age:** `{profile['gender']}` / `{profile['age']}`\n"
-        f"📍 **Location:** `{profile.get('state', 'N/A')}, {profile.get('country', 'India')}`\n\n"
-        f"🏆 **Earned Scholar Badges:**\n"
+        f"📖 **STUDENT PROFILE STATS BOOK**\n"
+        f"⚡ *Powered by @LearnwithHiM*\n"
+        f"━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\n\n"
+        f"👤 **Student Personal Card**\n"
+        f"  • **Name:** {profile['full_name']}\n"
+        f"  • **Target Exam:** `{profile['target_exam']}`\n"
+        f"  • **Gender / Age:** `{profile['gender']}` / `{profile['age']}`\n"
+        f"  • **Location:** `{profile.get('state', 'N/A')}, {profile.get('country', 'India')}`\n\n"
+        f"🏆 **Earned Scholar Badges**\n"
         f"{badge_str}\n\n"
-        f"📊 **Overall Metrics:**\n"
-        f"• **Global Rank:** `{rank}` ({percentile}%)\n"
-        f"• **Quizzes Completed:** `{perf['total_tests']}`\n"
-        f"• **Total Questions:** `{perf['total_qs']}`\n"
-        f"• **Average Score:** `{round(perf['avg_score'], 2)}`\n\n"
-        f"📅 **Date-Wise Quiz Summary (Recent):**\n"
+        f"📊 **Overall Metrics**\n"
+        f"  • **Global Rank:** `{rank}` ({percentile}%)\n"
+        f"  • **Quizzes Completed:** `{perf['total_tests']}`\n"
+        f"  • **Total Questions:** `{perf['total_qs']}`\n"
+        f"  • **Average Score:** `{round(perf['avg_score'], 2)}`\n\n"
+        f"📅 **Recent Date-Wise Quiz Summary**\n"
         f"{hist_str}\n"
         f"━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\n"
-        f"👇 **Flex your stats! Download official PDF below:**"
+        f"👇 **Download your official PDF report card below:**"
     )
 
     buttons = [
@@ -177,22 +177,19 @@ async def myprofile_command(update: Update, context: ContextTypes.DEFAULT_TYPE):
     msg = (
         f"👤 **STUDENT PROFILE CARD**\n"
         f"⚡ *Powered by @LearnwithHiM*\n"
+        f"━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\n\n"
+        f"  • **Full Name:** {profile['full_name']}\n"
+        f"  • **Telegram ID:** `{profile['user_id']}`\n"
+        f"  • **Target Exam:** `{profile['target_exam']}`\n"
+        f"  • **Age / Gender:** `{profile['age']}` / `{profile['gender']}`\n"
+        f"  • **Location:** `{profile.get('state', 'N/A')}, {profile.get('country', 'India')}`\n"
+        f"  • **Phone:** `{profile['phone_number']}` *(Private)*\n\n"
+        f"📊 **Daily Quota Status**\n"
+        f"  • **Used Today:** `{today_used}` / `{allowed_limit}` Qs\n"
+        f"  • **Remaining Today:** `{remaining}` Qs\n"
+        f"  • **Referrals:** `{profile.get('referral_count', 0)}` / 4 friends\n"
         f"━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\n"
-        f"• **Full Name:** {profile['full_name']}\n"
-        f"• **Telegram ID:** `{profile['user_id']}`\n"
-        f"• **Target Exam:** `{profile['target_exam']}`\n"
-        f"• **Age / Gender:** `{profile['age']}` / `{profile['gender']}`\n"
-        f"• **Location:** `{profile.get('state', 'N/A')}, {profile.get('country', 'India')}`\n"
-        f"• **Phone:** `{profile['phone_number']}` *(Private)*\n\n"
-        f"📊 **Daily Quota Status:**\n"
-        f"• **Used Today:** `{today_used}` / `{allowed_limit}` Qs\n"
-        f"• **Remaining Today:** `{remaining}` Qs\n"
-        f"• **Referrals:** `{profile.get('referral_count', 0)}` / 4 friends\n"
-        f"━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\n"
-        f"👇 **Quick Navigation:**\n"
-        f"• `/profilebook` — View & download full Profile Book\n"
-        f"• `/mywholestate` — View academic stats & percentile\n"
-        f"• `/invite` — Invite friends to unlock +10 limit"
+        f"👇 **Quick Navigation:**"
     )
 
     buttons = [
@@ -218,20 +215,18 @@ async def wholestate_command(update: Update, context: ContextTypes.DEFAULT_TYPE)
 
     msg = (
         f"🎓 **STUDENT ACADEMIC REPORT CARD**\n"
-        f"⚡ Powered by @LearnwithHiM\n"
-        f"━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\n"
+        f"⚡ *Powered by @LearnwithHiM*\n"
+        f"━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\n\n"
         f"👤 **Name:** {profile['full_name']}\n"
         f"🎯 **Target Exam:** `{profile['target_exam']}`\n"
         f"📍 **Location:** `{profile.get('state', 'N/A')}, {profile.get('country', 'India')}`\n\n"
-        f"📈 **Performance Metrics:**\n"
-        f"• **Tests Completed:** `{perf.get('total_tests', 0)}`\n"
-        f"• **Questions Attempted:** `{perf.get('total_qs', 0)}`\n"
-        f"• **Global Rank:** `{rank}`\n"
-        f"• **Overall Percentile:** `{percentile}%` *(Calculated against all registered students)*\n"
+        f"📈 **Performance Metrics**\n"
+        f"  • **Tests Completed:** `{perf.get('total_tests', 0)}`\n"
+        f"  • **Questions Attempted:** `{perf.get('total_qs', 0)}`\n"
+        f"  • **Global Rank:** `{rank}`\n"
+        f"  • **Overall Percentile:** `{percentile}%` *(Calculated against all registered students)*\n"
         f"━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\n"
-        f"👇 **Quick Navigation:**\n"
-        f"• `/profilebook` — View & download Profile Book\n"
-        f"• `/toppername` — Check overall leaderboards"
+        f"👇 **Quick Navigation:**"
     )
 
     buttons = [
@@ -256,13 +251,11 @@ async def toppers_command(update: Update, context: ContextTypes.DEFAULT_TYPE):
 
     msg = (
         "🏆 **GLOBAL SCHOLAR LEADERBOARD**\n"
-        "⚡ Powered by @LearnwithHiM\n"
+        "⚡ *Powered by @LearnwithHiM*\n"
         "━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\n\n" 
         + "\n".join(lines) + 
         "\n\n━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\n"
-        "👇 **Quick Navigation:**\n"
-        "• `/profilebook` — View your badges & profile book\n"
-        "• `/quiz` — Attempt a quiz to improve rank"
+        "👇 **Quick Navigation:**"
     )
     buttons = [
         [InlineKeyboardButton("📖 Profile Book (/profilebook)", callback_data="cmd_profilebook"), InlineKeyboardButton("📊 My Stats (/mywholestate)", callback_data="cmd_wholestate")],
@@ -278,13 +271,13 @@ async def feedback_command(update: Update, context: ContextTypes.DEFAULT_TYPE):
         [InlineKeyboardButton("✨ Best preparation portal 🎓", callback_data="fb_p2")],
         [InlineKeyboardButton("🔥 Daily target limits keep me disciplined! 📈", callback_data="fb_p3")],
         [InlineKeyboardButton("✍️ Write Custom Feedback", callback_data="fb_custom")],
-        [InlineKeyboardButton("📖 See All Reviews (/reviews)", callback_data="cmd_viewfeedbacks")],
-        [InlineKeyboardButton("📖 Profile Book (/profilebook)", callback_data="cmd_profilebook"), InlineKeyboardButton("🚀 Quiz (/quiz)", callback_data="cmd_quiz")]
+        [InlineKeyboardButton("📖 Profile Book (/profilebook)", callback_data="cmd_profilebook"), InlineKeyboardButton("📖 See All Reviews (/reviews)", callback_data="cmd_viewfeedbacks")],
+        [InlineKeyboardButton("📊 My Stats (/mywholestate)", callback_data="cmd_wholestate"), InlineKeyboardButton("🚀 Quiz (/quiz)", callback_data="cmd_quiz")]
     ]
 
     msg = (
         "💬 **STUDENT FEEDBACK PORTAL**\n"
-        "⚡ Powered by @LearnwithHiM\n"
+        "⚡ *Powered by @LearnwithHiM*\n"
         "━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\n"
         "Your feedback helps Himanshu Sir make this platform even better!\n"
         "Select a quick preset rating below or write your own custom feedback:"
@@ -299,17 +292,12 @@ async def viewfeedbacks_command(update: Update, context: ContextTypes.DEFAULT_TY
         await send_response(update, "📖 No student reviews submitted yet. Be the first to leave feedback using /feedback!")
         return
 
-    lines = ["📖 **STUDENT REVIEWS & APPRECIATION BOARD**\n⚡ Powered by @LearnwithHiM\n━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\n"]
+    lines = ["📖 **STUDENT REVIEWS BOARD**\n⚡ *Powered by @LearnwithHiM*\n━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\n"]
     for idx, fb in enumerate(feedbacks, start=1):
         date_str = fb.get('submitted_at', '').split(' ')[0] if fb.get('submitted_at') else 'Verified Student'
         lines.append(f"**{idx}. {fb['full_name']}** (`{date_str}`):\n💬 *\"{fb['feedback_text']}\"*\n")
 
-    lines.append(
-        "━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\n"
-        "👇 **Quick Navigation:**\n"
-        "• `/feedback` — Leave your own review\n"
-        "• `/profilebook` — View your Profile Book"
-    )
+    lines.append("━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\n👇 **Quick Navigation:**")
 
     buttons = [
         [InlineKeyboardButton("💬 Write Review (/feedback)", callback_data="cmd_feedback"), InlineKeyboardButton("📖 Profile Book (/profilebook)", callback_data="cmd_profilebook")],
@@ -326,15 +314,13 @@ async def referral_command(update: Update, context: ContextTypes.DEFAULT_TYPE):
 
     msg = (
         f"🤝 **INVITE FRIENDS & UNLOCK +10 DAILY LIMIT**\n"
-        f"⚡ Powered by @LearnwithHiM\n"
+        f"⚡ *Powered by @LearnwithHiM*\n"
         f"━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\n"
         f"Share your personal invite link below with **4 friends**:\n"
         f"`{ref_link}`\n\n"
         f"When 4 friends register using your link, you automatically receive +10 questions added to your daily quota!\n"
         f"━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\n"
-        f"👇 **Quick Navigation:**\n"
-        f"• `/profilebook` — View your badges & profile book\n"
-        f"• `/quiz` — Attempt today's quiz limit"
+        f"👇 **Quick Navigation:**"
     )
     buttons = [
         [InlineKeyboardButton("📖 Profile Book (/profilebook)", callback_data="cmd_profilebook"), InlineKeyboardButton("🚀 Launch Quiz (/quiz)", callback_data="cmd_quiz")],
@@ -382,7 +368,7 @@ async def button_router(update: Update, context: ContextTypes.DEFAULT_TYPE):
         save_student_feedback(user.id, name, fb_text)
         
         post_fb_buttons = [
-            [InlineKeyboardButton("📖 See All Reviews (/reviews)", callback_data="cmd_viewfeedbacks"), InlineKeyboardButton("📖 Profile Book (/profilebook)", callback_data="cmd_profilebook")],
+            [InlineKeyboardButton("📖 Profile Book (/profilebook)", callback_data="cmd_profilebook"), InlineKeyboardButton("📖 See All Reviews (/reviews)", callback_data="cmd_viewfeedbacks")],
             [InlineKeyboardButton("📊 My Stats (/mywholestate)", callback_data="cmd_wholestate"), InlineKeyboardButton("🚀 Start Quiz (/quiz)", callback_data="cmd_quiz")]
         ]
         await query.edit_message_text(
@@ -414,7 +400,7 @@ async def handle_text_messages(update: Update, context: ContextTypes.DEFAULT_TYP
         save_student_feedback(user.id, name, text)
 
         post_fb_buttons = [
-            [InlineKeyboardButton("📖 See All Reviews (/reviews)", callback_data="cmd_viewfeedbacks"), InlineKeyboardButton("📖 Profile Book (/profilebook)", callback_data="cmd_profilebook")],
+            [InlineKeyboardButton("📖 Profile Book (/profilebook)", callback_data="cmd_profilebook"), InlineKeyboardButton("📖 See All Reviews (/reviews)", callback_data="cmd_viewfeedbacks")],
             [InlineKeyboardButton("📊 My Stats (/mywholestate)", callback_data="cmd_wholestate"), InlineKeyboardButton("🚀 Start Quiz (/quiz)", callback_data="cmd_quiz")]
         ]
         await update.message.reply_text(

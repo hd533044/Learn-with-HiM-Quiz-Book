@@ -1,78 +1,90 @@
-from app.database import get_db
+import sqlite3
+from app.database import get_db_connection
 
 def get_overall_leaderboard(limit: int = 10):
-    """Calculates privacy-safe leaderboard showing ONLY user full name and average score."""
-    with get_db() as conn:
-        query = """
-        SELECT u.full_name, AVG(q.score) as avg_score, COUNT(q.id) as total_tests
+    """Calculates top scholars based on average quiz score."""
+    conn = get_db_connection()
+    cursor = conn.cursor()
+    
+    cursor.execute("""
+        SELECT u.full_name, AVG(CAST(q.score AS FLOAT)) as avg_score, COUNT(q.id) as total_tests
         FROM quiz_attempts q
-        JOIN users u ON q.user_id = u.user_id
+        JOIN user_profiles u ON q.user_id = u.user_id
         GROUP BY q.user_id
-        ORDER BY avg_score DESC
+        HAVING total_tests >= 1
+        ORDER BY avg_score DESC, total_tests DESC
         LIMIT ?
-        """
-        rows = conn.execute(query, (limit,)).fetchall()
-        return [dict(r) for r in rows]
-
-def calculate_user_percentile(user_id: int) -> float:
-    """Calculates accurate student percentile based on average score compared to total students."""
-    with get_db() as conn:
-        all_scores = conn.execute("""
-            SELECT user_id, AVG(score) as avg_score 
-            FROM quiz_attempts 
-            GROUP BY user_id 
-            ORDER BY avg_score ASC
-        """).fetchall()
-        
-        if not all_scores:
-            return 100.0
-
-        total_students = len(all_scores)
-        user_avg = 0.0
-        students_below = 0
-
-        for row in all_scores:
-            if row['user_id'] == user_id:
-                user_avg = row['avg_score']
-                break
-
-        for row in all_scores:
-            if row['avg_score'] < user_avg:
-                students_below += 1
-
-        if total_students == 1:
-            return 100.0
-
-        percentile = (students_below / (total_students - 1)) * 100.0
-        return round(percentile, 2)
+    """, (limit,))
+    
+    rows = cursor.fetchall()
+    conn.close()
+    return [dict(r) for r in rows]
 
 def calculate_user_rank(user_id: int) -> str:
-    with get_db() as conn:
-        rows = conn.execute("""
-            SELECT user_id, AVG(score) as avg_score,
-                   RANK() OVER (ORDER BY AVG(score) DESC) as rank_pos
-            FROM quiz_attempts
-            GROUP BY user_id
-        """).fetchall()
-        
-        for row in rows:
-            if row['user_id'] == user_id:
-                pos = row['rank_pos']
-                badge = " 🥇" if pos == 1 else " 🥈" if pos == 2 else " 🥉" if pos == 3 else ""
-                return f"#{pos}{badge}"
-        return "N/A"
+    """Calculates user's global leaderboard rank position."""
+    conn = get_db_connection()
+    cursor = conn.cursor()
+    
+    cursor.execute("""
+        SELECT q.user_id, AVG(CAST(q.score AS FLOAT)) as avg_score
+        FROM quiz_attempts q
+        GROUP BY q.user_id
+        ORDER BY avg_score DESC
+    """)
+    
+    all_users = cursor.fetchall()
+    conn.close()
+
+    for rank, row in enumerate(all_users, start=1):
+        if row["user_id"] == user_id:
+            return f"#{rank}"
+            
+    return "Unranked"
+
+def calculate_user_percentile(user_id: int) -> float:
+    """Calculates user performance percentile against all registered scholars."""
+    conn = get_db_connection()
+    cursor = conn.cursor()
+    
+    cursor.execute("SELECT AVG(CAST(score AS FLOAT)) as user_avg FROM quiz_attempts WHERE user_id = ?", (user_id,))
+    u_row = cursor.fetchone()
+    
+    if not u_row or u_row["user_avg"] is None:
+        conn.close()
+        return 0.0
+
+    user_avg = u_row["user_avg"]
+
+    cursor.execute("SELECT AVG(CAST(score AS FLOAT)) as avg_score FROM quiz_attempts GROUP BY user_id")
+    all_avgs = [r["avg_score"] for r in cursor.fetchall()]
+    conn.close()
+
+    if not all_avgs:
+        return 100.0
+
+    below_count = sum(1 for a in all_avgs if a < user_avg)
+    percentile = (below_count / len(all_avgs)) * 100
+    return round(percentile, 1)
 
 def get_user_performance_summary(user_id: int):
-    with get_db() as conn:
-        row = conn.execute("""
-            SELECT COUNT(*) as total_tests,
-                   SUM(total_questions) as total_qs,
-                   SUM(correct_answers) as total_correct,
-                   SUM(wrong_answers) as total_wrong,
-                   SUM(skipped_count) as total_skipped,
-                   AVG(score) as avg_score
-            FROM quiz_attempts
-            WHERE user_id = ?
-        """, (user_id,)).fetchone()
+    """Retrieves total tests and questions attempted by user."""
+    conn = get_db_connection()
+    cursor = conn.cursor()
+    
+    cursor.execute("""
+        SELECT COUNT(id) as total_tests, SUM(total_questions) as total_qs, SUM(score) as total_score
+        FROM quiz_attempts
+        WHERE user_id = ?
+    """, (user_id,))
+    
+    row = cursor.fetchone()
+    conn.close()
+    
+    if not row or not row["total_tests"]:
+        return {"total_tests": 0, "total_qs": 0, "total_score": 0}
         
-        return dict(row) if row else {}
+    return {
+        "total_tests": row["total_tests"],
+        "total_qs": row["total_qs"] or 0,
+        "total_score": row["total_score"] or 0
+    }

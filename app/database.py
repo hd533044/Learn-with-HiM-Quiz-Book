@@ -39,7 +39,7 @@ def generate_unique_student_id() -> str:
             return candidate
 
 def generate_4digit_pass() -> str:
-    """Generates a 4-digit alphanumeric upper-case password."""
+    """Generates a 4-digit uppercase alphanumeric password."""
     chars = string.ascii_uppercase + string.digits
     return "".join(random.choices(chars, k=4))
 
@@ -70,7 +70,7 @@ def init_db():
         )
     ''')
     
-    # Schema migrations
+    # Schema migrations for safety
     cursor.execute("PRAGMA table_info(users)")
     cols = [r[1] for r in cursor.fetchall()]
     if 'student_id' not in cols:
@@ -139,8 +139,28 @@ def init_db():
     conn.commit()
     conn.close()
 
+def can_user_edit_profile(user_id: int) -> tuple:
+    """Checks if 30 days have passed since the user's last profile edit."""
+    conn = get_db()
+    cursor = conn.cursor()
+    cursor.execute("SELECT last_profile_edit FROM users WHERE user_id = ?", (user_id,))
+    row = cursor.fetchone()
+    conn.close()
+
+    if not row or not row['last_profile_edit']:
+        return True, 0
+
+    try:
+        last_edit_date = datetime.strptime(row['last_profile_edit'].split(" ")[0], "%Y-%m-%d")
+        days_passed = (datetime.now() - last_edit_date).days
+        if days_passed >= 30:
+            return True, 0
+        return False, 30 - days_passed
+    except Exception:
+        return True, 0
+
 def sync_user_unique_file(user_id: int):
-    """Creates & updates the user's JSON file in data/user_profiles/{student_id}.json."""
+    """Generates/updates JSON file in data/user_profiles/{student_id}.json."""
     conn = get_db()
     cursor = conn.cursor()
     
@@ -237,7 +257,6 @@ def save_user_profile(user_id, full_name, username, phone, target_exam, age, gen
     return student_id, login_pass
 
 def touch_user_activity(user_id: int):
-    """Updates the user's last active timestamp."""
     conn = get_db()
     cursor = conn.cursor()
     now_epoch = int(datetime.now().timestamp())
@@ -246,7 +265,6 @@ def touch_user_activity(user_id: int):
     conn.close()
 
 def is_user_session_expired(user_id: int) -> bool:
-    """Checks if the user has been inactive for more than 4 hours (14400 seconds)."""
     conn = get_db()
     cursor = conn.cursor()
     cursor.execute("SELECT last_active_epoch FROM users WHERE user_id = ?", (user_id,))
@@ -261,7 +279,6 @@ def is_user_session_expired(user_id: int) -> bool:
     return (now_epoch - row['last_active_epoch']) > four_hours_sec
 
 def verify_student_login(student_id: str, login_pass: str) -> dict:
-    """Verifies student_id and password for 4-hour re-login."""
     conn = get_db()
     cursor = conn.cursor()
     cursor.execute("SELECT * FROM users WHERE student_id = ? AND login_pass = ?", (student_id.strip(), login_pass.strip().upper()))

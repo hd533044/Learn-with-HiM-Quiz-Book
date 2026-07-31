@@ -3,7 +3,7 @@ import logging
 import time
 from telegram import Update, Poll, InlineKeyboardMarkup, InlineKeyboardButton
 from telegram.ext import ContextTypes
-from app.config import DAILY_QUESTION_LIMIT, CHANNEL_USERNAME, YOUTUBE_CHANNEL_URL, PRIMARY_ADMIN_ID
+from app.config import DAILY_QUESTION_LIMIT, PRIMARY_ADMIN_ID
 from app.database import (
     get_today_attempts, get_seen_question_ids, 
     mark_questions_as_seen, record_quiz_result, get_ist_timestamp_str, 
@@ -293,8 +293,10 @@ async def send_next_question(chat_id: int, user_id: int, context: ContextTypes.D
 
     q = session["questions"][session["current_index"]]
     timer_sec = session["timer_sec"]
+    current_q_num = session['current_index'] + 1
+    total_q_num = session['total']
 
-    header_text = f"🖥 [Q {session['current_index']+1}/{session['total']}]\n\n{q['question']}"
+    header_text = f"🖥 [Q {current_q_num}/{total_q_num}]\n\n{q['question']}"
     if len(header_text) > 300:
         header_text = header_text[:297] + "..."
 
@@ -321,12 +323,14 @@ async def send_next_question(chat_id: int, user_id: int, context: ContextTypes.D
         poll_id = poll_msg.poll.id
         POLL_MAP[poll_id] = {"user_id": user_id, "chat_id": chat_id, "q_idx": session["current_index"], "correct_id": correct_id}
 
-        # INLINE CONTROL BUTTONS UNDER RUNNING QUESTION POLL
-        await context.bot.send_message(
-            chat_id=chat_id,
-            text="You can Pause/Resume.",
-            reply_markup=get_pause_resume_keyboard()
-        )
+        # CONDITIONAL SHOW: Show inline buttons ONLY IF it's NOT the last question!
+        is_last_question = (current_q_num == total_q_num)
+        if not is_last_question:
+            await context.bot.send_message(
+                chat_id=chat_id,
+                text="You can Pause/Resume.",
+                reply_markup=get_pause_resume_keyboard()
+            )
 
         if user_id in TIMER_TASKS and not TIMER_TASKS[user_id].done():
             TIMER_TASKS[user_id].cancel()

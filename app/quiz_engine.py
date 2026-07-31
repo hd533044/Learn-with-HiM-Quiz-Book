@@ -336,29 +336,31 @@ async def auto_skip_task(chat_id: int, user_id: int, poll_id: str, expected_idx:
     await asyncio.sleep(timer_sec + 1)
     if poll_id in POLL_MAP:
         POLL_MAP.pop(poll_id, None)
-        session = ACTIVE_SESSIONS.get(user_id)
-        if session and not session.get("is_paused") and session["current_index"] == expected_idx:
-            session["skipped"] += 1
-            session["current_index"] += 1
-            if session["current_index"] >= session["total"]:
-                await finish_quiz_and_send_report(chat_id, user_id, context)
-            else:
-                await send_next_question(chat_id, user_id, context)
+    
+    session = ACTIVE_SESSIONS.get(user_id)
+    if session and not session.get("is_paused") and session["current_index"] == expected_idx:
+        session["skipped"] += 1
+        session["current_index"] += 1
+        if session["current_index"] >= session["total"]:
+            await finish_quiz_and_send_report(chat_id, user_id, context)
+        else:
+            await send_next_question(chat_id, user_id, context)
 
 async def handle_poll_answer(update: Update, context: ContextTypes.DEFAULT_TYPE):
     answer = update.poll_answer
     poll_id = answer.poll_id
     
-    # Fallback lookup if poll_id isn't directly tracked, or use user identification
+    # HARDENED FALLBACK: Extract user_id directly from poll_answer object
     user_id = answer.user.id if answer.user else None
-    
-    # Check if poll_id is in POLL_MAP
+    if not user_id:
+        return
+
+    # Try mapping via poll_id first, fallback directly to active user session if poll_id dropped
     if poll_id in POLL_MAP:
         data = POLL_MAP.pop(poll_id)
         user_id = data["user_id"]
         chat_id = data["chat_id"]
     else:
-        # Fallback for active session matching
         session = ACTIVE_SESSIONS.get(user_id)
         if not session:
             return
@@ -386,6 +388,7 @@ async def handle_poll_answer(update: Update, context: ContextTypes.DEFAULT_TYPE)
 
         session["current_index"] += 1
         
+        # Unconditional check to immediately dispatch the score card on completion
         if session["current_index"] >= session["total"]:
             await finish_quiz_and_send_report(chat_id, user_id, context)
         else:

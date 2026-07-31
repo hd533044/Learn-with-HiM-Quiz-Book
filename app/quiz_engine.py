@@ -322,7 +322,6 @@ async def send_next_question(chat_id: int, user_id: int, context: ContextTypes.D
         poll_id = poll_msg.poll.id
         POLL_MAP[poll_id] = {"user_id": user_id, "chat_id": chat_id, "q_idx": session["current_index"], "correct_id": correct_id}
 
-        # Updated text string directly above the buttons
         await context.bot.send_message(
             chat_id=chat_id,
             text="You can Pause/Resume.",
@@ -381,6 +380,7 @@ async def handle_poll_answer(update: Update, context: ContextTypes.DEFAULT_TYPE)
         await send_next_question(chat_id, user_id, context)
 
 async def finish_quiz_and_send_report(chat_id: int, user_id: int, context: ContextTypes.DEFAULT_TYPE):
+    """GENERATES AND SENDS COMPLETE DETAILED REPORT CARD AT QUIZ END."""
     session = ACTIVE_SESSIONS.pop(user_id, None)
     if not session:
         return
@@ -390,33 +390,65 @@ async def finish_quiz_and_send_report(chat_id: int, user_id: int, context: Conte
     wrong = session["wrong"]
     skipped = session["skipped"]
     score = session["score"]
+    attempted = correct + wrong
 
-    record_quiz_result(user_id, score=score, total_questions=total, correct_count=correct, wrong_count=wrong, skipped_count=skipped)
+    # Save test results to SQLite & sync user JSON file
+    record_quiz_result(
+        user_id=user_id, 
+        score=score, 
+        total_questions=total, 
+        correct_count=correct, 
+        wrong_count=wrong, 
+        skipped_count=skipped
+    )
 
     percentile = calculate_user_percentile(user_id)
     rank_str = calculate_user_rank(user_id)
+    profile = get_user_profile(user_id)
+    student_name = profile.get("full_name", "Student") if profile else "Student"
+
+    # Percentage Accuracy
+    accuracy = round((correct / max(1, attempted)) * 100, 1) if attempted > 0 else 0.0
+
+    # Custom Motivational Message based on Performance
+    if accuracy >= 80:
+        motivation_note = "🌟 **Outstanding Performance!** Keep up the fantastic momentum—you are on track to top your exam!"
+    elif accuracy >= 50:
+        motivation_note = "📈 **Good Progress!** Continuous practice is the key to perfection. Keep revising daily!"
+    else:
+        motivation_note = "💪 **Don't Get Discouraged!** Every mistake is a learning step. Re-read your notes and try again!"
 
     report_card = (
         f"🏆 **OFFICIAL QUIZ REPORT CARD**\n"
         f"📚 *Learn with HiM Quiz Book by Himanshu Sir*\n"
         f"━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\n"
+        f"👤 **Student Name:** {student_name}\n"
         f"📅 **Attempted At:** `{session['start_time']}`\n\n"
-        f"📊 **Performance Breakdown:**\n"
+        f"📊 **DETAILED RESULT ANALYSIS:**\n"
         f"• **Total Questions:** `{total}`\n"
-        f"• **Correct Answers:** `{correct}` ✅\n"
-        f"• **Wrong Answers:** `{wrong}` ❌\n"
-        f"• **Skipped Questions:** `{skipped}` ⏭\n"
-        f"• **Final Score:** `{score} / {total}`\n\n"
-        f"🎖 **Overall Rank & Percentile:**\n"
+        f"• **Total Attempted:** `{attempted}` / `{total}` Qs\n"
+        f"• **Total Correct:** `{correct}` ✅\n"
+        f"• **Total Wrong:** `{wrong}` ❌\n"
+        f"• **Total Skipped:** `{skipped}` ⏭\n"
+        f"• **Accuracy Rate:** `{accuracy}%`🎯\n"
+        f"• **Final Marks:** `{score} / {total}` Marks\n\n"
+        f"🎖 **GLOBAL ACADEMIC STANDING:**\n"
         f"• **Global Rank:** `{rank_str}`\n"
-        f"• **Percentile Rating:** `{percentile}%`\n"
-        f"━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━"
+        f"• **Overall Percentile:** `{percentile}%`\n"
+        f"━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\n"
+        f"{motivation_note}\n"
+        f"*Keep it up and continue your preparation like this!* 🔥"
     )
 
     buttons = [
         [InlineKeyboardButton("📢 Join Telegram Channel", url=f"https://t.me/{CHANNEL_USERNAME.replace('@', '')}")],
-        [InlineKeyboardButton("📺 Join YouTube Channel", url=YOUTUBE_CHANNEL_URL)],
+        [InlineKeyboardButton("📺 Join YouTube Portal", url=YOUTUBE_CHANNEL_URL)],
         [InlineKeyboardButton("🚀 Attempt Another Quiz", callback_data="cmd_quiz")]
     ]
 
-    await context.bot.send_message(chat_id=chat_id, text=report_card, reply_markup=InlineKeyboardMarkup(buttons), parse_mode="Markdown")
+    await context.bot.send_message(
+        chat_id=chat_id, 
+        text=report_card, 
+        reply_markup=InlineKeyboardMarkup(buttons), 
+        parse_mode="Markdown"
+    )

@@ -13,6 +13,8 @@ from app.database import (
 from app.pyq_fetcher import fetch_pyqs_for_quiz
 from app.stats import calculate_user_percentile, calculate_user_rank
 
+logger = logging.getLogger(__name__)
+
 ACTIVE_SESSIONS = {}
 POLL_MAP = {}
 TIMER_TASKS = {}
@@ -66,6 +68,7 @@ async def launch_quiz_setup(update: Update, context: ContextTypes.DEFAULT_TYPE):
     attempted_today = get_today_attempts(user.id)
     allowed_limit = DAILY_QUESTION_LIMIT + profile.get("bonus_quota", 0)
 
+    # UNLIMITED ADMIN ACCESS
     if attempted_today >= allowed_limit and user.id != PRIMARY_ADMIN_ID:
         await update.message.reply_text(
             f"🛑 **Daily Limit Reached!**\n\n"
@@ -149,6 +152,7 @@ async def quiz_timer_callback(update: Update, context: ContextTypes.DEFAULT_TYPE
         "total": len(questions),
         "timer_sec": timer_sec,
         "is_paused": False,
+        "finishing": False,
         "start_time": get_ist_timestamp_str()
     }
     ACTIVE_SESSIONS[user_id] = session
@@ -242,6 +246,7 @@ async def resume_quiz_command(update: Update, context: ContextTypes.DEFAULT_TYPE
         "total": paused["total"],
         "timer_sec": paused["timer_sec"],
         "is_paused": False,
+        "finishing": False,
         "start_time": paused["start_time"]
     }
     ACTIVE_SESSIONS[user_id] = session
@@ -324,7 +329,7 @@ async def send_next_question(chat_id: int, user_id: int, context: ContextTypes.D
 
         TIMER_TASKS[user_id] = asyncio.create_task(auto_skip_task(chat_id, user_id, poll_id, session["current_index"], timer_sec, context))
     except Exception as e:
-        logging.error(f"Error sending poll: {e}")
+        logger.error(f"Error sending poll to chat {chat_id}: {e}")
         session["skipped"] += 1
         session["current_index"] += 1
         if session["current_index"] >= session["total"]:
@@ -338,7 +343,7 @@ async def auto_skip_task(chat_id: int, user_id: int, poll_id: str, expected_idx:
         POLL_MAP.pop(poll_id, None)
     
     session = ACTIVE_SESSIONS.get(user_id)
-    if session and not session.get("is_paused") and session["current_index"] == expected_idx:
+    if session and not session.get("is_paused") and not session.get("finishing") and session["current_index"] == expected_idx:
         session["skipped"] += 1
         session["current_index"] += 1
         if session["current_index"] >= session["total"]:
@@ -350,21 +355,15 @@ async def handle_poll_answer(update: Update, context: ContextTypes.DEFAULT_TYPE)
     answer = update.poll_answer
     poll_id = answer.poll_id
     
-    # HARDENED FALLBACK: Extract user_id directly from poll_answer object
     user_id = answer.user.id if answer.user else None
     if not user_id:
         return
 
-    # Try mapping via poll_id first, fallback directly to active user session if poll_id dropped
+    chat_id = user_id  # In Telegram bots, private chat_id is always equal to user_id
+
     if poll_id in POLL_MAP:
         data = POLL_MAP.pop(poll_id)
-        user_id = data["user_id"]
-        chat_id = data["chat_id"]
-    else:
-        session = ACTIVE_SESSIONS.get(user_id)
-        if not session:
-            return
-        chat_id = session.get("chat_id", user_id)
+        chat_id = data.get("chat_id", user_id)
 
     if user_id in TIMER_TASKS and not TIMER_TASKS[user_id].done():
         TIMER_TASKS[user_id].cancel()
@@ -375,7 +374,7 @@ async def handle_poll_answer(update: Update, context: ContextTypes.DEFAULT_TYPE)
         return
 
     session = ACTIVE_SESSIONS.get(user_id)
-    if session and not session.get("is_paused"):
+    if session and not session.get("is_paused") and not session.get("finishing"):
         selected = answer.option_ids[0] if answer.option_ids else -1
         current_q = session["questions"][session["current_index"]]
         correct_id = current_q.get("correct_option", 0)
@@ -388,7 +387,6 @@ async def handle_poll_answer(update: Update, context: ContextTypes.DEFAULT_TYPE)
 
         session["current_index"] += 1
         
-        # Unconditional check to immediately dispatch the score card on completion
         if session["current_index"] >= session["total"]:
             await finish_quiz_and_send_report(chat_id, user_id, context)
         else:
@@ -396,9 +394,11 @@ async def handle_poll_answer(update: Update, context: ContextTypes.DEFAULT_TYPE)
 
 async def finish_quiz_and_send_report(chat_id: int, user_id: int, context: ContextTypes.DEFAULT_TYPE):
     """UNCONDITIONAL SAFEGUARD: Generates and forces delivery of the final competition report card."""
-    session = ACTIVE_SESSIONS.pop(user_id, None)
-    if not session:
+    session = ACTIVE_SESSIONS.get(user_id)
+    if not session or session.get("finishing"):
         return
+
+    session["finishing"] = True  # Thread lock to block duplicate calls
 
     total = session["total"]
     correct = session["correct"]
@@ -407,14 +407,18 @@ async def finish_quiz_and_send_report(chat_id: int, user_id: int, context: Conte
     score = session["score"]
     attempted = correct + wrong
 
-    record_quiz_result(
-        user_id=user_id, 
-        score=score, 
-        total_questions=total, 
-        correct_count=correct, 
-        wrong_count=wrong, 
-        skipped_count=skipped
-    )
+    # 1. Record in DB and JSON files
+    try:
+        record_quiz_result(
+            user_id=user_id, 
+            score=score, 
+            total_questions=total, 
+            correct_count=correct, 
+            wrong_count=wrong, 
+            skipped_count=skipped
+        )
+    except Exception as e:
+        logger.error(f"Error logging quiz result for user {user_id}: {e}")
 
     percentile = calculate_user_percentile(user_id)
     rank_str = calculate_user_rank(user_id)
@@ -460,12 +464,27 @@ async def finish_quiz_and_send_report(chat_id: int, user_id: int, context: Conte
         [InlineKeyboardButton("🚀 Start Fresh Quiz (/quiz)", callback_data="cmd_quiz")]
     ]
 
+    target_chat = chat_id if chat_id else user_id
+
     try:
         await context.bot.send_message(
-            chat_id=chat_id, 
+            chat_id=target_chat, 
             text=report_card, 
             reply_markup=InlineKeyboardMarkup(buttons), 
             parse_mode="Markdown"
         )
+        ACTIVE_SESSIONS.pop(user_id, None)  # Clean session memory ONLY after message successfully sends
     except Exception as e:
-        logging.error(f"Failed to deliver final score card to chat {chat_id}: {e}")
+        logger.error(f"Failed to deliver report card to {target_chat}: {e}")
+        # Secondary fallback directly targeting user_id
+        try:
+            await context.bot.send_message(
+                chat_id=user_id, 
+                text=report_card, 
+                reply_markup=InlineKeyboardMarkup(buttons), 
+                parse_mode="Markdown"
+            )
+            ACTIVE_SESSIONS.pop(user_id, None)
+        except Exception as ex:
+            logger.error(f"Fallback delivery also failed for user {user_id}: {ex}")
+            ACTIVE_SESSIONS.pop(user_id, None)

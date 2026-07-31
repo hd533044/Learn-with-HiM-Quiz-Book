@@ -447,7 +447,10 @@ def build_application() -> Application:
     app.add_handler(CallbackQueryHandler(button_router, pattern="^cmd_|^fb_"))
 
     app.add_handler(MessageHandler(filters.CONTACT | (filters.TEXT & ~filters.COMMAND), handle_text_and_contact_messages))
+    
+    # CRITICAL: Ensures poll answers are actively caught and routed to quiz_engine.py
     app.add_handler(PollAnswerHandler(handle_poll_answer))
+    
     app.add_error_handler(global_error_handler)
 
     return app

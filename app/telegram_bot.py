@@ -16,7 +16,11 @@ from app.database import (
 )
 from app.onboarding import get_onboarding_handler
 from app.quiz_engine import launch_quiz_setup, quiz_count_callback, quiz_timer_callback, handle_poll_answer
-from app.stats import get_overall_leaderboard, calculate_user_percentile, calculate_user_rank, get_user_performance_summary
+from app.stats import (
+    get_overall_leaderboard, calculate_user_percentile, calculate_user_rank, 
+    get_user_performance_summary, get_datewise_quiz_history, get_user_badges
+)
+from app.pdf_generator import generate_profile_book_pdf
 from app.admin import admin_portal_command, admin_callback_handler
 
 NEGATIVE_WORDS = ["bad", "worst", "useless", "trash", "fake", "hate", "terrible", "waste", "horrible", "fraud", "stupid", "scam"]
@@ -37,10 +41,6 @@ async def maintenance_guard(update: Update, context: ContextTypes.DEFAULT_TYPE) 
     return True
 
 async def send_response(update: Update, text: str, reply_markup=None):
-    """
-    CLEAN RESPONSE ENGINE:
-    Uses InlineKeyboardMarkup or ReplyKeyboardRemove() to ensure no persistent grid keyboards exist.
-    """
     if update.callback_query:
         await update.callback_query.answer()
         try:
@@ -56,9 +56,11 @@ async def help_command(update: Update, context: ContextTypes.DEFAULT_TYPE):
 
     msg = (
         "🤖 **LEARN WITH HIM QUIZ BOOK — COMMAND DIRECTORY**\n"
+        "⚡ Powered by @LearnwithHiM\n"
         "━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\n"
         "Tap any button below for instant navigation or use slash commands:\n\n"
         "• 🚀 **/quiz**: Start a new custom computer quiz\n"
+        "• 📖 **/profilebook**: View & download your official Profile Stats Card\n"
         "• 👤 **/myprofile**: View your verified student card\n"
         "• ✏️ **/editprofile**: Update profile details (1x / 30 days)\n"
         "• 📊 **/mywholestate**: View detailed rank & percentile\n"
@@ -69,13 +71,95 @@ async def help_command(update: Update, context: ContextTypes.DEFAULT_TYPE):
     )
 
     buttons = [
-        [InlineKeyboardButton("🚀 Start Quiz (/quiz)", callback_data="cmd_quiz"), InlineKeyboardButton("👤 Profile (/myprofile)", callback_data="cmd_profile")],
+        [InlineKeyboardButton("📖 Profile Book (/profilebook)", callback_data="cmd_profilebook"), InlineKeyboardButton("🚀 Start Quiz (/quiz)", callback_data="cmd_quiz")],
         [InlineKeyboardButton("📊 My Stats (/mywholestate)", callback_data="cmd_wholestate"), InlineKeyboardButton("🏆 Leaderboard (/toppername)", callback_data="cmd_toppers")],
         [InlineKeyboardButton("💬 Feedback (/feedback)", callback_data="cmd_feedback"), InlineKeyboardButton("📖 Reviews (/reviews)", callback_data="cmd_viewfeedbacks")],
         [InlineKeyboardButton("✏️ Edit Profile (/editprofile)", callback_data="cmd_editprofile"), InlineKeyboardButton("🤝 Invite Friends (/invite)", callback_data="cmd_referral")]
     ]
 
     await send_response(update, msg, reply_markup=InlineKeyboardMarkup(buttons))
+
+async def profilebook_command(update: Update, context: ContextTypes.DEFAULT_TYPE):
+    if not await maintenance_guard(update, context): return
+    user = update.effective_user
+    profile = get_user_profile(user.id)
+
+    if not profile:
+        await send_response(update, "⚠️ Please type /start to register first!")
+        return
+
+    perf = get_user_performance_summary(user.id)
+    history = get_datewise_quiz_history(user.id)
+    badges = get_user_badges(user.id)
+    rank = calculate_user_rank(user.id)
+    percentile = calculate_user_percentile(user.id)
+
+    badge_str = "\n".join([f"• {b}" for b in badges])
+    
+    history_lines = []
+    if history:
+        for h in history[:5]:
+            history_lines.append(f"• `{h['date']}`: `{h['tests']}` Quizzes | Avg Score: `{h['avg_score']}`")
+        hist_str = "\n".join(history_lines)
+    else:
+        hist_str = "• *No quiz attempts recorded yet.*"
+
+    msg = (
+        f"⚡ **Powered by @LearnwithHiM**\n"
+        f"📖 **OFFICIAL STUDENT PROFILE STATS BOOK**\n"
+        f"━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\n"
+        f"👤 **Student Name:** {profile['full_name']}\n"
+        f"🎯 **Target Exam:** `{profile['target_exam']}`\n"
+        f"🚻 **Gender / Age:** `{profile['gender']}` / `{profile['age']}`\n"
+        f"📍 **Location:** `{profile.get('state', 'N/A')}, {profile.get('country', 'India')}`\n\n"
+        f"🏆 **Earned Scholar Badges:**\n"
+        f"{badge_str}\n\n"
+        f"📊 **Overall Metrics:**\n"
+        f"• **Global Rank:** `{rank}` ({percentile}%)\n"
+        f"• **Quizzes Completed:** `{perf['total_tests']}`\n"
+        f"• **Total Questions:** `{perf['total_qs']}`\n"
+        f"• **Average Score:** `{round(perf['avg_score'], 2)}`\n\n"
+        f"📅 **Date-Wise Quiz Summary (Recent):**\n"
+        f"{hist_str}\n"
+        f"━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\n"
+        f"👇 **Flex your stats! Download official PDF below:**"
+    )
+
+    buttons = [
+        [InlineKeyboardButton("📥 Download Official PDF Report", callback_data=f"pdf_profilebook_{user.id}")],
+        [InlineKeyboardButton("📊 My Stats (/mywholestate)", callback_data="cmd_wholestate"), InlineKeyboardButton("🏆 Leaderboard (/toppername)", callback_data="cmd_toppers")],
+        [InlineKeyboardButton("🚀 Launch Quiz (/quiz)", callback_data="cmd_quiz"), InlineKeyboardButton("👤 Profile (/myprofile)", callback_data="cmd_profile")]
+    ]
+
+    await send_response(update, msg, reply_markup=InlineKeyboardMarkup(buttons))
+
+async def download_pdf_callback(update: Update, context: ContextTypes.DEFAULT_TYPE):
+    query = update.callback_query
+    await query.answer("📄 Generating your official PDF Stats Book...")
+
+    target_user_id = int(query.data.replace("pdf_profilebook_", ""))
+    profile = get_user_profile(target_user_id)
+
+    if not profile:
+        await query.message.reply_text("⚠️ Profile not found.")
+        return
+
+    pdf_buffer = generate_profile_book_pdf(profile)
+    file_name = f"Profile_Book_{profile['full_name'].replace(' ', '_')}.pdf"
+
+    await context.bot.send_document(
+        chat_id=query.message.chat_id,
+        document=pdf_buffer,
+        filename=file_name,
+        caption=(
+            f"📄 **OFFICIAL PROFILE STATS REPORT CARD**\n"
+            f"👤 **Student:** {profile['full_name']}\n"
+            f"🎯 **Target Exam:** `{profile['target_exam']}`\n\n"
+            f"⚡ **Powered by @LearnwithHiM**\n"
+            f"Keep practicing daily to unlock Gold & Diamond badges!"
+        ),
+        parse_mode="Markdown"
+    )
 
 async def myprofile_command(update: Update, context: ContextTypes.DEFAULT_TYPE):
     if not await maintenance_guard(update, context): return
@@ -92,7 +176,7 @@ async def myprofile_command(update: Update, context: ContextTypes.DEFAULT_TYPE):
 
     msg = (
         f"👤 **STUDENT PROFILE CARD**\n"
-        f"📚 *Learn with HiM Quiz Book*\n"
+        f"⚡ *Powered by @LearnwithHiM*\n"
         f"━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\n"
         f"• **Full Name:** {profile['full_name']}\n"
         f"• **Telegram ID:** `{profile['user_id']}`\n"
@@ -106,15 +190,15 @@ async def myprofile_command(update: Update, context: ContextTypes.DEFAULT_TYPE):
         f"• **Referrals:** `{profile.get('referral_count', 0)}` / 4 friends\n"
         f"━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\n"
         f"👇 **Quick Navigation:**\n"
+        f"• `/profilebook` — View & download full Profile Book\n"
         f"• `/mywholestate` — View academic stats & percentile\n"
-        f"• `/editprofile` — Edit profile details (1x/30 days)\n"
         f"• `/invite` — Invite friends to unlock +10 limit"
     )
 
     buttons = [
-        [InlineKeyboardButton("📊 My Stats (/mywholestate)", callback_data="cmd_wholestate"), InlineKeyboardButton("🏆 Leaderboard (/toppername)", callback_data="cmd_toppers")],
-        [InlineKeyboardButton("✏️ Edit Profile (/editprofile)", callback_data="cmd_editprofile"), InlineKeyboardButton("🤝 Invite Friends (/invite)", callback_data="cmd_referral")],
-        [InlineKeyboardButton("🚀 Launch Quiz (/quiz)", callback_data="cmd_quiz"), InlineKeyboardButton("📖 Reviews (/reviews)", callback_data="cmd_viewfeedbacks")]
+        [InlineKeyboardButton("📖 Profile Book (/profilebook)", callback_data="cmd_profilebook"), InlineKeyboardButton("📊 My Stats (/mywholestate)", callback_data="cmd_wholestate")],
+        [InlineKeyboardButton("🏆 Leaderboard (/toppername)", callback_data="cmd_toppers"), InlineKeyboardButton("✏️ Edit Profile (/editprofile)", callback_data="cmd_editprofile")],
+        [InlineKeyboardButton("🤝 Invite Friends (/invite)", callback_data="cmd_referral"), InlineKeyboardButton("🚀 Launch Quiz (/quiz)", callback_data="cmd_quiz")]
     ]
 
     await send_response(update, msg, reply_markup=InlineKeyboardMarkup(buttons))
@@ -134,26 +218,25 @@ async def wholestate_command(update: Update, context: ContextTypes.DEFAULT_TYPE)
 
     msg = (
         f"🎓 **STUDENT ACADEMIC REPORT CARD**\n"
+        f"⚡ Powered by @LearnwithHiM\n"
         f"━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\n"
         f"👤 **Name:** {profile['full_name']}\n"
         f"🎯 **Target Exam:** `{profile['target_exam']}`\n"
         f"📍 **Location:** `{profile.get('state', 'N/A')}, {profile.get('country', 'India')}`\n\n"
         f"📈 **Performance Metrics:**\n"
         f"• **Tests Completed:** `{perf.get('total_tests', 0)}`\n"
-        f"• **Total Quizzes Attempted:** `{perf.get('total_tests', 0)}` till date\n"
         f"• **Questions Attempted:** `{perf.get('total_qs', 0)}`\n"
         f"• **Global Rank:** `{rank}`\n"
         f"• **Overall Percentile:** `{percentile}%` *(Calculated against all registered students)*\n"
         f"━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\n"
         f"👇 **Quick Navigation:**\n"
-        f"• `/toppername` — Check overall leaderboards\n"
-        f"• `/myprofile` — View student profile card\n"
-        f"• `/feedback` — Rate & review this platform"
+        f"• `/profilebook` — View & download Profile Book\n"
+        f"• `/toppername` — Check overall leaderboards"
     )
 
     buttons = [
-        [InlineKeyboardButton("🏆 Leaderboard (/toppername)", callback_data="cmd_toppers"), InlineKeyboardButton("👤 Profile (/myprofile)", callback_data="cmd_profile")],
-        [InlineKeyboardButton("💬 Write Review (/feedback)", callback_data="cmd_feedback"), InlineKeyboardButton("📖 See Reviews (/reviews)", callback_data="cmd_viewfeedbacks")],
+        [InlineKeyboardButton("📖 Profile Book (/profilebook)", callback_data="cmd_profilebook"), InlineKeyboardButton("🏆 Leaderboard (/toppername)", callback_data="cmd_toppers")],
+        [InlineKeyboardButton("👤 Profile (/myprofile)", callback_data="cmd_profile"), InlineKeyboardButton("💬 Write Review (/feedback)", callback_data="cmd_feedback")],
         [InlineKeyboardButton("🚀 Launch Quiz (/quiz)", callback_data="cmd_quiz")]
     ]
     await send_response(update, msg, reply_markup=InlineKeyboardMarkup(buttons))
@@ -173,16 +256,17 @@ async def toppers_command(update: Update, context: ContextTypes.DEFAULT_TYPE):
 
     msg = (
         "🏆 **GLOBAL SCHOLAR LEADERBOARD**\n"
+        "⚡ Powered by @LearnwithHiM\n"
         "━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\n\n" 
         + "\n".join(lines) + 
         "\n\n━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\n"
         "👇 **Quick Navigation:**\n"
-        "• `/mywholestate` — Compare your rank & percentile\n"
+        "• `/profilebook` — View your badges & profile book\n"
         "• `/quiz` — Attempt a quiz to improve rank"
     )
     buttons = [
-        [InlineKeyboardButton("📊 My Stats (/mywholestate)", callback_data="cmd_wholestate"), InlineKeyboardButton("👤 Profile (/myprofile)", callback_data="cmd_profile")],
-        [InlineKeyboardButton("🚀 Launch Quiz (/quiz)", callback_data="cmd_quiz"), InlineKeyboardButton("💬 Write Review (/feedback)", callback_data="cmd_feedback")]
+        [InlineKeyboardButton("📖 Profile Book (/profilebook)", callback_data="cmd_profilebook"), InlineKeyboardButton("📊 My Stats (/mywholestate)", callback_data="cmd_wholestate")],
+        [InlineKeyboardButton("👤 Profile (/myprofile)", callback_data="cmd_profile"), InlineKeyboardButton("🚀 Launch Quiz (/quiz)", callback_data="cmd_quiz")]
     ]
     await send_response(update, msg, reply_markup=InlineKeyboardMarkup(buttons))
 
@@ -195,11 +279,12 @@ async def feedback_command(update: Update, context: ContextTypes.DEFAULT_TYPE):
         [InlineKeyboardButton("🔥 Daily target limits keep me disciplined! 📈", callback_data="fb_p3")],
         [InlineKeyboardButton("✍️ Write Custom Feedback", callback_data="fb_custom")],
         [InlineKeyboardButton("📖 See All Reviews (/reviews)", callback_data="cmd_viewfeedbacks")],
-        [InlineKeyboardButton("📊 My Stats (/mywholestate)", callback_data="cmd_wholestate"), InlineKeyboardButton("🚀 Quiz (/quiz)", callback_data="cmd_quiz")]
+        [InlineKeyboardButton("📖 Profile Book (/profilebook)", callback_data="cmd_profilebook"), InlineKeyboardButton("🚀 Quiz (/quiz)", callback_data="cmd_quiz")]
     ]
 
     msg = (
         "💬 **STUDENT FEEDBACK PORTAL**\n"
+        "⚡ Powered by @LearnwithHiM\n"
         "━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\n"
         "Your feedback helps Himanshu Sir make this platform even better!\n"
         "Select a quick preset rating below or write your own custom feedback:"
@@ -214,7 +299,7 @@ async def viewfeedbacks_command(update: Update, context: ContextTypes.DEFAULT_TY
         await send_response(update, "📖 No student reviews submitted yet. Be the first to leave feedback using /feedback!")
         return
 
-    lines = ["📖 **STUDENT REVIEWS & APPRECIATION BOARD**\n━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\n"]
+    lines = ["📖 **STUDENT REVIEWS & APPRECIATION BOARD**\n⚡ Powered by @LearnwithHiM\n━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\n"]
     for idx, fb in enumerate(feedbacks, start=1):
         date_str = fb.get('submitted_at', '').split(' ')[0] if fb.get('submitted_at') else 'Verified Student'
         lines.append(f"**{idx}. {fb['full_name']}** (`{date_str}`):\n💬 *\"{fb['feedback_text']}\"*\n")
@@ -223,13 +308,12 @@ async def viewfeedbacks_command(update: Update, context: ContextTypes.DEFAULT_TY
         "━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\n"
         "👇 **Quick Navigation:**\n"
         "• `/feedback` — Leave your own review\n"
-        "• `/toppername` — View global leaderboards\n"
-        "• `/quiz` — Start a practice quiz"
+        "• `/profilebook` — View your Profile Book"
     )
 
     buttons = [
-        [InlineKeyboardButton("💬 Write Review (/feedback)", callback_data="cmd_feedback"), InlineKeyboardButton("🚀 Launch Quiz (/quiz)", callback_data="cmd_quiz")],
-        [InlineKeyboardButton("🏆 Leaderboard (/toppername)", callback_data="cmd_toppers"), InlineKeyboardButton("📊 My Stats (/mywholestate)", callback_data="cmd_wholestate")]
+        [InlineKeyboardButton("💬 Write Review (/feedback)", callback_data="cmd_feedback"), InlineKeyboardButton("📖 Profile Book (/profilebook)", callback_data="cmd_profilebook")],
+        [InlineKeyboardButton("🚀 Launch Quiz (/quiz)", callback_data="cmd_quiz"), InlineKeyboardButton("🏆 Leaderboard (/toppername)", callback_data="cmd_toppers")]
     ]
 
     await send_response(update, "\n".join(lines), reply_markup=InlineKeyboardMarkup(buttons))
@@ -242,18 +326,19 @@ async def referral_command(update: Update, context: ContextTypes.DEFAULT_TYPE):
 
     msg = (
         f"🤝 **INVITE FRIENDS & UNLOCK +10 DAILY LIMIT**\n"
+        f"⚡ Powered by @LearnwithHiM\n"
         f"━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\n"
         f"Share your personal invite link below with **4 friends**:\n"
         f"`{ref_link}`\n\n"
         f"When 4 friends register using your link, you automatically receive +10 questions added to your daily quota!\n"
         f"━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\n"
         f"👇 **Quick Navigation:**\n"
-        f"• `/myprofile` — View your active daily quota status\n"
+        f"• `/profilebook` — View your badges & profile book\n"
         f"• `/quiz` — Attempt today's quiz limit"
     )
     buttons = [
-        [InlineKeyboardButton("👤 View Profile (/myprofile)", callback_data="cmd_profile"), InlineKeyboardButton("🚀 Launch Quiz (/quiz)", callback_data="cmd_quiz")],
-        [InlineKeyboardButton("📊 My Stats (/mywholestate)", callback_data="cmd_wholestate"), InlineKeyboardButton("🏆 Leaderboard (/toppername)", callback_data="cmd_toppers")]
+        [InlineKeyboardButton("📖 Profile Book (/profilebook)", callback_data="cmd_profilebook"), InlineKeyboardButton("🚀 Launch Quiz (/quiz)", callback_data="cmd_quiz")],
+        [InlineKeyboardButton("👤 View Profile (/myprofile)", callback_data="cmd_profile"), InlineKeyboardButton("🏆 Leaderboard (/toppername)", callback_data="cmd_toppers")]
     ]
     await send_response(update, msg, reply_markup=InlineKeyboardMarkup(buttons))
 
@@ -268,6 +353,8 @@ async def button_router(update: Update, context: ContextTypes.DEFAULT_TYPE):
         await launch_quiz_setup(update, context)
     elif data == "cmd_profile":
         await myprofile_command(update, context)
+    elif data == "cmd_profilebook":
+        await profilebook_command(update, context)
     elif data == "cmd_toppers":
         await toppers_command(update, context)
     elif data == "cmd_wholestate":
@@ -281,6 +368,8 @@ async def button_router(update: Update, context: ContextTypes.DEFAULT_TYPE):
     elif data == "cmd_editprofile":
         from app.onboarding import edit_profile_command
         await edit_profile_command(update, context)
+    elif data.startswith("pdf_profilebook_"):
+        await download_pdf_callback(update, context)
     elif data.startswith("fb_p"):
         presets = {
             "fb_p1": "10/10 Bot! The quizzes are top quality 🚀",
@@ -293,8 +382,8 @@ async def button_router(update: Update, context: ContextTypes.DEFAULT_TYPE):
         save_student_feedback(user.id, name, fb_text)
         
         post_fb_buttons = [
-            [InlineKeyboardButton("📖 See All Reviews (/reviews)", callback_data="cmd_viewfeedbacks"), InlineKeyboardButton("🚀 Start Quiz (/quiz)", callback_data="cmd_quiz")],
-            [InlineKeyboardButton("📊 My Stats (/mywholestate)", callback_data="cmd_wholestate"), InlineKeyboardButton("🏆 Leaderboard (/toppername)", callback_data="cmd_toppers")]
+            [InlineKeyboardButton("📖 See All Reviews (/reviews)", callback_data="cmd_viewfeedbacks"), InlineKeyboardButton("📖 Profile Book (/profilebook)", callback_data="cmd_profilebook")],
+            [InlineKeyboardButton("📊 My Stats (/mywholestate)", callback_data="cmd_wholestate"), InlineKeyboardButton("🚀 Start Quiz (/quiz)", callback_data="cmd_quiz")]
         ]
         await query.edit_message_text(
             f"🎉 **Thank you, {name}!** Your feedback has been recorded:\n\n💬 *\"{fb_text}\"*\n\n"
@@ -325,8 +414,8 @@ async def handle_text_messages(update: Update, context: ContextTypes.DEFAULT_TYP
         save_student_feedback(user.id, name, text)
 
         post_fb_buttons = [
-            [InlineKeyboardButton("📖 See All Reviews (/reviews)", callback_data="cmd_viewfeedbacks"), InlineKeyboardButton("🚀 Start Quiz (/quiz)", callback_data="cmd_quiz")],
-            [InlineKeyboardButton("📊 My Stats (/mywholestate)", callback_data="cmd_wholestate"), InlineKeyboardButton("🏆 Leaderboard (/toppername)", callback_data="cmd_toppers")]
+            [InlineKeyboardButton("📖 See All Reviews (/reviews)", callback_data="cmd_viewfeedbacks"), InlineKeyboardButton("📖 Profile Book (/profilebook)", callback_data="cmd_profilebook")],
+            [InlineKeyboardButton("📊 My Stats (/mywholestate)", callback_data="cmd_wholestate"), InlineKeyboardButton("🚀 Start Quiz (/quiz)", callback_data="cmd_quiz")]
         ]
         await update.message.reply_text(
             f"🎉 **Feedback Received!** Thank you *{name}* for your kind words:\n\n💬 *\"{text}\"*\n\n"
@@ -353,7 +442,7 @@ async def global_error_handler(update: object, context: ContextTypes.DEFAULT_TYP
 
 async def post_init(application: Application):
     """
-    PURGES ALL CACHED TELEGRAM COMMAND SCOPES AND REGISTERS ONLY THE EXACT 8 PROJECT COMMANDS.
+    PURGES ALL CACHED TELEGRAM COMMAND SCOPES AND REGISTERS ONLY THE EXACT 9 PROJECT COMMANDS.
     """
     try:
         await application.bot.delete_my_commands(scope=BotCommandScopeDefault())
@@ -364,6 +453,7 @@ async def post_init(application: Application):
 
     allowed_commands = [
         BotCommand("quiz", "🚀 Start Computer Quiz"),
+        BotCommand("profilebook", "📖 View & Download Profile Stats Book"),
         BotCommand("myprofile", "👤 View Student Profile"),
         BotCommand("editprofile", "✏️ Edit Profile Details"),
         BotCommand("mywholestate", "📊 View Performance & Rank"),
@@ -384,6 +474,7 @@ def build_application() -> Application:
     
     # Core Project Commands
     app.add_handler(CommandHandler("quiz", launch_quiz_setup))
+    app.add_handler(CommandHandler("profilebook", profilebook_command))
     app.add_handler(CommandHandler("myprofile", myprofile_command))
     app.add_handler(CommandHandler("mywholestate", wholestate_command))
     app.add_handler(CommandHandler("toppername", toppers_command))
@@ -401,7 +492,7 @@ def build_application() -> Application:
     app.add_handler(CallbackQueryHandler(quiz_count_callback, pattern="^qcount_"))
     app.add_handler(CallbackQueryHandler(quiz_timer_callback, pattern="^qtimer_"))
     app.add_handler(CallbackQueryHandler(admin_callback_handler, pattern="^admin_"))
-    app.add_handler(CallbackQueryHandler(button_router, pattern="^cmd_|^fb_"))
+    app.add_handler(CallbackQueryHandler(button_router, pattern="^cmd_|^fb_|^pdf_"))
 
     app.add_handler(MessageHandler(filters.TEXT & ~filters.COMMAND, handle_text_messages))
     app.add_handler(PollAnswerHandler(handle_poll_answer))

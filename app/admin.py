@@ -4,7 +4,7 @@ from telegram import Update, InlineKeyboardMarkup, InlineKeyboardButton
 from telegram.ext import ContextTypes
 from app.config import PRIMARY_ADMIN_ID
 from app.database import get_all_users, set_maintenance_until, get_maintenance_until, get_user_profile
-from app.stats import get_user_performance_summary
+from app.stats import get_user_performance_summary, get_user_badges, calculate_user_rank
 
 logger = logging.getLogger(__name__)
 
@@ -24,7 +24,7 @@ async def admin_portal_command(update: Update, context: ContextTypes.DEFAULT_TYP
     keyboard = [
         [InlineKeyboardButton("⏸ Pause Bot 5 Mins", callback_data="admin_pause_5"), InlineKeyboardButton("⏸ Pause Bot 10 Mins", callback_data="admin_pause_10")],
         [InlineKeyboardButton("▶️ Resume Bot Now", callback_data="admin_resume_now")],
-        [InlineKeyboardButton("👥 View All Users (Full Details)", callback_data="admin_view_users")],
+        [InlineKeyboardButton("👥 View All Users (Full Details & PDF Books)", callback_data="admin_view_users")],
         [InlineKeyboardButton("📢 Global Broadcast", callback_data="admin_broadcast")]
     ]
 
@@ -99,7 +99,7 @@ async def show_all_users_admin(update: Update, context: ContextTypes.DEFAULT_TYP
         return
 
     total_count = len(users)
-    header = f"👥 **REGISTERED STUDENT DIRECTORY ({total_count} Total Users)**\n━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\n\n"
+    header = f"👥 **REGISTERED STUDENT DIRECTORY ({total_count} Total Users)**\n⚡ Powered by @LearnwithHiM\n━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\n\n"
     
     chunks = []
     current_chunk = header
@@ -107,14 +107,15 @@ async def show_all_users_admin(update: Update, context: ContextTypes.DEFAULT_TYP
     for idx, u in enumerate(users, start=1):
         perf = get_user_performance_summary(u['user_id'])
         avg_score = round(perf.get('avg_score', 0.0) or 0.0, 2)
+        badges = get_user_badges(u['user_id'])
+        badge_short = badges[0] if badges else "Active Student"
 
         entry = (
             f"**{idx}. {u['full_name']}** (@{u['username'] or 'N/A'})\n"
             f"• **Telegram ID:** `{u['user_id']}` | **Phone:** `{u['phone_number'] or 'N/A'}`\n"
-            f"• **Target Exam:** `{u['target_exam']}`\n"
-            f"• **Location:** `{u.get('state', 'N/A')}, {u.get('country', 'India')}`\n"
-            f"• **Age/Gender:** `{u['age']}` / `{u['gender']}`\n"
-            f"• **Stats:** Avg Score `{avg_score}` | Mocks `{perf.get('total_tests', 0)}`\n"
+            f"• **Target Exam:** `{u['target_exam']}` | **Gender/Age:** `{u['gender']}`/`{u['age']}`\n"
+            f"• **Location:** `{u.get('state', 'N/A')}, {profile_country(u)}`\n"
+            f"• **Badge:** `{badge_short}` | **Avg Score:** `{avg_score}`\n"
             f"• **Joined:** `{u.get('created_at', 'N/A')}`\n\n"
         )
         
@@ -132,3 +133,6 @@ async def show_all_users_admin(update: Update, context: ContextTypes.DEFAULT_TYP
             await update.callback_query.edit_message_text(chunk, parse_mode="Markdown")
         else:
             await context.bot.send_message(chat_id=update.effective_chat.id, text=chunk, parse_mode="Markdown")
+
+def profile_country(u):
+    return u.get('country', 'India')

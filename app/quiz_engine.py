@@ -3,7 +3,7 @@ import logging
 import time
 from telegram import Update, Poll, InlineKeyboardMarkup, InlineKeyboardButton
 from telegram.ext import ContextTypes
-from app.config import DAILY_QUESTION_LIMIT, CHANNEL_USERNAME, YOUTUBE_CHANNEL_URL, PRIMARY_ADMIN_ID
+from app.config import DAILY_QUESTION_LIMIT, PRIMARY_ADMIN_ID
 from app.database import (
     get_today_attempts, get_seen_question_ids, 
     mark_questions_as_seen, record_quiz_result, get_ist_timestamp_str, 
@@ -17,11 +17,6 @@ ACTIVE_SESSIONS = {}
 POLL_MAP = {}
 TIMER_TASKS = {}
 QUIZ_SETUP_CACHE = {}
-
-def get_pause_resume_keyboard():
-    return InlineKeyboardMarkup([
-        [InlineKeyboardButton("⏸ Pause (/pause)", callback_data="cmd_pause_quiz"), InlineKeyboardButton("▶️ Resume (/resume)", callback_data="cmd_resume_quiz")]
-    ])
 
 async def check_quiz_maintenance(update: Update) -> bool:
     m_until = get_maintenance_until()
@@ -251,7 +246,6 @@ async def resume_quiz_command(update: Update, context: ContextTypes.DEFAULT_TYPE
     if update.callback_query:
         await update.callback_query.answer()
 
-    # 3-Second Interactive Countdown Timer
     countdown_msg = await context.bot.send_message(
         chat_id=chat_id, 
         text=f"▶️ **RESUMING QUIZ...**\n━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\n⏳ **3...** Get ready for Question `{session['current_index'] + 1}/{session['total']}`!",
@@ -322,12 +316,6 @@ async def send_next_question(chat_id: int, user_id: int, context: ContextTypes.D
         poll_id = poll_msg.poll.id
         POLL_MAP[poll_id] = {"user_id": user_id, "chat_id": chat_id, "q_idx": session["current_index"], "correct_id": correct_id}
 
-        await context.bot.send_message(
-            chat_id=chat_id,
-            text="You can Pause/Resume.",
-            reply_markup=get_pause_resume_keyboard()
-        )
-
         if user_id in TIMER_TASKS and not TIMER_TASKS[user_id].done():
             TIMER_TASKS[user_id].cancel()
 
@@ -346,7 +334,10 @@ async def auto_skip_task(chat_id: int, user_id: int, poll_id: str, expected_idx:
         if session and not session.get("is_paused") and session["current_index"] == expected_idx:
             session["skipped"] += 1
             session["current_index"] += 1
-            await send_next_question(chat_id, user_id, context)
+            if session["current_index"] >= session["total"]:
+                await finish_quiz_and_send_report(chat_id, user_id, context)
+            else:
+                await send_next_question(chat_id, user_id, context)
 
 async def handle_poll_answer(update: Update, context: ContextTypes.DEFAULT_TYPE):
     answer = update.poll_answer
@@ -376,11 +367,15 @@ async def handle_poll_answer(update: Update, context: ContextTypes.DEFAULT_TYPE)
             session["wrong"] += 1
 
         session["current_index"] += 1
-        await asyncio.sleep(0.8)
-        await send_next_question(chat_id, user_id, context)
+        await asyncio.sleep(0.5)
+        
+        if session["current_index"] >= session["total"]:
+            await finish_quiz_and_send_report(chat_id, user_id, context)
+        else:
+            await send_next_question(chat_id, user_id, context)
 
 async def finish_quiz_and_send_report(chat_id: int, user_id: int, context: ContextTypes.DEFAULT_TYPE):
-    """GENERATES AND SENDS COMPLETE DETAILED REPORT CARD AT QUIZ END."""
+    """GENERATES AND SENDS COMPLETE DETAILED REPORT CARD AT QUIZ END INSTANTLY."""
     session = ACTIVE_SESSIONS.pop(user_id, None)
     if not session:
         return
@@ -392,7 +387,7 @@ async def finish_quiz_and_send_report(chat_id: int, user_id: int, context: Conte
     score = session["score"]
     attempted = correct + wrong
 
-    # Save test results to SQLite & sync user JSON file
+    # Record attempt to SQLite database & sync JSON user profile
     record_quiz_result(
         user_id=user_id, 
         score=score, 
@@ -407,16 +402,14 @@ async def finish_quiz_and_send_report(chat_id: int, user_id: int, context: Conte
     profile = get_user_profile(user_id)
     student_name = profile.get("full_name", "Student") if profile else "Student"
 
-    # Percentage Accuracy
     accuracy = round((correct / max(1, attempted)) * 100, 1) if attempted > 0 else 0.0
 
-    # Custom Motivational Message based on Performance
     if accuracy >= 80:
-        motivation_note = "🌟 **Outstanding Performance!** Keep up the fantastic momentum—you are on track to top your exam!"
+        motivation_quote = "🌟 *\"Success is not final, failure is not fatal: it is the courage to continue that counts.\"*\n— Winston Churchill"
     elif accuracy >= 50:
-        motivation_note = "📈 **Good Progress!** Continuous practice is the key to perfection. Keep revising daily!"
+        motivation_quote = "📈 *\"Quality is not an act, it is a habit. Consistent effort produces consistent results!\"*\n— Aristotle"
     else:
-        motivation_note = "💪 **Don't Get Discouraged!** Every mistake is a learning step. Re-read your notes and try again!"
+        motivation_quote = "💪 *\"Our greatest glory is not in never falling, but in rising every time we fall.\"*\n— Confucius"
 
     report_card = (
         f"🏆 **OFFICIAL QUIZ REPORT CARD**\n"
@@ -424,26 +417,26 @@ async def finish_quiz_and_send_report(chat_id: int, user_id: int, context: Conte
         f"━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\n"
         f"👤 **Student Name:** {student_name}\n"
         f"📅 **Attempted At:** `{session['start_time']}`\n\n"
-        f"📊 **DETAILED RESULT ANALYSIS:**\n"
+        f"📊 **DETAILED SCORE ANALYSIS:**\n"
         f"• **Total Questions:** `{total}`\n"
         f"• **Total Attempted:** `{attempted}` / `{total}` Qs\n"
         f"• **Total Correct:** `{correct}` ✅\n"
         f"• **Total Wrong:** `{wrong}` ❌\n"
         f"• **Total Skipped:** `{skipped}` ⏭\n"
-        f"• **Accuracy Rate:** `{accuracy}%`🎯\n"
-        f"• **Final Marks:** `{score} / {total}` Marks\n\n"
-        f"🎖 **GLOBAL ACADEMIC STANDING:**\n"
+        f"• **Accuracy Rate:** `{accuracy}%` 🎯\n"
+        f"• **Final Score:** `{score} / {total}` Marks\n\n"
+        f"🎖 **GLOBAL RANK & PERCENTILE:**\n"
         f"• **Global Rank:** `{rank_str}`\n"
         f"• **Overall Percentile:** `{percentile}%`\n"
         f"━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\n"
-        f"{motivation_note}\n"
-        f"*Keep it up and continue your preparation like this!* 🔥"
+        f"🔥 **MOTIVATION FOR YOU:**\n"
+        f"{motivation_quote}\n\n"
+        f"👇 **Explore commands below to track your progress:**"
     )
 
     buttons = [
-        [InlineKeyboardButton("📢 Join Telegram Channel", url=f"https://t.me/{CHANNEL_USERNAME.replace('@', '')}")],
-        [InlineKeyboardButton("📺 Join YouTube Portal", url=YOUTUBE_CHANNEL_URL)],
-        [InlineKeyboardButton("🚀 Attempt Another Quiz", callback_data="cmd_quiz")]
+        [InlineKeyboardButton("🚀 Start Fresh Quiz (/quiz)", callback_data="cmd_quiz"), InlineKeyboardButton("📊 My Stats (/mywholestate)", callback_data="cmd_wholestate")],
+        [InlineKeyboardButton("🏆 Leaderboard (/toppername)", callback_data="cmd_toppers"), InlineKeyboardButton("👤 Profile (/myprofile)", callback_data="cmd_profile")]
     ]
 
     await context.bot.send_message(

@@ -1,8 +1,19 @@
+import os
 import sqlite3
 import logging
-from app.config import SQLITE_DB_PATH
 
 logger = logging.getLogger(__name__)
+
+# Safely resolve database path from config or fallback to default data location
+try:
+    from app.config import DB_PATH
+    SQLITE_DB_PATH = DB_PATH
+except ImportError:
+    try:
+        from app.config import SQLITE_DB_PATH
+    except ImportError:
+        BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+        SQLITE_DB_PATH = os.path.join(BASE_DIR, "data", "quiz_bot.db")
 
 def get_db_connection():
     conn = sqlite3.connect(SQLITE_DB_PATH)

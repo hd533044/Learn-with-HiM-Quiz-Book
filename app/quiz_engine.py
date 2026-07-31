@@ -3,7 +3,7 @@ import logging
 import time
 from telegram import Update, Poll, InlineKeyboardMarkup, InlineKeyboardButton
 from telegram.ext import ContextTypes
-from app.config import DAILY_QUESTION_LIMIT, PRIMARY_ADMIN_ID
+from app.config import DAILY_QUESTION_LIMIT, CHANNEL_USERNAME, YOUTUBE_CHANNEL_URL, PRIMARY_ADMIN_ID
 from app.database import (
     get_today_attempts, get_seen_question_ids, 
     mark_questions_as_seen, record_quiz_result, get_ist_timestamp_str, 
@@ -321,7 +321,7 @@ async def send_next_question(chat_id: int, user_id: int, context: ContextTypes.D
         poll_id = poll_msg.poll.id
         POLL_MAP[poll_id] = {"user_id": user_id, "chat_id": chat_id, "q_idx": session["current_index"], "correct_id": correct_id}
 
-        # INLINE BUTTONS PRESERVED FOR EVERY QUESTION
+        # INLINE CONTROL BUTTONS ATTACHED UNDER EVERY QUESTION POLL
         await context.bot.send_message(
             chat_id=chat_id,
             text="You can Pause/Resume.",
@@ -336,7 +336,10 @@ async def send_next_question(chat_id: int, user_id: int, context: ContextTypes.D
         logging.error(f"Error sending poll: {e}")
         session["skipped"] += 1
         session["current_index"] += 1
-        await send_next_question(chat_id, user_id, context)
+        if session["current_index"] >= session["total"]:
+            await finish_quiz_and_send_report(chat_id, user_id, context)
+        else:
+            await send_next_question(chat_id, user_id, context)
 
 async def auto_skip_task(chat_id: int, user_id: int, poll_id: str, expected_idx: int, timer_sec: int, context: ContextTypes.DEFAULT_TYPE):
     await asyncio.sleep(timer_sec + 1)
@@ -399,7 +402,7 @@ async def finish_quiz_and_send_report(chat_id: int, user_id: int, context: Conte
     score = session["score"]
     attempted = correct + wrong
 
-    # Record attempt to SQLite database & sync JSON user profile
+    # Record result to SQLite database & sync user JSON profile
     record_quiz_result(
         user_id=user_id, 
         score=score, 

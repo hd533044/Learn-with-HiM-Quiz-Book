@@ -18,11 +18,6 @@ POLL_MAP = {}
 TIMER_TASKS = {}
 QUIZ_SETUP_CACHE = {}
 
-def get_pause_resume_keyboard():
-    return InlineKeyboardMarkup([
-        [InlineKeyboardButton("⏸ Pause (/pause)", callback_data="cmd_pause_quiz"), InlineKeyboardButton("▶️ Resume (/resume)", callback_data="cmd_resume_quiz")]
-    ])
-
 async def check_quiz_maintenance(update: Update) -> bool:
     m_until = get_maintenance_until()
     if int(time.time()) < m_until:
@@ -321,13 +316,6 @@ async def send_next_question(chat_id: int, user_id: int, context: ContextTypes.D
         poll_id = poll_msg.poll.id
         POLL_MAP[poll_id] = {"user_id": user_id, "chat_id": chat_id, "q_idx": session["current_index"], "correct_id": correct_id}
 
-        # INLINE BUTTONS PRESERVED DIRECTLY UNDER EVERY QUESTION
-        await context.bot.send_message(
-            chat_id=chat_id,
-            text="You can Pause/Resume.",
-            reply_markup=get_pause_resume_keyboard()
-        )
-
         if user_id in TIMER_TASKS and not TIMER_TASKS[user_id].done():
             TIMER_TASKS[user_id].cancel()
 
@@ -384,7 +372,6 @@ async def handle_poll_answer(update: Update, context: ContextTypes.DEFAULT_TYPE)
         session["current_index"] += 1
         await asyncio.sleep(0.5)
         
-        # DIRECT TERMINATION TRIGGER AT QUIZ END
         if session["current_index"] >= session["total"]:
             await finish_quiz_and_send_report(chat_id, user_id, context)
         else:
@@ -403,7 +390,7 @@ async def finish_quiz_and_send_report(chat_id: int, user_id: int, context: Conte
     score = session["score"]
     attempted = correct + wrong
 
-    # Save test results to SQLite & sync user JSON file
+    # Save attempt log to SQLite and update the student's unique JSON file
     record_quiz_result(
         user_id=user_id, 
         score=score, 
@@ -447,12 +434,14 @@ async def finish_quiz_and_send_report(chat_id: int, user_id: int, context: Conte
         f"━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\n"
         f"🔥 **MOTIVATION FOR YOU:**\n"
         f"{motivation_quote}\n\n"
-        f"👇 **Explore commands below to track your progress:**"
+        f"👇 **Subscribe & Continue Practice:**"
     )
 
+    clean_channel = CHANNEL_USERNAME.replace('@', '')
     buttons = [
-        [InlineKeyboardButton("🚀 Start Fresh Quiz (/quiz)", callback_data="cmd_quiz"), InlineKeyboardButton("📊 My Stats (/mywholestate)", callback_data="cmd_wholestate")],
-        [InlineKeyboardButton("🏆 Leaderboard (/toppername)", callback_data="cmd_toppers"), InlineKeyboardButton("👤 Profile (/myprofile)", callback_data="cmd_profile")]
+        [InlineKeyboardButton("📢 Join Telegram Channel", url=f"https://t.me/{clean_channel}")],
+        [InlineKeyboardButton("📺 Subscribe YouTube Channel", url=YOUTUBE_CHANNEL_URL)],
+        [InlineKeyboardButton("🚀 Start Fresh Quiz (/quiz)", callback_data="cmd_quiz")]
     ]
 
     await context.bot.send_message(

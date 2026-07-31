@@ -262,7 +262,7 @@ def touch_user_activity(user_id: int):
     conn.close()
 
 def is_user_session_expired(user_id: int) -> bool:
-    """Returns True if user has been inactive for more than 4 hours (14,400 seconds)."""
+    """TEMPORARY TESTING: Returns True if user has been inactive for more than 3 minutes (180 seconds)."""
     conn = get_db()
     cursor = conn.cursor()
     cursor.execute("SELECT last_active_epoch FROM users WHERE user_id = ?", (user_id,))
@@ -273,8 +273,8 @@ def is_user_session_expired(user_id: int) -> bool:
         return False
 
     now_epoch = int(datetime.now().timestamp())
-    four_hours_sec = 4 * 3600
-    return (now_epoch - row['last_active_epoch']) > four_hours_sec
+    three_minutes_sec = 180  # Changed from 4 * 3600 for testing!
+    return (now_epoch - row['last_active_epoch']) > three_minutes_sec
 
 def verify_student_login(user_id: int, student_id: str, login_pass: str) -> bool:
     """Verifies that the provided student_id and password match the user_id."""

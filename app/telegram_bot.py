@@ -18,7 +18,7 @@ from app.database import (
 from app.onboarding import get_onboarding_handler
 from app.quiz_engine import (
     launch_quiz_setup, quiz_count_callback, quiz_timer_callback, handle_poll_answer,
-    stop_quiz_command, resume_quiz_command, download_quiz_pdf_callback
+    stop_quiz_command, resume_quiz_command
 )
 from app.stats import (
     get_overall_leaderboard, calculate_user_percentile, calculate_user_rank, 
@@ -421,8 +421,6 @@ async def button_router(update: Update, context: ContextTypes.DEFAULT_TYPE):
         await edit_profile_command(update, context)
     elif data.startswith("pdf_profilebook_"):
         await download_pdf_callback(update, context)
-    elif data == "pdf_recent_quiz":
-        await download_quiz_pdf_callback(update, context)
     elif data.startswith("fb_p"):
         presets = {
             "fb_p1": "10/10 Bot! The quizzes are top quality 🚀",

@@ -8,7 +8,6 @@ from app.database import (
     save_paused_quiz, get_paused_quiz, clear_paused_quiz
 )
 from app.pyq_fetcher import get_pyq_questions
-from app.pdf_generator import generate_quiz_questions_pdf
 
 logger = logging.getLogger(__name__)
 
@@ -284,12 +283,6 @@ async def handle_poll_answer(update: Update, context: ContextTypes.DEFAULT_TYPE)
         if is_correct:
             active['score'] += 1
         active['current_idx'] += 1
-        active.get('history', []).append({
-            'question_text': poll_info['question_text'],
-            'options': poll_info['options'],
-            'correct_option_id': poll_info['correct_option_id'],
-            'explanation': poll_info['explanation']
-        })
 
         class FakeChat:
             id = user_id
@@ -317,19 +310,10 @@ async def finish_quiz(update: Update, context: ContextTypes.DEFAULT_TYPE):
 
     score = active['score']
     total_qs = active['total_qs']
-    history = active.get('history', [])
-
     chat_id = update.effective_chat.id if update.effective_chat else user.id
 
     save_quiz_attempt(user.id, float(score), total_qs, score, total_qs - score, int(time.time()))
     context.user_data.pop('active_quiz', None)
-
-    context.user_data['last_completed_quiz'] = {
-        'user_name': user.full_name if hasattr(user, 'full_name') else 'Student',
-        'score': score,
-        'total_qs': total_qs,
-        'questions': history
-    }
 
     msg = (
         f"🎉 **QUIZ COMPLETED!**\n"
@@ -338,12 +322,11 @@ async def finish_quiz(update: Update, context: ContextTypes.DEFAULT_TYPE):
         f"📊 **Final Score:** `{score}` / `{total_qs}` Qs\n"
         f"🎯 **Accuracy:** `{round((score/max(1, total_qs))*100, 1)}%`\n"
         f"━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\n"
-        f"👇 **Download your quiz question bank PDF below:**"
+        f"👇 **What would you like to do next?**"
     )
 
     buttons = [
-        [InlineKeyboardButton("📥 Download Quiz Question Bank (PDF)", callback_data="pdf_recent_quiz")],
-        [InlineKeyboardButton("📖 Profile Book (/profilebook)", callback_data="cmd_profilebook"), InlineKeyboardButton("🚀 Start Fresh Quiz (/quiz)", callback_data="cmd_quiz")],
+        [InlineKeyboardButton("🚀 Start Fresh Quiz (/quiz)", callback_data="cmd_quiz"), InlineKeyboardButton("📖 Profile Book (/profilebook)", callback_data="cmd_profilebook")],
         [InlineKeyboardButton("📊 My Stats (/mywholestate)", callback_data="cmd_wholestate"), InlineKeyboardButton("🏆 Leaderboard (/toppername)", callback_data="cmd_toppers")]
     ]
 
@@ -351,38 +334,5 @@ async def finish_quiz(update: Update, context: ContextTypes.DEFAULT_TYPE):
         chat_id=chat_id,
         text=msg,
         reply_markup=InlineKeyboardMarkup(buttons),
-        parse_mode="Markdown"
-    )
-
-async def download_quiz_pdf_callback(update: Update, context: ContextTypes.DEFAULT_TYPE):
-    query = update.callback_query
-    await query.answer("📄 Generating Quiz Question Bank PDF...")
-
-    quiz_data = context.user_data.get('last_completed_quiz')
-    if not quiz_data or not quiz_data.get('questions'):
-        await query.message.reply_text("⚠️ No recent quiz session found to generate PDF.")
-        return
-
-    pdf_buffer = generate_quiz_questions_pdf(quiz_data)
-    file_name = f"Quiz_Question_Bank_{quiz_data['user_name'].replace(' ', '_')}.pdf"
-
-    post_pdf_buttons = [
-        [InlineKeyboardButton("🚀 Launch Quiz (/quiz)", callback_data="cmd_quiz"), InlineKeyboardButton("📖 Profile Book (/profilebook)", callback_data="cmd_profilebook")],
-        [InlineKeyboardButton("📊 My Stats (/mywholestate)", callback_data="cmd_wholestate"), InlineKeyboardButton("🏆 Leaderboard (/toppername)", callback_data="cmd_toppers")]
-    ]
-
-    await context.bot.send_document(
-        chat_id=query.message.chat_id,
-        document=pdf_buffer,
-        filename=file_name,
-        caption=(
-            f"📝 **RECENT QUIZ QUESTION BANK & SOLUTION SHEET**\n"
-            f"👤 **Student:** {quiz_data['user_name']}\n"
-            f"📊 **Score:** `{quiz_data['score']}/{quiz_data['total_qs']}`\n\n"
-            f"⚡ **Powered by @LearnwithHiM**\n"
-            f"━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\n"
-            f"👇 **Continue practicing using options below:**"
-        ),
-        reply_markup=InlineKeyboardMarkup(post_pdf_buttons),
         parse_mode="Markdown"
     )

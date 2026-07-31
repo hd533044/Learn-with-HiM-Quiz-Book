@@ -18,6 +18,11 @@ POLL_MAP = {}
 TIMER_TASKS = {}
 QUIZ_SETUP_CACHE = {}
 
+def get_pause_resume_keyboard():
+    return InlineKeyboardMarkup([
+        [InlineKeyboardButton("⏸ Pause (/pause)", callback_data="cmd_pause_quiz"), InlineKeyboardButton("▶️ Resume (/resume)", callback_data="cmd_resume_quiz")]
+    ])
+
 async def check_quiz_maintenance(update: Update) -> bool:
     m_until = get_maintenance_until()
     if int(time.time()) < m_until:
@@ -316,6 +321,13 @@ async def send_next_question(chat_id: int, user_id: int, context: ContextTypes.D
         
         poll_id = poll_msg.poll.id
         POLL_MAP[poll_id] = {"user_id": user_id, "chat_id": chat_id, "q_idx": session["current_index"], "correct_id": correct_id}
+
+        # Send ONLY inline pause/resume buttons directly under the poll (no text label)
+        await context.bot.send_message(
+            chat_id=chat_id,
+            text="⚡",
+            reply_markup=get_pause_resume_keyboard()
+        )
 
         if user_id in TIMER_TASKS and not TIMER_TASKS[user_id].done():
             TIMER_TASKS[user_id].cancel()

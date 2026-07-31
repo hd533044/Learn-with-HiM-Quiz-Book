@@ -1,19 +1,14 @@
 import re
+import time
 import logging
 import warnings
 from telegram import Update, InlineKeyboardMarkup, InlineKeyboardButton, ReplyKeyboardMarkup, KeyboardButton, ReplyKeyboardRemove
 from telegram.warnings import PTBUserWarning
 from telegram.ext import (
-    ConversationHandler, 
-    CommandHandler, 
-    MessageHandler, 
-    CallbackQueryHandler, 
-    filters, 
-    ContextTypes
+    ConversationHandler, CommandHandler, MessageHandler, CallbackQueryHandler, filters, ContextTypes
 )
 from app.config import WELCOME_CARD_TEXT, PRIMARY_ADMIN_ID
 from app.database import save_user_profile, get_user_profile, can_user_edit_profile, get_maintenance_until
-import time
 
 warnings.filterwarnings("ignore", category=PTBUserWarning)
 
@@ -167,14 +162,12 @@ async def exam_callback(update: Update, context: ContextTypes.DEFAULT_TYPE):
     await query.answer()
     
     selected_exam = query.data.replace("exam_", "")
-    
     if selected_exam == "OTHER":
         context.user_data["awaiting_other_exam"] = True
         await query.edit_message_text("✍️ Please type the exact name of your Target Exam:")
         return EXAM
 
     context.user_data["target_exam"] = selected_exam
-    
     country_buttons = InlineKeyboardMarkup([
         [InlineKeyboardButton("🇮🇳 India", callback_data="country_India"), InlineKeyboardButton("🌎 Other Country", callback_data="country_OTHER")]
     ])
@@ -191,7 +184,6 @@ async def custom_exam_text(update: Update, context: ContextTypes.DEFAULT_TYPE):
     if context.user_data.get("awaiting_other_exam"):
         context.user_data["target_exam"] = update.message.text.strip()
         context.user_data["awaiting_other_exam"] = False
-        
         country_buttons = InlineKeyboardMarkup([
             [InlineKeyboardButton("🇮🇳 India", callback_data="country_India"), InlineKeyboardButton("🌎 Other Country", callback_data="country_OTHER")]
         ])
@@ -235,7 +227,7 @@ async def custom_country_text(update: Update, context: ContextTypes.DEFAULT_TYPE
         await update.message.reply_text(
             f"🌍 Country: `{context.user_data['country']}`\n\n"
             f"📱 **Mobile Verification (Step 5/6):**\n"
-            f"Tap the **Share Verified Mobile Number** button below to complete verification:",
+            f"Type your **10-digit mobile number** (e.g. `9876543210`) OR tap the button below:",
             reply_markup=markup,
             parse_mode="Markdown"
         )
@@ -257,25 +249,33 @@ async def state_callback(update: Update, context: ContextTypes.DEFAULT_TYPE):
         chat_id=query.message.chat_id,
         text=f"📍 Selected Location: `{selected_state}, India`\n\n"
              f"📱 **Mobile Verification (Step 5/6):**\n"
-             f"Tap the **Share Verified Mobile Number** button below to complete verification:",
+             f"Type your **10-digit mobile number** (e.g. `9876543210`) OR tap the button below:",
         reply_markup=markup,
         parse_mode="Markdown"
     )
     return PHONE
 
 async def phone_contact_step(update: Update, context: ContextTypes.DEFAULT_TYPE):
-    if not update.message.contact:
-        contact_btn = KeyboardButton(text="📱 Share Verified Mobile Number", request_contact=True)
-        markup = ReplyKeyboardMarkup([[contact_btn]], one_time_keyboard=True, resize_keyboard=True)
-        await update.message.reply_text(
-            "⚠️ **Verification Required!**\n\n"
-            "To prevent fake profiles, you MUST click the button below to share your verified Telegram mobile number:",
-            reply_markup=markup,
-            parse_mode="Markdown"
-        )
-        return PHONE
+    phone_num = None
+    
+    if update.message.contact:
+        phone_num = update.message.contact.phone_number
+    elif update.message.text:
+        text_input = update.message.text.strip().replace(" ", "").replace("-", "")
+        if text_input.isdigit() and len(text_input) >= 10:
+            phone_num = text_input
+        else:
+            await update.message.reply_text(
+                "❌ **Invalid Mobile Number!**\n\n"
+                "Please enter a valid **10-digit mobile number** (e.g. `9876543210`) or tap the button below:",
+                reply_markup=ReplyKeyboardMarkup(
+                    [[KeyboardButton(text="📱 Share Verified Mobile Number", request_contact=True)]],
+                    one_time_keyboard=True, resize_keyboard=True
+                ),
+                parse_mode="Markdown"
+            )
+            return PHONE
 
-    phone_num = update.message.contact.phone_number
     context.user_data["phone_number"] = phone_num
 
     gender_buttons = InlineKeyboardMarkup([
@@ -284,7 +284,7 @@ async def phone_contact_step(update: Update, context: ContextTypes.DEFAULT_TYPE)
     ])
 
     await update.message.reply_text(
-        f"✅ Verified Mobile: `{phone_num}`\n\n"
+        f"✅ Mobile Number Saved: `{phone_num}`\n\n"
         f"👤 **Select Gender (Step 6/6):**",
         reply_markup=gender_buttons,
         parse_mode="Markdown"
@@ -376,5 +376,5 @@ def get_onboarding_handler():
         per_chat=True,
         per_user=True,
         per_message=False,
-        allow_reentry=True  # <--- CRITICAL FIX: Forces /start to reset and restart registration even if user is stuck in a state!
+        allow_reentry=True
     )

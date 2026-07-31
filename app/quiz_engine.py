@@ -1,241 +1,178 @@
-import asyncio
-import logging
 import time
-from telegram import Update, Poll, InlineKeyboardMarkup, InlineKeyboardButton
+import random
+import asyncio
+from telegram import Update, InlineKeyboardMarkup, InlineKeyboardButton, ReplyKeyboardRemove
 from telegram.ext import ContextTypes
-from app.config import DAILY_QUESTION_LIMIT, CHANNEL_USERNAME, YOUTUBE_CHANNEL_URL, PRIMARY_ADMIN_ID
+from app.config import DAILY_QUESTION_LIMIT, CHANNEL_USERNAME, YOUTUBE_CHANNEL_URL
 from app.database import (
-    get_today_attempts, get_seen_question_ids, 
-    mark_questions_as_seen, record_quiz_result, get_ist_timestamp_str, get_user_profile, get_maintenance_until
+    get_user_profile, get_today_attempts, record_quiz_result, 
+    get_questions_by_count, get_maintenance_until
 )
-from app.pyq_fetcher import fetch_pyqs_for_quiz
 from app.stats import calculate_user_percentile, calculate_user_rank
 
 ACTIVE_SESSIONS = {}
-POLL_MAP = {}
-TIMER_TASKS = {}
-QUIZ_SETUP_CACHE = {}
 
 async def check_quiz_maintenance(update: Update) -> bool:
-    """ABSOLUTE HARD LOCK: Blocks /quiz during maintenance for ALL users."""
     m_until = get_maintenance_until()
     if int(time.time()) < m_until:
-        remaining_sec = m_until - int(time.time())
-        mins_left = max(1, (remaining_sec + 59) // 60)
+        mins_left = max(1, (m_until - int(time.time()) + 59) // 60)
         msg = f"🛠 **ADMIN HAS PAUSED THE SERVICE CURRENTLY**\nService will resume in approximately `{mins_left} mins`. Please try again later!"
-        
         if update.callback_query:
             await update.callback_query.answer(f"🛠 Service Paused! Resuming in ~{mins_left} mins.", show_alert=True)
         elif update.message:
-            await update.message.reply_text(msg, parse_mode="Markdown")
+            await update.message.reply_text(msg, parse_mode="Markdown", reply_markup=ReplyKeyboardRemove())
         return False
     return True
 
 async def launch_quiz_setup(update: Update, context: ContextTypes.DEFAULT_TYPE):
-    # ABSOLUTE MAINTENANCE LOCKDOWN AT ENTRY POINT
-    if not await check_quiz_maintenance(update):
-        return
+    if not await check_quiz_maintenance(update): return
 
     user = update.effective_user
     profile = get_user_profile(user.id)
-    
+
     if not profile or not profile.get("is_verified"):
-        await update.message.reply_text("⚠️ Please type /start to create your profile before attempting quizzes!")
+        msg = "⚠️ Please type /start to create your profile before attempting quizzes!"
+        if update.callback_query:
+            await update.callback_query.answer("⚠️ Profile required! Type /start first.", show_alert=True)
+        else:
+            await update.message.reply_text(msg, reply_markup=ReplyKeyboardRemove())
         return
 
-    attempted_today = get_today_attempts(user.id)
+    today_used = get_today_attempts(user.id)
     allowed_limit = DAILY_QUESTION_LIMIT + profile.get("bonus_quota", 0)
 
-    if attempted_today >= allowed_limit and user.id != PRIMARY_ADMIN_ID:
-        await update.message.reply_text(
-            f"🛑 **Daily Limit Reached!**\n\n"
-            f"You have used `{attempted_today}` / `{allowed_limit}` questions today.\n\n"
-            f"💡 **Unlock +10 Questions:** Share your invite link with 4 friends to increase your limit!",
-            reply_markup=InlineKeyboardMarkup([[
-                InlineKeyboardButton("🤝 Invite Friends (+10 Limit)", callback_data="cmd_referral")
-            ]]),
-            parse_mode="Markdown"
+    if today_used >= allowed_limit:
+        msg = (
+            f"🚫 **DAILY QUESTION LIMIT EXHAUSTED!**\n"
+            f"━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\n"
+            f"• **Used Today:** `{today_used}` / `{allowed_limit}` Qs\n\n"
+            f"🤝 **Want +10 Extra Questions?**\n"
+            f"Use `/invite` to invite 4 friends and instantly expand your daily quota limit!"
         )
+        if update.callback_query:
+            await update.callback_query.edit_message_text(msg, parse_mode="Markdown")
+        else:
+            await update.message.reply_text(msg, parse_mode="Markdown")
         return
 
-    counts = [10, 15, 20, 25, 30, 40]
-    buttons = [InlineKeyboardButton(f"📝 {c} Qs", callback_data=f"qcount_{c}") for c in counts]
-    keyboard = [buttons[:3], buttons[3:]]
-
-    msg_text = (
+    buttons = [
+        [InlineKeyboardButton("📝 10 Qs", callback_data="qcount_10"), InlineKeyboardButton("📝 15 Qs", callback_data="qcount_15"), InlineKeyboardButton("📝 20 Qs", callback_data="qcount_20")],
+        [InlineKeyboardButton("📝 25 Qs", callback_data="qcount_25"), InlineKeyboardButton("📝 30 Qs", callback_data="qcount_30"), InlineKeyboardButton("📝 40 Qs", callback_data="qcount_40")]
+    ]
+    
+    text = (
         "📚 **Learn with HiM Quiz Setup (Step 1/2)**\n"
         "━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\n"
         "Select the number of questions for this session:"
     )
 
     if update.callback_query:
-        await update.callback_query.edit_message_text(msg_text, reply_markup=InlineKeyboardMarkup(keyboard), parse_mode="Markdown")
+        await update.callback_query.edit_message_text(text, reply_markup=InlineKeyboardMarkup(buttons), parse_mode="Markdown")
     else:
-        await update.message.reply_text(msg_text, reply_markup=InlineKeyboardMarkup(keyboard), parse_mode="Markdown")
+        await update.message.reply_text(text, reply_markup=InlineKeyboardMarkup(buttons), parse_mode="Markdown")
 
 async def quiz_count_callback(update: Update, context: ContextTypes.DEFAULT_TYPE):
     if not await check_quiz_maintenance(update): return
-
     query = update.callback_query
     await query.answer()
-    user_id = query.from_user.id
-    
+
     count = int(query.data.replace("qcount_", ""))
-    QUIZ_SETUP_CACHE[user_id] = {"count": count}
+    context.user_data["selected_q_count"] = count
 
-    timers = [12, 15, 18, 20, 25, 30]
-    buttons = [InlineKeyboardButton(f"⏱ {t}s", callback_data=f"qtimer_{t}") for t in timers]
-    keyboard = [buttons[:3], buttons[3:]]
+    timer_buttons = [
+        [InlineKeyboardButton("⏱ 15 Sec / Q", callback_data="qtimer_15"), InlineKeyboardButton("⏱ 30 Sec / Q", callback_data="qtimer_30")],
+        [InlineKeyboardButton("⏱ 45 Sec / Q", callback_data="qtimer_45"), InlineKeyboardButton("⏱ 60 Sec / Q", callback_data="qtimer_60")]
+    ]
 
-    await query.edit_message_text(
-        f"⏱ **Learn with HiM Quiz Setup (Step 2/2)**\n"
-        f"━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\n"
-        f"Selected: `{count} Questions`\n\n"
-        f"Choose timer duration per question:",
-        reply_markup=InlineKeyboardMarkup(keyboard),
-        parse_mode="Markdown"
+    text = (
+        f"📝 Selected Questions: `{count} Qs`\n\n"
+        f"⏱ **Timer Selection (Step 2/2)**\n"
+        f"Choose time limit per question:"
     )
+    await query.edit_message_text(text, reply_markup=InlineKeyboardMarkup(timer_buttons), parse_mode="Markdown")
 
 async def quiz_timer_callback(update: Update, context: ContextTypes.DEFAULT_TYPE):
     if not await check_quiz_maintenance(update): return
-
     query = update.callback_query
     await query.answer()
-    user_id = query.from_user.id
-    
+
     timer_sec = int(query.data.replace("qtimer_", ""))
-    setup = QUIZ_SETUP_CACHE.pop(user_id, {"count": 20})
-    count = setup.get("count", 20)
+    q_count = context.user_data.get("selected_q_count", 10)
+    user_id = query.from_user.id
 
-    seen_ids = get_seen_question_ids(user_id)
-    questions = fetch_pyqs_for_quiz(needed_count=count, seen_ids=seen_ids)
-
+    questions = get_questions_by_count(q_count)
     if not questions:
-        await query.edit_message_text("🎉 You have completed all questions in the question bank!")
+        await query.edit_message_text("⚠️ Question bank is empty. Please contact admin.")
         return
 
-    q_ids = [q["id"] for q in questions if q.get("id") is not None]
-    mark_questions_as_seen(user_id, q_ids)
-
-    session = {
-        "user_id": user_id,
+    ACTIVE_SESSIONS[user_id] = {
         "questions": questions,
         "current_index": 0,
-        "score": 0.0,
+        "total": len(questions),
+        "timer_sec": timer_sec,
         "correct": 0,
         "wrong": 0,
         "skipped": 0,
-        "total": len(questions),
-        "timer_sec": timer_sec,
-        "is_paused": False,
-        "start_time": get_ist_timestamp_str()
+        "score": 0,
+        "poll_map": {},
+        "start_time": time.strftime("%Y-%m-%d %H:%M:%S")
     }
-    ACTIVE_SESSIONS[user_id] = session
 
-    await query.edit_message_text(
-        f"🚀 **Quiz Session Started!**\n"
-        f"━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\n"
-        f"🎯 **Questions:** `{len(questions)}` | ⏱ **Timer:** `{timer_sec}s/question`\n"
-        f"📅 **Attempt Date:** `{session['start_time']}`\n\n"
-        f"Loading Question 1/{len(questions)}...",
-        parse_mode="Markdown"
-    )
+    await query.edit_message_text(f"🚀 **Quiz Starting!**\nPreparing {len(questions)} questions ({timer_sec}s per question)...", parse_mode="Markdown")
     await send_next_question(query.message.chat_id, user_id, context)
 
 async def send_next_question(chat_id: int, user_id: int, context: ContextTypes.DEFAULT_TYPE):
-    m_until = get_maintenance_until()
-    if int(time.time()) < m_until:
-        await context.bot.send_message(chat_id=chat_id, text="🛠 **ADMIN HAS PAUSED THE SERVICE CURRENTLY**\nQuiz session paused!")
-        return
-
     session = ACTIVE_SESSIONS.get(user_id)
-    if not session or session.get("is_paused"):
+    if not session:
         return
 
-    if session["current_index"] >= session["total"]:
+    idx = session["current_index"]
+    if idx >= session["total"]:
         await finish_quiz_and_send_report(chat_id, user_id, context)
         return
 
-    q = session["questions"][session["current_index"]]
-    timer_sec = session["timer_sec"]
+    q = session["questions"][idx]
+    poll_msg = await context.bot.send_poll(
+        chat_id=chat_id,
+        question=f"Q{idx + 1}/{session['total']}: {q['question']}",
+        options=q["options"],
+        type="quiz",
+        correct_option_id=q["correct_option_id"],
+        explanation=q.get("explanation", "Learn with HiM Quiz Book"),
+        is_anonymous=False,
+        open_period=session["timer_sec"]
+    )
 
-    header_text = f"🖥 [Q {session['current_index']+1}/{session['total']}]\n\n{q['question']}"
-    if len(header_text) > 300:
-        header_text = header_text[:297] + "..."
-
-    clean_opts = [str(opt)[:97] for opt in q["options"]]
-    expl_text = q.get("explanation") or "Learn with HiM Quiz Book by Himanshu Sir"
-    if len(expl_text) > 200:
-        expl_text = expl_text[:197] + "..."
-
-    correct_id = q.get("correct_option", 0)
-
-    try:
-        poll_msg = await context.bot.send_poll(
-            chat_id=chat_id,
-            question=header_text,
-            options=clean_opts,
-            type=Poll.QUIZ,
-            correct_option_id=correct_id,
-            explanation=expl_text,
-            explanation_parse_mode="Markdown",
-            is_anonymous=False,
-            open_period=timer_sec
-        )
-        
-        poll_id = poll_msg.poll.id
-        POLL_MAP[poll_id] = {"user_id": user_id, "chat_id": chat_id, "q_idx": session["current_index"], "correct_id": correct_id}
-
-        if user_id in TIMER_TASKS and not TIMER_TASKS[user_id].done():
-            TIMER_TASKS[user_id].cancel()
-
-        TIMER_TASKS[user_id] = asyncio.create_task(auto_skip_task(chat_id, user_id, poll_id, session["current_index"], timer_sec, context))
-    except Exception as e:
-        logging.error(f"Error sending poll: {e}")
-        session["skipped"] += 1
-        session["current_index"] += 1
-        await send_next_question(chat_id, user_id, context)
-
-async def auto_skip_task(chat_id: int, user_id: int, poll_id: str, expected_idx: int, timer_sec: int, context: ContextTypes.DEFAULT_TYPE):
-    await asyncio.sleep(timer_sec + 1)
-    if poll_id in POLL_MAP:
-        POLL_MAP.pop(poll_id, None)
-        session = ACTIVE_SESSIONS.get(user_id)
-        if session and not session.get("is_paused") and session["current_index"] == expected_idx:
-            session["skipped"] += 1
-            session["current_index"] += 1
-            await send_next_question(chat_id, user_id, context)
+    session["poll_map"][poll_msg.poll.id] = {
+        "q_index": idx,
+        "correct_id": q["correct_option_id"]
+    }
 
 async def handle_poll_answer(update: Update, context: ContextTypes.DEFAULT_TYPE):
-    answer = update.poll_answer
-    poll_id = answer.poll_id
-    if poll_id not in POLL_MAP:
-        return
-
-    data = POLL_MAP.pop(poll_id)
-    user_id = data["user_id"]
-    chat_id = data["chat_id"]
-
-    if user_id in TIMER_TASKS and not TIMER_TASKS[user_id].done():
-        TIMER_TASKS[user_id].cancel()
-
-    m_until = get_maintenance_until()
-    if int(time.time()) < m_until:
-        await context.bot.send_message(chat_id=chat_id, text="🛠 **ADMIN HAS PAUSED THE SERVICE CURRENTLY**")
-        return
+    poll_answer = update.poll_answer
+    user_id = poll_answer.user.id
+    poll_id = poll_answer.poll_id
 
     session = ACTIVE_SESSIONS.get(user_id)
-    if session and not session.get("is_paused") and session["current_index"] == data["q_idx"]:
-        selected = answer.option_ids[0] if answer.option_ids else -1
-        if selected == data["correct_id"]:
-            session["score"] += 1.0
-            session["correct"] += 1
-        else:
-            session["wrong"] += 1
+    if not session:
+        return
 
-        session["current_index"] += 1
-        await asyncio.sleep(0.8)
-        await send_next_question(chat_id, user_id, context)
+    poll_info = session["poll_map"].get(poll_id)
+    if not poll_info:
+        return
+
+    selected_option = poll_answer.option_ids[0] if poll_answer.option_ids else None
+    if selected_option is None:
+        session["skipped"] += 1
+    elif selected_option == poll_info["correct_id"]:
+        session["correct"] += 1
+        session["score"] += 1
+    else:
+        session["wrong"] += 1
+
+    session["current_index"] += 1
+    await asyncio.sleep(1.5)
+    await send_next_question(poll_answer.user.id, user_id, context)
 
 async def finish_quiz_and_send_report(chat_id: int, user_id: int, context: ContextTypes.DEFAULT_TYPE):
     session = ACTIVE_SESSIONS.pop(user_id, None)
@@ -266,14 +203,28 @@ async def finish_quiz_and_send_report(chat_id: int, user_id: int, context: Conte
         f"• **Final Score:** `{score} / {total}`\n\n"
         f"🎖 **Overall Rank & Percentile:**\n"
         f"• **Global Rank:** `{rank_str}`\n"
-        f"• **Percentile Rating:** `{percentile}%`\n"
-        f"━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━"
+        f"• **Percentile Rating:** `{percentile}%` \n"
+        f"━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\n"
+        f"👇 **What would you like to do next?**\n"
+        f"• `/mywholestate` — View detailed academic stats\n"
+        f"• `/toppername` — Check overall leaderboards\n"
+        f"• `/feedback` — Rate & review this quiz session\n"
+        f"• `/quiz` — Start another practice quiz"
     )
 
     buttons = [
-        [InlineKeyboardButton("📢 Join Telegram Channel", url=f"https://t.me/{CHANNEL_USERNAME.replace('@', '')}")],
-        [InlineKeyboardButton("📺 Join YouTube Channel", url=YOUTUBE_CHANNEL_URL)],
-        [InlineKeyboardButton("🚀 Attempt Another Quiz", callback_data="cmd_quiz")]
+        [
+            InlineKeyboardButton("📊 My Stats (/mywholestate)", callback_data="cmd_wholestate"),
+            InlineKeyboardButton("🏆 Leaderboard (/toppername)", callback_data="cmd_toppers")
+        ],
+        [
+            InlineKeyboardButton("💬 Write Review (/feedback)", callback_data="cmd_feedback"),
+            InlineKeyboardButton("🚀 Attempt Another Quiz", callback_data="cmd_quiz")
+        ],
+        [
+            InlineKeyboardButton("📢 Telegram Channel", url=f"https://t.me/{CHANNEL_USERNAME.replace('@', '')}"),
+            InlineKeyboardButton("📺 YouTube Channel", url=YOUTUBE_CHANNEL_URL)
+        ]
     ]
 
     await context.bot.send_message(chat_id=chat_id, text=report_card, reply_markup=InlineKeyboardMarkup(buttons), parse_mode="Markdown")

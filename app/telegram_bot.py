@@ -22,7 +22,6 @@ from app.admin import admin_portal_command, admin_callback_handler
 NEGATIVE_WORDS = ["bad", "worst", "useless", "trash", "fake", "hate", "terrible", "waste", "horrible", "fraud", "stupid", "scam"]
 
 async def maintenance_guard(update: Update, context: ContextTypes.DEFAULT_TYPE) -> bool:
-    """STRICT MAINTENANCE GUARD: Hard blocks ALL user commands & callbacks if bot is paused."""
     m_until = get_maintenance_until()
     if int(time.time()) < m_until:
         remaining_sec = m_until - int(time.time())
@@ -37,10 +36,6 @@ async def maintenance_guard(update: Update, context: ContextTypes.DEFAULT_TYPE) 
     return True
 
 async def send_response(update: Update, text: str, reply_markup=None):
-    """
-    CLEAN RESPONSE ENGINE:
-    Uses InlineKeyboardMarkup or ReplyKeyboardRemove() to ensure no persistent grid keyboards exist.
-    """
     if update.callback_query:
         await update.callback_query.answer()
         try:
@@ -185,13 +180,14 @@ async def viewfeedbacks_command(update: Update, context: ContextTypes.DEFAULT_TY
     feedbacks = get_all_student_feedbacks(limit=15)
 
     if not feedbacks:
-        await send_response(update, "📖 No student reviews submitted yet. Be the first to leave feedback using /feedback!")
+        await send_response(update, "📖 **No student reviews submitted yet.**\nBe the first to leave feedback using /feedback!")
         return
 
-    lines = ["📖 **STUDENT REVIEWS & FEEDBACK BOARD**\n━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\n"]
+    lines = ["📖 **STUDENT REVIEWS & APPRECIATION BOARD**\n━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\n"]
     for idx, fb in enumerate(feedbacks, start=1):
-        lines.append(f"**{idx}. {fb['full_name']}**:\n 💬 *\"{fb['feedback_text']}\"*\n")
+        lines.append(f"**{idx}. {fb['full_name']}**:\n💬 *\"{fb['feedback_text']}\"*\n")
 
+    lines.append("━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\n💡 *Submit your own review anytime using /feedback!*")
     await send_response(update, "\n".join(lines))
 
 async def referral_command(update: Update, context: ContextTypes.DEFAULT_TYPE):
@@ -281,9 +277,6 @@ async def global_error_handler(update: object, context: ContextTypes.DEFAULT_TYP
     logging.debug(f"Exception caught in global error handler: {context.error}")
 
 async def post_init(application: Application):
-    """
-    PURGES ALL CACHED TELEGRAM COMMAND SCOPES AND REGISTERS ONLY THE EXACT 8 PROJECT COMMANDS.
-    """
     try:
         await application.bot.delete_my_commands(scope=BotCommandScopeDefault())
         await application.bot.delete_my_commands(scope=BotCommandScopeAllPrivateChats())
@@ -311,7 +304,6 @@ def build_application() -> Application:
 
     app.add_handler(get_onboarding_handler())
     
-    # Core Project Commands
     app.add_handler(CommandHandler("quiz", launch_quiz_setup))
     app.add_handler(CommandHandler("myprofile", myprofile_command))
     app.add_handler(CommandHandler("mywholestate", wholestate_command))
@@ -323,7 +315,6 @@ def build_application() -> Application:
     app.add_handler(CommandHandler("help", help_command))
     app.add_handler(CommandHandler("invite", referral_command))
     
-    # Secret Admin Command
     app.add_handler(CommandHandler("admin", admin_portal_command))
     app.add_handler(CommandHandler("admit", admin_portal_command))
 

@@ -43,12 +43,12 @@ async def session_and_maintenance_guard(update: Update, context: ContextTypes.DE
             await update.message.reply_text(msg, parse_mode="Markdown", reply_markup=ReplyKeyboardRemove())
         return False
 
-    # 2. 4-Hour Inactivity Expiry Check
+    # 2. Strict Inactivity Session Expiry Check
     profile = get_user_profile(user.id)
     if profile and profile.get("is_verified"):
-        if is_user_session_expired(user.id) and not context.user_data.get("session_unlocked"):
+        if is_user_session_expired(user.id):
             login_msg = (
-                "🔒 **SESSION EXPIRED (4+ Hours Inactive)**\n"
+                "🔒 **SESSION EXPIRED**\n"
                 "━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\n"
                 "For account security, please log back in to resume practicing.\n\n"
                 "👉 **Reply with your 6-Digit Student ID & 4-Digit Password:**\n"
@@ -66,6 +66,7 @@ async def session_and_maintenance_guard(update: Update, context: ContextTypes.DE
                 await update.message.reply_text(login_msg, reply_markup=buttons, parse_mode="Markdown")
             return False
 
+        # Touch user activity on valid interaction
         touch_user_activity(user.id)
 
     return True
@@ -311,13 +312,13 @@ async def handle_text_and_contact_messages(update: Update, context: ContextTypes
     user = update.effective_user
     message = update.message
 
+    # 1. OPTION 1 RECOVERY: Handle Contact Sharing Verification
     if message.contact:
         phone = message.contact.phone_number
         record = get_student_credentials_by_phone(phone)
         
         if record:
             touch_user_activity(user.id)
-            context.user_data["session_unlocked"] = True
             await message.reply_text(
                 f"✅ **IDENTITY VERIFIED SUCCESSFULLY!**\n"
                 f"━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\n"
@@ -339,16 +340,16 @@ async def handle_text_and_contact_messages(update: Update, context: ContextTypes
             )
         return
 
+    # 2. LOGIN VERIFIER: Handle Login Strings (e.g., "839201 A9K2")
     text = message.text.strip()
     parts = text.split()
     if len(parts) == 2 and len(parts[0]) == 6 and len(parts[1]) == 4 and parts[0].isdigit():
         student_id, pass_code = parts[0], parts[1]
         if verify_student_login(user.id, student_id, pass_code):
-            context.user_data["session_unlocked"] = True
             await message.reply_text(
                 f"🎉 **LOGIN SUCCESSFUL!**\n"
                 f"━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\n"
-                f"Welcome back! Your 4-hour session timer has been renewed.\n\n"
+                f"Welcome back! Your session timer has been renewed.\n\n"
                 f"👉 Tap **/quiz** to start practicing now!",
                 reply_markup=ReplyKeyboardRemove(),
                 parse_mode="Markdown"
@@ -447,10 +448,7 @@ def build_application() -> Application:
     app.add_handler(CallbackQueryHandler(button_router, pattern="^cmd_|^fb_"))
 
     app.add_handler(MessageHandler(filters.CONTACT | (filters.TEXT & ~filters.COMMAND), handle_text_and_contact_messages))
-    
-    # CRITICAL: Ensures poll answers are actively caught and routed to quiz_engine.py
     app.add_handler(PollAnswerHandler(handle_poll_answer))
-    
     app.add_error_handler(global_error_handler)
 
     return app

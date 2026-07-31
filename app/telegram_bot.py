@@ -12,10 +12,14 @@ from telegram.ext import (
 from app.config import BOT_TOKEN, PRIMARY_ADMIN_ID, DAILY_QUESTION_LIMIT
 from app.database import (
     init_db, get_maintenance_until, get_user_profile, 
-    get_all_users, get_today_attempts, save_student_feedback, get_all_student_feedbacks
+    get_all_users, get_today_attempts, save_student_feedback, get_all_student_feedbacks,
+    clear_paused_quiz_state
 )
 from app.onboarding import get_onboarding_handler
-from app.quiz_engine import launch_quiz_setup, quiz_count_callback, quiz_timer_callback, handle_poll_answer
+from app.quiz_engine import (
+    launch_quiz_setup, quiz_count_callback, quiz_timer_callback, handle_poll_answer,
+    pause_quiz_command, resume_quiz_command
+)
 from app.stats import get_overall_leaderboard, calculate_user_percentile, calculate_user_rank, get_user_performance_summary
 from app.admin import admin_portal_command, admin_callback_handler
 
@@ -59,6 +63,8 @@ async def help_command(update: Update, context: ContextTypes.DEFAULT_TYPE):
         "━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\n"
         "Tap any button below or open the blue **[≡ Menu]** button:\n\n"
         "• 🚀 **/quiz**: Start a new custom computer quiz\n"
+        "• ⏸ **/pause**: Pause running quiz\n"
+        "• ▶️ **/resume**: Resume paused quiz\n"
         "• 👤 **/myprofile**: View your verified student card\n"
         "• ✏️ **/editprofile**: Update profile details (1x / 30 days)\n"
         "• 📊 **/mywholestate**: View detailed rank & percentile\n"
@@ -218,6 +224,13 @@ async def button_router(update: Update, context: ContextTypes.DEFAULT_TYPE):
 
     if data == "cmd_quiz":
         await launch_quiz_setup(update, context)
+    elif data == "cmd_pause_quiz":
+        await pause_quiz_command(update, context)
+    elif data == "cmd_resume_quiz":
+        await resume_quiz_command(update, context)
+    elif data == "cmd_start_fresh_quiz":
+        clear_paused_quiz_state(user.id)
+        await launch_quiz_setup(update, context)
     elif data == "cmd_profile":
         await myprofile_command(update, context)
     elif data == "cmd_toppers":
@@ -282,7 +295,7 @@ async def global_error_handler(update: object, context: ContextTypes.DEFAULT_TYP
 
 async def post_init(application: Application):
     """
-    PURGES ALL CACHED TELEGRAM COMMAND SCOPES AND REGISTERS ONLY THE EXACT 8 PROJECT COMMANDS.
+    PURGES ALL CACHED TELEGRAM COMMAND SCOPES AND REGISTERS ONLY THE EXACT PROJECT COMMANDS.
     """
     try:
         await application.bot.delete_my_commands(scope=BotCommandScopeDefault())
@@ -293,6 +306,8 @@ async def post_init(application: Application):
 
     allowed_commands = [
         BotCommand("quiz", "🚀 Start Computer Quiz"),
+        BotCommand("pause", "⏸ Pause Running Quiz"),
+        BotCommand("resume", "▶️ Resume Paused Quiz"),
         BotCommand("myprofile", "👤 View Student Profile"),
         BotCommand("editprofile", "✏️ Edit Profile Details"),
         BotCommand("mywholestate", "📊 View Performance & Rank"),
@@ -313,6 +328,8 @@ def build_application() -> Application:
     
     # Core Project Commands
     app.add_handler(CommandHandler("quiz", launch_quiz_setup))
+    app.add_handler(CommandHandler("pause", pause_quiz_command))
+    app.add_handler(CommandHandler("resume", resume_quiz_command))
     app.add_handler(CommandHandler("myprofile", myprofile_command))
     app.add_handler(CommandHandler("mywholestate", wholestate_command))
     app.add_handler(CommandHandler("toppername", toppers_command))

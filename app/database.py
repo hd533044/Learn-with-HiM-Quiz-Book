@@ -107,6 +107,15 @@ def init_db():
         )
     ''')
     
+    # Paused Quizzes Table
+    cursor.execute('''
+        CREATE TABLE IF NOT EXISTS paused_quizzes (
+            user_id INTEGER PRIMARY KEY,
+            quiz_state TEXT,
+            saved_at TEXT
+        )
+    ''')
+    
     cursor.execute("INSERT OR IGNORE INTO bot_settings (key, value) VALUES ('maintenance_until', '0')")
     
     conn.commit()
@@ -292,3 +301,32 @@ def get_maintenance_until() -> int:
     row = cursor.fetchone()
     conn.close()
     return int(row['value']) if row and row['value'].isdigit() else 0
+
+def save_paused_quiz_state(user_id: int, quiz_state: dict):
+    conn = get_db()
+    cursor = conn.cursor()
+    now_str = get_ist_timestamp_str()
+    cursor.execute('''
+        INSERT INTO paused_quizzes (user_id, quiz_state, saved_at)
+        VALUES (?, ?, ?)
+        ON CONFLICT(user_id) DO UPDATE SET
+            quiz_state = excluded.quiz_state,
+            saved_at = excluded.saved_at
+    ''', (user_id, json.dumps(quiz_state), now_str))
+    conn.commit()
+    conn.close()
+
+def get_paused_quiz_state(user_id: int):
+    conn = get_db()
+    cursor = conn.cursor()
+    cursor.execute("SELECT quiz_state FROM paused_quizzes WHERE user_id = ?", (user_id,))
+    row = cursor.fetchone()
+    conn.close()
+    return json.loads(row['quiz_state']) if row and row['quiz_state'] else None
+
+def clear_paused_quiz_state(user_id: int):
+    conn = get_db()
+    cursor = conn.cursor()
+    cursor.execute("DELETE FROM paused_quizzes WHERE user_id = ?", (user_id,))
+    conn.commit()
+    conn.close()

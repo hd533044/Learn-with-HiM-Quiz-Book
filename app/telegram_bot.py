@@ -3,7 +3,7 @@ import logging
 from telegram import (
     Update, InlineKeyboardMarkup, InlineKeyboardButton, 
     BotCommand, BotCommandScopeDefault, BotCommandScopeAllPrivateChats, 
-    BotCommandScopeAllGroupChats, ReplyKeyboardRemove
+    BotCommandScopeAllGroupChats, ReplyKeyboardRemove, ReplyKeyboardMarkup, KeyboardButton
 )
 from telegram.ext import (
     Application, CommandHandler, CallbackQueryHandler, PollAnswerHandler, 
@@ -13,7 +13,8 @@ from app.config import BOT_TOKEN, PRIMARY_ADMIN_ID, DAILY_QUESTION_LIMIT
 from app.database import (
     init_db, get_maintenance_until, get_user_profile, 
     get_all_users, get_today_attempts, save_student_feedback, get_all_student_feedbacks,
-    clear_paused_quiz_state, touch_user_activity
+    clear_paused_quiz_state, is_user_session_expired, touch_user_activity, verify_password_only,
+    get_student_credentials_by_phone
 )
 from app.onboarding import get_onboarding_handler
 from app.quiz_engine import (
@@ -30,7 +31,7 @@ async def session_and_maintenance_guard(update: Update, context: ContextTypes.DE
     if not user:
         return True
 
-    # Check Maintenance Mode Only
+    # 1. Check Admin Maintenance Mode
     m_until = get_maintenance_until()
     if int(time.time()) < m_until and user.id != PRIMARY_ADMIN_ID:
         remaining_sec = m_until - int(time.time())
@@ -42,7 +43,31 @@ async def session_and_maintenance_guard(update: Update, context: ContextTypes.DE
             await update.message.reply_text(msg, parse_mode="Markdown", reply_markup=ReplyKeyboardRemove())
         return False
 
-    touch_user_activity(user.id)
+    # 2. Check Password Security Inactivity Lock
+    profile = get_user_profile(user.id)
+    if profile and profile.get("is_verified"):
+        if is_user_session_expired(user.id):
+            login_msg = (
+                "🔒 **SESSION EXPIRED (1+ Minute Inactive)**\n"
+                "━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\n"
+                "For account security, please enter your **4-Character Password** to unlock access:\n\n"
+                "👉 **Reply with your 4-Character Password below:**\n"
+                "*(Example: `A9K2`)*\n\n"
+                "💡 *Forgot password? Tap below to recover via phone number!*"
+            )
+            buttons = InlineKeyboardMarkup([
+                [InlineKeyboardButton("🔑 Recover Password via Phone", callback_data="cmd_forgot_credentials")]
+            ])
+            
+            if update.callback_query:
+                await update.callback_query.answer("🔒 Session Expired! Please Unlock.", show_alert=True)
+                await context.bot.send_message(chat_id=user.id, text=login_msg, reply_markup=buttons, parse_mode="Markdown")
+            elif update.message:
+                await update.message.reply_text(login_msg, reply_markup=buttons, parse_mode="Markdown")
+            return False
+
+        touch_user_activity(user.id)
+
     return True
 
 async def send_response(update: Update, text: str, reply_markup=None):
@@ -219,9 +244,29 @@ async def referral_command(update: Update, context: ContextTypes.DEFAULT_TYPE):
     )
     await send_response(update, msg)
 
+async def handle_forgot_credentials(update: Update, context: ContextTypes.DEFAULT_TYPE):
+    query = update.callback_query
+    await query.answer()
+
+    contact_btn = KeyboardButton(text="📱 Share Contact to Recover Password", request_contact=True)
+    markup = ReplyKeyboardMarkup([[contact_btn]], one_time_keyboard=True, resize_keyboard=True)
+
+    await context.bot.send_message(
+        chat_id=query.from_user.id,
+        text="🔑 **CREDENTIAL RECOVERY**\n"
+             "━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\n"
+             "Please click the **Share Contact** button below to verify your phone number and view your Password:",
+        reply_markup=markup,
+        parse_mode="Markdown"
+    )
+
 async def button_router(update: Update, context: ContextTypes.DEFAULT_TYPE):
     query = update.callback_query
     data = query.data
+
+    if data == "cmd_forgot_credentials":
+        await handle_forgot_credentials(update, context)
+        return
 
     if not await session_and_maintenance_guard(update, context): return
 
@@ -262,15 +307,69 @@ async def button_router(update: Update, context: ContextTypes.DEFAULT_TYPE):
         context.user_data["awaiting_custom_feedback"] = True
         await query.edit_message_text("✍️ Please reply with your custom feedback/review below:")
 
-async def handle_text_messages(update: Update, context: ContextTypes.DEFAULT_TYPE):
+async def handle_text_and_contact_messages(update: Update, context: ContextTypes.DEFAULT_TYPE):
     user = update.effective_user
     message = update.message
-    if not message or not message.text:
+    if not message:
         return
 
-    text = message.text.strip()
+    # 1. Contact Sharing Verification
+    if message.contact:
+        phone = message.contact.phone_number
+        record = get_student_credentials_by_phone(phone)
+        
+        if record:
+            touch_user_activity(user.id)
+            await message.reply_text(
+                f"✅ **IDENTITY VERIFIED SUCCESSFULLY!**\n"
+                f"━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\n"
+                f"👤 **Student Name:** {record['full_name']}\n"
+                f"🆔 **Student ID:** `{record['student_id']}`\n"
+                f"🔑 **Your Password:** `{record['login_pass']}`\n"
+                f"━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\n"
+                f"⚡ Your session is unlocked! Tap **/quiz** to resume.",
+                reply_markup=ReplyKeyboardRemove(),
+                parse_mode="Markdown"
+            )
+        else:
+            await message.reply_text(
+                "❌ **RECOVERY FAILED!**\n\n"
+                "No registered student account matched this phone number.\n"
+                "Type /start to register.",
+                reply_markup=ReplyKeyboardRemove(),
+                parse_mode="Markdown"
+            )
+        return
+
+    text = message.text.strip() if message.text else ""
+    
+    # Bypass command strings so CommandHandlers handle them directly
     if text.startswith("/"):
         return
+
+    # 2. Password Verification (4-character alphanumeric)
+    if len(text) == 4 and text.isalnum():
+        if verify_password_only(user.id, text):
+            await message.reply_text(
+                f"🎉 **PASSWORD VERIFIED — UNLOCKED!**\n"
+                f"━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\n"
+                f"Welcome back! Your session is renewed.\n\n"
+                f"👉 Tap **/quiz** to start practicing now!",
+                reply_markup=ReplyKeyboardRemove(),
+                parse_mode="Markdown"
+            )
+            return
+        else:
+            await message.reply_text(
+                "❌ **INCORRECT PASSWORD!**\n\n"
+                "The 4-character password entered is invalid.\n"
+                "Please try again or tap below to recover it via phone:",
+                reply_markup=InlineKeyboardMarkup([[
+                    InlineKeyboardButton("🔑 Recover Password via Phone", callback_data="cmd_forgot_credentials")
+                ]]),
+                parse_mode="Markdown"
+            )
+            return
 
     if not await session_and_maintenance_guard(update, context): return
 
@@ -332,7 +431,7 @@ def build_application() -> Application:
     # Onboarding Handler
     app.add_handler(get_onboarding_handler())
     
-    # Standalone Commands
+    # Explicit Command Handlers
     app.add_handler(CommandHandler("quiz", launch_quiz_setup))
     app.add_handler(CommandHandler("pause", pause_quiz_command))
     app.add_handler(CommandHandler("resume", resume_quiz_command))
@@ -355,8 +454,8 @@ def build_application() -> Application:
     app.add_handler(CallbackQueryHandler(admin_callback_handler, pattern="^admin_"))
     app.add_handler(CallbackQueryHandler(button_router, pattern="^cmd_|^fb_"))
 
-    # Text Messages
-    app.add_handler(MessageHandler(filters.TEXT & ~filters.COMMAND, handle_text_messages))
+    # Text & Contact Handler (Filters out commands with ~filters.COMMAND)
+    app.add_handler(MessageHandler((filters.CONTACT | filters.TEXT) & ~filters.COMMAND, handle_text_and_contact_messages))
     
     # Poll Answers
     app.add_handler(PollAnswerHandler(handle_poll_answer))

@@ -13,6 +13,9 @@ from app.config import DB_FILE, USER_PROFILES_DIR
 logger = logging.getLogger(__name__)
 IST = pytz.timezone("Asia/Kolkata")
 
+# INACTIVITY LOCK TIMER (Set to 60 seconds / 1 minute for trial)
+INACTIVITY_TIMEOUT_SEC = 60 
+
 def get_ist_now():
     return datetime.now(IST)
 
@@ -31,7 +34,14 @@ def sanitize_filename(name_str: str) -> str:
     clean = re.sub(r'[^a-zA-Z0-9]', '_', str(name_str).strip())
     return clean if clean else "Candidate"
 
+def sanitize_phone(phone_str: str) -> str:
+    if not phone_str:
+        return ""
+    digits = re.sub(r"\D", "", str(phone_str))
+    return digits[-10:] if len(digits) >= 10 else digits
+
 def generate_unique_student_id() -> str:
+    """Generates 6-Character ID: 5 Digits + 1 Uppercase English Letter (e.g., 83920A)."""
     conn = get_db()
     cursor = conn.cursor()
     while True:
@@ -168,6 +178,7 @@ def can_user_edit_profile(user_id: int) -> tuple:
         return True, 0
 
 def sync_user_unique_file(user_id: int):
+    """Syncs candidate data into data/user_profiles/<Name>_<Student_ID>.json."""
     conn = get_db()
     cursor = conn.cursor()
     
@@ -277,6 +288,54 @@ def touch_user_activity(user_id: int):
     cursor.execute("UPDATE users SET last_active_epoch = ? WHERE user_id = ?", (now_epoch, user_id))
     conn.commit()
     conn.close()
+
+def is_user_session_expired(user_id: int) -> bool:
+    """Returns True if inactive for more than INACTIVITY_TIMEOUT_SEC (60s)."""
+    conn = get_db()
+    cursor = conn.cursor()
+    cursor.execute("SELECT last_active_epoch FROM users WHERE user_id = ?", (user_id,))
+    row = cursor.fetchone()
+    conn.close()
+
+    if not row or not row['last_active_epoch']:
+        return False
+
+    now_epoch = int(time.time())
+    last_active = int(row['last_active_epoch'])
+    return (now_epoch - last_active) > INACTIVITY_TIMEOUT_SEC
+
+def verify_password_only(user_id: int, input_pass: str) -> bool:
+    conn = get_db()
+    cursor = conn.cursor()
+    cursor.execute(
+        "SELECT 1 FROM users WHERE user_id = ? AND UPPER(login_pass) = ?", 
+        (user_id, input_pass.strip().upper())
+    )
+    match = cursor.fetchone()
+    conn.close()
+    if match:
+        touch_user_activity(user_id)
+        return True
+    return False
+
+def get_student_credentials_by_phone(phone_number: str) -> dict:
+    target_10_digits = sanitize_phone(phone_number)
+    if not target_10_digits:
+        return None
+
+    conn = get_db()
+    cursor = conn.cursor()
+    cursor.execute("SELECT * FROM users")
+    rows = cursor.fetchall()
+    conn.close()
+
+    for r in rows:
+        row_dict = dict(r)
+        db_phone = sanitize_phone(row_dict.get('phone_number', ''))
+        if db_phone and db_phone == target_10_digits:
+            return row_dict
+
+    return None
 
 def get_user_profile(user_id):
     conn = get_db()

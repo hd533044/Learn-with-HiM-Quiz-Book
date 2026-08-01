@@ -43,7 +43,7 @@ async def session_and_maintenance_guard(update: Update, context: ContextTypes.DE
             await update.message.reply_text(msg, parse_mode="Markdown", reply_markup=ReplyKeyboardRemove())
         return False
 
-    # 2. Strict Password-Only 1-Minute Inactivity Guard
+    # 2. Inactivity Session Guard (1 Minute Timeout)
     profile = get_user_profile(user.id)
     if profile and profile.get("is_verified"):
         if is_user_session_expired(user.id):
@@ -53,7 +53,7 @@ async def session_and_maintenance_guard(update: Update, context: ContextTypes.DE
                 "For account security, enter your **4-Character Password** to unlock:\n\n"
                 "👉 **Reply with your 4-Character Password below:**\n"
                 "*(Example: `A9K2`)*\n\n"
-                "💡 *Forgot password? Tap below to recover via phone!*"
+                "💡 *Forgot password? Tap below to recover via mobile!*"
             )
             buttons = InlineKeyboardMarkup([
                 [InlineKeyboardButton("🔑 Recover Password via Phone", callback_data="cmd_forgot_credentials")]
@@ -310,6 +310,8 @@ async def button_router(update: Update, context: ContextTypes.DEFAULT_TYPE):
 async def handle_text_and_contact_messages(update: Update, context: ContextTypes.DEFAULT_TYPE):
     user = update.effective_user
     message = update.message
+    if not message:
+        return
 
     # 1. OPTION 1 RECOVERY: Handle Contact Verification
     if message.contact:
@@ -340,7 +342,12 @@ async def handle_text_and_contact_messages(update: Update, context: ContextTypes
         return
 
     # 2. PASSWORD-ONLY UNLOCK CHECK (4-Character String)
-    text = message.text.strip()
+    text = message.text.strip() if message.text else ""
+    
+    # Ignore slash commands so they route directly to CommandHandlers
+    if text.startswith("/"):
+        return
+
     if len(text) == 4 and text.isalnum():
         if verify_password_only(user.id, text):
             await message.reply_text(
@@ -421,8 +428,10 @@ def build_application() -> Application:
     init_db()
     app = Application.builder().token(BOT_TOKEN).post_init(post_init).build()
 
+    # 1. Onboarding Conversation Handler
     app.add_handler(get_onboarding_handler())
     
+    # 2. Command Handlers (Explicitly registered BEFORE generic message handlers)
     app.add_handler(CommandHandler("quiz", launch_quiz_setup))
     app.add_handler(CommandHandler("pause", pause_quiz_command))
     app.add_handler(CommandHandler("resume", resume_quiz_command))
@@ -439,13 +448,18 @@ def build_application() -> Application:
     app.add_handler(CommandHandler("admin", admin_portal_command))
     app.add_handler(CommandHandler("admit", admin_portal_command))
 
+    # 3. Callback Queries & Buttons
     app.add_handler(CallbackQueryHandler(quiz_count_callback, pattern="^qcount_"))
     app.add_handler(CallbackQueryHandler(quiz_timer_callback, pattern="^qtimer_"))
     app.add_handler(CallbackQueryHandler(admin_callback_handler, pattern="^admin_"))
     app.add_handler(CallbackQueryHandler(button_router, pattern="^cmd_|^fb_"))
 
-    app.add_handler(MessageHandler(filters.CONTACT | (filters.TEXT & ~filters.COMMAND), handle_text_and_contact_messages))
+    # 4. Generic Text / Contact Message Handler (Filter out command strings using ~filters.COMMAND)
+    app.add_handler(MessageHandler((filters.CONTACT | filters.TEXT) & ~filters.COMMAND, handle_text_and_contact_messages))
+    
+    # 5. Quiz Poll Answers
     app.add_handler(PollAnswerHandler(handle_poll_answer))
+    
     app.add_error_handler(global_error_handler)
 
     return app

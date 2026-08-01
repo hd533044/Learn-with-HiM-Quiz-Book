@@ -51,25 +51,27 @@ async def launch_quiz_setup(update: Update, context: ContextTypes.DEFAULT_TYPE):
         await update.message.reply_text("⚠️ Please type /start to create your profile before attempting quizzes!")
         return
 
-    # STRICT DAILY LIMIT CHECK (00:00 to 23:59 IST)
+    # STRICT DAILY LIMIT CHECK & WARNING (00:00 to 23:59 IST)
     attempted_today = get_today_attempts(user.id)
     allowed_limit = DAILY_QUESTION_LIMIT + profile.get("bonus_quota", 0)
 
     if attempted_today >= allowed_limit and user.id != PRIMARY_ADMIN_ID:
-        limit_msg = (
-            f"🛑 **Daily Free Limit Exhausted!**\n\n"
-            f"You have reached your actual daily limit of `{allowed_limit}` questions for today (00:00 to 23:59).\n"
-            f"The `/quiz` command has been **deactivated** for your account until tomorrow.\n\n"
-            f"💡 **Unlock +10 Questions:** Share your invite link with 4 friends to increase your limit!"
+        exhausted_msg = (
+            f"🛑 **WARNING: DAILY FREE LIMIT EXHAUSTED!**\n"
+            f"━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\n"
+            f"• **Today's Usage:** `{attempted_today}` / `{allowed_limit}` Questions\n"
+            f"• **Status:** You have fully exhausted your free daily limit for today (00:00 to 23:59).\n\n"
+            f"⚠️ **Notice:** The `/quiz` command is now **deactivated** for your account. You will not be able to attempt any more quizzes until tomorrow or until you unlock extra quota via referrals!\n\n"
+            f"💡 **Unlock +10 Questions:** Share your invite link with 4 friends using `/invite`."
         )
         keyboard = InlineKeyboardMarkup([[
             InlineKeyboardButton("🤝 Invite Friends (+10 Limit)", callback_data="cmd_referral")
         ]])
         if update.callback_query:
             await update.callback_query.answer("🛑 Daily Limit Exhausted! /quiz is deactivated.", show_alert=True)
-            await update.callback_query.message.reply_text(limit_msg, reply_markup=keyboard, parse_mode="Markdown")
+            await update.callback_query.message.reply_text(exhausted_msg, reply_markup=keyboard, parse_mode="Markdown")
         else:
-            await update.message.reply_text(limit_msg, reply_markup=keyboard, parse_mode="Markdown")
+            await update.message.reply_text(exhausted_msg, reply_markup=keyboard, parse_mode="Markdown")
         return
 
     paused = get_paused_quiz_state(user.id)
@@ -106,7 +108,7 @@ async def launch_quiz_setup(update: Update, context: ContextTypes.DEFAULT_TYPE):
         f"📚 **Learn with HiM Quiz Setup (Step 1/2)**\n"
         f"━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\n"
         f"• **Daily Quota Used Today:** `{attempted_today}` / `{allowed_limit}` Qs\n"
-        f"• **Remaining Quota:** `{remaining_quota}` Qs\n\n"
+        f"• **Remaining Quota:** `{remaining_quota}` Qs available\n\n"
         f"Select the number of questions for this session:"
     )
 
@@ -121,7 +123,6 @@ async def quiz_count_callback(update: Update, context: ContextTypes.DEFAULT_TYPE
     query = update.callback_query
     user_id = query.from_user.id
     
-    # DOUBLE CHECK LIMIT ON COUNT SELECTION TO BLOCK BYPASS
     profile = get_user_profile(user_id)
     attempted_today = get_today_attempts(user_id)
     allowed_limit = DAILY_QUESTION_LIMIT + (profile.get("bonus_quota", 0) if profile else 0)
@@ -129,7 +130,8 @@ async def quiz_count_callback(update: Update, context: ContextTypes.DEFAULT_TYPE
     if attempted_today >= allowed_limit and user_id != PRIMARY_ADMIN_ID:
         await query.answer("🛑 Daily Limit Exhausted! Quiz is locked.", show_alert=True)
         await query.edit_message_text(
-            f"🛑 **Daily Free Limit Exhausted!**\n\nYou have reached your actual daily limit of `{allowed_limit}` questions for today (00:00 to 23:59). You cannot attempt any more quizzes.",
+            f"🛑 **WARNING: DAILY FREE LIMIT EXHAUSTED!**\n\n"
+            f"You have reached your actual daily limit of `{allowed_limit}` questions for today (00:00 to 23:59). The `/quiz` command is deactivated.",
             parse_mode="Markdown"
         )
         return
@@ -137,7 +139,6 @@ async def quiz_count_callback(update: Update, context: ContextTypes.DEFAULT_TYPE
     await query.answer()
     count = int(query.data.replace("qcount_", ""))
     
-    # Ensure requested count does not exceed remaining quota
     remaining_quota = allowed_limit - attempted_today
     if count > remaining_quota:
         count = max(1, remaining_quota)
@@ -163,7 +164,6 @@ async def quiz_timer_callback(update: Update, context: ContextTypes.DEFAULT_TYPE
     query = update.callback_query
     user_id = query.from_user.id
     
-    # TRIPLE CHECK LIMIT ON FINAL TIMER LAUNCH TO STRICTLY BLOCK ANY ATTEMPTS
     profile = get_user_profile(user_id)
     attempted_today = get_today_attempts(user_id)
     allowed_limit = DAILY_QUESTION_LIMIT + (profile.get("bonus_quota", 0) if profile else 0)
@@ -171,7 +171,8 @@ async def quiz_timer_callback(update: Update, context: ContextTypes.DEFAULT_TYPE
     if attempted_today >= allowed_limit and user_id != PRIMARY_ADMIN_ID:
         await query.answer("🛑 Daily Limit Exhausted! Quiz is locked.", show_alert=True)
         await query.edit_message_text(
-            f"🛑 **Daily Free Limit Exhausted!**\n\nYou have reached your actual daily limit of `{allowed_limit}` questions for today (00:00 to 23:59). Your quiz has been cancelled.",
+            f"🛑 **WARNING: DAILY FREE LIMIT EXHAUSTED!**\n\n"
+            f"You have reached your actual daily limit of `{allowed_limit}` questions for today (00:00 to 23:59). Your quiz has been cancelled.",
             parse_mode="Markdown"
         )
         return

@@ -13,7 +13,7 @@ from app.config import DB_FILE, USER_PROFILES_DIR
 logger = logging.getLogger(__name__)
 IST = pytz.timezone("Asia/Kolkata")
 
-# INACTIVITY TRIAL TIMER: 60 Seconds (1 Minute). Set to 14400 for 4 Hours in Production.
+# INACTIVITY TRIAL TIMER: 60 Seconds (1 Minute).
 INACTIVITY_TIMEOUT_SEC = 60
 
 def get_ist_now():
@@ -323,7 +323,7 @@ def is_user_session_expired(user_id: int) -> bool:
     row = cursor.fetchone()
     conn.close()
 
-    if not row or not row['last_active_epoch']:
+    if not row or not row['last_active_epoch'] or int(row['last_active_epoch']) == 0:
         return False
 
     now_epoch = int(time.time())

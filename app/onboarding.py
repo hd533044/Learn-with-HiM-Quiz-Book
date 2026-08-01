@@ -1,25 +1,23 @@
 import re
 import logging
 import warnings
-import time
-from telegram import (
-    Update, InlineKeyboardMarkup, InlineKeyboardButton, 
-    ReplyKeyboardMarkup, KeyboardButton, ReplyKeyboardRemove
-)
+from telegram import Update, InlineKeyboardMarkup, InlineKeyboardButton, ReplyKeyboardMarkup, KeyboardButton, ReplyKeyboardRemove
 from telegram.warnings import PTBUserWarning
 from telegram.ext import (
-    ConversationHandler, CommandHandler, MessageHandler, 
-    CallbackQueryHandler, filters, ContextTypes
+    ConversationHandler, 
+    CommandHandler, 
+    MessageHandler, 
+    CallbackQueryHandler, 
+    filters, 
+    ContextTypes
 )
-from app.config import WELCOME_CARD_TEXT, PRIMARY_ADMIN_ID, DAILY_QUESTION_LIMIT
-from app.database import (
-    save_user_profile, get_user_profile, can_user_edit_profile, 
-    get_maintenance_until, touch_user_activity, get_today_attempts
-)
+from app.config import WELCOME_CARD_TEXT, PRIMARY_ADMIN_ID
+from app.database import save_user_profile, get_user_profile, can_user_edit_profile, get_maintenance_until
+import time
 
 warnings.filterwarnings("ignore", category=PTBUserWarning)
 
-NAME, EXAM, COUNTRY, STATE, PHONE, GENDER, AGE, PASSWORD_SET, EDIT_WARN = range(9)
+NAME, EXAM, COUNTRY, STATE, PHONE, GENDER, AGE, EDIT_WARN = range(8)
 
 INDIAN_STATES_AND_UTS = [
     "Andhra Pradesh", "Arunachal Pradesh", "Assam", "Bihar", "Chhattisgarh", "Goa", 
@@ -71,52 +69,23 @@ async def start_onboarding(update: Update, context: ContextTypes.DEFAULT_TYPE):
 
     profile = get_user_profile(user.id)
     if profile and profile.get("is_verified") and not context.user_data.get("is_editing_profile"):
-        touch_user_activity(user.id)
-        student_id = profile.get('student_id') or 'N/A'
-        login_pass = profile.get('login_pass') or 'N/A'
-        today_used = get_today_attempts(user.id)
-        allowed_limit = DAILY_QUESTION_LIMIT + profile.get("bonus_quota", 0)
-        remaining = max(0, allowed_limit - today_used)
-
-        profile_card = (
-            f"👤 **STUDENT PROFILE CARD**\n"
-            f"📚 *Learn with HiM Quiz Book*\n"
-            f"━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\n"
-            f"🆔 **Student ID:** `{student_id}`\n"
-            f"🔑 **Your Password:** `{login_pass}`\n"
-            f"━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\n"
-            f"• **Full Name:** {profile['full_name']}\n"
-            f"• **Telegram ID:** `{profile['user_id']}`\n"
-            f"• **Target Exam:** `{profile['target_exam']}`\n"
-            f"• **Age / Gender:** `{profile['age']}` / `{profile['gender']}`\n"
-            f"• **Location:** `{profile.get('state', 'N/A')}, {profile.get('country', 'India')}`\n"
-            f"• **Phone:** `{profile['phone_number']}` *(Private)*\n\n"
-            f"📅 **Login Tracking Metrics:**\n"
-            f"• **Last Login Timestamp:** `{profile.get('last_login_timestamp', 'N/A')}`\n"
-            f"• **Last Login Date:** `{profile.get('last_login_date', 'N/A')}`\n"
-            f"• **Last Active Epoch:** `{profile.get('last_active_epoch', 'N/A')}`\n\n"
-            f"📊 **Daily Quota Status:**\n"
-            f"• **Used Today:** `{today_used}` / `{allowed_limit}` Qs\n"
-            f"• **Remaining Today:** `{remaining}` Qs\n"
-            f"• **Referrals:** `{profile.get('referral_count', 0)}` / 4 friends\n"
-            f"━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━"
+        await update.message.reply_text(
+            f"⚡ **Welcome back, {profile['full_name']}!**\n\n"
+            f"🎯 **Target Exam:** `{profile['target_exam']}`\n"
+            f"📍 **Location:** `{profile.get('state', 'N/A')}, {profile.get('country', 'India')}`\n\n"
+            f"Click options below or use the square menu to start practicing!",
+            reply_markup=InlineKeyboardMarkup([
+                [InlineKeyboardButton("🚀 Launch Quiz", callback_data="cmd_quiz"), InlineKeyboardButton("👤 Profile", callback_data="cmd_profile")],
+                [InlineKeyboardButton("🥇 Leaderboard", callback_data="cmd_toppers"), InlineKeyboardButton("📊 My Stats", callback_data="cmd_wholestate")]
+            ]),
+            parse_mode="Markdown"
         )
-        
-        buttons = InlineKeyboardMarkup([
-            [InlineKeyboardButton("🚀 Launch Quiz", callback_data="cmd_quiz"), InlineKeyboardButton("📊 Whole State", callback_data="cmd_wholestate")],
-            [InlineKeyboardButton("✏️ Edit Profile", callback_data="cmd_editprofile"), InlineKeyboardButton("🤝 Invite (+10 Quota)", callback_data="cmd_referral")]
-        ])
-
-        if update.callback_query:
-            await update.callback_query.message.reply_text(profile_card, reply_markup=buttons, parse_mode="Markdown")
-        else:
-            await update.message.reply_text(profile_card, reply_markup=buttons, parse_mode="Markdown")
         return ConversationHandler.END
 
     await update.message.reply_text(
         f"{WELCOME_CARD_TEXT}\n\n"
         f"━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\n"
-        f"📝 **Student Registration (Step 1/7)**\n\n"
+        f"📝 **Student Registration (Step 1/6)**\n\n"
         f"Please enter your **Full Name** to setup your official student profile:",
         parse_mode="Markdown"
     )
@@ -130,15 +99,9 @@ async def edit_profile_command(update: Update, context: ContextTypes.DEFAULT_TYP
     can_edit, days_left = can_user_edit_profile(user.id)
     
     if not can_edit:
-        msg = (
-            f"⏳ **PROFILE EDIT LOCKED!**\n"
-            f"━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\n"
-            f"You are allowed to edit your profile details **ONLY ONCE EVERY 30 DAYS**.\n\n"
-            f"⏰ **Tracking Timer:** `{days_left} days remaining` before you can edit again."
-        )
+        msg = f"⏳ **Profile Edit Locked!**\n\nYou can only update your profile details once every 30 days.\nPlease try again in `{days_left} days`."
         if update.callback_query:
-            await update.callback_query.answer(f"⏳ Edit Locked! {days_left} days remaining.", show_alert=True)
-            await update.callback_query.message.reply_text(msg, parse_mode="Markdown")
+            await update.callback_query.answer(msg, show_alert=True)
         else:
             await update.message.reply_text(msg, parse_mode="Markdown")
         return ConversationHandler.END
@@ -171,7 +134,7 @@ async def edit_warn_callback(update: Update, context: ContextTypes.DEFAULT_TYPE)
 
     context.user_data["is_editing_profile"] = True
     await query.edit_message_text(
-        "✏️ **Edit Profile Session Started (Step 1/7)**\n\n"
+        "✏️ **Edit Profile Session Started (Step 1/6)**\n\n"
         "Please enter your updated **Full Name**:",
         parse_mode="Markdown"
     )
@@ -191,7 +154,7 @@ async def name_step(update: Update, context: ContextTypes.DEFAULT_TYPE):
 
     await update.message.reply_text(
         f"✨ Nice to meet you, *{context.user_data['full_name']}*!\n\n"
-        f"🎯 **Target Exam Selection (Step 2/7):**\n"
+        f"🎯 **Target Exam Selection (Step 2/6):**\n"
         f"Please tap your targeted examination from the options below:",
         reply_markup=InlineKeyboardMarkup(exams),
         parse_mode="Markdown"
@@ -216,7 +179,7 @@ async def exam_callback(update: Update, context: ContextTypes.DEFAULT_TYPE):
     ])
     await query.edit_message_text(
         f"🎯 Selected Target: `{selected_exam}`\n\n"
-        f"🌍 **Country Selection (Step 3/7):**\n"
+        f"🌍 **Country Selection (Step 3/6):**\n"
         f"Please choose your country from below:",
         reply_markup=country_buttons,
         parse_mode="Markdown"
@@ -233,7 +196,7 @@ async def custom_exam_text(update: Update, context: ContextTypes.DEFAULT_TYPE):
         ])
         await update.message.reply_text(
             f"🎯 Selected Target: `{context.user_data['target_exam']}`\n\n"
-            f"🌍 **Country Selection (Step 3/7):**\n"
+            f"🌍 **Country Selection (Step 3/6):**\n"
             f"Please choose your country from below:",
             reply_markup=country_buttons,
             parse_mode="Markdown"
@@ -252,7 +215,7 @@ async def country_callback(update: Update, context: ContextTypes.DEFAULT_TYPE):
 
     context.user_data["country"] = "India"
     await query.edit_message_text(
-        "📍 **Indian State / UT Selection (Step 4/7):**\n\n"
+        "📍 **Indian State / UT Selection (Step 4/6):**\n\n"
         "Please select your State or Union Territory from the interactive list below:",
         reply_markup=build_state_keyboard(),
         parse_mode="Markdown"
@@ -270,7 +233,7 @@ async def custom_country_text(update: Update, context: ContextTypes.DEFAULT_TYPE
         
         await update.message.reply_text(
             f"🌍 Country: `{context.user_data['country']}`\n\n"
-            f"📱 **Mobile Verification (Step 5/7):**\n"
+            f"📱 **Mobile Verification (Step 5/6):**\n"
             f"Tap the **Share Verified Mobile Number** button below to complete verification:",
             reply_markup=markup,
             parse_mode="Markdown"
@@ -292,7 +255,7 @@ async def state_callback(update: Update, context: ContextTypes.DEFAULT_TYPE):
     await context.bot.send_message(
         chat_id=query.message.chat_id,
         text=f"📍 Selected Location: `{selected_state}, India`\n\n"
-             f"📱 **Mobile Verification (Step 5/7):**\n"
+             f"📱 **Mobile Verification (Step 5/6):**\n"
              f"Tap the **Share Verified Mobile Number** button below to complete verification:",
         reply_markup=markup,
         parse_mode="Markdown"
@@ -304,9 +267,8 @@ async def phone_contact_step(update: Update, context: ContextTypes.DEFAULT_TYPE)
         contact_btn = KeyboardButton(text="📱 Share Verified Mobile Number", request_contact=True)
         markup = ReplyKeyboardMarkup([[contact_btn]], one_time_keyboard=True, resize_keyboard=True)
         await update.message.reply_text(
-            "🛑 **VERIFICATION REQUIRED — NO BYPASS ALLOWED!**\n\n"
-            "To ensure student authenticity, typing phone numbers manually is disabled.\n"
-            "You MUST click the **Share Verified Mobile Number** button below:",
+            "⚠️ **Verification Required!**\n\n"
+            "To prevent fake profiles, you MUST click the button below to share your verified Telegram mobile number:",
             reply_markup=markup,
             parse_mode="Markdown"
         )
@@ -322,7 +284,7 @@ async def phone_contact_step(update: Update, context: ContextTypes.DEFAULT_TYPE)
 
     await update.message.reply_text(
         f"✅ Verified Mobile: `{phone_num}`\n\n"
-        f"👤 **Select Gender (Step 6/7):**",
+        f"👤 **Select Gender (Step 6/6):**",
         reply_markup=gender_buttons,
         parse_mode="Markdown"
     )
@@ -349,78 +311,36 @@ async def age_step(update: Update, context: ContextTypes.DEFAULT_TYPE):
         await update.message.reply_text("❌ Please enter a valid age in numbers (e.g. 22):")
         return AGE
 
-    context.user_data["age"] = int(age_text)
-
-    await update.message.reply_text(
-        "🔑 **Set Your Custom Password (Step 7/7):**\n"
-        "━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\n"
-        "Please type a custom password (up to 10 alphanumeric characters, case-sensitive):\n"
-        "*(Example: `Pass1234` or `9876543210`)*",
-        parse_mode="Markdown"
-    )
-    return PASSWORD_SET
-
-async def password_step(update: Update, context: ContextTypes.DEFAULT_TYPE):
-    pass_text = update.message.text.strip()
-    
-    if len(pass_text) < 3 or len(pass_text) > 10 or not pass_text.isalnum():
-        await update.message.reply_text("❌ Password must be 3 to 10 alphanumeric characters (letters/numbers only). Please try again:")
-        return PASSWORD_SET
-
     user = update.effective_user
     context.user_data["is_editing_profile"] = False
 
-    student_id, login_pass = save_user_profile(
+    save_user_profile(
         user_id=user.id,
         full_name=context.user_data.get("full_name", user.full_name),
         username=user.username or "N/A",
         phone=context.user_data.get("phone_number", "N/A"),
         target_exam=context.user_data.get("target_exam", "General"),
-        age=context.user_data.get("age", 20),
+        age=int(age_text),
         gender=context.user_data.get("gender", "Not Specified"),
-        custom_pass=pass_text,
         country=context.user_data.get("country", "India"),
         state=context.user_data.get("state", "N/A"),
         referred_by=context.user_data.get("referred_by")
     )
 
-    profile = get_user_profile(user.id)
-    today_used = get_today_attempts(user.id)
-    allowed_limit = DAILY_QUESTION_LIMIT + profile.get("bonus_quota", 0)
-    remaining = max(0, allowed_limit - today_used)
-
-    summary_card = (
-        f"🎉 **STUDENT PROFILE SAVED SUCCESSFULLY!**\n"
-        f"📚 *Learn with HiM Official Student Profile*\n"
-        f"━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\n"
-        f"🆔 **Your Student ID:** `{student_id}`\n"
-        f"🔑 **Your Password:** `{login_pass}`\n"
-        f"━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\n"
-        f"• **Full Name:** {profile['full_name']}\n"
-        f"• **Telegram ID:** `{profile['user_id']}`\n"
-        f"• **Target Exam:** `{profile['target_exam']}`\n"
-        f"• **Age / Gender:** `{profile['age']}` / `{profile['gender']}`\n"
-        f"• **Location:** `{profile.get('state', 'N/A')}, {profile.get('country', 'India')}`\n"
-        f"• **Phone:** `{profile['phone_number']}` *(Private)*\n\n"
-        f"📅 **Login Tracking Metrics:**\n"
-        f"• **Last Login Timestamp:** `{profile.get('last_login_timestamp', 'N/A')}`\n"
-        f"• **Last Login Date:** `{profile.get('last_login_date', 'N/A')}`\n"
-        f"• **Last Active Epoch:** `{profile.get('last_active_epoch', 'N/A')}`\n\n"
-        f"📊 **Daily Quota Status:**\n"
-        f"• **Used Today:** `{today_used}` / `{allowed_limit}` Qs\n"
-        f"• **Remaining Today:** `{remaining}` Qs\n"
-        f"• **Referrals:** `{profile.get('referral_count', 0)}` / 4 friends\n"
-        f"━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\n"
-        f"⚡ **Session Active!** Tap **/quiz** below to start practicing."
+    await update.message.reply_text(
+        "🎉 **Student Registration Complete!**\n"
+        "━━━━━━━━━━━━━━━━━━━━━━━━━\n"
+        "Your student profile has been verified and synced successfully.\n\n"
+        "👉 Tap **Launch Quiz** below or use the square bot menu to begin!",
+        reply_markup=ReplyKeyboardRemove(),
+        parse_mode="Markdown"
     )
-
-    buttons = InlineKeyboardMarkup([
-        [InlineKeyboardButton("🚀 Launch Quiz", callback_data="cmd_quiz"), InlineKeyboardButton("📊 Whole State", callback_data="cmd_wholestate")],
-        [InlineKeyboardButton("✏️ Edit Profile", callback_data="cmd_editprofile"), InlineKeyboardButton("🤝 Invite (+10 Quota)", callback_data="cmd_referral")]
-    ])
-
-    await update.message.reply_text(summary_card, reply_markup=ReplyKeyboardRemove(), parse_mode="Markdown")
-    await update.message.reply_text("👇 **Quick Navigation:**", reply_markup=buttons, parse_mode="Markdown")
+    await update.message.reply_text(
+        "👇 **Quick Navigation:**",
+        reply_markup=InlineKeyboardMarkup([
+            [InlineKeyboardButton("🚀 Launch Quiz", callback_data="cmd_quiz"), InlineKeyboardButton("👤 Profile", callback_data="cmd_profile")]
+        ])
+    )
     return ConversationHandler.END
 
 async def cancel_onboarding(update: Update, context: ContextTypes.DEFAULT_TYPE):
@@ -447,10 +367,9 @@ def get_onboarding_handler():
                 MessageHandler(filters.TEXT & ~filters.COMMAND, custom_country_text)
             ],
             STATE: [CallbackQueryHandler(state_callback, pattern="^st_")],
-            PHONE: [MessageHandler(filters.ALL & ~filters.COMMAND, phone_contact_step)],
+            PHONE: [MessageHandler(filters.CONTACT | (filters.TEXT & ~filters.COMMAND), phone_contact_step)],
             GENDER: [CallbackQueryHandler(gender_callback, pattern="^gen_")],
             AGE: [MessageHandler(filters.TEXT & ~filters.COMMAND, age_step)],
-            PASSWORD_SET: [MessageHandler(filters.TEXT & ~filters.COMMAND, password_step)],
         },
         fallbacks=[CommandHandler("cancel", cancel_onboarding)],
         per_chat=True,

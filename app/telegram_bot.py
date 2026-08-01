@@ -3,7 +3,7 @@ import logging
 from telegram import (
     Update, InlineKeyboardMarkup, InlineKeyboardButton, 
     BotCommand, BotCommandScopeDefault, BotCommandScopeAllPrivateChats, 
-    BotCommandScopeAllGroupChats, ReplyKeyboardRemove, ReplyKeyboardMarkup, KeyboardButton
+    BotCommandScopeAllGroupChats, ReplyKeyboardRemove
 )
 from telegram.ext import (
     Application, CommandHandler, CallbackQueryHandler, PollAnswerHandler, 
@@ -13,8 +13,7 @@ from app.config import BOT_TOKEN, PRIMARY_ADMIN_ID, DAILY_QUESTION_LIMIT
 from app.database import (
     init_db, get_maintenance_until, get_user_profile, 
     get_all_users, get_today_attempts, save_student_feedback, get_all_student_feedbacks,
-    clear_paused_quiz_state, is_user_session_expired, touch_user_activity, verify_password_only,
-    get_student_credentials_by_phone
+    clear_paused_quiz_state
 )
 from app.onboarding import get_onboarding_handler
 from app.quiz_engine import (
@@ -26,51 +25,26 @@ from app.admin import admin_portal_command, admin_callback_handler
 
 NEGATIVE_WORDS = ["bad", "worst", "useless", "trash", "fake", "hate", "terrible", "waste", "horrible", "fraud", "stupid", "scam"]
 
-async def session_and_maintenance_guard(update: Update, context: ContextTypes.DEFAULT_TYPE) -> bool:
-    user = update.effective_user
-    if not user:
-        return True
-
-    # 1. Check Admin Maintenance Mode
+async def maintenance_guard(update: Update, context: ContextTypes.DEFAULT_TYPE) -> bool:
+    """STRICT MAINTENANCE GUARD: Hard blocks ALL user commands & callbacks if bot is paused."""
     m_until = get_maintenance_until()
-    if int(time.time()) < m_until and user.id != PRIMARY_ADMIN_ID:
+    if int(time.time()) < m_until:
         remaining_sec = m_until - int(time.time())
         mins_left = max(1, (remaining_sec + 59) // 60)
         msg = f"🛠 **ADMIN HAS PAUSED THE SERVICE CURRENTLY**\nService will resume in approximately `{mins_left} mins`. Please try again later!"
+        
         if update.callback_query:
-            await update.callback_query.answer(f"🛠 Service Paused!", show_alert=True)
+            await update.callback_query.answer(f"🛠 Service Paused! Resuming in ~{mins_left} mins.", show_alert=True)
         elif update.message:
             await update.message.reply_text(msg, parse_mode="Markdown", reply_markup=ReplyKeyboardRemove())
         return False
-
-    # 2. Check Password Security Inactivity Lock
-    profile = get_user_profile(user.id)
-    if profile and profile.get("is_verified"):
-        if is_user_session_expired(user.id):
-            login_msg = (
-                "🔒 **SESSION EXPIRED (1+ Minute Inactive)**\n"
-                "━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\n"
-                "For account security, please enter your **4-Character Password** to unlock access:\n\n"
-                "👉 **Reply with your 4-Character Password below:**\n"
-                "*(Example: `A9K2`)*\n\n"
-                "💡 *Forgot password? Tap below to recover via phone number!*"
-            )
-            buttons = InlineKeyboardMarkup([
-                [InlineKeyboardButton("🔑 Recover Password via Phone", callback_data="cmd_forgot_credentials")]
-            ])
-            
-            if update.callback_query:
-                await update.callback_query.answer("🔒 Session Expired! Please Unlock.", show_alert=True)
-                await context.bot.send_message(chat_id=user.id, text=login_msg, reply_markup=buttons, parse_mode="Markdown")
-            elif update.message:
-                await update.message.reply_text(login_msg, reply_markup=buttons, parse_mode="Markdown")
-            return False
-
-        touch_user_activity(user.id)
-
     return True
 
 async def send_response(update: Update, text: str, reply_markup=None):
+    """
+    CLEAN RESPONSE ENGINE:
+    Uses InlineKeyboardMarkup or ReplyKeyboardRemove() to ensure no persistent grid keyboards exist.
+    """
     if update.callback_query:
         await update.callback_query.answer()
         try:
@@ -82,7 +56,7 @@ async def send_response(update: Update, text: str, reply_markup=None):
         await update.message.reply_text(text, reply_markup=markup, parse_mode="Markdown")
 
 async def help_command(update: Update, context: ContextTypes.DEFAULT_TYPE):
-    if not await session_and_maintenance_guard(update, context): return
+    if not await maintenance_guard(update, context): return
 
     msg = (
         "🤖 **LEARN WITH HIM QUIZ BOOK — COMMAND DIRECTORY**\n"
@@ -92,7 +66,7 @@ async def help_command(update: Update, context: ContextTypes.DEFAULT_TYPE):
         "• ⏸ **/pause**: Pause running quiz\n"
         "• ▶️ **/resume**: Resume paused quiz\n"
         "• 👤 **/myprofile**: View your verified student card\n"
-        "• ✏️ **/editprofile**: Update profile details\n"
+        "• ✏️ **/editprofile**: Update profile details (1x / 30 days)\n"
         "• 📊 **/mywholestate**: View detailed rank & percentile\n"
         "• 🏆 **/toppername**: Inspect the global scholar leaderboard\n"
         "• 💬 **/feedback**: Rate the bot or leave feedback\n"
@@ -110,7 +84,7 @@ async def help_command(update: Update, context: ContextTypes.DEFAULT_TYPE):
     await send_response(update, msg, reply_markup=InlineKeyboardMarkup(buttons))
 
 async def myprofile_command(update: Update, context: ContextTypes.DEFAULT_TYPE):
-    if not await session_and_maintenance_guard(update, context): return
+    if not await maintenance_guard(update, context): return
     user = update.effective_user
     profile = get_user_profile(user.id)
 
@@ -125,9 +99,6 @@ async def myprofile_command(update: Update, context: ContextTypes.DEFAULT_TYPE):
     msg = (
         f"👤 **STUDENT PROFILE CARD**\n"
         f"📚 *Learn with HiM Quiz Book*\n"
-        f"━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\n"
-        f"🆔 **Student ID:** `{profile.get('student_id', 'N/A')}`\n"
-        f"🔑 **Your Password:** `{profile.get('login_pass', 'N/A')}`\n"
         f"━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\n"
         f"• **Full Name:** {profile['full_name']}\n"
         f"• **Telegram ID:** `{profile['user_id']}`\n"
@@ -150,7 +121,7 @@ async def myprofile_command(update: Update, context: ContextTypes.DEFAULT_TYPE):
     await send_response(update, msg, reply_markup=InlineKeyboardMarkup(buttons))
 
 async def wholestate_command(update: Update, context: ContextTypes.DEFAULT_TYPE):
-    if not await session_and_maintenance_guard(update, context): return
+    if not await maintenance_guard(update, context): return
     user = update.effective_user
     profile = get_user_profile(user.id)
     
@@ -166,21 +137,21 @@ async def wholestate_command(update: Update, context: ContextTypes.DEFAULT_TYPE)
         f"🎓 **STUDENT ACADEMIC REPORT CARD**\n"
         f"━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\n"
         f"👤 **Name:** {profile['full_name']}\n"
-        f"🆔 **Student ID:** `{profile.get('student_id', 'N/A')}`\n"
         f"🎯 **Target Exam:** `{profile['target_exam']}`\n"
         f"📍 **Location:** `{profile.get('state', 'N/A')}, {profile.get('country', 'India')}`\n\n"
         f"📈 **Performance Metrics:**\n"
         f"• **Tests Completed:** `{perf.get('total_tests', 0)}`\n"
+        f"• **Total Quizzes Attempted:** `{perf.get('total_tests', 0)}` till date\n"
         f"• **Questions Attempted:** `{perf.get('total_qs', 0)}`\n"
         f"• **Global Rank:** `{rank}`\n"
-        f"• **Overall Percentile:** `{percentile}%`"
+        f"• **Overall Percentile:** `{percentile}%` *(Calculated against all registered students)*"
     )
 
     buttons = [[InlineKeyboardButton("🚀 Launch Quiz", callback_data="cmd_quiz"), InlineKeyboardButton("🏆 Leaderboard", callback_data="cmd_toppers")]]
     await send_response(update, msg, reply_markup=InlineKeyboardMarkup(buttons))
 
 async def toppers_command(update: Update, context: ContextTypes.DEFAULT_TYPE):
-    if not await session_and_maintenance_guard(update, context): return
+    if not await maintenance_guard(update, context): return
     toppers = get_overall_leaderboard(limit=10)
     
     if not toppers:
@@ -197,7 +168,7 @@ async def toppers_command(update: Update, context: ContextTypes.DEFAULT_TYPE):
     await send_response(update, msg, reply_markup=InlineKeyboardMarkup(buttons))
 
 async def feedback_command(update: Update, context: ContextTypes.DEFAULT_TYPE):
-    if not await session_and_maintenance_guard(update, context): return
+    if not await maintenance_guard(update, context): return
 
     keyboard = [
         [InlineKeyboardButton("🌟 10/10 Bot! The quizzes are top quality 🚀", callback_data="fb_p1")],
@@ -216,7 +187,7 @@ async def feedback_command(update: Update, context: ContextTypes.DEFAULT_TYPE):
     await send_response(update, msg, reply_markup=InlineKeyboardMarkup(keyboard))
 
 async def viewfeedbacks_command(update: Update, context: ContextTypes.DEFAULT_TYPE):
-    if not await session_and_maintenance_guard(update, context): return
+    if not await maintenance_guard(update, context): return
     feedbacks = get_all_student_feedbacks(limit=15)
 
     if not feedbacks:
@@ -230,7 +201,7 @@ async def viewfeedbacks_command(update: Update, context: ContextTypes.DEFAULT_TY
     await send_response(update, "\n".join(lines))
 
 async def referral_command(update: Update, context: ContextTypes.DEFAULT_TYPE):
-    if not await session_and_maintenance_guard(update, context): return
+    if not await maintenance_guard(update, context): return
     user = update.effective_user
     bot_username = context.bot.username
     ref_link = f"https://t.me/{bot_username}?start=ref_{user.id}"
@@ -244,33 +215,13 @@ async def referral_command(update: Update, context: ContextTypes.DEFAULT_TYPE):
     )
     await send_response(update, msg)
 
-async def handle_forgot_credentials(update: Update, context: ContextTypes.DEFAULT_TYPE):
-    query = update.callback_query
-    await query.answer()
-
-    contact_btn = KeyboardButton(text="📱 Share Contact to Recover Password", request_contact=True)
-    markup = ReplyKeyboardMarkup([[contact_btn]], one_time_keyboard=True, resize_keyboard=True)
-
-    await context.bot.send_message(
-        chat_id=query.from_user.id,
-        text="🔑 **CREDENTIAL RECOVERY**\n"
-             "━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\n"
-             "Please click the **Share Contact** button below to verify your phone number and view your Password:",
-        reply_markup=markup,
-        parse_mode="Markdown"
-    )
-
 async def button_router(update: Update, context: ContextTypes.DEFAULT_TYPE):
+    if not await maintenance_guard(update, context): return
+
     query = update.callback_query
     data = query.data
-
-    if data == "cmd_forgot_credentials":
-        await handle_forgot_credentials(update, context)
-        return
-
-    if not await session_and_maintenance_guard(update, context): return
-
     user = query.from_user
+
     if data == "cmd_quiz":
         await launch_quiz_setup(update, context)
     elif data == "cmd_pause_quiz":
@@ -303,86 +254,28 @@ async def button_router(update: Update, context: ContextTypes.DEFAULT_TYPE):
         name = profile.get("full_name") if profile else user.full_name
         save_student_feedback(user.id, name, fb_text)
         await query.edit_message_text(f"🎉 **Thank you, {name}!** Your feedback has been recorded:\n\n💬 *\"{fb_text}\"*", parse_mode="Markdown")
+
     elif data == "fb_custom":
         context.user_data["awaiting_custom_feedback"] = True
         await query.edit_message_text("✍️ Please reply with your custom feedback/review below:")
 
-async def handle_text_and_contact_messages(update: Update, context: ContextTypes.DEFAULT_TYPE):
+async def handle_text_messages(update: Update, context: ContextTypes.DEFAULT_TYPE):
+    if not await maintenance_guard(update, context): return
+
     user = update.effective_user
-    message = update.message
-    if not message:
-        return
-
-    # 1. Contact Sharing Verification
-    if message.contact:
-        phone = message.contact.phone_number
-        record = get_student_credentials_by_phone(phone)
-        
-        if record:
-            touch_user_activity(user.id)
-            await message.reply_text(
-                f"✅ **IDENTITY VERIFIED SUCCESSFULLY!**\n"
-                f"━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\n"
-                f"👤 **Student Name:** {record['full_name']}\n"
-                f"🆔 **Student ID:** `{record['student_id']}`\n"
-                f"🔑 **Your Password:** `{record['login_pass']}`\n"
-                f"━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\n"
-                f"⚡ Your session is unlocked! Tap **/quiz** to resume.",
-                reply_markup=ReplyKeyboardRemove(),
-                parse_mode="Markdown"
-            )
-        else:
-            await message.reply_text(
-                "❌ **RECOVERY FAILED!**\n\n"
-                "No registered student account matched this phone number.\n"
-                "Type /start to register.",
-                reply_markup=ReplyKeyboardRemove(),
-                parse_mode="Markdown"
-            )
-        return
-
-    text = message.text.strip() if message.text else ""
-    
-    # Bypass command strings so CommandHandlers handle them directly
-    if text.startswith("/"):
-        return
-
-    # 2. Password Verification (4-character alphanumeric)
-    if len(text) == 4 and text.isalnum():
-        if verify_password_only(user.id, text):
-            await message.reply_text(
-                f"🎉 **PASSWORD VERIFIED — UNLOCKED!**\n"
-                f"━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\n"
-                f"Welcome back! Your session is renewed.\n\n"
-                f"👉 Tap **/quiz** to start practicing now!",
-                reply_markup=ReplyKeyboardRemove(),
-                parse_mode="Markdown"
-            )
-            return
-        else:
-            await message.reply_text(
-                "❌ **INCORRECT PASSWORD!**\n\n"
-                "The 4-character password entered is invalid.\n"
-                "Please try again or tap below to recover it via phone:",
-                reply_markup=InlineKeyboardMarkup([[
-                    InlineKeyboardButton("🔑 Recover Password via Phone", callback_data="cmd_forgot_credentials")
-                ]]),
-                parse_mode="Markdown"
-            )
-            return
-
-    if not await session_and_maintenance_guard(update, context): return
+    text = update.message.text.strip()
 
     if context.user_data.get("awaiting_custom_feedback"):
         context.user_data["awaiting_custom_feedback"] = False
+        
         if any(bad_word in text.lower() for bad_word in NEGATIVE_WORDS):
-            await message.reply_text("🙏 Thank you for your feedback! We are constantly working hard to improve your experience.")
+            await update.message.reply_text("🙏 Thank you for your feedback! We are constantly working hard to improve your experience.", reply_markup=ReplyKeyboardRemove())
             return
 
         profile = get_user_profile(user.id)
         name = profile.get("full_name") if profile else user.full_name
         save_student_feedback(user.id, name, text)
-        await message.reply_text(f"🎉 **Feedback Received!** Thank you *{name}* for your kind words:\n\n💬 *\"{text}\"*", parse_mode="Markdown")
+        await update.message.reply_text(f"🎉 **Feedback Received!** Thank you *{name}* for your kind words:\n\n💬 *\"{text}\"*", reply_markup=ReplyKeyboardRemove(), parse_mode="Markdown")
         return
 
     if context.user_data.get("awaiting_broadcast"):
@@ -395,12 +288,15 @@ async def handle_text_and_contact_messages(update: Update, context: ContextTypes
                 sent += 1
             except Exception:
                 pass
-        await message.reply_text(f"✅ Announcement sent to {sent} users!")
+        await update.message.reply_text(f"✅ Announcement sent to {sent} users!", reply_markup=ReplyKeyboardRemove())
 
 async def global_error_handler(update: object, context: ContextTypes.DEFAULT_TYPE) -> None:
     logging.debug(f"Exception caught in global error handler: {context.error}")
 
 async def post_init(application: Application):
+    """
+    PURGES ALL CACHED TELEGRAM COMMAND SCOPES AND REGISTERS ONLY THE EXACT PROJECT COMMANDS.
+    """
     try:
         await application.bot.delete_my_commands(scope=BotCommandScopeDefault())
         await application.bot.delete_my_commands(scope=BotCommandScopeAllPrivateChats())
@@ -428,10 +324,9 @@ def build_application() -> Application:
     init_db()
     app = Application.builder().token(BOT_TOKEN).post_init(post_init).build()
 
-    # Onboarding Handler
     app.add_handler(get_onboarding_handler())
     
-    # Explicit Command Handlers
+    # Core Project Commands
     app.add_handler(CommandHandler("quiz", launch_quiz_setup))
     app.add_handler(CommandHandler("pause", pause_quiz_command))
     app.add_handler(CommandHandler("resume", resume_quiz_command))
@@ -445,19 +340,16 @@ def build_application() -> Application:
     app.add_handler(CommandHandler("help", help_command))
     app.add_handler(CommandHandler("invite", referral_command))
     
+    # Secret Admin Command
     app.add_handler(CommandHandler("admin", admin_portal_command))
     app.add_handler(CommandHandler("admit", admin_portal_command))
 
-    # Callbacks
     app.add_handler(CallbackQueryHandler(quiz_count_callback, pattern="^qcount_"))
     app.add_handler(CallbackQueryHandler(quiz_timer_callback, pattern="^qtimer_"))
     app.add_handler(CallbackQueryHandler(admin_callback_handler, pattern="^admin_"))
     app.add_handler(CallbackQueryHandler(button_router, pattern="^cmd_|^fb_"))
 
-    # Text & Contact Handler (Filters out commands with ~filters.COMMAND)
-    app.add_handler(MessageHandler((filters.CONTACT | filters.TEXT) & ~filters.COMMAND, handle_text_and_contact_messages))
-    
-    # Poll Answers
+    app.add_handler(MessageHandler(filters.TEXT & ~filters.COMMAND, handle_text_messages))
     app.add_handler(PollAnswerHandler(handle_poll_answer))
     app.add_error_handler(global_error_handler)
 

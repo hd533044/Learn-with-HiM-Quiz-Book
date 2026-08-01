@@ -11,10 +11,10 @@ from telegram.ext import (
     ConversationHandler, CommandHandler, MessageHandler, 
     CallbackQueryHandler, filters, ContextTypes
 )
-from app.config import WELCOME_CARD_TEXT, PRIMARY_ADMIN_ID
+from app.config import WELCOME_CARD_TEXT, PRIMARY_ADMIN_ID, DAILY_QUESTION_LIMIT
 from app.database import (
     save_user_profile, get_user_profile, can_user_edit_profile, 
-    get_maintenance_until, touch_user_activity
+    get_maintenance_until, touch_user_activity, get_today_attempts
 )
 
 warnings.filterwarnings("ignore", category=PTBUserWarning)
@@ -74,19 +74,43 @@ async def start_onboarding(update: Update, context: ContextTypes.DEFAULT_TYPE):
         touch_user_activity(user.id)
         student_id = profile.get('student_id') or 'N/A'
         login_pass = profile.get('login_pass') or 'N/A'
-        await update.message.reply_text(
-            f"⚡ **Welcome back, {profile['full_name']}!**\n\n"
+        today_used = get_today_attempts(user.id)
+        allowed_limit = DAILY_QUESTION_LIMIT + profile.get("bonus_quota", 0)
+        remaining = max(0, allowed_limit - today_used)
+
+        profile_card = (
+            f"👤 **STUDENT PROFILE CARD**\n"
+            f"📚 *Learn with HiM Quiz Book*\n"
+            f"━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\n"
             f"🆔 **Student ID:** `{student_id}`\n"
-            f"🔑 **Password:** `{login_pass}`\n"
-            f"🎯 **Target Exam:** `{profile['target_exam']}`\n"
-            f"📍 **Location:** `{profile.get('state', 'N/A')}, {profile.get('country', 'India')}`\n\n"
-            f"Click options below or use the menu to start practicing!",
-            reply_markup=InlineKeyboardMarkup([
-                [InlineKeyboardButton("🚀 Launch Quiz", callback_data="cmd_quiz"), InlineKeyboardButton("👤 Profile", callback_data="cmd_profile")],
-                [InlineKeyboardButton("🏆 Leaderboard", callback_data="cmd_toppers"), InlineKeyboardButton("📊 My Stats", callback_data="cmd_wholestate")]
-            ]),
-            parse_mode="Markdown"
+            f"🔑 **Your Password:** `{login_pass}`\n"
+            f"━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\n"
+            f"• **Full Name:** {profile['full_name']}\n"
+            f"• **Telegram ID:** `{profile['user_id']}`\n"
+            f"• **Target Exam:** `{profile['target_exam']}`\n"
+            f"• **Age / Gender:** `{profile['age']}` / `{profile['gender']}`\n"
+            f"• **Location:** `{profile.get('state', 'N/A')}, {profile.get('country', 'India')}`\n"
+            f"• **Phone:** `{profile['phone_number']}` *(Private)*\n\n"
+            f"📅 **Login Tracking Metrics:**\n"
+            f"• **Last Login Timestamp:** `{profile.get('last_login_timestamp', 'N/A')}`\n"
+            f"• **Last Login Date:** `{profile.get('last_login_date', 'N/A')}`\n"
+            f"• **Last Active Epoch:** `{profile.get('last_active_epoch', 'N/A')}`\n\n"
+            f"📊 **Daily Quota Status:**\n"
+            f"• **Used Today:** `{today_used}` / `{allowed_limit}` Qs\n"
+            f"• **Remaining Today:** `{remaining}` Qs\n"
+            f"• **Referrals:** `{profile.get('referral_count', 0)}` / 4 friends\n"
+            f"━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━"
         )
+        
+        buttons = InlineKeyboardMarkup([
+            [InlineKeyboardButton("🚀 Launch Quiz", callback_data="cmd_quiz"), InlineKeyboardButton("📊 Whole State", callback_data="cmd_wholestate")],
+            [InlineKeyboardButton("✏️ Edit Profile", callback_data="cmd_editprofile"), InlineKeyboardButton("🤝 Invite (+10 Quota)", callback_data="cmd_referral")]
+        ])
+
+        if update.callback_query:
+            await update.callback_query.message.reply_text(profile_card, reply_markup=buttons, parse_mode="Markdown")
+        else:
+            await update.message.reply_text(profile_card, reply_markup=buttons, parse_mode="Markdown")
         return ConversationHandler.END
 
     await update.message.reply_text(
@@ -360,30 +384,43 @@ async def password_step(update: Update, context: ContextTypes.DEFAULT_TYPE):
         referred_by=context.user_data.get("referred_by")
     )
 
+    profile = get_user_profile(user.id)
+    today_used = get_today_attempts(user.id)
+    allowed_limit = DAILY_QUESTION_LIMIT + profile.get("bonus_quota", 0)
+    remaining = max(0, allowed_limit - today_used)
+
     summary_card = (
-        f"🎉 **STUDENT REGISTRATION COMPLETE!**\n"
-        f"📚 *Learn with HiM Official Student Account*\n"
+        f"🎉 **STUDENT PROFILE SAVED SUCCESSFULLY!**\n"
+        f"📚 *Learn with HiM Official Student Profile*\n"
         f"━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\n"
-        f"🆔 **Your 6-Character Student ID:** `{student_id}`\n"
-        f"🔑 **Your Custom Password:** `{login_pass}`\n"
+        f"🆔 **Your Student ID:** `{student_id}`\n"
+        f"🔑 **Your Password:** `{login_pass}`\n"
         f"━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\n"
-        f"👤 **Name:** {context.user_data.get('full_name', user.full_name)}\n"
-        f"🎯 **Target Exam:** `{context.user_data.get('target_exam')}`\n"
-        f"📍 **Location:** `{context.user_data.get('state')}, {context.user_data.get('country')}`\n"
-        f"📱 **Verified Mobile:** `{context.user_data.get('phone_number')}`\n\n"
-        f"🔐 **SECURITY NOTICE:**\n"
-        f"🚨 **REMEMBER YOUR PASSWORD (`{login_pass}`)! IF INACTIVE FOR MORE THAN 1 MINUTE, YOU WILL NEED IT TO UNLOCK ACCESS TO COMMANDS.**\n"
+        f"• **Full Name:** {profile['full_name']}\n"
+        f"• **Telegram ID:** `{profile['user_id']}`\n"
+        f"• **Target Exam:** `{profile['target_exam']}`\n"
+        f"• **Age / Gender:** `{profile['age']}` / `{profile['gender']}`\n"
+        f"• **Location:** `{profile.get('state', 'N/A')}, {profile.get('country', 'India')}`\n"
+        f"• **Phone:** `{profile['phone_number']}` *(Private)*\n\n"
+        f"📅 **Login Tracking Metrics:**\n"
+        f"• **Last Login Timestamp:** `{profile.get('last_login_timestamp', 'N/A')}`\n"
+        f"• **Last Login Date:** `{profile.get('last_login_date', 'N/A')}`\n"
+        f"• **Last Active Epoch:** `{profile.get('last_active_epoch', 'N/A')}`\n\n"
+        f"📊 **Daily Quota Status:**\n"
+        f"• **Used Today:** `{today_used}` / `{allowed_limit}` Qs\n"
+        f"• **Remaining Today:** `{remaining}` Qs\n"
+        f"• **Referrals:** `{profile.get('referral_count', 0)}` / 4 friends\n"
         f"━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\n"
-        f"👉 Tap **Launch Quiz** below to start practicing!"
+        f"⚡ **Session Active!** Tap **/quiz** below to start practicing."
     )
 
+    buttons = InlineKeyboardMarkup([
+        [InlineKeyboardButton("🚀 Launch Quiz", callback_data="cmd_quiz"), InlineKeyboardButton("📊 Whole State", callback_data="cmd_wholestate")],
+        [InlineKeyboardButton("✏️ Edit Profile", callback_data="cmd_editprofile"), InlineKeyboardButton("🤝 Invite (+10 Quota)", callback_data="cmd_referral")]
+    ])
+
     await update.message.reply_text(summary_card, reply_markup=ReplyKeyboardRemove(), parse_mode="Markdown")
-    await update.message.reply_text(
-        "👇 **Quick Navigation:**",
-        reply_markup=InlineKeyboardMarkup([
-            [InlineKeyboardButton("🚀 Launch Quiz", callback_data="cmd_quiz"), InlineKeyboardButton("👤 Profile", callback_data="cmd_profile")]
-        ])
-    )
+    await update.message.reply_text("👇 **Quick Navigation:**", reply_markup=buttons, parse_mode="Markdown")
     return ConversationHandler.END
 
 async def cancel_onboarding(update: Update, context: ContextTypes.DEFAULT_TYPE):

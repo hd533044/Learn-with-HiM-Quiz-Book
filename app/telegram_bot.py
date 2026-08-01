@@ -43,12 +43,12 @@ async def session_and_maintenance_guard(update: Update, context: ContextTypes.DE
             await update.message.reply_text(msg, parse_mode="Markdown", reply_markup=ReplyKeyboardRemove())
         return False
 
-    # 2. Strict Inactivity Session Expiry Check
+    # 2. Inactivity Expiry Check (2 Minutes Test Window)
     profile = get_user_profile(user.id)
     if profile and profile.get("is_verified"):
         if is_user_session_expired(user.id):
             login_msg = (
-                "🔒 **SESSION EXPIRED**\n"
+                "🔒 **SESSION EXPIRED (2+ Minutes Inactive)**\n"
                 "━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\n"
                 "For account security, please log back in to resume practicing.\n\n"
                 "👉 **Reply with your 6-Digit Student ID & 4-Digit Password:**\n"
@@ -66,7 +66,6 @@ async def session_and_maintenance_guard(update: Update, context: ContextTypes.DE
                 await update.message.reply_text(login_msg, reply_markup=buttons, parse_mode="Markdown")
             return False
 
-        # Touch user activity on valid interaction
         touch_user_activity(user.id)
 
     return True
@@ -340,7 +339,7 @@ async def handle_text_and_contact_messages(update: Update, context: ContextTypes
             )
         return
 
-    # 2. LOGIN VERIFIER: Handle Login Strings (e.g., "839201 A9K2")
+    # 2. LOGIN VERIFIER: Handle Login Strings (e.g. "839201 A9K2")
     text = message.text.strip()
     parts = text.split()
     if len(parts) == 2 and len(parts[0]) == 6 and len(parts[1]) == 4 and parts[0].isdigit():

@@ -4,6 +4,7 @@ import os
 import random
 import string
 import logging
+import re
 from datetime import datetime
 import pytz
 from app.config import DB_FILE, USER_PROFILES_DIR
@@ -24,6 +25,13 @@ def get_db():
     conn = sqlite3.connect(DB_FILE)
     conn.row_factory = sqlite3.Row
     return conn
+
+def sanitize_phone(phone_str: str) -> str:
+    """Extracts only digits and returns the last 10 digits for accurate matching."""
+    if not phone_str:
+        return ""
+    digits = re.sub(r"\D", "", str(phone_str))
+    return digits[-10:] if len(digits) >= 10 else digits
 
 def generate_unique_student_id() -> str:
     """Generates a unique 6-digit Student ID."""
@@ -262,7 +270,7 @@ def touch_user_activity(user_id: int):
     conn.close()
 
 def is_user_session_expired(user_id: int) -> bool:
-    """TEMPORARY TESTING: Returns True if user has been inactive for more than 3 minutes (180 seconds)."""
+    """TESTING MODE: Returns True if user has been inactive for more than 2 minutes (120 seconds)."""
     conn = get_db()
     cursor = conn.cursor()
     cursor.execute("SELECT last_active_epoch FROM users WHERE user_id = ?", (user_id,))
@@ -273,8 +281,8 @@ def is_user_session_expired(user_id: int) -> bool:
         return False
 
     now_epoch = int(datetime.now().timestamp())
-    three_minutes_sec = 180  # Changed from 4 * 3600 for testing!
-    return (now_epoch - row['last_active_epoch']) > three_minutes_sec
+    two_minutes_sec = 120  # SET TO EXACTLY 2 MINUTES FOR TESTING!
+    return (now_epoch - row['last_active_epoch']) > two_minutes_sec
 
 def verify_student_login(user_id: int, student_id: str, login_pass: str) -> bool:
     """Verifies that the provided student_id and password match the user_id."""
@@ -292,14 +300,24 @@ def verify_student_login(user_id: int, student_id: str, login_pass: str) -> bool
     return False
 
 def get_student_credentials_by_phone(phone_number: str) -> dict:
-    """Option 1 Phone Recovery."""
-    clean_phone = phone_number.replace("+", "").strip()
+    """Option 1 Phone Recovery with Robust 10-Digit Matching."""
+    target_10_digits = sanitize_phone(phone_number)
+    if not target_10_digits:
+        return None
+
     conn = get_db()
     cursor = conn.cursor()
-    cursor.execute("SELECT * FROM users WHERE REPLACE(phone_number, '+', '') = ?", (clean_phone,))
-    row = cursor.fetchone()
+    cursor.execute("SELECT * FROM users")
+    rows = cursor.fetchall()
     conn.close()
-    return dict(row) if row else None
+
+    for r in rows:
+        row_dict = dict(r)
+        db_phone = sanitize_phone(row_dict.get('phone_number', ''))
+        if db_phone and db_phone == target_10_digits:
+            return row_dict
+
+    return None
 
 def get_user_profile(user_id):
     conn = get_db()

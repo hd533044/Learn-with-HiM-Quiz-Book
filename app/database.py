@@ -13,9 +13,6 @@ from app.config import DB_FILE, USER_PROFILES_DIR
 logger = logging.getLogger(__name__)
 IST = pytz.timezone("Asia/Kolkata")
 
-# TRIAL INACTIVITY LOCK: 60 Seconds (1 Minute)
-INACTIVITY_TIMEOUT_SEC = 60 
-
 def get_ist_now():
     return datetime.now(IST)
 
@@ -31,22 +28,10 @@ def get_db():
     return conn
 
 def sanitize_filename(name_str: str) -> str:
-    """Sanitizes candidate name for safe filesystem naming."""
     clean = re.sub(r'[^a-zA-Z0-9]', '_', str(name_str).strip())
     return clean if clean else "Candidate"
 
-def sanitize_phone(phone_str: str) -> str:
-    """Extracts last 10 digits for accurate phone recovery matching."""
-    if not phone_str:
-        return ""
-    digits = re.sub(r"\D", "", str(phone_str))
-    return digits[-10:] if len(digits) >= 10 else digits
-
 def generate_unique_student_id() -> str:
-    """
-    Generates Unique 6-Character Student ID:
-    5 Digits + 1 Uppercase English Letter (e.g., '83920A', '10924F')
-    """
     conn = get_db()
     cursor = conn.cursor()
     while True:
@@ -65,7 +50,6 @@ def generate_unique_student_id() -> str:
             return candidate
 
 def generate_4digit_pass() -> str:
-    """Generates a 4-character uppercase alphanumeric password."""
     chars = string.ascii_uppercase + string.digits
     return "".join(random.choices(chars, k=4))
 
@@ -163,10 +147,6 @@ def init_db():
     conn.close()
 
 def can_user_edit_profile(user_id: int) -> tuple:
-    """
-    Checks if a user can edit their profile.
-    Returns (True, 0) if allowed, or (False, days_remaining) if locked.
-    """
     conn = get_db()
     cursor = conn.cursor()
     cursor.execute("SELECT last_profile_edit FROM users WHERE user_id = ?", (user_id,))
@@ -185,14 +165,9 @@ def can_user_edit_profile(user_id: int) -> tuple:
         days_remaining = 30 - days_passed
         return False, max(1, days_remaining)
     except Exception as e:
-        logger.error(f"Error parsing last_profile_edit date: {e}")
         return True, 0
 
 def sync_user_unique_file(user_id: int):
-    """
-    Saves and updates candidate details in individual JSON file inside data/user_profiles/
-    File Format: <Candidate_Name>_<Student_ID>.json
-    """
     conn = get_db()
     cursor = conn.cursor()
     
@@ -241,19 +216,11 @@ def sync_user_unique_file(user_id: int):
     filename = f"{cand_name}_{student_id}.json"
     filepath = os.path.join(USER_PROFILES_DIR, filename)
 
-    # Clean up old file if candidate updated full_name
-    for existing_file in os.listdir(USER_PROFILES_DIR):
-        if existing_file.endswith(f"_{student_id}.json") and existing_file != filename:
-            try:
-                os.remove(os.path.join(USER_PROFILES_DIR, existing_file))
-            except Exception:
-                pass
-
     try:
         with open(filepath, "w", encoding="utf-8") as f:
             json.dump(profile_data, f, indent=4, ensure_ascii=False)
     except Exception as e:
-        logger.error(f"Failed to write candidate file {filename}: {e}")
+        logger.error(f"Failed to write candidate file: {e}")
 
 def save_user_profile(user_id, full_name, username, phone, target_exam, age, gender, country="India", state="N/A", referred_by=None):
     conn = get_db()
@@ -304,63 +271,12 @@ def save_user_profile(user_id, full_name, username, phone, target_exam, age, gen
     return student_id, login_pass
 
 def touch_user_activity(user_id: int):
-    """Updates user active timestamp."""
     conn = get_db()
     cursor = conn.cursor()
     now_epoch = int(time.time())
     cursor.execute("UPDATE users SET last_active_epoch = ? WHERE user_id = ?", (now_epoch, user_id))
     conn.commit()
     conn.close()
-
-def is_user_session_expired(user_id: int) -> bool:
-    """Checks inactivity against target threshold (60 Seconds = 1 Minute)."""
-    conn = get_db()
-    cursor = conn.cursor()
-    cursor.execute("SELECT last_active_epoch FROM users WHERE user_id = ?", (user_id,))
-    row = cursor.fetchone()
-    conn.close()
-
-    if not row or not row['last_active_epoch']:
-        return False
-
-    now_epoch = int(time.time())
-    last_active = int(row['last_active_epoch'])
-    return (now_epoch - last_active) > INACTIVITY_TIMEOUT_SEC
-
-def verify_password_only(user_id: int, input_pass: str) -> bool:
-    """Verifies password directly for current Telegram user."""
-    conn = get_db()
-    cursor = conn.cursor()
-    cursor.execute(
-        "SELECT 1 FROM users WHERE user_id = ? AND UPPER(login_pass) = ?", 
-        (user_id, input_pass.strip().upper())
-    )
-    match = cursor.fetchone()
-    conn.close()
-    if match:
-        touch_user_activity(user_id)
-        return True
-    return False
-
-def get_student_credentials_by_phone(phone_number: str) -> dict:
-    """10-Digit Sanitized Matching for Contact Recovery."""
-    target_10_digits = sanitize_phone(phone_number)
-    if not target_10_digits:
-        return None
-
-    conn = get_db()
-    cursor = conn.cursor()
-    cursor.execute("SELECT * FROM users")
-    rows = cursor.fetchall()
-    conn.close()
-
-    for r in rows:
-        row_dict = dict(r)
-        db_phone = sanitize_phone(row_dict.get('phone_number', ''))
-        if db_phone and db_phone == target_10_digits:
-            return row_dict
-
-    return None
 
 def get_user_profile(user_id):
     conn = get_db()

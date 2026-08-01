@@ -17,7 +17,7 @@ from app.database import (
     get_student_credentials_by_phone
 )
 from app.auth_engine import strict_authentication_guard
-from  app.onboarding import get_onboarding_handler
+from app.onboarding import get_onboarding_handler
 from app.quiz_engine import (
     launch_quiz_setup, quiz_count_callback, quiz_timer_callback, handle_poll_answer,
     pause_quiz_command, resume_quiz_command
@@ -340,13 +340,13 @@ def build_application() -> Application:
     init_db()
     app = Application.builder().token(BOT_TOKEN).post_init(post_init).build()
 
-    # 1. Onboarding conversation handler first
+    # 1. Onboarding ConversationHandler
     app.add_handler(get_onboarding_handler())
     
-    # 2. Text & Contact handler for passwords and phone recovery (BEFORE slash commands)
+    # 2. Text & Contact Handler (Must precede command guard routing for typed passwords)
     app.add_handler(MessageHandler((filters.CONTACT | filters.TEXT) & ~filters.COMMAND, handle_text_and_contact_messages))
     
-    # 3. Slash commands
+    # 3. Slash Commands
     app.add_handler(CommandHandler("quiz", launch_quiz_setup))
     app.add_handler(CommandHandler("pause", pause_quiz_command))
     app.add_handler(CommandHandler("resume", resume_quiz_command))
@@ -363,13 +363,13 @@ def build_application() -> Application:
     app.add_handler(CommandHandler("admin", admin_portal_command))
     app.add_handler(CommandHandler("admit", admin_portal_command))
 
-    # 4. Callback Query / Button routers
+    # 4. Callback Query Handlers
     app.add_handler(CallbackQueryHandler(quiz_count_callback, pattern="^qcount_"))
     app.add_handler(CallbackQueryHandler(quiz_timer_callback, pattern="^qtimer_"))
     app.add_handler(CallbackQueryHandler(admin_callback_handler, pattern="^admin_"))
     app.add_handler(CallbackQueryHandler(button_router, pattern="^cmd_|^fb_"))
 
-    # 5. Quiz Poll answer handler & Global Error handler
+    # 5. Polls & Error Handlers
     app.add_handler(PollAnswerHandler(handle_poll_answer))
     app.add_error_handler(global_error_handler)
 

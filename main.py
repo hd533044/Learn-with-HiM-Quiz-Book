@@ -85,7 +85,7 @@ async def run_bot():
         await app.shutdown()
 
 def main():
-    # Python 3.14+ Event Loop Fix
+    # Python 3.14+ Event Loop Handling Fix
     try:
         loop = asyncio.get_running_loop()
     except RuntimeError:

@@ -13,7 +13,7 @@ from app.config import DB_FILE, USER_PROFILES_DIR
 logger = logging.getLogger(__name__)
 IST = pytz.timezone("Asia/Kolkata")
 
-# INACTIVITY TRIAL TIMER: 60 Seconds (1 Minute).
+# INACTIVITY TRIAL TIME: 60 Seconds (1 Minute). Change to 14400 (4 Hours) in production if needed.
 INACTIVITY_TIMEOUT_SEC = 60
 
 def get_ist_now():
@@ -41,7 +41,7 @@ def sanitize_phone(phone_str: str) -> str:
     return digits[-10:] if len(digits) >= 10 else digits
 
 def generate_unique_student_id() -> str:
-    """Generates 6-Character Unique ID: 5 Digits + 1 Uppercase Letter (e.g. 83920A)."""
+    """Generates 6-Character Unique Student ID: 5 Digits + 1 Uppercase Letter (e.g. 83920A)."""
     conn = get_db()
     cursor = conn.cursor()
     while True:

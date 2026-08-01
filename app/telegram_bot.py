@@ -31,7 +31,7 @@ async def session_and_maintenance_guard(update: Update, context: ContextTypes.DE
     if not user:
         return True
 
-    # 1. Maintenance Guard
+    # 1. Maintenance Check
     m_until = get_maintenance_until()
     if int(time.time()) < m_until and user.id != PRIMARY_ADMIN_ID:
         remaining_sec = m_until - int(time.time())
@@ -43,7 +43,7 @@ async def session_and_maintenance_guard(update: Update, context: ContextTypes.DE
             await update.message.reply_text(msg, parse_mode="Markdown", reply_markup=ReplyKeyboardRemove())
         return False
 
-    # 2. Strict 1-Minute Password Inactivity Guard
+    # 2. Strict Password-Only 1-Minute Inactivity Guard
     profile = get_user_profile(user.id)
     if profile and profile.get("is_verified"):
         if is_user_session_expired(user.id):
@@ -53,7 +53,7 @@ async def session_and_maintenance_guard(update: Update, context: ContextTypes.DE
                 "For account security, enter your **4-Character Password** to unlock:\n\n"
                 "👉 **Reply with your 4-Character Password below:**\n"
                 "*(Example: `A9K2`)*\n\n"
-                "💡 *Forgot password? Tap below to recover via mobile!*"
+                "💡 *Forgot password? Tap below to recover via phone!*"
             )
             buttons = InlineKeyboardMarkup([
                 [InlineKeyboardButton("🔑 Recover Password via Phone", callback_data="cmd_forgot_credentials")]

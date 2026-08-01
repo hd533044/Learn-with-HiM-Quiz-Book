@@ -13,7 +13,7 @@ from app.config import DB_FILE, USER_PROFILES_DIR
 logger = logging.getLogger(__name__)
 IST = pytz.timezone("Asia/Kolkata")
 
-# INACTIVITY TRIAL TIME: 60 Seconds (1 Minute)
+# TRIAL INACTIVITY LOCK: 60 Seconds (1 Minute)
 INACTIVITY_TIMEOUT_SEC = 60 
 
 def get_ist_now():
@@ -241,7 +241,7 @@ def sync_user_unique_file(user_id: int):
     filename = f"{cand_name}_{student_id}.json"
     filepath = os.path.join(USER_PROFILES_DIR, filename)
 
-    # Remove stale files for this candidate if they updated their full_name
+    # Clean up old file if candidate updated full_name
     for existing_file in os.listdir(USER_PROFILES_DIR):
         if existing_file.endswith(f"_{student_id}.json") and existing_file != filename:
             try:

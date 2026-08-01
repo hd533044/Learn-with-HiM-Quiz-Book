@@ -13,7 +13,7 @@ from app.config import BOT_TOKEN, PRIMARY_ADMIN_ID, DAILY_QUESTION_LIMIT
 from app.database import (
     init_db, get_maintenance_until, get_user_profile, 
     get_all_users, get_today_attempts, save_student_feedback, get_all_student_feedbacks,
-    clear_paused_quiz_state, is_user_session_expired, touch_user_activity, verify_student_login,
+    clear_paused_quiz_state, is_user_session_expired, touch_user_activity, verify_password_only,
     get_student_credentials_by_phone
 )
 from app.onboarding import get_onboarding_handler
@@ -31,7 +31,7 @@ async def session_and_maintenance_guard(update: Update, context: ContextTypes.DE
     if not user:
         return True
 
-    # 1. Maintenance Check
+    # 1. Maintenance Mode
     m_until = get_maintenance_until()
     if int(time.time()) < m_until and user.id != PRIMARY_ADMIN_ID:
         remaining_sec = m_until - int(time.time())
@@ -43,24 +43,24 @@ async def session_and_maintenance_guard(update: Update, context: ContextTypes.DE
             await update.message.reply_text(msg, parse_mode="Markdown", reply_markup=ReplyKeyboardRemove())
         return False
 
-    # 2. Inactivity Expiry Check (2 Minutes Test Window)
+    # 2. Password-Only Inactivity Check
     profile = get_user_profile(user.id)
     if profile and profile.get("is_verified"):
         if is_user_session_expired(user.id):
             login_msg = (
-                "🔒 **SESSION EXPIRED (2+ Minutes Inactive)**\n"
+                "🔒 **SESSION EXPIRED (1+ Minute Inactive)**\n"
                 "━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\n"
-                "For account security, please log back in to resume practicing.\n\n"
-                "👉 **Reply with your 6-Digit Student ID & 4-Digit Password:**\n"
-                "*(Example: `839201 A9K2`)*\n\n"
-                "💡 *Forgot credentials? Click the button below to recover!*"
+                "For account security, enter your **4-Character Password** to unlock:\n\n"
+                "👉 **Reply with your 4-Character Password below:**\n"
+                "*(Example: `A9K2`)*\n\n"
+                "💡 *Forgot password? Tap below to recover!*"
             )
             buttons = InlineKeyboardMarkup([
-                [InlineKeyboardButton("🔑 Recover Student ID / Password", callback_data="cmd_forgot_credentials")]
+                [InlineKeyboardButton("🔑 Recover Password via Phone", callback_data="cmd_forgot_credentials")]
             ])
             
             if update.callback_query:
-                await update.callback_query.answer("🔒 Session Expired! Please login.", show_alert=True)
+                await update.callback_query.answer("🔒 Session Expired! Enter Password.", show_alert=True)
                 await context.bot.send_message(chat_id=user.id, text=login_msg, reply_markup=buttons, parse_mode="Markdown")
             elif update.message:
                 await update.message.reply_text(login_msg, reply_markup=buttons, parse_mode="Markdown")
@@ -127,7 +127,7 @@ async def myprofile_command(update: Update, context: ContextTypes.DEFAULT_TYPE):
         f"📚 *Learn with HiM Quiz Book*\n"
         f"━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\n"
         f"🆔 **Student ID:** `{profile.get('student_id', 'N/A')}`\n"
-        f"🔑 **Password:** `{profile.get('login_pass', 'N/A')}`\n"
+        f"🔑 **Your Password:** `{profile.get('login_pass', 'N/A')}`\n"
         f"━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\n"
         f"• **Full Name:** {profile['full_name']}\n"
         f"• **Telegram ID:** `{profile['user_id']}`\n"
@@ -248,14 +248,14 @@ async def handle_forgot_credentials(update: Update, context: ContextTypes.DEFAUL
     query = update.callback_query
     await query.answer()
 
-    contact_btn = KeyboardButton(text="📱 Share Contact to Recover Credentials", request_contact=True)
+    contact_btn = KeyboardButton(text="📱 Share Contact to Recover Password", request_contact=True)
     markup = ReplyKeyboardMarkup([[contact_btn]], one_time_keyboard=True, resize_keyboard=True)
 
     await context.bot.send_message(
         chat_id=query.from_user.id,
-        text="🔑 **CREDENTIAL RECOVERY (Option 1)**\n"
+        text="🔑 **CREDENTIAL RECOVERY**\n"
              "━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\n"
-             "Please click the **Share Contact** button below to verify your mobile number and recover your Student ID and Password:",
+             "Please click the **Share Contact** button below to verify your phone number and view your Password:",
         reply_markup=markup,
         parse_mode="Markdown"
     )
@@ -311,7 +311,7 @@ async def handle_text_and_contact_messages(update: Update, context: ContextTypes
     user = update.effective_user
     message = update.message
 
-    # 1. OPTION 1 RECOVERY: Handle Contact Sharing Verification
+    # 1. PHONE RECOVERY
     if message.contact:
         phone = message.contact.phone_number
         record = get_student_credentials_by_phone(phone)
@@ -322,33 +322,31 @@ async def handle_text_and_contact_messages(update: Update, context: ContextTypes
                 f"✅ **IDENTITY VERIFIED SUCCESSFULLY!**\n"
                 f"━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\n"
                 f"👤 **Student Name:** {record['full_name']}\n"
-                f"🆔 **Your 6-Digit Student ID:** `{record['student_id']}`\n"
-                f"🔑 **Your 4-Digit Password:** `{record['login_pass']}`\n"
+                f"🆔 **Student ID:** `{record['student_id']}`\n"
+                f"🔑 **Your Password:** `{record['login_pass']}`\n"
                 f"━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\n"
-                f"⚡ Your session is now unlocked! You can continue practicing.",
+                f"⚡ Your session is unlocked! Tap **/quiz** to resume.",
                 reply_markup=ReplyKeyboardRemove(),
                 parse_mode="Markdown"
             )
         else:
             await message.reply_text(
                 "❌ **RECOVERY FAILED!**\n\n"
-                "No registered student account was found matching this phone number.\n"
-                "Please type /start to create a new student profile.",
+                "No registered student account matched this phone number.\n"
+                "Type /start to register.",
                 reply_markup=ReplyKeyboardRemove(),
                 parse_mode="Markdown"
             )
         return
 
-    # 2. LOGIN VERIFIER: Handle Login Strings (e.g. "839201 A9K2")
+    # 2. PASSWORD-ONLY UNLOCK CHECK (4-Character String)
     text = message.text.strip()
-    parts = text.split()
-    if len(parts) == 2 and len(parts[0]) == 6 and len(parts[1]) == 4 and parts[0].isdigit():
-        student_id, pass_code = parts[0], parts[1]
-        if verify_student_login(user.id, student_id, pass_code):
+    if len(text) == 4:
+        if verify_password_only(user.id, text):
             await message.reply_text(
-                f"🎉 **LOGIN SUCCESSFUL!**\n"
+                f"🎉 **PASSWORD VERIFIED — UNLOCKED!**\n"
                 f"━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\n"
-                f"Welcome back! Your session timer has been renewed.\n\n"
+                f"Welcome back! Your session is renewed.\n\n"
                 f"👉 Tap **/quiz** to start practicing now!",
                 reply_markup=ReplyKeyboardRemove(),
                 parse_mode="Markdown"
@@ -356,11 +354,11 @@ async def handle_text_and_contact_messages(update: Update, context: ContextTypes
             return
         else:
             await message.reply_text(
-                "❌ **INVALID CREDENTIALS!**\n\n"
-                "The Student ID or Password you entered does not match our records.\n"
-                "Please try again or tap below to recover your credentials:",
+                "❌ **INCORRECT PASSWORD!**\n\n"
+                "The 4-character password entered is invalid.\n"
+                "Please try again or tap below to recover it:",
                 reply_markup=InlineKeyboardMarkup([[
-                    InlineKeyboardButton("🔑 Recover Credentials", callback_data="cmd_forgot_credentials")
+                    InlineKeyboardButton("🔑 Recover Password via Phone", callback_data="cmd_forgot_credentials")
                 ]]),
                 parse_mode="Markdown"
             )

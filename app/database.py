@@ -5,12 +5,16 @@ import random
 import string
 import logging
 import re
+import time
 from datetime import datetime
 import pytz
 from app.config import DB_FILE, USER_PROFILES_DIR
 
 logger = logging.getLogger(__name__)
 IST = pytz.timezone("Asia/Kolkata")
+
+# INACTIVITY TRIAL TIME: 60 Seconds (1 Minute)
+INACTIVITY_TIMEOUT_SEC = 60 
 
 def get_ist_now():
     return datetime.now(IST)
@@ -26,28 +30,42 @@ def get_db():
     conn.row_factory = sqlite3.Row
     return conn
 
+def sanitize_filename(name_str: str) -> str:
+    """Sanitizes candidate name for safe filesystem naming."""
+    clean = re.sub(r'[^a-zA-Z0-9]', '_', str(name_str).strip())
+    return clean if clean else "Candidate"
+
 def sanitize_phone(phone_str: str) -> str:
-    """Extracts only digits and returns the last 10 digits for accurate matching."""
+    """Extracts last 10 digits for accurate phone recovery matching."""
     if not phone_str:
         return ""
     digits = re.sub(r"\D", "", str(phone_str))
     return digits[-10:] if len(digits) >= 10 else digits
 
 def generate_unique_student_id() -> str:
-    """Generates a unique 6-digit Student ID."""
+    """
+    Generates Unique 6-Character Student ID:
+    5 Digits + 1 Uppercase English Letter (e.g., '83920A', '10924F')
+    """
     conn = get_db()
     cursor = conn.cursor()
     while True:
-        candidate = "".join(random.choices(string.digits, k=6))
-        if candidate.startswith("0"):
-            continue
-        cursor.execute("SELECT 1 FROM users WHERE student_id = ?", (candidate,))
+        five_digits = "".join(random.choices(string.digits, k=5))
+        one_letter = random.choice(string.ascii_uppercase)
+        candidate = f"{five_digits}{one_letter}"
+
+        cursor.execute("SELECT 1 FROM student_id_registry WHERE student_id = ?", (candidate,))
         if not cursor.fetchone():
+            cursor.execute('''
+                INSERT INTO student_id_registry (student_id, issued_at)
+                VALUES (?, ?)
+            ''', (candidate, get_ist_timestamp_str()))
+            conn.commit()
             conn.close()
             return candidate
 
 def generate_4digit_pass() -> str:
-    """Generates a 4-digit uppercase alphanumeric password."""
+    """Generates a 4-character uppercase alphanumeric password."""
     chars = string.ascii_uppercase + string.digits
     return "".join(random.choices(chars, k=4))
 
@@ -55,6 +73,15 @@ def init_db():
     conn = get_db()
     cursor = conn.cursor()
     
+    # Registry table tracking issued Student IDs
+    cursor.execute('''
+        CREATE TABLE IF NOT EXISTS student_id_registry (
+            student_id TEXT PRIMARY KEY,
+            user_id INTEGER,
+            issued_at TEXT
+        )
+    ''')
+
     cursor.execute('''
         CREATE TABLE IF NOT EXISTS users (
             user_id INTEGER PRIMARY KEY,
@@ -77,15 +104,6 @@ def init_db():
             created_at TEXT
         )
     ''')
-    
-    cursor.execute("PRAGMA table_info(users)")
-    cols = [r[1] for r in cursor.fetchall()]
-    if 'student_id' not in cols:
-        cursor.execute("ALTER TABLE users ADD COLUMN student_id TEXT")
-    if 'login_pass' not in cols:
-        cursor.execute("ALTER TABLE users ADD COLUMN login_pass TEXT")
-    if 'last_active_epoch' not in cols:
-        cursor.execute("ALTER TABLE users ADD COLUMN last_active_epoch INTEGER DEFAULT 0")
 
     cursor.execute('''
         CREATE TABLE IF NOT EXISTS quiz_attempts (
@@ -165,7 +183,10 @@ def can_user_edit_profile(user_id: int) -> tuple:
         return True, 0
 
 def sync_user_unique_file(user_id: int):
-    """Saves every user in their unique file data/user_profiles/<student_id>.json."""
+    """
+    Saves and updates candidate details in individual JSON file inside data/user_profiles/
+    File Format: <Candidate_Name>_<Student_ID>.json
+    """
     conn = get_db()
     cursor = conn.cursor()
     
@@ -181,7 +202,9 @@ def sync_user_unique_file(user_id: int):
 
     user_dict = dict(user_row)
     attempts_list = [dict(a) for a in attempts_rows]
+    
     student_id = user_dict.get('student_id') or str(user_id)
+    cand_name = sanitize_filename(user_dict.get('full_name', 'Student'))
 
     profile_data = {
         "student_identity": {
@@ -208,18 +231,28 @@ def sync_user_unique_file(user_id: int):
         "quiz_history": attempts_list
     }
 
-    filepath = os.path.join(USER_PROFILES_DIR, f"{student_id}.json")
+    filename = f"{cand_name}_{student_id}.json"
+    filepath = os.path.join(USER_PROFILES_DIR, filename)
+
+    # Clean up old file if name was updated
+    for existing_file in os.listdir(USER_PROFILES_DIR):
+        if existing_file.endswith(f"_{student_id}.json") and existing_file != filename:
+            try:
+                os.remove(os.path.join(USER_PROFILES_DIR, existing_file))
+            except Exception:
+                pass
+
     try:
         with open(filepath, "w", encoding="utf-8") as f:
             json.dump(profile_data, f, indent=4, ensure_ascii=False)
     except Exception as e:
-        logger.error(f"Failed to save unique JSON file for Student {student_id}: {e}")
+        logger.error(f"Failed to write candidate file {filename}: {e}")
 
 def save_user_profile(user_id, full_name, username, phone, target_exam, age, gender, country="India", state="N/A", referred_by=None):
     conn = get_db()
     cursor = conn.cursor()
     now_str = get_ist_timestamp_str()
-    now_epoch = int(datetime.now().timestamp())
+    now_epoch = int(time.time())
     
     cursor.execute("SELECT student_id, login_pass FROM users WHERE user_id = ?", (user_id,))
     existing = cursor.fetchone()
@@ -230,6 +263,8 @@ def save_user_profile(user_id, full_name, username, phone, target_exam, age, gen
     else:
         student_id = generate_unique_student_id()
         login_pass = generate_4digit_pass()
+
+    cursor.execute("UPDATE student_id_registry SET user_id = ? WHERE student_id = ?", (user_id, student_id))
 
     cursor.execute('''
         INSERT INTO users (user_id, student_id, login_pass, full_name, username, phone_number, target_exam, age, gender, country, state, referred_by, last_profile_edit, last_active_epoch, is_verified, created_at)
@@ -262,15 +297,16 @@ def save_user_profile(user_id, full_name, username, phone, target_exam, age, gen
     return student_id, login_pass
 
 def touch_user_activity(user_id: int):
+    """Updates user active timestamp."""
     conn = get_db()
     cursor = conn.cursor()
-    now_epoch = int(datetime.now().timestamp())
+    now_epoch = int(time.time())
     cursor.execute("UPDATE users SET last_active_epoch = ? WHERE user_id = ?", (now_epoch, user_id))
     conn.commit()
     conn.close()
 
 def is_user_session_expired(user_id: int) -> bool:
-    """TESTING MODE: Returns True if user has been inactive for more than 2 minutes (120 seconds)."""
+    """Checks inactivity against target threshold (1 Minute = 60 Seconds)."""
     conn = get_db()
     cursor = conn.cursor()
     cursor.execute("SELECT last_active_epoch FROM users WHERE user_id = ?", (user_id,))
@@ -280,17 +316,17 @@ def is_user_session_expired(user_id: int) -> bool:
     if not row or not row['last_active_epoch']:
         return False
 
-    now_epoch = int(datetime.now().timestamp())
-    two_minutes_sec = 120  # SET TO EXACTLY 2 MINUTES FOR TESTING!
-    return (now_epoch - row['last_active_epoch']) > two_minutes_sec
+    now_epoch = int(time.time())
+    last_active = int(row['last_active_epoch'])
+    return (now_epoch - last_active) > INACTIVITY_TIMEOUT_SEC
 
-def verify_student_login(user_id: int, student_id: str, login_pass: str) -> bool:
-    """Verifies that the provided student_id and password match the user_id."""
+def verify_password_only(user_id: int, input_pass: str) -> bool:
+    """Verifies password directly for current Telegram user."""
     conn = get_db()
     cursor = conn.cursor()
     cursor.execute(
-        "SELECT 1 FROM users WHERE user_id = ? AND student_id = ? AND UPPER(login_pass) = ?", 
-        (user_id, student_id.strip(), login_pass.strip().upper())
+        "SELECT 1 FROM users WHERE user_id = ? AND UPPER(login_pass) = ?", 
+        (user_id, input_pass.strip().upper())
     )
     match = cursor.fetchone()
     conn.close()
@@ -300,7 +336,7 @@ def verify_student_login(user_id: int, student_id: str, login_pass: str) -> bool
     return False
 
 def get_student_credentials_by_phone(phone_number: str) -> dict:
-    """Option 1 Phone Recovery with Robust 10-Digit Matching."""
+    """10-Digit Sanitized Matching for Contact Recovery."""
     target_10_digits = sanitize_phone(phone_number)
     if not target_10_digits:
         return None

@@ -20,7 +20,11 @@ QUIZ_SETUP_CACHE = {}
 
 def get_pause_resume_keyboard():
     return InlineKeyboardMarkup([
-        [InlineKeyboardButton("⏸ Pause (/pause)", callback_data="cmd_pause_quiz"), InlineKeyboardButton("▶️ Resume (/resume)", callback_data="cmd_resume_quiz")]
+        [
+            InlineKeyboardButton("⏸ Pause (/pause)", callback_data="cmd_pause_quiz"), 
+            InlineKeyboardButton("▶️ Resume (/resume)", callback_data="cmd_resume_quiz"),
+            InlineKeyboardButton("🛑 Stop (/stop)", callback_data="cmd_stop_quiz")
+        ]
     ])
 
 async def check_quiz_maintenance(update: Update) -> bool:
@@ -72,15 +76,20 @@ async def launch_quiz_setup(update: Update, context: ContextTypes.DEFAULT_TYPE):
     allowed_limit = DAILY_QUESTION_LIMIT + profile.get("bonus_quota", 0)
 
     if attempted_today >= allowed_limit and user.id != PRIMARY_ADMIN_ID:
-        await update.message.reply_text(
-            f"🛑 **Daily Limit Reached!**\n\n"
-            f"You have used `{attempted_today}` / `{allowed_limit}` questions today.\n\n"
-            f"💡 **Unlock +10 Questions:** Share your invite link with 4 friends to increase your limit!",
-            reply_markup=InlineKeyboardMarkup([[
-                InlineKeyboardButton("🤝 Invite Friends (+10 Limit)", callback_data="cmd_referral")
-            ]]),
-            parse_mode="Markdown"
+        limit_msg = (
+            f"🛑 **Daily Free Limit Exhausted!**\n\n"
+            f"You have reached your actual daily limit of `{allowed_limit}` questions for today (00:00 to 23:59).\n"
+            f"The `/quiz` command is currently deactivated for your account until tomorrow.\n\n"
+            f"💡 **Unlock +10 Questions:** Share your invite link with 4 friends to increase your limit!"
         )
+        keyboard = InlineKeyboardMarkup([[
+            InlineKeyboardButton("🤝 Invite Friends (+10 Limit)", callback_data="cmd_referral")
+        ]])
+        if update.callback_query:
+            await update.callback_query.answer("🛑 Daily Limit Exhausted! /quiz deactivated.", show_alert=True)
+            await update.callback_query.message.reply_text(limit_msg, reply_markup=keyboard, parse_mode="Markdown")
+        else:
+            await update.message.reply_text(limit_msg, reply_markup=keyboard, parse_mode="Markdown")
         return
 
     counts = [10, 15, 20, 25, 30, 40]
@@ -206,7 +215,7 @@ async def pause_quiz_command(update: Update, context: ContextTypes.DEFAULT_TYPE)
         f"• **Paused At Question:** `{session['current_index'] + 1}` / `{session['total']}`\n"
         f"• **Remaining Questions:** `{remaining_qs}` Qs\n"
         f"• **Current Score:** `{session['score']}` / `{session['total']}`\n\n"
-        f"Type **/resume** or tap below whenever you wish to continue!"
+        f"Type `/resume` or tap below whenever you wish to continue!"
     )
     keyboard = InlineKeyboardMarkup([
         [InlineKeyboardButton("▶️ Resume Quiz Now (/resume)", callback_data="cmd_resume_quiz")]
@@ -251,7 +260,6 @@ async def resume_quiz_command(update: Update, context: ContextTypes.DEFAULT_TYPE
     if update.callback_query:
         await update.callback_query.answer()
 
-    # 3-Second Interactive Countdown Timer
     countdown_msg = await context.bot.send_message(
         chat_id=chat_id, 
         text=f"▶️ **RESUMING QUIZ...**\n━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\n⏳ **3...** Get ready for Question `{session['current_index'] + 1}/{session['total']}`!",
@@ -277,6 +285,60 @@ async def resume_quiz_command(update: Update, context: ContextTypes.DEFAULT_TYPE
         pass
 
     await send_next_question(chat_id, user_id, context)
+
+async def stop_quiz_command(update: Update, context: ContextTypes.DEFAULT_TYPE):
+    user_id = update.effective_user.id
+    chat_id = update.effective_chat.id
+
+    session = ACTIVE_SESSIONS.pop(user_id, None)
+    paused = get_paused_quiz_state(user_id)
+    
+    if not session and not paused:
+        msg = "ℹ️ You do not have an active or paused quiz session to stop."
+        if update.callback_query:
+            await update.callback_query.answer(msg, show_alert=True)
+        else:
+            await update.message.reply_text(msg)
+        return
+
+    clear_paused_quiz_state(user_id)
+    if user_id in TIMER_TASKS and not TIMER_TASKS[user_id].done():
+        TIMER_TASKS[user_id].cancel()
+
+    if session:
+        if session["current_index"] > 0:
+            record_quiz_result(
+                user_id, 
+                score=session["score"], 
+                total_questions=session["current_index"], 
+                correct_count=session["correct"], 
+                wrong_count=session["wrong"], 
+                skipped_count=session["skipped"]
+            )
+    elif paused:
+        if paused.get("current_index", 0) > 0:
+            record_quiz_result(
+                user_id, 
+                score=paused["score"], 
+                total_questions=paused["current_index"], 
+                correct_count=paused["correct"], 
+                wrong_count=paused["wrong"], 
+                skipped_count=paused["skipped"]
+            )
+
+    msg = (
+        f"🛑 **QUIZ STOPPED COMPLETELY**\n"
+        f"━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\n"
+        f"• Your quiz session has been terminated.\n"
+        f"• Remaining unattempted limit has been restored to your daily quota.\n\n"
+        f"Type `/quiz` whenever you are ready to start again!"
+    )
+
+    if update.callback_query:
+        await update.callback_query.answer("🛑 Quiz Stopped Successfully!", show_alert=True)
+        await context.bot.send_message(chat_id=chat_id, text=msg, parse_mode="Markdown")
+    else:
+        await update.message.reply_text(msg, parse_mode="Markdown")
 
 async def send_next_question(chat_id: int, user_id: int, context: ContextTypes.DEFAULT_TYPE):
     m_until = get_maintenance_until()
@@ -322,7 +384,6 @@ async def send_next_question(chat_id: int, user_id: int, context: ContextTypes.D
         poll_id = poll_msg.poll.id
         POLL_MAP[poll_id] = {"user_id": user_id, "chat_id": chat_id, "q_idx": session["current_index"], "correct_id": correct_id}
 
-        # Updated text string directly above the buttons
         await context.bot.send_message(
             chat_id=chat_id,
             text="You can Pause/Resume.",

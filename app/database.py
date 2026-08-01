@@ -27,7 +27,6 @@ def init_db():
     conn = get_db()
     cursor = conn.cursor()
     
-    # Users Table
     cursor.execute('''
         CREATE TABLE IF NOT EXISTS users (
             user_id INTEGER PRIMARY KEY,
@@ -48,7 +47,6 @@ def init_db():
         )
     ''')
     
-    # Ensure schema migrations for existing databases
     cursor.execute("PRAGMA table_info(users)")
     columns = [row[1] for row in cursor.fetchall()]
     if 'country' not in columns:
@@ -58,7 +56,6 @@ def init_db():
     if 'last_profile_edit' not in columns:
         cursor.execute("ALTER TABLE users ADD COLUMN last_profile_edit TEXT")
 
-    # Quiz Attempts Log
     cursor.execute('''
         CREATE TABLE IF NOT EXISTS quiz_attempts (
             id INTEGER PRIMARY KEY AUTOINCREMENT,
@@ -77,7 +74,6 @@ def init_db():
         )
     ''')
 
-    # Seen Questions Deduplication
     cursor.execute('''
         CREATE TABLE IF NOT EXISTS seen_questions (
             id INTEGER PRIMARY KEY AUTOINCREMENT,
@@ -88,7 +84,6 @@ def init_db():
         )
     ''')
 
-    # Student Feedback Table
     cursor.execute('''
         CREATE TABLE IF NOT EXISTS student_feedback (
             id INTEGER PRIMARY KEY AUTOINCREMENT,
@@ -99,7 +94,6 @@ def init_db():
         )
     ''')
     
-    # Maintenance Mode System Table
     cursor.execute('''
         CREATE TABLE IF NOT EXISTS bot_settings (
             key TEXT PRIMARY KEY,
@@ -107,7 +101,6 @@ def init_db():
         )
     ''')
     
-    # Paused Quizzes Table
     cursor.execute('''
         CREATE TABLE IF NOT EXISTS paused_quizzes (
             user_id INTEGER PRIMARY KEY,
@@ -122,7 +115,7 @@ def init_db():
     conn.close()
 
 def sync_user_json_profile(user_id: int):
-    """Syncs SQLite user profile and test logs into data/user_profiles/{user_id}.json."""
+    """Syncs SQLite user profile and test logs into data/user_profiles/{user_id}.json with every timestamp."""
     conn = get_db()
     cursor = conn.cursor()
     
@@ -188,7 +181,6 @@ def save_user_profile(user_id, full_name, username, phone, target_exam, age, gen
         sync_user_json_profile(referred_by)
 
 def can_user_edit_profile(user_id: int) -> tuple[bool, int]:
-    """Checks if 30 days have passed since the user's last profile update."""
     conn = get_db()
     cursor = conn.cursor()
     cursor.execute("SELECT last_profile_edit FROM users WHERE user_id = ?", (user_id,))

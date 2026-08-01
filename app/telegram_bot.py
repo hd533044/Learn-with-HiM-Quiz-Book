@@ -18,7 +18,7 @@ from app.database import (
 from app.onboarding import get_onboarding_handler
 from app.quiz_engine import (
     launch_quiz_setup, quiz_count_callback, quiz_timer_callback, handle_poll_answer,
-    pause_quiz_command, resume_quiz_command
+    pause_quiz_command, resume_quiz_command, stop_quiz_command
 )
 from app.stats import get_overall_leaderboard, calculate_user_percentile, calculate_user_rank, get_user_performance_summary
 from app.admin import admin_portal_command, admin_callback_handler
@@ -26,7 +26,6 @@ from app.admin import admin_portal_command, admin_callback_handler
 NEGATIVE_WORDS = ["bad", "worst", "useless", "trash", "fake", "hate", "terrible", "waste", "horrible", "fraud", "stupid", "scam"]
 
 async def maintenance_guard(update: Update, context: ContextTypes.DEFAULT_TYPE) -> bool:
-    """STRICT MAINTENANCE GUARD: Hard blocks ALL user commands & callbacks if bot is paused."""
     m_until = get_maintenance_until()
     if int(time.time()) < m_until:
         remaining_sec = m_until - int(time.time())
@@ -41,10 +40,6 @@ async def maintenance_guard(update: Update, context: ContextTypes.DEFAULT_TYPE) 
     return True
 
 async def send_response(update: Update, text: str, reply_markup=None):
-    """
-    CLEAN RESPONSE ENGINE:
-    Uses InlineKeyboardMarkup or ReplyKeyboardRemove() to ensure no persistent grid keyboards exist.
-    """
     if update.callback_query:
         await update.callback_query.answer()
         try:
@@ -65,6 +60,7 @@ async def help_command(update: Update, context: ContextTypes.DEFAULT_TYPE):
         "• 🚀 **/quiz**: Start a new custom computer quiz\n"
         "• ⏸ **/pause**: Pause running quiz\n"
         "• ▶️ **/resume**: Resume paused quiz\n"
+        "• 🛑 **/stop**: Stop quiz completely & restore remaining limit\n"
         "• 👤 **/myprofile**: View your verified student card\n"
         "• ✏️ **/editprofile**: Update profile details (1x / 30 days)\n"
         "• 📊 **/mywholestate**: View detailed rank & percentile\n"
@@ -75,8 +71,8 @@ async def help_command(update: Update, context: ContextTypes.DEFAULT_TYPE):
     )
 
     buttons = [
-        [InlineKeyboardButton("🚀 /quiz", callback_data="cmd_quiz"), InlineKeyboardButton("👤 /myprofile", callback_data="cmd_profile")],
-        [InlineKeyboardButton("✏️ /editprofile", callback_data="cmd_editprofile"), InlineKeyboardButton("📊 /mywholestate", callback_data="cmd_wholestate")],
+        [InlineKeyboardButton("🚀 /quiz", callback_data="cmd_quiz"), InlineKeyboardButton("🛑 /stop", callback_data="cmd_stop_quiz")],
+        [InlineKeyboardButton("👤 /myprofile", callback_data="cmd_profile"), InlineKeyboardButton("📊 /mywholestate", callback_data="cmd_wholestate")],
         [InlineKeyboardButton("🏆 /toppername", callback_data="cmd_toppers"), InlineKeyboardButton("💬 /feedback", callback_data="cmd_feedback")],
         [InlineKeyboardButton("🤝 /invite", callback_data="cmd_referral"), InlineKeyboardButton("📖 /reviews", callback_data="cmd_viewfeedbacks")]
     ]
@@ -106,7 +102,7 @@ async def myprofile_command(update: Update, context: ContextTypes.DEFAULT_TYPE):
         f"• **Age / Gender:** `{profile['age']}` / `{profile['gender']}`\n"
         f"• **Location:** `{profile.get('state', 'N/A')}, {profile.get('country', 'India')}`\n"
         f"• **Phone:** `{profile['phone_number']}` *(Private)*\n\n"
-        f"📊 **Daily Quota Status:**\n"
+        f"📊 **Daily Quota Status (00:00 to 23:59):**\n"
         f"• **Used Today:** `{today_used}` / `{allowed_limit}` Qs\n"
         f"• **Remaining Today:** `{remaining}` Qs\n"
         f"• **Referrals:** `{profile.get('referral_count', 0)}` / 4 friends\n"
@@ -141,10 +137,9 @@ async def wholestate_command(update: Update, context: ContextTypes.DEFAULT_TYPE)
         f"📍 **Location:** `{profile.get('state', 'N/A')}, {profile.get('country', 'India')}`\n\n"
         f"📈 **Performance Metrics:**\n"
         f"• **Tests Completed:** `{perf.get('total_tests', 0)}`\n"
-        f"• **Total Quizzes Attempted:** `{perf.get('total_tests', 0)}` till date\n"
         f"• **Questions Attempted:** `{perf.get('total_qs', 0)}`\n"
         f"• **Global Rank:** `{rank}`\n"
-        f"• **Overall Percentile:** `{percentile}%` *(Calculated against all registered students)*"
+        f"• **Overall Percentile:** `{percentile}%`"
     )
 
     buttons = [[InlineKeyboardButton("🚀 Launch Quiz", callback_data="cmd_quiz"), InlineKeyboardButton("🏆 Leaderboard", callback_data="cmd_toppers")]]
@@ -228,6 +223,8 @@ async def button_router(update: Update, context: ContextTypes.DEFAULT_TYPE):
         await pause_quiz_command(update, context)
     elif data == "cmd_resume_quiz":
         await resume_quiz_command(update, context)
+    elif data == "cmd_stop_quiz":
+        await stop_quiz_command(update, context)
     elif data == "cmd_start_fresh_quiz":
         clear_paused_quiz_state(user.id)
         await launch_quiz_setup(update, context)
@@ -294,9 +291,6 @@ async def global_error_handler(update: object, context: ContextTypes.DEFAULT_TYP
     logging.debug(f"Exception caught in global error handler: {context.error}")
 
 async def post_init(application: Application):
-    """
-    PURGES ALL CACHED TELEGRAM COMMAND SCOPES AND REGISTERS ONLY THE EXACT PROJECT COMMANDS.
-    """
     try:
         await application.bot.delete_my_commands(scope=BotCommandScopeDefault())
         await application.bot.delete_my_commands(scope=BotCommandScopeAllPrivateChats())
@@ -308,6 +302,7 @@ async def post_init(application: Application):
         BotCommand("quiz", "🚀 Start Computer Quiz"),
         BotCommand("pause", "⏸ Pause Running Quiz"),
         BotCommand("resume", "▶️ Resume Paused Quiz"),
+        BotCommand("stop", "🛑 Stop Quiz Completely"),
         BotCommand("myprofile", "👤 View Student Profile"),
         BotCommand("editprofile", "✏️ Edit Profile Details"),
         BotCommand("mywholestate", "📊 View Performance & Rank"),
@@ -326,10 +321,10 @@ def build_application() -> Application:
 
     app.add_handler(get_onboarding_handler())
     
-    # Core Project Commands
     app.add_handler(CommandHandler("quiz", launch_quiz_setup))
     app.add_handler(CommandHandler("pause", pause_quiz_command))
     app.add_handler(CommandHandler("resume", resume_quiz_command))
+    app.add_handler(CommandHandler("stop", stop_quiz_command))
     app.add_handler(CommandHandler("myprofile", myprofile_command))
     app.add_handler(CommandHandler("mywholestate", wholestate_command))
     app.add_handler(CommandHandler("toppername", toppers_command))
@@ -340,7 +335,6 @@ def build_application() -> Application:
     app.add_handler(CommandHandler("help", help_command))
     app.add_handler(CommandHandler("invite", referral_command))
     
-    # Secret Admin Command
     app.add_handler(CommandHandler("admin", admin_portal_command))
     app.add_handler(CommandHandler("admit", admin_portal_command))
 

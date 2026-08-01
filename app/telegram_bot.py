@@ -26,6 +26,7 @@ from app.admin import admin_portal_command, admin_callback_handler
 NEGATIVE_WORDS = ["bad", "worst", "useless", "trash", "fake", "hate", "terrible", "waste", "horrible", "fraud", "stupid", "scam"]
 
 async def maintenance_guard(update: Update, context: ContextTypes.DEFAULT_TYPE) -> bool:
+    """STRICT MAINTENANCE GUARD: Hard blocks ALL user commands & callbacks if bot is paused."""
     m_until = get_maintenance_until()
     if int(time.time()) < m_until:
         remaining_sec = m_until - int(time.time())
@@ -39,7 +40,41 @@ async def maintenance_guard(update: Update, context: ContextTypes.DEFAULT_TYPE) 
         return False
     return True
 
+async def strict_quiz_command_guard(update: Update, context: ContextTypes.DEFAULT_TYPE):
+    """STRICT COMMAND DEACTIVATION: Blocks /quiz entirely if daily limit (00:00 to 23:59) is exhausted."""
+    if not await maintenance_guard(update, context): 
+        return
+
+    user = update.effective_user
+    profile = get_user_profile(user.id)
+    
+    if not profile or not profile.get("is_verified"):
+        await update.message.reply_text("⚠️ Please type /start to create your profile before attempting quizzes!")
+        return
+
+    attempted_today = get_today_attempts(user.id)
+    allowed_limit = DAILY_QUESTION_LIMIT + profile.get("bonus_quota", 0)
+
+    if attempted_today >= allowed_limit and user.id != PRIMARY_ADMIN_ID:
+        limit_msg = (
+            f"🛑 **Daily Free Limit Exhausted!**\n\n"
+            f"You have reached your actual daily limit of `{allowed_limit}` questions for today (00:00 to 23:59).\n"
+            f"The `/quiz` command has been **deactivated** for your account until tomorrow.\n\n"
+            f"💡 **Unlock +10 Questions:** Share your invite link with 4 friends to increase your limit!"
+        )
+        keyboard = InlineKeyboardMarkup([[
+            InlineKeyboardButton("🤝 Invite Friends (+10 Limit)", callback_data="cmd_referral")
+        ]])
+        await update.message.reply_text(limit_msg, reply_markup=keyboard, parse_mode="Markdown")
+        return
+
+    await launch_quiz_setup(update, context)
+
 async def send_response(update: Update, text: str, reply_markup=None):
+    """
+    CLEAN RESPONSE ENGINE:
+    Uses InlineKeyboardMarkup or ReplyKeyboardRemove() to ensure no persistent grid keyboards exist.
+    """
     if update.callback_query:
         await update.callback_query.answer()
         try:
@@ -137,9 +172,10 @@ async def wholestate_command(update: Update, context: ContextTypes.DEFAULT_TYPE)
         f"📍 **Location:** `{profile.get('state', 'N/A')}, {profile.get('country', 'India')}`\n\n"
         f"📈 **Performance Metrics:**\n"
         f"• **Tests Completed:** `{perf.get('total_tests', 0)}`\n"
+        f"• **Total Quizzes Attempted:** `{perf.get('total_tests', 0)}` till date\n"
         f"• **Questions Attempted:** `{perf.get('total_qs', 0)}`\n"
         f"• **Global Rank:** `{rank}`\n"
-        f"• **Overall Percentile:** `{percentile}%`"
+        f"• **Overall Percentile:** `{percentile}%` *(Calculated against all registered students)*"
     )
 
     buttons = [[InlineKeyboardButton("🚀 Launch Quiz", callback_data="cmd_quiz"), InlineKeyboardButton("🏆 Leaderboard", callback_data="cmd_toppers")]]
@@ -218,6 +254,12 @@ async def button_router(update: Update, context: ContextTypes.DEFAULT_TYPE):
     user = query.from_user
 
     if data == "cmd_quiz":
+        profile = get_user_profile(user.id)
+        attempted_today = get_today_attempts(user.id)
+        allowed_limit = DAILY_QUESTION_LIMIT + (profile.get("bonus_quota", 0) if profile else 0)
+        if attempted_today >= allowed_limit and user.id != PRIMARY_ADMIN_ID:
+            await query.answer("🛑 Daily Limit Exhausted! /quiz is deactivated.", show_alert=True)
+            return
         await launch_quiz_setup(update, context)
     elif data == "cmd_pause_quiz":
         await pause_quiz_command(update, context)
@@ -291,6 +333,9 @@ async def global_error_handler(update: object, context: ContextTypes.DEFAULT_TYP
     logging.debug(f"Exception caught in global error handler: {context.error}")
 
 async def post_init(application: Application):
+    """
+    PURGES ALL CACHED TELEGRAM COMMAND SCOPES AND REGISTERS ONLY THE EXACT PROJECT COMMANDS.
+    """
     try:
         await application.bot.delete_my_commands(scope=BotCommandScopeDefault())
         await application.bot.delete_my_commands(scope=BotCommandScopeAllPrivateChats())
@@ -321,7 +366,8 @@ def build_application() -> Application:
 
     app.add_handler(get_onboarding_handler())
     
-    app.add_handler(CommandHandler("quiz", launch_quiz_setup))
+    # Core Project Commands mapped with strict daily limit block check
+    app.add_handler(CommandHandler("quiz", strict_quiz_command_guard))
     app.add_handler(CommandHandler("pause", pause_quiz_command))
     app.add_handler(CommandHandler("resume", resume_quiz_command))
     app.add_handler(CommandHandler("stop", stop_quiz_command))
@@ -335,6 +381,7 @@ def build_application() -> Application:
     app.add_handler(CommandHandler("help", help_command))
     app.add_handler(CommandHandler("invite", referral_command))
     
+    # Secret Admin Command
     app.add_handler(CommandHandler("admin", admin_portal_command))
     app.add_handler(CommandHandler("admit", admin_portal_command))
 

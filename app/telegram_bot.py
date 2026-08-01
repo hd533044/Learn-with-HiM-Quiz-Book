@@ -29,7 +29,10 @@ NEGATIVE_WORDS = ["bad", "worst", "useless", "trash", "fake", "hate", "terrible"
 
 async def send_response(update: Update, text: str, reply_markup=None):
     if update.callback_query:
-        await update.callback_query.answer()
+        try:
+            await update.callback_query.answer()
+        except Exception:
+            pass
         try:
             await update.callback_query.edit_message_text(text, reply_markup=reply_markup, parse_mode="Markdown")
         except Exception:
@@ -195,13 +198,18 @@ async def referral_command(update: Update, context: ContextTypes.DEFAULT_TYPE):
 
 async def handle_forgot_credentials(update: Update, context: ContextTypes.DEFAULT_TYPE):
     query = update.callback_query
-    await query.answer()
+    if query:
+        try:
+            await query.answer()
+        except Exception:
+            pass
 
     contact_btn = KeyboardButton(text="📱 Share Contact to Recover Credentials", request_contact=True)
     markup = ReplyKeyboardMarkup([[contact_btn]], one_time_keyboard=True, resize_keyboard=True)
 
+    user_id = query.from_user.id if query else update.effective_user.id
     await context.bot.send_message(
-        chat_id=query.from_user.id,
+        chat_id=user_id,
         text="🔑 **CREDENTIAL RECOVERY**\n━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\nClick **Share Contact** to verify mobile and view credentials:",
         reply_markup=markup,
         parse_mode="Markdown"
@@ -340,13 +348,10 @@ def build_application() -> Application:
     init_db()
     app = Application.builder().token(BOT_TOKEN).post_init(post_init).build()
 
-    # 1. Onboarding ConversationHandler
+    # 1. Onboarding Handler (/start and /editprofile)
     app.add_handler(get_onboarding_handler())
     
-    # 2. Text & Contact Handler (Must precede command guard routing for typed passwords)
-    app.add_handler(MessageHandler((filters.CONTACT | filters.TEXT) & ~filters.COMMAND, handle_text_and_contact_messages))
-    
-    # 3. Slash Commands
+    # 2. Command Handlers
     app.add_handler(CommandHandler("quiz", launch_quiz_setup))
     app.add_handler(CommandHandler("pause", pause_quiz_command))
     app.add_handler(CommandHandler("resume", resume_quiz_command))
@@ -359,15 +364,17 @@ def build_application() -> Application:
     app.add_handler(CommandHandler("viewfeedbacks", viewfeedbacks_command))
     app.add_handler(CommandHandler("help", help_command))
     app.add_handler(CommandHandler("invite", referral_command))
-    
     app.add_handler(CommandHandler("admin", admin_portal_command))
     app.add_handler(CommandHandler("admit", admin_portal_command))
 
-    # 4. Callback Query Handlers
+    # 3. Callback Query / Button Handlers
     app.add_handler(CallbackQueryHandler(quiz_count_callback, pattern="^qcount_"))
     app.add_handler(CallbackQueryHandler(quiz_timer_callback, pattern="^qtimer_"))
     app.add_handler(CallbackQueryHandler(admin_callback_handler, pattern="^admin_"))
     app.add_handler(CallbackQueryHandler(button_router, pattern="^cmd_|^fb_"))
+
+    # 4. Text & Contact Handler (Captures Password replies & contact sharing)
+    app.add_handler(MessageHandler((filters.CONTACT | filters.TEXT) & ~filters.COMMAND, handle_text_and_contact_messages))
 
     # 5. Polls & Error Handlers
     app.add_handler(PollAnswerHandler(handle_poll_answer))

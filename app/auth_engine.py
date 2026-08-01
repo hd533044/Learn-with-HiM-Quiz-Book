@@ -26,36 +26,59 @@ async def strict_authentication_guard(update: Update, context: ContextTypes.DEFA
         mins_left = max(1, (remaining_sec + 59) // 60)
         msg = f"🛠 **ADMIN HAS PAUSED THE SERVICE CURRENTLY**\nService will resume in approximately `{mins_left} mins`. Please try again later!"
         if update.callback_query:
-            await update.callback_query.answer("🛠 Service Paused!", show_alert=True)
+            try:
+                await update.callback_query.answer("🛠 Service Paused!", show_alert=True)
+            except Exception:
+                pass
         elif update.message:
             await update.message.reply_text(msg, parse_mode="Markdown", reply_markup=ReplyKeyboardRemove())
         return False
 
-    # 2. Inactivity Lock Check
+    # 2. Inactivity Lock & Verification Check
     profile = get_user_profile(user.id)
-    if profile and profile.get("is_verified"):
-        if is_user_session_expired(user.id):
-            lock_card = (
-                "🔒 **SECURITY LOCK: ACCESS DENIED**\n"
-                "━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\n"
-                "Kindly Register or Log In to access the Learn with HiM Portal.\n\n"
-                "👉 **To unlock, reply with your Custom Password below (Case Sensitive):**\n"
-                "*(Example: `Pass1234` or `9876543210`)*\n\n"
-                "💡 *Forgot credentials? Click below to recover via mobile contact!*"
-            )
-            buttons = InlineKeyboardMarkup([
-                [InlineKeyboardButton("🔑 Recover Credentials via Phone", callback_data="cmd_forgot_credentials")]
-            ])
-            
-            if update.callback_query:
+    
+    # Unregistered User Handling
+    if not profile or not profile.get("is_verified"):
+        unreg_card = (
+            "🔒 **ACCOUNT UNVERIFIED**\n"
+            "━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\n"
+            "Kindly register to access the Learn with HiM Quiz Portal.\n\n"
+            "👉 Please type **/start** to set up your profile!"
+        )
+        if update.callback_query:
+            try:
+                await update.callback_query.answer("🔒 Please type /start to register!", show_alert=True)
+            except Exception:
+                pass
+            await context.bot.send_message(chat_id=user.id, text=unreg_card, parse_mode="Markdown")
+        elif update.message:
+            await update.message.reply_text(unreg_card, parse_mode="Markdown")
+        return False
+
+    # Registered User Session Expired Check
+    if is_user_session_expired(user.id):
+        lock_card = (
+            "🔒 **SECURITY LOCK: ACCESS DENIED**\n"
+            "━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\n"
+            "Your session has expired due to inactivity.\n\n"
+            "👉 **To unlock, reply with your Custom Password below (Case Sensitive):**\n"
+            "*(Example: `Pass1234` or `9876543210`)*\n\n"
+            "💡 *Forgot credentials? Click below to recover via mobile contact!*"
+        )
+        buttons = InlineKeyboardMarkup([
+            [InlineKeyboardButton("🔑 Recover Credentials via Phone", callback_data="cmd_forgot_credentials")]
+        ])
+        
+        if update.callback_query:
+            try:
                 await update.callback_query.answer("🔒 Session Expired! Please enter password.", show_alert=True)
-                await context.bot.send_message(chat_id=user.id, text=lock_card, reply_markup=buttons, parse_mode="Markdown")
-            elif update.message:
-                await update.message.reply_text(lock_card, reply_markup=buttons, parse_mode="Markdown")
-            return False
+            except Exception:
+                pass
+            await context.bot.send_message(chat_id=user.id, text=lock_card, reply_markup=buttons, parse_mode="Markdown")
+        elif update.message:
+            await update.message.reply_text(lock_card, reply_markup=buttons, parse_mode="Markdown")
+        return False
 
-        touch_user_activity(user.id)
-        return True
-
-    # Allow unregistered users to access registration via /start
+    # Session active - touch last active timestamp
+    touch_user_activity(user.id)
     return True

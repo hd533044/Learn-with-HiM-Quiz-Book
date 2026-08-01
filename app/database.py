@@ -73,7 +73,6 @@ def init_db():
     conn = get_db()
     cursor = conn.cursor()
     
-    # Registry table tracking issued Student IDs
     cursor.execute('''
         CREATE TABLE IF NOT EXISTS student_id_registry (
             student_id TEXT PRIMARY KEY,
@@ -164,6 +163,10 @@ def init_db():
     conn.close()
 
 def can_user_edit_profile(user_id: int) -> tuple:
+    """
+    Checks if a user can edit their profile.
+    Returns (True, 0) if allowed, or (False, days_remaining) if locked.
+    """
     conn = get_db()
     cursor = conn.cursor()
     cursor.execute("SELECT last_profile_edit FROM users WHERE user_id = ?", (user_id,))
@@ -174,12 +177,15 @@ def can_user_edit_profile(user_id: int) -> tuple:
         return True, 0
 
     try:
-        last_edit_date = datetime.strptime(row['last_profile_edit'].split(" ")[0], "%Y-%m-%d")
-        days_passed = (datetime.now() - last_edit_date).days
+        edit_str = row['last_profile_edit'].split(" IST")[0].strip()
+        last_edit_dt = datetime.strptime(edit_str, "%Y-%m-%d %H:%M:%S")
+        days_passed = (datetime.now() - last_edit_dt).days
         if days_passed >= 30:
             return True, 0
-        return False, 30 - days_passed
-    except Exception:
+        days_remaining = 30 - days_passed
+        return False, max(1, days_remaining)
+    except Exception as e:
+        logger.error(f"Error parsing last_profile_edit date: {e}")
         return True, 0
 
 def sync_user_unique_file(user_id: int):
@@ -225,6 +231,7 @@ def sync_user_unique_file(user_id: int):
         "system_status": {
             "referral_count": user_dict.get('referral_count'),
             "bonus_quota": user_dict.get('bonus_quota'),
+            "last_profile_edit": user_dict.get('last_profile_edit'),
             "created_at": user_dict.get('created_at'),
             "last_active": get_ist_timestamp_str()
         },
@@ -234,7 +241,7 @@ def sync_user_unique_file(user_id: int):
     filename = f"{cand_name}_{student_id}.json"
     filepath = os.path.join(USER_PROFILES_DIR, filename)
 
-    # Clean up old file if name was updated
+    # Remove stale files for this candidate if they updated their full_name
     for existing_file in os.listdir(USER_PROFILES_DIR):
         if existing_file.endswith(f"_{student_id}.json") and existing_file != filename:
             try:
@@ -306,7 +313,7 @@ def touch_user_activity(user_id: int):
     conn.close()
 
 def is_user_session_expired(user_id: int) -> bool:
-    """Checks inactivity against target threshold (1 Minute = 60 Seconds)."""
+    """Checks inactivity against target threshold (60 Seconds = 1 Minute)."""
     conn = get_db()
     cursor = conn.cursor()
     cursor.execute("SELECT last_active_epoch FROM users WHERE user_id = ?", (user_id,))

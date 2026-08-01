@@ -31,7 +31,7 @@ async def session_and_maintenance_guard(update: Update, context: ContextTypes.DE
     if not user:
         return True
 
-    # 1. Maintenance Mode
+    # 1. Maintenance Guard
     m_until = get_maintenance_until()
     if int(time.time()) < m_until and user.id != PRIMARY_ADMIN_ID:
         remaining_sec = m_until - int(time.time())
@@ -43,7 +43,7 @@ async def session_and_maintenance_guard(update: Update, context: ContextTypes.DE
             await update.message.reply_text(msg, parse_mode="Markdown", reply_markup=ReplyKeyboardRemove())
         return False
 
-    # 2. Password-Only Inactivity Check
+    # 2. Strict 1-Minute Password Inactivity Guard
     profile = get_user_profile(user.id)
     if profile and profile.get("is_verified"):
         if is_user_session_expired(user.id):
@@ -53,7 +53,7 @@ async def session_and_maintenance_guard(update: Update, context: ContextTypes.DE
                 "For account security, enter your **4-Character Password** to unlock:\n\n"
                 "👉 **Reply with your 4-Character Password below:**\n"
                 "*(Example: `A9K2`)*\n\n"
-                "💡 *Forgot password? Tap below to recover!*"
+                "💡 *Forgot password? Tap below to recover via mobile!*"
             )
             buttons = InlineKeyboardMarkup([
                 [InlineKeyboardButton("🔑 Recover Password via Phone", callback_data="cmd_forgot_credentials")]
@@ -311,7 +311,7 @@ async def handle_text_and_contact_messages(update: Update, context: ContextTypes
     user = update.effective_user
     message = update.message
 
-    # 1. PHONE RECOVERY
+    # 1. OPTION 1 RECOVERY: Handle Contact Verification
     if message.contact:
         phone = message.contact.phone_number
         record = get_student_credentials_by_phone(phone)
@@ -341,7 +341,7 @@ async def handle_text_and_contact_messages(update: Update, context: ContextTypes
 
     # 2. PASSWORD-ONLY UNLOCK CHECK (4-Character String)
     text = message.text.strip()
-    if len(text) == 4:
+    if len(text) == 4 and text.isalnum():
         if verify_password_only(user.id, text):
             await message.reply_text(
                 f"🎉 **PASSWORD VERIFIED — UNLOCKED!**\n"
@@ -356,7 +356,7 @@ async def handle_text_and_contact_messages(update: Update, context: ContextTypes
             await message.reply_text(
                 "❌ **INCORRECT PASSWORD!**\n\n"
                 "The 4-character password entered is invalid.\n"
-                "Please try again or tap below to recover it:",
+                "Please try again or tap below to recover it via phone:",
                 reply_markup=InlineKeyboardMarkup([[
                     InlineKeyboardButton("🔑 Recover Password via Phone", callback_data="cmd_forgot_credentials")
                 ]]),

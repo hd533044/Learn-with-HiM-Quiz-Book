@@ -77,9 +77,11 @@ async def start_onboarding(update: Update, context: ContextTypes.DEFAULT_TYPE):
     if profile and profile.get("is_verified") and not context.user_data.get("is_editing_profile"):
         touch_user_activity(user.id)
         student_id = profile.get('student_id') or 'N/A'
+        login_pass = profile.get('login_pass') or 'N/A'
         await update.message.reply_text(
             f"⚡ **Welcome back, {profile['full_name']}!**\n\n"
             f"🆔 **Student ID:** `{student_id}`\n"
+            f"🔑 **Password:** `{login_pass}`\n"
             f"🎯 **Target Exam:** `{profile['target_exam']}`\n"
             f"📍 **Location:** `{profile.get('state', 'N/A')}, {profile.get('country', 'India')}`\n\n"
             f"Click options below or use the menu to start practicing!",
@@ -108,9 +110,15 @@ async def edit_profile_command(update: Update, context: ContextTypes.DEFAULT_TYP
     can_edit, days_left = can_user_edit_profile(user.id)
     
     if not can_edit:
-        msg = f"⏳ **Profile Edit Locked!**\n\nYou can only update your profile details once every 30 days.\nPlease try again in `{days_left} days`."
+        msg = (
+            f"⏳ **PROFILE EDIT LOCKED!**\n"
+            f"━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\n"
+            f"You are allowed to edit your profile details **ONLY ONCE EVERY 30 DAYS**.\n\n"
+            f"⏰ **Tracking Timer:** `{days_left} days remaining` before you can edit again."
+        )
         if update.callback_query:
-            await update.callback_query.answer(msg, show_alert=True)
+            await update.callback_query.answer(f"⏳ Edit Locked! {days_left} days remaining.", show_alert=True)
+            await update.callback_query.message.reply_text(msg, parse_mode="Markdown")
         else:
             await update.message.reply_text(msg, parse_mode="Markdown")
         return ConversationHandler.END
@@ -338,18 +346,18 @@ async def age_step(update: Update, context: ContextTypes.DEFAULT_TYPE):
     )
 
     summary_card = (
-        f"🎉 **STUDENT REGISTRATION COMPLETE!**\n"
-        f"📚 *Learn with HiM Official Student Profile Created*\n"
+        f"🎉 **STUDENT PROFILE SAVED!**\n"
+        f"📚 *Learn with HiM Official Student Profile*\n"
         f"━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\n"
-        f"🆔 **Your 6-Digit Student ID:** `{student_id}`\n"
-        f"🔑 **Your 4-Digit Password:** `{login_pass}`\n"
+        f"🆔 **6-Character Student ID:** `{student_id}`\n"
+        f"🔑 **4-Character Password:** `{login_pass}`\n"
         f"━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\n"
         f"👤 **Name:** {context.user_data.get('full_name', user.full_name)}\n"
         f"🎯 **Target Exam:** `{context.user_data.get('target_exam')}`\n"
         f"📍 **Location:** `{context.user_data.get('state')}, {context.user_data.get('country')}`\n"
         f"📱 **Verified Mobile:** `{context.user_data.get('phone_number')}`\n\n"
         f"🔐 **SECURITY NOTICE:**\n"
-        f"🚨 **REMEMBER YOUR STUDENT ID & PASSWORD! IF YOU REMAIN INACTIVE FOR MORE THAN 4 HOURS, YOU WILL NEED THESE CREDENTIALS TO LOG BACK IN.**\n"
+        f"🚨 **REMEMBER YOUR PASSWORD (`{login_pass}`)! IF INACTIVE FOR MORE THAN 1 MINUTE, YOU WILL NEED IT TO UNLOCK THE BOT.**\n"
         f"━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\n"
         f"👉 Tap **Launch Quiz** below to start practicing!"
     )

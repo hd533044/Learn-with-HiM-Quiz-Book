@@ -20,7 +20,6 @@ ACTIVE_SESSIONS = {}
 POLL_MAP = {}
 TIMER_TASKS = {}
 QUIZ_SETUP_CACHE = {}
-LAST_QUIZ_RESULTS = {}  # In-memory result cache for downloadable instant PDF
 
 def get_pause_resume_keyboard():
     return InlineKeyboardMarkup([
@@ -557,14 +556,13 @@ async def download_instant_pdf_callback(update: Update, context: ContextTypes.DE
     await query.answer("⏳ Generating your instant PDF report card...")
     user_id = query.from_user.id
     
-    quiz_result_payload = LAST_QUIZ_RESULTS.get(user_id)
+    quiz_result_payload = context.user_data.get("last_quiz_result")
     if not quiz_result_payload:
-        await query.message.reply_text("⚠️ No recent quiz session found to generate report card.")
+        await query.message.reply_text("⚠️ No recent quiz session data found to export.")
         return
 
     profile = await asyncio.to_thread(get_user_profile, user_id)
     
-    # Generate PDF in thread pool to prevent event loop lag
     pdf_file = await asyncio.to_thread(generate_instant_quiz_pdf_report, user_id, quiz_result_payload)
 
     if pdf_file and os.path.exists(pdf_file):
@@ -610,8 +608,8 @@ async def finish_quiz_and_send_report(chat_id: int, user_id: int, context: Conte
     percentile = await asyncio.to_thread(calculate_user_percentile, user_id)
     rank_str = await asyncio.to_thread(calculate_user_rank, user_id)
 
-    # Store payload for interactive PDF download button
-    LAST_QUIZ_RESULTS[user_id] = {
+    # Persist session result securely inside context.user_data
+    context.user_data["last_quiz_result"] = {
         "total_questions": total,
         "score": score,
         "correct_count": correct,

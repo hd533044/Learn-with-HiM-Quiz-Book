@@ -5,17 +5,11 @@ from telegram import Update, Poll, InlineKeyboardMarkup, InlineKeyboardButton
 from telegram.ext import ContextTypes
 from app.config import DAILY_QUESTION_LIMIT, CHANNEL_USERNAME, YOUTUBE_CHANNEL_URL, PRIMARY_ADMIN_ID
 from app.database import (
-    get_today_attempts, 
-    get_seen_question_ids, 
-    mark_questions_as_seen, 
-    record_quiz_result, 
-    get_ist_timestamp_str, 
-    get_user_profile, 
-    get_maintenance_until,
-    save_paused_quiz_state, 
-    get_paused_quiz_state, 
-    clear_paused_quiz_state,
-    save_question_to_db
+    get_today_attempts, get_seen_question_ids, 
+    mark_questions_as_seen, record_quiz_result, get_ist_timestamp_str, 
+    get_user_profile, get_maintenance_until,
+    save_paused_quiz_state, get_paused_quiz_state, clear_paused_quiz_state,
+    save_question_to_db, log_user_activity_time
 )
 from app.pyq_fetcher import fetch_pyqs_for_quiz
 from app.stats import calculate_user_percentile, calculate_user_rank
@@ -25,9 +19,7 @@ POLL_MAP = {}
 TIMER_TASKS = {}
 QUIZ_SETUP_CACHE = {}
 
-
 def get_pause_resume_keyboard():
-    """Generates inline controls attached below every active question poll."""
     return InlineKeyboardMarkup([
         [
             InlineKeyboardButton("⏸ Pause (/pause)", callback_data="cmd_pause_quiz"), 
@@ -39,17 +31,13 @@ def get_pause_resume_keyboard():
         ]
     ])
 
-
 async def check_quiz_maintenance(update: Update) -> bool:
-    """Checks if admin maintenance mode is active before allowing quiz actions."""
     m_until = get_maintenance_until()
     if int(time.time()) < m_until:
         remaining_sec = m_until - int(time.time())
         mins_left = max(1, (remaining_sec + 59) // 60)
-        msg = (
-            f"🛠 **ADMIN HAS PAUSED THE SERVICE CURRENTLY**\n"
-            f"Service will resume in approximately `{mins_left} mins`. Please try again later!"
-        )
+        msg = f"🛠 **ADMIN HAS PAUSED THE SERVICE CURRENTLY**\nService will resume in approximately `{mins_left} mins`. Please try again later!"
+        
         if update.callback_query:
             await update.callback_query.answer(f"🛠 Service Paused! Resuming in ~{mins_left} mins.", show_alert=True)
         elif update.message:
@@ -57,13 +45,11 @@ async def check_quiz_maintenance(update: Update) -> bool:
         return False
     return True
 
-
 async def launch_quiz_setup(update: Update, context: ContextTypes.DEFAULT_TYPE):
-    """Initializes the quiz setup wizard and strictly checks daily limits."""
-    if not await check_quiz_maintenance(update): 
-        return
+    if not await check_quiz_maintenance(update): return
 
     user = update.effective_user
+    log_user_activity_time(user.id, seconds=10)
     profile = get_user_profile(user.id)
     
     if not profile or not profile.get("is_verified"):
@@ -71,14 +57,8 @@ async def launch_quiz_setup(update: Update, context: ContextTypes.DEFAULT_TYPE):
         return
 
     attempted_today = get_today_attempts(user.id)
-    
-    # Primary Admin ID (1091057353) gets 10,000 Qs/day; students get 40 + bonus quota
-    if user.id == PRIMARY_ADMIN_ID:
-        allowed_limit = 10000
-    else:
-        allowed_limit = DAILY_QUESTION_LIMIT + profile.get("bonus_quota", 0)
+    allowed_limit = 10000 if user.id == PRIMARY_ADMIN_ID else DAILY_QUESTION_LIMIT + profile.get("bonus_quota", 0)
 
-    # Strict daily free limit check (00:00 to 23:59 IST)
     if attempted_today >= allowed_limit:
         exhausted_msg = (
             f"🛑 **WARNING: DAILY FREE LIMIT EXHAUSTED!**\n"
@@ -88,9 +68,9 @@ async def launch_quiz_setup(update: Update, context: ContextTypes.DEFAULT_TYPE):
             f"⚠️ **Notice:** The `/quiz` command is now **deactivated** for your account until tomorrow or until you unlock extra quota via referrals!\n\n"
             f"💡 **Unlock +10 Questions:** Share your invite link with 4 friends using `/invite`."
         )
-        keyboard = InlineKeyboardMarkup([
-            [InlineKeyboardButton("🤝 Invite Friends (+10 Limit)", callback_data="cmd_referral")]
-        ])
+        keyboard = InlineKeyboardMarkup([[
+            InlineKeyboardButton("🤝 Invite Friends (+10 Limit)", callback_data="cmd_referral")
+        ]])
         if update.callback_query:
             await update.callback_query.answer("🛑 Daily Limit Exhausted! /quiz is deactivated.", show_alert=True)
             await update.callback_query.message.reply_text(exhausted_msg, reply_markup=keyboard, parse_mode="Markdown")
@@ -141,14 +121,12 @@ async def launch_quiz_setup(update: Update, context: ContextTypes.DEFAULT_TYPE):
     else:
         await update.message.reply_text(msg_text, reply_markup=InlineKeyboardMarkup(keyboard), parse_mode="Markdown")
 
-
 async def quiz_count_callback(update: Update, context: ContextTypes.DEFAULT_TYPE):
-    """Handles question count selection and double-checks daily limit."""
-    if not await check_quiz_maintenance(update): 
-        return
+    if not await check_quiz_maintenance(update): return
 
     query = update.callback_query
     user_id = query.from_user.id
+    log_user_activity_time(user_id, seconds=10)
     
     profile = get_user_profile(user_id)
     attempted_today = get_today_attempts(user_id)
@@ -185,14 +163,12 @@ async def quiz_count_callback(update: Update, context: ContextTypes.DEFAULT_TYPE
         parse_mode="Markdown"
     )
 
-
 async def quiz_timer_callback(update: Update, context: ContextTypes.DEFAULT_TYPE):
-    """Handles timer selection, verifies limits, fetches PYQs, and starts quiz."""
-    if not await check_quiz_maintenance(update): 
-        return
+    if not await check_quiz_maintenance(update): return
 
     query = update.callback_query
     user_id = query.from_user.id
+    log_user_activity_time(user_id, seconds=15)
     
     profile = get_user_profile(user_id)
     attempted_today = get_today_attempts(user_id)
@@ -201,8 +177,7 @@ async def quiz_timer_callback(update: Update, context: ContextTypes.DEFAULT_TYPE
     if attempted_today >= allowed_limit:
         await query.answer("🛑 Daily Limit Exhausted! Quiz is locked.", show_alert=True)
         await query.edit_message_text(
-            f"🛑 **WARNING: DAILY FREE LIMIT EXHAUSTED!**\n\n"
-            f"You have reached your actual daily limit of `{allowed_limit}` questions for today (00:00 to 23:59). Your quiz has been cancelled.",
+            f"🛑 **WARNING: DAILY FREE LIMIT EXHAUSTED!**\n\nYou have reached your actual daily limit of `{allowed_limit}` questions for today (00:00 to 23:59). Your quiz has been cancelled.",
             parse_mode="Markdown"
         )
         return
@@ -237,7 +212,8 @@ async def quiz_timer_callback(update: Update, context: ContextTypes.DEFAULT_TYPE
         "total": len(questions),
         "timer_sec": timer_sec,
         "is_paused": False,
-        "start_time": get_ist_timestamp_str()
+        "start_time": get_ist_timestamp_str(),
+        "detailed_logs": []
     }
     ACTIVE_SESSIONS[user_id] = session
 
@@ -251,11 +227,10 @@ async def quiz_timer_callback(update: Update, context: ContextTypes.DEFAULT_TYPE
     )
     await send_next_question(query.message.chat_id, user_id, context)
 
-
 async def save_question_callback(update: Update, context: ContextTypes.DEFAULT_TYPE):
-    """Saves active question to SQLite & syncs user personal JSON file."""
     query = update.callback_query
     user_id = query.from_user.id
+    log_user_activity_time(user_id, seconds=5)
     session = ACTIVE_SESSIONS.get(user_id)
     
     if not session or "current_question" not in session:
@@ -275,11 +250,10 @@ async def save_question_callback(update: Update, context: ContextTypes.DEFAULT_T
     else:
         await query.answer("ℹ️ This question is already saved in your bookmarks!", show_alert=True)
 
-
 async def pause_quiz_command(update: Update, context: ContextTypes.DEFAULT_TYPE):
-    """Pauses the active quiz session and stores state in DB."""
     user_id = update.effective_user.id
     chat_id = update.effective_chat.id
+    log_user_activity_time(user_id, seconds=5)
 
     session = ACTIVE_SESSIONS.get(user_id)
     if not session or session.get("is_paused"):
@@ -304,7 +278,8 @@ async def pause_quiz_command(update: Update, context: ContextTypes.DEFAULT_TYPE)
         "skipped": session["skipped"],
         "total": session["total"],
         "timer_sec": session["timer_sec"],
-        "start_time": session["start_time"]
+        "start_time": session["start_time"],
+        "detailed_logs": session.get("detailed_logs", [])
     }
     save_paused_quiz_state(user_id, save_state)
     ACTIVE_SESSIONS.pop(user_id, None)
@@ -328,11 +303,10 @@ async def pause_quiz_command(update: Update, context: ContextTypes.DEFAULT_TYPE)
     else:
         await update.message.reply_text(msg, reply_markup=keyboard, parse_mode="Markdown")
 
-
 async def resume_quiz_command(update: Update, context: ContextTypes.DEFAULT_TYPE):
-    """Resumes paused quiz session with a 3-second animated countdown."""
     user_id = update.effective_user.id
     chat_id = update.effective_chat.id
+    log_user_activity_time(user_id, seconds=5)
 
     paused = get_paused_quiz_state(user_id)
     if not paused:
@@ -356,7 +330,8 @@ async def resume_quiz_command(update: Update, context: ContextTypes.DEFAULT_TYPE
         "total": paused["total"],
         "timer_sec": paused["timer_sec"],
         "is_paused": False,
-        "start_time": paused["start_time"]
+        "start_time": paused["start_time"],
+        "detailed_logs": paused.get("detailed_logs", [])
     }
     ACTIVE_SESSIONS[user_id] = session
 
@@ -389,11 +364,10 @@ async def resume_quiz_command(update: Update, context: ContextTypes.DEFAULT_TYPE
 
     await send_next_question(chat_id, user_id, context)
 
-
 async def stop_quiz_command(update: Update, context: ContextTypes.DEFAULT_TYPE):
-    """Terminates session completely and refunds remaining unattempted limit."""
     user_id = update.effective_user.id
     chat_id = update.effective_chat.id
+    log_user_activity_time(user_id, seconds=5)
 
     session = ACTIVE_SESSIONS.pop(user_id, None)
     paused = get_paused_quiz_state(user_id)
@@ -418,7 +392,8 @@ async def stop_quiz_command(update: Update, context: ContextTypes.DEFAULT_TYPE):
                 total_questions=session["current_index"], 
                 correct_count=session["correct"], 
                 wrong_count=session["wrong"], 
-                skipped_count=session["skipped"]
+                skipped_count=session["skipped"],
+                question_details=session.get("detailed_logs", [])
             )
     elif paused:
         if paused.get("current_index", 0) > 0:
@@ -428,7 +403,8 @@ async def stop_quiz_command(update: Update, context: ContextTypes.DEFAULT_TYPE):
                 total_questions=paused["current_index"], 
                 correct_count=paused["correct"], 
                 wrong_count=paused["wrong"], 
-                skipped_count=paused["skipped"]
+                skipped_count=paused["skipped"],
+                question_details=paused.get("detailed_logs", [])
             )
 
     msg = (
@@ -445,9 +421,7 @@ async def stop_quiz_command(update: Update, context: ContextTypes.DEFAULT_TYPE):
     else:
         await update.message.reply_text(msg, parse_mode="Markdown")
 
-
 async def send_next_question(chat_id: int, user_id: int, context: ContextTypes.DEFAULT_TYPE):
-    """Sends the next question poll in active sequence."""
     m_until = get_maintenance_until()
     if int(time.time()) < m_until:
         await context.bot.send_message(chat_id=chat_id, text="🛠 **ADMIN HAS PAUSED THE SERVICE CURRENTLY**\nQuiz session paused!")
@@ -490,7 +464,13 @@ async def send_next_question(chat_id: int, user_id: int, context: ContextTypes.D
         )
         
         poll_id = poll_msg.poll.id
-        POLL_MAP[poll_id] = {"user_id": user_id, "chat_id": chat_id, "q_idx": session["current_index"], "correct_id": correct_id}
+        POLL_MAP[poll_id] = {
+            "user_id": user_id, 
+            "chat_id": chat_id, 
+            "q_idx": session["current_index"], 
+            "correct_id": correct_id,
+            "q_data": q
+        }
 
         await context.bot.send_message(
             chat_id=chat_id,
@@ -508,21 +488,26 @@ async def send_next_question(chat_id: int, user_id: int, context: ContextTypes.D
         session["current_index"] += 1
         await send_next_question(chat_id, user_id, context)
 
-
 async def auto_skip_task(chat_id: int, user_id: int, poll_id: str, expected_idx: int, timer_sec: int, context: ContextTypes.DEFAULT_TYPE):
-    """Auto skips poll when question timer expires."""
     await asyncio.sleep(timer_sec + 1)
     if poll_id in POLL_MAP:
-        POLL_MAP.pop(poll_id, None)
+        data = POLL_MAP.pop(poll_id, None)
         session = ACTIVE_SESSIONS.get(user_id)
         if session and not session.get("is_paused") and session["current_index"] == expected_idx:
+            q = data.get("q_data", {})
+            session.setdefault("detailed_logs", []).append({
+                "question_id": q.get("id"),
+                "question_text": q.get("question"),
+                "status": "SKIPPED_TIMEOUT",
+                "selected_option": None,
+                "correct_option": data.get("correct_id"),
+                "timestamp": get_ist_timestamp_str()
+            })
             session["skipped"] += 1
             session["current_index"] += 1
             await send_next_question(chat_id, user_id, context)
 
-
 async def handle_poll_answer(update: Update, context: ContextTypes.DEFAULT_TYPE):
-    """Processes user poll submission, scores it, and triggers next question."""
     answer = update.poll_answer
     poll_id = answer.poll_id
     if poll_id not in POLL_MAP:
@@ -531,6 +516,7 @@ async def handle_poll_answer(update: Update, context: ContextTypes.DEFAULT_TYPE)
     data = POLL_MAP.pop(poll_id)
     user_id = data["user_id"]
     chat_id = data["chat_id"]
+    log_user_activity_time(user_id, seconds=data.get("timer_sec", 15))
 
     if user_id in TIMER_TASKS and not TIMER_TASKS[user_id].done():
         TIMER_TASKS[user_id].cancel()
@@ -543,19 +529,32 @@ async def handle_poll_answer(update: Update, context: ContextTypes.DEFAULT_TYPE)
     session = ACTIVE_SESSIONS.get(user_id)
     if session and not session.get("is_paused") and session["current_index"] == data["q_idx"]:
         selected = answer.option_ids[0] if answer.option_ids else -1
-        if selected == data["correct_id"]:
+        correct_id = data["correct_id"]
+        q = data.get("q_data", {})
+
+        is_correct = (selected == correct_id)
+        if is_correct:
             session["score"] += 1.0
             session["correct"] += 1
+            status = "CORRECT"
         else:
             session["wrong"] += 1
+            status = "WRONG"
+
+        session.setdefault("detailed_logs", []).append({
+            "question_id": q.get("id"),
+            "question_text": q.get("question"),
+            "status": status,
+            "selected_option": selected,
+            "correct_option": correct_id,
+            "timestamp": get_ist_timestamp_str()
+        })
 
         session["current_index"] += 1
         await asyncio.sleep(0.8)
         await send_next_question(chat_id, user_id, context)
 
-
 async def finish_quiz_and_send_report(chat_id: int, user_id: int, context: ContextTypes.DEFAULT_TYPE):
-    """Finalizes quiz session, logs to DB & JSON, and displays result card with saved questions button."""
     session = ACTIVE_SESSIONS.pop(user_id, None)
     if not session:
         return
@@ -565,8 +564,17 @@ async def finish_quiz_and_send_report(chat_id: int, user_id: int, context: Conte
     wrong = session["wrong"]
     skipped = session["skipped"]
     score = session["score"]
+    detailed_logs = session.get("detailed_logs", [])
 
-    record_quiz_result(user_id, score=score, total_questions=total, correct_count=correct, wrong_count=wrong, skipped_count=skipped)
+    record_quiz_result(
+        user_id, 
+        score=score, 
+        total_questions=total, 
+        correct_count=correct, 
+        wrong_count=wrong, 
+        skipped_count=skipped,
+        question_details=detailed_logs
+    )
 
     percentile = calculate_user_percentile(user_id)
     rank_str = calculate_user_rank(user_id)

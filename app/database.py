@@ -44,6 +44,7 @@ def init_db():
             referral_count INTEGER DEFAULT 0,
             bonus_quota INTEGER DEFAULT 0,
             last_profile_edit TEXT,
+            last_active TEXT,
             is_verified INTEGER DEFAULT 1,
             created_at TEXT
         )
@@ -61,6 +62,8 @@ def init_db():
         cursor.execute("ALTER TABLE users ADD COLUMN state TEXT DEFAULT 'N/A'")
     if 'last_profile_edit' not in columns:
         cursor.execute("ALTER TABLE users ADD COLUMN last_profile_edit TEXT")
+    if 'last_active' not in columns:
+        cursor.execute("ALTER TABLE users ADD COLUMN last_active TEXT")
 
     cursor.execute('''
         CREATE TABLE IF NOT EXISTS quiz_attempts (
@@ -76,9 +79,15 @@ def init_db():
             time_taken INTEGER DEFAULT 0,
             attempt_timestamp TEXT,
             attempt_date TEXT,
+            details_json TEXT,
             FOREIGN KEY (user_id) REFERENCES users (user_id)
         )
     ''')
+
+    cursor.execute("PRAGMA table_info(quiz_attempts)")
+    q_columns = [row[1] for row in cursor.fetchall()]
+    if 'details_json' not in q_columns:
+        cursor.execute("ALTER TABLE quiz_attempts ADD COLUMN details_json TEXT")
 
     cursor.execute('''
         CREATE TABLE IF NOT EXISTS seen_questions (
@@ -126,6 +135,16 @@ def init_db():
             saved_at TEXT
         )
     ''')
+
+    cursor.execute('''
+        CREATE TABLE IF NOT EXISTS user_activity_time (
+            id INTEGER PRIMARY KEY AUTOINCREMENT,
+            user_id INTEGER,
+            date_str TEXT,
+            seconds_spent INTEGER DEFAULT 0,
+            UNIQUE(user_id, date_str)
+        )
+    ''')
     
     cursor.execute("INSERT OR IGNORE INTO bot_settings (key, value) VALUES ('maintenance_until', '0')")
     
@@ -133,11 +152,7 @@ def init_db():
     conn.close()
 
 def generate_student_id(full_name: str, dob_str: str) -> str:
-    """
-    Generates unique Student ID: First 2 letters of name (Capitalized) + ddmmyy.
-    e.g., Himanshu, 09-08-2000 -> Hi090800
-    Includes a collision guard to append suffix if ID already exists.
-    """
+    """Generates unique Student ID: First 2 letters of name + ddmmyy with collision guard."""
     clean_name = "".join(filter(str.isalpha, full_name))
     if len(clean_name) >= 2:
         prefix = clean_name[:2].capitalize()
@@ -172,8 +187,26 @@ def generate_student_id(full_name: str, dob_str: str) -> str:
     
     return student_id
 
+def log_user_activity_time(user_id: int, seconds: int = 15):
+    """Tracks time spent on the bot by user date-wise."""
+    conn = get_db()
+    cursor = conn.cursor()
+    today_date = get_ist_date_str()
+    now_str = get_ist_timestamp_str()
+    
+    cursor.execute('''
+        INSERT INTO user_activity_time (user_id, date_str, seconds_spent)
+        VALUES (?, ?, ?)
+        ON CONFLICT(user_id, date_str) DO UPDATE SET
+            seconds_spent = seconds_spent + excluded.seconds_spent
+    ''', (user_id, today_date, seconds))
+
+    cursor.execute("UPDATE users SET last_active = ? WHERE user_id = ?", (now_str, user_id))
+    conn.commit()
+    conn.close()
+
 def sync_user_json_profile(user_id: int):
-    """Syncs SQLite user profile and test logs into data/user_profiles/{student_id}.json."""
+    """Generates and syncs the complete Master Student Profile JSON file under data/user_profiles/<STUDENT_ID>.json."""
     conn = get_db()
     cursor = conn.cursor()
     
@@ -183,19 +216,110 @@ def sync_user_json_profile(user_id: int):
         conn.close()
         return
 
+    user_dict = dict(user_row)
+    student_id = user_dict.get("student_id") or f"USER_{user_id}"
+
     cursor.execute("SELECT * FROM quiz_attempts WHERE user_id = ? ORDER BY id DESC", (user_id,))
     attempts_rows = cursor.fetchall()
+    
+    cursor.execute("SELECT * FROM saved_questions WHERE user_id = ? ORDER BY id DESC", (user_id,))
+    saved_rows = cursor.fetchall()
+
+    cursor.execute("SELECT * FROM student_feedback WHERE user_id = ? ORDER BY id DESC", (user_id,))
+    feedback_rows = cursor.fetchall()
+
+    cursor.execute("SELECT date_str, seconds_spent FROM user_activity_time WHERE user_id = ? ORDER BY date_str DESC", (user_id,))
+    time_rows = cursor.fetchall()
     conn.close()
 
-    user_dict = dict(user_row)
-    attempts_list = [dict(a) for a in attempts_rows]
+    formatted_attempts = []
+    datewise_quiz_summary = {}
+    daily_questions_count = {}
 
-    student_id = user_dict.get("student_id") or f"USER_{user_id}"
+    for a in attempts_rows:
+        ad = dict(a)
+        if ad.get("details_json"):
+            try:
+                ad["question_details"] = json.loads(ad["details_json"])
+            except Exception:
+                ad["question_details"] = []
+            del ad["details_json"]
+        formatted_attempts.append(ad)
+
+        dt = ad.get("attempt_date", "Unknown")
+        qs = ad.get("questions_attempted", 0)
+
+        daily_questions_count[dt] = daily_questions_count.get(dt, 0) + qs
+
+        if dt not in datewise_quiz_summary:
+            datewise_quiz_summary[dt] = {
+                "total_quizzes": 0,
+                "total_questions": 0,
+                "total_correct": 0,
+                "total_wrong": 0,
+                "total_score": 0.0,
+                "total_time_seconds": 0
+            }
+        
+        datewise_quiz_summary[dt]["total_quizzes"] += 1
+        datewise_quiz_summary[dt]["total_questions"] += qs
+        datewise_quiz_summary[dt]["total_correct"] += ad.get("correct_answers", 0)
+        datewise_quiz_summary[dt]["total_wrong"] += ad.get("wrong_answers", 0)
+        datewise_quiz_summary[dt]["total_score"] += ad.get("score", 0.0)
+        datewise_quiz_summary[dt]["total_time_seconds"] += ad.get("time_taken", 0)
+
+    formatted_saved_qs = []
+    datewise_saved_summary = {}
+    for s in saved_rows:
+        sd = dict(s)
+        if sd.get("options_json"):
+            try:
+                sd["options"] = json.loads(sd["options_json"])
+            except Exception:
+                sd["options"] = []
+            del sd["options_json"]
+        formatted_saved_qs.append(sd)
+
+        s_date = sd.get("saved_at", "").split(" ")[0] if sd.get("saved_at") else "Unknown"
+        datewise_saved_summary[s_date] = datewise_saved_summary.get(s_date, 0) + 1
+
+    activity_log = {r["date_str"]: f"{r['seconds_spent']} seconds ({round(r['seconds_spent']/60, 2)} mins)" for r in time_rows}
+    total_time_seconds = sum([r["seconds_spent"] for r in time_rows])
 
     profile_data = {
         "student_id": student_id,
-        "profile_info": user_dict,
-        "quiz_history": attempts_list,
+        "registration_info": user_dict,
+        "bot_engagement_metrics": {
+            "last_login_timestamp": user_dict.get("last_active") or user_dict.get("created_at"),
+            "total_time_spent_overall": f"{total_time_seconds} seconds ({round(total_time_seconds/60, 2)} mins)",
+            "daily_spent_time_breakdown": activity_log,
+            "questions_attempted_per_day": daily_questions_count
+        },
+        "academic_summary": {
+            "total_quizzes_attempted": len(formatted_attempts),
+            "total_questions_attempted": sum([a.get("questions_attempted", 0) for a in formatted_attempts]),
+            "total_correct": sum([a.get("correct_answers", 0) for a in formatted_attempts]),
+            "total_wrong": sum([a.get("wrong_answers", 0) for a in formatted_attempts]),
+            "total_skipped": sum([a.get("skipped_count", 0) for a in formatted_attempts]),
+            "datewise_quiz_summary": datewise_quiz_summary
+        },
+        "saved_questions_ledger": {
+            "total_saved": len(formatted_saved_qs),
+            "datewise_saved_summary": datewise_saved_summary,
+            "saved_questions": formatted_saved_qs
+        },
+        "student_reviews_given": [dict(f) for f in feedback_rows],
+        "subscription_ledger": {
+            "status": "FREE_TIER",
+            "active_plan": "Standard Free Tier",
+            "total_amount_paid": 0.0,
+            "payment_history": []
+        },
+        "badges_and_achievements": {
+            "earned_badges": ["Early Learner", "Registered Scholar"],
+            "streak_days": len(daily_questions_count)
+        },
+        "full_quiz_history": formatted_attempts,
         "last_synced": get_ist_timestamp_str()
     }
 
@@ -211,12 +335,11 @@ def save_user_profile(user_id, full_name, username, phone, target_exam, dob, age
     cursor = conn.cursor()
     now_str = get_ist_timestamp_str()
     
-    birth_year = dob.split("-")[-1] if dob and "-" in dob else str(datetime.now().year - age)
     student_id = generate_student_id(full_name, dob)
 
     cursor.execute('''
-        INSERT INTO users (user_id, student_id, full_name, username, phone_number, target_exam, dob, age, gender, country, state, referred_by, last_profile_edit, is_verified, created_at)
-        VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, 1, ?)
+        INSERT INTO users (user_id, student_id, full_name, username, phone_number, target_exam, dob, age, gender, country, state, referred_by, last_profile_edit, last_active, is_verified, created_at)
+        VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, 1, ?)
         ON CONFLICT(user_id) DO UPDATE SET
             student_id=excluded.student_id,
             full_name=excluded.full_name,
@@ -229,8 +352,9 @@ def save_user_profile(user_id, full_name, username, phone, target_exam, dob, age
             country=excluded.country,
             state=excluded.state,
             last_profile_edit=?,
+            last_active=?,
             is_verified=1
-    ''', (user_id, student_id, full_name, username, phone, target_exam, dob, age, gender, country, state, referred_by, now_str, now_str, now_str))
+    ''', (user_id, student_id, full_name, username, phone, target_exam, dob, age, gender, country, state, referred_by, now_str, now_str, now_str, now_str, now_str))
     
     if referred_by and referred_by != user_id:
         cursor.execute("UPDATE users SET referral_count = referral_count + 1 WHERE user_id = ?", (referred_by,))
@@ -294,16 +418,17 @@ def get_today_attempts(user_id):
     conn.close()
     return row['total'] if row and row['total'] else 0
 
-def record_quiz_result(user_id, quiz_id="computer_awareness_mock", score=0.0, total_questions=0, correct_count=0, wrong_count=0, skipped_count=0, time_taken=0):
+def record_quiz_result(user_id, quiz_id="computer_awareness_mock", score=0.0, total_questions=0, correct_count=0, wrong_count=0, skipped_count=0, time_taken=0, question_details=None):
     conn = get_db()
     cursor = conn.cursor()
     today_date = get_ist_date_str()
     timestamp_str = get_ist_timestamp_str()
+    details_str = json.dumps(question_details) if question_details else json.dumps([])
     
     cursor.execute('''
-        INSERT INTO quiz_attempts (user_id, quiz_id, questions_attempted, total_questions, correct_answers, wrong_answers, skipped_count, score, time_taken, attempt_timestamp, attempt_date)
-        VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
-    ''', (user_id, quiz_id, total_questions, total_questions, correct_count, wrong_count, skipped_count, score, time_taken, timestamp_str, today_date))
+        INSERT INTO quiz_attempts (user_id, quiz_id, questions_attempted, total_questions, correct_answers, wrong_answers, skipped_count, score, time_taken, attempt_timestamp, attempt_date, details_json)
+        VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
+    ''', (user_id, quiz_id, total_questions, total_questions, correct_count, wrong_count, skipped_count, score, time_taken, timestamp_str, today_date, details_str))
     conn.commit()
     conn.close()
     
@@ -361,6 +486,7 @@ def save_student_feedback(user_id: int, full_name: str, feedback_text: str):
     ''', (user_id, full_name, feedback_text, now_str))
     conn.commit()
     conn.close()
+    sync_user_json_profile(user_id)
 
 def get_all_student_feedbacks(limit: int = 15):
     conn = get_db()

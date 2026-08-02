@@ -11,18 +11,17 @@ logger = logging.getLogger(__name__)
 async def admin_portal_command(update: Update, context: ContextTypes.DEFAULT_TYPE):
     user_id = update.effective_user.id
     if user_id != PRIMARY_ADMIN_ID:
-        # Secret command: pretend command doesn't exist for non-admin users
         return
 
     users = get_all_users()
     m_until = get_maintenance_until()
     now_ts = int(time.time())
-    m_status = "🟢 Active (Online)" if now_ts >= m_until else f"🔴 PAUSED (Maintenance Mode)"
+    m_status = "🟢 Active (Online)" if now_ts >= m_until else "🔴 PAUSED (Maintenance Mode)"
 
     keyboard = [
         [InlineKeyboardButton("⏸ Pause Bot 5 Mins", callback_data="admin_pause_5"), InlineKeyboardButton("⏸ Pause Bot 10 Mins", callback_data="admin_pause_10")],
         [InlineKeyboardButton("▶️ Resume Bot Now", callback_data="admin_resume_now")],
-        [InlineKeyboardButton("👥 View All Users (Full Details)", callback_data="admin_view_users")],
+        [InlineKeyboardButton("👥 View All Students (Ledger Audit)", callback_data="admin_view_users")],
         [InlineKeyboardButton("📢 Global Broadcast", callback_data="admin_broadcast")]
     ]
 
@@ -88,19 +87,23 @@ async def admin_callback_handler(update: Update, context: ContextTypes.DEFAULT_T
             await query.edit_message_text("📁 No registered users found.")
             return
 
-        report_lines = ["📋 **FULL STUDENT DATABASE REPORT**\n━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\n"]
+        report_lines = ["📋 **FULL STUDENT DATABASE LEDGER REPORT**\n━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\n"]
         for idx, u in enumerate(users[:15], start=1):
             perf = get_user_performance_summary(u['user_id'])
             avg_score = round(perf.get('avg_score', 0.0) or 0.0, 2)
+            sid = u.get('student_id', 'N/A')
             
             student_card = (
                 f"👤 **{idx}. {u['full_name']}** (@{u['username'] or 'N/A'})\n"
+                f" • **Student ID:** `{sid}`\n"
                 f" • **Telegram ID:** `{u['user_id']}`\n"
                 f" • **Phone:** `{u['phone_number'] or 'Not Provided'}`\n"
                 f" • **Target Exam:** `{u['target_exam']}`\n"
-                f" • **Age / Gender:** `{u['age']}` / `{u['gender']}`\n"
+                f" • **DOB / Age:** `{u.get('dob', 'N/A')}` / `{u['age']}`\n"
                 f" • **Location:** `{u.get('state', 'N/A')}, {u.get('country', 'India')}`\n"
-                f" • **Average Score:** `{avg_score}` | **Mocks:** `{perf.get('total_tests', 0)}`"
+                f" • **Last Active:** `{u.get('last_active', 'N/A')}`\n"
+                f" • **Avg Score:** `{avg_score}` | **Mocks:** `{perf.get('total_tests', 0)}`\n"
+                f" • **File Path:** `data/user_profiles/{sid}.json`"
             )
             report_lines.append(student_card)
 

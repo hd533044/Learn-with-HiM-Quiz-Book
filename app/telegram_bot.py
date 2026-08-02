@@ -14,7 +14,7 @@ from app.config import BOT_TOKEN, PRIMARY_ADMIN_ID, DAILY_QUESTION_LIMIT
 from app.database import (
     init_db, get_maintenance_until, get_user_profile, 
     get_all_users, get_today_attempts, save_student_feedback, get_all_student_feedbacks,
-    clear_paused_quiz_state, get_saved_questions
+    clear_paused_quiz_state, get_saved_questions, log_user_activity_time
 )
 from app.onboarding import get_onboarding_handler
 from app.quiz_engine import (
@@ -45,6 +45,7 @@ async def strict_quiz_command_guard(update: Update, context: ContextTypes.DEFAUL
         return
 
     user = update.effective_user
+    log_user_activity_time(user.id, seconds=10)
     profile = get_user_profile(user.id)
     
     if not profile or not profile.get("is_verified"):
@@ -82,6 +83,8 @@ async def send_response(update: Update, text: str, reply_markup=None):
 
 async def help_command(update: Update, context: ContextTypes.DEFAULT_TYPE):
     if not await maintenance_guard(update, context): return
+    user = update.effective_user
+    log_user_activity_time(user.id, seconds=10)
 
     msg = (
         "🤖 **LEARN WITH HIM QUIZ BOOK — COMMAND DIRECTORY**\n"
@@ -113,6 +116,7 @@ async def help_command(update: Update, context: ContextTypes.DEFAULT_TYPE):
 async def saved_questions_command(update: Update, context: ContextTypes.DEFAULT_TYPE):
     if not await maintenance_guard(update, context): return
     user = update.effective_user
+    log_user_activity_time(user.id, seconds=10)
     saved = get_saved_questions(user.id)
     
     if not saved:
@@ -156,6 +160,7 @@ async def saved_questions_command(update: Update, context: ContextTypes.DEFAULT_
 async def myprofile_command(update: Update, context: ContextTypes.DEFAULT_TYPE):
     if not await maintenance_guard(update, context): return
     user = update.effective_user
+    log_user_activity_time(user.id, seconds=10)
     profile = get_user_profile(user.id)
 
     if not profile:
@@ -196,6 +201,7 @@ async def myprofile_command(update: Update, context: ContextTypes.DEFAULT_TYPE):
 async def wholestate_command(update: Update, context: ContextTypes.DEFAULT_TYPE):
     if not await maintenance_guard(update, context): return
     user = update.effective_user
+    log_user_activity_time(user.id, seconds=10)
     profile = get_user_profile(user.id)
     
     if not profile:
@@ -218,7 +224,7 @@ async def wholestate_command(update: Update, context: ContextTypes.DEFAULT_TYPE)
         f"• **Tests Completed:** `{perf.get('total_tests', 0)}`\n"
         f"• **Questions Attempted:** `{perf.get('total_qs', 0)}`\n"
         f"• **Global Rank:** `{rank}`\n"
-        f"• **Overall Percentile:** `{percentile}%`"
+        f"• **Overall Percentile:** `{percentile}%` *(Calculated against all registered students)*"
     )
 
     buttons = [[InlineKeyboardButton("🚀 Launch Quiz", callback_data="cmd_quiz"), InlineKeyboardButton("🏆 Leaderboard", callback_data="cmd_toppers")]]
@@ -226,6 +232,8 @@ async def wholestate_command(update: Update, context: ContextTypes.DEFAULT_TYPE)
 
 async def toppers_command(update: Update, context: ContextTypes.DEFAULT_TYPE):
     if not await maintenance_guard(update, context): return
+    user = update.effective_user
+    log_user_activity_time(user.id, seconds=10)
     toppers = get_overall_leaderboard(limit=10)
     
     if not toppers:
@@ -243,6 +251,8 @@ async def toppers_command(update: Update, context: ContextTypes.DEFAULT_TYPE):
 
 async def feedback_command(update: Update, context: ContextTypes.DEFAULT_TYPE):
     if not await maintenance_guard(update, context): return
+    user = update.effective_user
+    log_user_activity_time(user.id, seconds=10)
 
     keyboard = [
         [InlineKeyboardButton("🌟 10/10 Bot! The quizzes are top quality 🚀", callback_data="fb_p1")],
@@ -262,6 +272,8 @@ async def feedback_command(update: Update, context: ContextTypes.DEFAULT_TYPE):
 
 async def viewfeedbacks_command(update: Update, context: ContextTypes.DEFAULT_TYPE):
     if not await maintenance_guard(update, context): return
+    user = update.effective_user
+    log_user_activity_time(user.id, seconds=10)
     feedbacks = get_all_student_feedbacks(limit=15)
 
     if not feedbacks:
@@ -277,6 +289,7 @@ async def viewfeedbacks_command(update: Update, context: ContextTypes.DEFAULT_TY
 async def referral_command(update: Update, context: ContextTypes.DEFAULT_TYPE):
     if not await maintenance_guard(update, context): return
     user = update.effective_user
+    log_user_activity_time(user.id, seconds=10)
     bot_username = context.bot.username
     ref_link = f"https://t.me/{bot_username}?start=ref_{user.id}"
 
@@ -295,6 +308,7 @@ async def button_router(update: Update, context: ContextTypes.DEFAULT_TYPE):
     query = update.callback_query
     data = query.data
     user = query.from_user
+    log_user_activity_time(user.id, seconds=5)
 
     if data == "cmd_quiz":
         profile = get_user_profile(user.id)
@@ -351,6 +365,7 @@ async def handle_text_messages(update: Update, context: ContextTypes.DEFAULT_TYP
 
     user = update.effective_user
     text = update.message.text.strip()
+    log_user_activity_time(user.id, seconds=10)
 
     if context.user_data.get("awaiting_custom_feedback"):
         context.user_data["awaiting_custom_feedback"] = False

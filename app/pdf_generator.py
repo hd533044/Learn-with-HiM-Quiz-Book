@@ -1,251 +1,249 @@
 import os
-import io
-from typing import Dict, Any, List
+import json
+from datetime import datetime, timedelta
 from reportlab.lib.pagesizes import letter
-from reportlab.lib.colors import HexColor, white
-from reportlab.pdfgen import canvas
-from reportlab.platypus import SimpleDocTemplate, Paragraph, Spacer, Table, TableStyle, HRFlowable, Image
-from reportlab.lib.styles import getSampleStyleSheet, ParagraphStyle
-from app.stats import (
-    get_user_performance_summary, 
-    get_datewise_quiz_history, 
-    get_user_badges, 
-    calculate_user_rank, 
-    calculate_user_percentile
+from reportlab.lib import colors
+from reportlab.lib.units import inch
+from reportlab.platypus import (
+    SimpleDocTemplate, Paragraph, Spacer, Table, TableStyle, Image, KeepTogether, PageBreak
 )
+from reportlab.lib.styles import getSampleStyleSheet, ParagraphStyle
+from reportlab.pdfgen import canvas
+from app.config import USER_PROFILES_DIR, BASE_DIR
+from app.database import get_user_profile, get_db
 
-class WatermarkCanvas(canvas.Canvas):
-    """Custom canvas that draws logo & diagonal watermark on every single page."""
+class NumberedCanvas(canvas.Canvas):
     def __init__(self, *args, **kwargs):
         super().__init__(*args, **kwargs)
-        self.pages = []
+        self._saved_page_states = []
 
     def showPage(self):
-        self.pages.append(dict(self.__dict__))
+        self._saved_page_states.append(dict(self.__dict__))
         self._startPage()
 
     def save(self):
-        num_pages = len(self.pages)
-        for page in self.pages:
-            self.__dict__.update(page)
-            self.draw_page_decorations(num_pages)
+        num_pages = len(self._saved_page_states)
+        for state in self._saved_page_states:
+            self.__dict__.update(state)
+            self.draw_page_number(num_pages)
             super().showPage()
         super().save()
 
-    def draw_page_decorations(self, total_pages):
+    def draw_page_number(self, page_count):
         self.saveState()
-        
-        # 1. Diagonal Background Watermark
-        self.setFont("Helvetica-Bold", 32)
-        self.setFillColor(HexColor("#E2E8F0"), alpha=0.35)
-        self.rotate(35)
-        self.drawString(180, 100, "⚡ Learn with HiM — Official Quiz Bank")
-        self.restoreState()
-
-        # 2. Header Logo & Border on every page
-        self.saveState()
-        logo_path = os.path.join(os.path.dirname(os.path.dirname(os.path.abspath(__file__))), "assets", "logo.png")
-        if os.path.exists(logo_path):
-            try:
-                self.drawImage(logo_path, 36, 740, width=35, height=35, preserveAspectRatio=True, mask='auto')
-            except Exception:
-                pass
-
         self.setFont("Helvetica-Bold", 8)
-        self.setFillColor(HexColor("#718096"))
-        self.drawString(78, 752, "LEARN WITH HIM QUIZ BOOK — OFFICIAL STUDY MATERIAL")
-        self.drawRightString(576, 752, f"Page {self._pageNumber} of {total_pages}")
-        self.setStrokeColor(HexColor("#CBD5E0"))
-        self.setLineWidth(0.5)
-        self.line(36, 736, 576, 736)
-
-        # 3. Footer Branding
-        self.line(36, 36, 576, 36)
-        self.setFont("Helvetica", 8)
-        self.drawString(36, 24, "⚡ Powered by @LearnwithHiM | Telegram Channel & YouTube Portal")
-        self.drawRightString(576, 24, "Strictly For Personal Educational Practice")
+        self.setFillColor(colors.HexColor("#64748B"))
+        
+        # 1. Official Diagonal Watermark
+        self.saveState()
+        self.setFont("Helvetica-Bold", 42)
+        self.setFillColor(colors.HexColor("#F1F5F9"))
+        self.rotate(35)
+        self.drawString(180, 100, "@LearnwithHiM")
         self.restoreState()
 
-def generate_profile_book_pdf(profile: Dict[str, Any]) -> io.BytesIO:
-    """Generates an official branded PDF Profile Book."""
-    user_id = profile.get('user_id', 0)
-    perf = get_user_performance_summary(user_id)
-    history = get_datewise_quiz_history(user_id)
-    badges = get_user_badges(user_id)
-    rank = calculate_user_rank(user_id)
-    percentile = calculate_user_percentile(user_id)
+        # 2. Footer Line
+        self.setStrokeColor(colors.HexColor("#CBD5E1"))
+        self.setLineWidth(0.8)
+        self.line(36, 36, 576, 36)
 
-    buffer = io.BytesIO()
+        # 3. Footer Text
+        footer_text = f"Learn with HiM Quiz Book — Official Student Academic Ledger | Page {self._pageNumber} of {page_count}"
+        self.drawString(36, 22, footer_text)
+        self.restoreState()
+
+def mask_phone(phone_str: str) -> str:
+    if not phone_str or len(phone_str) < 4:
+        return "XXXXXX"
+    return "XXXXXX" + phone_str[-4:]
+
+def generate_student_pdf_report(user_id: int, filter_mode: str = "all") -> str:
+    """
+    Generates an interactive, colorful PDF report.
+    filter_mode: 'last_1_month', 'all_months_stats', 'all_time'
+    """
+    u = get_user_profile(user_id)
+    if not u:
+        return ""
+
+    sid = u.get("student_id") or f"USER_{user_id}"
+    pdf_filename = f"{sid}_Report_{filter_mode}.pdf"
+    pdf_path = os.path.join(USER_PROFILES_DIR, pdf_filename)
+
     doc = SimpleDocTemplate(
-        buffer, pagesize=letter,
-        rightMargin=36, leftMargin=36, topMargin=54, bottomMargin=54
+        pdf_path,
+        pagesize=letter,
+        rightMargin=36,
+        leftMargin=36,
+        topMargin=36,
+        bottomMargin=54
     )
 
     styles = getSampleStyleSheet()
     
     title_style = ParagraphStyle(
-        'DocTitle', parent=styles['Heading1'], fontName='Helvetica-Bold', fontSize=18, textColor=HexColor('#1A2B4C'), spaceAfter=2
+        'DocTitle',
+        parent=styles['Heading1'],
+        fontName='Helvetica-Bold',
+        fontSize=18,
+        leading=22,
+        textColor=colors.HexColor("#1E3A8A")
     )
-    sig_style = ParagraphStyle(
-        'SignatureStyle', parent=styles['Normal'], fontName='Helvetica-Bold', fontSize=10, textColor=HexColor('#D9534F'), spaceAfter=10
+
+    subtitle_style = ParagraphStyle(
+        'DocSubTitle',
+        parent=styles['Normal'],
+        fontName='Helvetica',
+        fontSize=10,
+        leading=14,
+        textColor=colors.HexColor("#475569")
     )
-    h2_style = ParagraphStyle(
-        'SectionHeading', parent=styles['Heading2'], fontName='Helvetica-Bold', fontSize=11, textColor=HexColor('#1A2B4C'), spaceBefore=8, spaceAfter=4
+
+    section_heading = ParagraphStyle(
+        'SecHeading',
+        parent=styles['Heading2'],
+        fontName='Helvetica-Bold',
+        fontSize=12,
+        leading=16,
+        textColor=colors.HexColor("#0F172A"),
+        spaceBefore=10,
+        spaceAfter=6
     )
+
     body_style = ParagraphStyle(
-        'BodyTextCustom', parent=styles['Normal'], fontName='Helvetica', fontSize=9, textColor=HexColor('#222222'), leading=13
+        'BodyTextCustom',
+        parent=styles['Normal'],
+        fontName='Helvetica',
+        fontSize=9,
+        leading=12,
+        textColor=colors.HexColor("#334155")
     )
-    header_text_style = ParagraphStyle(
-        'TableHeaderCustom', parent=styles['Normal'], fontName='Helvetica-Bold', fontSize=9, textColor=white, leading=13, alignment=1
+
+    story = []
+
+    # 1. Header with Logos
+    logo_left_path = os.path.join(BASE_DIR, "assets", "logo.png")
+    logo_right_path = os.path.join(BASE_DIR, "assets", "logohim.png")
+
+    img_left = Image(logo_left_path, width=1.1*inch, height=0.5*inch) if os.path.exists(logo_left_path) else Paragraph("<b>HiM Logo</b>", body_style)
+    img_right = Image(logo_right_path, width=1.1*inch, height=0.5*inch) if os.path.exists(logo_right_path) else Paragraph("<b>@LearnwithHiM</b>", body_style)
+
+    header_text_p = Paragraph(
+        "<b>LEARN WITH HIM QUIZ BOOK</b><br/>"
+        "<font size=8 color='#64748B'>Official Academic Student Performance Ledger</font>",
+        title_style
     )
 
-    elements: List[Any] = []
-
-    elements.append(Paragraph("📖 OFFICIAL STUDENT PROFILE STATS BOOK", title_style))
-    elements.append(Paragraph("⚡ Powered by @LearnwithHiM | YouTube: Learn with HiM", sig_style))
-    elements.append(HRFlowable(width="100%", thickness=1.5, color=HexColor('#1A2B4C'), spaceAfter=10))
-
-    full_name = profile.get('full_name', 'Student')
-    target_exam = profile.get('target_exam', 'N/A')
-    gender = profile.get('gender', 'N/A')
-    age = profile.get('age', 'N/A')
-    state = profile.get('state', 'N/A')
-    country = profile.get('country', 'India')
-
-    student_data = [
-        [Paragraph(f"<b>Full Name:</b> {full_name}", body_style), Paragraph(f"<b>Telegram ID:</b> {user_id}", body_style)],
-        [Paragraph(f"<b>Target Exam:</b> {target_exam}", body_style), Paragraph(f"<b>Gender / Age:</b> {gender} / {age}", body_style)],
-        [Paragraph(f"<b>Location:</b> {state}, {country}", body_style), Paragraph(f"<b>Global Rank:</b> {rank} ({percentile}%)", body_style)]
-    ]
-    t_student = Table(student_data, colWidths=[270, 270])
-    t_student.setStyle(TableStyle([
-        ('BACKGROUND', (0,0), (-1,-1), HexColor('#F8F9FA')),
-        ('PADDING', (0,0), (-1,-1), 5),
-        ('BOX', (0,0), (-1,-1), 1, HexColor('#D0D7DE')),
-        ('INNERGRID', (0,0), (-1,-1), 0.5, HexColor('#E1E4E8')),
+    header_table = Table([[img_left, header_text_p, img_right]], colWidths=[1.2*inch, 4.0*inch, 1.2*inch])
+    header_table.setStyle(TableStyle([
+        ('VALIGN', (0,0), (-1,-1), 'MIDDLE'),
+        ('ALIGN', (0,0), (0,0), 'LEFT'),
+        ('ALIGN', (1,0), (1,0), 'CENTER'),
+        ('ALIGN', (2,0), (2,0), 'RIGHT'),
     ]))
-    elements.append(t_student)
-    elements.append(Spacer(1, 8))
+    story.append(header_table)
+    story.append(Spacer(1, 10))
 
-    elements.append(Paragraph("🏆 Achievement & Scholar Badges", h2_style))
-    badge_str = " | ".join(badges) if badges else "🌱 Active Practitioner"
-    t_badge = Table([[Paragraph(f"<b>Active Badges:</b> {badge_str}", body_style)]], colWidths=[540])
-    t_badge.setStyle(TableStyle([
-        ('BACKGROUND', (0,0), (-1,-1), HexColor('#FFF8E7')),
-        ('PADDING', (0,0), (-1,-1), 6),
-        ('BOX', (0,0), (-1,-1), 1, HexColor('#FFE082')),
-    ]))
-    elements.append(t_badge)
-    elements.append(Spacer(1, 8))
+    # 2. Personal Registration Details Table (Masked)
+    story.append(Paragraph("👤 <b>STUDENT PROFILE OVERVIEW</b>", section_heading))
 
-    elements.append(Paragraph("📊 Overall Academic Metrics", h2_style))
-    metrics_data = [
-        [Paragraph("Tests Attempted", header_text_style), Paragraph("Total Questions", header_text_style), Paragraph("Correct Answers", header_text_style), Paragraph("Average Score", header_text_style)],
-        [Paragraph(str(perf.get('total_tests', 0)), body_style), Paragraph(str(perf.get('total_qs', 0)), body_style), Paragraph(str(perf.get('total_correct', 0)), body_style), Paragraph(f"{round(perf.get('avg_score', 0.0), 2)}", body_style)]
+    masked_phone = mask_phone(u.get("phone_number", ""))
+    masked_pin = "XX" + str(u.get("pin", ""))[-2:] if u.get("pin") else "XXXX"
+
+    profile_data = [
+        [Paragraph("<b>Student Name:</b>", body_style), Paragraph(f"{u.get('full_name')}", body_style), Paragraph("<b>Student ID:</b>", body_style), Paragraph(f"<b>{sid}</b>", body_style)],
+        [Paragraph("<b>Target Exam:</b>", body_style), Paragraph(f"{u.get('target_exam')}", body_style), Paragraph("<b>Location:</b>", body_style), Paragraph(f"{u.get('state')}, {u.get('country')}", body_style)],
+        [Paragraph("<b>DOB / Age:</b>", body_style), Paragraph(f"{u.get('dob')} ({u.get('age')} yrs)", body_style), Paragraph("<b>Phone (Masked):</b>", body_style), Paragraph(f"{masked_phone}", body_style)],
+        [Paragraph("<b>Account Status:</b>", body_style), Paragraph("ACTIVE 🟢", body_style), Paragraph("<b>Secret PIN:</b>", body_style), Paragraph(f"{masked_pin}", body_style)],
+        [Paragraph("<b>Registered At:</b>", body_style), Paragraph(f"{u.get('created_at')}", body_style), Paragraph("<b>Last Active:</b>", body_style), Paragraph(f"{u.get('last_active')}", body_style)]
     ]
-    t_metrics = Table(metrics_data, colWidths=[135, 135, 135, 135])
-    t_metrics.setStyle(TableStyle([
-        ('BACKGROUND', (0,0), (-1,0), HexColor('#1A2B4C')),
+
+    prof_table = Table(profile_data, colWidths=[1.3*inch, 2.2*inch, 1.3*inch, 2.2*inch])
+    prof_table.setStyle(TableStyle([
+        ('BACKGROUND', (0,0), (-1,-1), colors.HexColor("#F8FAFC")),
+        ('GRID', (0,0), (-1,-1), 0.5, colors.HexColor("#E2E8F0")),
         ('PADDING', (0,0), (-1,-1), 5),
+        ('VALIGN', (0,0), (-1,-1), 'MIDDLE')
+    ]))
+    story.append(prof_table)
+    story.append(Spacer(1, 12))
+
+    # 3. Query Database for Attempts & Filters
+    conn = get_db()
+    cursor = conn.cursor()
+
+    one_month_ago_str = (datetime.now() - timedelta(days=30)).strftime("%Y-%m-%d")
+
+    if filter_mode == "last_1_month":
+        cursor.execute("SELECT * FROM quiz_attempts WHERE user_id = ? AND attempt_date >= ? ORDER BY id DESC", (user_id, one_month_ago_str))
+    else:
+        cursor.execute("SELECT * FROM quiz_attempts WHERE user_id = ? ORDER BY id DESC", (user_id,))
+    
+    attempts = cursor.fetchall()
+
+    cursor.execute("SELECT * FROM saved_questions WHERE user_id = ? ORDER BY id DESC", (user_id,))
+    saved_qs = cursor.fetchall()
+    conn.close()
+
+    # Performance Stats
+    total_quizzes = len(attempts)
+    total_qs = sum([a['questions_attempted'] for a in attempts])
+    total_correct = sum([a['correct_answers'] for a in attempts])
+    total_wrong = sum([a['wrong_answers'] for a in attempts])
+    total_score = sum([a['score'] for a in attempts])
+    acc = round((total_correct / total_qs) * 100, 2) if total_qs > 0 else 0.0
+
+    story.append(Paragraph(f"📊 <b>ACADEMIC PERFORMANCE SUMMARY ({filter_mode.replace('_', ' ').title()})</b>", section_heading))
+
+    stats_data = [
+        [Paragraph("<b>Quizzes Attempted</b>", body_style), Paragraph("<b>Total Questions</b>", body_style), Paragraph("<b>Correct ✅</b>", body_style), Paragraph("<b>Wrong ❌</b>", body_style), Paragraph("<b>Accuracy</b>", body_style)],
+        [Paragraph(f"{total_quizzes}", body_style), Paragraph(f"{total_qs}", body_style), Paragraph(f"{total_correct}", body_style), Paragraph(f"{total_wrong}", body_style), Paragraph(f"<b>{acc}%</b>", body_style)]
+    ]
+    stats_table = Table(stats_data, colWidths=[1.4*inch, 1.4*inch, 1.4*inch, 1.4*inch, 1.4*inch])
+    stats_table.setStyle(TableStyle([
+        ('BACKGROUND', (0,0), (-1,0), colors.HexColor("#DBEAFE")),
+        ('BACKGROUND', (0,1), (-1,1), colors.HexColor("#EFF6FF")),
+        ('GRID', (0,0), (-1,-1), 0.5, colors.HexColor("#93C5FD")),
         ('ALIGN', (0,0), (-1,-1), 'CENTER'),
-        ('BOX', (0,0), (-1,-1), 1, HexColor('#1A2B4C')),
-        ('INNERGRID', (0,0), (-1,-1), 0.5, HexColor('#D0D7DE')),
+        ('PADDING', (0,0), (-1,-1), 6)
     ]))
-    elements.append(t_metrics)
-    elements.append(Spacer(1, 10))
+    story.append(stats_table)
+    story.append(Spacer(1, 14))
 
-    elements.append(Paragraph("📅 Date-Wise Quiz History Summary", h2_style))
-    if history:
-        hist_table_data = [[
-            Paragraph("Date", header_text_style), Paragraph("Quizzes", header_text_style), Paragraph("Questions", header_text_style), Paragraph("Correct", header_text_style), Paragraph("Avg Score", header_text_style)
-        ]]
-        for h in history[:12]:
-            hist_table_data.append([
-                Paragraph(str(h.get('date', 'N/A')), body_style),
-                Paragraph(str(h.get('tests', 0)), body_style),
-                Paragraph(str(h.get('qs', 0)), body_style),
-                Paragraph(str(h.get('correct', 0)), body_style),
-                Paragraph(str(h.get('avg_score', 0.0)), body_style)
-            ])
-        t_hist = Table(hist_table_data, colWidths=[120, 100, 105, 105, 110])
-        t_hist.setStyle(TableStyle([
-            ('BACKGROUND', (0,0), (-1,0), HexColor('#2C3E50')),
-            ('PADDING', (0,0), (-1,-1), 4),
-            ('BOX', (0,0), (-1,-1), 1, HexColor('#2C3E50')),
-            ('INNERGRID', (0,0), (-1,-1), 0.5, HexColor('#E1E4E8')),
-        ]))
-        elements.append(t_hist)
+    # 4. Attempted / Wrong Questions Detailed Table
+    story.append(Paragraph("🎯 <b>DETAILED QUESTION LOGS (One-Liner Format)</b>", section_heading))
 
-    doc.build(elements, canvasmaker=WatermarkCanvas)
-    buffer.seek(0)
-    return buffer
+    q_table_data = [[Paragraph("<b>Date / Time</b>", body_style), Paragraph("<b>Question Text</b>", body_style), Paragraph("<b>Status</b>", body_style), Paragraph("<b>Correct Answer Text</b>", body_style)]]
 
-def generate_quiz_questions_pdf(quiz_data: dict) -> io.BytesIO:
-    """Generates a compact PDF containing recent quiz questions, correct answers, and explanations."""
-    buffer = io.BytesIO()
-    doc = SimpleDocTemplate(
-        buffer, pagesize=letter,
-        rightMargin=36, leftMargin=36, topMargin=54, bottomMargin=54
-    )
-
-    styles = getSampleStyleSheet()
-
-    title_style = ParagraphStyle(
-        'QTitle', parent=styles['Heading1'], fontName='Helvetica-Bold', fontSize=16, textColor=HexColor('#1A2B4C'), spaceAfter=2
-    )
-    sig_style = ParagraphStyle(
-        'QSig', parent=styles['Normal'], fontName='Helvetica-Bold', fontSize=10, textColor=HexColor('#D9534F'), spaceAfter=8
-    )
-    q_num_style = ParagraphStyle(
-        'QNum', parent=styles['Heading2'], fontName='Helvetica-Bold', fontSize=10, textColor=HexColor('#1A2B4C'), spaceBefore=6, spaceAfter=2
-    )
-    option_style = ParagraphStyle(
-        'OptStyle', parent=styles['Normal'], fontName='Helvetica', fontSize=9, textColor=HexColor('#2D3748'), leading=12
-    )
-    correct_opt_style = ParagraphStyle(
-        'CorrStyle', parent=styles['Normal'], fontName='Helvetica-Bold', fontSize=9, textColor=HexColor('#276749'), leading=12
-    )
-    exp_style = ParagraphStyle(
-        'ExpStyle', parent=styles['Normal'], fontName='Helvetica-Oblique', fontSize=8.5, textColor=HexColor('#4A5568'), leading=11
-    )
-
-    elements: List[Any] = []
-
-    user_name = quiz_data.get('user_name', 'Student')
-    score = quiz_data.get('score', 0)
-    total_qs = quiz_data.get('total_qs', 0)
-    questions = quiz_data.get('questions', [])
-
-    elements.append(Paragraph("📝 RECENT QUIZ QUESTION BANK & SOLUTION SHEET", title_style))
-    elements.append(Paragraph(f"👤 Student: <b>{user_name}</b> | Score: <b>{score}/{total_qs}</b> | ⚡ Powered by @LearnwithHiM", sig_style))
-    elements.append(HRFlowable(width="100%", thickness=1.5, color=HexColor('#1A2B4C'), spaceAfter=10))
-
-    for idx, q in enumerate(questions, start=1):
-        q_text = q.get('question_text', 'Question text missing')
-        opts = q.get('options', [])
-        corr_idx = q.get('correct_option_id', 0)
-        exp = q.get('explanation', 'No detailed explanation provided.')
-
-        elements.append(Paragraph(f"<b>Q{idx}. {q_text}</b>", q_num_style))
+    for a in attempts[:15]:
+        ad = dict(a)
+        dt = ad.get("attempt_timestamp", "N/A")
+        details = json.loads(ad["details_json"]) if ad.get("details_json") else []
         
-        opt_rows = []
-        for o_idx, opt in enumerate(opts):
-            is_correct = (o_idx == corr_idx)
-            prefix = "✅ " if is_correct else "• "
-            style = correct_opt_style if is_correct else option_style
-            opt_rows.append([Paragraph(f"{prefix} <b>({chr(65+o_idx)})</b> {opt}", style)])
+        for q_item in details:
+            q_txt = q_item.get("question_text", "N/A")
+            c_ans = q_item.get("correct_answer_text", "N/A")
+            status = q_item.get("status", "SKIPPED")
+            status_str = "CORRECT ✅" if status == "CORRECT" else "WRONG ❌" if status == "WRONG" else "SKIPPED ⏭"
 
-        t_opts = Table(opt_rows, colWidths=[540])
-        t_opts.setStyle(TableStyle([
-            ('BACKGROUND', (0,0), (-1,-1), HexColor('#F7FAFC')),
-            ('PADDING', (0,0), (-1,-1), 3),
-            ('BOX', (0,0), (-1,-1), 0.5, HexColor('#E2E8F0')),
-        ]))
-        elements.append(t_opts)
-        elements.append(Spacer(1, 2))
-        elements.append(Paragraph(f"💡 <b>Explanation:</b> {exp}", exp_style))
-        elements.append(Spacer(1, 6))
+            q_table_data.append([
+                Paragraph(f"{dt}", body_style),
+                Paragraph(f"{q_txt[:60]}...", body_style) if len(q_txt) > 60 else Paragraph(f"{q_txt}", body_style),
+                Paragraph(f"{status_str}", body_style),
+                Paragraph(f"{c_ans}", body_style)
+            ])
 
-    doc.build(elements, canvasmaker=WatermarkCanvas)
-    buffer.seek(0)
-    return buffer
+    if len(q_table_data) == 1:
+        q_table_data.append([Paragraph("N/A", body_style), Paragraph("No attempted questions recorded for this period.", body_style), Paragraph("-", body_style), Paragraph("N/A", body_style)])
+
+    q_table = Table(q_table_data, colWidths=[1.5*inch, 2.7*inch, 1.1*inch, 1.7*inch])
+    q_table.setStyle(TableStyle([
+        ('BACKGROUND', (0,0), (-1,0), colors.HexColor("#F1F5F9")),
+        ('GRID', (0,0), (-1,-1), 0.5, colors.HexColor("#CBD5E1")),
+        ('PADDING', (0,0), (-1,-1), 5),
+        ('VALIGN', (0,0), (-1,-1), 'TOP')
+    ]))
+    story.append(q_table)
+
+    doc.build(story, canvasmaker=NumberedCanvas)
+    return pdf_path

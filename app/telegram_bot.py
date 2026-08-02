@@ -14,7 +14,8 @@ from app.config import BOT_TOKEN, PRIMARY_ADMIN_ID, DAILY_QUESTION_LIMIT
 from app.database import (
     init_db, get_maintenance_until, get_user_profile, 
     get_all_users, get_today_attempts, save_student_feedback, get_all_student_feedbacks,
-    clear_paused_quiz_state, get_saved_questions, log_user_activity_time
+    clear_paused_quiz_state, get_saved_questions, log_user_activity_time,
+    check_and_update_inactivity, refresh_user_activity_epoch
 )
 from app.onboarding import get_onboarding_handler
 from app.quiz_engine import (
@@ -26,7 +27,37 @@ from app.admin import admin_portal_command, admin_callback_handler
 
 NEGATIVE_WORDS = ["bad", "worst", "useless", "trash", "fake", "hate", "terrible", "waste", "horrible", "fraud", "stupid", "scam"]
 
+async def inactivity_guard(update: Update, context: ContextTypes.DEFAULT_TYPE) -> bool:
+    user = update.effective_user
+    if not user:
+        return True
+
+    user_id = user.id
+    if user_id == PRIMARY_ADMIN_ID:
+        refresh_user_activity_epoch(user_id)
+        return True
+
+    is_locked, diff_sec = check_and_update_inactivity(user_id)
+    if is_locked:
+        context.user_data["is_account_locked"] = True
+        msg = (
+            f"🔒 **ACCOUNT LOCKED DUE TO INACTIVITY**\n"
+            f"━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\n"
+            f"You were inactive for `{diff_sec // 60} mins`.\n\n"
+            f"🔑 **Please reply with your 4-Digit Secret PIN to unlock your account:**"
+        )
+        if update.callback_query:
+            await update.callback_query.answer("🔒 Account Locked due to 5 mins of inactivity!", show_alert=True)
+            await update.callback_query.message.reply_text(msg, parse_mode="Markdown")
+        elif update.message:
+            await update.message.reply_text(msg, parse_mode="Markdown")
+        return False
+    return True
+
 async def maintenance_guard(update: Update, context: ContextTypes.DEFAULT_TYPE) -> bool:
+    if not await inactivity_guard(update, context):
+        return False
+
     m_until = get_maintenance_until()
     if int(time.time()) < m_until:
         remaining_sec = m_until - int(time.time())
@@ -360,10 +391,21 @@ async def button_router(update: Update, context: ContextTypes.DEFAULT_TYPE):
         await query.edit_message_text("✍️ Please reply with your custom feedback/review below:")
 
 async def handle_text_messages(update: Update, context: ContextTypes.DEFAULT_TYPE):
-    if not await maintenance_guard(update, context): return
-
     user = update.effective_user
     text = update.message.text.strip()
+
+    # Unlock Locked Account via Inactivity PIN
+    if context.user_data.get("is_account_locked"):
+        profile = get_user_profile(user.id)
+        if profile and profile.get("pin") == text:
+            context.user_data["is_account_locked"] = False
+            refresh_user_activity_epoch(user.id)
+            await update.message.reply_text("🔓 **ACCOUNT UNLOCKED SUCCESSFULLY!**\nYou may continue learning.", reply_markup=ReplyKeyboardRemove())
+        else:
+            await update.message.reply_text("❌ **Incorrect PIN!** Please enter your correct 4-digit PIN to unlock:")
+        return
+
+    if not await maintenance_guard(update, context): return
     log_user_activity_time(user.id, seconds=10)
 
     # Admin Search Handler
@@ -470,7 +512,7 @@ def build_application() -> Application:
 
     app.add_handler(CallbackQueryHandler(quiz_count_callback, pattern="^qcount_"))
     app.add_handler(CallbackQueryHandler(quiz_timer_callback, pattern="^qtimer_"))
-    app.add_handler(CallbackQueryHandler(admin_callback_handler, pattern="^(admin_|audit_)"))
+    app.add_handler(CallbackQueryHandler(admin_callback_handler, pattern="^(admin_|audit_|genpdf_)"))
     app.add_handler(CallbackQueryHandler(button_router, pattern="^cmd_|^fb_"))
 
     app.add_handler(MessageHandler(filters.TEXT & ~filters.COMMAND, handle_text_messages))

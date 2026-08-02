@@ -3,13 +3,15 @@ import json
 import logging
 import math
 import os
+import zipfile
 from telegram import Update, InlineKeyboardMarkup, InlineKeyboardButton
 from telegram.ext import ContextTypes
 from app.config import PRIMARY_ADMIN_ID, USER_PROFILES_DIR
 from app.database import (
     get_all_users, set_maintenance_until, get_maintenance_until, 
-    get_user_profile, get_db, sync_user_json_profile
+    get_user_profile, get_db, sync_user_json_profile, toggle_user_ban_status
 )
+from app.pdf_generator import generate_student_pdf_report
 from app.stats import get_user_performance_summary, calculate_user_rank, calculate_user_percentile
 
 logger = logging.getLogger(__name__)
@@ -28,6 +30,7 @@ async def admin_portal_command(update: Update, context: ContextTypes.DEFAULT_TYP
     keyboard = [
         [InlineKeyboardButton("👥 Browse Student Directory (/user_profiles)", callback_data="admin_users_page_0")],
         [InlineKeyboardButton("🔍 Search Student (ID/Phone/Name)", callback_data="admin_search_prompt")],
+        [InlineKeyboardButton("📦 Export All Ledgers (.zip)", callback_data="admin_export_zip")],
         [InlineKeyboardButton("⏸ Pause Bot 5 Mins", callback_data="admin_pause_5"), InlineKeyboardButton("⏸ Pause Bot 10 Mins", callback_data="admin_pause_10")],
         [InlineKeyboardButton("▶️ Resume Bot Now", callback_data="admin_resume_now")],
         [InlineKeyboardButton("📢 Global Broadcast", callback_data="admin_broadcast")]
@@ -57,8 +60,41 @@ async def admin_callback_handler(update: Update, context: ContextTypes.DEFAULT_T
 
     users = get_all_users()
 
+    # Bulk ZIP Export
+    if data == "admin_export_zip":
+        await query.answer()
+        await query.edit_message_text("⏳ **Generating Bulk Zip Package...**\nZipping all student JSON ledgers...")
+        
+        for u in users:
+            sync_user_json_profile(u['user_id'])
+
+        zip_filename = "All_Student_Profiles_Export.zip"
+        zip_path = os.path.join(USER_PROFILES_DIR, zip_filename)
+
+        try:
+            with zipfile.ZipFile(zip_path, 'w', zipfile.ZIP_DEFLATED) as zipf:
+                for root, _, files in os.walk(USER_PROFILES_DIR):
+                    for file in files:
+                        if file.endswith('.json'):
+                            file_path = os.path.join(root, file)
+                            zipf.write(file_path, arcname=file)
+
+            if os.path.exists(zip_path):
+                with open(zip_path, "rb") as doc:
+                    await context.bot.send_document(
+                        chat_id=query.message.chat_id,
+                        document=doc,
+                        filename=zip_filename,
+                        caption=f"📦 **MASTER STUDENT PROFILES BACKUP**\n\nTotal Files Included: `{len(users)} JSON profiles`"
+                    )
+                os.remove(zip_path)
+            await admin_portal_command(update, context)
+        except Exception as e:
+            logger.error(f"Error zipping profiles: {e}")
+            await query.message.reply_text(f"⚠️ Error creating zip archive: {e}")
+
     # Pause 5 Mins
-    if data == "admin_pause_5":
+    elif data == "admin_pause_5":
         await query.answer()
         set_maintenance_until(int(time.time()) + 300)
         await query.edit_message_text("🛑 **Bot Service PAUSED for 5 Minutes.**\nBroadcasting notice to all users...")
@@ -125,7 +161,8 @@ async def admin_callback_handler(update: Update, context: ContextTypes.DEFAULT_T
         keyboard = []
         for u in page_users:
             sid = u.get("student_id") or f"USER_{u['user_id']}"
-            btn_text = f"👤 {u['full_name']} (ID: {sid})"
+            ban_flag = " 🛑" if u.get("is_banned") else ""
+            btn_text = f"👤 {u['full_name']}{ban_flag} (ID: {sid})"
             keyboard.append([InlineKeyboardButton(btn_text, callback_data=f"admin_inspect_u_{u['user_id']}")])
 
         nav_row = []
@@ -163,13 +200,16 @@ async def admin_callback_handler(update: Update, context: ContextTypes.DEFAULT_T
             return
 
         sid = u.get("student_id") or f"USER_{u.get('user_id')}"
+        is_banned = u.get("is_banned", 0)
+        ban_text = "🟢 ACTIVE" if not is_banned else "🔴 BANNED"
 
         keyboard = [
-            [InlineKeyboardButton("📋 Personal Details", callback_data=f"audit_personal_{target_uid}"), InlineKeyboardButton("⏱ Time & Activity Log", callback_data=f"audit_activity_{target_uid}")],
-            [InlineKeyboardButton("📊 Overall Performance", callback_data=f"audit_perf_{target_uid}"), InlineKeyboardButton("📅 Date-wise Quiz Summary", callback_data=f"audit_datesummary_{target_uid}")],
-            [InlineKeyboardButton("🎯 Attempted Questions", callback_data=f"audit_attempted_{target_uid}"), InlineKeyboardButton("❌ Wrong Questions", callback_data=f"audit_wrong_{target_uid}")],
-            [InlineKeyboardButton("💾 Saved Questions", callback_data=f"audit_saved_{target_uid}"), InlineKeyboardButton("💬 Student Feedback", callback_data=f"audit_feedback_{target_uid}")],
-            [InlineKeyboardButton("🎁 Grant +20 Bonus Quota", callback_data=f"audit_grant_{target_uid}"), InlineKeyboardButton("📥 Export Raw JSON File", callback_data=f"audit_exportjson_{target_uid}")],
+            [InlineKeyboardButton("📋 Personal Details", callback_data=f"audit_personal_{target_uid}"), InlineKeyboardButton("🔑 User PIN & Security Questions", callback_data=f"audit_pinsec_{target_uid}")],
+            [InlineKeyboardButton("⏱ Time & Activity Log", callback_data=f"audit_activity_{target_uid}"), InlineKeyboardButton("📊 Overall Performance", callback_data=f"audit_perf_{target_uid}")],
+            [InlineKeyboardButton("📅 Date-wise Quiz Summary", callback_data=f"audit_datesummary_{target_uid}"), InlineKeyboardButton("🎯 Attempted Questions", callback_data=f"audit_attempted_{target_uid}")],
+            [InlineKeyboardButton("❌ Wrong Questions", callback_data=f"audit_wrong_{target_uid}"), InlineKeyboardButton("💾 Saved Questions", callback_data=f"audit_saved_{target_uid}")],
+            [InlineKeyboardButton("💬 Student Feedback", callback_data=f"audit_feedback_{target_uid}"), InlineKeyboardButton("🎁 Grant +20 Bonus Quota", callback_data=f"audit_grant_{target_uid}")],
+            [InlineKeyboardButton("📄 Export PDF Report Card", callback_data=f"audit_pdfmenu_{target_uid}"), InlineKeyboardButton("📥 Export Raw JSON File", callback_data=f"audit_exportjson_{target_uid}")],
             [InlineKeyboardButton("🔙 Back to Student Directory", callback_data="admin_users_page_0")]
         ]
 
@@ -180,12 +220,84 @@ async def admin_callback_handler(update: Update, context: ContextTypes.DEFAULT_T
             f"• **Student ID:** `{sid}`\n"
             f"• **Telegram ID:** `{u.get('user_id')}`\n"
             f"• **Target Exam:** `{u.get('target_exam')}`\n"
+            f"• **Account Status:** `{ban_text}`\n"
             f"• **File Ledger:** `data/user_profiles/{sid}.json`\n\n"
             f"Select an audit module below to view detailed reports:"
         )
         await query.edit_message_text(msg, reply_markup=InlineKeyboardMarkup(keyboard), parse_mode="Markdown")
 
-    # Audit Module 1: Personal Details (FIXED BUG)
+    # NEW: User PIN & Security Questions Audit
+    elif data.startswith("audit_pinsec_"):
+        await query.answer()
+        target_uid = int(data.replace("audit_pinsec_", ""))
+        u = get_user_profile(target_uid)
+
+        msg = (
+            f"🔑 **USER PIN & SECURITY QUESTIONS (ADMIN AUDIT)**\n"
+            f"━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\n"
+            f"👤 **Student:** {u.get('full_name')} (`{u.get('student_id')}`)\n\n"
+            f"• **Secret 4-Digit PIN:** `{u.get('pin', 'Not Set')}`\n"
+            f"• **Security Question:** *\"{u.get('security_question', 'Not Set')}\"*\n"
+            f"• **Security Answer:** `{u.get('security_answer', 'Not Set')}`\n\n"
+            f"⚠️ *Confidential: Visible strictly to Primary Admin.*"
+        )
+        keyboard = [[InlineKeyboardButton("🔙 Back to Dashboard", callback_data=f"admin_inspect_u_{target_uid}")]]
+        await query.edit_message_text(msg, reply_markup=InlineKeyboardMarkup(keyboard), parse_mode="Markdown")
+
+    # NEW: PDF Export Options Sub-Menu
+    elif data.startswith("audit_pdfmenu_"):
+        await query.answer()
+        target_uid = int(data.replace("audit_pdfmenu_", ""))
+        
+        pdf_buttons = InlineKeyboardMarkup([
+            [InlineKeyboardButton("📅 Last 1 Month Data", callback_data=f"genpdf_{target_uid}_last_1_month")],
+            [InlineKeyboardButton("🗓 All Months Stats", callback_data=f"genpdf_{target_uid}_all_months_stats")],
+            [InlineKeyboardButton("♾ All-Time Data Till Now", callback_data=f"genpdf_{target_uid}_all_time")],
+            [InlineKeyboardButton("🔙 Back to Dashboard", callback_data=f"admin_inspect_u_{target_uid}")]
+        ])
+
+        await query.edit_message_text(
+            f"📄 **PDF REPORT CARD GENERATOR**\n"
+            f"━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\n"
+            f"Please select the date range/timeframe for the PDF document:",
+            reply_markup=pdf_buttons,
+            parse_mode="Markdown"
+        )
+
+    # NEW: Generate and Send PDF Report
+    elif data.startswith("genpdf_"):
+        await query.answer()
+        parts = data.split("_")
+        target_uid = int(parts[1])
+        filter_mode = "_".join(parts[2:])
+
+        await query.edit_message_text("⏳ **Generating Colorful PDF Report...**\nApplying logos, watermarks, and masked fields...")
+        
+        pdf_file = generate_student_pdf_report(target_uid, filter_mode)
+        u = get_user_profile(target_uid)
+        sid = u.get("student_id") or f"USER_{target_uid}"
+
+        if pdf_file and os.path.exists(pdf_file):
+            with open(pdf_file, "rb") as doc:
+                await context.bot.send_document(
+                    chat_id=query.message.chat_id,
+                    document=doc,
+                    filename=os.path.basename(pdf_file),
+                    caption=(
+                        f"📄 **OFFICIAL STUDENT PDF ACADEMIC REPORT**\n"
+                        f"━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\n"
+                        f"👤 **Student:** {u.get('full_name')}\n"
+                        f"🪪 **Student ID:** `{sid}`\n"
+                        f"📅 **Timeframe:** `{filter_mode.replace('_', ' ').title()}`\n"
+                        f"🏷 **Watermark:** `@LearnwithHiM`"
+                    )
+                )
+        else:
+            await query.message.reply_text("⚠️ Failed to generate PDF file.")
+        
+        await admin_portal_command(update, context)
+
+    # Audit Module 1: Personal Details
     elif data.startswith("audit_personal_"):
         await query.answer()
         target_uid = int(data.replace("audit_personal_", ""))
@@ -196,6 +308,7 @@ async def admin_callback_handler(update: Update, context: ContextTypes.DEFAULT_T
             return
 
         sid = u.get("student_id") or f"USER_{u.get('user_id')}"
+        ban_status = "BANNED 🔴" if u.get("is_banned") else "ACTIVE 🟢"
 
         msg = (
             f"📋 **STUDENT PERSONAL DETAILS**\n"
@@ -203,6 +316,7 @@ async def admin_callback_handler(update: Update, context: ContextTypes.DEFAULT_T
             f"• **Full Name:** {u.get('full_name', 'N/A')}\n"
             f"• **Student ID:** `{sid}`\n"
             f"• **Telegram ID:** `{u.get('user_id')}`\n"
+            f"• **Account Status:** `{ban_status}`\n"
             f"• **Username:** @{u.get('username') or 'N/A'}\n"
             f"• **Phone Number:** `{u.get('phone_number') or 'N/A'}`\n"
             f"• **Target Exam:** `{u.get('target_exam', 'N/A')}`\n"
@@ -322,7 +436,7 @@ async def admin_callback_handler(update: Update, context: ContextTypes.DEFAULT_T
         keyboard = [[InlineKeyboardButton("🔙 Back to Dashboard", callback_data=f"admin_inspect_u_{target_uid}")]]
         await query.edit_message_text(msg, reply_markup=InlineKeyboardMarkup(keyboard), parse_mode="Markdown")
 
-    # Audit Module 5: Attempted Questions (FIXED WITH FULL TEXT ANSWERS)
+    # Audit Module 5: Attempted Questions
     elif data.startswith("audit_attempted_"):
         await query.answer()
         target_uid = int(data.replace("audit_attempted_", ""))
@@ -363,7 +477,7 @@ async def admin_callback_handler(update: Update, context: ContextTypes.DEFAULT_T
         keyboard = [[InlineKeyboardButton("🔙 Back to Dashboard", callback_data=f"admin_inspect_u_{target_uid}")]]
         await query.edit_message_text(msg, reply_markup=InlineKeyboardMarkup(keyboard), parse_mode="Markdown")
 
-    # Audit Module 6: Wrong Questions Log (FIXED WITH FULL TEXT ANSWERS)
+    # Audit Module 6: Wrong Questions Log
     elif data.startswith("audit_wrong_"):
         await query.answer()
         target_uid = int(data.replace("audit_wrong_", ""))
@@ -404,7 +518,7 @@ async def admin_callback_handler(update: Update, context: ContextTypes.DEFAULT_T
         keyboard = [[InlineKeyboardButton("🔙 Back to Dashboard", callback_data=f"admin_inspect_u_{target_uid}")]]
         await query.edit_message_text(msg, reply_markup=InlineKeyboardMarkup(keyboard), parse_mode="Markdown")
 
-    # Audit Module 7: Saved Questions (FIXED WITH FULL TEXT ANSWERS)
+    # Audit Module 7: Saved Questions
     elif data.startswith("audit_saved_"):
         await query.answer()
         target_uid = int(data.replace("audit_saved_", ""))
@@ -481,7 +595,7 @@ async def admin_callback_handler(update: Update, context: ContextTypes.DEFAULT_T
             reply_markup=InlineKeyboardMarkup([[InlineKeyboardButton("🔙 Back to Dashboard", callback_data=f"admin_inspect_u_{target_uid}")]])
         )
 
-    # Audit Module 10: Export JSON File
+    # Audit Module 10: Export Single JSON File
     elif data.startswith("audit_exportjson_"):
         await query.answer()
         target_uid = int(data.replace("audit_exportjson_", ""))

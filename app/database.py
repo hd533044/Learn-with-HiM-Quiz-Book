@@ -48,6 +48,7 @@ def init_db():
             bonus_quota INTEGER DEFAULT 0,
             last_profile_edit TEXT,
             last_active TEXT,
+            last_activity_epoch INTEGER DEFAULT 0,
             is_banned INTEGER DEFAULT 0,
             is_verified INTEGER DEFAULT 1,
             created_at TEXT
@@ -61,9 +62,9 @@ def init_db():
     if 'dob' not in columns:
         cursor.execute("ALTER TABLE users ADD COLUMN dob TEXT")
     if 'country' not in columns:
-        cursor.execute("ALTER TABLE users ADD COLUMN country TEXT DEFAULT 'India'")
+        cursor.execute("ALTER TABLE users ADD COLUMN country DEFAULT 'India'")
     if 'state' not in columns:
-        cursor.execute("ALTER TABLE users ADD COLUMN state TEXT DEFAULT 'N/A'")
+        cursor.execute("ALTER TABLE users ADD COLUMN state DEFAULT 'N/A'")
     if 'pin' not in columns:
         cursor.execute("ALTER TABLE users ADD COLUMN pin TEXT")
     if 'security_question' not in columns:
@@ -74,6 +75,8 @@ def init_db():
         cursor.execute("ALTER TABLE users ADD COLUMN last_profile_edit TEXT")
     if 'last_active' not in columns:
         cursor.execute("ALTER TABLE users ADD COLUMN last_active TEXT")
+    if 'last_activity_epoch' not in columns:
+        cursor.execute("ALTER TABLE users ADD COLUMN last_activity_epoch INTEGER DEFAULT 0")
     if 'is_banned' not in columns:
         cursor.execute("ALTER TABLE users ADD COLUMN is_banned INTEGER DEFAULT 0")
 
@@ -159,7 +162,6 @@ def init_db():
     conn.close()
 
 def generate_student_id(full_name: str, dob_str: str) -> str:
-    """Generates unique Student ID: First 2 letters of name + ddmmyy with collision guard."""
     clean_name = "".join(filter(str.isalpha, full_name))
     if len(clean_name) >= 2:
         prefix = clean_name[:2].capitalize()
@@ -210,11 +212,48 @@ def update_user_pin(user_id: int, new_pin: str):
     conn.close()
     sync_user_json_profile(user_id)
 
+def check_and_update_inactivity(user_id: int) -> tuple[bool, int]:
+    """
+    Checks if the user has been inactive for > 300 seconds (5 mins).
+    Returns (is_locked, seconds_inactive). Updates last_activity_epoch if active.
+    """
+    conn = get_db()
+    cursor = conn.cursor()
+    now_epoch = int(get_ist_now().timestamp())
+    
+    cursor.execute("SELECT last_activity_epoch, pin FROM users WHERE user_id = ?", (user_id,))
+    row = cursor.fetchone()
+    
+    if not row or not row['pin']:
+        conn.close()
+        return False, 0
+
+    last_epoch = row['last_activity_epoch'] or 0
+    diff = now_epoch - last_epoch if last_epoch > 0 else 0
+
+    if last_epoch > 0 and diff > 300: # Exceeds 5 minutes
+        conn.close()
+        return True, diff
+
+    cursor.execute("UPDATE users SET last_activity_epoch = ?, last_active = ? WHERE user_id = ?", (now_epoch, get_ist_timestamp_str(), user_id))
+    conn.commit()
+    conn.close()
+    return False, diff
+
+def refresh_user_activity_epoch(user_id: int):
+    conn = get_db()
+    cursor = conn.cursor()
+    now_epoch = int(get_ist_now().timestamp())
+    cursor.execute("UPDATE users SET last_activity_epoch = ?, last_active = ? WHERE user_id = ?", (now_epoch, get_ist_timestamp_str(), user_id))
+    conn.commit()
+    conn.close()
+
 def log_user_activity_time(user_id: int, seconds: int = 15):
     conn = get_db()
     cursor = conn.cursor()
     today_date = get_ist_date_str()
     now_str = get_ist_timestamp_str()
+    now_epoch = int(get_ist_now().timestamp())
     
     cursor.execute('''
         INSERT INTO user_activity_time (user_id, date_str, seconds_spent)
@@ -223,7 +262,7 @@ def log_user_activity_time(user_id: int, seconds: int = 15):
             seconds_spent = seconds_spent + excluded.seconds_spent
     ''', (user_id, today_date, seconds))
 
-    cursor.execute("UPDATE users SET last_active = ? WHERE user_id = ?", (now_str, user_id))
+    cursor.execute("UPDATE users SET last_active = ?, last_activity_epoch = ? WHERE user_id = ?", (now_str, now_epoch, user_id))
     conn.commit()
     conn.close()
 
@@ -368,12 +407,13 @@ def save_user_profile(user_id, full_name, username, phone, target_exam, dob, age
     conn = get_db()
     cursor = conn.cursor()
     now_str = get_ist_timestamp_str()
+    now_epoch = int(get_ist_now().timestamp())
     
     student_id = generate_student_id(full_name, dob)
 
     cursor.execute('''
-        INSERT INTO users (user_id, student_id, full_name, username, phone_number, target_exam, dob, age, gender, pin, security_question, security_answer, country, state, referred_by, last_profile_edit, last_active, is_banned, is_verified, created_at)
-        VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, 0, 1, ?)
+        INSERT INTO users (user_id, student_id, full_name, username, phone_number, target_exam, dob, age, gender, pin, security_question, security_answer, country, state, referred_by, last_profile_edit, last_active, last_activity_epoch, is_banned, is_verified, created_at)
+        VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, 0, 1, ?)
         ON CONFLICT(user_id) DO UPDATE SET
             student_id=excluded.student_id,
             full_name=excluded.full_name,
@@ -390,8 +430,9 @@ def save_user_profile(user_id, full_name, username, phone, target_exam, dob, age
             state=excluded.state,
             last_profile_edit=?,
             last_active=?,
+            last_activity_epoch=?,
             is_verified=1
-    ''', (user_id, student_id, full_name, username, phone, target_exam, dob, age, gender, pin, sec_q, sec_a, country, state, referred_by, now_str, now_str, now_str, now_str, now_str))
+    ''', (user_id, student_id, full_name, username, phone, target_exam, dob, age, gender, pin, sec_q, sec_a, country, state, referred_by, now_str, now_str, now_epoch, now_str, now_str, now_epoch, now_str))
     
     if referred_by and referred_by != user_id:
         cursor.execute("UPDATE users SET referral_count = referral_count + 1 WHERE user_id = ?", (referred_by,))

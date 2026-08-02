@@ -27,7 +27,8 @@ def get_pause_resume_keyboard():
             InlineKeyboardButton("🛑 Stop (/stop)", callback_data="cmd_stop_quiz")
         ],
         [
-            InlineKeyboardButton("💾 Save Question", callback_data="cmd_save_question")
+            InlineKeyboardButton("💾 Save Question", callback_data="cmd_save_question"),
+            InlineKeyboardButton("📖 Check Saved Qs", callback_data="cmd_savedquestions")
         ]
     ])
 
@@ -131,11 +132,7 @@ async def quiz_count_callback(update: Update, context: ContextTypes.DEFAULT_TYPE
     
     profile = get_user_profile(user_id)
     attempted_today = get_today_attempts(user_id)
-    
-    if user_id == PRIMARY_ADMIN_ID:
-        allowed_limit = 10000
-    else:
-        allowed_limit = DAILY_QUESTION_LIMIT + (profile.get("bonus_quota", 0) if profile else 0)
+    allowed_limit = 10000 if user_id == PRIMARY_ADMIN_ID else DAILY_QUESTION_LIMIT + (profile.get("bonus_quota", 0) if profile else 0)
 
     if attempted_today >= allowed_limit:
         await query.answer("🛑 Daily Limit Exhausted! Quiz is locked.", show_alert=True)
@@ -176,11 +173,7 @@ async def quiz_timer_callback(update: Update, context: ContextTypes.DEFAULT_TYPE
     
     profile = get_user_profile(user_id)
     attempted_today = get_today_attempts(user_id)
-    
-    if user_id == PRIMARY_ADMIN_ID:
-        allowed_limit = 10000
-    else:
-        allowed_limit = DAILY_QUESTION_LIMIT + (profile.get("bonus_quota", 0) if profile else 0)
+    allowed_limit = 10000 if user_id == PRIMARY_ADMIN_ID else DAILY_QUESTION_LIMIT + (profile.get("bonus_quota", 0) if profile else 0)
 
     if attempted_today >= allowed_limit:
         await query.answer("🛑 Daily Limit Exhausted! Quiz is locked.", show_alert=True)
@@ -251,9 +244,9 @@ async def save_question_callback(update: Update, context: ContextTypes.DEFAULT_T
         explanation=q.get("explanation", "")
     )
     if success:
-        await query.answer("💾 Question saved successfully! View via /savedquestions", show_alert=True)
+        await query.answer("💾 Question saved successfully! Tap '📖 Check Saved Qs' to view.", show_alert=True)
     else:
-        await query.answer("ℹ️ This question is already bookmarked in your saved list!", show_alert=True)
+        await query.answer("ℹ️ This question is already saved in your bookmarks!", show_alert=True)
 
 async def pause_quiz_command(update: Update, context: ContextTypes.DEFAULT_TYPE):
     user_id = update.effective_user.id
@@ -434,7 +427,7 @@ async def send_next_question(chat_id: int, user_id: int, context: ContextTypes.D
         return
 
     q = session["questions"][session["current_index"]]
-    session["current_question"] = q # Store current active question for saving
+    session["current_question"] = q
     timer_sec = session["timer_sec"]
 
     header_text = f"🖥 [Q {session['current_index']+1}/{session['total']}]\n\n{q['question']}"

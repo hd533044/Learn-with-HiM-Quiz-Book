@@ -19,7 +19,6 @@ import time
 
 warnings.filterwarnings("ignore", category=PTBUserWarning)
 
-# Fixed: Updated to range(10) for all 10 conversation states
 NAME, EXAM, COUNTRY, STATE, PHONE, GENDER, DOB_YEAR, DOB_MONTH, DOB_DAY, EDIT_WARN = range(10)
 
 INDIAN_STATES_AND_UTS = [
@@ -399,7 +398,7 @@ async def dob_day_callback(update: Update, context: ContextTypes.DEFAULT_TYPE):
     full_name = context.user_data.get("full_name", user.full_name)
     context.user_data["is_editing_profile"] = False
 
-    student_id = generate_student_id(full_name, birth_year)
+    student_id = generate_student_id(full_name, dob_str)
 
     save_user_profile(
         user_id=user.id,
@@ -423,8 +422,8 @@ async def dob_day_callback(update: Update, context: ContextTypes.DEFAULT_TYPE):
             f"━━━━━━━━━━━━━━━━━━━━━━━━━\n"
             f"🪪 **OFFICIAL STUDENT ID ISSUED:** `{student_id}`\n"
             f"🎂 **DOB Registered:** `{dob_str}`\n\n"
-            f"Your official student file `data/user_profiles/{student_id}.json` is live and active!\n\n"
-            f"👉 Tap **Launch Quiz** below or use the square bot menu to begin!"
+            f"✅ Your student profile has been verified and saved successfully! You can view or update your details anytime in your **Profile Card** (/myprofile).\n\n"
+            f"👉 Tap **Launch Quiz** below or use the main menu to begin learning!"
         ),
         reply_markup=ReplyKeyboardRemove(),
         parse_mode="Markdown"

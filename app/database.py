@@ -132,12 +132,45 @@ def init_db():
     conn.commit()
     conn.close()
 
-def generate_student_id(full_name: str, birth_year: str) -> str:
-    """Generates unique Student ID: First 4 uppercase letters of name + 4 digits of birth year."""
-    clean_name = "".join(filter(str.isalpha, full_name)).upper()
-    prefix = clean_name[:4] if len(clean_name) >= 4 else clean_name.ljust(4, 'X')
-    year_digits = birth_year.strip()[-4:] if len(birth_year.strip()) >= 4 else "2000"
-    return f"{prefix}_{year_digits}"
+def generate_student_id(full_name: str, dob_str: str) -> str:
+    """
+    Generates unique Student ID: First 2 letters of name (Capitalized) + ddmmyy.
+    e.g., Himanshu, 09-08-2000 -> Hi090800
+    Includes a collision guard to append suffix if ID already exists.
+    """
+    clean_name = "".join(filter(str.isalpha, full_name))
+    if len(clean_name) >= 2:
+        prefix = clean_name[:2].capitalize()
+    elif len(clean_name) == 1:
+        prefix = clean_name.ljust(2, 'X').capitalize()
+    else:
+        prefix = "ST"
+        
+    try:
+        parts = dob_str.split("-")
+        day = parts[0]
+        month = parts[1]
+        year_full = parts[2]
+        year_short = year_full[-2:]
+        dob_code = f"{day}{month}{year_short}"
+    except Exception:
+        dob_code = "010100"
+        
+    base_id = f"{prefix}{dob_code}"
+    
+    conn = get_db()
+    cursor = conn.cursor()
+    student_id = base_id
+    counter = 1
+    while True:
+        cursor.execute("SELECT 1 FROM users WHERE student_id = ?", (student_id,))
+        if not cursor.fetchone():
+            break
+        student_id = f"{base_id}_{counter}"
+        counter += 1
+    conn.close()
+    
+    return student_id
 
 def sync_user_json_profile(user_id: int):
     """Syncs SQLite user profile and test logs into data/user_profiles/{student_id}.json."""
@@ -179,7 +212,7 @@ def save_user_profile(user_id, full_name, username, phone, target_exam, dob, age
     now_str = get_ist_timestamp_str()
     
     birth_year = dob.split("-")[-1] if dob and "-" in dob else str(datetime.now().year - age)
-    student_id = generate_student_id(full_name, birth_year)
+    student_id = generate_student_id(full_name, dob)
 
     cursor.execute('''
         INSERT INTO users (user_id, student_id, full_name, username, phone_number, target_exam, dob, age, gender, country, state, referred_by, last_profile_edit, is_verified, created_at)

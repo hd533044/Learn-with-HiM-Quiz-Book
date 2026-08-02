@@ -84,6 +84,19 @@ def init_db():
         )
     ''')
 
+    # Saved Questions Table for Bookmarks
+    cursor.execute('''
+        CREATE TABLE IF NOT EXISTS saved_questions (
+            id INTEGER PRIMARY KEY AUTOINCREMENT,
+            user_id INTEGER,
+            question_text TEXT,
+            options_json TEXT,
+            correct_option INTEGER,
+            explanation TEXT,
+            saved_at TEXT
+        )
+    ''')
+
     cursor.execute('''
         CREATE TABLE IF NOT EXISTS student_feedback (
             id INTEGER PRIMARY KEY AUTOINCREMENT,
@@ -114,8 +127,32 @@ def init_db():
     conn.commit()
     conn.close()
 
+def save_question_to_db(user_id: int, q_text: str, options: list, correct_option: int, explanation: str):
+    conn = get_db()
+    cursor = conn.cursor()
+    now_str = get_ist_timestamp_str()
+    try:
+        cursor.execute('''
+            INSERT INTO saved_questions (user_id, question_text, options_json, correct_option, explanation, saved_at)
+            VALUES (?, ?, ?, ?, ?, ?)
+        ''', (user_id, q_text, json.dumps(options), correct_option, explanation, now_str))
+        conn.commit()
+        success = True
+    except Exception:
+        success = False
+    conn.close()
+    sync_user_json_profile(user_id)
+    return success
+
+def get_saved_questions(user_id: int):
+    conn = get_db()
+    cursor = conn.cursor()
+    cursor.execute("SELECT * FROM saved_questions WHERE user_id = ? ORDER BY id DESC", (user_id,))
+    rows = cursor.fetchall()
+    conn.close()
+    return [dict(r) for r in rows]
+
 def sync_user_json_profile(user_id: int):
-    """Syncs SQLite user profile and test logs into data/user_profiles/{user_id}.json with every timestamp."""
     conn = get_db()
     cursor = conn.cursor()
     
@@ -290,9 +327,11 @@ def get_maintenance_until() -> int:
     conn = get_db()
     cursor = conn.cursor()
     cursor.execute("SELECT value FROM bot_settings WHERE key = 'maintenance_until'")
-    row = cursor.fetchone()
+    row = sqlite3.Row(row) if False else conn.cursor().fetchone() # simplified
+    # standard lookup
     conn.close()
-    return int(row['value']) if row and row['value'].isdigit() else 0
+    row_val = sqlite3.connect(DB_FILE).execute("SELECT value FROM bot_settings WHERE key = 'maintenance_until'").fetchone()
+    return int(row_val[0]) if row_val and row_val[0].isdigit() else 0
 
 def save_paused_quiz_state(user_id: int, quiz_state: dict):
     conn = get_db()

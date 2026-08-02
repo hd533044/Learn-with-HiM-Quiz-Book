@@ -13,20 +13,20 @@ from app.config import BOT_TOKEN, PRIMARY_ADMIN_ID, DAILY_QUESTION_LIMIT
 from app.database import (
     init_db, get_maintenance_until, get_user_profile, 
     get_all_users, get_today_attempts, save_student_feedback, get_all_student_feedbacks,
-    clear_paused_quiz_state
+    clear_paused_quiz_state, get_saved_questions
 )
 from app.onboarding import get_onboarding_handler
 from app.quiz_engine import (
     launch_quiz_setup, quiz_count_callback, quiz_timer_callback, handle_poll_answer,
-    pause_quiz_command, resume_quiz_command, stop_quiz_command
+    pause_quiz_command, resume_quiz_command, stop_quiz_command, save_question_callback
 )
 from app.stats import get_overall_leaderboard, calculate_user_percentile, calculate_user_rank, get_user_performance_summary
 from app.admin import admin_portal_command, admin_callback_handler
+import json
 
 NEGATIVE_WORDS = ["bad", "worst", "useless", "trash", "fake", "hate", "terrible", "waste", "horrible", "fraud", "stupid", "scam"]
 
 async def maintenance_guard(update: Update, context: ContextTypes.DEFAULT_TYPE) -> bool:
-    """STRICT MAINTENANCE GUARD: Hard blocks ALL user commands & callbacks if bot is paused."""
     m_until = get_maintenance_until()
     if int(time.time()) < m_until:
         remaining_sec = m_until - int(time.time())
@@ -41,7 +41,6 @@ async def maintenance_guard(update: Update, context: ContextTypes.DEFAULT_TYPE) 
     return True
 
 async def strict_quiz_command_guard(update: Update, context: ContextTypes.DEFAULT_TYPE):
-    """STRICT COMMAND DEACTIVATION: Blocks /quiz entirely if daily limit (00:00 to 23:59) is exhausted."""
     if not await maintenance_guard(update, context): 
         return
 
@@ -74,10 +73,6 @@ async def strict_quiz_command_guard(update: Update, context: ContextTypes.DEFAUL
     await launch_quiz_setup(update, context)
 
 async def send_response(update: Update, text: str, reply_markup=None):
-    """
-    CLEAN RESPONSE ENGINE:
-    Uses InlineKeyboardMarkup or ReplyKeyboardRemove() to ensure no persistent grid keyboards exist.
-    """
     if update.callback_query:
         await update.callback_query.answer()
         try:
@@ -99,6 +94,7 @@ async def help_command(update: Update, context: ContextTypes.DEFAULT_TYPE):
         "• ⏸ **/pause**: Pause running quiz\n"
         "• ▶️ **/resume**: Resume paused quiz\n"
         "• 🛑 **/stop**: Stop quiz completely & restore remaining limit\n"
+        "• 💾 **/savedquestions**: View your bookmarked/saved questions\n"
         "• 👤 **/myprofile**: View your verified student card\n"
         "• ✏️ **/editprofile**: Update profile details (1x / 30 days)\n"
         "• 📊 **/mywholestate**: View detailed rank & percentile\n"
@@ -110,11 +106,54 @@ async def help_command(update: Update, context: ContextTypes.DEFAULT_TYPE):
 
     buttons = [
         [InlineKeyboardButton("🚀 /quiz", callback_data="cmd_quiz"), InlineKeyboardButton("🛑 /stop", callback_data="cmd_stop_quiz")],
-        [InlineKeyboardButton("👤 /myprofile", callback_data="cmd_profile"), InlineKeyboardButton("📊 /mywholestate", callback_data="cmd_wholestate")],
-        [InlineKeyboardButton("🏆 /toppername", callback_data="cmd_toppers"), InlineKeyboardButton("💬 /feedback", callback_data="cmd_feedback")],
+        [InlineKeyboardButton("💾 /savedquestions", callback_data="cmd_savedquestions"), InlineKeyboardButton("👤 /myprofile", callback_data="cmd_profile")],
+        [InlineKeyboardButton("📊 /mywholestate", callback_data="cmd_wholestate"), InlineKeyboardButton("🏆 /toppername", callback_data="cmd_toppers")],
         [InlineKeyboardButton("🤝 /invite", callback_data="cmd_referral"), InlineKeyboardButton("📖 /reviews", callback_data="cmd_viewfeedbacks")]
     ]
 
+    await send_response(update, msg, reply_markup=InlineKeyboardMarkup(buttons))
+
+async def saved_questions_command(update: Update, context: ContextTypes.DEFAULT_TYPE):
+    if not await maintenance_guard(update, context): return
+    user = update.effective_user
+    saved = get_saved_questions(user.id)
+    
+    if not saved:
+        msg = (
+            "📖 **SAVED QUESTIONS BOOKMARK**\n"
+            "━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\n\n"
+            "You haven't saved any questions yet! Tap the **💾 Save Question** button during your quiz attempts to bookmark important questions here."
+        )
+        await send_response(update, msg, reply_markup=InlineKeyboardMarkup([[InlineKeyboardButton("🚀 Launch Quiz", callback_data="cmd_quiz")]]))
+        return
+
+    total_count = len(saved)
+    lines = [
+        f"📖 **SAVED QUESTIONS BOOKMARK**",
+        f"━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━",
+        f"📊 **Total Saved Questions:** `{total_count}`",
+        f"📌 *Showing most recent bookmarks first*\n"
+    ]
+
+    for idx, sq in enumerate(saved[:15], start=1):
+        opts_list = json.loads(sq['options_json']) if sq['options_json'] else []
+        opts_str = "\n".join([f"  ({chr(65+i)}) {opt}" for i, opt in enumerate(opts_list)])
+        corr_letter = chr(65 + sq['correct_option']) if 0 <= sq['correct_option'] < len(opts_list) else 'N/A'
+        
+        lines.append(
+            f"**{idx}. Saved At:** `{sq['saved_at']}`\n"
+            f"❓ **Q:** {sq['question_text']}\n"
+            f"{opts_str}\n"
+            f"✅ **Correct Option:** `{corr_letter}`\n"
+            f"💡 **Explanation:** {sq['explanation']}\n"
+            f"──────────────────────────────"
+        )
+
+    if total_count > 15:
+        lines.append(f"\n*(Showing 15 of {total_count} saved questions)*")
+
+    msg = "\n".join(lines)
+    buttons = [[InlineKeyboardButton("🚀 Launch Quiz", callback_data="cmd_quiz")]]
     await send_response(update, msg, reply_markup=InlineKeyboardMarkup(buttons))
 
 async def myprofile_command(update: Update, context: ContextTypes.DEFAULT_TYPE):
@@ -127,8 +166,6 @@ async def myprofile_command(update: Update, context: ContextTypes.DEFAULT_TYPE):
         return
 
     today_used = get_today_attempts(user.id)
-    
-    # Check if Primary Admin (ID: 1091057353) to display 10,000 quota in profile
     if user.id == PRIMARY_ADMIN_ID:
         allowed_limit = 10000
     else:
@@ -154,7 +191,7 @@ async def myprofile_command(update: Update, context: ContextTypes.DEFAULT_TYPE):
     )
 
     buttons = [
-        [InlineKeyboardButton("🚀 Launch Quiz", callback_data="cmd_quiz"), InlineKeyboardButton("📊 Whole State", callback_data="cmd_wholestate")],
+        [InlineKeyboardButton("🚀 Launch Quiz", callback_data="cmd_quiz"), InlineKeyboardButton("💾 Saved Questions", callback_data="cmd_savedquestions")],
         [InlineKeyboardButton("✏️ Edit Profile", callback_data="cmd_editprofile"), InlineKeyboardButton("🤝 Invite (+10 Quota)", callback_data="cmd_referral")]
     ]
 
@@ -181,10 +218,9 @@ async def wholestate_command(update: Update, context: ContextTypes.DEFAULT_TYPE)
         f"📍 **Location:** `{profile.get('state', 'N/A')}, {profile.get('country', 'India')}`\n\n"
         f"📈 **Performance Metrics:**\n"
         f"• **Tests Completed:** `{perf.get('total_tests', 0)}`\n"
-        f"• **Total Quizzes Attempted:** `{perf.get('total_tests', 0)}` till date\n"
         f"• **Questions Attempted:** `{perf.get('total_qs', 0)}`\n"
         f"• **Global Rank:** `{rank}`\n"
-        f"• **Overall Percentile:** `{percentile}%` *(Calculated against all registered students)*"
+        f"• **Overall Percentile:** `{percentile}%`"
     )
 
     buttons = [[InlineKeyboardButton("🚀 Launch Quiz", callback_data="cmd_quiz"), InlineKeyboardButton("🏆 Leaderboard", callback_data="cmd_toppers")]]
@@ -280,6 +316,10 @@ async def button_router(update: Update, context: ContextTypes.DEFAULT_TYPE):
         await resume_quiz_command(update, context)
     elif data == "cmd_stop_quiz":
         await stop_quiz_command(update, context)
+    elif data == "cmd_savedquestions":
+        await saved_questions_command(update, context)
+    elif data == "cmd_save_question":
+        await save_question_callback(update, context)
     elif data == "cmd_start_fresh_quiz":
         clear_paused_quiz_state(user.id)
         await launch_quiz_setup(update, context)
@@ -346,9 +386,6 @@ async def global_error_handler(update: object, context: ContextTypes.DEFAULT_TYP
     logging.debug(f"Exception caught in global error handler: {context.error}")
 
 async def post_init(application: Application):
-    """
-    PURGES ALL CACHED TELEGRAM COMMAND SCOPES AND REGISTERS ONLY THE EXACT PROJECT COMMANDS.
-    """
     try:
         await application.bot.delete_my_commands(scope=BotCommandScopeDefault())
         await application.bot.delete_my_commands(scope=BotCommandScopeAllPrivateChats())
@@ -361,6 +398,7 @@ async def post_init(application: Application):
         BotCommand("pause", "⏸ Pause Running Quiz"),
         BotCommand("resume", "▶️ Resume Paused Quiz"),
         BotCommand("stop", "🛑 Stop Quiz Completely"),
+        BotCommand("savedquestions", "💾 View Saved Questions"),
         BotCommand("myprofile", "👤 View Student Profile"),
         BotCommand("editprofile", "✏️ Edit Profile Details"),
         BotCommand("mywholestate", "📊 View Performance & Rank"),
@@ -383,6 +421,7 @@ def build_application() -> Application:
     app.add_handler(CommandHandler("pause", pause_quiz_command))
     app.add_handler(CommandHandler("resume", resume_quiz_command))
     app.add_handler(CommandHandler("stop", stop_quiz_command))
+    app.add_handler(CommandHandler("savedquestions", saved_questions_command))
     app.add_handler(CommandHandler("myprofile", myprofile_command))
     app.add_handler(CommandHandler("mywholestate", wholestate_command))
     app.add_handler(CommandHandler("toppername", toppers_command))

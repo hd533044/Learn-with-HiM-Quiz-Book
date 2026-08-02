@@ -8,7 +8,8 @@ from app.database import (
     get_today_attempts, get_seen_question_ids, 
     mark_questions_as_seen, record_quiz_result, get_ist_timestamp_str, 
     get_user_profile, get_maintenance_until,
-    save_paused_quiz_state, get_paused_quiz_state, clear_paused_quiz_state
+    save_paused_quiz_state, get_paused_quiz_state, clear_paused_quiz_state,
+    save_question_to_db
 )
 from app.pyq_fetcher import fetch_pyqs_for_quiz
 from app.stats import calculate_user_percentile, calculate_user_rank
@@ -24,6 +25,9 @@ def get_pause_resume_keyboard():
             InlineKeyboardButton("⏸ Pause (/pause)", callback_data="cmd_pause_quiz"), 
             InlineKeyboardButton("▶️ Resume (/resume)", callback_data="cmd_resume_quiz"),
             InlineKeyboardButton("🛑 Stop (/stop)", callback_data="cmd_stop_quiz")
+        ],
+        [
+            InlineKeyboardButton("💾 Save Question", callback_data="cmd_save_question")
         ]
     ])
 
@@ -51,7 +55,6 @@ async def launch_quiz_setup(update: Update, context: ContextTypes.DEFAULT_TYPE):
         await update.message.reply_text("⚠️ Please type /start to create your profile before attempting quizzes!")
         return
 
-    # DAILY LIMIT CALCULATOR (Admin get 10,000 Qs/day, Students get 40 + Bonus Quota)
     attempted_today = get_today_attempts(user.id)
     if user.id == PRIMARY_ADMIN_ID:
         allowed_limit = 10000
@@ -64,7 +67,7 @@ async def launch_quiz_setup(update: Update, context: ContextTypes.DEFAULT_TYPE):
             f"━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\n"
             f"• **Today's Usage:** `{attempted_today}` / `{allowed_limit}` Questions\n"
             f"• **Status:** You have fully exhausted your free daily limit for today (00:00 to 23:59).\n\n"
-            f"⚠️ **Notice:** The `/quiz` command is now **deactivated** for your account. You will not be able to attempt any more quizzes until tomorrow or until you unlock extra quota via referrals!\n\n"
+            f"⚠️ **Notice:** The `/quiz` command is now **deactivated** for your account until tomorrow or until you unlock extra quota via referrals!\n\n"
             f"💡 **Unlock +10 Questions:** Share your invite link with 4 friends using `/invite`."
         )
         keyboard = InlineKeyboardMarkup([[
@@ -230,6 +233,27 @@ async def quiz_timer_callback(update: Update, context: ContextTypes.DEFAULT_TYPE
         parse_mode="Markdown"
     )
     await send_next_question(query.message.chat_id, user_id, context)
+
+async def save_question_callback(update: Update, context: ContextTypes.DEFAULT_TYPE):
+    query = update.callback_query
+    user_id = query.from_user.id
+    session = ACTIVE_SESSIONS.get(user_id)
+    if not session or "current_question" not in session:
+        await query.answer("⚠️ No active question found to save right now!", show_alert=True)
+        return
+    
+    q = session["current_question"]
+    success = save_question_to_db(
+        user_id=user_id,
+        q_text=q["question"],
+        options=q["options"],
+        correct_option=q["correct_option"],
+        explanation=q.get("explanation", "")
+    )
+    if success:
+        await query.answer("💾 Question saved successfully! View via /savedquestions", show_alert=True)
+    else:
+        await query.answer("ℹ️ This question is already bookmarked in your saved list!", show_alert=True)
 
 async def pause_quiz_command(update: Update, context: ContextTypes.DEFAULT_TYPE):
     user_id = update.effective_user.id
@@ -410,6 +434,7 @@ async def send_next_question(chat_id: int, user_id: int, context: ContextTypes.D
         return
 
     q = session["questions"][session["current_index"]]
+    session["current_question"] = q # Store current active question for saving
     timer_sec = session["timer_sec"]
 
     header_text = f"🖥 [Q {session['current_index']+1}/{session['total']}]\n\n{q['question']}"
@@ -441,7 +466,7 @@ async def send_next_question(chat_id: int, user_id: int, context: ContextTypes.D
 
         await context.bot.send_message(
             chat_id=chat_id,
-            text="You can Pause/Resume.",
+            text="Quiz Controls:",
             reply_markup=get_pause_resume_keyboard()
         )
 

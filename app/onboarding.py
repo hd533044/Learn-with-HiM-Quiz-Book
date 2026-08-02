@@ -179,7 +179,7 @@ async def login_sid_step(update: Update, context: ContextTypes.DEFAULT_TYPE):
 
     context.user_data["login_target_user"] = u
     rec_btn = InlineKeyboardMarkup([
-        [InlineKeyboardButton("❓ Reset PIN / Account Recovery", callback_data="login_forgot_pin")]
+        [InlineKeyboardButton("🔑 Reset Your PIN / Password", callback_data="login_forgot_pin")]
     ])
 
     await update.message.reply_text(
@@ -200,13 +200,12 @@ async def login_pin_step(update: Update, context: ContextTypes.DEFAULT_TYPE):
         ])
         await update.message.reply_text(
             f"❌ **Incorrect PIN!**\n\n"
-            f"The PIN entered does not match your account. Please try entering your PIN again, or tap below to reset your PIN using phone, security question, or name/DOB verification:",
+            f"The PIN entered does not match your account. Please try entering your PIN again, or tap below to reset your PIN:",
             reply_markup=rec_btn,
             parse_mode="Markdown"
         )
         return LOGIN_PIN
 
-    # Transfer login to current Telegram user ID
     user = update.effective_user
     save_user_profile(
         user_id=user.id,
@@ -320,8 +319,8 @@ async def rec_sec_ans_step(update: Update, context: ContextTypes.DEFAULT_TYPE):
     correct_ans = str(u.get("security_answer", "")).strip().lower()
 
     if ans_input != correct_ans:
-        rec_btn = InlineKeyboardMarkup([[InlineKeyboardButton("🔑 Try Another Recovery Option", callback_data="login_forgot_pin")]])
-        await update.message.reply_text("❌ **Incorrect Security Answer!** Please try typing your answer again or select another option:", reply_markup=rec_btn)
+        rec_btn = InlineKeyboardMarkup([[InlineKeyboardButton("🔑 Reset Your PIN / Password", callback_data="login_forgot_pin")]])
+        await update.message.reply_text("❌ **Incorrect Security Answer!**\n\nPlease try again or tap below to reset using another method:", reply_markup=rec_btn)
         return REC_SEC_ANS
 
     await update.message.reply_text("✅ **Identity Verified!** Please enter your **New 4-Digit Secret PIN**:")
@@ -339,7 +338,7 @@ async def rec_phone_step(update: Update, context: ContextTypes.DEFAULT_TYPE):
     user_phone = str(u.get("phone_number", "")).replace("+", "").strip()
 
     if shared_phone != user_phone:
-        rec_btn = InlineKeyboardMarkup([[InlineKeyboardButton("🔑 Try Another Recovery Option", callback_data="login_forgot_pin")]])
+        rec_btn = InlineKeyboardMarkup([[InlineKeyboardButton("🔑 Reset Your PIN / Password", callback_data="login_forgot_pin")]])
         await update.message.reply_text(
             f"❌ **Phone Number Mismatch!** Shared number does not match registered number for `{u['student_id']}`.",
             reply_markup=rec_btn
@@ -360,7 +359,7 @@ async def rec_name_dob_step(update: Update, context: ContextTypes.DEFAULT_TYPE):
         await update.message.reply_text("✅ **Name / DOB Verified!** Please enter your **New 4-Digit Secret PIN**:")
         return RESET_PIN
 
-    rec_btn = InlineKeyboardMarkup([[InlineKeyboardButton("🔑 Try Another Recovery Option", callback_data="login_forgot_pin")]])
+    rec_btn = InlineKeyboardMarkup([[InlineKeyboardButton("🔑 Reset Your PIN / Password", callback_data="login_forgot_pin")]])
     await update.message.reply_text(
         "❌ **Verification Failed!** Input does not match registered records. Try again or pick another method:",
         reply_markup=rec_btn
@@ -852,12 +851,30 @@ def get_onboarding_handler():
             RECOVERY_MENU: [
                 CallbackQueryHandler(recovery_option_router, pattern="^rec_opt_")
             ],
-            REC_SEC_ANS: [MessageHandler(filters.TEXT & ~filters.COMMAND, rec_sec_ans_step)],
-            REC_PHONE: [MessageHandler(filters.CONTACT | (filters.TEXT & ~filters.COMMAND), rec_phone_step)],
-            REC_NAME_DOB: [MessageHandler(filters.TEXT & ~filters.COMMAND, rec_name_dob_step)],
-            REC_DOB_YEAR: [CallbackQueryHandler(rec_dob_year_callback, pattern="^recdoby_")],
-            REC_DOB_MONTH: [CallbackQueryHandler(rec_dob_month_callback, pattern="^recdobm_")],
-            REC_DOB_DAY: [CallbackQueryHandler(rec_dob_day_callback, pattern="^recdobd_")],
+            REC_SEC_ANS: [
+                MessageHandler(filters.TEXT & ~filters.COMMAND, rec_sec_ans_step),
+                CallbackQueryHandler(recovery_menu_callback, pattern="^login_forgot_pin$")
+            ],
+            REC_PHONE: [
+                MessageHandler(filters.CONTACT | (filters.TEXT & ~filters.COMMAND), rec_phone_step),
+                CallbackQueryHandler(recovery_menu_callback, pattern="^login_forgot_pin$")
+            ],
+            REC_NAME_DOB: [
+                MessageHandler(filters.TEXT & ~filters.COMMAND, rec_name_dob_step),
+                CallbackQueryHandler(recovery_menu_callback, pattern="^login_forgot_pin$")
+            ],
+            REC_DOB_YEAR: [
+                CallbackQueryHandler(rec_dob_year_callback, pattern="^recdoby_"),
+                CallbackQueryHandler(recovery_menu_callback, pattern="^login_forgot_pin$")
+            ],
+            REC_DOB_MONTH: [
+                CallbackQueryHandler(rec_dob_month_callback, pattern="^recdobm_"),
+                CallbackQueryHandler(recovery_menu_callback, pattern="^login_forgot_pin$")
+            ],
+            REC_DOB_DAY: [
+                CallbackQueryHandler(rec_dob_day_callback, pattern="^recdobd_"),
+                CallbackQueryHandler(recovery_menu_callback, pattern="^login_forgot_pin$")
+            ],
             RESET_PIN: [MessageHandler(filters.TEXT & ~filters.COMMAND, reset_pin_step)],
 
             EDIT_WARN: [CallbackQueryHandler(edit_warn_callback, pattern="^edit_confirm_")],
@@ -880,7 +897,10 @@ def get_onboarding_handler():
             SEC_QUESTION: [CallbackQueryHandler(sec_q_callback, pattern="^secq_")],
             SEC_ANSWER: [MessageHandler(filters.TEXT & ~filters.COMMAND, sec_ans_step)]
         },
-        fallbacks=[CommandHandler("cancel", cancel_onboarding)],
+        fallbacks=[
+            CommandHandler("cancel", cancel_onboarding),
+            CallbackQueryHandler(recovery_menu_callback, pattern="^login_forgot_pin$")
+        ],
         per_chat=True,
         per_user=True,
         per_message=False

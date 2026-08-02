@@ -69,6 +69,14 @@ def mask_phone(phone_str: str) -> str:
     clean_p = str(phone_str).replace("+", "").strip()
     return "XXXXXX" + clean_p[-4:]
 
+def parse_date_only(date_str: str) -> str:
+    if not date_str:
+        return "N/A"
+    try:
+        return date_str.split(" ")[0]
+    except Exception:
+        return date_str
+
 def generate_student_pdf_report(user_id: int, filter_mode: str = "last_1_month_data") -> str:
     u = get_user_profile(user_id)
     if not u:
@@ -188,7 +196,7 @@ def generate_student_pdf_report(user_id: int, filter_mode: str = "last_1_month_d
     story.append(prof_table)
     story.append(Spacer(1, 8))
 
-    # 3. Database Attempts Querying
+    # 3. Database Attempt Fetching
     conn = get_db()
     cursor = conn.cursor()
     
@@ -199,21 +207,26 @@ def generate_student_pdf_report(user_id: int, filter_mode: str = "last_1_month_d
 
     is_month_filter = "last_1_month" in filter_mode
 
-    if is_month_filter:
-        summary_title_text = f"MONTHLY REPORT ({one_month_ago_str} TO {now_date_str})"
-        cursor.execute("SELECT * FROM quiz_attempts WHERE user_id = ? AND attempt_date >= ? ORDER BY id DESC", (user_id, one_month_ago_str))
-    else:
-        summary_title_text = "ALL-TIME CUMULATIVE ACADEMIC REPORT"
-        cursor.execute("SELECT * FROM quiz_attempts WHERE user_id = ? ORDER BY id DESC", (user_id,))
-    
-    attempts = cursor.fetchall()
+    cursor.execute("SELECT * FROM quiz_attempts WHERE user_id = ? ORDER BY id DESC", (user_id,))
+    all_attempts = [dict(r) for r in cursor.fetchall()]
     conn.close()
 
-    total_quizzes = len(attempts)
-    total_qs = sum([a['questions_attempted'] for a in attempts])
-    total_correct = sum([a['correct_answers'] for a in attempts])
-    total_wrong = sum([a['wrong_answers'] for a in attempts])
+    filtered_attempts = []
+    for a in all_attempts:
+        a_date = parse_date_only(a.get("attempt_date") or a.get("attempt_timestamp"))
+        if is_month_filter:
+            if a_date >= one_month_ago_str:
+                filtered_attempts.append(a)
+        else:
+            filtered_attempts.append(a)
+
+    total_quizzes = len(filtered_attempts)
+    total_qs = sum([a.get('questions_attempted', 0) for a in filtered_attempts])
+    total_correct = sum([a.get('correct_answers', 0) for a in filtered_attempts])
+    total_wrong = sum([a.get('wrong_answers', 0) for a in filtered_attempts])
     acc = round((total_correct / total_qs) * 100, 2) if total_qs > 0 else 0.0
+
+    summary_title_text = f"MONTHLY REPORT ({one_month_ago_str} TO {now_date_str})" if is_month_filter else "ALL-TIME CUMULATIVE ACADEMIC REPORT"
 
     story.append(Paragraph(f"<b>ACADEMIC PERFORMANCE SUMMARY — {summary_title_text}</b>", section_heading))
 
@@ -232,7 +245,7 @@ def generate_student_pdf_report(user_id: int, filter_mode: str = "last_1_month_d
     story.append(stats_table)
     story.append(Spacer(1, 8))
 
-    # QUIZ SUMMARY MODE (Command 2 & 4: High-level date-wise performance without question texts)
+    # QUIZ SUMMARY MODE (Commands 2 & 4: Date-Wise Quiz Table)
     if "quiz" in filter_mode:
         story.append(Paragraph("🗓 <b>DATE-WISE QUIZ SUMMARY REPORT</b>", section_heading))
         
@@ -246,16 +259,15 @@ def generate_student_pdf_report(user_id: int, filter_mode: str = "last_1_month_d
         ]]
 
         date_groups = {}
-        for a in attempts:
-            ad = dict(a)
-            dt = ad.get("attempt_date", "Unknown")
+        for a in filtered_attempts:
+            dt = parse_date_only(a.get("attempt_date") or a.get("attempt_timestamp"))
             if dt not in date_groups:
                 date_groups[dt] = {"qs": 0, "correct": 0, "wrong": 0, "skipped": 0, "score": 0.0}
-            date_groups[dt]["qs"] += ad.get("questions_attempted", 0)
-            date_groups[dt]["correct"] += ad.get("correct_answers", 0)
-            date_groups[dt]["wrong"] += ad.get("wrong_answers", 0)
-            date_groups[dt]["skipped"] += ad.get("skipped_count", 0)
-            date_groups[dt]["score"] += ad.get("score", 0.0)
+            date_groups[dt]["qs"] += a.get("questions_attempted", 0)
+            date_groups[dt]["correct"] += a.get("correct_answers", 0)
+            date_groups[dt]["wrong"] += a.get("wrong_answers", 0)
+            date_groups[dt]["skipped"] += a.get("skipped_count", 0)
+            date_groups[dt]["score"] += a.get("score", 0.0)
 
         for dt, st in date_groups.items():
             date_summary_data.append([
@@ -264,13 +276,13 @@ def generate_student_pdf_report(user_id: int, filter_mode: str = "last_1_month_d
                 Paragraph(f"{st['correct']}", body_style),
                 Paragraph(f"{st['wrong']}", body_style),
                 Paragraph(f"{st['skipped']}", body_style),
-                Paragraph(f"{st['score']}", body_style)
+                Paragraph(f"{round(st['score'], 2)}", body_style)
             ])
 
         if len(date_summary_data) == 1:
             date_summary_data.append([Paragraph("N/A", body_style), Paragraph("0", body_style), Paragraph("0", body_style), Paragraph("0", body_style), Paragraph("0", body_style), Paragraph("0.0", body_style)])
 
-        date_table = Table(date_summary_data, colWidths=[1.2*inch, 1.1*inch, 1.1*inch, 1.1*inch, 1.1*inch, 1.4*inch])
+        date_table = Table(date_summary_data, colWidths=[1.2*inch, 1.1*inch, 1.1*inch, 1.1*inch, 1.1*inch, 1.4*inch], repeatRows=1)
         date_table.setStyle(TableStyle([
             ('BACKGROUND', (0,0), (-1,0), colors.HexColor("#F1F5F9")),
             ('GRID', (0,0), (-1,-1), 0.5, colors.HexColor("#CBD5E1")),
@@ -279,16 +291,15 @@ def generate_student_pdf_report(user_id: int, filter_mode: str = "last_1_month_d
         ]))
         story.append(date_table)
 
-    # FULL DATA MODE (Command 1 & 3: Itemized question tables in order: Wrong -> Skipped -> Correct)
+    # FULL DATA MODE (Commands 1 & 3: Itemized Question Tables in Order: Wrong -> Skipped -> Correct)
     else:
         wrong_q_list = []
         skipped_q_list = []
         correct_q_list = []
 
-        for a in attempts:
-            ad = dict(a)
-            attempt_date = ad.get("attempt_date") or (ad.get("attempt_timestamp", "").split(" ")[0] if ad.get("attempt_timestamp") else "N/A")
-            details = json.loads(ad["details_json"]) if ad.get("details_json") else []
+        for a in filtered_attempts:
+            attempt_date = parse_date_only(a.get("attempt_date") or a.get("attempt_timestamp"))
+            details = json.loads(a["details_json"]) if a.get("details_json") else []
 
             for q_item in details:
                 q_item['attempt_date'] = attempt_date
@@ -300,7 +311,6 @@ def generate_student_pdf_report(user_id: int, filter_mode: str = "last_1_month_d
                 else:
                     skipped_q_list.append(q_item)
 
-        # Limit per category to prevent document buffer overflow
         max_rows = 50 if is_month_filter else 100
 
         # 4a. WRONG QUESTIONS TABLE (Rose Header)

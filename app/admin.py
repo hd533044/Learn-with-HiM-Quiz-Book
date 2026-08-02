@@ -226,7 +226,7 @@ async def admin_callback_handler(update: Update, context: ContextTypes.DEFAULT_T
         )
         await query.edit_message_text(msg, reply_markup=InlineKeyboardMarkup(keyboard), parse_mode="Markdown")
 
-    # NEW: User PIN & Security Questions Audit
+    # User PIN & Security Questions Audit
     elif data.startswith("audit_pinsec_"):
         await query.answer()
         target_uid = int(data.replace("audit_pinsec_", ""))
@@ -244,7 +244,7 @@ async def admin_callback_handler(update: Update, context: ContextTypes.DEFAULT_T
         keyboard = [[InlineKeyboardButton("🔙 Back to Dashboard", callback_data=f"admin_inspect_u_{target_uid}")]]
         await query.edit_message_text(msg, reply_markup=InlineKeyboardMarkup(keyboard), parse_mode="Markdown")
 
-    # NEW: PDF Export Options Sub-Menu
+    # PDF Export Options Sub-Menu
     elif data.startswith("audit_pdfmenu_"):
         await query.answer()
         target_uid = int(data.replace("audit_pdfmenu_", ""))
@@ -264,14 +264,14 @@ async def admin_callback_handler(update: Update, context: ContextTypes.DEFAULT_T
             parse_mode="Markdown"
         )
 
-    # NEW: Generate and Send PDF Report
+    # Generate and Send PDF Report
     elif data.startswith("genpdf_"):
         await query.answer()
         parts = data.split("_")
         target_uid = int(parts[1])
         filter_mode = "_".join(parts[2:])
 
-        await query.edit_message_text("⏳ **Generating Colorful PDF Report...**\nApplying logos, watermarks, and masked fields...")
+        await query.edit_message_text("⏳ **Generating Custom PDF Report...**\nApplying logos, watermark, sky background, and social links...")
         
         pdf_file = generate_student_pdf_report(target_uid, filter_mode)
         u = get_user_profile(target_uid)

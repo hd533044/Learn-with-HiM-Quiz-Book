@@ -20,7 +20,7 @@ ACTIVE_SESSIONS = {}
 POLL_MAP = {}
 TIMER_TASKS = {}
 QUIZ_SETUP_CACHE = {}
-LAST_QUIZ_RESULTS = {}  # Cache last attempt for inline PDF generation
+LAST_QUIZ_RESULTS = {}  # In-memory result cache for downloadable instant PDF
 
 def get_pause_resume_keyboard():
     return InlineKeyboardMarkup([
@@ -53,13 +53,13 @@ async def launch_quiz_setup(update: Update, context: ContextTypes.DEFAULT_TYPE):
 
     user = update.effective_user
     log_user_activity_time(user.id, seconds=10)
-    profile = get_user_profile(user.id)
+    profile = await asyncio.to_thread(get_user_profile, user.id)
     
     if not profile or not profile.get("is_verified"):
         await update.message.reply_text("⚠️ Please type /start to create your profile before attempting quizzes!")
         return
 
-    attempted_today = get_today_attempts(user.id)
+    attempted_today = await asyncio.to_thread(get_today_attempts, user.id)
     allowed_limit = 10000 if user.id == PRIMARY_ADMIN_ID else DAILY_QUESTION_LIMIT + profile.get("bonus_quota", 0)
 
     if attempted_today >= allowed_limit:
@@ -81,7 +81,7 @@ async def launch_quiz_setup(update: Update, context: ContextTypes.DEFAULT_TYPE):
             await update.message.reply_text(exhausted_msg, reply_markup=keyboard, parse_mode="Markdown")
         return
 
-    paused = get_paused_quiz_state(user.id)
+    paused = await asyncio.to_thread(get_paused_quiz_state, user.id)
     if paused:
         remaining_count = len(paused.get('questions', [])) - paused.get('current_index', 0)
         text = (
@@ -131,8 +131,8 @@ async def quiz_count_callback(update: Update, context: ContextTypes.DEFAULT_TYPE
     user_id = query.from_user.id
     log_user_activity_time(user_id, seconds=10)
     
-    profile = get_user_profile(user_id)
-    attempted_today = get_today_attempts(user_id)
+    profile = await asyncio.to_thread(get_user_profile, user_id)
+    attempted_today = await asyncio.to_thread(get_today_attempts, user_id)
     allowed_limit = 10000 if user_id == PRIMARY_ADMIN_ID else DAILY_QUESTION_LIMIT + (profile.get("bonus_quota", 0) if profile else 0)
 
     if attempted_today >= allowed_limit:
@@ -173,8 +173,8 @@ async def quiz_timer_callback(update: Update, context: ContextTypes.DEFAULT_TYPE
     user_id = query.from_user.id
     log_user_activity_time(user_id, seconds=15)
     
-    profile = get_user_profile(user_id)
-    attempted_today = get_today_attempts(user_id)
+    profile = await asyncio.to_thread(get_user_profile, user_id)
+    attempted_today = await asyncio.to_thread(get_today_attempts, user_id)
     allowed_limit = 10000 if user_id == PRIMARY_ADMIN_ID else DAILY_QUESTION_LIMIT + (profile.get("bonus_quota", 0) if profile else 0)
 
     if attempted_today >= allowed_limit:
@@ -194,15 +194,15 @@ async def quiz_timer_callback(update: Update, context: ContextTypes.DEFAULT_TYPE
     if count > remaining_quota:
         count = max(1, remaining_quota)
 
-    seen_ids = get_seen_question_ids(user_id)
-    questions = fetch_pyqs_for_quiz(needed_count=count, seen_ids=seen_ids)
+    seen_ids = await asyncio.to_thread(get_seen_question_ids, user_id)
+    questions = await asyncio.to_thread(fetch_pyqs_for_quiz, count, seen_ids)
 
     if not questions:
         await query.edit_message_text("🎉 You have completed all questions in the question bank!")
         return
 
     q_ids = [q["id"] for q in questions if q.get("id") is not None]
-    mark_questions_as_seen(user_id, q_ids)
+    await asyncio.to_thread(mark_questions_as_seen, user_id, q_ids)
 
     session = {
         "user_id": user_id,
@@ -241,12 +241,13 @@ async def save_question_callback(update: Update, context: ContextTypes.DEFAULT_T
         return
     
     q = session["current_question"]
-    success = save_question_to_db(
-        user_id=user_id,
-        q_text=q["question"],
-        options=q["options"],
-        correct_option=q["correct_option"],
-        explanation=q.get("explanation", "")
+    success = await asyncio.to_thread(
+        save_question_to_db,
+        user_id,
+        q["question"],
+        q["options"],
+        q["correct_option"],
+        q.get("explanation", "")
     )
     if success:
         await query.answer("💾 Question saved successfully! Check result card or type /savedquestions to view.", show_alert=True)
@@ -284,7 +285,7 @@ async def pause_quiz_command(update: Update, context: ContextTypes.DEFAULT_TYPE)
         "start_time": session["start_time"],
         "detailed_logs": session.get("detailed_logs", [])
     }
-    save_paused_quiz_state(user_id, save_state)
+    await asyncio.to_thread(save_paused_quiz_state, user_id, save_state)
     ACTIVE_SESSIONS.pop(user_id, None)
 
     remaining_qs = session["total"] - session["current_index"]
@@ -311,7 +312,7 @@ async def resume_quiz_command(update: Update, context: ContextTypes.DEFAULT_TYPE
     chat_id = update.effective_chat.id
     log_user_activity_time(user_id, seconds=5)
 
-    paused = get_paused_quiz_state(user_id)
+    paused = await asyncio.to_thread(get_paused_quiz_state, user_id)
     if not paused:
         msg = "ℹ️ No paused quiz found. Type /quiz to start a new session!"
         if update.callback_query:
@@ -320,7 +321,7 @@ async def resume_quiz_command(update: Update, context: ContextTypes.DEFAULT_TYPE
             await update.message.reply_text(msg)
         return
 
-    clear_paused_quiz_state(user_id)
+    await asyncio.to_thread(clear_paused_quiz_state, user_id)
 
     session = {
         "user_id": user_id,
@@ -346,7 +347,7 @@ async def resume_quiz_command(update: Update, context: ContextTypes.DEFAULT_TYPE
         text=f"▶️ **RESUMING QUIZ...**\n━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\n⏳ **3...** Get ready for Question `{session['current_index'] + 1}/{session['total']}`!",
         parse_mode="Markdown"
     )
-    await asyncio.sleep(1)
+    await asyncio.sleep(0.5)
 
     try:
         await context.bot.edit_message_text(
@@ -354,14 +355,14 @@ async def resume_quiz_command(update: Update, context: ContextTypes.DEFAULT_TYPE
             text=f"▶️ **RESUMING QUIZ...**\n━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\n⏳ **2...** Get ready for Question `{session['current_index'] + 1}/{session['total']}`!",
             parse_mode="Markdown"
         )
-        await asyncio.sleep(1)
+        await asyncio.sleep(0.5)
 
         await context.bot.edit_message_text(
             chat_id=chat_id, message_id=countdown_msg.message_id,
             text=f"▶️ **RESUMING QUIZ...**\n━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\n⚡ **1...** Launching Poll now!",
             parse_mode="Markdown"
         )
-        await asyncio.sleep(1)
+        await asyncio.sleep(0.5)
     except Exception:
         pass
 
@@ -373,7 +374,7 @@ async def stop_quiz_command(update: Update, context: ContextTypes.DEFAULT_TYPE):
     log_user_activity_time(user_id, seconds=5)
 
     session = ACTIVE_SESSIONS.get(user_id)
-    paused = get_paused_quiz_state(user_id)
+    paused = await asyncio.to_thread(get_paused_quiz_state, user_id)
     
     if not session and not paused:
         msg = "ℹ️ You do not have an active or paused quiz session to stop."
@@ -383,7 +384,7 @@ async def stop_quiz_command(update: Update, context: ContextTypes.DEFAULT_TYPE):
             await update.message.reply_text(msg)
         return
 
-    clear_paused_quiz_state(user_id)
+    await asyncio.to_thread(clear_paused_quiz_state, user_id)
     if user_id in TIMER_TASKS and not TIMER_TASKS[user_id].done():
         TIMER_TASKS[user_id].cancel()
 
@@ -478,7 +479,7 @@ async def send_next_question(chat_id: int, user_id: int, context: ContextTypes.D
         await send_next_question(chat_id, user_id, context)
 
 async def auto_skip_task(chat_id: int, user_id: int, poll_id: str, expected_idx: int, timer_sec: int, context: ContextTypes.DEFAULT_TYPE):
-    await asyncio.sleep(timer_sec + 1)
+    await asyncio.sleep(timer_sec)
     if poll_id in POLL_MAP:
         data = POLL_MAP.pop(poll_id, None)
         session = ACTIVE_SESSIONS.get(user_id)
@@ -549,21 +550,22 @@ async def handle_poll_answer(update: Update, context: ContextTypes.DEFAULT_TYPE)
         })
 
         session["current_index"] += 1
-        await asyncio.sleep(0.8)
         await send_next_question(chat_id, user_id, context)
 
 async def download_instant_pdf_callback(update: Update, context: ContextTypes.DEFAULT_TYPE):
     query = update.callback_query
-    await query.answer("⏳ Generating your instant report PDF...")
+    await query.answer("⏳ Generating your instant PDF report card...")
     user_id = query.from_user.id
     
     quiz_result_payload = LAST_QUIZ_RESULTS.get(user_id)
     if not quiz_result_payload:
-        await query.message.reply_text("⚠️ No recent quiz session data found to export.")
+        await query.message.reply_text("⚠️ No recent quiz session found to generate report card.")
         return
 
-    profile = get_user_profile(user_id)
-    pdf_file = generate_instant_quiz_pdf_report(user_id, quiz_result_payload)
+    profile = await asyncio.to_thread(get_user_profile, user_id)
+    
+    # Generate PDF in thread pool to prevent event loop lag
+    pdf_file = await asyncio.to_thread(generate_instant_quiz_pdf_report, user_id, quiz_result_payload)
 
     if pdf_file and os.path.exists(pdf_file):
         with open(pdf_file, "rb") as doc:
@@ -594,21 +596,21 @@ async def finish_quiz_and_send_report(chat_id: int, user_id: int, context: Conte
     score = session["score"]
     detailed_logs = session.get("detailed_logs", [])
 
-    record_quiz_result(
+    await asyncio.to_thread(
+        record_quiz_result,
         user_id, 
-        score=score, 
-        total_questions=total, 
-        correct_count=correct, 
-        wrong_count=wrong, 
-        skipped_count=skipped,
-        question_details=detailed_logs
+        score, 
+        total, 
+        correct, 
+        wrong, 
+        skipped,
+        detailed_logs
     )
 
-    percentile = calculate_user_percentile(user_id)
-    rank_str = calculate_user_rank(user_id)
-    profile = get_user_profile(user_id)
+    percentile = await asyncio.to_thread(calculate_user_percentile, user_id)
+    rank_str = await asyncio.to_thread(calculate_user_rank, user_id)
 
-    # Store payload for interactive PDF download
+    # Store payload for interactive PDF download button
     LAST_QUIZ_RESULTS[user_id] = {
         "total_questions": total,
         "score": score,
@@ -618,7 +620,6 @@ async def finish_quiz_and_send_report(chat_id: int, user_id: int, context: Conte
         "details": detailed_logs
     }
 
-    # Post-Quiz Scorecard & Download PDF Button
     buttons = [
         [InlineKeyboardButton("📄 Download Attempt Summary PDF Card", callback_data="cmd_download_instant_pdf")],
         [InlineKeyboardButton("📢 Join Telegram Channel (@Learnwithhim)", url="https://t.me/Learnwithhim")],

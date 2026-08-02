@@ -30,10 +30,12 @@ def init_db():
     cursor.execute('''
         CREATE TABLE IF NOT EXISTS users (
             user_id INTEGER PRIMARY KEY,
+            student_id TEXT UNIQUE,
             full_name TEXT,
             username TEXT,
             phone_number TEXT,
             target_exam TEXT,
+            dob TEXT,
             age INTEGER,
             gender TEXT,
             country TEXT DEFAULT 'India',
@@ -49,6 +51,10 @@ def init_db():
     
     cursor.execute("PRAGMA table_info(users)")
     columns = [row[1] for row in cursor.fetchall()]
+    if 'student_id' not in columns:
+        cursor.execute("ALTER TABLE users ADD COLUMN student_id TEXT")
+    if 'dob' not in columns:
+        cursor.execute("ALTER TABLE users ADD COLUMN dob TEXT")
     if 'country' not in columns:
         cursor.execute("ALTER TABLE users ADD COLUMN country TEXT DEFAULT 'India'")
     if 'state' not in columns:
@@ -84,7 +90,6 @@ def init_db():
         )
     ''')
 
-    # Saved Questions Table for Bookmarks
     cursor.execute('''
         CREATE TABLE IF NOT EXISTS saved_questions (
             id INTEGER PRIMARY KEY AUTOINCREMENT,
@@ -127,32 +132,15 @@ def init_db():
     conn.commit()
     conn.close()
 
-def save_question_to_db(user_id: int, q_text: str, options: list, correct_option: int, explanation: str):
-    conn = get_db()
-    cursor = conn.cursor()
-    now_str = get_ist_timestamp_str()
-    try:
-        cursor.execute('''
-            INSERT INTO saved_questions (user_id, question_text, options_json, correct_option, explanation, saved_at)
-            VALUES (?, ?, ?, ?, ?, ?)
-        ''', (user_id, q_text, json.dumps(options), correct_option, explanation, now_str))
-        conn.commit()
-        success = True
-    except Exception:
-        success = False
-    conn.close()
-    sync_user_json_profile(user_id)
-    return success
-
-def get_saved_questions(user_id: int):
-    conn = get_db()
-    cursor = conn.cursor()
-    cursor.execute("SELECT * FROM saved_questions WHERE user_id = ? ORDER BY id DESC", (user_id,))
-    rows = cursor.fetchall()
-    conn.close()
-    return [dict(r) for r in rows]
+def generate_student_id(full_name: str, birth_year: str) -> str:
+    """Generates unique Student ID: First 4 uppercase letters of name + 4 digits of birth year."""
+    clean_name = "".join(filter(str.isalpha, full_name)).upper()
+    prefix = clean_name[:4] if len(clean_name) >= 4 else clean_name.ljust(4, 'X')
+    year_digits = birth_year.strip()[-4:] if len(birth_year.strip()) >= 4 else "2000"
+    return f"{prefix}_{year_digits}"
 
 def sync_user_json_profile(user_id: int):
+    """Syncs SQLite user profile and test logs into data/user_profiles/{student_id}.json."""
     conn = get_db()
     cursor = conn.cursor()
     
@@ -169,39 +157,47 @@ def sync_user_json_profile(user_id: int):
     user_dict = dict(user_row)
     attempts_list = [dict(a) for a in attempts_rows]
 
+    student_id = user_dict.get("student_id") or f"USER_{user_id}"
+
     profile_data = {
+        "student_id": student_id,
         "profile_info": user_dict,
         "quiz_history": attempts_list,
         "last_synced": get_ist_timestamp_str()
     }
 
-    filepath = os.path.join(USER_PROFILES_DIR, f"{user_id}.json")
+    filepath = os.path.join(USER_PROFILES_DIR, f"{student_id}.json")
     try:
         with open(filepath, "w", encoding="utf-8") as f:
             json.dump(profile_data, f, indent=4, ensure_ascii=False)
     except Exception as e:
-        logger.error(f"Failed to sync JSON profile for user {user_id}: {e}")
+        logger.error(f"Failed to sync JSON profile for student {student_id}: {e}")
 
-def save_user_profile(user_id, full_name, username, phone, target_exam, age, gender, country="India", state="N/A", referred_by=None):
+def save_user_profile(user_id, full_name, username, phone, target_exam, dob, age, gender, country="India", state="N/A", referred_by=None):
     conn = get_db()
     cursor = conn.cursor()
     now_str = get_ist_timestamp_str()
     
+    birth_year = dob.split("-")[-1] if dob and "-" in dob else str(datetime.now().year - age)
+    student_id = generate_student_id(full_name, birth_year)
+
     cursor.execute('''
-        INSERT INTO users (user_id, full_name, username, phone_number, target_exam, age, gender, country, state, referred_by, last_profile_edit, is_verified, created_at)
-        VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, 1, ?)
+        INSERT INTO users (user_id, student_id, full_name, username, phone_number, target_exam, dob, age, gender, country, state, referred_by, last_profile_edit, is_verified, created_at)
+        VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, 1, ?)
         ON CONFLICT(user_id) DO UPDATE SET
+            student_id=excluded.student_id,
             full_name=excluded.full_name,
             username=excluded.username,
             phone_number=excluded.phone_number,
             target_exam=excluded.target_exam,
+            dob=excluded.dob,
             age=excluded.age,
             gender=excluded.gender,
             country=excluded.country,
             state=excluded.state,
             last_profile_edit=?,
             is_verified=1
-    ''', (user_id, full_name, username, phone, target_exam, age, gender, country, state, referred_by, now_str, now_str, now_str))
+    ''', (user_id, student_id, full_name, username, phone, target_exam, dob, age, gender, country, state, referred_by, now_str, now_str, now_str))
     
     if referred_by and referred_by != user_id:
         cursor.execute("UPDATE users SET referral_count = referral_count + 1 WHERE user_id = ?", (referred_by,))
@@ -297,6 +293,31 @@ def mark_questions_as_seen(user_id, question_ids):
     conn.commit()
     conn.close()
 
+def save_question_to_db(user_id: int, q_text: str, options: list, correct_option: int, explanation: str):
+    conn = get_db()
+    cursor = conn.cursor()
+    now_str = get_ist_timestamp_str()
+    try:
+        cursor.execute('''
+            INSERT INTO saved_questions (user_id, question_text, options_json, correct_option, explanation, saved_at)
+            VALUES (?, ?, ?, ?, ?, ?)
+        ''', (user_id, q_text, json.dumps(options), correct_option, explanation, now_str))
+        conn.commit()
+        success = True
+    except Exception:
+        success = False
+    conn.close()
+    sync_user_json_profile(user_id)
+    return success
+
+def get_saved_questions(user_id: int):
+    conn = get_db()
+    cursor = conn.cursor()
+    cursor.execute("SELECT * FROM saved_questions WHERE user_id = ? ORDER BY id DESC", (user_id,))
+    rows = cursor.fetchall()
+    conn.close()
+    return [dict(r) for r in rows]
+
 def save_student_feedback(user_id: int, full_name: str, feedback_text: str):
     conn = get_db()
     cursor = conn.cursor()
@@ -327,11 +348,9 @@ def get_maintenance_until() -> int:
     conn = get_db()
     cursor = conn.cursor()
     cursor.execute("SELECT value FROM bot_settings WHERE key = 'maintenance_until'")
-    row = sqlite3.Row(row) if False else conn.cursor().fetchone() # simplified
-    # standard lookup
+    row = cursor.fetchone()
     conn.close()
-    row_val = sqlite3.connect(DB_FILE).execute("SELECT value FROM bot_settings WHERE key = 'maintenance_until'").fetchone()
-    return int(row_val[0]) if row_val and row_val[0].isdigit() else 0
+    return int(row['value']) if row and row['value'].isdigit() else 0
 
 def save_paused_quiz_state(user_id: int, quiz_state: dict):
     conn = get_db()

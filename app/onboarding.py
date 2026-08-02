@@ -1,6 +1,7 @@
 import re
 import logging
 import warnings
+from datetime import datetime
 from telegram import Update, InlineKeyboardMarkup, InlineKeyboardButton, ReplyKeyboardMarkup, KeyboardButton, ReplyKeyboardRemove
 from telegram.warnings import PTBUserWarning
 from telegram.ext import (
@@ -12,12 +13,12 @@ from telegram.ext import (
     ContextTypes
 )
 from app.config import WELCOME_CARD_TEXT, PRIMARY_ADMIN_ID
-from app.database import save_user_profile, get_user_profile, can_user_edit_profile, get_maintenance_until
+from app.database import save_user_profile, get_user_profile, can_user_edit_profile, get_maintenance_until, generate_student_id
 import time
 
 warnings.filterwarnings("ignore", category=PTBUserWarning)
 
-NAME, EXAM, COUNTRY, STATE, PHONE, GENDER, AGE, EDIT_WARN = range(8)
+NAME, EXAM, COUNTRY, STATE, PHONE, GENDER, DOB_YEAR, DOB_MONTH, EDIT_WARN = range(8)
 
 INDIAN_STATES_AND_UTS = [
     "Andhra Pradesh", "Arunachal Pradesh", "Assam", "Bihar", "Chhattisgarh", "Goa", 
@@ -35,6 +36,23 @@ def build_state_keyboard():
         row = [InlineKeyboardButton(INDIAN_STATES_AND_UTS[i], callback_data=f"st_{INDIAN_STATES_AND_UTS[i]}")]
         if i + 1 < len(INDIAN_STATES_AND_UTS):
             row.append(InlineKeyboardButton(INDIAN_STATES_AND_UTS[i+1], callback_data=f"st_{INDIAN_STATES_AND_UTS[i+1]}"))
+        keyboard.append(row)
+    return InlineKeyboardMarkup(keyboard)
+
+def build_year_keyboard():
+    current_year = datetime.now().year
+    years = [str(y) for i, y in enumerate(range(current_year - 45, current_year - 10))]
+    keyboard = []
+    for i in range(0, len(years), 4):
+        row = [InlineKeyboardButton(y, callback_data=f"doby_{y}") for y in years[i:i+4]]
+        keyboard.append(row)
+    return InlineKeyboardMarkup(keyboard)
+
+def build_month_keyboard():
+    months = ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"]
+    keyboard = []
+    for i in range(0, len(months), 3):
+        row = [InlineKeyboardButton(m, callback_data=f"dobm_{idx+1:02d}") for idx, m in enumerate(months[i:i+3], start=i)]
         keyboard.append(row)
     return InlineKeyboardMarkup(keyboard)
 
@@ -69,8 +87,10 @@ async def start_onboarding(update: Update, context: ContextTypes.DEFAULT_TYPE):
 
     profile = get_user_profile(user.id)
     if profile and profile.get("is_verified") and not context.user_data.get("is_editing_profile"):
+        student_id = profile.get("student_id", "N/A")
         await update.message.reply_text(
-            f"⚡ **Welcome back, {profile['full_name']}!**\n\n"
+            f"⚡ **Welcome back, {profile['full_name']}!**\n"
+            f"🪪 **Student ID:** `{student_id}`\n\n"
             f"🎯 **Target Exam:** `{profile['target_exam']}`\n"
             f"📍 **Location:** `{profile.get('state', 'N/A')}, {profile.get('country', 'India')}`\n\n"
             f"Click options below or use the square menu to start practicing!",
@@ -86,7 +106,7 @@ async def start_onboarding(update: Update, context: ContextTypes.DEFAULT_TYPE):
         f"{WELCOME_CARD_TEXT}\n\n"
         f"━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\n"
         f"📝 **Student Registration (Step 1/6)**\n\n"
-        f"Please enter your **Full Name** to setup your official student profile:",
+        f"Please enter your **Full Name** (at least 4 letters) to issue your unique Official Student ID:",
         parse_mode="Markdown"
     )
     return NAME
@@ -135,13 +155,25 @@ async def edit_warn_callback(update: Update, context: ContextTypes.DEFAULT_TYPE)
     context.user_data["is_editing_profile"] = True
     await query.edit_message_text(
         "✏️ **Edit Profile Session Started (Step 1/6)**\n\n"
-        "Please enter your updated **Full Name**:",
+        "Please enter your updated **Full Name** (at least 4 letters):",
         parse_mode="Markdown"
     )
     return NAME
 
 async def name_step(update: Update, context: ContextTypes.DEFAULT_TYPE):
-    context.user_data["full_name"] = update.message.text.strip()
+    input_name = update.message.text.strip()
+    clean_letters = "".join(filter(str.isalpha, input_name))
+
+    if len(clean_letters) < 4:
+        await update.message.reply_text(
+            "⚠️ **Name Too Short!**\n\n"
+            "Your name must contain at least 4 alphabetic characters to issue your Student ID.\n"
+            "Please enter your complete **Full Name** again:",
+            parse_mode="Markdown"
+        )
+        return NAME
+
+    context.user_data["full_name"] = input_name
 
     exams = [
         [InlineKeyboardButton("1. SSC CGL", callback_data="exam_SSC CGL"), InlineKeyboardButton("2. SSC CHSL", callback_data="exam_SSC CHSL")],
@@ -299,44 +331,75 @@ async def gender_callback(update: Update, context: ContextTypes.DEFAULT_TYPE):
 
     await query.edit_message_text(
         f"👤 Gender: `{selected_gender}`\n\n"
-        f"🎂 Please type your **Age in years** (e.g. `22`):",
+        f"🎂 **Select Birth Year (Step 7/7):**\n"
+        f"Please tap your Birth Year from below to issue your Student ID:",
+        reply_markup=build_year_keyboard(),
         parse_mode="Markdown"
     )
-    return AGE
+    return DOB_YEAR
 
-async def age_step(update: Update, context: ContextTypes.DEFAULT_TYPE):
-    age_text = update.message.text.strip()
+async def dob_year_callback(update: Update, context: ContextTypes.DEFAULT_TYPE):
+    query = update.callback_query
+    await query.answer()
     
-    if not age_text.isdigit() or int(age_text) < 10 or int(age_text) > 80:
-        await update.message.reply_text("❌ Please enter a valid age in numbers (e.g. 22):")
-        return AGE
+    selected_year = query.data.replace("doby_", "")
+    context.user_data["birth_year"] = selected_year
+
+    await query.edit_message_text(
+        f"📅 **Selected Birth Year:** `{selected_year}`\n\n"
+        f"🗓 **Select Birth Month:**\n"
+        f"Please tap your Month of Birth below:",
+        reply_markup=build_month_keyboard(),
+        parse_mode="Markdown"
+    )
+    return DOB_MONTH
+
+async def dob_month_callback(update: Update, context: ContextTypes.DEFAULT_TYPE):
+    query = update.callback_query
+    await query.answer()
+    
+    selected_month = query.data.replace("dobm_", "")
+    birth_year = context.user_data.get("birth_year", "2002")
+    
+    dob_str = f"15-{selected_month}-{birth_year}"
+    calc_age = datetime.now().year - int(birth_year)
 
     user = update.effective_user
+    full_name = context.user_data.get("full_name", user.full_name)
     context.user_data["is_editing_profile"] = False
+
+    student_id = generate_student_id(full_name, birth_year)
 
     save_user_profile(
         user_id=user.id,
-        full_name=context.user_data.get("full_name", user.full_name),
+        full_name=full_name,
         username=user.username or "N/A",
         phone=context.user_data.get("phone_number", "N/A"),
         target_exam=context.user_data.get("target_exam", "General"),
-        age=int(age_text),
+        dob=dob_str,
+        age=calc_age,
         gender=context.user_data.get("gender", "Not Specified"),
         country=context.user_data.get("country", "India"),
         state=context.user_data.get("state", "N/A"),
         referred_by=context.user_data.get("referred_by")
     )
 
-    await update.message.reply_text(
-        "🎉 **Student Registration Complete!**\n"
-        "━━━━━━━━━━━━━━━━━━━━━━━━━\n"
-        "Your student profile has been verified and synced successfully.\n\n"
-        "👉 Tap **Launch Quiz** below or use the square bot menu to begin!",
+    await query.delete_message()
+    await context.bot.send_message(
+        chat_id=query.message.chat_id,
+        text=(
+            f"🎉 **Student Registration Complete!**\n"
+            f"━━━━━━━━━━━━━━━━━━━━━━━━━\n"
+            f"🪪 **OFFICIAL STUDENT ID ISSUED:** `{student_id}`\n\n"
+            f"Your official student file `data/user_profiles/{student_id}.json` is live and active!\n\n"
+            f"👉 Tap **Launch Quiz** below or use the square bot menu to begin!"
+        ),
         reply_markup=ReplyKeyboardRemove(),
         parse_mode="Markdown"
     )
-    await update.message.reply_text(
-        "👇 **Quick Navigation:**",
+    await context.bot.send_message(
+        chat_id=query.message.chat_id,
+        text="👇 **Quick Navigation:**",
         reply_markup=InlineKeyboardMarkup([
             [InlineKeyboardButton("🚀 Launch Quiz", callback_data="cmd_quiz"), InlineKeyboardButton("👤 Profile", callback_data="cmd_profile")]
         ])
@@ -369,7 +432,8 @@ def get_onboarding_handler():
             STATE: [CallbackQueryHandler(state_callback, pattern="^st_")],
             PHONE: [MessageHandler(filters.CONTACT | (filters.TEXT & ~filters.COMMAND), phone_contact_step)],
             GENDER: [CallbackQueryHandler(gender_callback, pattern="^gen_")],
-            AGE: [MessageHandler(filters.TEXT & ~filters.COMMAND, age_step)],
+            DOB_YEAR: [CallbackQueryHandler(dob_year_callback, pattern="^doby_")],
+            DOB_MONTH: [CallbackQueryHandler(dob_month_callback, pattern="^dobm_")],
         },
         fallbacks=[CommandHandler("cancel", cancel_onboarding)],
         per_chat=True,

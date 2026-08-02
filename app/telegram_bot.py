@@ -27,7 +27,6 @@ from app.admin import admin_portal_command, admin_callback_handler
 NEGATIVE_WORDS = ["bad", "worst", "useless", "trash", "fake", "hate", "terrible", "waste", "horrible", "fraud", "stupid", "scam"]
 
 async def maintenance_guard(update: Update, context: ContextTypes.DEFAULT_TYPE) -> bool:
-    """STRICT MAINTENANCE GUARD: Hard blocks ALL user commands & callbacks if bot is paused."""
     m_until = get_maintenance_until()
     if int(time.time()) < m_until:
         remaining_sec = m_until - int(time.time())
@@ -42,7 +41,6 @@ async def maintenance_guard(update: Update, context: ContextTypes.DEFAULT_TYPE) 
     return True
 
 async def strict_quiz_command_guard(update: Update, context: ContextTypes.DEFAULT_TYPE):
-    """STRICT COMMAND DEACTIVATION: Blocks /quiz entirely if daily limit (00:00 to 23:59) is exhausted."""
     if not await maintenance_guard(update, context): 
         return
 
@@ -166,16 +164,19 @@ async def myprofile_command(update: Update, context: ContextTypes.DEFAULT_TYPE):
 
     today_used = get_today_attempts(user.id)
     allowed_limit = 10000 if user.id == PRIMARY_ADMIN_ID else DAILY_QUESTION_LIMIT + profile.get("bonus_quota", 0)
+
     remaining = max(0, allowed_limit - today_used)
+    student_id = profile.get("student_id", f"USER_{user.id}")
 
     msg = (
         f"👤 **STUDENT PROFILE CARD**\n"
         f"📚 *Learn with HiM Quiz Book*\n"
         f"━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\n"
         f"• **Full Name:** {profile['full_name']}\n"
+        f"• **Student ID:** `{student_id}`\n"
         f"• **Telegram ID:** `{profile['user_id']}`\n"
         f"• **Target Exam:** `{profile['target_exam']}`\n"
-        f"• **Age / Gender:** `{profile['age']}` / `{profile['gender']}`\n"
+        f"• **DOB / Gender:** `{profile.get('dob', 'N/A')}` / `{profile['gender']}`\n"
         f"• **Location:** `{profile.get('state', 'N/A')}, {profile.get('country', 'India')}`\n"
         f"• **Phone:** `{profile['phone_number']}` *(Private)*\n\n"
         f"📊 **Daily Quota Status (00:00 to 23:59):**\n"
@@ -204,19 +205,20 @@ async def wholestate_command(update: Update, context: ContextTypes.DEFAULT_TYPE)
     perf = get_user_performance_summary(user.id)
     rank = calculate_user_rank(user.id)
     percentile = calculate_user_percentile(user.id)
+    student_id = profile.get("student_id", f"USER_{user.id}")
 
     msg = (
         f"🎓 **STUDENT ACADEMIC REPORT CARD**\n"
         f"━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\n"
         f"👤 **Name:** {profile['full_name']}\n"
+        f"🪪 **Student ID:** `{student_id}`\n"
         f"🎯 **Target Exam:** `{profile['target_exam']}`\n"
         f"📍 **Location:** `{profile.get('state', 'N/A')}, {profile.get('country', 'India')}`\n\n"
         f"📈 **Performance Metrics:**\n"
         f"• **Tests Completed:** `{perf.get('total_tests', 0)}`\n"
-        f"• **Total Quizzes Attempted:** `{perf.get('total_tests', 0)}` till date\n"
         f"• **Questions Attempted:** `{perf.get('total_qs', 0)}`\n"
         f"• **Global Rank:** `{rank}`\n"
-        f"• **Overall Percentile:** `{percentile}%` *(Calculated against all registered students)*"
+        f"• **Overall Percentile:** `{percentile}%`"
     )
 
     buttons = [[InlineKeyboardButton("🚀 Launch Quiz", callback_data="cmd_quiz"), InlineKeyboardButton("🏆 Leaderboard", callback_data="cmd_toppers")]]
@@ -379,9 +381,6 @@ async def global_error_handler(update: object, context: ContextTypes.DEFAULT_TYP
     logging.debug(f"Exception caught in global error handler: {context.error}")
 
 async def post_init(application: Application):
-    """
-    PURGES ALL CACHED TELEGRAM COMMAND SCOPES AND REGISTERS ONLY THE EXACT PROJECT COMMANDS IN MAIN MENU.
-    """
     try:
         await application.bot.delete_my_commands(scope=BotCommandScopeDefault())
         await application.bot.delete_my_commands(scope=BotCommandScopeAllPrivateChats())
@@ -389,7 +388,6 @@ async def post_init(application: Application):
     except Exception as e:
         logging.warning(f"Note on command purge: {e}")
 
-    # Registered in Telegram Main Menu (left of typing bar)
     allowed_commands = [
         BotCommand("quiz", "🚀 Start Computer Quiz"),
         BotCommand("pause", "⏸ Pause Running Quiz"),

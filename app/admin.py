@@ -265,21 +265,20 @@ async def admin_callback_handler(update: Update, context: ContextTypes.DEFAULT_T
             parse_mode="Markdown"
         )
 
-    # Generate and Send PDF Report (DOCUMENT FIRST -> NAVIGATION BUTTONS BELOW IT)
+    # Generate and Send PDF Report
     elif data.startswith("genpdf_"):
         await query.answer()
         parts = data.split("_")
         target_uid = int(parts[1])
         filter_mode = "_".join(parts[2:])
 
-        await query.edit_message_text("⏳ **Generating Custom PDF Report Card...**\nBuilding stats, formatting tables, and rendering PDF...")
+        await query.edit_message_text("⏳ **Generating Custom PDF Report Card...**\nBuilding stats, visual charts, and formatting tables...")
         
         pdf_file = generate_student_pdf_report(target_uid, filter_mode)
         u = get_user_profile(target_uid)
         sid = u.get("student_id") or f"USER_{target_uid}"
 
         if pdf_file and os.path.exists(pdf_file):
-            # 1. Send the PDF document FIRST
             with open(pdf_file, "rb") as doc:
                 await context.bot.send_document(
                     chat_id=query.message.chat_id,
@@ -294,20 +293,10 @@ async def admin_callback_handler(update: Update, context: ContextTypes.DEFAULT_T
                         f"🏷 **Watermark:** `@LearnwithHiM`"
                     )
                 )
-            
-            # 2. Send navigation buttons DIRECTLY BELOW the document
-            nav_buttons = InlineKeyboardMarkup([
-                [InlineKeyboardButton("📄 Export Another PDF Report", callback_data=f"audit_pdfmenu_{target_uid}")],
-                [InlineKeyboardButton("🔙 Back to Student Dashboard", callback_data=f"admin_inspect_u_{target_uid}")],
-                [InlineKeyboardButton("👑 Main Admin Portal", callback_data="admin_home")]
-            ])
-            await context.bot.send_message(
-                chat_id=query.message.chat_id,
-                text="👇 **Quick Actions & Navigation:**",
-                reply_markup=nav_buttons
-            )
         else:
             await query.message.reply_text("⚠️ Failed to generate PDF file.")
+        
+        await admin_portal_command(update, context)
 
     # Audit Module 1: Personal Details
     elif data.startswith("audit_personal_"):

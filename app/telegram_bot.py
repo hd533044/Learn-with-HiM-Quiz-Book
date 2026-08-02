@@ -53,9 +53,12 @@ async def strict_quiz_command_guard(update: Update, context: ContextTypes.DEFAUL
         return
 
     attempted_today = get_today_attempts(user.id)
-    allowed_limit = DAILY_QUESTION_LIMIT + profile.get("bonus_quota", 0)
+    if user.id == PRIMARY_ADMIN_ID:
+        allowed_limit = 10000
+    else:
+        allowed_limit = DAILY_QUESTION_LIMIT + profile.get("bonus_quota", 0)
 
-    if attempted_today >= allowed_limit and user.id != PRIMARY_ADMIN_ID:
+    if attempted_today >= allowed_limit:
         limit_msg = (
             f"🛑 **Daily Free Limit Exhausted!**\n\n"
             f"You have reached your actual daily limit of `{allowed_limit}` questions for today (00:00 to 23:59).\n"
@@ -124,7 +127,13 @@ async def myprofile_command(update: Update, context: ContextTypes.DEFAULT_TYPE):
         return
 
     today_used = get_today_attempts(user.id)
-    allowed_limit = DAILY_QUESTION_LIMIT + profile.get("bonus_quota", 0)
+    
+    # Check if Primary Admin (ID: 1091057353) to display 10,000 quota in profile
+    if user.id == PRIMARY_ADMIN_ID:
+        allowed_limit = 10000
+    else:
+        allowed_limit = DAILY_QUESTION_LIMIT + profile.get("bonus_quota", 0)
+
     remaining = max(0, allowed_limit - today_used)
 
     msg = (
@@ -256,8 +265,12 @@ async def button_router(update: Update, context: ContextTypes.DEFAULT_TYPE):
     if data == "cmd_quiz":
         profile = get_user_profile(user.id)
         attempted_today = get_today_attempts(user.id)
-        allowed_limit = DAILY_QUESTION_LIMIT + (profile.get("bonus_quota", 0) if profile else 0)
-        if attempted_today >= allowed_limit and user.id != PRIMARY_ADMIN_ID:
+        if user.id == PRIMARY_ADMIN_ID:
+            allowed_limit = 10000
+        else:
+            allowed_limit = DAILY_QUESTION_LIMIT + (profile.get("bonus_quota", 0) if profile else 0)
+
+        if attempted_today >= allowed_limit:
             await query.answer("🛑 Daily Limit Exhausted! /quiz is deactivated.", show_alert=True)
             return
         await launch_quiz_setup(update, context)
@@ -366,7 +379,6 @@ def build_application() -> Application:
 
     app.add_handler(get_onboarding_handler())
     
-    # Core Project Commands mapped with strict daily limit block check
     app.add_handler(CommandHandler("quiz", strict_quiz_command_guard))
     app.add_handler(CommandHandler("pause", pause_quiz_command))
     app.add_handler(CommandHandler("resume", resume_quiz_command))
@@ -381,7 +393,6 @@ def build_application() -> Application:
     app.add_handler(CommandHandler("help", help_command))
     app.add_handler(CommandHandler("invite", referral_command))
     
-    # Secret Admin Command
     app.add_handler(CommandHandler("admin", admin_portal_command))
     app.add_handler(CommandHandler("admit", admin_portal_command))
 

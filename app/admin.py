@@ -265,7 +265,7 @@ async def admin_callback_handler(update: Update, context: ContextTypes.DEFAULT_T
             parse_mode="Markdown"
         )
 
-    # Generate and Send PDF Report (DOCUMENT FIRST -> BUTTONS BELOW IT)
+    # Generate and Send PDF Report (DOCUMENT FIRST -> NAVIGATION BUTTONS BELOW IT)
     elif data.startswith("genpdf_"):
         await query.answer()
         parts = data.split("_")
@@ -279,6 +279,7 @@ async def admin_callback_handler(update: Update, context: ContextTypes.DEFAULT_T
         sid = u.get("student_id") or f"USER_{target_uid}"
 
         if pdf_file and os.path.exists(pdf_file):
+            # 1. Send the PDF document FIRST
             with open(pdf_file, "rb") as doc:
                 await context.bot.send_document(
                     chat_id=query.message.chat_id,
@@ -294,6 +295,7 @@ async def admin_callback_handler(update: Update, context: ContextTypes.DEFAULT_T
                     )
                 )
             
+            # 2. Send navigation buttons DIRECTLY BELOW the document
             nav_buttons = InlineKeyboardMarkup([
                 [InlineKeyboardButton("📄 Export Another PDF Report", callback_data=f"audit_pdfmenu_{target_uid}")],
                 [InlineKeyboardButton("🔙 Back to Student Dashboard", callback_data=f"admin_inspect_u_{target_uid}")],

@@ -40,11 +40,15 @@ def init_db():
             gender TEXT,
             country TEXT DEFAULT 'India',
             state TEXT DEFAULT 'N/A',
+            pin TEXT,
+            security_question TEXT,
+            security_answer TEXT,
             referred_by INTEGER,
             referral_count INTEGER DEFAULT 0,
             bonus_quota INTEGER DEFAULT 0,
             last_profile_edit TEXT,
             last_active TEXT,
+            is_banned INTEGER DEFAULT 0,
             is_verified INTEGER DEFAULT 1,
             created_at TEXT
         )
@@ -60,10 +64,18 @@ def init_db():
         cursor.execute("ALTER TABLE users ADD COLUMN country TEXT DEFAULT 'India'")
     if 'state' not in columns:
         cursor.execute("ALTER TABLE users ADD COLUMN state TEXT DEFAULT 'N/A'")
+    if 'pin' not in columns:
+        cursor.execute("ALTER TABLE users ADD COLUMN pin TEXT")
+    if 'security_question' not in columns:
+        cursor.execute("ALTER TABLE users ADD COLUMN security_question TEXT")
+    if 'security_answer' not in columns:
+        cursor.execute("ALTER TABLE users ADD COLUMN security_answer TEXT")
     if 'last_profile_edit' not in columns:
         cursor.execute("ALTER TABLE users ADD COLUMN last_profile_edit TEXT")
     if 'last_active' not in columns:
         cursor.execute("ALTER TABLE users ADD COLUMN last_active TEXT")
+    if 'is_banned' not in columns:
+        cursor.execute("ALTER TABLE users ADD COLUMN is_banned INTEGER DEFAULT 0")
 
     cursor.execute('''
         CREATE TABLE IF NOT EXISTS quiz_attempts (
@@ -83,11 +95,6 @@ def init_db():
             FOREIGN KEY (user_id) REFERENCES users (user_id)
         )
     ''')
-
-    cursor.execute("PRAGMA table_info(quiz_attempts)")
-    q_columns = [row[1] for row in cursor.fetchall()]
-    if 'details_json' not in q_columns:
-        cursor.execute("ALTER TABLE quiz_attempts ADD COLUMN details_json TEXT")
 
     cursor.execute('''
         CREATE TABLE IF NOT EXISTS seen_questions (
@@ -187,8 +194,23 @@ def generate_student_id(full_name: str, dob_str: str) -> str:
     
     return student_id
 
+def get_user_by_student_id(student_id: str):
+    conn = get_db()
+    cursor = conn.cursor()
+    cursor.execute("SELECT * FROM users WHERE LOWER(student_id) = LOWER(?)", (student_id.strip(),))
+    row = cursor.fetchone()
+    conn.close()
+    return dict(row) if row else None
+
+def update_user_pin(user_id: int, new_pin: str):
+    conn = get_db()
+    cursor = conn.cursor()
+    cursor.execute("UPDATE users SET pin = ? WHERE user_id = ?", (new_pin, user_id))
+    conn.commit()
+    conn.close()
+    sync_user_json_profile(user_id)
+
 def log_user_activity_time(user_id: int, seconds: int = 15):
-    """Tracks time spent on the bot by user date-wise."""
     conn = get_db()
     cursor = conn.cursor()
     today_date = get_ist_date_str()
@@ -205,8 +227,20 @@ def log_user_activity_time(user_id: int, seconds: int = 15):
     conn.commit()
     conn.close()
 
+def toggle_user_ban_status(user_id: int) -> bool:
+    conn = get_db()
+    cursor = conn.cursor()
+    cursor.execute("SELECT is_banned FROM users WHERE user_id = ?", (user_id,))
+    row = cursor.fetchone()
+    current_status = row['is_banned'] if row and row['is_banned'] else 0
+    new_status = 0 if current_status == 1 else 1
+    cursor.execute("UPDATE users SET is_banned = ? WHERE user_id = ?", (new_status, user_id))
+    conn.commit()
+    conn.close()
+    sync_user_json_profile(user_id)
+    return bool(new_status)
+
 def sync_user_json_profile(user_id: int):
-    """Generates and syncs the complete Master Student Profile JSON file under data/user_profiles/<STUDENT_ID>.json."""
     conn = get_db()
     cursor = conn.cursor()
     
@@ -330,7 +364,7 @@ def sync_user_json_profile(user_id: int):
     except Exception as e:
         logger.error(f"Failed to sync JSON profile for student {student_id}: {e}")
 
-def save_user_profile(user_id, full_name, username, phone, target_exam, dob, age, gender, country="India", state="N/A", referred_by=None):
+def save_user_profile(user_id, full_name, username, phone, target_exam, dob, age, gender, pin, sec_q, sec_a, country="India", state="N/A", referred_by=None):
     conn = get_db()
     cursor = conn.cursor()
     now_str = get_ist_timestamp_str()
@@ -338,8 +372,8 @@ def save_user_profile(user_id, full_name, username, phone, target_exam, dob, age
     student_id = generate_student_id(full_name, dob)
 
     cursor.execute('''
-        INSERT INTO users (user_id, student_id, full_name, username, phone_number, target_exam, dob, age, gender, country, state, referred_by, last_profile_edit, last_active, is_verified, created_at)
-        VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, 1, ?)
+        INSERT INTO users (user_id, student_id, full_name, username, phone_number, target_exam, dob, age, gender, pin, security_question, security_answer, country, state, referred_by, last_profile_edit, last_active, is_banned, is_verified, created_at)
+        VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, 0, 1, ?)
         ON CONFLICT(user_id) DO UPDATE SET
             student_id=excluded.student_id,
             full_name=excluded.full_name,
@@ -349,12 +383,15 @@ def save_user_profile(user_id, full_name, username, phone, target_exam, dob, age
             dob=excluded.dob,
             age=excluded.age,
             gender=excluded.gender,
+            pin=excluded.pin,
+            security_question=excluded.security_question,
+            security_answer=excluded.security_answer,
             country=excluded.country,
             state=excluded.state,
             last_profile_edit=?,
             last_active=?,
             is_verified=1
-    ''', (user_id, student_id, full_name, username, phone, target_exam, dob, age, gender, country, state, referred_by, now_str, now_str, now_str, now_str, now_str))
+    ''', (user_id, student_id, full_name, username, phone, target_exam, dob, age, gender, pin, sec_q, sec_a, country, state, referred_by, now_str, now_str, now_str, now_str, now_str))
     
     if referred_by and referred_by != user_id:
         cursor.execute("UPDATE users SET referral_count = referral_count + 1 WHERE user_id = ?", (referred_by,))

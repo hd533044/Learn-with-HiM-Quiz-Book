@@ -1,6 +1,7 @@
 import re
 import logging
 import warnings
+import calendar
 from datetime import datetime
 from telegram import Update, InlineKeyboardMarkup, InlineKeyboardButton, ReplyKeyboardMarkup, KeyboardButton, ReplyKeyboardRemove
 from telegram.warnings import PTBUserWarning
@@ -18,8 +19,8 @@ import time
 
 warnings.filterwarnings("ignore", category=PTBUserWarning)
 
-# Fixed: range(9) for 9 state constants
-NAME, EXAM, COUNTRY, STATE, PHONE, GENDER, DOB_YEAR, DOB_MONTH, EDIT_WARN = range(9)
+# Updated states to include exact Day selection
+NAME, EXAM, COUNTRY, STATE, PHONE, GENDER, DOB_YEAR, DOB_MONTH, DOB_DAY, EDIT_WARN = range(9)
 
 INDIAN_STATES_AND_UTS = [
     "Andhra Pradesh", "Arunachal Pradesh", "Assam", "Bihar", "Chhattisgarh", "Goa", 
@@ -42,7 +43,7 @@ def build_state_keyboard():
 
 def build_year_keyboard():
     current_year = datetime.now().year
-    years = [str(y) for i, y in enumerate(range(current_year - 45, current_year - 10))]
+    years = [str(y) for y in range(current_year - 45, current_year - 10)]
     keyboard = []
     for i in range(0, len(years), 4):
         row = [InlineKeyboardButton(y, callback_data=f"doby_{y}") for y in years[i:i+4]]
@@ -54,6 +55,16 @@ def build_month_keyboard():
     keyboard = []
     for i in range(0, len(months), 3):
         row = [InlineKeyboardButton(m, callback_data=f"dobm_{idx+1:02d}") for idx, m in enumerate(months[i:i+3], start=i)]
+        keyboard.append(row)
+    return InlineKeyboardMarkup(keyboard)
+
+def build_day_keyboard(year: int, month: int):
+    """Builds a dynamic grid of days based on month and year length."""
+    num_days = calendar.monthrange(year, month)[1]
+    days = [f"{d:02d}" for d in range(1, num_days + 1)]
+    keyboard = []
+    for i in range(0, len(days), 7):
+        row = [InlineKeyboardButton(d, callback_data=f"dobd_{d}") for d in days[i:i+7]]
         keyboard.append(row)
     return InlineKeyboardMarkup(keyboard)
 
@@ -310,9 +321,9 @@ async def phone_contact_step(update: Update, context: ContextTypes.DEFAULT_TYPE)
     phone_num = update.message.contact.phone_number
     context.user_data["phone_number"] = phone_num
 
+    # Fixed: Removed 'Other' option from gender selection
     gender_buttons = InlineKeyboardMarkup([
-        [InlineKeyboardButton("Male 👨", callback_data="gen_Male"), InlineKeyboardButton("Female 👩", callback_data="gen_Female")],
-        [InlineKeyboardButton("Other 🧑", callback_data="gen_Other")]
+        [InlineKeyboardButton("Male 👨", callback_data="gen_Male"), InlineKeyboardButton("Female 👩", callback_data="gen_Female")]
     ])
 
     await update.message.reply_text(
@@ -360,9 +371,29 @@ async def dob_month_callback(update: Update, context: ContextTypes.DEFAULT_TYPE)
     await query.answer()
     
     selected_month = query.data.replace("dobm_", "")
-    birth_year = context.user_data.get("birth_year", "2002")
+    context.user_data["birth_month"] = selected_month
     
-    dob_str = f"15-{selected_month}-{birth_year}"
+    selected_year = int(context.user_data.get("birth_year", "2002"))
+    selected_month_int = int(selected_month)
+
+    await query.edit_message_text(
+        f"📅 **Selected Birth Period:** `{selected_month}/{selected_year}`\n\n"
+        f"🗓 **Select Exact Birth Date (Day):**\n"
+        f"Please tap your exact Day of Birth from below:",
+        reply_markup=build_day_keyboard(selected_year, selected_month_int),
+        parse_mode="Markdown"
+    )
+    return DOB_DAY
+
+async def dob_day_callback(update: Update, context: ContextTypes.DEFAULT_TYPE):
+    query = update.callback_query
+    await query.answer()
+    
+    selected_day = query.data.replace("dobd_", "")
+    birth_year = context.user_data.get("birth_year", "2002")
+    birth_month = context.user_data.get("birth_month", "01")
+    
+    dob_str = f"{selected_day}-{birth_month}-{birth_year}"
     calc_age = datetime.now().year - int(birth_year)
 
     user = update.effective_user
@@ -391,7 +422,8 @@ async def dob_month_callback(update: Update, context: ContextTypes.DEFAULT_TYPE)
         text=(
             f"🎉 **Student Registration Complete!**\n"
             f"━━━━━━━━━━━━━━━━━━━━━━━━━\n"
-            f"🪪 **OFFICIAL STUDENT ID ISSUED:** `{student_id}`\n\n"
+            f"🪪 **OFFICIAL STUDENT ID ISSUED:** `{student_id}`\n"
+            f"🎂 **DOB Registered:** `{dob_str}`\n\n"
             f"Your official student file `data/user_profiles/{student_id}.json` is live and active!\n\n"
             f"👉 Tap **Launch Quiz** below or use the square bot menu to begin!"
         ),
@@ -435,6 +467,7 @@ def get_onboarding_handler():
             GENDER: [CallbackQueryHandler(gender_callback, pattern="^gen_")],
             DOB_YEAR: [CallbackQueryHandler(dob_year_callback, pattern="^doby_")],
             DOB_MONTH: [CallbackQueryHandler(dob_month_callback, pattern="^dobm_")],
+            DOB_DAY: [CallbackQueryHandler(dob_day_callback, pattern="^dobd_")],
         },
         fallbacks=[CommandHandler("cancel", cancel_onboarding)],
         per_chat=True,

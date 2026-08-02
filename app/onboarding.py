@@ -207,22 +207,6 @@ async def login_pin_step(update: Update, context: ContextTypes.DEFAULT_TYPE):
         return LOGIN_PIN
 
     user = update.effective_user
-    save_user_profile(
-        user_id=user.id,
-        full_name=u['full_name'],
-        username=user.username or u['username'],
-        phone=u['phone_number'],
-        target_exam=u['target_exam'],
-        dob=u['dob'],
-        age=u['age'],
-        gender=u['gender'],
-        pin=u['pin'],
-        sec_q=u.get('security_question', 'Default'),
-        sec_a=u.get('security_answer', 'Default'),
-        country=u.get('country', 'India'),
-        state=u.get('state', 'N/A')
-    )
-
     await update.message.reply_text(
         f"🎉 **LOGIN SUCCESSFUL!**\n"
         f"━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\n"
@@ -323,7 +307,13 @@ async def rec_sec_ans_step(update: Update, context: ContextTypes.DEFAULT_TYPE):
         await update.message.reply_text("❌ **Incorrect Security Answer!**\n\nPlease try again or tap below to reset using another method:", reply_markup=rec_btn)
         return REC_SEC_ANS
 
-    await update.message.reply_text("✅ **Identity Verified!** Please enter your **New 4-Digit Secret PIN**:")
+    await update.message.reply_text(
+        f"✅ **IDENTITY VERIFIED!**\n\n"
+        f"👤 **Student Name:** {u['full_name']}\n"
+        f"🪪 **Student ID:** `{u['student_id']}`\n\n"
+        f"Please enter your **New Secret 4-Digit PIN** below:",
+        parse_mode="Markdown"
+    )
     return RESET_PIN
 
 async def rec_phone_step(update: Update, context: ContextTypes.DEFAULT_TYPE):
@@ -345,7 +335,14 @@ async def rec_phone_step(update: Update, context: ContextTypes.DEFAULT_TYPE):
         )
         return REC_PHONE
 
-    await update.message.reply_text("✅ **Phone Verification Successful!** Please enter your **New 4-Digit Secret PIN**:", reply_markup=ReplyKeyboardRemove())
+    await update.message.reply_text(
+        f"✅ **PHONE VERIFIED SUCCESSFULLY!**\n\n"
+        f"👤 **Student Name:** {u['full_name']}\n"
+        f"🪪 **Student ID:** `{u['student_id']}`\n\n"
+        f"Please enter your **New Secret 4-Digit PIN** below:",
+        reply_markup=ReplyKeyboardRemove(),
+        parse_mode="Markdown"
+    )
     return RESET_PIN
 
 async def rec_name_dob_step(update: Update, context: ContextTypes.DEFAULT_TYPE):
@@ -356,7 +353,13 @@ async def rec_name_dob_step(update: Update, context: ContextTypes.DEFAULT_TYPE):
     reg_dob = str(u.get("dob", "")).strip().lower()
 
     if text_input in reg_name or text_input == reg_dob:
-        await update.message.reply_text("✅ **Name / DOB Verified!** Please enter your **New 4-Digit Secret PIN**:")
+        await update.message.reply_text(
+            f"✅ **NAME / DOB VERIFIED!**\n\n"
+            f"👤 **Student Name:** {u['full_name']}\n"
+            f"🪪 **Student ID:** `{u['student_id']}`\n\n"
+            f"Please enter your **New Secret 4-Digit PIN** below:",
+            parse_mode="Markdown"
+        )
         return RESET_PIN
 
     rec_btn = InlineKeyboardMarkup([[InlineKeyboardButton("🔑 Reset Your PIN / Password", callback_data="login_forgot_pin")]])
@@ -413,7 +416,7 @@ async def rec_dob_day_callback(update: Update, context: ContextTypes.DEFAULT_TYP
     await query.delete_message()
     await context.bot.send_message(
         chat_id=query.message.chat_id,
-        text="✅ **DOB Verified!** Please enter your **New 4-Digit Secret PIN**:",
+        text=f"✅ **DOB VERIFIED!**\n\n👤 **Student Name:** {u['full_name']}\n🪪 **Student ID:** `{u['student_id']}`\n\nPlease enter your **New Secret 4-Digit PIN** below:",
         parse_mode="Markdown"
     )
     return RESET_PIN
@@ -425,32 +428,21 @@ async def reset_pin_step(update: Update, context: ContextTypes.DEFAULT_TYPE):
         return RESET_PIN
 
     u = context.user_data.get("login_target_user")
-    user = update.effective_user
-    
-    target_uid = u['user_id'] if u else user.id
+    if not u:
+        user = update.effective_user
+        u = get_user_profile(user.id)
+
+    target_uid = u['user_id']
     update_user_pin(target_uid, new_pin)
 
-    save_user_profile(
-        user_id=user.id,
-        full_name=u['full_name'],
-        username=user.username or u['username'],
-        phone=u['phone_number'],
-        target_exam=u['target_exam'],
-        dob=u['dob'],
-        age=u['age'],
-        gender=u['gender'],
-        pin=new_pin,
-        sec_q=u.get('security_question', 'Default'),
-        sec_a=u.get('security_answer', 'Default'),
-        country=u.get('country', 'India'),
-        state=u.get('state', 'N/A')
-    )
-
     await update.message.reply_text(
-        f"🎉 **PIN RESET & LOGIN SUCCESSFUL!**\n"
+        f"🎉 **PIN RESET SUCCESSFUL!**\n"
         f"━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\n"
-        f"Your new secret 4-digit PIN is set to `{new_pin}`.\n\n"
-        f"👉 Tap **Launch Quiz** below to begin!",
+        f"👤 **Student Name:** {u['full_name']}\n"
+        f"🪪 **Student ID:** `{u['student_id']}`\n"
+        f"🔑 **Your New Secret PIN:** `{new_pin}`\n\n"
+        f"Your original account remains 100% active with all scores, saved questions, and limits fully intact.\n\n"
+        f"👉 Tap **Launch Quiz** below or use /quiz to continue practicing!",
         reply_markup=InlineKeyboardMarkup([
             [InlineKeyboardButton("🚀 Launch Quiz", callback_data="cmd_quiz"), InlineKeyboardButton("👤 Profile", callback_data="cmd_profile")]
         ]),

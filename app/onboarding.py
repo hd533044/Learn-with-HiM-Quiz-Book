@@ -19,8 +19,8 @@ import time
 
 warnings.filterwarnings("ignore", category=PTBUserWarning)
 
-# Updated states to include exact Day selection
-NAME, EXAM, COUNTRY, STATE, PHONE, GENDER, DOB_YEAR, DOB_MONTH, DOB_DAY, EDIT_WARN = range(9)
+# Fixed: Updated to range(10) for all 10 conversation states
+NAME, EXAM, COUNTRY, STATE, PHONE, GENDER, DOB_YEAR, DOB_MONTH, DOB_DAY, EDIT_WARN = range(10)
 
 INDIAN_STATES_AND_UTS = [
     "Andhra Pradesh", "Arunachal Pradesh", "Assam", "Bihar", "Chhattisgarh", "Goa", 
@@ -321,7 +321,6 @@ async def phone_contact_step(update: Update, context: ContextTypes.DEFAULT_TYPE)
     phone_num = update.message.contact.phone_number
     context.user_data["phone_number"] = phone_num
 
-    # Fixed: Removed 'Other' option from gender selection
     gender_buttons = InlineKeyboardMarkup([
         [InlineKeyboardButton("Male 👨", callback_data="gen_Male"), InlineKeyboardButton("Female 👩", callback_data="gen_Female")]
     ])

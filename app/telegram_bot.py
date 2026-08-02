@@ -138,14 +138,13 @@ async def saved_questions_command(update: Update, context: ContextTypes.DEFAULT_
 
     for idx, sq in enumerate(saved[:15], start=1):
         opts_list = json.loads(sq['options_json']) if sq['options_json'] else []
-        opts_str = "\n".join([f"  ({chr(65+i)}) {opt}" for i, opt in enumerate(opts_list)])
-        corr_letter = chr(65 + sq['correct_option']) if 0 <= sq['correct_option'] < len(opts_list) else 'N/A'
+        corr_idx = sq['correct_option']
+        corr_ans = opts_list[corr_idx] if 0 <= corr_idx < len(opts_list) else 'N/A'
         
         lines.append(
             f"**{idx}. Saved At:** `{sq['saved_at']}`\n"
             f"❓ **Q:** {sq['question_text']}\n"
-            f"{opts_str}\n"
-            f"✅ **Correct Option:** `{corr_letter}`\n"
+            f"✅ **Correct Answer:** `{corr_ans}`\n"
             f"💡 **Explanation:** {sq['explanation']}\n"
             f"──────────────────────────────"
         )
@@ -366,6 +365,28 @@ async def handle_text_messages(update: Update, context: ContextTypes.DEFAULT_TYP
     user = update.effective_user
     text = update.message.text.strip()
     log_user_activity_time(user.id, seconds=10)
+
+    # Admin Search Handler
+    if user.id == PRIMARY_ADMIN_ID and context.user_data.get("awaiting_admin_search"):
+        context.user_data["awaiting_admin_search"] = False
+        all_u = get_all_users()
+        matches = [
+            u for u in all_u if text.lower() in str(u.get("student_id", "")).lower() 
+            or text.lower() in str(u.get("phone_number", "")).lower() 
+            or text.lower() in str(u.get("full_name", "")).lower()
+        ]
+
+        if not matches:
+            await update.message.reply_text(f"⚠️ No student found matching query: `{text}`", parse_mode="Markdown")
+            return
+
+        keyboard = []
+        for m in matches[:10]:
+            sid = m.get("student_id") or f"USER_{m['user_id']}"
+            keyboard.append([InlineKeyboardButton(f"👤 {m['full_name']} (ID: {sid})", callback_data=f"admin_inspect_u_{m['user_id']}")])
+        
+        await update.message.reply_text(f"🔍 **Search Results for '{text}':**", reply_markup=InlineKeyboardMarkup(keyboard), parse_mode="Markdown")
+        return
 
     if context.user_data.get("awaiting_custom_feedback"):
         context.user_data["awaiting_custom_feedback"] = False

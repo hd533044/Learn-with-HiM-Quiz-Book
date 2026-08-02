@@ -495,12 +495,17 @@ async def auto_skip_task(chat_id: int, user_id: int, poll_id: str, expected_idx:
         session = ACTIVE_SESSIONS.get(user_id)
         if session and not session.get("is_paused") and session["current_index"] == expected_idx:
             q = data.get("q_data", {})
+            opts = q.get("options", [])
+            c_idx = data.get("correct_id", 0)
+            c_ans_text = opts[c_idx] if 0 <= c_idx < len(opts) else "N/A"
+
             session.setdefault("detailed_logs", []).append({
                 "question_id": q.get("id"),
                 "question_text": q.get("question"),
                 "status": "SKIPPED_TIMEOUT",
                 "selected_option": None,
-                "correct_option": data.get("correct_id"),
+                "correct_option": c_idx,
+                "correct_answer_text": c_ans_text,
                 "timestamp": get_ist_timestamp_str()
             })
             session["skipped"] += 1
@@ -531,6 +536,9 @@ async def handle_poll_answer(update: Update, context: ContextTypes.DEFAULT_TYPE)
         selected = answer.option_ids[0] if answer.option_ids else -1
         correct_id = data["correct_id"]
         q = data.get("q_data", {})
+        opts = q.get("options", [])
+
+        c_ans_text = opts[correct_id] if 0 <= correct_id < len(opts) else "N/A"
 
         is_correct = (selected == correct_id)
         if is_correct:
@@ -547,6 +555,7 @@ async def handle_poll_answer(update: Update, context: ContextTypes.DEFAULT_TYPE)
             "status": status,
             "selected_option": selected,
             "correct_option": correct_id,
+            "correct_answer_text": c_ans_text,
             "timestamp": get_ist_timestamp_str()
         })
 

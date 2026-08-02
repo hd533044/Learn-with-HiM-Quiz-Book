@@ -2,12 +2,13 @@ import time
 import json
 import logging
 import math
+import os
 from telegram import Update, InlineKeyboardMarkup, InlineKeyboardButton
 from telegram.ext import ContextTypes
-from app.config import PRIMARY_ADMIN_ID
+from app.config import PRIMARY_ADMIN_ID, USER_PROFILES_DIR
 from app.database import (
     get_all_users, set_maintenance_until, get_maintenance_until, 
-    get_user_profile, get_db
+    get_user_profile, get_db, sync_user_json_profile
 )
 from app.stats import get_user_performance_summary, calculate_user_rank, calculate_user_percentile
 
@@ -25,7 +26,8 @@ async def admin_portal_command(update: Update, context: ContextTypes.DEFAULT_TYP
     m_status = "🟢 Active (Online)" if now_ts >= m_until else "🔴 PAUSED (Maintenance Mode)"
 
     keyboard = [
-        [InlineKeyboardButton("👥 Browse Student Profiles (/user_profiles)", callback_data="admin_users_page_0")],
+        [InlineKeyboardButton("👥 Browse Student Directory (/user_profiles)", callback_data="admin_users_page_0")],
+        [InlineKeyboardButton("🔍 Search Student (ID/Phone/Name)", callback_data="admin_search_prompt")],
         [InlineKeyboardButton("⏸ Pause Bot 5 Mins", callback_data="admin_pause_5"), InlineKeyboardButton("⏸ Pause Bot 10 Mins", callback_data="admin_pause_10")],
         [InlineKeyboardButton("▶️ Resume Bot Now", callback_data="admin_resume_now")],
         [InlineKeyboardButton("📢 Global Broadcast", callback_data="admin_broadcast")]
@@ -97,6 +99,12 @@ async def admin_callback_handler(update: Update, context: ContextTypes.DEFAULT_T
             except Exception:
                 pass
 
+    # Search Student Prompt
+    elif data == "admin_search_prompt":
+        await query.answer()
+        context.user_data["awaiting_admin_search"] = True
+        await query.edit_message_text("🔍 **STUDENT SEARCH ENGINE**\n\nPlease reply with the student's **Student ID**, **Phone Number**, or **Full Name**:")
+
     # Paginated Student Directory
     elif data.startswith("admin_users_page_"):
         await query.answer()
@@ -154,50 +162,56 @@ async def admin_callback_handler(update: Update, context: ContextTypes.DEFAULT_T
             await query.edit_message_text("⚠️ Student profile not found.")
             return
 
-        sid = u.get("student_id") or f"USER_{u['user_id']}"
+        sid = u.get("student_id") or f"USER_{u.get('user_id')}"
 
         keyboard = [
             [InlineKeyboardButton("📋 Personal Details", callback_data=f"audit_personal_{target_uid}"), InlineKeyboardButton("⏱ Time & Activity Log", callback_data=f"audit_activity_{target_uid}")],
             [InlineKeyboardButton("📊 Overall Performance", callback_data=f"audit_perf_{target_uid}"), InlineKeyboardButton("📅 Date-wise Quiz Summary", callback_data=f"audit_datesummary_{target_uid}")],
             [InlineKeyboardButton("🎯 Attempted Questions", callback_data=f"audit_attempted_{target_uid}"), InlineKeyboardButton("❌ Wrong Questions", callback_data=f"audit_wrong_{target_uid}")],
-            [InlineKeyboardButton("💾 Saved Questions", callback_data="audit_saved_{target_uid}".replace("{target_uid}", str(target_uid))), InlineKeyboardButton("💬 Student Feedback", callback_data=f"audit_feedback_{target_uid}")],
-            [InlineKeyboardButton("💳 Subscriptions & Badges", callback_data=f"audit_sub_{target_uid}")],
+            [InlineKeyboardButton("💾 Saved Questions", callback_data=f"audit_saved_{target_uid}"), InlineKeyboardButton("💬 Student Feedback", callback_data=f"audit_feedback_{target_uid}")],
+            [InlineKeyboardButton("🎁 Grant +20 Bonus Quota", callback_data=f"audit_grant_{target_uid}"), InlineKeyboardButton("📥 Export Raw JSON File", callback_data=f"audit_exportjson_{target_uid}")],
             [InlineKeyboardButton("🔙 Back to Student Directory", callback_data="admin_users_page_0")]
         ]
 
         msg = (
             f"🪪 **STUDENT AUDIT CONTROL PANEL**\n"
             f"━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\n"
-            f"• **Student Name:** {u['full_name']}\n"
+            f"• **Student Name:** {u.get('full_name')}\n"
             f"• **Student ID:** `{sid}`\n"
-            f"• **Telegram ID:** `{u['user_id']}`\n"
-            f"• **Target Exam:** `{u['target_exam']}`\n"
+            f"• **Telegram ID:** `{u.get('user_id')}`\n"
+            f"• **Target Exam:** `{u.get('target_exam')}`\n"
             f"• **File Ledger:** `data/user_profiles/{sid}.json`\n\n"
             f"Select an audit module below to view detailed reports:"
         )
         await query.edit_message_text(msg, reply_markup=InlineKeyboardMarkup(keyboard), parse_mode="Markdown")
 
-    # Audit Module 1: Personal Details
+    # Audit Module 1: Personal Details (FIXED BUG)
     elif data.startswith("audit_personal_"):
         await query.answer()
         target_uid = int(data.replace("audit_personal_", ""))
         u = get_user_profile(target_uid)
-        sid = u.get("student_id") or f"USER_{u['user_id']}"
+        
+        if not u:
+            await query.edit_message_text("⚠️ Error retrieving user profile.")
+            return
+
+        sid = u.get("student_id") or f"USER_{u.get('user_id')}"
 
         msg = (
             f"📋 **STUDENT PERSONAL DETAILS**\n"
             f"━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\n"
-            f"• **Full Name:** {u['full_name']}\n"
+            f"• **Full Name:** {u.get('full_name', 'N/A')}\n"
             f"• **Student ID:** `{sid}`\n"
-            f"• **Telegram ID:** `{u['user_id']}`\n"
-            f"• **Username:** @{u['username'] or 'N/A'}\n"
-            f"• **Phone Number:** `{u['phone_number']}`\n"
-            f"• **Target Exam:** `{u['target_exam']}`\n"
+            f"• **Telegram ID:** `{u.get('user_id')}`\n"
+            f"• **Username:** @{u.get('username') or 'N/A'}\n"
+            f"• **Phone Number:** `{u.get('phone_number') or 'N/A'}`\n"
+            f"• **Target Exam:** `{u.get('target_exam', 'N/A')}`\n"
             f"• **Date of Birth:** `{u.get('dob', 'N/A')}`\n"
-            f"• **Calculated Age:** `{u['age']} yrs`\n"
-            f"• **Gender:** `{u['gender']}`\n"
+            f"• **Calculated Age:** `{u.get('age', 'N/A')} yrs`\n"
+            f"• **Gender:** `{u.get('gender', 'N/A')}`\n"
             f"• **Location:** `{u.get('state', 'N/A')}, {u.get('country', 'India')}`\n"
-            f"• **Registered At:** `{u['created_at']}`\n"
+            f"• **Bonus Quota:** `{u.get('bonus_quota', 0)} Qs`\n"
+            f"• **Registered At:** `{u.get('created_at', 'N/A')}`\n"
             f"• **Last Active:** `{u.get('last_active', 'N/A')}`\n"
             f"• **Referred By ID:** `{u.get('referred_by') or 'None'}`\n"
             f"• **Referral Count:** `{u.get('referral_count', 0)}` friends"
@@ -220,7 +234,7 @@ async def admin_callback_handler(update: Update, context: ContextTypes.DEFAULT_T
         lines = [
             f"⏱ **STUDENT ACTIVITY & TIME LOG**",
             f"━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━",
-            f"👤 **Student:** {u['full_name']} (`{u.get('student_id')}`)",
+            f"👤 **Student:** {u.get('full_name')} (`{u.get('student_id')}`)",
             f"• **Last Login / Active:** `{u.get('last_active', 'N/A')}`",
             f"• **Total Time Spent Overall:** `{total_sec} sec` ({round(total_sec/60, 2)} mins)\n",
             f"📅 **Date-Wise Time Spent Breakdown:**"
@@ -253,7 +267,7 @@ async def admin_callback_handler(update: Update, context: ContextTypes.DEFAULT_T
         msg = (
             f"📊 **STUDENT OVERALL PERFORMANCE**\n"
             f"━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\n"
-            f"👤 **Student:** {u['full_name']} (`{u.get('student_id')}`)\n\n"
+            f"👤 **Student:** {u.get('full_name')} (`{u.get('student_id')}`)\n\n"
             f"• **Total Tests Completed:** `{perf.get('total_tests', 0)}`\n"
             f"• **Total Questions Attempted:** `{total_qs}`\n"
             f"• **Correct Answers:** `{total_correct}` ✅\n"
@@ -280,7 +294,7 @@ async def admin_callback_handler(update: Update, context: ContextTypes.DEFAULT_T
         lines = [
             f"📅 **DATE-WISE QUIZ SUMMARY**",
             f"━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━",
-            f"👤 **Student:** {u['full_name']} (`{u.get('student_id')}`)\n"
+            f"👤 **Student:** {u.get('full_name')} (`{u.get('student_id')}`)\n"
         ]
 
         if attempts:
@@ -308,7 +322,7 @@ async def admin_callback_handler(update: Update, context: ContextTypes.DEFAULT_T
         keyboard = [[InlineKeyboardButton("🔙 Back to Dashboard", callback_data=f"admin_inspect_u_{target_uid}")]]
         await query.edit_message_text(msg, reply_markup=InlineKeyboardMarkup(keyboard), parse_mode="Markdown")
 
-    # Audit Module 5: Attempted Questions
+    # Audit Module 5: Attempted Questions (FIXED WITH FULL TEXT ANSWERS)
     elif data.startswith("audit_attempted_"):
         await query.answer()
         target_uid = int(data.replace("audit_attempted_", ""))
@@ -321,7 +335,7 @@ async def admin_callback_handler(update: Update, context: ContextTypes.DEFAULT_T
         lines = [
             f"🎯 **ATTEMPTED QUESTIONS LOG (One-Liner Format)**",
             f"━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━",
-            f"👤 **Student:** {u['full_name']} (`{u.get('student_id')}`)\n"
+            f"👤 **Student:** {u.get('full_name')} (`{u.get('student_id')}`)\n"
         ]
 
         found_any = False
@@ -334,9 +348,9 @@ async def admin_callback_handler(update: Update, context: ContextTypes.DEFAULT_T
                 lines.append(f"📅 **Quiz At:** `{dt}`")
                 for idx, q_item in enumerate(details, start=1):
                     q_text = q_item.get("question_text", "N/A")
-                    c_opt = q_item.get("correct_option", 0)
+                    ans_text = q_item.get("correct_answer_text", "N/A")
                     status_icon = "✅" if q_item.get("status") == "CORRECT" else "❌" if q_item.get("status") == "WRONG" else "⏭"
-                    lines.append(f" {idx}. {status_icon} `{q_text}` — [Correct: Option {chr(65+c_opt)}]")
+                    lines.append(f" {idx}. {status_icon} `{q_text}`\n    👉 **Ans:** `{ans_text}`")
                 lines.append("")
 
         if not found_any:
@@ -349,7 +363,7 @@ async def admin_callback_handler(update: Update, context: ContextTypes.DEFAULT_T
         keyboard = [[InlineKeyboardButton("🔙 Back to Dashboard", callback_data=f"admin_inspect_u_{target_uid}")]]
         await query.edit_message_text(msg, reply_markup=InlineKeyboardMarkup(keyboard), parse_mode="Markdown")
 
-    # Audit Module 6: Wrong Questions Log
+    # Audit Module 6: Wrong Questions Log (FIXED WITH FULL TEXT ANSWERS)
     elif data.startswith("audit_wrong_"):
         await query.answer()
         target_uid = int(data.replace("audit_wrong_", ""))
@@ -362,7 +376,7 @@ async def admin_callback_handler(update: Update, context: ContextTypes.DEFAULT_T
         lines = [
             f"❌ **WRONG QUESTIONS LOG (One-Liner Format)**",
             f"━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━",
-            f"👤 **Student:** {u['full_name']} (`{u.get('student_id')}`)\n"
+            f"👤 **Student:** {u.get('full_name')} (`{u.get('student_id')}`)\n"
         ]
 
         found_wrong = False
@@ -376,8 +390,8 @@ async def admin_callback_handler(update: Update, context: ContextTypes.DEFAULT_T
                 lines.append(f"📅 **Quiz At:** `{dt}`")
                 for idx, q_item in enumerate(wrong_items, start=1):
                     q_text = q_item.get("question_text", "N/A")
-                    c_opt = q_item.get("correct_option", 0)
-                    lines.append(f" {idx}. ❌ `{q_text}` — [Correct Answer: Option {chr(65+c_opt)}]")
+                    ans_text = q_item.get("correct_answer_text", "N/A")
+                    lines.append(f" {idx}. ❌ `{q_text}`\n    👉 **Correct Ans:** `{ans_text}`")
                 lines.append("")
 
         if not found_wrong:
@@ -390,7 +404,7 @@ async def admin_callback_handler(update: Update, context: ContextTypes.DEFAULT_T
         keyboard = [[InlineKeyboardButton("🔙 Back to Dashboard", callback_data=f"admin_inspect_u_{target_uid}")]]
         await query.edit_message_text(msg, reply_markup=InlineKeyboardMarkup(keyboard), parse_mode="Markdown")
 
-    # Audit Module 7: Saved Questions
+    # Audit Module 7: Saved Questions (FIXED WITH FULL TEXT ANSWERS)
     elif data.startswith("audit_saved_"):
         await query.answer()
         target_uid = int(data.replace("audit_saved_", ""))
@@ -403,16 +417,18 @@ async def admin_callback_handler(update: Update, context: ContextTypes.DEFAULT_T
         lines = [
             f"💾 **SAVED QUESTIONS REPORT (One-Liner Format)**",
             f"━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━",
-            f"👤 **Student:** {u['full_name']} (`{u.get('student_id')}`)",
+            f"👤 **Student:** {u.get('full_name')} (`{u.get('student_id')}`)",
             f"• **Total Bookmarks:** `{len(saved)}`\n"
         ]
 
         if saved:
             for idx, sq in enumerate(saved, start=1):
                 sq_d = dict(sq)
-                c_opt = sq_d.get("correct_option", 0)
+                opts_list = json.loads(sq_d['options_json']) if sq_d.get('options_json') else []
+                c_opt_idx = sq_d.get("correct_option", 0)
+                ans_text = opts_list[c_opt_idx] if 0 <= c_opt_idx < len(opts_list) else "N/A"
                 s_at = sq_d.get("saved_at", "N/A")
-                lines.append(f"**{idx}. [{s_at}]** 📌 `{sq_d['question_text']}` — [Correct: Option {chr(65+c_opt)}]")
+                lines.append(f"**{idx}. [{s_at}]** 📌 `{sq_d['question_text']}`\n    👉 **Correct Ans:** `{ans_text}`")
         else:
             lines.append("*No saved questions bookmarked by this student.*")
 
@@ -436,7 +452,7 @@ async def admin_callback_handler(update: Update, context: ContextTypes.DEFAULT_T
         lines = [
             f"💬 **STUDENT FEEDBACK & REVIEWS**",
             f"━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━",
-            f"👤 **Student:** {u['full_name']} (`{u.get('student_id')}`)\n"
+            f"👤 **Student:** {u.get('full_name')} (`{u.get('student_id')}`)\n"
         ]
 
         if fbs:
@@ -450,28 +466,43 @@ async def admin_callback_handler(update: Update, context: ContextTypes.DEFAULT_T
         keyboard = [[InlineKeyboardButton("🔙 Back to Dashboard", callback_data=f"admin_inspect_u_{target_uid}")]]
         await query.edit_message_text(msg, reply_markup=InlineKeyboardMarkup(keyboard), parse_mode="Markdown")
 
-    # Audit Module 9: Subscriptions & Badges (Future Extension)
-    elif data.startswith("audit_sub_"):
+    # Audit Module 9: Grant Bonus Quota
+    elif data.startswith("audit_grant_"):
         await query.answer()
-        target_uid = int(data.replace("audit_sub_", ""))
-        u = get_user_profile(target_uid)
+        target_uid = int(data.replace("audit_grant_", ""))
+        conn = get_db()
+        conn.execute("UPDATE users SET bonus_quota = bonus_quota + 20 WHERE user_id = ?", (target_uid,))
+        conn.commit()
+        conn.close()
+        sync_user_json_profile(target_uid)
 
-        msg = (
-            f"💳 **SUBSCRIPTIONS, PAYMENTS & BADGES**\n"
-            f"━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\n"
-            f"👤 **Student:** {u['full_name']} (`{u.get('student_id')}`)\n\n"
-            f"💎 **Active Subscription Plan:** `STANDARD_FREE_TIER`\n"
-            f"💰 **Total Amount Paid:** `₹0.00` (Free Plan)\n"
-            f"📜 **Payment History:** `0 Transactions`\n\n"
-            f"🏅 **Earned Scholar Badges:**\n"
-            f" • 🌱 Early Learner\n"
-            f" • 🪪 Verified Scholar\n\n"
-            f"🔒 *User Passwords & Pro Plan Subscriptions will reflect here when activated in future.*"
+        await query.edit_message_text(
+            f"🎉 **Bonus Quota Granted!**\n\nAdded +20 daily question quota to user `{target_uid}`.",
+            reply_markup=InlineKeyboardMarkup([[InlineKeyboardButton("🔙 Back to Dashboard", callback_data=f"admin_inspect_u_{target_uid}")]])
         )
-        keyboard = [[InlineKeyboardButton("🔙 Back to Dashboard", callback_data=f"admin_inspect_u_{target_uid}")]]
-        await query.edit_message_text(msg, reply_markup=InlineKeyboardMarkup(keyboard), parse_mode="Markdown")
 
-    # Broadcast Mode
+    # Audit Module 10: Export JSON File
+    elif data.startswith("audit_exportjson_"):
+        await query.answer()
+        target_uid = int(data.replace("audit_exportjson_", ""))
+        u = get_user_profile(target_uid)
+        sid = u.get("student_id") or f"USER_{u.get('user_id')}"
+        
+        sync_user_json_profile(target_uid)
+        filepath = os.path.join(USER_PROFILES_DIR, f"{sid}.json")
+
+        if os.path.exists(filepath):
+            with open(filepath, "rb") as doc:
+                await context.bot.send_document(
+                    chat_id=query.message.chat_id,
+                    document=doc,
+                    filename=f"{sid}.json",
+                    caption=f"📄 **Master Student Profile File:** `{sid}.json`"
+                )
+        else:
+            await query.message.reply_text("⚠️ JSON file not found on disk.")
+
+    # Broadcast
     elif data == "admin_broadcast":
         await query.answer()
         context.user_data["awaiting_broadcast"] = True

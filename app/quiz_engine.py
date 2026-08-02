@@ -16,6 +16,8 @@ from app.pyq_fetcher import fetch_pyqs_for_quiz
 from app.stats import calculate_user_percentile, calculate_user_rank
 from app.pdf_generator import generate_instant_quiz_pdf_report
 
+logger = logging.getLogger(__name__)
+
 ACTIVE_SESSIONS = {}
 POLL_MAP = {}
 TIMER_TASKS = {}
@@ -137,8 +139,7 @@ async def quiz_count_callback(update: Update, context: ContextTypes.DEFAULT_TYPE
     if attempted_today >= allowed_limit:
         await query.answer("🛑 Daily Limit Exhausted! Quiz is locked.", show_alert=True)
         await query.edit_message_text(
-            f"🛑 **WARNING: DAILY FREE LIMIT EXHAUSTED!**\n\n"
-            f"You have reached your actual daily limit of `{allowed_limit}` questions for today (00:00 to 23:59). The `/quiz` command is deactivated.",
+            f"🛑 **WARNING: DAILY FREE LIMIT EXHAUSTED!**\n\nYou have reached your actual daily limit of `{allowed_limit}` questions for today (00:00 to 23:59). The `/quiz` command is deactivated.",
             parse_mode="Markdown"
         )
         return
@@ -553,16 +554,17 @@ async def handle_poll_answer(update: Update, context: ContextTypes.DEFAULT_TYPE)
 
 async def download_instant_pdf_callback(update: Update, context: ContextTypes.DEFAULT_TYPE):
     query = update.callback_query
-    await query.answer("⏳ Generating your instant PDF report card...")
     user_id = query.from_user.id
+    await query.answer("⏳ Generating your instant PDF report card...")
     
-    quiz_result_payload = context.user_data.get("last_quiz_result")
+    # Safely fetch result payload from Application User Data
+    quiz_result_payload = context.application.user_data.get(user_id, {}).get("last_quiz_result")
+    
     if not quiz_result_payload:
         await query.message.reply_text("⚠️ No recent quiz session data found to export.")
         return
 
     profile = await asyncio.to_thread(get_user_profile, user_id)
-    
     pdf_file = await asyncio.to_thread(generate_instant_quiz_pdf_report, user_id, quiz_result_payload)
 
     if pdf_file and os.path.exists(pdf_file):
@@ -594,6 +596,7 @@ async def finish_quiz_and_send_report(chat_id: int, user_id: int, context: Conte
     score = session["score"]
     detailed_logs = session.get("detailed_logs", [])
 
+    # Record to DB asynchronously
     await asyncio.to_thread(
         record_quiz_result,
         user_id, 
@@ -608,8 +611,11 @@ async def finish_quiz_and_send_report(chat_id: int, user_id: int, context: Conte
     percentile = await asyncio.to_thread(calculate_user_percentile, user_id)
     rank_str = await asyncio.to_thread(calculate_user_rank, user_id)
 
-    # Persist session result securely inside context.user_data
-    context.user_data["last_quiz_result"] = {
+    # Global persistent cache for download PDF trigger
+    if user_id not in context.application.user_data:
+        context.application.user_data[user_id] = {}
+        
+    context.application.user_data[user_id]["last_quiz_result"] = {
         "total_questions": total,
         "score": score,
         "correct_count": correct,
@@ -643,4 +649,12 @@ async def finish_quiz_and_send_report(chat_id: int, user_id: int, context: Conte
         f"💡 *Tap the PDF button below to download your full itemized report card!*"
     )
 
-    await context.bot.send_message(chat_id=chat_id, text=report_card, reply_markup=InlineKeyboardMarkup(buttons), parse_mode="Markdown")
+    try:
+        await context.bot.send_message(
+            chat_id=chat_id, 
+            text=report_card, 
+            reply_markup=InlineKeyboardMarkup(buttons), 
+            parse_mode="Markdown"
+        )
+    except Exception as e:
+        logger.error(f"Error sending final quiz report card: {e}")

@@ -1,6 +1,7 @@
 import asyncio
 import logging
 import time
+import os
 from telegram import Update, Poll, InlineKeyboardMarkup, InlineKeyboardButton
 from telegram.ext import ContextTypes
 from app.config import DAILY_QUESTION_LIMIT, CHANNEL_USERNAME, YOUTUBE_CHANNEL_URL, PRIMARY_ADMIN_ID
@@ -13,6 +14,7 @@ from app.database import (
 )
 from app.pyq_fetcher import fetch_pyqs_for_quiz
 from app.stats import calculate_user_percentile, calculate_user_rank
+from app.pdf_generator import generate_instant_quiz_pdf_report
 
 ACTIVE_SESSIONS = {}
 POLL_MAP = {}
@@ -369,7 +371,7 @@ async def stop_quiz_command(update: Update, context: ContextTypes.DEFAULT_TYPE):
     chat_id = update.effective_chat.id
     log_user_activity_time(user_id, seconds=5)
 
-    session = ACTIVE_SESSIONS.pop(user_id, None)
+    session = ACTIVE_SESSIONS.get(user_id)
     paused = get_paused_quiz_state(user_id)
     
     if not session and not paused:
@@ -395,6 +397,9 @@ async def stop_quiz_command(update: Update, context: ContextTypes.DEFAULT_TYPE):
                 skipped_count=session["skipped"],
                 question_details=session.get("detailed_logs", [])
             )
+            # Finish & Generate Instant PDF Report Card
+            await finish_quiz_and_send_report(chat_id, user_id, context, session_override=session)
+            return
     elif paused:
         if paused.get("current_index", 0) > 0:
             record_quiz_result(
@@ -563,8 +568,8 @@ async def handle_poll_answer(update: Update, context: ContextTypes.DEFAULT_TYPE)
         await asyncio.sleep(0.8)
         await send_next_question(chat_id, user_id, context)
 
-async def finish_quiz_and_send_report(chat_id: int, user_id: int, context: ContextTypes.DEFAULT_TYPE):
-    session = ACTIVE_SESSIONS.pop(user_id, None)
+async def finish_quiz_and_send_report(chat_id: int, user_id: int, context: ContextTypes.DEFAULT_TYPE, session_override=None):
+    session = session_override or ACTIVE_SESSIONS.pop(user_id, None)
     if not session:
         return
 
@@ -575,18 +580,56 @@ async def finish_quiz_and_send_report(chat_id: int, user_id: int, context: Conte
     score = session["score"]
     detailed_logs = session.get("detailed_logs", [])
 
-    record_quiz_result(
-        user_id, 
-        score=score, 
-        total_questions=total, 
-        correct_count=correct, 
-        wrong_count=wrong, 
-        skipped_count=skipped,
-        question_details=detailed_logs
-    )
+    if not session_override:
+        record_quiz_result(
+            user_id, 
+            score=score, 
+            total_questions=total, 
+            correct_count=correct, 
+            wrong_count=wrong, 
+            skipped_count=skipped,
+            question_details=detailed_logs
+        )
 
     percentile = calculate_user_percentile(user_id)
     rank_str = calculate_user_rank(user_id)
+    profile = get_user_profile(user_id)
+
+    # 1. Generate Instant PDF Report
+    quiz_result_payload = {
+        "total_questions": total,
+        "score": score,
+        "correct_count": correct,
+        "wrong_count": wrong,
+        "skipped_count": skipped,
+        "details": detailed_logs
+    }
+    
+    pdf_file = generate_instant_quiz_pdf_report(user_id, quiz_result_payload)
+
+    # 2. Upload Instant PDF Document
+    if pdf_file and os.path.exists(pdf_file):
+        with open(pdf_file, "rb") as doc:
+            await context.bot.send_document(
+                chat_id=chat_id,
+                document=doc,
+                filename=os.path.basename(pdf_file),
+                caption=(
+                    f"📄 **OFFICIAL INSTANT QUIZ REPORT CARD**\n"
+                    f"━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\n"
+                    f"👤 **Student:** {profile['full_name'] if profile else 'Student'}\n"
+                    f"🏆 **Final Score:** `{score} / {total}.0`\n"
+                    f"🏷 **Watermark:** `@LearnwithHiM`"
+                )
+            )
+
+    # 3. Corrected Telegram Join Link (@Learnwithhim)
+    buttons = [
+        [InlineKeyboardButton("📖 Review Saved Questions", callback_data="cmd_savedquestions")],
+        [InlineKeyboardButton("📢 Join Telegram Channel (@Learnwithhim)", url="https://t.me/Learnwithhim")],
+        [InlineKeyboardButton("📺 Join YouTube Channel", url=YOUTUBE_CHANNEL_URL)],
+        [InlineKeyboardButton("🚀 Attempt Another Quiz", callback_data="cmd_quiz")]
+    ]
 
     report_card = (
         f"🏆 **OFFICIAL QUIZ REPORT CARD**\n"
@@ -602,14 +645,8 @@ async def finish_quiz_and_send_report(chat_id: int, user_id: int, context: Conte
         f"🎖 **Overall Rank & Percentile:**\n"
         f"• **Global Rank:** `{rank_str}`\n"
         f"• **Percentile Rating:** `{percentile}%`\n"
-        f"━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━"
+        f"━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\n"
+        f"📄 *Your instant downloadable PDF report card has been sent above!*"
     )
-
-    buttons = [
-        [InlineKeyboardButton("📖 Review Saved Questions", callback_data="cmd_savedquestions")],
-        [InlineKeyboardButton("📢 Join Telegram Channel", url=f"https://t.me/{CHANNEL_USERNAME.replace('@', '')}")],
-        [InlineKeyboardButton("📺 Join YouTube Channel", url=YOUTUBE_CHANNEL_URL)],
-        [InlineKeyboardButton("🚀 Attempt Another Quiz", callback_data="cmd_quiz")]
-    ]
 
     await context.bot.send_message(chat_id=chat_id, text=report_card, reply_markup=InlineKeyboardMarkup(buttons), parse_mode="Markdown")

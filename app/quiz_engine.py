@@ -51,11 +51,14 @@ async def launch_quiz_setup(update: Update, context: ContextTypes.DEFAULT_TYPE):
         await update.message.reply_text("⚠️ Please type /start to create your profile before attempting quizzes!")
         return
 
-    # STRICT DAILY LIMIT CHECK & WARNING (00:00 to 23:59 IST)
+    # DAILY LIMIT CALCULATOR (Admin get 10,000 Qs/day, Students get 40 + Bonus Quota)
     attempted_today = get_today_attempts(user.id)
-    allowed_limit = DAILY_QUESTION_LIMIT + profile.get("bonus_quota", 0)
+    if user.id == PRIMARY_ADMIN_ID:
+        allowed_limit = 10000
+    else:
+        allowed_limit = DAILY_QUESTION_LIMIT + profile.get("bonus_quota", 0)
 
-    if attempted_today >= allowed_limit and user.id != PRIMARY_ADMIN_ID:
+    if attempted_today >= allowed_limit:
         exhausted_msg = (
             f"🛑 **WARNING: DAILY FREE LIMIT EXHAUSTED!**\n"
             f"━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\n"
@@ -125,9 +128,13 @@ async def quiz_count_callback(update: Update, context: ContextTypes.DEFAULT_TYPE
     
     profile = get_user_profile(user_id)
     attempted_today = get_today_attempts(user_id)
-    allowed_limit = DAILY_QUESTION_LIMIT + (profile.get("bonus_quota", 0) if profile else 0)
+    
+    if user_id == PRIMARY_ADMIN_ID:
+        allowed_limit = 10000
+    else:
+        allowed_limit = DAILY_QUESTION_LIMIT + (profile.get("bonus_quota", 0) if profile else 0)
 
-    if attempted_today >= allowed_limit and user_id != PRIMARY_ADMIN_ID:
+    if attempted_today >= allowed_limit:
         await query.answer("🛑 Daily Limit Exhausted! Quiz is locked.", show_alert=True)
         await query.edit_message_text(
             f"🛑 **WARNING: DAILY FREE LIMIT EXHAUSTED!**\n\n"
@@ -166,13 +173,16 @@ async def quiz_timer_callback(update: Update, context: ContextTypes.DEFAULT_TYPE
     
     profile = get_user_profile(user_id)
     attempted_today = get_today_attempts(user_id)
-    allowed_limit = DAILY_QUESTION_LIMIT + (profile.get("bonus_quota", 0) if profile else 0)
+    
+    if user_id == PRIMARY_ADMIN_ID:
+        allowed_limit = 10000
+    else:
+        allowed_limit = DAILY_QUESTION_LIMIT + (profile.get("bonus_quota", 0) if profile else 0)
 
-    if attempted_today >= allowed_limit and user_id != PRIMARY_ADMIN_ID:
+    if attempted_today >= allowed_limit:
         await query.answer("🛑 Daily Limit Exhausted! Quiz is locked.", show_alert=True)
         await query.edit_message_text(
-            f"🛑 **WARNING: DAILY FREE LIMIT EXHAUSTED!**\n\n"
-            f"You have reached your actual daily limit of `{allowed_limit}` questions for today (00:00 to 23:59). Your quiz has been cancelled.",
+            f"🛑 **WARNING: DAILY FREE LIMIT EXHAUSTED!**\n\nYou have reached your actual daily limit of `{allowed_limit}` questions for today (00:00 to 23:59). Your quiz has been cancelled.",
             parse_mode="Markdown"
         )
         return

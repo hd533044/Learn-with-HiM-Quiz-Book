@@ -18,7 +18,8 @@ import time
 
 warnings.filterwarnings("ignore", category=PTBUserWarning)
 
-NAME, EXAM, COUNTRY, STATE, PHONE, GENDER, DOB_YEAR, DOB_MONTH, EDIT_WARN = range(8)
+# Fixed: range(9) for 9 state constants
+NAME, EXAM, COUNTRY, STATE, PHONE, GENDER, DOB_YEAR, DOB_MONTH, EDIT_WARN = range(9)
 
 INDIAN_STATES_AND_UTS = [
     "Andhra Pradesh", "Arunachal Pradesh", "Assam", "Bihar", "Chhattisgarh", "Goa", 

@@ -20,7 +20,8 @@ from app.database import (
 from app.onboarding import get_onboarding_handler
 from app.quiz_engine import (
     launch_quiz_setup, quiz_count_callback, quiz_timer_callback, handle_poll_answer,
-    pause_quiz_command, resume_quiz_command, stop_quiz_command, save_question_callback
+    pause_quiz_command, resume_quiz_command, stop_quiz_command, save_question_callback,
+    download_instant_pdf_callback
 )
 from app.stats import get_overall_leaderboard, calculate_user_percentile, calculate_user_rank, get_user_performance_summary
 from app.admin import admin_portal_command, admin_callback_handler
@@ -350,6 +351,8 @@ async def button_router(update: Update, context: ContextTypes.DEFAULT_TYPE):
             await query.answer("🛑 Daily Limit Exhausted! /quiz is deactivated.", show_alert=True)
             return
         await launch_quiz_setup(update, context)
+    elif data == "cmd_download_instant_pdf":
+        await download_instant_pdf_callback(update, context)
     elif data == "cmd_pause_quiz":
         await pause_quiz_command(update, context)
     elif data == "cmd_resume_quiz":

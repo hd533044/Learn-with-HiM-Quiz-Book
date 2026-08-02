@@ -20,6 +20,7 @@ ACTIVE_SESSIONS = {}
 POLL_MAP = {}
 TIMER_TASKS = {}
 QUIZ_SETUP_CACHE = {}
+LAST_QUIZ_RESULTS = {}  # Cache last attempt for inline PDF generation
 
 def get_pause_resume_keyboard():
     return InlineKeyboardMarkup([
@@ -388,29 +389,12 @@ async def stop_quiz_command(update: Update, context: ContextTypes.DEFAULT_TYPE):
 
     if session:
         if session["current_index"] > 0:
-            record_quiz_result(
-                user_id, 
-                score=session["score"], 
-                total_questions=session["current_index"], 
-                correct_count=session["correct"], 
-                wrong_count=session["wrong"], 
-                skipped_count=session["skipped"],
-                question_details=session.get("detailed_logs", [])
-            )
-            # Finish & Generate Instant PDF Report Card
             await finish_quiz_and_send_report(chat_id, user_id, context, session_override=session)
             return
     elif paused:
         if paused.get("current_index", 0) > 0:
-            record_quiz_result(
-                user_id, 
-                score=paused["score"], 
-                total_questions=paused["current_index"], 
-                correct_count=paused["correct"], 
-                wrong_count=paused["wrong"], 
-                skipped_count=paused["skipped"],
-                question_details=paused.get("detailed_logs", [])
-            )
+            await finish_quiz_and_send_report(chat_id, user_id, context, session_override=paused)
+            return
 
     msg = (
         f"🛑 **QUIZ STOPPED COMPLETELY**\n"
@@ -568,6 +552,36 @@ async def handle_poll_answer(update: Update, context: ContextTypes.DEFAULT_TYPE)
         await asyncio.sleep(0.8)
         await send_next_question(chat_id, user_id, context)
 
+async def download_instant_pdf_callback(update: Update, context: ContextTypes.DEFAULT_TYPE):
+    query = update.callback_query
+    await query.answer("⏳ Generating your instant report PDF...")
+    user_id = query.from_user.id
+    
+    quiz_result_payload = LAST_QUIZ_RESULTS.get(user_id)
+    if not quiz_result_payload:
+        await query.message.reply_text("⚠️ No recent quiz session data found to export.")
+        return
+
+    profile = get_user_profile(user_id)
+    pdf_file = generate_instant_quiz_pdf_report(user_id, quiz_result_payload)
+
+    if pdf_file and os.path.exists(pdf_file):
+        with open(pdf_file, "rb") as doc:
+            await context.bot.send_document(
+                chat_id=query.message.chat_id,
+                document=doc,
+                filename=os.path.basename(pdf_file),
+                caption=(
+                    f"📄 **OFFICIAL INSTANT QUIZ REPORT CARD**\n"
+                    f"━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\n"
+                    f"👤 **Student:** {profile['full_name'] if profile else 'Student'}\n"
+                    f"🏆 **Final Score:** `{quiz_result_payload['score']} / {quiz_result_payload['total_questions']}.0`\n"
+                    f"🏷 **Watermark:** `@LearnwithHiM`"
+                )
+            )
+    else:
+        await query.message.reply_text("⚠️ Failed to generate PDF report card.")
+
 async def finish_quiz_and_send_report(chat_id: int, user_id: int, context: ContextTypes.DEFAULT_TYPE, session_override=None):
     session = session_override or ACTIVE_SESSIONS.pop(user_id, None)
     if not session:
@@ -580,23 +594,22 @@ async def finish_quiz_and_send_report(chat_id: int, user_id: int, context: Conte
     score = session["score"]
     detailed_logs = session.get("detailed_logs", [])
 
-    if not session_override:
-        record_quiz_result(
-            user_id, 
-            score=score, 
-            total_questions=total, 
-            correct_count=correct, 
-            wrong_count=wrong, 
-            skipped_count=skipped,
-            question_details=detailed_logs
-        )
+    record_quiz_result(
+        user_id, 
+        score=score, 
+        total_questions=total, 
+        correct_count=correct, 
+        wrong_count=wrong, 
+        skipped_count=skipped,
+        question_details=detailed_logs
+    )
 
     percentile = calculate_user_percentile(user_id)
     rank_str = calculate_user_rank(user_id)
     profile = get_user_profile(user_id)
 
-    # 1. Generate Instant PDF Report
-    quiz_result_payload = {
+    # Store payload for interactive PDF download
+    LAST_QUIZ_RESULTS[user_id] = {
         "total_questions": total,
         "score": score,
         "correct_count": correct,
@@ -604,30 +617,12 @@ async def finish_quiz_and_send_report(chat_id: int, user_id: int, context: Conte
         "skipped_count": skipped,
         "details": detailed_logs
     }
-    
-    pdf_file = generate_instant_quiz_pdf_report(user_id, quiz_result_payload)
 
-    # 2. Upload Instant PDF Document
-    if pdf_file and os.path.exists(pdf_file):
-        with open(pdf_file, "rb") as doc:
-            await context.bot.send_document(
-                chat_id=chat_id,
-                document=doc,
-                filename=os.path.basename(pdf_file),
-                caption=(
-                    f"📄 **OFFICIAL INSTANT QUIZ REPORT CARD**\n"
-                    f"━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\n"
-                    f"👤 **Student:** {profile['full_name'] if profile else 'Student'}\n"
-                    f"🏆 **Final Score:** `{score} / {total}.0`\n"
-                    f"🏷 **Watermark:** `@LearnwithHiM`"
-                )
-            )
-
-    # 3. Corrected Telegram Join Link (@Learnwithhim)
+    # Post-Quiz Scorecard & Download PDF Button
     buttons = [
-        [InlineKeyboardButton("📖 Review Saved Questions", callback_data="cmd_savedquestions")],
+        [InlineKeyboardButton("📄 Download Attempt Summary PDF Card", callback_data="cmd_download_instant_pdf")],
         [InlineKeyboardButton("📢 Join Telegram Channel (@Learnwithhim)", url="https://t.me/Learnwithhim")],
-        [InlineKeyboardButton("📺 Join YouTube Channel", url=YOUTUBE_CHANNEL_URL)],
+        [InlineKeyboardButton("📖 Review Saved Questions", callback_data="cmd_savedquestions")],
         [InlineKeyboardButton("🚀 Attempt Another Quiz", callback_data="cmd_quiz")]
     ]
 
@@ -641,12 +636,12 @@ async def finish_quiz_and_send_report(chat_id: int, user_id: int, context: Conte
         f"• **Correct Answers:** `{correct}` ✅\n"
         f"• **Wrong Answers:** `{wrong}` ❌\n"
         f"• **Skipped Questions:** `{skipped}` ⏭\n"
-        f"• **Final Score:** `{score} / {total}`\n\n"
+        f"• **Final Score:** `{score} / {total}.0`\n\n"
         f"🎖 **Overall Rank & Percentile:**\n"
         f"• **Global Rank:** `{rank_str}`\n"
         f"• **Percentile Rating:** `{percentile}%`\n"
         f"━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\n"
-        f"📄 *Your instant downloadable PDF report card has been sent above!*"
+        f"💡 *Tap the PDF button below to download your full itemized report card!*"
     )
 
     await context.bot.send_message(chat_id=chat_id, text=report_card, reply_markup=InlineKeyboardMarkup(buttons), parse_mode="Markdown")

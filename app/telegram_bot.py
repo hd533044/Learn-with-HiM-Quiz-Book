@@ -40,6 +40,7 @@ async def inactivity_guard(update: Update, context: ContextTypes.DEFAULT_TYPE) -
     is_locked, diff_sec = check_and_update_inactivity(user_id)
     if is_locked:
         context.user_data["is_account_locked"] = True
+        rec_btn = InlineKeyboardMarkup([[InlineKeyboardButton("🔑 Reset Your PIN / Password", callback_data="login_forgot_pin")]])
         msg = (
             f"🔒 **ACCOUNT LOCKED DUE TO INACTIVITY**\n"
             f"━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\n"
@@ -48,9 +49,9 @@ async def inactivity_guard(update: Update, context: ContextTypes.DEFAULT_TYPE) -
         )
         if update.callback_query:
             await update.callback_query.answer("🔒 Account Locked due to 5 mins of inactivity!", show_alert=True)
-            await update.callback_query.message.reply_text(msg, parse_mode="Markdown")
+            await update.callback_query.message.reply_text(msg, reply_markup=rec_btn, parse_mode="Markdown")
         elif update.message:
-            await update.message.reply_text(msg, parse_mode="Markdown")
+            await update.message.reply_text(msg, reply_markup=rec_btn, parse_mode="Markdown")
         return False
     return True
 
@@ -402,7 +403,12 @@ async def handle_text_messages(update: Update, context: ContextTypes.DEFAULT_TYP
             refresh_user_activity_epoch(user.id)
             await update.message.reply_text("🔓 **ACCOUNT UNLOCKED SUCCESSFULLY!**\nYou may continue learning.", reply_markup=ReplyKeyboardRemove())
         else:
-            await update.message.reply_text("❌ **Incorrect PIN!** Please enter your correct 4-digit PIN to unlock:")
+            rec_btn = InlineKeyboardMarkup([[InlineKeyboardButton("🔑 Reset Your PIN / Password", callback_data="login_forgot_pin")]])
+            await update.message.reply_text(
+                "❌ **Incorrect PIN!**\n\nPlease try entering your correct 4-digit PIN to unlock, or tap below to reset your PIN:",
+                reply_markup=rec_btn,
+                parse_mode="Markdown"
+            )
         return
 
     if not await maintenance_guard(update, context): return

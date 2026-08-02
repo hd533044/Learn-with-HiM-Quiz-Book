@@ -25,8 +25,8 @@ warnings.filterwarnings("ignore", category=PTBUserWarning)
 (
     START_CHOICE, NAME, EXAM, COUNTRY, STATE, PHONE, GENDER, DOB_YEAR, DOB_MONTH, DOB_DAY, 
     PIN_SETUP, SEC_QUESTION, SEC_ANSWER, LOGIN_SID, LOGIN_PIN, RECOVERY_MENU, 
-    REC_SEC_ANS, REC_PHONE, REC_DOB_YEAR, REC_DOB_MONTH, REC_DOB_DAY, RESET_PIN, EDIT_WARN
-) = range(23)
+    REC_SEC_ANS, REC_PHONE, REC_DOB_YEAR, REC_DOB_MONTH, REC_DOB_DAY, REC_NAME_DOB, RESET_PIN, EDIT_WARN
+) = range(24)
 
 PRESET_SEC_QUESTIONS = [
     "What is your pet's name?",
@@ -179,7 +179,7 @@ async def login_sid_step(update: Update, context: ContextTypes.DEFAULT_TYPE):
 
     context.user_data["login_target_user"] = u
     rec_btn = InlineKeyboardMarkup([
-        [InlineKeyboardButton("❓ Forgot PIN / Account Recovery", callback_data="login_forgot_pin")]
+        [InlineKeyboardButton("❓ Reset PIN / Account Recovery", callback_data="login_forgot_pin")]
     ])
 
     await update.message.reply_text(
@@ -196,11 +196,11 @@ async def login_pin_step(update: Update, context: ContextTypes.DEFAULT_TYPE):
 
     if not u or u.get("pin") != pin_input:
         rec_btn = InlineKeyboardMarkup([
-            [InlineKeyboardButton("❓ Forgot PIN / Account Recovery", callback_data="login_forgot_pin")]
+            [InlineKeyboardButton("🔑 Reset Your PIN / Password", callback_data="login_forgot_pin")]
         ])
         await update.message.reply_text(
             f"❌ **Incorrect PIN!**\n\n"
-            f"The PIN entered does not match. Please try again or tap below for recovery:",
+            f"The PIN entered does not match your account. Please try entering your PIN again, or tap below to reset your PIN using phone, security question, or name/DOB verification:",
             reply_markup=rec_btn,
             parse_mode="Markdown"
         )
@@ -243,20 +243,27 @@ async def recovery_menu_callback(update: Update, context: ContextTypes.DEFAULT_T
 
     u = context.user_data.get("login_target_user")
     if not u:
+        user = update.effective_user
+        u = get_user_profile(user.id)
+
+    if not u:
         await query.edit_message_text("⚠️ Session expired. Please type /start to log in again.")
         return ConversationHandler.END
+
+    context.user_data["login_target_user"] = u
 
     rec_options = InlineKeyboardMarkup([
         [InlineKeyboardButton("🛡 Security Question", callback_data="rec_opt_secq")],
         [InlineKeyboardButton("📱 Verify via Phone Number", callback_data="rec_opt_phone")],
-        [InlineKeyboardButton("🎂 DOB Verification", callback_data="rec_opt_dob")]
+        [InlineKeyboardButton("🎂 DOB + Name Verification", callback_data="rec_opt_namedob")],
+        [InlineKeyboardButton("🗓 DOB Grid Verification", callback_data="rec_opt_dob")]
     ])
 
     await query.edit_message_text(
-        f"🛡 **ACCOUNT RECOVERY PORTAL**\n"
+        f"🛡 **PIN & ACCOUNT RESET PORTAL**\n"
         f"━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\n"
         f"Account: `{u['full_name']}` (`{u['student_id']}`)\n\n"
-        f"Select a recovery method to reset your secret 4-digit PIN:",
+        f"Select an authentication method below to reset your secret 4-digit PIN:",
         reply_markup=rec_options,
         parse_mode="Markdown"
     )
@@ -290,6 +297,15 @@ async def recovery_option_router(update: Update, context: ContextTypes.DEFAULT_T
         )
         return REC_PHONE
 
+    elif data == "rec_opt_namedob":
+        await query.edit_message_text(
+            f"👤 **NAME & DOB RECOVERY**\n"
+            f"━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\n\n"
+            f"Please reply with your **Registered Full Name** (or DOB formatted as DD-MM-YYYY):",
+            parse_mode="Markdown"
+        )
+        return REC_NAME_DOB
+
     elif data == "rec_opt_dob":
         await query.edit_message_text(
             f"🎂 **DATE OF BIRTH RECOVERY**\n\nSelect your registered **Birth Year**:",
@@ -304,7 +320,8 @@ async def rec_sec_ans_step(update: Update, context: ContextTypes.DEFAULT_TYPE):
     correct_ans = str(u.get("security_answer", "")).strip().lower()
 
     if ans_input != correct_ans:
-        await update.message.reply_text("❌ **Incorrect Security Answer!** Please try typing your answer again:")
+        rec_btn = InlineKeyboardMarkup([[InlineKeyboardButton("🔑 Try Another Recovery Option", callback_data="login_forgot_pin")]])
+        await update.message.reply_text("❌ **Incorrect Security Answer!** Please try typing your answer again or select another option:", reply_markup=rec_btn)
         return REC_SEC_ANS
 
     await update.message.reply_text("✅ **Identity Verified!** Please enter your **New 4-Digit Secret PIN**:")
@@ -322,14 +339,33 @@ async def rec_phone_step(update: Update, context: ContextTypes.DEFAULT_TYPE):
     user_phone = str(u.get("phone_number", "")).replace("+", "").strip()
 
     if shared_phone != user_phone:
+        rec_btn = InlineKeyboardMarkup([[InlineKeyboardButton("🔑 Try Another Recovery Option", callback_data="login_forgot_pin")]])
         await update.message.reply_text(
             f"❌ **Phone Number Mismatch!** Shared number does not match registered number for `{u['student_id']}`.",
-            reply_markup=ReplyKeyboardRemove()
+            reply_markup=rec_btn
         )
-        return ConversationHandler.END
+        return REC_PHONE
 
     await update.message.reply_text("✅ **Phone Verification Successful!** Please enter your **New 4-Digit Secret PIN**:", reply_markup=ReplyKeyboardRemove())
     return RESET_PIN
+
+async def rec_name_dob_step(update: Update, context: ContextTypes.DEFAULT_TYPE):
+    text_input = update.message.text.strip().lower()
+    u = context.user_data.get("login_target_user")
+    
+    reg_name = str(u.get("full_name", "")).strip().lower()
+    reg_dob = str(u.get("dob", "")).strip().lower()
+
+    if text_input in reg_name or text_input == reg_dob:
+        await update.message.reply_text("✅ **Name / DOB Verified!** Please enter your **New 4-Digit Secret PIN**:")
+        return RESET_PIN
+
+    rec_btn = InlineKeyboardMarkup([[InlineKeyboardButton("🔑 Try Another Recovery Option", callback_data="login_forgot_pin")]])
+    await update.message.reply_text(
+        "❌ **Verification Failed!** Input does not match registered records. Try again or pick another method:",
+        reply_markup=rec_btn
+    )
+    return REC_NAME_DOB
 
 async def rec_dob_year_callback(update: Update, context: ContextTypes.DEFAULT_TYPE):
     query = update.callback_query
@@ -371,8 +407,9 @@ async def rec_dob_day_callback(update: Update, context: ContextTypes.DEFAULT_TYP
 
     u = context.user_data.get("login_target_user")
     if dob_constructed != u.get("dob"):
-        await query.edit_message_text(f"❌ **DOB Mismatch!** Registered DOB does not match `{dob_constructed}`.")
-        return ConversationHandler.END
+        rec_btn = InlineKeyboardMarkup([[InlineKeyboardButton("🔑 Reset Options", callback_data="login_forgot_pin")]])
+        await query.edit_message_text(f"❌ **DOB Mismatch!** Registered DOB does not match `{dob_constructed}`.", reply_markup=rec_btn)
+        return RECOVERY_MENU
 
     await query.delete_message()
     await context.bot.send_message(
@@ -391,7 +428,8 @@ async def reset_pin_step(update: Update, context: ContextTypes.DEFAULT_TYPE):
     u = context.user_data.get("login_target_user")
     user = update.effective_user
     
-    update_user_pin(u['user_id'], new_pin)
+    target_uid = u['user_id'] if u else user.id
+    update_user_pin(target_uid, new_pin)
 
     save_user_profile(
         user_id=user.id,
@@ -796,7 +834,8 @@ def get_onboarding_handler():
         entry_points=[
             CommandHandler("start", start_onboarding),
             CommandHandler("editprofile", edit_profile_command),
-            CallbackQueryHandler(edit_profile_command, pattern="^cmd_editprofile$")
+            CallbackQueryHandler(edit_profile_command, pattern="^cmd_editprofile$"),
+            CallbackQueryHandler(recovery_menu_callback, pattern="^login_forgot_pin$")
         ],
         states={
             START_CHOICE: [
@@ -815,6 +854,7 @@ def get_onboarding_handler():
             ],
             REC_SEC_ANS: [MessageHandler(filters.TEXT & ~filters.COMMAND, rec_sec_ans_step)],
             REC_PHONE: [MessageHandler(filters.CONTACT | (filters.TEXT & ~filters.COMMAND), rec_phone_step)],
+            REC_NAME_DOB: [MessageHandler(filters.TEXT & ~filters.COMMAND, rec_name_dob_step)],
             REC_DOB_YEAR: [CallbackQueryHandler(rec_dob_year_callback, pattern="^recdoby_")],
             REC_DOB_MONTH: [CallbackQueryHandler(rec_dob_month_callback, pattern="^recdobm_")],
             REC_DOB_DAY: [CallbackQueryHandler(rec_dob_day_callback, pattern="^recdobd_")],

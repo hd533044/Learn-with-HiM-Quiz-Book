@@ -163,7 +163,7 @@ def generate_student_pdf_report(user_id: int, filter_mode: str = "last_1_month_d
     story.append(header_table)
     story.append(Spacer(1, 8))
 
-    # 2. Student Profile Overview
+    # 2. Student Profile Overview Table
     sid = u.get("student_id") or f"USER_{user_id}"
     masked_phone = mask_phone(u.get("phone_number", ""))
     masked_pin = "XX" + str(u.get("pin", ""))[-2:] if u.get("pin") else "XXXX"
@@ -188,7 +188,7 @@ def generate_student_pdf_report(user_id: int, filter_mode: str = "last_1_month_d
     story.append(prof_table)
     story.append(Spacer(1, 8))
 
-    # 3. Database Attempt Fetching
+    # 3. Database Attempts Querying
     conn = get_db()
     cursor = conn.cursor()
     
@@ -213,10 +213,9 @@ def generate_student_pdf_report(user_id: int, filter_mode: str = "last_1_month_d
     total_qs = sum([a['questions_attempted'] for a in attempts])
     total_correct = sum([a['correct_answers'] for a in attempts])
     total_wrong = sum([a['wrong_answers'] for a in attempts])
-    total_skipped = sum([a['skipped_count'] for a in attempts])
     acc = round((total_correct / total_qs) * 100, 2) if total_qs > 0 else 0.0
 
-    story.append(Paragraph(f"📊 <b>ACADEMIC PERFORMANCE SUMMARY — {summary_title_text}</b>", section_heading))
+    story.append(Paragraph(f"<b>ACADEMIC PERFORMANCE SUMMARY — {summary_title_text}</b>", section_heading))
 
     stats_data = [
         [Paragraph("Quizzes", body_style_bold), Paragraph("Total Questions", body_style_bold), Paragraph("Correct ✅", body_style_bold), Paragraph("Wrong ❌", body_style_bold), Paragraph("Accuracy", body_style_bold)],
@@ -233,24 +232,7 @@ def generate_student_pdf_report(user_id: int, filter_mode: str = "last_1_month_d
     story.append(stats_table)
     story.append(Spacer(1, 8))
 
-    # Fast Table-Based Progress Indicator
-    story.append(Paragraph("📈 <b>VISUAL STATISTICAL BREAKDOWN</b>", section_heading))
-    visual_table_data = [
-        [Paragraph("<b>Category</b>", body_style_bold), Paragraph("<b>Count</b>", body_style_bold), Paragraph("<b>Distribution Ratio</b>", body_style_bold)],
-        [Paragraph("Correct ✅", body_style), Paragraph(f"{total_correct}", body_style), Paragraph("🟩" * min(20, max(1, total_correct)), body_style)],
-        [Paragraph("Wrong ❌", body_style), Paragraph(f"{total_wrong}", body_style), Paragraph("🟥" * min(20, max(1, total_wrong)), body_style)],
-        [Paragraph("Skipped ⏭", body_style), Paragraph(f"{total_skipped}", body_style), Paragraph("🟨" * min(20, max(1, total_skipped)), body_style)]
-    ]
-    v_table = Table(visual_table_data, colWidths=[1.5*inch, 1.0*inch, 4.5*inch])
-    v_table.setStyle(TableStyle([
-        ('BACKGROUND', (0,0), (-1,0), colors.HexColor("#F1F5F9")),
-        ('GRID', (0,0), (-1,-1), 0.5, colors.HexColor("#CBD5E1")),
-        ('PADDING', (0,0), (-1,-1), 4)
-    ]))
-    story.append(v_table)
-    story.append(Spacer(1, 8))
-
-    # Quiz Summary Mode (Without Question Text)
+    # QUIZ SUMMARY MODE (Command 2 & 4: High-level date-wise performance without question texts)
     if "quiz" in filter_mode:
         story.append(Paragraph("🗓 <b>DATE-WISE QUIZ SUMMARY REPORT</b>", section_heading))
         
@@ -297,7 +279,7 @@ def generate_student_pdf_report(user_id: int, filter_mode: str = "last_1_month_d
         ]))
         story.append(date_table)
 
-    # Full Data Mode (With Itemized Question Tables)
+    # FULL DATA MODE (Command 1 & 3: Itemized question tables in order: Wrong -> Skipped -> Correct)
     else:
         wrong_q_list = []
         skipped_q_list = []
@@ -318,11 +300,14 @@ def generate_student_pdf_report(user_id: int, filter_mode: str = "last_1_month_d
                 else:
                     skipped_q_list.append(q_item)
 
-        # 4a. Wrong Questions
+        # Limit per category to prevent document buffer overflow
+        max_rows = 50 if is_month_filter else 100
+
+        # 4a. WRONG QUESTIONS TABLE (Rose Header)
         story.append(Paragraph("❌ <b>WRONG QUESTIONS REPORT</b>", section_heading))
         w_table_data = [[Paragraph("Attempt Date", body_style_bold), Paragraph("Question Text", body_style_bold), Paragraph("Correct Answer Text", body_style_bold)]]
         
-        for q in wrong_q_list[:25]:
+        for q in wrong_q_list[:max_rows]:
             q_txt = q.get("question_text", "N/A")
             c_ans = q.get("correct_answer_text", "N/A")
             w_table_data.append([
@@ -334,7 +319,7 @@ def generate_student_pdf_report(user_id: int, filter_mode: str = "last_1_month_d
         if len(w_table_data) == 1:
             w_table_data.append([Paragraph("N/A", body_style), Paragraph("Zero wrong questions in this timeframe! 🎉", body_style), Paragraph("N/A", body_style)])
 
-        w_table = Table(w_table_data, colWidths=[1.2*inch, 3.8*inch, 2.0*inch])
+        w_table = Table(w_table_data, colWidths=[1.2*inch, 3.8*inch, 2.0*inch], repeatRows=1)
         w_table.setStyle(TableStyle([
             ('BACKGROUND', (0,0), (-1,0), colors.HexColor("#FFE4E6")),
             ('BACKGROUND', (0,1), (-1,-1), colors.HexColor("#FFFFFF")),
@@ -345,11 +330,11 @@ def generate_student_pdf_report(user_id: int, filter_mode: str = "last_1_month_d
         story.append(w_table)
         story.append(Spacer(1, 8))
 
-        # 4b. Skipped Questions
+        # 4b. UN-ATTEMPTED / SKIPPED QUESTIONS TABLE (Amber Header)
         story.append(Paragraph("⏭ <b>UN-ATTEMPTED / SKIPPED QUESTIONS REPORT</b>", section_heading))
         s_table_data = [[Paragraph("Attempt Date", body_style_bold), Paragraph("Question Text", body_style_bold), Paragraph("Correct Answer Text", body_style_bold)]]
         
-        for q in skipped_q_list[:25]:
+        for q in skipped_q_list[:max_rows]:
             q_txt = q.get("question_text", "N/A")
             c_ans = q.get("correct_answer_text", "N/A")
             s_table_data.append([
@@ -361,7 +346,7 @@ def generate_student_pdf_report(user_id: int, filter_mode: str = "last_1_month_d
         if len(s_table_data) == 1:
             s_table_data.append([Paragraph("N/A", body_style), Paragraph("Zero skipped questions in this timeframe!", body_style), Paragraph("N/A", body_style)])
 
-        s_table = Table(s_table_data, colWidths=[1.2*inch, 3.8*inch, 2.0*inch])
+        s_table = Table(s_table_data, colWidths=[1.2*inch, 3.8*inch, 2.0*inch], repeatRows=1)
         s_table.setStyle(TableStyle([
             ('BACKGROUND', (0,0), (-1,0), colors.HexColor("#FEF3C7")),
             ('BACKGROUND', (0,1), (-1,-1), colors.HexColor("#FFFFFF")),
@@ -372,11 +357,11 @@ def generate_student_pdf_report(user_id: int, filter_mode: str = "last_1_month_d
         story.append(s_table)
         story.append(Spacer(1, 8))
 
-        # 4c. Correct Questions
+        # 4c. CORRECT QUESTIONS TABLE (Emerald Header)
         story.append(Paragraph("✅ <b>CORRECT QUESTIONS REPORT</b>", section_heading))
         c_table_data = [[Paragraph("Attempt Date", body_style_bold), Paragraph("Question Text", body_style_bold), Paragraph("Correct Answer Text", body_style_bold)]]
         
-        for q in correct_q_list[:25]:
+        for q in correct_q_list[:max_rows]:
             q_txt = q.get("question_text", "N/A")
             c_ans = q.get("correct_answer_text", "N/A")
             c_table_data.append([
@@ -388,7 +373,7 @@ def generate_student_pdf_report(user_id: int, filter_mode: str = "last_1_month_d
         if len(c_table_data) == 1:
             c_table_data.append([Paragraph("N/A", body_style), Paragraph("No correct questions logged yet.", body_style), Paragraph("N/A", body_style)])
 
-        c_table = Table(c_table_data, colWidths=[1.2*inch, 3.8*inch, 2.0*inch])
+        c_table = Table(c_table_data, colWidths=[1.2*inch, 3.8*inch, 2.0*inch], repeatRows=1)
         c_table.setStyle(TableStyle([
             ('BACKGROUND', (0,0), (-1,0), colors.HexColor("#D1FAE5")),
             ('BACKGROUND', (0,1), (-1,-1), colors.HexColor("#FFFFFF")),

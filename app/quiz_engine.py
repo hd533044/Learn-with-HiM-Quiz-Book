@@ -171,6 +171,7 @@ async def quiz_timer_callback(update: Update, context: ContextTypes.DEFAULT_TYPE
 
     query = update.callback_query
     user_id = query.from_user.id
+    chat_id = query.message.chat_id
     log_user_activity_time(user_id, seconds=15)
     
     profile = await asyncio.to_thread(get_user_profile, user_id)
@@ -206,7 +207,7 @@ async def quiz_timer_callback(update: Update, context: ContextTypes.DEFAULT_TYPE
 
     session = {
         "user_id": user_id,
-        "chat_id": query.message.chat_id,
+        "chat_id": chat_id,
         "questions": questions,
         "current_index": 0,
         "score": 0.0,
@@ -229,7 +230,7 @@ async def quiz_timer_callback(update: Update, context: ContextTypes.DEFAULT_TYPE
         f"Loading Question 1/{len(questions)}...",
         parse_mode="Markdown"
     )
-    await send_next_question(query.message.chat_id, user_id, context)
+    await send_next_question(chat_id, user_id, context)
 
 async def save_question_callback(update: Update, context: ContextTypes.DEFAULT_TYPE):
     query = update.callback_query

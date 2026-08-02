@@ -25,28 +25,20 @@ class CleanReportCanvas(canvas.Canvas):
         num_pages = len(self._saved_page_states)
         for state in self._saved_page_states:
             self.__dict__.update(state)
-            self.draw_decorations(num_pages)
+            self.draw_footer(num_pages)
             super().showPage()
         super().save()
 
-    def draw_decorations(self, page_count):
+    def draw_footer(self, page_count):
         self.saveState()
-        
-        # 1. Subtle Small Diagonal Watermark (@LearnwithHiM)
-        self.setFont("Helvetica-Bold", 16)
-        self.setFillColor(colors.HexColor("#E0F2FE"))
-        self.saveState()
-        self.rotate(25)
-        self.drawString(240, 240, "@LearnwithHiM")
-        self.restoreState()
 
-        # 2. Bottom Footer Line
+        # Footer Separator Line
         self.setStrokeColor(colors.HexColor("#CBD5E1"))
         self.setLineWidth(0.8)
         self.line(30, 42, 582, 42)
 
-        # 3. Clickable Social Media Links Footer
-        self.setFont("Helvetica", 7)
+        # Clickable Social Media Links (Times New Roman)
+        self.setFont("Times-Bold", 8)
         self.setFillColor(colors.HexColor("#0284C7"))
         
         y_pos = 28
@@ -65,7 +57,7 @@ class CleanReportCanvas(canvas.Canvas):
         self.drawString(420, y_pos, "✉️ Direct DM")
         self.linkURL("https://t.me/Learnwithhim?direct", (420, y_pos-2, 480, y_pos+8))
 
-        self.setFont("Helvetica", 7)
+        self.setFont("Times-Roman", 8)
         self.setFillColor(colors.HexColor("#64748B"))
         self.drawRightString(582, y_pos, f"Page {self._pageNumber} of {page_count}")
 
@@ -85,7 +77,6 @@ def generate_student_pdf_report(user_id: int, filter_mode: str = "all") -> str:
     username = u.get("username") or "user"
     username_clean = "".join(filter(str.isalnum, username)).lower() or "user"
     
-    # Filename format: Username_userid_1-monthreport.pdf
     timeframe_str = "1-monthreport" if filter_mode == "last_1_month" else "allmonthsreport" if filter_mode == "all_months_stats" else "alltimereport"
     pdf_filename = f"{username_clean}_{user_id}_{timeframe_str}.pdf"
     pdf_path = os.path.join(USER_PROFILES_DIR, pdf_filename)
@@ -101,55 +92,64 @@ def generate_student_pdf_report(user_id: int, filter_mode: str = "all") -> str:
 
     styles = getSampleStyleSheet()
 
-    # Font styles - Arial/Helvetica Rounded, Normal Weight
+    # Base font style - Times New Roman
     main_heading_style = ParagraphStyle(
-        'MainTitleRed',
+        'MainTitleDarkBlue',
         parent=styles['Heading1'],
-        fontName='Helvetica-Bold',
-        fontSize=16,
-        leading=20,
-        textColor=colors.HexColor("#DC2626"), # RED
-        alignment=1 # Center
+        fontName='Times-Bold',
+        fontSize=18,
+        leading=22,
+        textColor=colors.HexColor("#1E3A8A"), # Dark Blue
+        alignment=1
     )
 
     sub_heading_style = ParagraphStyle(
-        'SubTitleSky',
+        'SubTitleGreen',
         parent=styles['Normal'],
-        fontName='Helvetica',
+        fontName='Times-Bold',
         fontSize=9,
         leading=12,
-        textColor=colors.HexColor("#0284C7"), # SKY BLUE
-        alignment=1 # Center
+        textColor=colors.HexColor("#16A34A"), # Light Greenish
+        alignment=1
     )
 
     section_heading = ParagraphStyle(
         'SecHeading',
         parent=styles['Heading2'],
-        fontName='Helvetica-Bold',
-        fontSize=10,
-        leading=14,
+        fontName='Times-Bold',
+        fontSize=11,
+        leading=15,
         textColor=colors.HexColor("#0F172A"),
         spaceBefore=8,
         spaceAfter=4
     )
 
     body_style = ParagraphStyle(
-        'BodyTextCustom',
+        'BodyTextTimes',
         parent=styles['Normal'],
-        fontName='Helvetica', # Clean Rounded Normal Font
-        fontSize=8,
-        leading=11,
+        fontName='Times-Roman', # Times New Roman Normal
+        fontSize=9,
+        leading=12,
         textColor=colors.HexColor("#334155")
+    )
+
+    body_style_bold = ParagraphStyle(
+        'BodyTextTimesBold',
+        parent=styles['Normal'],
+        fontName='Times-Bold',
+        fontSize=9,
+        leading=12,
+        textColor=colors.HexColor("#0F172A")
     )
 
     story = []
 
-    # 1. Header with Uncrushed Logos and Fixed Aspect Ratios
+    # 1. Even Unsquished Small Logo Images
     logo_left_path = os.path.join(BASE_DIR, "assets", "logo.png")
     logo_right_path = os.path.join(BASE_DIR, "assets", "logohim.png")
 
-    img_left = Image(logo_left_path, width=1.2*inch, height=0.7*inch) if os.path.exists(logo_left_path) else Paragraph("<b>Logo</b>", body_style)
-    img_right = Image(logo_right_path, width=1.2*inch, height=0.7*inch) if os.path.exists(logo_right_path) else Paragraph("<b>@LearnwithHiM</b>", body_style)
+    img_left = Image(logo_left_path, width=0.8*inch, height=0.8*inch) if os.path.exists(logo_left_path) else Paragraph("<b>Logo</b>", body_style)
+    img_right = Image(logo_right_path, width=0.8*inch, height=0.8*inch) if os.path.exists(logo_right_path) else Paragraph("<b>@LearnwithHiM</b>", body_style)
 
     if hasattr(img_left, 'preserveAspectRatio'):
         img_left.preserveAspectRatio = True
@@ -157,12 +157,13 @@ def generate_student_pdf_report(user_id: int, filter_mode: str = "all") -> str:
         img_right.preserveAspectRatio = True
 
     header_text_p = Paragraph(
-        "<u><b>LEARN WITH HIM QUIZ BOOK</b></u><br/>"
-        "<font color='#0284C7' size=8>POWERED BY @LEARNWITHHIM (HIMANSHU SIR)</font>",
+        "<b><font color='#1E3A8A'>Learn with HiM Quiz Book</font></b><br/>"
+        "<font color='#38BDF8' size=8>━━━━━</font><br/>"
+        "<font color='#16A34A' size=9><b>Smart Quiz! Smart Study! Better Improvement! Exam Relevant!</b></font>",
         main_heading_style
     )
 
-    header_table = Table([[img_left, header_text_p, img_right]], colWidths=[1.3*inch, 4.0*inch, 1.3*inch])
+    header_table = Table([[img_left, header_text_p, img_right]], colWidths=[1.0*inch, 4.6*inch, 1.0*inch])
     header_table.setStyle(TableStyle([
         ('VALIGN', (0,0), (-1,-1), 'MIDDLE'),
         ('ALIGN', (0,0), (0,0), 'LEFT'),
@@ -174,19 +175,19 @@ def generate_student_pdf_report(user_id: int, filter_mode: str = "all") -> str:
     story.append(header_table)
     story.append(Spacer(1, 8))
 
-    # 2. Student Profile Overview Table
+    # 2. Student Profile Overview
     sid = u.get("student_id") or f"USER_{user_id}"
     masked_phone = mask_phone(u.get("phone_number", ""))
     masked_pin = "XX" + str(u.get("pin", ""))[-2:] if u.get("pin") else "XXXX"
 
-    story.append(Paragraph("📋 <b>STUDENT PROFILE OVERVIEW</b>", section_heading))
+    story.append(Paragraph("<b>STUDENT PROFILE OVERVIEW</b>", section_heading))
 
     profile_data = [
-        [Paragraph("Student Name:", body_style), Paragraph(f"{u.get('full_name')}", body_style), Paragraph("Student ID:", body_style), Paragraph(f"{sid}", body_style)],
-        [Paragraph("Target Exam:", body_style), Paragraph(f"{u.get('target_exam')}", body_style), Paragraph("Location:", body_style), Paragraph(f"{u.get('state')}, {u.get('country')}", body_style)],
-        [Paragraph("DOB / Age:", body_style), Paragraph(f"{u.get('dob')} ({u.get('age')} yrs)", body_style), Paragraph("Phone (Masked):", body_style), Paragraph(f"{masked_phone}", body_style)],
-        [Paragraph("Account Status:", body_style), Paragraph("ACTIVE 🟢", body_style), Paragraph("Secret PIN:", body_style), Paragraph(f"{masked_pin}", body_style)],
-        [Paragraph("Registered At:", body_style), Paragraph(f"{u.get('created_at')}", body_style), Paragraph("Last Active:", body_style), Paragraph(f"{u.get('last_active')}", body_style)]
+        [Paragraph("Student Name:", body_style_bold), Paragraph(f"{u.get('full_name')}", body_style), Paragraph("Student ID:", body_style_bold), Paragraph(f"{sid}", body_style)],
+        [Paragraph("Target Exam:", body_style_bold), Paragraph(f"{u.get('target_exam')}", body_style), Paragraph("Location:", body_style_bold), Paragraph(f"{u.get('state')}, {u.get('country')}", body_style)],
+        [Paragraph("DOB / Age:", body_style_bold), Paragraph(f"{u.get('dob')} ({u.get('age')} yrs)", body_style), Paragraph("Phone (Masked):", body_style_bold), Paragraph(f"{masked_phone}", body_style)],
+        [Paragraph("Account Status:", body_style_bold), Paragraph("ACTIVE 🟢", body_style), Paragraph("Secret PIN:", body_style_bold), Paragraph(f"{masked_pin}", body_style)],
+        [Paragraph("Registered At:", body_style_bold), Paragraph(f"{u.get('created_at')}", body_style), Paragraph("Last Active:", body_style_bold), Paragraph(f"{u.get('last_active')}", body_style)]
     ]
 
     prof_table = Table(profile_data, colWidths=[1.3*inch, 2.2*inch, 1.3*inch, 2.2*inch])
@@ -199,7 +200,7 @@ def generate_student_pdf_report(user_id: int, filter_mode: str = "all") -> str:
     story.append(prof_table)
     story.append(Spacer(1, 8))
 
-    # 3. Database Attempt Fetching & Dynamic Date Title
+    # 3. Dynamic Monthly Report Title & Database Data
     conn = get_db()
     cursor = conn.cursor()
     
@@ -227,10 +228,10 @@ def generate_student_pdf_report(user_id: int, filter_mode: str = "all") -> str:
     total_wrong = sum([a['wrong_answers'] for a in attempts])
     acc = round((total_correct / total_qs) * 100, 2) if total_qs > 0 else 0.0
 
-    story.append(Paragraph(f"📊 <b>ACADEMIC PERFORMANCE SUMMARY — {summary_title_text}</b>", section_heading))
+    story.append(Paragraph(f"<b>ACADEMIC PERFORMANCE SUMMARY — {summary_title_text}</b>", section_heading))
 
     stats_data = [
-        [Paragraph("Quizzes", body_style), Paragraph("Total Questions", body_style), Paragraph("Correct ✅", body_style), Paragraph("Wrong ❌", body_style), Paragraph("Accuracy", body_style)],
+        [Paragraph("Quizzes", body_style_bold), Paragraph("Total Questions", body_style_bold), Paragraph("Correct ✅", body_style_bold), Paragraph("Wrong ❌", body_style_bold), Paragraph("Accuracy", body_style_bold)],
         [Paragraph(f"{total_quizzes}", body_style), Paragraph(f"{total_qs}", body_style), Paragraph(f"{total_correct}", body_style), Paragraph(f"{total_wrong}", body_style), Paragraph(f"{acc}%", body_style)]
     ]
     stats_table = Table(stats_data, colWidths=[1.4*inch, 1.4*inch, 1.4*inch, 1.4*inch, 1.4*inch])
@@ -264,9 +265,9 @@ def generate_student_pdf_report(user_id: int, filter_mode: str = "all") -> str:
             else:
                 skipped_q_list.append(q_item)
 
-    # 4a. WRONG QUESTIONS TABLE (First Priority)
+    # 4a. WRONG QUESTIONS TABLE
     story.append(Paragraph("❌ <b>WRONG QUESTIONS REPORT</b>", section_heading))
-    w_table_data = [[Paragraph("Attempt Date", body_style), Paragraph("Question Text", body_style), Paragraph("Correct Answer Text", body_style)]]
+    w_table_data = [[Paragraph("Attempt Date", body_style_bold), Paragraph("Question Text", body_style_bold), Paragraph("Correct Answer Text", body_style_bold)]]
     
     for q in wrong_q_list[:20]:
         q_txt = q.get("question_text", "N/A")
@@ -291,9 +292,9 @@ def generate_student_pdf_report(user_id: int, filter_mode: str = "all") -> str:
     story.append(w_table)
     story.append(Spacer(1, 8))
 
-    # 4b. UN-ATTEMPTED / SKIPPED QUESTIONS TABLE (Second Priority)
+    # 4b. UN-ATTEMPTED / SKIPPED QUESTIONS TABLE
     story.append(Paragraph("⏭ <b>UN-ATTEMPTED / SKIPPED QUESTIONS REPORT</b>", section_heading))
-    s_table_data = [[Paragraph("Attempt Date", body_style), Paragraph("Question Text", body_style), Paragraph("Correct Answer Text", body_style)]]
+    s_table_data = [[Paragraph("Attempt Date", body_style_bold), Paragraph("Question Text", body_style_bold), Paragraph("Correct Answer Text", body_style_bold)]]
     
     for q in skipped_q_list[:20]:
         q_txt = q.get("question_text", "N/A")
@@ -318,9 +319,9 @@ def generate_student_pdf_report(user_id: int, filter_mode: str = "all") -> str:
     story.append(s_table)
     story.append(Spacer(1, 8))
 
-    # 4c. CORRECT QUESTIONS TABLE (Third Priority)
+    # 4c. CORRECT QUESTIONS TABLE
     story.append(Paragraph("✅ <b>CORRECT QUESTIONS REPORT</b>", section_heading))
-    c_table_data = [[Paragraph("Attempt Date", body_style), Paragraph("Question Text", body_style), Paragraph("Correct Answer Text", body_style)]]
+    c_table_data = [[Paragraph("Attempt Date", body_style_bold), Paragraph("Question Text", body_style_bold), Paragraph("Correct Answer Text", body_style_bold)]]
     
     for q in correct_q_list[:20]:
         q_txt = q.get("question_text", "N/A")

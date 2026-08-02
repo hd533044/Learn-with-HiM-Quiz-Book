@@ -209,7 +209,7 @@ async def admin_callback_handler(update: Update, context: ContextTypes.DEFAULT_T
             [InlineKeyboardButton("📅 Date-wise Quiz Summary", callback_data=f"audit_datesummary_{target_uid}"), InlineKeyboardButton("🎯 Attempted Questions", callback_data=f"audit_attempted_{target_uid}")],
             [InlineKeyboardButton("❌ Wrong Questions", callback_data=f"audit_wrong_{target_uid}"), InlineKeyboardButton("💾 Saved Questions", callback_data=f"audit_saved_{target_uid}")],
             [InlineKeyboardButton("💬 Student Feedback", callback_data=f"audit_feedback_{target_uid}"), InlineKeyboardButton("🎁 Grant +20 Bonus Quota", callback_data=f"audit_grant_{target_uid}")],
-            [InlineKeyboardButton("📄 Export PDF Report Card", callback_data=f"audit_pdfmenu_{target_uid}"), InlineKeyboardButton("📥 Export Raw JSON File", callback_data=f"audit_exportjson_{target_uid}")],
+            [InlineKeyboardButton("📄 Export PDF Reports Options", callback_data=f"audit_pdfmenu_{target_uid}"), InlineKeyboardButton("📥 Export Raw JSON File", callback_data=f"audit_exportjson_{target_uid}")],
             [InlineKeyboardButton("🔙 Back to Student Directory", callback_data="admin_users_page_0")]
         ]
 
@@ -244,22 +244,23 @@ async def admin_callback_handler(update: Update, context: ContextTypes.DEFAULT_T
         keyboard = [[InlineKeyboardButton("🔙 Back to Dashboard", callback_data=f"admin_inspect_u_{target_uid}")]]
         await query.edit_message_text(msg, reply_markup=InlineKeyboardMarkup(keyboard), parse_mode="Markdown")
 
-    # PDF Export Options Sub-Menu
+    # Reorganized PDF Menu Options
     elif data.startswith("audit_pdfmenu_"):
         await query.answer()
         target_uid = int(data.replace("audit_pdfmenu_", ""))
         
         pdf_buttons = InlineKeyboardMarkup([
-            [InlineKeyboardButton("📅 Last 1 Month Data", callback_data=f"genpdf_{target_uid}_last_1_month")],
-            [InlineKeyboardButton("🗓 All Months Stats", callback_data=f"genpdf_{target_uid}_all_months_stats")],
-            [InlineKeyboardButton("♾ All-Time Data Till Now", callback_data=f"genpdf_{target_uid}_all_time")],
+            [InlineKeyboardButton("📋 1. Last 1 Month Full Data Report", callback_data=f"genpdf_{target_uid}_last_1_month_data")],
+            [InlineKeyboardButton("📊 2. Last 1 Month Quiz Summary Report (No Qs)", callback_data=f"genpdf_{target_uid}_last_1_month_quiz")],
+            [InlineKeyboardButton("📜 3. All Months Full Data Report", callback_data=f"genpdf_{target_uid}_all_months_data")],
+            [InlineKeyboardButton("📈 4. All Months Quiz Summary Report (No Qs)", callback_data=f"genpdf_{target_uid}_all_months_quiz")],
             [InlineKeyboardButton("🔙 Back to Dashboard", callback_data=f"admin_inspect_u_{target_uid}")]
         ])
 
         await query.edit_message_text(
             f"📄 **PDF REPORT CARD GENERATOR**\n"
             f"━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\n"
-            f"Please select the date range/timeframe for the PDF document:",
+            f"Select the exact report type to generate:",
             reply_markup=pdf_buttons,
             parse_mode="Markdown"
         )
@@ -271,7 +272,7 @@ async def admin_callback_handler(update: Update, context: ContextTypes.DEFAULT_T
         target_uid = int(parts[1])
         filter_mode = "_".join(parts[2:])
 
-        await query.edit_message_text("⏳ **Generating Custom PDF Report...**\nApplying logos, watermark, sky background, and social links...")
+        await query.edit_message_text("⏳ **Generating Custom PDF Report Card...**\nBuilding stats, visual charts, and formatting tables...")
         
         pdf_file = generate_student_pdf_report(target_uid, filter_mode)
         u = get_user_profile(target_uid)
@@ -288,7 +289,7 @@ async def admin_callback_handler(update: Update, context: ContextTypes.DEFAULT_T
                         f"━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\n"
                         f"👤 **Student:** {u.get('full_name')}\n"
                         f"🪪 **Student ID:** `{sid}`\n"
-                        f"📅 **Timeframe:** `{filter_mode.replace('_', ' ').title()}`\n"
+                        f"📊 **Report Module:** `{filter_mode.replace('_', ' ').title()}`\n"
                         f"🏷 **Watermark:** `@LearnwithHiM`"
                     )
                 )

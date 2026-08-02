@@ -9,6 +9,8 @@ from reportlab.platypus import (
 )
 from reportlab.lib.styles import getSampleStyleSheet, ParagraphStyle
 from reportlab.pdfgen import canvas
+from reportlab.graphics.shapes import Drawing, Rect, String
+from reportlab.graphics.charts.barcharts import VerticalBarChart
 from app.config import USER_PROFILES_DIR, BASE_DIR
 from app.database import get_user_profile, get_db
 
@@ -37,7 +39,7 @@ class CleanReportCanvas(canvas.Canvas):
         self.setLineWidth(0.8)
         self.line(30, 42, 582, 42)
 
-        # Clickable Social Media Links (Times New Roman)
+        # Clickable Social Media Links (Times-Roman)
         self.setFont("Times-Bold", 8)
         self.setFillColor(colors.HexColor("#0284C7"))
         
@@ -69,7 +71,42 @@ def mask_phone(phone_str: str) -> str:
     clean_p = str(phone_str).replace("+", "").strip()
     return "XXXXXX" + clean_p[-4:]
 
-def generate_student_pdf_report(user_id: int, filter_mode: str = "all") -> str:
+def create_performance_chart(correct: int, wrong: int, skipped: int):
+    """Draws a visual bar chart representing student stats."""
+    drawing = Drawing(400, 140)
+    chart = VerticalBarChart()
+    chart.x = 45
+    chart.y = 25
+    chart.height = 95
+    chart.width = 300
+    chart.data = [[correct, wrong, skipped]]
+    
+    # Calculate chart ceiling dynamically
+    max_val = max(correct, wrong, skipped, 5)
+    chart.valueAxis.valueMin = 0
+    chart.valueAxis.valueMax = max_val + 2
+    chart.valueAxis.valueStep = max(1, (max_val + 2) // 5)
+    
+    chart.categoryAxis.categoryNames = ['Correct ✅', 'Wrong ❌', 'Skipped ⏭']
+    chart.categoryAxis.labels.fontName = 'Times-Bold'
+    chart.categoryAxis.labels.fontSize = 8
+    
+    # Custom bar colors
+    chart.bars[0].fillColor = colors.HexColor("#34D399") # Green
+    chart.bars[(0, 1)].fillColor = colors.HexColor("#FB7185") # Red
+    chart.bars[(0, 2)].fillColor = colors.HexColor("#FBBF24") # Yellow
+    
+    drawing.add(chart)
+    return drawing
+
+def generate_student_pdf_report(user_id: int, filter_mode: str = "last_1_month_data") -> str:
+    """
+    filter_mode options:
+      1. 'last_1_month_data'  : Full Q-logs for last 30 days
+      2. 'last_1_month_quiz'  : Quiz stats & charts without individual Q-text (last 30 days)
+      3. 'all_months_data'    : Full historical Q-logs
+      4. 'all_months_quiz'    : Full historical quiz stats & charts without Q-text
+    """
     u = get_user_profile(user_id)
     if not u:
         return ""
@@ -77,8 +114,7 @@ def generate_student_pdf_report(user_id: int, filter_mode: str = "all") -> str:
     username = u.get("username") or "user"
     username_clean = "".join(filter(str.isalnum, username)).lower() or "user"
     
-    timeframe_str = "1-monthreport" if filter_mode == "last_1_month" else "allmonthsreport" if filter_mode == "all_months_stats" else "alltimereport"
-    pdf_filename = f"{username_clean}_{user_id}_{timeframe_str}.pdf"
+    pdf_filename = f"{username_clean}_{user_id}_{filter_mode}_report.pdf"
     pdf_path = os.path.join(USER_PROFILES_DIR, pdf_filename)
 
     doc = SimpleDocTemplate(
@@ -92,24 +128,13 @@ def generate_student_pdf_report(user_id: int, filter_mode: str = "all") -> str:
 
     styles = getSampleStyleSheet()
 
-    # Base font style - Times New Roman
     main_heading_style = ParagraphStyle(
         'MainTitleDarkBlue',
         parent=styles['Heading1'],
         fontName='Times-Bold',
         fontSize=18,
         leading=22,
-        textColor=colors.HexColor("#1E3A8A"), # Dark Blue
-        alignment=1
-    )
-
-    sub_heading_style = ParagraphStyle(
-        'SubTitleGreen',
-        parent=styles['Normal'],
-        fontName='Times-Bold',
-        fontSize=9,
-        leading=12,
-        textColor=colors.HexColor("#16A34A"), # Light Greenish
+        textColor=colors.HexColor("#1E3A8A"),
         alignment=1
     )
 
@@ -127,7 +152,7 @@ def generate_student_pdf_report(user_id: int, filter_mode: str = "all") -> str:
     body_style = ParagraphStyle(
         'BodyTextTimes',
         parent=styles['Normal'],
-        fontName='Times-Roman', # Times New Roman Normal
+        fontName='Times-Roman',
         fontSize=9,
         leading=12,
         textColor=colors.HexColor("#334155")
@@ -144,7 +169,7 @@ def generate_student_pdf_report(user_id: int, filter_mode: str = "all") -> str:
 
     story = []
 
-    # 1. Even Unsquished Small Logo Images
+    # 1. Header with Uncrushed Logos
     logo_left_path = os.path.join(BASE_DIR, "assets", "logo.png")
     logo_right_path = os.path.join(BASE_DIR, "assets", "logohim.png")
 
@@ -200,7 +225,7 @@ def generate_student_pdf_report(user_id: int, filter_mode: str = "all") -> str:
     story.append(prof_table)
     story.append(Spacer(1, 8))
 
-    # 3. Dynamic Monthly Report Title & Database Data
+    # 3. Database Attempt Fetching & Date Filtering
     conn = get_db()
     cursor = conn.cursor()
     
@@ -209,12 +234,11 @@ def generate_student_pdf_report(user_id: int, filter_mode: str = "all") -> str:
     one_month_ago_str = one_month_ago.strftime("%Y-%m-%d")
     now_date_str = now_date.strftime("%Y-%m-%d")
 
-    if filter_mode == "last_1_month":
+    is_month_filter = "last_1_month" in filter_mode
+
+    if is_month_filter:
         summary_title_text = f"MONTHLY REPORT ({one_month_ago_str} TO {now_date_str})"
         cursor.execute("SELECT * FROM quiz_attempts WHERE user_id = ? AND attempt_date >= ? ORDER BY id DESC", (user_id, one_month_ago_str))
-    elif filter_mode == "all_months_stats":
-        summary_title_text = "ALL MONTHS ACADEMIC STATS REPORT"
-        cursor.execute("SELECT * FROM quiz_attempts WHERE user_id = ? ORDER BY id DESC", (user_id,))
     else:
         summary_title_text = "ALL-TIME CUMULATIVE ACADEMIC REPORT"
         cursor.execute("SELECT * FROM quiz_attempts WHERE user_id = ? ORDER BY id DESC", (user_id,))
@@ -226,9 +250,10 @@ def generate_student_pdf_report(user_id: int, filter_mode: str = "all") -> str:
     total_qs = sum([a['questions_attempted'] for a in attempts])
     total_correct = sum([a['correct_answers'] for a in attempts])
     total_wrong = sum([a['wrong_answers'] for a in attempts])
+    total_skipped = sum([a['skipped_count'] for a in attempts])
     acc = round((total_correct / total_qs) * 100, 2) if total_qs > 0 else 0.0
 
-    story.append(Paragraph(f"<b>ACADEMIC PERFORMANCE SUMMARY — {summary_title_text}</b>", section_heading))
+    story.append(Paragraph(f"📊 <b>ACADEMIC PERFORMANCE SUMMARY — {summary_title_text}</b>", section_heading))
 
     stats_data = [
         [Paragraph("Quizzes", body_style_bold), Paragraph("Total Questions", body_style_bold), Paragraph("Correct ✅", body_style_bold), Paragraph("Wrong ❌", body_style_bold), Paragraph("Accuracy", body_style_bold)],
@@ -245,105 +270,160 @@ def generate_student_pdf_report(user_id: int, filter_mode: str = "all") -> str:
     story.append(stats_table)
     story.append(Spacer(1, 8))
 
-    # Categorize questions into 3 lists: Wrong, Skipped, Correct
-    wrong_q_list = []
-    skipped_q_list = []
-    correct_q_list = []
-
-    for a in attempts:
-        ad = dict(a)
-        attempt_date = ad.get("attempt_date") or (ad.get("attempt_timestamp", "").split(" ")[0] if ad.get("attempt_timestamp") else "N/A")
-        details = json.loads(ad["details_json"]) if ad.get("details_json") else []
-
-        for q_item in details:
-            q_item['attempt_date'] = attempt_date
-            status = q_item.get("status")
-            if status == "WRONG":
-                wrong_q_list.append(q_item)
-            elif status == "CORRECT":
-                correct_q_list.append(q_item)
-            else:
-                skipped_q_list.append(q_item)
-
-    # 4a. WRONG QUESTIONS TABLE
-    story.append(Paragraph("❌ <b>WRONG QUESTIONS REPORT</b>", section_heading))
-    w_table_data = [[Paragraph("Attempt Date", body_style_bold), Paragraph("Question Text", body_style_bold), Paragraph("Correct Answer Text", body_style_bold)]]
-    
-    for q in wrong_q_list[:20]:
-        q_txt = q.get("question_text", "N/A")
-        c_ans = q.get("correct_answer_text", "N/A")
-        w_table_data.append([
-            Paragraph(f"{q['attempt_date']}", body_style),
-            Paragraph(f"{q_txt}", body_style),
-            Paragraph(f"{c_ans}", body_style)
-        ])
-
-    if len(w_table_data) == 1:
-        w_table_data.append([Paragraph("N/A", body_style), Paragraph("Zero wrong questions in this timeframe! 🎉", body_style), Paragraph("N/A", body_style)])
-
-    w_table = Table(w_table_data, colWidths=[1.2*inch, 3.8*inch, 2.0*inch])
-    w_table.setStyle(TableStyle([
-        ('BACKGROUND', (0,0), (-1,0), colors.HexColor("#FFE4E6")),
-        ('BACKGROUND', (0,1), (-1,-1), colors.HexColor("#FFFFFF")),
-        ('GRID', (0,0), (-1,-1), 0.5, colors.HexColor("#FB7185")),
-        ('PADDING', (0,0), (-1,-1), 4),
-        ('VALIGN', (0,0), (-1,-1), 'TOP')
-    ]))
-    story.append(w_table)
+    # Add Visual Bar Chart
+    story.append(Paragraph("📈 <b>VISUAL STATISTICAL BREAKDOWN</b>", section_heading))
+    chart_drawing = create_performance_chart(total_correct, total_wrong, total_skipped)
+    story.append(chart_drawing)
     story.append(Spacer(1, 8))
 
-    # 4b. UN-ATTEMPTED / SKIPPED QUESTIONS TABLE
-    story.append(Paragraph("⏭ <b>UN-ATTEMPTED / SKIPPED QUESTIONS REPORT</b>", section_heading))
-    s_table_data = [[Paragraph("Attempt Date", body_style_bold), Paragraph("Question Text", body_style_bold), Paragraph("Correct Answer Text", body_style_bold)]]
-    
-    for q in skipped_q_list[:20]:
-        q_txt = q.get("question_text", "N/A")
-        c_ans = q.get("correct_answer_text", "N/A")
-        s_table_data.append([
-            Paragraph(f"{q['attempt_date']}", body_style),
-            Paragraph(f"{q_txt}", body_style),
-            Paragraph(f"{c_ans}", body_style)
-        ])
+    # Mode 2 & Mode 4: QUIZ SUMMARY ONLY (Without actual question texts)
+    if "quiz" in filter_mode:
+        story.append(Paragraph("🗓 <b>DATE-WISE QUIZ SUMMARY REPORT</b>", section_heading))
+        
+        date_summary_data = [[
+            Paragraph("Attempt Date", body_style_bold),
+            Paragraph("Questions", body_style_bold),
+            Paragraph("Correct ✅", body_style_bold),
+            Paragraph("Wrong ❌", body_style_bold),
+            Paragraph("Skipped ⏭", body_style_bold),
+            Paragraph("Total Score", body_style_bold)
+        ]]
 
-    if len(s_table_data) == 1:
-        s_table_data.append([Paragraph("N/A", body_style), Paragraph("Zero skipped questions in this timeframe!", body_style), Paragraph("N/A", body_style)])
+        date_groups = {}
+        for a in attempts:
+            ad = dict(a)
+            dt = ad.get("attempt_date", "Unknown")
+            if dt not in date_groups:
+                date_groups[dt] = {"qs": 0, "correct": 0, "wrong": 0, "skipped": 0, "score": 0.0}
+            date_groups[dt]["qs"] += ad.get("questions_attempted", 0)
+            date_groups[dt]["correct"] += ad.get("correct_answers", 0)
+            date_groups[dt]["wrong"] += ad.get("wrong_answers", 0)
+            date_groups[dt]["skipped"] += ad.get("skipped_count", 0)
+            date_groups[dt]["score"] += ad.get("score", 0.0)
 
-    s_table = Table(s_table_data, colWidths=[1.2*inch, 3.8*inch, 2.0*inch])
-    s_table.setStyle(TableStyle([
-        ('BACKGROUND', (0,0), (-1,0), colors.HexColor("#FEF3C7")),
-        ('BACKGROUND', (0,1), (-1,-1), colors.HexColor("#FFFFFF")),
-        ('GRID', (0,0), (-1,-1), 0.5, colors.HexColor("#FBBF24")),
-        ('PADDING', (0,0), (-1,-1), 4),
-        ('VALIGN', (0,0), (-1,-1), 'TOP')
-    ]))
-    story.append(s_table)
-    story.append(Spacer(1, 8))
+        for dt, st in date_groups.items():
+            date_summary_data.append([
+                Paragraph(f"{dt}", body_style),
+                Paragraph(f"{st['qs']}", body_style),
+                Paragraph(f"{st['correct']}", body_style),
+                Paragraph(f"{st['wrong']}", body_style),
+                Paragraph(f"{st['skipped']}", body_style),
+                Paragraph(f"{st['score']}", body_style)
+            ])
 
-    # 4c. CORRECT QUESTIONS TABLE
-    story.append(Paragraph("✅ <b>CORRECT QUESTIONS REPORT</b>", section_heading))
-    c_table_data = [[Paragraph("Attempt Date", body_style_bold), Paragraph("Question Text", body_style_bold), Paragraph("Correct Answer Text", body_style_bold)]]
-    
-    for q in correct_q_list[:20]:
-        q_txt = q.get("question_text", "N/A")
-        c_ans = q.get("correct_answer_text", "N/A")
-        c_table_data.append([
-            Paragraph(f"{q['attempt_date']}", body_style),
-            Paragraph(f"{q_txt}", body_style),
-            Paragraph(f"{c_ans}", body_style)
-        ])
+        if len(date_summary_data) == 1:
+            date_summary_data.append([Paragraph("N/A", body_style), Paragraph("0", body_style), Paragraph("0", body_style), Paragraph("0", body_style), Paragraph("0", body_style), Paragraph("0.0", body_style)])
 
-    if len(c_table_data) == 1:
-        c_table_data.append([Paragraph("N/A", body_style), Paragraph("No correct questions logged yet.", body_style), Paragraph("N/A", body_style)])
+        date_table = Table(date_summary_data, colWidths=[1.2*inch, 1.1*inch, 1.1*inch, 1.1*inch, 1.1*inch, 1.4*inch])
+        date_table.setStyle(TableStyle([
+            ('BACKGROUND', (0,0), (-1,0), colors.HexColor("#F1F5F9")),
+            ('BACKGROUND', (0,1), (-1,-1), colors.HexColor("#FFFFFF")),
+            ('GRID', (0,0), (-1,-1), 0.5, colors.HexColor("#CBD5E1")),
+            ('ALIGN', (0,0), (-1,-1), 'CENTER'),
+            ('PADDING', (0,0), (-1,-1), 5)
+        ]))
+        story.append(date_table)
 
-    c_table = Table(c_table_data, colWidths=[1.2*inch, 3.8*inch, 2.0*inch])
-    c_table.setStyle(TableStyle([
-        ('BACKGROUND', (0,0), (-1,0), colors.HexColor("#D1FAE5")),
-        ('BACKGROUND', (0,1), (-1,-1), colors.HexColor("#FFFFFF")),
-        ('GRID', (0,0), (-1,-1), 0.5, colors.HexColor("#34D399")),
-        ('PADDING', (0,0), (-1,-1), 4),
-        ('VALIGN', (0,0), (-1,-1), 'TOP')
-    ]))
-    story.append(c_table)
+    # Mode 1 & Mode 3: FULL DATA REPORT (With itemized question tables)
+    else:
+        wrong_q_list = []
+        skipped_q_list = []
+        correct_q_list = []
+
+        for a in attempts:
+            ad = dict(a)
+            attempt_date = ad.get("attempt_date") or (ad.get("attempt_timestamp", "").split(" ")[0] if ad.get("attempt_timestamp") else "N/A")
+            details = json.loads(ad["details_json"]) if ad.get("details_json") else []
+
+            for q_item in details:
+                q_item['attempt_date'] = attempt_date
+                status = q_item.get("status")
+                if status == "WRONG":
+                    wrong_q_list.append(q_item)
+                elif status == "CORRECT":
+                    correct_q_list.append(q_item)
+                else:
+                    skipped_q_list.append(q_item)
+
+        # 4a. WRONG QUESTIONS TABLE
+        story.append(Paragraph("❌ <b>WRONG QUESTIONS REPORT</b>", section_heading))
+        w_table_data = [[Paragraph("Attempt Date", body_style_bold), Paragraph("Question Text", body_style_bold), Paragraph("Correct Answer Text", body_style_bold)]]
+        
+        for q in wrong_q_list[:25]:
+            q_txt = q.get("question_text", "N/A")
+            c_ans = q.get("correct_answer_text", "N/A")
+            w_table_data.append([
+                Paragraph(f"{q['attempt_date']}", body_style),
+                Paragraph(f"{q_txt}", body_style),
+                Paragraph(f"{c_ans}", body_style)
+            ])
+
+        if len(w_table_data) == 1:
+            w_table_data.append([Paragraph("N/A", body_style), Paragraph("Zero wrong questions in this timeframe! 🎉", body_style), Paragraph("N/A", body_style)])
+
+        w_table = Table(w_table_data, colWidths=[1.2*inch, 3.8*inch, 2.0*inch])
+        w_table.setStyle(TableStyle([
+            ('BACKGROUND', (0,0), (-1,0), colors.HexColor("#FFE4E6")),
+            ('BACKGROUND', (0,1), (-1,-1), colors.HexColor("#FFFFFF")),
+            ('GRID', (0,0), (-1,-1), 0.5, colors.HexColor("#FB7185")),
+            ('PADDING', (0,0), (-1,-1), 4),
+            ('VALIGN', (0,0), (-1,-1), 'TOP')
+        ]))
+        story.append(w_table)
+        story.append(Spacer(1, 8))
+
+        # 4b. UN-ATTEMPTED / SKIPPED QUESTIONS TABLE
+        story.append(Paragraph("⏭ <b>UN-ATTEMPTED / SKIPPED QUESTIONS REPORT</b>", section_heading))
+        s_table_data = [[Paragraph("Attempt Date", body_style_bold), Paragraph("Question Text", body_style_bold), Paragraph("Correct Answer Text", body_style_bold)]]
+        
+        for q in skipped_q_list[:25]:
+            q_txt = q.get("question_text", "N/A")
+            c_ans = q.get("correct_answer_text", "N/A")
+            s_table_data.append([
+                Paragraph(f"{q['attempt_date']}", body_style),
+                Paragraph(f"{q_txt}", body_style),
+                Paragraph(f"{c_ans}", body_style)
+            ])
+
+        if len(s_table_data) == 1:
+            s_table_data.append([Paragraph("N/A", body_style), Paragraph("Zero skipped questions in this timeframe!", body_style), Paragraph("N/A", body_style)])
+
+        s_table = Table(s_table_data, colWidths=[1.2*inch, 3.8*inch, 2.0*inch])
+        s_table.setStyle(TableStyle([
+            ('BACKGROUND', (0,0), (-1,0), colors.HexColor("#FEF3C7")),
+            ('BACKGROUND', (0,1), (-1,-1), colors.HexColor("#FFFFFF")),
+            ('GRID', (0,0), (-1,-1), 0.5, colors.HexColor("#FBBF24")),
+            ('PADDING', (0,0), (-1,-1), 4),
+            ('VALIGN', (0,0), (-1,-1), 'TOP')
+        ]))
+        story.append(s_table)
+        story.append(Spacer(1, 8))
+
+        # 4c. CORRECT QUESTIONS TABLE
+        story.append(Paragraph("✅ <b>CORRECT QUESTIONS REPORT</b>", section_heading))
+        c_table_data = [[Paragraph("Attempt Date", body_style_bold), Paragraph("Question Text", body_style_bold), Paragraph("Correct Answer Text", body_style_bold)]]
+        
+        for q in correct_q_list[:25]:
+            q_txt = q.get("question_text", "N/A")
+            c_ans = q.get("correct_answer_text", "N/A")
+            c_table_data.append([
+                Paragraph(f"{q['attempt_date']}", body_style),
+                Paragraph(f"{q_txt}", body_style),
+                Paragraph(f"{c_ans}", body_style)
+            ])
+
+        if len(c_table_data) == 1:
+            c_table_data.append([Paragraph("N/A", body_style), Paragraph("No correct questions logged yet.", body_style), Paragraph("N/A", body_style)])
+
+        c_table = Table(c_table_data, colWidths=[1.2*inch, 3.8*inch, 2.0*inch])
+        c_table.setStyle(TableStyle([
+            ('BACKGROUND', (0,0), (-1,0), colors.HexColor("#D1FAE5")),
+            ('BACKGROUND', (0,1), (-1,-1), colors.HexColor("#FFFFFF")),
+            ('GRID', (0,0), (-1,-1), 0.5, colors.HexColor("#34D399")),
+            ('PADDING', (0,0), (-1,-1), 4),
+            ('VALIGN', (0,0), (-1,-1), 'TOP')
+        ]))
+        story.append(c_table)
 
     doc.build(story, canvasmaker=CleanReportCanvas)
     return pdf_path

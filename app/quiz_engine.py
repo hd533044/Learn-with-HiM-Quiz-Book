@@ -206,6 +206,7 @@ async def quiz_timer_callback(update: Update, context: ContextTypes.DEFAULT_TYPE
 
     session = {
         "user_id": user_id,
+        "chat_id": query.message.chat_id,
         "questions": questions,
         "current_index": 0,
         "score": 0.0,
@@ -274,6 +275,7 @@ async def pause_quiz_command(update: Update, context: ContextTypes.DEFAULT_TYPE)
 
     save_state = {
         "user_id": user_id,
+        "chat_id": chat_id,
         "questions": session["questions"],
         "current_index": session["current_index"],
         "score": session["score"],
@@ -325,6 +327,7 @@ async def resume_quiz_command(update: Update, context: ContextTypes.DEFAULT_TYPE
 
     session = {
         "user_id": user_id,
+        "chat_id": chat_id,
         "questions": paused["questions"],
         "current_index": paused.get("current_index", 0),
         "score": paused["score"],
@@ -473,7 +476,7 @@ async def send_next_question(chat_id: int, user_id: int, context: ContextTypes.D
 
         TIMER_TASKS[user_id] = asyncio.create_task(auto_skip_task(chat_id, user_id, poll_id, session["current_index"], timer_sec, context))
     except Exception as e:
-        logging.error(f"Error sending poll: {e}")
+        logger.error(f"Error sending poll: {e}")
         session["skipped"] += 1
         session["current_index"] += 1
         await send_next_question(chat_id, user_id, context)
@@ -557,8 +560,8 @@ async def download_instant_pdf_callback(update: Update, context: ContextTypes.DE
     user_id = query.from_user.id
     await query.answer("⏳ Generating your instant PDF report card...")
     
-    # Safely fetch result payload from Application User Data
-    quiz_result_payload = context.application.user_data.get(user_id, {}).get("last_quiz_result")
+    user_data = context.application.user_data.get(user_id, {})
+    quiz_result_payload = user_data.get("last_quiz_result")
     
     if not quiz_result_payload:
         await query.message.reply_text("⚠️ No recent quiz session data found to export.")
@@ -596,7 +599,6 @@ async def finish_quiz_and_send_report(chat_id: int, user_id: int, context: Conte
     score = session["score"]
     detailed_logs = session.get("detailed_logs", [])
 
-    # Record to DB asynchronously
     await asyncio.to_thread(
         record_quiz_result,
         user_id, 
@@ -611,7 +613,6 @@ async def finish_quiz_and_send_report(chat_id: int, user_id: int, context: Conte
     percentile = await asyncio.to_thread(calculate_user_percentile, user_id)
     rank_str = await asyncio.to_thread(calculate_user_rank, user_id)
 
-    # Global persistent cache for download PDF trigger
     if user_id not in context.application.user_data:
         context.application.user_data[user_id] = {}
         

@@ -265,7 +265,7 @@ async def admin_callback_handler(update: Update, context: ContextTypes.DEFAULT_T
             parse_mode="Markdown"
         )
 
-    # Generate and Send PDF Report
+    # Generate and Send PDF Report (DOCUMENT FIRST -> NAVIGATION BUTTONS BELOW IT)
     elif data.startswith("genpdf_"):
         await query.answer()
         parts = data.split("_")
@@ -279,6 +279,7 @@ async def admin_callback_handler(update: Update, context: ContextTypes.DEFAULT_T
         sid = u.get("student_id") or f"USER_{target_uid}"
 
         if pdf_file and os.path.exists(pdf_file):
+            # 1. Send the PDF document FIRST
             with open(pdf_file, "rb") as doc:
                 await context.bot.send_document(
                     chat_id=query.message.chat_id,
@@ -294,6 +295,7 @@ async def admin_callback_handler(update: Update, context: ContextTypes.DEFAULT_T
                     )
                 )
             
+            # 2. Send navigation buttons DIRECTLY BELOW the document
             nav_buttons = InlineKeyboardMarkup([
                 [InlineKeyboardButton("📄 Export Another PDF Report", callback_data=f"audit_pdfmenu_{target_uid}")],
                 [InlineKeyboardButton("🔙 Back to Student Dashboard", callback_data=f"admin_inspect_u_{target_uid}")],
@@ -319,10 +321,6 @@ async def admin_callback_handler(update: Update, context: ContextTypes.DEFAULT_T
 
         sid = u.get("student_id") or f"USER_{u.get('user_id')}"
         ban_status = "BANNED 🔴" if u.get("is_banned") else "ACTIVE 🟢"
-        
-        edit_cnt = u.get("edit_count", 0)
-        last_edit = u.get("last_profile_edit", "Never")
-        remaining_edits = max(0, 3 - edit_cnt)
 
         msg = (
             f"📋 **STUDENT PERSONAL DETAILS**\n"
@@ -338,8 +336,6 @@ async def admin_callback_handler(update: Update, context: ContextTypes.DEFAULT_T
             f"• **Calculated Age:** `{u.get('age', 'N/A')} yrs`\n"
             f"• **Gender:** `{u.get('gender', 'N/A')}`\n"
             f"• **Location:** `{u.get('state', 'N/A')}, {u.get('country', 'India')}`\n"
-            f"• **Profile Edits Made:** `{edit_cnt} / 3 times` *(Last: {last_edit})*\n"
-            f"• **Remaining Edits:** `{remaining_edits} left`\n"
             f"• **Bonus Quota:** `{u.get('bonus_quota', 0)} Qs`\n"
             f"• **Registered At:** `{u.get('created_at', 'N/A')}`\n"
             f"• **Last Active:** `{u.get('last_active', 'N/A')}`\n"

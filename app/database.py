@@ -46,6 +46,7 @@ def init_db():
             referred_by INTEGER,
             referral_count INTEGER DEFAULT 0,
             bonus_quota INTEGER DEFAULT 0,
+            edit_count INTEGER DEFAULT 0,
             last_profile_edit TEXT,
             last_active TEXT,
             last_activity_epoch INTEGER DEFAULT 0,
@@ -71,6 +72,8 @@ def init_db():
         cursor.execute("ALTER TABLE users ADD COLUMN security_question TEXT")
     if 'security_answer' not in columns:
         cursor.execute("ALTER TABLE users ADD COLUMN security_answer TEXT")
+    if 'edit_count' not in columns:
+        cursor.execute("ALTER TABLE users ADD COLUMN edit_count INTEGER DEFAULT 0")
     if 'last_profile_edit' not in columns:
         cursor.execute("ALTER TABLE users ADD COLUMN last_profile_edit TEXT")
     if 'last_active' not in columns:
@@ -213,10 +216,6 @@ def update_user_pin(user_id: int, new_pin: str):
     sync_user_json_profile(user_id)
 
 def check_and_update_inactivity(user_id: int) -> tuple[bool, int]:
-    """
-    Checks if the user has been inactive for > 300 seconds (5 mins).
-    Returns (is_locked, seconds_inactive). Updates last_activity_epoch if active.
-    """
     conn = get_db()
     cursor = conn.cursor()
     now_epoch = int(get_ist_now().timestamp())
@@ -231,7 +230,7 @@ def check_and_update_inactivity(user_id: int) -> tuple[bool, int]:
     last_epoch = row['last_activity_epoch'] or 0
     diff = now_epoch - last_epoch if last_epoch > 0 else 0
 
-    if last_epoch > 0 and diff > 300: # Exceeds 5 minutes
+    if last_epoch > 0 and diff > 300:
         conn.close()
         return True, diff
 
@@ -403,19 +402,26 @@ def sync_user_json_profile(user_id: int):
     except Exception as e:
         logger.error(f"Failed to sync JSON profile for student {student_id}: {e}")
 
-def save_user_profile(user_id, full_name, username, phone, target_exam, dob, age, gender, pin, sec_q, sec_a, country="India", state="N/A", referred_by=None):
+def save_user_profile(user_id, full_name, username, phone, target_exam, dob, age, gender, pin, sec_q, sec_a, country="India", state="N/A", referred_by=None, is_update=False):
     conn = get_db()
     cursor = conn.cursor()
     now_str = get_ist_timestamp_str()
     now_epoch = int(get_ist_now().timestamp())
     
-    student_id = generate_student_id(full_name, dob)
+    cursor.execute("SELECT student_id, edit_count FROM users WHERE user_id = ?", (user_id,))
+    existing = cursor.fetchone()
+    
+    if existing and existing['student_id']:
+        student_id = existing['student_id']
+        new_edit_count = (existing['edit_count'] or 0) + (1 if is_update else 0)
+    else:
+        student_id = generate_student_id(full_name, dob)
+        new_edit_count = 0
 
     cursor.execute('''
-        INSERT INTO users (user_id, student_id, full_name, username, phone_number, target_exam, dob, age, gender, pin, security_question, security_answer, country, state, referred_by, last_profile_edit, last_active, last_activity_epoch, is_banned, is_verified, created_at)
+        INSERT INTO users (user_id, student_id, full_name, username, phone_number, target_exam, dob, age, gender, pin, security_question, security_answer, country, state, referred_by, edit_count, last_profile_edit, last_active, last_activity_epoch, is_banned, is_verified, created_at)
         VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, 0, 1, ?)
         ON CONFLICT(user_id) DO UPDATE SET
-            student_id=excluded.student_id,
             full_name=excluded.full_name,
             username=excluded.username,
             phone_number=excluded.phone_number,
@@ -428,13 +434,14 @@ def save_user_profile(user_id, full_name, username, phone, target_exam, dob, age
             security_answer=excluded.security_answer,
             country=excluded.country,
             state=excluded.state,
-            last_profile_edit=?,
-            last_active=?,
-            last_activity_epoch=?,
+            edit_count=excluded.edit_count,
+            last_profile_edit=excluded.last_profile_edit,
+            last_active=excluded.last_active,
+            last_activity_epoch=excluded.last_activity_epoch,
             is_verified=1
-    ''', (user_id, student_id, full_name, username, phone, target_exam, dob, age, gender, pin, sec_q, sec_a, country, state, referred_by, now_str, now_str, now_epoch, now_str, now_str, now_epoch, now_str))
+    ''', (user_id, student_id, full_name, username, phone, target_exam, dob, age, gender, pin, sec_q, sec_a, country, state, referred_by, new_edit_count, now_str, now_str, now_epoch, now_str, now_str, now_epoch, now_str))
     
-    if referred_by and referred_by != user_id:
+    if referred_by and referred_by != user_id and not existing:
         cursor.execute("UPDATE users SET referral_count = referral_count + 1 WHERE user_id = ?", (referred_by,))
         cursor.execute("SELECT referral_count FROM users WHERE user_id = ?", (referred_by,))
         row = cursor.fetchone()
@@ -445,27 +452,34 @@ def save_user_profile(user_id, full_name, username, phone, target_exam, dob, age
     conn.close()
     
     sync_user_json_profile(user_id)
-    if referred_by:
+    if referred_by and not existing:
         sync_user_json_profile(referred_by)
 
-def can_user_edit_profile(user_id: int) -> tuple[bool, int]:
+def can_user_edit_profile(user_id: int) -> tuple[bool, str, int]:
     conn = get_db()
     cursor = conn.cursor()
-    cursor.execute("SELECT last_profile_edit FROM users WHERE user_id = ?", (user_id,))
+    cursor.execute("SELECT edit_count, last_profile_edit FROM users WHERE user_id = ?", (user_id,))
     row = cursor.fetchone()
     conn.close()
 
-    if not row or not row['last_profile_edit']:
-        return True, 0
+    if not row:
+        return False, "User not found.", 0
+
+    edit_count = row['edit_count'] or 0
+    if edit_count >= 3:
+        return False, "MAX_LIFETIME_REACHED", 0
+
+    if not row['last_profile_edit']:
+        return True, "ALLOWED", 3 - edit_count
 
     try:
         last_edit_date = datetime.strptime(row['last_profile_edit'].split(" ")[0], "%Y-%m-%d")
         days_passed = (datetime.now() - last_edit_date).days
-        if days_passed >= 30:
-            return True, 0
-        return False, 30 - days_passed
+        if days_passed < 30:
+            return False, "COOLDOWN_ACTIVE", 30 - days_passed
+        return True, "ALLOWED", 3 - edit_count
     except Exception:
-        return True, 0
+        return True, "ALLOWED", 3 - edit_count
 
 def get_user_profile(user_id):
     conn = get_db()

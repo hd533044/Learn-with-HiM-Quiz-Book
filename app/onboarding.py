@@ -109,7 +109,6 @@ async def start_onboarding(update: Update, context: ContextTypes.DEFAULT_TYPE):
         except ValueError:
             pass
 
-    # Clear any previous broken session state
     context.user_data["awaiting_other_exam"] = False
     context.user_data["awaiting_other_country"] = False
 
@@ -459,10 +458,14 @@ async def edit_profile_command(update: Update, context: ContextTypes.DEFAULT_TYP
         return ConversationHandler.END
 
     user = update.effective_user
-    can_edit, days_left = can_user_edit_profile(user.id)
+    allowed, reason, val = can_user_edit_profile(user.id)
     
-    if not can_edit:
-        msg = f"⏳ **Profile Edit Locked!**\n\nYou can only update your profile details once every 30 days.\nPlease try again in `{days_left} days`."
+    if not allowed:
+        if reason == "MAX_LIFETIME_REACHED":
+            msg = "🛑 **Lifetime Edit Limit Reached!**\n\nYou have already edited your profile the maximum allowed **3 times** in your lifetime. No further edits are permitted."
+        else:
+            msg = f"⏳ **Profile Edit Cooldown Active!**\n\nYou can only update your profile once every 30 days. Please try again in `{val} days`."
+        
         if update.callback_query:
             await update.callback_query.answer(msg, show_alert=True)
         else:
@@ -470,9 +473,11 @@ async def edit_profile_command(update: Update, context: ContextTypes.DEFAULT_TYP
         return ConversationHandler.END
 
     warn_msg = (
-        "⚠️ **PROFILE EDIT WARNING**\n"
+        "⚠️ **PROFILE EDIT WARNING & GUIDELINES**\n"
         "━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\n"
-        "Please note: You are allowed to edit your student profile details **ONLY ONCE EVERY 30 DAYS**.\n\n"
+        f"• You are allowed to edit your profile up to **3 times in your lifetime**.\n"
+        f"• You currently have **{val} edit(s)** remaining.\n"
+        f"• Edits are also subject to a 30-day cooldown period.\n\n"
         "Are you sure you want to proceed with updating your profile now?"
     )
     warn_markup = InlineKeyboardMarkup([
@@ -780,6 +785,7 @@ async def sec_ans_step(update: Update, context: ContextTypes.DEFAULT_TYPE):
     calc_age = datetime.now().year - int(birth_year)
 
     student_id = generate_student_id(full_name, dob_str)
+    is_editing = context.user_data.get("is_editing_profile", False)
     context.user_data["is_editing_profile"] = False
 
     save_user_profile(
@@ -796,7 +802,8 @@ async def sec_ans_step(update: Update, context: ContextTypes.DEFAULT_TYPE):
         sec_a=ans_input,
         country=context.user_data.get("country", "India"),
         state=context.user_data.get("state", "N/A"),
-        referred_by=context.user_data.get("referred_by")
+        referred_by=context.user_data.get("referred_by"),
+        is_update=is_editing
     )
 
     await update.message.reply_text(

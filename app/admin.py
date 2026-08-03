@@ -154,7 +154,18 @@ async def admin_callback_handler(update: Update, context: ContextTypes.DEFAULT_T
         u = get_user_profile(target_uid)
         sid = u.get("student_id") or f"USER_{target_uid}"
 
-        if pdf_file and os.path.exists(pdf_file):
+        if pdf_file == "NO_ATTEMPTS":
+            nav_buttons = InlineKeyboardMarkup([
+                [InlineKeyboardButton("📄 Export Another PDF Report", callback_data=f"audit_pdfmenu_{target_uid}")],
+                [InlineKeyboardButton("🔙 Back to Student Dashboard", callback_data=f"admin_inspect_u_{target_uid}")]
+            ])
+            await query.edit_message_text(
+                f"ℹ️ **NO QUIZ ATTEMPTS FOUND!**\n\n"
+                f"Student **{u.get('full_name')}** (`{sid}`) has not attempted any quizzes in this selected timeframe.",
+                reply_markup=nav_buttons,
+                parse_mode="Markdown"
+            )
+        elif pdf_file and os.path.exists(pdf_file):
             # 1. Send PDF Document FIRST
             with open(pdf_file, "rb") as doc:
                 await context.bot.send_document(

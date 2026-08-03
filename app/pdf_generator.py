@@ -69,7 +69,7 @@ class NumberedCanvas(canvas.Canvas):
         self.restoreState()
 
 def mask_phone(phone_str: str) -> str:
-    if not phone_str or len(phone_str) < 4:
+    if not phone_str or len(str(phone_str)) < 4:
         return "XXXXXX"
     clean_p = str(phone_str).replace("+", "").strip()
     return "XXXXXX" + clean_p[-4:]
@@ -82,9 +82,15 @@ def parse_date_only(date_str: str) -> str:
     except Exception:
         return str(date_str)
 
-def safe_xml(text: str) -> str:
-    if not text:
+def clean_str(text) -> str:
+    """Safely converts any input type (int, dict, None, etc.) into clean escaped text."""
+    if text is None:
         return "N/A"
+    if isinstance(text, (dict, list)):
+        try:
+            text = json.dumps(text)
+        except Exception:
+            text = str(text)
     return saxutils.escape(str(text))
 
 def generate_student_pdf_report(user_id: int, filter_mode: str = "last_1_month_data") -> str:
@@ -93,8 +99,36 @@ def generate_student_pdf_report(user_id: int, filter_mode: str = "last_1_month_d
         if not u:
             return ""
 
+        # Query Quiz Attempts First
+        conn = get_db()
+        cursor = conn.cursor()
+        
+        now_date = datetime.now()
+        one_month_ago = now_date - timedelta(days=30)
+        one_month_ago_str = one_month_ago.strftime("%Y-%m-%d")
+        now_date_str = now_date.strftime("%Y-%m-%d")
+
+        is_month_filter = "last_1_month" in filter_mode
+
+        cursor.execute("SELECT * FROM quiz_attempts WHERE user_id = ? ORDER BY id DESC", (user_id,))
+        all_attempts = [dict(r) for r in cursor.fetchall()]
+        conn.close()
+
+        filtered_attempts = []
+        for a in all_attempts:
+            a_date = parse_date_only(a.get("attempt_date") or a.get("attempt_timestamp"))
+            if is_month_filter:
+                if a_date >= one_month_ago_str:
+                    filtered_attempts.append(a)
+            else:
+                filtered_attempts.append(a)
+
+        # Check if user has zero attempts to prevent generating empty PDFs
+        if not filtered_attempts:
+            return "NO_ATTEMPTS"
+
         username = u.get("username") or "user"
-        username_clean = "".join(filter(str.isalnum, username)).lower() or "user"
+        username_clean = "".join(filter(str.isalnum, str(username))).lower() or "user"
         
         pdf_filename = f"{username_clean}_{user_id}_{filter_mode}_report.pdf"
         pdf_path = os.path.join(USER_PROFILES_DIR, pdf_filename)
@@ -183,18 +217,18 @@ def generate_student_pdf_report(user_id: int, filter_mode: str = "last_1_month_d
         story.append(Spacer(1, 8))
 
         # 2. Student Profile Table
-        sid = safe_xml(u.get("student_id") or f"USER_{user_id}")
+        sid = clean_str(u.get("student_id") or f"USER_{user_id}")
         masked_phone = mask_phone(u.get("phone_number", ""))
         masked_pin = "XX" + str(u.get("pin", ""))[-2:] if u.get("pin") else "XXXX"
 
         story.append(Paragraph("<b>STUDENT PROFILE OVERVIEW</b>", section_heading))
 
         profile_data = [
-            [Paragraph("Student Name:", body_style_bold), Paragraph(safe_xml(u.get('full_name')), body_style), Paragraph("Student ID:", body_style_bold), Paragraph(sid, body_style)],
-            [Paragraph("Target Exam:", body_style_bold), Paragraph(safe_xml(u.get('target_exam')), body_style), Paragraph("Location:", body_style_bold), Paragraph(safe_xml(f"{u.get('state')}, {u.get('country')}"), body_style)],
-            [Paragraph("DOB / Age:", body_style_bold), Paragraph(safe_xml(f"{u.get('dob')} ({u.get('age')} yrs)"), body_style), Paragraph("Phone (Masked):", body_style_bold), Paragraph(masked_phone, body_style)],
+            [Paragraph("Student Name:", body_style_bold), Paragraph(clean_str(u.get('full_name')), body_style), Paragraph("Student ID:", body_style_bold), Paragraph(sid, body_style)],
+            [Paragraph("Target Exam:", body_style_bold), Paragraph(clean_str(u.get('target_exam')), body_style), Paragraph("Location:", body_style_bold), Paragraph(clean_str(f"{u.get('state')}, {u.get('country')}"), body_style)],
+            [Paragraph("DOB / Age:", body_style_bold), Paragraph(clean_str(f"{u.get('dob')} ({u.get('age')} yrs)"), body_style), Paragraph("Phone (Masked):", body_style_bold), Paragraph(masked_phone, body_style)],
             [Paragraph("Account Status:", body_style_bold), Paragraph("ACTIVE 🟢", body_style), Paragraph("Secret PIN:", body_style_bold), Paragraph(masked_pin, body_style)],
-            [Paragraph("Registered At:", body_style_bold), Paragraph(safe_xml(u.get('created_at')), body_style), Paragraph("Last Active:", body_style_bold), Paragraph(safe_xml(u.get('last_active')), body_style)]
+            [Paragraph("Registered At:", body_style_bold), Paragraph(clean_str(u.get('created_at')), body_style), Paragraph("Last Active:", body_style_bold), Paragraph(clean_str(u.get('last_active')), body_style)]
         ]
 
         prof_table = Table(profile_data, colWidths=[1.3*inch, 2.2*inch, 1.3*inch, 2.2*inch])
@@ -207,34 +241,11 @@ def generate_student_pdf_report(user_id: int, filter_mode: str = "last_1_month_d
         story.append(prof_table)
         story.append(Spacer(1, 8))
 
-        # 3. Quiz Attempts Query & Filter
-        conn = get_db()
-        cursor = conn.cursor()
-        
-        now_date = datetime.now()
-        one_month_ago = now_date - timedelta(days=30)
-        one_month_ago_str = one_month_ago.strftime("%Y-%m-%d")
-        now_date_str = now_date.strftime("%Y-%m-%d")
-
-        is_month_filter = "last_1_month" in filter_mode
-
-        cursor.execute("SELECT * FROM quiz_attempts WHERE user_id = ? ORDER BY id DESC", (user_id,))
-        all_attempts = [dict(r) for r in cursor.fetchall()]
-        conn.close()
-
-        filtered_attempts = []
-        for a in all_attempts:
-            a_date = parse_date_only(a.get("attempt_date") or a.get("attempt_timestamp"))
-            if is_month_filter:
-                if a_date >= one_month_ago_str:
-                    filtered_attempts.append(a)
-            else:
-                filtered_attempts.append(a)
-
+        # 3. Overall Performance Summary
         total_quizzes = len(filtered_attempts)
-        total_qs = sum([a.get('questions_attempted', 0) for a in filtered_attempts])
-        total_correct = sum([a.get('correct_answers', 0) for a in filtered_attempts])
-        total_wrong = sum([a.get('wrong_answers', 0) for a in filtered_attempts])
+        total_qs = sum([a.get('questions_attempted', 0) or 0 for a in filtered_attempts])
+        total_correct = sum([a.get('correct_answers', 0) or 0 for a in filtered_attempts])
+        total_wrong = sum([a.get('wrong_answers', 0) or 0 for a in filtered_attempts])
         acc = round((total_correct / total_qs) * 100, 2) if total_qs > 0 else 0.0
 
         summary_title_text = f"MONTHLY REPORT ({one_month_ago_str} TO {now_date_str})" if is_month_filter else "ALL-TIME CUMULATIVE ACADEMIC REPORT"
@@ -274,11 +285,11 @@ def generate_student_pdf_report(user_id: int, filter_mode: str = "last_1_month_d
                 dt = parse_date_only(a.get("attempt_date") or a.get("attempt_timestamp"))
                 if dt not in date_groups:
                     date_groups[dt] = {"qs": 0, "correct": 0, "wrong": 0, "skipped": 0, "score": 0.0}
-                date_groups[dt]["qs"] += a.get("questions_attempted", 0)
-                date_groups[dt]["correct"] += a.get("correct_answers", 0)
-                date_groups[dt]["wrong"] += a.get("wrong_answers", 0)
-                date_groups[dt]["skipped"] += a.get("skipped_count", 0)
-                date_groups[dt]["score"] += a.get("score", 0.0)
+                date_groups[dt]["qs"] += a.get("questions_attempted", 0) or 0
+                date_groups[dt]["correct"] += a.get("correct_answers", 0) or 0
+                date_groups[dt]["wrong"] += a.get("wrong_answers", 0) or 0
+                date_groups[dt]["skipped"] += a.get("skipped_count", 0) or 0
+                date_groups[dt]["score"] += a.get("score", 0.0) or 0.0
 
             for dt, st in date_groups.items():
                 date_summary_data.append([
@@ -289,9 +300,6 @@ def generate_student_pdf_report(user_id: int, filter_mode: str = "last_1_month_d
                     Paragraph(f"{st['skipped']}", body_style),
                     Paragraph(f"{round(st['score'], 2)}", body_style)
                 ])
-
-            if len(date_summary_data) == 1:
-                date_summary_data.append([Paragraph("N/A", body_style), Paragraph("0", body_style), Paragraph("0", body_style), Paragraph("0", body_style), Paragraph("0", body_style), Paragraph("0.0", body_style)])
 
             date_table = Table(date_summary_data, colWidths=[1.2*inch, 1.1*inch, 1.1*inch, 1.1*inch, 1.1*inch, 1.4*inch], repeatRows=1)
             date_table.setStyle(TableStyle([
@@ -317,15 +325,17 @@ def generate_student_pdf_report(user_id: int, filter_mode: str = "last_1_month_d
                     except Exception:
                         details = []
 
-                for q_item in details:
-                    q_item['attempt_date'] = attempt_date
-                    status = q_item.get("status")
-                    if status == "WRONG":
-                        wrong_q_list.append(q_item)
-                    elif status == "CORRECT":
-                        correct_q_list.append(q_item)
-                    else:
-                        skipped_q_list.append(q_item)
+                if isinstance(details, list):
+                    for q_item in details:
+                        if isinstance(q_item, dict):
+                            q_item['attempt_date'] = attempt_date
+                            status = q_item.get("status")
+                            if status == "WRONG":
+                                wrong_q_list.append(q_item)
+                            elif status == "CORRECT":
+                                correct_q_list.append(q_item)
+                            else:
+                                skipped_q_list.append(q_item)
 
             max_rows = 150 if is_month_filter else 300
 
@@ -337,8 +347,8 @@ def generate_student_pdf_report(user_id: int, filter_mode: str = "last_1_month_d
                 ]]
                 
                 for q in q_list[:max_rows]:
-                    q_txt = safe_xml(q.get("question_text", "N/A"))
-                    c_ans = safe_xml(q.get("correct_answer_text", "N/A"))
+                    q_txt = clean_str(q.get("question_text", "N/A"))
+                    c_ans = clean_str(q.get("correct_answer_text", "N/A"))
                     table_data.append([
                         Paragraph(f"{q['attempt_date']}", body_style),
                         Paragraph(q_txt, body_style),

@@ -77,6 +77,11 @@ def parse_date_only(date_str: str) -> str:
     except Exception:
         return date_str
 
+def sanitize_text(text: str) -> str:
+    if not text:
+        return "N/A"
+    return str(text).replace("<", "&lt;").replace(">", "&gt;")
+
 def generate_student_pdf_report(user_id: int, filter_mode: str = "last_1_month_data") -> str:
     u = get_user_profile(user_id)
     if not u:
@@ -172,18 +177,24 @@ def generate_student_pdf_report(user_id: int, filter_mode: str = "last_1_month_d
     story.append(Spacer(1, 8))
 
     # 2. Student Profile Overview Table
-    sid = u.get("student_id") or f"USER_{user_id}"
+    sid = sanitize_text(u.get("student_id") or f"USER_{user_id}")
+    full_name = sanitize_text(u.get('full_name'))
+    target_exam = sanitize_text(u.get('target_exam'))
+    location_str = sanitize_text(f"{u.get('state')}, {u.get('country')}")
+    dob_str = sanitize_text(f"{u.get('dob')} ({u.get('age')} yrs)")
+    created_at = sanitize_text(u.get('created_at'))
+    last_active = sanitize_text(u.get('last_active'))
     masked_phone = mask_phone(u.get("phone_number", ""))
     masked_pin = "XX" + str(u.get("pin", ""))[-2:] if u.get("pin") else "XXXX"
 
     story.append(Paragraph("<b>STUDENT PROFILE OVERVIEW</b>", section_heading))
 
     profile_data = [
-        [Paragraph("Student Name:", body_style_bold), Paragraph(f"{u.get('full_name')}", body_style), Paragraph("Student ID:", body_style_bold), Paragraph(f"{sid}", body_style)],
-        [Paragraph("Target Exam:", body_style_bold), Paragraph(f"{u.get('target_exam')}", body_style), Paragraph("Location:", body_style_bold), Paragraph(f"{u.get('state')}, {u.get('country')}", body_style)],
-        [Paragraph("DOB / Age:", body_style_bold), Paragraph(f"{u.get('dob')} ({u.get('age')} yrs)", body_style), Paragraph("Phone (Masked):", body_style_bold), Paragraph(f"{masked_phone}", body_style)],
-        [Paragraph("Account Status:", body_style_bold), Paragraph("ACTIVE 🟢", body_style), Paragraph("Secret PIN:", body_style_bold), Paragraph(f"{masked_pin}", body_style)],
-        [Paragraph("Registered At:", body_style_bold), Paragraph(f"{u.get('created_at')}", body_style), Paragraph("Last Active:", body_style_bold), Paragraph(f"{u.get('last_active')}", body_style)]
+        [Paragraph("Student Name:", body_style_bold), Paragraph(full_name, body_style), Paragraph("Student ID:", body_style_bold), Paragraph(sid, body_style)],
+        [Paragraph("Target Exam:", body_style_bold), Paragraph(target_exam, body_style), Paragraph("Location:", body_style_bold), Paragraph(location_str, body_style)],
+        [Paragraph("DOB / Age:", body_style_bold), Paragraph(dob_str, body_style), Paragraph("Phone (Masked):", body_style_bold), Paragraph(masked_phone, body_style)],
+        [Paragraph("Account Status:", body_style_bold), Paragraph("ACTIVE 🟢", body_style), Paragraph("Secret PIN:", body_style_bold), Paragraph(masked_pin, body_style)],
+        [Paragraph("Registered At:", body_style_bold), Paragraph(created_at, body_style), Paragraph("Last Active:", body_style_bold), Paragraph(last_active, body_style)]
     ]
 
     prof_table = Table(profile_data, colWidths=[1.3*inch, 2.2*inch, 1.3*inch, 2.2*inch])
@@ -299,7 +310,12 @@ def generate_student_pdf_report(user_id: int, filter_mode: str = "last_1_month_d
 
         for a in filtered_attempts:
             attempt_date = parse_date_only(a.get("attempt_date") or a.get("attempt_timestamp"))
-            details = json.loads(a["details_json"]) if a.get("details_json") else []
+            details = []
+            if a.get("details_json"):
+                try:
+                    details = json.loads(a["details_json"])
+                except Exception:
+                    details = []
 
             for q_item in details:
                 q_item['attempt_date'] = attempt_date
@@ -311,87 +327,67 @@ def generate_student_pdf_report(user_id: int, filter_mode: str = "last_1_month_d
                 else:
                     skipped_q_list.append(q_item)
 
-        max_rows = 50 if is_month_filter else 100
+        # Allow rendering up to 250 records per category to avoid PDF overflow/out-of-memory errors
+        max_rows = 150 if is_month_filter else 250
+
+        # Helper function to generate styled chunked tables safely
+        def build_styled_question_table(q_list, bg_header, border_color, empty_msg):
+            table_data = [[
+                Paragraph("Attempt Date", body_style_bold), 
+                Paragraph("Question Text", body_style_bold), 
+                Paragraph("Correct Answer Text", body_style_bold)
+            ]]
+            
+            for q in q_list[:max_rows]:
+                q_txt = sanitize_text(q.get("question_text", "N/A"))
+                c_ans = sanitize_text(q.get("correct_answer_text", "N/A"))
+                table_data.append([
+                    Paragraph(f"{q['attempt_date']}", body_style),
+                    Paragraph(q_txt, body_style),
+                    Paragraph(c_ans, body_style)
+                ])
+
+            if len(table_data) == 1:
+                table_data.append([Paragraph("N/A", body_style), Paragraph(empty_msg, body_style), Paragraph("N/A", body_style)])
+
+            q_table = Table(table_data, colWidths=[1.2*inch, 3.8*inch, 2.0*inch], repeatRows=1)
+            q_table.setStyle(TableStyle([
+                ('BACKGROUND', (0,0), (-1,0), colors.HexColor(bg_header)),
+                ('BACKGROUND', (0,1), (-1,-1), colors.HexColor("#FFFFFF")),
+                ('GRID', (0,0), (-1,-1), 0.5, colors.HexColor(border_color)),
+                ('PADDING', (0,0), (-1,-1), 4),
+                ('VALIGN', (0,0), (-1,-1), 'TOP')
+            ]))
+            return q_table
 
         # 4a. WRONG QUESTIONS TABLE (Rose Header)
         story.append(Paragraph("❌ <b>WRONG QUESTIONS REPORT</b>", section_heading))
-        w_table_data = [[Paragraph("Attempt Date", body_style_bold), Paragraph("Question Text", body_style_bold), Paragraph("Correct Answer Text", body_style_bold)]]
-        
-        for q in wrong_q_list[:max_rows]:
-            q_txt = q.get("question_text", "N/A")
-            c_ans = q.get("correct_answer_text", "N/A")
-            w_table_data.append([
-                Paragraph(f"{q['attempt_date']}", body_style),
-                Paragraph(f"{q_txt}", body_style),
-                Paragraph(f"{c_ans}", body_style)
-            ])
-
-        if len(w_table_data) == 1:
-            w_table_data.append([Paragraph("N/A", body_style), Paragraph("Zero wrong questions in this timeframe! 🎉", body_style), Paragraph("N/A", body_style)])
-
-        w_table = Table(w_table_data, colWidths=[1.2*inch, 3.8*inch, 2.0*inch], repeatRows=1)
-        w_table.setStyle(TableStyle([
-            ('BACKGROUND', (0,0), (-1,0), colors.HexColor("#FFE4E6")),
-            ('BACKGROUND', (0,1), (-1,-1), colors.HexColor("#FFFFFF")),
-            ('GRID', (0,0), (-1,-1), 0.5, colors.HexColor("#FB7185")),
-            ('PADDING', (0,0), (-1,-1), 4),
-            ('VALIGN', (0,0), (-1,-1), 'TOP')
-        ]))
-        story.append(w_table)
+        story.append(build_styled_question_table(
+            wrong_q_list, 
+            bg_header="#FFE4E6", 
+            border_color="#FB7185", 
+            empty_msg="Zero wrong questions in this timeframe! 🎉"
+        ))
         story.append(Spacer(1, 8))
 
         # 4b. UN-ATTEMPTED / SKIPPED QUESTIONS TABLE (Amber Header)
         story.append(Paragraph("⏭ <b>UN-ATTEMPTED / SKIPPED QUESTIONS REPORT</b>", section_heading))
-        s_table_data = [[Paragraph("Attempt Date", body_style_bold), Paragraph("Question Text", body_style_bold), Paragraph("Correct Answer Text", body_style_bold)]]
-        
-        for q in skipped_q_list[:max_rows]:
-            q_txt = q.get("question_text", "N/A")
-            c_ans = q.get("correct_answer_text", "N/A")
-            s_table_data.append([
-                Paragraph(f"{q['attempt_date']}", body_style),
-                Paragraph(f"{q_txt}", body_style),
-                Paragraph(f"{c_ans}", body_style)
-            ])
-
-        if len(s_table_data) == 1:
-            s_table_data.append([Paragraph("N/A", body_style), Paragraph("Zero skipped questions in this timeframe!", body_style), Paragraph("N/A", body_style)])
-
-        s_table = Table(s_table_data, colWidths=[1.2*inch, 3.8*inch, 2.0*inch], repeatRows=1)
-        s_table.setStyle(TableStyle([
-            ('BACKGROUND', (0,0), (-1,0), colors.HexColor("#FEF3C7")),
-            ('BACKGROUND', (0,1), (-1,-1), colors.HexColor("#FFFFFF")),
-            ('GRID', (0,0), (-1,-1), 0.5, colors.HexColor("#FBBF24")),
-            ('PADDING', (0,0), (-1,-1), 4),
-            ('VALIGN', (0,0), (-1,-1), 'TOP')
-        ]))
-        story.append(s_table)
+        story.append(build_styled_question_table(
+            skipped_q_list, 
+            bg_header="#FEF3C7", 
+            border_color="#FBBF24", 
+            empty_msg="Zero skipped questions in this timeframe!"
+        ))
         story.append(Spacer(1, 8))
 
         # 4c. CORRECT QUESTIONS TABLE (Emerald Header)
         story.append(Paragraph("✅ <b>CORRECT QUESTIONS REPORT</b>", section_heading))
-        c_table_data = [[Paragraph("Attempt Date", body_style_bold), Paragraph("Question Text", body_style_bold), Paragraph("Correct Answer Text", body_style_bold)]]
-        
-        for q in correct_q_list[:max_rows]:
-            q_txt = q.get("question_text", "N/A")
-            c_ans = q.get("correct_answer_text", "N/A")
-            c_table_data.append([
-                Paragraph(f"{q['attempt_date']}", body_style),
-                Paragraph(f"{q_txt}", body_style),
-                Paragraph(f"{c_ans}", body_style)
-            ])
-
-        if len(c_table_data) == 1:
-            c_table_data.append([Paragraph("N/A", body_style), Paragraph("No correct questions logged yet.", body_style), Paragraph("N/A", body_style)])
-
-        c_table = Table(c_table_data, colWidths=[1.2*inch, 3.8*inch, 2.0*inch], repeatRows=1)
-        c_table.setStyle(TableStyle([
-            ('BACKGROUND', (0,0), (-1,0), colors.HexColor("#D1FAE5")),
-            ('BACKGROUND', (0,1), (-1,-1), colors.HexColor("#FFFFFF")),
-            ('GRID', (0,0), (-1,-1), 0.5, colors.HexColor("#34D399")),
-            ('PADDING', (0,0), (-1,-1), 4),
-            ('VALIGN', (0,0), (-1,-1), 'TOP')
-        ]))
-        story.append(c_table)
+        story.append(build_styled_question_table(
+            correct_q_list, 
+            bg_header="#D1FAE5", 
+            border_color="#34D399", 
+            empty_msg="No correct questions logged yet."
+        ))
 
     doc.build(story, canvasmaker=CleanReportCanvas)
     return pdf_path

@@ -1,5 +1,6 @@
 import os
 import json
+import logging
 import xml.sax.saxutils as saxutils
 from datetime import datetime, timedelta
 from reportlab.lib.pagesizes import letter
@@ -12,6 +13,8 @@ from reportlab.lib.styles import getSampleStyleSheet, ParagraphStyle
 from reportlab.pdfgen import canvas
 from app.config import USER_PROFILES_DIR, BASE_DIR
 from app.database import get_user_profile, get_db
+
+logger = logging.getLogger(__name__)
 
 class NumberedCanvas(canvas.Canvas):
     """
@@ -401,5 +404,5 @@ def generate_student_pdf_report(user_id: int, filter_mode: str = "last_1_month_d
         return pdf_path
 
     except Exception as e:
-        print(f"Error generating PDF: {e}")
+        logger.error(f"Error generating PDF: {e}")
         return ""

@@ -112,7 +112,7 @@ async def start_onboarding(update: Update, context: ContextTypes.DEFAULT_TYPE):
     profile = get_user_profile(user.id)
     if profile and profile.get("is_verified") and not context.user_data.get("is_editing_profile"):
         student_id = profile.get("student_id", "N/A")
-        await update.message.reply_text(
+        await update.effective_message.reply_text(
             f"⚡ **Welcome back, {profile['full_name']}!**\n"
             f"🪪 **Student ID:** `{student_id}`\n\n"
             f"🎯 **Target Exam:** `{profile['target_exam']}`\n"
@@ -131,7 +131,7 @@ async def start_onboarding(update: Update, context: ContextTypes.DEFAULT_TYPE):
         [InlineKeyboardButton("🔑 Existing Student Login", callback_data="start_login")]
     ])
 
-    await update.message.reply_text(
+    await update.effective_message.reply_text(
         f"{WELCOME_CARD_TEXT}\n\n"
         f"━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\n"
         f"👋 **WELCOME TO LEARN WITH HIM QUIZ BOOK!**\n\n"
@@ -826,6 +826,7 @@ def get_onboarding_handler():
             CommandHandler("start", start_onboarding),
             CommandHandler("editprofile", edit_profile_command),
             CallbackQueryHandler(edit_profile_command, pattern="^cmd_editprofile$"),
+            CallbackQueryHandler(start_onboarding, pattern="^trigger_start$"),
             CallbackQueryHandler(recovery_menu_callback, pattern="^login_forgot_pin$")
         ],
         states={
@@ -890,9 +891,11 @@ def get_onboarding_handler():
             SEC_ANSWER: [MessageHandler(filters.TEXT & ~filters.COMMAND, sec_ans_step)]
         },
         fallbacks=[
+            CommandHandler("start", start_onboarding),
             CommandHandler("cancel", cancel_onboarding),
             CallbackQueryHandler(recovery_menu_callback, pattern="^login_forgot_pin$")
         ],
+        allow_reentry=True,
         per_chat=True,
         per_user=True,
         per_message=False

@@ -17,15 +17,40 @@ from app.database import (
     clear_paused_quiz_state, get_saved_questions, log_user_activity_time,
     check_and_update_inactivity, refresh_user_activity_epoch
 )
-from app.onboarding import get_onboarding_handler
+from app.onboarding import get_onboarding_handler, start_onboarding
 from app.quiz_engine import (
     launch_quiz_setup, quiz_count_callback, quiz_timer_callback, handle_poll_answer,
-    pause_quiz_command, resume_quiz_command, stop_quiz_command, save_question_callback
+    pause_quiz_command, resume_quiz_command, stop_quiz_command, save_question_callback,
+    download_instant_pdf_callback
 )
 from app.stats import get_overall_leaderboard, calculate_user_percentile, calculate_user_rank, get_user_performance_summary
 from app.admin import admin_portal_command, admin_callback_handler
 
 NEGATIVE_WORDS = ["bad", "worst", "useless", "trash", "fake", "hate", "terrible", "waste", "horrible", "fraud", "stupid", "scam"]
+
+async def send_registration_prompt(update: Update):
+    msg = (
+        "⚠️ **To use this Quiz Book you must have to register first here!**\n\n"
+        "Please tap the registration button below to set up your student profile:"
+    )
+    keyboard = InlineKeyboardMarkup([
+        [InlineKeyboardButton("📝 Click Here for Registration", callback_data="trigger_start")]
+    ])
+    if update.callback_query:
+        await update.callback_query.answer("⚠️ Registration Required!", show_alert=True)
+        await update.callback_query.message.reply_text(msg, reply_markup=keyboard, parse_mode="Markdown")
+    elif update.message:
+        await update.message.reply_text(msg, reply_markup=keyboard, parse_mode="Markdown")
+
+async def check_user_registration(update: Update) -> bool:
+    user = update.effective_user
+    if not user:
+        return False
+    profile = get_user_profile(user.id)
+    if not profile or not profile.get("is_verified"):
+        await send_registration_prompt(update)
+        return False
+    return True
 
 async def inactivity_guard(update: Update, context: ContextTypes.DEFAULT_TYPE) -> bool:
     user = update.effective_user
@@ -76,13 +101,12 @@ async def strict_quiz_command_guard(update: Update, context: ContextTypes.DEFAUL
     if not await maintenance_guard(update, context): 
         return
 
+    if not await check_user_registration(update):
+        return
+
     user = update.effective_user
     log_user_activity_time(user.id, seconds=10)
     profile = get_user_profile(user.id)
-    
-    if not profile or not profile.get("is_verified"):
-        await update.message.reply_text("⚠️ Please type /start to create your profile before attempting quizzes!")
-        return
 
     attempted_today = get_today_attempts(user.id)
     allowed_limit = 10000 if user.id == PRIMARY_ADMIN_ID else DAILY_QUESTION_LIMIT + profile.get("bonus_quota", 0)
@@ -115,6 +139,8 @@ async def send_response(update: Update, text: str, reply_markup=None):
 
 async def help_command(update: Update, context: ContextTypes.DEFAULT_TYPE):
     if not await maintenance_guard(update, context): return
+    if not await check_user_registration(update): return
+    
     user = update.effective_user
     log_user_activity_time(user.id, seconds=10)
 
@@ -147,6 +173,8 @@ async def help_command(update: Update, context: ContextTypes.DEFAULT_TYPE):
 
 async def saved_questions_command(update: Update, context: ContextTypes.DEFAULT_TYPE):
     if not await maintenance_guard(update, context): return
+    if not await check_user_registration(update): return
+
     user = update.effective_user
     log_user_activity_time(user.id, seconds=10)
     saved = get_saved_questions(user.id)
@@ -190,13 +218,11 @@ async def saved_questions_command(update: Update, context: ContextTypes.DEFAULT_
 
 async def myprofile_command(update: Update, context: ContextTypes.DEFAULT_TYPE):
     if not await maintenance_guard(update, context): return
+    if not await check_user_registration(update): return
+
     user = update.effective_user
     log_user_activity_time(user.id, seconds=10)
     profile = get_user_profile(user.id)
-
-    if not profile:
-        await send_response(update, "⚠️ Please type /start to create your student profile first!")
-        return
 
     today_used = get_today_attempts(user.id)
     allowed_limit = 10000 if user.id == PRIMARY_ADMIN_ID else DAILY_QUESTION_LIMIT + profile.get("bonus_quota", 0)
@@ -231,13 +257,11 @@ async def myprofile_command(update: Update, context: ContextTypes.DEFAULT_TYPE):
 
 async def wholestate_command(update: Update, context: ContextTypes.DEFAULT_TYPE):
     if not await maintenance_guard(update, context): return
+    if not await check_user_registration(update): return
+
     user = update.effective_user
     log_user_activity_time(user.id, seconds=10)
     profile = get_user_profile(user.id)
-    
-    if not profile:
-        await send_response(update, "⚠️ Please type /start to register first!")
-        return
 
     perf = get_user_performance_summary(user.id)
     rank = calculate_user_rank(user.id)
@@ -263,6 +287,8 @@ async def wholestate_command(update: Update, context: ContextTypes.DEFAULT_TYPE)
 
 async def toppers_command(update: Update, context: ContextTypes.DEFAULT_TYPE):
     if not await maintenance_guard(update, context): return
+    if not await check_user_registration(update): return
+
     user = update.effective_user
     log_user_activity_time(user.id, seconds=10)
     toppers = get_overall_leaderboard(limit=10)
@@ -282,6 +308,8 @@ async def toppers_command(update: Update, context: ContextTypes.DEFAULT_TYPE):
 
 async def feedback_command(update: Update, context: ContextTypes.DEFAULT_TYPE):
     if not await maintenance_guard(update, context): return
+    if not await check_user_registration(update): return
+
     user = update.effective_user
     log_user_activity_time(user.id, seconds=10)
 
@@ -303,6 +331,8 @@ async def feedback_command(update: Update, context: ContextTypes.DEFAULT_TYPE):
 
 async def viewfeedbacks_command(update: Update, context: ContextTypes.DEFAULT_TYPE):
     if not await maintenance_guard(update, context): return
+    if not await check_user_registration(update): return
+
     user = update.effective_user
     log_user_activity_time(user.id, seconds=10)
     feedbacks = get_all_student_feedbacks(limit=15)
@@ -319,6 +349,8 @@ async def viewfeedbacks_command(update: Update, context: ContextTypes.DEFAULT_TY
 
 async def referral_command(update: Update, context: ContextTypes.DEFAULT_TYPE):
     if not await maintenance_guard(update, context): return
+    if not await check_user_registration(update): return
+
     user = update.effective_user
     log_user_activity_time(user.id, seconds=10)
     bot_username = context.bot.username
@@ -341,6 +373,12 @@ async def button_router(update: Update, context: ContextTypes.DEFAULT_TYPE):
     user = query.from_user
     log_user_activity_time(user.id, seconds=5)
 
+    if data == "trigger_start":
+        await start_onboarding(update, context)
+        return
+
+    if not await check_user_registration(update): return
+
     if data == "cmd_quiz":
         profile = get_user_profile(user.id)
         attempted_today = get_today_attempts(user.id)
@@ -350,6 +388,8 @@ async def button_router(update: Update, context: ContextTypes.DEFAULT_TYPE):
             await query.answer("🛑 Daily Limit Exhausted! /quiz is deactivated.", show_alert=True)
             return
         await launch_quiz_setup(update, context)
+    elif data == "cmd_download_instant_pdf":
+        await download_instant_pdf_callback(update, context)
     elif data == "cmd_pause_quiz":
         await pause_quiz_command(update, context)
     elif data == "cmd_resume_quiz":
@@ -519,7 +559,7 @@ def build_application() -> Application:
     app.add_handler(CallbackQueryHandler(quiz_count_callback, pattern="^qcount_"))
     app.add_handler(CallbackQueryHandler(quiz_timer_callback, pattern="^qtimer_"))
     app.add_handler(CallbackQueryHandler(admin_callback_handler, pattern="^(admin_|audit_|genpdf_)"))
-    app.add_handler(CallbackQueryHandler(button_router, pattern="^cmd_|^fb_"))
+    app.add_handler(CallbackQueryHandler(button_router, pattern="^cmd_|^fb_|^trigger_start"))
 
     app.add_handler(MessageHandler(filters.TEXT & ~filters.COMMAND, handle_text_messages))
     app.add_handler(PollAnswerHandler(handle_poll_answer))

@@ -141,18 +141,21 @@ async def admin_callback_handler(update: Update, context: ContextTypes.DEFAULT_T
         context.user_data["awaiting_admin_search"] = True
         await query.edit_message_text("🔍 **STUDENT SEARCH ENGINE**\n\nPlease reply with the student's **Student ID**, **Phone Number**, or **Full Name**:")
 
-    # Generate and Send PDF Report (Route matched BEFORE startswith checks)
+    # Generate and Send PDF Report
     elif data.startswith("genpdf_"):
         await query.answer()
-        parts = data.split("_")
-        target_uid = int(parts[1])
-        filter_mode = "_".join(parts[2:])
+        # Cleanly extract target_uid and filter_mode even if data has multiple underscores
+        raw = data.replace("genpdf_", "")
+        parts = raw.split("_")
+        target_uid = int(parts[0])
+        filter_mode = "_".join(parts[1:])
 
         await query.edit_message_text("⏳ **Generating Custom PDF Report Card...**\nBuilding stats, formatting tables, and rendering PDF...")
         
         pdf_file = generate_student_pdf_report(target_uid, filter_mode)
         u = get_user_profile(target_uid)
-        sid = u.get("student_id") or f"USER_{target_uid}"
+        sid = u.get("student_id") or f"USER_{target_uid}" if u else f"USER_{target_uid}"
+        student_name = u.get("full_name", "Student") if u else "Student"
 
         if pdf_file == "NO_ATTEMPTS":
             nav_buttons = InlineKeyboardMarkup([
@@ -161,7 +164,7 @@ async def admin_callback_handler(update: Update, context: ContextTypes.DEFAULT_T
             ])
             await query.edit_message_text(
                 f"ℹ️ **NO QUIZ ATTEMPTS FOUND!**\n\n"
-                f"Student **{u.get('full_name')}** (`{sid}`) has not attempted any quizzes in this selected timeframe.",
+                f"Student **{student_name}** (`{sid}`) has not attempted any quizzes in the selected timeframe.",
                 reply_markup=nav_buttons,
                 parse_mode="Markdown"
             )
@@ -175,7 +178,7 @@ async def admin_callback_handler(update: Update, context: ContextTypes.DEFAULT_T
                     caption=(
                         f"📄 **OFFICIAL STUDENT PDF ACADEMIC REPORT**\n"
                         f"━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\n"
-                        f"👤 **Student:** {u.get('full_name')}\n"
+                        f"👤 **Student:** {student_name}\n"
                         f"🪪 **Student ID:** `{sid}`\n"
                         f"📊 **Report Module:** `{filter_mode.replace('_', ' ').title()}`\n"
                         f"🏷 **Watermark:** `@LearnwithHiM`"
@@ -194,7 +197,13 @@ async def admin_callback_handler(update: Update, context: ContextTypes.DEFAULT_T
                 reply_markup=nav_buttons
             )
         else:
-            await query.message.reply_text("⚠️ Failed to generate PDF file. Please check user logs.")
+            nav_buttons = InlineKeyboardMarkup([
+                [InlineKeyboardButton("🔙 Back to Student Dashboard", callback_data=f"admin_inspect_u_{target_uid}")]
+            ])
+            await query.edit_message_text(
+                "⚠️ **Failed to generate PDF file.**\nPlease check server logs.",
+                reply_markup=nav_buttons
+            )
 
     # Paginated Student Directory
     elif data.startswith("admin_users_page_"):

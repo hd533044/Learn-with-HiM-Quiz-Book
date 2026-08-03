@@ -83,7 +83,7 @@ def parse_date_only(date_str: str) -> str:
         return str(date_str)
 
 def clean_str(text) -> str:
-    """Safely converts any input type (int, dict, None, etc.) into clean escaped text."""
+    """Safely converts any input type (int, dict, None, etc.) into clean escaped XML text for ReportLab."""
     if text is None:
         return "N/A"
     if isinstance(text, (dict, list)):
@@ -329,7 +329,7 @@ def generate_student_pdf_report(user_id: int, filter_mode: str = "last_1_month_d
                     for q_item in details:
                         if isinstance(q_item, dict):
                             q_item['attempt_date'] = attempt_date
-                            status = q_item.get("status")
+                            status = str(q_item.get("status", "")).upper()
                             if status == "WRONG":
                                 wrong_q_list.append(q_item)
                             elif status == "CORRECT":
@@ -347,10 +347,10 @@ def generate_student_pdf_report(user_id: int, filter_mode: str = "last_1_month_d
                 ]]
                 
                 for q in q_list[:max_rows]:
-                    q_txt = clean_str(q.get("question_text", "N/A"))
-                    c_ans = clean_str(q.get("correct_answer_text", "N/A"))
+                    q_txt = clean_str(q.get("question_text") or q.get("question") or "N/A")
+                    c_ans = clean_str(q.get("correct_answer_text") or "N/A")
                     table_data.append([
-                        Paragraph(f"{q['attempt_date']}", body_style),
+                        Paragraph(f"{q.get('attempt_date', 'N/A')}", body_style),
                         Paragraph(q_txt, body_style),
                         Paragraph(c_ans, body_style)
                     ])

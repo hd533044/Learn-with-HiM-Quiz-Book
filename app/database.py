@@ -419,8 +419,13 @@ def save_user_profile(user_id, full_name, username, phone, target_exam, dob, age
         new_edit_count = 0
 
     cursor.execute('''
-        INSERT INTO users (user_id, student_id, full_name, username, phone_number, target_exam, dob, age, gender, pin, security_question, security_answer, country, state, referred_by, edit_count, last_profile_edit, last_active, last_activity_epoch, is_banned, is_verified, created_at)
-        VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, 0, 1, ?)
+        INSERT INTO users (
+            user_id, student_id, full_name, username, phone_number, target_exam, 
+            dob, age, gender, pin, security_question, security_answer, 
+            country, state, referred_by, edit_count, last_profile_edit, 
+            last_active, last_activity_epoch, is_banned, is_verified, created_at
+        )
+        VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, 0, 1, ?)
         ON CONFLICT(user_id) DO UPDATE SET
             full_name=excluded.full_name,
             username=excluded.username,
@@ -439,7 +444,12 @@ def save_user_profile(user_id, full_name, username, phone, target_exam, dob, age
             last_active=excluded.last_active,
             last_activity_epoch=excluded.last_activity_epoch,
             is_verified=1
-    ''', (user_id, student_id, full_name, username, phone, target_exam, dob, age, gender, pin, sec_q, sec_a, country, state, referred_by, new_edit_count, now_str, now_str, now_epoch, now_str, now_str, now_epoch, now_str))
+    ''', (
+        user_id, student_id, full_name, username, phone, target_exam, 
+        dob, age, gender, pin, sec_q, sec_a, 
+        country, state, referred_by, new_edit_count, now_str, 
+        now_str, now_epoch, now_str
+    ))
     
     if referred_by and referred_by != user_id and not existing:
         cursor.execute("UPDATE users SET referral_count = referral_count + 1 WHERE user_id = ?", (referred_by,))

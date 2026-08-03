@@ -788,6 +788,10 @@ async def sec_ans_step(update: Update, context: ContextTypes.DEFAULT_TYPE):
     is_editing = context.user_data.get("is_editing_profile", False)
     context.user_data["is_editing_profile"] = False
 
+    # Safely check if user already existed in database to correctly set is_update flag
+    existing_profile = get_user_profile(user.id)
+    really_is_update = bool(existing_profile and existing_profile.get("is_verified") and is_editing)
+
     save_user_profile(
         user_id=user.id,
         full_name=full_name,
@@ -803,7 +807,7 @@ async def sec_ans_step(update: Update, context: ContextTypes.DEFAULT_TYPE):
         country=context.user_data.get("country", "India"),
         state=context.user_data.get("state", "N/A"),
         referred_by=context.user_data.get("referred_by"),
-        is_update=is_editing
+        is_update=really_is_update
     )
 
     await update.message.reply_text(

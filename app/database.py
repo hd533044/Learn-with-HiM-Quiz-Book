@@ -463,7 +463,7 @@ def can_user_edit_profile(user_id: int) -> tuple[bool, str, int]:
     conn.close()
 
     if not row:
-        return False, "User not found.", 0
+        return True, "ALLOWED", 3
 
     edit_count = row['edit_count'] or 0
     if edit_count >= 3:

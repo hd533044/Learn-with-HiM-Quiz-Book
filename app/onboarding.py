@@ -16,13 +16,13 @@ from telegram.ext import (
 from app.config import WELCOME_CARD_TEXT, PRIMARY_ADMIN_ID
 from app.database import (
     save_user_profile, get_user_profile, can_user_edit_profile, 
-    get_maintenance_until, generate_student_id, get_user_by_student_id, update_user_pin
+    get_maintenance_until, generate_student_id, update_user_pin
 )
 import time
 
 warnings.filterwarnings("ignore", category=PTBUserWarning)
 
-# Exactly 20 state variables declared (Country state removed)
+# Exactly 20 states defined in strict sequential order
 (
     NAME, EXAM, STATE, PHONE, GENDER, DOB_YEAR, DOB_MONTH, DOB_DAY, 
     PIN_SETUP, SEC_QUESTION, SEC_ANSWER, RECOVERY_MENU, 
@@ -129,7 +129,6 @@ async def start_onboarding(update: Update, context: ContextTypes.DEFAULT_TYPE):
         )
         return ConversationHandler.END
 
-    # Directly prompt for name (Step 1)
     await update.effective_message.reply_text(
         f"{WELCOME_CARD_TEXT}\n\n"
         f"━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\n"

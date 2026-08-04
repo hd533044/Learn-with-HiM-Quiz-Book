@@ -208,10 +208,21 @@ async def custom_exam_text(update: Update, context: ContextTypes.DEFAULT_TYPE):
             parse_mode="Markdown"
         )
         return STATE
-    else:
-        # Ignore random text typed while user should be tapping a button
-        await update.message.reply_text("👇 ᴘʟᴇᴀꜱᴇ ᴛᴀᴘ ᴏɴᴇ ᴏꜰ ᴛʜᴇ ᴇxᴀᴍ ʙᴜᴛᴛᴏɴꜱ ᴀʙᴏᴠᴇ, ᴏʀ ᴄʜᴏᴏꜱᴇ '10. ᴏᴛʜᴇʀ ᴇxᴀᴍ' ᴛᴏ ᴛʏᴘᴇ ᴄᴜꜱᴛᴏᴍ!")
-        return EXAM
+
+    # If the user sends regular text without tapping button or choosing Other Exam
+    exams = [
+        [InlineKeyboardButton("1. ꜱꜱᴄ ᴄɢʟ", callback_data="exam_SSC CGL"), InlineKeyboardButton("2. ꜱꜱᴄ ᴄʜꜱʟ", callback_data="exam_SSC CHSL")],
+        [InlineKeyboardButton("3. ᴄᴀᴘꜰ ʜᴄᴍ", callback_data="exam_CAPF HCM"), InlineKeyboardButton("4. ᴀꜱɪ ꜱᴛᴇɴᴏ", callback_data="exam_ASI STENO")],
+        [InlineKeyboardButton("5. ᴅᴘ ʜᴄᴍ", callback_data="exam_DP HCM"), InlineKeyboardButton("6. ʙꜱꜰ ʜᴄᴍ", callback_data="exam_BSF HCM")],
+        [InlineKeyboardButton("7. ᴄɪꜱꜰ ʜᴄᴍ", callback_data="exam_CISF HCM"), InlineKeyboardButton("8. ʀᴀɪʟᴡᴀʏ ɴᴛᴘᴄ ᴜɢ", callback_data="exam_RAILWAY NTPC UG")],
+        [InlineKeyboardButton("9. ʀᴀɪʟᴡᴀʏ ɴᴛᴘᴄ ɢʀᴀᴅᴜᴀᴛᴇ", callback_data="exam_RAILWAY NTPC GRADUATE")],
+        [InlineKeyboardButton("10. ᴏᴛʜᴇʀ ᴇxᴀᴍ", callback_data="exam_OTHER")]
+    ]
+    await update.message.reply_text(
+        "👇 ᴘʟᴇᴀꜱᴇ ᴛᴀᴘ ᴏɴᴇ ᴏꜰ ᴛʜᴇ ᴇxᴀᴍ ʙᴜᴛᴛᴏɴꜱ ʙᴇʟᴏᴡ, ᴏʀ ᴄʜᴏᴏꜱᴇ '10. ᴏᴛʜᴇʀ ᴇxᴀᴍ' ᴛᴏ ᴛʏᴘᴇ ᴄᴜꜱᴛᴏᴍ:",
+        reply_markup=InlineKeyboardMarkup(exams)
+    )
+    return EXAM
 
 async def state_callback(update: Update, context: ContextTypes.DEFAULT_TYPE):
     query = update.callback_query

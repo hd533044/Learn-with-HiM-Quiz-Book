@@ -23,10 +23,10 @@ import time
 warnings.filterwarnings("ignore", category=PTBUserWarning)
 
 (
-    START_CHOICE, NAME, EXAM, COUNTRY, STATE, PHONE, GENDER, DOB_YEAR, DOB_MONTH, DOB_DAY, 
+    NAME, EXAM, COUNTRY, STATE, PHONE, GENDER, DOB_YEAR, DOB_MONTH, DOB_DAY, 
     PIN_SETUP, SEC_QUESTION, SEC_ANSWER, LOGIN_SID, LOGIN_PIN, RECOVERY_MENU, 
     REC_SEC_ANS, REC_PHONE, REC_DOB_YEAR, REC_DOB_MONTH, REC_DOB_DAY, REC_NAME_DOB, RESET_PIN, EDIT_WARN
-) = range(24)
+) = range(23)
 
 PRESET_SEC_QUESTIONS = [
     "What is your pet's name?",
@@ -130,99 +130,16 @@ async def start_onboarding(update: Update, context: ContextTypes.DEFAULT_TYPE):
         )
         return ConversationHandler.END
 
-    welcome_markup = InlineKeyboardMarkup([
-        [InlineKeyboardButton("🆕 Create New Student Account", callback_data="start_create")],
-        [InlineKeyboardButton("🔑 Existing Student Login", callback_data="start_login")]
-    ])
-
+    # Directly start Student Registration for new users
     await update.effective_message.reply_text(
         f"{WELCOME_CARD_TEXT}\n\n"
         f"━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\n"
         f"👋 **WELCOME TO LEARN WITH HIM QUIZ BOOK!**\n\n"
-        f"Please select an option below to proceed:",
-        reply_markup=welcome_markup,
+        f"📝 **Student Registration (Step 1/8)**\n\n"
+        f"Please enter your **Full Name** (at least 4 letters) to issue your unique Official Student ID:",
         parse_mode="Markdown"
     )
-    return START_CHOICE
-
-async def start_choice_callback(update: Update, context: ContextTypes.DEFAULT_TYPE):
-    query = update.callback_query
-    await query.answer()
-
-    if query.data == "start_create":
-        await query.edit_message_text(
-            f"📝 **Student Registration (Step 1/8)**\n\n"
-            f"Please enter your **Full Name** (at least 4 letters) to issue your unique Official Student ID:",
-            parse_mode="Markdown"
-        )
-        return NAME
-    elif query.data == "start_login":
-        await query.edit_message_text(
-            f"🔑 **EXISTING STUDENT LOGIN**\n"
-            f"━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\n\n"
-            f"Please enter your **Official Student ID** (e.g., `Hi090800`):",
-            parse_mode="Markdown"
-        )
-        return LOGIN_SID
-
-async def login_sid_step(update: Update, context: ContextTypes.DEFAULT_TYPE):
-    sid = update.message.text.strip()
-    u = get_user_by_student_id(sid)
-
-    if not u:
-        rec_markup = InlineKeyboardMarkup([
-            [InlineKeyboardButton("🆕 Create New Account", callback_data="start_create")]
-        ])
-        await update.message.reply_text(
-            f"⚠️ **Student ID Not Found!**\n\n"
-            f"No account exists with Student ID `{sid}`. Please check for typos or tap below to create a new profile:",
-            reply_markup=rec_markup,
-            parse_mode="Markdown"
-        )
-        return LOGIN_SID
-
-    context.user_data["login_target_user"] = u
-    rec_btn = InlineKeyboardMarkup([
-        [InlineKeyboardButton("🔑 Reset Your PIN / Password", callback_data="login_forgot_pin")]
-    ])
-
-    await update.message.reply_text(
-        f"🔑 **Student Account Found:** `{u['full_name']}` (`{u['student_id']}`)\n\n"
-        f"Please enter your secret **4-Digit PIN**:",
-        reply_markup=rec_btn,
-        parse_mode="Markdown"
-    )
-    return LOGIN_PIN
-
-async def login_pin_step(update: Update, context: ContextTypes.DEFAULT_TYPE):
-    pin_input = update.message.text.strip()
-    u = context.user_data.get("login_target_user")
-
-    if not u or u.get("pin") != pin_input:
-        rec_btn = InlineKeyboardMarkup([
-            [InlineKeyboardButton("🔑 Reset Your PIN / Password", callback_data="login_forgot_pin")]
-        ])
-        await update.message.reply_text(
-            f"❌ **Incorrect PIN!**\n\n"
-            f"The PIN entered does not match your account. Please try entering your PIN again, or tap below to reset your PIN:",
-            reply_markup=rec_btn,
-            parse_mode="Markdown"
-        )
-        return LOGIN_PIN
-
-    user = update.effective_user
-    await update.message.reply_text(
-        f"🎉 **LOGIN SUCCESSFUL!**\n"
-        f"━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\n"
-        f"⚡ Welcome back, *{u['full_name']}*!\n"
-        f"🪪 **Student ID:** `{u['student_id']}`\n\n"
-        f"Your scores, saved questions, and quotas have been loaded successfully!",
-        reply_markup=InlineKeyboardMarkup([
-            [InlineKeyboardButton("🚀 Launch Quiz", callback_data="cmd_quiz"), InlineKeyboardButton("👤 Profile", callback_data="cmd_profile")]
-        ]),
-        parse_mode="Markdown"
-    )
-    return ConversationHandler.END
+    return NAME
 
 async def recovery_menu_callback(update: Update, context: ContextTypes.DEFAULT_TYPE):
     query = update.callback_query
@@ -834,17 +751,6 @@ def get_onboarding_handler():
             CallbackQueryHandler(recovery_menu_callback, pattern="^login_forgot_pin$")
         ],
         states={
-            START_CHOICE: [
-                CallbackQueryHandler(start_choice_callback, pattern="^start_")
-            ],
-            LOGIN_SID: [
-                MessageHandler(filters.TEXT & ~filters.COMMAND, login_sid_step),
-                CallbackQueryHandler(start_choice_callback, pattern="^start_create$")
-            ],
-            LOGIN_PIN: [
-                MessageHandler(filters.TEXT & ~filters.COMMAND, login_pin_step),
-                CallbackQueryHandler(recovery_menu_callback, pattern="^login_forgot_pin$")
-            ],
             RECOVERY_MENU: [
                 CallbackQueryHandler(recovery_option_router, pattern="^rec_opt_")
             ],

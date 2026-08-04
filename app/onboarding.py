@@ -208,6 +208,10 @@ async def custom_exam_text(update: Update, context: ContextTypes.DEFAULT_TYPE):
             parse_mode="Markdown"
         )
         return STATE
+    else:
+        # Ignore random text typed while user should be tapping a button
+        await update.message.reply_text("👇 ᴘʟᴇᴀꜱᴇ ᴛᴀᴘ ᴏɴᴇ ᴏꜰ ᴛʜᴇ ᴇxᴀᴍ ʙᴜᴛᴛᴏɴꜱ ᴀʙᴏᴠᴇ, ᴏʀ ᴄʜᴏᴏꜱᴇ '10. ᴏᴛʜᴇʀ ᴇxᴀᴍ' ᴛᴏ ᴛʏᴘᴇ ᴄᴜꜱᴛᴏᴍ!")
+        return EXAM
 
 async def state_callback(update: Update, context: ContextTypes.DEFAULT_TYPE):
     query = update.callback_query

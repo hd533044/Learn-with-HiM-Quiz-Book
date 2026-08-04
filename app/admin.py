@@ -90,6 +90,7 @@ async def admin_callback_handler(update: Update, context: ContextTypes.DEFAULT_T
                 os.remove(zip_path)
             await admin_portal_command(update, context)
         except Exception as e:
+            logger.error(f"Error zipping profiles: {e}")
             await query.message.reply_text(f"⚠️ Error creating zip archive: {e}")
 
     # Pause 5 Mins
@@ -139,78 +140,6 @@ async def admin_callback_handler(update: Update, context: ContextTypes.DEFAULT_T
         await query.answer()
         context.user_data["awaiting_admin_search"] = True
         await query.edit_message_text("🔍 **STUDENT SEARCH ENGINE**\n\nPlease reply with the student's **Student ID**, **Phone Number**, or **Full Name**:")
-
-    # Generate and Send PDF Report
-    elif data.startswith("genpdf_"):
-        await query.answer()
-        raw = data.replace("genpdf_", "")
-        parts = raw.split("_")
-        target_uid = int(parts[0])
-        filter_mode = "_".join(parts[1:])
-
-        await query.edit_message_text("⏳ **Generating Custom PDF Report Card...**\nBuilding stats, formatting tables, and rendering PDF...")
-        
-        pdf_file = generate_student_pdf_report(target_uid, filter_mode)
-        u = get_user_profile(target_uid)
-        sid = u.get("student_id") or f"USER_{target_uid}" if u else f"USER_{target_uid}"
-        student_name = u.get("full_name", "Student") if u else "Student"
-
-        if pdf_file == "NO_ATTEMPTS":
-            nav_buttons = InlineKeyboardMarkup([
-                [InlineKeyboardButton("📄 Export Another PDF Report", callback_data=f"audit_pdfmenu_{target_uid}")],
-                [InlineKeyboardButton("🔙 Back to Student Dashboard", callback_data=f"admin_inspect_u_{target_uid}")]
-            ])
-            await query.edit_message_text(
-                f"ℹ️ **NO QUIZ ATTEMPTS FOUND!**\n\n"
-                f"Student **{student_name}** (`{sid}`) has not attempted any quizzes in the selected timeframe.",
-                reply_markup=nav_buttons,
-                parse_mode="Markdown"
-            )
-        elif pdf_file and pdf_file.startswith("ERROR_DETAILS:"):
-            nav_buttons = InlineKeyboardMarkup([
-                [InlineKeyboardButton("🔙 Back to Student Dashboard", callback_data=f"admin_inspect_u_{target_uid}")]
-            ])
-            await query.edit_message_text(
-                f"⚠️ **PDF Generation Error:**\n\n```\n{pdf_file[:3500]}\n```",
-                reply_markup=nav_buttons,
-                parse_mode="Markdown"
-            )
-        elif pdf_file and os.path.exists(pdf_file):
-            # 1. Send PDF Document FIRST
-            with open(pdf_file, "rb") as doc:
-                await context.bot.send_document(
-                    chat_id=query.message.chat_id,
-                    document=doc,
-                    filename=os.path.basename(pdf_file),
-                    caption=(
-                        f"📄 **OFFICIAL STUDENT PDF ACADEMIC REPORT**\n"
-                        f"━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\n"
-                        f"👤 **Student:** {student_name}\n"
-                        f"🪪 **Student ID:** `{sid}`\n"
-                        f"📊 **Report Module:** `{filter_mode.replace('_', ' ').title()}`\n"
-                        f"🏷 **Watermark:** `@LearnwithHiM`"
-                    )
-                )
-            
-            # 2. Send Navigation Buttons DIRECTLY BELOW Document
-            nav_buttons = InlineKeyboardMarkup([
-                [InlineKeyboardButton("📄 Export Another PDF Report", callback_data=f"audit_pdfmenu_{target_uid}")],
-                [InlineKeyboardButton("🔙 Back to Student Dashboard", callback_data=f"admin_inspect_u_{target_uid}")],
-                [InlineKeyboardButton("👑 Main Admin Portal", callback_data="admin_home")]
-            ])
-            await context.bot.send_message(
-                chat_id=query.message.chat_id,
-                text="👇 **Quick Actions & Navigation:**",
-                reply_markup=nav_buttons
-            )
-        else:
-            nav_buttons = InlineKeyboardMarkup([
-                [InlineKeyboardButton("🔙 Back to Student Dashboard", callback_data=f"admin_inspect_u_{target_uid}")]
-            ])
-            await query.edit_message_text(
-                "⚠️ **Failed to generate PDF file.**",
-                reply_markup=nav_buttons
-            )
 
     # Paginated Student Directory
     elif data.startswith("admin_users_page_"):
@@ -336,6 +265,50 @@ async def admin_callback_handler(update: Update, context: ContextTypes.DEFAULT_T
             parse_mode="Markdown"
         )
 
+    # Generate and Send PDF Report (DOCUMENT FIRST -> NAVIGATION BUTTONS BELOW IT)
+    elif data.startswith("genpdf_"):
+        await query.answer()
+        parts = data.split("_")
+        target_uid = int(parts[1])
+        filter_mode = "_".join(parts[2:])
+
+        await query.edit_message_text("⏳ **Generating Custom PDF Report Card...**\nBuilding stats, formatting tables, and rendering PDF...")
+        
+        pdf_file = generate_student_pdf_report(target_uid, filter_mode)
+        u = get_user_profile(target_uid)
+        sid = u.get("student_id") or f"USER_{target_uid}"
+
+        if pdf_file and os.path.exists(pdf_file):
+            # 1. Send the PDF document FIRST
+            with open(pdf_file, "rb") as doc:
+                await context.bot.send_document(
+                    chat_id=query.message.chat_id,
+                    document=doc,
+                    filename=os.path.basename(pdf_file),
+                    caption=(
+                        f"📄 **OFFICIAL STUDENT PDF ACADEMIC REPORT**\n"
+                        f"━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\n"
+                        f"👤 **Student:** {u.get('full_name')}\n"
+                        f"🪪 **Student ID:** `{sid}`\n"
+                        f"📊 **Report Module:** `{filter_mode.replace('_', ' ').title()}`\n"
+                        f"🏷 **Watermark:** `@LearnwithHiM`"
+                    )
+                )
+            
+            # 2. Send navigation buttons DIRECTLY BELOW the document
+            nav_buttons = InlineKeyboardMarkup([
+                [InlineKeyboardButton("📄 Export Another PDF Report", callback_data=f"audit_pdfmenu_{target_uid}")],
+                [InlineKeyboardButton("🔙 Back to Student Dashboard", callback_data=f"admin_inspect_u_{target_uid}")],
+                [InlineKeyboardButton("👑 Main Admin Portal", callback_data="admin_home")]
+            ])
+            await context.bot.send_message(
+                chat_id=query.message.chat_id,
+                text="👇 **Quick Actions & Navigation:**",
+                reply_markup=nav_buttons
+            )
+        else:
+            await query.message.reply_text("⚠️ Failed to generate PDF file.")
+
     # Audit Module 1: Personal Details
     elif data.startswith("audit_personal_"):
         await query.answer()
@@ -348,10 +321,6 @@ async def admin_callback_handler(update: Update, context: ContextTypes.DEFAULT_T
 
         sid = u.get("student_id") or f"USER_{u.get('user_id')}"
         ban_status = "BANNED 🔴" if u.get("is_banned") else "ACTIVE 🟢"
-        
-        edit_cnt = u.get("edit_count", 0)
-        last_edit = u.get("last_profile_edit", "Never")
-        remaining_edits = max(0, 3 - edit_cnt)
 
         msg = (
             f"📋 **STUDENT PERSONAL DETAILS**\n"
@@ -367,8 +336,6 @@ async def admin_callback_handler(update: Update, context: ContextTypes.DEFAULT_T
             f"• **Calculated Age:** `{u.get('age', 'N/A')} yrs`\n"
             f"• **Gender:** `{u.get('gender', 'N/A')}`\n"
             f"• **Location:** `{u.get('state', 'N/A')}, {u.get('country', 'India')}`\n"
-            f"• **Profile Edits Made:** `{edit_cnt} / 3 times` *(Last: {last_edit})*\n"
-            f"• **Remaining Edits:** `{remaining_edits} left`\n"
             f"• **Bonus Quota:** `{u.get('bonus_quota', 0)} Qs`\n"
             f"• **Registered At:** `{u.get('created_at', 'N/A')}`\n"
             f"• **Last Active:** `{u.get('last_active', 'N/A')}`\n"

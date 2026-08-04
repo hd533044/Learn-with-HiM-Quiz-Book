@@ -22,8 +22,9 @@ import time
 
 warnings.filterwarnings("ignore", category=PTBUserWarning)
 
+# Exactly 23 state variables matching range(23)
 (
-    NAME, EXAM, COUNTRY, STATE, PHONE, GENDER, DOB_YEAR, DOB_MONTH, DOB_DAY, 
+    START_CHOICE, NAME, EXAM, STATE, PHONE, GENDER, DOB_YEAR, DOB_MONTH, DOB_DAY, 
     PIN_SETUP, SEC_QUESTION, SEC_ANSWER, LOGIN_SID, LOGIN_PIN, RECOVERY_MENU, 
     REC_SEC_ANS, REC_PHONE, REC_DOB_YEAR, REC_DOB_MONTH, REC_DOB_DAY, REC_NAME_DOB, RESET_PIN, EDIT_WARN
 ) = range(23)
@@ -109,9 +110,7 @@ async def start_onboarding(update: Update, context: ContextTypes.DEFAULT_TYPE):
         except ValueError:
             pass
 
-    # Clear any previous broken session state
     context.user_data["awaiting_other_exam"] = False
-    context.user_data["awaiting_other_country"] = False
 
     profile = get_user_profile(user.id)
     if profile and profile.get("is_verified") and not context.user_data.get("is_editing_profile"):
@@ -130,13 +129,351 @@ async def start_onboarding(update: Update, context: ContextTypes.DEFAULT_TYPE):
         )
         return ConversationHandler.END
 
-    # Directly start Student Registration for new users
+    # Directly prompt for registration (Step 1)
     await update.effective_message.reply_text(
         f"{WELCOME_CARD_TEXT}\n\n"
         f"━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\n"
         f"👋 **WELCOME TO LEARN WITH HIM QUIZ BOOK!**\n\n"
-        f"📝 **Student Registration (Step 1/8)**\n\n"
+        f"📝 **Student Registration (Step 1/7)**\n\n"
         f"Please enter your **Full Name** (at least 4 letters) to issue your unique Official Student ID:",
+        parse_mode="Markdown"
+    )
+    return NAME
+
+async def name_step(update: Update, context: ContextTypes.DEFAULT_TYPE):
+    input_name = update.message.text.strip()
+    clean_letters = "".join(filter(str.isalpha, input_name))
+
+    if len(clean_letters) < 4:
+        await update.message.reply_text(
+            "⚠️ **Name Too Short!**\n\n"
+            "Your name must contain at least 4 alphabetic characters to issue your Student ID.\n"
+            "Please enter your complete **Full Name** again:",
+            parse_mode="Markdown"
+        )
+        return NAME
+
+    context.user_data["full_name"] = input_name
+
+    exams = [
+        [InlineKeyboardButton("1. SSC CGL", callback_data="exam_SSC CGL"), InlineKeyboardButton("2. SSC CHSL", callback_data="exam_SSC CHSL")],
+        [InlineKeyboardButton("3. CAPF HCM", callback_data="exam_CAPF HCM"), InlineKeyboardButton("4. ASI STENO", callback_data="exam_ASI STENO")],
+        [InlineKeyboardButton("5. DP HCM", callback_data="exam_DP HCM"), InlineKeyboardButton("6. BSF HCM", callback_data="exam_BSF HCM")],
+        [InlineKeyboardButton("7. CISF HCM", callback_data="exam_CISF HCM"), InlineKeyboardButton("8. RAILWAY NTPC UG", callback_data="exam_RAILWAY NTPC UG")],
+        [InlineKeyboardButton("9. RAILWAY NTPC GRADUATE", callback_data="exam_RAILWAY NTPC GRADUATE")],
+        [InlineKeyboardButton("10. Other Exam", callback_data="exam_OTHER")]
+    ]
+
+    await update.message.reply_text(
+        f"✨ Nice to meet you, *{context.user_data['full_name']}*!\n\n"
+        f"🎯 **Target Exam Selection (Step 2/7):**\n"
+        f"Please tap your targeted examination from the options below:",
+        reply_markup=InlineKeyboardMarkup(exams),
+        parse_mode="Markdown"
+    )
+    return EXAM
+
+async def exam_callback(update: Update, context: ContextTypes.DEFAULT_TYPE):
+    query = update.callback_query
+    await query.answer()
+    
+    selected_exam = query.data.replace("exam_", "")
+    
+    if selected_exam == "OTHER":
+        context.user_data["awaiting_other_exam"] = True
+        await query.edit_message_text("✍️ Please type the exact name of your Target Exam:")
+        return EXAM
+
+    context.user_data["target_exam"] = selected_exam
+    context.user_data["country"] = "India"
+    
+    await query.edit_message_text(
+        f"🎯 Selected Target: `{selected_exam}`\n\n"
+        f"📍 **Indian State / UT Selection (Step 3/7):**\n"
+        f"Please select your State or Union Territory from the interactive list below:",
+        reply_markup=build_state_keyboard(),
+        parse_mode="Markdown"
+    )
+    return STATE
+
+async def custom_exam_text(update: Update, context: ContextTypes.DEFAULT_TYPE):
+    if context.user_data.get("awaiting_other_exam"):
+        context.user_data["target_exam"] = update.message.text.strip()
+        context.user_data["awaiting_other_exam"] = False
+        context.user_data["country"] = "India"
+        
+        await update.message.reply_text(
+            f"🎯 Selected Target: `{context.user_data['target_exam']}`\n\n"
+            f"📍 **Indian State / UT Selection (Step 3/7):**\n"
+            f"Please select your State or Union Territory from the interactive list below:",
+            reply_markup=build_state_keyboard(),
+            parse_mode="Markdown"
+        )
+        return STATE
+
+    exams = [
+        [InlineKeyboardButton("1. SSC CGL", callback_data="exam_SSC CGL"), InlineKeyboardButton("2. SSC CHSL", callback_data="exam_SSC CHSL")],
+        [InlineKeyboardButton("3. CAPF HCM", callback_data="exam_CAPF HCM"), InlineKeyboardButton("4. ASI STENO", callback_data="exam_ASI STENO")],
+        [InlineKeyboardButton("5. DP HCM", callback_data="exam_DP HCM"), InlineKeyboardButton("6. BSF HCM", callback_data="exam_BSF HCM")],
+        [InlineKeyboardButton("7. CISF HCM", callback_data="exam_CISF HCM"), InlineKeyboardButton("8. RAILWAY NTPC UG", callback_data="exam_RAILWAY NTPC UG")],
+        [InlineKeyboardButton("9. RAILWAY NTPC GRADUATE", callback_data="exam_RAILWAY NTPC GRADUATE")],
+        [InlineKeyboardButton("10. Other Exam", callback_data="exam_OTHER")]
+    ]
+    await update.message.reply_text(
+        "👇 Please tap one of the exam buttons below, or choose '10. Other Exam' to type custom:",
+        reply_markup=InlineKeyboardMarkup(exams)
+    )
+    return EXAM
+
+async def state_callback(update: Update, context: ContextTypes.DEFAULT_TYPE):
+    query = update.callback_query
+    await query.answer()
+    
+    selected_state = query.data.replace("st_", "")
+    context.user_data["country"] = "India"
+    context.user_data["state"] = selected_state
+
+    contact_btn = KeyboardButton(text="📱 Share Verified Mobile Number", request_contact=True)
+    markup = ReplyKeyboardMarkup([[contact_btn]], one_time_keyboard=True, resize_keyboard=True)
+
+    await query.delete_message()
+    await context.bot.send_message(
+        chat_id=query.message.chat_id,
+        text=f"📍 Selected Location: `{selected_state}, India`\n\n"
+             f"📱 **Mobile Verification (Step 4/7):**\n"
+             f"Tap the **Share Verified Mobile Number** button below to complete verification:",
+        reply_markup=markup,
+        parse_mode="Markdown"
+    )
+    return PHONE
+
+async def phone_contact_step(update: Update, context: ContextTypes.DEFAULT_TYPE):
+    if not update.message.contact:
+        contact_btn = KeyboardButton(text="📱 Share Verified Mobile Number", request_contact=True)
+        markup = ReplyKeyboardMarkup([[contact_btn]], one_time_keyboard=True, resize_keyboard=True)
+        await update.message.reply_text(
+            "⚠️ **Verification Required!**\n\n"
+            "To prevent fake profiles, you MUST click the button below to share your verified Telegram mobile number:",
+            reply_markup=markup,
+            parse_mode="Markdown"
+        )
+        return PHONE
+
+    phone_num = update.message.contact.phone_number
+    context.user_data["phone_number"] = phone_num
+
+    gender_buttons = InlineKeyboardMarkup([
+        [InlineKeyboardButton("Male 👨", callback_data="gen_Male"), InlineKeyboardButton("Female 👩", callback_data="gen_Female")]
+    ])
+
+    await update.message.reply_text(
+        f"✅ Verified Mobile: `{phone_num}`\n\n"
+        f"👤 **Select Gender (Step 5/7):**",
+        reply_markup=gender_buttons,
+        parse_mode="Markdown"
+    )
+    return GENDER
+
+async def gender_callback(update: Update, context: ContextTypes.DEFAULT_TYPE):
+    query = update.callback_query
+    await query.answer()
+    
+    selected_gender = query.data.replace("gen_", "")
+    context.user_data["gender"] = selected_gender
+
+    await query.edit_message_text(
+        f"👤 Gender: `{selected_gender}`\n\n"
+        f"🎂 **Select Birth Year (Step 6/7):**\n"
+        f"Please tap your Birth Year from below to issue your Student ID:",
+        reply_markup=build_year_keyboard(),
+        parse_mode="Markdown"
+    )
+    return DOB_YEAR
+
+async def dob_year_callback(update: Update, context: ContextTypes.DEFAULT_TYPE):
+    query = update.callback_query
+    await query.answer()
+    
+    selected_year = query.data.replace("doby_", "")
+    context.user_data["birth_year"] = selected_year
+
+    await query.edit_message_text(
+        f"📅 **Selected Birth Year:** `{selected_year}`\n\n"
+        f"🗓 **Select Birth Month:**\n"
+        f"Please tap your Month of Birth below:",
+        reply_markup=build_month_keyboard(),
+        parse_mode="Markdown"
+    )
+    return DOB_MONTH
+
+async def dob_month_callback(update: Update, context: ContextTypes.DEFAULT_TYPE):
+    query = update.callback_query
+    await query.answer()
+    
+    selected_month = query.data.replace("dobm_", "")
+    context.user_data["birth_month"] = selected_month
+    
+    selected_year = int(context.user_data.get("birth_year", "2002"))
+    selected_month_int = int(selected_month)
+
+    await query.edit_message_text(
+        f"📅 **Selected Birth Period:** `{selected_month}/{selected_year}`\n\n"
+        f"🗓 **Select Exact Birth Date (Day):**\n"
+        f"Please tap your exact Day of Birth from below:",
+        reply_markup=build_day_keyboard(selected_year, selected_month_int),
+        parse_mode="Markdown"
+    )
+    return DOB_DAY
+
+async def dob_day_callback(update: Update, context: ContextTypes.DEFAULT_TYPE):
+    query = update.callback_query
+    await query.answer()
+    
+    selected_day = query.data.replace("dobd_", "")
+    birth_year = context.user_data.get("birth_year", "2002")
+    birth_month = context.user_data.get("birth_month", "01")
+    
+    dob_str = f"{selected_day}-{birth_month}-{birth_year}"
+    context.user_data["dob_str"] = dob_str
+
+    await query.edit_message_text(
+        f"🎂 **DOB Selected:** `{dob_str}`\n\n"
+        f"🔑 **Account Security (Step 7/7):**\n"
+        f"Please set a secret **4-Digit PIN** for your account (e.g. `4321`):",
+        parse_mode="Markdown"
+    )
+    return PIN_SETUP
+
+async def pin_setup_step(update: Update, context: ContextTypes.DEFAULT_TYPE):
+    pin_input = update.message.text.strip()
+    if not pin_input.isdigit() or len(pin_input) != 4:
+        await update.message.reply_text("⚠️ PIN must be exactly **4 numeric digits** (e.g. 4321). Please try again:")
+        return PIN_SETUP
+
+    context.user_data["pin"] = pin_input
+
+    sec_buttons = InlineKeyboardMarkup([
+        [InlineKeyboardButton(q, callback_data=f"secq_{idx}")] for idx, q in enumerate(PRESET_SEC_QUESTIONS)
+    ])
+
+    await update.message.reply_text(
+        f"🛡 **Select Security Recovery Question:**\n"
+        f"Choose a question from below to use for PIN recovery:",
+        reply_markup=sec_buttons,
+        parse_mode="Markdown"
+    )
+    return SEC_QUESTION
+
+async def sec_q_callback(update: Update, context: ContextTypes.DEFAULT_TYPE):
+    query = update.callback_query
+    await query.answer()
+    
+    q_idx = int(query.data.replace("secq_", ""))
+    selected_q = PRESET_SEC_QUESTIONS[q_idx]
+    context.user_data["security_question"] = selected_q
+
+    await query.edit_message_text(
+        f"🛡 **Security Question:** *{selected_q}*\n\n"
+        f"Please reply with your secret Answer below:",
+        parse_mode="Markdown"
+    )
+    return SEC_ANSWER
+
+async def sec_ans_step(update: Update, context: ContextTypes.DEFAULT_TYPE):
+    ans_input = update.message.text.strip()
+    context.user_data["security_answer"] = ans_input
+
+    user = update.effective_user
+    full_name = context.user_data.get("full_name", user.full_name)
+    dob_str = context.user_data.get("dob_str", "15-08-2000")
+    birth_year = dob_str.split("-")[-1]
+    calc_age = datetime.now().year - int(birth_year)
+
+    student_id = generate_student_id(full_name, dob_str)
+    context.user_data["is_editing_profile"] = False
+
+    save_user_profile(
+        user_id=user.id,
+        full_name=full_name,
+        username=user.username or "N/A",
+        phone=context.user_data.get("phone_number", "N/A"),
+        target_exam=context.user_data.get("target_exam", "General"),
+        dob=dob_str,
+        age=calc_age,
+        gender=context.user_data.get("gender", "Not Specified"),
+        pin=context.user_data.get("pin", "1234"),
+        sec_q=context.user_data.get("security_question", "Default"),
+        sec_a=ans_input,
+        country="India",
+        state=context.user_data.get("state", "N/A"),
+        referred_by=context.user_data.get("referred_by")
+    )
+
+    await update.message.reply_text(
+        f"🎉 **Student Registration Complete!**\n"
+        f"━━━━━━━━━━━━━━━━━━━━━━━━━\n"
+        f"🪪 **OFFICIAL STUDENT ID ISSUED:** `{student_id}`\n"
+        f"🔑 **Secret PIN:** `{context.user_data.get('pin')}`\n"
+        f"🎂 **DOB Registered:** `{dob_str}`\n\n"
+        f"✅ Your student profile has been verified and saved successfully! You can view or update your details anytime in your **Profile Card** (/myprofile).\n\n"
+        f"👉 Tap **Launch Quiz** below or use the main menu to begin learning!",
+        reply_markup=ReplyKeyboardRemove(),
+        parse_mode="Markdown"
+    )
+    await context.bot.send_message(
+        chat_id=update.message.chat_id,
+        text="👇 **Quick Navigation:**",
+        reply_markup=InlineKeyboardMarkup([
+            [InlineKeyboardButton("🚀 Launch Quiz", callback_data="cmd_quiz"), InlineKeyboardButton("👤 Profile", callback_data="cmd_profile")]
+        ])
+    )
+    return ConversationHandler.END
+
+async def edit_profile_command(update: Update, context: ContextTypes.DEFAULT_TYPE):
+    if not await check_onboarding_maintenance(update):
+        return ConversationHandler.END
+
+    user = update.effective_user
+    can_edit, days_left = can_user_edit_profile(user.id)
+    
+    if not can_edit:
+        msg = f"⏳ **Profile Edit Locked!**\n\nYou can only update your profile details once every 30 days.\nPlease try again in `{days_left} days`."
+        if update.callback_query:
+            await update.callback_query.answer(msg, show_alert=True)
+        else:
+            await update.message.reply_text(msg, parse_mode="Markdown")
+        return ConversationHandler.END
+
+    warn_msg = (
+        "⚠️ **PROFILE EDIT WARNING**\n"
+        "━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\n"
+        "Please note: You are allowed to edit your student profile details **ONLY ONCE EVERY 30 DAYS**.\n\n"
+        "Are you sure you want to proceed with updating your profile now?"
+    )
+    warn_markup = InlineKeyboardMarkup([
+        [InlineKeyboardButton("✅ Yes, Proceed to Edit", callback_data="edit_confirm_yes")],
+        [InlineKeyboardButton("❌ Cancel Edit", callback_data="edit_confirm_no")]
+    ])
+
+    if update.callback_query:
+        await update.callback_query.message.reply_text(warn_msg, reply_markup=warn_markup, parse_mode="Markdown")
+    else:
+        await update.message.reply_text(warn_msg, reply_markup=warn_markup, parse_mode="Markdown")
+    
+    return EDIT_WARN
+
+async def edit_warn_callback(update: Update, context: ContextTypes.DEFAULT_TYPE):
+    query = update.callback_query
+    await query.answer()
+
+    if query.data == "edit_confirm_no":
+        await query.edit_message_text("❌ Profile update cancelled.")
+        return ConversationHandler.END
+
+    context.user_data["is_editing_profile"] = True
+    await query.edit_message_text(
+        "✏️ **Edit Profile Session Started (Step 1/7)**\n\n"
+        "Please enter your updated **Full Name** (at least 4 letters):",
         parse_mode="Markdown"
     )
     return NAME
@@ -371,371 +708,6 @@ async def reset_pin_step(update: Update, context: ContextTypes.DEFAULT_TYPE):
     )
     return ConversationHandler.END
 
-async def edit_profile_command(update: Update, context: ContextTypes.DEFAULT_TYPE):
-    if not await check_onboarding_maintenance(update):
-        return ConversationHandler.END
-
-    user = update.effective_user
-    can_edit, days_left = can_user_edit_profile(user.id)
-    
-    if not can_edit:
-        msg = f"⏳ **Profile Edit Locked!**\n\nYou can only update your profile details once every 30 days.\nPlease try again in `{days_left} days`."
-        if update.callback_query:
-            await update.callback_query.answer(msg, show_alert=True)
-        else:
-            await update.message.reply_text(msg, parse_mode="Markdown")
-        return ConversationHandler.END
-
-    warn_msg = (
-        "⚠️ **PROFILE EDIT WARNING**\n"
-        "━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\n"
-        "Please note: You are allowed to edit your student profile details **ONLY ONCE EVERY 30 DAYS**.\n\n"
-        "Are you sure you want to proceed with updating your profile now?"
-    )
-    warn_markup = InlineKeyboardMarkup([
-        [InlineKeyboardButton("✅ Yes, Proceed to Edit", callback_data="edit_confirm_yes")],
-        [InlineKeyboardButton("❌ Cancel Edit", callback_data="edit_confirm_no")]
-    ])
-
-    if update.callback_query:
-        await update.callback_query.message.reply_text(warn_msg, reply_markup=warn_markup, parse_mode="Markdown")
-    else:
-        await update.message.reply_text(warn_msg, reply_markup=warn_markup, parse_mode="Markdown")
-    
-    return EDIT_WARN
-
-async def edit_warn_callback(update: Update, context: ContextTypes.DEFAULT_TYPE):
-    query = update.callback_query
-    await query.answer()
-
-    if query.data == "edit_confirm_no":
-        await query.edit_message_text("❌ Profile update cancelled.")
-        return ConversationHandler.END
-
-    context.user_data["is_editing_profile"] = True
-    await query.edit_message_text(
-        "✏️ **Edit Profile Session Started (Step 1/8)**\n\n"
-        "Please enter your updated **Full Name** (at least 4 letters):",
-        parse_mode="Markdown"
-    )
-    return NAME
-
-async def name_step(update: Update, context: ContextTypes.DEFAULT_TYPE):
-    input_name = update.message.text.strip()
-    clean_letters = "".join(filter(str.isalpha, input_name))
-
-    if len(clean_letters) < 4:
-        await update.message.reply_text(
-            "⚠️ **Name Too Short!**\n\n"
-            "Your name must contain at least 4 alphabetic characters to issue your Student ID.\n"
-            "Please enter your complete **Full Name** again:",
-            parse_mode="Markdown"
-        )
-        return NAME
-
-    context.user_data["full_name"] = input_name
-
-    exams = [
-        [InlineKeyboardButton("1. SSC CGL", callback_data="exam_SSC CGL"), InlineKeyboardButton("2. SSC CHSL", callback_data="exam_SSC CHSL")],
-        [InlineKeyboardButton("3. CAPF HCM", callback_data="exam_CAPF HCM"), InlineKeyboardButton("4. ASI STENO", callback_data="exam_ASI STENO")],
-        [InlineKeyboardButton("5. DP HCM", callback_data="exam_DP HCM"), InlineKeyboardButton("6. BSF HCM", callback_data="exam_BSF HCM")],
-        [InlineKeyboardButton("7. CISF HCM", callback_data="exam_CISF HCM"), InlineKeyboardButton("8. RAILWAY NTPC UG", callback_data="exam_RAILWAY NTPC UG")],
-        [InlineKeyboardButton("9. RAILWAY NTPC GRADUATE", callback_data="exam_RAILWAY NTPC GRADUATE")],
-        [InlineKeyboardButton("10. Other Exam", callback_data="exam_OTHER")]
-    ]
-
-    await update.message.reply_text(
-        f"✨ Nice to meet you, *{context.user_data['full_name']}*!\n\n"
-        f"🎯 **Target Exam Selection (Step 2/8):**\n"
-        f"Please tap your targeted examination from the options below:",
-        reply_markup=InlineKeyboardMarkup(exams),
-        parse_mode="Markdown"
-    )
-    return EXAM
-
-async def exam_callback(update: Update, context: ContextTypes.DEFAULT_TYPE):
-    query = update.callback_query
-    await query.answer()
-    
-    selected_exam = query.data.replace("exam_", "")
-    
-    if selected_exam == "OTHER":
-        context.user_data["awaiting_other_exam"] = True
-        await query.edit_message_text("✍️ Please type the exact name of your Target Exam:")
-        return EXAM
-
-    context.user_data["target_exam"] = selected_exam
-    
-    country_buttons = InlineKeyboardMarkup([
-        [InlineKeyboardButton("🇮🇳 India", callback_data="country_India"), InlineKeyboardButton("🌎 Other Country", callback_data="country_OTHER")]
-    ])
-    await query.edit_message_text(
-        f"🎯 Selected Target: `{selected_exam}`\n\n"
-        f"🌍 **Country Selection (Step 3/8):**\n"
-        f"Please choose your country from below:",
-        reply_markup=country_buttons,
-        parse_mode="Markdown"
-    )
-    return COUNTRY
-
-async def custom_exam_text(update: Update, context: ContextTypes.DEFAULT_TYPE):
-    if context.user_data.get("awaiting_other_exam"):
-        context.user_data["target_exam"] = update.message.text.strip()
-        context.user_data["awaiting_other_exam"] = False
-        
-        country_buttons = InlineKeyboardMarkup([
-            [InlineKeyboardButton("🇮🇳 India", callback_data="country_India"), InlineKeyboardButton("🌎 Other Country", callback_data="country_OTHER")]
-        ])
-        await update.message.reply_text(
-            f"🎯 Selected Target: `{context.user_data['target_exam']}`\n\n"
-            f"🌍 **Country Selection (Step 3/8):**\n"
-            f"Please choose your country from below:",
-            reply_markup=country_buttons,
-            parse_mode="Markdown"
-        )
-        return COUNTRY
-
-async def country_callback(update: Update, context: ContextTypes.DEFAULT_TYPE):
-    query = update.callback_query
-    await query.answer()
-    
-    choice = query.data.replace("country_", "")
-    if choice == "OTHER":
-        context.user_data["awaiting_other_country"] = True
-        await query.edit_message_text("✍️ Please type the name of your Country:")
-        return COUNTRY
-
-    context.user_data["country"] = "India"
-    await query.edit_message_text(
-        "📍 **Indian State / UT Selection (Step 4/8):**\n\n"
-        "Please select your State or Union Territory from the interactive list below:",
-        reply_markup=build_state_keyboard(),
-        parse_mode="Markdown"
-    )
-    return STATE
-
-async def custom_country_text(update: Update, context: ContextTypes.DEFAULT_TYPE):
-    if context.user_data.get("awaiting_other_country"):
-        context.user_data["country"] = update.message.text.strip()
-        context.user_data["state"] = "Foreign"
-        context.user_data["awaiting_other_country"] = False
-        
-        contact_btn = KeyboardButton(text="📱 Share Verified Mobile Number", request_contact=True)
-        markup = ReplyKeyboardMarkup([[contact_btn]], one_time_keyboard=True, resize_keyboard=True)
-        
-        await update.message.reply_text(
-            f"🌍 Country: `{context.user_data['country']}`\n\n"
-            f"📱 **Mobile Verification (Step 5/8):**\n"
-            f"Tap the **Share Verified Mobile Number** button below to complete verification:",
-            reply_markup=markup,
-            parse_mode="Markdown"
-        )
-        return PHONE
-
-async def state_callback(update: Update, context: ContextTypes.DEFAULT_TYPE):
-    query = update.callback_query
-    await query.answer()
-    
-    selected_state = query.data.replace("st_", "")
-    context.user_data["country"] = "India"
-    context.user_data["state"] = selected_state
-
-    contact_btn = KeyboardButton(text="📱 Share Verified Mobile Number", request_contact=True)
-    markup = ReplyKeyboardMarkup([[contact_btn]], one_time_keyboard=True, resize_keyboard=True)
-
-    await query.delete_message()
-    await context.bot.send_message(
-        chat_id=query.message.chat_id,
-        text=f"📍 Selected Location: `{selected_state}, India`\n\n"
-             f"📱 **Mobile Verification (Step 5/8):**\n"
-             f"Tap the **Share Verified Mobile Number** button below to complete verification:",
-        reply_markup=markup,
-        parse_mode="Markdown"
-    )
-    return PHONE
-
-async def phone_contact_step(update: Update, context: ContextTypes.DEFAULT_TYPE):
-    if not update.message.contact:
-        contact_btn = KeyboardButton(text="📱 Share Verified Mobile Number", request_contact=True)
-        markup = ReplyKeyboardMarkup([[contact_btn]], one_time_keyboard=True, resize_keyboard=True)
-        await update.message.reply_text(
-            "⚠️ **Verification Required!**\n\n"
-            "To prevent fake profiles, you MUST click the button below to share your verified Telegram mobile number:",
-            reply_markup=markup,
-            parse_mode="Markdown"
-        )
-        return PHONE
-
-    phone_num = update.message.contact.phone_number
-    context.user_data["phone_number"] = phone_num
-
-    gender_buttons = InlineKeyboardMarkup([
-        [InlineKeyboardButton("Male 👨", callback_data="gen_Male"), InlineKeyboardButton("Female 👩", callback_data="gen_Female")]
-    ])
-
-    await update.message.reply_text(
-        f"✅ Verified Mobile: `{phone_num}`\n\n"
-        f"👤 **Select Gender (Step 6/8):**",
-        reply_markup=gender_buttons,
-        parse_mode="Markdown"
-    )
-    return GENDER
-
-async def gender_callback(update: Update, context: ContextTypes.DEFAULT_TYPE):
-    query = update.callback_query
-    await query.answer()
-    
-    selected_gender = query.data.replace("gen_", "")
-    context.user_data["gender"] = selected_gender
-
-    await query.edit_message_text(
-        f"👤 Gender: `{selected_gender}`\n\n"
-        f"🎂 **Select Birth Year (Step 7/8):**\n"
-        f"Please tap your Birth Year from below to issue your Student ID:",
-        reply_markup=build_year_keyboard(),
-        parse_mode="Markdown"
-    )
-    return DOB_YEAR
-
-async def dob_year_callback(update: Update, context: ContextTypes.DEFAULT_TYPE):
-    query = update.callback_query
-    await query.answer()
-    
-    selected_year = query.data.replace("doby_", "")
-    context.user_data["birth_year"] = selected_year
-
-    await query.edit_message_text(
-        f"📅 **Selected Birth Year:** `{selected_year}`\n\n"
-        f"🗓 **Select Birth Month:**\n"
-        f"Please tap your Month of Birth below:",
-        reply_markup=build_month_keyboard(),
-        parse_mode="Markdown"
-    )
-    return DOB_MONTH
-
-async def dob_month_callback(update: Update, context: ContextTypes.DEFAULT_TYPE):
-    query = update.callback_query
-    await query.answer()
-    
-    selected_month = query.data.replace("dobm_", "")
-    context.user_data["birth_month"] = selected_month
-    
-    selected_year = int(context.user_data.get("birth_year", "2002"))
-    selected_month_int = int(selected_month)
-
-    await query.edit_message_text(
-        f"📅 **Selected Birth Period:** `{selected_month}/{selected_year}`\n\n"
-        f"🗓 **Select Exact Birth Date (Day):**\n"
-        f"Please tap your exact Day of Birth from below:",
-        reply_markup=build_day_keyboard(selected_year, selected_month_int),
-        parse_mode="Markdown"
-    )
-    return DOB_DAY
-
-async def dob_day_callback(update: Update, context: ContextTypes.DEFAULT_TYPE):
-    query = update.callback_query
-    await query.answer()
-    
-    selected_day = query.data.replace("dobd_", "")
-    birth_year = context.user_data.get("birth_year", "2002")
-    birth_month = context.user_data.get("birth_month", "01")
-    
-    dob_str = f"{selected_day}-{birth_month}-{birth_year}"
-    context.user_data["dob_str"] = dob_str
-
-    await query.edit_message_text(
-        f"🎂 **DOB Selected:** `{dob_str}`\n\n"
-        f"🔑 **Account Security (Step 8/8):**\n"
-        f"Please set a secret **4-Digit PIN** for your account (e.g. `4321`):",
-        parse_mode="Markdown"
-    )
-    return PIN_SETUP
-
-async def pin_setup_step(update: Update, context: ContextTypes.DEFAULT_TYPE):
-    pin_input = update.message.text.strip()
-    if not pin_input.isdigit() or len(pin_input) != 4:
-        await update.message.reply_text("⚠️ PIN must be exactly **4 numeric digits** (e.g. 4321). Please try again:")
-        return PIN_SETUP
-
-    context.user_data["pin"] = pin_input
-
-    sec_buttons = InlineKeyboardMarkup([
-        [InlineKeyboardButton(q, callback_data=f"secq_{idx}")] for idx, q in enumerate(PRESET_SEC_QUESTIONS)
-    ])
-
-    await update.message.reply_text(
-        f"🛡 **Select Security Recovery Question:**\n"
-        f"Choose a question from below to use for PIN recovery:",
-        reply_markup=sec_buttons,
-        parse_mode="Markdown"
-    )
-    return SEC_QUESTION
-
-async def sec_q_callback(update: Update, context: ContextTypes.DEFAULT_TYPE):
-    query = update.callback_query
-    await query.answer()
-    
-    q_idx = int(query.data.replace("secq_", ""))
-    selected_q = PRESET_SEC_QUESTIONS[q_idx]
-    context.user_data["security_question"] = selected_q
-
-    await query.edit_message_text(
-        f"🛡 **Security Question:** *{selected_q}*\n\n"
-        f"Please reply with your secret Answer below:",
-        parse_mode="Markdown"
-    )
-    return SEC_ANSWER
-
-async def sec_ans_step(update: Update, context: ContextTypes.DEFAULT_TYPE):
-    ans_input = update.message.text.strip()
-    context.user_data["security_answer"] = ans_input
-
-    user = update.effective_user
-    full_name = context.user_data.get("full_name", user.full_name)
-    dob_str = context.user_data.get("dob_str", "15-08-2000")
-    birth_year = dob_str.split("-")[-1]
-    calc_age = datetime.now().year - int(birth_year)
-
-    student_id = generate_student_id(full_name, dob_str)
-    context.user_data["is_editing_profile"] = False
-
-    save_user_profile(
-        user_id=user.id,
-        full_name=full_name,
-        username=user.username or "N/A",
-        phone=context.user_data.get("phone_number", "N/A"),
-        target_exam=context.user_data.get("target_exam", "General"),
-        dob=dob_str,
-        age=calc_age,
-        gender=context.user_data.get("gender", "Not Specified"),
-        pin=context.user_data.get("pin", "1234"),
-        sec_q=context.user_data.get("security_question", "Default"),
-        sec_a=ans_input,
-        country=context.user_data.get("country", "India"),
-        state=context.user_data.get("state", "N/A"),
-        referred_by=context.user_data.get("referred_by")
-    )
-
-    await update.message.reply_text(
-        f"🎉 **Student Registration Complete!**\n"
-        f"━━━━━━━━━━━━━━━━━━━━━━━━━\n"
-        f"🪪 **OFFICIAL STUDENT ID ISSUED:** `{student_id}`\n"
-        f"🔑 **Secret PIN:** `{context.user_data.get('pin')}`\n"
-        f"🎂 **DOB Registered:** `{dob_str}`\n\n"
-        f"✅ Your student profile has been verified and saved successfully! You can view or update your details anytime in your **Profile Card** (/myprofile).\n\n"
-        f"👉 Tap **Launch Quiz** below or use the main menu to begin learning!",
-        reply_markup=ReplyKeyboardRemove(),
-        parse_mode="Markdown"
-    )
-    await context.bot.send_message(
-        chat_id=update.message.chat_id,
-        text="👇 **Quick Navigation:**",
-        reply_markup=InlineKeyboardMarkup([
-            [InlineKeyboardButton("🚀 Launch Quiz", callback_data="cmd_quiz"), InlineKeyboardButton("👤 Profile", callback_data="cmd_profile")]
-        ])
-    )
-    return ConversationHandler.END
-
 async def cancel_onboarding(update: Update, context: ContextTypes.DEFAULT_TYPE):
     context.user_data["is_editing_profile"] = False
     await update.message.reply_text("Setup cancelled. Type /start anytime to begin registration.", reply_markup=ReplyKeyboardRemove())
@@ -785,10 +757,6 @@ def get_onboarding_handler():
             EXAM: [
                 CallbackQueryHandler(exam_callback, pattern="^exam_"),
                 MessageHandler(filters.TEXT & ~filters.COMMAND, custom_exam_text)
-            ],
-            COUNTRY: [
-                CallbackQueryHandler(country_callback, pattern="^country_"),
-                MessageHandler(filters.TEXT & ~filters.COMMAND, custom_country_text)
             ],
             STATE: [CallbackQueryHandler(state_callback, pattern="^st_")],
             PHONE: [MessageHandler(filters.CONTACT | (filters.TEXT & ~filters.COMMAND), phone_contact_step)],

@@ -23,10 +23,10 @@ import time
 warnings.filterwarnings("ignore", category=PTBUserWarning)
 
 (
-    START_CHOICE, NAME, EXAM, COUNTRY, STATE, PHONE, GENDER, DOB_YEAR, DOB_MONTH, DOB_DAY, 
-    PIN_SETUP, SEC_QUESTION, SEC_ANSWER, LOGIN_SID, LOGIN_PIN, RECOVERY_MENU, 
+    NAME, EXAM, COUNTRY, STATE, PHONE, GENDER, DOB_YEAR, DOB_MONTH, DOB_DAY, 
+    PIN_SETUP, SEC_QUESTION, SEC_ANSWER, RECOVERY_MENU, 
     REC_SEC_ANS, REC_PHONE, REC_DOB_YEAR, REC_DOB_MONTH, REC_DOB_DAY, REC_NAME_DOB, RESET_PIN, EDIT_WARN
-) = range(24)
+) = range(21)
 
 PRESET_SEC_QUESTIONS = [
     "ᴡʜᴀᴛ ɪꜱ ʏᴏᴜʀ ᴘᴇᴛ'ꜱ ɴᴀᴍᴇ?",
@@ -129,99 +129,15 @@ async def start_onboarding(update: Update, context: ContextTypes.DEFAULT_TYPE):
         )
         return ConversationHandler.END
 
-    welcome_markup = InlineKeyboardMarkup([
-        [InlineKeyboardButton("🆕 ᴄʀᴇᴀᴛᴇ ɴᴇᴡ ꜱᴛᴜᴅᴇɴᴛ ᴀᴄᴄᴏᴜɴᴛ", callback_data="start_create")],
-        [InlineKeyboardButton("🔑 ᴇxɪꜱᴛɪɴɢ ꜱᴛᴜᴅᴇɴᴛ ʟᴏɢɪɴ", callback_data="start_login")]
-    ])
-
+    # Directly prompt for name (Step 1)
     await update.effective_message.reply_text(
         f"{WELCOME_CARD_TEXT}\n\n"
         f"━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\n"
-        f"👋 **ᴡᴇʟᴄᴏᴍᴇ ᴛᴏ ʟᴇᴀʀɴ ᴡɪᴛʜ ʜɪᴍ qᴜɪᴢ ʙᴏᴏᴋ!**\n\n"
-        f"ᴘʟᴇᴀꜱᴇ ꜱᴇʟᴇᴄᴛ ᴀɴ ᴏᴘᴛɪᴏɴ ʙᴇʟᴏᴡ ᴛᴏ ᴘʀᴏᴄᴇᴇᴅ:",
-        reply_markup=welcome_markup,
+        f"📝 **ꜱᴛᴜᴅᴇɴᴛ ʀᴇɢɪꜱᴛʀᴀᴛɪᴏɴ (ꜱᴛᴇᴘ 1/8)**\n\n"
+        f"ᴘʟᴇᴀꜱᴇ ᴇɴᴛᴇʀ ʏᴏᴜʀ **ꜰᴜʟʟ ɴᴀᴍᴇ** (ᴀᴛ ʟᴇᴀꜱᴛ 4 ʟᴇᴛᴛᴇʀꜱ) ᴛᴏ ɪꜱꜱᴜᴇ ʏᴏᴜʀ ᴜɴɪqᴜᴇ ᴏꜰꜰɪᴄɪᴀʟ ꜱᴛᴜᴅᴇɴᴛ ɪᴅ:",
         parse_mode="Markdown"
     )
-    return START_CHOICE
-
-async def start_choice_callback(update: Update, context: ContextTypes.DEFAULT_TYPE):
-    query = update.callback_query
-    await query.answer()
-
-    if query.data == "start_create":
-        await query.edit_message_text(
-            f"📝 **ꜱᴛᴜᴅᴇɴᴛ ʀᴇɢɪꜱᴛʀᴀᴛɪᴏɴ (ꜱᴛᴇᴘ 1/8)**\n\n"
-            f"ᴘʟᴇᴀꜱᴇ ᴇɴᴛᴇʀ ʏᴏᴜʀ **ꜰᴜʟʟ ɴᴀᴍᴇ** (ᴀᴛ ʟᴇᴀꜱᴛ 4 ʟᴇᴛᴛᴇʀꜱ) ᴛᴏ ɪꜱꜱᴜᴇ ʏᴏᴜʀ ᴜɴɪqᴜᴇ ᴏꜰꜰɪᴄɪᴀʟ ꜱᴛᴜᴅᴇɴᴛ ɪᴅ:",
-            parse_mode="Markdown"
-        )
-        return NAME
-    elif query.data == "start_login":
-        await query.edit_message_text(
-            f"🔑 **ᴇxɪꜱᴛɪɴɢ ꜱᴛᴜᴅᴇɴᴛ ʟᴏɢɪɴ**\n"
-            f"━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\n\n"
-            f"ᴘʟᴇᴀꜱᴇ ᴇɴᴛᴇʀ ʏᴏᴜʀ **ᴏꜰꜰɪᴄɪᴀʟ ꜱᴛᴜᴅᴇɴᴛ ɪᴅ** (ᴇ.ɢ., `ʜɪ090800`):",
-            parse_mode="Markdown"
-        )
-        return LOGIN_SID
-
-async def login_sid_step(update: Update, context: ContextTypes.DEFAULT_TYPE):
-    sid = update.message.text.strip()
-    u = get_user_by_student_id(sid)
-
-    if not u:
-        rec_markup = InlineKeyboardMarkup([
-            [InlineKeyboardButton("🆕 ᴄʀᴇᴀᴛᴇ ɴᴇᴡ ᴀᴄᴄᴏᴜɴᴛ", callback_data="start_create")]
-        ])
-        await update.message.reply_text(
-            f"⚠️ **ꜱᴛᴜᴅᴇɴᴛ ɪᴅ ɴᴏᴛ ꜰᴏᴜɴᴅ!**\n\n"
-            f"ɴᴏ ᴀᴄᴄᴏᴜɴᴛ ᴇxɪꜱᴛꜱ ᴡɪᴛʜ ꜱᴛᴜᴅᴇɴᴛ ɪᴅ `{sid}`. ᴘʟᴇᴀꜱᴇ ᴄʜᴇᴄᴋ ꜰᴏʀ ᴛʏᴘᴏꜱ ᴏʀ ᴛᴀᴘ ʙᴇʟᴏᴡ ᴛᴏ ᴄʀᴇᴀᴛᴇ ᴀ ɴᴇᴡ ᴘʀᴏꜰɪʟᴇ:",
-            reply_markup=rec_markup,
-            parse_mode="Markdown"
-        )
-        return LOGIN_SID
-
-    context.user_data["login_target_user"] = u
-    rec_btn = InlineKeyboardMarkup([
-        [InlineKeyboardButton("🔑 ʀᴇꜱᴇᴛ ʏᴏᴜʀ ᴘɪɴ / ᴘᴀꜱꜱᴡᴏʀᴅ", callback_data="login_forgot_pin")]
-    ])
-
-    await update.message.reply_text(
-        f"🔑 **ꜱᴛᴜᴅᴇɴᴛ ᴀᴄᴄᴏᴜɴᴛ ꜰᴏᴜɴᴅ:** `{u['full_name']}` (`{u['student_id']}`)\n\n"
-        f"ᴘʟᴇᴀꜱᴇ ᴇɴᴛᴇʀ ʏᴏᴜʀ ꜱᴇᴄʀᴇᴛ **4-ᴅɪɢɪᴛ ᴘɪɴ**:",
-        reply_markup=rec_btn,
-        parse_mode="Markdown"
-    )
-    return LOGIN_PIN
-
-async def login_pin_step(update: Update, context: ContextTypes.DEFAULT_TYPE):
-    pin_input = update.message.text.strip()
-    u = context.user_data.get("login_target_user")
-
-    if not u or u.get("pin") != pin_input:
-        rec_btn = InlineKeyboardMarkup([
-            [InlineKeyboardButton("🔑 ʀᴇꜱᴇᴛ ʏᴏᴜʀ ᴘɪɴ / ᴘᴀꜱꜱᴡᴏʀᴅ", callback_data="login_forgot_pin")]
-        ])
-        await update.message.reply_text(
-            f"❌ **ɪɴᴄᴏʀʀᴇᴄᴛ ᴘɪɴ!**\n\n"
-            f"ᴛʜᴇ ᴘɪɴ ᴇɴᴛᴇʀᴇᴅ ᴅᴏᴇꜱ ɴᴏᴛ ᴍᴀᴛᴄʜ ʏᴏᴜʀ ᴀᴄᴄᴏᴜɴᴛ. ᴘʟᴇᴀꜱᴇ ᴛʀʏ ᴇɴᴛᴇʀɪɴɢ ʏᴏᴜʀ ᴘɪɴ ᴀɢᴀɪɴ, ᴏʀ ᴛᴀᴘ ʙᴇʟᴏᴡ ᴛᴏ ʀᴇꜱᴇᴛ ʏᴏᴜʀ ᴘɪɴ:",
-            reply_markup=rec_btn,
-            parse_mode="Markdown"
-        )
-        return LOGIN_PIN
-
-    user = update.effective_user
-    await update.message.reply_text(
-        f"🎉 **ʟᴏɢɪɴ ꜱᴜᴄᴄᴇꜱꜱꜰᴜʟ!**\n"
-        f"━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\n"
-        f"⚡ ᴡᴇʟᴄᴏᴍᴇ ʙᴀᴄᴋ, *{u['full_name']}*!\n"
-        f"🪪 **ꜱᴛᴜᴅᴇɴᴛ ɪᴅ:** `{u['student_id']}`\n\n"
-        f"ʏᴏᴜʀ ꜱᴄᴏʀᴇꜱ, ꜱᴀᴠᴇᴅ qᴜᴇꜱᴛɪᴏɴꜱ, ᴀɴᴅ qᴜᴏᴛᴀꜱ ʜᴀᴠᴇ ʙᴇᴇɴ ʟᴏᴀᴅᴇᴅ ꜱᴜᴄᴄᴇꜱꜱꜰᴜʟʟʏ!",
-        reply_markup=InlineKeyboardMarkup([
-            [InlineKeyboardButton("🚀 ʟᴀᴜɴᴄʜ qᴜɪᴢ", callback_data="cmd_quiz"), InlineKeyboardButton("👤 ᴘʀᴏꜰɪʟᴇ", callback_data="cmd_profile")]
-        ]),
-        parse_mode="Markdown"
-    )
-    return ConversationHandler.END
+    return NAME
 
 async def recovery_menu_callback(update: Update, context: ContextTypes.DEFAULT_TYPE):
     query = update.callback_query
@@ -240,7 +156,7 @@ async def recovery_menu_callback(update: Update, context: ContextTypes.DEFAULT_T
 
     rec_options = InlineKeyboardMarkup([
         [InlineKeyboardButton("🛡 ꜱᴇᴄᴜʀɪᴛʏ qᴜᴇꜱᴛɪᴏɴ", callback_data="rec_opt_secq")],
-        [InlineKeyboardButton("📱 ᴠᴇʀɪꜰʏ ᴠɪᴀ ᴘʜᴏɴᴇ ɴᴜᴍʙᴇʀ", callback_data="rec_opt_phone")],
+        [InlineKeyboardButton("📱 ᴠᴇʀɪꜰɪᴇᴅ ᴘʜᴏɴᴇ ɴᴜᴍʙᴇʀ", callback_data="rec_opt_phone")],
         [InlineKeyboardButton("🎂 ᴅᴏʙ + ɴᴀᴍᴇ ᴠᴇʀɪꜰɪᴄᴀᴛɪᴏɴ", callback_data="rec_opt_namedob")],
         [InlineKeyboardButton("🗓 ᴅᴏʙ ɢʀɪᴅ ᴠᴇʀɪꜰɪᴄᴀᴛɪᴏɴ", callback_data="rec_opt_dob")]
     ])
@@ -833,17 +749,6 @@ def get_onboarding_handler():
             CallbackQueryHandler(recovery_menu_callback, pattern="^login_forgot_pin$")
         ],
         states={
-            START_CHOICE: [
-                CallbackQueryHandler(start_choice_callback, pattern="^start_")
-            ],
-            LOGIN_SID: [
-                MessageHandler(filters.TEXT & ~filters.COMMAND, login_sid_step),
-                CallbackQueryHandler(start_choice_callback, pattern="^start_create$")
-            ],
-            LOGIN_PIN: [
-                MessageHandler(filters.TEXT & ~filters.COMMAND, login_pin_step),
-                CallbackQueryHandler(recovery_menu_callback, pattern="^login_forgot_pin$")
-            ],
             RECOVERY_MENU: [
                 CallbackQueryHandler(recovery_option_router, pattern="^rec_opt_")
             ],

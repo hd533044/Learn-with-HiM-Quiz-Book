@@ -608,10 +608,18 @@ async def finish_quiz_and_send_report(chat_id: int, user_id: int, context: Conte
     )
 
     buttons = [
-        [InlineKeyboardButton("📖 Review Saved Questions", callback_data="cmd_savedquestions")],
+        [
+            InlineKeyboardButton("📄 Export PDF Report", callback_data="cmd_pdfreport"),
+            InlineKeyboardButton("📖 Review Saved Questions", callback_data="cmd_savedquestions")
+        ],
         [InlineKeyboardButton("📢 Join Telegram Channel", url="https://t.me/Learnwithhim")],
         [InlineKeyboardButton("📺 Join YouTube Channel", url=YOUTUBE_CHANNEL_URL)],
         [InlineKeyboardButton("🚀 Attempt Another Quiz", callback_data="cmd_quiz")]
     ]
 
-    await context.bot.send_message(chat_id=chat_id, text=report_card, reply_markup=InlineKeyboardMarkup(buttons), parse_mode="Markdown")
+    await context.bot.send_message(
+        chat_id=chat_id, 
+        text=report_card, 
+        reply_markup=InlineKeyboardMarkup(buttons), 
+        parse_mode="Markdown"
+    )

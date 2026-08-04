@@ -144,7 +144,6 @@ async def admin_callback_handler(update: Update, context: ContextTypes.DEFAULT_T
     # Generate and Send PDF Report
     elif data.startswith("genpdf_"):
         await query.answer()
-        # Cleanly extract target_uid and filter_mode even if data has multiple underscores
         raw = data.replace("genpdf_", "")
         parts = raw.split("_")
         target_uid = int(parts[0])

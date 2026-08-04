@@ -7,7 +7,7 @@ from reportlab.lib.pagesizes import letter
 from reportlab.lib import colors
 from reportlab.lib.units import inch
 from reportlab.platypus import (
-    SimpleDocTemplate, Paragraph, Spacer, Table, TableStyle, Image
+    SimpleDocTemplate, Paragraph, Spacer, Table, TableStyle, Image, KeepTogether
 )
 from reportlab.lib.styles import getSampleStyleSheet, ParagraphStyle
 from reportlab.pdfgen import canvas
@@ -19,7 +19,7 @@ logger = logging.getLogger(__name__)
 class NumberedCanvas(canvas.Canvas):
     """
     Two-pass canvas to dynamically compute total page numbers
-    and render clickable footer links cleanly without crashing.
+    and render clickable footer links cleanly across unlimited pages.
     """
     def __init__(self, *args, **kwargs):
         super().__init__(*args, **kwargs)
@@ -86,7 +86,7 @@ def parse_date_only(date_str: str) -> str:
         return str(date_str)
 
 def clean_str(text) -> str:
-    """Safely converts any input type (int, dict, None, etc.) into clean escaped XML text for ReportLab."""
+    """Safely converts any input type into clean escaped XML text for ReportLab Paragraphs."""
     if text is None:
         return "N/A"
     if isinstance(text, (dict, list)):
@@ -102,7 +102,7 @@ def generate_student_pdf_report(user_id: int, filter_mode: str = "last_1_month_d
         if not u:
             return ""
 
-        # Query Quiz Attempts First
+        # Query Quiz Attempts
         conn = get_db()
         cursor = conn.cursor()
         
@@ -126,7 +126,7 @@ def generate_student_pdf_report(user_id: int, filter_mode: str = "last_1_month_d
             else:
                 filtered_attempts.append(a)
 
-        # Check if user has zero attempts to prevent generating empty PDFs
+        # Alert if user has zero attempts in selected window
         if not filtered_attempts:
             return "NO_ATTEMPTS"
 
@@ -164,7 +164,7 @@ def generate_student_pdf_report(user_id: int, filter_mode: str = "last_1_month_d
             fontSize=11,
             leading=15,
             textColor=colors.HexColor("#0F172A"),
-            spaceBefore=8,
+            spaceBefore=10,
             spaceAfter=4
         )
 
@@ -172,8 +172,8 @@ def generate_student_pdf_report(user_id: int, filter_mode: str = "last_1_month_d
             'BodyTextTimes',
             parent=styles['Normal'],
             fontName='Times-Roman',
-            fontSize=9,
-            leading=12,
+            fontSize=8.5,
+            leading=11,
             textColor=colors.HexColor("#334155")
         )
 
@@ -181,14 +181,14 @@ def generate_student_pdf_report(user_id: int, filter_mode: str = "last_1_month_d
             'BodyTextTimesBold',
             parent=styles['Normal'],
             fontName='Times-Bold',
-            fontSize=9,
-            leading=12,
+            fontSize=8.5,
+            leading=11,
             textColor=colors.HexColor("#0F172A")
         )
 
         story = []
 
-        # 1. Logos Header
+        # 1. Logos & Title Header
         logo_left_path = os.path.join(BASE_DIR, "assets", "logo.png")
         logo_right_path = os.path.join(BASE_DIR, "assets", "logohim.png")
 
@@ -217,7 +217,7 @@ def generate_student_pdf_report(user_id: int, filter_mode: str = "last_1_month_d
             ('RIGHTPADDING', (0,0), (-1,-1), 0),
         ]))
         story.append(header_table)
-        story.append(Spacer(1, 8))
+        story.append(Spacer(1, 6))
 
         # 2. Student Profile Table
         sid = clean_str(u.get("student_id") or f"USER_{user_id}")
@@ -238,11 +238,11 @@ def generate_student_pdf_report(user_id: int, filter_mode: str = "last_1_month_d
         prof_table.setStyle(TableStyle([
             ('BACKGROUND', (0,0), (-1,-1), colors.HexColor("#F8FAFC")),
             ('GRID', (0,0), (-1,-1), 0.5, colors.HexColor("#CBD5E1")),
-            ('PADDING', (0,0), (-1,-1), 4),
+            ('PADDING', (0,0), (-1,-1), 3),
             ('VALIGN', (0,0), (-1,-1), 'MIDDLE')
         ]))
         story.append(prof_table)
-        story.append(Spacer(1, 8))
+        story.append(Spacer(1, 6))
 
         # 3. Overall Performance Summary
         total_quizzes = len(filtered_attempts)
@@ -265,7 +265,7 @@ def generate_student_pdf_report(user_id: int, filter_mode: str = "last_1_month_d
             ('BACKGROUND', (0,1), (-1,1), colors.HexColor("#F8FAFC")),
             ('GRID', (0,0), (-1,-1), 0.5, colors.HexColor("#38BDF8")),
             ('ALIGN', (0,0), (-1,-1), 'CENTER'),
-            ('PADDING', (0,0), (-1,-1), 5)
+            ('PADDING', (0,0), (-1,-1), 4)
         ]))
         story.append(stats_table)
         story.append(Spacer(1, 8))
@@ -309,7 +309,7 @@ def generate_student_pdf_report(user_id: int, filter_mode: str = "last_1_month_d
                 ('BACKGROUND', (0,0), (-1,0), colors.HexColor("#F1F5F9")),
                 ('GRID', (0,0), (-1,-1), 0.5, colors.HexColor("#CBD5E1")),
                 ('ALIGN', (0,0), (-1,-1), 'CENTER'),
-                ('PADDING', (0,0), (-1,-1), 5)
+                ('PADDING', (0,0), (-1,-1), 4)
             ]))
             story.append(date_table)
 
@@ -340,8 +340,7 @@ def generate_student_pdf_report(user_id: int, filter_mode: str = "last_1_month_d
                             else:
                                 skipped_q_list.append(q_item)
 
-            max_rows = 150 if is_month_filter else 300
-
+            # Robust Question Table Generator with Page-Break Support
             def build_styled_question_table(q_list, bg_header, border_color, empty_msg):
                 table_data = [[
                     Paragraph("Attempt Date", body_style_bold), 
@@ -349,7 +348,7 @@ def generate_student_pdf_report(user_id: int, filter_mode: str = "last_1_month_d
                     Paragraph("Correct Answer Text", body_style_bold)
                 ]]
                 
-                for q in q_list[:max_rows]:
+                for q in q_list:
                     q_txt = clean_str(q.get("question_text") or q.get("question") or "N/A")
                     c_ans = clean_str(q.get("correct_answer_text") or "N/A")
                     table_data.append([
@@ -359,14 +358,19 @@ def generate_student_pdf_report(user_id: int, filter_mode: str = "last_1_month_d
                     ])
 
                 if len(table_data) == 1:
-                    table_data.append([Paragraph("N/A", body_style), Paragraph(empty_msg, body_style), Paragraph("N/A", body_style)])
+                    table_data.append([
+                        Paragraph("N/A", body_style), 
+                        Paragraph(empty_msg, body_style), 
+                        Paragraph("N/A", body_style)
+                    ])
 
-                q_table = Table(table_data, colWidths=[1.2*inch, 3.8*inch, 2.0*inch], repeatRows=1)
+                # repeatRows=1 enables automatic multi-page table splitting
+                q_table = Table(table_data, colWidths=[1.1*inch, 3.9*inch, 2.0*inch], repeatRows=1)
                 q_table.setStyle(TableStyle([
                     ('BACKGROUND', (0,0), (-1,0), colors.HexColor(bg_header)),
                     ('BACKGROUND', (0,1), (-1,-1), colors.HexColor("#FFFFFF")),
                     ('GRID', (0,0), (-1,-1), 0.5, colors.HexColor(border_color)),
-                    ('PADDING', (0,0), (-1,-1), 4),
+                    ('PADDING', (0,0), (-1,-1), 3),
                     ('VALIGN', (0,0), (-1,-1), 'TOP')
                 ]))
                 return q_table

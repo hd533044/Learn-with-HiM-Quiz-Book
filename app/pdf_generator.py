@@ -59,7 +59,7 @@ class CleanReportCanvas(canvas.Canvas):
 
         self.setFont("Times-Roman", 8)
         self.setFillColor(colors.HexColor("#64748B"))
-        self.drawRightString(582, y_pos, f"Page {self._pageNumber} of {page_count}")
+        self.drawRightString(582, y_pos, f"ᴘᴀɢᴇ {self._pageNumber} ᴏꜰ {page_count}")
 
         self.restoreState()
 
@@ -71,7 +71,7 @@ def mask_phone(phone_str: str) -> str:
 
 def parse_date_only(date_str: str) -> str:
     if not date_str:
-        return "N/A"
+        return "ɴ/ᴀ"
     try:
         return date_str.split(" ")[0]
     except Exception:
@@ -144,7 +144,7 @@ def generate_student_pdf_report(user_id: int, filter_mode: str = "last_1_month_d
     logo_left_path = os.path.join(BASE_DIR, "assets", "logo.png")
     logo_right_path = os.path.join(BASE_DIR, "assets", "logohim.png")
 
-    img_left = Image(logo_left_path, width=0.8*inch, height=0.8*inch) if os.path.exists(logo_left_path) else Paragraph("<b>Logo</b>", body_style)
+    img_left = Image(logo_left_path, width=0.8*inch, height=0.8*inch) if os.path.exists(logo_left_path) else Paragraph("<b>ʟᴏɢᴏ</b>", body_style)
     img_right = Image(logo_right_path, width=0.8*inch, height=0.8*inch) if os.path.exists(logo_right_path) else Paragraph("<b>@LearnwithHiM</b>", body_style)
 
     if hasattr(img_left, 'preserveAspectRatio'):
@@ -153,9 +153,9 @@ def generate_student_pdf_report(user_id: int, filter_mode: str = "last_1_month_d
         img_right.preserveAspectRatio = True
 
     header_text_p = Paragraph(
-        "<b><font color='#1E3A8A'>Learn with HiM Quiz Book</font></b><br/>"
+        "<b><font color='#1E3A8A'>ʟᴇᴀʀɴ ᴡɪᴛʜ ʜɪᴍ qᴜɪᴢ ʙᴏᴏᴋ</font></b><br/>"
         "<font color='#38BDF8' size=8>━━━━━</font><br/>"
-        "<font color='#16A34A' size=9><b>Smart Quiz! Smart Study! Better Improvement! Exam Relevant!</b></font>",
+        "<font color='#16A34A' size=9><b>ꜱᴍᴀʀᴛ qᴜɪᴢ! ꜱᴍᴀʀᴛ ꜱᴛᴜᴅʏ! ʙᴇᴛᴛᴇʀ ɪᴍᴘʀᴏᴠᴇᴍᴇɴᴛ! ᴇxᴀᴍ ʀᴇʟᴇᴠᴀɴᴛ!</b></font>",
         main_heading_style
     )
 
@@ -176,14 +176,14 @@ def generate_student_pdf_report(user_id: int, filter_mode: str = "last_1_month_d
     masked_phone = mask_phone(u.get("phone_number", ""))
     masked_pin = "XX" + str(u.get("pin", ""))[-2:] if u.get("pin") else "XXXX"
 
-    story.append(Paragraph("<b>STUDENT PROFILE OVERVIEW</b>", section_heading))
+    story.append(Paragraph("<b>ꜱᴛᴜᴅᴇɴᴛ ᴘʀᴏꜰɪʟᴇ ᴏᴠᴇʀᴠɪᴇᴡ</b>", section_heading))
 
     profile_data = [
-        [Paragraph("Student Name:", body_style_bold), Paragraph(f"{u.get('full_name')}", body_style), Paragraph("Student ID:", body_style_bold), Paragraph(f"{sid}", body_style)],
-        [Paragraph("Target Exam:", body_style_bold), Paragraph(f"{u.get('target_exam')}", body_style), Paragraph("Location:", body_style_bold), Paragraph(f"{u.get('state')}, {u.get('country')}", body_style)],
-        [Paragraph("DOB / Age:", body_style_bold), Paragraph(f"{u.get('dob')} ({u.get('age')} yrs)", body_style), Paragraph("Phone (Masked):", body_style_bold), Paragraph(f"{masked_phone}", body_style)],
-        [Paragraph("Account Status:", body_style_bold), Paragraph("ACTIVE 🟢", body_style), Paragraph("Secret PIN:", body_style_bold), Paragraph(f"{masked_pin}", body_style)],
-        [Paragraph("Registered At:", body_style_bold), Paragraph(f"{u.get('created_at')}", body_style), Paragraph("Last Active:", body_style_bold), Paragraph(f"{u.get('last_active')}", body_style)]
+        [Paragraph("ꜱᴛᴜᴅᴇɴᴛ ɴᴀᴍᴇ:", body_style_bold), Paragraph(f"{u.get('full_name')}", body_style), Paragraph("ꜱᴛᴜᴅᴇɴᴛ ɪᴅ:", body_style_bold), Paragraph(f"{sid}", body_style)],
+        [Paragraph("ᴛᴀʀɢᴇᴛ ᴇxᴀᴍ:", body_style_bold), Paragraph(f"{u.get('target_exam')}", body_style), Paragraph("ʟᴏᴄᴀᴛɪᴏɴ:", body_style_bold), Paragraph(f"{u.get('state')}, {u.get('country')}", body_style)],
+        [Paragraph("ᴅᴏʙ / ᴀɢᴇ:", body_style_bold), Paragraph(f"{u.get('dob')} ({u.get('age')} ʏʀꜱ)", body_style), Paragraph("ᴘʜᴏɴᴇ (ᴍᴀꜱᴋᴇᴅ):", body_style_bold), Paragraph(f"{masked_phone}", body_style)],
+        [Paragraph("ᴀᴄᴄᴏᴜɴᴛ ꜱᴛᴀᴛᴜꜱ:", body_style_bold), Paragraph("ᴀᴄᴛɪᴠᴇ 🟢", body_style), Paragraph("ꜱᴇᴄʀᴇᴛ ᴘɪɴ:", body_style_bold), Paragraph(f"{masked_pin}", body_style)],
+        [Paragraph("ʀᴇɢɪꜱᴛᴇʀᴇᴅ ᴀᴛ:", body_style_bold), Paragraph(f"{u.get('created_at')}", body_style), Paragraph("ʟᴀꜱᴛ ᴀᴄᴛɪᴠᴇ:", body_style_bold), Paragraph(f"{u.get('last_active')}", body_style)]
     ]
 
     prof_table = Table(profile_data, colWidths=[1.3*inch, 2.2*inch, 1.3*inch, 2.2*inch])
@@ -226,12 +226,12 @@ def generate_student_pdf_report(user_id: int, filter_mode: str = "last_1_month_d
     total_wrong = sum([a.get('wrong_answers', 0) for a in filtered_attempts])
     acc = round((total_correct / total_qs) * 100, 2) if total_qs > 0 else 0.0
 
-    summary_title_text = f"MONTHLY REPORT ({one_month_ago_str} TO {now_date_str})" if is_month_filter else "ALL-TIME CUMULATIVE ACADEMIC REPORT"
+    summary_title_text = f"ᴍᴏɴᴛʜʟʏ ʀᴇᴘᴏʀᴛ ({one_month_ago_str} ᴛᴏ {now_date_str})" if is_month_filter else "ᴀʟʟ-ᴛɪᴍᴇ ᴄᴜᴍᴜʟᴀᴛɪᴠᴇ ᴀᴄᴀᴅᴇᴍɪᴄ ʀᴇᴘᴏʀᴛ"
 
-    story.append(Paragraph(f"<b>ACADEMIC PERFORMANCE SUMMARY — {summary_title_text}</b>", section_heading))
+    story.append(Paragraph(f"<b>ᴀᴄᴀᴅᴇᴍɪᴄ ᴘᴇʀꜰᴏʀᴍᴀɴᴄᴇ ꜱᴜᴍᴍᴀʀʏ — {summary_title_text}</b>", section_heading))
 
     stats_data = [
-        [Paragraph("Quizzes", body_style_bold), Paragraph("Total Questions", body_style_bold), Paragraph("Correct ✅", body_style_bold), Paragraph("Wrong ❌", body_style_bold), Paragraph("Accuracy", body_style_bold)],
+        [Paragraph("qᴜɪᴢᴢᴇꜱ", body_style_bold), Paragraph("ᴛᴏᴛᴀʟ qᴜᴇꜱᴛɪᴏɴꜱ", body_style_bold), Paragraph("ᴄᴏʀʀᴇᴄᴛ ✅", body_style_bold), Paragraph("ᴡʀᴏɴɢ ❌", body_style_bold), Paragraph("ᴀᴄᴄᴜʀᴀᴄʏ", body_style_bold)],
         [Paragraph(f"{total_quizzes}", body_style), Paragraph(f"{total_qs}", body_style), Paragraph(f"{total_correct}", body_style), Paragraph(f"{total_wrong}", body_style), Paragraph(f"{acc}%", body_style)]
     ]
     stats_table = Table(stats_data, colWidths=[1.4*inch, 1.4*inch, 1.4*inch, 1.4*inch, 1.4*inch])
@@ -247,15 +247,15 @@ def generate_student_pdf_report(user_id: int, filter_mode: str = "last_1_month_d
 
     # QUIZ SUMMARY MODE (Commands 2 & 4: Date-Wise Quiz Table)
     if "quiz" in filter_mode:
-        story.append(Paragraph("🗓 <b>DATE-WISE QUIZ SUMMARY REPORT</b>", section_heading))
+        story.append(Paragraph("🗓 <b>ᴅᴀᴛᴇ-ᴡɪꜱᴇ qᴜɪᴢ ꜱᴜᴍᴍᴀʀʏ ʀᴇᴘᴏʀᴛ</b>", section_heading))
         
         date_summary_data = [[
-            Paragraph("Attempt Date", body_style_bold),
-            Paragraph("Questions", body_style_bold),
-            Paragraph("Correct ✅", body_style_bold),
-            Paragraph("Wrong ❌", body_style_bold),
-            Paragraph("Skipped ⏭", body_style_bold),
-            Paragraph("Total Score", body_style_bold)
+            Paragraph("ᴀᴛᴛᴇᴍᴘᴛ ᴅᴀᴛᴇ", body_style_bold),
+            Paragraph("qᴜᴇꜱᴛɪᴏɴꜱ", body_style_bold),
+            Paragraph("ᴄᴏʀʀᴇᴄᴛ ✅", body_style_bold),
+            Paragraph("ᴡʀᴏɴɢ ❌", body_style_bold),
+            Paragraph("ꜱᴋɪᴘᴘᴇᴅ ⏭", body_style_bold),
+            Paragraph("ᴛᴏᴛᴀʟ ꜱᴄᴏʀᴇ", body_style_bold)
         ]]
 
         date_groups = {}
@@ -280,7 +280,7 @@ def generate_student_pdf_report(user_id: int, filter_mode: str = "last_1_month_d
             ])
 
         if len(date_summary_data) == 1:
-            date_summary_data.append([Paragraph("N/A", body_style), Paragraph("0", body_style), Paragraph("0", body_style), Paragraph("0", body_style), Paragraph("0", body_style), Paragraph("0.0", body_style)])
+            date_summary_data.append([Paragraph("ɴ/ᴀ", body_style), Paragraph("0", body_style), Paragraph("0", body_style), Paragraph("0", body_style), Paragraph("0", body_style), Paragraph("0.0", body_style)])
 
         date_table = Table(date_summary_data, colWidths=[1.2*inch, 1.1*inch, 1.1*inch, 1.1*inch, 1.1*inch, 1.4*inch], repeatRows=1)
         date_table.setStyle(TableStyle([
@@ -314,12 +314,12 @@ def generate_student_pdf_report(user_id: int, filter_mode: str = "last_1_month_d
         max_rows = 50 if is_month_filter else 100
 
         # 4a. WRONG QUESTIONS TABLE (Rose Header)
-        story.append(Paragraph("❌ <b>WRONG QUESTIONS REPORT</b>", section_heading))
-        w_table_data = [[Paragraph("Attempt Date", body_style_bold), Paragraph("Question Text", body_style_bold), Paragraph("Correct Answer Text", body_style_bold)]]
+        story.append(Paragraph("❌ <b>ᴡʀᴏɴɢ qᴜᴇꜱᴛɪᴏɴꜱ ʀᴇᴘᴏʀᴛ</b>", section_heading))
+        w_table_data = [[Paragraph("ᴀᴛᴛᴇᴍᴘᴛ ᴅᴀᴛᴇ", body_style_bold), Paragraph("qᴜᴇꜱᴛɪᴏɴ ᴛᴇxᴛ", body_style_bold), Paragraph("ᴄᴏʀʀᴇᴄᴛ ᴀɴꜱᴡᴇʀ ᴛᴇxᴛ", body_style_bold)]]
         
         for q in wrong_q_list[:max_rows]:
-            q_txt = q.get("question_text", "N/A")
-            c_ans = q.get("correct_answer_text", "N/A")
+            q_txt = q.get("question_text", "ɴ/ᴀ")
+            c_ans = q.get("correct_answer_text", "ɴ/ᴀ")
             w_table_data.append([
                 Paragraph(f"{q['attempt_date']}", body_style),
                 Paragraph(f"{q_txt}", body_style),
@@ -327,7 +327,7 @@ def generate_student_pdf_report(user_id: int, filter_mode: str = "last_1_month_d
             ])
 
         if len(w_table_data) == 1:
-            w_table_data.append([Paragraph("N/A", body_style), Paragraph("Zero wrong questions in this timeframe! 🎉", body_style), Paragraph("N/A", body_style)])
+            w_table_data.append([Paragraph("ɴ/ᴀ", body_style), Paragraph("ᴢᴇʀᴏ ᴡʀᴏɴɢ qᴜᴇꜱᴛɪᴏɴꜱ ɪɴ ᴛʜɪꜱ ᴛɪᴍᴇꜰʀᴀᴍᴇ! 🎉", body_style), Paragraph("ɴ/ᴀ", body_style)])
 
         w_table = Table(w_table_data, colWidths=[1.2*inch, 3.8*inch, 2.0*inch], repeatRows=1)
         w_table.setStyle(TableStyle([
@@ -341,12 +341,12 @@ def generate_student_pdf_report(user_id: int, filter_mode: str = "last_1_month_d
         story.append(Spacer(1, 8))
 
         # 4b. UN-ATTEMPTED / SKIPPED QUESTIONS TABLE (Amber Header)
-        story.append(Paragraph("⏭ <b>UN-ATTEMPTED / SKIPPED QUESTIONS REPORT</b>", section_heading))
-        s_table_data = [[Paragraph("Attempt Date", body_style_bold), Paragraph("Question Text", body_style_bold), Paragraph("Correct Answer Text", body_style_bold)]]
+        story.append(Paragraph("⏭ <b>ᴜɴ-ᴀᴛᴛᴇᴍᴘᴛᴇᴅ / ꜱᴋɪᴘᴘᴇᴅ qᴜᴇꜱᴛɪᴏɴꜱ ʀᴇᴘᴏʀᴛ</b>", section_heading))
+        s_table_data = [[Paragraph("ᴀᴛᴛᴇᴍᴘᴛ ᴅᴀᴛᴇ", body_style_bold), Paragraph("qᴜᴇꜱᴛɪᴏɴ ᴛᴇxᴛ", body_style_bold), Paragraph("ᴄᴏʀʀᴇᴄᴛ ᴀɴꜱᴡᴇʀ ᴛᴇxᴛ", body_style_bold)]]
         
         for q in skipped_q_list[:max_rows]:
-            q_txt = q.get("question_text", "N/A")
-            c_ans = q.get("correct_answer_text", "N/A")
+            q_txt = q.get("question_text", "ɴ/ᴀ")
+            c_ans = q.get("correct_answer_text", "ɴ/ᴀ")
             s_table_data.append([
                 Paragraph(f"{q['attempt_date']}", body_style),
                 Paragraph(f"{q_txt}", body_style),
@@ -354,7 +354,7 @@ def generate_student_pdf_report(user_id: int, filter_mode: str = "last_1_month_d
             ])
 
         if len(s_table_data) == 1:
-            s_table_data.append([Paragraph("N/A", body_style), Paragraph("Zero skipped questions in this timeframe!", body_style), Paragraph("N/A", body_style)])
+            s_table_data.append([Paragraph("ɴ/ᴀ", body_style), Paragraph("ᴢᴇʀᴏ ꜱᴋɪᴘᴘᴇᴅ qᴜᴇꜱᴛɪᴏɴꜱ ɪɴ ᴛʜɪꜱ ᴛɪᴍᴇꜰʀᴀᴍᴇ!", body_style), Paragraph("ɴ/ᴀ", body_style)])
 
         s_table = Table(s_table_data, colWidths=[1.2*inch, 3.8*inch, 2.0*inch], repeatRows=1)
         s_table.setStyle(TableStyle([
@@ -368,12 +368,12 @@ def generate_student_pdf_report(user_id: int, filter_mode: str = "last_1_month_d
         story.append(Spacer(1, 8))
 
         # 4c. CORRECT QUESTIONS TABLE (Emerald Header)
-        story.append(Paragraph("✅ <b>CORRECT QUESTIONS REPORT</b>", section_heading))
-        c_table_data = [[Paragraph("Attempt Date", body_style_bold), Paragraph("Question Text", body_style_bold), Paragraph("Correct Answer Text", body_style_bold)]]
+        story.append(Paragraph("✅ <b>ᴄᴏʀʀᴇᴄᴛ qᴜᴇꜱᴛɪᴏɴꜱ ʀᴇᴘᴏʀᴛ</b>", section_heading))
+        c_table_data = [[Paragraph("ᴀᴛᴛᴇᴍᴘᴛ ᴅᴀᴛᴇ", body_style_bold), Paragraph("qᴜᴇꜱᴛɪᴏɴ ᴛᴇxᴛ", body_style_bold), Paragraph("ᴄᴏʀʀᴇᴄᴛ ᴀɴꜱᴡᴇʀ ᴛᴇxᴛ", body_style_bold)]]
         
         for q in correct_q_list[:max_rows]:
-            q_txt = q.get("question_text", "N/A")
-            c_ans = q.get("correct_answer_text", "N/A")
+            q_txt = q.get("question_text", "ɴ/ᴀ")
+            c_ans = q.get("correct_answer_text", "ɴ/ᴀ")
             c_table_data.append([
                 Paragraph(f"{q['attempt_date']}", body_style),
                 Paragraph(f"{q_txt}", body_style),
@@ -381,7 +381,7 @@ def generate_student_pdf_report(user_id: int, filter_mode: str = "last_1_month_d
             ])
 
         if len(c_table_data) == 1:
-            c_table_data.append([Paragraph("N/A", body_style), Paragraph("No correct questions logged yet.", body_style), Paragraph("N/A", body_style)])
+            c_table_data.append([Paragraph("ɴ/ᴀ", body_style), Paragraph("ɴᴏ ᴄᴏʀʀᴇᴄᴛ qᴜᴇꜱᴛɪᴏɴꜱ ʟᴏɢɢᴇᴅ ʏᴇᴛ.", body_style), Paragraph("ɴ/ᴀ", body_style)])
 
         c_table = Table(c_table_data, colWidths=[1.2*inch, 3.8*inch, 2.0*inch], repeatRows=1)
         c_table.setStyle(TableStyle([

@@ -62,7 +62,7 @@ async def admin_callback_handler(update: Update, context: ContextTypes.DEFAULT_T
 
     if data == "admin_export_zip":
         await query.answer()
-        await query.edit_message_text("⏳ **Generating Bulk Zip Package...**\nZipping all student JSON ledgers...")
+        await query.edit_message_text("⏳ **Generating Bulk Zip Package...**\nZipping all student JSON ledgers...", parse_mode="Markdown")
         
         for u in users:
             sync_user_json_profile(u['user_id'])
@@ -84,7 +84,8 @@ async def admin_callback_handler(update: Update, context: ContextTypes.DEFAULT_T
                         chat_id=query.message.chat_id,
                         document=doc,
                         filename=zip_filename,
-                        caption=f"📦 **MASTER STUDENT PROFILES BACKUP**\n\nTotal Files Included: `{len(users)} JSON profiles`"
+                        caption=f"📦 **MASTER STUDENT PROFILES BACKUP**\n\nTotal Files Included: `{len(users)} JSON profiles`",
+                        parse_mode="Markdown"
                     )
                 os.remove(zip_path)
             await admin_portal_command(update, context)
@@ -94,12 +95,13 @@ async def admin_callback_handler(update: Update, context: ContextTypes.DEFAULT_T
     elif data == "admin_pause_5":
         await query.answer()
         set_maintenance_until(int(time.time()) + 300)
-        await query.edit_message_text("🛑 **Bot Service PAUSED for 5 Minutes.**\nBroadcasting notice to all users...")
+        await query.edit_message_text("🛑 **Bot Service PAUSED for 5 Minutes.**\nBroadcasting notice to all users...", parse_mode="Markdown")
         for u in users:
             try:
                 await context.bot.send_message(
                     chat_id=u['user_id'], 
-                    text="📢 **ADMIN HAS PAUSED SERVICE FOR 5 MINS**\n\n⏰ Services will automatically resume in 5 minutes."
+                    text="📢 **ADMIN HAS PAUSED SERVICE FOR 5 MINS**\n\n⏰ Services will automatically resume in 5 minutes.",
+                    parse_mode="Markdown"
                 )
             except Exception:
                 pass
@@ -107,12 +109,13 @@ async def admin_callback_handler(update: Update, context: ContextTypes.DEFAULT_T
     elif data == "admin_pause_10":
         await query.answer()
         set_maintenance_until(int(time.time()) + 600)
-        await query.edit_message_text("🛑 **Bot Service PAUSED for 10 Minutes.**\nBroadcasting notice to all users...")
+        await query.edit_message_text("🛑 **Bot Service PAUSED for 10 Minutes.**\nBroadcasting notice to all users...", parse_mode="Markdown")
         for u in users:
             try:
                 await context.bot.send_message(
                     chat_id=u['user_id'], 
-                    text="📢 **ADMIN HAS PAUSED SERVICE FOR 10 MINS**\n\n⏰ Services will automatically resume in 10 minutes."
+                    text="📢 **ADMIN HAS PAUSED SERVICE FOR 10 MINS**\n\n⏰ Services will automatically resume in 10 minutes.",
+                    parse_mode="Markdown"
                 )
             except Exception:
                 pass
@@ -120,12 +123,13 @@ async def admin_callback_handler(update: Update, context: ContextTypes.DEFAULT_T
     elif data == "admin_resume_now":
         await query.answer()
         set_maintenance_until(0)
-        await query.edit_message_text("🟢 **Bot Service RESUMED Immediately.**\nBroadcasting notice to all users...")
+        await query.edit_message_text("🟢 **Bot Service RESUMED Immediately.**\nBroadcasting notice to all users...", parse_mode="Markdown")
         for u in users:
             try:
                 await context.bot.send_message(
                     chat_id=u['user_id'], 
-                    text="📢 **ADMIN HAS RESUMED SERVICES! YOU CAN ATTEMPT QUIZZES NOW!**"
+                    text="📢 **ADMIN HAS RESUMED SERVICES! YOU CAN ATTEMPT QUIZZES NOW!**",
+                    parse_mode="Markdown"
                 )
             except Exception:
                 pass
@@ -133,7 +137,7 @@ async def admin_callback_handler(update: Update, context: ContextTypes.DEFAULT_T
     elif data == "admin_search_prompt":
         await query.answer()
         context.user_data["awaiting_admin_search"] = True
-        await query.edit_message_text("🔍 **STUDENT SEARCH ENGINE**\n\nPlease reply with the student's **Student ID**, **Phone Number**, or **Full Name**:")
+        await query.edit_message_text("🔍 **STUDENT SEARCH ENGINE**\n\nPlease reply with the student's **Student ID**, **Phone Number**, or **Full Name**:", parse_mode="Markdown")
 
     elif data.startswith("genpdf_"):
         await query.answer()
@@ -142,7 +146,7 @@ async def admin_callback_handler(update: Update, context: ContextTypes.DEFAULT_T
         target_uid = int(parts[0])
         filter_mode = "_".join(parts[1:])
 
-        await query.edit_message_text("⏳ **Generating Custom PDF Report Card...**\nBuilding stats, formatting tables, and rendering PDF...")
+        await query.edit_message_text("⏳ **Generating Custom PDF Report Card...**\nBuilding stats, formatting tables, and rendering PDF...", parse_mode="Markdown")
         
         pdf_file = generate_student_pdf_report(target_uid, filter_mode)
         u = get_user_profile(target_uid)
@@ -171,19 +175,21 @@ async def admin_callback_handler(update: Update, context: ContextTypes.DEFAULT_T
                 parse_mode="Markdown"
             )
         elif pdf_file and os.path.exists(pdf_file):
+            caption_text = (
+                f"📄 **OFFICIAL STUDENT PDF ACADEMIC REPORT**\n"
+                f"━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\n"
+                f"👤 **Student:** {student_name}\n"
+                f"🪪 **Student ID:** `{sid}`\n"
+                f"📊 **Report Module:** `{filter_mode.replace('_', ' ').title()}`\n"
+                f"🏷 **Watermark:** `@LearnwithHiM`"
+            )
             with open(pdf_file, "rb") as doc:
                 await context.bot.send_document(
                     chat_id=query.message.chat_id,
                     document=doc,
                     filename=os.path.basename(pdf_file),
-                    caption=(
-                        f"📄 **OFFICIAL STUDENT PDF ACADEMIC REPORT**\n"
-                        f"━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\n"
-                        f"👤 **Student:** {student_name}\n"
-                        f"🪪 **Student ID:** `{sid}`\n"
-                        f"📊 **Report Module:** `{filter_mode.replace('_', ' ').title()}`\n"
-                        f"🏷 **Watermark:** `@LearnwithHiM`"
-                    )
+                    caption=caption_text,
+                    parse_mode="Markdown"
                 )
             
             nav_buttons = InlineKeyboardMarkup([
@@ -194,7 +200,8 @@ async def admin_callback_handler(update: Update, context: ContextTypes.DEFAULT_T
             await context.bot.send_message(
                 chat_id=query.message.chat_id,
                 text="👇 **Quick Actions & Navigation:**",
-                reply_markup=nav_buttons
+                reply_markup=nav_buttons,
+                parse_mode="Markdown"
             )
         else:
             nav_buttons = InlineKeyboardMarkup([
@@ -202,7 +209,8 @@ async def admin_callback_handler(update: Update, context: ContextTypes.DEFAULT_T
             ])
             await query.edit_message_text(
                 "⚠️ **Failed to generate PDF file.**",
-                reply_markup=nav_buttons
+                reply_markup=nav_buttons,
+                parse_mode="Markdown"
             )
 
     elif data.startswith("admin_users_page_"):
@@ -211,7 +219,7 @@ async def admin_callback_handler(update: Update, context: ContextTypes.DEFAULT_T
         total_users = len(users)
 
         if total_users == 0:
-            await query.edit_message_text("📁 No registered students found in database.")
+            await query.edit_message_text("📁 No registered students found in database.", parse_mode="Markdown")
             return
 
         total_pages = math.ceil(total_users / USERS_PER_PAGE)
@@ -257,7 +265,7 @@ async def admin_callback_handler(update: Update, context: ContextTypes.DEFAULT_T
         u = get_user_profile(target_uid)
 
         if not u:
-            await query.edit_message_text("⚠️ Student profile not found.")
+            await query.edit_message_text("⚠️ Student profile not found.", parse_mode="Markdown")
             return
 
         sid = u.get("student_id") or f"USER_{u.get('user_id')}"
@@ -330,7 +338,7 @@ async def admin_callback_handler(update: Update, context: ContextTypes.DEFAULT_T
         u = get_user_profile(target_uid)
         
         if not u:
-            await query.edit_message_text("⚠️ Error retrieving user profile.")
+            await query.edit_message_text("⚠️ Error retrieving user profile.", parse_mode="Markdown")
             return
 
         sid = u.get("student_id") or f"USER_{u.get('user_id')}"
@@ -634,12 +642,13 @@ async def admin_callback_handler(update: Update, context: ContextTypes.DEFAULT_T
                     chat_id=query.message.chat_id,
                     document=doc,
                     filename=f"{sid}.json",
-                    caption=f"📄 **Master Student Profile File:** `{sid}.json`"
+                    caption=f"📄 **Master Student Profile File:** `{sid}.json`",
+                    parse_mode="Markdown"
                 )
         else:
-            await query.message.reply_text("⚠️ JSON file not found on disk.")
+            await query.message.reply_text("⚠️ JSON file not found on disk.", parse_mode="Markdown")
 
     elif data == "admin_broadcast":
         await query.answer()
         context.user_data["awaiting_broadcast"] = True
-        await query.edit_message_text("📢 Send the message text you wish to broadcast to all registered users:")
+        await query.edit_message_text("📢 Send the message text you wish to broadcast to all registered users:", parse_mode="Markdown")

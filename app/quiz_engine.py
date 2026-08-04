@@ -1,7 +1,6 @@
 import asyncio
 import logging
 import time
-import os
 from telegram import Update, Poll, InlineKeyboardMarkup, InlineKeyboardButton
 from telegram.ext import ContextTypes
 from app.config import DAILY_QUESTION_LIMIT, CHANNEL_USERNAME, YOUTUBE_CHANNEL_URL, PRIMARY_ADMIN_ID
@@ -14,8 +13,6 @@ from app.database import (
 )
 from app.pyq_fetcher import fetch_pyqs_for_quiz
 from app.stats import calculate_user_percentile, calculate_user_rank
-
-logger = logging.getLogger(__name__)
 
 ACTIVE_SESSIONS = {}
 POLL_MAP = {}
@@ -53,13 +50,13 @@ async def launch_quiz_setup(update: Update, context: ContextTypes.DEFAULT_TYPE):
 
     user = update.effective_user
     log_user_activity_time(user.id, seconds=10)
-    profile = await asyncio.to_thread(get_user_profile, user.id)
+    profile = get_user_profile(user.id)
     
     if not profile or not profile.get("is_verified"):
         await update.message.reply_text("⚠️ Please type /start to create your profile before attempting quizzes!")
         return
 
-    attempted_today = await asyncio.to_thread(get_today_attempts, user.id)
+    attempted_today = get_today_attempts(user.id)
     allowed_limit = 10000 if user.id == PRIMARY_ADMIN_ID else DAILY_QUESTION_LIMIT + profile.get("bonus_quota", 0)
 
     if attempted_today >= allowed_limit:
@@ -81,7 +78,7 @@ async def launch_quiz_setup(update: Update, context: ContextTypes.DEFAULT_TYPE):
             await update.message.reply_text(exhausted_msg, reply_markup=keyboard, parse_mode="Markdown")
         return
 
-    paused = await asyncio.to_thread(get_paused_quiz_state, user.id)
+    paused = get_paused_quiz_state(user.id)
     if paused:
         remaining_count = len(paused.get('questions', [])) - paused.get('current_index', 0)
         text = (
@@ -171,7 +168,6 @@ async def quiz_timer_callback(update: Update, context: ContextTypes.DEFAULT_TYPE
 
     query = update.callback_query
     user_id = query.from_user.id
-    chat_id = query.message.chat_id
     log_user_activity_time(user_id, seconds=15)
     
     profile = get_user_profile(user_id)
@@ -207,7 +203,6 @@ async def quiz_timer_callback(update: Update, context: ContextTypes.DEFAULT_TYPE
 
     session = {
         "user_id": user_id,
-        "chat_id": chat_id,
         "questions": questions,
         "current_index": 0,
         "score": 0.0,
@@ -610,10 +605,9 @@ async def finish_quiz_and_send_report(chat_id: int, user_id: int, context: Conte
         f"━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━"
     )
 
-    # Updated Telegram button with @Learnwithhim link
     buttons = [
         [InlineKeyboardButton("📖 Review Saved Questions", callback_data="cmd_savedquestions")],
-        [InlineKeyboardButton("📢 Join Telegram Channel", url="https://t.me/Learnwithhim")],
+        [InlineKeyboardButton("📢 Join Telegram Channel", url=f"https://t.me/{CHANNEL_USERNAME.replace('@', '')}")],
         [InlineKeyboardButton("📺 Join YouTube Channel", url=YOUTUBE_CHANNEL_URL)],
         [InlineKeyboardButton("🚀 Attempt Another Quiz", callback_data="cmd_quiz")]
     ]

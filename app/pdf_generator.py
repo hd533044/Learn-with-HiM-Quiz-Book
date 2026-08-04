@@ -67,7 +67,7 @@ def parse_date_only(date_str: str) -> str:
 
 
 def clean_str(text) -> str:
-    """Safely converts any value (dict, int, None) into escaped XML text for ReportLab."""
+    """Safely converts any value into escaped XML text for ReportLab."""
     if text is None:
         return "N/A"
     if isinstance(text, (dict, list)):
@@ -84,7 +84,6 @@ def generate_student_pdf_report(user_id: int, filter_mode: str = "last_1_month_d
         if not u:
             return "ERROR: User profile not found in database."
 
-        # Fetch Quiz Attempts
         conn = get_db()
         cursor = conn.cursor()
         
@@ -169,7 +168,7 @@ def generate_student_pdf_report(user_id: int, filter_mode: str = "last_1_month_d
 
         story = []
 
-        # 1. Header with Both Logos (Page 1 Only)
+        # Header with Both Logos
         logo_left_path = os.path.join(BASE_DIR, "assets", "logo.png")
         logo_right_path = os.path.join(BASE_DIR, "assets", "logohim.png")
 
@@ -200,7 +199,7 @@ def generate_student_pdf_report(user_id: int, filter_mode: str = "last_1_month_d
         story.append(header_table)
         story.append(Spacer(1, 6))
 
-        # 2. Student Profile Overview
+        # Student Profile Overview
         sid = clean_str(u.get("student_id") or f"USER_{user_id}")
         masked_phone = mask_phone(u.get("phone_number", ""))
         masked_pin = "XX" + str(u.get("pin", ""))[-2:] if u.get("pin") else "XXXX"
@@ -225,7 +224,7 @@ def generate_student_pdf_report(user_id: int, filter_mode: str = "last_1_month_d
         story.append(prof_table)
         story.append(Spacer(1, 6))
 
-        # 3. Academic Performance Summary
+        # Academic Performance Summary
         total_quizzes = len(filtered_attempts)
         total_qs = sum([a.get('questions_attempted', 0) or 0 for a in filtered_attempts])
         total_correct = sum([a.get('correct_answers', 0) or 0 for a in filtered_attempts])
@@ -251,7 +250,6 @@ def generate_student_pdf_report(user_id: int, filter_mode: str = "last_1_month_d
         story.append(stats_table)
         story.append(Spacer(1, 8))
 
-        # QUIZ SUMMARY MODE (Date-Wise Summary Table)
         if "quiz" in filter_mode:
             story.append(Paragraph("🗓 <b>DATE-WISE QUIZ SUMMARY REPORT</b>", section_heading))
             
@@ -294,7 +292,6 @@ def generate_student_pdf_report(user_id: int, filter_mode: str = "last_1_month_d
             ]))
             story.append(date_table)
 
-        # FULL DATA MODE (Multi-Page Itemized Question Tables)
         else:
             wrong_q_list = []
             skipped_q_list = []
@@ -354,7 +351,6 @@ def generate_student_pdf_report(user_id: int, filter_mode: str = "last_1_month_d
                 ]))
                 return q_table
 
-            # 4a. WRONG QUESTIONS TABLE
             story.append(Paragraph("❌ <b>WRONG QUESTIONS REPORT</b>", section_heading))
             story.append(build_styled_question_table(
                 wrong_q_list, 
@@ -364,7 +360,6 @@ def generate_student_pdf_report(user_id: int, filter_mode: str = "last_1_month_d
             ))
             story.append(Spacer(1, 8))
 
-            # 4b. UN-ATTEMPTED / SKIPPED QUESTIONS TABLE
             story.append(Paragraph("⏭ <b>UN-ATTEMPTED / SKIPPED QUESTIONS REPORT</b>", section_heading))
             story.append(build_styled_question_table(
                 skipped_q_list, 
@@ -374,7 +369,6 @@ def generate_student_pdf_report(user_id: int, filter_mode: str = "last_1_month_d
             ))
             story.append(Spacer(1, 8))
 
-            # 4c. CORRECT QUESTIONS TABLE
             story.append(Paragraph("✅ <b>CORRECT QUESTIONS REPORT</b>", section_heading))
             story.append(build_styled_question_table(
                 correct_q_list, 

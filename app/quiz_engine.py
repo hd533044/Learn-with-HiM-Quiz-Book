@@ -34,6 +34,30 @@ def get_pause_resume_keyboard():
         ]
     ])
 
+def get_quizbook_nav_keyboard():
+    """Persistent inline navigation menu attached across all response screens."""
+    return InlineKeyboardMarkup([
+        [
+            InlineKeyboardButton("❌ Wrong Qs", callback_data="cmd_wrong_qs"),
+            InlineKeyboardButton("⏭ Skipped Qs", callback_data="cmd_unattempted_qs")
+        ],
+        [
+            InlineKeyboardButton("🎯 Attempted Qs", callback_data="cmd_attempted_qs"),
+            InlineKeyboardButton("💾 Saved Qs", callback_data="cmd_savedquestions")
+        ],
+        [
+            InlineKeyboardButton("📄 PDF Report", callback_data="cmd_pdfreport"),
+            InlineKeyboardButton("🏆 Leaderboard", callback_data="cmd_toppers")
+        ],
+        [
+            InlineKeyboardButton("📊 My Analytics", callback_data="cmd_wholestate"),
+            InlineKeyboardButton("💬 Leave Feedback", callback_data="cmd_feedback")
+        ],
+        [
+            InlineKeyboardButton("🚀 Launch New Quiz", callback_data="cmd_quiz")
+        ]
+    ])
+
 async def check_quiz_maintenance(update: Update) -> bool:
     m_until = get_maintenance_until()
     if int(time.time()) < m_until:
@@ -196,7 +220,7 @@ async def quiz_timer_callback(update: Update, context: ContextTypes.DEFAULT_TYPE
     questions = fetch_pyqs_for_quiz(needed_count=count, seen_ids=seen_ids)
 
     if not questions:
-        await query.edit_message_text("🎉 **CONGRATULATIONS!** You have completed all available questions in the bank!")
+        await query.edit_message_text("🎉 **CONGRATULATIONS!** You have completed all available questions in the bank!", reply_markup=get_quizbook_nav_keyboard())
         return
 
     q_ids = [q["id"] for q in questions if q.get("id") is not None]
@@ -379,7 +403,7 @@ async def stop_quiz_command(update: Update, context: ContextTypes.DEFAULT_TYPE):
         if update.callback_query:
             await update.callback_query.answer(msg, show_alert=True)
         else:
-            await update.message.reply_text(msg)
+            await update.message.reply_text(msg, reply_markup=get_quizbook_nav_keyboard())
         return
 
     clear_paused_quiz_state(user_id)
@@ -414,14 +438,14 @@ async def stop_quiz_command(update: Update, context: ContextTypes.DEFAULT_TYPE):
         f"━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\n"
         f"• Your session has been safely closed.\n"
         f"• Remaining unattempted limit restored to your daily quota.\n\n"
-        f"🚀 Type `/quiz` whenever you wish to practice again!"
+        f"🚀 Select an option below to continue learning:"
     )
 
     if update.callback_query:
         await update.callback_query.answer("🛑 Quiz Stopped!", show_alert=True)
-        await context.bot.send_message(chat_id=chat_id, text=msg, parse_mode="Markdown")
+        await context.bot.send_message(chat_id=chat_id, text=msg, reply_markup=get_quizbook_nav_keyboard(), parse_mode="Markdown")
     else:
-        await update.message.reply_text(msg, parse_mode="Markdown")
+        await update.message.reply_text(msg, reply_markup=get_quizbook_nav_keyboard(), parse_mode="Markdown")
 
 async def send_next_question(chat_id: int, user_id: int, context: ContextTypes.DEFAULT_TYPE):
     m_until = get_maintenance_until()
@@ -604,22 +628,39 @@ async def finish_quiz_and_send_report(chat_id: int, user_id: int, context: Conte
         f"🎖 **RANK & PERCENTILE:**\n"
         f"• **Global Rank:** `{rank_str}` 🥇\n"
         f"• **Percentile Rating:** `{percentile}%` 📈\n"
-        f"━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━"
+        f"━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\n"
+        f"👇 **INLINE QUIZ BOOK NAVIGATION:**"
     )
 
-    buttons = [
+    end_quiz_buttons = [
         [
             InlineKeyboardButton("📄 Export PDF Report", callback_data="cmd_pdfreport"),
-            InlineKeyboardButton("📖 Review Saved Questions", callback_data="cmd_savedquestions")
+            InlineKeyboardButton("💾 Saved Questions", callback_data="cmd_savedquestions")
         ],
-        [InlineKeyboardButton("📢 Join Telegram Channel", url="https://t.me/Learnwithhim")],
-        [InlineKeyboardButton("📺 Join YouTube Channel", url=YOUTUBE_CHANNEL_URL)],
-        [InlineKeyboardButton("🚀 Attempt Another Quiz", callback_data="cmd_quiz")]
+        [
+            InlineKeyboardButton("❌ Wrong Questions", callback_data="cmd_wrong_qs"),
+            InlineKeyboardButton("⏭ Skipped Questions", callback_data="cmd_unattempted_qs")
+        ],
+        [
+            InlineKeyboardButton("🎯 Attempted Questions", callback_data="cmd_attempted_qs"),
+            InlineKeyboardButton("🏆 Leaderboard (/toppername)", callback_data="cmd_toppers")
+        ],
+        [
+            InlineKeyboardButton("📊 Analytics (/mywholestate)", callback_data="cmd_wholestate"),
+            InlineKeyboardButton("💬 Leave Feedback", callback_data="cmd_feedback")
+        ],
+        [
+            InlineKeyboardButton("📢 Telegram Channel", url="https://t.me/Learnwithhim"),
+            InlineKeyboardButton("📺 YouTube Channel", url=YOUTUBE_CHANNEL_URL)
+        ],
+        [
+            InlineKeyboardButton("🚀 Attempt Another Quiz", callback_data="cmd_quiz")
+        ]
     ]
 
     await context.bot.send_message(
         chat_id=chat_id, 
         text=report_card, 
-        reply_markup=InlineKeyboardMarkup(buttons), 
+        reply_markup=InlineKeyboardMarkup(end_quiz_buttons), 
         parse_mode="Markdown"
     )

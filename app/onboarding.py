@@ -22,12 +22,12 @@ import time
 
 warnings.filterwarnings("ignore", category=PTBUserWarning)
 
-# Exactly 19 state variables matching range(19)
+# Exactly 20 state variables declared including EDIT_WARN matching range(20)
 (
     NAME, EXAM, STATE, PHONE, GENDER, DOB_YEAR, DOB_MONTH, DOB_DAY, 
     PIN_SETUP, SEC_QUESTION, SEC_ANSWER, RECOVERY_MENU, 
-    REC_SEC_ANS, REC_PHONE, REC_DOB_YEAR, REC_DOB_MONTH, REC_DOB_DAY, REC_NAME_DOB, RESET_PIN
-) = range(19)
+    REC_SEC_ANS, REC_PHONE, REC_DOB_YEAR, REC_DOB_MONTH, REC_DOB_DAY, REC_NAME_DOB, RESET_PIN, EDIT_WARN
+) = range(20)
 
 PRESET_SEC_QUESTIONS = [
     "What is your pet's name?",

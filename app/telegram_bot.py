@@ -27,6 +27,7 @@ from app.stats import get_overall_leaderboard, calculate_user_percentile, calcul
 from app.admin import admin_portal_command, admin_callback_handler
 from app.pdf_generator import generate_student_pdf_report
 
+logger = logging.getLogger(__name__)
 NEGATIVE_WORDS = ["bad", "worst", "useless", "trash", "fake", "hate", "terrible", "waste", "horrible", "fraud", "stupid", "scam"]
 
 async def send_registration_prompt(update: Update):
@@ -229,9 +230,9 @@ async def student_pdf_callback(update: Update, context: ContextTypes.DEFAULT_TYP
             f"You have not bookmarked any questions yet. Tap Save Question during quizzes!",
             reply_markup=nav_buttons
         )
-    elif pdf_file and pdf_file.startswith("ERROR_DETAILS:"):
+    elif pdf_file and str(pdf_file).startswith("ERROR_DETAILS:"):
         await query.edit_message_text(
-            f"⚠️ PDF Generation Error:\n\n{pdf_file[:3500]}",
+            f"⚠️ PDF Generation Error:\n\n{str(pdf_file)[:3500]}",
             reply_markup=nav_buttons
         )
     elif pdf_file and os.path.exists(pdf_file):
@@ -592,7 +593,7 @@ async def handle_text_messages(update: Update, context: ContextTypes.DEFAULT_TYP
         await update.message.reply_text(f"✅ Announcement sent to {sent} users!", reply_markup=ReplyKeyboardRemove())
 
 async def global_error_handler(update: object, context: ContextTypes.DEFAULT_TYPE) -> None:
-    logging.debug(f"Exception caught in global error handler: {context.error}")
+    logging.error(f"Global Error Handler caught: {context.error}")
 
 async def post_init(application: Application):
     try:

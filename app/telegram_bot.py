@@ -29,11 +29,11 @@ NEGATIVE_WORDS = ["bad", "worst", "useless", "trash", "fake", "hate", "terrible"
 
 async def send_registration_prompt(update: Update):
     msg = (
-        "⚠️ **ᴛᴏ ᴜꜱᴇ ᴛʜɪꜱ qᴜɪᴢ ʙᴏᴏᴋ ʏᴏᴜ ᴍᴜꜱᴛ ʀᴇɢɪꜱᴛᴇʀ ꜰɪʀꜱᴛ ʜᴇʀᴇ!**\n\n"
-        "ᴘʟᴇᴀꜱᴇ ᴛᴀᴘ ᴛʜᴇ ʀᴇɢɪꜱᴛʀᴀᴛɪᴏɴ ʙᴜᴛᴛᴏɴ ʙᴇʟᴏᴡ ᴛᴏ ꜱᴇᴛ ᴜᴘ ʏᴏᴜʀ ꜱᴛᴜᴅᴇɴᴛ ᴘʀᴏꜰɪʟᴇ:"
+        "⚠️ **To use this Quiz Book you must register first here!**\n\n"
+        "Please tap the registration button below to set up your student profile:"
     )
     keyboard = InlineKeyboardMarkup([
-        [InlineKeyboardButton("📝 ᴄʟɪᴄᴋ ʜᴇʀᴇ ꜰᴏʀ ʀᴇɢɪꜱᴛʀᴀᴛɪᴏɴ", callback_data="trigger_start")]
+        [InlineKeyboardButton("📝 Click Here for Registration", callback_data="trigger_start")]
     ])
     if update.callback_query:
         await update.callback_query.answer("⚠️ Registration Required!", show_alert=True)
@@ -64,12 +64,12 @@ async def inactivity_guard(update: Update, context: ContextTypes.DEFAULT_TYPE) -
     is_locked, diff_sec = check_and_update_inactivity(user_id)
     if is_locked:
         context.user_data["is_account_locked"] = True
-        rec_btn = InlineKeyboardMarkup([[InlineKeyboardButton("🔑 ʀᴇꜱᴇᴛ ʏᴏᴜʀ ᴘɪɴ / ᴘᴀꜱꜱᴡᴏʀᴅ", callback_data="login_forgot_pin")]])
+        rec_btn = InlineKeyboardMarkup([[InlineKeyboardButton("🔑 Reset Your PIN / Password", callback_data="login_forgot_pin")]])
         msg = (
-            f"🔒 **ᴀᴄᴄᴏᴜɴᴛ ʟᴏᴄᴋᴇᴅ ᴅᴜᴇ ᴛᴏ ɪɴᴀᴄᴛɪᴠɪᴛʏ**\n"
+            f"🔒 **ACCOUNT LOCKED DUE TO INACTIVITY**\n"
             f"━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\n"
-            f"ʏᴏᴜ ᴡᴇʀᴇ ɪɴᴀᴄᴛɪᴠᴇ ꜰᴏʀ `{diff_sec // 60} ᴍɪɴꜱ`.\n\n"
-            f"🔑 **ᴘʟᴇᴀꜱᴇ ʀᴇᴘʟʏ ᴡɪᴛʜ ʏᴏᴜʀ 4-ᴅɪɢɪᴛ ꜱᴇᴄʀᴇᴛ ᴘɪɴ ᴛᴏ ᴜɴʟᴏᴄᴋ ʏᴏᴜʀ ᴀᴄᴄᴏᴜɴᴛ:**"
+            f"You were inactive for `{diff_sec // 60} mins`.\n\n"
+            f"🔑 **Please reply with your 4-Digit Secret PIN to unlock your account:**"
         )
         if update.callback_query:
             await update.callback_query.answer("🔒 Account Locked due to 5 mins of inactivity!", show_alert=True)
@@ -87,7 +87,7 @@ async def maintenance_guard(update: Update, context: ContextTypes.DEFAULT_TYPE) 
     if int(time.time()) < m_until:
         remaining_sec = m_until - int(time.time())
         mins_left = max(1, (remaining_sec + 59) // 60)
-        msg = f"🛠 **ᴀᴅᴍɪɴ ʜᴀꜱ ᴘᴀᴜꜱᴇᴅ ᴛʜᴇ ꜱᴇʀᴠɪᴄᴇ ᴄᴜʀʀᴇɴᴛʟʏ**\nꜱᴇʀᴠɪᴄᴇ ᴡɪʟʟ ʀᴇꜱᴜᴍᴇ ɪɴ ᴀᴘᴘʀᴏxɪᴍᴀᴛᴇʟʏ `{mins_left} ᴍɪɴꜱ`. ᴘʟᴇᴀꜱᴇ ᴛʀʏ ᴀɢᴀɪɴ ʟᴀᴛᴇʀ!"
+        msg = f"🛠 **ADMIN HAS PAUSED THE SERVICE CURRENTLY**\nService will resume in approximately `{mins_left} mins`. Please try again later!"
         
         if update.callback_query:
             await update.callback_query.answer(f"🛠 Service Paused! Resuming in ~{mins_left} mins.", show_alert=True)
@@ -112,13 +112,13 @@ async def strict_quiz_command_guard(update: Update, context: ContextTypes.DEFAUL
 
     if attempted_today >= allowed_limit:
         limit_msg = (
-            f"🛑 **ᴅᴀɪʟʏ ꜰʀᴇᴇ ʟɪᴍɪᴛ ᴇxʜᴀᴜꜱᴛᴇᴅ!**\n\n"
-            f"ʏᴏᴜ ʜᴀᴠᴇ ʀᴇᴀᴄʜᴇᴅ ʏᴏᴜʀ ᴀᴄᴛᴜᴀʟ ᴅᴀɪʟʏ ʟɪᴍɪᴛ ᴏꜰ `{allowed_limit}` qᴜᴇꜱᴛɪᴏɴꜱ ꜰᴏʀ ᴛᴏᴅᴀʏ (00:00 ᴛᴏ 23:59).\n"
-            f"ᴛʜᴇ `/quiz` ᴄᴏᴍᴍᴀɴᴅ ʜᴀꜱ ʙᴇᴇɴ **ᴅᴇᴀᴄᴛɪᴠᴀᴛᴇᴅ** ꜰᴏʀ ʏᴏᴜʀ ᴀᴄᴄᴏᴜɴᴛ ᴜɴᴛɪʟ ᴛᴏᴍᴏʀʀᴏᴡ.\n\n"
-            f"💡 **ᴜɴʟᴏᴄᴋ +10 qᴜᴇꜱᴛɪᴏɴꜱ:** ꜱʜᴀʀᴇ ʏᴏᴜʀ ɪɴᴠɪᴛᴇ ʟɪɴᴋ ᴡɪᴛʜ 4 ꜰʀɪᴇɴᴅꜱ ᴛᴏ ɪɴᴄʀᴇᴀꜱᴇ ʏᴏᴜʀ ʟɪᴍɪᴛ!"
+            f"🛑 **Daily Free Limit Exhausted!**\n\n"
+            f"You have reached your actual daily limit of `{allowed_limit}` questions for today (00:00 to 23:59).\n"
+            f"The `/quiz` command has been **deactivated** for your account until tomorrow.\n\n"
+            f"💡 **Unlock +10 Questions:** Share your invite link with 4 friends to increase your limit!"
         )
         keyboard = InlineKeyboardMarkup([[
-            InlineKeyboardButton("🤝 ɪɴᴠɪᴛᴇ ꜰʀɪᴇɴᴅꜱ (+10 ʟɪᴍɪᴛ)", callback_data="cmd_referral")
+            InlineKeyboardButton("🤝 Invite Friends (+10 Limit)", callback_data="cmd_referral")
         ]])
         await update.message.reply_text(limit_msg, reply_markup=keyboard, parse_mode="Markdown")
         return
@@ -144,21 +144,21 @@ async def help_command(update: Update, context: ContextTypes.DEFAULT_TYPE):
     log_user_activity_time(user.id, seconds=10)
 
     msg = (
-        "🤖 **ʟᴇᴀʀɴ ᴡɪᴛʜ ʜɪᴍ qᴜɪᴢ ʙᴏᴏᴋ — ᴄᴏᴍᴍᴀɴᴅ ᴅɪʀᴇᴄᴛᴏʀʏ**\n"
+        "🤖 **LEARN WITH HIM QUIZ BOOK — COMMAND DIRECTORY**\n"
         "━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\n"
-        "ᴛᴀᴘ ᴀɴʏ ʙᴜᴛᴛᴏɴ ʙᴇʟᴏᴡ ᴏʀ ᴏᴘᴇɴ ᴛʜᴇ ʙʟᴜᴇ **[≡ ᴍᴇɴᴜ]** ʙᴜᴛᴛᴏɴ:\n\n"
-        "• 🚀 **/quiz**: ꜱᴛᴀʀᴛ ᴀ ɴᴇᴡ ᴄᴜꜱᴛᴏᴍ ᴄᴏᴍᴘᴜᴛᴇʀ qᴜɪᴢ\n"
-        "• ⏸ **/pause**: ᴘᴀᴜꜱᴇ ʀᴜɴɴɪɴɢ qᴜɪᴢ\n"
-        "• ▶️ **/resume**: ʀᴇꜱᴜᴍᴇ ᴘᴀᴜꜱᴇᴅ qᴜɪᴢ\n"
-        "• 🛑 **/stop**: ꜱᴛᴏᴘ qᴜɪᴢ ᴄᴏᴍᴘʟᴇᴛᴇʟʏ & ʀᴇꜱᴛᴏʀᴇ ʀᴇᴍᴀɪɴɪɴɢ ʟɪᴍɪᴛ\n"
-        "• 💾 **/savedquestions**: ᴠɪᴇᴡ ʏᴏᴜʀ ʙᴏᴏᴋᴍᴀʀᴋᴇᴅ/ꜱᴀᴠᴇᴅ qᴜᴇꜱᴛɪᴏɴꜱ\n"
-        "• 👤 **/myprofile**: ᴠɪᴇᴡ ʏᴏᴜʀ ᴠᴇʀɪꜰɪᴇᴅ ꜱᴛᴜᴅᴇɴᴛ ᴄᴀʀᴅ\n"
-        "• ✏️ **/editprofile**: ᴜᴘᴅᴀᴛᴇ ᴘʀᴏꜰɪʟᴇ ᴅᴇᴛᴀɪʟꜱ (1x / 30 ᴅᴀʏꜱ)\n"
-        "• 📊 **/mywholestate**: ᴠɪᴇᴡ ᴅᴇᴛᴀɪʟᴇᴅ ʀᴀɴᴋ & ᴘᴇʀᴄᴇɴᴛɪʟᴇ\n"
-        "• 🏆 **/toppername**: ɪɴꜱᴘᴇᴄᴛ ᴛʜᴇ ɢʟᴏʙᴀʟ ꜱᴄʜᴏʟᴀʀ ʟᴇᴀᴅᴇʀʙᴏᴀʀᴅ\n"
-        "• 💬 **/feedback**: ʀᴀᴛᴇ ᴛʜᴇ ʙᴏᴛ ᴏʀ ʟᴇᴀᴠᴇ ꜰᴇᴇᴅʙᴀᴄᴋ\n"
-        "• 📖 **/reviews**: ᴠɪᴇᴡ ꜱᴛᴜᴅᴇɴᴛ ʀᴇᴠɪᴇᴡꜱ\n"
-        "• 🤝 **/invite**: ꜱʜᴀʀᴇ ʀᴇꜰᴇʀʀᴀʟ ʟɪɴᴋ ᴛᴏ ᴜɴʟᴏᴄᴋ +10 ʟɪᴍɪᴛ"
+        "Tap any button below or open the blue **[≡ Menu]** button:\n\n"
+        "• 🚀 **/quiz**: Start a new custom computer quiz\n"
+        "• ⏸ **/pause**: Pause running quiz\n"
+        "• ▶️ **/resume**: Resume paused quiz\n"
+        "• 🛑 **/stop**: Stop quiz completely & restore remaining limit\n"
+        "• 💾 **/savedquestions**: View your bookmarked/saved questions\n"
+        "• 👤 **/myprofile**: View your verified student card\n"
+        "• ✏️ **/editprofile**: Update profile details (1x / 30 days)\n"
+        "• 📊 **/mywholestate**: View detailed rank & percentile\n"
+        "• 🏆 **/toppername**: Inspect the global scholar leaderboard\n"
+        "• 💬 **/feedback**: Rate the bot or leave feedback\n"
+        "• 📖 **/reviews**: View student reviews\n"
+        "• 🤝 **/invite**: Share referral link to unlock +10 limit"
     )
 
     buttons = [
@@ -180,39 +180,39 @@ async def saved_questions_command(update: Update, context: ContextTypes.DEFAULT_
     
     if not saved:
         msg = (
-            "📖 **ꜱᴀᴠᴇᴅ qᴜᴇꜱᴛɪᴏɴꜱ ʙᴏᴏᴋᴍᴀʀᴋ**\n"
+            "📖 **SAVED QUESTIONS BOOKMARK**\n"
             "━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\n\n"
-            "ʏᴏᴜ ʜᴀᴠᴇɴ'ᴛ ꜱᴀᴠᴇᴅ ᴀɴʏ qᴜᴇꜱᴛɪᴏɴꜱ ʏᴇᴛ! ᴛᴀᴘ ᴛʜᴇ **💾 ꜱᴀᴠᴇ qᴜᴇꜱᴛɪᴏɴ** ʙᴜᴛᴛᴏɴ ᴅᴜʀɪɴɢ ʏᴏᴜʀ qᴜɪᴢ ᴀᴛᴛᴇᴍᴘᴛꜱ ᴛᴏ ʙᴏᴏᴋᴍᴀʀᴋ ɪᴍᴘᴏʀᴛᴀɴᴛ qᴜᴇꜱᴛɪᴏɴꜱ ʜᴇʀᴇ."
+            "You haven't saved any questions yet! Tap the **💾 Save Question** button during your quiz attempts to bookmark important questions here."
         )
-        await send_response(update, msg, reply_markup=InlineKeyboardMarkup([[InlineKeyboardButton("🚀 ʟᴀᴜɴᴄʜ qᴜɪᴢ", callback_data="cmd_quiz")]]))
+        await send_response(update, msg, reply_markup=InlineKeyboardMarkup([[InlineKeyboardButton("🚀 Launch Quiz", callback_data="cmd_quiz")]]))
         return
 
     total_count = len(saved)
     lines = [
-        f"📖 **ꜱᴀᴠᴇᴅ qᴜᴇꜱᴛɪᴏɴꜱ ʙᴏᴏᴋᴍᴀʀᴋ**",
+        f"📖 **SAVED QUESTIONS BOOKMARK**",
         f"━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━",
-        f"📊 **ᴛᴏᴛᴀʟ ꜱᴀᴠᴇᴅ qᴜᴇꜱᴛɪᴏɴꜱ:** `{total_count}`",
-        f"📌 *ꜱʜᴏᴡɪɴɢ ᴍᴏꜱᴛ ʀᴇᴄᴇɴᴛ ʙᴏᴏᴋᴍᴀʀᴋꜱ ꜰɪʀꜱᴛ*\n"
+        f"📊 **Total Saved Questions:** `{total_count}`",
+        f"📌 *Showing most recent bookmarks first*\n"
     ]
 
     for idx, sq in enumerate(saved[:15], start=1):
         opts_list = json.loads(sq['options_json']) if sq['options_json'] else []
         corr_idx = sq['correct_option']
-        corr_ans = opts_list[corr_idx] if 0 <= corr_idx < len(opts_list) else 'ɴ/ᴀ'
+        corr_ans = opts_list[corr_idx] if 0 <= corr_idx < len(opts_list) else 'N/A'
         
         lines.append(
-            f"**{idx}. ꜱᴀᴠᴇᴅ ᴀᴛ:** `{sq['saved_at']}`\n"
-            f"❓ **q:** {sq['question_text']}\n"
-            f"✅ **ᴄᴏʀʀᴇᴄᴛ ᴀɴꜱᴡᴇʀ:** `{corr_ans}`\n"
-            f"💡 **ᴇxᴘʟᴀɴᴀᴛɪᴏɴ:** {sq['explanation']}\n"
+            f"**{idx}. Saved At:** `{sq['saved_at']}`\n"
+            f"❓ **Q:** {sq['question_text']}\n"
+            f"✅ **Correct Answer:** `{corr_ans}`\n"
+            f"💡 **Explanation:** {sq['explanation']}\n"
             f"──────────────────────────────"
         )
 
     if total_count > 15:
-        lines.append(f"\n*(ꜱʜᴏᴡɪɴɢ 15 ᴏꜰ {total_count} ꜱᴀᴠᴇᴅ qᴜᴇꜱᴛɪᴏɴꜱ)*")
+        lines.append(f"\n*(Showing 15 of {total_count} saved questions)*")
 
     msg = "\n".join(lines)
-    buttons = [[InlineKeyboardButton("🚀 ʟᴀᴜɴᴄʜ qᴜɪᴢ", callback_data="cmd_quiz")]]
+    buttons = [[InlineKeyboardButton("🚀 Launch Quiz", callback_data="cmd_quiz")]]
     await send_response(update, msg, reply_markup=InlineKeyboardMarkup(buttons))
 
 async def myprofile_command(update: Update, context: ContextTypes.DEFAULT_TYPE):
@@ -230,26 +230,26 @@ async def myprofile_command(update: Update, context: ContextTypes.DEFAULT_TYPE):
     student_id = profile.get("student_id", f"USER_{user.id}")
 
     msg = (
-        f"👤 **ꜱᴛᴜᴅᴇɴᴛ ᴘʀᴏꜰɪʟᴇ ᴄᴀʀᴅ**\n"
-        f"📚 *ʟᴇᴀʀɴ ᴡɪᴛʜ ʜɪᴍ qᴜɪᴢ ʙᴏᴏᴋ*\n"
+        f"👤 **STUDENT PROFILE CARD**\n"
+        f"📚 *Learn with HiM Quiz Book*\n"
         f"━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\n"
-        f"• **ꜰᴜʟʟ ɴᴀᴍᴇ:** {profile['full_name']}\n"
-        f"• **ꜱᴛᴜᴅᴇɴᴛ ɪᴅ:** `{student_id}`\n"
-        f"• **ᴛᴇʟᴇɢʀᴀᴍ ɪᴅ:** `{profile['user_id']}`\n"
-        f"• **ᴛᴀʀɢᴇᴛ ᴇxᴀᴍ:** `{profile['target_exam']}`\n"
-        f"• **ᴅᴏʙ / ɢᴇɴᴅᴇʀ:** `{profile.get('dob', 'ɴ/ᴀ')}` / `{profile['gender']}`\n"
-        f"• **ʟᴏᴄᴀᴛɪᴏɴ:** `{profile.get('state', 'ɴ/ᴀ')}, {profile.get('country', 'ɪɴᴅɪᴀ')}`\n"
-        f"• **ᴘʜᴏɴᴇ:** `{profile['phone_number']}` *(ᴘʀɪᴠᴀᴛᴇ)*\n\n"
-        f"📊 **ᴅᴀɪʟʏ qᴜᴏᴛᴀ ꜱᴛᴀᴛᴜꜱ (00:00 ᴛᴏ 23:59):**\n"
-        f"• **ᴜꜱᴇᴅ ᴛᴏᴅᴀʏ:** `{today_used}` / `{allowed_limit}` qꜱ\n"
-        f"• **ʀᴇᴍᴀɪɴɪɴɢ ᴛᴏᴅᴀʏ:** `{remaining}` qꜱ\n"
-        f"• **ʀᴇꜰᴇʀʀᴀʟꜱ:** `{profile.get('referral_count', 0)}` / 4 ꜰʀɪᴇɴᴅꜱ\n"
+        f"• **Full Name:** {profile['full_name']}\n"
+        f"• **Student ID:** `{student_id}`\n"
+        f"• **Telegram ID:** `{profile['user_id']}`\n"
+        f"• **Target Exam:** `{profile['target_exam']}`\n"
+        f"• **DOB / Gender:** `{profile.get('dob', 'N/A')}` / `{profile['gender']}`\n"
+        f"• **Location:** `{profile.get('state', 'N/A')}, {profile.get('country', 'India')}`\n"
+        f"• **Phone:** `{profile['phone_number']}` *(Private)*\n\n"
+        f"📊 **Daily Quota Status (00:00 to 23:59):**\n"
+        f"• **Used Today:** `{today_used}` / `{allowed_limit}` Qs\n"
+        f"• **Remaining Today:** `{remaining}` Qs\n"
+        f"• **Referrals:** `{profile.get('referral_count', 0)}` / 4 friends\n"
         f"━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━"
     )
 
     buttons = [
-        [InlineKeyboardButton("🚀 ʟᴀᴜɴᴄʜ qᴜɪᴢ", callback_data="cmd_quiz"), InlineKeyboardButton("💾 ꜱᴀᴠᴇᴅ qᴜᴇꜱᴛɪᴏɴꜱ", callback_data="cmd_savedquestions")],
-        [InlineKeyboardButton("✏️ ᴇᴅɪᴛ ᴘʀᴏꜰɪʟᴇ", callback_data="cmd_editprofile"), InlineKeyboardButton("🤝 ɪɴᴠɪᴛᴇ (+10 qᴜᴏᴛᴀ)", callback_data="cmd_referral")]
+        [InlineKeyboardButton("🚀 Launch Quiz", callback_data="cmd_quiz"), InlineKeyboardButton("💾 Saved Questions", callback_data="cmd_savedquestions")],
+        [InlineKeyboardButton("✏️ Edit Profile", callback_data="cmd_editprofile"), InlineKeyboardButton("🤝 Invite (+10 Quota)", callback_data="cmd_referral")]
     ]
 
     await send_response(update, msg, reply_markup=InlineKeyboardMarkup(buttons))
@@ -268,20 +268,20 @@ async def wholestate_command(update: Update, context: ContextTypes.DEFAULT_TYPE)
     student_id = profile.get("student_id", f"USER_{user.id}")
 
     msg = (
-        f"🎓 **ꜱᴛᴜᴅᴇɴᴛ ᴀᴄᴀᴅᴇᴍɪᴄ ʀᴇᴘᴏʀᴛ ᴄᴀʀᴅ**\n"
+        f"🎓 **STUDENT ACADEMIC REPORT CARD**\n"
         f"━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\n"
-        f"👤 **ɴᴀᴍᴇ:** {profile['full_name']}\n"
-        f"🪪 **ꜱᴛᴜᴅᴇɴᴛ ɪᴅ:** `{student_id}`\n"
-        f"🎯 **ᴛᴀʀɢᴇᴛ ᴇxᴀᴍ:** `{profile['target_exam']}`\n"
-        f"📍 **ʟᴏᴄᴀᴛɪᴏɴ:** `{profile.get('state', 'ɴ/ᴀ')}, {profile.get('country', 'ɪɴᴅɪᴀ')}`\n\n"
-        f"📈 **ᴘᴇʀꜰᴏʀᴍᴀɴᴄᴇ ᴍᴇᴛʀɪᴄꜱ:**\n"
-        f"• **ᴛᴇꜱᴛꜱ ᴄᴏᴍᴘʟᴇᴛᴇᴅ:** `{perf.get('total_tests', 0)}`\n"
-        f"• **qᴜᴇꜱᴛɪᴏɴꜱ ᴀᴛᴛᴇᴍᴘᴛᴇᴅ:** `{perf.get('total_qs', 0)}`\n"
-        f"• **ɢʟᴏʙᴀʟ ʀᴀɴᴋ:** `{rank}`\n"
-        f"• **ᴏᴠᴇʀᴀʟʟ ᴘᴇʀᴄᴇɴᴛɪʟᴇ:** `{percentile}%` *(ᴄᴀʟᴄᴜʟᴀᴛᴇᴅ ᴀɢᴀɪɴꜱᴛ ᴀʟʟ ʀᴇɢɪꜱᴛᴇʀᴇᴅ ꜱᴛᴜᴅᴇɴᴛꜱ)*"
+        f"👤 **Name:** {profile['full_name']}\n"
+        f"🪪 **Student ID:** `{student_id}`\n"
+        f"🎯 **Target Exam:** `{profile['target_exam']}`\n"
+        f"📍 **Location:** `{profile.get('state', 'N/A')}, {profile.get('country', 'India')}`\n\n"
+        f"📈 **Performance Metrics:**\n"
+        f"• **Tests Completed:** `{perf.get('total_tests', 0)}`\n"
+        f"• **Questions Attempted:** `{perf.get('total_qs', 0)}`\n"
+        f"• **Global Rank:** `{rank}`\n"
+        f"• **Overall Percentile:** `{percentile}%` *(Calculated against all registered students)*"
     )
 
-    buttons = [[InlineKeyboardButton("🚀 ʟᴀᴜɴᴄʜ qᴜɪᴢ", callback_data="cmd_quiz"), InlineKeyboardButton("🏆 ʟᴇᴀᴅᴇʀʙᴏᴀʀᴅ", callback_data="cmd_toppers")]]
+    buttons = [[InlineKeyboardButton("🚀 Launch Quiz", callback_data="cmd_quiz"), InlineKeyboardButton("🏆 Leaderboard", callback_data="cmd_toppers")]]
     await send_response(update, msg, reply_markup=InlineKeyboardMarkup(buttons))
 
 async def toppers_command(update: Update, context: ContextTypes.DEFAULT_TYPE):
@@ -299,10 +299,10 @@ async def toppers_command(update: Update, context: ContextTypes.DEFAULT_TYPE):
     lines = []
     for idx, t in enumerate(toppers, start=1):
         badge = " 🥇" if idx == 1 else " 🥈" if idx == 2 else " 🥉" if idx == 3 else ""
-        lines.append(f"{idx}. **{t['full_name']}**{badge} — ᴀᴠɢ ꜱᴄᴏʀᴇ: `{round(t['avg_score'], 2)}`")
+        lines.append(f"{idx}. **{t['full_name']}**{badge} — Avg Score: `{round(t['avg_score'], 2)}`")
 
-    msg = "🏆 **ɢʟᴏʙᴀʟ ꜱᴄʜᴏʟᴀʀ ʟᴇᴀᴅᴇʀʙᴏᴀʀᴅ**\n━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\n\n" + "\n".join(lines)
-    buttons = [[InlineKeyboardButton("🚀 ᴀᴛᴛᴇᴍᴘᴛ qᴜɪᴢ", callback_data="cmd_quiz")]]
+    msg = "🏆 **GLOBAL SCHOLAR LEADERBOARD**\n━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\n\n" + "\n".join(lines)
+    buttons = [[InlineKeyboardButton("🚀 Attempt Quiz", callback_data="cmd_quiz")]]
     await send_response(update, msg, reply_markup=InlineKeyboardMarkup(buttons))
 
 async def feedback_command(update: Update, context: ContextTypes.DEFAULT_TYPE):
@@ -313,18 +313,18 @@ async def feedback_command(update: Update, context: ContextTypes.DEFAULT_TYPE):
     log_user_activity_time(user.id, seconds=10)
 
     keyboard = [
-        [InlineKeyboardButton("🌟 10/10 ʙᴏᴛ! ᴛʜᴇ qᴜɪᴢᴢᴇꜱ ᴀʀᴇ ᴛᴏᴘ qᴜᴀʟɪᴛʏ 🚀", callback_data="fb_p1")],
-        [InlineKeyboardButton("✨ ʟᴇᴀʀɴ ᴡɪᴛʜ ʜɪᴍ ɪꜱ ᴛʜᴇ ʙᴇꜱᴛ ᴘʀᴇᴘᴀʀᴀᴛɪᴏɴ ᴘᴏʀᴛᴀʟ 🎓", callback_data="fb_p2")],
-        [InlineKeyboardButton("🔥 ᴅᴀɪʟʏ ᴛᴀʀɢᴇᴛ ʟɪᴍɪᴛꜱ ᴋᴇᴇᴘ ᴍᴇ ᴅɪꜱᴄɪᴘʟɪɴᴇᴅ! 📈", callback_data="fb_p3")],
-        [InlineKeyboardButton("✍️ ᴡʀɪᴛᴇ ᴄᴜꜱᴛᴏᴍ ꜰᴇᴇᴅʙᴀᴄᴋ", callback_data="fb_custom")],
-        [InlineKeyboardButton("📖 ᴠɪᴇᴡ ꜱᴛᴜᴅᴇɴᴛ ʀᴇᴠɪᴇᴡꜱ", callback_data="cmd_viewfeedbacks")]
+        [InlineKeyboardButton("🌟 10/10 Bot! The quizzes are top quality 🚀", callback_data="fb_p1")],
+        [InlineKeyboardButton("✨ Learn with HiM is the best preparation portal 🎓", callback_data="fb_p2")],
+        [InlineKeyboardButton("🔥 Daily target limits keep me disciplined! 📈", callback_data="fb_p3")],
+        [InlineKeyboardButton("✍️ Write Custom Feedback", callback_data="fb_custom")],
+        [InlineKeyboardButton("📖 View Student Reviews", callback_data="cmd_viewfeedbacks")]
     ]
 
     msg = (
-        "💬 **ꜱᴛᴜᴅᴇɴᴛ ꜰᴇᴇᴅʙᴀᴄᴋ ᴘᴏʀᴛᴀʟ**\n"
+        "💬 **STUDENT FEEDBACK PORTAL**\n"
         "━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\n"
-        "ʏᴏᴜʀ ꜰᴇᴇᴅʙᴀᴄᴋ ʜᴇʟᴘꜱ ʜɪᴍᴀɴꜱʜᴜ ꜱɪʀ ᴍᴀᴋᴇ ᴛʜɪꜱ ᴘʟᴀᴛꜰᴏʀᴍ ᴇᴠᴇɴ ʙᴇᴛᴛᴇʀ!\n"
-        "ꜱᴇʟᴇᴄᴛ ᴀ qᴜɪᴄᴋ ᴘʀᴇꜱᴇᴛ ʀᴀᴛɪɴɢ ʙᴇʟᴏᴡ ᴏʀ ᴡʀɪᴛᴇ ʏᴏᴜʀ ᴏᴡɴ ᴄᴜꜱᴛᴏᴍ ꜰᴇᴇᴅʙᴀᴄᴋ:"
+        "Your feedback helps Himanshu Sir make this platform even better!\n"
+        "Select a quick preset rating below or write your own custom feedback:"
     )
     await send_response(update, msg, reply_markup=InlineKeyboardMarkup(keyboard))
 
@@ -340,7 +340,7 @@ async def viewfeedbacks_command(update: Update, context: ContextTypes.DEFAULT_TY
         await send_response(update, "📖 No student reviews submitted yet. Be the first to leave feedback using /feedback!")
         return
 
-    lines = ["📖 **ꜱᴛᴜᴅᴇɴᴛ ʀᴇᴠɪᴇᴡꜱ & ꜰᴇᴇᴅʙᴀᴄᴋ ʙᴏᴀʀᴅ**\n━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\n"]
+    lines = ["📖 **STUDENT REVIEWS & FEEDBACK BOARD**\n━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\n"]
     for idx, fb in enumerate(feedbacks, start=1):
         lines.append(f"**{idx}. {fb['full_name']}**:\n 💬 *\"{fb['feedback_text']}\"*\n")
 
@@ -356,11 +356,11 @@ async def referral_command(update: Update, context: ContextTypes.DEFAULT_TYPE):
     ref_link = f"https://t.me/{bot_username}?start=ref_{user.id}"
 
     msg = (
-        f"🤝 **ɪɴᴠɪᴛᴇ ꜰʀɪᴇɴᴅꜱ & ᴜɴʟᴏᴄᴋ +10 ᴅᴀɪʟʏ ʟɪᴍɪᴛ**\n"
+        f"🤝 **INVITE FRIENDS & UNLOCK +10 DAILY LIMIT**\n"
         f"━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\n"
-        f"ꜱʜᴀʀᴇ ʏᴏᴜʀ ᴘᴇʀꜱᴏɴᴀʟ ɪɴᴠɪᴛᴇ ʟɪɴᴋ ʙᴇʟᴏᴡ ᴡɪᴛʜ **4 ꜰʀɪᴇɴᴅꜱ**:\n"
+        f"Share your personal invite link below with **4 friends**:\n"
         f"`{ref_link}`\n\n"
-        f"ᴡʜᴇɴ 4 ꜰʀɪᴇɴᴅꜱ ʀᴇɢɪꜱᴛᴇʀ ᴜꜱɪɴɢ ʏᴏᴜʀ ʟɪɴᴋ, ʏᴏᴜ ᴀᴜᴛᴏᴍᴀᴛɪᴄᴀʟʟʏ ʀᴇᴄᴇɪᴠᴇ +10 qᴜᴇꜱᴛɪᴏɴꜱ ᴀᴅᴅᴇᴅ ᴛᴏ ʏᴏᴜʀ ᴅᴀɪʟʏ qᴜᴏᴛᴀ!"
+        f"When 4 friends register using your link, you automatically receive +10 questions added to your daily quota!"
     )
     await send_response(update, msg)
 
@@ -414,19 +414,19 @@ async def button_router(update: Update, context: ContextTypes.DEFAULT_TYPE):
         await viewfeedbacks_command(update, context)
     elif data.startswith("fb_p"):
         presets = {
-            "fb_p1": "10/10 ʙᴏᴛ! ᴛʜᴇ qᴜɪᴢᴢᴇꜱ ᴀʀᴇ ᴛᴏᴘ qᴜᴀʟɪᴛʏ 🚀",
-            "fb_p2": "ʟᴇᴀʀɴ ᴡɪᴛʜ ʜɪᴍ ɪꜱ ᴛʜᴇ ʙᴇꜱᴛ ᴘʀᴇᴘᴀʀᴀᴛɪᴏɴ ᴘᴏʀᴛᴀʟ 🎓",
-            "fb_p3": "ᴅᴀɪʟʏ ᴛᴀʀɢᴇᴛ ʟɪᴍɪᴛꜱ ᴋᴇᴇᴘ ᴍᴇ ᴅɪꜱᴄɪᴘʟɪɴᴇᴅ! 📈"
+            "fb_p1": "10/10 Bot! The quizzes are top quality 🚀",
+            "fb_p2": "Learn with HiM is the best preparation portal 🎓",
+            "fb_p3": "Daily target limits keep me disciplined! 📈"
         }
-        fb_text = presets.get(data, "ɢʀᴇᴀᴛ ᴇᴅᴜᴄᴀᴛɪᴏɴᴀʟ ʙᴏᴛ!")
+        fb_text = presets.get(data, "Great educational bot!")
         profile = get_user_profile(user.id)
         name = profile.get("full_name") if profile else user.full_name
         save_student_feedback(user.id, name, fb_text)
-        await query.edit_message_text(f"🎉 **ᴛʜᴀɴᴋ ʏᴏᴜ, {name}!** ʏᴏᴜʀ ꜰᴇᴇᴅʙᴀᴄᴋ ʜᴀꜱ ʙᴇᴇɴ ʀᴇᴄᴏʀᴅᴇᴅ:\n\n💬 *\"{fb_text}\"*", parse_mode="Markdown")
+        await query.edit_message_text(f"🎉 **Thank you, {name}!** Your feedback has been recorded:\n\n💬 *\"{fb_text}\"*", parse_mode="Markdown")
 
     elif data == "fb_custom":
         context.user_data["awaiting_custom_feedback"] = True
-        await query.edit_message_text("✍️ ᴘʟᴇᴀꜱᴇ ʀᴇᴘʟʏ ᴡɪᴛʜ ʏᴏᴜʀ ᴄᴜꜱᴛᴏᴍ ꜰᴇᴇᴅʙᴀᴄᴋ/ʀᴇᴠɪᴇᴡ ʙᴇʟᴏᴡ:")
+        await query.edit_message_text("✍️ Please reply with your custom feedback/review below:")
 
 async def handle_text_messages(update: Update, context: ContextTypes.DEFAULT_TYPE):
     user = update.effective_user
@@ -438,11 +438,11 @@ async def handle_text_messages(update: Update, context: ContextTypes.DEFAULT_TYP
         if profile and profile.get("pin") == text:
             context.user_data["is_account_locked"] = False
             refresh_user_activity_epoch(user.id)
-            await update.message.reply_text("🔓 **ᴀᴄᴄᴏᴜɴᴛ ᴜɴʟᴏᴄᴋᴇᴅ ꜱᴜᴄᴄᴇꜱꜱꜰᴜʟʟʏ!**\nʏᴏᴜ ᴍᴀʏ ᴄᴏɴᴛɪɴᴜᴇ ʟᴇᴀʀɴɪɴɢ.", reply_markup=ReplyKeyboardRemove())
+            await update.message.reply_text("🔓 **ACCOUNT UNLOCKED SUCCESSFULLY!**\nYou may continue learning.", reply_markup=ReplyKeyboardRemove())
         else:
-            rec_btn = InlineKeyboardMarkup([[InlineKeyboardButton("🔑 ʀᴇꜱᴇᴛ ʏᴏᴜʀ ᴘɪɴ / ᴘᴀꜱꜱᴡᴏʀᴅ", callback_data="login_forgot_pin")]])
+            rec_btn = InlineKeyboardMarkup([[InlineKeyboardButton("🔑 Reset Your PIN / Password", callback_data="login_forgot_pin")]])
             await update.message.reply_text(
-                "❌ **ɪɴᴄᴏʀʀᴇᴄᴛ ᴘɪɴ!**\n\nᴘʟᴇᴀꜱᴇ ᴛʀʏ ᴇɴᴛᴇʀɪɴɢ ʏᴏᴜʀ ᴄᴏʀʀᴇᴄᴛ 4-ᴅɪɢɪᴛ ᴘɪɴ ᴛᴏ ᴜɴʟᴏᴄᴋ, ᴏʀ ᴛᴀᴘ ʙᴇʟᴏᴡ ᴛᴏ ʀᴇꜱᴇᴛ ʏᴏᴜʀ ᴘɪɴ:",
+                "❌ **Incorrect PIN!**\n\nPlease try entering your correct 4-digit PIN to unlock, or tap below to reset your PIN:",
                 reply_markup=rec_btn,
                 parse_mode="Markdown"
             )
@@ -468,9 +468,9 @@ async def handle_text_messages(update: Update, context: ContextTypes.DEFAULT_TYP
         keyboard = []
         for m in matches[:10]:
             sid = m.get("student_id") or f"USER_{m['user_id']}"
-            keyboard.append([InlineKeyboardButton(f"👤 {m['full_name']} (ɪᴅ: {sid})", callback_data=f"admin_inspect_u_{m['user_id']}")])
+            keyboard.append([InlineKeyboardButton(f"👤 {m['full_name']} (ID: {sid})", callback_data=f"admin_inspect_u_{m['user_id']}")])
         
-        await update.message.reply_text(f"🔍 **ꜱᴇᴀʀᴄʜ ʀᴇꜱᴜʟᴛꜱ ꜰᴏʀ '{text}':**", reply_markup=InlineKeyboardMarkup(keyboard), parse_mode="Markdown")
+        await update.message.reply_text(f"🔍 **Search Results for '{text}':**", reply_markup=InlineKeyboardMarkup(keyboard), parse_mode="Markdown")
         return
 
     if context.user_data.get("awaiting_custom_feedback"):
@@ -483,7 +483,7 @@ async def handle_text_messages(update: Update, context: ContextTypes.DEFAULT_TYP
         profile = get_user_profile(user.id)
         name = profile.get("full_name") if profile else user.full_name
         save_student_feedback(user.id, name, text)
-        await update.message.reply_text(f"🎉 **ꜰᴇᴇᴅʙᴀᴄᴋ ʀᴇᴄᴇɪᴠᴇᴅ!** ᴛʜᴀɴᴋ ʏᴏᴜ *{name}* ꜰᴏʀ ʏᴏᴜʀ ᴋɪɴᴅ ᴡᴏʀᴅꜱ:\n\n💬 *\"{text}\"*", reply_markup=ReplyKeyboardRemove(), parse_mode="Markdown")
+        await update.message.reply_text(f"🎉 **Feedback Received!** Thank you *{name}* for your kind words:\n\n💬 *\"{text}\"*", reply_markup=ReplyKeyboardRemove(), parse_mode="Markdown")
         return
 
     if context.user_data.get("awaiting_broadcast"):
@@ -492,7 +492,7 @@ async def handle_text_messages(update: Update, context: ContextTypes.DEFAULT_TYP
         sent = 0
         for u in users:
             try:
-                await context.bot.send_message(chat_id=u['user_id'], text=f"📢 **ᴀɴɴᴏᴜɴᴄᴇᴍᴇɴᴛ ꜰʀᴏᴍ ʜɪᴍᴀɴꜱʜᴜ ꜱɪʀ**\n\n{text}", parse_mode="Markdown")
+                await context.bot.send_message(chat_id=u['user_id'], text=f"📢 **ANNOUNCEMENT FROM HIMANSHU SIR**\n\n{text}", parse_mode="Markdown")
                 sent += 1
             except Exception:
                 pass
@@ -510,18 +510,18 @@ async def post_init(application: Application):
         logging.warning(f"Note on command purge: {e}")
 
     allowed_commands = [
-        BotCommand("quiz", "🚀 ꜱᴛᴀʀᴛ ᴄᴏᴍᴘᴜᴛᴇʀ qᴜɪᴢ"),
-        BotCommand("pause", "⏸ ᴘᴀᴜꜱᴇ ʀᴜɴɴɪɴɢ qᴜɪᴢ"),
-        BotCommand("resume", "▶️ ʀᴇꜱᴜᴍᴇ ᴘᴀᴜꜱᴇᴅ qᴜɪᴢ"),
-        BotCommand("stop", "🛑 ꜱᴛᴏᴘ qᴜɪᴢ ᴄᴏᴍᴘʟᴇᴛᴇʟʏ"),
-        BotCommand("savedquestions", "💾 ᴠɪᴇᴡ ꜱᴀᴠᴇᴅ qᴜᴇꜱᴛɪᴏɴꜱ"),
-        BotCommand("myprofile", "👤 ᴠɪᴇᴡ ꜱᴛᴜᴅᴇɴᴛ ᴘʀᴏꜰɪʟᴇ"),
-        BotCommand("editprofile", "✏️ ᴇᴅɪᴛ ᴘʀᴏꜰɪʟᴇ ᴅᴇᴛᴀɪʟꜱ"),
-        BotCommand("mywholestate", "📊 ᴠɪᴇᴡ ᴘᴇʀꜰᴏʀᴍᴀɴᴄᴇ & ʀᴀɴᴋ"),
-        BotCommand("toppername", "🏆 ɢʟᴏʙᴀʟ ʟᴇᴀᴅᴇʀʙᴏᴀʀᴅ"),
-        BotCommand("feedback", "💬 ꜱᴜʙᴍɪᴛ ꜰᴇᴇᴅʙᴀᴄᴋ"),
-        BotCommand("reviews", "📖 ᴠɪᴇᴡ ꜱᴛᴜᴅᴇɴᴛ ʀᴇᴠɪᴇᴡꜱ"),
-        BotCommand("invite", "🤝 ɪɴᴠɪᴛᴇ ꜰʀɪᴇɴᴅꜱ (+10 ʟɪᴍɪᴛ)")
+        BotCommand("quiz", "🚀 Start Computer Quiz"),
+        BotCommand("pause", "⏸ Pause Running Quiz"),
+        BotCommand("resume", "▶️ Resume Paused Quiz"),
+        BotCommand("stop", "🛑 Stop Quiz Completely"),
+        BotCommand("savedquestions", "💾 View Saved Questions"),
+        BotCommand("myprofile", "👤 View Student Profile"),
+        BotCommand("editprofile", "✏️ Edit Profile Details"),
+        BotCommand("mywholestate", "📊 View Performance & Rank"),
+        BotCommand("toppername", "🏆 Global Leaderboard"),
+        BotCommand("feedback", "💬 Submit Feedback"),
+        BotCommand("reviews", "📖 View Student Reviews"),
+        BotCommand("invite", "🤝 Invite Friends (+10 Limit)")
     ]
     
     await application.bot.set_my_commands(allowed_commands, scope=BotCommandScopeDefault())

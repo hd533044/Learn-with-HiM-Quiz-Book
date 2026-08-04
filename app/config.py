@@ -29,10 +29,10 @@ PRIMARY_ADMIN_ID = 1091057353
 ADMIN_IDS = [1091057353, 2070531704]
 
 WELCOME_CARD_TEXT = (
-    "❤️ **ᴡᴇʟᴄᴏᴍᴇ ᴛᴏ ʟᴇᴀʀɴ ᴡɪᴛʜ ʜɪᴍ qᴜɪᴢ ʙᴏᴏᴋ** ❤️\n"
-    "**ᴛʜᴇ ʙᴇꜱᴛ-ɪɴ-ᴄʟᴀꜱꜱ qᴜɪᴢ ʙᴏᴏᴋ ʙʏ ʜɪᴍᴀɴꜱʜᴜ ꜱɪʀ**\n\n"
-    "ꜱʜᴀʀᴘᴇɴ ʏᴏᴜʀ ꜱᴋɪʟʟꜱ ᴡɪᴛʜ ʜɪɢʜ-qᴜᴀʟɪᴛʏ, ᴇxᴀᴍ-ꜰᴏᴄᴜꜱᴇᴅ qᴜɪᴢᴢᴇꜱ ᴅᴇꜱɪɢɴᴇᴅ ᴛᴏ ʜᴇʟᴘ ʏᴏᴜ ʟᴇᴀʀɴ ꜰᴀꜱᴛᴇʀ, ᴘʀᴀᴄᴛɪᴄᴇ ꜱᴍᴀʀᴛᴇʀ, ᴀɴᴅ ꜱᴄᴏʀᴇ ʜɪɢʜᴇʀ.\n\n"
-    "📚 **ᴄᴜʀᴀᴛᴇᴅ qᴜᴇꜱᴛɪᴏɴꜱ** • ⚡ **ɪɴꜱᴛᴀɴᴛ ʀᴇꜱᴜʟᴛꜱ** • 📈 **ᴘᴇʀꜰᴏʀᴍᴀɴᴄᴇ ᴛʀᴀᴄᴋɪɴɢ** • 🏆 **ᴅᴀɪʟʏ ɪᴍᴘʀᴏᴠᴇᴍᴇɴᴛ**\n\n"
-    "**ᴘʀᴀᴄᴛɪᴄᴇ. ʟᴇᴀʀɴ. ᴀᴄʜɪᴇᴠᴇ.**\n\n"
-    "ᴡᴇʟᴄᴏᴍᴇ ᴛᴏ ᴛʜᴇ ʟᴇᴀʀɴ ᴡɪᴛʜ ʜɪᴍ ꜰᴀᴍɪʟʏ. ᴡɪꜱʜɪɴɢ ʏᴏᴜ ꜱᴜᴄᴄᴇꜱꜱ ɪɴ ᴇᴠᴇʀʏ ᴇxᴀᴍ! ❤️"
+    "❤️ **Welcome to Learn with HiM Quiz Book** ❤️\n"
+    "**The Best-in-Class Quiz Book by Himanshu Sir**\n\n"
+    "Sharpen your skills with high-quality, exam-focused quizzes designed to help you learn faster, practice smarter, and score higher.\n\n"
+    "📚 **Curated Questions** • ⚡ **Instant Results** • 📈 **Performance Tracking** • 🏆 **Daily Improvement**\n\n"
+    "**Practice. Learn. Achieve.**\n\n"
+    "Welcome to the Learn with HiM family. Wishing you success in every exam! ❤️"
 )

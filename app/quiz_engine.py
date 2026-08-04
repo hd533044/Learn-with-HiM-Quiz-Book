@@ -25,12 +25,12 @@ QUIZ_SETUP_CACHE = {}
 def get_pause_resume_keyboard():
     return InlineKeyboardMarkup([
         [
-            InlineKeyboardButton("⏸ ᴘᴀᴜꜱᴇ (/pause)", callback_data="cmd_pause_quiz"), 
-            InlineKeyboardButton("▶️ ʀᴇꜱᴜᴍᴇ (/resume)", callback_data="cmd_resume_quiz"),
-            InlineKeyboardButton("🛑 ꜱᴛᴏᴘ (/stop)", callback_data="cmd_stop_quiz")
+            InlineKeyboardButton("⏸ Pause (/pause)", callback_data="cmd_pause_quiz"), 
+            InlineKeyboardButton("▶️ Resume (/resume)", callback_data="cmd_resume_quiz"),
+            InlineKeyboardButton("🛑 Stop (/stop)", callback_data="cmd_stop_quiz")
         ],
         [
-            InlineKeyboardButton("💾 ꜱᴀᴠᴇ qᴜᴇꜱᴛɪᴏɴ", callback_data="cmd_save_question")
+            InlineKeyboardButton("💾 Save Question", callback_data="cmd_save_question")
         ]
     ])
 
@@ -39,7 +39,7 @@ async def check_quiz_maintenance(update: Update) -> bool:
     if int(time.time()) < m_until:
         remaining_sec = m_until - int(time.time())
         mins_left = max(1, (remaining_sec + 59) // 60)
-        msg = f"🛠 **ᴀᴅᴍɪɴ ʜᴀꜱ ᴘᴀᴜꜱᴇᴅ ᴛʜᴇ ꜱᴇʀᴠɪᴄᴇ ᴄᴜʀʀᴇɴᴛʟʏ**\nꜱᴇʀᴠɪᴄᴇ ᴡɪʟʟ ʀᴇꜱᴜᴍᴇ ɪɴ ᴀᴘᴘʀᴏxɪᴍᴀᴛᴇʟʏ `{mins_left} ᴍɪɴꜱ`. ᴘʟᴇᴀꜱᴇ ᴛʀʏ ᴀɢᴀɪɴ ʟᴀᴛᴇʀ!"
+        msg = f"🛠 **ADMIN HAS PAUSED THE SERVICE CURRENTLY**\nService will resume in approximately `{mins_left} mins`. Please try again later!"
         
         if update.callback_query:
             await update.callback_query.answer(f"🛠 Service Paused! Resuming in ~{mins_left} mins.", show_alert=True)
@@ -56,7 +56,7 @@ async def launch_quiz_setup(update: Update, context: ContextTypes.DEFAULT_TYPE):
     profile = await asyncio.to_thread(get_user_profile, user.id)
     
     if not profile or not profile.get("is_verified"):
-        await update.message.reply_text("⚠️ ᴘʟᴇᴀꜱᴇ ᴛʏᴘᴇ /start ᴛᴏ ᴄʀᴇᴀᴛᴇ ʏᴏᴜʀ ᴘʀᴏꜰɪʟᴇ ʙᴇꜰᴏʀᴇ ᴀᴛᴛᴇᴍᴘᴛɪɴɢ qᴜɪᴢᴢᴇꜱ!")
+        await update.message.reply_text("⚠️ Please type /start to create your profile before attempting quizzes!")
         return
 
     attempted_today = await asyncio.to_thread(get_today_attempts, user.id)
@@ -64,15 +64,15 @@ async def launch_quiz_setup(update: Update, context: ContextTypes.DEFAULT_TYPE):
 
     if attempted_today >= allowed_limit:
         exhausted_msg = (
-            f"🛑 **ᴡᴀʀɴɪɴɢ: ᴅᴀɪʟʏ ꜰʀᴇᴇ ʟɪᴍɪᴛ ᴇxʜᴀᴜꜱᴛᴇᴅ!**\n"
+            f"🛑 **WARNING: DAILY FREE LIMIT EXHAUSTED!**\n"
             f"━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\n"
-            f"• **ᴛᴏᴅᴀʏ'ꜱ ᴜꜱᴀɢᴇ:** `{attempted_today}` / `{allowed_limit}` qᴜᴇꜱᴛɪᴏɴꜱ\n"
-            f"• **ꜱᴛᴀᴛᴜꜱ:** ʏᴏᴜ ʜᴀᴠᴇ ꜰᴜʟʟʏ ᴇxʜᴀᴜꜱᴛᴇᴅ ʏᴏᴜʀ ꜰʀᴇᴇ ᴅᴀɪʟʏ ʟɪᴍɪᴛ ꜰᴏʀ ᴛᴏᴅᴀʏ (00:00 ᴛᴏ 23:59).\n\n"
-            f"⚠️ **ɴᴏᴛɪᴄᴇ:** ᴛʜᴇ `/quiz` ᴄᴏᴍᴍᴀɴᴅ ɪꜱ ɴᴏᴡ **ᴅᴇᴀᴄᴛɪᴠᴀᴛᴇᴅ** ꜰᴏʀ ʏᴏᴜʀ ᴀᴄᴄᴏᴜɴᴛ ᴜɴᴛɪʟ ᴛᴏᴍᴏʀʀᴏᴡ ᴏʀ ᴜɴᴛɪʟ ʏᴏᴜ ᴜɴʟᴏᴄᴋ ᴇxᴛʀᴀ qᴜᴏᴛᴀ ᴠɪᴀ ʀᴇꜰᴇʀʀᴀʟꜱ!\n\n"
-            f"💡 **ᴜɴʟᴏᴄᴋ +10 qᴜᴇꜱᴛɪᴏɴꜱ:** ꜱʜᴀʀᴇ ʏᴏᴜʀ ɪɴᴠɪᴛᴇ ʟɪɴᴋ ᴡɪᴛʜ 4 ꜰʀɪᴇɴᴅꜱ ᴜꜱɪɴɢ `/invite`."
+            f"• **Today's Usage:** `{attempted_today}` / `{allowed_limit}` Questions\n"
+            f"• **Status:** You have fully exhausted your free daily limit for today (00:00 to 23:59).\n\n"
+            f"⚠️ **Notice:** The `/quiz` command is now **deactivated** for your account until tomorrow or until you unlock extra quota via referrals!\n\n"
+            f"💡 **Unlock +10 Questions:** Share your invite link with 4 friends using `/invite`."
         )
         keyboard = InlineKeyboardMarkup([[
-            InlineKeyboardButton("🤝 ɪɴᴠɪᴛᴇ ꜰʀɪᴇɴᴅꜱ (+10 ʟɪᴍɪᴛ)", callback_data="cmd_referral")
+            InlineKeyboardButton("🤝 Invite Friends (+10 Limit)", callback_data="cmd_referral")
         ]])
         if update.callback_query:
             await update.callback_query.answer("🛑 Daily Limit Exhausted! /quiz is deactivated.", show_alert=True)
@@ -85,16 +85,16 @@ async def launch_quiz_setup(update: Update, context: ContextTypes.DEFAULT_TYPE):
     if paused:
         remaining_count = len(paused.get('questions', [])) - paused.get('current_index', 0)
         text = (
-            f"⏸ **ʏᴏᴜ ʜᴀᴠᴇ ᴀ ᴘᴀᴜꜱᴇᴅ qᴜɪᴢ ꜱᴇꜱꜱɪᴏɴ!**\n"
+            f"⏸ **YOU HAVE A PAUSED QUIZ SESSION!**\n"
             f"━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\n"
-            f"• **ʀᴇꜱᴜᴍᴇ ᴘᴏɪɴᴛ:** qᴜᴇꜱᴛɪᴏɴ `{paused.get('current_index', 0) + 1}` / `{paused.get('total', 0)}`\n"
-            f"• **ʀᴇᴍᴀɪɴɪɴɢ qᴜᴇꜱᴛɪᴏɴꜱ:** `{remaining_count}` qꜱ\n"
-            f"• **ᴄᴜʀʀᴇɴᴛ ꜱᴄᴏʀᴇ:** `{paused.get('score', 0.0)}` / `{paused.get('total', 0)}`\n\n"
-            f"ᴛᴀᴘ **ʀᴇꜱᴜᴍᴇ** ʙᴇʟᴏᴡ ᴛᴏ ᴄᴏɴᴛɪɴᴜᴇ ᴡʜᴇʀᴇ ʏᴏᴜ ʟᴇꜰᴛ ᴏꜰꜰ, ᴏʀ ꜱᴛᴀʀᴛ ꜰʀᴇꜱʜ:"
+            f"• **Resume Point:** Question `{paused.get('current_index', 0) + 1}` / `{paused.get('total', 0)}`\n"
+            f"• **Remaining Questions:** `{remaining_count}` Qs\n"
+            f"• **Current Score:** `{paused.get('score', 0.0)}` / `{paused.get('total', 0)}`\n\n"
+            f"Tap **Resume** below to continue where you left off, or start fresh:"
         )
         keyboard = InlineKeyboardMarkup([
-            [InlineKeyboardButton("▶️ ʀᴇꜱᴜᴍᴇ ᴘᴀᴜꜱᴇᴅ qᴜɪᴢ (/resume)", callback_data="cmd_resume_quiz")],
-            [InlineKeyboardButton("🔄 ꜱᴛᴀʀᴛ ɴᴇᴡ qᴜɪᴢ", callback_data="cmd_start_fresh_quiz")]
+            [InlineKeyboardButton("▶️ Resume Paused Quiz (/resume)", callback_data="cmd_resume_quiz")],
+            [InlineKeyboardButton("🔄 Start New Quiz", callback_data="cmd_start_fresh_quiz")]
         ])
         if update.callback_query:
             await update.callback_query.edit_message_text(text, reply_markup=keyboard, parse_mode="Markdown")
@@ -108,15 +108,15 @@ async def launch_quiz_setup(update: Update, context: ContextTypes.DEFAULT_TYPE):
     if not valid_counts:
         valid_counts = [max(1, remaining_quota)]
 
-    buttons = [InlineKeyboardButton(f"📝 {c} qꜱ", callback_data=f"qcount_{c}") for c in valid_counts]
+    buttons = [InlineKeyboardButton(f"📝 {c} Qs", callback_data=f"qcount_{c}") for c in valid_counts]
     keyboard = [buttons[:3], buttons[3:]]
 
     msg_text = (
-        f"📚 **ʟᴇᴀʀɴ ᴡɪᴛʜ ʜɪᴍ qᴜɪᴢ ꜱᴇᴛᴜᴘ (ꜱᴛᴇᴘ 1/2)**\n"
+        f"📚 **Learn with HiM Quiz Setup (Step 1/2)**\n"
         f"━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\n"
-        f"• **ᴅᴀɪʟʏ qᴜᴏᴛᴀ ᴜꜱᴇᴅ ᴛᴏᴅᴀʏ:** `{attempted_today}` / `{allowed_limit}` qꜱ\n"
-        f"• **ʀᴇᴍᴀɪɴɪɴɢ qᴜᴏᴛᴀ:** `{remaining_quota}` qꜱ ᴀᴠᴀɪʟᴀʙʟᴇ\n\n"
-        f"ꜱᴇʟᴇᴄᴛ ᴛʜᴇ ɴᴜᴍʙᴇʀ ᴏꜰ qᴜᴇꜱᴛɪᴏɴꜱ ꜰᴏʀ ᴛʜɪꜱ ꜱᴇꜱꜱɪᴏɴ:"
+        f"• **Daily Quota Used Today:** `{attempted_today}` / `{allowed_limit}` Qs\n"
+        f"• **Remaining Quota:** `{remaining_quota}` Qs available\n\n"
+        f"Select the number of questions for this session:"
     )
 
     if update.callback_query:
@@ -138,8 +138,8 @@ async def quiz_count_callback(update: Update, context: ContextTypes.DEFAULT_TYPE
     if attempted_today >= allowed_limit:
         await query.answer("🛑 Daily Limit Exhausted! Quiz is locked.", show_alert=True)
         await query.edit_message_text(
-            f"🛑 **ᴡᴀʀɴɪɴɢ: ᴅᴀɪʟʏ ꜰʀᴇᴇ ʟɪᴍɪᴛ ᴇxʜᴀᴜꜱᴛᴇᴅ!**\n\n"
-            f"ʏᴏᴜ ʜᴀᴠᴇ ʀᴇᴀᴄʜᴇᴅ ʏᴏᴜʀ ᴀᴄᴛᴜᴀʟ ᴅᴀɪʟʏ ʟɪᴍɪᴛ ᴏꜰ `{allowed_limit}` qᴜᴇꜱᴛɪᴏɴꜱ ꜰᴏʀ ᴛᴏᴅᴀʏ (00:00 ᴛᴏ 23:59). ᴛʜᴇ `/quiz` ᴄᴏᴍᴍᴀɴᴅ ɪꜱ ᴅᴇᴀᴄᴛɪᴠᴀᴛᴇᴅ.",
+            f"🛑 **WARNING: DAILY FREE LIMIT EXHAUSTED!**\n\n"
+            f"You have reached your actual daily limit of `{allowed_limit}` questions for today (00:00 to 23:59). The `/quiz` command is deactivated.",
             parse_mode="Markdown"
         )
         return
@@ -154,14 +154,14 @@ async def quiz_count_callback(update: Update, context: ContextTypes.DEFAULT_TYPE
     QUIZ_SETUP_CACHE[user_id] = {"count": count}
 
     timers = [12, 15, 18, 20, 25, 30]
-    buttons = [InlineKeyboardButton(f"⏱ {t}ꜱ", callback_data=f"qtimer_{t}") for t in timers]
+    buttons = [InlineKeyboardButton(f"⏱ {t}s", callback_data=f"qtimer_{t}") for t in timers]
     keyboard = [buttons[:3], buttons[3:]]
 
     await query.edit_message_text(
-        f"⏱ **ʟᴇᴀʀɴ ᴡɪᴛʜ ʜɪᴍ qᴜɪᴢ ꜱᴇᴛᴜᴘ (ꜱᴛᴇᴘ 2/2)**\n"
+        f"⏱ **Learn with HiM Quiz Setup (Step 2/2)**\n"
         f"━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\n"
-        f"ꜱᴇʟᴇᴄᴛᴇᴅ: `{count} qᴜᴇꜱᴛɪᴏɴꜱ` (ʀᴇᴍᴀɪɴɪɴɢ qᴜᴏᴛᴀ: `{remaining_quota}`)\n\n"
-        f"ᴄʜᴏᴏꜱᴇ ᴛɪᴍᴇʀ ᴅᴜʀᴀᴛɪᴏɴ ᴘᴇʀ qᴜᴇꜱᴛɪᴏɴ:",
+        f"Selected: `{count} Questions` (Remaining Quota: `{remaining_quota}`)\n\n"
+        f"Choose timer duration per question:",
         reply_markup=InlineKeyboardMarkup(keyboard),
         parse_mode="Markdown"
     )
@@ -181,7 +181,7 @@ async def quiz_timer_callback(update: Update, context: ContextTypes.DEFAULT_TYPE
     if attempted_today >= allowed_limit:
         await query.answer("🛑 Daily Limit Exhausted! Quiz is locked.", show_alert=True)
         await query.edit_message_text(
-            f"🛑 **ᴡᴀʀɴɪɴɢ: ᴅᴀɪʟʏ ꜰʀᴇᴇ ʟɪᴍɪᴛ ᴇxʜᴀᴜꜱᴛᴇᴅ!**\n\nʏᴏᴜ ʜᴀᴠᴇ ʀᴇᴀᴄʜᴇᴅ ʏᴏᴜʀ ᴀᴄᴛᴜᴀʟ ᴅᴀɪʟʏ ʟɪᴍɪᴛ ᴏꜰ `{allowed_limit}` qᴜᴇꜱᴛɪᴏɴꜱ ꜰᴏʀ ᴛᴏᴅᴀʏ (00:00 ᴛᴏ 23:59). ʏᴏᴜʀ qᴜɪᴢ ʜᴀꜱ ʙᴇᴇɴ ᴄᴀɴᴄᴇʟʟᴇᴅ.",
+            f"🛑 **WARNING: DAILY FREE LIMIT EXHAUSTED!**\n\nYou have reached your actual daily limit of `{allowed_limit}` questions for today (00:00 to 23:59). Your quiz has been cancelled.",
             parse_mode="Markdown"
         )
         return
@@ -223,11 +223,11 @@ async def quiz_timer_callback(update: Update, context: ContextTypes.DEFAULT_TYPE
     ACTIVE_SESSIONS[user_id] = session
 
     await query.edit_message_text(
-        f"🚀 **qᴜɪᴢ ꜱᴇꜱꜱɪᴏɴ ꜱᴛᴀʀᴛᴇᴅ!**\n"
+        f"🚀 **Quiz Session Started!**\n"
         f"━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\n"
-        f"🎯 **qᴜᴇꜱᴛɪᴏɴꜱ:** `{len(questions)}` | ⏱ **ᴛɪᴍᴇʀ:** `{timer_sec}ꜱ/qᴜᴇꜱᴛɪᴏɴ`\n"
-        f"📅 **ᴀᴛᴛᴇᴍᴘᴛ ᴅᴀᴛᴇ:** `{session['start_time']}`\n\n"
-        f"ʟᴏᴀᴅɪɴɢ qᴜᴇꜱᴛɪᴏɴ 1/{len(questions)}...",
+        f"🎯 **Questions:** `{len(questions)}` | ⏱ **Timer:** `{timer_sec}s/question`\n"
+        f"📅 **Attempt Date:** `{session['start_time']}`\n\n"
+        f"Loading Question 1/{len(questions)}...",
         parse_mode="Markdown"
     )
     await send_next_question(query.message.chat_id, user_id, context)
@@ -262,7 +262,7 @@ async def pause_quiz_command(update: Update, context: ContextTypes.DEFAULT_TYPE)
 
     session = ACTIVE_SESSIONS.get(user_id)
     if not session or session.get("is_paused"):
-        msg = "ℹ️ ʏᴏᴜ ᴅᴏ ɴᴏᴛ ʜᴀᴠᴇ ᴀɴ ᴀᴄᴛɪᴠᴇ ʀᴜɴɴɪɴɢ qᴜɪᴢ ᴛᴏ ᴘᴀᴜꜱᴇ."
+        msg = "ℹ️ You do not have an active running quiz to pause."
         if update.callback_query:
             await update.callback_query.answer(msg, show_alert=True)
         else:
@@ -291,15 +291,15 @@ async def pause_quiz_command(update: Update, context: ContextTypes.DEFAULT_TYPE)
 
     remaining_qs = session["total"] - session["current_index"]
     msg = (
-        f"⏸ **qᴜɪᴢ ᴘᴀᴜꜱᴇᴅ & ꜱᴀᴠᴇᴅ**\n"
+        f"⏸ **QUIZ PAUSED & SAVED**\n"
         f"━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\n"
-        f"• **ᴘᴀᴜꜱᴇᴅ ᴀᴛ qᴜᴇꜱᴛɪᴏɴ:** `{session['current_index'] + 1}` / `{session['total']}`\n"
-        f"• **ʀᴇᴍᴀɪɴɪɴɢ qᴜᴇꜱᴛɪᴏɴꜱ:** `{remaining_qs}` qꜱ\n"
-        f"• **ᴄᴜʀʀᴇɴᴛ ꜱᴄᴏʀᴇ:** `{session['score']}` / `{session['total']}`\n\n"
-        f"ᴛʏᴘᴇ `/resume` ᴏʀ ᴛᴀᴘ ʙᴇʟᴏᴡ ᴡʜᴇɴᴇᴠᴇʀ ʏᴏᴜ ᴡɪꜱʜ ᴛᴏ ᴄᴏɴᴛɪɴᴜᴇ!"
+        f"• **Paused At Question:** `{session['current_index'] + 1}` / `{session['total']}`\n"
+        f"• **Remaining Questions:** `{remaining_qs}` Qs\n"
+        f"• **Current Score:** `{session['score']}` / `{session['total']}`\n\n"
+        f"Type `/resume` or tap below whenever you wish to continue!"
     )
     keyboard = InlineKeyboardMarkup([
-        [InlineKeyboardButton("▶️ ʀᴇꜱᴜᴍᴇ qᴜɪᴢ ɴᴏᴡ (/resume)", callback_data="cmd_resume_quiz")]
+        [InlineKeyboardButton("▶️ Resume Quiz Now (/resume)", callback_data="cmd_resume_quiz")]
     ])
 
     if update.callback_query:
@@ -315,7 +315,7 @@ async def resume_quiz_command(update: Update, context: ContextTypes.DEFAULT_TYPE
 
     paused = get_paused_quiz_state(user_id)
     if not paused:
-        msg = "ℹ️ ɴᴏ ᴘᴀᴜꜱᴇᴅ qᴜɪᴢ ꜰᴏᴜɴᴅ. ᴛʏᴘᴇ /quiz ᴛᴏ ꜱᴛᴀʀᴛ ᴀ ɴᴇᴡ ꜱᴇꜱꜱɪᴏɴ!"
+        msg = "ℹ️ No paused quiz found. Type /quiz to start a new session!"
         if update.callback_query:
             await update.callback_query.answer(msg, show_alert=True)
         else:
@@ -345,7 +345,7 @@ async def resume_quiz_command(update: Update, context: ContextTypes.DEFAULT_TYPE
 
     countdown_msg = await context.bot.send_message(
         chat_id=chat_id, 
-        text=f"▶️ **ʀᴇꜱᴜᴍɪɴɢ qᴜɪᴢ...**\n━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\n⏳ **3...** ɢᴇᴛ ʀᴇᴀᴅʏ ꜰᴏʀ qᴜᴇꜱᴛɪᴏɴ `{session['current_index'] + 1}/{session['total']}`!",
+        text=f"▶️ **RESUMING QUIZ...**\n━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\n⏳ **3...** Get ready for Question `{session['current_index'] + 1}/{session['total']}`!",
         parse_mode="Markdown"
     )
     await asyncio.sleep(1)
@@ -353,14 +353,14 @@ async def resume_quiz_command(update: Update, context: ContextTypes.DEFAULT_TYPE
     try:
         await context.bot.edit_message_text(
             chat_id=chat_id, message_id=countdown_msg.message_id,
-            text=f"▶️ **ʀᴇꜱᴜᴍɪɴɢ qᴜɪᴢ...**\n━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\n⏳ **2...** ɢᴇᴛ ʀᴇᴀᴅʏ ꜰᴏʀ qᴜᴇꜱᴛɪᴏɴ `{session['current_index'] + 1}/{session['total']}`!",
+            text=f"▶️ **RESUMING QUIZ...**\n━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\n⏳ **2...** Get ready for Question `{session['current_index'] + 1}/{session['total']}`!",
             parse_mode="Markdown"
         )
         await asyncio.sleep(1)
 
         await context.bot.edit_message_text(
             chat_id=chat_id, message_id=countdown_msg.message_id,
-            text=f"▶️ **ʀᴇꜱᴜᴍɪɴɢ qᴜɪᴢ...**\n━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\n⚡ **1...** ʟᴀᴜɴᴄʜɪɴɢ ᴘᴏʟʟ ɴᴏᴡ!",
+            text=f"▶️ **RESUMING QUIZ...**\n━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\n⚡ **1...** Launching Poll now!",
             parse_mode="Markdown"
         )
         await asyncio.sleep(1)
@@ -378,7 +378,7 @@ async def stop_quiz_command(update: Update, context: ContextTypes.DEFAULT_TYPE):
     paused = get_paused_quiz_state(user_id)
     
     if not session and not paused:
-        msg = "ℹ️ ʏᴏᴜ ᴅᴏ ɴᴏᴛ ʜᴀᴠᴇ ᴀɴ ᴀᴄᴛɪᴠᴇ ᴏʀ ᴘᴀᴜꜱᴇᴅ qᴜɪᴢ ꜱᴇꜱꜱɪᴏɴ ᴛᴏ ꜱᴛᴏᴘ."
+        msg = "ℹ️ You do not have an active or paused quiz session to stop."
         if update.callback_query:
             await update.callback_query.answer(msg, show_alert=True)
         else:
@@ -413,11 +413,11 @@ async def stop_quiz_command(update: Update, context: ContextTypes.DEFAULT_TYPE):
             )
 
     msg = (
-        f"🛑 **qᴜɪᴢ ꜱᴛᴏᴘᴘᴇᴅ ᴄᴏᴍᴘʟᴇᴛᴇʟʏ**\n"
+        f"🛑 **QUIZ STOPPED COMPLETELY**\n"
         f"━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\n"
-        f"• **ʏᴏᴜʀ qᴜɪᴢ ꜱᴇꜱꜱɪᴏɴ ʜᴀꜱ ʙᴇᴇɴ ᴛᴇʀᴍɪɴᴀᴛᴇᴅ.**\n"
-        f"• **ʀᴇᴍᴀɪɴɪɴɢ ᴜɴᴀᴛᴛᴇᴍᴘᴛᴇᴅ ʟɪᴍɪᴛ ʜᴀꜱ ʙᴇᴇɴ ʀᴇꜱᴛᴏʀᴇᴅ ᴛᴏ ʏᴏᴜʀ ᴅᴀɪʟʏ qᴜᴏᴛᴀ.**\n\n"
-        f"ᴛʏᴘᴇ `/quiz` ᴡʜᴇɴᴇᴠᴇʀ ʏᴏᴜ ᴀʀᴇ ʀᴇᴀᴅʏ ᴛᴏ ꜱᴛᴀʀᴛ ᴀɢᴀɪɴ!"
+        f"• Your quiz session has been terminated.\n"
+        f"• Remaining unattempted limit has been restored to your daily quota.\n\n"
+        f"Type `/quiz` whenever you are ready to start again!"
     )
 
     if update.callback_query:
@@ -429,7 +429,7 @@ async def stop_quiz_command(update: Update, context: ContextTypes.DEFAULT_TYPE):
 async def send_next_question(chat_id: int, user_id: int, context: ContextTypes.DEFAULT_TYPE):
     m_until = get_maintenance_until()
     if int(time.time()) < m_until:
-        await context.bot.send_message(chat_id=chat_id, text="🛠 **ᴀᴅᴍɪɴ ʜᴀꜱ ᴘᴀᴜꜱᴇᴅ ᴛʜᴇ ꜱᴇʀᴠɪᴄᴇ ᴄᴜʀʀᴇɴᴛʟʏ**\nqᴜɪᴢ ꜱᴇꜱꜱɪᴏɴ ᴘᴀᴜꜱᴇᴅ!")
+        await context.bot.send_message(chat_id=chat_id, text="🛠 **ADMIN HAS PAUSED THE SERVICE CURRENTLY**\nQuiz session paused!")
         return
 
     session = ACTIVE_SESSIONS.get(user_id)
@@ -444,12 +444,12 @@ async def send_next_question(chat_id: int, user_id: int, context: ContextTypes.D
     session["current_question"] = q
     timer_sec = session["timer_sec"]
 
-    header_text = f"🖥 [q {session['current_index']+1}/{session['total']}]\n\n{q['question']}"
+    header_text = f"🖥 [Q {session['current_index']+1}/{session['total']}]\n\n{q['question']}"
     if len(header_text) > 300:
         header_text = header_text[:297] + "..."
 
     clean_opts = [str(opt)[:97] for opt in q["options"]]
-    expl_text = q.get("explanation") or "ʟᴇᴀʀɴ ᴡɪᴛʜ ʜɪᴍ qᴜɪᴢ ʙᴏᴏᴋ ʙʏ ʜɪᴍᴀɴꜱʜᴜ ꜱɪʀ"
+    expl_text = q.get("explanation") or "Learn with HiM Quiz Book by Himanshu Sir"
     if len(expl_text) > 200:
         expl_text = expl_text[:197] + "..."
 
@@ -479,7 +479,7 @@ async def send_next_question(chat_id: int, user_id: int, context: ContextTypes.D
 
         await context.bot.send_message(
             chat_id=chat_id,
-            text="qᴜɪᴢ ᴄᴏɴᴛʀᴏʟꜱ:",
+            text="Quiz Controls:",
             reply_markup=get_pause_resume_keyboard()
         )
 
@@ -502,7 +502,7 @@ async def auto_skip_task(chat_id: int, user_id: int, poll_id: str, expected_idx:
             q = data.get("q_data", {})
             opts = q.get("options", [])
             c_idx = data.get("correct_id", 0)
-            c_ans_text = opts[c_idx] if 0 <= c_idx < len(opts) else "ɴ/ᴀ"
+            c_ans_text = opts[c_idx] if 0 <= c_idx < len(opts) else "N/A"
 
             session.setdefault("detailed_logs", []).append({
                 "question_id": q.get("id"),
@@ -533,7 +533,7 @@ async def handle_poll_answer(update: Update, context: ContextTypes.DEFAULT_TYPE)
 
     m_until = get_maintenance_until()
     if int(time.time()) < m_until:
-        await context.bot.send_message(chat_id=chat_id, text="🛠 **ᴀᴅᴍɪɴ ʜᴀꜱ ᴘᴀᴜꜱᴇᴅ ᴛʜᴇ ꜱᴇʀᴠɪᴄᴇ ᴄᴜʀʀᴇɴᴛʟʏ**")
+        await context.bot.send_message(chat_id=chat_id, text="🛠 **ADMIN HAS PAUSED THE SERVICE CURRENTLY**")
         return
 
     session = ACTIVE_SESSIONS.get(user_id)
@@ -543,7 +543,7 @@ async def handle_poll_answer(update: Update, context: ContextTypes.DEFAULT_TYPE)
         q = data.get("q_data", {})
         opts = q.get("options", [])
 
-        c_ans_text = opts[correct_id] if 0 <= correct_id < len(opts) else "ɴ/ᴀ"
+        c_ans_text = opts[correct_id] if 0 <= correct_id < len(opts) else "N/A"
 
         is_correct = (selected == correct_id)
         if is_correct:
@@ -594,27 +594,28 @@ async def finish_quiz_and_send_report(chat_id: int, user_id: int, context: Conte
     rank_str = calculate_user_rank(user_id)
 
     report_card = (
-        f"🏆 **ᴏꜰꜰɪᴄɪᴀʟ qᴜɪᴢ ʀᴇᴘᴏʀᴛ ᴄᴀʀᴅ**\n"
-        f"📚 *ʟᴇᴀʀɴ ᴡɪᴛʜ ʜɪᴍ qᴜɪᴢ ʙᴏᴏᴋ ʙʏ ʜɪᴍᴀɴꜱʜᴜ ꜱɪʀ*\n"
+        f"🏆 **OFFICIAL QUIZ REPORT CARD**\n"
+        f"📚 *Learn with HiM Quiz Book by Himanshu Sir*\n"
         f"━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\n"
-        f"📅 **ᴀᴛᴛᴇᴍᴘᴛᴇᴅ ᴀᴛ:** `{session['start_time']}`\n\n"
-        f"📊 **ᴘᴇʀꜰᴏʀᴍᴀɴᴄᴇ ʙʀᴇᴀᴋᴅᴏᴡɴ:**\n"
-        f"• **ᴛᴏᴛᴀʟ qᴜᴇꜱᴛɪᴏɴꜱ:** `{total}`\n"
-        f"• **ᴄᴏʀʀᴇᴄᴛ ᴀɴꜱᴡᴇʀꜱ:** `{correct}` ✅\n"
-        f"• **ᴡʀᴏɴɢ ᴀɴꜱᴡᴇʀꜱ:** `{wrong}` ❌\n"
-        f"• **ꜱᴋɪᴘᴘᴇᴅ qᴜᴇꜱᴛɪᴏɴꜱ:** `{skipped}` ⏭\n"
-        f"• **ꜰɪɴᴀʟ ꜱᴄᴏʀᴇ:** `{score} / {total}`\n\n"
-        f"🎖 **ᴏᴠᴇʀᴀʟʟ ʀᴀɴᴋ & ᴘᴇʀᴄᴇɴᴛɪʟᴇ:**\n"
-        f"• **ɢʟᴏʙᴀʟ ʀᴀɴᴋ:** `{rank_str}`\n"
-        f"• **ᴘᴇʀᴄᴇɴᴛɪʟᴇ ʀᴀᴛɪɴɢ:** `{percentile}%`\n"
+        f"📅 **Attempted At:** `{session['start_time']}`\n\n"
+        f"📊 **Performance Breakdown:**\n"
+        f"• **Total Questions:** `{total}`\n"
+        f"• **Correct Answers:** `{correct}` ✅\n"
+        f"• **Wrong Answers:** `{wrong}` ❌\n"
+        f"• **Skipped Questions:** `{skipped}` ⏭\n"
+        f"• **Final Score:** `{score} / {total}`\n\n"
+        f"🎖 **Overall Rank & Percentile:**\n"
+        f"• **Global Rank:** `{rank_str}`\n"
+        f"• **Percentile Rating:** `{percentile}%`\n"
         f"━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━"
     )
 
+    # Updated Telegram button with @Learnwithhim link
     buttons = [
-        [InlineKeyboardButton("📖 ʀᴇᴠɪᴇᴡ ꜱᴀᴠᴇᴅ qᴜᴇꜱᴛɪᴏɴꜱ", callback_data="cmd_savedquestions")],
-        [InlineKeyboardButton("📢 ᴊᴏɪɴ ᴛᴇʟᴇɢʀᴀᴍ ᴄʜᴀɴɴᴇʟ", url="https://t.me/Learnwithhim")],
-        [InlineKeyboardButton("📺 ᴊᴏɪɴ ʏᴏᴜᴛᴜʙᴇ ᴄʜᴀɴɴᴇʟ", url=YOUTUBE_CHANNEL_URL)],
-        [InlineKeyboardButton("🚀 ᴀᴛᴛᴇᴍᴘᴛ ᴀɴᴏᴛʜᴇʀ qᴜɪᴢ", callback_data="cmd_quiz")]
+        [InlineKeyboardButton("📖 Review Saved Questions", callback_data="cmd_savedquestions")],
+        [InlineKeyboardButton("📢 Join Telegram Channel", url="https://t.me/Learnwithhim")],
+        [InlineKeyboardButton("📺 Join YouTube Channel", url=YOUTUBE_CHANNEL_URL)],
+        [InlineKeyboardButton("🚀 Attempt Another Quiz", callback_data="cmd_quiz")]
     ]
 
     await context.bot.send_message(chat_id=chat_id, text=report_card, reply_markup=InlineKeyboardMarkup(buttons), parse_mode="Markdown")

@@ -46,7 +46,6 @@ def generate_razorpay_link(user_id: int, plan_key: str):
         logging.error(f"[PAYMENT ERROR] Invalid Plan Key requested: {plan_key}")
         return None
 
-    # Free Demo Trial (₹0) handling
     if plan["price"] == 0:
         return f"https://t.me/{os.getenv('BOT_USERNAME', 'LearnwithHiMBot')}?start=activate_demo_{plan_key}"
 
@@ -62,12 +61,10 @@ def generate_razorpay_link(user_id: int, plan_key: str):
         client = razorpay.Client(auth=(RAZORPAY_KEY_ID, RAZORPAY_KEY_SECRET))
         amount_in_paise = int(plan["price"] * 100)
         
-        # Fetch user profile data to satisfy Razorpay customer requirements
         profile = get_user_profile(user_id)
         raw_name = profile.get("full_name", "Student Scholar") if profile else "Student Scholar"
         raw_phone = str(profile.get("phone_number", "9999999999")) if profile else "9999999999"
         
-        # Format phone number for Razorpay requirements (must be 10 digits or include +91)
         clean_phone = "".join(filter(str.isdigit, raw_phone))
         if len(clean_phone) >= 10:
             clean_phone = clean_phone[-10:]
@@ -92,15 +89,8 @@ def generate_razorpay_link(user_id: int, plan_key: str):
             "callback_method": "get"
         }
 
-        logging.info(f"[RAZORPAY API] Attempting payment link creation for User ID {user_id}, Plan {plan_key}, Amount {amount_in_paise} paise")
         response = client.payment_link.create(payload)
-        short_url = response.get("short_url")
-        
-        if not short_url:
-            logging.error(f"[PAYMENT ERROR] Razorpay response missing short_url: {response}")
-            return None
-            
-        return short_url
+        return response.get("short_url")
     except Exception as e:
         logging.error(f"[PAYMENT CRITICAL EXCEPTION] Failed to generate Razorpay link for User {user_id}: {str(e)}")
         return None

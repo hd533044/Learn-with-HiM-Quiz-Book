@@ -11,7 +11,10 @@ from telegram.ext import (
     Application, CommandHandler, CallbackQueryHandler, PollAnswerHandler, 
     MessageHandler, filters, ContextTypes
 )
-from app.config import BOT_TOKEN, PRIMARY_ADMIN_ID, DAILY_QUESTION_LIMIT, PLAN_TIERS
+from app.config import (
+    BOT_TOKEN, PRIMARY_ADMIN_ID, DAILY_QUESTION_LIMIT, PLAN_TIERS,
+    RAZORPAY_KEY_ID, RAZORPAY_KEY_SECRET, RENDER_EXTERNAL_URL
+)
 from app.database import (
     init_db, get_maintenance_until, get_user_profile, 
     get_all_users, get_today_attempts, save_student_feedback, get_all_student_feedbacks,
@@ -28,7 +31,46 @@ from app.admin import admin_portal_command, admin_callback_handler
 from app.pdf_generator import generate_student_pdf_report
 from app.pyq_fetcher import fetch_pyqs_for_quiz
 
+try:
+    import razorpay
+    HAS_RAZORPAY = True
+except ImportError:
+    HAS_RAZORPAY = False
+
 NEGATIVE_WORDS = ["bad", "worst", "useless", "trash", "fake", "hate", "terrible", "waste", "horrible", "fraud", "stupid", "scam"]
+
+def generate_razorpay_link(user_id: int, plan_key: str):
+    """Generates a Razorpay payment link directly inside telegram_bot module."""
+    if not HAS_RAZORPAY:
+        logging.error("Razorpay module is not installed.")
+        return None
+
+    if not RAZORPAY_KEY_ID or not RAZORPAY_KEY_SECRET:
+        logging.error("Razorpay Key ID or Secret is missing in environment.")
+        return None
+
+    plan = PLAN_TIERS.get(plan_key)
+    if not plan:
+        return None
+
+    try:
+        client = razorpay.Client(auth=(RAZORPAY_KEY_ID, RAZORPAY_KEY_SECRET))
+        response = client.payment_link.create({
+            "amount": plan["price"] * 100,
+            "currency": "INR",
+            "accept_partial": False,
+            "description": f"Learn with HiM Subscription - {plan['name']}",
+            "notes": {
+                "user_id": str(user_id),
+                "plan_key": plan_key
+            },
+            "callback_url": RENDER_EXTERNAL_URL,
+            "callback_method": "get"
+        })
+        return response.get("short_url")
+    except Exception as e:
+        logging.error(f"Error creating Razorpay payment link: {e}")
+        return None
 
 async def send_registration_prompt(update: Update):
     msg = (
@@ -143,7 +185,6 @@ async def send_response(update: Update, text: str, reply_markup=None):
         await update.message.reply_text(text, reply_markup=markup, parse_mode="Markdown")
 
 async def plans_command(update: Update, context: ContextTypes.DEFAULT_TYPE):
-    """Displays exact tier payment plans matrix."""
     if not await maintenance_guard(update, context): return
     if not await check_user_registration(update): return
 
@@ -180,12 +221,8 @@ async def plans_command(update: Update, context: ContextTypes.DEFAULT_TYPE):
     await send_response(update, msg, reply_markup=InlineKeyboardMarkup(keyboard))
 
 async def handle_buy_plan_callback(update: Update, context: ContextTypes.DEFAULT_TYPE):
-    """Generates instant Razorpay payment link when user clicks a plan button."""
     query = update.callback_query
     await query.answer()
-
-    # Import dynamically from main.py to avoid circular dependencies
-    from main import create_razorpay_payment_link
 
     user_id = query.from_user.id
     plan_key = query.data.replace("buy_plan_", "")
@@ -195,7 +232,7 @@ async def handle_buy_plan_callback(update: Update, context: ContextTypes.DEFAULT
         await query.message.reply_text("⚠️ Invalid plan selected.")
         return
 
-    payment_url = create_razorpay_payment_link(user_id, plan_key)
+    payment_url = generate_razorpay_link(user_id, plan_key)
 
     if payment_url:
         keyboard = [
@@ -208,7 +245,7 @@ async def handle_buy_plan_callback(update: Update, context: ContextTypes.DEFAULT
             f"💰 **Amount Payable:** ₹{plan_info['price']}\n"
             f"📅 **Validity:** {plan_info['days']} Days\n"
             f"⚡ **Daily Limit:** {plan_info['daily_limit']} Questions/Day\n\n"
-            f"Tap the **💳 Pay Now** button below to complete secure payment via UPI, GPay, PhonePe, or Cards. "
+            f"Tap the **💳 Pay Now** button below to complete payment via UPI, GPay, PhonePe, or Cards. "
             f"Your VIP quota activates automatically upon payment!"
         )
         await query.edit_message_text(msg, reply_markup=InlineKeyboardMarkup(keyboard), parse_mode="Markdown")

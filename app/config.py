@@ -29,9 +29,11 @@ ADMIN_IDS = [1091057353, 2070531704]
 # ---------------------------------------------------------
 # Razorpay Credentials Configuration
 # ---------------------------------------------------------
-RAZORPAY_KEY_ID = os.getenv("RAZORPAY_KEY_ID", "rzp_test_TMB1bZp7hh2k2R")
-RAZORPAY_KEY_SECRET = os.getenv("RAZORPAY_KEY_SECRET", "MPgns1qhndStgrXNwWEGfkjq")
-RAZORPAY_WEBHOOK_SECRET = os.getenv("RAZORPAY_WEBHOOK_SECRET", "learnwithhim_secret_123")
+RAZORPAY_KEY_ID = os.getenv("RAZORPAY_KEY_ID", "rzp_test_TMB1bZp7hh2k2R").strip()
+RAZORPAY_KEY_SECRET = os.getenv("RAZORPAY_KEY_SECRET", "MPgns1qhndStgrXNwWEGfkjq").strip()
+RAZORPAY_WEBHOOK_SECRET = os.getenv("RAZORPAY_WEBHOOK_SECRET", "learnwithhim_secret_123").strip()
+
+RENDER_EXTERNAL_URL = os.getenv("RENDER_EXTERNAL_URL", "https://learnwithhimquiz.onrender.com").strip()
 
 # Exact Subscription Plan Matrix
 PLAN_TIERS = {
@@ -47,10 +49,10 @@ PLAN_TIERS = {
 }
 
 WELCOME_CARD_TEXT = (
-    "❤️ **WELCOME TO LEARN WITH HIM QUIZ BOOK** ❤️\n"
+    "💖 **WELCOME TO LEARN WITH HIM QUIZ BOOK** 💖\n"
     "👑 **THE BEST-IN-CLASS QUIZ BOOK BY HIMANSHU SIR** 👑\n\n"
-    "✨ Sharpen your skills with high-quality, exam-focused quizzes designed to help you learn faster, practice smarter, and score higher! 🚀\n\n"
-    "📚 **Curated Questions** • ⚡ **Instant Results** • 📈 **Performance Tracking** • 🏆 **Daily Improvement**\n\n"
+    "🎯 Sharpen your skills with high-quality, exam-focused quizzes designed to help you learn faster, practice smarter, and achieve your goals.\n"
+    "✨ **Curated Questions** • ⚡ **Instant Results** • 📈 **Performance Tracking** • 🏆 **Daily Improvement**\n\n"
     "🎯 **PRACTICE. LEARN. ACHIEVE.** 🎯\n\n"
-    "🌟 Welcome to the Learn with HiM family. Wishing you ultimate success in every exam! ❤️"
+    "✨ Welcome to the Learn with HiM family. Wishing you ultimate success in every exam! 💖"
 )

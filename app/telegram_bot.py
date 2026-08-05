@@ -36,7 +36,7 @@ from app.pyq_fetcher import fetch_pyqs_for_quiz
 NEGATIVE_WORDS = ["bad", "worst", "useless", "trash", "fake", "hate", "terrible", "waste", "horrible", "fraud", "stupid", "scam"]
 
 async def generate_direct_razorpay_link(user_id: int, plan_key: str) -> str:
-    """Generates a Razorpay payment link directly via HTTP REST API, avoiding all SDK package crashes."""
+    """Generates a Razorpay payment link directly via HTTP REST API."""
     plan = PLAN_TIERS.get(plan_key)
     if not plan or plan["price"] == 0:
         return None
@@ -925,7 +925,6 @@ def build_application() -> Application:
     app.add_handler(CommandHandler("user_profiles", admin_portal_command))
 
     app.add_handler(CallbackQueryHandler(quiz_count_callback, pattern="^qcount_"))
-    app.add_handler(CallbackQueryHandler(bot_app_instance.bot if False else lambda u, c: None, pattern="^none$")) # placeholder
     app.add_handler(CallbackQueryHandler(user_pdf_callback_handler, pattern="^usergenpdf_"))
     app.add_handler(CallbackQueryHandler(admin_callback_handler, pattern="^(admin_|audit_|genpdf_)"))
     app.add_handler(CallbackQueryHandler(button_router, pattern="^cmd_|^fb_|^trigger_start|^buy_plan_"))

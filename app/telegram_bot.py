@@ -342,27 +342,17 @@ async def help_command(update: Update, context: ContextTypes.DEFAULT_TYPE):
     msg = (
         "🤖 **LEARN WITH HIM QUIZ BOOK — COMMAND DIRECTORY** 🤖\n"
         "━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\n"
-        "Tap any command below or use the blue **[≡ Menu]** button:\n\n"
-        "• 🚀 **/quiz**: Start a new custom quiz\n"
-        "• 📄 **/pdfreport**: Export personal PDF report card\n"
-        "• ❌ **/wrongquestions**: View recent wrong answers\n"
-        "• ⏭️ **/unattemptedquestions**: View remaining Qs\n"
-        "• 🎯 **/attemptedquestions**: View attempted logs\n"
-        "• 💾 **/savedquestions**: View bookmarked questions\n"
-        "• 👤 **/myprofile**: View verified student profile\n"
-        "• ✏️ **/editprofile**: Edit profile (1x / 30 days)\n"
-        "• 📊 **/mywholestate**: View rank & percentile\n"
-        "• 🏆 **/toppername**: View global leaderboard\n"
-        "• 💬 **/feedback**: Submit feedback to Himanshu Sir\n"
-        "• 📖 **/reviews**: Read student reviews\n"
-        "• 🤝 **/invite**: Invite friends to unlock +10 limit"
+        "Tap any interactive button below or use the blue **[≡ Menu]** button:\n"
     )
 
     buttons = [
-        [InlineKeyboardButton("🚀 /quiz", callback_data="cmd_quiz"), InlineKeyboardButton("📄 /pdfreport", callback_data="cmd_pdfreport")],
-        [InlineKeyboardButton("💾 /savedquestions", callback_data="cmd_savedquestions"), InlineKeyboardButton("👤 /myprofile", callback_data="cmd_profile")],
-        [InlineKeyboardButton("📊 /mywholestate", callback_data="cmd_wholestate"), InlineKeyboardButton("🏆 /toppername", callback_data="cmd_toppers")],
-        [InlineKeyboardButton("🤝 /invite", callback_data="cmd_referral"), InlineKeyboardButton("📖 /reviews", callback_data="cmd_viewfeedbacks")]
+        [InlineKeyboardButton("🚀 Launch Quiz (/quiz)", callback_data="cmd_quiz"), InlineKeyboardButton("📄 PDF Reports (/pdfreport)", callback_data="cmd_pdfreport")],
+        [InlineKeyboardButton("❌ Wrong Qs (/wrongquestions)", callback_data="cmd_wrongquestions"), InlineKeyboardButton("🎯 Attempted Qs (/attemptedquestions)", callback_data="cmd_attemptedquestions")],
+        [InlineKeyboardButton("⏭️ Unattempted Qs (/unattemptedquestions)", callback_data="cmd_unattemptedquestions"), InlineKeyboardButton("💾 Bookmarks (/savedquestions)", callback_data="cmd_savedquestions")],
+        [InlineKeyboardButton("👤 My Profile (/myprofile)", callback_data="cmd_profile"), InlineKeyboardButton("✏️ Edit Profile (/editprofile)", callback_data="cmd_editprofile")],
+        [InlineKeyboardButton("📊 My Rank (/mywholestate)", callback_data="cmd_wholestate"), InlineKeyboardButton("🏆 Leaderboard (/toppername)", callback_data="cmd_toppers")],
+        [InlineKeyboardButton("💬 Submit Feedback (/feedback)", callback_data="cmd_feedback"), InlineKeyboardButton("📖 Reviews (/reviews)", callback_data="cmd_viewfeedbacks")],
+        [InlineKeyboardButton("🤝 Invite Friends (/invite)", callback_data="cmd_referral")]
     ]
 
     await send_response(update, msg, reply_markup=InlineKeyboardMarkup(buttons))
@@ -591,8 +581,16 @@ async def button_router(update: Update, context: ContextTypes.DEFAULT_TYPE):
             await query.answer("🛑 Daily Limit Exhausted!", show_alert=True)
             return
         await launch_quiz_setup(update, context)
+    elif data == "cmd_help":
+        await help_command(update, context)
     elif data == "cmd_pdfreport":
         await pdfreport_command(update, context)
+    elif data == "cmd_wrongquestions":
+        await wrongquestions_command(update, context)
+    elif data == "cmd_attemptedquestions":
+        await attemptedquestions_command(update, context)
+    elif data == "cmd_unattemptedquestions":
+        await unattemptedquestions_command(update, context)
     elif data == "cmd_pause_quiz":
         await pause_quiz_command(update, context)
     elif data == "cmd_resume_quiz":

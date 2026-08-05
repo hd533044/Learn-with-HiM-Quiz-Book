@@ -40,33 +40,41 @@ except ImportError:
 NEGATIVE_WORDS = ["bad", "worst", "useless", "trash", "fake", "hate", "terrible", "waste", "horrible", "fraud", "stupid", "scam"]
 
 def generate_razorpay_link(user_id: int, plan_key: str):
-    """Generates a Razorpay payment link directly with full diagnostic logs."""
-    if not HAS_RAZORPAY:
-        logging.error("Razorpay module is not installed in Python environment.")
-        return None
-
-    if not RAZORPAY_KEY_ID or not RAZORPAY_KEY_SECRET:
-        logging.error(f"Razorpay Credentials Error: Key ID='{RAZORPAY_KEY_ID}', Secret Set={bool(RAZORPAY_KEY_SECRET)}")
-        return None
-
+    """Generates a Razorpay payment link with fallback handling for zero-price trials."""
     plan = PLAN_TIERS.get(plan_key)
     if not plan:
         logging.error(f"Invalid Plan Key requested: {plan_key}")
         return None
 
+    # Handle Free Demo Trial (₹0) directly without calling external API
+    if plan["price"] == 0:
+        return f"https://t.me/{os.getenv('BOT_USERNAME', 'LearnwithHiMBot')}?start=activate_demo_{plan_key}"
+
+    if not HAS_RAZORPAY:
+        logging.error("Razorpay module is not installed in Python environment.")
+        return None
+
+    if not RAZORPAY_KEY_ID or not RAZORPAY_KEY_SECRET:
+        logging.error("Razorpay Key ID or Secret is missing in environment variables.")
+        return None
+
     try:
         client = razorpay.Client(auth=(RAZORPAY_KEY_ID, RAZORPAY_KEY_SECRET))
         amount_in_paise = int(plan["price"] * 100)
-        
-        # Ensure minimum amount constraint for Razorpay API (at least 100 paise)
-        if amount_in_paise < 100:
-            amount_in_paise = 100
+
+        profile = get_user_profile(user_id)
+        customer_name = profile.get("full_name", "Student") if profile else "Student"
+        customer_phone = profile.get("phone_number", "9999999999") if profile else "9999999999"
 
         payload = {
             "amount": amount_in_paise,
             "currency": "INR",
             "accept_partial": False,
             "description": f"Learn with HiM Subscription - {plan['name']}",
+            "customer": {
+                "name": customer_name,
+                "contact": customer_phone if len(str(customer_phone)) >= 10 else "9999999999"
+            },
             "notes": {
                 "user_id": str(user_id),
                 "plan_key": plan_key
@@ -201,6 +209,7 @@ async def plans_command(update: Update, context: ContextTypes.DEFAULT_TYPE):
     log_user_activity_time(user.id, seconds=10)
 
     keyboard = [
+        [InlineKeyboardButton("🎁 FREE DEMO TRIAL (2 Days - 20 Qs/Day)", callback_data="buy_plan_FREE_DEMO")],
         [InlineKeyboardButton("📦 BRONZE (₹5 - 3 Days - 80 Qs/Day)", callback_data="buy_plan_BRONZE")],
         [InlineKeyboardButton("📦 SILVER (₹10 - 7 Days - 100 Qs/Day)", callback_data="buy_plan_SILVER")],
         [InlineKeyboardButton("📦 GOLD (₹15 - 12 Days - 120 Qs/Day)", callback_data="buy_plan_GOLD")],
@@ -214,7 +223,7 @@ async def plans_command(update: Update, context: ContextTypes.DEFAULT_TYPE):
     msg = (
         f"👑 **LEARN WITH HIM QUIZ BOOK — VIP MEMBERSHIP PACKS** 👑\n"
         f"━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\n"
-        f"🎁 **FREE DEMO:** 2 Days Access | 20 Questions / Day Limit\n\n"
+        f"🎁 **FREE DEMO TRIAL:** 2 Days Access | 20 Questions / Day Limit\n\n"
         f"📦 **BRONZE:** ₹5 | 3 Days (80 Qs/Day)\n"
         f"📦 **SILVER:** ₹10 | 7 Days (100 Qs/Day)\n"
         f"📦 **GOLD:** ₹15 | 12 Days (120 Qs/Day)\n"
@@ -224,7 +233,7 @@ async def plans_command(update: Update, context: ContextTypes.DEFAULT_TYPE):
         f"📦 **RUBY:** ₹50 | 90 Days (400 Qs/Day)\n"
         f"📦 **MEGA PACK:** ₹80 | 180 Days / 6 Months (500 Qs/Day)\n\n"
         f"⚡ **0% Payment Failure Architecture:** Instant Razorpay Auto-Link with Automated VIP Activation!\n\n"
-        f"Select a pack below to pay instantly via UPI/Cards/NetBanking:"
+        f"Select a pack below to get started:"
     )
 
     await send_response(update, msg, reply_markup=InlineKeyboardMarkup(keyboard))
@@ -239,6 +248,19 @@ async def handle_buy_plan_callback(update: Update, context: ContextTypes.DEFAULT
 
     if not plan_info:
         await query.message.reply_text("⚠️ Invalid plan selected.")
+        return
+
+    # Handle Free Demo direct activation
+    if plan_info["price"] == 0:
+        from main import activate_user_subscription
+        await activate_user_subscription(user_id, plan_key)
+        await query.edit_message_text(
+            f"🎉 **FREE DEMO ACTIVATED SUCCESSFULLY!**\n\n"
+            f"🎁 Duration: {plan_info['days']} Days\n"
+            f"⚡ Daily Limit: {plan_info['daily_limit']} Questions/Day\n\n"
+            f"Start practicing now with /quiz!",
+            parse_mode="Markdown"
+        )
         return
 
     payment_url = generate_razorpay_link(user_id, plan_key)
@@ -259,7 +281,7 @@ async def handle_buy_plan_callback(update: Update, context: ContextTypes.DEFAULT
         )
         await query.edit_message_text(msg, reply_markup=InlineKeyboardMarkup(keyboard), parse_mode="Markdown")
     else:
-        await query.message.reply_text("⚠️ Unable to generate payment link. Please try again shortly or contact Admin.")
+        await query.message.reply_text("⚠️ Unable to generate payment link. Please check Razorpay keys in environment variables or try again.")
 
 async def pdfreport_command(update: Update, context: ContextTypes.DEFAULT_TYPE):
     if not await maintenance_guard(update, context): return

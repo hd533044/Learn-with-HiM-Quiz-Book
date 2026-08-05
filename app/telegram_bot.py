@@ -2,8 +2,8 @@ import time
 import logging
 import json
 import os
+import urllib.request
 import base64
-import aiohttp
 from telegram import (
     Update, InlineKeyboardMarkup, InlineKeyboardButton, 
     BotCommand, BotCommandScopeDefault, BotCommandScopeAllPrivateChats, 
@@ -35,8 +35,8 @@ from app.pyq_fetcher import fetch_pyqs_for_quiz
 
 NEGATIVE_WORDS = ["bad", "worst", "useless", "trash", "fake", "hate", "terrible", "waste", "horrible", "fraud", "stupid", "scam"]
 
-async def generate_direct_razorpay_link(user_id: int, plan_key: str) -> str:
-    """Generates a Razorpay payment link directly via HTTP REST API."""
+def generate_razorpay_link_sync(user_id: int, plan_key: str) -> str:
+    """Generates a Razorpay payment link using standard urllib, entirely avoiding SDK package crashes."""
     plan = PLAN_TIERS.get(plan_key)
     if not plan or plan["price"] == 0:
         return None
@@ -45,7 +45,7 @@ async def generate_direct_razorpay_link(user_id: int, plan_key: str) -> str:
     key_secret = (os.getenv("RAZORPAY_KEY_SECRET") or RAZORPAY_KEY_SECRET or "").strip()
 
     if not key_id or not key_secret:
-        logging.error("Razorpay API keys missing for HTTP request.")
+        logging.error("Razorpay API keys are missing.")
         return None
 
     url = "https://api.razorpay.com/v1/payment_links"
@@ -79,22 +79,22 @@ async def generate_direct_razorpay_link(user_id: int, plan_key: str) -> str:
         "callback_method": "get"
     }
 
-    headers = {
-        "Authorization": f"Basic {encoded_auth}",
-        "Content-Type": "application/json"
-    }
+    req_data = json.dumps(payload).encode("utf-8")
+    req = urllib.request.Request(url, data=req_data, method="POST")
+    req.add_header("Authorization", f"Basic {encoded_auth}")
+    req.add_header("Content-Type", "application/json")
 
     try:
-        async with aiohttp.ClientSession() as session:
-            async with session.post(url, json=payload, headers=headers) as resp:
-                res_json = await resp.json()
-                if resp.status == 200 and "short_url" in res_json:
-                    return res_json["short_url"]
-                else:
-                    logging.error(f"Razorpay REST API Error: {res_json}")
-                    return None
+        with urllib.request.urlopen(req, timeout=10) as response:
+            res_body = response.read().decode("utf-8")
+            res_json = json.loads(res_body)
+            if response.status == 200 and "short_url" in res_json:
+                return res_json["short_url"]
+            else:
+                logging.error(f"Razorpay API Error Response: {res_body}")
+                return None
     except Exception as e:
-        logging.error(f"HTTP exception during Razorpay link creation: {e}")
+        logging.error(f"Urllib request exception for Razorpay link: {e}")
         return None
 
 async def send_registration_prompt(update: Update):
@@ -270,7 +270,7 @@ async def handle_buy_plan_callback(update: Update, context: ContextTypes.DEFAULT
         )
         return
 
-    payment_url = await generate_direct_razorpay_link(user_id, plan_key)
+    payment_url = generate_razorpay_link_sync(user_id, plan_key)
 
     if payment_url:
         keyboard = [
@@ -922,7 +922,7 @@ def build_application() -> Application:
     
     app.add_handler(CommandHandler("admin", admin_portal_command))
     app.add_handler(CommandHandler("admit", admin_portal_command))
-    app.add_handler(CommandHandler("user_profiles", admin_portal_command))
+    app.add_handler(CommandHandler("admin_portal", admin_portal_command))
 
     app.add_handler(CallbackQueryHandler(quiz_count_callback, pattern="^qcount_"))
     app.add_handler(CallbackQueryHandler(user_pdf_callback_handler, pattern="^usergenpdf_"))

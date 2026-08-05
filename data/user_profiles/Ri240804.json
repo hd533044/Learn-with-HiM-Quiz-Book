@@ -18,36 +18,38 @@
         "referred_by": null,
         "referral_count": 0,
         "bonus_quota": 0,
-        "last_profile_edit": "2026-08-05 12:28:51 IST",
-        "last_active": "2026-08-05 12:33:38 IST",
-        "last_activity_epoch": 1785913418,
+        "paid_question_balance": 0,
+        "vip_pass_expiry": null,
+        "last_profile_edit": null,
+        "last_active": "2026-08-05 16:39:43 IST",
+        "last_activity_epoch": 1785928183,
         "is_banned": 0,
         "is_verified": 1,
         "created_at": "2026-08-05 12:28:51 IST"
     },
     "bot_engagement_metrics": {
-        "last_login_timestamp": "2026-08-05 12:33:38 IST",
-        "total_time_spent_overall": "215 seconds (3.58 mins)",
+        "last_login_timestamp": "2026-08-05 16:39:43 IST",
+        "total_time_spent_overall": "515 seconds (8.58 mins)",
         "daily_spent_time_breakdown": {
-            "2026-08-05": "215 seconds (3.58 mins)"
+            "2026-08-05": "515 seconds (8.58 mins)"
         },
         "questions_attempted_per_day": {
-            "2026-08-05": 10
+            "2026-08-05": 30
         }
     },
     "academic_summary": {
         "total_quizzes_attempted": 1,
-        "total_questions_attempted": 10,
-        "total_correct": 6,
-        "total_wrong": 4,
+        "total_questions_attempted": 30,
+        "total_correct": 17,
+        "total_wrong": 13,
         "total_skipped": 0,
         "datewise_quiz_summary": {
             "2026-08-05": {
                 "total_quizzes": 1,
-                "total_questions": 10,
-                "total_correct": 6,
-                "total_wrong": 4,
-                "total_score": 6.0,
+                "total_questions": 30,
+                "total_correct": 17,
+                "total_wrong": 13,
+                "total_score": 17.0,
                 "total_time_seconds": 0
             }
         }
@@ -60,9 +62,8 @@
     "student_reviews_given": [],
     "subscription_ledger": {
         "status": "FREE_TIER",
-        "active_plan": "Standard Free Tier",
-        "total_amount_paid": 0.0,
-        "payment_history": []
+        "paid_question_balance": 0,
+        "vip_pass_expiry": null
     },
     "badges_and_achievements": {
         "earned_badges": [
@@ -73,111 +74,291 @@
     },
     "full_quiz_history": [
         {
-            "id": 17,
+            "id": 5,
             "user_id": 5119470041,
             "quiz_id": "computer_awareness_mock",
-            "questions_attempted": 10,
-            "total_questions": 10,
-            "correct_answers": 6,
-            "wrong_answers": 4,
+            "questions_attempted": 30,
+            "total_questions": 30,
+            "correct_answers": 17,
+            "wrong_answers": 13,
             "skipped_count": 0,
-            "score": 6.0,
+            "score": 17.0,
             "time_taken": 0,
-            "attempt_timestamp": "2026-08-05 12:32:56 IST",
+            "attempt_timestamp": "2026-08-05 16:38:20 IST",
             "attempt_date": "2026-08-05",
             "question_details": [
                 {
-                    "question_id": 110,
-                    "question_text": "What is the shortcut to go to the Data tab in MS-Excel 2010?",
-                    "status": "WRONG",
-                    "selected_option": 3,
+                    "question_id": 99,
+                    "question_text": "What is the minimum zoom percentage in MS-Excel 2010?",
+                    "status": "CORRECT",
+                    "selected_option": 0,
                     "correct_option": 0,
-                    "correct_answer_text": "Alt + A",
-                    "timestamp": "2026-08-05 12:30:27 IST"
+                    "correct_answer_text": "10%",
+                    "timestamp": "2026-08-05 16:31:28 IST"
                 },
                 {
-                    "question_id": 398,
-                    "question_text": "What is the name of the email client in Microsoft 365?",
+                    "question_id": 380,
+                    "question_text": "What does HTML stand for?",
+                    "status": "CORRECT",
+                    "selected_option": 0,
+                    "correct_option": 0,
+                    "correct_answer_text": "Hyper Text Markup Language",
+                    "timestamp": "2026-08-05 16:31:37 IST"
+                },
+                {
+                    "question_id": 334,
+                    "question_text": "What are the Lower Layers of the OSI model also known as?",
+                    "status": "WRONG",
+                    "selected_option": 0,
+                    "correct_option": 1,
+                    "correct_answer_text": "Lower Layers or Hardware Layers",
+                    "timestamp": "2026-08-05 16:31:54 IST"
+                },
+                {
+                    "question_id": 528,
+                    "question_text": "How can you quickly remove all formatting from a selected text in MS Word?",
+                    "status": "CORRECT",
+                    "selected_option": 0,
+                    "correct_option": 0,
+                    "correct_answer_text": "Clear Formatting",
+                    "timestamp": "2026-08-05 16:32:04 IST"
+                },
+                {
+                    "question_id": 185,
+                    "question_text": "What is the function of the keyboard shortcut Shift + Enter on a worksheet?",
+                    "status": "WRONG",
+                    "selected_option": 0,
+                    "correct_option": 1,
+                    "correct_answer_text": "Moves to the cell directly above",
+                    "timestamp": "2026-08-05 16:32:17 IST"
+                },
+                {
+                    "question_id": 104,
+                    "question_text": "What is the shortcut to preview the worksheet before printing?",
+                    "status": "CORRECT",
+                    "selected_option": 1,
+                    "correct_option": 1,
+                    "correct_answer_text": "Ctrl + F2",
+                    "timestamp": "2026-08-05 16:32:23 IST"
+                },
+                {
+                    "question_id": 316,
+                    "question_text": "How are octal numbers converted to hexadecimal numbers?",
+                    "status": "WRONG",
+                    "selected_option": 2,
+                    "correct_option": 1,
+                    "correct_answer_text": "By converting each digit to binary and then to hexadecimal",
+                    "timestamp": "2026-08-05 16:32:38 IST"
+                },
+                {
+                    "question_id": 220,
+                    "question_text": "What type of fund transfer does IMPS facilitate?",
+                    "status": "WRONG",
+                    "selected_option": 2,
+                    "correct_option": 0,
+                    "correct_answer_text": "Interbank",
+                    "timestamp": "2026-08-05 16:32:54 IST"
+                },
+                {
+                    "question_id": 527,
+                    "question_text": "What is the purpose of using a digital signature?",
                     "status": "CORRECT",
                     "selected_option": 2,
                     "correct_option": 2,
-                    "correct_answer_text": "Microsoft Outlook",
-                    "timestamp": "2026-08-05 12:30:38 IST"
+                    "correct_answer_text": "To verify the sender's identity",
+                    "timestamp": "2026-08-05 16:33:13 IST"
                 },
                 {
-                    "question_id": 274,
-                    "question_text": "What is the definition of a cracker?",
+                    "question_id": 22,
+                    "question_text": "Which port has a data transfer speed of 12 megabits per second?",
+                    "status": "WRONG",
+                    "selected_option": 0,
+                    "correct_option": 2,
+                    "correct_answer_text": "Universal Serial Bus (USB) Port",
+                    "timestamp": "2026-08-05 16:33:23 IST"
+                },
+                {
+                    "question_id": 354,
+                    "question_text": "What is the term used to refer to the Transport Layer?",
                     "status": "CORRECT",
                     "selected_option": 0,
                     "correct_option": 0,
-                    "correct_answer_text": "A person who carries out malicious attacks on computer networks",
-                    "timestamp": "2026-08-05 12:31:03 IST"
+                    "correct_answer_text": "Heart of the OSI model",
+                    "timestamp": "2026-08-05 16:33:35 IST"
                 },
                 {
-                    "question_id": 345,
-                    "question_text": "What is the purpose of the Transport Layer?",
-                    "status": "WRONG",
+                    "question_id": 87,
+                    "question_text": "Which of the following is not a group in the 'Insert' tab in MS-EXCEL?",
+                    "status": "CORRECT",
                     "selected_option": 3,
-                    "correct_option": 1,
-                    "correct_answer_text": "To provide end-to-end delivery of messages",
-                    "timestamp": "2026-08-05 12:31:19 IST"
+                    "correct_option": 3,
+                    "correct_answer_text": "Formula",
+                    "timestamp": "2026-08-05 16:33:47 IST"
                 },
                 {
-                    "question_id": 533,
-                    "question_text": "What is the difference between a range of cells and a group of cells in MS Excel?",
-                    "status": "CORRECT",
-                    "selected_option": 1,
-                    "correct_option": 1,
-                    "correct_answer_text": "A range of cells refers to multiple cells, while a group of cells refers to a single cell",
-                    "timestamp": "2026-08-05 12:31:38 IST"
-                },
-                {
-                    "question_id": 204,
-                    "question_text": "What is the term for transferring data from the customer's machine to the server?",
-                    "status": "WRONG",
-                    "selected_option": 0,
-                    "correct_option": 1,
-                    "correct_answer_text": "Uploading",
-                    "timestamp": "2026-08-05 12:31:53 IST"
-                },
-                {
-                    "question_id": 389,
-                    "question_text": "What is the primary function of Microsoft Excel?",
-                    "status": "CORRECT",
-                    "selected_option": 1,
-                    "correct_option": 1,
-                    "correct_answer_text": "Spreadsheet editing",
-                    "timestamp": "2026-08-05 12:32:06 IST"
-                },
-                {
-                    "question_id": 144,
-                    "question_text": "What is the purpose of using Alt + F4?",
+                    "question_id": 481,
+                    "question_text": "What is the full form of OSI?",
                     "status": "CORRECT",
                     "selected_option": 0,
                     "correct_option": 0,
-                    "correct_answer_text": "Closes all workbooks and exits Excel",
-                    "timestamp": "2026-08-05 12:32:17 IST"
+                    "correct_answer_text": "Open System Interconnection",
+                    "timestamp": "2026-08-05 16:33:55 IST"
+                },
+                {
+                    "question_id": 472,
+                    "question_text": "What is the function of Ctrl+Shift+F1?",
+                    "status": "WRONG",
+                    "selected_option": 1,
+                    "correct_option": 0,
+                    "correct_answer_text": "Toggle full screen mode",
+                    "timestamp": "2026-08-05 16:34:11 IST"
+                },
+                {
+                    "question_id": 16,
+                    "question_text": "Which of the following ports supports single stream data transmission?",
+                    "status": "WRONG",
+                    "selected_option": 0,
+                    "correct_option": 3,
+                    "correct_answer_text": "Serial Port",
+                    "timestamp": "2026-08-05 16:34:28 IST"
+                },
+                {
+                    "question_id": 354,
+                    "question_text": "What is the term used to refer to the Transport Layer?",
+                    "status": "CORRECT",
+                    "selected_option": 0,
+                    "correct_option": 0,
+                    "correct_answer_text": "Heart of the OSI model",
+                    "timestamp": "2026-08-05 16:34:39 IST"
+                },
+                {
+                    "question_id": 113,
+                    "question_text": "What is the purpose of the PROPER function?",
+                    "status": "CORRECT",
+                    "selected_option": 2,
+                    "correct_option": 2,
+                    "correct_answer_text": "To capitalize the first letter of each word",
+                    "timestamp": "2026-08-05 16:34:57 IST"
+                },
+                {
+                    "question_id": 325,
+                    "question_text": "How are computer codes used to represent characters?",
+                    "status": "CORRECT",
+                    "selected_option": 0,
+                    "correct_option": 0,
+                    "correct_answer_text": "Using a unique coded pattern of 1's and 0's",
+                    "timestamp": "2026-08-05 16:35:12 IST"
+                },
+                {
+                    "question_id": 134,
+                    "question_text": "What is the function of Ctrl + F3?",
+                    "status": "WRONG",
+                    "selected_option": 1,
+                    "correct_option": 0,
+                    "correct_answer_text": "Displays the Name Manager dialog box",
+                    "timestamp": "2026-08-05 16:35:24 IST"
+                },
+                {
+                    "question_id": 43,
+                    "question_text": "What is the function of Win Keys + R?",
+                    "status": "CORRECT",
+                    "selected_option": 0,
+                    "correct_option": 0,
+                    "correct_answer_text": "To open Run Dialogue Box",
+                    "timestamp": "2026-08-05 16:35:30 IST"
+                },
+                {
+                    "question_id": 66,
+                    "question_text": "What is the function of the LOWER function in MS-EXCEL?",
+                    "status": "CORRECT",
+                    "selected_option": 1,
+                    "correct_option": 1,
+                    "correct_answer_text": "To convert text to lower case",
+                    "timestamp": "2026-08-05 16:35:37 IST"
+                },
+                {
+                    "question_id": 542,
+                    "question_text": "What are the requirements for Skype to function on a computer?",
+                    "status": "CORRECT",
+                    "selected_option": 2,
+                    "correct_option": 2,
+                    "correct_answer_text": "A web cam, a microphone, and a speaker",
+                    "timestamp": "2026-08-05 16:35:59 IST"
+                },
+                {
+                    "question_id": 256,
+                    "question_text": "What is the primary goal of a white hat hacker?",
+                    "status": "CORRECT",
+                    "selected_option": 2,
+                    "correct_option": 2,
+                    "correct_answer_text": "To help fix security flaws in computer systems",
+                    "timestamp": "2026-08-05 16:36:17 IST"
+                },
+                {
+                    "question_id": 513,
+                    "question_text": "Which icon is commonly used to save the current document in MS Word?",
+                    "status": "WRONG",
+                    "selected_option": 2,
+                    "correct_option": 0,
+                    "correct_answer_text": "The floppy disk icon",
+                    "timestamp": "2026-08-05 16:36:29 IST"
                 },
                 {
                     "question_id": 402,
                     "question_text": "What is the purpose of Microsoft OneNote?",
-                    "status": "WRONG",
-                    "selected_option": 0,
+                    "status": "CORRECT",
+                    "selected_option": 2,
                     "correct_option": 2,
                     "correct_answer_text": "Notetaking and note sharing",
-                    "timestamp": "2026-08-05 12:32:38 IST"
+                    "timestamp": "2026-08-05 16:36:50 IST"
                 },
                 {
-                    "question_id": 167,
-                    "question_text": "What is the function of Ctrl + Y in the active workbook?",
+                    "question_id": 181,
+                    "question_text": "What is the function of the keyboard shortcut End + Enter on a worksheet?",
+                    "status": "WRONG",
+                    "selected_option": 2,
+                    "correct_option": 1,
+                    "correct_answer_text": "Moves to the last cell in the current row that is not blank",
+                    "timestamp": "2026-08-05 16:37:11 IST"
+                },
+                {
+                    "question_id": 324,
+                    "question_text": "What is the purpose of using powers of 8 in octal to decimal conversion?",
+                    "status": "WRONG",
+                    "selected_option": 3,
+                    "correct_option": 2,
+                    "correct_answer_text": "To multiply each digit of the octal number",
+                    "timestamp": "2026-08-05 16:37:30 IST"
+                },
+                {
+                    "question_id": 237,
+                    "question_text": "What is the purpose of a router in repackaging data packets?",
+                    "status": "WRONG",
+                    "selected_option": 2,
+                    "correct_option": 0,
+                    "correct_answer_text": "To reduce the size of the packets",
+                    "timestamp": "2026-08-05 16:37:52 IST"
+                },
+                {
+                    "question_id": 369,
+                    "question_text": "What is the former name of Apple Inc.?",
                     "status": "CORRECT",
                     "selected_option": 0,
                     "correct_option": 0,
-                    "correct_answer_text": "Repeats the last workbook action",
-                    "timestamp": "2026-08-05 12:32:55 IST"
+                    "correct_answer_text": "Apple Computer Company",
+                    "timestamp": "2026-08-05 16:38:03 IST"
+                },
+                {
+                    "question_id": 400,
+                    "question_text": "How does Microsoft 365 differ from the old-fashioned bundle in terms of payment?",
+                    "status": "WRONG",
+                    "selected_option": 2,
+                    "correct_option": 1,
+                    "correct_answer_text": "Microsoft 365 is a subscription",
+                    "timestamp": "2026-08-05 16:38:19 IST"
                 }
             ]
         }
     ],
-    "last_synced": "2026-08-05 15:25:41 IST"
+    "last_synced": "2026-08-05 20:33:22 IST"
 }

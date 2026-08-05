@@ -1,0 +1,274 @@
+{
+    "student_id": "Va130705",
+    "registration_info": {
+        "user_id": 5555490846,
+        "student_id": "Va130705",
+        "full_name": "Vansh Khokhar",
+        "username": "vanshkhokran",
+        "phone_number": "916398940226",
+        "target_exam": "CAPF HCM",
+        "dob": "13-07-2005",
+        "age": 21,
+        "gender": "Male",
+        "country": "India",
+        "state": "Uttar Pradesh",
+        "pin": "2005",
+        "security_question": "👩 What is your mother's maiden name?",
+        "security_answer": "Geeta Devi",
+        "referred_by": null,
+        "referral_count": 0,
+        "bonus_quota": 0,
+        "paid_question_balance": 0,
+        "vip_pass_expiry": null,
+        "last_profile_edit": "2026-08-05 17:03:04 IST",
+        "last_active": "2026-08-05 20:08:34 IST",
+        "last_activity_epoch": 1785940714,
+        "is_banned": 0,
+        "is_verified": 1,
+        "created_at": "2026-08-05 17:03:04 IST"
+    },
+    "bot_engagement_metrics": {
+        "last_login_timestamp": "2026-08-05 20:08:34 IST",
+        "total_time_spent_overall": "490 seconds (8.17 mins)",
+        "daily_spent_time_breakdown": {
+            "2026-08-05": "490 seconds (8.17 mins)"
+        },
+        "questions_attempted_per_day": {
+            "2026-08-05": 20
+        }
+    },
+    "academic_summary": {
+        "total_quizzes_attempted": 1,
+        "total_questions_attempted": 20,
+        "total_correct": 10,
+        "total_wrong": 9,
+        "total_skipped": 1,
+        "datewise_quiz_summary": {
+            "2026-08-05": {
+                "total_quizzes": 1,
+                "total_questions": 20,
+                "total_correct": 10,
+                "total_wrong": 9,
+                "total_score": 10.0,
+                "total_time_seconds": 0
+            }
+        }
+    },
+    "saved_questions_ledger": {
+        "total_saved": 0,
+        "datewise_saved_summary": {},
+        "saved_questions": []
+    },
+    "student_reviews_given": [],
+    "subscription_ledger": {
+        "status": "FREE_TIER",
+        "paid_question_balance": 0,
+        "vip_pass_expiry": null
+    },
+    "badges_and_achievements": {
+        "earned_badges": [
+            "Early Learner",
+            "Registered Scholar"
+        ],
+        "streak_days": 1
+    },
+    "full_quiz_history": [
+        {
+            "id": 15,
+            "user_id": 5555490846,
+            "quiz_id": "computer_awareness_mock",
+            "questions_attempted": 20,
+            "total_questions": 20,
+            "correct_answers": 10,
+            "wrong_answers": 9,
+            "skipped_count": 1,
+            "score": 10.0,
+            "time_taken": 0,
+            "attempt_timestamp": "2026-08-05 20:05:44 IST",
+            "attempt_date": "2026-08-05",
+            "question_details": [
+                {
+                    "question_id": 337,
+                    "question_text": "Which layer is responsible for end-to-end delivery of messages?",
+                    "status": "CORRECT",
+                    "selected_option": 1,
+                    "correct_option": 1,
+                    "correct_answer_text": "Transport Layer",
+                    "timestamp": "2026-08-05 20:00:41 IST"
+                },
+                {
+                    "question_id": 410,
+                    "question_text": "What is the function of Alt+F4 in Word?",
+                    "status": "WRONG",
+                    "selected_option": 0,
+                    "correct_option": 1,
+                    "correct_answer_text": "Closes Word",
+                    "timestamp": "2026-08-05 20:00:54 IST"
+                },
+                {
+                    "question_id": 439,
+                    "question_text": "How to move to the previous sheet in a workbook?",
+                    "status": "CORRECT",
+                    "selected_option": 0,
+                    "correct_option": 0,
+                    "correct_answer_text": "Ctrl+Page up",
+                    "timestamp": "2026-08-05 20:01:13 IST"
+                },
+                {
+                    "question_id": 402,
+                    "question_text": "What is the purpose of Microsoft OneNote?",
+                    "status": "CORRECT",
+                    "selected_option": 2,
+                    "correct_option": 2,
+                    "correct_answer_text": "Notetaking and note sharing",
+                    "timestamp": "2026-08-05 20:01:32 IST"
+                },
+                {
+                    "question_id": 277,
+                    "question_text": "Which networking device filters network traffic while connecting multiple computers?",
+                    "status": "WRONG",
+                    "selected_option": 0,
+                    "correct_option": 1,
+                    "correct_answer_text": "Switch",
+                    "timestamp": "2026-08-05 20:01:51 IST"
+                },
+                {
+                    "question_id": 62,
+                    "question_text": "What is the function of Win Keys + Pause break in a Windows system?",
+                    "status": "SKIPPED_TIMEOUT",
+                    "selected_option": null,
+                    "correct_option": 0,
+                    "correct_answer_text": "To open System Configuration",
+                    "timestamp": "2026-08-05 20:02:24 IST"
+                },
+                {
+                    "question_id": 266,
+                    "question_text": "What is the difference between ethical and non-ethical hacking in terms of legality?",
+                    "status": "CORRECT",
+                    "selected_option": 1,
+                    "correct_option": 1,
+                    "correct_answer_text": "Ethical hacking is legal, while non-ethical hacking is illegal",
+                    "timestamp": "2026-08-05 20:02:41 IST"
+                },
+                {
+                    "question_id": 173,
+                    "question_text": "Which shortcut key is used to delete text to the end of the line?",
+                    "status": "WRONG",
+                    "selected_option": 2,
+                    "correct_option": 0,
+                    "correct_answer_text": "Ctrl + Delete",
+                    "timestamp": "2026-08-05 20:02:53 IST"
+                },
+                {
+                    "question_id": 167,
+                    "question_text": "What is the function of Ctrl + Y in the active workbook?",
+                    "status": "WRONG",
+                    "selected_option": 1,
+                    "correct_option": 0,
+                    "correct_answer_text": "Repeats the last workbook action",
+                    "timestamp": "2026-08-05 20:03:08 IST"
+                },
+                {
+                    "question_id": 24,
+                    "question_text": "Which port has 9 pins and 25 pins versions?",
+                    "status": "WRONG",
+                    "selected_option": 1,
+                    "correct_option": 3,
+                    "correct_answer_text": "Serial Port",
+                    "timestamp": "2026-08-05 20:03:20 IST"
+                },
+                {
+                    "question_id": 340,
+                    "question_text": "Which of the following is a characteristic of the Transport Layer?",
+                    "status": "WRONG",
+                    "selected_option": 3,
+                    "correct_option": 2,
+                    "correct_answer_text": "Segmentation and reassembly",
+                    "timestamp": "2026-08-05 20:03:40 IST"
+                },
+                {
+                    "question_id": 215,
+                    "question_text": "What is the physical network of computers all over the world?",
+                    "status": "WRONG",
+                    "selected_option": 2,
+                    "correct_option": 1,
+                    "correct_answer_text": "Internet",
+                    "timestamp": "2026-08-05 20:03:54 IST"
+                },
+                {
+                    "question_id": 50,
+                    "question_text": "What is the function of Win Keys + D?",
+                    "status": "CORRECT",
+                    "selected_option": 0,
+                    "correct_option": 0,
+                    "correct_answer_text": "To show the Desktop",
+                    "timestamp": "2026-08-05 20:04:02 IST"
+                },
+                {
+                    "question_id": 433,
+                    "question_text": "How to move to the beginning of a worksheet?",
+                    "status": "CORRECT",
+                    "selected_option": 0,
+                    "correct_option": 0,
+                    "correct_answer_text": "Ctrl+Home",
+                    "timestamp": "2026-08-05 20:04:12 IST"
+                },
+                {
+                    "question_id": 34,
+                    "question_text": "Which port is used for connecting camcorders and video equipment and has a data transfer speed of 400 to 800 megabits per second?",
+                    "status": "WRONG",
+                    "selected_option": 2,
+                    "correct_option": 3,
+                    "correct_answer_text": "Firewire Port",
+                    "timestamp": "2026-08-05 20:04:35 IST"
+                },
+                {
+                    "question_id": 372,
+                    "question_text": "What is the teraflop capacity of the Param Yuva II supercomputer?",
+                    "status": "CORRECT",
+                    "selected_option": 2,
+                    "correct_option": 2,
+                    "correct_answer_text": "529 teraflop",
+                    "timestamp": "2026-08-05 20:04:49 IST"
+                },
+                {
+                    "question_id": 558,
+                    "question_text": "What was the first general-purpose electronic computer?",
+                    "status": "CORRECT",
+                    "selected_option": 0,
+                    "correct_option": 0,
+                    "correct_answer_text": "ENIAC",
+                    "timestamp": "2026-08-05 20:04:57 IST"
+                },
+                {
+                    "question_id": 273,
+                    "question_text": "What is the purpose of a key logger recorder?",
+                    "status": "CORRECT",
+                    "selected_option": 1,
+                    "correct_option": 1,
+                    "correct_answer_text": "To record instant messages, e-mail, and keyboard inputs",
+                    "timestamp": "2026-08-05 20:05:09 IST"
+                },
+                {
+                    "question_id": 21,
+                    "question_text": "Which of the following ports supports multiple data streams at a time?",
+                    "status": "CORRECT",
+                    "selected_option": 1,
+                    "correct_option": 1,
+                    "correct_answer_text": "Parallel Port",
+                    "timestamp": "2026-08-05 20:05:27 IST"
+                },
+                {
+                    "question_id": 515,
+                    "question_text": "Which social networking service places the biggest emphasis on professional networking?",
+                    "status": "WRONG",
+                    "selected_option": 1,
+                    "correct_option": 2,
+                    "correct_answer_text": "LinkedIn",
+                    "timestamp": "2026-08-05 20:05:43 IST"
+                }
+            ]
+        }
+    ],
+    "last_synced": "2026-08-05 20:33:22 IST"
+}

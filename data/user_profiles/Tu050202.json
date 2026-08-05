@@ -18,436 +18,57 @@
         "referred_by": null,
         "referral_count": 0,
         "bonus_quota": 0,
-        "last_profile_edit": "2026-08-05 11:19:16 IST",
-        "last_active": "2026-08-05 11:39:56 IST",
-        "last_activity_epoch": 1785910196,
+        "paid_question_balance": 0,
+        "vip_pass_expiry": null,
+        "last_profile_edit": null,
+        "last_active": "2026-08-05 19:35:08 IST",
+        "last_activity_epoch": 1785938708,
         "is_banned": 0,
         "is_verified": 1,
         "created_at": "2026-08-05 11:19:16 IST"
     },
     "bot_engagement_metrics": {
-        "last_login_timestamp": "2026-08-05 11:39:56 IST",
-        "total_time_spent_overall": "765 seconds (12.75 mins)",
+        "last_login_timestamp": "2026-08-05 19:35:08 IST",
+        "total_time_spent_overall": "40 seconds (0.67 mins)",
         "daily_spent_time_breakdown": {
-            "2026-08-05": "765 seconds (12.75 mins)"
+            "2026-08-05": "40 seconds (0.67 mins)"
         },
-        "questions_attempted_per_day": {
-            "2026-08-05": 40
-        }
+        "questions_attempted_per_day": {}
     },
     "academic_summary": {
-        "total_quizzes_attempted": 1,
-        "total_questions_attempted": 40,
-        "total_correct": 18,
-        "total_wrong": 22,
+        "total_quizzes_attempted": 0,
+        "total_questions_attempted": 0,
+        "total_correct": 0,
+        "total_wrong": 0,
         "total_skipped": 0,
-        "datewise_quiz_summary": {
-            "2026-08-05": {
-                "total_quizzes": 1,
-                "total_questions": 40,
-                "total_correct": 18,
-                "total_wrong": 22,
-                "total_score": 18.0,
-                "total_time_seconds": 0
-            }
-        }
+        "datewise_quiz_summary": {}
     },
     "saved_questions_ledger": {
         "total_saved": 0,
         "datewise_saved_summary": {},
         "saved_questions": []
     },
-    "student_reviews_given": [],
+    "student_reviews_given": [
+        {
+            "id": 8,
+            "user_id": 5374831084,
+            "full_name": "TUNA JAGADALA",
+            "feedback_text": "10/10 Quality Quizzes!",
+            "submitted_at": "2026-08-05 19:34:44 IST"
+        }
+    ],
     "subscription_ledger": {
         "status": "FREE_TIER",
-        "active_plan": "Standard Free Tier",
-        "total_amount_paid": 0.0,
-        "payment_history": []
+        "paid_question_balance": 0,
+        "vip_pass_expiry": null
     },
     "badges_and_achievements": {
         "earned_badges": [
             "Early Learner",
             "Registered Scholar"
         ],
-        "streak_days": 1
+        "streak_days": 0
     },
-    "full_quiz_history": [
-        {
-            "id": 9,
-            "user_id": 5374831084,
-            "quiz_id": "computer_awareness_mock",
-            "questions_attempted": 40,
-            "total_questions": 40,
-            "correct_answers": 18,
-            "wrong_answers": 22,
-            "skipped_count": 0,
-            "score": 18.0,
-            "time_taken": 0,
-            "attempt_timestamp": "2026-08-05 11:31:48 IST",
-            "attempt_date": "2026-08-05",
-            "question_details": [
-                {
-                    "question_id": 538,
-                    "question_text": "What is an example of system software?",
-                    "status": "WRONG",
-                    "selected_option": 0,
-                    "correct_option": 2,
-                    "correct_answer_text": "Windows operating system",
-                    "timestamp": "2026-08-05 11:21:52 IST"
-                },
-                {
-                    "question_id": 111,
-                    "question_text": "What is the purpose of the DATEVALUE function?",
-                    "status": "WRONG",
-                    "selected_option": 0,
-                    "correct_option": 1,
-                    "correct_answer_text": "To convert a text string to a date",
-                    "timestamp": "2026-08-05 11:22:14 IST"
-                },
-                {
-                    "question_id": 530,
-                    "question_text": "How can you insert a new column in a table in MS Word?",
-                    "status": "WRONG",
-                    "selected_option": 0,
-                    "correct_option": 1,
-                    "correct_answer_text": "Insert Column to the Right",
-                    "timestamp": "2026-08-05 11:22:34 IST"
-                },
-                {
-                    "question_id": 144,
-                    "question_text": "What is the purpose of using Alt + F4?",
-                    "status": "CORRECT",
-                    "selected_option": 0,
-                    "correct_option": 0,
-                    "correct_answer_text": "Closes all workbooks and exits Excel",
-                    "timestamp": "2026-08-05 11:22:50 IST"
-                },
-                {
-                    "question_id": 191,
-                    "question_text": "What is the function of the keyboard shortcut Ctrl + Up Arrow on a worksheet?",
-                    "status": "WRONG",
-                    "selected_option": 2,
-                    "correct_option": 1,
-                    "correct_answer_text": "Moves to the top boundary of the current data region",
-                    "timestamp": "2026-08-05 11:23:12 IST"
-                },
-                {
-                    "question_id": 542,
-                    "question_text": "What are the requirements for Skype to function on a computer?",
-                    "status": "CORRECT",
-                    "selected_option": 2,
-                    "correct_option": 2,
-                    "correct_answer_text": "A web cam, a microphone, and a speaker",
-                    "timestamp": "2026-08-05 11:23:22 IST"
-                },
-                {
-                    "question_id": 242,
-                    "question_text": "What is the purpose of a gateway in a network?",
-                    "status": "WRONG",
-                    "selected_option": 1,
-                    "correct_option": 2,
-                    "correct_answer_text": "To serve as the entry and exit point of a network",
-                    "timestamp": "2026-08-05 11:23:41 IST"
-                },
-                {
-                    "question_id": 516,
-                    "question_text": "What option allows you to quickly remove all formatting from selected text while retaining the underlying text content in MS Word?",
-                    "status": "CORRECT",
-                    "selected_option": 0,
-                    "correct_option": 0,
-                    "correct_answer_text": "Clear Formatting",
-                    "timestamp": "2026-08-05 11:23:51 IST"
-                },
-                {
-                    "question_id": 160,
-                    "question_text": "Which shortcut key is used to display the Delete dialog box?",
-                    "status": "WRONG",
-                    "selected_option": 2,
-                    "correct_option": 0,
-                    "correct_answer_text": "Ctrl + -",
-                    "timestamp": "2026-08-05 11:24:02 IST"
-                },
-                {
-                    "question_id": 408,
-                    "question_text": "How do you move from an open dialog box back to the document in Word?",
-                    "status": "WRONG",
-                    "selected_option": 0,
-                    "correct_option": 1,
-                    "correct_answer_text": "Alt+F6",
-                    "timestamp": "2026-08-05 11:24:23 IST"
-                },
-                {
-                    "question_id": 456,
-                    "question_text": "What is the function of F4 alone?",
-                    "status": "WRONG",
-                    "selected_option": 2,
-                    "correct_option": 0,
-                    "correct_answer_text": "Repeats the last command or action",
-                    "timestamp": "2026-08-05 11:24:36 IST"
-                },
-                {
-                    "question_id": 279,
-                    "question_text": "What type of malware records everything you type on your PC to obtain sensitive information?",
-                    "status": "WRONG",
-                    "selected_option": 1,
-                    "correct_option": 2,
-                    "correct_answer_text": "Keyloggers",
-                    "timestamp": "2026-08-05 11:24:50 IST"
-                },
-                {
-                    "question_id": 309,
-                    "question_text": "How are decimal numbers converted to hexadecimal numbers?",
-                    "status": "CORRECT",
-                    "selected_option": 1,
-                    "correct_option": 1,
-                    "correct_answer_text": "By dividing the decimal number by 16 and noting the quotient and remainder",
-                    "timestamp": "2026-08-05 11:25:09 IST"
-                },
-                {
-                    "question_id": 385,
-                    "question_text": "How is Microsoft 365 sold?",
-                    "status": "CORRECT",
-                    "selected_option": 1,
-                    "correct_option": 1,
-                    "correct_answer_text": "As a subscription",
-                    "timestamp": "2026-08-05 11:25:20 IST"
-                },
-                {
-                    "question_id": 412,
-                    "question_text": "What happens when you press Shift+F5 in Word?",
-                    "status": "CORRECT",
-                    "selected_option": 0,
-                    "correct_option": 0,
-                    "correct_answer_text": "Moves the cursor to the last change",
-                    "timestamp": "2026-08-05 11:25:38 IST"
-                },
-                {
-                    "question_id": 327,
-                    "question_text": "What is the purpose of the remainder in decimal to hexadecimal conversion?",
-                    "status": "WRONG",
-                    "selected_option": 1,
-                    "correct_option": 3,
-                    "correct_answer_text": "To represent the hexadecimal digit",
-                    "timestamp": "2026-08-05 11:26:00 IST"
-                },
-                {
-                    "question_id": 309,
-                    "question_text": "How are decimal numbers converted to hexadecimal numbers?",
-                    "status": "CORRECT",
-                    "selected_option": 1,
-                    "correct_option": 1,
-                    "correct_answer_text": "By dividing the decimal number by 16 and noting the quotient and remainder",
-                    "timestamp": "2026-08-05 11:26:17 IST"
-                },
-                {
-                    "question_id": 316,
-                    "question_text": "How are octal numbers converted to hexadecimal numbers?",
-                    "status": "CORRECT",
-                    "selected_option": 1,
-                    "correct_option": 1,
-                    "correct_answer_text": "By converting each digit to binary and then to hexadecimal",
-                    "timestamp": "2026-08-05 11:26:40 IST"
-                },
-                {
-                    "question_id": 16,
-                    "question_text": "Which of the following ports supports single stream data transmission?",
-                    "status": "WRONG",
-                    "selected_option": 1,
-                    "correct_option": 3,
-                    "correct_answer_text": "Serial Port",
-                    "timestamp": "2026-08-05 11:26:49 IST"
-                },
-                {
-                    "question_id": 140,
-                    "question_text": "What is the function of Ctrl + F8?",
-                    "status": "WRONG",
-                    "selected_option": 2,
-                    "correct_option": 0,
-                    "correct_answer_text": "Activates the Resize window command",
-                    "timestamp": "2026-08-05 11:26:59 IST"
-                },
-                {
-                    "question_id": 453,
-                    "question_text": "What is the function of Shift+F2?",
-                    "status": "WRONG",
-                    "selected_option": 2,
-                    "correct_option": 1,
-                    "correct_answer_text": "Add or edit a cell note",
-                    "timestamp": "2026-08-05 11:27:16 IST"
-                },
-                {
-                    "question_id": 70,
-                    "question_text": "What is the purpose of the 'Sparklines' option in the 'Insert' tab in MS-EXCEL?",
-                    "status": "CORRECT",
-                    "selected_option": 2,
-                    "correct_option": 2,
-                    "correct_answer_text": "To create a mini chart in a cell",
-                    "timestamp": "2026-08-05 11:27:29 IST"
-                },
-                {
-                    "question_id": 493,
-                    "question_text": "What is the purpose of OSI?",
-                    "status": "CORRECT",
-                    "selected_option": 0,
-                    "correct_option": 0,
-                    "correct_answer_text": "To standardize communication between devices",
-                    "timestamp": "2026-08-05 11:27:38 IST"
-                },
-                {
-                    "question_id": 270,
-                    "question_text": "What is the purpose of a logic bomb in the context of hacking?",
-                    "status": "WRONG",
-                    "selected_option": 1,
-                    "correct_option": 3,
-                    "correct_answer_text": "To implement a malicious function after certain conditions are met",
-                    "timestamp": "2026-08-05 11:27:55 IST"
-                },
-                {
-                    "question_id": 500,
-                    "question_text": "What is the purpose of CLI?",
-                    "status": "WRONG",
-                    "selected_option": 2,
-                    "correct_option": 0,
-                    "correct_answer_text": "To allow users to interact with a system by typing text",
-                    "timestamp": "2026-08-05 11:28:11 IST"
-                },
-                {
-                    "question_id": 83,
-                    "question_text": "Which of the following is not a function in MS-EXCEL?",
-                    "status": "WRONG",
-                    "selected_option": 2,
-                    "correct_option": 3,
-                    "correct_answer_text": "EDIT",
-                    "timestamp": "2026-08-05 11:28:23 IST"
-                },
-                {
-                    "question_id": 521,
-                    "question_text": "Which MS Excel function can be used to sum up the numbers entered in a group of cells?",
-                    "status": "CORRECT",
-                    "selected_option": 0,
-                    "correct_option": 0,
-                    "correct_answer_text": "SUM",
-                    "timestamp": "2026-08-05 11:28:33 IST"
-                },
-                {
-                    "question_id": 125,
-                    "question_text": "What is the function of Alt + Shift + F2?",
-                    "status": "WRONG",
-                    "selected_option": 2,
-                    "correct_option": 0,
-                    "correct_answer_text": "Displays the Save As dialog box",
-                    "timestamp": "2026-08-05 11:28:52 IST"
-                },
-                {
-                    "question_id": 153,
-                    "question_text": "What is the function of Shift + Insert in the active cell?",
-                    "status": "WRONG",
-                    "selected_option": 2,
-                    "correct_option": 0,
-                    "correct_answer_text": "Enters the data from the clipboard",
-                    "timestamp": "2026-08-05 11:29:12 IST"
-                },
-                {
-                    "question_id": 545,
-                    "question_text": "What accurately describes application software?",
-                    "status": "CORRECT",
-                    "selected_option": 0,
-                    "correct_option": 0,
-                    "correct_answer_text": "Designed to perform specific tasks or functions to meet the user’s needs",
-                    "timestamp": "2026-08-05 11:29:27 IST"
-                },
-                {
-                    "question_id": 441,
-                    "question_text": "How to open the View tab?",
-                    "status": "CORRECT",
-                    "selected_option": 1,
-                    "correct_option": 1,
-                    "correct_answer_text": "Alt+W",
-                    "timestamp": "2026-08-05 11:29:46 IST"
-                },
-                {
-                    "question_id": 317,
-                    "question_text": "What is the purpose of computer codes in representing characters?",
-                    "status": "CORRECT",
-                    "selected_option": 1,
-                    "correct_option": 1,
-                    "correct_answer_text": "To represent any character in a unique coded pattern",
-                    "timestamp": "2026-08-05 11:30:00 IST"
-                },
-                {
-                    "question_id": 208,
-                    "question_text": "What option is pressed to create a new email message in Gmail?",
-                    "status": "CORRECT",
-                    "selected_option": 2,
-                    "correct_option": 2,
-                    "correct_answer_text": "Compose",
-                    "timestamp": "2026-08-05 11:30:09 IST"
-                },
-                {
-                    "question_id": 391,
-                    "question_text": "What is Microsoft OneNote used for?",
-                    "status": "WRONG",
-                    "selected_option": 1,
-                    "correct_option": 2,
-                    "correct_answer_text": "Notetaking and note sharing",
-                    "timestamp": "2026-08-05 11:30:27 IST"
-                },
-                {
-                    "question_id": 311,
-                    "question_text": "What is the least significant digit in a hexadecimal number?",
-                    "status": "WRONG",
-                    "selected_option": 3,
-                    "correct_option": 1,
-                    "correct_answer_text": "The rightmost digit",
-                    "timestamp": "2026-08-05 11:30:44 IST"
-                },
-                {
-                    "question_id": 327,
-                    "question_text": "What is the purpose of the remainder in decimal to hexadecimal conversion?",
-                    "status": "WRONG",
-                    "selected_option": 0,
-                    "correct_option": 3,
-                    "correct_answer_text": "To represent the hexadecimal digit",
-                    "timestamp": "2026-08-05 11:31:00 IST"
-                },
-                {
-                    "question_id": 313,
-                    "question_text": "What is the purpose of using powers of 16 in hexadecimal to decimal conversion?",
-                    "status": "CORRECT",
-                    "selected_option": 2,
-                    "correct_option": 2,
-                    "correct_answer_text": "To multiply each digit of the hexadecimal number",
-                    "timestamp": "2026-08-05 11:31:12 IST"
-                },
-                {
-                    "question_id": 483,
-                    "question_text": "Who is the Chairman and CEO of IBM?",
-                    "status": "WRONG",
-                    "selected_option": 2,
-                    "correct_option": 0,
-                    "correct_answer_text": "Arvind Krishna",
-                    "timestamp": "2026-08-05 11:31:25 IST"
-                },
-                {
-                    "question_id": 463,
-                    "question_text": "What is the purpose of Ctrl+F4?",
-                    "status": "CORRECT",
-                    "selected_option": 0,
-                    "correct_option": 0,
-                    "correct_answer_text": "Closes the selected workbook window",
-                    "timestamp": "2026-08-05 11:31:33 IST"
-                },
-                {
-                    "question_id": 117,
-                    "question_text": "What is the purpose of the CONCATENATE function?",
-                    "status": "CORRECT",
-                    "selected_option": 0,
-                    "correct_option": 0,
-                    "correct_answer_text": "To join several text items into one text item cell",
-                    "timestamp": "2026-08-05 11:31:47 IST"
-                }
-            ]
-        }
-    ],
-    "last_synced": "2026-08-05 15:25:41 IST"
+    "full_quiz_history": [],
+    "last_synced": "2026-08-05 20:33:22 IST"
 }

@@ -18,35 +18,37 @@
         "referred_by": null,
         "referral_count": 0,
         "bonus_quota": 0,
-        "last_profile_edit": "2026-08-05 15:09:05 IST",
-        "last_active": "2026-08-05 15:14:41 IST",
-        "last_activity_epoch": 1785923081,
+        "paid_question_balance": 0,
+        "vip_pass_expiry": null,
+        "last_profile_edit": null,
+        "last_active": "2026-08-05 17:20:01 IST",
+        "last_activity_epoch": 1785930601,
         "is_banned": 0,
         "is_verified": 1,
         "created_at": "2026-08-05 15:09:05 IST"
     },
     "bot_engagement_metrics": {
-        "last_login_timestamp": "2026-08-05 15:14:41 IST",
-        "total_time_spent_overall": "440 seconds (7.33 mins)",
+        "last_login_timestamp": "2026-08-05 17:20:01 IST",
+        "total_time_spent_overall": "475 seconds (7.92 mins)",
         "daily_spent_time_breakdown": {
-            "2026-08-05": "440 seconds (7.33 mins)"
+            "2026-08-05": "475 seconds (7.92 mins)"
         },
         "questions_attempted_per_day": {
-            "2026-08-05": 25
+            "2026-08-05": 20
         }
     },
     "academic_summary": {
-        "total_quizzes_attempted": 1,
-        "total_questions_attempted": 25,
+        "total_quizzes_attempted": 2,
+        "total_questions_attempted": 20,
         "total_correct": 14,
-        "total_wrong": 11,
+        "total_wrong": 6,
         "total_skipped": 0,
         "datewise_quiz_summary": {
             "2026-08-05": {
-                "total_quizzes": 1,
-                "total_questions": 25,
+                "total_quizzes": 2,
+                "total_questions": 20,
                 "total_correct": 14,
-                "total_wrong": 11,
+                "total_wrong": 6,
                 "total_score": 14.0,
                 "total_time_seconds": 0
             }
@@ -60,9 +62,8 @@
     "student_reviews_given": [],
     "subscription_ledger": {
         "status": "FREE_TIER",
-        "active_plan": "Standard Free Tier",
-        "total_amount_paid": 0.0,
-        "payment_history": []
+        "paid_question_balance": 0,
+        "vip_pass_expiry": null
     },
     "badges_and_achievements": {
         "earned_badges": [
@@ -73,246 +74,217 @@
     },
     "full_quiz_history": [
         {
-            "id": 28,
+            "id": 9,
             "user_id": 6367257644,
             "quiz_id": "computer_awareness_mock",
-            "questions_attempted": 25,
-            "total_questions": 25,
-            "correct_answers": 14,
-            "wrong_answers": 11,
+            "questions_attempted": 10,
+            "total_questions": 10,
+            "correct_answers": 6,
+            "wrong_answers": 4,
             "skipped_count": 0,
-            "score": 14.0,
+            "score": 6.0,
             "time_taken": 0,
-            "attempt_timestamp": "2026-08-05 15:14:06 IST",
+            "attempt_timestamp": "2026-08-05 17:19:53 IST",
             "attempt_date": "2026-08-05",
             "question_details": [
                 {
-                    "question_id": 244,
-                    "question_text": "What is the function of a router in a network?",
-                    "status": "CORRECT",
-                    "selected_option": 1,
-                    "correct_option": 1,
-                    "correct_answer_text": "To analyse and alter data packets for transmission over different networks",
-                    "timestamp": "2026-08-05 15:09:25 IST"
-                },
-                {
-                    "question_id": 241,
-                    "question_text": "How does a router handle data packets that are too large for a network?",
-                    "status": "WRONG",
-                    "selected_option": 3,
-                    "correct_option": 1,
-                    "correct_answer_text": "It repackages the packets as smaller packets",
-                    "timestamp": "2026-08-05 15:09:41 IST"
-                },
-                {
-                    "question_id": 560,
-                    "question_text": "How can you insert a blank row at the top of a worksheet in Excel?",
+                    "question_id": 257,
+                    "question_text": "What is the difference between ethical and non-ethical hacking?",
                     "status": "CORRECT",
                     "selected_option": 0,
                     "correct_option": 0,
-                    "correct_answer_text": "Drag the mouse on the row border to select the row and click Insert in the Cells group on the Home tab",
-                    "timestamp": "2026-08-05 15:09:50 IST"
+                    "correct_answer_text": "Ethical hacking is legal, while non-ethical hacking is illegal",
+                    "timestamp": "2026-08-05 17:18:04 IST"
                 },
                 {
-                    "question_id": 277,
-                    "question_text": "Which networking device filters network traffic while connecting multiple computers?",
+                    "question_id": 135,
+                    "question_text": "What is the purpose of using Shift + F12?",
                     "status": "WRONG",
+                    "selected_option": 1,
+                    "correct_option": 0,
+                    "correct_answer_text": "Saves the active workbook",
+                    "timestamp": "2026-08-05 17:18:16 IST"
+                },
+                {
+                    "question_id": 55,
+                    "question_text": "What is the purpose of Win Keys + No. 1,2,3,4,5 in a Windows system?",
+                    "status": "CORRECT",
                     "selected_option": 0,
+                    "correct_option": 0,
+                    "correct_answer_text": "To show the active window one by one",
+                    "timestamp": "2026-08-05 17:18:29 IST"
+                },
+                {
+                    "question_id": 400,
+                    "question_text": "How does Microsoft 365 differ from the old-fashioned bundle in terms of payment?",
+                    "status": "WRONG",
+                    "selected_option": 3,
                     "correct_option": 1,
-                    "correct_answer_text": "Switch",
-                    "timestamp": "2026-08-05 15:10:07 IST"
+                    "correct_answer_text": "Microsoft 365 is a subscription",
+                    "timestamp": "2026-08-05 17:18:42 IST"
+                },
+                {
+                    "question_id": 183,
+                    "question_text": "What is the function of the keyboard shortcut Page Down on a worksheet?",
+                    "status": "CORRECT",
+                    "selected_option": 1,
+                    "correct_option": 1,
+                    "correct_answer_text": "Moves to the next screen of rows down",
+                    "timestamp": "2026-08-05 17:18:58 IST"
+                },
+                {
+                    "question_id": 408,
+                    "question_text": "How do you move from an open dialog box back to the document in Word?",
+                    "status": "WRONG",
+                    "selected_option": 3,
+                    "correct_option": 1,
+                    "correct_answer_text": "Alt+F6",
+                    "timestamp": "2026-08-05 17:19:07 IST"
+                },
+                {
+                    "question_id": 427,
+                    "question_text": "How to move one cell up in a worksheet?",
+                    "status": "CORRECT",
+                    "selected_option": 0,
+                    "correct_option": 0,
+                    "correct_answer_text": "Up arrow key",
+                    "timestamp": "2026-08-05 17:19:16 IST"
                 },
                 {
                     "question_id": 200,
                     "question_text": "What is the effect of using the keyboard shortcut Ctrl + Tab on multiple open workbooks?",
                     "status": "WRONG",
-                    "selected_option": 2,
+                    "selected_option": 0,
                     "correct_option": 1,
                     "correct_answer_text": "Moves to the next open workbook or window",
-                    "timestamp": "2026-08-05 15:10:20 IST"
+                    "timestamp": "2026-08-05 17:19:29 IST"
                 },
                 {
-                    "question_id": 221,
-                    "question_text": "What is the purpose of the Rendering Engine in a web browser?",
+                    "question_id": 8,
+                    "question_text": "How many pins are available in a Parallel Port?",
                     "status": "CORRECT",
-                    "selected_option": 0,
-                    "correct_option": 0,
-                    "correct_answer_text": "To display web pages",
-                    "timestamp": "2026-08-05 15:10:27 IST"
+                    "selected_option": 1,
+                    "correct_option": 1,
+                    "correct_answer_text": "25 pin",
+                    "timestamp": "2026-08-05 17:19:34 IST"
                 },
                 {
-                    "question_id": 58,
-                    "question_text": "What is the function of Win Keys + R in a Windows system?",
-                    "status": "CORRECT",
-                    "selected_option": 0,
-                    "correct_option": 0,
-                    "correct_answer_text": "To open Run Dialogue Box",
-                    "timestamp": "2026-08-05 15:10:37 IST"
-                },
-                {
-                    "question_id": 217,
-                    "question_text": "What is the primary mode of transaction in IMPS?",
+                    "question_id": 96,
+                    "question_text": "Which function capitalizes the first letter of each word in a text value?",
                     "status": "CORRECT",
                     "selected_option": 2,
                     "correct_option": 2,
-                    "correct_answer_text": "Mobile-based",
-                    "timestamp": "2026-08-05 15:10:45 IST"
-                },
+                    "correct_answer_text": "PROPER",
+                    "timestamp": "2026-08-05 17:19:53 IST"
+                }
+            ]
+        },
+        {
+            "id": 8,
+            "user_id": 6367257644,
+            "quiz_id": "computer_awareness_mock",
+            "questions_attempted": 10,
+            "total_questions": 10,
+            "correct_answers": 8,
+            "wrong_answers": 2,
+            "skipped_count": 0,
+            "score": 8.0,
+            "time_taken": 0,
+            "attempt_timestamp": "2026-08-05 17:15:11 IST",
+            "attempt_date": "2026-08-05",
+            "question_details": [
                 {
-                    "question_id": 74,
-                    "question_text": "What is the purpose of the 'Page Layout' tab in MS-EXCEL?",
+                    "question_id": 266,
+                    "question_text": "What is the difference between ethical and non-ethical hacking in terms of legality?",
                     "status": "CORRECT",
                     "selected_option": 1,
                     "correct_option": 1,
-                    "correct_answer_text": "To change the page layout",
-                    "timestamp": "2026-08-05 15:10:53 IST"
+                    "correct_answer_text": "Ethical hacking is legal, while non-ethical hacking is illegal",
+                    "timestamp": "2026-08-05 17:13:27 IST"
                 },
                 {
-                    "question_id": 312,
-                    "question_text": "How are octal numbers converted to decimal numbers?",
-                    "status": "WRONG",
-                    "selected_option": 0,
-                    "correct_option": 1,
-                    "correct_answer_text": "By multiplying each digit with powers of 8",
-                    "timestamp": "2026-08-05 15:11:08 IST"
-                },
-                {
-                    "question_id": 154,
-                    "question_text": "Which shortcut key is used to display the Pick From List drop-down list?",
-                    "status": "WRONG",
-                    "selected_option": 1,
-                    "correct_option": 0,
-                    "correct_answer_text": "Alt + Down Arrow",
-                    "timestamp": "2026-08-05 15:11:22 IST"
-                },
-                {
-                    "question_id": 139,
-                    "question_text": "What is the shortcut to display the Macro dialog box?",
+                    "question_id": 491,
+                    "question_text": "What is the syntax used for creating database objects?",
                     "status": "CORRECT",
                     "selected_option": 0,
                     "correct_option": 0,
-                    "correct_answer_text": "Alt + F8",
-                    "timestamp": "2026-08-05 15:11:30 IST"
+                    "correct_answer_text": "DDL",
+                    "timestamp": "2026-08-05 17:13:35 IST"
                 },
                 {
-                    "question_id": 163,
-                    "question_text": "What is the function of Tab in the active cell?",
-                    "status": "CORRECT",
-                    "selected_option": 0,
-                    "correct_option": 0,
-                    "correct_answer_text": "Enters the contents of the active cell and moves one cell to the right",
-                    "timestamp": "2026-08-05 15:11:45 IST"
-                },
-                {
-                    "question_id": 101,
-                    "question_text": "Which shortcut is used to move to the previous cell in a row of the table?",
+                    "question_id": 305,
+                    "question_text": "How are hexadecimal numbers converted to decimal numbers?",
                     "status": "CORRECT",
                     "selected_option": 1,
                     "correct_option": 1,
-                    "correct_answer_text": "Shift + Tab",
-                    "timestamp": "2026-08-05 15:11:58 IST"
+                    "correct_answer_text": "By multiplying each digit with powers of 16",
+                    "timestamp": "2026-08-05 17:13:47 IST"
                 },
                 {
-                    "question_id": 261,
-                    "question_text": "What is the definition of hacking in computer networking?",
-                    "status": "CORRECT",
-                    "selected_option": 0,
-                    "correct_option": 0,
-                    "correct_answer_text": "Any technical effort to manipulate the normal behavior of network connections and connected systems",
-                    "timestamp": "2026-08-05 15:12:05 IST"
-                },
-                {
-                    "question_id": 518,
-                    "question_text": "What type of data can MS Excel functions operate on?",
-                    "status": "CORRECT",
-                    "selected_option": 1,
-                    "correct_option": 1,
-                    "correct_answer_text": "Range of cells or groups of cells",
-                    "timestamp": "2026-08-05 15:12:18 IST"
-                },
-                {
-                    "question_id": 24,
-                    "question_text": "Which port has 9 pins and 25 pins versions?",
-                    "status": "WRONG",
-                    "selected_option": 0,
-                    "correct_option": 3,
-                    "correct_answer_text": "Serial Port",
-                    "timestamp": "2026-08-05 15:12:26 IST"
-                },
-                {
-                    "question_id": 242,
-                    "question_text": "What is the purpose of a gateway in a network?",
+                    "question_id": 253,
+                    "question_text": "What is the difference between a hacker and a cracker?",
                     "status": "CORRECT",
                     "selected_option": 2,
                     "correct_option": 2,
-                    "correct_answer_text": "To serve as the entry and exit point of a network",
-                    "timestamp": "2026-08-05 15:12:38 IST"
+                    "correct_answer_text": "A hacker is a person engaged in hacking, while a cracker is a person who carries out malicious attacks on computer networks",
+                    "timestamp": "2026-08-05 17:14:07 IST"
                 },
                 {
-                    "question_id": 320,
-                    "question_text": "How are decimal numbers represented in computer codes?",
+                    "question_id": 286,
+                    "question_text": "In which mode of data transmission is data transmitted in one direction only?",
                     "status": "WRONG",
                     "selected_option": 1,
-                    "correct_option": 3,
-                    "correct_answer_text": "Using a unique coded pattern of 1's and 0's",
-                    "timestamp": "2026-08-05 15:12:56 IST"
+                    "correct_option": 0,
+                    "correct_answer_text": "Simplex",
+                    "timestamp": "2026-08-05 17:14:23 IST"
                 },
                 {
-                    "question_id": 89,
-                    "question_text": "Which of the following is a type of add-in option in the 'Insert' tab in MS-EXCEL?",
-                    "status": "WRONG",
-                    "selected_option": 3,
-                    "correct_option": 1,
-                    "correct_answer_text": "3D Map",
-                    "timestamp": "2026-08-05 15:13:14 IST"
-                },
-                {
-                    "question_id": 422,
-                    "question_text": "What is the function of Ctrl+Shift+F6 in Word?",
-                    "status": "WRONG",
-                    "selected_option": 2,
-                    "correct_option": 1,
-                    "correct_answer_text": "Switches to the previous document window",
-                    "timestamp": "2026-08-05 15:13:23 IST"
-                },
-                {
-                    "question_id": 212,
-                    "question_text": "Which folder is used to store deleted emails?",
+                    "question_id": 234,
+                    "question_text": "What is a gateway in the context of networking?",
                     "status": "CORRECT",
-                    "selected_option": 2,
-                    "correct_option": 2,
-                    "correct_answer_text": "Trash",
-                    "timestamp": "2026-08-05 15:13:33 IST"
+                    "selected_option": 1,
+                    "correct_option": 1,
+                    "correct_answer_text": "A combination of software and hardware used to connect different networks",
+                    "timestamp": "2026-08-05 17:14:34 IST"
                 },
                 {
-                    "question_id": 528,
-                    "question_text": "How can you quickly remove all formatting from a selected text in MS Word?",
+                    "question_id": 129,
+                    "question_text": "What is the purpose of using Ctrl + F1?",
+                    "status": "WRONG",
+                    "selected_option": 2,
+                    "correct_option": 0,
+                    "correct_answer_text": "Displays or hides the Ribbon",
+                    "timestamp": "2026-08-05 17:14:48 IST"
+                },
+                {
+                    "question_id": 469,
+                    "question_text": "What is the purpose of Alt+F1?",
                     "status": "CORRECT",
                     "selected_option": 0,
                     "correct_option": 0,
-                    "correct_answer_text": "Clear Formatting",
-                    "timestamp": "2026-08-05 15:13:41 IST"
+                    "correct_answer_text": "Creates an embedded chart of the data in the current range",
+                    "timestamp": "2026-08-05 17:14:58 IST"
                 },
                 {
-                    "question_id": 245,
-                    "question_text": "What is the role of a gateway in connecting different networks?",
-                    "status": "WRONG",
-                    "selected_option": 1,
-                    "correct_option": 3,
-                    "correct_answer_text": "To connect different types of networks having different protocols",
-                    "timestamp": "2026-08-05 15:13:53 IST"
+                    "question_id": 398,
+                    "question_text": "What is the name of the email client in Microsoft 365?",
+                    "status": "CORRECT",
+                    "selected_option": 2,
+                    "correct_option": 2,
+                    "correct_answer_text": "Microsoft Outlook",
+                    "timestamp": "2026-08-05 17:15:04 IST"
                 },
                 {
-                    "question_id": 284,
-                    "question_text": "What is the primary purpose of Network Attached Storage (NAS)?",
-                    "status": "WRONG",
+                    "question_id": 162,
+                    "question_text": "Which shortcut key is used to enter a new line into a cell?",
+                    "status": "CORRECT",
                     "selected_option": 0,
-                    "correct_option": 1,
-                    "correct_answer_text": "To provide a centralized disk storage",
-                    "timestamp": "2026-08-05 15:14:05 IST"
+                    "correct_option": 0,
+                    "correct_answer_text": "Alt + Enter",
+                    "timestamp": "2026-08-05 17:15:11 IST"
                 }
             ]
         }
     ],
-    "last_synced": "2026-08-05 15:25:41 IST"
+    "last_synced": "2026-08-05 20:33:22 IST"
 }

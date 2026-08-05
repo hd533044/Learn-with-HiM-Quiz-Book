@@ -18,458 +18,57 @@
         "referred_by": null,
         "referral_count": 0,
         "bonus_quota": 0,
-        "last_profile_edit": "2026-08-05 12:22:23 IST",
-        "last_active": "2026-08-05 12:35:16 IST",
-        "last_activity_epoch": 1785913516,
+        "paid_question_balance": 0,
+        "vip_pass_expiry": null,
+        "last_profile_edit": null,
+        "last_active": "2026-08-05 19:13:15 IST",
+        "last_activity_epoch": 1785937395,
         "is_banned": 0,
         "is_verified": 1,
         "created_at": "2026-08-05 12:22:23 IST"
     },
     "bot_engagement_metrics": {
-        "last_login_timestamp": "2026-08-05 12:35:16 IST",
-        "total_time_spent_overall": "645 seconds (10.75 mins)",
+        "last_login_timestamp": "2026-08-05 19:13:15 IST",
+        "total_time_spent_overall": "25 seconds (0.42 mins)",
         "daily_spent_time_breakdown": {
-            "2026-08-05": "645 seconds (10.75 mins)"
+            "2026-08-05": "25 seconds (0.42 mins)"
         },
-        "questions_attempted_per_day": {
-            "2026-08-05": 40
-        }
+        "questions_attempted_per_day": {}
     },
     "academic_summary": {
-        "total_quizzes_attempted": 1,
-        "total_questions_attempted": 40,
-        "total_correct": 25,
-        "total_wrong": 13,
-        "total_skipped": 2,
-        "datewise_quiz_summary": {
-            "2026-08-05": {
-                "total_quizzes": 1,
-                "total_questions": 40,
-                "total_correct": 25,
-                "total_wrong": 13,
-                "total_score": 25.0,
-                "total_time_seconds": 0
-            }
-        }
+        "total_quizzes_attempted": 0,
+        "total_questions_attempted": 0,
+        "total_correct": 0,
+        "total_wrong": 0,
+        "total_skipped": 0,
+        "datewise_quiz_summary": {}
     },
     "saved_questions_ledger": {
-        "total_saved": 2,
-        "datewise_saved_summary": {
-            "2026-08-05": 2
-        },
-        "saved_questions": [
-            {
-                "id": 8,
-                "user_id": 1063940389,
-                "question_text": "What is the function of a gateway in routing data packets?",
-                "correct_option": 0,
-                "explanation": "A gateway routes data packets to the destination node using the best possible route.",
-                "saved_at": "2026-08-05 12:33:16 IST",
-                "options": [
-                    "To route data packets to the destination node",
-                    "To analyse and alter data packets for transmission",
-                    "To connect multiple devices within a network",
-                    "To provide internet connectivity to devices"
-                ]
-            },
-            {
-                "id": 7,
-                "user_id": 1063940389,
-                "question_text": "What is the purpose of using Alt + F4?",
-                "correct_option": 0,
-                "explanation": "Alt + F4 exits Microsoft Excel and prompts to save unsaved files.",
-                "saved_at": "2026-08-05 12:32:25 IST",
-                "options": [
-                    "Closes all workbooks and exits Excel",
-                    "Displays the Save As dialog box",
-                    "Creates a chart on a chart sheet using the highlighted range",
-                    "Displays the Open dialog box"
-                ]
-            }
-        ]
+        "total_saved": 0,
+        "datewise_saved_summary": {},
+        "saved_questions": []
     },
-    "student_reviews_given": [],
+    "student_reviews_given": [
+        {
+            "id": 7,
+            "user_id": 1063940389,
+            "full_name": "Bipul",
+            "feedback_text": "10/10 Quality Quizzes!",
+            "submitted_at": "2026-08-05 19:13:15 IST"
+        }
+    ],
     "subscription_ledger": {
         "status": "FREE_TIER",
-        "active_plan": "Standard Free Tier",
-        "total_amount_paid": 0.0,
-        "payment_history": []
+        "paid_question_balance": 0,
+        "vip_pass_expiry": null
     },
     "badges_and_achievements": {
         "earned_badges": [
             "Early Learner",
             "Registered Scholar"
         ],
-        "streak_days": 1
+        "streak_days": 0
     },
-    "full_quiz_history": [
-        {
-            "id": 18,
-            "user_id": 1063940389,
-            "quiz_id": "computer_awareness_mock",
-            "questions_attempted": 40,
-            "total_questions": 40,
-            "correct_answers": 25,
-            "wrong_answers": 13,
-            "skipped_count": 2,
-            "score": 25.0,
-            "time_taken": 0,
-            "attempt_timestamp": "2026-08-05 12:35:17 IST",
-            "attempt_date": "2026-08-05",
-            "question_details": [
-                {
-                    "question_id": 297,
-                    "question_text": "What is the term for a type of malware that records keystrokes?",
-                    "status": "CORRECT",
-                    "selected_option": 0,
-                    "correct_option": 0,
-                    "correct_answer_text": "Keyloggers",
-                    "timestamp": "2026-08-05 12:23:52 IST"
-                },
-                {
-                    "question_id": 204,
-                    "question_text": "What is the term for transferring data from the customer's machine to the server?",
-                    "status": "CORRECT",
-                    "selected_option": 1,
-                    "correct_option": 1,
-                    "correct_answer_text": "Uploading",
-                    "timestamp": "2026-08-05 12:24:08 IST"
-                },
-                {
-                    "question_id": 360,
-                    "question_text": "In what year was the Param Bio-blaze launched?",
-                    "status": "SKIPPED_TIMEOUT",
-                    "selected_option": null,
-                    "correct_option": 2,
-                    "correct_answer_text": "2014",
-                    "timestamp": "2026-08-05 12:24:41 IST"
-                },
-                {
-                    "question_id": 191,
-                    "question_text": "What is the function of the keyboard shortcut Ctrl + Up Arrow on a worksheet?",
-                    "status": "WRONG",
-                    "selected_option": 2,
-                    "correct_option": 1,
-                    "correct_answer_text": "Moves to the top boundary of the current data region",
-                    "timestamp": "2026-08-05 12:25:08 IST"
-                },
-                {
-                    "question_id": 375,
-                    "question_text": "What type of computer is SEAC?",
-                    "status": "WRONG",
-                    "selected_option": 1,
-                    "correct_option": 0,
-                    "correct_answer_text": "First generation",
-                    "timestamp": "2026-08-05 12:25:26 IST"
-                },
-                {
-                    "question_id": 546,
-                    "question_text": "What enables IoT devices to gather data and exchange it over the network?",
-                    "status": "WRONG",
-                    "selected_option": 1,
-                    "correct_option": 0,
-                    "correct_answer_text": "Actuators and sensors",
-                    "timestamp": "2026-08-05 12:25:49 IST"
-                },
-                {
-                    "question_id": 7,
-                    "question_text": "What is the primary function of a Parallel Port?",
-                    "status": "CORRECT",
-                    "selected_option": 1,
-                    "correct_option": 1,
-                    "correct_answer_text": "Used for scanners and printers",
-                    "timestamp": "2026-08-05 12:26:05 IST"
-                },
-                {
-                    "question_id": 104,
-                    "question_text": "What is the shortcut to preview the worksheet before printing?",
-                    "status": "CORRECT",
-                    "selected_option": 1,
-                    "correct_option": 1,
-                    "correct_answer_text": "Ctrl + F2",
-                    "timestamp": "2026-08-05 12:26:16 IST"
-                },
-                {
-                    "question_id": 534,
-                    "question_text": "What is the default alignment of text in a Microsoft Word document?",
-                    "status": "CORRECT",
-                    "selected_option": 1,
-                    "correct_option": 1,
-                    "correct_answer_text": "Left",
-                    "timestamp": "2026-08-05 12:26:41 IST"
-                },
-                {
-                    "question_id": 216,
-                    "question_text": "What does IMPS stand for?",
-                    "status": "WRONG",
-                    "selected_option": 0,
-                    "correct_option": 1,
-                    "correct_answer_text": "Immediate Payment Service",
-                    "timestamp": "2026-08-05 12:27:10 IST"
-                },
-                {
-                    "question_id": 392,
-                    "question_text": "What is the difference between Microsoft 365 and the old-fashioned bundle?",
-                    "status": "WRONG",
-                    "selected_option": 1,
-                    "correct_option": 2,
-                    "correct_answer_text": "Microsoft 365 is sold as a subscription and combines online services",
-                    "timestamp": "2026-08-05 12:27:28 IST"
-                },
-                {
-                    "question_id": 81,
-                    "question_text": "Which of the following groups is in the 'Insert' tab in MS-EXCEL?",
-                    "status": "WRONG",
-                    "selected_option": 1,
-                    "correct_option": 0,
-                    "correct_answer_text": "Illustrations",
-                    "timestamp": "2026-08-05 12:27:50 IST"
-                },
-                {
-                    "question_id": 103,
-                    "question_text": "What is the purpose of the CONCATENATE function in MS-Excel 2010?",
-                    "status": "CORRECT",
-                    "selected_option": 0,
-                    "correct_option": 0,
-                    "correct_answer_text": "To join several text items into one text item cell",
-                    "timestamp": "2026-08-05 12:28:03 IST"
-                },
-                {
-                    "question_id": 479,
-                    "question_text": "What does CDMA stand for?",
-                    "status": "WRONG",
-                    "selected_option": 2,
-                    "correct_option": 0,
-                    "correct_answer_text": "Code Division Multiple Access",
-                    "timestamp": "2026-08-05 12:28:20 IST"
-                },
-                {
-                    "question_id": 5,
-                    "question_text": "What is the data transfer speed of a Serial Port?",
-                    "status": "WRONG",
-                    "selected_option": 0,
-                    "correct_option": 1,
-                    "correct_answer_text": "115 kilobits per second",
-                    "timestamp": "2026-08-05 12:28:41 IST"
-                },
-                {
-                    "question_id": 13,
-                    "question_text": "What is the primary function of a Firewire Port?",
-                    "status": "CORRECT",
-                    "selected_option": 2,
-                    "correct_option": 2,
-                    "correct_answer_text": "Used for connecting camcorders and video equipment",
-                    "timestamp": "2026-08-05 12:29:00 IST"
-                },
-                {
-                    "question_id": 385,
-                    "question_text": "How is Microsoft 365 sold?",
-                    "status": "CORRECT",
-                    "selected_option": 1,
-                    "correct_option": 1,
-                    "correct_answer_text": "As a subscription",
-                    "timestamp": "2026-08-05 12:29:09 IST"
-                },
-                {
-                    "question_id": 423,
-                    "question_text": "How do you close the current document in Word?",
-                    "status": "CORRECT",
-                    "selected_option": 0,
-                    "correct_option": 0,
-                    "correct_answer_text": "Press Ctrl+F4",
-                    "timestamp": "2026-08-05 12:29:23 IST"
-                },
-                {
-                    "question_id": 12,
-                    "question_text": "What type of devices can be connected to a Universal Serial Bus (USB) Port?",
-                    "status": "CORRECT",
-                    "selected_option": 2,
-                    "correct_option": 2,
-                    "correct_answer_text": "All kinds of external USB devices",
-                    "timestamp": "2026-08-05 12:29:49 IST"
-                },
-                {
-                    "question_id": 312,
-                    "question_text": "How are octal numbers converted to decimal numbers?",
-                    "status": "CORRECT",
-                    "selected_option": 1,
-                    "correct_option": 1,
-                    "correct_answer_text": "By multiplying each digit with powers of 8",
-                    "timestamp": "2026-08-05 12:30:16 IST"
-                },
-                {
-                    "question_id": 448,
-                    "question_text": "What is the function of End, Arrow key?",
-                    "status": "WRONG",
-                    "selected_option": 1,
-                    "correct_option": 2,
-                    "correct_answer_text": "Enter the End mode and move to the next nonblank cell",
-                    "timestamp": "2026-08-05 12:30:35 IST"
-                },
-                {
-                    "question_id": 549,
-                    "question_text": "What should you click to choose the date for sorting in Gmail?",
-                    "status": "CORRECT",
-                    "selected_option": 0,
-                    "correct_option": 0,
-                    "correct_answer_text": "The ‘Date within’ field",
-                    "timestamp": "2026-08-05 12:30:59 IST"
-                },
-                {
-                    "question_id": 478,
-                    "question_text": "What is the shortcut to add or edit a cell note?",
-                    "status": "WRONG",
-                    "selected_option": 3,
-                    "correct_option": 0,
-                    "correct_answer_text": "Shift+F2",
-                    "timestamp": "2026-08-05 12:31:09 IST"
-                },
-                {
-                    "question_id": 493,
-                    "question_text": "What is the purpose of OSI?",
-                    "status": "CORRECT",
-                    "selected_option": 0,
-                    "correct_option": 0,
-                    "correct_answer_text": "To standardize communication between devices",
-                    "timestamp": "2026-08-05 12:31:25 IST"
-                },
-                {
-                    "question_id": 68,
-                    "question_text": "What is the purpose of the UPPER function in MS-EXCEL?",
-                    "status": "CORRECT",
-                    "selected_option": 1,
-                    "correct_option": 1,
-                    "correct_answer_text": "To convert text to upper case",
-                    "timestamp": "2026-08-05 12:31:45 IST"
-                },
-                {
-                    "question_id": 400,
-                    "question_text": "How does Microsoft 365 differ from the old-fashioned bundle in terms of payment?",
-                    "status": "CORRECT",
-                    "selected_option": 1,
-                    "correct_option": 1,
-                    "correct_answer_text": "Microsoft 365 is a subscription",
-                    "timestamp": "2026-08-05 12:31:57 IST"
-                },
-                {
-                    "question_id": 167,
-                    "question_text": "What is the function of Ctrl + Y in the active workbook?",
-                    "status": "CORRECT",
-                    "selected_option": 0,
-                    "correct_option": 0,
-                    "correct_answer_text": "Repeats the last workbook action",
-                    "timestamp": "2026-08-05 12:32:08 IST"
-                },
-                {
-                    "question_id": 352,
-                    "question_text": "Which of the following is a function of the Transport Layer?",
-                    "status": "WRONG",
-                    "selected_option": 0,
-                    "correct_option": 2,
-                    "correct_answer_text": "Segmentation and reassembly",
-                    "timestamp": "2026-08-05 12:32:20 IST"
-                },
-                {
-                    "question_id": 144,
-                    "question_text": "What is the purpose of using Alt + F4?",
-                    "status": "CORRECT",
-                    "selected_option": 0,
-                    "correct_option": 0,
-                    "correct_answer_text": "Closes all workbooks and exits Excel",
-                    "timestamp": "2026-08-05 12:32:36 IST"
-                },
-                {
-                    "question_id": 469,
-                    "question_text": "What is the purpose of Alt+F1?",
-                    "status": "CORRECT",
-                    "selected_option": 0,
-                    "correct_option": 0,
-                    "correct_answer_text": "Creates an embedded chart of the data in the current range",
-                    "timestamp": "2026-08-05 12:32:51 IST"
-                },
-                {
-                    "question_id": 148,
-                    "question_text": "Which shortcut key is used to enter the SUM() function?",
-                    "status": "CORRECT",
-                    "selected_option": 0,
-                    "correct_option": 0,
-                    "correct_answer_text": "Alt + =",
-                    "timestamp": "2026-08-05 12:33:01 IST"
-                },
-                {
-                    "question_id": 162,
-                    "question_text": "Which shortcut key is used to enter a new line into a cell?",
-                    "status": "WRONG",
-                    "selected_option": 2,
-                    "correct_option": 0,
-                    "correct_answer_text": "Alt + Enter",
-                    "timestamp": "2026-08-05 12:33:10 IST"
-                },
-                {
-                    "question_id": 239,
-                    "question_text": "What is the function of a gateway in routing data packets?",
-                    "status": "CORRECT",
-                    "selected_option": 0,
-                    "correct_option": 0,
-                    "correct_answer_text": "To route data packets to the destination node",
-                    "timestamp": "2026-08-05 12:33:31 IST"
-                },
-                {
-                    "question_id": 49,
-                    "question_text": "What is the purpose of a client server in a small network?",
-                    "status": "WRONG",
-                    "selected_option": 1,
-                    "correct_option": 2,
-                    "correct_answer_text": "To connect to the main server",
-                    "timestamp": "2026-08-05 12:33:58 IST"
-                },
-                {
-                    "question_id": 181,
-                    "question_text": "What is the function of the keyboard shortcut End + Enter on a worksheet?",
-                    "status": "CORRECT",
-                    "selected_option": 1,
-                    "correct_option": 1,
-                    "correct_answer_text": "Moves to the last cell in the current row that is not blank",
-                    "timestamp": "2026-08-05 12:34:24 IST"
-                },
-                {
-                    "question_id": 316,
-                    "question_text": "How are octal numbers converted to hexadecimal numbers?",
-                    "status": "CORRECT",
-                    "selected_option": 1,
-                    "correct_option": 1,
-                    "correct_answer_text": "By converting each digit to binary and then to hexadecimal",
-                    "timestamp": "2026-08-05 12:34:35 IST"
-                },
-                {
-                    "question_id": 278,
-                    "question_text": "What type of device provides centralized disk storage through a standard Ethernet connection?",
-                    "status": "CORRECT",
-                    "selected_option": 0,
-                    "correct_option": 0,
-                    "correct_answer_text": "Network Attached Storage (NAS)",
-                    "timestamp": "2026-08-05 12:35:00 IST"
-                },
-                {
-                    "question_id": 146,
-                    "question_text": "Which shortcut key is used to repeat the last workbook action?",
-                    "status": "CORRECT",
-                    "selected_option": 1,
-                    "correct_option": 1,
-                    "correct_answer_text": "Ctrl + Y",
-                    "timestamp": "2026-08-05 12:35:10 IST"
-                },
-                {
-                    "question_id": 144,
-                    "question_text": "What is the purpose of using Alt + F4?",
-                    "status": "CORRECT",
-                    "selected_option": 0,
-                    "correct_option": 0,
-                    "correct_answer_text": "Closes all workbooks and exits Excel",
-                    "timestamp": "2026-08-05 12:35:16 IST"
-                }
-            ]
-        }
-    ],
-    "last_synced": "2026-08-05 15:25:41 IST"
+    "full_quiz_history": [],
+    "last_synced": "2026-08-05 20:33:22 IST"
 }

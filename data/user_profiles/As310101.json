@@ -1,0 +1,372 @@
+{
+    "student_id": "As310101",
+    "registration_info": {
+        "user_id": 7908350539,
+        "student_id": "As310101",
+        "full_name": "Asho",
+        "username": "N/A",
+        "phone_number": "919670735397",
+        "target_exam": "CAPF HCM",
+        "dob": "31-01-2001",
+        "age": 25,
+        "gender": "Male",
+        "country": "India",
+        "state": "Uttar Pradesh",
+        "pin": "4567",
+        "security_question": "🏙 Which is your favorite city?",
+        "security_answer": "Shimla",
+        "referred_by": null,
+        "referral_count": 0,
+        "bonus_quota": 0,
+        "paid_question_balance": 0,
+        "vip_pass_expiry": null,
+        "last_profile_edit": "2026-08-05 16:15:19 IST",
+        "last_active": "2026-08-05 19:52:37 IST",
+        "last_activity_epoch": 1785939757,
+        "is_banned": 0,
+        "is_verified": 1,
+        "created_at": "2026-08-05 16:15:19 IST"
+    },
+    "bot_engagement_metrics": {
+        "last_login_timestamp": "2026-08-05 19:52:37 IST",
+        "total_time_spent_overall": "560 seconds (9.33 mins)",
+        "daily_spent_time_breakdown": {
+            "2026-08-05": "560 seconds (9.33 mins)"
+        },
+        "questions_attempted_per_day": {
+            "2026-08-05": 30
+        }
+    },
+    "academic_summary": {
+        "total_quizzes_attempted": 1,
+        "total_questions_attempted": 30,
+        "total_correct": 14,
+        "total_wrong": 15,
+        "total_skipped": 1,
+        "datewise_quiz_summary": {
+            "2026-08-05": {
+                "total_quizzes": 1,
+                "total_questions": 30,
+                "total_correct": 14,
+                "total_wrong": 15,
+                "total_score": 14.0,
+                "total_time_seconds": 0
+            }
+        }
+    },
+    "saved_questions_ledger": {
+        "total_saved": 0,
+        "datewise_saved_summary": {},
+        "saved_questions": []
+    },
+    "student_reviews_given": [
+        {
+            "id": 10,
+            "user_id": 7908350539,
+            "full_name": "Asho",
+            "feedback_text": "Kuch questions repeat huye he brother.....",
+            "submitted_at": "2026-08-05 19:52:37 IST"
+        }
+    ],
+    "subscription_ledger": {
+        "status": "FREE_TIER",
+        "paid_question_balance": 0,
+        "vip_pass_expiry": null
+    },
+    "badges_and_achievements": {
+        "earned_badges": [
+            "Early Learner",
+            "Registered Scholar"
+        ],
+        "streak_days": 1
+    },
+    "full_quiz_history": [
+        {
+            "id": 4,
+            "user_id": 7908350539,
+            "quiz_id": "computer_awareness_mock",
+            "questions_attempted": 30,
+            "total_questions": 30,
+            "correct_answers": 14,
+            "wrong_answers": 15,
+            "skipped_count": 1,
+            "score": 14.0,
+            "time_taken": 0,
+            "attempt_timestamp": "2026-08-05 16:25:24 IST",
+            "attempt_date": "2026-08-05",
+            "question_details": [
+                {
+                    "question_id": 348,
+                    "question_text": "Which of the following is a characteristic of the Network Layer?",
+                    "status": "WRONG",
+                    "selected_option": 3,
+                    "correct_option": 2,
+                    "correct_answer_text": "Routing and logical addressing",
+                    "timestamp": "2026-08-05 16:16:19 IST"
+                },
+                {
+                    "question_id": 367,
+                    "question_text": "What is the name of the company founded by Vinod Khosla?",
+                    "status": "CORRECT",
+                    "selected_option": 0,
+                    "correct_option": 0,
+                    "correct_answer_text": "Sun Microsystems",
+                    "timestamp": "2026-08-05 16:16:34 IST"
+                },
+                {
+                    "question_id": 210,
+                    "question_text": "Which Internet protocol specifies how data is broken down into packets and exchanged over the Internet?",
+                    "status": "WRONG",
+                    "selected_option": 3,
+                    "correct_option": 0,
+                    "correct_answer_text": "TCP",
+                    "timestamp": "2026-08-05 16:16:49 IST"
+                },
+                {
+                    "question_id": 432,
+                    "question_text": "What is the function of Home+Scroll lock?",
+                    "status": "CORRECT",
+                    "selected_option": 0,
+                    "correct_option": 0,
+                    "correct_answer_text": "Move to the cell in the upper-left corner of the window",
+                    "timestamp": "2026-08-05 16:17:14 IST"
+                },
+                {
+                    "question_id": 27,
+                    "question_text": "Which of the following ports supports single stream data transmission and has a data transfer speed of 115 kilobits per second?",
+                    "status": "CORRECT",
+                    "selected_option": 3,
+                    "correct_option": 3,
+                    "correct_answer_text": "Serial Port",
+                    "timestamp": "2026-08-05 16:17:34 IST"
+                },
+                {
+                    "question_id": 451,
+                    "question_text": "How to move to the last cell in the row or column?",
+                    "status": "WRONG",
+                    "selected_option": 2,
+                    "correct_option": 3,
+                    "correct_answer_text": "End, Arrow key",
+                    "timestamp": "2026-08-05 16:17:57 IST"
+                },
+                {
+                    "question_id": 294,
+                    "question_text": "In which mode of data transmission is data transmitted in both directions simultaneously?",
+                    "status": "CORRECT",
+                    "selected_option": 2,
+                    "correct_option": 2,
+                    "correct_answer_text": "Full-duplex",
+                    "timestamp": "2026-08-05 16:18:14 IST"
+                },
+                {
+                    "question_id": 329,
+                    "question_text": "What is the primary function of the Network Layer?",
+                    "status": "CORRECT",
+                    "selected_option": 1,
+                    "correct_option": 1,
+                    "correct_answer_text": "Routing and logical addressing",
+                    "timestamp": "2026-08-05 16:18:21 IST"
+                },
+                {
+                    "question_id": 62,
+                    "question_text": "What is the function of Win Keys + Pause break in a Windows system?",
+                    "status": "WRONG",
+                    "selected_option": 2,
+                    "correct_option": 0,
+                    "correct_answer_text": "To open System Configuration",
+                    "timestamp": "2026-08-05 16:18:46 IST"
+                },
+                {
+                    "question_id": 462,
+                    "question_text": "What is the shortcut to insert a new worksheet?",
+                    "status": "CORRECT",
+                    "selected_option": 1,
+                    "correct_option": 1,
+                    "correct_answer_text": "Alt+Shift+F1",
+                    "timestamp": "2026-08-05 16:18:57 IST"
+                },
+                {
+                    "question_id": 153,
+                    "question_text": "What is the function of Shift + Insert in the active cell?",
+                    "status": "WRONG",
+                    "selected_option": 2,
+                    "correct_option": 0,
+                    "correct_answer_text": "Enters the data from the clipboard",
+                    "timestamp": "2026-08-05 16:19:23 IST"
+                },
+                {
+                    "question_id": 462,
+                    "question_text": "What is the shortcut to insert a new worksheet?",
+                    "status": "CORRECT",
+                    "selected_option": 1,
+                    "correct_option": 1,
+                    "correct_answer_text": "Alt+Shift+F1",
+                    "timestamp": "2026-08-05 16:19:30 IST"
+                },
+                {
+                    "question_id": 272,
+                    "question_text": "What is a key characteristic of a white hat hacker?",
+                    "status": "WRONG",
+                    "selected_option": 1,
+                    "correct_option": 2,
+                    "correct_answer_text": "They use their knowledge to help fix security flaws",
+                    "timestamp": "2026-08-05 16:19:54 IST"
+                },
+                {
+                    "question_id": 517,
+                    "question_text": "What happens when you select the cell contents of a particular row in MS-Excel and then click the Delete button?",
+                    "status": "WRONG",
+                    "selected_option": 1,
+                    "correct_option": 0,
+                    "correct_answer_text": "Entries in all the selected cells will be deleted",
+                    "timestamp": "2026-08-05 16:20:22 IST"
+                },
+                {
+                    "question_id": 398,
+                    "question_text": "What is the name of the email client in Microsoft 365?",
+                    "status": "WRONG",
+                    "selected_option": 1,
+                    "correct_option": 2,
+                    "correct_answer_text": "Microsoft Outlook",
+                    "timestamp": "2026-08-05 16:20:29 IST"
+                },
+                {
+                    "question_id": 345,
+                    "question_text": "What is the purpose of the Transport Layer?",
+                    "status": "WRONG",
+                    "selected_option": 2,
+                    "correct_option": 1,
+                    "correct_answer_text": "To provide end-to-end delivery of messages",
+                    "timestamp": "2026-08-05 16:20:44 IST"
+                },
+                {
+                    "question_id": 13,
+                    "question_text": "What is the primary function of a Firewire Port?",
+                    "status": "WRONG",
+                    "selected_option": 0,
+                    "correct_option": 2,
+                    "correct_answer_text": "Used for connecting camcorders and video equipment",
+                    "timestamp": "2026-08-05 16:21:07 IST"
+                },
+                {
+                    "question_id": 120,
+                    "question_text": "What is the purpose of using Alt + F1?",
+                    "status": "WRONG",
+                    "selected_option": 2,
+                    "correct_option": 1,
+                    "correct_answer_text": "Creates an embedded chart using the highlighted range",
+                    "timestamp": "2026-08-05 16:21:28 IST"
+                },
+                {
+                    "question_id": 3,
+                    "question_text": "What is the primary function of a Serial Port?",
+                    "status": "WRONG",
+                    "selected_option": 0,
+                    "correct_option": 1,
+                    "correct_answer_text": "Used for external modems and older computer mouse",
+                    "timestamp": "2026-08-05 16:21:38 IST"
+                },
+                {
+                    "question_id": 470,
+                    "question_text": "What is the shortcut to close the selected workbook window?",
+                    "status": "CORRECT",
+                    "selected_option": 0,
+                    "correct_option": 0,
+                    "correct_answer_text": "Ctrl+F4",
+                    "timestamp": "2026-08-05 16:21:49 IST"
+                },
+                {
+                    "question_id": 412,
+                    "question_text": "What happens when you press Shift+F5 in Word?",
+                    "status": "WRONG",
+                    "selected_option": 2,
+                    "correct_option": 0,
+                    "correct_answer_text": "Moves the cursor to the last change",
+                    "timestamp": "2026-08-05 16:22:12 IST"
+                },
+                {
+                    "question_id": 546,
+                    "question_text": "What enables IoT devices to gather data and exchange it over the network?",
+                    "status": "WRONG",
+                    "selected_option": 3,
+                    "correct_option": 0,
+                    "correct_answer_text": "Actuators and sensors",
+                    "timestamp": "2026-08-05 16:22:38 IST"
+                },
+                {
+                    "question_id": 433,
+                    "question_text": "How to move to the beginning of a worksheet?",
+                    "status": "CORRECT",
+                    "selected_option": 0,
+                    "correct_option": 0,
+                    "correct_answer_text": "Ctrl+Home",
+                    "timestamp": "2026-08-05 16:22:48 IST"
+                },
+                {
+                    "question_id": 8,
+                    "question_text": "How many pins are available in a Parallel Port?",
+                    "status": "CORRECT",
+                    "selected_option": 1,
+                    "correct_option": 1,
+                    "correct_answer_text": "25 pin",
+                    "timestamp": "2026-08-05 16:22:56 IST"
+                },
+                {
+                    "question_id": 123,
+                    "question_text": "What is the purpose of using Ctrl + F9?",
+                    "status": "SKIPPED_TIMEOUT",
+                    "selected_option": null,
+                    "correct_option": 0,
+                    "correct_answer_text": "Minimizes the size of the active workbook or window",
+                    "timestamp": "2026-08-05 16:23:29 IST"
+                },
+                {
+                    "question_id": 405,
+                    "question_text": "What happens when you press F5 alone in Word?",
+                    "status": "CORRECT",
+                    "selected_option": 2,
+                    "correct_option": 2,
+                    "correct_answer_text": "Displays the Go To dialog box",
+                    "timestamp": "2026-08-05 16:23:58 IST"
+                },
+                {
+                    "question_id": 92,
+                    "question_text": "Which function is used to convert text to uppercase in MS-Excel 2010?",
+                    "status": "CORRECT",
+                    "selected_option": 1,
+                    "correct_option": 1,
+                    "correct_answer_text": "UPPER",
+                    "timestamp": "2026-08-05 16:24:16 IST"
+                },
+                {
+                    "question_id": 530,
+                    "question_text": "How can you insert a new column in a table in MS Word?",
+                    "status": "CORRECT",
+                    "selected_option": 1,
+                    "correct_option": 1,
+                    "correct_answer_text": "Insert Column to the Right",
+                    "timestamp": "2026-08-05 16:24:37 IST"
+                },
+                {
+                    "question_id": 113,
+                    "question_text": "What is the purpose of the PROPER function?",
+                    "status": "CORRECT",
+                    "selected_option": 2,
+                    "correct_option": 2,
+                    "correct_answer_text": "To capitalize the first letter of each word",
+                    "timestamp": "2026-08-05 16:24:53 IST"
+                },
+                {
+                    "question_id": 547,
+                    "question_text": "What is the name of the web portal launched by the Department of Telecommunication for sharing information on mobile towers and EMF Emission Compliances?",
+                    "status": "WRONG",
+                    "selected_option": 1,
+                    "correct_option": 0,
+                    "correct_answer_text": "Tarang Sanchar",
+                    "timestamp": "2026-08-05 16:25:23 IST"
+                }
+            ]
+        }
+    ],
+    "last_synced": "2026-08-05 20:33:22 IST"
+}

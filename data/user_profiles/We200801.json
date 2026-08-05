@@ -18,377 +18,47 @@
         "referred_by": null,
         "referral_count": 0,
         "bonus_quota": 0,
-        "last_profile_edit": "2026-08-05 13:04:44 IST",
+        "paid_question_balance": 0,
+        "vip_pass_expiry": null,
+        "last_profile_edit": null,
         "last_active": "2026-08-05 13:11:53 IST",
-        "last_activity_epoch": 1785915713,
+        "last_activity_epoch": 0,
         "is_banned": 0,
         "is_verified": 1,
         "created_at": "2026-08-05 13:04:44 IST"
     },
     "bot_engagement_metrics": {
         "last_login_timestamp": "2026-08-05 13:11:53 IST",
-        "total_time_spent_overall": "615 seconds (10.25 mins)",
-        "daily_spent_time_breakdown": {
-            "2026-08-05": "615 seconds (10.25 mins)"
-        },
-        "questions_attempted_per_day": {
-            "2026-08-05": 30
-        }
+        "total_time_spent_overall": "0 seconds (0.0 mins)",
+        "daily_spent_time_breakdown": {},
+        "questions_attempted_per_day": {}
     },
     "academic_summary": {
-        "total_quizzes_attempted": 1,
-        "total_questions_attempted": 30,
-        "total_correct": 13,
-        "total_wrong": 17,
+        "total_quizzes_attempted": 0,
+        "total_questions_attempted": 0,
+        "total_correct": 0,
+        "total_wrong": 0,
         "total_skipped": 0,
-        "datewise_quiz_summary": {
-            "2026-08-05": {
-                "total_quizzes": 1,
-                "total_questions": 30,
-                "total_correct": 13,
-                "total_wrong": 17,
-                "total_score": 13.0,
-                "total_time_seconds": 0
-            }
-        }
+        "datewise_quiz_summary": {}
     },
     "saved_questions_ledger": {
-        "total_saved": 2,
-        "datewise_saved_summary": {
-            "2026-08-05": 2
-        },
-        "saved_questions": [
-            {
-                "id": 11,
-                "user_id": 5782985083,
-                "question_text": "What is the function of Ctrl + F5?",
-                "correct_option": 0,
-                "explanation": "Ctrl + F5 restores the window size of the selected workbook window.",
-                "saved_at": "2026-08-05 13:06:08 IST",
-                "options": [
-                    "Restores the size of the active workbook or window",
-                    "Minimizes the size of the active workbook or window",
-                    "Maximizes the size of the active workbook or window",
-                    "Closes the selected workbook window"
-                ]
-            },
-            {
-                "id": 10,
-                "user_id": 5782985083,
-                "question_text": "What is the function of Ctrl + F5?",
-                "correct_option": 0,
-                "explanation": "Ctrl + F5 restores the window size of the selected workbook window.",
-                "saved_at": "2026-08-05 13:06:05 IST",
-                "options": [
-                    "Restores the size of the active workbook or window",
-                    "Minimizes the size of the active workbook or window",
-                    "Maximizes the size of the active workbook or window",
-                    "Closes the selected workbook window"
-                ]
-            }
-        ]
+        "total_saved": 0,
+        "datewise_saved_summary": {},
+        "saved_questions": []
     },
     "student_reviews_given": [],
     "subscription_ledger": {
         "status": "FREE_TIER",
-        "active_plan": "Standard Free Tier",
-        "total_amount_paid": 0.0,
-        "payment_history": []
+        "paid_question_balance": 0,
+        "vip_pass_expiry": null
     },
     "badges_and_achievements": {
         "earned_badges": [
             "Early Learner",
             "Registered Scholar"
         ],
-        "streak_days": 1
+        "streak_days": 0
     },
-    "full_quiz_history": [
-        {
-            "id": 22,
-            "user_id": 5782985083,
-            "quiz_id": "computer_awareness_mock",
-            "questions_attempted": 30,
-            "total_questions": 30,
-            "correct_answers": 13,
-            "wrong_answers": 17,
-            "skipped_count": 0,
-            "score": 13.0,
-            "time_taken": 0,
-            "attempt_timestamp": "2026-08-05 13:11:45 IST",
-            "attempt_date": "2026-08-05",
-            "question_details": [
-                {
-                    "question_id": 131,
-                    "question_text": "What is the function of Ctrl + F5?",
-                    "status": "CORRECT",
-                    "selected_option": 0,
-                    "correct_option": 0,
-                    "correct_answer_text": "Restores the size of the active workbook or window",
-                    "timestamp": "2026-08-05 13:06:25 IST"
-                },
-                {
-                    "question_id": 166,
-                    "question_text": "Which shortcut key is used to undo the last action in the active workbook?",
-                    "status": "CORRECT",
-                    "selected_option": 0,
-                    "correct_option": 0,
-                    "correct_answer_text": "Ctrl + Z",
-                    "timestamp": "2026-08-05 13:06:34 IST"
-                },
-                {
-                    "question_id": 360,
-                    "question_text": "In what year was the Param Bio-blaze launched?",
-                    "status": "WRONG",
-                    "selected_option": 1,
-                    "correct_option": 2,
-                    "correct_answer_text": "2014",
-                    "timestamp": "2026-08-05 13:06:44 IST"
-                },
-                {
-                    "question_id": 7,
-                    "question_text": "What is the primary function of a Parallel Port?",
-                    "status": "WRONG",
-                    "selected_option": 0,
-                    "correct_option": 1,
-                    "correct_answer_text": "Used for scanners and printers",
-                    "timestamp": "2026-08-05 13:06:52 IST"
-                },
-                {
-                    "question_id": 437,
-                    "question_text": "How to move one screen up in a worksheet?",
-                    "status": "CORRECT",
-                    "selected_option": 0,
-                    "correct_option": 0,
-                    "correct_answer_text": "Page up",
-                    "timestamp": "2026-08-05 13:08:02 IST"
-                },
-                {
-                    "question_id": 357,
-                    "question_text": "In what year was the Param Yuva II supercomputer launched?",
-                    "status": "WRONG",
-                    "selected_option": 0,
-                    "correct_option": 3,
-                    "correct_answer_text": "2013",
-                    "timestamp": "2026-08-05 13:08:12 IST"
-                },
-                {
-                    "question_id": 304,
-                    "question_text": "What is the purpose of noting the quotient and remainder in decimal to hexadecimal conversion?",
-                    "status": "WRONG",
-                    "selected_option": 1,
-                    "correct_option": 2,
-                    "correct_answer_text": "To determine the next division step",
-                    "timestamp": "2026-08-05 13:08:20 IST"
-                },
-                {
-                    "question_id": 552,
-                    "question_text": "What is the keyboard shortcut for opening a blank new document in MS-Word?",
-                    "status": "WRONG",
-                    "selected_option": 0,
-                    "correct_option": 1,
-                    "correct_answer_text": "Ctrl + N",
-                    "timestamp": "2026-08-05 13:08:28 IST"
-                },
-                {
-                    "question_id": 271,
-                    "question_text": "What is the difference between ethical and non-ethical hacking in terms of intent?",
-                    "status": "CORRECT",
-                    "selected_option": 1,
-                    "correct_option": 1,
-                    "correct_answer_text": "Ethical hacking is used for good, while non-ethical hacking is used for malicious purposes",
-                    "timestamp": "2026-08-05 13:08:40 IST"
-                },
-                {
-                    "question_id": 291,
-                    "question_text": "What is the primary function of a Router?",
-                    "status": "CORRECT",
-                    "selected_option": 1,
-                    "correct_option": 1,
-                    "correct_answer_text": "To connect multiple devices",
-                    "timestamp": "2026-08-05 13:08:50 IST"
-                },
-                {
-                    "question_id": 413,
-                    "question_text": "What is the function of F6 in a document that has been split in Word?",
-                    "status": "WRONG",
-                    "selected_option": 2,
-                    "correct_option": 1,
-                    "correct_answer_text": "Switches between the document, task pane, status bar, and ribbon, including split panes",
-                    "timestamp": "2026-08-05 13:08:57 IST"
-                },
-                {
-                    "question_id": 290,
-                    "question_text": "In which mode of data transmission can data flow in both directions, but with a delay?",
-                    "status": "CORRECT",
-                    "selected_option": 1,
-                    "correct_option": 1,
-                    "correct_answer_text": "Half-duplex",
-                    "timestamp": "2026-08-05 13:09:04 IST"
-                },
-                {
-                    "question_id": 347,
-                    "question_text": "What is the term used to refer to the combination of the Network Layer, Data Link Layer, and Physical Layer?",
-                    "status": "CORRECT",
-                    "selected_option": 1,
-                    "correct_option": 1,
-                    "correct_answer_text": "Lower Layers or Hardware Layers",
-                    "timestamp": "2026-08-05 13:09:18 IST"
-                },
-                {
-                    "question_id": 30,
-                    "question_text": "Which port is used for transferring large amounts of data at a very fast speed and has a data transfer speed of 400 to 800 megabits per second?",
-                    "status": "WRONG",
-                    "selected_option": 2,
-                    "correct_option": 3,
-                    "correct_answer_text": "Firewire Port",
-                    "timestamp": "2026-08-05 13:09:27 IST"
-                },
-                {
-                    "question_id": 209,
-                    "question_text": "What is responsible for displaying the web page in a web browser?",
-                    "status": "WRONG",
-                    "selected_option": 1,
-                    "correct_option": 0,
-                    "correct_answer_text": "Rendering Engine",
-                    "timestamp": "2026-08-05 13:09:30 IST"
-                },
-                {
-                    "question_id": 122,
-                    "question_text": "What is the function of Ctrl + F6?",
-                    "status": "WRONG",
-                    "selected_option": 2,
-                    "correct_option": 1,
-                    "correct_answer_text": "Moves to the next open workbook or window",
-                    "timestamp": "2026-08-05 13:09:37 IST"
-                },
-                {
-                    "question_id": 150,
-                    "question_text": "Which shortcut key is used to enter the current date into the active cell?",
-                    "status": "CORRECT",
-                    "selected_option": 0,
-                    "correct_option": 0,
-                    "correct_answer_text": "Ctrl + ;",
-                    "timestamp": "2026-08-05 13:09:43 IST"
-                },
-                {
-                    "question_id": 245,
-                    "question_text": "What is the role of a gateway in connecting different networks?",
-                    "status": "WRONG",
-                    "selected_option": 2,
-                    "correct_option": 3,
-                    "correct_answer_text": "To connect different types of networks having different protocols",
-                    "timestamp": "2026-08-05 13:09:49 IST"
-                },
-                {
-                    "question_id": 434,
-                    "question_text": "What is the shortcut to move one screen down in a worksheet?",
-                    "status": "CORRECT",
-                    "selected_option": 0,
-                    "correct_option": 0,
-                    "correct_answer_text": "Page down",
-                    "timestamp": "2026-08-05 13:09:56 IST"
-                },
-                {
-                    "question_id": 118,
-                    "question_text": "What is the shortcut to save a new workbook and display the Save As dialog box?",
-                    "status": "WRONG",
-                    "selected_option": 0,
-                    "correct_option": 2,
-                    "correct_answer_text": "Alt + F2",
-                    "timestamp": "2026-08-05 13:10:06 IST"
-                },
-                {
-                    "question_id": 192,
-                    "question_text": "What is the effect of using the keyboard shortcut Ctrl + Down Arrow on a worksheet?",
-                    "status": "WRONG",
-                    "selected_option": 3,
-                    "correct_option": 1,
-                    "correct_answer_text": "Moves to the bottom boundary of the current data region",
-                    "timestamp": "2026-08-05 13:10:17 IST"
-                },
-                {
-                    "question_id": 417,
-                    "question_text": "What happens when you press Alt+F5 in Word?",
-                    "status": "WRONG",
-                    "selected_option": 1,
-                    "correct_option": 0,
-                    "correct_answer_text": "Restores the document window size",
-                    "timestamp": "2026-08-05 13:10:25 IST"
-                },
-                {
-                    "question_id": 119,
-                    "question_text": "What is the function of Ctrl + F2?",
-                    "status": "WRONG",
-                    "selected_option": 2,
-                    "correct_option": 0,
-                    "correct_answer_text": "Print Preview",
-                    "timestamp": "2026-08-05 13:10:38 IST"
-                },
-                {
-                    "question_id": 392,
-                    "question_text": "What is the difference between Microsoft 365 and the old-fashioned bundle?",
-                    "status": "WRONG",
-                    "selected_option": 1,
-                    "correct_option": 2,
-                    "correct_answer_text": "Microsoft 365 is sold as a subscription and combines online services",
-                    "timestamp": "2026-08-05 13:10:46 IST"
-                },
-                {
-                    "question_id": 424,
-                    "question_text": "What is the function of F5 in Word?",
-                    "status": "WRONG",
-                    "selected_option": 1,
-                    "correct_option": 0,
-                    "correct_answer_text": "Displays the Go To dialog box",
-                    "timestamp": "2026-08-05 13:10:52 IST"
-                },
-                {
-                    "question_id": 402,
-                    "question_text": "What is the purpose of Microsoft OneNote?",
-                    "status": "CORRECT",
-                    "selected_option": 2,
-                    "correct_option": 2,
-                    "correct_answer_text": "Notetaking and note sharing",
-                    "timestamp": "2026-08-05 13:10:59 IST"
-                },
-                {
-                    "question_id": 113,
-                    "question_text": "What is the purpose of the PROPER function?",
-                    "status": "CORRECT",
-                    "selected_option": 2,
-                    "correct_option": 2,
-                    "correct_answer_text": "To capitalize the first letter of each word",
-                    "timestamp": "2026-08-05 13:11:10 IST"
-                },
-                {
-                    "question_id": 244,
-                    "question_text": "What is the function of a router in a network?",
-                    "status": "CORRECT",
-                    "selected_option": 1,
-                    "correct_option": 1,
-                    "correct_answer_text": "To analyse and alter data packets for transmission over different networks",
-                    "timestamp": "2026-08-05 13:11:17 IST"
-                },
-                {
-                    "question_id": 214,
-                    "question_text": "Which of the following is a web browser created and developed by Microsoft?",
-                    "status": "CORRECT",
-                    "selected_option": 0,
-                    "correct_option": 0,
-                    "correct_answer_text": "Edge",
-                    "timestamp": "2026-08-05 13:11:23 IST"
-                },
-                {
-                    "question_id": 130,
-                    "question_text": "What is the shortcut to calculate all cells on all worksheets in all workbooks?",
-                    "status": "WRONG",
-                    "selected_option": 2,
-                    "correct_option": 1,
-                    "correct_answer_text": "Alt + Ctrl + F9",
-                    "timestamp": "2026-08-05 13:11:44 IST"
-                }
-            ]
-        }
-    ],
-    "last_synced": "2026-08-05 15:25:41 IST"
+    "full_quiz_history": [],
+    "last_synced": "2026-08-05 20:33:22 IST"
 }

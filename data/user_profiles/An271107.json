@@ -18,39 +18,28 @@
         "referred_by": null,
         "referral_count": 0,
         "bonus_quota": 0,
-        "last_profile_edit": "2026-08-05 14:42:32 IST",
+        "paid_question_balance": 0,
+        "vip_pass_expiry": null,
+        "last_profile_edit": null,
         "last_active": "2026-08-05 14:51:36 IST",
-        "last_activity_epoch": 1785921696,
+        "last_activity_epoch": 0,
         "is_banned": 0,
         "is_verified": 1,
         "created_at": "2026-08-05 14:42:32 IST"
     },
     "bot_engagement_metrics": {
         "last_login_timestamp": "2026-08-05 14:51:36 IST",
-        "total_time_spent_overall": "595 seconds (9.92 mins)",
-        "daily_spent_time_breakdown": {
-            "2026-08-05": "595 seconds (9.92 mins)"
-        },
-        "questions_attempted_per_day": {
-            "2026-08-05": 40
-        }
+        "total_time_spent_overall": "0 seconds (0.0 mins)",
+        "daily_spent_time_breakdown": {},
+        "questions_attempted_per_day": {}
     },
     "academic_summary": {
-        "total_quizzes_attempted": 1,
-        "total_questions_attempted": 40,
-        "total_correct": 17,
-        "total_wrong": 19,
-        "total_skipped": 4,
-        "datewise_quiz_summary": {
-            "2026-08-05": {
-                "total_quizzes": 1,
-                "total_questions": 40,
-                "total_correct": 17,
-                "total_wrong": 19,
-                "total_score": 17.0,
-                "total_time_seconds": 0
-            }
-        }
+        "total_quizzes_attempted": 0,
+        "total_questions_attempted": 0,
+        "total_correct": 0,
+        "total_wrong": 0,
+        "total_skipped": 0,
+        "datewise_quiz_summary": {}
     },
     "saved_questions_ledger": {
         "total_saved": 0,
@@ -60,394 +49,16 @@
     "student_reviews_given": [],
     "subscription_ledger": {
         "status": "FREE_TIER",
-        "active_plan": "Standard Free Tier",
-        "total_amount_paid": 0.0,
-        "payment_history": []
+        "paid_question_balance": 0,
+        "vip_pass_expiry": null
     },
     "badges_and_achievements": {
         "earned_badges": [
             "Early Learner",
             "Registered Scholar"
         ],
-        "streak_days": 1
+        "streak_days": 0
     },
-    "full_quiz_history": [
-        {
-            "id": 26,
-            "user_id": 8431628753,
-            "quiz_id": "computer_awareness_mock",
-            "questions_attempted": 40,
-            "total_questions": 40,
-            "correct_answers": 17,
-            "wrong_answers": 19,
-            "skipped_count": 4,
-            "score": 17.0,
-            "time_taken": 0,
-            "attempt_timestamp": "2026-08-05 14:51:36 IST",
-            "attempt_date": "2026-08-05",
-            "question_details": [
-                {
-                    "question_id": 379,
-                    "question_text": "What is the capacity of the Param Biochrome HPC cluster in teraflops?",
-                    "status": "CORRECT",
-                    "selected_option": 1,
-                    "correct_option": 1,
-                    "correct_answer_text": "5 teraflops",
-                    "timestamp": "2026-08-05 14:43:37 IST"
-                },
-                {
-                    "question_id": 451,
-                    "question_text": "How to move to the last cell in the row or column?",
-                    "status": "CORRECT",
-                    "selected_option": 3,
-                    "correct_option": 3,
-                    "correct_answer_text": "End, Arrow key",
-                    "timestamp": "2026-08-05 14:43:48 IST"
-                },
-                {
-                    "question_id": 493,
-                    "question_text": "What is the purpose of OSI?",
-                    "status": "WRONG",
-                    "selected_option": 2,
-                    "correct_option": 0,
-                    "correct_answer_text": "To standardize communication between devices",
-                    "timestamp": "2026-08-05 14:43:58 IST"
-                },
-                {
-                    "question_id": 443,
-                    "question_text": "How to add notes and threaded comments?",
-                    "status": "WRONG",
-                    "selected_option": 2,
-                    "correct_option": 0,
-                    "correct_answer_text": "Alt+R",
-                    "timestamp": "2026-08-05 14:44:09 IST"
-                },
-                {
-                    "question_id": 273,
-                    "question_text": "What is the purpose of a key logger recorder?",
-                    "status": "CORRECT",
-                    "selected_option": 1,
-                    "correct_option": 1,
-                    "correct_answer_text": "To record instant messages, e-mail, and keyboard inputs",
-                    "timestamp": "2026-08-05 14:44:21 IST"
-                },
-                {
-                    "question_id": 100,
-                    "question_text": "What is the shortcut to close a workbook in MS-Excel 2010?",
-                    "status": "WRONG",
-                    "selected_option": 3,
-                    "correct_option": 1,
-                    "correct_answer_text": "Ctrl + F4",
-                    "timestamp": "2026-08-05 14:44:35 IST"
-                },
-                {
-                    "question_id": 197,
-                    "question_text": "What is the function of the keyboard shortcut Ctrl + Shift + Tab on a worksheet?",
-                    "status": "WRONG",
-                    "selected_option": 0,
-                    "correct_option": 1,
-                    "correct_answer_text": "Moves to the previous open workbook or window",
-                    "timestamp": "2026-08-05 14:44:50 IST"
-                },
-                {
-                    "question_id": 254,
-                    "question_text": "What are the two types of hacking?",
-                    "status": "WRONG",
-                    "selected_option": 0,
-                    "correct_option": 2,
-                    "correct_answer_text": "White hat and black hat hacking",
-                    "timestamp": "2026-08-05 14:44:57 IST"
-                },
-                {
-                    "question_id": 390,
-                    "question_text": "What is the purpose of Microsoft PowerPoint?",
-                    "status": "CORRECT",
-                    "selected_option": 2,
-                    "correct_option": 2,
-                    "correct_answer_text": "Presentation creation",
-                    "timestamp": "2026-08-05 14:45:06 IST"
-                },
-                {
-                    "question_id": 104,
-                    "question_text": "What is the shortcut to preview the worksheet before printing?",
-                    "status": "WRONG",
-                    "selected_option": 0,
-                    "correct_option": 1,
-                    "correct_answer_text": "Ctrl + F2",
-                    "timestamp": "2026-08-05 14:45:15 IST"
-                },
-                {
-                    "question_id": 47,
-                    "question_text": "What is the inbuilt web browser in Windows?",
-                    "status": "WRONG",
-                    "selected_option": 3,
-                    "correct_option": 1,
-                    "correct_answer_text": "Internet Explorer",
-                    "timestamp": "2026-08-05 14:45:26 IST"
-                },
-                {
-                    "question_id": 337,
-                    "question_text": "Which layer is responsible for end-to-end delivery of messages?",
-                    "status": "WRONG",
-                    "selected_option": 2,
-                    "correct_option": 1,
-                    "correct_answer_text": "Transport Layer",
-                    "timestamp": "2026-08-05 14:45:34 IST"
-                },
-                {
-                    "question_id": 413,
-                    "question_text": "What is the function of F6 in a document that has been split in Word?",
-                    "status": "CORRECT",
-                    "selected_option": 1,
-                    "correct_option": 1,
-                    "correct_answer_text": "Switches between the document, task pane, status bar, and ribbon, including split panes",
-                    "timestamp": "2026-08-05 14:45:49 IST"
-                },
-                {
-                    "question_id": 375,
-                    "question_text": "What type of computer is SEAC?",
-                    "status": "WRONG",
-                    "selected_option": 2,
-                    "correct_option": 0,
-                    "correct_answer_text": "First generation",
-                    "timestamp": "2026-08-05 14:46:01 IST"
-                },
-                {
-                    "question_id": 236,
-                    "question_text": "How does a node from one network communicate with a node from a foreign network?",
-                    "status": "CORRECT",
-                    "selected_option": 2,
-                    "correct_option": 2,
-                    "correct_answer_text": "By passing the data packet to a gateway, which then routes it to the destination",
-                    "timestamp": "2026-08-05 14:46:13 IST"
-                },
-                {
-                    "question_id": 388,
-                    "question_text": "What application is used for editing documents in Microsoft 365?",
-                    "status": "CORRECT",
-                    "selected_option": 2,
-                    "correct_option": 2,
-                    "correct_answer_text": "Word",
-                    "timestamp": "2026-08-05 14:46:28 IST"
-                },
-                {
-                    "question_id": 432,
-                    "question_text": "What is the function of Home+Scroll lock?",
-                    "status": "SKIPPED_TIMEOUT",
-                    "selected_option": null,
-                    "correct_option": 0,
-                    "correct_answer_text": "Move to the cell in the upper-left corner of the window",
-                    "timestamp": "2026-08-05 14:46:46 IST"
-                },
-                {
-                    "question_id": 404,
-                    "question_text": "What is the function of Ctrl+F4 in Word?",
-                    "status": "WRONG",
-                    "selected_option": 3,
-                    "correct_option": 0,
-                    "correct_answer_text": "Closes the current document",
-                    "timestamp": "2026-08-05 14:46:58 IST"
-                },
-                {
-                    "question_id": 155,
-                    "question_text": "What is the function of Esc in the active cell?",
-                    "status": "WRONG",
-                    "selected_option": 2,
-                    "correct_option": 0,
-                    "correct_answer_text": "Cancels the cell entry and restores the original contents",
-                    "timestamp": "2026-08-05 14:47:10 IST"
-                },
-                {
-                    "question_id": 55,
-                    "question_text": "What is the purpose of Win Keys + No. 1,2,3,4,5 in a Windows system?",
-                    "status": "CORRECT",
-                    "selected_option": 0,
-                    "correct_option": 0,
-                    "correct_answer_text": "To show the active window one by one",
-                    "timestamp": "2026-08-05 14:47:25 IST"
-                },
-                {
-                    "question_id": 57,
-                    "question_text": "What is the purpose of Alt + Tab in a Windows system?",
-                    "status": "CORRECT",
-                    "selected_option": 0,
-                    "correct_option": 0,
-                    "correct_answer_text": "To show the screen",
-                    "timestamp": "2026-08-05 14:47:37 IST"
-                },
-                {
-                    "question_id": 452,
-                    "question_text": "What is the shortcut to create an embedded chart of the data in the current range?",
-                    "status": "WRONG",
-                    "selected_option": 0,
-                    "correct_option": 1,
-                    "correct_answer_text": "Alt+F1",
-                    "timestamp": "2026-08-05 14:47:50 IST"
-                },
-                {
-                    "question_id": 411,
-                    "question_text": "How do you switch to the next document window when more than one document is open in Word?",
-                    "status": "WRONG",
-                    "selected_option": 1,
-                    "correct_option": 0,
-                    "correct_answer_text": "Press Ctrl+F6",
-                    "timestamp": "2026-08-05 14:48:03 IST"
-                },
-                {
-                    "question_id": 177,
-                    "question_text": "What is the function of the keyboard shortcut Ctrl + Tab?",
-                    "status": "WRONG",
-                    "selected_option": 2,
-                    "correct_option": 1,
-                    "correct_answer_text": "Moves to the next open workbook or window",
-                    "timestamp": "2026-08-05 14:48:18 IST"
-                },
-                {
-                    "question_id": 182,
-                    "question_text": "What is the effect of using the keyboard shortcut End + Home on a worksheet?",
-                    "status": "CORRECT",
-                    "selected_option": 3,
-                    "correct_option": 3,
-                    "correct_answer_text": "Moves to the last used cell on the active worksheet",
-                    "timestamp": "2026-08-05 14:48:30 IST"
-                },
-                {
-                    "question_id": 12,
-                    "question_text": "What type of devices can be connected to a Universal Serial Bus (USB) Port?",
-                    "status": "CORRECT",
-                    "selected_option": 2,
-                    "correct_option": 2,
-                    "correct_answer_text": "All kinds of external USB devices",
-                    "timestamp": "2026-08-05 14:48:43 IST"
-                },
-                {
-                    "question_id": 71,
-                    "question_text": "Which of the following is not a tab in MS-EXCEL?",
-                    "status": "WRONG",
-                    "selected_option": 2,
-                    "correct_option": 3,
-                    "correct_answer_text": "Edit",
-                    "timestamp": "2026-08-05 14:48:56 IST"
-                },
-                {
-                    "question_id": 521,
-                    "question_text": "Which MS Excel function can be used to sum up the numbers entered in a group of cells?",
-                    "status": "CORRECT",
-                    "selected_option": 0,
-                    "correct_option": 0,
-                    "correct_answer_text": "SUM",
-                    "timestamp": "2026-08-05 14:49:04 IST"
-                },
-                {
-                    "question_id": 256,
-                    "question_text": "What is the primary goal of a white hat hacker?",
-                    "status": "SKIPPED_TIMEOUT",
-                    "selected_option": null,
-                    "correct_option": 2,
-                    "correct_answer_text": "To help fix security flaws in computer systems",
-                    "timestamp": "2026-08-05 14:49:22 IST"
-                },
-                {
-                    "question_id": 520,
-                    "question_text": "What steps are used to format a cell in an MS Excel Spreadsheet?",
-                    "status": "CORRECT",
-                    "selected_option": 0,
-                    "correct_option": 0,
-                    "correct_answer_text": "Select cell -> Right Click -> Format Cell",
-                    "timestamp": "2026-08-05 14:49:34 IST"
-                },
-                {
-                    "question_id": 173,
-                    "question_text": "Which shortcut key is used to delete text to the end of the line?",
-                    "status": "SKIPPED_TIMEOUT",
-                    "selected_option": null,
-                    "correct_option": 0,
-                    "correct_answer_text": "Ctrl + Delete",
-                    "timestamp": "2026-08-05 14:49:51 IST"
-                },
-                {
-                    "question_id": 475,
-                    "question_text": "What is the function of F3 alone if names have not been defined in the workbook?",
-                    "status": "WRONG",
-                    "selected_option": 1,
-                    "correct_option": 2,
-                    "correct_answer_text": "Does nothing",
-                    "timestamp": "2026-08-05 14:49:58 IST"
-                },
-                {
-                    "question_id": 184,
-                    "question_text": "What is the effect of using the keyboard shortcut Page Up on a worksheet?",
-                    "status": "CORRECT",
-                    "selected_option": 0,
-                    "correct_option": 0,
-                    "correct_answer_text": "Moves to the previous screen of rows up",
-                    "timestamp": "2026-08-05 14:50:12 IST"
-                },
-                {
-                    "question_id": 180,
-                    "question_text": "What is the effect of using the keyboard shortcut End + Arrow Keys on a worksheet?",
-                    "status": "SKIPPED_TIMEOUT",
-                    "selected_option": null,
-                    "correct_option": 2,
-                    "correct_answer_text": "Moves to the last non-empty cell in that direction",
-                    "timestamp": "2026-08-05 14:50:30 IST"
-                },
-                {
-                    "question_id": 522,
-                    "question_text": "Which Excel feature allows you to simultaneously edit the same cell or range of cells with multiple users in real-time?",
-                    "status": "WRONG",
-                    "selected_option": 3,
-                    "correct_option": 0,
-                    "correct_answer_text": "Co-authoring",
-                    "timestamp": "2026-08-05 14:50:40 IST"
-                },
-                {
-                    "question_id": 531,
-                    "question_text": "What is the purpose of using co-authoring in MS Excel?",
-                    "status": "CORRECT",
-                    "selected_option": 0,
-                    "correct_option": 0,
-                    "correct_answer_text": "To allow multiple users to edit the same cell or range of cells in real-time",
-                    "timestamp": "2026-08-05 14:50:51 IST"
-                },
-                {
-                    "question_id": 396,
-                    "question_text": "What is the primary function of Microsoft Access?",
-                    "status": "WRONG",
-                    "selected_option": 0,
-                    "correct_option": 3,
-                    "correct_answer_text": "Database management",
-                    "timestamp": "2026-08-05 14:50:58 IST"
-                },
-                {
-                    "question_id": 392,
-                    "question_text": "What is the difference between Microsoft 365 and the old-fashioned bundle?",
-                    "status": "CORRECT",
-                    "selected_option": 2,
-                    "correct_option": 2,
-                    "correct_answer_text": "Microsoft 365 is sold as a subscription and combines online services",
-                    "timestamp": "2026-08-05 14:51:08 IST"
-                },
-                {
-                    "question_id": 485,
-                    "question_text": "What is the full form of FDDI?",
-                    "status": "CORRECT",
-                    "selected_option": 0,
-                    "correct_option": 0,
-                    "correct_answer_text": "Fiber Distributed Data Interface",
-                    "timestamp": "2026-08-05 14:51:21 IST"
-                },
-                {
-                    "question_id": 290,
-                    "question_text": "In which mode of data transmission can data flow in both directions, but with a delay?",
-                    "status": "WRONG",
-                    "selected_option": 3,
-                    "correct_option": 1,
-                    "correct_answer_text": "Half-duplex",
-                    "timestamp": "2026-08-05 14:51:36 IST"
-                }
-            ]
-        }
-    ],
-    "last_synced": "2026-08-05 15:25:41 IST"
+    "full_quiz_history": [],
+    "last_synced": "2026-08-05 20:33:22 IST"
 }

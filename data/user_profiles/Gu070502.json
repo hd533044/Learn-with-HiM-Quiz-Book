@@ -18,436 +18,57 @@
         "referred_by": null,
         "referral_count": 0,
         "bonus_quota": 0,
-        "last_profile_edit": "2026-08-05 12:31:05 IST",
-        "last_active": "2026-08-05 12:37:30 IST",
-        "last_activity_epoch": 1785913650,
+        "paid_question_balance": 0,
+        "vip_pass_expiry": null,
+        "last_profile_edit": null,
+        "last_active": "2026-08-05 20:32:48 IST",
+        "last_activity_epoch": 1785942168,
         "is_banned": 0,
         "is_verified": 1,
         "created_at": "2026-08-05 12:31:05 IST"
     },
     "bot_engagement_metrics": {
-        "last_login_timestamp": "2026-08-05 12:37:30 IST",
-        "total_time_spent_overall": "665 seconds (11.08 mins)",
+        "last_login_timestamp": "2026-08-05 20:32:48 IST",
+        "total_time_spent_overall": "25 seconds (0.42 mins)",
         "daily_spent_time_breakdown": {
-            "2026-08-05": "665 seconds (11.08 mins)"
+            "2026-08-05": "25 seconds (0.42 mins)"
         },
-        "questions_attempted_per_day": {
-            "2026-08-05": 40
-        }
+        "questions_attempted_per_day": {}
     },
     "academic_summary": {
-        "total_quizzes_attempted": 1,
-        "total_questions_attempted": 40,
-        "total_correct": 11,
-        "total_wrong": 29,
+        "total_quizzes_attempted": 0,
+        "total_questions_attempted": 0,
+        "total_correct": 0,
+        "total_wrong": 0,
         "total_skipped": 0,
-        "datewise_quiz_summary": {
-            "2026-08-05": {
-                "total_quizzes": 1,
-                "total_questions": 40,
-                "total_correct": 11,
-                "total_wrong": 29,
-                "total_score": 11.0,
-                "total_time_seconds": 0
-            }
-        }
+        "datewise_quiz_summary": {}
     },
     "saved_questions_ledger": {
         "total_saved": 0,
         "datewise_saved_summary": {},
         "saved_questions": []
     },
-    "student_reviews_given": [],
+    "student_reviews_given": [
+        {
+            "id": 11,
+            "user_id": 5044856958,
+            "full_name": "Guddu",
+            "feedback_text": "10/10 Quality Quizzes!",
+            "submitted_at": "2026-08-05 20:32:48 IST"
+        }
+    ],
     "subscription_ledger": {
         "status": "FREE_TIER",
-        "active_plan": "Standard Free Tier",
-        "total_amount_paid": 0.0,
-        "payment_history": []
+        "paid_question_balance": 0,
+        "vip_pass_expiry": null
     },
     "badges_and_achievements": {
         "earned_badges": [
             "Early Learner",
             "Registered Scholar"
         ],
-        "streak_days": 1
+        "streak_days": 0
     },
-    "full_quiz_history": [
-        {
-            "id": 19,
-            "user_id": 5044856958,
-            "quiz_id": "computer_awareness_mock",
-            "questions_attempted": 40,
-            "total_questions": 40,
-            "correct_answers": 11,
-            "wrong_answers": 29,
-            "skipped_count": 0,
-            "score": 11.0,
-            "time_taken": 0,
-            "attempt_timestamp": "2026-08-05 12:35:29 IST",
-            "attempt_date": "2026-08-05",
-            "question_details": [
-                {
-                    "question_id": 538,
-                    "question_text": "What is an example of system software?",
-                    "status": "WRONG",
-                    "selected_option": 1,
-                    "correct_option": 2,
-                    "correct_answer_text": "Windows operating system",
-                    "timestamp": "2026-08-05 12:32:26 IST"
-                },
-                {
-                    "question_id": 442,
-                    "question_text": "What is the shortcut to protect sheets and workbooks?",
-                    "status": "WRONG",
-                    "selected_option": 1,
-                    "correct_option": 0,
-                    "correct_answer_text": "Alt+R",
-                    "timestamp": "2026-08-05 12:32:34 IST"
-                },
-                {
-                    "question_id": 97,
-                    "question_text": "How many rows and columns are there in a worksheet of MS-Excel 2010?",
-                    "status": "CORRECT",
-                    "selected_option": 1,
-                    "correct_option": 1,
-                    "correct_answer_text": "1,048,576 rows and 16,384 columns",
-                    "timestamp": "2026-08-05 12:32:45 IST"
-                },
-                {
-                    "question_id": 406,
-                    "question_text": "How do you switch between the document, task pane, status bar, and ribbon in Word?",
-                    "status": "CORRECT",
-                    "selected_option": 2,
-                    "correct_option": 2,
-                    "correct_answer_text": "Press F6",
-                    "timestamp": "2026-08-05 12:32:53 IST"
-                },
-                {
-                    "question_id": 258,
-                    "question_text": "What is a key characteristic of a logic bomb?",
-                    "status": "WRONG",
-                    "selected_option": 3,
-                    "correct_option": 1,
-                    "correct_answer_text": "It is a piece of code that implements a malicious function after certain conditions are met",
-                    "timestamp": "2026-08-05 12:32:59 IST"
-                },
-                {
-                    "question_id": 332,
-                    "question_text": "What is the Transport Layer also known as?",
-                    "status": "WRONG",
-                    "selected_option": 0,
-                    "correct_option": 1,
-                    "correct_answer_text": "Heart of the OSI model",
-                    "timestamp": "2026-08-05 12:33:04 IST"
-                },
-                {
-                    "question_id": 244,
-                    "question_text": "What is the function of a router in a network?",
-                    "status": "WRONG",
-                    "selected_option": 3,
-                    "correct_option": 1,
-                    "correct_answer_text": "To analyse and alter data packets for transmission over different networks",
-                    "timestamp": "2026-08-05 12:33:07 IST"
-                },
-                {
-                    "question_id": 99,
-                    "question_text": "What is the minimum zoom percentage in MS-Excel 2010?",
-                    "status": "WRONG",
-                    "selected_option": 2,
-                    "correct_option": 0,
-                    "correct_answer_text": "10%",
-                    "timestamp": "2026-08-05 12:33:14 IST"
-                },
-                {
-                    "question_id": 519,
-                    "question_text": "How are rows identified in MS-Excel?",
-                    "status": "CORRECT",
-                    "selected_option": 1,
-                    "correct_option": 1,
-                    "correct_answer_text": "Numbers",
-                    "timestamp": "2026-08-05 12:33:17 IST"
-                },
-                {
-                    "question_id": 70,
-                    "question_text": "What is the purpose of the 'Sparklines' option in the 'Insert' tab in MS-EXCEL?",
-                    "status": "CORRECT",
-                    "selected_option": 2,
-                    "correct_option": 2,
-                    "correct_answer_text": "To create a mini chart in a cell",
-                    "timestamp": "2026-08-05 12:33:20 IST"
-                },
-                {
-                    "question_id": 110,
-                    "question_text": "What is the shortcut to go to the Data tab in MS-Excel 2010?",
-                    "status": "CORRECT",
-                    "selected_option": 0,
-                    "correct_option": 0,
-                    "correct_answer_text": "Alt + A",
-                    "timestamp": "2026-08-05 12:33:23 IST"
-                },
-                {
-                    "question_id": 345,
-                    "question_text": "What is the purpose of the Transport Layer?",
-                    "status": "WRONG",
-                    "selected_option": 2,
-                    "correct_option": 1,
-                    "correct_answer_text": "To provide end-to-end delivery of messages",
-                    "timestamp": "2026-08-05 12:33:25 IST"
-                },
-                {
-                    "question_id": 417,
-                    "question_text": "What happens when you press Alt+F5 in Word?",
-                    "status": "WRONG",
-                    "selected_option": 1,
-                    "correct_option": 0,
-                    "correct_answer_text": "Restores the document window size",
-                    "timestamp": "2026-08-05 12:33:29 IST"
-                },
-                {
-                    "question_id": 560,
-                    "question_text": "How can you insert a blank row at the top of a worksheet in Excel?",
-                    "status": "WRONG",
-                    "selected_option": 2,
-                    "correct_option": 0,
-                    "correct_answer_text": "Drag the mouse on the row border to select the row and click Insert in the Cells group on the Home tab",
-                    "timestamp": "2026-08-05 12:33:33 IST"
-                },
-                {
-                    "question_id": 355,
-                    "question_text": "What is the ranking of the supercomputer that entered the top 500 list of supercomputers of the world?",
-                    "status": "WRONG",
-                    "selected_option": 0,
-                    "correct_option": 1,
-                    "correct_answer_text": "Ranked 171",
-                    "timestamp": "2026-08-05 12:33:36 IST"
-                },
-                {
-                    "question_id": 490,
-                    "question_text": "What services does IBM offer?",
-                    "status": "WRONG",
-                    "selected_option": 3,
-                    "correct_option": 0,
-                    "correct_answer_text": "Infrastructure, hosting, and consulting services",
-                    "timestamp": "2026-08-05 12:33:39 IST"
-                },
-                {
-                    "question_id": 399,
-                    "question_text": "What is the purpose of the disk rearrangement programme in Microsoft Windows?",
-                    "status": "WRONG",
-                    "selected_option": 2,
-                    "correct_option": 0,
-                    "correct_answer_text": "To increase data access speed by rearranging files",
-                    "timestamp": "2026-08-05 12:33:41 IST"
-                },
-                {
-                    "question_id": 200,
-                    "question_text": "What is the effect of using the keyboard shortcut Ctrl + Tab on multiple open workbooks?",
-                    "status": "WRONG",
-                    "selected_option": 2,
-                    "correct_option": 1,
-                    "correct_answer_text": "Moves to the next open workbook or window",
-                    "timestamp": "2026-08-05 12:33:44 IST"
-                },
-                {
-                    "question_id": 338,
-                    "question_text": "What is the term used to refer to data in the Transport Layer?",
-                    "status": "WRONG",
-                    "selected_option": 1,
-                    "correct_option": 2,
-                    "correct_answer_text": "Segments",
-                    "timestamp": "2026-08-05 12:33:50 IST"
-                },
-                {
-                    "question_id": 380,
-                    "question_text": "What does HTML stand for?",
-                    "status": "WRONG",
-                    "selected_option": 1,
-                    "correct_option": 0,
-                    "correct_answer_text": "Hyper Text Markup Language",
-                    "timestamp": "2026-08-05 12:33:53 IST"
-                },
-                {
-                    "question_id": 502,
-                    "question_text": "What type of technology is CDMA?",
-                    "status": "WRONG",
-                    "selected_option": 3,
-                    "correct_option": 0,
-                    "correct_answer_text": "Wireless technology",
-                    "timestamp": "2026-08-05 12:33:56 IST"
-                },
-                {
-                    "question_id": 242,
-                    "question_text": "What is the purpose of a gateway in a network?",
-                    "status": "WRONG",
-                    "selected_option": 1,
-                    "correct_option": 2,
-                    "correct_answer_text": "To serve as the entry and exit point of a network",
-                    "timestamp": "2026-08-05 12:34:00 IST"
-                },
-                {
-                    "question_id": 381,
-                    "question_text": "Who invented HTML in 1990?",
-                    "status": "WRONG",
-                    "selected_option": 1,
-                    "correct_option": 0,
-                    "correct_answer_text": "Tim Berners Lee",
-                    "timestamp": "2026-08-05 12:34:04 IST"
-                },
-                {
-                    "question_id": 18,
-                    "question_text": "Which port is used for connecting external hard disks and keyboards?",
-                    "status": "WRONG",
-                    "selected_option": 0,
-                    "correct_option": 2,
-                    "correct_answer_text": "Universal Serial Bus (USB) Port",
-                    "timestamp": "2026-08-05 12:34:08 IST"
-                },
-                {
-                    "question_id": 559,
-                    "question_text": "What is the purpose of actuators and sensors in IoT devices?",
-                    "status": "WRONG",
-                    "selected_option": 2,
-                    "correct_option": 0,
-                    "correct_answer_text": "To gather data and exchange it over the network",
-                    "timestamp": "2026-08-05 12:34:11 IST"
-                },
-                {
-                    "question_id": 338,
-                    "question_text": "What is the term used to refer to data in the Transport Layer?",
-                    "status": "CORRECT",
-                    "selected_option": 2,
-                    "correct_option": 2,
-                    "correct_answer_text": "Segments",
-                    "timestamp": "2026-08-05 12:34:14 IST"
-                },
-                {
-                    "question_id": 367,
-                    "question_text": "What is the name of the company founded by Vinod Khosla?",
-                    "status": "CORRECT",
-                    "selected_option": 0,
-                    "correct_option": 0,
-                    "correct_answer_text": "Sun Microsystems",
-                    "timestamp": "2026-08-05 12:34:17 IST"
-                },
-                {
-                    "question_id": 221,
-                    "question_text": "What is the purpose of the Rendering Engine in a web browser?",
-                    "status": "CORRECT",
-                    "selected_option": 0,
-                    "correct_option": 0,
-                    "correct_answer_text": "To display web pages",
-                    "timestamp": "2026-08-05 12:34:20 IST"
-                },
-                {
-                    "question_id": 153,
-                    "question_text": "What is the function of Shift + Insert in the active cell?",
-                    "status": "WRONG",
-                    "selected_option": 1,
-                    "correct_option": 0,
-                    "correct_answer_text": "Enters the data from the clipboard",
-                    "timestamp": "2026-08-05 12:34:26 IST"
-                },
-                {
-                    "question_id": 37,
-                    "question_text": "What is the shortcut to capture a screenshot in Windows?",
-                    "status": "CORRECT",
-                    "selected_option": 1,
-                    "correct_option": 1,
-                    "correct_answer_text": "Win Keys + Print Screen",
-                    "timestamp": "2026-08-05 12:34:29 IST"
-                },
-                {
-                    "question_id": 191,
-                    "question_text": "What is the function of the keyboard shortcut Ctrl + Up Arrow on a worksheet?",
-                    "status": "WRONG",
-                    "selected_option": 2,
-                    "correct_option": 1,
-                    "correct_answer_text": "Moves to the top boundary of the current data region",
-                    "timestamp": "2026-08-05 12:34:33 IST"
-                },
-                {
-                    "question_id": 70,
-                    "question_text": "What is the purpose of the 'Sparklines' option in the 'Insert' tab in MS-EXCEL?",
-                    "status": "WRONG",
-                    "selected_option": 1,
-                    "correct_option": 2,
-                    "correct_answer_text": "To create a mini chart in a cell",
-                    "timestamp": "2026-08-05 12:34:37 IST"
-                },
-                {
-                    "question_id": 144,
-                    "question_text": "What is the purpose of using Alt + F4?",
-                    "status": "WRONG",
-                    "selected_option": 2,
-                    "correct_option": 0,
-                    "correct_answer_text": "Closes all workbooks and exits Excel",
-                    "timestamp": "2026-08-05 12:34:41 IST"
-                },
-                {
-                    "question_id": 159,
-                    "question_text": "What is the function of Ctrl + Delete in the active cell?",
-                    "status": "WRONG",
-                    "selected_option": 3,
-                    "correct_option": 0,
-                    "correct_answer_text": "Deletes text to the end of the line",
-                    "timestamp": "2026-08-05 12:34:46 IST"
-                },
-                {
-                    "question_id": 92,
-                    "question_text": "Which function is used to convert text to uppercase in MS-Excel 2010?",
-                    "status": "WRONG",
-                    "selected_option": 2,
-                    "correct_option": 1,
-                    "correct_answer_text": "UPPER",
-                    "timestamp": "2026-08-05 12:34:51 IST"
-                },
-                {
-                    "question_id": 341,
-                    "question_text": "What is the purpose of the Network Layer?",
-                    "status": "CORRECT",
-                    "selected_option": 1,
-                    "correct_option": 1,
-                    "correct_answer_text": "To route data between hosts in different networks",
-                    "timestamp": "2026-08-05 12:34:54 IST"
-                },
-                {
-                    "question_id": 369,
-                    "question_text": "What is the former name of Apple Inc.?",
-                    "status": "WRONG",
-                    "selected_option": 2,
-                    "correct_option": 0,
-                    "correct_answer_text": "Apple Computer Company",
-                    "timestamp": "2026-08-05 12:35:03 IST"
-                },
-                {
-                    "question_id": 61,
-                    "question_text": "What is the purpose of Alt + Space + X in a Windows system?",
-                    "status": "CORRECT",
-                    "selected_option": 0,
-                    "correct_option": 0,
-                    "correct_answer_text": "To maximize a window",
-                    "timestamp": "2026-08-05 12:35:14 IST"
-                },
-                {
-                    "question_id": 310,
-                    "question_text": "What is the most significant digit in a hexadecimal number?",
-                    "status": "WRONG",
-                    "selected_option": 3,
-                    "correct_option": 0,
-                    "correct_answer_text": "The leftmost digit",
-                    "timestamp": "2026-08-05 12:35:23 IST"
-                },
-                {
-                    "question_id": 463,
-                    "question_text": "What is the purpose of Ctrl+F4?",
-                    "status": "WRONG",
-                    "selected_option": 2,
-                    "correct_option": 0,
-                    "correct_answer_text": "Closes the selected workbook window",
-                    "timestamp": "2026-08-05 12:35:28 IST"
-                }
-            ]
-        }
-    ],
-    "last_synced": "2026-08-05 15:25:41 IST"
+    "full_quiz_history": [],
+    "last_synced": "2026-08-05 20:33:22 IST"
 }

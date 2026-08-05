@@ -1,0 +1,184 @@
+{
+    "student_id": "Na240203",
+    "registration_info": {
+        "user_id": 6183798991,
+        "student_id": "Na240203",
+        "full_name": "Nancy Choudhary",
+        "username": "Nanu746",
+        "phone_number": "917807536871",
+        "target_exam": "BSF HCM",
+        "dob": "24-02-2003",
+        "age": 23,
+        "gender": "Female",
+        "country": "India",
+        "state": "Himachal Pradesh",
+        "pin": "1234",
+        "security_question": "🐾 What is your pet's name?",
+        "security_answer": "Shimba",
+        "referred_by": null,
+        "referral_count": 0,
+        "bonus_quota": 0,
+        "paid_question_balance": 0,
+        "vip_pass_expiry": null,
+        "last_profile_edit": "2026-08-05 19:17:28 IST",
+        "last_active": "2026-08-05 19:21:47 IST",
+        "last_activity_epoch": 1785937907,
+        "is_banned": 0,
+        "is_verified": 1,
+        "created_at": "2026-08-05 19:17:28 IST"
+    },
+    "bot_engagement_metrics": {
+        "last_login_timestamp": "2026-08-05 19:21:47 IST",
+        "total_time_spent_overall": "275 seconds (4.58 mins)",
+        "daily_spent_time_breakdown": {
+            "2026-08-05": "275 seconds (4.58 mins)"
+        },
+        "questions_attempted_per_day": {
+            "2026-08-05": 10
+        }
+    },
+    "academic_summary": {
+        "total_quizzes_attempted": 1,
+        "total_questions_attempted": 10,
+        "total_correct": 7,
+        "total_wrong": 3,
+        "total_skipped": 0,
+        "datewise_quiz_summary": {
+            "2026-08-05": {
+                "total_quizzes": 1,
+                "total_questions": 10,
+                "total_correct": 7,
+                "total_wrong": 3,
+                "total_score": 7.0,
+                "total_time_seconds": 0
+            }
+        }
+    },
+    "saved_questions_ledger": {
+        "total_saved": 0,
+        "datewise_saved_summary": {},
+        "saved_questions": []
+    },
+    "student_reviews_given": [],
+    "subscription_ledger": {
+        "status": "FREE_TIER",
+        "paid_question_balance": 0,
+        "vip_pass_expiry": null
+    },
+    "badges_and_achievements": {
+        "earned_badges": [
+            "Early Learner",
+            "Registered Scholar"
+        ],
+        "streak_days": 1
+    },
+    "full_quiz_history": [
+        {
+            "id": 14,
+            "user_id": 6183798991,
+            "quiz_id": "computer_awareness_mock",
+            "questions_attempted": 10,
+            "total_questions": 10,
+            "correct_answers": 7,
+            "wrong_answers": 3,
+            "skipped_count": 0,
+            "score": 7.0,
+            "time_taken": 0,
+            "attempt_timestamp": "2026-08-05 19:20:18 IST",
+            "attempt_date": "2026-08-05",
+            "question_details": [
+                {
+                    "question_id": 500,
+                    "question_text": "What is the purpose of CLI?",
+                    "status": "WRONG",
+                    "selected_option": 1,
+                    "correct_option": 0,
+                    "correct_answer_text": "To allow users to interact with a system by typing text",
+                    "timestamp": "2026-08-05 19:18:20 IST"
+                },
+                {
+                    "question_id": 112,
+                    "question_text": "What is the shortcut to select multiple non-adjacent worksheets?",
+                    "status": "WRONG",
+                    "selected_option": 0,
+                    "correct_option": 1,
+                    "correct_answer_text": "Hold down the Ctrl key and click the tabs",
+                    "timestamp": "2026-08-05 19:18:26 IST"
+                },
+                {
+                    "question_id": 545,
+                    "question_text": "What accurately describes application software?",
+                    "status": "CORRECT",
+                    "selected_option": 0,
+                    "correct_option": 0,
+                    "correct_answer_text": "Designed to perform specific tasks or functions to meet the user’s needs",
+                    "timestamp": "2026-08-05 19:18:36 IST"
+                },
+                {
+                    "question_id": 536,
+                    "question_text": "Which file format occupies less memory when saving an MS-Word file?",
+                    "status": "CORRECT",
+                    "selected_option": 1,
+                    "correct_option": 1,
+                    "correct_answer_text": ".docx",
+                    "timestamp": "2026-08-05 19:18:50 IST"
+                },
+                {
+                    "question_id": 395,
+                    "question_text": "What can be shared with other OneNote users?",
+                    "status": "CORRECT",
+                    "selected_option": 2,
+                    "correct_option": 2,
+                    "correct_answer_text": "Notes, including handwritten or typed notes, drawings, screen clippings, and audio commentaries",
+                    "timestamp": "2026-08-05 19:19:09 IST"
+                },
+                {
+                    "question_id": 345,
+                    "question_text": "What is the purpose of the Transport Layer?",
+                    "status": "CORRECT",
+                    "selected_option": 1,
+                    "correct_option": 1,
+                    "correct_answer_text": "To provide end-to-end delivery of messages",
+                    "timestamp": "2026-08-05 19:19:17 IST"
+                },
+                {
+                    "question_id": 169,
+                    "question_text": "What is the function of Shift + Delete in the active cell?",
+                    "status": "WRONG",
+                    "selected_option": 1,
+                    "correct_option": 0,
+                    "correct_answer_text": "Cuts the selection to the clipboard",
+                    "timestamp": "2026-08-05 19:19:29 IST"
+                },
+                {
+                    "question_id": 517,
+                    "question_text": "What happens when you select the cell contents of a particular row in MS-Excel and then click the Delete button?",
+                    "status": "CORRECT",
+                    "selected_option": 0,
+                    "correct_option": 0,
+                    "correct_answer_text": "Entries in all the selected cells will be deleted",
+                    "timestamp": "2026-08-05 19:19:49 IST"
+                },
+                {
+                    "question_id": 8,
+                    "question_text": "How many pins are available in a Parallel Port?",
+                    "status": "CORRECT",
+                    "selected_option": 1,
+                    "correct_option": 1,
+                    "correct_answer_text": "25 pin",
+                    "timestamp": "2026-08-05 19:20:00 IST"
+                },
+                {
+                    "question_id": 334,
+                    "question_text": "What are the Lower Layers of the OSI model also known as?",
+                    "status": "CORRECT",
+                    "selected_option": 1,
+                    "correct_option": 1,
+                    "correct_answer_text": "Lower Layers or Hardware Layers",
+                    "timestamp": "2026-08-05 19:20:17 IST"
+                }
+            ]
+        }
+    ],
+    "last_synced": "2026-08-05 20:33:22 IST"
+}

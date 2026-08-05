@@ -18,468 +18,57 @@
         "referred_by": null,
         "referral_count": 0,
         "bonus_quota": 0,
-        "last_profile_edit": "2026-08-05 12:07:19 IST",
-        "last_active": "2026-08-05 12:26:37 IST",
-        "last_activity_epoch": 1785912997,
+        "paid_question_balance": 0,
+        "vip_pass_expiry": null,
+        "last_profile_edit": null,
+        "last_active": "2026-08-05 19:45:59 IST",
+        "last_activity_epoch": 1785939359,
         "is_banned": 0,
         "is_verified": 1,
         "created_at": "2026-08-05 12:07:19 IST"
     },
     "bot_engagement_metrics": {
-        "last_login_timestamp": "2026-08-05 12:26:37 IST",
-        "total_time_spent_overall": "925 seconds (15.42 mins)",
+        "last_login_timestamp": "2026-08-05 19:45:59 IST",
+        "total_time_spent_overall": "30 seconds (0.5 mins)",
         "daily_spent_time_breakdown": {
-            "2026-08-05": "925 seconds (15.42 mins)"
+            "2026-08-05": "30 seconds (0.5 mins)"
         },
-        "questions_attempted_per_day": {
-            "2026-08-05": 40
-        }
+        "questions_attempted_per_day": {}
     },
     "academic_summary": {
-        "total_quizzes_attempted": 3,
-        "total_questions_attempted": 40,
-        "total_correct": 24,
-        "total_wrong": 16,
+        "total_quizzes_attempted": 0,
+        "total_questions_attempted": 0,
+        "total_correct": 0,
+        "total_wrong": 0,
         "total_skipped": 0,
-        "datewise_quiz_summary": {
-            "2026-08-05": {
-                "total_quizzes": 3,
-                "total_questions": 40,
-                "total_correct": 24,
-                "total_wrong": 16,
-                "total_score": 24.0,
-                "total_time_seconds": 0
-            }
-        }
+        "datewise_quiz_summary": {}
     },
     "saved_questions_ledger": {
         "total_saved": 0,
         "datewise_saved_summary": {},
         "saved_questions": []
     },
-    "student_reviews_given": [],
+    "student_reviews_given": [
+        {
+            "id": 9,
+            "user_id": 1741833280,
+            "full_name": "Kasa. Naveen ( PAT By Soldier",
+            "feedback_text": "Best Exam Prep Portal!",
+            "submitted_at": "2026-08-05 19:45:41 IST"
+        }
+    ],
     "subscription_ledger": {
         "status": "FREE_TIER",
-        "active_plan": "Standard Free Tier",
-        "total_amount_paid": 0.0,
-        "payment_history": []
+        "paid_question_balance": 0,
+        "vip_pass_expiry": null
     },
     "badges_and_achievements": {
         "earned_badges": [
             "Early Learner",
             "Registered Scholar"
         ],
-        "streak_days": 1
+        "streak_days": 0
     },
-    "full_quiz_history": [
-        {
-            "id": 13,
-            "user_id": 1741833280,
-            "quiz_id": "computer_awareness_mock",
-            "questions_attempted": 4,
-            "total_questions": 4,
-            "correct_answers": 3,
-            "wrong_answers": 1,
-            "skipped_count": 0,
-            "score": 3.0,
-            "time_taken": 0,
-            "attempt_timestamp": "2026-08-05 12:22:50 IST",
-            "attempt_date": "2026-08-05",
-            "question_details": [
-                {
-                    "question_id": 21,
-                    "question_text": "Which of the following ports supports multiple data streams at a time?",
-                    "status": "CORRECT",
-                    "selected_option": 1,
-                    "correct_option": 1,
-                    "correct_answer_text": "Parallel Port",
-                    "timestamp": "2026-08-05 12:22:24 IST"
-                },
-                {
-                    "question_id": 548,
-                    "question_text": "How can you insert a blank row at the top of a worksheet?",
-                    "status": "CORRECT",
-                    "selected_option": 0,
-                    "correct_option": 0,
-                    "correct_answer_text": "Drag the mouse on the row border to select the row and click Insert in the Cells group on the Home tab",
-                    "timestamp": "2026-08-05 12:22:32 IST"
-                },
-                {
-                    "question_id": 516,
-                    "question_text": "What option allows you to quickly remove all formatting from selected text while retaining the underlying text content in MS Word?",
-                    "status": "CORRECT",
-                    "selected_option": 0,
-                    "correct_option": 0,
-                    "correct_answer_text": "Clear Formatting",
-                    "timestamp": "2026-08-05 12:22:44 IST"
-                },
-                {
-                    "question_id": 24,
-                    "question_text": "Which port has 9 pins and 25 pins versions?",
-                    "status": "WRONG",
-                    "selected_option": 0,
-                    "correct_option": 3,
-                    "correct_answer_text": "Serial Port",
-                    "timestamp": "2026-08-05 12:22:50 IST"
-                }
-            ]
-        },
-        {
-            "id": 12,
-            "user_id": 1741833280,
-            "quiz_id": "computer_awareness_mock",
-            "questions_attempted": 25,
-            "total_questions": 25,
-            "correct_answers": 15,
-            "wrong_answers": 10,
-            "skipped_count": 0,
-            "score": 15.0,
-            "time_taken": 0,
-            "attempt_timestamp": "2026-08-05 12:20:00 IST",
-            "attempt_date": "2026-08-05",
-            "question_details": [
-                {
-                    "question_id": 305,
-                    "question_text": "How are hexadecimal numbers converted to decimal numbers?",
-                    "status": "WRONG",
-                    "selected_option": 0,
-                    "correct_option": 1,
-                    "correct_answer_text": "By multiplying each digit with powers of 16",
-                    "timestamp": "2026-08-05 12:14:00 IST"
-                },
-                {
-                    "question_id": 152,
-                    "question_text": "Which shortcut key is used to enter the formula as an Array Formula?",
-                    "status": "CORRECT",
-                    "selected_option": 0,
-                    "correct_option": 0,
-                    "correct_answer_text": "Ctrl + Shift + Enter",
-                    "timestamp": "2026-08-05 12:14:07 IST"
-                },
-                {
-                    "question_id": 521,
-                    "question_text": "Which MS Excel function can be used to sum up the numbers entered in a group of cells?",
-                    "status": "CORRECT",
-                    "selected_option": 0,
-                    "correct_option": 0,
-                    "correct_answer_text": "SUM",
-                    "timestamp": "2026-08-05 12:14:15 IST"
-                },
-                {
-                    "question_id": 136,
-                    "question_text": "What is the shortcut to maximize the size of the active workbook or window?",
-                    "status": "WRONG",
-                    "selected_option": 2,
-                    "correct_option": 1,
-                    "correct_answer_text": "Ctrl + F10",
-                    "timestamp": "2026-08-05 12:14:31 IST"
-                },
-                {
-                    "question_id": 132,
-                    "question_text": "What is the purpose of using Alt + F11?",
-                    "status": "CORRECT",
-                    "selected_option": 0,
-                    "correct_option": 0,
-                    "correct_answer_text": "Toggles between the Visual Basic Editor window and the Excel window",
-                    "timestamp": "2026-08-05 12:14:43 IST"
-                },
-                {
-                    "question_id": 212,
-                    "question_text": "Which folder is used to store deleted emails?",
-                    "status": "CORRECT",
-                    "selected_option": 2,
-                    "correct_option": 2,
-                    "correct_answer_text": "Trash",
-                    "timestamp": "2026-08-05 12:14:52 IST"
-                },
-                {
-                    "question_id": 265,
-                    "question_text": "What is the purpose of ransomware in the context of hacking?",
-                    "status": "WRONG",
-                    "selected_option": 0,
-                    "correct_option": 1,
-                    "correct_answer_text": "To block access to a computer system until a sum of money is paid",
-                    "timestamp": "2026-08-05 12:15:18 IST"
-                },
-                {
-                    "question_id": 41,
-                    "question_text": "What is the function of Win Keys + M?",
-                    "status": "CORRECT",
-                    "selected_option": 0,
-                    "correct_option": 0,
-                    "correct_answer_text": "To minimize all active windows",
-                    "timestamp": "2026-08-05 12:15:34 IST"
-                },
-                {
-                    "question_id": 29,
-                    "question_text": "Which of the following ports has 25 pins and is used for scanners and printers?",
-                    "status": "WRONG",
-                    "selected_option": 2,
-                    "correct_option": 1,
-                    "correct_answer_text": "Parallel Port",
-                    "timestamp": "2026-08-05 12:15:46 IST"
-                },
-                {
-                    "question_id": 178,
-                    "question_text": "What is the effect of using the keyboard shortcut Alt + Tab on the computer?",
-                    "status": "WRONG",
-                    "selected_option": 2,
-                    "correct_option": 3,
-                    "correct_answer_text": "Moves to the next application open on your computer",
-                    "timestamp": "2026-08-05 12:16:13 IST"
-                },
-                {
-                    "question_id": 99,
-                    "question_text": "What is the minimum zoom percentage in MS-Excel 2010?",
-                    "status": "WRONG",
-                    "selected_option": 1,
-                    "correct_option": 0,
-                    "correct_answer_text": "10%",
-                    "timestamp": "2026-08-05 12:16:25 IST"
-                },
-                {
-                    "question_id": 298,
-                    "question_text": "In which mode of data transmission can data flow in one direction only?",
-                    "status": "CORRECT",
-                    "selected_option": 0,
-                    "correct_option": 0,
-                    "correct_answer_text": "Simplex",
-                    "timestamp": "2026-08-05 12:16:38 IST"
-                },
-                {
-                    "question_id": 376,
-                    "question_text": "Who built the SEAC computer?",
-                    "status": "CORRECT",
-                    "selected_option": 0,
-                    "correct_option": 0,
-                    "correct_answer_text": "U.S. National Bureau of Standards (NBS)",
-                    "timestamp": "2026-08-05 12:16:53 IST"
-                },
-                {
-                    "question_id": 117,
-                    "question_text": "What is the purpose of the CONCATENATE function?",
-                    "status": "CORRECT",
-                    "selected_option": 0,
-                    "correct_option": 0,
-                    "correct_answer_text": "To join several text items into one text item cell",
-                    "timestamp": "2026-08-05 12:17:21 IST"
-                },
-                {
-                    "question_id": 405,
-                    "question_text": "What happens when you press F5 alone in Word?",
-                    "status": "WRONG",
-                    "selected_option": 3,
-                    "correct_option": 2,
-                    "correct_answer_text": "Displays the Go To dialog box",
-                    "timestamp": "2026-08-05 12:17:37 IST"
-                },
-                {
-                    "question_id": 426,
-                    "question_text": "What is the shortcut to open the Review tab?",
-                    "status": "CORRECT",
-                    "selected_option": 0,
-                    "correct_option": 0,
-                    "correct_answer_text": "Alt+R",
-                    "timestamp": "2026-08-05 12:17:52 IST"
-                },
-                {
-                    "question_id": 138,
-                    "question_text": "What is the purpose of using Ctrl + F7?",
-                    "status": "WRONG",
-                    "selected_option": 2,
-                    "correct_option": 1,
-                    "correct_answer_text": "Activates the Move window command",
-                    "timestamp": "2026-08-05 12:18:01 IST"
-                },
-                {
-                    "question_id": 67,
-                    "question_text": "Which of the following is a group in the 'Insert' tab in MS-EXCEL?",
-                    "status": "WRONG",
-                    "selected_option": 3,
-                    "correct_option": 0,
-                    "correct_answer_text": "Illustrations",
-                    "timestamp": "2026-08-05 12:18:19 IST"
-                },
-                {
-                    "question_id": 428,
-                    "question_text": "What is the function of Ctrl+Arrow key?",
-                    "status": "CORRECT",
-                    "selected_option": 0,
-                    "correct_option": 0,
-                    "correct_answer_text": "Move to the edge of the current data region",
-                    "timestamp": "2026-08-05 12:18:26 IST"
-                },
-                {
-                    "question_id": 175,
-                    "question_text": "What is the function of the keyboard shortcut Ctrl + Shift + & (or 7)?",
-                    "status": "WRONG",
-                    "selected_option": 0,
-                    "correct_option": 2,
-                    "correct_answer_text": "Applies the outline border to the selection",
-                    "timestamp": "2026-08-05 12:18:53 IST"
-                },
-                {
-                    "question_id": 449,
-                    "question_text": "How to view macros?",
-                    "status": "CORRECT",
-                    "selected_option": 1,
-                    "correct_option": 1,
-                    "correct_answer_text": "Alt+W",
-                    "timestamp": "2026-08-05 12:19:08 IST"
-                },
-                {
-                    "question_id": 542,
-                    "question_text": "What are the requirements for Skype to function on a computer?",
-                    "status": "CORRECT",
-                    "selected_option": 2,
-                    "correct_option": 2,
-                    "correct_answer_text": "A web cam, a microphone, and a speaker",
-                    "timestamp": "2026-08-05 12:19:30 IST"
-                },
-                {
-                    "question_id": 291,
-                    "question_text": "What is the primary function of a Router?",
-                    "status": "CORRECT",
-                    "selected_option": 1,
-                    "correct_option": 1,
-                    "correct_answer_text": "To connect multiple devices",
-                    "timestamp": "2026-08-05 12:19:41 IST"
-                },
-                {
-                    "question_id": 403,
-                    "question_text": "What is the name of the word processing application in Microsoft 365?",
-                    "status": "CORRECT",
-                    "selected_option": 2,
-                    "correct_option": 2,
-                    "correct_answer_text": "Microsoft Word",
-                    "timestamp": "2026-08-05 12:19:48 IST"
-                },
-                {
-                    "question_id": 404,
-                    "question_text": "What is the function of Ctrl+F4 in Word?",
-                    "status": "CORRECT",
-                    "selected_option": 0,
-                    "correct_option": 0,
-                    "correct_answer_text": "Closes the current document",
-                    "timestamp": "2026-08-05 12:20:00 IST"
-                }
-            ]
-        },
-        {
-            "id": 10,
-            "user_id": 1741833280,
-            "quiz_id": "computer_awareness_mock",
-            "questions_attempted": 11,
-            "total_questions": 11,
-            "correct_answers": 6,
-            "wrong_answers": 5,
-            "skipped_count": 0,
-            "score": 6.0,
-            "time_taken": 0,
-            "attempt_timestamp": "2026-08-05 12:12:12 IST",
-            "attempt_date": "2026-08-05",
-            "question_details": [
-                {
-                    "question_id": 254,
-                    "question_text": "What are the two types of hacking?",
-                    "status": "WRONG",
-                    "selected_option": 1,
-                    "correct_option": 2,
-                    "correct_answer_text": "White hat and black hat hacking",
-                    "timestamp": "2026-08-05 12:09:06 IST"
-                },
-                {
-                    "question_id": 66,
-                    "question_text": "What is the function of the LOWER function in MS-EXCEL?",
-                    "status": "CORRECT",
-                    "selected_option": 1,
-                    "correct_option": 1,
-                    "correct_answer_text": "To convert text to lower case",
-                    "timestamp": "2026-08-05 12:09:20 IST"
-                },
-                {
-                    "question_id": 339,
-                    "question_text": "What is the function of service point addressing in the Transport Layer?",
-                    "status": "CORRECT",
-                    "selected_option": 0,
-                    "correct_option": 0,
-                    "correct_answer_text": "Providing a unique address for each device",
-                    "timestamp": "2026-08-05 12:09:44 IST"
-                },
-                {
-                    "question_id": 37,
-                    "question_text": "What is the shortcut to capture a screenshot in Windows?",
-                    "status": "CORRECT",
-                    "selected_option": 1,
-                    "correct_option": 1,
-                    "correct_answer_text": "Win Keys + Print Screen",
-                    "timestamp": "2026-08-05 12:09:51 IST"
-                },
-                {
-                    "question_id": 146,
-                    "question_text": "Which shortcut key is used to repeat the last workbook action?",
-                    "status": "CORRECT",
-                    "selected_option": 1,
-                    "correct_option": 1,
-                    "correct_answer_text": "Ctrl + Y",
-                    "timestamp": "2026-08-05 12:10:10 IST"
-                },
-                {
-                    "question_id": 162,
-                    "question_text": "Which shortcut key is used to enter a new line into a cell?",
-                    "status": "WRONG",
-                    "selected_option": 2,
-                    "correct_option": 0,
-                    "correct_answer_text": "Alt + Enter",
-                    "timestamp": "2026-08-05 12:10:30 IST"
-                },
-                {
-                    "question_id": 389,
-                    "question_text": "What is the primary function of Microsoft Excel?",
-                    "status": "CORRECT",
-                    "selected_option": 1,
-                    "correct_option": 1,
-                    "correct_answer_text": "Spreadsheet editing",
-                    "timestamp": "2026-08-05 12:10:42 IST"
-                },
-                {
-                    "question_id": 458,
-                    "question_text": "What is the shortcut to close Excel?",
-                    "status": "WRONG",
-                    "selected_option": 3,
-                    "correct_option": 0,
-                    "correct_answer_text": "Alt+F4",
-                    "timestamp": "2026-08-05 12:11:04 IST"
-                },
-                {
-                    "question_id": 411,
-                    "question_text": "How do you switch to the next document window when more than one document is open in Word?",
-                    "status": "WRONG",
-                    "selected_option": 1,
-                    "correct_option": 0,
-                    "correct_answer_text": "Press Ctrl+F6",
-                    "timestamp": "2026-08-05 12:11:29 IST"
-                },
-                {
-                    "question_id": 523,
-                    "question_text": "What is the purpose of using a public key in digital signatures?",
-                    "status": "CORRECT",
-                    "selected_option": 2,
-                    "correct_option": 2,
-                    "correct_answer_text": "To verify the sender's identity",
-                    "timestamp": "2026-08-05 12:11:51 IST"
-                },
-                {
-                    "question_id": 225,
-                    "question_text": "What is the purpose of the Compose option in Gmail?",
-                    "status": "WRONG",
-                    "selected_option": 3,
-                    "correct_option": 2,
-                    "correct_answer_text": "To create a new email",
-                    "timestamp": "2026-08-05 12:12:03 IST"
-                }
-            ]
-        }
-    ],
-    "last_synced": "2026-08-05 15:25:41 IST"
+    "full_quiz_history": [],
+    "last_synced": "2026-08-05 20:33:22 IST"
 }

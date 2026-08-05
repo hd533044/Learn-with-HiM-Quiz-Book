@@ -18,39 +18,28 @@
         "referred_by": null,
         "referral_count": 0,
         "bonus_quota": 0,
-        "last_profile_edit": "2026-08-05 12:20:39 IST",
+        "paid_question_balance": 0,
+        "vip_pass_expiry": null,
+        "last_profile_edit": null,
         "last_active": "2026-08-05 12:25:10 IST",
-        "last_activity_epoch": 1785912910,
+        "last_activity_epoch": 0,
         "is_banned": 0,
         "is_verified": 1,
         "created_at": "2026-08-05 12:20:39 IST"
     },
     "bot_engagement_metrics": {
         "last_login_timestamp": "2026-08-05 12:25:10 IST",
-        "total_time_spent_overall": "295 seconds (4.92 mins)",
-        "daily_spent_time_breakdown": {
-            "2026-08-05": "295 seconds (4.92 mins)"
-        },
-        "questions_attempted_per_day": {
-            "2026-08-05": 15
-        }
+        "total_time_spent_overall": "0 seconds (0.0 mins)",
+        "daily_spent_time_breakdown": {},
+        "questions_attempted_per_day": {}
     },
     "academic_summary": {
-        "total_quizzes_attempted": 1,
-        "total_questions_attempted": 15,
-        "total_correct": 7,
-        "total_wrong": 8,
+        "total_quizzes_attempted": 0,
+        "total_questions_attempted": 0,
+        "total_correct": 0,
+        "total_wrong": 0,
         "total_skipped": 0,
-        "datewise_quiz_summary": {
-            "2026-08-05": {
-                "total_quizzes": 1,
-                "total_questions": 15,
-                "total_correct": 7,
-                "total_wrong": 8,
-                "total_score": 7.0,
-                "total_time_seconds": 0
-            }
-        }
+        "datewise_quiz_summary": {}
     },
     "saved_questions_ledger": {
         "total_saved": 0,
@@ -60,169 +49,16 @@
     "student_reviews_given": [],
     "subscription_ledger": {
         "status": "FREE_TIER",
-        "active_plan": "Standard Free Tier",
-        "total_amount_paid": 0.0,
-        "payment_history": []
+        "paid_question_balance": 0,
+        "vip_pass_expiry": null
     },
     "badges_and_achievements": {
         "earned_badges": [
             "Early Learner",
             "Registered Scholar"
         ],
-        "streak_days": 1
+        "streak_days": 0
     },
-    "full_quiz_history": [
-        {
-            "id": 14,
-            "user_id": 1052866827,
-            "quiz_id": "computer_awareness_mock",
-            "questions_attempted": 15,
-            "total_questions": 15,
-            "correct_answers": 7,
-            "wrong_answers": 8,
-            "skipped_count": 0,
-            "score": 7.0,
-            "time_taken": 0,
-            "attempt_timestamp": "2026-08-05 12:23:51 IST",
-            "attempt_date": "2026-08-05",
-            "question_details": [
-                {
-                    "question_id": 260,
-                    "question_text": "What is ransomware used for?",
-                    "status": "WRONG",
-                    "selected_option": 2,
-                    "correct_option": 1,
-                    "correct_answer_text": "To block access to a computer system until a sum of money is paid",
-                    "timestamp": "2026-08-05 12:21:33 IST"
-                },
-                {
-                    "question_id": 301,
-                    "question_text": "What is the term for a mode of data transmission that allows data to flow in both directions simultaneously?",
-                    "status": "CORRECT",
-                    "selected_option": 2,
-                    "correct_option": 2,
-                    "correct_answer_text": "Full-duplex",
-                    "timestamp": "2026-08-05 12:21:45 IST"
-                },
-                {
-                    "question_id": 537,
-                    "question_text": "What option allows you to exclude specific sections or types of text from the spelling and grammar check in Microsoft Word?",
-                    "status": "WRONG",
-                    "selected_option": 2,
-                    "correct_option": 0,
-                    "correct_answer_text": "Exclusion Dictionary",
-                    "timestamp": "2026-08-05 12:21:58 IST"
-                },
-                {
-                    "question_id": 42,
-                    "question_text": "What is the purpose of Win Keys + No. 1,2,3,4,5?",
-                    "status": "WRONG",
-                    "selected_option": 1,
-                    "correct_option": 0,
-                    "correct_answer_text": "To show the active window one by one",
-                    "timestamp": "2026-08-05 12:22:06 IST"
-                },
-                {
-                    "question_id": 128,
-                    "question_text": "What is the function of Alt + F8?",
-                    "status": "CORRECT",
-                    "selected_option": 0,
-                    "correct_option": 0,
-                    "correct_answer_text": "Displays the Macro dialog box",
-                    "timestamp": "2026-08-05 12:22:18 IST"
-                },
-                {
-                    "question_id": 211,
-                    "question_text": "What do you use in Gmail when you want to send a mail in response to the original mail and to the original sender only?",
-                    "status": "WRONG",
-                    "selected_option": 1,
-                    "correct_option": 2,
-                    "correct_answer_text": "Reply",
-                    "timestamp": "2026-08-05 12:22:28 IST"
-                },
-                {
-                    "question_id": 144,
-                    "question_text": "What is the purpose of using Alt + F4?",
-                    "status": "CORRECT",
-                    "selected_option": 0,
-                    "correct_option": 0,
-                    "correct_answer_text": "Closes all workbooks and exits Excel",
-                    "timestamp": "2026-08-05 12:22:38 IST"
-                },
-                {
-                    "question_id": 520,
-                    "question_text": "What steps are used to format a cell in an MS Excel Spreadsheet?",
-                    "status": "CORRECT",
-                    "selected_option": 0,
-                    "correct_option": 0,
-                    "correct_answer_text": "Select cell -> Right Click -> Format Cell",
-                    "timestamp": "2026-08-05 12:22:51 IST"
-                },
-                {
-                    "question_id": 228,
-                    "question_text": "Which of the following is a benefit of using IMPS?",
-                    "status": "CORRECT",
-                    "selected_option": 2,
-                    "correct_option": 2,
-                    "correct_answer_text": "It is safe and economical",
-                    "timestamp": "2026-08-05 12:23:01 IST"
-                },
-                {
-                    "question_id": 114,
-                    "question_text": "What is the shortcut to close a workbook?",
-                    "status": "WRONG",
-                    "selected_option": 2,
-                    "correct_option": 1,
-                    "correct_answer_text": "Ctrl + F4",
-                    "timestamp": "2026-08-05 12:23:07 IST"
-                },
-                {
-                    "question_id": 81,
-                    "question_text": "Which of the following groups is in the 'Insert' tab in MS-EXCEL?",
-                    "status": "WRONG",
-                    "selected_option": 1,
-                    "correct_option": 0,
-                    "correct_answer_text": "Illustrations",
-                    "timestamp": "2026-08-05 12:23:15 IST"
-                },
-                {
-                    "question_id": 402,
-                    "question_text": "What is the purpose of Microsoft OneNote?",
-                    "status": "CORRECT",
-                    "selected_option": 2,
-                    "correct_option": 2,
-                    "correct_answer_text": "Notetaking and note sharing",
-                    "timestamp": "2026-08-05 12:23:23 IST"
-                },
-                {
-                    "question_id": 205,
-                    "question_text": "Which of the following is NOT an example of an email service provider?",
-                    "status": "WRONG",
-                    "selected_option": 2,
-                    "correct_option": 3,
-                    "correct_answer_text": "None of the above",
-                    "timestamp": "2026-08-05 12:23:31 IST"
-                },
-                {
-                    "question_id": 416,
-                    "question_text": "How do you display the Go To dialog box in Word?",
-                    "status": "WRONG",
-                    "selected_option": 2,
-                    "correct_option": 0,
-                    "correct_answer_text": "Press F5",
-                    "timestamp": "2026-08-05 12:23:41 IST"
-                },
-                {
-                    "question_id": 186,
-                    "question_text": "What is the effect of using the keyboard shortcut Shift + Tab on a worksheet?",
-                    "status": "CORRECT",
-                    "selected_option": 1,
-                    "correct_option": 1,
-                    "correct_answer_text": "Moves to the cell directly to the left",
-                    "timestamp": "2026-08-05 12:23:51 IST"
-                }
-            ]
-        }
-    ],
-    "last_synced": "2026-08-05 15:25:41 IST"
+    "full_quiz_history": [],
+    "last_synced": "2026-08-05 20:33:22 IST"
 }

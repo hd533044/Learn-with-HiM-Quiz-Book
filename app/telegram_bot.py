@@ -40,31 +40,39 @@ except ImportError:
 NEGATIVE_WORDS = ["bad", "worst", "useless", "trash", "fake", "hate", "terrible", "waste", "horrible", "fraud", "stupid", "scam"]
 
 def generate_razorpay_link(user_id: int, plan_key: str):
-    """Generates a Razorpay payment link with fallback handling for zero-price trials."""
+    """Production-grade Razorpay payment link generator with full parameter validation and error logging."""
     plan = PLAN_TIERS.get(plan_key)
     if not plan:
-        logging.error(f"Invalid Plan Key requested: {plan_key}")
+        logging.error(f"[PAYMENT ERROR] Invalid Plan Key requested: {plan_key}")
         return None
 
-    # Handle Free Demo Trial (₹0) directly without calling external API
+    # Free Demo Trial (₹0) handling
     if plan["price"] == 0:
         return f"https://t.me/{os.getenv('BOT_USERNAME', 'LearnwithHiMBot')}?start=activate_demo_{plan_key}"
 
     if not HAS_RAZORPAY:
-        logging.error("Razorpay module is not installed in Python environment.")
+        logging.error("[PAYMENT ERROR] Razorpay Python module is not installed.")
         return None
 
-    if not RAZORPAY_KEY_ID or not RAZORPAY_KEY_SECRET:
-        logging.error("Razorpay Key ID or Secret is missing in environment variables.")
+    if not RAZORPAY_KEY_ID or not RAZORPAY_KEY_SECRET or "your_key" in RAZORPAY_KEY_ID:
+        logging.error(f"[PAYMENT ERROR] Invalid Razorpay Keys configured! Key ID: {RAZORPAY_KEY_ID}")
         return None
 
     try:
         client = razorpay.Client(auth=(RAZORPAY_KEY_ID, RAZORPAY_KEY_SECRET))
         amount_in_paise = int(plan["price"] * 100)
-
+        
+        # Fetch user profile data to satisfy Razorpay customer requirements
         profile = get_user_profile(user_id)
-        customer_name = profile.get("full_name", "Student") if profile else "Student"
-        customer_phone = profile.get("phone_number", "9999999999") if profile else "9999999999"
+        raw_name = profile.get("full_name", "Student Scholar") if profile else "Student Scholar"
+        raw_phone = str(profile.get("phone_number", "9999999999")) if profile else "9999999999"
+        
+        # Format phone number for Razorpay requirements (must be 10 digits or include +91)
+        clean_phone = "".join(filter(str.isdigit, raw_phone))
+        if len(clean_phone) >= 10:
+            clean_phone = clean_phone[-10:]
+        else:
+            clean_phone = "9999999999"
 
         payload = {
             "amount": amount_in_paise,
@@ -72,21 +80,29 @@ def generate_razorpay_link(user_id: int, plan_key: str):
             "accept_partial": False,
             "description": f"Learn with HiM Subscription - {plan['name']}",
             "customer": {
-                "name": customer_name,
-                "contact": customer_phone if len(str(customer_phone)) >= 10 else "9999999999"
+                "name": raw_name[:30],
+                "contact": clean_phone,
+                "email": f"student_{user_id}@learnwithhim.com"
             },
             "notes": {
                 "user_id": str(user_id),
                 "plan_key": plan_key
             },
-            "callback_url": RENDER_EXTERNAL_URL,
+            "callback_url": RENDER_EXTERNAL_URL if RENDER_EXTERNAL_URL else "https://learnwithhimquiz.onrender.com",
             "callback_method": "get"
         }
 
+        logging.info(f"[RAZORPAY API] Attempting payment link creation for User ID {user_id}, Plan {plan_key}, Amount {amount_in_paise} paise")
         response = client.payment_link.create(payload)
-        return response.get("short_url")
+        short_url = response.get("short_url")
+        
+        if not short_url:
+            logging.error(f"[PAYMENT ERROR] Razorpay response missing short_url: {response}")
+            return None
+            
+        return short_url
     except Exception as e:
-        logging.error(f"Razorpay API Error during link creation for User {user_id}: {e}")
+        logging.error(f"[PAYMENT CRITICAL EXCEPTION] Failed to generate Razorpay link for User {user_id}: {str(e)}")
         return None
 
 async def send_registration_prompt(update: Update):
@@ -250,7 +266,6 @@ async def handle_buy_plan_callback(update: Update, context: ContextTypes.DEFAULT
         await query.message.reply_text("⚠️ Invalid plan selected.")
         return
 
-    # Handle Free Demo direct activation
     if plan_info["price"] == 0:
         from main import activate_user_subscription
         await activate_user_subscription(user_id, plan_key)
@@ -281,7 +296,7 @@ async def handle_buy_plan_callback(update: Update, context: ContextTypes.DEFAULT
         )
         await query.edit_message_text(msg, reply_markup=InlineKeyboardMarkup(keyboard), parse_mode="Markdown")
     else:
-        await query.message.reply_text("⚠️ Unable to generate payment link. Please check Razorpay keys in environment variables or try again.")
+        await query.message.reply_text("⚠️ Unable to generate payment link. Please check Render Environment Variables for valid RAZORPAY_KEY_ID and RAZORPAY_KEY_SECRET.")
 
 async def pdfreport_command(update: Update, context: ContextTypes.DEFAULT_TYPE):
     if not await maintenance_guard(update, context): return

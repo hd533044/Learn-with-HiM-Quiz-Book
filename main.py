@@ -105,7 +105,24 @@ async def handle_ping(request):
     """Render Web Service Healthcheck Endpoint."""
     return web.Response(text="Learn with HiM Quiz Book Bot is Online & Active!")
 
-
+def verify_razorpay_signature(order_id: str, payment_id: str, razorpay_signature: str, key_secret: str) -> bool:
+    """
+    Verifies the Razorpay payment signature using HMAC-SHA256.
+    Algorithm: HMAC-SHA256(order_id + "|" + payment_id, KEY_SECRET)
+    """
+    try:
+        message = f"{order_id}|{payment_id}"
+        generated_signature = hmac.new(
+            key_secret.encode('utf-8'),
+            message.encode('utf-8'),
+            hashlib.sha256
+        ).hexdigest()
+        
+        return hmac.compare_digest(generated_signature, razorpay_signature)
+    except Exception as e:
+        logging.error(f"Signature verification exception: {e}")
+        return False
+    
 async def handle_razorpay_webhook(request):
     """Webhook Handler for Instant Automated VIP Activation."""
     try:

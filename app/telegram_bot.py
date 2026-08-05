@@ -40,7 +40,7 @@ except ImportError:
 NEGATIVE_WORDS = ["bad", "worst", "useless", "trash", "fake", "hate", "terrible", "waste", "horrible", "fraud", "stupid", "scam"]
 
 def generate_razorpay_link(user_id: int, plan_key: str):
-    """Master production-grade Razorpay payment link generator with complete diagnostics."""
+    """Production-grade Razorpay link generator with runtime fallback diagnostics."""
     plan = PLAN_TIERS.get(plan_key)
     if not plan:
         logging.error(f"[PAYMENT ERROR] Invalid Plan Key requested: {plan_key}")
@@ -54,12 +54,11 @@ def generate_razorpay_link(user_id: int, plan_key: str):
         logging.error("[PAYMENT ERROR] Razorpay Python module is not installed.")
         return None
 
-    # Clean and check keys dynamically from environment or config
     key_id = (os.getenv("RAZORPAY_KEY_ID") or RAZORPAY_KEY_ID or "").strip()
     key_secret = (os.getenv("RAZORPAY_KEY_SECRET") or RAZORPAY_KEY_SECRET or "").strip()
 
-    if not key_id or not key_secret or "your_key" in key_id:
-        logging.error(f"[PAYMENT CONFIG ERROR] Razorpay Keys are missing or invalid! Found Key ID length: {len(key_id)}")
+    if not key_id or not key_secret:
+        logging.error("[PAYMENT ERROR] Razorpay API keys are blank in the runtime environment.")
         return None
 
     try:
@@ -94,12 +93,12 @@ def generate_razorpay_link(user_id: int, plan_key: str):
             "callback_method": "get"
         }
 
-        logging.info(f"[RAZORPAY API CALL] Requesting payment link for User {user_id}, Plan: {plan_key}, Amount: {amount_in_paise} paise")
+        logging.info(f"[RAZORPAY API] Requesting payment link for User ID {user_id}, Plan: {plan_key}")
         response = client.payment_link.create(payload)
         short_url = response.get("short_url")
         
         if not short_url:
-            logging.error(f"[RAZORPAY API ERROR] Response received without short_url: {response}")
+            logging.error(f"[RAZORPAY API ERROR] Missing short_url in payload: {response}")
             return None
             
         return short_url

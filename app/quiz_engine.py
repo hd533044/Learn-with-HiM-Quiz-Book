@@ -51,7 +51,7 @@ def get_quizbook_nav_keyboard():
         ],
         [
             InlineKeyboardButton("📊 My Analytics", callback_data="cmd_wholestate"),
-            InlineKeyboardButton("💬 Leave Feedback", callback_data="cmd_feedback")
+            InlineKeyboardButton("💳 VIP Plans", callback_data="cmd_plans")
         ],
         [
             InlineKeyboardButton("🚀 Launch New Quiz", callback_data="cmd_quiz")
@@ -84,20 +84,24 @@ async def launch_quiz_setup(update: Update, context: ContextTypes.DEFAULT_TYPE):
         return
 
     attempted_today = await asyncio.to_thread(get_today_attempts, user.id)
-    allowed_limit = 10000 if user.id == PRIMARY_ADMIN_ID else DAILY_QUESTION_LIMIT + profile.get("bonus_quota", 0)
+    
+    # Calculate Quota: Standard limit OR Paid VIP pass balance
+    paid_bal = profile.get("paid_question_balance", 0) or 0
+    base_limit = max(DAILY_QUESTION_LIMIT, paid_bal)
+    allowed_limit = 10000 if user.id == PRIMARY_ADMIN_ID else base_limit + profile.get("bonus_quota", 0)
 
     if attempted_today >= allowed_limit:
         exhausted_msg = (
-            f"🛑 **DAILY FREE LIMIT EXHAUSTED!** 🛑\n"
+            f"🛑 **DAILY LIMIT EXHAUSTED!** 🛑\n"
             f"━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\n"
             f"📊 **Today's Usage:** `{attempted_today}` / `{allowed_limit}` Questions\n"
-            f"🔒 **Status:** Daily free quota fully used for today (00:00 to 23:59).\n\n"
-            f"⚠️ The `/quiz` command is deactivated until tomorrow or until extra quota is unlocked!\n\n"
-            f"💡 **Unlock +10 Extra Questions:** Share your link with 4 friends using `/invite`."
+            f"🔒 **Status:** Daily question quota fully used for today.\n\n"
+            f"💳 **Upgrade Your Limit:** Tap **💳 View VIP Payment Plans** to unlock higher daily question limits!"
         )
-        keyboard = InlineKeyboardMarkup([[
-            InlineKeyboardButton("🤝 Invite Friends (+10 Limit)", callback_data="cmd_referral")
-        ]])
+        keyboard = InlineKeyboardMarkup([
+            [InlineKeyboardButton("💳 View VIP Payment Plans", callback_data="cmd_plans")],
+            [InlineKeyboardButton("🤝 Invite Friends (+10 Limit)", callback_data="cmd_referral")]
+        ])
         if update.callback_query:
             await update.callback_query.answer("🛑 Daily Limit Exhausted!", show_alert=True)
             await update.callback_query.message.reply_text(exhausted_msg, reply_markup=keyboard, parse_mode="Markdown")
@@ -127,12 +131,12 @@ async def launch_quiz_setup(update: Update, context: ContextTypes.DEFAULT_TYPE):
         return
 
     remaining_quota = allowed_limit - attempted_today
-    counts = [10, 15, 20, 25, 30, 40]
+    counts = [10, 15, 20, 25, 30, 40, 50, 80, 100]
     valid_counts = [c for c in counts if c <= remaining_quota]
     if not valid_counts:
         valid_counts = [max(1, remaining_quota)]
 
-    buttons = [InlineKeyboardButton(f"📝 {c} Qs", callback_data=f"qcount_{c}") for c in valid_counts]
+    buttons = [InlineKeyboardButton(f"📝 {c} Qs", callback_data=f"qcount_{c}") for c in valid_counts[:6]]
     keyboard = [buttons[:3], buttons[3:]]
 
     msg_text = (
@@ -157,7 +161,10 @@ async def quiz_count_callback(update: Update, context: ContextTypes.DEFAULT_TYPE
     
     profile = get_user_profile(user_id)
     attempted_today = get_today_attempts(user_id)
-    allowed_limit = 10000 if user_id == PRIMARY_ADMIN_ID else DAILY_QUESTION_LIMIT + (profile.get("bonus_quota", 0) if profile else 0)
+    
+    paid_bal = profile.get("paid_question_balance", 0) or 0 if profile else 0
+    base_limit = max(DAILY_QUESTION_LIMIT, paid_bal)
+    allowed_limit = 10000 if user_id == PRIMARY_ADMIN_ID else base_limit + (profile.get("bonus_quota", 0) if profile else 0)
 
     if attempted_today >= allowed_limit:
         await query.answer("🛑 Daily Limit Exhausted!", show_alert=True)
@@ -200,11 +207,14 @@ async def quiz_timer_callback(update: Update, context: ContextTypes.DEFAULT_TYPE
     
     profile = get_user_profile(user_id)
     attempted_today = get_today_attempts(user_id)
-    allowed_limit = 10000 if user_id == PRIMARY_ADMIN_ID else DAILY_QUESTION_LIMIT + (profile.get("bonus_quota", 0) if profile else 0)
+    
+    paid_bal = profile.get("paid_question_balance", 0) or 0 if profile else 0
+    base_limit = max(DAILY_QUESTION_LIMIT, paid_bal)
+    allowed_limit = 10000 if user_id == PRIMARY_ADMIN_ID else base_limit + (profile.get("bonus_quota", 0) if profile else 0)
 
     if attempted_today >= allowed_limit:
         await query.answer("🛑 Daily Limit Exhausted!", show_alert=True)
-        await query.edit_message_text("🛑 Daily free limit exhausted for today.", parse_mode="Markdown")
+        await query.edit_message_text("🛑 Daily limit exhausted for today.", parse_mode="Markdown")
         return
 
     await query.answer()
@@ -650,8 +660,8 @@ async def finish_quiz_and_send_report(chat_id: int, user_id: int, context: Conte
             InlineKeyboardButton("💬 Leave Feedback", callback_data="cmd_feedback")
         ],
         [
-            InlineKeyboardButton("📢 Telegram Channel", url="https://t.me/Learnwithhim"),
-            InlineKeyboardButton("📺 YouTube Channel", url=YOUTUBE_CHANNEL_URL)
+            InlineKeyboardButton("💳 VIP Plans", callback_data="cmd_plans"),
+            InlineKeyboardButton("📢 Telegram Channel", url="https://t.me/Learnwithhim")
         ],
         [
             InlineKeyboardButton("🚀 Attempt Another Quiz", callback_data="cmd_quiz")

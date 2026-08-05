@@ -11,7 +11,7 @@ from telegram.ext import (
     Application, CommandHandler, CallbackQueryHandler, PollAnswerHandler, 
     MessageHandler, filters, ContextTypes
 )
-from app.config import BOT_TOKEN, PRIMARY_ADMIN_ID, DAILY_QUESTION_LIMIT
+from app.config import BOT_TOKEN, PRIMARY_ADMIN_ID, DAILY_QUESTION_LIMIT, PLAN_TIERS
 from app.database import (
     init_db, get_maintenance_until, get_user_profile, 
     get_all_users, get_today_attempts, save_student_feedback, get_all_student_feedbacks,
@@ -111,18 +111,21 @@ async def strict_quiz_command_guard(update: Update, context: ContextTypes.DEFAUL
     profile = get_user_profile(user.id)
 
     attempted_today = get_today_attempts(user.id)
-    allowed_limit = 10000 if user.id == PRIMARY_ADMIN_ID else DAILY_QUESTION_LIMIT + profile.get("bonus_quota", 0)
+    paid_bal = profile.get("paid_question_balance", 0) or 0
+    base_limit = max(DAILY_QUESTION_LIMIT, paid_bal)
+    allowed_limit = 10000 if user.id == PRIMARY_ADMIN_ID else base_limit + profile.get("bonus_quota", 0)
 
     if attempted_today >= allowed_limit:
         limit_msg = (
-            f"🛑 **Daily Free Limit Exhausted!** 🛑\n\n"
+            f"🛑 **Daily Limit Exhausted!** 🛑\n\n"
             f"You have reached your daily limit of `{allowed_limit}` questions for today (00:00 to 23:59).\n"
             f"The `/quiz` command has been **deactivated** for your account until tomorrow.\n\n"
-            f"💡 **Unlock +10 Questions:** Share your link with 4 friends to increase your limit!"
+            f"💡 **Upgrade Limit:** Unlock higher daily questions via **💳 VIP Payment Plans**!"
         )
-        keyboard = InlineKeyboardMarkup([[
-            InlineKeyboardButton("🤝 Invite Friends (+10 Limit)", callback_data="cmd_referral")
-        ]])
+        keyboard = InlineKeyboardMarkup([
+            [InlineKeyboardButton("💳 View VIP Payment Plans", callback_data="cmd_plans")],
+            [InlineKeyboardButton("🤝 Invite Friends (+10 Limit)", callback_data="cmd_referral")]
+        ])
         await update.message.reply_text(limit_msg, reply_markup=keyboard, parse_mode="Markdown")
         return
 
@@ -138,6 +141,79 @@ async def send_response(update: Update, text: str, reply_markup=None):
     elif update.message:
         markup = reply_markup if reply_markup else ReplyKeyboardRemove()
         await update.message.reply_text(text, reply_markup=markup, parse_mode="Markdown")
+
+async def plans_command(update: Update, context: ContextTypes.DEFAULT_TYPE):
+    """Displays exact tier payment plans matrix."""
+    if not await maintenance_guard(update, context): return
+    if not await check_user_registration(update): return
+
+    user = update.effective_user
+    log_user_activity_time(user.id, seconds=10)
+
+    keyboard = [
+        [InlineKeyboardButton("📦 BRONZE (₹5 - 3 Days - 80 Qs/Day)", callback_data="buy_plan_BRONZE")],
+        [InlineKeyboardButton("📦 SILVER (₹10 - 7 Days - 100 Qs/Day)", callback_data="buy_plan_SILVER")],
+        [InlineKeyboardButton("📦 GOLD (₹15 - 12 Days - 120 Qs/Day)", callback_data="buy_plan_GOLD")],
+        [InlineKeyboardButton("📦 DIAMOND (₹20 - 18 Days - 150 Qs/Day)", callback_data="buy_plan_DIAMOND")],
+        [InlineKeyboardButton("📦 LEARNWITHHIM (₹25 - 30 Days - 250 Qs/Day)", callback_data="buy_plan_LEARNWITHHIM")],
+        [InlineKeyboardButton("📦 PLATINUM (₹40 - 60 Days - 300 Qs/Day)", callback_data="buy_plan_PLATINUM")],
+        [InlineKeyboardButton("📦 RUBY (₹50 - 90 Days - 400 Qs/Day)", callback_data="buy_plan_RUBY")],
+        [InlineKeyboardButton("📦 MEGA PACK (₹80 - 180 Days - 500 Qs/Day)", callback_data="buy_plan_MEGA")],
+    ]
+
+    msg = (
+        f"👑 **LEARN WITH HIM QUIZ BOOK — VIP MEMBERSHIP PACKS** 👑\n"
+        f"━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\n"
+        f"🎁 **FREE DEMO:** 2 Days Access | 20 Questions / Day Limit\n\n"
+        f"📦 **BRONZE:** ₹5 | 3 Days (80 Qs/Day)\n"
+        f"📦 **SILVER:** ₹10 | 7 Days (100 Qs/Day)\n"
+        f"📦 **GOLD:** ₹15 | 12 Days (120 Qs/Day)\n"
+        f"📦 **DIAMOND:** ₹20 | 18 Days (150 Qs/Day)\n"
+        f"📦 **LEARNWITHHIM:** ₹25 | 30 Days (250 Qs/Day)\n"
+        f"📦 **PLATINUM:** ₹40 | 60 Days (300 Qs/Day)\n"
+        f"📦 **RUBY:** ₹50 | 90 Days (400 Qs/Day)\n"
+        f"📦 **MEGA PACK:** ₹80 | 180 Days / 6 Months (500 Qs/Day)\n\n"
+        f"⚡ **0% Payment Failure Architecture:** Instant Razorpay Auto-Link with Automated VIP Activation!\n\n"
+        f"Select a pack below to pay instantly via UPI/Cards/NetBanking:"
+    )
+
+    await send_response(update, msg, reply_markup=InlineKeyboardMarkup(keyboard))
+
+async def handle_buy_plan_callback(update: Update, context: ContextTypes.DEFAULT_TYPE):
+    """Generates instant Razorpay payment link when user clicks a plan button."""
+    query = update.callback_query
+    await query.answer()
+
+    # Import dynamically from main.py to avoid circular dependencies
+    from main import create_razorpay_payment_link
+
+    user_id = query.from_user.id
+    plan_key = query.data.replace("buy_plan_", "")
+    plan_info = PLAN_TIERS.get(plan_key)
+
+    if not plan_info:
+        await query.message.reply_text("⚠️ Invalid plan selected.")
+        return
+
+    payment_url = create_razorpay_payment_link(user_id, plan_key)
+
+    if payment_url:
+        keyboard = [
+            [InlineKeyboardButton(f"💳 Pay ₹{plan_info['price']} via Razorpay", url=payment_url)],
+            [InlineKeyboardButton("🔙 Back to Plans", callback_data="cmd_plans")]
+        ]
+        msg = (
+            f"🛒 **SELECTED PACK:** {plan_info['name']}\n"
+            f"━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\n"
+            f"💰 **Amount Payable:** ₹{plan_info['price']}\n"
+            f"📅 **Validity:** {plan_info['days']} Days\n"
+            f"⚡ **Daily Limit:** {plan_info['daily_limit']} Questions/Day\n\n"
+            f"Tap the **💳 Pay Now** button below to complete secure payment via UPI, GPay, PhonePe, or Cards. "
+            f"Your VIP quota activates automatically upon payment!"
+        )
+        await query.edit_message_text(msg, reply_markup=InlineKeyboardMarkup(keyboard), parse_mode="Markdown")
+    else:
+        await query.message.reply_text("⚠️ Unable to generate payment link. Please try again shortly or contact Admin.")
 
 async def pdfreport_command(update: Update, context: ContextTypes.DEFAULT_TYPE):
     if not await maintenance_guard(update, context): return
@@ -168,7 +244,6 @@ async def pdfreport_command(update: Update, context: ContextTypes.DEFAULT_TYPE):
         await update.message.reply_text(msg, reply_markup=buttons, parse_mode="Markdown")
 
 async def wrongquestions_command(update: Update, context: ContextTypes.DEFAULT_TYPE):
-    """Shows the student's personal wrong answers log"""
     if not await maintenance_guard(update, context): return
     if not await check_user_registration(update): return
 
@@ -211,7 +286,6 @@ async def wrongquestions_command(update: Update, context: ContextTypes.DEFAULT_T
     await send_response(update, msg, reply_markup=nav)
 
 async def attemptedquestions_command(update: Update, context: ContextTypes.DEFAULT_TYPE):
-    """Shows summary of attempted questions for the user"""
     if not await maintenance_guard(update, context): return
     if not await check_user_registration(update): return
 
@@ -253,7 +327,6 @@ async def attemptedquestions_command(update: Update, context: ContextTypes.DEFAU
     await send_response(update, msg, reply_markup=nav)
 
 async def unattemptedquestions_command(update: Update, context: ContextTypes.DEFAULT_TYPE):
-    """Shows unattempted status for the user"""
     if not await maintenance_guard(update, context): return
     if not await check_user_registration(update): return
 
@@ -347,12 +420,12 @@ async def help_command(update: Update, context: ContextTypes.DEFAULT_TYPE):
 
     buttons = [
         [InlineKeyboardButton("🚀 Launch Quiz (/quiz)", callback_data="cmd_quiz"), InlineKeyboardButton("📄 PDF Reports (/pdfreport)", callback_data="cmd_pdfreport")],
+        [InlineKeyboardButton("💳 VIP Plans (/plans)", callback_data="cmd_plans"), InlineKeyboardButton("💾 Bookmarks (/savedquestions)", callback_data="cmd_savedquestions")],
         [InlineKeyboardButton("❌ Wrong Qs (/wrongquestions)", callback_data="cmd_wrongquestions"), InlineKeyboardButton("🎯 Attempted Qs (/attemptedquestions)", callback_data="cmd_attemptedquestions")],
-        [InlineKeyboardButton("⏭️ Unattempted Qs (/unattemptedquestions)", callback_data="cmd_unattemptedquestions"), InlineKeyboardButton("💾 Bookmarks (/savedquestions)", callback_data="cmd_savedquestions")],
-        [InlineKeyboardButton("👤 My Profile (/myprofile)", callback_data="cmd_profile"), InlineKeyboardButton("✏️ Edit Profile (/editprofile)", callback_data="cmd_editprofile")],
-        [InlineKeyboardButton("📊 My Rank (/mywholestate)", callback_data="cmd_wholestate"), InlineKeyboardButton("🏆 Leaderboard (/toppername)", callback_data="cmd_toppers")],
-        [InlineKeyboardButton("💬 Submit Feedback (/feedback)", callback_data="cmd_feedback"), InlineKeyboardButton("📖 Reviews (/reviews)", callback_data="cmd_viewfeedbacks")],
-        [InlineKeyboardButton("🤝 Invite Friends (/invite)", callback_data="cmd_referral")]
+        [InlineKeyboardButton("⏭️ Unattempted Qs (/unattemptedquestions)", callback_data="cmd_unattemptedquestions"), InlineKeyboardButton("👤 My Profile (/myprofile)", callback_data="cmd_profile")],
+        [InlineKeyboardButton("✏️ Edit Profile (/editprofile)", callback_data="cmd_editprofile"), InlineKeyboardButton("📊 My Rank (/mywholestate)", callback_data="cmd_wholestate")],
+        [InlineKeyboardButton("🏆 Leaderboard (/toppername)", callback_data="cmd_toppers"), InlineKeyboardButton("💬 Submit Feedback (/feedback)", callback_data="cmd_feedback")],
+        [InlineKeyboardButton("📖 Reviews (/reviews)", callback_data="cmd_viewfeedbacks"), InlineKeyboardButton("🤝 Invite Friends (/invite)", callback_data="cmd_referral")]
     ]
 
     await send_response(update, msg, reply_markup=InlineKeyboardMarkup(buttons))
@@ -414,10 +487,13 @@ async def myprofile_command(update: Update, context: ContextTypes.DEFAULT_TYPE):
     profile = get_user_profile(user.id)
 
     today_used = get_today_attempts(user.id)
-    allowed_limit = 10000 if user.id == PRIMARY_ADMIN_ID else DAILY_QUESTION_LIMIT + profile.get("bonus_quota", 0)
+    paid_bal = profile.get("paid_question_balance", 0) or 0
+    base_limit = max(DAILY_QUESTION_LIMIT, paid_bal)
+    allowed_limit = 10000 if user.id == PRIMARY_ADMIN_ID else base_limit + profile.get("bonus_quota", 0)
 
     remaining = max(0, allowed_limit - today_used)
     student_id = profile.get("student_id", f"USER_{user.id}")
+    expiry = profile.get("vip_pass_expiry") or "N/A"
 
     msg = (
         f"👤 **STUDENT PROFILE CARD** 👤\n"
@@ -430,17 +506,18 @@ async def myprofile_command(update: Update, context: ContextTypes.DEFAULT_TYPE):
         f"• **DOB / Gender:** `{profile.get('dob', 'N/A')}` / `{profile['gender']}` 🎂\n"
         f"• **Location:** `{profile.get('state', 'N/A')}, India` 📍\n"
         f"• **Phone:** `{profile['phone_number']}` 📱 *(Private)*\n\n"
-        f"📊 **DAILY QUOTA STATUS (00:00 TO 23:59):**\n"
+        f"📊 **DAILY QUOTA & SUBSCRIPTION:**\n"
         f"• **Used Today:** `{today_used}` / `{allowed_limit}` Qs 🖥\n"
         f"• **Remaining Today:** `{remaining}` Qs ⚡\n"
+        f"• **VIP Expiry:** `{expiry}`\n"
         f"• **Referrals:** `{profile.get('referral_count', 0)}` / 4 friends 🤝\n"
         f"━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━"
     )
 
     buttons = [
         [InlineKeyboardButton("🚀 Launch Quiz", callback_data="cmd_quiz"), InlineKeyboardButton("📄 PDF Report Center", callback_data="cmd_pdfreport")],
-        [InlineKeyboardButton("💾 Bookmarks", callback_data="cmd_savedquestions"), InlineKeyboardButton("✏️ Edit Profile", callback_data="cmd_editprofile")],
-        [InlineKeyboardButton("🤝 Invite Friends", callback_data="cmd_referral")]
+        [InlineKeyboardButton("💳 VIP Plans", callback_data="cmd_plans"), InlineKeyboardButton("💾 Bookmarks", callback_data="cmd_savedquestions")],
+        [InlineKeyboardButton("✏️ Edit Profile", callback_data="cmd_editprofile"), InlineKeyboardButton("🤝 Invite Friends", callback_data="cmd_referral")]
     ]
 
     await send_response(update, msg, reply_markup=InlineKeyboardMarkup(buttons))
@@ -575,12 +652,19 @@ async def button_router(update: Update, context: ContextTypes.DEFAULT_TYPE):
     if data == "cmd_quiz":
         profile = get_user_profile(user.id)
         attempted_today = get_today_attempts(user.id)
-        allowed_limit = 10000 if user.id == PRIMARY_ADMIN_ID else DAILY_QUESTION_LIMIT + (profile.get("bonus_quota", 0) if profile else 0)
+        
+        paid_bal = profile.get("paid_question_balance", 0) or 0 if profile else 0
+        base_limit = max(DAILY_QUESTION_LIMIT, paid_bal)
+        allowed_limit = 10000 if user.id == PRIMARY_ADMIN_ID else base_limit + (profile.get("bonus_quota", 0) if profile else 0)
 
         if attempted_today >= allowed_limit:
             await query.answer("🛑 Daily Limit Exhausted!", show_alert=True)
             return
         await launch_quiz_setup(update, context)
+    elif data == "cmd_plans":
+        await plans_command(update, context)
+    elif data.startswith("buy_plan_"):
+        await handle_buy_plan_callback(update, context)
     elif data == "cmd_help":
         await help_command(update, context)
     elif data == "cmd_pdfreport":
@@ -713,6 +797,7 @@ async def post_init(application: Application):
 
     allowed_commands = [
         BotCommand("quiz", "🚀 Start Computer Quiz"),
+        BotCommand("plans", "💳 VIP Subscription Plans"),
         BotCommand("pdfreport", "📄 Export Academic PDF Report"),
         BotCommand("wrongquestions", "❌ View Wrong Questions"),
         BotCommand("unattemptedquestions", "⏭️ View Unattempted Questions"),
@@ -741,6 +826,7 @@ def build_application() -> Application:
     app.add_handler(get_onboarding_handler())
     
     app.add_handler(CommandHandler("quiz", strict_quiz_command_guard))
+    app.add_handler(CommandHandler("plans", plans_command))
     app.add_handler(CommandHandler("pause", pause_quiz_command))
     app.add_handler(CommandHandler("resume", resume_quiz_command))
     app.add_handler(CommandHandler("stop", stop_quiz_command))
@@ -767,7 +853,7 @@ def build_application() -> Application:
     app.add_handler(CallbackQueryHandler(quiz_timer_callback, pattern="^qtimer_"))
     app.add_handler(CallbackQueryHandler(user_pdf_callback_handler, pattern="^usergenpdf_"))
     app.add_handler(CallbackQueryHandler(admin_callback_handler, pattern="^(admin_|audit_|genpdf_)"))
-    app.add_handler(CallbackQueryHandler(button_router, pattern="^cmd_|^fb_|^trigger_start"))
+    app.add_handler(CallbackQueryHandler(button_router, pattern="^cmd_|^fb_|^trigger_start|^buy_plan_"))
 
     app.add_handler(MessageHandler(filters.TEXT & ~filters.COMMAND, handle_text_messages))
     app.add_handler(PollAnswerHandler(handle_poll_answer))

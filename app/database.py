@@ -4,7 +4,7 @@ import os
 import logging
 from datetime import datetime
 import pytz
-from app.config import DB_FILE, USER_PROFILES_DIR
+from app.config import DB_FILE, USER_PROFILES_DIR, PLAN_TIERS, DAILY_QUESTION_LIMIT
 
 logger = logging.getLogger(__name__)
 IST = pytz.timezone("Asia/Kolkata")
@@ -46,6 +46,8 @@ def init_db():
             referred_by INTEGER,
             referral_count INTEGER DEFAULT 0,
             bonus_quota INTEGER DEFAULT 0,
+            paid_question_balance INTEGER DEFAULT 0,
+            vip_pass_expiry TEXT,
             last_profile_edit TEXT,
             last_active TEXT,
             last_activity_epoch INTEGER DEFAULT 0,
@@ -71,6 +73,10 @@ def init_db():
         cursor.execute("ALTER TABLE users ADD COLUMN security_question TEXT")
     if 'security_answer' not in columns:
         cursor.execute("ALTER TABLE users ADD COLUMN security_answer TEXT")
+    if 'paid_question_balance' not in columns:
+        cursor.execute("ALTER TABLE users ADD COLUMN paid_question_balance INTEGER DEFAULT 0")
+    if 'vip_pass_expiry' not in columns:
+        cursor.execute("ALTER TABLE users ADD COLUMN vip_pass_expiry TEXT")
     if 'last_profile_edit' not in columns:
         cursor.execute("ALTER TABLE users ADD COLUMN last_profile_edit TEXT")
     if 'last_active' not in columns:
@@ -213,10 +219,6 @@ def update_user_pin(user_id: int, new_pin: str):
     sync_user_json_profile(user_id)
 
 def check_and_update_inactivity(user_id: int) -> tuple[bool, int]:
-    """
-    Checks if the user has been inactive for > 300 seconds (5 mins).
-    Returns (is_locked, seconds_inactive). Updates last_activity_epoch if active.
-    """
     conn = get_db()
     cursor = conn.cursor()
     now_epoch = int(get_ist_now().timestamp())
@@ -231,7 +233,7 @@ def check_and_update_inactivity(user_id: int) -> tuple[bool, int]:
     last_epoch = row['last_activity_epoch'] or 0
     diff = now_epoch - last_epoch if last_epoch > 0 else 0
 
-    if last_epoch > 0 and diff > 300: # Exceeds 5 minutes
+    if last_epoch > 0 and diff > 300:
         conn.close()
         return True, diff
 
@@ -359,6 +361,15 @@ def sync_user_json_profile(user_id: int):
     activity_log = {r["date_str"]: f"{r['seconds_spent']} seconds ({round(r['seconds_spent']/60, 2)} mins)" for r in time_rows}
     total_time_seconds = sum([r["seconds_spent"] for r in time_rows])
 
+    paid_balance = user_dict.get("paid_question_balance", 0)
+    vip_expiry = user_dict.get("vip_pass_expiry")
+    
+    sub_status = "FREE_TIER"
+    for p_key, p_val in PLAN_TIERS.items():
+        if p_val.get("daily_limit") == paid_balance and paid_balance > DAILY_QUESTION_LIMIT:
+            sub_status = p_key
+            break
+
     profile_data = {
         "student_id": student_id,
         "registration_info": user_dict,
@@ -383,10 +394,9 @@ def sync_user_json_profile(user_id: int):
         },
         "student_reviews_given": [dict(f) for f in feedback_rows],
         "subscription_ledger": {
-            "status": "FREE_TIER",
-            "active_plan": "Standard Free Tier",
-            "total_amount_paid": 0.0,
-            "payment_history": []
+            "status": sub_status,
+            "paid_question_balance": paid_balance,
+            "vip_pass_expiry": vip_expiry
         },
         "badges_and_achievements": {
             "earned_badges": ["Early Learner", "Registered Scholar"],

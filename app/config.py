@@ -20,11 +20,31 @@ if not BOT_TOKEN:
 CHANNEL_USERNAME = os.getenv("CHANNEL_USERNAME", "@LEARNWITHHIM")
 YOUTUBE_CHANNEL_URL = os.getenv("YOUTUBE_CHANNEL_URL", "https://www.youtube.com/@learnwithhim")
 
-DAILY_QUESTION_LIMIT = int(os.getenv("DAILY_QUESTION_LIMIT", "40"))
+DAILY_QUESTION_LIMIT = int(os.getenv("DAILY_QUESTION_LIMIT", "20"))
 DB_FILE = os.getenv("DB_FILE", os.path.join(DATA_DIR, "quiz_bot.db"))
 
 PRIMARY_ADMIN_ID = 1091057353
 ADMIN_IDS = [1091057353, 2070531704]
+
+# ---------------------------------------------------------
+# Razorpay Credentials Configuration
+# ---------------------------------------------------------
+RAZORPAY_KEY_ID = os.getenv("RAZORPAY_KEY_ID", "rzp_test_TMB1bZp7hh2k2R")
+RAZORPAY_KEY_SECRET = os.getenv("RAZORPAY_KEY_SECRET", "MPgns1qhndStgrXNwWEGfkjq")
+RAZORPAY_WEBHOOK_SECRET = os.getenv("RAZORPAY_WEBHOOK_SECRET", "learnwithhim_secret_123")
+
+# Exact Subscription Plan Matrix
+PLAN_TIERS = {
+    "FREE_DEMO": {"name": "🎁 FREE DEMO TRIAL", "price": 0, "days": 2, "daily_limit": 20},
+    "BRONZE": {"name": "📦 BRONZE PACK", "price": 5, "days": 3, "daily_limit": 80},
+    "SILVER": {"name": "📦 SILVER PACK", "price": 10, "days": 7, "daily_limit": 100},
+    "GOLD": {"name": "📦 GOLD PACK", "price": 15, "days": 12, "daily_limit": 120},
+    "DIAMOND": {"name": "📦 DIAMOND PACK", "price": 20, "days": 18, "daily_limit": 150},
+    "LEARNWITHHIM": {"name": "📦 LEARNWITHHIM PACK", "price": 25, "days": 30, "daily_limit": 250},
+    "PLATINUM": {"name": "📦 PLATINUM PACK", "price": 40, "days": 60, "daily_limit": 300},
+    "RUBY": {"name": "📦 RUBY PACK", "price": 50, "days": 90, "daily_limit": 400},
+    "MEGA": {"name": "📦 MEGA PACK", "price": 80, "days": 180, "daily_limit": 500},
+}
 
 WELCOME_CARD_TEXT = (
     "❤️ **WELCOME TO LEARN WITH HIM QUIZ BOOK** ❤️\n"

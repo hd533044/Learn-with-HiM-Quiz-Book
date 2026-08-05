@@ -3,13 +3,13 @@ import logging
 import json
 import os
 from telegram import (
-    Update, InlineKeyboardMarkup, InlineKeyboardButton, 
+    Update, InlineKeyboardMarkup, InlineKeyboardButton, LabeledPrice,
     BotCommand, BotCommandScopeDefault, BotCommandScopeAllPrivateChats, 
     BotCommandScopeAllGroupChats, ReplyKeyboardRemove
 )
 from telegram.ext import (
     Application, CommandHandler, CallbackQueryHandler, PollAnswerHandler, 
-    MessageHandler, filters, ContextTypes
+    MessageHandler, PreCheckoutQueryHandler, filters, ContextTypes
 )
 from app.config import (
     BOT_TOKEN, PRIMARY_ADMIN_ID, DAILY_QUESTION_LIMIT, PLAN_TIERS,
@@ -31,80 +31,7 @@ from app.admin import admin_portal_command, admin_callback_handler
 from app.pdf_generator import generate_student_pdf_report
 from app.pyq_fetcher import fetch_pyqs_for_quiz
 
-try:
-    import razorpay
-    HAS_RAZORPAY = True
-except ImportError:
-    HAS_RAZORPAY = False
-
 NEGATIVE_WORDS = ["bad", "worst", "useless", "trash", "fake", "hate", "terrible", "waste", "horrible", "fraud", "stupid", "scam"]
-
-def generate_razorpay_link(user_id: int, plan_key: str):
-    """Production-grade Razorpay link generator with runtime fallback diagnostics."""
-    plan = PLAN_TIERS.get(plan_key)
-    if not plan:
-        logging.error(f"[PAYMENT ERROR] Invalid Plan Key requested: {plan_key}")
-        return None
-
-    # Free Demo Trial (₹0) handling
-    if plan["price"] == 0:
-        return f"https://t.me/{os.getenv('BOT_USERNAME', 'LearnwithHiMBot')}?start=activate_demo_{plan_key}"
-
-    if not HAS_RAZORPAY:
-        logging.error("[PAYMENT ERROR] Razorpay Python module is not installed.")
-        return None
-
-    key_id = (os.getenv("RAZORPAY_KEY_ID") or RAZORPAY_KEY_ID or "").strip()
-    key_secret = (os.getenv("RAZORPAY_KEY_SECRET") or RAZORPAY_KEY_SECRET or "").strip()
-
-    if not key_id or not key_secret:
-        logging.error("[PAYMENT ERROR] Razorpay API keys are blank in the runtime environment.")
-        return None
-
-    try:
-        client = razorpay.Client(auth=(key_id, key_secret))
-        amount_in_paise = int(plan["price"] * 100)
-        
-        profile = get_user_profile(user_id)
-        raw_name = profile.get("full_name", "Student Scholar") if profile else "Student Scholar"
-        raw_phone = str(profile.get("phone_number", "9999999999")) if profile else "9999999999"
-        
-        clean_phone = "".join(filter(str.isdigit, raw_phone))
-        if len(clean_phone) >= 10:
-            clean_phone = clean_phone[-10:]
-        else:
-            clean_phone = "9999999999"
-
-        payload = {
-            "amount": amount_in_paise,
-            "currency": "INR",
-            "accept_partial": False,
-            "description": f"Learn with HiM Subscription - {plan['name']}",
-            "customer": {
-                "name": raw_name[:30],
-                "contact": clean_phone,
-                "email": f"student_{user_id}@learnwithhim.com"
-            },
-            "notes": {
-                "user_id": str(user_id),
-                "plan_key": plan_key
-            },
-            "callback_url": RENDER_EXTERNAL_URL if RENDER_EXTERNAL_URL else "https://learnwithhimquiz.onrender.com",
-            "callback_method": "get"
-        }
-
-        logging.info(f"[RAZORPAY API] Requesting payment link for User ID {user_id}, Plan: {plan_key}")
-        response = client.payment_link.create(payload)
-        short_url = response.get("short_url")
-        
-        if not short_url:
-            logging.error(f"[RAZORPAY API ERROR] Missing short_url in payload: {response}")
-            return None
-            
-        return short_url
-    except Exception as e:
-        logging.error(f"[RAZORPAY CRITICAL EXCEPTION] Failed for User {user_id}: {str(e)}")
-        return None
 
 async def send_registration_prompt(update: Update):
     msg = (
@@ -249,8 +176,8 @@ async def plans_command(update: Update, context: ContextTypes.DEFAULT_TYPE):
         f"📦 **PLATINUM:** ₹40 | 60 Days (300 Qs/Day)\n"
         f"📦 **RUBY:** ₹50 | 90 Days (400 Qs/Day)\n"
         f"📦 **MEGA PACK:** ₹80 | 180 Days / 6 Months (500 Qs/Day)\n\n"
-        f"⚡ **0% Payment Failure Architecture:** Instant Razorpay Auto-Link with Automated VIP Activation!\n\n"
-        f"Select a pack below to get started:"
+        f"⚡ **0% Failure Architecture:** Native Telegram Checkout with Instant Activation!\n\n"
+        f"Select a pack below to pay securely:"
     )
 
     await send_response(update, msg, reply_markup=InlineKeyboardMarkup(keyboard))
@@ -279,30 +206,56 @@ async def handle_buy_plan_callback(update: Update, context: ContextTypes.DEFAULT
         )
         return
 
-    payment_url = generate_razorpay_link(user_id, plan_key)
+    # Native Telegram Invoice Checkout (Bypasses third-party DB collation errors completely)
+    title = f"{plan_info['name']}"
+    description = f"Unlock {plan_info['daily_limit']} Qs/Day for {plan_info['days']} Days on Learn with HiM Quiz Book."
+    payload = f"vip_sub_{user_id}_{plan_key}"
+    currency = "INR"
+    prices = [LabeledPrice(plan_info['name'], int(plan_info['price'] * 100))]
 
-    if payment_url:
-        keyboard = [
-            [InlineKeyboardButton(f"💳 Pay ₹{plan_info['price']} via Razorpay", url=payment_url)],
-            [InlineKeyboardButton("🔙 Back to Plans", callback_data="cmd_plans")]
-        ]
-        msg = (
-            f"🛒 **SELECTED PACK:** {plan_info['name']}\n"
-            f"━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\n"
-            f"💰 **Amount Payable:** ₹{plan_info['price']}\n"
-            f"📅 **Validity:** {plan_info['days']} Days\n"
-            f"⚡ **Daily Limit:** {plan_info['daily_limit']} Questions/Day\n\n"
-            f"Tap the **💳 Pay Now** button below to complete payment via UPI, GPay, PhonePe, or Cards. "
-            f"Your VIP quota activates automatically upon payment!"
+    try:
+        await context.bot.send_invoice(
+            chat_id=query.message.chat_id,
+            title=title,
+            description=description,
+            payload=payload,
+            provider_token=RAZORPAY_KEY_ID, # Provider token via Telegram BotFather
+            currency=currency,
+            prices=prices,
+            start_parameter="vip_subscription",
+            need_name=True,
+            need_phone_number=True
         )
-        await query.edit_message_text(msg, reply_markup=InlineKeyboardMarkup(keyboard), parse_mode="Markdown")
-    else:
-        await query.message.reply_text(
-            "⚠️ **Payment Link Generation Failed!**\n\n"
-            "Please check your Render Environment Variables:\n"
-            "• `RAZORPAY_KEY_ID`\n"
-            "• `RAZORPAY_KEY_SECRET`\n\n"
-            "Check your Render Console Logs for the exact exception details.",
+    except Exception as e:
+        logging.error(f"Failed to send Telegram native invoice: {e}")
+        await query.message.reply_text("⚠️ Unable to initiate checkout invoice. Please try again later.")
+
+async def precheckout_callback(update: Update, context: ContextTypes.DEFAULT_TYPE):
+    """Answers the Telegram pre-checkout query to approve payment validation."""
+    query = update.pre_checkout_query
+    await query.answer(ok=True)
+
+async def successful_payment_callback(update: Update, context: ContextTypes.DEFAULT_TYPE):
+    """Automatically upgrades user upon successful native Telegram payment."""
+    payment = update.message.successful_payment
+    payload = payment.invoice_payload
+    
+    if payload.startswith("vip_sub_"):
+        parts = payload.split("_")
+        user_id = int(parts[2])
+        plan_key = parts[3]
+
+        from main import activate_user_subscription
+        await activate_user_subscription(user_id, plan_key)
+        
+        plan_info = PLAN_TIERS.get(plan_key, {})
+        await update.message.reply_text(
+            f"🎉 **PAYMENT SUCCESSFUL & VIP PASS ACTIVATED!** 🎉\n"
+            f"━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\n"
+            f"Welcome to **{plan_info.get('name')}**!\n\n"
+            f"📅 **Validity:** {plan_info.get('days')} Days\n"
+            f"⚡ **Daily Quota:** {plan_info.get('daily_limit')} Questions/Day\n\n"
+            f"Your daily question limit is updated. Start practicing now with /quiz!",
             parse_mode="Markdown"
         )
 
@@ -948,6 +901,8 @@ def build_application() -> Application:
 
     app.add_handler(MessageHandler(filters.TEXT & ~filters.COMMAND, handle_text_messages))
     app.add_handler(PollAnswerHandler(handle_poll_answer))
+    app.add_handler(PreCheckoutQueryHandler(precheckout_callback))
+    app.add_handler(MessageHandler(filters.SUCCESSFUL_PAYMENT, successful_payment_callback))
     app.add_error_handler(global_error_handler)
 
     return app

@@ -40,12 +40,13 @@ except ImportError:
 NEGATIVE_WORDS = ["bad", "worst", "useless", "trash", "fake", "hate", "terrible", "waste", "horrible", "fraud", "stupid", "scam"]
 
 def generate_razorpay_link(user_id: int, plan_key: str):
-    """Production-grade Razorpay payment link generator with full parameter validation and error logging."""
+    """Master production-grade Razorpay payment link generator with complete diagnostics."""
     plan = PLAN_TIERS.get(plan_key)
     if not plan:
         logging.error(f"[PAYMENT ERROR] Invalid Plan Key requested: {plan_key}")
         return None
 
+    # Free Demo Trial (₹0) handling
     if plan["price"] == 0:
         return f"https://t.me/{os.getenv('BOT_USERNAME', 'LearnwithHiMBot')}?start=activate_demo_{plan_key}"
 
@@ -53,12 +54,16 @@ def generate_razorpay_link(user_id: int, plan_key: str):
         logging.error("[PAYMENT ERROR] Razorpay Python module is not installed.")
         return None
 
-    if not RAZORPAY_KEY_ID or not RAZORPAY_KEY_SECRET or "your_key" in RAZORPAY_KEY_ID:
-        logging.error(f"[PAYMENT ERROR] Invalid Razorpay Keys configured! Key ID: {RAZORPAY_KEY_ID}")
+    # Clean and check keys dynamically from environment or config
+    key_id = (os.getenv("RAZORPAY_KEY_ID") or RAZORPAY_KEY_ID or "").strip()
+    key_secret = (os.getenv("RAZORPAY_KEY_SECRET") or RAZORPAY_KEY_SECRET or "").strip()
+
+    if not key_id or not key_secret or "your_key" in key_id:
+        logging.error(f"[PAYMENT CONFIG ERROR] Razorpay Keys are missing or invalid! Found Key ID length: {len(key_id)}")
         return None
 
     try:
-        client = razorpay.Client(auth=(RAZORPAY_KEY_ID, RAZORPAY_KEY_SECRET))
+        client = razorpay.Client(auth=(key_id, key_secret))
         amount_in_paise = int(plan["price"] * 100)
         
         profile = get_user_profile(user_id)
@@ -89,10 +94,17 @@ def generate_razorpay_link(user_id: int, plan_key: str):
             "callback_method": "get"
         }
 
+        logging.info(f"[RAZORPAY API CALL] Requesting payment link for User {user_id}, Plan: {plan_key}, Amount: {amount_in_paise} paise")
         response = client.payment_link.create(payload)
-        return response.get("short_url")
+        short_url = response.get("short_url")
+        
+        if not short_url:
+            logging.error(f"[RAZORPAY API ERROR] Response received without short_url: {response}")
+            return None
+            
+        return short_url
     except Exception as e:
-        logging.error(f"[PAYMENT CRITICAL EXCEPTION] Failed to generate Razorpay link for User {user_id}: {str(e)}")
+        logging.error(f"[RAZORPAY CRITICAL EXCEPTION] Failed for User {user_id}: {str(e)}")
         return None
 
 async def send_registration_prompt(update: Update):
@@ -286,7 +298,14 @@ async def handle_buy_plan_callback(update: Update, context: ContextTypes.DEFAULT
         )
         await query.edit_message_text(msg, reply_markup=InlineKeyboardMarkup(keyboard), parse_mode="Markdown")
     else:
-        await query.message.reply_text("⚠️ Unable to generate payment link. Please check Render Environment Variables for valid RAZORPAY_KEY_ID and RAZORPAY_KEY_SECRET.")
+        await query.message.reply_text(
+            "⚠️ **Payment Link Generation Failed!**\n\n"
+            "Please check your Render Environment Variables:\n"
+            "• `RAZORPAY_KEY_ID`\n"
+            "• `RAZORPAY_KEY_SECRET`\n\n"
+            "Check your Render Console Logs for the exact exception details.",
+            parse_mode="Markdown"
+        )
 
 async def pdfreport_command(update: Update, context: ContextTypes.DEFAULT_TYPE):
     if not await maintenance_guard(update, context): return

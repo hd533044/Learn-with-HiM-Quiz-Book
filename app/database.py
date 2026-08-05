@@ -22,6 +22,7 @@ def get_ist_timestamp_str():
     return get_ist_now().strftime("%Y-%m-%d %H:%M:%S IST")
 
 def get_db():
+    """Returns a unified database connection supporting both Turso Cloud and local SQLite."""
     if TURSO_URL and TURSO_TOKEN:
         try:
             import libsql_experimental as libsql
@@ -29,17 +30,16 @@ def get_db():
             conn.row_factory = libsql.Row
             return conn
         except ImportError:
-            # Local Python 3.14 fallback where wheel isn't built yet
-            logger.warning("libsql_experimental not installed locally. Using local SQLite database.")
+            logger.debug("libsql_experimental not installed. Falling back to local SQLite database.")
         except Exception as e:
             logger.error(f"Failed to connect to Turso Cloud, falling back to local SQLite: {e}")
-    
+
     conn = sqlite3.connect(DB_FILE)
     conn.row_factory = sqlite3.Row
     return conn
 
 def sync_json_profiles_to_turso():
-    """One-time auto-migration helper to load existing JSON profile ledgers into Turso Cloud."""
+    """Auto-migration helper to safely load local JSON profile ledgers into Turso Cloud."""
     if not os.path.exists(USER_PROFILES_DIR):
         return
 
@@ -94,12 +94,12 @@ def sync_json_profiles_to_turso():
     conn.commit()
     conn.close()
     if migrated_count > 0:
-        logger.info(f"✅ Successfully auto-migrated {migrated_count} student profiles to Turso Cloud!")
+        logger.info(f"🟢 Successfully auto-migrated {migrated_count} student profiles to Turso Cloud!")
 
 def init_db():
     conn = get_db()
     cursor = conn.cursor()
-    
+
     cursor.execute('''
         CREATE TABLE IF NOT EXISTS users (
             user_id INTEGER PRIMARY KEY,
@@ -129,7 +129,7 @@ def init_db():
             created_at TEXT
         )
     ''')
-    
+
     cursor.execute("PRAGMA table_info(users)")
     columns = [row[1] for row in cursor.fetchall()]
     if 'student_id' not in columns:
@@ -209,14 +209,14 @@ def init_db():
             submitted_at TEXT
         )
     ''')
-    
+
     cursor.execute('''
         CREATE TABLE IF NOT EXISTS bot_settings (
             key TEXT PRIMARY KEY,
             value TEXT
         )
     ''')
-    
+
     cursor.execute('''
         CREATE TABLE IF NOT EXISTS paused_quizzes (
             user_id INTEGER PRIMARY KEY,
@@ -234,13 +234,12 @@ def init_db():
             UNIQUE(user_id, date_str)
         )
     ''')
-    
+
     cursor.execute("INSERT OR IGNORE INTO bot_settings (key, value) VALUES ('maintenance_until', '0')")
-    
+
     conn.commit()
     conn.close()
 
-    # Automatically migrate offline profile JSON files into Turso Cloud
     sync_json_profiles_to_turso()
 
 def generate_student_id(full_name: str, dob_str: str) -> str:
@@ -251,19 +250,16 @@ def generate_student_id(full_name: str, dob_str: str) -> str:
         prefix = clean_name.ljust(2, 'X').capitalize()
     else:
         prefix = "ST"
-        
+
     try:
         parts = dob_str.split("-")
-        day = parts[0]
-        month = parts[1]
-        year_full = parts[2]
-        year_short = year_full[-2:]
-        dob_code = f"{day}{month}{year_short}"
+        day, month, year_full = parts[0], parts[1], parts[2]
+        dob_code = f"{day}{month}{year_full[-2:]}"
     except Exception:
         dob_code = "010100"
-        
+
     base_id = f"{prefix}{dob_code}"
-    
+
     conn = get_db()
     cursor = conn.cursor()
     student_id = base_id
@@ -275,7 +271,7 @@ def generate_student_id(full_name: str, dob_str: str) -> str:
         student_id = f"{base_id}_{counter}"
         counter += 1
     conn.close()
-    
+
     return student_id
 
 def get_user_by_student_id(student_id: str):
@@ -298,10 +294,10 @@ def check_and_update_inactivity(user_id: int) -> tuple[bool, int]:
     conn = get_db()
     cursor = conn.cursor()
     now_epoch = int(get_ist_now().timestamp())
-    
+
     cursor.execute("SELECT last_activity_epoch, pin FROM users WHERE user_id = ?", (user_id,))
     row = cursor.fetchone()
-    
+
     if not row or not row['pin']:
         conn.close()
         return False, 0
@@ -332,7 +328,7 @@ def log_user_activity_time(user_id: int, seconds: int = 15):
     today_date = get_ist_date_str()
     now_str = get_ist_timestamp_str()
     now_epoch = int(get_ist_now().timestamp())
-    
+
     cursor.execute('''
         INSERT INTO user_activity_time (user_id, date_str, seconds_spent)
         VALUES (?, ?, ?)
@@ -360,7 +356,7 @@ def toggle_user_ban_status(user_id: int) -> bool:
 def sync_user_json_profile(user_id: int):
     conn = get_db()
     cursor = conn.cursor()
-    
+
     cursor.execute("SELECT * FROM users WHERE user_id = ?", (user_id,))
     user_row = cursor.fetchone()
     if not user_row:
@@ -372,7 +368,7 @@ def sync_user_json_profile(user_id: int):
 
     cursor.execute("SELECT * FROM quiz_attempts WHERE user_id = ? ORDER BY id DESC", (user_id,))
     attempts_rows = cursor.fetchall()
-    
+
     cursor.execute("SELECT * FROM saved_questions WHERE user_id = ? ORDER BY id DESC", (user_id,))
     saved_rows = cursor.fetchall()
 
@@ -411,7 +407,7 @@ def sync_user_json_profile(user_id: int):
                 "total_score": 0.0,
                 "total_time_seconds": 0
             }
-        
+
         datewise_quiz_summary[dt]["total_quizzes"] += 1
         datewise_quiz_summary[dt]["total_questions"] += qs
         datewise_quiz_summary[dt]["total_correct"] += ad.get("correct_answers", 0)
@@ -485,7 +481,7 @@ def save_user_profile(user_id, full_name, username, phone, target_exam, dob, age
     cursor = conn.cursor()
     now_str = get_ist_timestamp_str()
     now_epoch = int(get_ist_now().timestamp())
-    
+
     student_id = generate_student_id(full_name, dob)
 
     cursor.execute('''
@@ -510,17 +506,17 @@ def save_user_profile(user_id, full_name, username, phone, target_exam, dob, age
             last_activity_epoch=?,
             is_verified=1
     ''', (user_id, student_id, full_name, username, phone, target_exam, dob, age, gender, pin, sec_q, sec_a, country, state, referred_by, now_str, now_str, now_epoch, now_str, now_str, now_epoch, now_str))
-    
+
     if referred_by and referred_by != user_id:
         cursor.execute("UPDATE users SET referral_count = referral_count + 1 WHERE user_id = ?", (referred_by,))
         cursor.execute("SELECT referral_count FROM users WHERE user_id = ?", (referred_by,))
         row = cursor.fetchone()
         if row and row['referral_count'] >= 4:
             cursor.execute("UPDATE users SET bonus_quota = bonus_quota + 10 WHERE user_id = ?", (referred_by,))
-            
+
     conn.commit()
     conn.close()
-    
+
     sync_user_json_profile(user_id)
     if referred_by:
         sync_user_json_profile(referred_by)
@@ -579,14 +575,14 @@ def record_quiz_result(user_id, quiz_id="computer_awareness_mock", score=0.0, to
     today_date = get_ist_date_str()
     timestamp_str = get_ist_timestamp_str()
     details_str = json.dumps(question_details) if question_details else json.dumps([])
-    
+
     cursor.execute('''
         INSERT INTO quiz_attempts (user_id, quiz_id, questions_attempted, total_questions, correct_answers, wrong_answers, skipped_count, score, time_taken, attempt_timestamp, attempt_date, details_json)
         VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
     ''', (user_id, quiz_id, total_questions, total_questions, correct_count, wrong_count, skipped_count, score, time_taken, timestamp_str, today_date, details_str))
     conn.commit()
     conn.close()
-    
+
     sync_user_json_profile(user_id)
 
 def get_seen_question_ids(user_id):

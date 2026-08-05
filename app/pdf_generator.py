@@ -94,6 +94,170 @@ def generate_student_pdf_report(user_id: int, filter_mode: str = "last_1_month_d
 
         is_month_filter = "last_1_month" in filter_mode
 
+        # -------------------------------------------------------------
+        # HANDLING 5TH OPTION: SAVED QUESTIONS EXPORT
+        # -------------------------------------------------------------
+        if filter_mode == "saved_questions_only":
+            cursor.execute("SELECT * FROM saved_questions WHERE user_id = ? ORDER BY id DESC", (user_id,))
+            saved_rows = [dict(r) for r in cursor.fetchall()]
+            conn.close()
+
+            if not saved_rows:
+                return "NO_SAVED_QUESTIONS"
+
+            username = u.get("username") or "user"
+            username_clean = "".join(filter(str.isalnum, str(username))).lower() or "user"
+            pdf_filename = f"{username_clean}_{user_id}_{filter_mode}_report.pdf"
+            pdf_path = os.path.join(USER_PROFILES_DIR, pdf_filename)
+
+            doc = SimpleDocTemplate(
+                pdf_path,
+                pagesize=letter,
+                rightMargin=30,
+                leftMargin=30,
+                topMargin=25,
+                bottomMargin=50
+            )
+
+            styles = getSampleStyleSheet()
+
+            main_heading_style = ParagraphStyle(
+                'MainTitleDarkBlue',
+                parent=styles['Heading1'],
+                fontName='Times-Bold',
+                fontSize=18,
+                leading=22,
+                textColor=colors.HexColor("#1E3A8A"),
+                alignment=1
+            )
+
+            section_heading = ParagraphStyle(
+                'SecHeading',
+                parent=styles['Heading2'],
+                fontName='Times-Bold',
+                fontSize=11,
+                leading=15,
+                textColor=colors.HexColor("#0F172A"),
+                spaceBefore=10,
+                spaceAfter=4
+            )
+
+            body_style = ParagraphStyle(
+                'BodyTextTimes',
+                parent=styles['Normal'],
+                fontName='Times-Roman',
+                fontSize=8.5,
+                leading=11,
+                textColor=colors.HexColor("#334155")
+            )
+
+            body_style_bold = ParagraphStyle(
+                'BodyTextTimesBold',
+                parent=styles['Normal'],
+                fontName='Times-Bold',
+                fontSize=8.5,
+                leading=11,
+                textColor=colors.HexColor("#0F172A")
+            )
+
+            story = []
+
+            # Header with Logos
+            logo_left_path = os.path.join(BASE_DIR, "assets", "logo.png")
+            logo_right_path = os.path.join(BASE_DIR, "assets", "logohim.png")
+
+            img_left = Image(logo_left_path, width=0.8*inch, height=0.8*inch) if os.path.exists(logo_left_path) else Paragraph("<b>Logo</b>", body_style)
+            img_right = Image(logo_right_path, width=0.8*inch, height=0.8*inch) if os.path.exists(logo_right_path) else Paragraph("<b>@LearnwithHiM</b>", body_style)
+
+            if hasattr(img_left, 'preserveAspectRatio'):
+                img_left.preserveAspectRatio = True
+            if hasattr(img_right, 'preserveAspectRatio'):
+                img_right.preserveAspectRatio = True
+
+            header_text_p = Paragraph(
+                "<b><font color='#1E3A8A'>Learn with HiM Quiz Book</font></b><br/>"
+                "<font color='#38BDF8' size=8>━━━━━</font><br/>"
+                "<font color='#16A34A' size=9><b>Smart Quiz! Smart Study! Better Improvement! Exam Relevant!</b></font>",
+                main_heading_style
+            )
+
+            header_table = Table([[img_left, header_text_p, img_right]], colWidths=[1.0*inch, 4.6*inch, 1.0*inch])
+            header_table.setStyle(TableStyle([
+                ('VALIGN', (0,0), (-1,-1), 'MIDDLE'),
+                ('ALIGN', (0,0), (0,0), 'LEFT'),
+                ('ALIGN', (1,0), (1,0), 'CENTER'),
+                ('ALIGN', (2,0), (2,0), 'RIGHT'),
+                ('LEFTPADDING', (0,0), (-1,-1), 0),
+                ('RIGHTPADDING', (0,0), (-1,-1), 0),
+            ]))
+            story.append(header_table)
+            story.append(Spacer(1, 6))
+
+            # Student Profile Overview
+            sid = clean_str(u.get("student_id") or f"USER_{user_id}")
+            masked_phone = mask_phone(u.get("phone_number", ""))
+            masked_pin = "XX" + str(u.get("pin", ""))[-2:] if u.get("pin") else "XXXX"
+
+            story.append(Paragraph("<b>STUDENT PROFILE OVERVIEW</b>", section_heading))
+
+            profile_data = [
+                [Paragraph("Student Name:", body_style_bold), Paragraph(clean_str(u.get('full_name')), body_style), Paragraph("Student ID:", body_style_bold), Paragraph(sid, body_style)],
+                [Paragraph("Target Exam:", body_style_bold), Paragraph(clean_str(u.get('target_exam')), body_style), Paragraph("Location:", body_style_bold), Paragraph(clean_str(f"{u.get('state')}, {u.get('country')}"), body_style)],
+                [Paragraph("DOB / Age:", body_style_bold), Paragraph(clean_str(f"{u.get('dob')} ({u.get('age')} yrs)"), body_style), Paragraph("Phone (Masked):", body_style_bold), Paragraph(masked_phone, body_style)],
+                [Paragraph("Account Status:", body_style_bold), Paragraph("ACTIVE 🟢", body_style), Paragraph("Secret PIN:", body_style_bold), Paragraph(masked_pin, body_style)],
+                [Paragraph("Registered At:", body_style_bold), Paragraph(clean_str(u.get('created_at')), body_style), Paragraph("Last Active:", body_style_bold), Paragraph(clean_str(u.get('last_active')), body_style)]
+            ]
+
+            prof_table = Table(profile_data, colWidths=[1.3*inch, 2.2*inch, 1.3*inch, 2.2*inch])
+            prof_table.setStyle(TableStyle([
+                ('BACKGROUND', (0,0), (-1,-1), colors.HexColor("#F8FAFC")),
+                ('GRID', (0,0), (-1,-1), 0.5, colors.HexColor("#CBD5E1")),
+                ('PADDING', (0,0), (-1,-1), 3),
+                ('VALIGN', (0,0), (-1,-1), 'MIDDLE')
+            ]))
+            story.append(prof_table)
+            story.append(Spacer(1, 6))
+
+            # Saved Questions Table
+            story.append(Paragraph("💾 <b>BOOKMARKED & SAVED QUESTIONS REPORT</b>", section_heading))
+
+            saved_table_data = [[
+                Paragraph("Saved Date", body_style_bold),
+                Paragraph("Question Text", body_style_bold),
+                Paragraph("Correct Answer", body_style_bold)
+            ]]
+
+            for sq in saved_rows:
+                opts = json.loads(sq['options_json']) if sq.get('options_json') else []
+                c_idx = sq.get('correct_option', 0)
+                ans_txt = opts[c_idx] if 0 <= c_idx < len(opts) else "N/A"
+
+                q_desc = f"{clean_str(sq.get('question_text', 'N/A'))}"
+                if sq.get('explanation'):
+                    q_desc += f"<br/><font color='#64748B'><b>Exp:</b> {clean_str(sq.get('explanation'))}</font>"
+
+                saved_table_data.append([
+                    Paragraph(f"{sq.get('saved_at', 'N/A')}", body_style),
+                    Paragraph(q_desc, body_style),
+                    Paragraph(clean_str(ans_txt), body_style)
+                ])
+
+            sq_table = Table(saved_table_data, colWidths=[1.1*inch, 3.9*inch, 2.0*inch], repeatRows=1)
+            sq_table.setStyle(TableStyle([
+                ('BACKGROUND', (0,0), (-1,0), colors.HexColor("#E0F2FE")),
+                ('BACKGROUND', (0,1), (-1,-1), colors.HexColor("#FFFFFF")),
+                ('GRID', (0,0), (-1,-1), 0.5, colors.HexColor("#38BDF8")),
+                ('PADDING', (0,0), (-1,-1), 3),
+                ('VALIGN', (0,0), (-1,-1), 'TOP')
+            ]))
+            story.append(sq_table)
+
+            doc.build(story, onFirstPage=draw_pdf_footer, onLaterPages=draw_pdf_footer)
+            return pdf_path
+
+        # -------------------------------------------------------------
+        # STANDARD ATTEMPT LOGS & QUIZ SUMMARY PROCESSING
+        # -------------------------------------------------------------
         cursor.execute("SELECT * FROM quiz_attempts WHERE user_id = ? ORDER BY id DESC", (user_id,))
         all_attempts = [dict(r) for r in cursor.fetchall()]
         conn.close()

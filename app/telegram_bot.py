@@ -40,23 +40,30 @@ except ImportError:
 NEGATIVE_WORDS = ["bad", "worst", "useless", "trash", "fake", "hate", "terrible", "waste", "horrible", "fraud", "stupid", "scam"]
 
 def generate_razorpay_link(user_id: int, plan_key: str):
-    """Generates a Razorpay payment link directly inside telegram_bot module."""
+    """Generates a Razorpay payment link directly with full diagnostic logs."""
     if not HAS_RAZORPAY:
-        logging.error("Razorpay module is not installed.")
+        logging.error("Razorpay module is not installed in Python environment.")
         return None
 
     if not RAZORPAY_KEY_ID or not RAZORPAY_KEY_SECRET:
-        logging.error("Razorpay Key ID or Secret is missing in environment.")
+        logging.error(f"Razorpay Credentials Error: Key ID='{RAZORPAY_KEY_ID}', Secret Set={bool(RAZORPAY_KEY_SECRET)}")
         return None
 
     plan = PLAN_TIERS.get(plan_key)
     if not plan:
+        logging.error(f"Invalid Plan Key requested: {plan_key}")
         return None
 
     try:
         client = razorpay.Client(auth=(RAZORPAY_KEY_ID, RAZORPAY_KEY_SECRET))
-        response = client.payment_link.create({
-            "amount": plan["price"] * 100,
+        amount_in_paise = int(plan["price"] * 100)
+        
+        # Ensure minimum amount constraint for Razorpay API (at least 100 paise)
+        if amount_in_paise < 100:
+            amount_in_paise = 100
+
+        payload = {
+            "amount": amount_in_paise,
             "currency": "INR",
             "accept_partial": False,
             "description": f"Learn with HiM Subscription - {plan['name']}",
@@ -66,10 +73,12 @@ def generate_razorpay_link(user_id: int, plan_key: str):
             },
             "callback_url": RENDER_EXTERNAL_URL,
             "callback_method": "get"
-        })
+        }
+
+        response = client.payment_link.create(payload)
         return response.get("short_url")
     except Exception as e:
-        logging.error(f"Error creating Razorpay payment link: {e}")
+        logging.error(f"Razorpay API Error during link creation for User {user_id}: {e}")
         return None
 
 async def send_registration_prompt(update: Update):

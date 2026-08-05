@@ -22,15 +22,14 @@ def get_ist_timestamp_str():
     return get_ist_now().strftime("%Y-%m-%d %H:%M:%S IST")
 
 def get_db():
-    """Returns a database connection for Turso Cloud or local SQLite."""
+    """Returns a unified database connection supporting both Turso Cloud and local SQLite."""
     if TURSO_URL and TURSO_TOKEN:
         try:
             import libsql_experimental as libsql
-            # Connect to Turso Cloud without assigning row_factory on conn
             conn = libsql.connect(database=TURSO_URL, auth_token=TURSO_TOKEN)
             return conn
         except ImportError:
-            logger.debug("libsql_experimental not installed. Falling back to local SQLite.")
+            logger.debug("libsql_experimental not installed. Falling back to local SQLite database.")
         except Exception as e:
             logger.error(f"Failed to connect to Turso Cloud, falling back to local SQLite: {e}")
 

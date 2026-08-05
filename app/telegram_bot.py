@@ -16,17 +16,17 @@ from app.database import (
     init_db, get_maintenance_until, get_user_profile, 
     get_all_users, get_today_attempts, save_student_feedback, get_all_student_feedbacks,
     clear_paused_quiz_state, get_saved_questions, log_user_activity_time,
-    check_and_update_inactivity, refresh_user_activity_epoch, get_db
+    check_and_update_inactivity, refresh_user_activity_epoch, get_db, get_seen_question_ids
 )
 from app.onboarding import get_onboarding_handler, start_onboarding
 from app.quiz_engine import (
     launch_quiz_setup, quiz_count_callback, quiz_timer_callback, handle_poll_answer,
-    pause_quiz_command, resume_quiz_command, stop_quiz_command, save_question_callback,
-    get_quizbook_nav_keyboard
+    pause_quiz_command, resume_quiz_command, stop_quiz_command, save_question_callback
 )
 from app.stats import get_overall_leaderboard, calculate_user_percentile, calculate_user_rank, get_user_performance_summary
 from app.admin import admin_portal_command, admin_callback_handler
 from app.pdf_generator import generate_student_pdf_report
+from app.pyq_fetcher import fetch_pyqs_for_quiz
 
 NEGATIVE_WORDS = ["bad", "worst", "useless", "trash", "fake", "hate", "terrible", "waste", "horrible", "fraud", "stupid", "scam"]
 
@@ -99,223 +99,12 @@ async def maintenance_guard(update: Update, context: ContextTypes.DEFAULT_TYPE) 
         return False
     return True
 
-async def send_response(update: Update, text: str, reply_markup=None):
-    if reply_markup is None:
-        reply_markup = get_quizbook_nav_keyboard()
-
-    if update.callback_query:
-        await update.callback_query.answer()
-        try:
-            await update.callback_query.edit_message_text(text, reply_markup=reply_markup, parse_mode="Markdown")
-        except Exception:
-            await update.callback_query.message.reply_text(text, reply_markup=reply_markup, parse_mode="Markdown")
-    elif update.message:
-        await update.message.reply_text(text, reply_markup=reply_markup, parse_mode="Markdown")
-
-# --- USER EXPORT PDF OPTIONS HANDLERS ---
-async def pdf_report_menu_command(update: Update, context: ContextTypes.DEFAULT_TYPE):
-    if not await maintenance_guard(update, context): return
-    if not await check_user_registration(update): return
-
-    user = update.effective_user
-    log_user_activity_time(user.id, seconds=10)
-
-    pdf_buttons = InlineKeyboardMarkup([
-        [InlineKeyboardButton("📋 1. Last 1 Month Full Data Report", callback_data=f"userpdf_last_1_month_data")],
-        [InlineKeyboardButton("📊 2. Last 1 Month Quiz Summary Report (No Qs)", callback_data=f"userpdf_last_1_month_quiz")],
-        [InlineKeyboardButton("📜 3. All Months Full Data Report", callback_data=f"userpdf_all_months_data")],
-        [InlineKeyboardButton("📈 4. All Months Quiz Summary Report (No Qs)", callback_data=f"userpdf_all_months_quiz")],
-        [InlineKeyboardButton("❌ Wrong Qs", callback_data="cmd_wrong_qs"), InlineKeyboardButton("⏭ Skipped Qs", callback_data="cmd_unattempted_qs")],
-        [InlineKeyboardButton("🎯 Attempted Qs", callback_data="cmd_attempted_qs"), InlineKeyboardButton("💾 Saved Qs", callback_data="cmd_savedquestions")],
-        [InlineKeyboardButton("🚀 Launch Quiz", callback_data="cmd_quiz")]
-    ])
-
-    msg = (
-        f"📄 **MY ACADEMIC PDF REPORT GENERATOR** 📄\n"
-        f"━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\n"
-        f"Select the exact report card option you wish to export as PDF:"
-    )
-    await send_response(update, msg, reply_markup=pdf_buttons)
-
-async def user_pdf_callback_handler(update: Update, context: ContextTypes.DEFAULT_TYPE):
-    if not await maintenance_guard(update, context): return
-    query = update.callback_query
-    user = query.from_user
-    data = query.data
-
-    if not await check_user_registration(update): return
-
-    filter_mode = data.replace("userpdf_", "")
-    await query.answer()
-    await query.edit_message_text("⏳ **Generating Your PDF Report Card...**\nFormatting tables, scorecards, and generating PDF...", parse_mode="Markdown")
-
-    pdf_file = generate_student_pdf_report(user.id, filter_mode)
-    u = get_user_profile(user.id)
-    sid = u.get("student_id") if u else f"USER_{user.id}"
-    student_name = u.get("full_name", "Student") if u else "Student"
-
-    if pdf_file == "NO_ATTEMPTS":
-        await query.edit_message_text(
-            f"ℹ️ **NO QUIZ ATTEMPTS FOUND!**\n\n"
-            f"You have not recorded any quiz attempts in the selected timeframe.",
-            reply_markup=get_quizbook_nav_keyboard(),
-            parse_mode="Markdown"
-        )
-    elif pdf_file and pdf_file.startswith("ERROR_DETAILS:"):
-        await query.edit_message_text(
-            f"⚠️ **PDF Generation Error:**\n\nUnable to render PDF report right now. Please try again shortly.",
-            reply_markup=get_quizbook_nav_keyboard(),
-            parse_mode="Markdown"
-        )
-    elif pdf_file and os.path.exists(pdf_file):
-        caption_text = (
-            f"📄 **OFFICIAL ACADEMIC PDF REPORT**\n"
-            f"━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\n"
-            f"👤 **Student:** {student_name}\n"
-            f"🪪 **Student ID:** `{sid}`\n"
-            f"📊 **Report Module:** `{filter_mode.replace('_', ' ').title()}`\n"
-            f"🏷 **Watermark:** `@LearnwithHiM`"
-        )
-        with open(pdf_file, "rb") as doc:
-            await context.bot.send_document(
-                chat_id=query.message.chat_id,
-                document=doc,
-                filename=os.path.basename(pdf_file),
-                caption=caption_text,
-                parse_mode="Markdown"
-            )
-
-        await context.bot.send_message(
-            chat_id=query.message.chat_id,
-            text="👇 **Interactive Navigation Options:**",
-            reply_markup=get_quizbook_nav_keyboard(),
-            parse_mode="Markdown"
-        )
-
-# --- QUESTION NAVIGATION SLASH COMMAND HANDLERS ---
-async def wrong_questions_command(update: Update, context: ContextTypes.DEFAULT_TYPE):
-    if not await maintenance_guard(update, context): return
-    if not await check_user_registration(update): return
-
-    user = update.effective_user
-    log_user_activity_time(user.id, seconds=10)
-
-    conn = get_db()
-    attempts = conn.execute("SELECT * FROM quiz_attempts WHERE user_id = ? ORDER BY id DESC LIMIT 10", (user.id,)).fetchall()
-    conn.close()
-
-    lines = [
-        f"❌ **WRONG QUESTIONS LOG** ❌",
-        f"━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\n"
-    ]
-
-    found_wrong = False
-    for a in attempts:
-        ad = dict(a)
-        dt = ad.get("attempt_timestamp", "N/A")
-        details = json.loads(ad["details_json"]) if ad.get("details_json") else []
-        wrong_items = [q for q in details if q.get("status") == "WRONG"]
-        if wrong_items:
-            found_wrong = True
-            lines.append(f"📅 **Quiz At:** `{dt}`")
-            for idx, q_item in enumerate(wrong_items, start=1):
-                q_text = q_item.get("question_text", "N/A")
-                ans_text = q_item.get("correct_answer_text", "N/A")
-                lines.append(f" {idx}. ❌ `{q_text}`\n    👉 **Correct Ans:** `{ans_text}`")
-            lines.append("")
-
-    if not found_wrong:
-        lines.append("🎉 *Zero wrong questions logged in recent sessions! Excellent work.*")
-
-    msg = "\n".join(lines)
-    if len(msg) > 4000:
-        msg = msg[:3950] + "\n\n*(Truncated due to Telegram length limit)*"
-
-    await send_response(update, msg, reply_markup=get_quizbook_nav_keyboard())
-
-async def unattempted_questions_command(update: Update, context: ContextTypes.DEFAULT_TYPE):
-    if not await maintenance_guard(update, context): return
-    if not await check_user_registration(update): return
-
-    user = update.effective_user
-    log_user_activity_time(user.id, seconds=10)
-
-    conn = get_db()
-    attempts = conn.execute("SELECT * FROM quiz_attempts WHERE user_id = ? ORDER BY id DESC LIMIT 10", (user.id,)).fetchall()
-    conn.close()
-
-    lines = [
-        f"⏭ **UNATTEMPTED / SKIPPED QUESTIONS LOG** ⏭",
-        f"━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\n"
-    ]
-
-    found_skipped = False
-    for a in attempts:
-        ad = dict(a)
-        dt = ad.get("attempt_timestamp", "N/A")
-        details = json.loads(ad["details_json"]) if ad.get("details_json") else []
-        skipped_items = [q for q in details if q.get("status") in ["SKIPPED_TIMEOUT", "SKIPPED"]]
-        if skipped_items:
-            found_skipped = True
-            lines.append(f"📅 **Quiz At:** `{dt}`")
-            for idx, q_item in enumerate(skipped_items, start=1):
-                q_text = q_item.get("question_text", "N/A")
-                ans_text = q_item.get("correct_answer_text", "N/A")
-                lines.append(f" {idx}. ⏭ `{q_text}`\n    👉 **Correct Ans:** `{ans_text}`")
-            lines.append("")
-
-    if not found_skipped:
-        lines.append("🎉 *Zero unattempted/skipped questions in recent sessions!*")
-
-    msg = "\n".join(lines)
-    if len(msg) > 4000:
-        msg = msg[:3950] + "\n\n*(Truncated due to Telegram length limit)*"
-
-    await send_response(update, msg, reply_markup=get_quizbook_nav_keyboard())
-
-async def attempted_questions_command(update: Update, context: ContextTypes.DEFAULT_TYPE):
-    if not await maintenance_guard(update, context): return
-    if not await check_user_registration(update): return
-
-    user = update.effective_user
-    log_user_activity_time(user.id, seconds=10)
-
-    conn = get_db()
-    attempts = conn.execute("SELECT * FROM quiz_attempts WHERE user_id = ? ORDER BY id DESC LIMIT 5", (user.id,)).fetchall()
-    conn.close()
-
-    lines = [
-        f"🎯 **ALL ATTEMPTED QUESTIONS LOG** 🎯",
-        f"━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\n"
-    ]
-
-    found_any = False
-    for a in attempts:
-        ad = dict(a)
-        dt = ad.get("attempt_timestamp", "N/A")
-        details = json.loads(ad["details_json"]) if ad.get("details_json") else []
-        if details:
-            found_any = True
-            lines.append(f"📅 **Quiz At:** `{dt}`")
-            for idx, q_item in enumerate(details, start=1):
-                q_text = q_item.get("question_text", "N/A")
-                ans_text = q_item.get("correct_answer_text", "N/A")
-                status_icon = "✅" if q_item.get("status") == "CORRECT" else "❌" if q_item.get("status") == "WRONG" else "⏭"
-                lines.append(f" {idx}. {status_icon} `{q_text}`\n    👉 **Correct Ans:** `{ans_text}`")
-            lines.append("")
-
-    if not found_any:
-        lines.append("*No attempted question logs found.*")
-
-    msg = "\n".join(lines)
-    if len(msg) > 4000:
-        msg = msg[:3950] + "\n\n*(Truncated due to Telegram length limit)*"
-
-    await send_response(update, msg, reply_markup=get_quizbook_nav_keyboard())
-
 async def strict_quiz_command_guard(update: Update, context: ContextTypes.DEFAULT_TYPE):
-    if not await maintenance_guard(update, context): return
-    if not await check_user_registration(update): return
+    if not await maintenance_guard(update, context): 
+        return
+
+    if not await check_user_registration(update):
+        return
 
     user = update.effective_user
     log_user_activity_time(user.id, seconds=10)
@@ -331,11 +120,217 @@ async def strict_quiz_command_guard(update: Update, context: ContextTypes.DEFAUL
             f"The `/quiz` command has been **deactivated** for your account until tomorrow.\n\n"
             f"💡 **Unlock +10 Questions:** Share your link with 4 friends to increase your limit!"
         )
-        keyboard = InlineKeyboardMarkup([[InlineKeyboardButton("🤝 Invite Friends (+10 Limit)", callback_data="cmd_referral")]])
+        keyboard = InlineKeyboardMarkup([[
+            InlineKeyboardButton("🤝 Invite Friends (+10 Limit)", callback_data="cmd_referral")
+        ]])
         await update.message.reply_text(limit_msg, reply_markup=keyboard, parse_mode="Markdown")
         return
 
     await launch_quiz_setup(update, context)
+
+async def send_response(update: Update, text: str, reply_markup=None):
+    if update.callback_query:
+        await update.callback_query.answer()
+        try:
+            await update.callback_query.edit_message_text(text, reply_markup=reply_markup, parse_mode="Markdown")
+        except Exception:
+            await update.callback_query.message.reply_text(text, reply_markup=reply_markup, parse_mode="Markdown")
+    elif update.message:
+        markup = reply_markup if reply_markup else ReplyKeyboardRemove()
+        await update.message.reply_text(text, reply_markup=markup, parse_mode="Markdown")
+
+async def pdfreport_command(update: Update, context: ContextTypes.DEFAULT_TYPE):
+    if not await maintenance_guard(update, context): return
+    if not await check_user_registration(update): return
+
+    user = update.effective_user
+    log_user_activity_time(user.id, seconds=10)
+
+    buttons = InlineKeyboardMarkup([
+        [InlineKeyboardButton("📋 1. Last 1 Month Full Data Report", callback_data="usergenpdf_last_1_month_data")],
+        [InlineKeyboardButton("📊 2. Last 1 Month Quiz Summary Report (No Qs)", callback_data="usergenpdf_last_1_month_quiz")],
+        [InlineKeyboardButton("📜 3. All Months Full Data Report", callback_data="usergenpdf_all_months_data")],
+        [InlineKeyboardButton("📈 4. All Months Quiz Summary Report (No Qs)", callback_data="usergenpdf_all_months_quiz")],
+        [InlineKeyboardButton("💾 5. Saved Questions PDF Report", callback_data="usergenpdf_saved_questions_only")],
+        [InlineKeyboardButton("👤 Back to Profile", callback_data="cmd_profile")]
+    ])
+
+    msg = (
+        f"📄 **STUDENT PDF REPORT CENTER** 📄\n"
+        f"━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\n"
+        f"✨ Select your preferred report format below to instantly generate and download your personal academic PDF report card:"
+    )
+
+    if update.callback_query:
+        await update.callback_query.answer()
+        await update.callback_query.edit_message_text(msg, reply_markup=buttons, parse_mode="Markdown")
+    else:
+        await update.message.reply_text(msg, reply_markup=buttons, parse_mode="Markdown")
+
+async def wrongquestions_command(update: Update, context: ContextTypes.DEFAULT_TYPE):
+    """Shows the student's personal wrong answers log"""
+    if not await maintenance_guard(update, context): return
+    if not await check_user_registration(update): return
+
+    user = update.effective_user
+    log_user_activity_time(user.id, seconds=10)
+
+    conn = get_db()
+    attempts = conn.execute("SELECT * FROM quiz_attempts WHERE user_id = ? ORDER BY id DESC LIMIT 5", (user.id,)).fetchall()
+    conn.close()
+
+    lines = [
+        f"❌ **YOUR INCORRECT QUESTIONS LOG** ❌",
+        f"━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\n"
+    ]
+
+    found_wrong = False
+    for a in attempts:
+        ad = dict(a)
+        dt = ad.get("attempt_timestamp", "N/A")
+        details = json.loads(ad["details_json"]) if ad.get("details_json") else []
+        wrong_items = [q for q in details if q.get("status") == "WRONG"]
+        
+        if wrong_items:
+            found_wrong = True
+            lines.append(f"📅 **Quiz At:** `{dt}`")
+            for idx, q_item in enumerate(wrong_items, start=1):
+                q_text = q_item.get("question_text", "N/A")
+                ans_text = q_item.get("correct_answer_text", "N/A")
+                lines.append(f" {idx}. ❌ `{q_text}`\n    👉 **Correct Answer:** `{ans_text}`")
+            lines.append("")
+
+    if not found_wrong:
+        lines.append("🎉 *Zero wrong questions logged in your recent attempts! Excellent job.*")
+
+    msg = "\n".join(lines)
+    if len(msg) > 4000:
+        msg = msg[:3950] + "\n\n*(Truncated due to length limit)*"
+
+    nav = InlineKeyboardMarkup([[InlineKeyboardButton("🚀 Launch Quiz", callback_data="cmd_quiz")]])
+    await send_response(update, msg, reply_markup=nav)
+
+async def attemptedquestions_command(update: Update, context: ContextTypes.DEFAULT_TYPE):
+    """Shows summary of attempted questions for the user"""
+    if not await maintenance_guard(update, context): return
+    if not await check_user_registration(update): return
+
+    user = update.effective_user
+    log_user_activity_time(user.id, seconds=10)
+
+    conn = get_db()
+    attempts = conn.execute("SELECT * FROM quiz_attempts WHERE user_id = ? ORDER BY id DESC LIMIT 5", (user.id,)).fetchall()
+    conn.close()
+
+    lines = [
+        f"🎯 **YOUR RECENT ATTEMPTED QUESTIONS** 🎯",
+        f"━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\n"
+    ]
+
+    found_any = False
+    for a in attempts:
+        ad = dict(a)
+        dt = ad.get("attempt_timestamp", "N/A")
+        details = json.loads(ad["details_json"]) if ad.get("details_json") else []
+        if details:
+            found_any = True
+            lines.append(f"📅 **Quiz At:** `{dt}`")
+            for idx, q_item in enumerate(details, start=1):
+                q_text = q_item.get("question_text", "N/A")
+                ans_text = q_item.get("correct_answer_text", "N/A")
+                status_icon = "✅" if q_item.get("status") == "CORRECT" else "❌" if q_item.get("status") == "WRONG" else "⏭"
+                lines.append(f" {idx}. {status_icon} `{q_text}`\n    👉 **Ans:** `{ans_text}`")
+            lines.append("")
+
+    if not found_any:
+        lines.append("*No question attempt logs found yet. Type /quiz to start!*")
+
+    msg = "\n".join(lines)
+    if len(msg) > 4000:
+        msg = msg[:3950] + "\n\n*(Truncated due to length limit)*"
+
+    nav = InlineKeyboardMarkup([[InlineKeyboardButton("🚀 Launch Quiz", callback_data="cmd_quiz")]])
+    await send_response(update, msg, reply_markup=nav)
+
+async def unattemptedquestions_command(update: Update, context: ContextTypes.DEFAULT_TYPE):
+    """Shows unattempted status for the user"""
+    if not await maintenance_guard(update, context): return
+    if not await check_user_registration(update): return
+
+    user = update.effective_user
+    log_user_activity_time(user.id, seconds=10)
+
+    seen_ids = get_seen_question_ids(user.id)
+    all_qs = fetch_pyqs_for_quiz(needed_count=1000, seen_ids=[])
+    total_bank = len(all_qs)
+    seen_count = len(seen_ids)
+    remaining_count = max(0, total_bank - seen_count)
+
+    msg = (
+        f"⏭️ **UNATTEMPTED QUESTIONS SUMMARY** ⏭️\n"
+        f"━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\n"
+        f"📚 **Total Question Bank:** `{total_bank}` Qs\n"
+        f"✅ **Questions Attempted:** `{seen_count}` Qs\n"
+        f"⏭️ **Remaining Unattempted:** `{remaining_count}` Qs\n\n"
+        f"🚀 Tap **Launch Quiz** below to practice new unattempted questions!"
+    )
+    nav = InlineKeyboardMarkup([[InlineKeyboardButton("🚀 Launch Quiz", callback_data="cmd_quiz")]])
+    await send_response(update, msg, reply_markup=nav)
+
+async def user_pdf_callback_handler(update: Update, context: ContextTypes.DEFAULT_TYPE):
+    if not await maintenance_guard(update, context): return
+    if not await check_user_registration(update): return
+
+    query = update.callback_query
+    user_id = query.from_user.id
+    data = query.data
+
+    if not data.startswith("usergenpdf_"):
+        return
+
+    filter_mode = data.replace("usergenpdf_", "")
+    await query.answer()
+    await query.edit_message_text("⏳ **Generating Your Custom PDF Report Card...**\nFormatting telemetry, tables, and compiling layout...", parse_mode="Markdown")
+
+    pdf_file = generate_student_pdf_report(user_id, filter_mode)
+    profile = get_user_profile(user_id)
+    student_name = profile.get("full_name", "Student") if profile else "Student"
+    sid = profile.get("student_id", f"USER_{user_id}") if profile else f"USER_{user_id}"
+
+    if pdf_file == "NO_ATTEMPTS":
+        nav = InlineKeyboardMarkup([[InlineKeyboardButton("📄 Back to PDF Center", callback_data="cmd_pdfreport")]])
+        await query.edit_message_text("ℹ️ **NO QUIZ ATTEMPTS FOUND!**\n\nYou have not attempted any quizzes in the selected timeframe yet.", reply_markup=nav, parse_mode="Markdown")
+    elif pdf_file == "NO_SAVED_QUESTIONS":
+        nav = InlineKeyboardMarkup([[InlineKeyboardButton("📄 Back to PDF Center", callback_data="cmd_pdfreport")]])
+        await query.edit_message_text("ℹ️ **NO SAVED QUESTIONS FOUND!**\n\nYou haven't bookmarked any questions yet during your quizzes.", reply_markup=nav, parse_mode="Markdown")
+    elif pdf_file and pdf_file.startswith("ERROR_DETAILS:"):
+        nav = InlineKeyboardMarkup([[InlineKeyboardButton("📄 Back to PDF Center", callback_data="cmd_pdfreport")]])
+        await query.edit_message_text(f"⚠️ **PDF Generation Error:**\n\n`{pdf_file}`", reply_markup=nav, parse_mode="Markdown")
+    elif pdf_file and os.path.exists(pdf_file):
+        caption = (
+            f"📄 **OFFICIAL STUDENT PDF ACADEMIC REPORT**\n"
+            f"━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\n"
+            f"👤 **Student:** {student_name}\n"
+            f"🪪 **Student ID:** `{sid}`\n"
+            f"📊 **Report Module:** `{filter_mode.replace('_', ' ').title()}`\n"
+            f"🏷 **Watermark:** `@LearnwithHiM`"
+        )
+        with open(pdf_file, "rb") as doc:
+            await context.bot.send_document(
+                chat_id=query.message.chat_id,
+                document=doc,
+                filename=os.path.basename(pdf_file),
+                caption=caption,
+                parse_mode="Markdown"
+            )
+        nav = InlineKeyboardMarkup([
+            [InlineKeyboardButton("📄 Export Another PDF", callback_data="cmd_pdfreport")],
+            [InlineKeyboardButton("👤 My Profile", callback_data="cmd_profile")]
+        ])
+        await context.bot.send_message(chat_id=query.message.chat_id, text="👇 **Quick Navigation:**", reply_markup=nav, parse_mode="Markdown")
+    else:
+        nav = InlineKeyboardMarkup([[InlineKeyboardButton("📄 Back to PDF Center", callback_data="cmd_pdfreport")]])
+        await query.edit_message_text("⚠️ **Failed to generate PDF file.**", reply_markup=nav, parse_mode="Markdown")
 
 async def help_command(update: Update, context: ContextTypes.DEFAULT_TYPE):
     if not await maintenance_guard(update, context): return
@@ -347,23 +342,30 @@ async def help_command(update: Update, context: ContextTypes.DEFAULT_TYPE):
     msg = (
         "🤖 **LEARN WITH HIM QUIZ BOOK — COMMAND DIRECTORY** 🤖\n"
         "━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\n"
-        "Tap any button below or open the blue **[≡ Menu]** button:\n\n"
-        "• 🚀 **/quiz**: Start a new custom computer quiz\n"
-        "• 📄 **/pdf_report**: Export official academic PDF reports\n"
-        "• ❌ **/wrong_questions**: Review wrong questions\n"
-        "• ⏭ **/unattempted_questions**: View skipped/unattempted questions\n"
-        "• 🎯 **/attempted_questions**: View all attempted questions\n"
-        "• 💾 **/saved_questions**: View bookmarked/saved questions\n"
-        "• 👤 **/myprofile**: View verified student profile card\n"
-        "• ✏️ **/editprofile**: Update profile details (1x / 30 days)\n"
-        "• 📊 **/mywholestate**: View detailed rank & percentile\n"
-        "• 🏆 **/toppername**: Inspect global scholar leaderboard\n"
-        "• 💬 **/feedback**: Rate the bot or submit feedback\n"
-        "• 📖 **/reviews**: View student reviews\n"
-        "• 🤝 **/invite**: Share referral link to unlock +10 limit"
+        "Tap any command below or use the blue **[≡ Menu]** button:\n\n"
+        "• 🚀 **/quiz**: Start a new custom quiz\n"
+        "• 📄 **/pdfreport**: Export personal PDF report card\n"
+        "• ❌ **/wrongquestions**: View recent wrong answers\n"
+        "• ⏭️ **/unattemptedquestions**: View remaining Qs\n"
+        "• 🎯 **/attemptedquestions**: View attempted logs\n"
+        "• 💾 **/savedquestions**: View bookmarked questions\n"
+        "• 👤 **/myprofile**: View verified student profile\n"
+        "• ✏️ **/editprofile**: Edit profile (1x / 30 days)\n"
+        "• 📊 **/mywholestate**: View rank & percentile\n"
+        "• 🏆 **/toppername**: View global leaderboard\n"
+        "• 💬 **/feedback**: Submit feedback to Himanshu Sir\n"
+        "• 📖 **/reviews**: Read student reviews\n"
+        "• 🤝 **/invite**: Invite friends to unlock +10 limit"
     )
 
-    await send_response(update, msg, reply_markup=get_quizbook_nav_keyboard())
+    buttons = [
+        [InlineKeyboardButton("🚀 /quiz", callback_data="cmd_quiz"), InlineKeyboardButton("📄 /pdfreport", callback_data="cmd_pdfreport")],
+        [InlineKeyboardButton("💾 /savedquestions", callback_data="cmd_savedquestions"), InlineKeyboardButton("👤 /myprofile", callback_data="cmd_profile")],
+        [InlineKeyboardButton("📊 /mywholestate", callback_data="cmd_wholestate"), InlineKeyboardButton("🏆 /toppername", callback_data="cmd_toppers")],
+        [InlineKeyboardButton("🤝 /invite", callback_data="cmd_referral"), InlineKeyboardButton("📖 /reviews", callback_data="cmd_viewfeedbacks")]
+    ]
+
+    await send_response(update, msg, reply_markup=InlineKeyboardMarkup(buttons))
 
 async def saved_questions_command(update: Update, context: ContextTypes.DEFAULT_TYPE):
     if not await maintenance_guard(update, context): return
@@ -379,7 +381,7 @@ async def saved_questions_command(update: Update, context: ContextTypes.DEFAULT_
             "━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\n\n"
             "You haven't bookmarked any questions yet! Tap **💾 Save Question** during quizzes to save important questions here."
         )
-        await send_response(update, msg, reply_markup=get_quizbook_nav_keyboard())
+        await send_response(update, msg, reply_markup=InlineKeyboardMarkup([[InlineKeyboardButton("🚀 Launch Quiz", callback_data="cmd_quiz")]]))
         return
 
     total_count = len(saved)
@@ -407,7 +409,11 @@ async def saved_questions_command(update: Update, context: ContextTypes.DEFAULT_
         lines.append(f"\n*(Showing 15 of {total_count} saved questions)*")
 
     msg = "\n".join(lines)
-    await send_response(update, msg, reply_markup=get_quizbook_nav_keyboard())
+    buttons = [
+        [InlineKeyboardButton("📄 Export Saved Qs to PDF", callback_data="usergenpdf_saved_questions_only")],
+        [InlineKeyboardButton("🚀 Launch Quiz", callback_data="cmd_quiz")]
+    ]
+    await send_response(update, msg, reply_markup=InlineKeyboardMarkup(buttons))
 
 async def myprofile_command(update: Update, context: ContextTypes.DEFAULT_TYPE):
     if not await maintenance_guard(update, context): return
@@ -441,7 +447,13 @@ async def myprofile_command(update: Update, context: ContextTypes.DEFAULT_TYPE):
         f"━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━"
     )
 
-    await send_response(update, msg, reply_markup=get_quizbook_nav_keyboard())
+    buttons = [
+        [InlineKeyboardButton("🚀 Launch Quiz", callback_data="cmd_quiz"), InlineKeyboardButton("📄 PDF Report Center", callback_data="cmd_pdfreport")],
+        [InlineKeyboardButton("💾 Bookmarks", callback_data="cmd_savedquestions"), InlineKeyboardButton("✏️ Edit Profile", callback_data="cmd_editprofile")],
+        [InlineKeyboardButton("🤝 Invite Friends", callback_data="cmd_referral")]
+    ]
+
+    await send_response(update, msg, reply_markup=InlineKeyboardMarkup(buttons))
 
 async def wholestate_command(update: Update, context: ContextTypes.DEFAULT_TYPE):
     if not await maintenance_guard(update, context): return
@@ -470,7 +482,11 @@ async def wholestate_command(update: Update, context: ContextTypes.DEFAULT_TYPE)
         f"• **Overall Percentile:** `{percentile}%` 📊 *(Calculated against all scholars)*"
     )
 
-    await send_response(update, msg, reply_markup=get_quizbook_nav_keyboard())
+    buttons = [
+        [InlineKeyboardButton("🚀 Launch Quiz", callback_data="cmd_quiz"), InlineKeyboardButton("📄 PDF Report Center", callback_data="cmd_pdfreport")],
+        [InlineKeyboardButton("🏆 Toppers Leaderboard", callback_data="cmd_toppers")]
+    ]
+    await send_response(update, msg, reply_markup=InlineKeyboardMarkup(buttons))
 
 async def toppers_command(update: Update, context: ContextTypes.DEFAULT_TYPE):
     if not await maintenance_guard(update, context): return
@@ -481,7 +497,7 @@ async def toppers_command(update: Update, context: ContextTypes.DEFAULT_TYPE):
     toppers = get_overall_leaderboard(limit=10)
     
     if not toppers:
-        await send_response(update, "🏆 No leaderboard records available yet. Be the first to attempt a quiz!", reply_markup=get_quizbook_nav_keyboard())
+        await send_response(update, "🏆 No leaderboard records available yet. Be the first to attempt a quiz!")
         return
 
     lines = []
@@ -490,7 +506,8 @@ async def toppers_command(update: Update, context: ContextTypes.DEFAULT_TYPE):
         lines.append(f"{idx}. **{t['full_name']}**{badge} — Avg Score: `{round(t['avg_score'], 2)}` ⭐")
 
     msg = "🏆 **GLOBAL SCHOLAR LEADERBOARD** 🏆\n━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\n\n" + "\n".join(lines)
-    await send_response(update, msg, reply_markup=get_quizbook_nav_keyboard())
+    buttons = [[InlineKeyboardButton("🚀 Attempt Quiz", callback_data="cmd_quiz")]]
+    await send_response(update, msg, reply_markup=InlineKeyboardMarkup(buttons))
 
 async def feedback_command(update: Update, context: ContextTypes.DEFAULT_TYPE):
     if not await maintenance_guard(update, context): return
@@ -504,8 +521,7 @@ async def feedback_command(update: Update, context: ContextTypes.DEFAULT_TYPE):
         [InlineKeyboardButton("✨ Best Exam Prep Portal", callback_data="fb_p2")],
         [InlineKeyboardButton("🔥 Great Daily Limits & Routine!", callback_data="fb_p3")],
         [InlineKeyboardButton("✍️ Write Custom Review", callback_data="fb_custom")],
-        [InlineKeyboardButton("📖 View All Student Reviews", callback_data="cmd_viewfeedbacks")],
-        [InlineKeyboardButton("🚀 Launch Quiz", callback_data="cmd_quiz")]
+        [InlineKeyboardButton("📖 View All Student Reviews", callback_data="cmd_viewfeedbacks")]
     ]
 
     msg = (
@@ -525,14 +541,14 @@ async def viewfeedbacks_command(update: Update, context: ContextTypes.DEFAULT_TY
     feedbacks = get_all_student_feedbacks(limit=15)
 
     if not feedbacks:
-        await send_response(update, "📖 No student reviews submitted yet. Be the first to leave feedback using /feedback!", reply_markup=get_quizbook_nav_keyboard())
+        await send_response(update, "📖 No student reviews submitted yet. Be the first to leave feedback using /feedback!")
         return
 
     lines = ["📖 **STUDENT REVIEWS & FEEDBACK BOARD** 📖\n━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\n"]
     for idx, fb in enumerate(feedbacks, start=1):
         lines.append(f"**{idx}. {fb['full_name']}**:\n 💬 *\"{fb['feedback_text']}\"*\n")
 
-    await send_response(update, "\n".join(lines), reply_markup=get_quizbook_nav_keyboard())
+    await send_response(update, "\n".join(lines))
 
 async def referral_command(update: Update, context: ContextTypes.DEFAULT_TYPE):
     if not await maintenance_guard(update, context): return
@@ -550,7 +566,7 @@ async def referral_command(update: Update, context: ContextTypes.DEFAULT_TYPE):
         f"`{ref_link}`\n\n"
         f"When 4 friends register using your link, you automatically receive +10 extra questions added to your daily quota!"
     )
-    await send_response(update, msg, reply_markup=get_quizbook_nav_keyboard())
+    await send_response(update, msg)
 
 async def button_router(update: Update, context: ContextTypes.DEFAULT_TYPE):
     if not await maintenance_guard(update, context): return
@@ -576,13 +592,7 @@ async def button_router(update: Update, context: ContextTypes.DEFAULT_TYPE):
             return
         await launch_quiz_setup(update, context)
     elif data == "cmd_pdfreport":
-        await pdf_report_menu_command(update, context)
-    elif data == "cmd_wrong_qs":
-        await wrong_questions_command(update, context)
-    elif data == "cmd_unattempted_qs":
-        await unattempted_questions_command(update, context)
-    elif data == "cmd_attempted_qs":
-        await attempted_questions_command(update, context)
+        await pdfreport_command(update, context)
     elif data == "cmd_pause_quiz":
         await pause_quiz_command(update, context)
     elif data == "cmd_resume_quiz":
@@ -618,11 +628,7 @@ async def button_router(update: Update, context: ContextTypes.DEFAULT_TYPE):
         profile = get_user_profile(user.id)
         name = profile.get("full_name") if profile else user.full_name
         save_student_feedback(user.id, name, fb_text)
-        await query.edit_message_text(
-            f"🎉 **Thank you, {name}!** Your review has been saved:\n\n💬 *\"{fb_text}\"*", 
-            reply_markup=get_quizbook_nav_keyboard(),
-            parse_mode="Markdown"
-        )
+        await query.edit_message_text(f"🎉 **Thank you, {name}!** Your review has been saved:\n\n💬 *\"{fb_text}\"*", parse_mode="Markdown")
 
     elif data == "fb_custom":
         context.user_data["awaiting_custom_feedback"] = True
@@ -637,7 +643,7 @@ async def handle_text_messages(update: Update, context: ContextTypes.DEFAULT_TYP
         if profile and profile.get("pin") == text:
             context.user_data["is_account_locked"] = False
             refresh_user_activity_epoch(user.id)
-            await update.message.reply_text("🔓 **ACCOUNT UNLOCKED SUCCESSFULLY!**\nYou may continue learning.", reply_markup=get_quizbook_nav_keyboard())
+            await update.message.reply_text("🔓 **ACCOUNT UNLOCKED SUCCESSFULLY!**\nYou may continue learning.", reply_markup=ReplyKeyboardRemove())
         else:
             rec_btn = InlineKeyboardMarkup([[InlineKeyboardButton("🔑 Reset Options", callback_data="login_forgot_pin")]])
             await update.message.reply_text(
@@ -675,17 +681,13 @@ async def handle_text_messages(update: Update, context: ContextTypes.DEFAULT_TYP
         context.user_data["awaiting_custom_feedback"] = False
         
         if any(bad_word in text.lower() for bad_word in NEGATIVE_WORDS):
-            await update.message.reply_text("🙏 Thank you for your feedback! We are working hard to improve your learning experience.", reply_markup=get_quizbook_nav_keyboard())
+            await update.message.reply_text("🙏 Thank you for your feedback! We are working hard to improve your learning experience.", reply_markup=ReplyKeyboardRemove())
             return
 
         profile = get_user_profile(user.id)
         name = profile.get("full_name") if profile else user.full_name
         save_student_feedback(user.id, name, text)
-        await update.message.reply_text(
-            f"🎉 **Feedback Received!** Thank you *{name}*:\n\n💬 *\"{text}\"*", 
-            reply_markup=get_quizbook_nav_keyboard(), 
-            parse_mode="Markdown"
-        )
+        await update.message.reply_text(f"🎉 **Feedback Received!** Thank you *{name}*:\n\n💬 *\"{text}\"*", reply_markup=ReplyKeyboardRemove(), parse_mode="Markdown")
         return
 
     if context.user_data.get("awaiting_broadcast"):
@@ -698,7 +700,7 @@ async def handle_text_messages(update: Update, context: ContextTypes.DEFAULT_TYP
                 sent += 1
             except Exception:
                 pass
-        await update.message.reply_text(f"✅ Announcement sent to {sent} users!", reply_markup=get_quizbook_nav_keyboard())
+        await update.message.reply_text(f"✅ Announcement sent to {sent} users!", reply_markup=ReplyKeyboardRemove())
 
 async def global_error_handler(update: object, context: ContextTypes.DEFAULT_TYPE) -> None:
     logging.debug(f"Exception caught in global error handler: {context.error}")
@@ -713,22 +715,22 @@ async def post_init(application: Application):
 
     allowed_commands = [
         BotCommand("quiz", "🚀 Start Computer Quiz"),
-        BotCommand("pdf_report", "📄 Export Academic PDF Report"),
-        BotCommand("wrong_questions", "❌ View Wrong Questions"),
-        BotCommand("unattempted_questions", "⏭ View Unattempted Questions"),
-        BotCommand("attempted_questions", "🎯 View Attempted Questions"),
-        BotCommand("saved_questions", "💾 View Bookmarked Questions"),
+        BotCommand("pdfreport", "📄 Export Academic PDF Report"),
+        BotCommand("wrongquestions", "❌ View Wrong Questions"),
+        BotCommand("unattemptedquestions", "⏭️ View Unattempted Questions"),
+        BotCommand("attemptedquestions", "🎯 View Attempted Questions"),
         BotCommand("savedquestions", "💾 View Bookmarked Questions"),
-        BotCommand("pause", "⏸ Pause Running Quiz"),
-        BotCommand("resume", "▶️ Resume Paused Quiz"),
-        BotCommand("stop", "🛑 Stop Quiz Completely"),
         BotCommand("myprofile", "👤 View Student Profile"),
         BotCommand("editprofile", "✏️ Edit Profile Details"),
         BotCommand("mywholestate", "📊 View Performance & Rank"),
         BotCommand("toppername", "🏆 Global Leaderboard"),
         BotCommand("feedback", "💬 Submit Feedback"),
         BotCommand("reviews", "📖 View Student Reviews"),
-        BotCommand("invite", "🤝 Invite Friends (+10 Quota)")
+        BotCommand("invite", "🤝 Invite Friends (+10 Quota)"),
+        BotCommand("pause", "⏸️ Pause Running Quiz"),
+        BotCommand("resume", "▶️ Resume Paused Quiz"),
+        BotCommand("stop", "🛑 Stop Quiz Completely"),
+        BotCommand("help", "🤖 Show Command Directory")
     ]
     
     await application.bot.set_my_commands(allowed_commands, scope=BotCommandScopeDefault())
@@ -741,15 +743,14 @@ def build_application() -> Application:
     app.add_handler(get_onboarding_handler())
     
     app.add_handler(CommandHandler("quiz", strict_quiz_command_guard))
-    app.add_handler(CommandHandler("pdf_report", pdf_report_menu_command))
-    app.add_handler(CommandHandler("wrong_questions", wrong_questions_command))
-    app.add_handler(CommandHandler("unattempted_questions", unattempted_questions_command))
-    app.add_handler(CommandHandler("attempted_questions", attempted_questions_command))
-    app.add_handler(CommandHandler("saved_questions", saved_questions_command))
-    app.add_handler(CommandHandler("savedquestions", saved_questions_command))
     app.add_handler(CommandHandler("pause", pause_quiz_command))
     app.add_handler(CommandHandler("resume", resume_quiz_command))
     app.add_handler(CommandHandler("stop", stop_quiz_command))
+    app.add_handler(CommandHandler("savedquestions", saved_questions_command))
+    app.add_handler(CommandHandler("pdfreport", pdfreport_command))
+    app.add_handler(CommandHandler("wrongquestions", wrongquestions_command))
+    app.add_handler(CommandHandler("attemptedquestions", attemptedquestions_command))
+    app.add_handler(CommandHandler("unattemptedquestions", unattemptedquestions_command))
     app.add_handler(CommandHandler("myprofile", myprofile_command))
     app.add_handler(CommandHandler("mywholestate", wholestate_command))
     app.add_handler(CommandHandler("toppername", toppers_command))
@@ -766,8 +767,8 @@ def build_application() -> Application:
 
     app.add_handler(CallbackQueryHandler(quiz_count_callback, pattern="^qcount_"))
     app.add_handler(CallbackQueryHandler(quiz_timer_callback, pattern="^qtimer_"))
+    app.add_handler(CallbackQueryHandler(user_pdf_callback_handler, pattern="^usergenpdf_"))
     app.add_handler(CallbackQueryHandler(admin_callback_handler, pattern="^(admin_|audit_|genpdf_)"))
-    app.add_handler(CallbackQueryHandler(user_pdf_callback_handler, pattern="^userpdf_"))
     app.add_handler(CallbackQueryHandler(button_router, pattern="^cmd_|^fb_|^trigger_start"))
 
     app.add_handler(MessageHandler(filters.TEXT & ~filters.COMMAND, handle_text_messages))

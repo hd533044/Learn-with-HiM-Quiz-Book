@@ -1,0 +1,273 @@
+{
+    "student_id": "Ab100303",
+    "registration_info": {
+        "user_id": 1428644275,
+        "student_id": "Ab100303",
+        "full_name": "Abhishek Singh",
+        "username": "N/A",
+        "phone_number": "918318540600",
+        "target_exam": "CAPF HCM",
+        "dob": "10-03-2003",
+        "age": 23,
+        "gender": "Male",
+        "country": "India",
+        "state": "Uttar Pradesh",
+        "pin": "0600",
+        "security_question": "🏙 Which is your favorite city?",
+        "security_answer": "Mumbai",
+        "referred_by": null,
+        "referral_count": 0,
+        "bonus_quota": 0,
+        "last_profile_edit": "2026-08-05 14:52:12 IST",
+        "last_active": "2026-08-05 14:55:46 IST",
+        "last_activity_epoch": 1785921946,
+        "is_banned": 0,
+        "is_verified": 1,
+        "created_at": "2026-08-05 14:52:12 IST"
+    },
+    "bot_engagement_metrics": {
+        "last_login_timestamp": "2026-08-05 14:55:46 IST",
+        "total_time_spent_overall": "380 seconds (6.33 mins)",
+        "daily_spent_time_breakdown": {
+            "2026-08-05": "380 seconds (6.33 mins)"
+        },
+        "questions_attempted_per_day": {
+            "2026-08-05": 20
+        }
+    },
+    "academic_summary": {
+        "total_quizzes_attempted": 1,
+        "total_questions_attempted": 20,
+        "total_correct": 10,
+        "total_wrong": 10,
+        "total_skipped": 0,
+        "datewise_quiz_summary": {
+            "2026-08-05": {
+                "total_quizzes": 1,
+                "total_questions": 20,
+                "total_correct": 10,
+                "total_wrong": 10,
+                "total_score": 10.0,
+                "total_time_seconds": 0
+            }
+        }
+    },
+    "saved_questions_ledger": {
+        "total_saved": 0,
+        "datewise_saved_summary": {},
+        "saved_questions": []
+    },
+    "student_reviews_given": [],
+    "subscription_ledger": {
+        "status": "FREE_TIER",
+        "active_plan": "Standard Free Tier",
+        "total_amount_paid": 0.0,
+        "payment_history": []
+    },
+    "badges_and_achievements": {
+        "earned_badges": [
+            "Early Learner",
+            "Registered Scholar"
+        ],
+        "streak_days": 1
+    },
+    "full_quiz_history": [
+        {
+            "id": 27,
+            "user_id": 1428644275,
+            "quiz_id": "computer_awareness_mock",
+            "questions_attempted": 20,
+            "total_questions": 20,
+            "correct_answers": 10,
+            "wrong_answers": 10,
+            "skipped_count": 0,
+            "score": 10.0,
+            "time_taken": 0,
+            "attempt_timestamp": "2026-08-05 14:55:13 IST",
+            "attempt_date": "2026-08-05",
+            "question_details": [
+                {
+                    "question_id": 270,
+                    "question_text": "What is the purpose of a logic bomb in the context of hacking?",
+                    "status": "WRONG",
+                    "selected_option": 1,
+                    "correct_option": 3,
+                    "correct_answer_text": "To implement a malicious function after certain conditions are met",
+                    "timestamp": "2026-08-05 14:52:38 IST"
+                },
+                {
+                    "question_id": 28,
+                    "question_text": "Which port is used for connecting all kinds of external USB devices and has a data transfer speed of 12 megabits per second?",
+                    "status": "CORRECT",
+                    "selected_option": 2,
+                    "correct_option": 2,
+                    "correct_answer_text": "Universal Serial Bus (USB) Port",
+                    "timestamp": "2026-08-05 14:52:48 IST"
+                },
+                {
+                    "question_id": 22,
+                    "question_text": "Which port has a data transfer speed of 12 megabits per second?",
+                    "status": "CORRECT",
+                    "selected_option": 2,
+                    "correct_option": 2,
+                    "correct_answer_text": "Universal Serial Bus (USB) Port",
+                    "timestamp": "2026-08-05 14:52:54 IST"
+                },
+                {
+                    "question_id": 51,
+                    "question_text": "What is the purpose of Alt + Space + R?",
+                    "status": "WRONG",
+                    "selected_option": 1,
+                    "correct_option": 0,
+                    "correct_answer_text": "To restore a window",
+                    "timestamp": "2026-08-05 14:53:02 IST"
+                },
+                {
+                    "question_id": 164,
+                    "question_text": "Which shortcut key is used to enter the contents of the active cell and move one cell to the left?",
+                    "status": "WRONG",
+                    "selected_option": 1,
+                    "correct_option": 0,
+                    "correct_answer_text": "Shift + Tab",
+                    "timestamp": "2026-08-05 14:53:09 IST"
+                },
+                {
+                    "question_id": 499,
+                    "question_text": "What is the relationship between IBM and its services?",
+                    "status": "WRONG",
+                    "selected_option": 1,
+                    "correct_option": 0,
+                    "correct_answer_text": "IBM offers infrastructure, hosting, and consulting services",
+                    "timestamp": "2026-08-05 14:53:21 IST"
+                },
+                {
+                    "question_id": 470,
+                    "question_text": "What is the shortcut to close the selected workbook window?",
+                    "status": "WRONG",
+                    "selected_option": 1,
+                    "correct_option": 0,
+                    "correct_answer_text": "Ctrl+F4",
+                    "timestamp": "2026-08-05 14:53:25 IST"
+                },
+                {
+                    "question_id": 70,
+                    "question_text": "What is the purpose of the 'Sparklines' option in the 'Insert' tab in MS-EXCEL?",
+                    "status": "CORRECT",
+                    "selected_option": 2,
+                    "correct_option": 2,
+                    "correct_answer_text": "To create a mini chart in a cell",
+                    "timestamp": "2026-08-05 14:53:34 IST"
+                },
+                {
+                    "question_id": 65,
+                    "question_text": "Which tab in MS-EXCEL contains the 'Clipboard' and 'Font' groups?",
+                    "status": "WRONG",
+                    "selected_option": 0,
+                    "correct_option": 1,
+                    "correct_answer_text": "Home",
+                    "timestamp": "2026-08-05 14:53:47 IST"
+                },
+                {
+                    "question_id": 41,
+                    "question_text": "What is the function of Win Keys + M?",
+                    "status": "CORRECT",
+                    "selected_option": 0,
+                    "correct_option": 0,
+                    "correct_answer_text": "To minimize all active windows",
+                    "timestamp": "2026-08-05 14:53:54 IST"
+                },
+                {
+                    "question_id": 43,
+                    "question_text": "What is the function of Win Keys + R?",
+                    "status": "CORRECT",
+                    "selected_option": 0,
+                    "correct_option": 0,
+                    "correct_answer_text": "To open Run Dialogue Box",
+                    "timestamp": "2026-08-05 14:53:59 IST"
+                },
+                {
+                    "question_id": 361,
+                    "question_text": "What does SEAC stand for?",
+                    "status": "WRONG",
+                    "selected_option": 1,
+                    "correct_option": 0,
+                    "correct_answer_text": "Standards Eastern Automatic Computer",
+                    "timestamp": "2026-08-05 14:54:07 IST"
+                },
+                {
+                    "question_id": 217,
+                    "question_text": "What is the primary mode of transaction in IMPS?",
+                    "status": "WRONG",
+                    "selected_option": 3,
+                    "correct_option": 2,
+                    "correct_answer_text": "Mobile-based",
+                    "timestamp": "2026-08-05 14:54:14 IST"
+                },
+                {
+                    "question_id": 400,
+                    "question_text": "How does Microsoft 365 differ from the old-fashioned bundle in terms of payment?",
+                    "status": "CORRECT",
+                    "selected_option": 1,
+                    "correct_option": 1,
+                    "correct_answer_text": "Microsoft 365 is a subscription",
+                    "timestamp": "2026-08-05 14:54:22 IST"
+                },
+                {
+                    "question_id": 382,
+                    "question_text": "What company was founded by Steve Jobs, Steve Wozniac, and Ronald Wayne in 1976?",
+                    "status": "CORRECT",
+                    "selected_option": 0,
+                    "correct_option": 0,
+                    "correct_answer_text": "Apple Inc.",
+                    "timestamp": "2026-08-05 14:54:29 IST"
+                },
+                {
+                    "question_id": 555,
+                    "question_text": "What is the purpose of the Step by Step Mail Merge Wizard in Microsoft Word?",
+                    "status": "CORRECT",
+                    "selected_option": 2,
+                    "correct_option": 2,
+                    "correct_answer_text": "To merge data from a database into a document",
+                    "timestamp": "2026-08-05 14:54:38 IST"
+                },
+                {
+                    "question_id": 318,
+                    "question_text": "How are hexadecimal numbers converted to octal numbers?",
+                    "status": "CORRECT",
+                    "selected_option": 1,
+                    "correct_option": 1,
+                    "correct_answer_text": "By converting each digit to binary and then to octal",
+                    "timestamp": "2026-08-05 14:54:46 IST"
+                },
+                {
+                    "question_id": 444,
+                    "question_text": "What is the function of Ctrl+End, Arrow key?",
+                    "status": "CORRECT",
+                    "selected_option": 1,
+                    "correct_option": 1,
+                    "correct_answer_text": "Move to the last cell on a worksheet",
+                    "timestamp": "2026-08-05 14:54:57 IST"
+                },
+                {
+                    "question_id": 293,
+                    "question_text": "What is the term for a device that provides centralized disk storage?",
+                    "status": "WRONG",
+                    "selected_option": 1,
+                    "correct_option": 0,
+                    "correct_answer_text": "Network Attached Storage (NAS)",
+                    "timestamp": "2026-08-05 14:55:05 IST"
+                },
+                {
+                    "question_id": 236,
+                    "question_text": "How does a node from one network communicate with a node from a foreign network?",
+                    "status": "WRONG",
+                    "selected_option": 1,
+                    "correct_option": 2,
+                    "correct_answer_text": "By passing the data packet to a gateway, which then routes it to the destination",
+                    "timestamp": "2026-08-05 14:55:12 IST"
+                }
+            ]
+        }
+    ],
+    "last_synced": "2026-08-05 15:25:41 IST"
+}

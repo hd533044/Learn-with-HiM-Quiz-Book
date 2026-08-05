@@ -1,0 +1,469 @@
+{
+    "student_id": "Ma091004",
+    "registration_info": {
+        "user_id": 7596726398,
+        "student_id": "Ma091004",
+        "full_name": "Manju",
+        "username": "N/A",
+        "phone_number": "918950968402",
+        "target_exam": "BSF HCM",
+        "dob": "09-10-2004",
+        "age": 22,
+        "gender": "Female",
+        "country": "India",
+        "state": "Haryana",
+        "pin": "2004",
+        "security_question": "🐾 What is your pet's name?",
+        "security_answer": "Rubi",
+        "referred_by": null,
+        "referral_count": 0,
+        "bonus_quota": 0,
+        "last_profile_edit": "2026-08-05 10:46:10 IST",
+        "last_active": "2026-08-05 11:47:05 IST",
+        "last_activity_epoch": 1785910625,
+        "is_banned": 0,
+        "is_verified": 1,
+        "created_at": "2026-08-05 10:46:10 IST"
+    },
+    "bot_engagement_metrics": {
+        "last_login_timestamp": "2026-08-05 11:47:05 IST",
+        "total_time_spent_overall": "780 seconds (13.0 mins)",
+        "daily_spent_time_breakdown": {
+            "2026-08-05": "780 seconds (13.0 mins)"
+        },
+        "questions_attempted_per_day": {
+            "2026-08-05": 40
+        }
+    },
+    "academic_summary": {
+        "total_quizzes_attempted": 2,
+        "total_questions_attempted": 40,
+        "total_correct": 24,
+        "total_wrong": 16,
+        "total_skipped": 0,
+        "datewise_quiz_summary": {
+            "2026-08-05": {
+                "total_quizzes": 2,
+                "total_questions": 40,
+                "total_correct": 24,
+                "total_wrong": 16,
+                "total_score": 24.0,
+                "total_time_seconds": 0
+            }
+        }
+    },
+    "saved_questions_ledger": {
+        "total_saved": 0,
+        "datewise_saved_summary": {},
+        "saved_questions": []
+    },
+    "student_reviews_given": [],
+    "subscription_ledger": {
+        "status": "FREE_TIER",
+        "active_plan": "Standard Free Tier",
+        "total_amount_paid": 0.0,
+        "payment_history": []
+    },
+    "badges_and_achievements": {
+        "earned_badges": [
+            "Early Learner",
+            "Registered Scholar"
+        ],
+        "streak_days": 1
+    },
+    "full_quiz_history": [
+        {
+            "id": 6,
+            "user_id": 7596726398,
+            "quiz_id": "computer_awareness_mock",
+            "questions_attempted": 20,
+            "total_questions": 20,
+            "correct_answers": 13,
+            "wrong_answers": 7,
+            "skipped_count": 0,
+            "score": 13.0,
+            "time_taken": 0,
+            "attempt_timestamp": "2026-08-05 11:05:30 IST",
+            "attempt_date": "2026-08-05",
+            "question_details": [
+                {
+                    "question_id": 374,
+                    "question_text": "What is the ranking of the Param Yuva II supercomputer?",
+                    "status": "CORRECT",
+                    "selected_option": 1,
+                    "correct_option": 1,
+                    "correct_answer_text": "Ranked 69",
+                    "timestamp": "2026-08-05 11:01:51 IST"
+                },
+                {
+                    "question_id": 313,
+                    "question_text": "What is the purpose of using powers of 16 in hexadecimal to decimal conversion?",
+                    "status": "CORRECT",
+                    "selected_option": 2,
+                    "correct_option": 2,
+                    "correct_answer_text": "To multiply each digit of the hexadecimal number",
+                    "timestamp": "2026-08-05 11:02:11 IST"
+                },
+                {
+                    "question_id": 179,
+                    "question_text": "What is the function of the keyboard shortcut Alt + Shift + Tab?",
+                    "status": "WRONG",
+                    "selected_option": 3,
+                    "correct_option": 2,
+                    "correct_answer_text": "Moves to the previous application open on your computer",
+                    "timestamp": "2026-08-05 11:02:28 IST"
+                },
+                {
+                    "question_id": 296,
+                    "question_text": "Which of the following is an example of a networking device?",
+                    "status": "CORRECT",
+                    "selected_option": 3,
+                    "correct_option": 3,
+                    "correct_answer_text": "All of the above",
+                    "timestamp": "2026-08-05 11:02:35 IST"
+                },
+                {
+                    "question_id": 553,
+                    "question_text": "What is the purpose of the Exclusion Dictionary in Microsoft Word?",
+                    "status": "CORRECT",
+                    "selected_option": 0,
+                    "correct_option": 0,
+                    "correct_answer_text": "To exclude specific sections or types of text from the spelling and grammar check",
+                    "timestamp": "2026-08-05 11:02:49 IST"
+                },
+                {
+                    "question_id": 400,
+                    "question_text": "How does Microsoft 365 differ from the old-fashioned bundle in terms of payment?",
+                    "status": "CORRECT",
+                    "selected_option": 1,
+                    "correct_option": 1,
+                    "correct_answer_text": "Microsoft 365 is a subscription",
+                    "timestamp": "2026-08-05 11:03:00 IST"
+                },
+                {
+                    "question_id": 43,
+                    "question_text": "What is the function of Win Keys + R?",
+                    "status": "CORRECT",
+                    "selected_option": 0,
+                    "correct_option": 0,
+                    "correct_answer_text": "To open Run Dialogue Box",
+                    "timestamp": "2026-08-05 11:03:09 IST"
+                },
+                {
+                    "question_id": 265,
+                    "question_text": "What is the purpose of ransomware in the context of hacking?",
+                    "status": "CORRECT",
+                    "selected_option": 1,
+                    "correct_option": 1,
+                    "correct_answer_text": "To block access to a computer system until a sum of money is paid",
+                    "timestamp": "2026-08-05 11:03:17 IST"
+                },
+                {
+                    "question_id": 239,
+                    "question_text": "What is the function of a gateway in routing data packets?",
+                    "status": "WRONG",
+                    "selected_option": 2,
+                    "correct_option": 0,
+                    "correct_answer_text": "To route data packets to the destination node",
+                    "timestamp": "2026-08-05 11:03:31 IST"
+                },
+                {
+                    "question_id": 223,
+                    "question_text": "What is the definition of uploading?",
+                    "status": "WRONG",
+                    "selected_option": 2,
+                    "correct_option": 3,
+                    "correct_answer_text": "Uploading is transferring data from client to server",
+                    "timestamp": "2026-08-05 11:03:47 IST"
+                },
+                {
+                    "question_id": 17,
+                    "question_text": "Which of the following ports has a data transfer speed of 115 kilobits per second?",
+                    "status": "WRONG",
+                    "selected_option": 1,
+                    "correct_option": 3,
+                    "correct_answer_text": "Serial Port",
+                    "timestamp": "2026-08-05 11:03:55 IST"
+                },
+                {
+                    "question_id": 108,
+                    "question_text": "What is the purpose of the Ctrl + A shortcut in MS-Excel 2010?",
+                    "status": "CORRECT",
+                    "selected_option": 0,
+                    "correct_option": 0,
+                    "correct_answer_text": "To select the entire worksheet",
+                    "timestamp": "2026-08-05 11:04:04 IST"
+                },
+                {
+                    "question_id": 383,
+                    "question_text": "What is the primary purpose of the disk rearrangement programme in Microsoft Windows?",
+                    "status": "WRONG",
+                    "selected_option": 2,
+                    "correct_option": 0,
+                    "correct_answer_text": "To increase data access speed",
+                    "timestamp": "2026-08-05 11:04:13 IST"
+                },
+                {
+                    "question_id": 498,
+                    "question_text": "What is the difference between CDMA and FDDI?",
+                    "status": "CORRECT",
+                    "selected_option": 0,
+                    "correct_option": 0,
+                    "correct_answer_text": "CDMA is used for secure signal transmission, while FDDI is used for high-speed data transmission",
+                    "timestamp": "2026-08-05 11:04:28 IST"
+                },
+                {
+                    "question_id": 307,
+                    "question_text": "What is the purpose of computer codes?",
+                    "status": "CORRECT",
+                    "selected_option": 2,
+                    "correct_option": 2,
+                    "correct_answer_text": "To represent any character in a unique coded pattern",
+                    "timestamp": "2026-08-05 11:04:37 IST"
+                },
+                {
+                    "question_id": 227,
+                    "question_text": "What is the term for a network of networks connected globally?",
+                    "status": "CORRECT",
+                    "selected_option": 1,
+                    "correct_option": 1,
+                    "correct_answer_text": "Internet",
+                    "timestamp": "2026-08-05 11:04:47 IST"
+                },
+                {
+                    "question_id": 205,
+                    "question_text": "Which of the following is NOT an example of an email service provider?",
+                    "status": "CORRECT",
+                    "selected_option": 3,
+                    "correct_option": 3,
+                    "correct_answer_text": "None of the above",
+                    "timestamp": "2026-08-05 11:04:55 IST"
+                },
+                {
+                    "question_id": 198,
+                    "question_text": "What is the effect of using the keyboard shortcut Scroll Lock + Arrow Keys on a worksheet?",
+                    "status": "CORRECT",
+                    "selected_option": 1,
+                    "correct_option": 1,
+                    "correct_answer_text": "Scrolls the screen one row or column in that direction without changing active cell",
+                    "timestamp": "2026-08-05 11:05:08 IST"
+                },
+                {
+                    "question_id": 293,
+                    "question_text": "What is the term for a device that provides centralized disk storage?",
+                    "status": "WRONG",
+                    "selected_option": 1,
+                    "correct_option": 0,
+                    "correct_answer_text": "Network Attached Storage (NAS)",
+                    "timestamp": "2026-08-05 11:05:20 IST"
+                },
+                {
+                    "question_id": 26,
+                    "question_text": "Which port has a data transfer speed of 400 to 800 megabits per second?",
+                    "status": "WRONG",
+                    "selected_option": 2,
+                    "correct_option": 3,
+                    "correct_answer_text": "Firewire Port",
+                    "timestamp": "2026-08-05 11:05:30 IST"
+                }
+            ]
+        },
+        {
+            "id": 4,
+            "user_id": 7596726398,
+            "quiz_id": "computer_awareness_mock",
+            "questions_attempted": 20,
+            "total_questions": 20,
+            "correct_answers": 11,
+            "wrong_answers": 9,
+            "skipped_count": 0,
+            "score": 11.0,
+            "time_taken": 0,
+            "attempt_timestamp": "2026-08-05 10:50:23 IST",
+            "attempt_date": "2026-08-05",
+            "question_details": [
+                {
+                    "question_id": 514,
+                    "question_text": "What option allows you to copy the selected text or object to the Clipboard while removing it from its original location in MS Word?",
+                    "status": "WRONG",
+                    "selected_option": 0,
+                    "correct_option": 1,
+                    "correct_answer_text": "Cut",
+                    "timestamp": "2026-08-05 10:46:59 IST"
+                },
+                {
+                    "question_id": 433,
+                    "question_text": "How to move to the beginning of a worksheet?",
+                    "status": "CORRECT",
+                    "selected_option": 0,
+                    "correct_option": 0,
+                    "correct_answer_text": "Ctrl+Home",
+                    "timestamp": "2026-08-05 10:47:08 IST"
+                },
+                {
+                    "question_id": 78,
+                    "question_text": "What is the purpose of the 'Review' tab in MS-EXCEL?",
+                    "status": "CORRECT",
+                    "selected_option": 3,
+                    "correct_option": 3,
+                    "correct_answer_text": "To review the document",
+                    "timestamp": "2026-08-05 10:47:17 IST"
+                },
+                {
+                    "question_id": 532,
+                    "question_text": "How can you quickly save a document in MS Word?",
+                    "status": "WRONG",
+                    "selected_option": 2,
+                    "correct_option": 1,
+                    "correct_answer_text": "Press Ctrl + S",
+                    "timestamp": "2026-08-05 10:47:29 IST"
+                },
+                {
+                    "question_id": 52,
+                    "question_text": "What is the function of Win Keys + Pause break?",
+                    "status": "CORRECT",
+                    "selected_option": 0,
+                    "correct_option": 0,
+                    "correct_answer_text": "To open System Configuration / System Properties",
+                    "timestamp": "2026-08-05 10:47:39 IST"
+                },
+                {
+                    "question_id": 453,
+                    "question_text": "What is the function of Shift+F2?",
+                    "status": "WRONG",
+                    "selected_option": 2,
+                    "correct_option": 1,
+                    "correct_answer_text": "Add or edit a cell note",
+                    "timestamp": "2026-08-05 10:47:48 IST"
+                },
+                {
+                    "question_id": 384,
+                    "question_text": "When was Microsoft 365 first made available?",
+                    "status": "WRONG",
+                    "selected_option": 2,
+                    "correct_option": 1,
+                    "correct_answer_text": "2011",
+                    "timestamp": "2026-08-05 10:47:56 IST"
+                },
+                {
+                    "question_id": 522,
+                    "question_text": "Which Excel feature allows you to simultaneously edit the same cell or range of cells with multiple users in real-time?",
+                    "status": "WRONG",
+                    "selected_option": 3,
+                    "correct_option": 0,
+                    "correct_answer_text": "Co-authoring",
+                    "timestamp": "2026-08-05 10:48:08 IST"
+                },
+                {
+                    "question_id": 439,
+                    "question_text": "How to move to the previous sheet in a workbook?",
+                    "status": "CORRECT",
+                    "selected_option": 0,
+                    "correct_option": 0,
+                    "correct_answer_text": "Ctrl+Page up",
+                    "timestamp": "2026-08-05 10:48:19 IST"
+                },
+                {
+                    "question_id": 200,
+                    "question_text": "What is the effect of using the keyboard shortcut Ctrl + Tab on multiple open workbooks?",
+                    "status": "CORRECT",
+                    "selected_option": 1,
+                    "correct_option": 1,
+                    "correct_answer_text": "Moves to the next open workbook or window",
+                    "timestamp": "2026-08-05 10:48:33 IST"
+                },
+                {
+                    "question_id": 163,
+                    "question_text": "What is the function of Tab in the active cell?",
+                    "status": "CORRECT",
+                    "selected_option": 0,
+                    "correct_option": 0,
+                    "correct_answer_text": "Enters the contents of the active cell and moves one cell to the right",
+                    "timestamp": "2026-08-05 10:48:45 IST"
+                },
+                {
+                    "question_id": 134,
+                    "question_text": "What is the function of Ctrl + F3?",
+                    "status": "WRONG",
+                    "selected_option": 3,
+                    "correct_option": 0,
+                    "correct_answer_text": "Displays the Name Manager dialog box",
+                    "timestamp": "2026-08-05 10:48:56 IST"
+                },
+                {
+                    "question_id": 81,
+                    "question_text": "Which of the following groups is in the 'Insert' tab in MS-EXCEL?",
+                    "status": "WRONG",
+                    "selected_option": 1,
+                    "correct_option": 0,
+                    "correct_answer_text": "Illustrations",
+                    "timestamp": "2026-08-05 10:49:08 IST"
+                },
+                {
+                    "question_id": 167,
+                    "question_text": "What is the function of Ctrl + Y in the active workbook?",
+                    "status": "CORRECT",
+                    "selected_option": 0,
+                    "correct_option": 0,
+                    "correct_answer_text": "Repeats the last workbook action",
+                    "timestamp": "2026-08-05 10:49:21 IST"
+                },
+                {
+                    "question_id": 423,
+                    "question_text": "How do you close the current document in Word?",
+                    "status": "WRONG",
+                    "selected_option": 1,
+                    "correct_option": 0,
+                    "correct_answer_text": "Press Ctrl+F4",
+                    "timestamp": "2026-08-05 10:49:35 IST"
+                },
+                {
+                    "question_id": 543,
+                    "question_text": "What type of computer security requires verifying the genuineness of the individuals or organisations that want to access a system?",
+                    "status": "CORRECT",
+                    "selected_option": 0,
+                    "correct_option": 0,
+                    "correct_answer_text": "Authentication",
+                    "timestamp": "2026-08-05 10:49:43 IST"
+                },
+                {
+                    "question_id": 533,
+                    "question_text": "What is the difference between a range of cells and a group of cells in MS Excel?",
+                    "status": "CORRECT",
+                    "selected_option": 1,
+                    "correct_option": 1,
+                    "correct_answer_text": "A range of cells refers to multiple cells, while a group of cells refers to a single cell",
+                    "timestamp": "2026-08-05 10:49:54 IST"
+                },
+                {
+                    "question_id": 516,
+                    "question_text": "What option allows you to quickly remove all formatting from selected text while retaining the underlying text content in MS Word?",
+                    "status": "CORRECT",
+                    "selected_option": 0,
+                    "correct_option": 0,
+                    "correct_answer_text": "Clear Formatting",
+                    "timestamp": "2026-08-05 10:50:03 IST"
+                },
+                {
+                    "question_id": 429,
+                    "question_text": "How to enter the End mode and move to the next nonblank cell?",
+                    "status": "WRONG",
+                    "selected_option": 2,
+                    "correct_option": 0,
+                    "correct_answer_text": "End, Arrow key",
+                    "timestamp": "2026-08-05 10:50:14 IST"
+                },
+                {
+                    "question_id": 508,
+                    "question_text": "What type of chart is best suited for comparing proportions or percentages of a whole in Microsoft Excel?",
+                    "status": "CORRECT",
+                    "selected_option": 2,
+                    "correct_option": 2,
+                    "correct_answer_text": "Pie chart",
+                    "timestamp": "2026-08-05 10:50:22 IST"
+                }
+            ]
+        }
+    ],
+    "last_synced": "2026-08-05 15:25:41 IST"
+}

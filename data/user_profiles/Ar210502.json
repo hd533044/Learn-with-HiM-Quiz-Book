@@ -1,0 +1,273 @@
+{
+    "student_id": "Ar210502",
+    "registration_info": {
+        "user_id": 1079668053,
+        "student_id": "Ar210502",
+        "full_name": "Arjun",
+        "username": "arjunsinghrajputana7773",
+        "phone_number": "918209484510",
+        "target_exam": "CAPF HCM",
+        "dob": "21-05-2002",
+        "age": 24,
+        "gender": "Male",
+        "country": "India",
+        "state": "Rajasthan",
+        "pin": "7773",
+        "security_question": "🐾 What is your pet's name?",
+        "security_answer": "Tayu",
+        "referred_by": null,
+        "referral_count": 0,
+        "bonus_quota": 0,
+        "last_profile_edit": "2026-08-05 10:45:37 IST",
+        "last_active": "2026-08-05 10:49:00 IST",
+        "last_activity_epoch": 1785907140,
+        "is_banned": 0,
+        "is_verified": 1,
+        "created_at": "2026-08-05 10:45:37 IST"
+    },
+    "bot_engagement_metrics": {
+        "last_login_timestamp": "2026-08-05 10:49:00 IST",
+        "total_time_spent_overall": "355 seconds (5.92 mins)",
+        "daily_spent_time_breakdown": {
+            "2026-08-05": "355 seconds (5.92 mins)"
+        },
+        "questions_attempted_per_day": {
+            "2026-08-05": 20
+        }
+    },
+    "academic_summary": {
+        "total_quizzes_attempted": 1,
+        "total_questions_attempted": 20,
+        "total_correct": 10,
+        "total_wrong": 10,
+        "total_skipped": 0,
+        "datewise_quiz_summary": {
+            "2026-08-05": {
+                "total_quizzes": 1,
+                "total_questions": 20,
+                "total_correct": 10,
+                "total_wrong": 10,
+                "total_score": 10.0,
+                "total_time_seconds": 0
+            }
+        }
+    },
+    "saved_questions_ledger": {
+        "total_saved": 0,
+        "datewise_saved_summary": {},
+        "saved_questions": []
+    },
+    "student_reviews_given": [],
+    "subscription_ledger": {
+        "status": "FREE_TIER",
+        "active_plan": "Standard Free Tier",
+        "total_amount_paid": 0.0,
+        "payment_history": []
+    },
+    "badges_and_achievements": {
+        "earned_badges": [
+            "Early Learner",
+            "Registered Scholar"
+        ],
+        "streak_days": 1
+    },
+    "full_quiz_history": [
+        {
+            "id": 3,
+            "user_id": 1079668053,
+            "quiz_id": "computer_awareness_mock",
+            "questions_attempted": 20,
+            "total_questions": 20,
+            "correct_answers": 10,
+            "wrong_answers": 10,
+            "skipped_count": 0,
+            "score": 10.0,
+            "time_taken": 0,
+            "attempt_timestamp": "2026-08-05 10:48:41 IST",
+            "attempt_date": "2026-08-05",
+            "question_details": [
+                {
+                    "question_id": 372,
+                    "question_text": "What is the teraflop capacity of the Param Yuva II supercomputer?",
+                    "status": "CORRECT",
+                    "selected_option": 2,
+                    "correct_option": 2,
+                    "correct_answer_text": "529 teraflop",
+                    "timestamp": "2026-08-05 10:45:59 IST"
+                },
+                {
+                    "question_id": 503,
+                    "question_text": "What is the role of the Chairman and CEO of IBM in the company?",
+                    "status": "WRONG",
+                    "selected_option": 3,
+                    "correct_option": 0,
+                    "correct_answer_text": "To oversee the overall strategy and direction of the company",
+                    "timestamp": "2026-08-05 10:46:12 IST"
+                },
+                {
+                    "question_id": 266,
+                    "question_text": "What is the difference between ethical and non-ethical hacking in terms of legality?",
+                    "status": "WRONG",
+                    "selected_option": 2,
+                    "correct_option": 1,
+                    "correct_answer_text": "Ethical hacking is legal, while non-ethical hacking is illegal",
+                    "timestamp": "2026-08-05 10:46:20 IST"
+                },
+                {
+                    "question_id": 116,
+                    "question_text": "What is the shortcut to move to the previous cell in a row of the table?",
+                    "status": "CORRECT",
+                    "selected_option": 1,
+                    "correct_option": 1,
+                    "correct_answer_text": "Shift + Tab",
+                    "timestamp": "2026-08-05 10:46:28 IST"
+                },
+                {
+                    "question_id": 516,
+                    "question_text": "What option allows you to quickly remove all formatting from selected text while retaining the underlying text content in MS Word?",
+                    "status": "CORRECT",
+                    "selected_option": 0,
+                    "correct_option": 0,
+                    "correct_answer_text": "Clear Formatting",
+                    "timestamp": "2026-08-05 10:46:34 IST"
+                },
+                {
+                    "question_id": 73,
+                    "question_text": "Which of the following functions is used to convert text to lower case in MS-EXCEL?",
+                    "status": "CORRECT",
+                    "selected_option": 1,
+                    "correct_option": 1,
+                    "correct_answer_text": "LOWER",
+                    "timestamp": "2026-08-05 10:46:41 IST"
+                },
+                {
+                    "question_id": 432,
+                    "question_text": "What is the function of Home+Scroll lock?",
+                    "status": "WRONG",
+                    "selected_option": 2,
+                    "correct_option": 0,
+                    "correct_answer_text": "Move to the cell in the upper-left corner of the window",
+                    "timestamp": "2026-08-05 10:46:56 IST"
+                },
+                {
+                    "question_id": 227,
+                    "question_text": "What is the term for a network of networks connected globally?",
+                    "status": "CORRECT",
+                    "selected_option": 1,
+                    "correct_option": 1,
+                    "correct_answer_text": "Internet",
+                    "timestamp": "2026-08-05 10:47:05 IST"
+                },
+                {
+                    "question_id": 122,
+                    "question_text": "What is the function of Ctrl + F6?",
+                    "status": "WRONG",
+                    "selected_option": 2,
+                    "correct_option": 1,
+                    "correct_answer_text": "Moves to the next open workbook or window",
+                    "timestamp": "2026-08-05 10:47:10 IST"
+                },
+                {
+                    "question_id": 216,
+                    "question_text": "What does IMPS stand for?",
+                    "status": "WRONG",
+                    "selected_option": 2,
+                    "correct_option": 1,
+                    "correct_answer_text": "Immediate Payment Service",
+                    "timestamp": "2026-08-05 10:47:19 IST"
+                },
+                {
+                    "question_id": 429,
+                    "question_text": "How to enter the End mode and move to the next nonblank cell?",
+                    "status": "WRONG",
+                    "selected_option": 2,
+                    "correct_option": 0,
+                    "correct_answer_text": "End, Arrow key",
+                    "timestamp": "2026-08-05 10:47:27 IST"
+                },
+                {
+                    "question_id": 143,
+                    "question_text": "What is the function of Ctrl + F12?",
+                    "status": "WRONG",
+                    "selected_option": 1,
+                    "correct_option": 0,
+                    "correct_answer_text": "Displays the Open dialog box",
+                    "timestamp": "2026-08-05 10:47:35 IST"
+                },
+                {
+                    "question_id": 178,
+                    "question_text": "What is the effect of using the keyboard shortcut Alt + Tab on the computer?",
+                    "status": "WRONG",
+                    "selected_option": 2,
+                    "correct_option": 3,
+                    "correct_answer_text": "Moves to the next application open on your computer",
+                    "timestamp": "2026-08-05 10:47:41 IST"
+                },
+                {
+                    "question_id": 398,
+                    "question_text": "What is the name of the email client in Microsoft 365?",
+                    "status": "CORRECT",
+                    "selected_option": 2,
+                    "correct_option": 2,
+                    "correct_answer_text": "Microsoft Outlook",
+                    "timestamp": "2026-08-05 10:47:46 IST"
+                },
+                {
+                    "question_id": 128,
+                    "question_text": "What is the function of Alt + F8?",
+                    "status": "CORRECT",
+                    "selected_option": 0,
+                    "correct_option": 0,
+                    "correct_answer_text": "Displays the Macro dialog box",
+                    "timestamp": "2026-08-05 10:47:54 IST"
+                },
+                {
+                    "question_id": 291,
+                    "question_text": "What is the primary function of a Router?",
+                    "status": "WRONG",
+                    "selected_option": 3,
+                    "correct_option": 1,
+                    "correct_answer_text": "To connect multiple devices",
+                    "timestamp": "2026-08-05 10:48:00 IST"
+                },
+                {
+                    "question_id": 526,
+                    "question_text": "How can you protect a worksheet in MS Excel from unauthorized changes?",
+                    "status": "CORRECT",
+                    "selected_option": 1,
+                    "correct_option": 1,
+                    "correct_answer_text": "Password-protect the worksheet",
+                    "timestamp": "2026-08-05 10:48:10 IST"
+                },
+                {
+                    "question_id": 387,
+                    "question_text": "What are the two editions of Microsoft 365 available for personal use?",
+                    "status": "WRONG",
+                    "selected_option": 1,
+                    "correct_option": 2,
+                    "correct_answer_text": "Family and Personal",
+                    "timestamp": "2026-08-05 10:48:17 IST"
+                },
+                {
+                    "question_id": 57,
+                    "question_text": "What is the purpose of Alt + Tab in a Windows system?",
+                    "status": "CORRECT",
+                    "selected_option": 0,
+                    "correct_option": 0,
+                    "correct_answer_text": "To show the screen",
+                    "timestamp": "2026-08-05 10:48:34 IST"
+                },
+                {
+                    "question_id": 8,
+                    "question_text": "How many pins are available in a Parallel Port?",
+                    "status": "CORRECT",
+                    "selected_option": 1,
+                    "correct_option": 1,
+                    "correct_answer_text": "25 pin",
+                    "timestamp": "2026-08-05 10:48:41 IST"
+                }
+            ]
+        }
+    ],
+    "last_synced": "2026-08-05 15:25:41 IST"
+}

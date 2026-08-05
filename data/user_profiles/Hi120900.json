@@ -1,0 +1,228 @@
+{
+    "student_id": "Hi120900",
+    "registration_info": {
+        "user_id": 1091057353,
+        "student_id": "Hi120900",
+        "full_name": "Himanshu",
+        "username": "iamhimnshu",
+        "phone_number": "917073923272",
+        "target_exam": "SSC CGL",
+        "dob": "12-09-2000",
+        "age": 26,
+        "gender": "Male",
+        "country": "India",
+        "state": "Delhi",
+        "pin": "5330",
+        "security_question": "🏙 Which is your favorite city?",
+        "security_answer": "Delhi",
+        "referred_by": null,
+        "referral_count": 0,
+        "bonus_quota": 0,
+        "last_profile_edit": "2026-08-05 08:52:33 IST",
+        "last_active": "2026-08-05 08:55:47 IST",
+        "last_activity_epoch": 1785900347,
+        "is_banned": 0,
+        "is_verified": 1,
+        "created_at": "2026-08-05 08:52:33 IST"
+    },
+    "bot_engagement_metrics": {
+        "last_login_timestamp": "2026-08-05 08:55:47 IST",
+        "total_time_spent_overall": "285 seconds (4.75 mins)",
+        "daily_spent_time_breakdown": {
+            "2026-08-05": "285 seconds (4.75 mins)"
+        },
+        "questions_attempted_per_day": {
+            "2026-08-05": 10
+        }
+    },
+    "academic_summary": {
+        "total_quizzes_attempted": 1,
+        "total_questions_attempted": 10,
+        "total_correct": 1,
+        "total_wrong": 8,
+        "total_skipped": 1,
+        "datewise_quiz_summary": {
+            "2026-08-05": {
+                "total_quizzes": 1,
+                "total_questions": 10,
+                "total_correct": 1,
+                "total_wrong": 8,
+                "total_score": 1.0,
+                "total_time_seconds": 0
+            }
+        }
+    },
+    "saved_questions_ledger": {
+        "total_saved": 3,
+        "datewise_saved_summary": {
+            "2026-08-05": 3
+        },
+        "saved_questions": [
+            {
+                "id": 3,
+                "user_id": 1091057353,
+                "question_text": "What is the name of the company founded by Vinod Khosla?",
+                "correct_option": 0,
+                "explanation": "Sun Microsystems was founded by Vinod Khosla.",
+                "saved_at": "2026-08-05 08:55:37 IST",
+                "options": [
+                    "Sun Microsystems",
+                    "Apple Inc.",
+                    "Google",
+                    "Microsoft"
+                ]
+            },
+            {
+                "id": 2,
+                "user_id": 1091057353,
+                "question_text": "What is the role of the Chairman and CEO of IBM?",
+                "correct_option": 0,
+                "explanation": "The Chairman and CEO of IBM oversees the overall strategy and direction of the company.",
+                "saved_at": "2026-08-05 08:55:32 IST",
+                "options": [
+                    "To oversee the overall strategy and direction of the company",
+                    "To manage the company's financial operations",
+                    "To develop new software applications",
+                    "To manage the company's marketing efforts"
+                ]
+            },
+            {
+                "id": 1,
+                "user_id": 1091057353,
+                "question_text": "What is the definition of ransomware?",
+                "correct_option": 0,
+                "explanation": "Ransomware is a type of malware that blocks access to a computer system until a sum of money is paid.",
+                "saved_at": "2026-08-05 08:55:06 IST",
+                "options": [
+                    "A type of malware that blocks access to a computer system until a sum of money is paid",
+                    "A piece of code that implements a malicious function after certain conditions are met",
+                    "A type of software that protects against hacking",
+                    "A type of social engineering"
+                ]
+            }
+        ]
+    },
+    "student_reviews_given": [],
+    "subscription_ledger": {
+        "status": "FREE_TIER",
+        "active_plan": "Standard Free Tier",
+        "total_amount_paid": 0.0,
+        "payment_history": []
+    },
+    "badges_and_achievements": {
+        "earned_badges": [
+            "Early Learner",
+            "Registered Scholar"
+        ],
+        "streak_days": 1
+    },
+    "full_quiz_history": [
+        {
+            "id": 1,
+            "user_id": 1091057353,
+            "quiz_id": "computer_awareness_mock",
+            "questions_attempted": 10,
+            "total_questions": 10,
+            "correct_answers": 1,
+            "wrong_answers": 8,
+            "skipped_count": 1,
+            "score": 1.0,
+            "time_taken": 0,
+            "attempt_timestamp": "2026-08-05 08:55:43 IST",
+            "attempt_date": "2026-08-05",
+            "question_details": [
+                {
+                    "question_id": 417,
+                    "question_text": "What happens when you press Alt+F5 in Word?",
+                    "status": "WRONG",
+                    "selected_option": 1,
+                    "correct_option": 0,
+                    "correct_answer_text": "Restores the document window size",
+                    "timestamp": "2026-08-05 08:55:05 IST"
+                },
+                {
+                    "question_id": 269,
+                    "question_text": "What is the definition of ransomware?",
+                    "status": "WRONG",
+                    "selected_option": 1,
+                    "correct_option": 0,
+                    "correct_answer_text": "A type of malware that blocks access to a computer system until a sum of money is paid",
+                    "timestamp": "2026-08-05 08:55:08 IST"
+                },
+                {
+                    "question_id": 555,
+                    "question_text": "What is the purpose of the Step by Step Mail Merge Wizard in Microsoft Word?",
+                    "status": "WRONG",
+                    "selected_option": 1,
+                    "correct_option": 2,
+                    "correct_answer_text": "To merge data from a database into a document",
+                    "timestamp": "2026-08-05 08:55:11 IST"
+                },
+                {
+                    "question_id": 261,
+                    "question_text": "What is the definition of hacking in computer networking?",
+                    "status": "SKIPPED_TIMEOUT",
+                    "selected_option": null,
+                    "correct_option": 0,
+                    "correct_answer_text": "Any technical effort to manipulate the normal behavior of network connections and connected systems",
+                    "timestamp": "2026-08-05 08:55:25 IST"
+                },
+                {
+                    "question_id": 268,
+                    "question_text": "What is the difference between a white hat hacker and a cracker?",
+                    "status": "WRONG",
+                    "selected_option": 3,
+                    "correct_option": 0,
+                    "correct_answer_text": "A white hat hacker uses their knowledge for good, while a cracker uses their knowledge for bad",
+                    "timestamp": "2026-08-05 08:55:30 IST"
+                },
+                {
+                    "question_id": 496,
+                    "question_text": "What is the role of the Chairman and CEO of IBM?",
+                    "status": "WRONG",
+                    "selected_option": 3,
+                    "correct_option": 0,
+                    "correct_answer_text": "To oversee the overall strategy and direction of the company",
+                    "timestamp": "2026-08-05 08:55:33 IST"
+                },
+                {
+                    "question_id": 134,
+                    "question_text": "What is the function of Ctrl + F3?",
+                    "status": "WRONG",
+                    "selected_option": 3,
+                    "correct_option": 0,
+                    "correct_answer_text": "Displays the Name Manager dialog box",
+                    "timestamp": "2026-08-05 08:55:35 IST"
+                },
+                {
+                    "question_id": 367,
+                    "question_text": "What is the name of the company founded by Vinod Khosla?",
+                    "status": "WRONG",
+                    "selected_option": 2,
+                    "correct_option": 0,
+                    "correct_answer_text": "Sun Microsystems",
+                    "timestamp": "2026-08-05 08:55:38 IST"
+                },
+                {
+                    "question_id": 213,
+                    "question_text": "Which browser was the first to display images inline with text instead of displaying images in a separate window?",
+                    "status": "CORRECT",
+                    "selected_option": 2,
+                    "correct_option": 2,
+                    "correct_answer_text": "Mosaic",
+                    "timestamp": "2026-08-05 08:55:40 IST"
+                },
+                {
+                    "question_id": 134,
+                    "question_text": "What is the function of Ctrl + F3?",
+                    "status": "WRONG",
+                    "selected_option": 3,
+                    "correct_option": 0,
+                    "correct_answer_text": "Displays the Name Manager dialog box",
+                    "timestamp": "2026-08-05 08:55:42 IST"
+                }
+            ]
+        }
+    ],
+    "last_synced": "2026-08-05 15:25:41 IST"
+}

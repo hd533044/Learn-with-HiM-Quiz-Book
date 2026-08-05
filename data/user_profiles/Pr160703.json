@@ -1,0 +1,289 @@
+{
+    "student_id": "Pr160703",
+    "registration_info": {
+        "user_id": 991646206,
+        "student_id": "Pr160703",
+        "full_name": "Pranay Samarth",
+        "username": "Pranaysamarth",
+        "phone_number": "919527686452",
+        "target_exam": "BSF HCM",
+        "dob": "16-07-2003",
+        "age": 23,
+        "gender": "Male",
+        "country": "India",
+        "state": "Maharashtra",
+        "pin": "9527",
+        "security_question": "🏙 Which is your favorite city?",
+        "security_answer": "Mumbai",
+        "referred_by": null,
+        "referral_count": 0,
+        "bonus_quota": 0,
+        "last_profile_edit": "2026-08-05 12:41:38 IST",
+        "last_active": "2026-08-05 12:46:21 IST",
+        "last_activity_epoch": 1785914181,
+        "is_banned": 0,
+        "is_verified": 1,
+        "created_at": "2026-08-05 12:41:38 IST"
+    },
+    "bot_engagement_metrics": {
+        "last_login_timestamp": "2026-08-05 12:46:21 IST",
+        "total_time_spent_overall": "445 seconds (7.42 mins)",
+        "daily_spent_time_breakdown": {
+            "2026-08-05": "445 seconds (7.42 mins)"
+        },
+        "questions_attempted_per_day": {
+            "2026-08-05": 20
+        }
+    },
+    "academic_summary": {
+        "total_quizzes_attempted": 2,
+        "total_questions_attempted": 20,
+        "total_correct": 12,
+        "total_wrong": 8,
+        "total_skipped": 0,
+        "datewise_quiz_summary": {
+            "2026-08-05": {
+                "total_quizzes": 2,
+                "total_questions": 20,
+                "total_correct": 12,
+                "total_wrong": 8,
+                "total_score": 12.0,
+                "total_time_seconds": 0
+            }
+        }
+    },
+    "saved_questions_ledger": {
+        "total_saved": 0,
+        "datewise_saved_summary": {},
+        "saved_questions": []
+    },
+    "student_reviews_given": [],
+    "subscription_ledger": {
+        "status": "FREE_TIER",
+        "active_plan": "Standard Free Tier",
+        "total_amount_paid": 0.0,
+        "payment_history": []
+    },
+    "badges_and_achievements": {
+        "earned_badges": [
+            "Early Learner",
+            "Registered Scholar"
+        ],
+        "streak_days": 1
+    },
+    "full_quiz_history": [
+        {
+            "id": 21,
+            "user_id": 991646206,
+            "quiz_id": "computer_awareness_mock",
+            "questions_attempted": 10,
+            "total_questions": 10,
+            "correct_answers": 6,
+            "wrong_answers": 4,
+            "skipped_count": 0,
+            "score": 6.0,
+            "time_taken": 0,
+            "attempt_timestamp": "2026-08-05 12:46:21 IST",
+            "attempt_date": "2026-08-05",
+            "question_details": [
+                {
+                    "question_id": 560,
+                    "question_text": "How can you insert a blank row at the top of a worksheet in Excel?",
+                    "status": "CORRECT",
+                    "selected_option": 0,
+                    "correct_option": 0,
+                    "correct_answer_text": "Drag the mouse on the row border to select the row and click Insert in the Cells group on the Home tab",
+                    "timestamp": "2026-08-05 12:44:49 IST"
+                },
+                {
+                    "question_id": 466,
+                    "question_text": "What is the purpose of Ctrl+F5?",
+                    "status": "CORRECT",
+                    "selected_option": 0,
+                    "correct_option": 0,
+                    "correct_answer_text": "Restores the window size of the selected workbook window",
+                    "timestamp": "2026-08-05 12:44:57 IST"
+                },
+                {
+                    "question_id": 399,
+                    "question_text": "What is the purpose of the disk rearrangement programme in Microsoft Windows?",
+                    "status": "WRONG",
+                    "selected_option": 3,
+                    "correct_option": 0,
+                    "correct_answer_text": "To increase data access speed by rearranging files",
+                    "timestamp": "2026-08-05 12:45:06 IST"
+                },
+                {
+                    "question_id": 409,
+                    "question_text": "What happens when you press Ctrl+Shift+F5 in Word?",
+                    "status": "CORRECT",
+                    "selected_option": 0,
+                    "correct_option": 0,
+                    "correct_answer_text": "Displays the Bookmark dialog box",
+                    "timestamp": "2026-08-05 12:45:19 IST"
+                },
+                {
+                    "question_id": 360,
+                    "question_text": "In what year was the Param Bio-blaze launched?",
+                    "status": "WRONG",
+                    "selected_option": 0,
+                    "correct_option": 2,
+                    "correct_answer_text": "2014",
+                    "timestamp": "2026-08-05 12:45:28 IST"
+                },
+                {
+                    "question_id": 125,
+                    "question_text": "What is the function of Alt + Shift + F2?",
+                    "status": "CORRECT",
+                    "selected_option": 0,
+                    "correct_option": 0,
+                    "correct_answer_text": "Displays the Save As dialog box",
+                    "timestamp": "2026-08-05 12:45:33 IST"
+                },
+                {
+                    "question_id": 246,
+                    "question_text": "How does a router repackage data packets?",
+                    "status": "CORRECT",
+                    "selected_option": 0,
+                    "correct_option": 0,
+                    "correct_answer_text": "It reduces the size of the packets",
+                    "timestamp": "2026-08-05 12:45:44 IST"
+                },
+                {
+                    "question_id": 365,
+                    "question_text": "Who invented HTML?",
+                    "status": "CORRECT",
+                    "selected_option": 0,
+                    "correct_option": 0,
+                    "correct_answer_text": "Tim Berners Lee",
+                    "timestamp": "2026-08-05 12:46:00 IST"
+                },
+                {
+                    "question_id": 105,
+                    "question_text": "What is the shortcut to open the Delete dialog box to delete selected cells?",
+                    "status": "WRONG",
+                    "selected_option": 3,
+                    "correct_option": 1,
+                    "correct_answer_text": "Ctrl + -",
+                    "timestamp": "2026-08-05 12:46:11 IST"
+                },
+                {
+                    "question_id": 283,
+                    "question_text": "Which of the following is a characteristic of a Switch?",
+                    "status": "WRONG",
+                    "selected_option": 0,
+                    "correct_option": 1,
+                    "correct_answer_text": "It filters network traffic",
+                    "timestamp": "2026-08-05 12:46:21 IST"
+                }
+            ]
+        },
+        {
+            "id": 20,
+            "user_id": 991646206,
+            "quiz_id": "computer_awareness_mock",
+            "questions_attempted": 10,
+            "total_questions": 10,
+            "correct_answers": 6,
+            "wrong_answers": 4,
+            "skipped_count": 0,
+            "score": 6.0,
+            "time_taken": 0,
+            "attempt_timestamp": "2026-08-05 12:43:28 IST",
+            "attempt_date": "2026-08-05",
+            "question_details": [
+                {
+                    "question_id": 446,
+                    "question_text": "What is the shortcut to set zoom magnification?",
+                    "status": "WRONG",
+                    "selected_option": 2,
+                    "correct_option": 1,
+                    "correct_answer_text": "Alt+W",
+                    "timestamp": "2026-08-05 12:42:16 IST"
+                },
+                {
+                    "question_id": 541,
+                    "question_text": "What is the fastest way to open the Help window in Microsoft Word?",
+                    "status": "CORRECT",
+                    "selected_option": 2,
+                    "correct_option": 2,
+                    "correct_answer_text": "Press F1",
+                    "timestamp": "2026-08-05 12:42:22 IST"
+                },
+                {
+                    "question_id": 434,
+                    "question_text": "What is the shortcut to move one screen down in a worksheet?",
+                    "status": "CORRECT",
+                    "selected_option": 0,
+                    "correct_option": 0,
+                    "correct_answer_text": "Page down",
+                    "timestamp": "2026-08-05 12:42:29 IST"
+                },
+                {
+                    "question_id": 106,
+                    "question_text": "What is the shortcut to open the Format Cells dialog box?",
+                    "status": "CORRECT",
+                    "selected_option": 1,
+                    "correct_option": 1,
+                    "correct_answer_text": "Ctrl + Shift + F",
+                    "timestamp": "2026-08-05 12:42:38 IST"
+                },
+                {
+                    "question_id": 150,
+                    "question_text": "Which shortcut key is used to enter the current date into the active cell?",
+                    "status": "WRONG",
+                    "selected_option": 1,
+                    "correct_option": 0,
+                    "correct_answer_text": "Ctrl + ;",
+                    "timestamp": "2026-08-05 12:42:46 IST"
+                },
+                {
+                    "question_id": 383,
+                    "question_text": "What is the primary purpose of the disk rearrangement programme in Microsoft Windows?",
+                    "status": "WRONG",
+                    "selected_option": 2,
+                    "correct_option": 0,
+                    "correct_answer_text": "To increase data access speed",
+                    "timestamp": "2026-08-05 12:42:57 IST"
+                },
+                {
+                    "question_id": 506,
+                    "question_text": "What is the primary function of a public key in digital signature verification?",
+                    "status": "WRONG",
+                    "selected_option": 3,
+                    "correct_option": 1,
+                    "correct_answer_text": "To decrypt the digital signature",
+                    "timestamp": "2026-08-05 12:43:06 IST"
+                },
+                {
+                    "question_id": 436,
+                    "question_text": "What is the function of Alt+Page down?",
+                    "status": "CORRECT",
+                    "selected_option": 0,
+                    "correct_option": 0,
+                    "correct_answer_text": "Move one screen to the right in a worksheet",
+                    "timestamp": "2026-08-05 12:43:12 IST"
+                },
+                {
+                    "question_id": 221,
+                    "question_text": "What is the purpose of the Rendering Engine in a web browser?",
+                    "status": "CORRECT",
+                    "selected_option": 0,
+                    "correct_option": 0,
+                    "correct_answer_text": "To display web pages",
+                    "timestamp": "2026-08-05 12:43:20 IST"
+                },
+                {
+                    "question_id": 516,
+                    "question_text": "What option allows you to quickly remove all formatting from selected text while retaining the underlying text content in MS Word?",
+                    "status": "CORRECT",
+                    "selected_option": 0,
+                    "correct_option": 0,
+                    "correct_answer_text": "Clear Formatting",
+                    "timestamp": "2026-08-05 12:43:28 IST"
+                }
+            ]
+        }
+    ],
+    "last_synced": "2026-08-05 15:25:41 IST"
+}

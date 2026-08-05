@@ -1,0 +1,281 @@
+{
+    "student_id": "Me140105",
+    "registration_info": {
+        "user_id": 5749704601,
+        "student_id": "Me140105",
+        "full_name": "Mehak sharma",
+        "username": "mehaksha_2005",
+        "phone_number": "917834865839",
+        "target_exam": "BSF HCM",
+        "dob": "14-01-2005",
+        "age": 21,
+        "gender": "Female",
+        "country": "India",
+        "state": "Delhi",
+        "pin": "4321",
+        "security_question": "🐾 What is your pet's name?",
+        "security_answer": "sam",
+        "referred_by": null,
+        "referral_count": 0,
+        "bonus_quota": 0,
+        "last_profile_edit": "2026-08-05 15:16:19 IST",
+        "last_active": "2026-08-05 15:21:52 IST",
+        "last_activity_epoch": 1785923512,
+        "is_banned": 0,
+        "is_verified": 1,
+        "created_at": "2026-08-05 15:16:19 IST"
+    },
+    "bot_engagement_metrics": {
+        "last_login_timestamp": "2026-08-05 15:21:52 IST",
+        "total_time_spent_overall": "350 seconds (5.83 mins)",
+        "daily_spent_time_breakdown": {
+            "2026-08-05": "350 seconds (5.83 mins)"
+        },
+        "questions_attempted_per_day": {
+            "2026-08-05": 20
+        }
+    },
+    "academic_summary": {
+        "total_quizzes_attempted": 1,
+        "total_questions_attempted": 20,
+        "total_correct": 13,
+        "total_wrong": 6,
+        "total_skipped": 1,
+        "datewise_quiz_summary": {
+            "2026-08-05": {
+                "total_quizzes": 1,
+                "total_questions": 20,
+                "total_correct": 13,
+                "total_wrong": 6,
+                "total_score": 13.0,
+                "total_time_seconds": 0
+            }
+        }
+    },
+    "saved_questions_ledger": {
+        "total_saved": 0,
+        "datewise_saved_summary": {},
+        "saved_questions": []
+    },
+    "student_reviews_given": [
+        {
+            "id": 2,
+            "user_id": 5749704601,
+            "full_name": "Mehak sharma",
+            "feedback_text": "10/10 Quality Quizzes!",
+            "submitted_at": "2026-08-05 15:21:52 IST"
+        }
+    ],
+    "subscription_ledger": {
+        "status": "FREE_TIER",
+        "active_plan": "Standard Free Tier",
+        "total_amount_paid": 0.0,
+        "payment_history": []
+    },
+    "badges_and_achievements": {
+        "earned_badges": [
+            "Early Learner",
+            "Registered Scholar"
+        ],
+        "streak_days": 1
+    },
+    "full_quiz_history": [
+        {
+            "id": 29,
+            "user_id": 5749704601,
+            "quiz_id": "computer_awareness_mock",
+            "questions_attempted": 20,
+            "total_questions": 20,
+            "correct_answers": 13,
+            "wrong_answers": 6,
+            "skipped_count": 1,
+            "score": 13.0,
+            "time_taken": 0,
+            "attempt_timestamp": "2026-08-05 15:20:50 IST",
+            "attempt_date": "2026-08-05",
+            "question_details": [
+                {
+                    "question_id": 552,
+                    "question_text": "What is the keyboard shortcut for opening a blank new document in MS-Word?",
+                    "status": "CORRECT",
+                    "selected_option": 1,
+                    "correct_option": 1,
+                    "correct_answer_text": "Ctrl + N",
+                    "timestamp": "2026-08-05 15:16:36 IST"
+                },
+                {
+                    "question_id": 278,
+                    "question_text": "What type of device provides centralized disk storage through a standard Ethernet connection?",
+                    "status": "WRONG",
+                    "selected_option": 1,
+                    "correct_option": 0,
+                    "correct_answer_text": "Network Attached Storage (NAS)",
+                    "timestamp": "2026-08-05 15:16:56 IST"
+                },
+                {
+                    "question_id": 211,
+                    "question_text": "What do you use in Gmail when you want to send a mail in response to the original mail and to the original sender only?",
+                    "status": "CORRECT",
+                    "selected_option": 2,
+                    "correct_option": 2,
+                    "correct_answer_text": "Reply",
+                    "timestamp": "2026-08-05 15:17:06 IST"
+                },
+                {
+                    "question_id": 436,
+                    "question_text": "What is the function of Alt+Page down?",
+                    "status": "CORRECT",
+                    "selected_option": 0,
+                    "correct_option": 0,
+                    "correct_answer_text": "Move one screen to the right in a worksheet",
+                    "timestamp": "2026-08-05 15:17:25 IST"
+                },
+                {
+                    "question_id": 202,
+                    "question_text": "What is the effect of using the keyboard shortcut End + Home on a worksheet to move to a specific cell?",
+                    "status": "WRONG",
+                    "selected_option": 2,
+                    "correct_option": 3,
+                    "correct_answer_text": "Moves to the last used cell on the active worksheet",
+                    "timestamp": "2026-08-05 15:17:53 IST"
+                },
+                {
+                    "question_id": 31,
+                    "question_text": "Which of the following ports supports multiple data streams at a time and has 25 pins?",
+                    "status": "WRONG",
+                    "selected_option": 2,
+                    "correct_option": 1,
+                    "correct_answer_text": "Parallel Port",
+                    "timestamp": "2026-08-05 15:18:00 IST"
+                },
+                {
+                    "question_id": 360,
+                    "question_text": "In what year was the Param Bio-blaze launched?",
+                    "status": "CORRECT",
+                    "selected_option": 2,
+                    "correct_option": 2,
+                    "correct_answer_text": "2014",
+                    "timestamp": "2026-08-05 15:18:07 IST"
+                },
+                {
+                    "question_id": 399,
+                    "question_text": "What is the purpose of the disk rearrangement programme in Microsoft Windows?",
+                    "status": "CORRECT",
+                    "selected_option": 0,
+                    "correct_option": 0,
+                    "correct_answer_text": "To increase data access speed by rearranging files",
+                    "timestamp": "2026-08-05 15:18:16 IST"
+                },
+                {
+                    "question_id": 243,
+                    "question_text": "How does a node from one network communicate with a node from another network?",
+                    "status": "WRONG",
+                    "selected_option": 1,
+                    "correct_option": 2,
+                    "correct_answer_text": "By passing the data packet to a gateway, which then routes it to the destination",
+                    "timestamp": "2026-08-05 15:18:43 IST"
+                },
+                {
+                    "question_id": 297,
+                    "question_text": "What is the term for a type of malware that records keystrokes?",
+                    "status": "WRONG",
+                    "selected_option": 3,
+                    "correct_option": 0,
+                    "correct_answer_text": "Keyloggers",
+                    "timestamp": "2026-08-05 15:18:50 IST"
+                },
+                {
+                    "question_id": 124,
+                    "question_text": "What is the shortcut to display the Open dialog box?",
+                    "status": "CORRECT",
+                    "selected_option": 0,
+                    "correct_option": 0,
+                    "correct_answer_text": "Ctrl + F12",
+                    "timestamp": "2026-08-05 15:18:56 IST"
+                },
+                {
+                    "question_id": 317,
+                    "question_text": "What is the purpose of computer codes in representing characters?",
+                    "status": "CORRECT",
+                    "selected_option": 1,
+                    "correct_option": 1,
+                    "correct_answer_text": "To represent any character in a unique coded pattern",
+                    "timestamp": "2026-08-05 15:19:15 IST"
+                },
+                {
+                    "question_id": 144,
+                    "question_text": "What is the purpose of using Alt + F4?",
+                    "status": "CORRECT",
+                    "selected_option": 0,
+                    "correct_option": 0,
+                    "correct_answer_text": "Closes all workbooks and exits Excel",
+                    "timestamp": "2026-08-05 15:19:25 IST"
+                },
+                {
+                    "question_id": 506,
+                    "question_text": "What is the primary function of a public key in digital signature verification?",
+                    "status": "SKIPPED_TIMEOUT",
+                    "selected_option": null,
+                    "correct_option": 1,
+                    "correct_answer_text": "To decrypt the digital signature",
+                    "timestamp": "2026-08-05 15:19:58 IST"
+                },
+                {
+                    "question_id": 24,
+                    "question_text": "Which port has 9 pins and 25 pins versions?",
+                    "status": "CORRECT",
+                    "selected_option": 3,
+                    "correct_option": 3,
+                    "correct_answer_text": "Serial Port",
+                    "timestamp": "2026-08-05 15:20:02 IST"
+                },
+                {
+                    "question_id": 373,
+                    "question_text": "What is the ranking of the Param Yuva supercomputer in November 2008?",
+                    "status": "CORRECT",
+                    "selected_option": 1,
+                    "correct_option": 1,
+                    "correct_answer_text": "Ranked 69",
+                    "timestamp": "2026-08-05 15:20:14 IST"
+                },
+                {
+                    "question_id": 207,
+                    "question_text": "What keyboard shortcut is used to bookmark the current webpage on the web browser?",
+                    "status": "CORRECT",
+                    "selected_option": 1,
+                    "correct_option": 1,
+                    "correct_answer_text": "Ctrl + D",
+                    "timestamp": "2026-08-05 15:20:20 IST"
+                },
+                {
+                    "question_id": 491,
+                    "question_text": "What is the syntax used for creating database objects?",
+                    "status": "WRONG",
+                    "selected_option": 1,
+                    "correct_option": 0,
+                    "correct_answer_text": "DDL",
+                    "timestamp": "2026-08-05 15:20:26 IST"
+                },
+                {
+                    "question_id": 468,
+                    "question_text": "What is the shortcut to display the Paste Name dialog box?",
+                    "status": "CORRECT",
+                    "selected_option": 1,
+                    "correct_option": 1,
+                    "correct_answer_text": "F3 alone",
+                    "timestamp": "2026-08-05 15:20:42 IST"
+                },
+                {
+                    "question_id": 468,
+                    "question_text": "What is the shortcut to display the Paste Name dialog box?",
+                    "status": "CORRECT",
+                    "selected_option": 1,
+                    "correct_option": 1,
+                    "correct_answer_text": "F3 alone",
+                    "timestamp": "2026-08-05 15:20:50 IST"
+                }
+            ]
+        }
+    ],
+    "last_synced": "2026-08-05 15:25:41 IST"
+}

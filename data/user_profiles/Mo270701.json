@@ -1,0 +1,82 @@
+{
+    "student_id": "Mo270701",
+    "registration_info": {
+        "user_id": 8428545731,
+        "student_id": "Mo270701",
+        "full_name": "Moni sharma",
+        "username": "N/A",
+        "phone_number": "919053919063",
+        "target_exam": "BSF HCM",
+        "dob": "27-07-2001",
+        "age": 25,
+        "gender": "Female",
+        "country": "India",
+        "state": "Haryana",
+        "pin": "8930",
+        "security_question": "🏙 Which is your favorite city?",
+        "security_answer": "Panipat",
+        "referred_by": null,
+        "referral_count": 0,
+        "bonus_quota": 0,
+        "last_profile_edit": "2026-08-05 12:04:22 IST",
+        "last_active": "2026-08-05 12:06:37 IST",
+        "last_activity_epoch": 1785911797,
+        "is_banned": 0,
+        "is_verified": 1,
+        "created_at": "2026-08-05 12:04:22 IST"
+    },
+    "bot_engagement_metrics": {
+        "last_login_timestamp": "2026-08-05 12:06:37 IST",
+        "total_time_spent_overall": "100 seconds (1.67 mins)",
+        "daily_spent_time_breakdown": {
+            "2026-08-05": "100 seconds (1.67 mins)"
+        },
+        "questions_attempted_per_day": {}
+    },
+    "academic_summary": {
+        "total_quizzes_attempted": 0,
+        "total_questions_attempted": 0,
+        "total_correct": 0,
+        "total_wrong": 0,
+        "total_skipped": 0,
+        "datewise_quiz_summary": {}
+    },
+    "saved_questions_ledger": {
+        "total_saved": 1,
+        "datewise_saved_summary": {
+            "2026-08-05": 1
+        },
+        "saved_questions": [
+            {
+                "id": 6,
+                "user_id": 8428545731,
+                "question_text": "What is the term for a mode of data transmission that allows data to flow in both directions simultaneously?",
+                "correct_option": 2,
+                "explanation": "Full-duplex is a mode of data transmission that allows data to flow in both directions simultaneously.",
+                "saved_at": "2026-08-05 12:05:04 IST",
+                "options": [
+                    "Simplex",
+                    "Half-duplex",
+                    "Full-duplex",
+                    "Multiplex"
+                ]
+            }
+        ]
+    },
+    "student_reviews_given": [],
+    "subscription_ledger": {
+        "status": "FREE_TIER",
+        "active_plan": "Standard Free Tier",
+        "total_amount_paid": 0.0,
+        "payment_history": []
+    },
+    "badges_and_achievements": {
+        "earned_badges": [
+            "Early Learner",
+            "Registered Scholar"
+        ],
+        "streak_days": 0
+    },
+    "full_quiz_history": [],
+    "last_synced": "2026-08-05 15:25:41 IST"
+}

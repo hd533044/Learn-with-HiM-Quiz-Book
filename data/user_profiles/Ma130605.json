@@ -1,0 +1,469 @@
+{
+    "student_id": "Ma130605",
+    "registration_info": {
+        "user_id": 5584246658,
+        "student_id": "Ma130605",
+        "full_name": "Mahendraraj",
+        "username": "the_silentace",
+        "phone_number": "918815017032",
+        "target_exam": "BSF HCM",
+        "dob": "13-06-2005",
+        "age": 21,
+        "gender": "Male",
+        "country": "India",
+        "state": "Madhya Pradesh",
+        "pin": "9960",
+        "security_question": "🏙 Which is your favorite city?",
+        "security_answer": "Mandsaur",
+        "referred_by": null,
+        "referral_count": 0,
+        "bonus_quota": 0,
+        "last_profile_edit": "2026-08-05 11:10:57 IST",
+        "last_active": "2026-08-05 14:41:19 IST",
+        "last_activity_epoch": 1785921079,
+        "is_banned": 0,
+        "is_verified": 1,
+        "created_at": "2026-08-05 11:10:57 IST"
+    },
+    "bot_engagement_metrics": {
+        "last_login_timestamp": "2026-08-05 14:41:19 IST",
+        "total_time_spent_overall": "830 seconds (13.83 mins)",
+        "daily_spent_time_breakdown": {
+            "2026-08-05": "830 seconds (13.83 mins)"
+        },
+        "questions_attempted_per_day": {
+            "2026-08-05": 40
+        }
+    },
+    "academic_summary": {
+        "total_quizzes_attempted": 2,
+        "total_questions_attempted": 40,
+        "total_correct": 25,
+        "total_wrong": 15,
+        "total_skipped": 0,
+        "datewise_quiz_summary": {
+            "2026-08-05": {
+                "total_quizzes": 2,
+                "total_questions": 40,
+                "total_correct": 25,
+                "total_wrong": 15,
+                "total_score": 25.0,
+                "total_time_seconds": 0
+            }
+        }
+    },
+    "saved_questions_ledger": {
+        "total_saved": 0,
+        "datewise_saved_summary": {},
+        "saved_questions": []
+    },
+    "student_reviews_given": [],
+    "subscription_ledger": {
+        "status": "FREE_TIER",
+        "active_plan": "Standard Free Tier",
+        "total_amount_paid": 0.0,
+        "payment_history": []
+    },
+    "badges_and_achievements": {
+        "earned_badges": [
+            "Early Learner",
+            "Registered Scholar"
+        ],
+        "streak_days": 1
+    },
+    "full_quiz_history": [
+        {
+            "id": 25,
+            "user_id": 5584246658,
+            "quiz_id": "computer_awareness_mock",
+            "questions_attempted": 30,
+            "total_questions": 30,
+            "correct_answers": 20,
+            "wrong_answers": 10,
+            "skipped_count": 0,
+            "score": 20.0,
+            "time_taken": 0,
+            "attempt_timestamp": "2026-08-05 14:40:23 IST",
+            "attempt_date": "2026-08-05",
+            "question_details": [
+                {
+                    "question_id": 161,
+                    "question_text": "What is the function of Ctrl + Shift + = in the active cell?",
+                    "status": "CORRECT",
+                    "selected_option": 0,
+                    "correct_option": 0,
+                    "correct_answer_text": "Displays the Insert dialog box to insert blank cells",
+                    "timestamp": "2026-08-05 14:33:33 IST"
+                },
+                {
+                    "question_id": 295,
+                    "question_text": "What is the function of a Switch?",
+                    "status": "WRONG",
+                    "selected_option": 1,
+                    "correct_option": 0,
+                    "correct_answer_text": "To filter network traffic",
+                    "timestamp": "2026-08-05 14:33:46 IST"
+                },
+                {
+                    "question_id": 69,
+                    "question_text": "Which tab in MS-EXCEL contains the 'Function Library' and 'Formula Auditing' groups?",
+                    "status": "CORRECT",
+                    "selected_option": 2,
+                    "correct_option": 2,
+                    "correct_answer_text": "Formula",
+                    "timestamp": "2026-08-05 14:33:58 IST"
+                },
+                {
+                    "question_id": 296,
+                    "question_text": "Which of the following is an example of a networking device?",
+                    "status": "CORRECT",
+                    "selected_option": 3,
+                    "correct_option": 3,
+                    "correct_answer_text": "All of the above",
+                    "timestamp": "2026-08-05 14:34:07 IST"
+                },
+                {
+                    "question_id": 373,
+                    "question_text": "What is the ranking of the Param Yuva supercomputer in November 2008?",
+                    "status": "WRONG",
+                    "selected_option": 0,
+                    "correct_option": 1,
+                    "correct_answer_text": "Ranked 69",
+                    "timestamp": "2026-08-05 14:34:18 IST"
+                },
+                {
+                    "question_id": 376,
+                    "question_text": "Who built the SEAC computer?",
+                    "status": "CORRECT",
+                    "selected_option": 0,
+                    "correct_option": 0,
+                    "correct_answer_text": "U.S. National Bureau of Standards (NBS)",
+                    "timestamp": "2026-08-05 14:34:28 IST"
+                },
+                {
+                    "question_id": 266,
+                    "question_text": "What is the difference between ethical and non-ethical hacking in terms of legality?",
+                    "status": "CORRECT",
+                    "selected_option": 1,
+                    "correct_option": 1,
+                    "correct_answer_text": "Ethical hacking is legal, while non-ethical hacking is illegal",
+                    "timestamp": "2026-08-05 14:34:43 IST"
+                },
+                {
+                    "question_id": 91,
+                    "question_text": "What is the shortcut to select an entire row in MS-Excel 2010?",
+                    "status": "CORRECT",
+                    "selected_option": 1,
+                    "correct_option": 1,
+                    "correct_answer_text": "Shift + Spacebar",
+                    "timestamp": "2026-08-05 14:34:56 IST"
+                },
+                {
+                    "question_id": 171,
+                    "question_text": "Which shortcut key is used to display the Insert dialog box for inserting cells?",
+                    "status": "CORRECT",
+                    "selected_option": 0,
+                    "correct_option": 0,
+                    "correct_answer_text": "Ctrl + Shift + =",
+                    "timestamp": "2026-08-05 14:35:06 IST"
+                },
+                {
+                    "question_id": 431,
+                    "question_text": "How to extend the selection of cells to the last used cell on the worksheet?",
+                    "status": "CORRECT",
+                    "selected_option": 0,
+                    "correct_option": 0,
+                    "correct_answer_text": "Ctrl+Shift+End",
+                    "timestamp": "2026-08-05 14:35:30 IST"
+                },
+                {
+                    "question_id": 166,
+                    "question_text": "Which shortcut key is used to undo the last action in the active workbook?",
+                    "status": "CORRECT",
+                    "selected_option": 0,
+                    "correct_option": 0,
+                    "correct_answer_text": "Ctrl + Z",
+                    "timestamp": "2026-08-05 14:35:40 IST"
+                },
+                {
+                    "question_id": 480,
+                    "question_text": "What principle is used in CDMA to work?",
+                    "status": "WRONG",
+                    "selected_option": 3,
+                    "correct_option": 0,
+                    "correct_answer_text": "Spread spectrum",
+                    "timestamp": "2026-08-05 14:35:54 IST"
+                },
+                {
+                    "question_id": 122,
+                    "question_text": "What is the function of Ctrl + F6?",
+                    "status": "CORRECT",
+                    "selected_option": 1,
+                    "correct_option": 1,
+                    "correct_answer_text": "Moves to the next open workbook or window",
+                    "timestamp": "2026-08-05 14:36:10 IST"
+                },
+                {
+                    "question_id": 399,
+                    "question_text": "What is the purpose of the disk rearrangement programme in Microsoft Windows?",
+                    "status": "WRONG",
+                    "selected_option": 3,
+                    "correct_option": 0,
+                    "correct_answer_text": "To increase data access speed by rearranging files",
+                    "timestamp": "2026-08-05 14:36:31 IST"
+                },
+                {
+                    "question_id": 107,
+                    "question_text": "How many rows and columns are there in a worksheet of MS-Excel 2003?",
+                    "status": "CORRECT",
+                    "selected_option": 1,
+                    "correct_option": 1,
+                    "correct_answer_text": "65536 rows and 256 columns",
+                    "timestamp": "2026-08-05 14:36:39 IST"
+                },
+                {
+                    "question_id": 547,
+                    "question_text": "What is the name of the web portal launched by the Department of Telecommunication for sharing information on mobile towers and EMF Emission Compliances?",
+                    "status": "WRONG",
+                    "selected_option": 2,
+                    "correct_option": 0,
+                    "correct_answer_text": "Tarang Sanchar",
+                    "timestamp": "2026-08-05 14:36:57 IST"
+                },
+                {
+                    "question_id": 530,
+                    "question_text": "How can you insert a new column in a table in MS Word?",
+                    "status": "WRONG",
+                    "selected_option": 0,
+                    "correct_option": 1,
+                    "correct_answer_text": "Insert Column to the Right",
+                    "timestamp": "2026-08-05 14:37:17 IST"
+                },
+                {
+                    "question_id": 274,
+                    "question_text": "What is the definition of a cracker?",
+                    "status": "CORRECT",
+                    "selected_option": 0,
+                    "correct_option": 0,
+                    "correct_answer_text": "A person who carries out malicious attacks on computer networks",
+                    "timestamp": "2026-08-05 14:37:30 IST"
+                },
+                {
+                    "question_id": 435,
+                    "question_text": "How to move to the next sheet in a workbook?",
+                    "status": "CORRECT",
+                    "selected_option": 0,
+                    "correct_option": 0,
+                    "correct_answer_text": "Ctrl+Page down",
+                    "timestamp": "2026-08-05 14:37:48 IST"
+                },
+                {
+                    "question_id": 137,
+                    "question_text": "What is the function of Alt + Shift + F4?",
+                    "status": "CORRECT",
+                    "selected_option": 0,
+                    "correct_option": 0,
+                    "correct_answer_text": "Closes all workbooks and exits Excel",
+                    "timestamp": "2026-08-05 14:38:02 IST"
+                },
+                {
+                    "question_id": 368,
+                    "question_text": "Which company was acquired by Oracle?",
+                    "status": "CORRECT",
+                    "selected_option": 0,
+                    "correct_option": 0,
+                    "correct_answer_text": "Sun Microsystems",
+                    "timestamp": "2026-08-05 14:38:09 IST"
+                },
+                {
+                    "question_id": 89,
+                    "question_text": "Which of the following is a type of add-in option in the 'Insert' tab in MS-EXCEL?",
+                    "status": "WRONG",
+                    "selected_option": 2,
+                    "correct_option": 1,
+                    "correct_answer_text": "3D Map",
+                    "timestamp": "2026-08-05 14:38:35 IST"
+                },
+                {
+                    "question_id": 197,
+                    "question_text": "What is the function of the keyboard shortcut Ctrl + Shift + Tab on a worksheet?",
+                    "status": "CORRECT",
+                    "selected_option": 1,
+                    "correct_option": 1,
+                    "correct_answer_text": "Moves to the previous open workbook or window",
+                    "timestamp": "2026-08-05 14:38:50 IST"
+                },
+                {
+                    "question_id": 439,
+                    "question_text": "How to move to the previous sheet in a workbook?",
+                    "status": "CORRECT",
+                    "selected_option": 0,
+                    "correct_option": 0,
+                    "correct_answer_text": "Ctrl+Page up",
+                    "timestamp": "2026-08-05 14:39:02 IST"
+                },
+                {
+                    "question_id": 266,
+                    "question_text": "What is the difference between ethical and non-ethical hacking in terms of legality?",
+                    "status": "CORRECT",
+                    "selected_option": 1,
+                    "correct_option": 1,
+                    "correct_answer_text": "Ethical hacking is legal, while non-ethical hacking is illegal",
+                    "timestamp": "2026-08-05 14:39:12 IST"
+                },
+                {
+                    "question_id": 178,
+                    "question_text": "What is the effect of using the keyboard shortcut Alt + Tab on the computer?",
+                    "status": "WRONG",
+                    "selected_option": 0,
+                    "correct_option": 3,
+                    "correct_answer_text": "Moves to the next application open on your computer",
+                    "timestamp": "2026-08-05 14:39:22 IST"
+                },
+                {
+                    "question_id": 312,
+                    "question_text": "How are octal numbers converted to decimal numbers?",
+                    "status": "WRONG",
+                    "selected_option": 2,
+                    "correct_option": 1,
+                    "correct_answer_text": "By multiplying each digit with powers of 8",
+                    "timestamp": "2026-08-05 14:39:36 IST"
+                },
+                {
+                    "question_id": 219,
+                    "question_text": "Which of the following is a feature of IMPS?",
+                    "status": "WRONG",
+                    "selected_option": 0,
+                    "correct_option": 1,
+                    "correct_answer_text": "It is available 24X7",
+                    "timestamp": "2026-08-05 14:39:53 IST"
+                },
+                {
+                    "question_id": 538,
+                    "question_text": "What is an example of system software?",
+                    "status": "CORRECT",
+                    "selected_option": 2,
+                    "correct_option": 2,
+                    "correct_answer_text": "Windows operating system",
+                    "timestamp": "2026-08-05 14:40:01 IST"
+                },
+                {
+                    "question_id": 93,
+                    "question_text": "How can you select multiple non-adjacent worksheets in MS-Excel 2010?",
+                    "status": "CORRECT",
+                    "selected_option": 1,
+                    "correct_option": 1,
+                    "correct_answer_text": "Hold down the Ctrl key and click the tabs",
+                    "timestamp": "2026-08-05 14:40:22 IST"
+                }
+            ]
+        },
+        {
+            "id": 24,
+            "user_id": 5584246658,
+            "quiz_id": "computer_awareness_mock",
+            "questions_attempted": 10,
+            "total_questions": 10,
+            "correct_answers": 5,
+            "wrong_answers": 5,
+            "skipped_count": 0,
+            "score": 5.0,
+            "time_taken": 0,
+            "attempt_timestamp": "2026-08-05 14:32:06 IST",
+            "attempt_date": "2026-08-05",
+            "question_details": [
+                {
+                    "question_id": 128,
+                    "question_text": "What is the function of Alt + F8?",
+                    "status": "CORRECT",
+                    "selected_option": 0,
+                    "correct_option": 0,
+                    "correct_answer_text": "Displays the Macro dialog box",
+                    "timestamp": "2026-08-05 14:29:11 IST"
+                },
+                {
+                    "question_id": 36,
+                    "question_text": "What is the purpose of a mobile operating system?",
+                    "status": "CORRECT",
+                    "selected_option": 2,
+                    "correct_option": 2,
+                    "correct_answer_text": "To help small devices like smartphones work efficiently",
+                    "timestamp": "2026-08-05 14:29:27 IST"
+                },
+                {
+                    "question_id": 221,
+                    "question_text": "What is the purpose of the Rendering Engine in a web browser?",
+                    "status": "WRONG",
+                    "selected_option": 3,
+                    "correct_option": 0,
+                    "correct_answer_text": "To display web pages",
+                    "timestamp": "2026-08-05 14:29:50 IST"
+                },
+                {
+                    "question_id": 293,
+                    "question_text": "What is the term for a device that provides centralized disk storage?",
+                    "status": "WRONG",
+                    "selected_option": 2,
+                    "correct_option": 0,
+                    "correct_answer_text": "Network Attached Storage (NAS)",
+                    "timestamp": "2026-08-05 14:30:11 IST"
+                },
+                {
+                    "question_id": 8,
+                    "question_text": "How many pins are available in a Parallel Port?",
+                    "status": "CORRECT",
+                    "selected_option": 1,
+                    "correct_option": 1,
+                    "correct_answer_text": "25 pin",
+                    "timestamp": "2026-08-05 14:30:23 IST"
+                },
+                {
+                    "question_id": 168,
+                    "question_text": "Which shortcut key is used to display the Pick From List drop-down list in the active cell?",
+                    "status": "WRONG",
+                    "selected_option": 2,
+                    "correct_option": 0,
+                    "correct_answer_text": "Alt + Down Arrow",
+                    "timestamp": "2026-08-05 14:30:42 IST"
+                },
+                {
+                    "question_id": 57,
+                    "question_text": "What is the purpose of Alt + Tab in a Windows system?",
+                    "status": "WRONG",
+                    "selected_option": 2,
+                    "correct_option": 0,
+                    "correct_answer_text": "To show the screen",
+                    "timestamp": "2026-08-05 14:31:00 IST"
+                },
+                {
+                    "question_id": 549,
+                    "question_text": "What should you click to choose the date for sorting in Gmail?",
+                    "status": "CORRECT",
+                    "selected_option": 0,
+                    "correct_option": 0,
+                    "correct_answer_text": "The ‘Date within’ field",
+                    "timestamp": "2026-08-05 14:31:15 IST"
+                },
+                {
+                    "question_id": 379,
+                    "question_text": "What is the capacity of the Param Biochrome HPC cluster in teraflops?",
+                    "status": "CORRECT",
+                    "selected_option": 1,
+                    "correct_option": 1,
+                    "correct_answer_text": "5 teraflops",
+                    "timestamp": "2026-08-05 14:31:33 IST"
+                },
+                {
+                    "question_id": 506,
+                    "question_text": "What is the primary function of a public key in digital signature verification?",
+                    "status": "WRONG",
+                    "selected_option": 2,
+                    "correct_option": 1,
+                    "correct_answer_text": "To decrypt the digital signature",
+                    "timestamp": "2026-08-05 14:31:48 IST"
+                }
+            ]
+        }
+    ],
+    "last_synced": "2026-08-05 15:25:41 IST"
+}

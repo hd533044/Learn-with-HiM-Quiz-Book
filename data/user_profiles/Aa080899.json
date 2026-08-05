@@ -1,0 +1,469 @@
+{
+    "student_id": "Aa080899",
+    "registration_info": {
+        "user_id": 8012837431,
+        "student_id": "Aa080899",
+        "full_name": "AAYUSH",
+        "username": "Aayush8853",
+        "phone_number": "917394962407",
+        "target_exam": "CAPF HCM",
+        "dob": "08-08-1999",
+        "age": 27,
+        "gender": "Male",
+        "country": "India",
+        "state": "Uttar Pradesh",
+        "pin": "1234",
+        "security_question": "🏙 Which is your favorite city?",
+        "security_answer": "Varanasi",
+        "referred_by": null,
+        "referral_count": 0,
+        "bonus_quota": 0,
+        "last_profile_edit": "2026-08-05 12:14:11 IST",
+        "last_active": "2026-08-05 12:37:33 IST",
+        "last_activity_epoch": 1785913653,
+        "is_banned": 0,
+        "is_verified": 1,
+        "created_at": "2026-08-05 12:14:11 IST"
+    },
+    "bot_engagement_metrics": {
+        "last_login_timestamp": "2026-08-05 12:37:33 IST",
+        "total_time_spent_overall": "740 seconds (12.33 mins)",
+        "daily_spent_time_breakdown": {
+            "2026-08-05": "740 seconds (12.33 mins)"
+        },
+        "questions_attempted_per_day": {
+            "2026-08-05": 40
+        }
+    },
+    "academic_summary": {
+        "total_quizzes_attempted": 2,
+        "total_questions_attempted": 40,
+        "total_correct": 25,
+        "total_wrong": 14,
+        "total_skipped": 1,
+        "datewise_quiz_summary": {
+            "2026-08-05": {
+                "total_quizzes": 2,
+                "total_questions": 40,
+                "total_correct": 25,
+                "total_wrong": 14,
+                "total_score": 25.0,
+                "total_time_seconds": 0
+            }
+        }
+    },
+    "saved_questions_ledger": {
+        "total_saved": 0,
+        "datewise_saved_summary": {},
+        "saved_questions": []
+    },
+    "student_reviews_given": [],
+    "subscription_ledger": {
+        "status": "FREE_TIER",
+        "active_plan": "Standard Free Tier",
+        "total_amount_paid": 0.0,
+        "payment_history": []
+    },
+    "badges_and_achievements": {
+        "earned_badges": [
+            "Early Learner",
+            "Registered Scholar"
+        ],
+        "streak_days": 1
+    },
+    "full_quiz_history": [
+        {
+            "id": 16,
+            "user_id": 8012837431,
+            "quiz_id": "computer_awareness_mock",
+            "questions_attempted": 30,
+            "total_questions": 30,
+            "correct_answers": 18,
+            "wrong_answers": 11,
+            "skipped_count": 1,
+            "score": 18.0,
+            "time_taken": 0,
+            "attempt_timestamp": "2026-08-05 12:27:22 IST",
+            "attempt_date": "2026-08-05",
+            "question_details": [
+                {
+                    "question_id": 160,
+                    "question_text": "Which shortcut key is used to display the Delete dialog box?",
+                    "status": "WRONG",
+                    "selected_option": 2,
+                    "correct_option": 0,
+                    "correct_answer_text": "Ctrl + -",
+                    "timestamp": "2026-08-05 12:19:15 IST"
+                },
+                {
+                    "question_id": 529,
+                    "question_text": "What is the difference between a social networking site and a professional networking site?",
+                    "status": "WRONG",
+                    "selected_option": 2,
+                    "correct_option": 0,
+                    "correct_answer_text": "A social networking site is used for personal connections, while a professional networking site is used for business connections",
+                    "timestamp": "2026-08-05 12:19:39 IST"
+                },
+                {
+                    "question_id": 38,
+                    "question_text": "What is the function of Win Keys + E?",
+                    "status": "WRONG",
+                    "selected_option": 1,
+                    "correct_option": 0,
+                    "correct_answer_text": "To open My Computer",
+                    "timestamp": "2026-08-05 12:19:57 IST"
+                },
+                {
+                    "question_id": 516,
+                    "question_text": "What option allows you to quickly remove all formatting from selected text while retaining the underlying text content in MS Word?",
+                    "status": "CORRECT",
+                    "selected_option": 0,
+                    "correct_option": 0,
+                    "correct_answer_text": "Clear Formatting",
+                    "timestamp": "2026-08-05 12:20:06 IST"
+                },
+                {
+                    "question_id": 492,
+                    "question_text": "What is the full form of URL?",
+                    "status": "CORRECT",
+                    "selected_option": 0,
+                    "correct_option": 0,
+                    "correct_answer_text": "Uniform Resource Locator",
+                    "timestamp": "2026-08-05 12:20:14 IST"
+                },
+                {
+                    "question_id": 529,
+                    "question_text": "What is the difference between a social networking site and a professional networking site?",
+                    "status": "CORRECT",
+                    "selected_option": 0,
+                    "correct_option": 0,
+                    "correct_answer_text": "A social networking site is used for personal connections, while a professional networking site is used for business connections",
+                    "timestamp": "2026-08-05 12:20:28 IST"
+                },
+                {
+                    "question_id": 326,
+                    "question_text": "What is the first step in converting a hexadecimal number to an octal number?",
+                    "status": "CORRECT",
+                    "selected_option": 1,
+                    "correct_option": 1,
+                    "correct_answer_text": "Convert each digit to binary and then to octal",
+                    "timestamp": "2026-08-05 12:20:53 IST"
+                },
+                {
+                    "question_id": 302,
+                    "question_text": "What is the function of a Router?",
+                    "status": "WRONG",
+                    "selected_option": 0,
+                    "correct_option": 1,
+                    "correct_answer_text": "To connect multiple devices",
+                    "timestamp": "2026-08-05 12:21:13 IST"
+                },
+                {
+                    "question_id": 322,
+                    "question_text": "How are octal numbers represented in computer codes?",
+                    "status": "WRONG",
+                    "selected_option": 2,
+                    "correct_option": 3,
+                    "correct_answer_text": "Using a unique coded pattern of 1's and 0's",
+                    "timestamp": "2026-08-05 12:21:25 IST"
+                },
+                {
+                    "question_id": 407,
+                    "question_text": "What is the function of Shift+F6 in Word?",
+                    "status": "CORRECT",
+                    "selected_option": 1,
+                    "correct_option": 1,
+                    "correct_answer_text": "Switches between the document, ribbon, status bar, and task pane",
+                    "timestamp": "2026-08-05 12:21:40 IST"
+                },
+                {
+                    "question_id": 39,
+                    "question_text": "What is the purpose of Alt + Space + X?",
+                    "status": "WRONG",
+                    "selected_option": 1,
+                    "correct_option": 0,
+                    "correct_answer_text": "To maximize a window",
+                    "timestamp": "2026-08-05 12:22:01 IST"
+                },
+                {
+                    "question_id": 536,
+                    "question_text": "Which file format occupies less memory when saving an MS-Word file?",
+                    "status": "CORRECT",
+                    "selected_option": 1,
+                    "correct_option": 1,
+                    "correct_answer_text": ".docx",
+                    "timestamp": "2026-08-05 12:22:08 IST"
+                },
+                {
+                    "question_id": 300,
+                    "question_text": "Which of the following is a type of cyber threat that demands payment in exchange for restoring access to encrypted data?",
+                    "status": "CORRECT",
+                    "selected_option": 2,
+                    "correct_option": 2,
+                    "correct_answer_text": "Ransomware",
+                    "timestamp": "2026-08-05 12:22:36 IST"
+                },
+                {
+                    "question_id": 515,
+                    "question_text": "Which social networking service places the biggest emphasis on professional networking?",
+                    "status": "WRONG",
+                    "selected_option": 1,
+                    "correct_option": 2,
+                    "correct_answer_text": "LinkedIn",
+                    "timestamp": "2026-08-05 12:22:53 IST"
+                },
+                {
+                    "question_id": 323,
+                    "question_text": "What is the least significant digit in a decimal to hexadecimal conversion?",
+                    "status": "WRONG",
+                    "selected_option": 2,
+                    "correct_option": 3,
+                    "correct_answer_text": "The rightmost digit of the remainder",
+                    "timestamp": "2026-08-05 12:23:10 IST"
+                },
+                {
+                    "question_id": 72,
+                    "question_text": "What is the purpose of the 'Defined Names' group in the 'Formula' tab in MS-EXCEL?",
+                    "status": "CORRECT",
+                    "selected_option": 1,
+                    "correct_option": 1,
+                    "correct_answer_text": "To define a name for a cell or range",
+                    "timestamp": "2026-08-05 12:23:25 IST"
+                },
+                {
+                    "question_id": 309,
+                    "question_text": "How are decimal numbers converted to hexadecimal numbers?",
+                    "status": "CORRECT",
+                    "selected_option": 1,
+                    "correct_option": 1,
+                    "correct_answer_text": "By dividing the decimal number by 16 and noting the quotient and remainder",
+                    "timestamp": "2026-08-05 12:23:38 IST"
+                },
+                {
+                    "question_id": 143,
+                    "question_text": "What is the function of Ctrl + F12?",
+                    "status": "CORRECT",
+                    "selected_option": 0,
+                    "correct_option": 0,
+                    "correct_answer_text": "Displays the Open dialog box",
+                    "timestamp": "2026-08-05 12:23:57 IST"
+                },
+                {
+                    "question_id": 559,
+                    "question_text": "What is the purpose of actuators and sensors in IoT devices?",
+                    "status": "CORRECT",
+                    "selected_option": 0,
+                    "correct_option": 0,
+                    "correct_answer_text": "To gather data and exchange it over the network",
+                    "timestamp": "2026-08-05 12:24:06 IST"
+                },
+                {
+                    "question_id": 33,
+                    "question_text": "Which of the following ports has a data transfer speed of 12 megabits per second and is used for connecting all kinds of external USB devices?",
+                    "status": "CORRECT",
+                    "selected_option": 2,
+                    "correct_option": 2,
+                    "correct_answer_text": "Universal Serial Bus (USB) Port",
+                    "timestamp": "2026-08-05 12:24:34 IST"
+                },
+                {
+                    "question_id": 433,
+                    "question_text": "How to move to the beginning of a worksheet?",
+                    "status": "CORRECT",
+                    "selected_option": 0,
+                    "correct_option": 0,
+                    "correct_answer_text": "Ctrl+Home",
+                    "timestamp": "2026-08-05 12:24:45 IST"
+                },
+                {
+                    "question_id": 339,
+                    "question_text": "What is the function of service point addressing in the Transport Layer?",
+                    "status": "WRONG",
+                    "selected_option": 2,
+                    "correct_option": 0,
+                    "correct_answer_text": "Providing a unique address for each device",
+                    "timestamp": "2026-08-05 12:25:14 IST"
+                },
+                {
+                    "question_id": 518,
+                    "question_text": "What type of data can MS Excel functions operate on?",
+                    "status": "CORRECT",
+                    "selected_option": 1,
+                    "correct_option": 1,
+                    "correct_answer_text": "Range of cells or groups of cells",
+                    "timestamp": "2026-08-05 12:25:24 IST"
+                },
+                {
+                    "question_id": 65,
+                    "question_text": "Which tab in MS-EXCEL contains the 'Clipboard' and 'Font' groups?",
+                    "status": "CORRECT",
+                    "selected_option": 1,
+                    "correct_option": 1,
+                    "correct_answer_text": "Home",
+                    "timestamp": "2026-08-05 12:25:32 IST"
+                },
+                {
+                    "question_id": 331,
+                    "question_text": "Which devices implement the Network Layer?",
+                    "status": "CORRECT",
+                    "selected_option": 0,
+                    "correct_option": 0,
+                    "correct_answer_text": "Routers and Switches",
+                    "timestamp": "2026-08-05 12:25:47 IST"
+                },
+                {
+                    "question_id": 121,
+                    "question_text": "What is the shortcut to close all workbooks and exit Excel?",
+                    "status": "CORRECT",
+                    "selected_option": 0,
+                    "correct_option": 0,
+                    "correct_answer_text": "Alt + F4",
+                    "timestamp": "2026-08-05 12:25:56 IST"
+                },
+                {
+                    "question_id": 177,
+                    "question_text": "What is the function of the keyboard shortcut Ctrl + Tab?",
+                    "status": "SKIPPED_TIMEOUT",
+                    "selected_option": null,
+                    "correct_option": 1,
+                    "correct_answer_text": "Moves to the next open workbook or window",
+                    "timestamp": "2026-08-05 12:26:29 IST"
+                },
+                {
+                    "question_id": 6,
+                    "question_text": "What type of data transmission is supported by a Serial Port?",
+                    "status": "WRONG",
+                    "selected_option": 2,
+                    "correct_option": 1,
+                    "correct_answer_text": "Single stream of data at a time",
+                    "timestamp": "2026-08-05 12:26:43 IST"
+                },
+                {
+                    "question_id": 533,
+                    "question_text": "What is the difference between a range of cells and a group of cells in MS Excel?",
+                    "status": "WRONG",
+                    "selected_option": 0,
+                    "correct_option": 1,
+                    "correct_answer_text": "A range of cells refers to multiple cells, while a group of cells refers to a single cell",
+                    "timestamp": "2026-08-05 12:27:12 IST"
+                },
+                {
+                    "question_id": 538,
+                    "question_text": "What is an example of system software?",
+                    "status": "CORRECT",
+                    "selected_option": 2,
+                    "correct_option": 2,
+                    "correct_answer_text": "Windows operating system",
+                    "timestamp": "2026-08-05 12:27:21 IST"
+                }
+            ]
+        },
+        {
+            "id": 11,
+            "user_id": 8012837431,
+            "quiz_id": "computer_awareness_mock",
+            "questions_attempted": 10,
+            "total_questions": 10,
+            "correct_answers": 7,
+            "wrong_answers": 3,
+            "skipped_count": 0,
+            "score": 7.0,
+            "time_taken": 0,
+            "attempt_timestamp": "2026-08-05 12:17:26 IST",
+            "attempt_date": "2026-08-05",
+            "question_details": [
+                {
+                    "question_id": 207,
+                    "question_text": "What keyboard shortcut is used to bookmark the current webpage on the web browser?",
+                    "status": "CORRECT",
+                    "selected_option": 1,
+                    "correct_option": 1,
+                    "correct_answer_text": "Ctrl + D",
+                    "timestamp": "2026-08-05 12:15:07 IST"
+                },
+                {
+                    "question_id": 363,
+                    "question_text": "What is the main use of SMPS?",
+                    "status": "CORRECT",
+                    "selected_option": 0,
+                    "correct_option": 0,
+                    "correct_answer_text": "In computers",
+                    "timestamp": "2026-08-05 12:15:23 IST"
+                },
+                {
+                    "question_id": 42,
+                    "question_text": "What is the purpose of Win Keys + No. 1,2,3,4,5?",
+                    "status": "CORRECT",
+                    "selected_option": 0,
+                    "correct_option": 0,
+                    "correct_answer_text": "To show the active window one by one",
+                    "timestamp": "2026-08-05 12:15:50 IST"
+                },
+                {
+                    "question_id": 234,
+                    "question_text": "What is a gateway in the context of networking?",
+                    "status": "CORRECT",
+                    "selected_option": 1,
+                    "correct_option": 1,
+                    "correct_answer_text": "A combination of software and hardware used to connect different networks",
+                    "timestamp": "2026-08-05 12:15:58 IST"
+                },
+                {
+                    "question_id": 128,
+                    "question_text": "What is the function of Alt + F8?",
+                    "status": "WRONG",
+                    "selected_option": 1,
+                    "correct_option": 0,
+                    "correct_answer_text": "Displays the Macro dialog box",
+                    "timestamp": "2026-08-05 12:16:11 IST"
+                },
+                {
+                    "question_id": 21,
+                    "question_text": "Which of the following ports supports multiple data streams at a time?",
+                    "status": "WRONG",
+                    "selected_option": 2,
+                    "correct_option": 1,
+                    "correct_answer_text": "Parallel Port",
+                    "timestamp": "2026-08-05 12:16:23 IST"
+                },
+                {
+                    "question_id": 505,
+                    "question_text": "What is the primary function of URL?",
+                    "status": "CORRECT",
+                    "selected_option": 0,
+                    "correct_option": 0,
+                    "correct_answer_text": "To locate resources on the internet",
+                    "timestamp": "2026-08-05 12:16:32 IST"
+                },
+                {
+                    "question_id": 360,
+                    "question_text": "In what year was the Param Bio-blaze launched?",
+                    "status": "WRONG",
+                    "selected_option": 3,
+                    "correct_option": 2,
+                    "correct_answer_text": "2014",
+                    "timestamp": "2026-08-05 12:16:46 IST"
+                },
+                {
+                    "question_id": 165,
+                    "question_text": "What is the function of Ctrl + Z in the active workbook?",
+                    "status": "CORRECT",
+                    "selected_option": 0,
+                    "correct_option": 0,
+                    "correct_answer_text": "Undo the last workbook action",
+                    "timestamp": "2026-08-05 12:17:06 IST"
+                },
+                {
+                    "question_id": 229,
+                    "question_text": "What is the primary function of the Reply option in Gmail?",
+                    "status": "CORRECT",
+                    "selected_option": 2,
+                    "correct_option": 2,
+                    "correct_answer_text": "To reply to an email",
+                    "timestamp": "2026-08-05 12:17:25 IST"
+                }
+            ]
+        }
+    ],
+    "last_synced": "2026-08-05 15:25:41 IST"
+}

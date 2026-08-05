@@ -1,0 +1,183 @@
+{
+    "student_id": "Su011099",
+    "registration_info": {
+        "user_id": 1167523333,
+        "student_id": "Su011099",
+        "full_name": "Suraj mishra",
+        "username": "N/A",
+        "phone_number": "919682220213",
+        "target_exam": "BSF HCM",
+        "dob": "01-10-1999",
+        "age": 27,
+        "gender": "Male",
+        "country": "India",
+        "state": "Uttar Pradesh",
+        "pin": "1008",
+        "security_question": "👩 What is your mother's maiden name?",
+        "security_answer": "Kali",
+        "referred_by": null,
+        "referral_count": 0,
+        "bonus_quota": 0,
+        "last_profile_edit": "2026-08-05 12:22:41 IST",
+        "last_active": "2026-08-05 12:25:50 IST",
+        "last_activity_epoch": 1785912950,
+        "is_banned": 0,
+        "is_verified": 1,
+        "created_at": "2026-08-05 12:22:41 IST"
+    },
+    "bot_engagement_metrics": {
+        "last_login_timestamp": "2026-08-05 12:25:50 IST",
+        "total_time_spent_overall": "225 seconds (3.75 mins)",
+        "daily_spent_time_breakdown": {
+            "2026-08-05": "225 seconds (3.75 mins)"
+        },
+        "questions_attempted_per_day": {
+            "2026-08-05": 10
+        }
+    },
+    "academic_summary": {
+        "total_quizzes_attempted": 1,
+        "total_questions_attempted": 10,
+        "total_correct": 10,
+        "total_wrong": 0,
+        "total_skipped": 0,
+        "datewise_quiz_summary": {
+            "2026-08-05": {
+                "total_quizzes": 1,
+                "total_questions": 10,
+                "total_correct": 10,
+                "total_wrong": 0,
+                "total_score": 10.0,
+                "total_time_seconds": 0
+            }
+        }
+    },
+    "saved_questions_ledger": {
+        "total_saved": 0,
+        "datewise_saved_summary": {},
+        "saved_questions": []
+    },
+    "student_reviews_given": [],
+    "subscription_ledger": {
+        "status": "FREE_TIER",
+        "active_plan": "Standard Free Tier",
+        "total_amount_paid": 0.0,
+        "payment_history": []
+    },
+    "badges_and_achievements": {
+        "earned_badges": [
+            "Early Learner",
+            "Registered Scholar"
+        ],
+        "streak_days": 1
+    },
+    "full_quiz_history": [
+        {
+            "id": 15,
+            "user_id": 1167523333,
+            "quiz_id": "computer_awareness_mock",
+            "questions_attempted": 10,
+            "total_questions": 10,
+            "correct_answers": 10,
+            "wrong_answers": 0,
+            "skipped_count": 0,
+            "score": 10.0,
+            "time_taken": 0,
+            "attempt_timestamp": "2026-08-05 12:25:08 IST",
+            "attempt_date": "2026-08-05",
+            "question_details": [
+                {
+                    "question_id": 351,
+                    "question_text": "What is the term used to refer to data in the Network Layer?",
+                    "status": "CORRECT",
+                    "selected_option": 0,
+                    "correct_option": 0,
+                    "correct_answer_text": "Packets",
+                    "timestamp": "2026-08-05 12:23:36 IST"
+                },
+                {
+                    "question_id": 68,
+                    "question_text": "What is the purpose of the UPPER function in MS-EXCEL?",
+                    "status": "CORRECT",
+                    "selected_option": 1,
+                    "correct_option": 1,
+                    "correct_answer_text": "To convert text to upper case",
+                    "timestamp": "2026-08-05 12:23:45 IST"
+                },
+                {
+                    "question_id": 99,
+                    "question_text": "What is the minimum zoom percentage in MS-Excel 2010?",
+                    "status": "CORRECT",
+                    "selected_option": 0,
+                    "correct_option": 0,
+                    "correct_answer_text": "10%",
+                    "timestamp": "2026-08-05 12:23:53 IST"
+                },
+                {
+                    "question_id": 111,
+                    "question_text": "What is the purpose of the DATEVALUE function?",
+                    "status": "CORRECT",
+                    "selected_option": 1,
+                    "correct_option": 1,
+                    "correct_answer_text": "To convert a text string to a date",
+                    "timestamp": "2026-08-05 12:24:13 IST"
+                },
+                {
+                    "question_id": 332,
+                    "question_text": "What is the Transport Layer also known as?",
+                    "status": "CORRECT",
+                    "selected_option": 1,
+                    "correct_option": 1,
+                    "correct_answer_text": "Heart of the OSI model",
+                    "timestamp": "2026-08-05 12:24:18 IST"
+                },
+                {
+                    "question_id": 398,
+                    "question_text": "What is the name of the email client in Microsoft 365?",
+                    "status": "CORRECT",
+                    "selected_option": 2,
+                    "correct_option": 2,
+                    "correct_answer_text": "Microsoft Outlook",
+                    "timestamp": "2026-08-05 12:24:26 IST"
+                },
+                {
+                    "question_id": 148,
+                    "question_text": "Which shortcut key is used to enter the SUM() function?",
+                    "status": "CORRECT",
+                    "selected_option": 0,
+                    "correct_option": 0,
+                    "correct_answer_text": "Alt + =",
+                    "timestamp": "2026-08-05 12:24:38 IST"
+                },
+                {
+                    "question_id": 338,
+                    "question_text": "What is the term used to refer to data in the Transport Layer?",
+                    "status": "CORRECT",
+                    "selected_option": 2,
+                    "correct_option": 2,
+                    "correct_answer_text": "Segments",
+                    "timestamp": "2026-08-05 12:24:48 IST"
+                },
+                {
+                    "question_id": 190,
+                    "question_text": "What is the effect of using the keyboard shortcut Ctrl + End on a worksheet?",
+                    "status": "CORRECT",
+                    "selected_option": 1,
+                    "correct_option": 1,
+                    "correct_answer_text": "Moves to the last used cell on the active worksheet",
+                    "timestamp": "2026-08-05 12:24:58 IST"
+                },
+                {
+                    "question_id": 298,
+                    "question_text": "In which mode of data transmission can data flow in one direction only?",
+                    "status": "CORRECT",
+                    "selected_option": 0,
+                    "correct_option": 0,
+                    "correct_answer_text": "Simplex",
+                    "timestamp": "2026-08-05 12:25:07 IST"
+                }
+            ]
+        }
+    ],
+    "last_synced": "2026-08-05 15:25:41 IST"
+}

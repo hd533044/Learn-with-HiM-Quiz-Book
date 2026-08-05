@@ -9,6 +9,9 @@ from app.config import DB_FILE, USER_PROFILES_DIR
 logger = logging.getLogger(__name__)
 IST = pytz.timezone("Asia/Kolkata")
 
+TURSO_URL = os.getenv("TURSO_DATABASE_URL", "").strip()
+TURSO_TOKEN = os.getenv("TURSO_AUTH_TOKEN", "").strip()
+
 def get_ist_now():
     return datetime.now(IST)
 
@@ -19,9 +22,79 @@ def get_ist_timestamp_str():
     return get_ist_now().strftime("%Y-%m-%d %H:%M:%S IST")
 
 def get_db():
+    if TURSO_URL and TURSO_TOKEN:
+        try:
+            import libsql_experimental as libsql
+            conn = libsql.connect(database=TURSO_URL, auth_token=TURSO_TOKEN)
+            conn.row_factory = libsql.Row
+            return conn
+        except ImportError:
+            # Local Python 3.14 fallback where wheel isn't built yet
+            logger.warning("libsql_experimental not installed locally. Using local SQLite database.")
+        except Exception as e:
+            logger.error(f"Failed to connect to Turso Cloud, falling back to local SQLite: {e}")
+    
     conn = sqlite3.connect(DB_FILE)
     conn.row_factory = sqlite3.Row
     return conn
+
+def sync_json_profiles_to_turso():
+    """One-time auto-migration helper to load existing JSON profile ledgers into Turso Cloud."""
+    if not os.path.exists(USER_PROFILES_DIR):
+        return
+
+    json_files = [f for f in os.listdir(USER_PROFILES_DIR) if f.endswith(".json")]
+    if not json_files:
+        return
+
+    conn = get_db()
+    migrated_count = 0
+
+    for file_name in json_files:
+        file_path = os.path.join(USER_PROFILES_DIR, file_name)
+        try:
+            with open(file_path, "r", encoding="utf-8") as f:
+                data = json.load(f)
+
+            reg_info = data.get("registration_info", {})
+            user_id = reg_info.get("user_id") or data.get("user_id")
+            if not user_id:
+                continue
+
+            student_id = data.get("student_id") or reg_info.get("student_id")
+            full_name = reg_info.get("full_name") or data.get("full_name")
+            username = reg_info.get("username")
+            phone = reg_info.get("phone_number") or data.get("phone_number")
+            target_exam = reg_info.get("target_exam") or data.get("target_exam")
+            dob = reg_info.get("dob") or data.get("dob")
+            age = reg_info.get("age") or data.get("age")
+            gender = reg_info.get("gender") or data.get("gender")
+            country = reg_info.get("country", "India")
+            state = reg_info.get("state", "N/A")
+            pin = reg_info.get("pin") or data.get("pin")
+            sec_q = reg_info.get("security_question")
+            sec_a = reg_info.get("security_answer")
+            created_at = reg_info.get("created_at") or data.get("created_at") or get_ist_timestamp_str()
+            last_active = reg_info.get("last_active") or data.get("last_active") or get_ist_timestamp_str()
+
+            conn.execute("""
+                INSERT OR IGNORE INTO users (
+                    user_id, student_id, full_name, username, phone_number, target_exam,
+                    dob, age, gender, country, state, pin, security_question, security_answer,
+                    is_banned, is_verified, created_at, last_active
+                ) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, 0, 1, ?, ?)
+            """, (
+                user_id, student_id, full_name, username, phone, target_exam,
+                dob, age, gender, country, state, pin, sec_q, sec_a, created_at, last_active
+            ))
+            migrated_count += 1
+        except Exception as e:
+            logger.error(f"Error syncing {file_name} to Turso: {e}")
+
+    conn.commit()
+    conn.close()
+    if migrated_count > 0:
+        logger.info(f"✅ Successfully auto-migrated {migrated_count} student profiles to Turso Cloud!")
 
 def init_db():
     conn = get_db()
@@ -46,6 +119,8 @@ def init_db():
             referred_by INTEGER,
             referral_count INTEGER DEFAULT 0,
             bonus_quota INTEGER DEFAULT 0,
+            paid_question_balance INTEGER DEFAULT 0,
+            vip_pass_expiry TEXT DEFAULT NULL,
             last_profile_edit TEXT,
             last_active TEXT,
             last_activity_epoch INTEGER DEFAULT 0,
@@ -79,6 +154,10 @@ def init_db():
         cursor.execute("ALTER TABLE users ADD COLUMN last_activity_epoch INTEGER DEFAULT 0")
     if 'is_banned' not in columns:
         cursor.execute("ALTER TABLE users ADD COLUMN is_banned INTEGER DEFAULT 0")
+    if 'paid_question_balance' not in columns:
+        cursor.execute("ALTER TABLE users ADD COLUMN paid_question_balance INTEGER DEFAULT 0")
+    if 'vip_pass_expiry' not in columns:
+        cursor.execute("ALTER TABLE users ADD COLUMN vip_pass_expiry TEXT DEFAULT NULL")
 
     cursor.execute('''
         CREATE TABLE IF NOT EXISTS quiz_attempts (
@@ -161,6 +240,9 @@ def init_db():
     conn.commit()
     conn.close()
 
+    # Automatically migrate offline profile JSON files into Turso Cloud
+    sync_json_profiles_to_turso()
+
 def generate_student_id(full_name: str, dob_str: str) -> str:
     clean_name = "".join(filter(str.isalpha, full_name))
     if len(clean_name) >= 2:
@@ -213,10 +295,6 @@ def update_user_pin(user_id: int, new_pin: str):
     sync_user_json_profile(user_id)
 
 def check_and_update_inactivity(user_id: int) -> tuple[bool, int]:
-    """
-    Checks if the user has been inactive for > 300 seconds (5 mins).
-    Returns (is_locked, seconds_inactive). Updates last_activity_epoch if active.
-    """
     conn = get_db()
     cursor = conn.cursor()
     now_epoch = int(get_ist_now().timestamp())
@@ -231,7 +309,7 @@ def check_and_update_inactivity(user_id: int) -> tuple[bool, int]:
     last_epoch = row['last_activity_epoch'] or 0
     diff = now_epoch - last_epoch if last_epoch > 0 else 0
 
-    if last_epoch > 0 and diff > 300: # Exceeds 5 minutes
+    if last_epoch > 0 and diff > 300:
         conn.close()
         return True, diff
 
@@ -384,9 +462,8 @@ def sync_user_json_profile(user_id: int):
         "student_reviews_given": [dict(f) for f in feedback_rows],
         "subscription_ledger": {
             "status": "FREE_TIER",
-            "active_plan": "Standard Free Tier",
-            "total_amount_paid": 0.0,
-            "payment_history": []
+            "paid_question_balance": user_dict.get("paid_question_balance", 0),
+            "vip_pass_expiry": user_dict.get("vip_pass_expiry")
         },
         "badges_and_achievements": {
             "earned_badges": ["Early Learner", "Registered Scholar"],
@@ -587,7 +664,7 @@ def get_maintenance_until() -> int:
     cursor.execute("SELECT value FROM bot_settings WHERE key = 'maintenance_until'")
     row = cursor.fetchone()
     conn.close()
-    return int(row['value']) if row and row['value'].isdigit() else 0
+    return int(row['value']) if row and str(row['value']).isdigit() else 0
 
 def save_paused_quiz_state(user_id: int, quiz_state: dict):
     conn = get_db()

@@ -1,0 +1,326 @@
+{
+    "student_id": "Ai010501",
+    "registration_info": {
+        "user_id": 808888877,
+        "student_id": "Ai010501",
+        "full_name": "Aish",
+        "username": "N/A",
+        "phone_number": "919738664897",
+        "target_exam": "CAPF HCM",
+        "dob": "01-05-2001",
+        "age": 25,
+        "gender": "Female",
+        "country": "India",
+        "state": "Karnataka",
+        "pin": "9738",
+        "security_question": "🏫 What was the name of your first school?",
+        "security_answer": "Presentation girls school dharwad",
+        "referred_by": null,
+        "referral_count": 0,
+        "bonus_quota": 0,
+        "last_profile_edit": "2026-08-05 09:06:38 IST",
+        "last_active": "2026-08-05 09:18:02 IST",
+        "last_activity_epoch": 1785901682,
+        "is_banned": 0,
+        "is_verified": 1,
+        "created_at": "2026-08-05 09:06:38 IST"
+    },
+    "bot_engagement_metrics": {
+        "last_login_timestamp": "2026-08-05 09:18:02 IST",
+        "total_time_spent_overall": "520 seconds (8.67 mins)",
+        "daily_spent_time_breakdown": {
+            "2026-08-05": "520 seconds (8.67 mins)"
+        },
+        "questions_attempted_per_day": {
+            "2026-08-05": 25
+        }
+    },
+    "academic_summary": {
+        "total_quizzes_attempted": 1,
+        "total_questions_attempted": 25,
+        "total_correct": 11,
+        "total_wrong": 14,
+        "total_skipped": 0,
+        "datewise_quiz_summary": {
+            "2026-08-05": {
+                "total_quizzes": 1,
+                "total_questions": 25,
+                "total_correct": 11,
+                "total_wrong": 14,
+                "total_score": 11.0,
+                "total_time_seconds": 0
+            }
+        }
+    },
+    "saved_questions_ledger": {
+        "total_saved": 0,
+        "datewise_saved_summary": {},
+        "saved_questions": []
+    },
+    "student_reviews_given": [
+        {
+            "id": 1,
+            "user_id": 808888877,
+            "full_name": "Aish",
+            "feedback_text": "Best Exam Prep Portal!",
+            "submitted_at": "2026-08-05 09:18:02 IST"
+        }
+    ],
+    "subscription_ledger": {
+        "status": "FREE_TIER",
+        "active_plan": "Standard Free Tier",
+        "total_amount_paid": 0.0,
+        "payment_history": []
+    },
+    "badges_and_achievements": {
+        "earned_badges": [
+            "Early Learner",
+            "Registered Scholar"
+        ],
+        "streak_days": 1
+    },
+    "full_quiz_history": [
+        {
+            "id": 2,
+            "user_id": 808888877,
+            "quiz_id": "computer_awareness_mock",
+            "questions_attempted": 25,
+            "total_questions": 25,
+            "correct_answers": 11,
+            "wrong_answers": 14,
+            "skipped_count": 0,
+            "score": 11.0,
+            "time_taken": 0,
+            "attempt_timestamp": "2026-08-05 09:12:35 IST",
+            "attempt_date": "2026-08-05",
+            "question_details": [
+                {
+                    "question_id": 66,
+                    "question_text": "What is the function of the LOWER function in MS-EXCEL?",
+                    "status": "CORRECT",
+                    "selected_option": 1,
+                    "correct_option": 1,
+                    "correct_answer_text": "To convert text to lower case",
+                    "timestamp": "2026-08-05 09:07:18 IST"
+                },
+                {
+                    "question_id": 272,
+                    "question_text": "What is a key characteristic of a white hat hacker?",
+                    "status": "CORRECT",
+                    "selected_option": 2,
+                    "correct_option": 2,
+                    "correct_answer_text": "They use their knowledge to help fix security flaws",
+                    "timestamp": "2026-08-05 09:07:34 IST"
+                },
+                {
+                    "question_id": 480,
+                    "question_text": "What principle is used in CDMA to work?",
+                    "status": "WRONG",
+                    "selected_option": 3,
+                    "correct_option": 0,
+                    "correct_answer_text": "Spread spectrum",
+                    "timestamp": "2026-08-05 09:07:50 IST"
+                },
+                {
+                    "question_id": 295,
+                    "question_text": "What is the function of a Switch?",
+                    "status": "WRONG",
+                    "selected_option": 1,
+                    "correct_option": 0,
+                    "correct_answer_text": "To filter network traffic",
+                    "timestamp": "2026-08-05 09:08:00 IST"
+                },
+                {
+                    "question_id": 50,
+                    "question_text": "What is the function of Win Keys + D?",
+                    "status": "WRONG",
+                    "selected_option": 2,
+                    "correct_option": 0,
+                    "correct_answer_text": "To show the Desktop",
+                    "timestamp": "2026-08-05 09:08:21 IST"
+                },
+                {
+                    "question_id": 324,
+                    "question_text": "What is the purpose of using powers of 8 in octal to decimal conversion?",
+                    "status": "WRONG",
+                    "selected_option": 1,
+                    "correct_option": 2,
+                    "correct_answer_text": "To multiply each digit of the octal number",
+                    "timestamp": "2026-08-05 09:08:38 IST"
+                },
+                {
+                    "question_id": 515,
+                    "question_text": "Which social networking service places the biggest emphasis on professional networking?",
+                    "status": "WRONG",
+                    "selected_option": 0,
+                    "correct_option": 2,
+                    "correct_answer_text": "LinkedIn",
+                    "timestamp": "2026-08-05 09:08:56 IST"
+                },
+                {
+                    "question_id": 264,
+                    "question_text": "What is the definition of a logic bomb?",
+                    "status": "WRONG",
+                    "selected_option": 1,
+                    "correct_option": 0,
+                    "correct_answer_text": "A piece of code that implements a malicious function after certain conditions are met",
+                    "timestamp": "2026-08-05 09:09:12 IST"
+                },
+                {
+                    "question_id": 490,
+                    "question_text": "What services does IBM offer?",
+                    "status": "CORRECT",
+                    "selected_option": 0,
+                    "correct_option": 0,
+                    "correct_answer_text": "Infrastructure, hosting, and consulting services",
+                    "timestamp": "2026-08-05 09:09:21 IST"
+                },
+                {
+                    "question_id": 288,
+                    "question_text": "Which of the following is an example of a dedicated file storage device?",
+                    "status": "WRONG",
+                    "selected_option": 2,
+                    "correct_option": 0,
+                    "correct_answer_text": "Network Attached Storage (NAS)",
+                    "timestamp": "2026-08-05 09:09:32 IST"
+                },
+                {
+                    "question_id": 417,
+                    "question_text": "What happens when you press Alt+F5 in Word?",
+                    "status": "WRONG",
+                    "selected_option": 3,
+                    "correct_option": 0,
+                    "correct_answer_text": "Restores the document window size",
+                    "timestamp": "2026-08-05 09:09:46 IST"
+                },
+                {
+                    "question_id": 163,
+                    "question_text": "What is the function of Tab in the active cell?",
+                    "status": "CORRECT",
+                    "selected_option": 0,
+                    "correct_option": 0,
+                    "correct_answer_text": "Enters the contents of the active cell and moves one cell to the right",
+                    "timestamp": "2026-08-05 09:09:59 IST"
+                },
+                {
+                    "question_id": 59,
+                    "question_text": "What is the purpose of a client server in a network?",
+                    "status": "CORRECT",
+                    "selected_option": 2,
+                    "correct_option": 2,
+                    "correct_answer_text": "To connect to the main server",
+                    "timestamp": "2026-08-05 09:10:18 IST"
+                },
+                {
+                    "question_id": 348,
+                    "question_text": "Which of the following is a characteristic of the Network Layer?",
+                    "status": "WRONG",
+                    "selected_option": 3,
+                    "correct_option": 2,
+                    "correct_answer_text": "Routing and logical addressing",
+                    "timestamp": "2026-08-05 09:10:33 IST"
+                },
+                {
+                    "question_id": 185,
+                    "question_text": "What is the function of the keyboard shortcut Shift + Enter on a worksheet?",
+                    "status": "WRONG",
+                    "selected_option": 3,
+                    "correct_option": 1,
+                    "correct_answer_text": "Moves to the cell directly above",
+                    "timestamp": "2026-08-05 09:10:50 IST"
+                },
+                {
+                    "question_id": 371,
+                    "question_text": "In what year was Apple Inc. founded?",
+                    "status": "CORRECT",
+                    "selected_option": 1,
+                    "correct_option": 1,
+                    "correct_answer_text": "1976",
+                    "timestamp": "2026-08-05 09:10:58 IST"
+                },
+                {
+                    "question_id": 461,
+                    "question_text": "What is the function of Shift+F6?",
+                    "status": "CORRECT",
+                    "selected_option": 0,
+                    "correct_option": 0,
+                    "correct_answer_text": "Switches between the worksheet, Zoom controls, task pane, and ribbon",
+                    "timestamp": "2026-08-05 09:11:06 IST"
+                },
+                {
+                    "question_id": 502,
+                    "question_text": "What type of technology is CDMA?",
+                    "status": "WRONG",
+                    "selected_option": 1,
+                    "correct_option": 0,
+                    "correct_answer_text": "Wireless technology",
+                    "timestamp": "2026-08-05 09:11:20 IST"
+                },
+                {
+                    "question_id": 208,
+                    "question_text": "What option is pressed to create a new email message in Gmail?",
+                    "status": "CORRECT",
+                    "selected_option": 2,
+                    "correct_option": 2,
+                    "correct_answer_text": "Compose",
+                    "timestamp": "2026-08-05 09:11:28 IST"
+                },
+                {
+                    "question_id": 144,
+                    "question_text": "What is the purpose of using Alt + F4?",
+                    "status": "CORRECT",
+                    "selected_option": 0,
+                    "correct_option": 0,
+                    "correct_answer_text": "Closes all workbooks and exits Excel",
+                    "timestamp": "2026-08-05 09:11:38 IST"
+                },
+                {
+                    "question_id": 355,
+                    "question_text": "What is the ranking of the supercomputer that entered the top 500 list of supercomputers of the world?",
+                    "status": "CORRECT",
+                    "selected_option": 1,
+                    "correct_option": 1,
+                    "correct_answer_text": "Ranked 171",
+                    "timestamp": "2026-08-05 09:11:50 IST"
+                },
+                {
+                    "question_id": 518,
+                    "question_text": "What type of data can MS Excel functions operate on?",
+                    "status": "CORRECT",
+                    "selected_option": 1,
+                    "correct_option": 1,
+                    "correct_answer_text": "Range of cells or groups of cells",
+                    "timestamp": "2026-08-05 09:12:03 IST"
+                },
+                {
+                    "question_id": 129,
+                    "question_text": "What is the purpose of using Ctrl + F1?",
+                    "status": "WRONG",
+                    "selected_option": 1,
+                    "correct_option": 0,
+                    "correct_answer_text": "Displays or hides the Ribbon",
+                    "timestamp": "2026-08-05 09:12:18 IST"
+                },
+                {
+                    "question_id": 491,
+                    "question_text": "What is the syntax used for creating database objects?",
+                    "status": "WRONG",
+                    "selected_option": 1,
+                    "correct_option": 0,
+                    "correct_answer_text": "DDL",
+                    "timestamp": "2026-08-05 09:12:24 IST"
+                },
+                {
+                    "question_id": 442,
+                    "question_text": "What is the shortcut to protect sheets and workbooks?",
+                    "status": "WRONG",
+                    "selected_option": 1,
+                    "correct_option": 0,
+                    "correct_answer_text": "Alt+R",
+                    "timestamp": "2026-08-05 09:12:34 IST"
+                }
+            ]
+        }
+    ],
+    "last_synced": "2026-08-05 15:25:41 IST"
+}

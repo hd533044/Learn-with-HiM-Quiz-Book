@@ -1,0 +1,486 @@
+{
+    "student_id": "Ba240406",
+    "registration_info": {
+        "user_id": 1729101884,
+        "student_id": "Ba240406",
+        "full_name": "Balaji",
+        "username": "anshul_tomar10",
+        "phone_number": "917000492024",
+        "target_exam": "CAPF HCM",
+        "dob": "24-04-2006",
+        "age": 20,
+        "gender": "Male",
+        "country": "India",
+        "state": "Madhya Pradesh",
+        "pin": "7734",
+        "security_question": "🐾 What is your pet's name?",
+        "security_answer": "Annu",
+        "referred_by": null,
+        "referral_count": 0,
+        "bonus_quota": 0,
+        "last_profile_edit": "2026-08-05 11:21:30 IST",
+        "last_active": "2026-08-05 11:53:59 IST",
+        "last_activity_epoch": 1785911039,
+        "is_banned": 0,
+        "is_verified": 1,
+        "created_at": "2026-08-05 11:21:30 IST"
+    },
+    "bot_engagement_metrics": {
+        "last_login_timestamp": "2026-08-05 11:53:59 IST",
+        "total_time_spent_overall": "800 seconds (13.33 mins)",
+        "daily_spent_time_breakdown": {
+            "2026-08-05": "800 seconds (13.33 mins)"
+        },
+        "questions_attempted_per_day": {
+            "2026-08-05": 40
+        }
+    },
+    "academic_summary": {
+        "total_quizzes_attempted": 2,
+        "total_questions_attempted": 40,
+        "total_correct": 22,
+        "total_wrong": 17,
+        "total_skipped": 1,
+        "datewise_quiz_summary": {
+            "2026-08-05": {
+                "total_quizzes": 2,
+                "total_questions": 40,
+                "total_correct": 22,
+                "total_wrong": 17,
+                "total_score": 22.0,
+                "total_time_seconds": 0
+            }
+        }
+    },
+    "saved_questions_ledger": {
+        "total_saved": 1,
+        "datewise_saved_summary": {
+            "2026-08-05": 1
+        },
+        "saved_questions": [
+            {
+                "id": 5,
+                "user_id": 1729101884,
+                "question_text": "What is the shortcut to display the Macro dialog box?",
+                "correct_option": 0,
+                "explanation": "Alt + F8 opens the Macro dialog box.",
+                "saved_at": "2026-08-05 11:27:23 IST",
+                "options": [
+                    "Alt + F8",
+                    "Alt + F11",
+                    "Ctrl + F8",
+                    "Alt + Shift + F8"
+                ]
+            }
+        ]
+    },
+    "student_reviews_given": [],
+    "subscription_ledger": {
+        "status": "FREE_TIER",
+        "active_plan": "Standard Free Tier",
+        "total_amount_paid": 0.0,
+        "payment_history": []
+    },
+    "badges_and_achievements": {
+        "earned_badges": [
+            "Early Learner",
+            "Registered Scholar"
+        ],
+        "streak_days": 1
+    },
+    "full_quiz_history": [
+        {
+            "id": 8,
+            "user_id": 1729101884,
+            "quiz_id": "computer_awareness_mock",
+            "questions_attempted": 9,
+            "total_questions": 9,
+            "correct_answers": 7,
+            "wrong_answers": 2,
+            "skipped_count": 0,
+            "score": 7.0,
+            "time_taken": 0,
+            "attempt_timestamp": "2026-08-05 11:31:12 IST",
+            "attempt_date": "2026-08-05",
+            "question_details": [
+                {
+                    "question_id": 456,
+                    "question_text": "What is the function of F4 alone?",
+                    "status": "CORRECT",
+                    "selected_option": 0,
+                    "correct_option": 0,
+                    "correct_answer_text": "Repeats the last command or action",
+                    "timestamp": "2026-08-05 11:29:36 IST"
+                },
+                {
+                    "question_id": 147,
+                    "question_text": "What is the function of Shift + Enter in the active cell?",
+                    "status": "WRONG",
+                    "selected_option": 1,
+                    "correct_option": 0,
+                    "correct_answer_text": "Enters the contents of the active cell and moves to the cell above",
+                    "timestamp": "2026-08-05 11:29:50 IST"
+                },
+                {
+                    "question_id": 108,
+                    "question_text": "What is the purpose of the Ctrl + A shortcut in MS-Excel 2010?",
+                    "status": "CORRECT",
+                    "selected_option": 0,
+                    "correct_option": 0,
+                    "correct_answer_text": "To select the entire worksheet",
+                    "timestamp": "2026-08-05 11:29:56 IST"
+                },
+                {
+                    "question_id": 297,
+                    "question_text": "What is the term for a type of malware that records keystrokes?",
+                    "status": "CORRECT",
+                    "selected_option": 0,
+                    "correct_option": 0,
+                    "correct_answer_text": "Keyloggers",
+                    "timestamp": "2026-08-05 11:30:03 IST"
+                },
+                {
+                    "question_id": 357,
+                    "question_text": "In what year was the Param Yuva II supercomputer launched?",
+                    "status": "WRONG",
+                    "selected_option": 0,
+                    "correct_option": 3,
+                    "correct_answer_text": "2013",
+                    "timestamp": "2026-08-05 11:30:16 IST"
+                },
+                {
+                    "question_id": 507,
+                    "question_text": "Which of the following is an example of multi-factor authentication for PC security?",
+                    "status": "CORRECT",
+                    "selected_option": 1,
+                    "correct_option": 1,
+                    "correct_answer_text": "Fingerprint scan",
+                    "timestamp": "2026-08-05 11:30:37 IST"
+                },
+                {
+                    "question_id": 18,
+                    "question_text": "Which port is used for connecting external hard disks and keyboards?",
+                    "status": "CORRECT",
+                    "selected_option": 2,
+                    "correct_option": 2,
+                    "correct_answer_text": "Universal Serial Bus (USB) Port",
+                    "timestamp": "2026-08-05 11:30:42 IST"
+                },
+                {
+                    "question_id": 547,
+                    "question_text": "What is the name of the web portal launched by the Department of Telecommunication for sharing information on mobile towers and EMF Emission Compliances?",
+                    "status": "CORRECT",
+                    "selected_option": 0,
+                    "correct_option": 0,
+                    "correct_answer_text": "Tarang Sanchar",
+                    "timestamp": "2026-08-05 11:30:52 IST"
+                },
+                {
+                    "question_id": 262,
+                    "question_text": "What is the difference between a white hat hacker and a black hat hacker?",
+                    "status": "CORRECT",
+                    "selected_option": 0,
+                    "correct_option": 0,
+                    "correct_answer_text": "A white hat hacker uses their knowledge for good, while a black hat hacker uses their knowledge for bad",
+                    "timestamp": "2026-08-05 11:31:11 IST"
+                }
+            ]
+        },
+        {
+            "id": 7,
+            "user_id": 1729101884,
+            "quiz_id": "computer_awareness_mock",
+            "questions_attempted": 31,
+            "total_questions": 31,
+            "correct_answers": 15,
+            "wrong_answers": 15,
+            "skipped_count": 1,
+            "score": 15.0,
+            "time_taken": 0,
+            "attempt_timestamp": "2026-08-05 11:28:43 IST",
+            "attempt_date": "2026-08-05",
+            "question_details": [
+                {
+                    "question_id": 281,
+                    "question_text": "In which mode of data transmission can data flow in both directions, but only one direction at a time?",
+                    "status": "CORRECT",
+                    "selected_option": 1,
+                    "correct_option": 1,
+                    "correct_answer_text": "Half-duplex",
+                    "timestamp": "2026-08-05 11:22:19 IST"
+                },
+                {
+                    "question_id": 15,
+                    "question_text": "Which port is used for transferring large amounts of data at a very fast speed?",
+                    "status": "WRONG",
+                    "selected_option": 2,
+                    "correct_option": 3,
+                    "correct_answer_text": "Firewire Port",
+                    "timestamp": "2026-08-05 11:22:28 IST"
+                },
+                {
+                    "question_id": 194,
+                    "question_text": "What is the effect of using the keyboard shortcut Ctrl + Right Arrow on a worksheet?",
+                    "status": "CORRECT",
+                    "selected_option": 1,
+                    "correct_option": 1,
+                    "correct_answer_text": "Moves to the right boundary of the current data region",
+                    "timestamp": "2026-08-05 11:22:43 IST"
+                },
+                {
+                    "question_id": 114,
+                    "question_text": "What is the shortcut to close a workbook?",
+                    "status": "CORRECT",
+                    "selected_option": 1,
+                    "correct_option": 1,
+                    "correct_answer_text": "Ctrl + F4",
+                    "timestamp": "2026-08-05 11:22:52 IST"
+                },
+                {
+                    "question_id": 101,
+                    "question_text": "Which shortcut is used to move to the previous cell in a row of the table?",
+                    "status": "CORRECT",
+                    "selected_option": 1,
+                    "correct_option": 1,
+                    "correct_answer_text": "Shift + Tab",
+                    "timestamp": "2026-08-05 11:23:00 IST"
+                },
+                {
+                    "question_id": 182,
+                    "question_text": "What is the effect of using the keyboard shortcut End + Home on a worksheet?",
+                    "status": "WRONG",
+                    "selected_option": 2,
+                    "correct_option": 3,
+                    "correct_answer_text": "Moves to the last used cell on the active worksheet",
+                    "timestamp": "2026-08-05 11:23:25 IST"
+                },
+                {
+                    "question_id": 54,
+                    "question_text": "What is the function of Alt + Space + N?",
+                    "status": "WRONG",
+                    "selected_option": 2,
+                    "correct_option": 0,
+                    "correct_answer_text": "To minimize a window",
+                    "timestamp": "2026-08-05 11:23:45 IST"
+                },
+                {
+                    "question_id": 418,
+                    "question_text": "How do you move the cursor to the last change in Word?",
+                    "status": "WRONG",
+                    "selected_option": 0,
+                    "correct_option": 1,
+                    "correct_answer_text": "Press Shift+F5",
+                    "timestamp": "2026-08-05 11:23:57 IST"
+                },
+                {
+                    "question_id": 522,
+                    "question_text": "Which Excel feature allows you to simultaneously edit the same cell or range of cells with multiple users in real-time?",
+                    "status": "WRONG",
+                    "selected_option": 3,
+                    "correct_option": 0,
+                    "correct_answer_text": "Co-authoring",
+                    "timestamp": "2026-08-05 11:24:16 IST"
+                },
+                {
+                    "question_id": 10,
+                    "question_text": "What is the primary function of a Universal Serial Bus (USB) Port?",
+                    "status": "CORRECT",
+                    "selected_option": 2,
+                    "correct_option": 2,
+                    "correct_answer_text": "Used for connecting all kinds of external USB devices",
+                    "timestamp": "2026-08-05 11:24:29 IST"
+                },
+                {
+                    "question_id": 497,
+                    "question_text": "What is the primary function of DDL?",
+                    "status": "CORRECT",
+                    "selected_option": 0,
+                    "correct_option": 0,
+                    "correct_answer_text": "To create and modify database objects",
+                    "timestamp": "2026-08-05 11:24:38 IST"
+                },
+                {
+                    "question_id": 472,
+                    "question_text": "What is the function of Ctrl+Shift+F1?",
+                    "status": "WRONG",
+                    "selected_option": 1,
+                    "correct_option": 0,
+                    "correct_answer_text": "Toggle full screen mode",
+                    "timestamp": "2026-08-05 11:24:47 IST"
+                },
+                {
+                    "question_id": 77,
+                    "question_text": "Which of the following functions is used to convert text to upper case in MS-EXCEL?",
+                    "status": "CORRECT",
+                    "selected_option": 1,
+                    "correct_option": 1,
+                    "correct_answer_text": "UPPER",
+                    "timestamp": "2026-08-05 11:24:54 IST"
+                },
+                {
+                    "question_id": 192,
+                    "question_text": "What is the effect of using the keyboard shortcut Ctrl + Down Arrow on a worksheet?",
+                    "status": "CORRECT",
+                    "selected_option": 1,
+                    "correct_option": 1,
+                    "correct_answer_text": "Moves to the bottom boundary of the current data region",
+                    "timestamp": "2026-08-05 11:25:07 IST"
+                },
+                {
+                    "question_id": 238,
+                    "question_text": "How does a gateway connect different types of networks?",
+                    "status": "WRONG",
+                    "selected_option": 0,
+                    "correct_option": 1,
+                    "correct_answer_text": "By using a combination of software and hardware",
+                    "timestamp": "2026-08-05 11:25:17 IST"
+                },
+                {
+                    "question_id": 137,
+                    "question_text": "What is the function of Alt + Shift + F4?",
+                    "status": "WRONG",
+                    "selected_option": 2,
+                    "correct_option": 0,
+                    "correct_answer_text": "Closes all workbooks and exits Excel",
+                    "timestamp": "2026-08-05 11:25:29 IST"
+                },
+                {
+                    "question_id": 461,
+                    "question_text": "What is the function of Shift+F6?",
+                    "status": "CORRECT",
+                    "selected_option": 0,
+                    "correct_option": 0,
+                    "correct_answer_text": "Switches between the worksheet, Zoom controls, task pane, and ribbon",
+                    "timestamp": "2026-08-05 11:25:40 IST"
+                },
+                {
+                    "question_id": 261,
+                    "question_text": "What is the definition of hacking in computer networking?",
+                    "status": "CORRECT",
+                    "selected_option": 0,
+                    "correct_option": 0,
+                    "correct_answer_text": "Any technical effort to manipulate the normal behavior of network connections and connected systems",
+                    "timestamp": "2026-08-05 11:25:53 IST"
+                },
+                {
+                    "question_id": 450,
+                    "question_text": "What is the shortcut to show and hide gridlines and headings?",
+                    "status": "WRONG",
+                    "selected_option": 2,
+                    "correct_option": 1,
+                    "correct_answer_text": "Alt+W",
+                    "timestamp": "2026-08-05 11:26:05 IST"
+                },
+                {
+                    "question_id": 266,
+                    "question_text": "What is the difference between ethical and non-ethical hacking in terms of legality?",
+                    "status": "CORRECT",
+                    "selected_option": 1,
+                    "correct_option": 1,
+                    "correct_answer_text": "Ethical hacking is legal, while non-ethical hacking is illegal",
+                    "timestamp": "2026-08-05 11:26:23 IST"
+                },
+                {
+                    "question_id": 91,
+                    "question_text": "What is the shortcut to select an entire row in MS-Excel 2010?",
+                    "status": "WRONG",
+                    "selected_option": 0,
+                    "correct_option": 1,
+                    "correct_answer_text": "Shift + Spacebar",
+                    "timestamp": "2026-08-05 11:26:33 IST"
+                },
+                {
+                    "question_id": 230,
+                    "question_text": "Which of the following is an example of a keyboard shortcut?",
+                    "status": "CORRECT",
+                    "selected_option": 2,
+                    "correct_option": 2,
+                    "correct_answer_text": "Ctrl + D",
+                    "timestamp": "2026-08-05 11:26:42 IST"
+                },
+                {
+                    "question_id": 424,
+                    "question_text": "What is the function of F5 in Word?",
+                    "status": "WRONG",
+                    "selected_option": 1,
+                    "correct_option": 0,
+                    "correct_answer_text": "Displays the Go To dialog box",
+                    "timestamp": "2026-08-05 11:26:53 IST"
+                },
+                {
+                    "question_id": 178,
+                    "question_text": "What is the effect of using the keyboard shortcut Alt + Tab on the computer?",
+                    "status": "WRONG",
+                    "selected_option": 2,
+                    "correct_option": 3,
+                    "correct_answer_text": "Moves to the next application open on your computer",
+                    "timestamp": "2026-08-05 11:27:12 IST"
+                },
+                {
+                    "question_id": 139,
+                    "question_text": "What is the shortcut to display the Macro dialog box?",
+                    "status": "SKIPPED_TIMEOUT",
+                    "selected_option": null,
+                    "correct_option": 0,
+                    "correct_answer_text": "Alt + F8",
+                    "timestamp": "2026-08-05 11:27:45 IST"
+                },
+                {
+                    "question_id": 513,
+                    "question_text": "Which icon is commonly used to save the current document in MS Word?",
+                    "status": "WRONG",
+                    "selected_option": 2,
+                    "correct_option": 0,
+                    "correct_answer_text": "The floppy disk icon",
+                    "timestamp": "2026-08-05 11:27:52 IST"
+                },
+                {
+                    "question_id": 157,
+                    "question_text": "What is the function of Backspace in the active cell?",
+                    "status": "CORRECT",
+                    "selected_option": 1,
+                    "correct_option": 1,
+                    "correct_answer_text": "Deletes the selection or one character to the left",
+                    "timestamp": "2026-08-05 11:28:01 IST"
+                },
+                {
+                    "question_id": 328,
+                    "question_text": "Which layer is responsible for framing, physical addressing, and error control?",
+                    "status": "WRONG",
+                    "selected_option": 3,
+                    "correct_option": 2,
+                    "correct_answer_text": "Data Link Layer",
+                    "timestamp": "2026-08-05 11:28:10 IST"
+                },
+                {
+                    "question_id": 76,
+                    "question_text": "What is the purpose of the 'Data' tab in MS-EXCEL?",
+                    "status": "CORRECT",
+                    "selected_option": 1,
+                    "correct_option": 1,
+                    "correct_answer_text": "To manage and manipulate data",
+                    "timestamp": "2026-08-05 11:28:18 IST"
+                },
+                {
+                    "question_id": 134,
+                    "question_text": "What is the function of Ctrl + F3?",
+                    "status": "WRONG",
+                    "selected_option": 3,
+                    "correct_option": 0,
+                    "correct_answer_text": "Displays the Name Manager dialog box",
+                    "timestamp": "2026-08-05 11:28:31 IST"
+                },
+                {
+                    "question_id": 363,
+                    "question_text": "What is the main use of SMPS?",
+                    "status": "CORRECT",
+                    "selected_option": 0,
+                    "correct_option": 0,
+                    "correct_answer_text": "In computers",
+                    "timestamp": "2026-08-05 11:28:41 IST"
+                }
+            ]
+        }
+    ],
+    "last_synced": "2026-08-05 15:25:41 IST"
+}

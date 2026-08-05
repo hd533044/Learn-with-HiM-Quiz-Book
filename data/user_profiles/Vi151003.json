@@ -1,0 +1,290 @@
+{
+    "student_id": "Vi151003",
+    "registration_info": {
+        "user_id": 5784849726,
+        "student_id": "Vi151003",
+        "full_name": "Vikram singh chahar",
+        "username": "VIKRAM_1510",
+        "phone_number": "917597635938",
+        "target_exam": "CAPF HCM",
+        "dob": "15-10-2003",
+        "age": 23,
+        "gender": "Male",
+        "country": "India",
+        "state": "Rajasthan",
+        "pin": "1234",
+        "security_question": "👩 What is your mother's maiden name?",
+        "security_answer": "Devi",
+        "referred_by": null,
+        "referral_count": 0,
+        "bonus_quota": 0,
+        "last_profile_edit": "2026-08-05 10:46:26 IST",
+        "last_active": "2026-08-05 11:17:28 IST",
+        "last_activity_epoch": 1785908848,
+        "is_banned": 0,
+        "is_verified": 1,
+        "created_at": "2026-08-05 10:46:26 IST"
+    },
+    "bot_engagement_metrics": {
+        "last_login_timestamp": "2026-08-05 11:17:28 IST",
+        "total_time_spent_overall": "420 seconds (7.0 mins)",
+        "daily_spent_time_breakdown": {
+            "2026-08-05": "420 seconds (7.0 mins)"
+        },
+        "questions_attempted_per_day": {
+            "2026-08-05": 20
+        }
+    },
+    "academic_summary": {
+        "total_quizzes_attempted": 1,
+        "total_questions_attempted": 20,
+        "total_correct": 7,
+        "total_wrong": 13,
+        "total_skipped": 0,
+        "datewise_quiz_summary": {
+            "2026-08-05": {
+                "total_quizzes": 1,
+                "total_questions": 20,
+                "total_correct": 7,
+                "total_wrong": 13,
+                "total_score": 7.0,
+                "total_time_seconds": 0
+            }
+        }
+    },
+    "saved_questions_ledger": {
+        "total_saved": 1,
+        "datewise_saved_summary": {
+            "2026-08-05": 1
+        },
+        "saved_questions": [
+            {
+                "id": 4,
+                "user_id": 5784849726,
+                "question_text": "What is the shortcut to insert a new worksheet?",
+                "correct_option": 1,
+                "explanation": "Alt+Shift+F1 inserts a new worksheet.",
+                "saved_at": "2026-08-05 10:58:20 IST",
+                "options": [
+                    "Alt+F1",
+                    "Alt+Shift+F1",
+                    "Ctrl+Shift+F1",
+                    "Ctrl+F1"
+                ]
+            }
+        ]
+    },
+    "student_reviews_given": [],
+    "subscription_ledger": {
+        "status": "FREE_TIER",
+        "active_plan": "Standard Free Tier",
+        "total_amount_paid": 0.0,
+        "payment_history": []
+    },
+    "badges_and_achievements": {
+        "earned_badges": [
+            "Early Learner",
+            "Registered Scholar"
+        ],
+        "streak_days": 1
+    },
+    "full_quiz_history": [
+        {
+            "id": 5,
+            "user_id": 5784849726,
+            "quiz_id": "computer_awareness_mock",
+            "questions_attempted": 20,
+            "total_questions": 20,
+            "correct_answers": 7,
+            "wrong_answers": 13,
+            "skipped_count": 0,
+            "score": 7.0,
+            "time_taken": 0,
+            "attempt_timestamp": "2026-08-05 10:58:35 IST",
+            "attempt_date": "2026-08-05",
+            "question_details": [
+                {
+                    "question_id": 409,
+                    "question_text": "What happens when you press Ctrl+Shift+F5 in Word?",
+                    "status": "CORRECT",
+                    "selected_option": 0,
+                    "correct_option": 0,
+                    "correct_answer_text": "Displays the Bookmark dialog box",
+                    "timestamp": "2026-08-05 10:55:42 IST"
+                },
+                {
+                    "question_id": 239,
+                    "question_text": "What is the function of a gateway in routing data packets?",
+                    "status": "WRONG",
+                    "selected_option": 2,
+                    "correct_option": 0,
+                    "correct_answer_text": "To route data packets to the destination node",
+                    "timestamp": "2026-08-05 10:55:52 IST"
+                },
+                {
+                    "question_id": 212,
+                    "question_text": "Which folder is used to store deleted emails?",
+                    "status": "CORRECT",
+                    "selected_option": 2,
+                    "correct_option": 2,
+                    "correct_answer_text": "Trash",
+                    "timestamp": "2026-08-05 10:56:00 IST"
+                },
+                {
+                    "question_id": 280,
+                    "question_text": "What type of cyber threat is Crypto Locker an example of?",
+                    "status": "CORRECT",
+                    "selected_option": 1,
+                    "correct_option": 1,
+                    "correct_answer_text": "Ransomware",
+                    "timestamp": "2026-08-05 10:56:15 IST"
+                },
+                {
+                    "question_id": 225,
+                    "question_text": "What is the purpose of the Compose option in Gmail?",
+                    "status": "WRONG",
+                    "selected_option": 3,
+                    "correct_option": 2,
+                    "correct_answer_text": "To create a new email",
+                    "timestamp": "2026-08-05 10:56:34 IST"
+                },
+                {
+                    "question_id": 196,
+                    "question_text": "What is the effect of using the keyboard shortcut Ctrl + Page Down on a worksheet?",
+                    "status": "WRONG",
+                    "selected_option": 0,
+                    "correct_option": 1,
+                    "correct_answer_text": "Moves to the next worksheet in the workbook",
+                    "timestamp": "2026-08-05 10:56:39 IST"
+                },
+                {
+                    "question_id": 39,
+                    "question_text": "What is the purpose of Alt + Space + X?",
+                    "status": "WRONG",
+                    "selected_option": 2,
+                    "correct_option": 0,
+                    "correct_answer_text": "To maximize a window",
+                    "timestamp": "2026-08-05 10:56:56 IST"
+                },
+                {
+                    "question_id": 369,
+                    "question_text": "What is the former name of Apple Inc.?",
+                    "status": "WRONG",
+                    "selected_option": 3,
+                    "correct_option": 0,
+                    "correct_answer_text": "Apple Computer Company",
+                    "timestamp": "2026-08-05 10:57:13 IST"
+                },
+                {
+                    "question_id": 367,
+                    "question_text": "What is the name of the company founded by Vinod Khosla?",
+                    "status": "CORRECT",
+                    "selected_option": 0,
+                    "correct_option": 0,
+                    "correct_answer_text": "Sun Microsystems",
+                    "timestamp": "2026-08-05 10:57:23 IST"
+                },
+                {
+                    "question_id": 393,
+                    "question_text": "What is included in Microsoft 365 for personal, non-commercial use?",
+                    "status": "CORRECT",
+                    "selected_option": 2,
+                    "correct_option": 2,
+                    "correct_answer_text": "Word processor, spreadsheet programme, presentation programme, email client, database management system, and desktop publishing app",
+                    "timestamp": "2026-08-05 10:57:32 IST"
+                },
+                {
+                    "question_id": 408,
+                    "question_text": "How do you move from an open dialog box back to the document in Word?",
+                    "status": "WRONG",
+                    "selected_option": 2,
+                    "correct_option": 1,
+                    "correct_answer_text": "Alt+F6",
+                    "timestamp": "2026-08-05 10:57:40 IST"
+                },
+                {
+                    "question_id": 490,
+                    "question_text": "What services does IBM offer?",
+                    "status": "WRONG",
+                    "selected_option": 1,
+                    "correct_option": 0,
+                    "correct_answer_text": "Infrastructure, hosting, and consulting services",
+                    "timestamp": "2026-08-05 10:57:52 IST"
+                },
+                {
+                    "question_id": 270,
+                    "question_text": "What is the purpose of a logic bomb in the context of hacking?",
+                    "status": "WRONG",
+                    "selected_option": 0,
+                    "correct_option": 3,
+                    "correct_answer_text": "To implement a malicious function after certain conditions are met",
+                    "timestamp": "2026-08-05 10:58:02 IST"
+                },
+                {
+                    "question_id": 28,
+                    "question_text": "Which port is used for connecting all kinds of external USB devices and has a data transfer speed of 12 megabits per second?",
+                    "status": "WRONG",
+                    "selected_option": 3,
+                    "correct_option": 2,
+                    "correct_answer_text": "Universal Serial Bus (USB) Port",
+                    "timestamp": "2026-08-05 10:58:06 IST"
+                },
+                {
+                    "question_id": 156,
+                    "question_text": "Which shortcut key is used to delete the selection or one character to the right?",
+                    "status": "WRONG",
+                    "selected_option": 2,
+                    "correct_option": 0,
+                    "correct_answer_text": "Delete",
+                    "timestamp": "2026-08-05 10:58:13 IST"
+                },
+                {
+                    "question_id": 477,
+                    "question_text": "What is the function of F4 alone if the last command or action cannot be repeated?",
+                    "status": "WRONG",
+                    "selected_option": 0,
+                    "correct_option": 1,
+                    "correct_answer_text": "Does nothing",
+                    "timestamp": "2026-08-05 10:58:17 IST"
+                },
+                {
+                    "question_id": 462,
+                    "question_text": "What is the shortcut to insert a new worksheet?",
+                    "status": "WRONG",
+                    "selected_option": 3,
+                    "correct_option": 1,
+                    "correct_answer_text": "Alt+Shift+F1",
+                    "timestamp": "2026-08-05 10:58:24 IST"
+                },
+                {
+                    "question_id": 103,
+                    "question_text": "What is the purpose of the CONCATENATE function in MS-Excel 2010?",
+                    "status": "CORRECT",
+                    "selected_option": 0,
+                    "correct_option": 0,
+                    "correct_answer_text": "To join several text items into one text item cell",
+                    "timestamp": "2026-08-05 10:58:27 IST"
+                },
+                {
+                    "question_id": 261,
+                    "question_text": "What is the definition of hacking in computer networking?",
+                    "status": "CORRECT",
+                    "selected_option": 0,
+                    "correct_option": 0,
+                    "correct_answer_text": "Any technical effort to manipulate the normal behavior of network connections and connected systems",
+                    "timestamp": "2026-08-05 10:58:31 IST"
+                },
+                {
+                    "question_id": 335,
+                    "question_text": "What is the function of segmentation and reassembly in the Transport Layer?",
+                    "status": "WRONG",
+                    "selected_option": 2,
+                    "correct_option": 0,
+                    "correct_answer_text": "Breaking down data into smaller segments and reassembling them",
+                    "timestamp": "2026-08-05 10:58:34 IST"
+                }
+            ]
+        }
+    ],
+    "last_synced": "2026-08-05 15:25:41 IST"
+}

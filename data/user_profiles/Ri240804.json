@@ -1,0 +1,183 @@
+{
+    "student_id": "Ri240804",
+    "registration_info": {
+        "user_id": 5119470041,
+        "student_id": "Ri240804",
+        "full_name": "Rish",
+        "username": "N/A",
+        "phone_number": "918871741862",
+        "target_exam": "CAPF HCM",
+        "dob": "24-08-2004",
+        "age": 22,
+        "gender": "Female",
+        "country": "India",
+        "state": "Madhya Pradesh",
+        "pin": "2903",
+        "security_question": "🏙 Which is your favorite city?",
+        "security_answer": "Bhopal",
+        "referred_by": null,
+        "referral_count": 0,
+        "bonus_quota": 0,
+        "last_profile_edit": "2026-08-05 12:28:51 IST",
+        "last_active": "2026-08-05 12:33:38 IST",
+        "last_activity_epoch": 1785913418,
+        "is_banned": 0,
+        "is_verified": 1,
+        "created_at": "2026-08-05 12:28:51 IST"
+    },
+    "bot_engagement_metrics": {
+        "last_login_timestamp": "2026-08-05 12:33:38 IST",
+        "total_time_spent_overall": "215 seconds (3.58 mins)",
+        "daily_spent_time_breakdown": {
+            "2026-08-05": "215 seconds (3.58 mins)"
+        },
+        "questions_attempted_per_day": {
+            "2026-08-05": 10
+        }
+    },
+    "academic_summary": {
+        "total_quizzes_attempted": 1,
+        "total_questions_attempted": 10,
+        "total_correct": 6,
+        "total_wrong": 4,
+        "total_skipped": 0,
+        "datewise_quiz_summary": {
+            "2026-08-05": {
+                "total_quizzes": 1,
+                "total_questions": 10,
+                "total_correct": 6,
+                "total_wrong": 4,
+                "total_score": 6.0,
+                "total_time_seconds": 0
+            }
+        }
+    },
+    "saved_questions_ledger": {
+        "total_saved": 0,
+        "datewise_saved_summary": {},
+        "saved_questions": []
+    },
+    "student_reviews_given": [],
+    "subscription_ledger": {
+        "status": "FREE_TIER",
+        "active_plan": "Standard Free Tier",
+        "total_amount_paid": 0.0,
+        "payment_history": []
+    },
+    "badges_and_achievements": {
+        "earned_badges": [
+            "Early Learner",
+            "Registered Scholar"
+        ],
+        "streak_days": 1
+    },
+    "full_quiz_history": [
+        {
+            "id": 17,
+            "user_id": 5119470041,
+            "quiz_id": "computer_awareness_mock",
+            "questions_attempted": 10,
+            "total_questions": 10,
+            "correct_answers": 6,
+            "wrong_answers": 4,
+            "skipped_count": 0,
+            "score": 6.0,
+            "time_taken": 0,
+            "attempt_timestamp": "2026-08-05 12:32:56 IST",
+            "attempt_date": "2026-08-05",
+            "question_details": [
+                {
+                    "question_id": 110,
+                    "question_text": "What is the shortcut to go to the Data tab in MS-Excel 2010?",
+                    "status": "WRONG",
+                    "selected_option": 3,
+                    "correct_option": 0,
+                    "correct_answer_text": "Alt + A",
+                    "timestamp": "2026-08-05 12:30:27 IST"
+                },
+                {
+                    "question_id": 398,
+                    "question_text": "What is the name of the email client in Microsoft 365?",
+                    "status": "CORRECT",
+                    "selected_option": 2,
+                    "correct_option": 2,
+                    "correct_answer_text": "Microsoft Outlook",
+                    "timestamp": "2026-08-05 12:30:38 IST"
+                },
+                {
+                    "question_id": 274,
+                    "question_text": "What is the definition of a cracker?",
+                    "status": "CORRECT",
+                    "selected_option": 0,
+                    "correct_option": 0,
+                    "correct_answer_text": "A person who carries out malicious attacks on computer networks",
+                    "timestamp": "2026-08-05 12:31:03 IST"
+                },
+                {
+                    "question_id": 345,
+                    "question_text": "What is the purpose of the Transport Layer?",
+                    "status": "WRONG",
+                    "selected_option": 3,
+                    "correct_option": 1,
+                    "correct_answer_text": "To provide end-to-end delivery of messages",
+                    "timestamp": "2026-08-05 12:31:19 IST"
+                },
+                {
+                    "question_id": 533,
+                    "question_text": "What is the difference between a range of cells and a group of cells in MS Excel?",
+                    "status": "CORRECT",
+                    "selected_option": 1,
+                    "correct_option": 1,
+                    "correct_answer_text": "A range of cells refers to multiple cells, while a group of cells refers to a single cell",
+                    "timestamp": "2026-08-05 12:31:38 IST"
+                },
+                {
+                    "question_id": 204,
+                    "question_text": "What is the term for transferring data from the customer's machine to the server?",
+                    "status": "WRONG",
+                    "selected_option": 0,
+                    "correct_option": 1,
+                    "correct_answer_text": "Uploading",
+                    "timestamp": "2026-08-05 12:31:53 IST"
+                },
+                {
+                    "question_id": 389,
+                    "question_text": "What is the primary function of Microsoft Excel?",
+                    "status": "CORRECT",
+                    "selected_option": 1,
+                    "correct_option": 1,
+                    "correct_answer_text": "Spreadsheet editing",
+                    "timestamp": "2026-08-05 12:32:06 IST"
+                },
+                {
+                    "question_id": 144,
+                    "question_text": "What is the purpose of using Alt + F4?",
+                    "status": "CORRECT",
+                    "selected_option": 0,
+                    "correct_option": 0,
+                    "correct_answer_text": "Closes all workbooks and exits Excel",
+                    "timestamp": "2026-08-05 12:32:17 IST"
+                },
+                {
+                    "question_id": 402,
+                    "question_text": "What is the purpose of Microsoft OneNote?",
+                    "status": "WRONG",
+                    "selected_option": 0,
+                    "correct_option": 2,
+                    "correct_answer_text": "Notetaking and note sharing",
+                    "timestamp": "2026-08-05 12:32:38 IST"
+                },
+                {
+                    "question_id": 167,
+                    "question_text": "What is the function of Ctrl + Y in the active workbook?",
+                    "status": "CORRECT",
+                    "selected_option": 0,
+                    "correct_option": 0,
+                    "correct_answer_text": "Repeats the last workbook action",
+                    "timestamp": "2026-08-05 12:32:55 IST"
+                }
+            ]
+        }
+    ],
+    "last_synced": "2026-08-05 15:25:41 IST"
+}

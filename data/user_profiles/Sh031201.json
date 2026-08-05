@@ -1,0 +1,183 @@
+{
+    "student_id": "Sh031201",
+    "registration_info": {
+        "user_id": 5273769003,
+        "student_id": "Sh031201",
+        "full_name": "Shubham",
+        "username": "N/A",
+        "phone_number": "917291943265",
+        "target_exam": "CAPF HCM",
+        "dob": "03-12-2001",
+        "age": 25,
+        "gender": "Male",
+        "country": "India",
+        "state": "Delhi",
+        "pin": "2001",
+        "security_question": "🐾 What is your pet's name?",
+        "security_answer": "Dog",
+        "referred_by": null,
+        "referral_count": 0,
+        "bonus_quota": 0,
+        "last_profile_edit": "2026-08-05 13:17:56 IST",
+        "last_active": "2026-08-05 13:21:59 IST",
+        "last_activity_epoch": 1785916319,
+        "is_banned": 0,
+        "is_verified": 1,
+        "created_at": "2026-08-05 13:17:56 IST"
+    },
+    "bot_engagement_metrics": {
+        "last_login_timestamp": "2026-08-05 13:21:59 IST",
+        "total_time_spent_overall": "190 seconds (3.17 mins)",
+        "daily_spent_time_breakdown": {
+            "2026-08-05": "190 seconds (3.17 mins)"
+        },
+        "questions_attempted_per_day": {
+            "2026-08-05": 10
+        }
+    },
+    "academic_summary": {
+        "total_quizzes_attempted": 1,
+        "total_questions_attempted": 10,
+        "total_correct": 4,
+        "total_wrong": 5,
+        "total_skipped": 1,
+        "datewise_quiz_summary": {
+            "2026-08-05": {
+                "total_quizzes": 1,
+                "total_questions": 10,
+                "total_correct": 4,
+                "total_wrong": 5,
+                "total_score": 4.0,
+                "total_time_seconds": 0
+            }
+        }
+    },
+    "saved_questions_ledger": {
+        "total_saved": 0,
+        "datewise_saved_summary": {},
+        "saved_questions": []
+    },
+    "student_reviews_given": [],
+    "subscription_ledger": {
+        "status": "FREE_TIER",
+        "active_plan": "Standard Free Tier",
+        "total_amount_paid": 0.0,
+        "payment_history": []
+    },
+    "badges_and_achievements": {
+        "earned_badges": [
+            "Early Learner",
+            "Registered Scholar"
+        ],
+        "streak_days": 1
+    },
+    "full_quiz_history": [
+        {
+            "id": 23,
+            "user_id": 5273769003,
+            "quiz_id": "computer_awareness_mock",
+            "questions_attempted": 10,
+            "total_questions": 10,
+            "correct_answers": 4,
+            "wrong_answers": 5,
+            "skipped_count": 1,
+            "score": 4.0,
+            "time_taken": 0,
+            "attempt_timestamp": "2026-08-05 13:21:28 IST",
+            "attempt_date": "2026-08-05",
+            "question_details": [
+                {
+                    "question_id": 78,
+                    "question_text": "What is the purpose of the 'Review' tab in MS-EXCEL?",
+                    "status": "CORRECT",
+                    "selected_option": 3,
+                    "correct_option": 3,
+                    "correct_answer_text": "To review the document",
+                    "timestamp": "2026-08-05 13:19:58 IST"
+                },
+                {
+                    "question_id": 175,
+                    "question_text": "What is the function of the keyboard shortcut Ctrl + Shift + & (or 7)?",
+                    "status": "WRONG",
+                    "selected_option": 1,
+                    "correct_option": 2,
+                    "correct_answer_text": "Applies the outline border to the selection",
+                    "timestamp": "2026-08-05 13:20:08 IST"
+                },
+                {
+                    "question_id": 33,
+                    "question_text": "Which of the following ports has a data transfer speed of 12 megabits per second and is used for connecting all kinds of external USB devices?",
+                    "status": "CORRECT",
+                    "selected_option": 2,
+                    "correct_option": 2,
+                    "correct_answer_text": "Universal Serial Bus (USB) Port",
+                    "timestamp": "2026-08-05 13:20:18 IST"
+                },
+                {
+                    "question_id": 345,
+                    "question_text": "What is the purpose of the Transport Layer?",
+                    "status": "SKIPPED_TIMEOUT",
+                    "selected_option": null,
+                    "correct_option": 1,
+                    "correct_answer_text": "To provide end-to-end delivery of messages",
+                    "timestamp": "2026-08-05 13:20:33 IST"
+                },
+                {
+                    "question_id": 78,
+                    "question_text": "What is the purpose of the 'Review' tab in MS-EXCEL?",
+                    "status": "CORRECT",
+                    "selected_option": 3,
+                    "correct_option": 3,
+                    "correct_answer_text": "To review the document",
+                    "timestamp": "2026-08-05 13:20:39 IST"
+                },
+                {
+                    "question_id": 539,
+                    "question_text": "How can you access the Step by Step Mail Merge Wizard in Microsoft Word?",
+                    "status": "CORRECT",
+                    "selected_option": 1,
+                    "correct_option": 1,
+                    "correct_answer_text": "Clicking on the Mailings tab",
+                    "timestamp": "2026-08-05 13:20:47 IST"
+                },
+                {
+                    "question_id": 459,
+                    "question_text": "What is the function of F5 alone?",
+                    "status": "WRONG",
+                    "selected_option": 1,
+                    "correct_option": 0,
+                    "correct_answer_text": "Displays the Go To dialog box",
+                    "timestamp": "2026-08-05 13:20:59 IST"
+                },
+                {
+                    "question_id": 255,
+                    "question_text": "What is a white hat hacker?",
+                    "status": "WRONG",
+                    "selected_option": 0,
+                    "correct_option": 1,
+                    "correct_answer_text": "A hacker who uses their knowledge to find and fix security flaws",
+                    "timestamp": "2026-08-05 13:21:04 IST"
+                },
+                {
+                    "question_id": 369,
+                    "question_text": "What is the former name of Apple Inc.?",
+                    "status": "WRONG",
+                    "selected_option": 1,
+                    "correct_option": 0,
+                    "correct_answer_text": "Apple Computer Company",
+                    "timestamp": "2026-08-05 13:21:15 IST"
+                },
+                {
+                    "question_id": 464,
+                    "question_text": "What is the function of F3 alone?",
+                    "status": "WRONG",
+                    "selected_option": 1,
+                    "correct_option": 0,
+                    "correct_answer_text": "Displays the Paste Name dialog box",
+                    "timestamp": "2026-08-05 13:21:28 IST"
+                }
+            ]
+        }
+    ],
+    "last_synced": "2026-08-05 15:25:41 IST"
+}

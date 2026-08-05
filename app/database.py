@@ -27,7 +27,8 @@ def get_db():
         try:
             import libsql_experimental as libsql
             conn = libsql.connect(database=TURSO_URL, auth_token=TURSO_TOKEN)
-            conn.row_factory = libsql.Row
+            # Use standard sqlite3.Row so dictionary row mapping works flawlessly on Turso
+            conn.row_factory = sqlite3.Row
             return conn
         except ImportError:
             logger.debug("libsql_experimental not installed. Falling back to local SQLite database.")

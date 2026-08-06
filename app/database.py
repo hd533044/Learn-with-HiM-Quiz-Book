@@ -344,7 +344,16 @@ def log_user_activity_time(user_id: int, seconds_spent: int = 10):
     conn.commit()
     conn.close()
 
-# Admin Control Panel Helpers & Aliases
+# Admin Control Panel Helpers
+def get_paid_users():
+    """Retrieves all users with active paid balances or active VIP passes."""
+    conn = get_db()
+    cursor = conn.cursor()
+    cursor.execute("SELECT * FROM users WHERE paid_question_balance > 20 ORDER BY paid_question_balance DESC")
+    rows = cursor.fetchall()
+    conn.close()
+    return [dict(r) for r in rows]
+
 def admin_toggle_ban(user_id: int, ban_status: int = 1):
     conn = get_db()
     cursor = conn.cursor()

@@ -238,6 +238,38 @@ def init_db():
     conn.commit()
     conn.close()
 
+def log_user_activity_time(user_id: int, seconds_spent: int = 10):
+    """Tracks active learning time spent by a student per day."""
+    conn = get_db()
+    cursor = conn.cursor()
+    dt_str = get_ist_date_str()
+    now_str = get_ist_timestamp_str()
+    now_epoch = int(get_ist_now().timestamp())
+
+    if DATABASE_URL and HAS_PG:
+        cursor.execute('''
+            INSERT INTO user_activity_time (user_id, date_str, seconds_spent)
+            VALUES (?, ?, ?)
+            ON CONFLICT (user_id, date_str) DO UPDATE SET
+                seconds_spent = user_activity_time.seconds_spent + EXCLUDED.seconds_spent
+        ''', (user_id, dt_str, seconds_spent))
+        cursor.execute('''
+            UPDATE users SET last_active = ?, last_activity_epoch = ? WHERE user_id = ?
+        ''', (now_str, now_epoch, user_id))
+    else:
+        cursor.execute('''
+            INSERT INTO user_activity_time (user_id, date_str, seconds_spent)
+            VALUES (?, ?, ?)
+            ON CONFLICT(user_id, date_str) DO UPDATE SET
+                seconds_spent = seconds_spent + excluded.seconds_spent
+        ''', (user_id, dt_str, seconds_spent))
+        cursor.execute('''
+            UPDATE users SET last_active = ?, last_activity_epoch = ? WHERE user_id = ?
+        ''', (now_str, now_epoch, user_id))
+
+    conn.commit()
+    conn.close()
+
 def record_payment_transaction(user_id: int, plan_key: str, amount: int, payment_id: str):
     conn = get_db()
     cursor = conn.cursor()

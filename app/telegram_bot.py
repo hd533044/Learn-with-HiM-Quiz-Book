@@ -36,7 +36,7 @@ from app.pyq_fetcher import fetch_pyqs_for_quiz
 NEGATIVE_WORDS = ["bad", "worst", "useless", "trash", "fake", "hate", "terrible", "waste", "horrible", "fraud", "stupid", "scam"]
 
 def generate_razorpay_link_sync(user_id: int, plan_key: str) -> str:
-    """Generates a Razorpay payment link using standard urllib, entirely avoiding SDK package crashes."""
+    """Generates a live Razorpay payment link via direct REST API call using urllib."""
     plan = PLAN_TIERS.get(plan_key)
     if not plan or plan["price"] == 0:
         return None
@@ -45,7 +45,7 @@ def generate_razorpay_link_sync(user_id: int, plan_key: str) -> str:
     key_secret = (os.getenv("RAZORPAY_KEY_SECRET") or RAZORPAY_KEY_SECRET or "").strip()
 
     if not key_id or not key_secret:
-        logging.error("Razorpay API keys are missing.")
+        logging.error("[PAYMENT ERROR] Razorpay API keys are missing or unconfigured.")
         return None
 
     url = "https://api.razorpay.com/v1/payment_links"
@@ -75,7 +75,7 @@ def generate_razorpay_link_sync(user_id: int, plan_key: str) -> str:
             "user_id": str(user_id),
             "plan_key": plan_key
         },
-        "callback_url": RENDER_EXTERNAL_URL if RENDER_EXTERNAL_URL else "https://learnwithhimquiz.onrender.com",
+        "callback_url": RENDER_EXTERNAL_URL if RENDER_EXTERNAL_URL else "https://learn-with-him-quiz-book.onrender.com",
         "callback_method": "get"
     }
 
@@ -91,10 +91,10 @@ def generate_razorpay_link_sync(user_id: int, plan_key: str) -> str:
             if response.status == 200 and "short_url" in res_json:
                 return res_json["short_url"]
             else:
-                logging.error(f"Razorpay API Error Response: {res_body}")
+                logging.error(f"[RAZORPAY API ERROR] {res_body}")
                 return None
     except Exception as e:
-        logging.error(f"Urllib request exception for Razorpay link: {e}")
+        logging.error(f"[RAZORPAY EXCEPTION] {e}")
         return None
 
 async def send_registration_prompt(update: Update):
@@ -284,11 +284,11 @@ async def handle_buy_plan_callback(update: Update, context: ContextTypes.DEFAULT
             f"📅 **Validity:** {plan_info['days']} Days\n"
             f"⚡ **Daily Limit:** {plan_info['daily_limit']} Questions/Day\n\n"
             f"Tap the **💳 Pay Now** button below to complete payment via UPI, GPay, PhonePe, or Cards. "
-            f"Your VIP quota activates automatically upon payment via Webhooks!"
+            f"Your VIP quota activates automatically upon payment!"
         )
         await query.edit_message_text(msg, reply_markup=InlineKeyboardMarkup(keyboard), parse_mode="Markdown")
     else:
-        await query.message.reply_text("⚠️ Unable to generate payment link. Please verify Razorpay keys in Render Environment Variables.")
+        await query.message.reply_text("⚠️ Unable to generate payment link. Please verify Razorpay live keys in Render Environment Variables.")
 
 async def pdfreport_command(update: Update, context: ContextTypes.DEFAULT_TYPE):
     if not await maintenance_guard(update, context): return
@@ -922,7 +922,6 @@ def build_application() -> Application:
     
     app.add_handler(CommandHandler("admin", admin_portal_command))
     app.add_handler(CommandHandler("admit", admin_portal_command))
-    app.add_handler(CommandHandler("admin_portal", admin_portal_command))
 
     app.add_handler(CallbackQueryHandler(quiz_count_callback, pattern="^qcount_"))
     app.add_handler(CallbackQueryHandler(user_pdf_callback_handler, pattern="^usergenpdf_"))

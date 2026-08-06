@@ -85,7 +85,6 @@ async def launch_quiz_setup(update: Update, context: ContextTypes.DEFAULT_TYPE):
 
     attempted_today = await asyncio.to_thread(get_today_attempts, user.id)
     
-    # Calculate Quota: Standard limit OR Paid VIP pass balance
     paid_bal = profile.get("paid_question_balance", 0) or 0
     base_limit = max(DAILY_QUESTION_LIMIT, paid_bal)
     allowed_limit = 10000 if user.id == PRIMARY_ADMIN_ID else base_limit + profile.get("bonus_quota", 0)
@@ -99,7 +98,7 @@ async def launch_quiz_setup(update: Update, context: ContextTypes.DEFAULT_TYPE):
             f"💳 **Upgrade Your Limit:** Tap **💳 View VIP Payment Plans** to unlock higher daily question limits!"
         )
         keyboard = InlineKeyboardMarkup([
-            [InlineKeyboardButton("💳 View VIP Payment Plans", callback_data="cmd_plans")],
+            [InlineKeyboardButton("💳 View VIP Payment Plans", callback_data="cmd_paidplans")],
             [InlineKeyboardButton("🤝 Invite Friends (+10 Limit)", callback_data="cmd_referral")]
         ])
         if update.callback_query:
@@ -660,7 +659,7 @@ async def finish_quiz_and_send_report(chat_id: int, user_id: int, context: Conte
             InlineKeyboardButton("💬 Leave Feedback", callback_data="cmd_feedback")
         ],
         [
-            InlineKeyboardButton("💳 VIP Plans", callback_data="cmd_plans"),
+            InlineKeyboardButton("💳 VIP Paid Plans", callback_data="cmd_paidplans"),
             InlineKeyboardButton("📢 Telegram Channel", url="https://t.me/Learnwithhim")
         ],
         [

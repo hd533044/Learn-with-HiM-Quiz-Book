@@ -317,9 +317,10 @@ def admin_delete_user_account(user_id: int):
             logger.error(f"Error removing JSON profile on deletion: {e}")
 
 def get_paid_users():
+    """Retrieves ONLY paid users (excludes demo/free-tier accounts)."""
     conn = get_db()
     cursor = conn.cursor()
-    cursor.execute("SELECT * FROM users WHERE paid_question_balance > 0 ORDER BY created_at DESC")
+    cursor.execute("SELECT * FROM users WHERE paid_question_balance > 20 ORDER BY created_at DESC")
     rows = cursor.fetchall()
     conn.close()
     return [dict(r) for r in rows]
@@ -464,7 +465,6 @@ def save_user_profile(user_id, full_name, username, phone, target_exam, dob, age
     
     student_id = generate_student_id(full_name, dob)
 
-    # AUTO-GRANT FREE DEMO PLAN UPON REGISTRATION (2 Days / 20 Qs/Day)
     demo_plan = PLAN_TIERS.get("FREE_DEMO", {"days": 2, "daily_limit": 20})
     demo_expiry = (datetime.now(IST) + timedelta(days=demo_plan["days"])).strftime("%Y-%m-%d %H:%M:%S IST")
 
@@ -491,11 +491,12 @@ def save_user_profile(user_id, full_name, username, phone, target_exam, dob, age
             is_verified=1
     ''', (user_id, student_id, full_name, username, phone, target_exam, dob, age, gender, pin, sec_q, sec_a, country, state, referred_by, demo_plan["daily_limit"], demo_expiry, now_str, now_str, now_epoch, now_str, now_str, now_epoch, now_str))
     
+    # INVITE SYSTEM: MULTIPLES OF 3 REFERRALS GIVE +10 BONUS QUOTA
     if referred_by and referred_by != user_id:
         cursor.execute("UPDATE users SET referral_count = referral_count + 1 WHERE user_id = ?", (referred_by,))
         cursor.execute("SELECT referral_count FROM users WHERE user_id = ?", (referred_by,))
         row = cursor.fetchone()
-        if row and row['referral_count'] >= 4:
+        if row and row['referral_count'] % 3 == 0:
             cursor.execute("UPDATE users SET bonus_quota = bonus_quota + 10 WHERE user_id = ?", (referred_by,))
             
     conn.commit()

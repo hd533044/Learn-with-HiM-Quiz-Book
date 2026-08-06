@@ -45,7 +45,7 @@ bot_app_instance = None
 
 
 async def activate_user_subscription(user_id: int, plan_key: str):
-    """Activates subscription ledger in SQLite DB, sets demo_used flag if applicable, & syncs JSON profile."""
+    """Activates subscription ledger in SQLite DB, stack quotas, sets demo_used flag, & syncs JSON profile."""
     plan = PLAN_TIERS.get(plan_key)
     if not plan:
         return False
@@ -59,21 +59,15 @@ async def activate_user_subscription(user_id: int, plan_key: str):
         conn = sqlite3.connect(DB_FILE)
         cursor = conn.cursor()
         
-        # Check if user table has demo_used column, else fallback gracefully
         if plan_key == "FREE_DEMO":
-            try:
-                cursor.execute(
-                    "UPDATE users SET paid_question_balance = ?, vip_pass_expiry = ?, demo_used = 1 WHERE user_id = ?",
-                    (plan["daily_limit"], expiry_str, user_id)
-                )
-            except sqlite3.OperationalError:
-                cursor.execute(
-                    "UPDATE users SET paid_question_balance = ?, vip_pass_expiry = ? WHERE user_id = ?",
-                    (plan["daily_limit"], expiry_str, user_id)
-                )
-        else:
             cursor.execute(
-                "UPDATE users SET paid_question_balance = ?, vip_pass_expiry = ? WHERE user_id = ?",
+                "UPDATE users SET paid_question_balance = max(paid_question_balance, ?), vip_pass_expiry = ?, demo_used = 1 WHERE user_id = ?",
+                (plan["daily_limit"], expiry_str, user_id)
+            )
+        else:
+            # Stacks paid benefits on top of current balance
+            cursor.execute(
+                "UPDATE users SET paid_question_balance = paid_question_balance + ?, vip_pass_expiry = ? WHERE user_id = ?",
                 (plan["daily_limit"], expiry_str, user_id)
             )
 
@@ -108,7 +102,7 @@ async def send_payment_invoice_telegram(user_id: int, plan_key: str, payment_id:
         f"• **Payment / Txn ID:** `{payment_id}`\n"
         f"• **Date & Time:** `{txn_time}`\n"
         f"• **Validity:** `{plan_info.get('days')} Days`\n"
-        f"• **Daily Question Limit:** `{plan_info.get('daily_limit')} Questions / Day`\n"
+        f"• **Added Daily Limit:** `+{plan_info.get('daily_limit')} Questions / Day`\n"
         f"━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\n"
         f"🚀 Tap **/quiz** to launch your Computer Quiz practice session now!"
     )
@@ -132,7 +126,6 @@ async def handle_razorpay_callback_get(request):
     params = request.query
     razorpay_payment_id = params.get("razorpay_payment_id", "N/A")
 
-    # Extract parameters passed directly or via notes
     user_id = params.get("user_id") or params.get("notes[user_id]")
     plan_key = params.get("plan_key") or params.get("notes[plan_key]")
 

@@ -26,9 +26,11 @@ DB_FILE = os.getenv("DB_FILE", os.path.join(DATA_DIR, "quiz_bot.db"))
 PRIMARY_ADMIN_ID = 1091057353
 ADMIN_IDS = [1091057353, 2070531704]
 
-# ---------------------------------------------------------
+# Turso Hosted Cloud Database Credentials
+TURSO_DATABASE_URL = os.getenv("TURSO_DATABASE_URL", "").strip()
+TURSO_AUTH_TOKEN = os.getenv("TURSO_AUTH_TOKEN", "").strip()
+
 # Razorpay Credentials Configuration
-# ---------------------------------------------------------
 RAZORPAY_KEY_ID = os.getenv("RAZORPAY_KEY_ID", "rzp_test_TMB1bZp7hh2k2R").strip()
 RAZORPAY_KEY_SECRET = os.getenv("RAZORPAY_KEY_SECRET", "MPgns1qhndStgrXNwWEGfkjq").strip()
 RAZORPAY_WEBHOOK_SECRET = os.getenv("RAZORPAY_WEBHOOK_SECRET", "learnwithhim_secret_123").strip()

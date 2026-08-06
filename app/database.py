@@ -4,10 +4,20 @@ import os
 import logging
 from datetime import datetime, timedelta
 import pytz
-from app.config import DB_FILE, USER_PROFILES_DIR, PLAN_TIERS, DAILY_QUESTION_LIMIT
+from app.config import (
+    DB_FILE, USER_PROFILES_DIR, PLAN_TIERS, DAILY_QUESTION_LIMIT,
+    TURSO_DATABASE_URL, TURSO_AUTH_TOKEN
+)
 
 logger = logging.getLogger(__name__)
 IST = pytz.timezone("Asia/Kolkata")
+
+HAS_TURSO = False
+try:
+    import libsql_experimental as libsql
+    HAS_TURSO = True
+except ImportError:
+    HAS_TURSO = False
 
 def get_ist_now():
     return datetime.now(IST)
@@ -19,6 +29,14 @@ def get_ist_timestamp_str():
     return get_ist_now().strftime("%Y-%m-%d %H:%M:%S IST")
 
 def get_db():
+    """Connects to Turso cloud DB in production, falling back to local SQLite if offline."""
+    if HAS_TURSO and TURSO_DATABASE_URL and TURSO_AUTH_TOKEN:
+        try:
+            conn = libsql.connect(database=TURSO_DATABASE_URL, auth_token=TURSO_AUTH_TOKEN)
+            return conn
+        except Exception as e:
+            logger.error(f"Turso Connection Error: {e}, falling back to local SQLite")
+    
     conn = sqlite3.connect(DB_FILE)
     conn.row_factory = sqlite3.Row
     return conn
@@ -57,37 +75,6 @@ def init_db():
             created_at TEXT
         )
     ''')
-    
-    cursor.execute("PRAGMA table_info(users)")
-    columns = [row[1] for row in cursor.fetchall()]
-    if 'student_id' not in columns:
-        cursor.execute("ALTER TABLE users ADD COLUMN student_id TEXT")
-    if 'dob' not in columns:
-        cursor.execute("ALTER TABLE users ADD COLUMN dob TEXT")
-    if 'country' not in columns:
-        cursor.execute("ALTER TABLE users ADD COLUMN country DEFAULT 'India'")
-    if 'state' not in columns:
-        cursor.execute("ALTER TABLE users ADD COLUMN state DEFAULT 'N/A'")
-    if 'pin' not in columns:
-        cursor.execute("ALTER TABLE users ADD COLUMN pin TEXT")
-    if 'security_question' not in columns:
-        cursor.execute("ALTER TABLE users ADD COLUMN security_question TEXT")
-    if 'security_answer' not in columns:
-        cursor.execute("ALTER TABLE users ADD COLUMN security_answer TEXT")
-    if 'paid_question_balance' not in columns:
-        cursor.execute("ALTER TABLE users ADD COLUMN paid_question_balance INTEGER DEFAULT 0")
-    if 'vip_pass_expiry' not in columns:
-        cursor.execute("ALTER TABLE users ADD COLUMN vip_pass_expiry TEXT")
-    if 'demo_used' not in columns:
-        cursor.execute("ALTER TABLE users ADD COLUMN demo_used INTEGER DEFAULT 0")
-    if 'last_profile_edit' not in columns:
-        cursor.execute("ALTER TABLE users ADD COLUMN last_profile_edit TEXT")
-    if 'last_active' not in columns:
-        cursor.execute("ALTER TABLE users ADD COLUMN last_active TEXT")
-    if 'last_activity_epoch' not in columns:
-        cursor.execute("ALTER TABLE users ADD COLUMN last_activity_epoch INTEGER DEFAULT 0")
-    if 'is_banned' not in columns:
-        cursor.execute("ALTER TABLE users ADD COLUMN is_banned INTEGER DEFAULT 0")
 
     cursor.execute('''
         CREATE TABLE IF NOT EXISTS quiz_attempts (
@@ -317,7 +304,6 @@ def admin_delete_user_account(user_id: int):
             logger.error(f"Error removing JSON profile on deletion: {e}")
 
 def get_paid_users():
-    """Retrieves ONLY paid users (excludes demo/free-tier accounts)."""
     conn = get_db()
     cursor = conn.cursor()
     cursor.execute("SELECT * FROM users WHERE paid_question_balance > 20 ORDER BY created_at DESC")
@@ -491,7 +477,6 @@ def save_user_profile(user_id, full_name, username, phone, target_exam, dob, age
             is_verified=1
     ''', (user_id, student_id, full_name, username, phone, target_exam, dob, age, gender, pin, sec_q, sec_a, country, state, referred_by, demo_plan["daily_limit"], demo_expiry, now_str, now_str, now_epoch, now_str, now_str, now_epoch, now_str))
     
-    # INVITE SYSTEM: MULTIPLES OF 3 REFERRALS GIVE +10 BONUS QUOTA
     if referred_by and referred_by != user_id:
         cursor.execute("UPDATE users SET referral_count = referral_count + 1 WHERE user_id = ?", (referred_by,))
         cursor.execute("SELECT referral_count FROM users WHERE user_id = ?", (referred_by,))

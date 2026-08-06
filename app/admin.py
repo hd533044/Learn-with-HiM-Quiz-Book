@@ -6,10 +6,11 @@ import os
 import zipfile
 from telegram import Update, InlineKeyboardMarkup, InlineKeyboardButton
 from telegram.ext import ContextTypes
-from app.config import PRIMARY_ADMIN_ID, USER_PROFILES_DIR
+from app.config import PRIMARY_ADMIN_ID, USER_PROFILES_DIR, PLAN_TIERS
 from app.database import (
     get_all_users, set_maintenance_until, get_maintenance_until, 
-    get_user_profile, get_db, sync_user_json_profile, toggle_user_ban_status
+    get_user_profile, get_db, sync_user_json_profile, toggle_user_ban_status,
+    get_paid_users, admin_update_user_name, admin_delete_user_account
 )
 from app.pdf_generator import generate_student_pdf_report
 from app.stats import get_user_performance_summary, calculate_user_rank, calculate_user_percentile
@@ -23,12 +24,14 @@ async def admin_portal_command(update: Update, context: ContextTypes.DEFAULT_TYP
         return
 
     users = get_all_users()
+    paid_users = get_paid_users()
     m_until = get_maintenance_until()
     now_ts = int(time.time())
     m_status = "🟢 Active (Online)" if now_ts >= m_until else "🔴 PAUSED (Maintenance Mode)"
 
     keyboard = [
         [InlineKeyboardButton("👥 Student Directory (/user_profiles)", callback_data="admin_users_page_0")],
+        [InlineKeyboardButton("💳 Paid Students Directory", callback_data="admin_paid_users_page_0")],
         [InlineKeyboardButton("🔍 Search Student (ID/Phone/Name)", callback_data="admin_search_prompt")],
         [InlineKeyboardButton("📦 Export All Json Ledgers (.zip)", callback_data="admin_export_zip")],
         [InlineKeyboardButton("⏸ Pause Bot 5 Mins", callback_data="admin_pause_5"), InlineKeyboardButton("⏸ Pause Bot 10 Mins", callback_data="admin_pause_10")],
@@ -40,6 +43,7 @@ async def admin_portal_command(update: Update, context: ContextTypes.DEFAULT_TYP
         f"👑 **MASTER ADMIN PORTAL — Himanshu Sir** 👑\n"
         f"━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\n"
         f"📊 **Total Registered Students:** `{len(users)}`\n"
+        f"💳 **Total Paid VIP Subscribers:** `{len(paid_users)}`\n"
         f"⚡ **Bot System Status:** `{m_status}`\n\n"
         f"Select an administrative action below:"
     )
@@ -233,7 +237,8 @@ async def admin_callback_handler(update: Update, context: ContextTypes.DEFAULT_T
         for u in page_users:
             sid = u.get("student_id") or f"USER_{u['user_id']}"
             ban_flag = " 🛑" if u.get("is_banned") else ""
-            btn_text = f"👤 {u['full_name']}{ban_flag} (ID: {sid})"
+            paid_flag = " 💳" if u.get("paid_question_balance", 0) > 0 else ""
+            btn_text = f"👤 {u['full_name']}{paid_flag}{ban_flag} (ID: {sid})"
             keyboard.append([InlineKeyboardButton(btn_text, callback_data=f"admin_inspect_u_{u['user_id']}")])
 
         nav_row = []
@@ -255,6 +260,50 @@ async def admin_callback_handler(update: Update, context: ContextTypes.DEFAULT_T
         )
         await query.edit_message_text(msg, reply_markup=InlineKeyboardMarkup(keyboard), parse_mode="Markdown")
 
+    elif data.startswith("admin_paid_users_page_"):
+        await query.answer()
+        page = int(data.replace("admin_paid_users_page_", ""))
+        paid_users = get_paid_users()
+        total_paid = len(paid_users)
+
+        if total_paid == 0:
+            keyboard = [[InlineKeyboardButton("🔙 Back to Admin Portal", callback_data="admin_home")]]
+            await query.edit_message_text("💳 **PAID VIP SUBSCRIBERS**\n\nNo paid users found in the database yet.", reply_markup=InlineKeyboardMarkup(keyboard), parse_mode="Markdown")
+            return
+
+        total_pages = math.ceil(total_paid / USERS_PER_PAGE)
+        page = max(0, min(page, total_pages - 1))
+
+        start_idx = page * USERS_PER_PAGE
+        end_idx = start_idx + USERS_PER_PAGE
+        page_users = paid_users[start_idx:end_idx]
+
+        keyboard = []
+        for u in page_users:
+            sid = u.get("student_id") or f"USER_{u['user_id']}"
+            ban_flag = " 🛑" if u.get("is_banned") else ""
+            btn_text = f"💳 {u['full_name']}{ban_flag} ({u.get('paid_question_balance', 0)} Qs/D)"
+            keyboard.append([InlineKeyboardButton(btn_text, callback_data=f"admin_inspect_u_{u['user_id']}")])
+
+        nav_row = []
+        if page > 0:
+            nav_row.append(InlineKeyboardButton("◀️ Prev", callback_data=f"admin_paid_users_page_{page - 1}"))
+        nav_row.append(InlineKeyboardButton(f"📄 Page {page + 1}/{total_pages}", callback_data="ignore"))
+        if page < total_pages - 1:
+            nav_row.append(InlineKeyboardButton("Next ▶️", callback_data=f"admin_paid_users_page_{page + 1}"))
+        
+        keyboard.append(nav_row)
+        keyboard.append([InlineKeyboardButton("🔙 Back to Admin Portal", callback_data="admin_home")])
+
+        msg = (
+            f"💳 **PAID VIP STUDENTS DIRECTORY**\n"
+            f"━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\n"
+            f"• **Total Active VIP Subscribers:** `{total_paid}`\n"
+            f"• **Page:** `{page + 1}` of `{total_pages}`\n\n"
+            f"Tap any paid student below to inspect profile and subscription ledger:"
+        )
+        await query.edit_message_text(msg, reply_markup=InlineKeyboardMarkup(keyboard), parse_mode="Markdown")
+
     elif data == "admin_home":
         await query.answer()
         await admin_portal_command(update, context)
@@ -271,15 +320,21 @@ async def admin_callback_handler(update: Update, context: ContextTypes.DEFAULT_T
         sid = u.get("student_id") or f"USER_{u.get('user_id')}"
         is_banned = u.get("is_banned", 0)
         ban_text = "🟢 ACTIVE" if not is_banned else "🔴 BANNED"
+        ban_btn_label = "🔴 Ban Student" if not is_banned else "🟢 Unban Student"
+
+        paid_bal = u.get("paid_question_balance", 0)
+        is_paid = paid_bal > 0
+        paid_text = f"💳 PAID VIP ({paid_bal} Qs/Day)" if is_paid else "🆓 FREE TIER"
 
         keyboard = [
             [InlineKeyboardButton("📋 Personal Details", callback_data=f"audit_personal_{target_uid}"), InlineKeyboardButton("🔑 PIN & Security Questions", callback_data=f"audit_pinsec_{target_uid}")],
             [InlineKeyboardButton("⏱ Time & Activity Log", callback_data=f"audit_activity_{target_uid}"), InlineKeyboardButton("📊 Overall Performance", callback_data=f"audit_perf_{target_uid}")],
             [InlineKeyboardButton("📅 Date-wise Quiz Summary", callback_data=f"audit_datesummary_{target_uid}"), InlineKeyboardButton("🎯 Attempted Questions", callback_data=f"audit_attempted_{target_uid}")],
             [InlineKeyboardButton("❌ Wrong Questions Log", callback_data=f"audit_wrong_{target_uid}"), InlineKeyboardButton("💾 Saved Questions", callback_data=f"audit_saved_{target_uid}")],
-            [InlineKeyboardButton("💬 Student Feedback", callback_data=f"audit_feedback_{target_uid}"), InlineKeyboardButton("🎁 Grant +20 Quota", callback_data=f"audit_grant_{target_uid}")],
-            [InlineKeyboardButton("📄 Export PDF Options", callback_data=f"audit_pdfmenu_{target_uid}"), InlineKeyboardButton("📥 Export Raw JSON File", callback_data=f"audit_exportjson_{target_uid}")],
-            [InlineKeyboardButton("🔙 Back to Student Directory", callback_data="admin_users_page_0")]
+            [InlineKeyboardButton("✏️ Edit Name", callback_data=f"admin_editname_prompt_{target_uid}"), InlineKeyboardButton("🗑 Delete Profile", callback_data=f"admin_deluser_confirm_{target_uid}")],
+            [InlineKeyboardButton(ban_btn_label, callback_data=f"admin_toggle_ban_{target_uid}"), InlineKeyboardButton("🎁 Grant +20 Quota", callback_data=f"audit_grant_{target_uid}")],
+            [InlineKeyboardButton("💬 Student Feedback", callback_data=f"audit_feedback_{target_uid}"), InlineKeyboardButton("📄 Export PDF Options", callback_data=f"audit_pdfmenu_{target_uid}")],
+            [InlineKeyboardButton("📥 Export Raw JSON File", callback_data=f"audit_exportjson_{target_uid}"), InlineKeyboardButton("🔙 Back to Student Directory", callback_data="admin_users_page_0")]
         ]
 
         msg = (
@@ -289,11 +344,54 @@ async def admin_callback_handler(update: Update, context: ContextTypes.DEFAULT_T
             f"• **Student ID:** `{sid}`\n"
             f"• **Telegram ID:** `{u.get('user_id')}`\n"
             f"• **Target Exam:** `{u.get('target_exam')}`\n"
+            f"• **Payment Status:** `{paid_text}`\n"
+            f"• **VIP Expiry:** `{u.get('vip_pass_expiry') or 'N/A'}`\n"
             f"• **Account Status:** `{ban_text}`\n"
             f"• **File Ledger:** `data/user_profiles/{sid}.json`\n\n"
-            f"Select an audit module below to view detailed reports:"
+            f"Select an audit module or management option below:"
         )
         await query.edit_message_text(msg, reply_markup=InlineKeyboardMarkup(keyboard), parse_mode="Markdown")
+
+    elif data.startswith("admin_toggle_ban_"):
+        await query.answer()
+        target_uid = int(data.replace("admin_toggle_ban_", ""))
+        new_ban = toggle_user_ban_status(target_uid)
+        status_msg = "🔴 Student Banned successfully!" if new_ban else "🟢 Student Unbanned successfully!"
+        await query.message.reply_text(status_msg)
+        
+        # Refresh inspection panel
+        query.data = f"admin_inspect_u_{target_uid}"
+        await admin_callback_handler(update, context)
+
+    elif data.startswith("admin_editname_prompt_"):
+        await query.answer()
+        target_uid = int(data.replace("admin_editname_prompt_", ""))
+        context.user_data["awaiting_admin_editname"] = target_uid
+        await query.edit_message_text(f"✏️ **EDIT STUDENT NAME**\n\nPlease reply with the new Full Name for user ID `{target_uid}`:", parse_mode="Markdown")
+
+    elif data.startswith("admin_deluser_confirm_"):
+        await query.answer()
+        target_uid = int(data.replace("admin_deluser_confirm_", ""))
+        u = get_user_profile(target_uid)
+        
+        confirm_btn = InlineKeyboardMarkup([
+            [InlineKeyboardButton("⚠️ Yes, Delete Permanently", callback_data=f"admin_deluser_do_{target_uid}")],
+            [InlineKeyboardButton("❌ Cancel", callback_data=f"admin_inspect_u_{target_uid}")]
+        ])
+        await query.edit_message_text(
+            f"⚠️ **CONFIRM PERMANENT DELETION** ⚠️\n"
+            f"━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\n"
+            f"Are you sure you want to permanently delete **{u.get('full_name')}** (`{target_uid}`)?\n\n"
+            f"This will erase their database entry, quiz attempts, bookmarks, and JSON ledger forever!",
+            reply_markup=confirm_btn,
+            parse_mode="Markdown"
+        )
+
+    elif data.startswith("admin_deluser_do_"):
+        await query.answer()
+        target_uid = int(data.replace("admin_deluser_do_", ""))
+        admin_delete_user_account(target_uid)
+        await query.edit_message_text(f"🗑 **STUDENT ACCOUNT DELETED PERMANENTLY.**\nUser ID `{target_uid}` has been removed.", parse_mode="Markdown")
 
     elif data.startswith("audit_pinsec_"):
         await query.answer()
@@ -348,6 +446,9 @@ async def admin_callback_handler(update: Update, context: ContextTypes.DEFAULT_T
         last_edit = u.get("last_profile_edit", "Never")
         remaining_edits = max(0, 3 - edit_cnt)
 
+        paid_bal = u.get("paid_question_balance", 0)
+        paid_str = f"💳 YES ({paid_bal} Qs/Day)" if paid_bal > 0 else "🆓 NO (Free Tier)"
+
         msg = (
             f"📋 **STUDENT PERSONAL DETAILS** 📋\n"
             f"━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\n"
@@ -355,6 +456,8 @@ async def admin_callback_handler(update: Update, context: ContextTypes.DEFAULT_T
             f"• **Student ID:** `{sid}`\n"
             f"• **Telegram ID:** `{u.get('user_id')}`\n"
             f"• **Account Status:** `{ban_status}`\n"
+            f"• **Paid VIP Subscriber:** `{paid_str}`\n"
+            f"• **VIP Pass Expiry:** `{u.get('vip_pass_expiry') or 'N/A'}`\n"
             f"• **Username:** @{u.get('username') or 'N/A'}\n"
             f"• **Phone Number:** `{u.get('phone_number') or 'N/A'}`\n"
             f"• **Target Exam:** `{u.get('target_exam', 'N/A')}`\n"

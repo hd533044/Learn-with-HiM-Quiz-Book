@@ -2,7 +2,7 @@ import sqlite3
 import json
 import os
 import logging
-from datetime import datetime
+from datetime import datetime, timedelta
 import pytz
 from app.config import DB_FILE, USER_PROFILES_DIR, PLAN_TIERS, DAILY_QUESTION_LIMIT
 
@@ -48,6 +48,7 @@ def init_db():
             bonus_quota INTEGER DEFAULT 0,
             paid_question_balance INTEGER DEFAULT 0,
             vip_pass_expiry TEXT,
+            demo_used INTEGER DEFAULT 0,
             last_profile_edit TEXT,
             last_active TEXT,
             last_activity_epoch INTEGER DEFAULT 0,
@@ -77,6 +78,8 @@ def init_db():
         cursor.execute("ALTER TABLE users ADD COLUMN paid_question_balance INTEGER DEFAULT 0")
     if 'vip_pass_expiry' not in columns:
         cursor.execute("ALTER TABLE users ADD COLUMN vip_pass_expiry TEXT")
+    if 'demo_used' not in columns:
+        cursor.execute("ALTER TABLE users ADD COLUMN demo_used INTEGER DEFAULT 0")
     if 'last_profile_edit' not in columns:
         cursor.execute("ALTER TABLE users ADD COLUMN last_profile_edit TEXT")
     if 'last_active' not in columns:
@@ -281,6 +284,46 @@ def toggle_user_ban_status(user_id: int) -> bool:
     sync_user_json_profile(user_id)
     return bool(new_status)
 
+def admin_update_user_name(user_id: int, new_name: str):
+    conn = get_db()
+    cursor = conn.cursor()
+    cursor.execute("UPDATE users SET full_name = ? WHERE user_id = ?", (new_name.strip(), user_id))
+    conn.commit()
+    conn.close()
+    sync_user_json_profile(user_id)
+
+def admin_delete_user_account(user_id: int):
+    conn = get_db()
+    cursor = conn.cursor()
+    cursor.execute("SELECT student_id FROM users WHERE user_id = ?", (user_id,))
+    row = cursor.fetchone()
+    sid = row['student_id'] if row and row['student_id'] else f"USER_{user_id}"
+
+    cursor.execute("DELETE FROM users WHERE user_id = ?", (user_id,))
+    cursor.execute("DELETE FROM quiz_attempts WHERE user_id = ?", (user_id,))
+    cursor.execute("DELETE FROM seen_questions WHERE user_id = ?", (user_id,))
+    cursor.execute("DELETE FROM saved_questions WHERE user_id = ?", (user_id,))
+    cursor.execute("DELETE FROM student_feedback WHERE user_id = ?", (user_id,))
+    cursor.execute("DELETE FROM paused_quizzes WHERE user_id = ?", (user_id,))
+    cursor.execute("DELETE FROM user_activity_time WHERE user_id = ?", (user_id,))
+    conn.commit()
+    conn.close()
+
+    json_path = os.path.join(USER_PROFILES_DIR, f"{sid}.json")
+    if os.path.exists(json_path):
+        try:
+            os.remove(json_path)
+        except Exception as e:
+            logger.error(f"Error removing JSON profile on deletion: {e}")
+
+def get_paid_users():
+    conn = get_db()
+    cursor = conn.cursor()
+    cursor.execute("SELECT * FROM users WHERE paid_question_balance > 0 ORDER BY created_at DESC")
+    rows = cursor.fetchall()
+    conn.close()
+    return [dict(r) for r in rows]
+
 def sync_user_json_profile(user_id: int):
     conn = get_db()
     cursor = conn.cursor()
@@ -421,9 +464,13 @@ def save_user_profile(user_id, full_name, username, phone, target_exam, dob, age
     
     student_id = generate_student_id(full_name, dob)
 
+    # AUTO-GRANT FREE DEMO PLAN UPON REGISTRATION (2 Days / 20 Qs/Day)
+    demo_plan = PLAN_TIERS.get("FREE_DEMO", {"days": 2, "daily_limit": 20})
+    demo_expiry = (datetime.now(IST) + timedelta(days=demo_plan["days"])).strftime("%Y-%m-%d %H:%M:%S IST")
+
     cursor.execute('''
-        INSERT INTO users (user_id, student_id, full_name, username, phone_number, target_exam, dob, age, gender, pin, security_question, security_answer, country, state, referred_by, last_profile_edit, last_active, last_activity_epoch, is_banned, is_verified, created_at)
-        VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, 0, 1, ?)
+        INSERT INTO users (user_id, student_id, full_name, username, phone_number, target_exam, dob, age, gender, pin, security_question, security_answer, country, state, referred_by, paid_question_balance, vip_pass_expiry, demo_used, last_profile_edit, last_active, last_activity_epoch, is_banned, is_verified, created_at)
+        VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, 1, ?, ?, ?, 0, 1, ?)
         ON CONFLICT(user_id) DO UPDATE SET
             student_id=excluded.student_id,
             full_name=excluded.full_name,
@@ -442,7 +489,7 @@ def save_user_profile(user_id, full_name, username, phone, target_exam, dob, age
             last_active=?,
             last_activity_epoch=?,
             is_verified=1
-    ''', (user_id, student_id, full_name, username, phone, target_exam, dob, age, gender, pin, sec_q, sec_a, country, state, referred_by, now_str, now_str, now_epoch, now_str, now_str, now_epoch, now_str))
+    ''', (user_id, student_id, full_name, username, phone, target_exam, dob, age, gender, pin, sec_q, sec_a, country, state, referred_by, demo_plan["daily_limit"], demo_expiry, now_str, now_str, now_epoch, now_str, now_str, now_epoch, now_str))
     
     if referred_by and referred_by != user_id:
         cursor.execute("UPDATE users SET referral_count = referral_count + 1 WHERE user_id = ?", (referred_by,))

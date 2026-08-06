@@ -124,7 +124,8 @@ async def start_onboarding(update: Update, context: ContextTypes.DEFAULT_TYPE):
             f"🚀 **Select an option below to start practicing:**",
             reply_markup=InlineKeyboardMarkup([
                 [InlineKeyboardButton("🚀 Launch Quiz", callback_data="cmd_quiz"), InlineKeyboardButton("👤 Profile Card", callback_data="cmd_profile")],
-                [InlineKeyboardButton("🥇 Toppers Leaderboard", callback_data="cmd_toppers"), InlineKeyboardButton("📊 My Analytics", callback_data="cmd_wholestate")]
+                [InlineKeyboardButton("💳 My Plan", callback_data="cmd_myplan"), InlineKeyboardButton("🥇 Toppers Leaderboard", callback_data="cmd_toppers")],
+                [InlineKeyboardButton("📊 My Analytics", callback_data="cmd_wholestate"), InlineKeyboardButton("💳 VIP Plans", callback_data="cmd_plans")]
             ]),
             parse_mode="Markdown"
         )
@@ -408,14 +409,23 @@ async def sec_ans_step(update: Update, context: ContextTypes.DEFAULT_TYPE):
         referred_by=context.user_data.get("referred_by")
     )
 
-    await update.message.reply_text(
+    # AUTOMATED WELCOME & DEMO PLAN ACTIVATION NOTICE
+    demo_msg = (
         f"🎉 **STUDENT REGISTRATION COMPLETE!** 🎉\n"
         f"━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\n"
         f"🪪 **OFFICIAL STUDENT ID:** `{student_id}`\n"
         f"🔑 **SECRET PIN:** `{context.user_data.get('pin')}`\n"
         f"🎂 **REGISTERED DOB:** `{dob_str}`\n\n"
-        f"✅ Your student profile is verified and active! View or update details anytime via your **Profile Card** (/myprofile).\n\n"
-        f"🚀 Tap **Launch Quiz** below to start practicing immediately!",
+        f"🎁 **FREE DEMO PLAN ACTIVATED BY DEFAULT!**\n"
+        f"• **Quota:** `20 Questions / Day`\n"
+        f"• **Validity:** `2 Days Access`\n"
+        f"• **Status:** Active & Ready\n\n"
+        f"💡 *Need higher daily question limits? Check out our VIP Membership Packs via /plans!*\n\n"
+        f"🚀 Tap **Launch Quiz** below to start practicing immediately!"
+    )
+
+    await update.message.reply_text(
+        demo_msg,
         reply_markup=ReplyKeyboardRemove(),
         parse_mode="Markdown"
     )
@@ -423,7 +433,8 @@ async def sec_ans_step(update: Update, context: ContextTypes.DEFAULT_TYPE):
         chat_id=update.message.chat_id,
         text="👇 **QUICK NAVIGATION** 👇",
         reply_markup=InlineKeyboardMarkup([
-            [InlineKeyboardButton("🚀 Launch Quiz", callback_data="cmd_quiz"), InlineKeyboardButton("👤 Profile Card", callback_data="cmd_profile")]
+            [InlineKeyboardButton("🚀 Launch Quiz", callback_data="cmd_quiz"), InlineKeyboardButton("👤 Profile Card", callback_data="cmd_profile")],
+            [InlineKeyboardButton("💳 My Current Plan", callback_data="cmd_myplan"), InlineKeyboardButton("💳 VIP Plans", callback_data="cmd_plans")]
         ])
     )
     return ConversationHandler.END

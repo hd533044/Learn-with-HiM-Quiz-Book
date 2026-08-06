@@ -21,7 +21,8 @@ from app.database import (
     init_db, get_maintenance_until, get_user_profile, 
     get_all_users, get_today_attempts, save_student_feedback, get_all_student_feedbacks,
     clear_paused_quiz_state, get_saved_questions, log_user_activity_time,
-    check_and_update_inactivity, refresh_user_activity_epoch, get_db, get_seen_question_ids
+    check_and_update_inactivity, refresh_user_activity_epoch, get_db, get_seen_question_ids,
+    admin_update_user_name
 )
 from app.onboarding import get_onboarding_handler, start_onboarding
 from app.quiz_engine import (
@@ -36,12 +37,10 @@ from app.pyq_fetcher import fetch_pyqs_for_quiz
 NEGATIVE_WORDS = ["bad", "worst", "useless", "trash", "fake", "hate", "terrible", "waste", "horrible", "fraud", "stupid", "scam"]
 
 def generate_razorpay_link_sync(user_id: int, plan_key: str) -> str:
-    """Generates a Razorpay payment link with user ID metadata attached for automatic fulfillment."""
     plan = PLAN_TIERS.get(plan_key)
     if not plan or plan["price"] == 0:
         return None
 
-    # Clean API keys
     key_id = (os.getenv("RAZORPAY_KEY_ID") or RAZORPAY_KEY_ID or "").strip()
     key_secret = (os.getenv("RAZORPAY_KEY_SECRET") or RAZORPAY_KEY_SECRET or "").strip()
 
@@ -62,7 +61,6 @@ def generate_razorpay_link_sync(user_id: int, plan_key: str) -> str:
     elif len(clean_phone) < 10:
         clean_phone = "9123456789"
 
-    # Direct query parameter passing guarantees instantaneous browser redirect activation
     base_render_url = (os.getenv("RENDER_EXTERNAL_URL") or "https://learn-with-him-quiz-book.onrender.com").rstrip("/")
     callback_uri = f"{base_render_url}/razorpay-webhook?user_id={user_id}&plan_key={plan_key}"
 
@@ -128,6 +126,16 @@ async def check_user_registration(update: Update) -> bool:
     if not profile or not profile.get("is_verified"):
         await send_registration_prompt(update)
         return False
+
+    if profile.get("is_banned"):
+        ban_msg = "🛑 **ACCOUNT BANNED!**\n\nYour account has been suspended by the administrator. Access to quizzes and services is restricted."
+        if update.callback_query:
+            await update.callback_query.answer("🛑 Account Banned!", show_alert=True)
+            await update.callback_query.message.reply_text(ban_msg, parse_mode="Markdown")
+        elif update.message:
+            await update.message.reply_text(ban_msg, parse_mode="Markdown")
+        return False
+
     return True
 
 async def inactivity_guard(update: Update, context: ContextTypes.DEFAULT_TYPE) -> bool:
@@ -218,6 +226,50 @@ async def send_response(update: Update, text: str, reply_markup=None):
         markup = reply_markup if reply_markup else ReplyKeyboardRemove()
         await update.message.reply_text(text, reply_markup=markup, parse_mode="Markdown")
 
+async def myplan_command(update: Update, context: ContextTypes.DEFAULT_TYPE):
+    """Displays current subscription plan details and daily quota limits."""
+    if not await maintenance_guard(update, context): return
+    if not await check_user_registration(update): return
+
+    user = update.effective_user
+    log_user_activity_time(user.id, seconds=10)
+    profile = get_user_profile(user.id)
+
+    today_used = get_today_attempts(user.id)
+    paid_bal = profile.get("paid_question_balance", 0) or 0
+    base_limit = max(DAILY_QUESTION_LIMIT, paid_bal)
+    allowed_limit = 10000 if user.id == PRIMARY_ADMIN_ID else base_limit + profile.get("bonus_quota", 0)
+    remaining = max(0, allowed_limit - today_used)
+
+    # Determine active plan key & name
+    active_plan_name = "🎁 FREE DEMO PLAN"
+    for p_key, p_val in PLAN_TIERS.items():
+        if p_val.get("daily_limit") == paid_bal:
+            active_plan_name = p_val.get("name")
+            break
+
+    expiry = profile.get("vip_pass_expiry") or "N/A"
+
+    msg = (
+        f"💳 **YOUR CURRENT SUBSCRIPTION PLAN** 💳\n"
+        f"━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\n"
+        f"👑 **Active Plan:** `{active_plan_name}`\n"
+        f"⚡ **Daily Question Limit:** `{allowed_limit} Questions / Day`\n"
+        f"📊 **Used Today:** `{today_used}` / `{allowed_limit}` Qs\n"
+        f"🟢 **Remaining Today:** `{remaining}` Qs Available\n"
+        f"⏳ **Pass Expiry Date:** `{expiry}`\n"
+        f"🎁 **Bonus Quota:** `+{profile.get('bonus_quota', 0)} Qs`\n"
+        f"━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\n"
+        f"💡 *Upgrade your daily limit anytime by choosing a VIP Pack below:*"
+    )
+
+    buttons = InlineKeyboardMarkup([
+        [InlineKeyboardButton("💳 Upgrade / VIP Plans", callback_data="cmd_plans")],
+        [InlineKeyboardButton("🚀 Launch Quiz", callback_data="cmd_quiz"), InlineKeyboardButton("👤 Profile Card", callback_data="cmd_profile")]
+    ])
+
+    await send_response(update, msg, reply_markup=buttons)
+
 async def plans_command(update: Update, context: ContextTypes.DEFAULT_TYPE):
     if not await maintenance_guard(update, context): return
     if not await check_user_registration(update): return
@@ -227,7 +279,6 @@ async def plans_command(update: Update, context: ContextTypes.DEFAULT_TYPE):
     profile = get_user_profile(user.id)
 
     keyboard = []
-    # Only display Demo Trial if the student has NOT used it yet
     if not profile.get("demo_used"):
         keyboard.append([InlineKeyboardButton("🎁 FREE DEMO TRIAL (2 Days - 20 Qs/Day)", callback_data="buy_plan_FREE_DEMO")])
 
@@ -264,7 +315,6 @@ async def handle_buy_plan_callback(update: Update, context: ContextTypes.DEFAULT
 
     profile = get_user_profile(user_id)
 
-    # Strictly enforce 1-time Demo Trial limit
     if plan_key == "FREE_DEMO":
         if profile and profile.get("demo_used"):
             await query.answer("🛑 Demo trial can only be used ONCE per student!", show_alert=True)
@@ -275,7 +325,7 @@ async def handle_buy_plan_callback(update: Update, context: ContextTypes.DEFAULT
         await activate_user_subscription(user_id, plan_key)
         await query.edit_message_text(
             f"🎉 **FREE DEMO TRIAL ACTIVATED!** 🎉\n\n"
-            f"🎁 **Duration:** 2 Days\n"
+            f"🎁 **Duration:** 2 Days Access\n"
             f"⚡ **Daily Limit:** 20 Questions / Day\n\n"
             f"Start practicing now with **/quiz**!",
             parse_mode="Markdown"
@@ -301,27 +351,6 @@ async def handle_buy_plan_callback(update: Update, context: ContextTypes.DEFAULT
         await query.edit_message_text(msg, reply_markup=InlineKeyboardMarkup(keyboard), parse_mode="Markdown")
     else:
         await query.message.reply_text("⚠️ Unable to generate payment link. Please verify Razorpay live keys in Render Environment Variables.")
-
-async def post_registration_welcome(update: Update, context: ContextTypes.DEFAULT_TYPE):
-    """Offers Demo and Paid Plan options immediately upon successful registration."""
-    user = update.effective_user
-    profile = get_user_profile(user.id)
-
-    keyboard = []
-    if not profile.get("demo_used"):
-        keyboard.append([InlineKeyboardButton("🎁 Start Free Demo Trial (1-Time Use)", callback_data="buy_plan_FREE_DEMO")])
-    keyboard.append([InlineKeyboardButton("💳 View Paid VIP Subscription Plans", callback_data="cmd_plans")])
-
-    msg = (
-        f"🎉 **REGISTRATION COMPLETE! WELCOME TO QUIZ BOOK!** 🎉\n"
-        f"━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\n"
-        f"Hello **{profile.get('full_name', user.full_name)}**, your student account is verified.\n\n"
-        f"Choose an option below to activate your practice pack:"
-    )
-    if update.callback_query:
-        await update.callback_query.message.reply_text(msg, reply_markup=InlineKeyboardMarkup(keyboard), parse_mode="Markdown")
-    else:
-        await update.message.reply_text(msg, reply_markup=InlineKeyboardMarkup(keyboard), parse_mode="Markdown")
 
 async def pdfreport_command(update: Update, context: ContextTypes.DEFAULT_TYPE):
     if not await maintenance_guard(update, context): return
@@ -527,13 +556,14 @@ async def help_command(update: Update, context: ContextTypes.DEFAULT_TYPE):
     )
 
     buttons = [
-        [InlineKeyboardButton("🚀 Launch Quiz (/quiz)", callback_data="cmd_quiz"), InlineKeyboardButton("📄 PDF Reports (/pdfreport)", callback_data="cmd_pdfreport")],
-        [InlineKeyboardButton("💳 VIP Plans (/plans)", callback_data="cmd_plans"), InlineKeyboardButton("💾 Bookmarks (/savedquestions)", callback_data="cmd_savedquestions")],
-        [InlineKeyboardButton("❌ Wrong Qs (/wrongquestions)", callback_data="cmd_wrongquestions"), InlineKeyboardButton("🎯 Attempted Qs (/attemptedquestions)", callback_data="cmd_attemptedquestions")],
-        [InlineKeyboardButton("⏭️ Unattempted Qs (/unattemptedquestions)", callback_data="cmd_unattemptedquestions"), InlineKeyboardButton("👤 My Profile (/myprofile)", callback_data="cmd_profile")],
-        [InlineKeyboardButton("✏️ Edit Profile (/editprofile)", callback_data="cmd_editprofile"), InlineKeyboardButton("📊 My Rank (/mywholestate)", callback_data="cmd_wholestate")],
-        [InlineKeyboardButton("🏆 Leaderboard (/toppername)", callback_data="cmd_toppers"), InlineKeyboardButton("💬 Submit Feedback (/feedback)", callback_data="cmd_feedback")],
-        [InlineKeyboardButton("📖 Reviews (/reviews)", callback_data="cmd_viewfeedbacks"), InlineKeyboardButton("🤝 Invite Friends (/invite)", callback_data="cmd_referral")]
+        [InlineKeyboardButton("🚀 Launch Quiz (/quiz)", callback_data="cmd_quiz"), InlineKeyboardButton("💳 My Current Plan (/myplan)", callback_data="cmd_myplan")],
+        [InlineKeyboardButton("💳 VIP Plans (/plans)", callback_data="cmd_plans"), InlineKeyboardButton("📄 PDF Reports (/pdfreport)", callback_data="cmd_pdfreport")],
+        [InlineKeyboardButton("💾 Bookmarks (/savedquestions)", callback_data="cmd_savedquestions"), InlineKeyboardButton("❌ Wrong Qs (/wrongquestions)", callback_data="cmd_wrongquestions")],
+        [InlineKeyboardButton("🎯 Attempted Qs (/attemptedquestions)", callback_data="cmd_attemptedquestions"), InlineKeyboardButton("⏭️ Unattempted Qs (/unattemptedquestions)", callback_data="cmd_unattemptedquestions")],
+        [InlineKeyboardButton("👤 My Profile (/myprofile)", callback_data="cmd_profile"), InlineKeyboardButton("✏️ Edit Profile (/editprofile)", callback_data="cmd_editprofile")],
+        [InlineKeyboardButton("📊 My Rank (/mywholestate)", callback_data="cmd_wholestate"), InlineKeyboardButton("🏆 Leaderboard (/toppername)", callback_data="cmd_toppers")],
+        [InlineKeyboardButton("💬 Submit Feedback (/feedback)", callback_data="cmd_feedback"), InlineKeyboardButton("📖 Reviews (/reviews)", callback_data="cmd_viewfeedbacks")],
+        [InlineKeyboardButton("🤝 Invite Friends (/invite)", callback_data="cmd_referral")]
     ]
 
     await send_response(update, msg, reply_markup=InlineKeyboardMarkup(buttons))
@@ -624,8 +654,9 @@ async def myprofile_command(update: Update, context: ContextTypes.DEFAULT_TYPE):
 
     buttons = [
         [InlineKeyboardButton("🚀 Launch Quiz", callback_data="cmd_quiz"), InlineKeyboardButton("📄 PDF Report Center", callback_data="cmd_pdfreport")],
-        [InlineKeyboardButton("💳 VIP Plans", callback_data="cmd_plans"), InlineKeyboardButton("💾 Bookmarks", callback_data="cmd_savedquestions")],
-        [InlineKeyboardButton("✏️ Edit Profile", callback_data="cmd_editprofile"), InlineKeyboardButton("🤝 Invite Friends", callback_data="cmd_referral")]
+        [InlineKeyboardButton("💳 My Plan", callback_data="cmd_myplan"), InlineKeyboardButton("💳 VIP Plans", callback_data="cmd_plans")],
+        [InlineKeyboardButton("💾 Bookmarks", callback_data="cmd_savedquestions"), InlineKeyboardButton("✏️ Edit Profile", callback_data="cmd_editprofile")],
+        [InlineKeyboardButton("🤝 Invite Friends", callback_data="cmd_referral")]
     ]
 
     await send_response(update, msg, reply_markup=InlineKeyboardMarkup(buttons))
@@ -769,6 +800,8 @@ async def button_router(update: Update, context: ContextTypes.DEFAULT_TYPE):
             await query.answer("🛑 Daily Limit Exhausted!", show_alert=True)
             return
         await launch_quiz_setup(update, context)
+    elif data == "cmd_myplan":
+        await myplan_command(update, context)
     elif data == "cmd_plans":
         await plans_command(update, context)
     elif data.startswith("buy_plan_"):
@@ -846,6 +879,13 @@ async def handle_text_messages(update: Update, context: ContextTypes.DEFAULT_TYP
     if not await maintenance_guard(update, context): return
     log_user_activity_time(user.id, seconds=10)
 
+    # Handle Admin Editing Student Name
+    if user.id == PRIMARY_ADMIN_ID and context.user_data.get("awaiting_admin_editname"):
+        target_uid = context.user_data.pop("awaiting_admin_editname")
+        admin_update_user_name(target_uid, text)
+        await update.message.reply_text(f"✅ **Student name updated to:** `{text}` for user `{target_uid}`!", parse_mode="Markdown")
+        return
+
     if user.id == PRIMARY_ADMIN_ID and context.user_data.get("awaiting_admin_search"):
         context.user_data["awaiting_admin_search"] = False
         all_u = get_all_users()
@@ -905,6 +945,7 @@ async def post_init(application: Application):
 
     allowed_commands = [
         BotCommand("quiz", "🚀 Start Computer Quiz"),
+        BotCommand("myplan", "💳 View Current Plan & Quota"),
         BotCommand("plans", "💳 VIP Subscription Plans"),
         BotCommand("pdfreport", "📄 Export Academic PDF Report"),
         BotCommand("wrongquestions", "❌ View Wrong Questions"),
@@ -934,6 +975,7 @@ def build_application() -> Application:
     app.add_handler(get_onboarding_handler())
     
     app.add_handler(CommandHandler("quiz", strict_quiz_command_guard))
+    app.add_handler(CommandHandler("myplan", myplan_command))
     app.add_handler(CommandHandler("plans", plans_command))
     app.add_handler(CommandHandler("pause", pause_quiz_command))
     app.add_handler(CommandHandler("resume", resume_quiz_command))

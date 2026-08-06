@@ -73,58 +73,127 @@ async def activate_user_subscription(user_id: int, plan_key: str):
         return False
 
 
-def create_razorpay_payment_link(user_id: int, plan_key: str):
-    """Generates an instant Razorpay payment link for given tier."""
-    if not razorpay_client:
-        return None
+async def send_payment_invoice_telegram(user_id: int, plan_key: str, payment_id: str = "N/A"):
+    """Sends an official payment receipt & pack unlock notification to Telegram."""
+    if not bot_app_instance:
+        return
 
-    plan = PLAN_TIERS.get(plan_key)
-    if not plan:
-        return None
-
+    plan_info = PLAN_TIERS.get(plan_key, {})
+    txn_time = get_ist_timestamp_str()
+    
+    invoice_msg = (
+        f"🎉 **PAYMENT CONFIRMED & VIP PACK UNLOCKED!** 🎉\n"
+        f"━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\n"
+        f"👑 **Unlocked Pack:** `{plan_info.get('name', plan_key)}`\n"
+        f"💰 **Amount Paid:** ₹{plan_info.get('price', 0)}\n"
+        f"🆔 **Transaction / Payment ID:** `{payment_id}`\n"
+        f"⏰ **Timestamp:** `{txn_time}`\n\n"
+        f"📅 **Pack Validity:** `{plan_info.get('days')} Days`\n"
+        f"⚡ **Daily Question Limit:** `{plan_info.get('daily_limit')} Qs/Day`\n"
+        f"━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\n"
+        f"✅ Your daily question quota has been automatically upgraded in the database.\n\n"
+        f"🚀 Start practicing right away with **/quiz**!"
+    )
     try:
-        response = razorpay_client.payment_link.create({
-            "amount": plan["price"] * 100,  # Convert to paise
-            "currency": "INR",
-            "accept_partial": False,
-            "description": f"Learn with HiM Subscription - {plan['name']}",
-            "notes": {
-                "user_id": str(user_id),
-                "plan_key": plan_key
-            },
-            "callback_url": os.getenv("RENDER_EXTERNAL_URL", "https://learnwithhimquiz.onrender.com"),
-            "callback_method": "get"
-        })
-        return response.get("short_url")
-    except Exception as e:
-        logging.error(f"Error creating Razorpay payment link: {e}")
-        return None
+        await bot_app_instance.bot.send_message(
+            chat_id=user_id,
+            text=invoice_msg,
+            parse_mode="Markdown"
+        )
+    except Exception as err:
+        logging.error(f"Failed to notify user via Telegram: {err}")
 
 
 async def handle_ping(request):
     """Render Web Service Healthcheck Endpoint."""
     return web.Response(text="Learn with HiM Quiz Book Bot is Online & Active!")
 
-def verify_razorpay_signature(order_id: str, payment_id: str, razorpay_signature: str, key_secret: str) -> bool:
+
+async def handle_razorpay_callback_get(request):
+    """Handles GET redirects from Razorpay checkout after user completes payment."""
+    params = request.query
+    razorpay_payment_id = params.get("razorpay_payment_id", "N/A")
+    razorpay_payment_link_status = params.get("razorpay_payment_link_status", "")
+
+    html_content = f"""
+    <!DOCTYPE html>
+    <html>
+    <head>
+        <title>Payment Successful - Learn with HiM Quiz Book</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <style>
+            body {{
+                font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+                background: #0f172a;
+                color: #f8fafc;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                min-height: 100vh;
+                margin: 0;
+                padding: 20px;
+            }}
+            .card {{
+                background: #1e293b;
+                border-radius: 16px;
+                padding: 32px;
+                max-width: 420px;
+                width: 100%;
+                box-shadow: 0 10px 25px rgba(0, 0, 0, 0.5);
+                text-align: center;
+                border: 1px solid #334155;
+            }}
+            .icon {{
+                font-size: 56px;
+                margin-bottom: 16px;
+            }}
+            h2 {{
+                color: #38bdf8;
+                margin-bottom: 8px;
+            }}
+            p {{
+                color: #94a3b8;
+                font-size: 15px;
+                line-height: 1.5;
+            }}
+            .id-box {{
+                background: #0f172a;
+                padding: 12px;
+                border-radius: 8px;
+                font-family: monospace;
+                color: #f1f5f9;
+                margin: 16px 0;
+                word-break: break-all;
+            }}
+            .btn {{
+                display: inline-block;
+                background: #2563eb;
+                color: white;
+                text-decoration: none;
+                padding: 12px 24px;
+                border-radius: 8px;
+                font-weight: bold;
+                margin-top: 16px;
+            }}
+        </style>
+    </head>
+    <body>
+        <div class="card">
+            <div class="icon">🎉</div>
+            <h2>Payment Successful!</h2>
+            <p>Your subscription pack has been unlocked successfully.</p>
+            <div class="id-box">Payment ID: {razorpay_payment_id}</div>
+            <p>You can close this tab and return to Telegram to start practicing!</p>
+            <a href="https://t.me/LearnwithHiMQuizzzbot" class="btn">Return to Telegram Bot</a>
+        </div>
+    </body>
+    </html>
     """
-    Verifies the Razorpay payment signature using HMAC-SHA256.
-    Algorithm: HMAC-SHA256(order_id + "|" + payment_id, KEY_SECRET)
-    """
-    try:
-        message = f"{order_id}|{payment_id}"
-        generated_signature = hmac.new(
-            key_secret.encode('utf-8'),
-            message.encode('utf-8'),
-            hashlib.sha256
-        ).hexdigest()
-        
-        return hmac.compare_digest(generated_signature, razorpay_signature)
-    except Exception as e:
-        logging.error(f"Signature verification exception: {e}")
-        return False
-    
+    return web.Response(text=html_content, content_type="text/html")
+
+
 async def handle_razorpay_webhook(request):
-    """Webhook Handler for Instant Automated VIP Activation."""
+    """Webhook Handler for Automated VIP Activation."""
     try:
         body = await request.text()
         signature = request.headers.get("X-Razorpay-Signature", "")
@@ -146,29 +215,13 @@ async def handle_razorpay_webhook(request):
             notes = payload.get("notes", {})
             user_id = notes.get("user_id")
             plan_key = notes.get("plan_key")
+            payment_id = payload.get("payment_id", "N/A")
 
             if user_id and plan_key:
                 uid = int(user_id)
                 success = await activate_user_subscription(uid, plan_key)
-                
-                if success and bot_app_instance:
-                    plan_info = PLAN_TIERS.get(plan_key, {})
-                    msg = (
-                        f"🎉 **PAYMENT CONFIRMED & ACTIVATED!** 🎉\n"
-                        f"━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\n"
-                        f"Welcome to **{plan_info.get('name')}**!\n\n"
-                        f"📅 **Validity:** {plan_info.get('days')} Days\n"
-                        f"⚡ **Daily Quota:** {plan_info.get('daily_limit')} Questions/Day\n\n"
-                        f"Your daily question limit is updated. Start practicing now with /quiz!"
-                    )
-                    try:
-                        await bot_app_instance.bot.send_message(
-                            chat_id=uid,
-                            text=msg,
-                            parse_mode="Markdown"
-                        )
-                    except Exception as err:
-                        logging.error(f"Failed to notify user via Telegram: {err}")
+                if success:
+                    await send_payment_invoice_telegram(uid, plan_key, payment_id)
 
         return web.Response(status=200, text="Webhook Processed")
     except Exception as e:
@@ -177,10 +230,11 @@ async def handle_razorpay_webhook(request):
 
 
 async def start_web_server():
-    """Starts a web server for keep-alive calls & Razorpay Webhooks."""
+    """Starts a web server for keep-alive calls, user redirects & Razorpay Webhooks."""
     app = web.Application()
     app.router.add_get("/", handle_ping)
     app.router.add_get("/ping", handle_ping)
+    app.router.add_get("/razorpay-webhook", handle_razorpay_callback_get)
     app.router.add_post("/razorpay-webhook", handle_razorpay_webhook)
 
     port = int(os.getenv("PORT", "8080"))

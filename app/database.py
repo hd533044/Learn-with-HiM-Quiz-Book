@@ -238,7 +238,35 @@ def init_db():
     conn.commit()
     conn.close()
 
-# Activity and Maintenance Functions
+# Onboarding Profile Editing Rules
+def can_user_edit_profile(user_id: int):
+    """Checks if the student can edit their profile (limit once every 24 hours)."""
+    user = get_user_profile(user_id)
+    if not user or not user.get("last_profile_edit"):
+        return True, ""
+
+    try:
+        last_edit_str = user["last_profile_edit"]
+        last_edit_time = datetime.strptime(last_edit_str, "%Y-%m-%d %H:%M:%S IST")
+        last_edit_time = IST.localize(last_edit_time)
+        
+        now = get_ist_now()
+        time_diff = now - last_edit_time
+        
+        if time_diff < timedelta(hours=24):
+            remaining = timedelta(hours=24) - time_diff
+            hours, remainder = divmod(int(remaining.total_seconds()), 3600)
+            minutes, _ = divmod(remainder, 60)
+            return False, f"{hours}h {minutes}m"
+        return True, ""
+    except Exception as e:
+        logger.error(f"Error checking profile edit eligibility for {user_id}: {e}")
+        return True, ""
+
+def can_edit_profile(user_id: int):
+    return can_user_edit_profile(user_id)
+
+# Activity and Tracker Functions
 def refresh_user_activity_epoch(user_id: int):
     now_str = get_ist_timestamp_str()
     now_epoch = int(get_ist_now().timestamp())
@@ -278,7 +306,7 @@ def log_user_activity_time(user_id: int, seconds_spent: int = 10):
     conn.commit()
     conn.close()
 
-# Administrative Control Functions
+# Admin Control Panel Helpers
 def admin_update_user_name(user_id: int, new_name: str):
     conn = get_db()
     cursor = conn.cursor()

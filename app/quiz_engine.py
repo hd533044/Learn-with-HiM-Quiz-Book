@@ -673,3 +673,233 @@ async def finish_quiz_and_send_report(chat_id: int, user_id: int, context: Conte
         reply_markup=InlineKeyboardMarkup(end_quiz_buttons), 
         parse_mode="Markdown"
     )
+    import os
+import json
+import random
+import logging
+from telegram import Update, InlineKeyboardButton, InlineKeyboardMarkup
+from telegram.ext import ContextTypes
+from app.config import QUESTION_BANK_DIR, DAILY_QUESTION_LIMIT, PLAN_TIERS
+from app.database import (
+    get_user_profile, get_today_attempts, record_quiz_result,
+    get_seen_question_ids, mark_questions_as_seen, save_question_to_db,
+    save_paused_quiz_state, get_paused_quiz_state, clear_paused_quiz_state
+)
+
+logger = logging.getLogger(__name__)
+
+def load_question_bank():
+    """Loads all JSON question batches into a consolidated list."""
+    all_questions = []
+    if not os.path.exists(QUESTION_BANK_DIR):
+        return all_questions
+
+    for filename in sorted(os.listdir(QUESTION_BANK_DIR)):
+        if filename.endswith(".json"):
+            filepath = os.path.join(QUESTION_BANK_DIR, filename)
+            try:
+                with open(filepath, "r", encoding="utf-8") as f:
+                    batch = json.load(f)
+                    if isinstance(batch, list):
+                        all_questions.extend(batch)
+            except Exception as e:
+                logger.error(f"Error loading question file {filename}: {e}")
+    return all_questions
+
+async def quiz_command(update: Update, context: ContextTypes.DEFAULT_TYPE):
+    user = update.effective_user
+    user_id = user.id
+    
+    profile = get_user_profile(user_id)
+    if not profile or not profile.get("is_verified"):
+        await update.message.reply_text("⚠️ You must complete registration first! Tap /start to register.")
+        return
+
+    if profile.get("is_banned"):
+        await update.message.reply_text("⛔ Your account has been restricted. Please contact support.")
+        return
+
+    today_count = get_today_attempts(user_id)
+    paid_balance = profile.get("paid_question_balance", 0)
+    effective_limit = max(DAILY_QUESTION_LIMIT, paid_balance)
+
+    if today_count >= effective_limit:
+        await update.message.reply_text(
+            f"🛑 **Daily Limit Reached!**\n\n"
+            f"You have attempted **{today_count}/{effective_limit}** questions today.\n"
+            f"Upgrade your pack or return tomorrow for a fresh quota!",
+            parse_mode="Markdown"
+        )
+        return
+
+    paused_state = get_paused_quiz_state(user_id)
+    if paused_state:
+        keyboard = [
+            [InlineKeyboardButton("▶️ Resume Quiz", callback_data="quiz_resume")],
+            [InlineKeyboardButton("🔄 Start New Quiz", callback_data="quiz_start_new")]
+        ]
+        await update.message.reply_text(
+            "📌 You have an unfinished quiz session. Would you like to resume?",
+            reply_markup=InlineKeyboardMarkup(keyboard)
+        )
+        return
+
+    await start_new_quiz_session(update, context, user_id)
+
+async def start_new_quiz_session(update: Update, context: ContextTypes.DEFAULT_TYPE, user_id: int):
+    questions = load_question_bank()
+    if not questions:
+        msg = "⚠️ Question bank is currently empty. Please try again later."
+        if update.callback_query:
+            await update.callback_query.message.edit_text(msg)
+        else:
+            await update.message.reply_text(msg)
+        return
+
+    seen_ids = get_seen_question_ids(user_id)
+    unseen_q = [q for q in questions if str(q.get("id")) not in seen_ids]
+
+    if not unseen_q:
+        unseen_q = questions  # Reset view pool if all questions were completed
+
+    selected_questions = random.sample(unseen_q, min(10, len(unseen_q)))
+
+    session = {
+        "user_id": user_id,
+        "questions": selected_questions,
+        "current_index": 0,
+        "score": 0,
+        "correct": 0,
+        "wrong": 0,
+        "skipped": 0,
+        "details": []
+    }
+    context.user_data["quiz_session"] = session
+    await send_quiz_question(update, context, user_id)
+
+async def send_quiz_question(update: Update, context: ContextTypes.DEFAULT_TYPE, user_id: int):
+    session = context.user_data.get("quiz_session")
+    if not session:
+        return
+
+    idx = session["current_index"]
+    questions = session["questions"]
+
+    if idx >= len(questions):
+        await finish_quiz_session(update, context, user_id)
+        return
+
+    q = questions[idx]
+    q_text = f"📝 **Question {idx + 1}/{len(questions)}**\n\n{q['question']}"
+
+    keyboard = []
+    for i, opt in enumerate(q["options"]):
+        keyboard.append([InlineKeyboardButton(f"{chr(65+i)}. {opt}", callback_data=f"opt_{i}")])
+
+    keyboard.append([
+        InlineKeyboardButton("💾 Save Question", callback_data=f"save_q_{q.get('id')}"),
+        InlineKeyboardButton("⏸️ Pause", callback_data="pause_quiz")
+    ])
+
+    reply_markup = InlineKeyboardMarkup(keyboard)
+
+    if update.callback_query:
+        await update.callback_query.message.edit_text(q_text, reply_markup=reply_markup, parse_mode="Markdown")
+    else:
+        await update.message.reply_text(q_text, reply_markup=reply_markup, parse_mode="Markdown")
+
+async def quiz_callback_handler(update: Update, context: ContextTypes.DEFAULT_TYPE):
+    query = update.callback_query
+    await query.answer()
+    data = query.data
+    user_id = query.from_user.id
+
+    if data == "quiz_resume":
+        state = get_paused_quiz_state(user_id)
+        if state:
+            context.user_data["quiz_session"] = state
+            clear_paused_quiz_state(user_id)
+            await send_quiz_question(update, context, user_id)
+        return
+
+    if data == "quiz_start_new":
+        clear_paused_quiz_state(user_id)
+        await start_new_quiz_session(update, context, user_id)
+        return
+
+    session = context.user_data.get("quiz_session")
+
+    if data == "pause_quiz" and session:
+        save_paused_quiz_state(user_id, session)
+        context.user_data.pop("quiz_session", None)
+        await query.message.edit_text("⏸️ **Quiz Paused.** Tap /quiz anytime to resume your progress!", parse_mode="Markdown")
+        return
+
+    if data.startswith("save_q_"):
+        q_id = data.split("save_q_")[1]
+        if session:
+            curr_q = session["questions"][session["current_index"]]
+            save_question_to_db(user_id, curr_q["question"], curr_q["options"], curr_q["correct_option"], curr_q.get("explanation", ""))
+            await query.answer("✅ Question saved to your personal library!", show_alert=True)
+        return
+
+    if data.startswith("opt_") and session:
+        selected_opt = int(data.split("_")[1])
+        curr_q = session["questions"][session["current_index"]]
+        is_correct = (selected_opt == curr_q["correct_option"])
+
+        if is_correct:
+            session["score"] += 1.0
+            session["correct"] += 1
+            status = "CORRECT"
+        else:
+            session["wrong"] += 1
+            status = "WRONG"
+
+        session["details"].append({
+            "question_id": curr_q.get("id"),
+            "question_text": curr_q["question"],
+            "status": status,
+            "selected_option": selected_opt,
+            "correct_option": curr_q["correct_option"],
+            "correct_answer_text": curr_q["options"][curr_q["correct_option"]]
+        })
+
+        session["current_index"] += 1
+        await send_quiz_question(update, context, user_id)
+
+async def finish_quiz_session(update: Update, context: ContextTypes.DEFAULT_TYPE, user_id: int):
+    session = context.user_data.pop("quiz_session", None)
+    if not session:
+        return
+
+    total = len(session["questions"])
+    score = session["score"]
+    correct = session["correct"]
+    wrong = session["wrong"]
+    
+    seen_ids = [str(q.get("id")) for q in session["questions"]]
+    mark_questions_as_seen(user_id, seen_ids)
+
+    record_quiz_result(
+        user_id=user_id,
+        score=score,
+        total_questions=total,
+        correct_count=correct,
+        wrong_count=wrong,
+        skipped_count=0,
+        question_details=session["details"]
+    )
+
+    summary_text = (
+        f"🏆 **QUIZ COMPLETED!** 🏆\n\n"
+        f"📊 **Final Score:** {score}/{total}\n"
+        f"✅ **Correct Answers:** {correct}\n"
+        f"❌ **Wrong Answers:** {wrong}\n\n"
+        f"Keep practicing daily to build your streak! Tap /stats to check your profile metrics."
+    )
+
+    if update.callback_query:
+        await update.callback_query.message.edit_text(summary_text, parse_mode="Markdown")
+    else:
+        await update.message.reply_text(summary_text, parse_mode="Markdown")

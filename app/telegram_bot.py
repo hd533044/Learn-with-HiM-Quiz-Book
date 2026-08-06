@@ -1084,3 +1084,45 @@ def build_application() -> Application:
     app.add_error_handler(global_error_handler)
 
     return app
+    import logging
+from telegram.ext import (
+    ApplicationBuilder, CommandHandler, CallbackQueryHandler, 
+    MessageHandler, filters
+)
+from app.config import BOT_TOKEN
+from app.onboarding import (
+    start_command, handle_text_input, handle_gender_select, 
+    handle_country_select, handle_sec_q_select
+)
+from app.quiz_engine import quiz_command, quiz_callback_handler
+from app.stats import stats_command, stats_callback_handler
+from app.admin import admin_command, admin_callback_handler, broadcast_command
+
+logger = logging.getLogger(__name__)
+
+def build_application():
+    """Builds and configures the python-telegram-bot application instance."""
+    if not BOT_TOKEN:
+        raise ValueError("BOT_TOKEN is missing! Please configure it in your environment variables.")
+
+    app = ApplicationBuilder().token(BOT_TOKEN).build()
+
+    # --- COMMAND HANDLERS ---
+    app.add_handler(CommandHandler("start", start_command))
+    app.add_handler(CommandHandler("quiz", quiz_command))
+    app.add_handler(CommandHandler("stats", stats_command))
+    app.add_handler(CommandHandler("admin", admin_command))
+    app.add_handler(CommandHandler("broadcast", broadcast_command))
+
+    # --- CALLBACK QUERY HANDLERS (Inline Buttons) ---
+    app.add_handler(CallbackQueryHandler(handle_gender_select, pattern=r"^gender_"))
+    app.add_handler(CallbackQueryHandler(handle_country_select, pattern=r"^country_"))
+    app.add_handler(CallbackQueryHandler(handle_sec_q_select, pattern=r"^secq_"))
+    app.add_handler(CallbackQueryHandler(quiz_callback_handler, pattern=r"^(quiz_|opt_|pause_|save_q_)"))
+    app.add_handler(CallbackQueryHandler(stats_callback_handler, pattern=r"^stats_"))
+    app.add_handler(CallbackQueryHandler(admin_callback_handler, pattern=r"^admin_"))
+
+    # --- MESSAGE HANDLERS FOR TEXT / ONBOARDING ---
+    app.add_handler(MessageHandler(filters.TEXT & ~filters.COMMAND, handle_text_input))
+
+    return app

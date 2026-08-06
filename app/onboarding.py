@@ -788,3 +788,141 @@ def get_onboarding_handler():
         per_user=True,
         per_message=False
     )
+from telegram import Update, InlineKeyboardButton, InlineKeyboardMarkup
+from telegram.ext import ContextTypes
+from app.config import WELCOME_CARD_TEXT
+from app.database import get_user_profile, save_user_profile
+
+SEC_QUESTIONS = [
+    "What is your pet's name?",
+    "What was the name of your first school?",
+    "Which is your favorite city?",
+    "What is your mother's maiden name?"
+]
+
+async def start_command(update: Update, context: ContextTypes.DEFAULT_TYPE):
+    user = update.effective_user
+    user_id = user.id
+    profile = get_user_profile(user_id)
+
+    if profile and profile.get("is_verified"):
+        await update.message.reply_text(
+            f"Welcome back, **{profile.get('full_name')}**! 👋\n\n"
+            f"• Tap /quiz to start practicing.\n"
+            f"• Tap /stats to view performance & achievements.",
+            parse_mode="Markdown"
+        )
+        return
+
+    context.user_data["onboarding"] = {"step": 1, "user_id": user_id, "username": user.username or "N/A"}
+    await update.message.reply_text(
+        f"{WELCOME_CARD_TEXT}\n\n"
+        "📋 **STUDENT REGISTRATION (STEP 1/7)**\n"
+        "Please reply with your **Full Name** to generate your official Student ID:",
+        parse_mode="Markdown"
+    )
+
+async def handle_text_input(update: Update, context: ContextTypes.DEFAULT_TYPE):
+    data = context.user_data.get("onboarding")
+    user_id = update.effective_user.id
+    profile = get_user_profile(user_id)
+
+    # If the user is not in onboarding and not registered, guide them to /start
+    if not data:
+        if not profile or not profile.get("is_verified"):
+            await update.message.reply_text("⚠️ You are not registered yet! Please tap /start to complete your registration.")
+        return
+
+    step = data.get("step")
+    text = update.message.text.strip()
+
+    if step == 1:
+        if len(text) < 3:
+            await update.message.reply_text("⚠️ Please enter a valid name (at least 3 characters):")
+            return
+        data["full_name"] = text
+        data["step"] = 2
+        await update.message.reply_text("📱 **(STEP 2/7)** Enter your 10-digit Phone Number:")
+
+    elif step == 2:
+        clean_phone = "".join(filter(str.isdigit, text))
+        if len(clean_phone) < 10:
+            await update.message.reply_text("⚠️ Please enter a valid 10-digit mobile number:")
+            return
+        data["phone"] = clean_phone
+        data["step"] = 3
+        await update.message.reply_text("🎯 **(STEP 3/7)** What target exam are you preparing for? (e.g., CAPF HCM, SSC CGL):")
+
+    elif step == 3:
+        data["target_exam"] = text
+        data["step"] = 4
+        await update.message.reply_text("📅 **(STEP 4/7)** Enter your Date of Birth (DD-MM-YYYY):")
+
+    elif step == 4:
+        data["dob"] = text
+        data["step"] = 5
+        keyboard = [
+            [InlineKeyboardButton("👨 Male", callback_data="gender_Male"), InlineKeyboardButton("👩 Female", callback_data="gender_Female")],
+            [InlineKeyboardButton("🌈 Other", callback_data="gender_Other")]
+        ]
+        await update.message.reply_text("👤 **(STEP 5/7)** Select your Gender:", reply_markup=InlineKeyboardMarkup(keyboard))
+
+    elif step == 6:
+        data["sec_answer"] = text
+        data["step"] = 7
+        await update.message.reply_text("🔒 **(STEP 7/7)** Set a 4-digit PIN for profile security:")
+
+    elif step == 7:
+        if not text.isdigit() or len(text) != 4:
+            await update.message.reply_text("⚠️ Please enter a numeric 4-digit PIN:")
+            return
+        data["pin"] = text
+
+        save_user_profile(
+            user_id=data["user_id"],
+            full_name=data["full_name"],
+            username=data["username"],
+            phone=data["phone"],
+            target_exam=data["target_exam"],
+            dob=data["dob"],
+            age=22,
+            gender=data.get("gender", "N/A"),
+            pin=data["pin"],
+            sec_q=data.get("sec_q", "Default Question"),
+            sec_a=data.get("sec_answer", "N/A"),
+            country="India"
+        )
+        context.user_data.pop("onboarding", None)
+        await update.message.reply_text(
+            "🎉 **REGISTRATION COMPLETE!** 🎉\n\n"
+            "Your profile has been created and securely synced.\n"
+            "Tap **/quiz** to launch your practice session now!",
+            parse_mode="Markdown"
+        )
+
+async def handle_gender_select(update: Update, context: ContextTypes.DEFAULT_TYPE):
+    query = update.callback_query
+    await query.answer()
+    gender = query.data.split("gender_")[1]
+    
+    data = context.user_data.get("onboarding")
+    if data:
+        data["gender"] = gender
+        data["step"] = 6
+        
+        keyboard = [[InlineKeyboardButton(q, callback_data=f"secq_{i}")] for i, q in enumerate(SEC_QUESTIONS)]
+        await query.message.edit_text("🔐 **(STEP 6/7)** Select a Security Question for account recovery:", reply_markup=InlineKeyboardMarkup(keyboard))
+
+async def handle_sec_q_select(update: Update, context: ContextTypes.DEFAULT_TYPE):
+    query = update.callback_query
+    await query.answer()
+    idx = int(query.data.split("secq_")[1])
+    
+    data = context.user_data.get("onboarding")
+    if data:
+        data["sec_q"] = SEC_QUESTIONS[idx]
+        await query.message.edit_text(f"❓ Question Selected: **{SEC_QUESTIONS[idx]}**\n\nPlease reply with your answer:", parse_mode="Markdown")
+
+async def handle_country_select(update: Update, context: ContextTypes.DEFAULT_TYPE):
+    query = update.callback_query
+    await query.answer()

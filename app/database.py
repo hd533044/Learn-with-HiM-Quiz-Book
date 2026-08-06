@@ -1,23 +1,89 @@
-import sqlite3
 import json
 import os
 import logging
 from datetime import datetime, timedelta
 import pytz
 from app.config import (
-    DB_FILE, USER_PROFILES_DIR, PLAN_TIERS, DAILY_QUESTION_LIMIT,
-    TURSO_DATABASE_URL, TURSO_AUTH_TOKEN
+    DB_FILE, USER_PROFILES_DIR, PLAN_TIERS, DAILY_QUESTION_LIMIT, DATABASE_URL
 )
 
 logger = logging.getLogger(__name__)
 IST = pytz.timezone("Asia/Kolkata")
 
-HAS_TURSO = False
-try:
-    import libsql_experimental as libsql
-    HAS_TURSO = True
-except ImportError:
-    HAS_TURSO = False
+HAS_PG = False
+if DATABASE_URL:
+    try:
+        import psycopg2
+        import psycopg2.extras
+        HAS_PG = True
+    except ImportError:
+        HAS_PG = False
+
+class PostgresCursorWrapper:
+    def __init__(self, cursor, conn):
+        self.cursor = cursor
+        self.conn = conn
+
+    def execute(self, query, params=None):
+        pg_query = query.replace("?", "%s")
+        if params is not None:
+            self.cursor.execute(pg_query, params)
+        else:
+            self.cursor.execute(pg_query)
+        return self
+
+    def fetchone(self):
+        row = self.cursor.fetchone()
+        if row is None:
+            return None
+        if hasattr(self.cursor, "description") and self.cursor.description:
+            cols = [desc[0] for desc in self.cursor.description]
+            return PostgresRow(cols, row)
+        return row
+
+    def fetchall(self):
+        rows = self.cursor.fetchall()
+        if not rows:
+            return []
+        cols = [desc[0] for desc in self.cursor.description] if self.cursor.description else []
+        return [PostgresRow(cols, r) for r in rows]
+
+    @property
+    def lastrowid(self):
+        return getattr(self.cursor, "lastrowid", None)
+
+class PostgresRow:
+    def __init__(self, keys, values):
+        self._data = dict(zip(keys, values))
+
+    def __getitem__(self, key):
+        return self._data[key]
+
+    def get(self, key, default=None):
+        return self._data.get(key, default)
+
+class PostgresConnWrapper:
+    def __init__(self, conn):
+        self.conn = conn
+
+    def cursor(self):
+        return PostgresCursorWrapper(self.conn.cursor(cursor_factory=psycopg2.extras.DictCursor), self.conn)
+
+    def commit(self):
+        self.conn.commit()
+
+    def close(self):
+        self.conn.close()
+
+    def __enter__(self):
+        return self
+
+    def __exit__(self, exc_type, exc_val, exc_tb):
+        if exc_type:
+            self.conn.rollback()
+        else:
+            self.conn.commit()
+        self.conn.close()
 
 def get_ist_now():
     return datetime.now(IST)
@@ -29,14 +95,14 @@ def get_ist_timestamp_str():
     return get_ist_now().strftime("%Y-%m-%d %H:%M:%S IST")
 
 def get_db():
-    """Connects to Turso cloud DB in production, falling back to local SQLite if offline."""
-    if HAS_TURSO and TURSO_DATABASE_URL and TURSO_AUTH_TOKEN:
+    if HAS_PG and DATABASE_URL:
         try:
-            conn = libsql.connect(database=TURSO_DATABASE_URL, auth_token=TURSO_AUTH_TOKEN)
-            return conn
+            conn = psycopg2.connect(DATABASE_URL)
+            return PostgresConnWrapper(conn)
         except Exception as e:
-            logger.error(f"Turso Connection Error: {e}, falling back to local SQLite")
+            logger.error(f"PostgreSQL Connection Error: {e}, falling back to local SQLite")
     
+    import sqlite3
     conn = sqlite3.connect(DB_FILE)
     conn.row_factory = sqlite3.Row
     return conn
@@ -47,7 +113,7 @@ def init_db():
     
     cursor.execute('''
         CREATE TABLE IF NOT EXISTS users (
-            user_id INTEGER PRIMARY KEY,
+            user_id BIGINT PRIMARY KEY,
             student_id TEXT UNIQUE,
             full_name TEXT,
             username TEXT,
@@ -61,7 +127,7 @@ def init_db():
             pin TEXT,
             security_question TEXT,
             security_answer TEXT,
-            referred_by INTEGER,
+            referred_by BIGINT,
             referral_count INTEGER DEFAULT 0,
             bonus_quota INTEGER DEFAULT 0,
             paid_question_balance INTEGER DEFAULT 0,
@@ -69,7 +135,7 @@ def init_db():
             demo_used INTEGER DEFAULT 0,
             last_profile_edit TEXT,
             last_active TEXT,
-            last_activity_epoch INTEGER DEFAULT 0,
+            last_activity_epoch BIGINT DEFAULT 0,
             is_banned INTEGER DEFAULT 0,
             is_verified INTEGER DEFAULT 1,
             created_at TEXT
@@ -78,8 +144,8 @@ def init_db():
 
     cursor.execute('''
         CREATE TABLE IF NOT EXISTS quiz_attempts (
-            id INTEGER PRIMARY KEY AUTOINCREMENT,
-            user_id INTEGER,
+            id SERIAL PRIMARY KEY,
+            user_id BIGINT,
             quiz_id TEXT DEFAULT 'computer_awareness_mock',
             questions_attempted INTEGER DEFAULT 0,
             total_questions INTEGER DEFAULT 0,
@@ -90,15 +156,14 @@ def init_db():
             time_taken INTEGER DEFAULT 0,
             attempt_timestamp TEXT,
             attempt_date TEXT,
-            details_json TEXT,
-            FOREIGN KEY (user_id) REFERENCES users (user_id)
+            details_json TEXT
         )
     ''')
 
     cursor.execute('''
         CREATE TABLE IF NOT EXISTS seen_questions (
-            id INTEGER PRIMARY KEY AUTOINCREMENT,
-            user_id INTEGER,
+            id SERIAL PRIMARY KEY,
+            user_id BIGINT,
             question_id TEXT,
             seen_at TEXT,
             UNIQUE(user_id, question_id)
@@ -107,8 +172,8 @@ def init_db():
 
     cursor.execute('''
         CREATE TABLE IF NOT EXISTS saved_questions (
-            id INTEGER PRIMARY KEY AUTOINCREMENT,
-            user_id INTEGER,
+            id SERIAL PRIMARY KEY,
+            user_id BIGINT,
             question_text TEXT,
             options_json TEXT,
             correct_option INTEGER,
@@ -119,8 +184,8 @@ def init_db():
 
     cursor.execute('''
         CREATE TABLE IF NOT EXISTS student_feedback (
-            id INTEGER PRIMARY KEY AUTOINCREMENT,
-            user_id INTEGER,
+            id SERIAL PRIMARY KEY,
+            user_id BIGINT,
             full_name TEXT,
             feedback_text TEXT,
             submitted_at TEXT
@@ -136,7 +201,7 @@ def init_db():
     
     cursor.execute('''
         CREATE TABLE IF NOT EXISTS paused_quizzes (
-            user_id INTEGER PRIMARY KEY,
+            user_id BIGINT PRIMARY KEY,
             quiz_state TEXT,
             saved_at TEXT
         )
@@ -144,8 +209,8 @@ def init_db():
 
     cursor.execute('''
         CREATE TABLE IF NOT EXISTS user_activity_time (
-            id INTEGER PRIMARY KEY AUTOINCREMENT,
-            user_id INTEGER,
+            id SERIAL PRIMARY KEY,
+            user_id BIGINT,
             date_str TEXT,
             seconds_spent INTEGER DEFAULT 0,
             UNIQUE(user_id, date_str)
@@ -154,8 +219,8 @@ def init_db():
 
     cursor.execute('''
         CREATE TABLE IF NOT EXISTS payment_transactions (
-            id INTEGER PRIMARY KEY AUTOINCREMENT,
-            user_id INTEGER,
+            id SERIAL PRIMARY KEY,
+            user_id BIGINT,
             plan_key TEXT,
             amount INTEGER,
             payment_id TEXT,
@@ -165,16 +230,17 @@ def init_db():
         )
     ''')
     
-    cursor.execute("INSERT OR IGNORE INTO bot_settings (key, value) VALUES ('maintenance_until', '0')")
+    if DATABASE_URL and HAS_PG:
+        cursor.execute("INSERT INTO bot_settings (key, value) VALUES ('maintenance_until', '0') ON CONFLICT (key) DO NOTHING")
+    else:
+        cursor.execute("INSERT OR IGNORE INTO bot_settings (key, value) VALUES ('maintenance_until', '0')")
     
     conn.commit()
     conn.close()
 
 def record_payment_transaction(user_id: int, plan_key: str, amount: int, payment_id: str):
-    """Records payment transactions for financial reporting in admin."""
     conn = get_db()
     cursor = conn.cursor()
-    
     now_ist = get_ist_now()
     dt_str = now_ist.strftime("%Y-%m-%d")
     month_str = now_ist.strftime("%Y-%m")
@@ -184,191 +250,8 @@ def record_payment_transaction(user_id: int, plan_key: str, amount: int, payment
         INSERT INTO payment_transactions (user_id, plan_key, amount, payment_id, txn_date, txn_month, timestamp_str)
         VALUES (?, ?, ?, ?, ?, ?, ?)
     ''', (user_id, plan_key, amount, payment_id, dt_str, month_str, ts_str))
-    
     conn.commit()
     conn.close()
-
-def get_earnings_analytics():
-    """Calculates overall, daily, and monthly revenue totals."""
-    conn = get_db()
-    cursor = conn.cursor()
-    
-    cursor.execute("SELECT SUM(amount) as total_amt, COUNT(id) as total_cnt FROM payment_transactions")
-    row_total = cursor.fetchone()
-    total_rev = row_total['total_amt'] if row_total and row_total['total_amt'] else 0
-    total_cnt = row_total['total_cnt'] if row_total and row_total['total_cnt'] else 0
-
-    cursor.execute("SELECT txn_date, SUM(amount) as sum_amt, COUNT(id) as cnt FROM payment_transactions GROUP BY txn_date ORDER BY txn_date DESC LIMIT 30")
-    rows_daily = cursor.fetchall()
-    daily_map = {r['txn_date']: {"amount": r['sum_amt'], "count": r['cnt']} for r in rows_daily}
-
-    cursor.execute("SELECT txn_month, SUM(amount) as sum_amt, COUNT(id) as cnt FROM payment_transactions GROUP BY txn_month ORDER BY txn_month DESC LIMIT 12")
-    rows_monthly = cursor.fetchall()
-    monthly_map = {r['txn_month']: {"amount": r['sum_amt'], "count": r['cnt']} for r in rows_monthly}
-
-    conn.close()
-
-    return {
-        "total_revenue": total_rev,
-        "total_transactions": total_cnt,
-        "daily_breakdown": daily_map,
-        "monthly_breakdown": monthly_map
-    }
-
-def generate_student_id(full_name: str, dob_str: str) -> str:
-    clean_name = "".join(filter(str.isalpha, full_name))
-    if len(clean_name) >= 2:
-        prefix = clean_name[:2].capitalize()
-    elif len(clean_name) == 1:
-        prefix = clean_name.ljust(2, 'X').capitalize()
-    else:
-        prefix = "ST"
-        
-    try:
-        parts = dob_str.split("-")
-        day = parts[0]
-        month = parts[1]
-        year_full = parts[2]
-        year_short = year_full[-2:]
-        dob_code = f"{day}{month}{year_short}"
-    except Exception:
-        dob_code = "010100"
-        
-    base_id = f"{prefix}{dob_code}"
-    
-    conn = get_db()
-    cursor = conn.cursor()
-    student_id = base_id
-    counter = 1
-    while True:
-        cursor.execute("SELECT 1 FROM users WHERE student_id = ?", (student_id,))
-        if not cursor.fetchone():
-            break
-        student_id = f"{base_id}_{counter}"
-        counter += 1
-    conn.close()
-    
-    return student_id
-
-def get_user_by_student_id(student_id: str):
-    conn = get_db()
-    cursor = conn.cursor()
-    cursor.execute("SELECT * FROM users WHERE LOWER(student_id) = LOWER(?)", (student_id.strip(),))
-    row = cursor.fetchone()
-    conn.close()
-    return dict(row) if row else None
-
-def update_user_pin(user_id: int, new_pin: str):
-    conn = get_db()
-    cursor = conn.cursor()
-    cursor.execute("UPDATE users SET pin = ? WHERE user_id = ?", (new_pin, user_id))
-    conn.commit()
-    conn.close()
-    sync_user_json_profile(user_id)
-
-def check_and_update_inactivity(user_id: int) -> tuple[bool, int]:
-    conn = get_db()
-    cursor = conn.cursor()
-    now_epoch = int(get_ist_now().timestamp())
-    
-    cursor.execute("SELECT last_activity_epoch, pin FROM users WHERE user_id = ?", (user_id,))
-    row = cursor.fetchone()
-    
-    if not row or not row['pin']:
-        conn.close()
-        return False, 0
-
-    last_epoch = row['last_activity_epoch'] or 0
-    diff = now_epoch - last_epoch if last_epoch > 0 else 0
-
-    if last_epoch > 0 and diff > 300:
-        conn.close()
-        return True, diff
-
-    cursor.execute("UPDATE users SET last_activity_epoch = ?, last_active = ? WHERE user_id = ?", (now_epoch, get_ist_timestamp_str(), user_id))
-    conn.commit()
-    conn.close()
-    return False, diff
-
-def refresh_user_activity_epoch(user_id: int):
-    conn = get_db()
-    cursor = conn.cursor()
-    now_epoch = int(get_ist_now().timestamp())
-    cursor.execute("UPDATE users SET last_activity_epoch = ?, last_active = ? WHERE user_id = ?", (now_epoch, get_ist_timestamp_str(), user_id))
-    conn.commit()
-    conn.close()
-
-def log_user_activity_time(user_id: int, seconds: int = 15):
-    conn = get_db()
-    cursor = conn.cursor()
-    today_date = get_ist_date_str()
-    now_str = get_ist_timestamp_str()
-    now_epoch = int(get_ist_now().timestamp())
-    
-    cursor.execute('''
-        INSERT INTO user_activity_time (user_id, date_str, seconds_spent)
-        VALUES (?, ?, ?)
-        ON CONFLICT(user_id, date_str) DO UPDATE SET
-            seconds_spent = seconds_spent + excluded.seconds_spent
-    ''', (user_id, today_date, seconds))
-
-    cursor.execute("UPDATE users SET last_active = ?, last_activity_epoch = ? WHERE user_id = ?", (now_str, now_epoch, user_id))
-    conn.commit()
-    conn.close()
-
-def toggle_user_ban_status(user_id: int) -> bool:
-    conn = get_db()
-    cursor = conn.cursor()
-    cursor.execute("SELECT is_banned FROM users WHERE user_id = ?", (user_id,))
-    row = cursor.fetchone()
-    current_status = row['is_banned'] if row and row['is_banned'] else 0
-    new_status = 0 if current_status == 1 else 1
-    cursor.execute("UPDATE users SET is_banned = ? WHERE user_id = ?", (new_status, user_id))
-    conn.commit()
-    conn.close()
-    sync_user_json_profile(user_id)
-    return bool(new_status)
-
-def admin_update_user_name(user_id: int, new_name: str):
-    conn = get_db()
-    cursor = conn.cursor()
-    cursor.execute("UPDATE users SET full_name = ? WHERE user_id = ?", (new_name.strip(), user_id))
-    conn.commit()
-    conn.close()
-    sync_user_json_profile(user_id)
-
-def admin_delete_user_account(user_id: int):
-    conn = get_db()
-    cursor = conn.cursor()
-    cursor.execute("SELECT student_id FROM users WHERE user_id = ?", (user_id,))
-    row = cursor.fetchone()
-    sid = row['student_id'] if row and row['student_id'] else f"USER_{user_id}"
-
-    cursor.execute("DELETE FROM users WHERE user_id = ?", (user_id,))
-    cursor.execute("DELETE FROM quiz_attempts WHERE user_id = ?", (user_id,))
-    cursor.execute("DELETE FROM seen_questions WHERE user_id = ?", (user_id,))
-    cursor.execute("DELETE FROM saved_questions WHERE user_id = ?", (user_id,))
-    cursor.execute("DELETE FROM student_feedback WHERE user_id = ?", (user_id,))
-    cursor.execute("DELETE FROM paused_quizzes WHERE user_id = ?", (user_id,))
-    cursor.execute("DELETE FROM user_activity_time WHERE user_id = ?", (user_id,))
-    conn.commit()
-    conn.close()
-
-    json_path = os.path.join(USER_PROFILES_DIR, f"{sid}.json")
-    if os.path.exists(json_path):
-        try:
-            os.remove(json_path)
-        except Exception as e:
-            logger.error(f"Error removing JSON profile on deletion: {e}")
-
-def get_paid_users():
-    """Retrieves ONLY paid users (excludes free-tier / demo accounts)."""
-    conn = get_db()
-    cursor = conn.cursor()
-    cursor.execute("SELECT * FROM users WHERE paid_question_balance > 20 ORDER BY created_at DESC")
-    rows = cursor.fetchall()
-    conn.close()
-    return [dict(r) for r in rows]
 
 def sync_user_json_profile(user_id: int):
     conn = get_db()
@@ -508,67 +391,68 @@ def save_user_profile(user_id, full_name, username, phone, target_exam, dob, age
     now_str = get_ist_timestamp_str()
     now_epoch = int(get_ist_now().timestamp())
     
-    student_id = generate_student_id(full_name, dob)
+    clean_name = "".join(filter(str.isalpha, full_name))
+    prefix = clean_name[:2].capitalize() if len(clean_name) >= 2 else "ST"
+    try:
+        parts = dob.split("-")
+        dob_code = f"{parts[0]}{parts[1]}{parts[2][-2:]}"
+    except Exception:
+        dob_code = "010100"
+    student_id = f"{prefix}{dob_code}"
 
     demo_plan = PLAN_TIERS.get("FREE_DEMO", {"days": 2, "daily_limit": 20})
     demo_expiry = (datetime.now(IST) + timedelta(days=demo_plan["days"])).strftime("%Y-%m-%d %H:%M:%S IST")
 
-    cursor.execute('''
-        INSERT INTO users (user_id, student_id, full_name, username, phone_number, target_exam, dob, age, gender, pin, security_question, security_answer, country, state, referred_by, paid_question_balance, vip_pass_expiry, demo_used, last_profile_edit, last_active, last_activity_epoch, is_banned, is_verified, created_at)
-        VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, 1, ?, ?, ?, 0, 1, ?)
-        ON CONFLICT(user_id) DO UPDATE SET
-            student_id=excluded.student_id,
-            full_name=excluded.full_name,
-            username=excluded.username,
-            phone_number=excluded.phone_number,
-            target_exam=excluded.target_exam,
-            dob=excluded.dob,
-            age=excluded.age,
-            gender=excluded.gender,
-            pin=excluded.pin,
-            security_question=excluded.security_question,
-            security_answer=excluded.security_answer,
-            country=excluded.country,
-            state=excluded.state,
-            last_profile_edit=?,
-            last_active=?,
-            last_activity_epoch=?,
-            is_verified=1
-    ''', (user_id, student_id, full_name, username, phone, target_exam, dob, age, gender, pin, sec_q, sec_a, country, state, referred_by, demo_plan["daily_limit"], demo_expiry, now_str, now_str, now_epoch, now_str, now_str, now_epoch, now_str))
+    if DATABASE_URL and HAS_PG:
+        cursor.execute('''
+            INSERT INTO users (user_id, student_id, full_name, username, phone_number, target_exam, dob, age, gender, pin, security_question, security_answer, country, state, referred_by, paid_question_balance, vip_pass_expiry, demo_used, last_profile_edit, last_active, last_activity_epoch, is_banned, is_verified, created_at)
+            VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, 1, ?, ?, ?, 0, 1, ?)
+            ON CONFLICT (user_id) DO UPDATE SET
+                student_id=EXCLUDED.student_id,
+                full_name=EXCLUDED.full_name,
+                username=EXCLUDED.username,
+                phone_number=EXCLUDED.phone_number,
+                target_exam=EXCLUDED.target_exam,
+                dob=EXCLUDED.dob,
+                age=EXCLUDED.age,
+                gender=EXCLUDED.gender,
+                pin=EXCLUDED.pin,
+                security_question=EXCLUDED.security_question,
+                security_answer=EXCLUDED.security_answer,
+                country=EXCLUDED.country,
+                state=EXCLUDED.state,
+                last_profile_edit=EXCLUDED.last_profile_edit,
+                last_active=EXCLUDED.last_active,
+                last_activity_epoch=EXCLUDED.last_activity_epoch,
+                is_verified=1
+        ''', (user_id, student_id, full_name, username, phone, target_exam, dob, age, gender, pin, sec_q, sec_a, country, state, referred_by, demo_plan["daily_limit"], demo_expiry, now_str, now_str, now_epoch, now_str))
+    else:
+        cursor.execute('''
+            INSERT INTO users (user_id, student_id, full_name, username, phone_number, target_exam, dob, age, gender, pin, security_question, security_answer, country, state, referred_by, paid_question_balance, vip_pass_expiry, demo_used, last_profile_edit, last_active, last_activity_epoch, is_banned, is_verified, created_at)
+            VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, 1, ?, ?, ?, 0, 1, ?)
+            ON CONFLICT(user_id) DO UPDATE SET
+                student_id=excluded.student_id,
+                full_name=excluded.full_name,
+                username=excluded.username,
+                phone_number=excluded.phone_number,
+                target_exam=excluded.target_exam,
+                dob=excluded.dob,
+                age=excluded.age,
+                gender=excluded.gender,
+                pin=excluded.pin,
+                security_question=excluded.security_question,
+                security_answer=excluded.security_answer,
+                country=excluded.country,
+                state=excluded.state,
+                last_profile_edit=?,
+                last_active=?,
+                last_activity_epoch=?,
+                is_verified=1
+        ''', (user_id, student_id, full_name, username, phone, target_exam, dob, age, gender, pin, sec_q, sec_a, country, state, referred_by, demo_plan["daily_limit"], demo_expiry, now_str, now_str, now_epoch, now_str, now_str, now_epoch, now_str))
     
-    # REFERRAL PROGRAM: EVERY 3 REFERRALS GIVE +10 BONUS QUOTA
-    if referred_by and referred_by != user_id:
-        cursor.execute("UPDATE users SET referral_count = referral_count + 1 WHERE user_id = ?", (referred_by,))
-        cursor.execute("SELECT referral_count FROM users WHERE user_id = ?", (referred_by,))
-        row = cursor.fetchone()
-        if row and row['referral_count'] % 3 == 0:
-            cursor.execute("UPDATE users SET bonus_quota = bonus_quota + 10 WHERE user_id = ?", (referred_by,))
-            
     conn.commit()
     conn.close()
-    
     sync_user_json_profile(user_id)
-    if referred_by:
-        sync_user_json_profile(referred_by)
-
-def can_user_edit_profile(user_id: int) -> tuple[bool, int]:
-    conn = get_db()
-    cursor = conn.cursor()
-    cursor.execute("SELECT last_profile_edit FROM users WHERE user_id = ?", (user_id,))
-    row = cursor.fetchone()
-    conn.close()
-
-    if not row or not row['last_profile_edit']:
-        return True, 0
-
-    try:
-        last_edit_date = datetime.strptime(row['last_profile_edit'].split(" ")[0], "%Y-%m-%d")
-        days_passed = (datetime.now() - last_edit_date).days
-        if days_passed >= 30:
-            return True, 0
-        return False, 30 - days_passed
-    except Exception:
-        return True, 0
 
 def get_user_profile(user_id):
     conn = get_db()
@@ -628,7 +512,10 @@ def mark_questions_as_seen(user_id, question_ids):
     cursor = conn.cursor()
     now_str = get_ist_timestamp_str()
     for qid in question_ids:
-        cursor.execute("INSERT OR IGNORE INTO seen_questions (user_id, question_id, seen_at) VALUES (?, ?, ?)", (user_id, str(qid), now_str))
+        if DATABASE_URL and HAS_PG:
+            cursor.execute("INSERT INTO seen_questions (user_id, question_id, seen_at) VALUES (?, ?, ?) ON CONFLICT (user_id, question_id) DO NOTHING", (user_id, str(qid), now_str))
+        else:
+            cursor.execute("INSERT OR IGNORE INTO seen_questions (user_id, question_id, seen_at) VALUES (?, ?, ?)", (user_id, str(qid), now_str))
     conn.commit()
     conn.close()
 
@@ -677,32 +564,26 @@ def get_all_student_feedbacks(limit: int = 15):
     conn.close()
     return [dict(r) for r in rows]
 
-def set_maintenance_until(epoch_timestamp: int):
-    conn = get_db()
-    cursor = conn.cursor()
-    cursor.execute("UPDATE bot_settings SET value = ? WHERE key = 'maintenance_until'", (str(epoch_timestamp),))
-    conn.commit()
-    conn.close()
-
-def get_maintenance_until() -> int:
-    conn = get_db()
-    cursor = conn.cursor()
-    cursor.execute("SELECT value FROM bot_settings WHERE key = 'maintenance_until'")
-    row = cursor.fetchone()
-    conn.close()
-    return int(row['value']) if row and row['value'].isdigit() else 0
-
 def save_paused_quiz_state(user_id: int, quiz_state: dict):
     conn = get_db()
     cursor = conn.cursor()
     now_str = get_ist_timestamp_str()
-    cursor.execute('''
-        INSERT INTO paused_quizzes (user_id, quiz_state, saved_at)
-        VALUES (?, ?, ?)
-        ON CONFLICT(user_id) DO UPDATE SET
-            quiz_state = excluded.quiz_state,
-            saved_at = excluded.saved_at
-    ''', (user_id, json.dumps(quiz_state), now_str))
+    if DATABASE_URL and HAS_PG:
+        cursor.execute('''
+            INSERT INTO paused_quizzes (user_id, quiz_state, saved_at)
+            VALUES (?, ?, ?)
+            ON CONFLICT (user_id) DO UPDATE SET
+                quiz_state = EXCLUDED.quiz_state,
+                saved_at = EXCLUDED.saved_at
+        ''', (user_id, json.dumps(quiz_state), now_str))
+    else:
+        cursor.execute('''
+            INSERT INTO paused_quizzes (user_id, quiz_state, saved_at)
+            VALUES (?, ?, ?)
+            ON CONFLICT(user_id) DO UPDATE SET
+                quiz_state = excluded.quiz_state,
+                saved_at = excluded.saved_at
+        ''', (user_id, json.dumps(quiz_state), now_str))
     conn.commit()
     conn.close()
 
@@ -720,3 +601,42 @@ def clear_paused_quiz_state(user_id: int):
     cursor.execute("DELETE FROM paused_quizzes WHERE user_id = ?", (user_id,))
     conn.commit()
     conn.close()
+
+def set_maintenance_until(epoch_timestamp: int):
+    conn = get_db()
+    cursor = conn.cursor()
+    cursor.execute("UPDATE bot_settings SET value = ? WHERE key = 'maintenance_until'", (str(epoch_timestamp),))
+    conn.commit()
+    conn.close()
+
+def get_maintenance_until() -> int:
+    conn = get_db()
+    cursor = conn.cursor()
+    cursor.execute("SELECT value FROM bot_settings WHERE key = 'maintenance_until'")
+    row = cursor.fetchone()
+    conn.close()
+    return int(row['value']) if row and row['value'].isdigit() else 0
+
+def get_earnings_analytics():
+    conn = get_db()
+    cursor = conn.cursor()
+    cursor.execute("SELECT SUM(amount) as total_amt, COUNT(id) as total_cnt FROM payment_transactions")
+    row_total = cursor.fetchone()
+    total_rev = row_total['total_amt'] if row_total and row_total['total_amt'] else 0
+    total_cnt = row_total['total_cnt'] if row_total and row_total['total_cnt'] else 0
+
+    cursor.execute("SELECT txn_date, SUM(amount) as sum_amt, COUNT(id) as cnt FROM payment_transactions GROUP BY txn_date ORDER BY txn_date DESC LIMIT 30")
+    rows_daily = cursor.fetchall()
+    daily_map = {r['txn_date']: {"amount": r['sum_amt'], "count": r['cnt']} for r in rows_daily}
+
+    cursor.execute("SELECT txn_month, SUM(amount) as sum_amt, COUNT(id) as cnt FROM payment_transactions GROUP BY txn_month ORDER BY txn_month DESC LIMIT 12")
+    rows_monthly = cursor.fetchall()
+    monthly_map = {r['txn_month']: {"amount": r['sum_amt'], "count": r['cnt']} for r in rows_monthly}
+
+    conn.close()
+    return {
+        "total_revenue": total_rev,
+        "total_transactions": total_cnt,
+        "daily_breakdown": daily_map,
+        "monthly_breakdown": monthly_map
+    }

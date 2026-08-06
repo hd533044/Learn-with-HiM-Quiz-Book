@@ -45,7 +45,7 @@ bot_app_instance = None
 
 
 async def activate_user_subscription(user_id: int, plan_key: str):
-    """Activates subscription ledger in SQLite DB & syncs JSON profile."""
+    """Activates subscription ledger in SQLite DB, sets demo_used flag if applicable, & syncs JSON profile."""
     plan = PLAN_TIERS.get(plan_key)
     if not plan:
         return False
@@ -58,10 +58,25 @@ async def activate_user_subscription(user_id: int, plan_key: str):
     try:
         conn = sqlite3.connect(DB_FILE)
         cursor = conn.cursor()
-        cursor.execute(
-            "UPDATE users SET paid_question_balance = ?, vip_pass_expiry = ? WHERE user_id = ?",
-            (plan["daily_limit"], expiry_str, user_id)
-        )
+        
+        # Check if user table has demo_used column, else fallback gracefully
+        if plan_key == "FREE_DEMO":
+            try:
+                cursor.execute(
+                    "UPDATE users SET paid_question_balance = ?, vip_pass_expiry = ?, demo_used = 1 WHERE user_id = ?",
+                    (plan["daily_limit"], expiry_str, user_id)
+                )
+            except sqlite3.OperationalError:
+                cursor.execute(
+                    "UPDATE users SET paid_question_balance = ?, vip_pass_expiry = ? WHERE user_id = ?",
+                    (plan["daily_limit"], expiry_str, user_id)
+                )
+        else:
+            cursor.execute(
+                "UPDATE users SET paid_question_balance = ?, vip_pass_expiry = ? WHERE user_id = ?",
+                (plan["daily_limit"], expiry_str, user_id)
+            )
+
         conn.commit()
         conn.close()
 
@@ -74,25 +89,28 @@ async def activate_user_subscription(user_id: int, plan_key: str):
 
 
 async def send_payment_invoice_telegram(user_id: int, plan_key: str, payment_id: str = "N/A"):
-    """Sends an official payment receipt & pack unlock notification to Telegram."""
+    """Sends an official payment receipt & celebratory activation message to Telegram."""
     if not bot_app_instance:
         return
 
     plan_info = PLAN_TIERS.get(plan_key, {})
     txn_time = get_ist_timestamp_str()
+    plan_name = plan_info.get('name', plan_key)
     
     invoice_msg = (
-        f"🎉 **PAYMENT CONFIRMED & VIP PACK UNLOCKED!** 🎉\n"
+        f"🥳 **CONGRATULATIONS! PACK ACTIVATED!** 🥳\n"
         f"━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\n"
-        f"👑 **Unlocked Pack:** `{plan_info.get('name', plan_key)}`\n"
-        f"💰 **Amount Paid:** ₹{plan_info.get('price', 0)}\n"
-        f"🆔 **Transaction / Payment ID:** `{payment_id}`\n"
-        f"⏰ **Timestamp:** `{txn_time}`\n\n"
-        f"📅 **Pack Validity:** `{plan_info.get('days')} Days`\n"
-        f"⚡ **Daily Question Limit:** `{plan_info.get('daily_limit')} Qs/Day`\n"
+        f"🎉 **Your {plan_name} has been successfully activated!**\n"
+        f"✨ You can now start your preparation immediately.\n\n"
+        f"🧾 **OFFICIAL PAYMENT INVOICE**\n"
+        f"• **Unlocked Pack:** `{plan_name}`\n"
+        f"• **Amount Paid:** ₹{plan_info.get('price', 0)}\n"
+        f"• **Payment / Txn ID:** `{payment_id}`\n"
+        f"• **Date & Time:** `{txn_time}`\n"
+        f"• **Validity:** `{plan_info.get('days')} Days`\n"
+        f"• **Daily Question Limit:** `{plan_info.get('daily_limit')} Questions / Day`\n"
         f"━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\n"
-        f"✅ Your daily question quota has been automatically upgraded in the database.\n\n"
-        f"🚀 Start practicing right away with **/quiz**!"
+        f"🚀 Tap **/quiz** to launch your Computer Quiz practice session now!"
     )
     try:
         await bot_app_instance.bot.send_message(
@@ -101,7 +119,7 @@ async def send_payment_invoice_telegram(user_id: int, plan_key: str, payment_id:
             parse_mode="Markdown"
         )
     except Exception as err:
-        logging.error(f"Failed to notify user via Telegram: {err}")
+        logging.error(f"Failed to notify user {user_id} via Telegram: {err}")
 
 
 async def handle_ping(request):
@@ -113,7 +131,19 @@ async def handle_razorpay_callback_get(request):
     """Handles GET redirects from Razorpay checkout after user completes payment."""
     params = request.query
     razorpay_payment_id = params.get("razorpay_payment_id", "N/A")
-    razorpay_payment_link_status = params.get("razorpay_payment_link_status", "")
+
+    # Extract parameters passed directly or via notes
+    user_id = params.get("user_id") or params.get("notes[user_id]")
+    plan_key = params.get("plan_key") or params.get("notes[plan_key]")
+
+    if user_id and plan_key:
+        try:
+            uid = int(user_id)
+            activated = await activate_user_subscription(uid, plan_key)
+            if activated:
+                await send_payment_invoice_telegram(uid, plan_key, razorpay_payment_id)
+        except Exception as e:
+            logging.error(f"Error activating from GET callback redirect: {e}")
 
     html_content = f"""
     <!DOCTYPE html>
@@ -161,7 +191,7 @@ async def handle_razorpay_callback_get(request):
                 padding: 12px;
                 border-radius: 8px;
                 font-family: monospace;
-                color: #f1f5f9;
+                color: #38bdf8;
                 margin: 16px 0;
                 word-break: break-all;
             }}
@@ -181,9 +211,9 @@ async def handle_razorpay_callback_get(request):
         <div class="card">
             <div class="icon">🎉</div>
             <h2>Payment Successful!</h2>
-            <p>Your subscription pack has been unlocked successfully.</p>
+            <p>Congratulations! Your VIP plan has been activated.</p>
             <div class="id-box">Payment ID: {razorpay_payment_id}</div>
-            <p>You can close this tab and return to Telegram to start practicing!</p>
+            <p>An official invoice and pack receipt have been sent to your Telegram chat.</p>
             <a href="https://t.me/LearnwithHiMQuizzzbot" class="btn">Return to Telegram Bot</a>
         </div>
     </body>
@@ -210,12 +240,12 @@ async def handle_razorpay_webhook(request):
         data = json.loads(body)
         event = data.get("event")
 
-        if event == "payment_link.paid":
-            payload = data.get("payload", {}).get("payment_link", {}).get("entity", {})
+        if event in ("payment_link.paid", "payment.captured"):
+            payload = data.get("payload", {}).get("payment_link", {}).get("entity", {}) or data.get("payload", {}).get("payment", {}).get("entity", {})
             notes = payload.get("notes", {})
             user_id = notes.get("user_id")
             plan_key = notes.get("plan_key")
-            payment_id = payload.get("payment_id", "N/A")
+            payment_id = payload.get("payment_id") or payload.get("id") or "N/A"
 
             if user_id and plan_key:
                 uid = int(user_id)

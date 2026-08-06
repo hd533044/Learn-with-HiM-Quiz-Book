@@ -62,7 +62,10 @@ def generate_razorpay_link_sync(user_id: int, plan_key: str) -> str:
     elif len(clean_phone) < 10:
         clean_phone = "9123456789"
 
-    # Fully aligned payload: attaching notes ensures instant Telegram invoice & VIP pack activation
+    # Direct query parameter passing guarantees instantaneous browser redirect activation
+    base_render_url = (os.getenv("RENDER_EXTERNAL_URL") or "https://learn-with-him-quiz-book.onrender.com").rstrip("/")
+    callback_uri = f"{base_render_url}/razorpay-webhook?user_id={user_id}&plan_key={plan_key}"
+
     payload = {
         "amount": int(plan["price"] * 100),
         "currency": "INR",
@@ -77,75 +80,9 @@ def generate_razorpay_link_sync(user_id: int, plan_key: str) -> str:
             "user_id": str(user_id),
             "plan_key": str(plan_key)
         },
-        "callback_url": "https://learn-with-him-quiz-book.onrender.com/razorpay-webhook",
+        "callback_url": callback_uri,
         "callback_method": "get"
     }
-
-    req_data = json.dumps(payload).encode("utf-8")
-    req = urllib.request.Request(url, data=req_data, method="POST")
-    req.add_header("Authorization", f"Basic {encoded_auth}")
-    req.add_header("Content-Type", "application/json")
-
-    try:
-        with urllib.request.urlopen(req, timeout=12) as response:
-            res_body = response.read().decode("utf-8")
-            res_json = json.loads(res_body)
-            if response.status in (200, 201) and "short_url" in res_json:
-                return res_json["short_url"]
-            else:
-                logging.error(f"[RAZORPAY API FAIL RESPONSE] Status: {response.status}, Body: {res_body}")
-                return None
-    except urllib.error.HTTPError as http_err:
-        err_body = http_err.read().decode("utf-8") if http_err.fp else ""
-        logging.error(f"[RAZORPAY HTTP ERROR] Code: {http_err.code}, Reason: {http_err.reason}, Details: {err_body}")
-        return None
-    except Exception as e:
-        logging.error(f"[RAZORPAY EXCEPTION] {e}")
-        return None
-
-    req_data = json.dumps(payload).encode("utf-8")
-    req = urllib.request.Request(url, data=req_data, method="POST")
-    req.add_header("Authorization", f"Basic {encoded_auth}")
-    req.add_header("Content-Type", "application/json")
-
-    try:
-        with urllib.request.urlopen(req, timeout=12) as response:
-            res_body = response.read().decode("utf-8")
-            res_json = json.loads(res_body)
-            if response.status in (200, 201) and "short_url" in res_json:
-                return res_json["short_url"]
-            else:
-                logging.error(f"[RAZORPAY API FAIL RESPONSE] Status: {response.status}, Body: {res_body}")
-                return None
-    except urllib.error.HTTPError as http_err:
-        err_body = http_err.read().decode("utf-8") if http_err.fp else ""
-        logging.error(f"[RAZORPAY HTTP ERROR] Code: {http_err.code}, Reason: {http_err.reason}, Details: {err_body}")
-        return None
-    except Exception as e:
-        logging.error(f"[RAZORPAY EXCEPTION] {e}")
-        return None
-
-    req_data = json.dumps(payload).encode("utf-8")
-    req = urllib.request.Request(url, data=req_data, method="POST")
-    req.add_header("Authorization", f"Basic {encoded_auth}")
-    req.add_header("Content-Type", "application/json")
-
-    try:
-        with urllib.request.urlopen(req, timeout=12) as response:
-            res_body = response.read().decode("utf-8")
-            res_json = json.loads(res_body)
-            if response.status in (200, 201) and "short_url" in res_json:
-                return res_json["short_url"]
-            else:
-                logging.error(f"[RAZORPAY API FAIL RESPONSE] Status: {response.status}, Body: {res_body}")
-                return None
-    except urllib.error.HTTPError as http_err:
-        err_body = http_err.read().decode("utf-8") if http_err.fp else ""
-        logging.error(f"[RAZORPAY HTTP ERROR] Code: {http_err.code}, Reason: {http_err.reason}, Details: {err_body}")
-        return None
-    except Exception as e:
-        logging.error(f"[RAZORPAY EXCEPTION] {e}")
-        return None
 
     req_data = json.dumps(payload).encode("utf-8")
     req = urllib.request.Request(url, data=req_data, method="POST")
@@ -287,9 +224,14 @@ async def plans_command(update: Update, context: ContextTypes.DEFAULT_TYPE):
 
     user = update.effective_user
     log_user_activity_time(user.id, seconds=10)
+    profile = get_user_profile(user.id)
 
-    keyboard = [
-        [InlineKeyboardButton("🎁 FREE DEMO TRIAL (2 Days - 20 Qs/Day)", callback_data="buy_plan_FREE_DEMO")],
+    keyboard = []
+    # Only display Demo Trial if the student has NOT used it yet
+    if not profile.get("demo_used"):
+        keyboard.append([InlineKeyboardButton("🎁 FREE DEMO TRIAL (2 Days - 20 Qs/Day)", callback_data="buy_plan_FREE_DEMO")])
+
+    keyboard.extend([
         [InlineKeyboardButton("📦 BRONZE (₹5 - 3 Days - 80 Qs/Day)", callback_data="buy_plan_BRONZE")],
         [InlineKeyboardButton("📦 SILVER (₹10 - 7 Days - 100 Qs/Day)", callback_data="buy_plan_SILVER")],
         [InlineKeyboardButton("📦 GOLD (₹15 - 12 Days - 120 Qs/Day)", callback_data="buy_plan_GOLD")],
@@ -298,22 +240,12 @@ async def plans_command(update: Update, context: ContextTypes.DEFAULT_TYPE):
         [InlineKeyboardButton("📦 PLATINUM (₹40 - 60 Days - 300 Qs/Day)", callback_data="buy_plan_PLATINUM")],
         [InlineKeyboardButton("📦 RUBY (₹50 - 90 Days - 400 Qs/Day)", callback_data="buy_plan_RUBY")],
         [InlineKeyboardButton("📦 MEGA PACK (₹80 - 180 Days - 500 Qs/Day)", callback_data="buy_plan_MEGA")],
-    ]
+    ])
 
     msg = (
         f"👑 **LEARN WITH HIM QUIZ BOOK — VIP MEMBERSHIP PACKS** 👑\n"
         f"━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\n"
-        f"🎁 **FREE DEMO TRIAL:** 2 Days Access | 20 Questions / Day Limit\n\n"
-        f"📦 **BRONZE:** ₹5 | 3 Days (80 Qs/Day)\n"
-        f"📦 **SILVER:** ₹10 | 7 Days (100 Qs/Day)\n"
-        f"📦 **GOLD:** ₹15 | 12 Days (120 Qs/Day)\n"
-        f"📦 **DIAMOND:** ₹20 | 18 Days (150 Qs/Day)\n"
-        f"📦 **LEARNWITHHIM:** ₹25 | 30 Days (250 Qs/Day)\n"
-        f"📦 **PLATINUM:** ₹40 | 60 Days (300 Qs/Day)\n"
-        f"📦 **RUBY:** ₹50 | 90 Days (400 Qs/Day)\n"
-        f"📦 **MEGA PACK:** ₹80 | 180 Days / 6 Months (500 Qs/Day)\n\n"
-        f"⚡ **0% Failure Architecture:** Instant Razorpay Link Generation!\n\n"
-        f"Select a pack below to pay securely:"
+        f"Select a pack below to pay securely and instantly unlock daily question limits:"
     )
 
     await send_response(update, msg, reply_markup=InlineKeyboardMarkup(keyboard))
@@ -330,14 +262,22 @@ async def handle_buy_plan_callback(update: Update, context: ContextTypes.DEFAULT
         await query.message.reply_text("⚠️ Invalid plan selected.")
         return
 
-    if plan_info["price"] == 0:
+    profile = get_user_profile(user_id)
+
+    # Strictly enforce 1-time Demo Trial limit
+    if plan_key == "FREE_DEMO":
+        if profile and profile.get("demo_used"):
+            await query.answer("🛑 Demo trial can only be used ONCE per student!", show_alert=True)
+            await plans_command(update, context)
+            return
+
         from main import activate_user_subscription
         await activate_user_subscription(user_id, plan_key)
         await query.edit_message_text(
-            f"🎉 **FREE DEMO ACTIVATED SUCCESSFULLY!**\n\n"
-            f"🎁 Duration: {plan_info['days']} Days\n"
-            f"⚡ Daily Limit: {plan_info['daily_limit']} Questions/Day\n\n"
-            f"Start practicing now with /quiz!",
+            f"🎉 **FREE DEMO TRIAL ACTIVATED!** 🎉\n\n"
+            f"🎁 **Duration:** 2 Days\n"
+            f"⚡ **Daily Limit:** 20 Questions / Day\n\n"
+            f"Start practicing now with **/quiz**!",
             parse_mode="Markdown"
         )
         return
@@ -361,6 +301,27 @@ async def handle_buy_plan_callback(update: Update, context: ContextTypes.DEFAULT
         await query.edit_message_text(msg, reply_markup=InlineKeyboardMarkup(keyboard), parse_mode="Markdown")
     else:
         await query.message.reply_text("⚠️ Unable to generate payment link. Please verify Razorpay live keys in Render Environment Variables.")
+
+async def post_registration_welcome(update: Update, context: ContextTypes.DEFAULT_TYPE):
+    """Offers Demo and Paid Plan options immediately upon successful registration."""
+    user = update.effective_user
+    profile = get_user_profile(user.id)
+
+    keyboard = []
+    if not profile.get("demo_used"):
+        keyboard.append([InlineKeyboardButton("🎁 Start Free Demo Trial (1-Time Use)", callback_data="buy_plan_FREE_DEMO")])
+    keyboard.append([InlineKeyboardButton("💳 View Paid VIP Subscription Plans", callback_data="cmd_plans")])
+
+    msg = (
+        f"🎉 **REGISTRATION COMPLETE! WELCOME TO QUIZ BOOK!** 🎉\n"
+        f"━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\n"
+        f"Hello **{profile.get('full_name', user.full_name)}**, your student account is verified.\n\n"
+        f"Choose an option below to activate your practice pack:"
+    )
+    if update.callback_query:
+        await update.callback_query.message.reply_text(msg, reply_markup=InlineKeyboardMarkup(keyboard), parse_mode="Markdown")
+    else:
+        await update.message.reply_text(msg, reply_markup=InlineKeyboardMarkup(keyboard), parse_mode="Markdown")
 
 async def pdfreport_command(update: Update, context: ContextTypes.DEFAULT_TYPE):
     if not await maintenance_guard(update, context): return
@@ -996,6 +957,7 @@ def build_application() -> Application:
     app.add_handler(CommandHandler("admit", admin_portal_command))
 
     app.add_handler(CallbackQueryHandler(quiz_count_callback, pattern="^qcount_"))
+    app.add_handler(CallbackQueryHandler(quiz_timer_callback, pattern="^qtimer_"))
     app.add_handler(CallbackQueryHandler(user_pdf_callback_handler, pattern="^usergenpdf_"))
     app.add_handler(CallbackQueryHandler(admin_callback_handler, pattern="^(admin_|audit_|genpdf_)"))
     app.add_handler(CallbackQueryHandler(button_router, pattern="^cmd_|^fb_|^trigger_start|^buy_plan_"))

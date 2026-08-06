@@ -346,13 +346,26 @@ def log_user_activity_time(user_id: int, seconds_spent: int = 10):
 
 # Admin Control Panel Helpers
 def get_paid_users():
-    """Retrieves all users with active paid balances or active VIP passes."""
     conn = get_db()
     cursor = conn.cursor()
     cursor.execute("SELECT * FROM users WHERE paid_question_balance > 20 ORDER BY paid_question_balance DESC")
     rows = cursor.fetchall()
     conn.close()
     return [dict(r) for r in rows]
+
+def admin_delete_user_account(user_id: int):
+    """Deletes all data for a specific user across tables."""
+    conn = get_db()
+    cursor = conn.cursor()
+    cursor.execute("DELETE FROM users WHERE user_id = ?", (user_id,))
+    cursor.execute("DELETE FROM quiz_attempts WHERE user_id = ?", (user_id,))
+    cursor.execute("DELETE FROM seen_questions WHERE user_id = ?", (user_id,))
+    cursor.execute("DELETE FROM saved_questions WHERE user_id = ?", (user_id,))
+    cursor.execute("DELETE FROM student_feedback WHERE user_id = ?", (user_id,))
+    cursor.execute("DELETE FROM paused_quizzes WHERE user_id = ?", (user_id,))
+    cursor.execute("DELETE FROM user_activity_time WHERE user_id = ?", (user_id,))
+    conn.commit()
+    conn.close()
 
 def admin_toggle_ban(user_id: int, ban_status: int = 1):
     conn = get_db()

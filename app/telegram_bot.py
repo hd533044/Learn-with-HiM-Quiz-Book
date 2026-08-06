@@ -226,6 +226,43 @@ async def send_response(update: Update, text: str, reply_markup=None):
         markup = reply_markup if reply_markup else ReplyKeyboardRemove()
         await update.message.reply_text(text, reply_markup=markup, parse_mode="Markdown")
 
+async def admininfo_command(update: Update, context: ContextTypes.DEFAULT_TYPE):
+    """Displays public information about Himanshu Sir and the platform."""
+    user = update.effective_user
+    log_user_activity_time(user.id, seconds=10)
+
+    msg = (
+        f"🎉 **WELCOME GUYYYYYYZZZZZZ!! Kya Hal Hai...** 👋✨\n\n"
+        f"👑 **The owner of this premium Learn with HiM Quiz Book is Himanshu Sir** 👑\n"
+        f"━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\n"
+        f"🎖 **Selected Candidate:** BSF Head Constable Ministerial with **AIR #65 Rank** *(Batch 2023, Score: 96.7/100)* 🏆\n"
+        f"💡 **Vision:** He envisioned this beautiful platform and built it rigorously to help all competitive exam aspirants with top-tier practice at a minimal cost!\n"
+        f"⌛ *Just wait... More amazing features are coming soon!*\n\n"
+        f"📚 **Competitive Exam Milestones Cleared:**\n"
+        f"• 🎯 **SSC CGL:** Cleared Prelims *(2 Times)*\n"
+        f"• 🎯 **SSC CHSL:** Cleared Prelims *(2 Times)*\n"
+        f"• 🎯 **SSC CPO:** Cleared Prelims *(3 Times)*\n"
+        f"• 🎯 **SSC Steno 'C' & 'D':** Cleared *(3 Times)*\n"
+        f"• 🎯 **Other Exams Cleared:** SSC DP HCM | SSC Selection Phase | DSSSB DDA JSA\n"
+        f"📍 **Origin:** Rajasthan, India 🇮🇳\n\n"
+        f"━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\n"
+        f"📲 **JOIN THE OFFICIAL LEARN WITH HIM COMMUNITY:**\n"
+        f"🔹 **Telegram (Official Channel):** https://t.me/learnwithhim 📢\n"
+        f"🔹 **Telegram (Discussion Group):** https://t.me/learnwithhimm 💬\n"
+        f"🔹 **YouTube Channel:** https://www.youtube.com/@learnwithhim 📺\n"
+        f"🔹 **Instagram:** https://instagram.com/learnwithhimm 📸\n"
+        f"🔹 **WhatsApp Channel:** https://whatsapp.com/channel/0029Vb8KetR3LdQbsQTxrG3e 📱\n\n"
+        f"📩 **Official Email for Queries & Promotions:** `learnwithhimm@gmail.com` ✉️"
+    )
+
+    buttons = InlineKeyboardMarkup([
+        [InlineKeyboardButton("📢 Official Channel", url="https://t.me/learnwithhim"), InlineKeyboardButton("💬 Discussion Group", url="https://t.me/learnwithhimm")],
+        [InlineKeyboardButton("📺 YouTube", url="https://www.youtube.com/@learnwithhim"), InlineKeyboardButton("📸 Instagram", url="https://instagram.com/learnwithhimm")],
+        [InlineKeyboardButton("🚀 Launch Quiz", callback_data="cmd_quiz")]
+    ])
+
+    await send_response(update, msg, reply_markup=buttons)
+
 async def myplan_command(update: Update, context: ContextTypes.DEFAULT_TYPE):
     if not await maintenance_guard(update, context): return
     if not await check_user_registration(update): return
@@ -982,6 +1019,7 @@ async def post_init(application: Application):
         BotCommand("myplan", "💵 Subscriptions"),
         BotCommand("paidplans", "💳 VIP Paid Plans"),
         BotCommand("plans", "👑 All Membership Packs"),
+        BotCommand("admininfo", "👑 About Himanshu Sir & Community"),
         BotCommand("pdfreport", "📄 Export Academic PDF Report"),
         BotCommand("wrongquestions", "❌ View Wrong Questions"),
         BotCommand("unattemptedquestions", "⏭️ View Unattempted Questions"),
@@ -1013,6 +1051,7 @@ def build_application() -> Application:
     app.add_handler(CommandHandler("myplan", myplan_command))
     app.add_handler(CommandHandler("paidplans", paidplans_command))
     app.add_handler(CommandHandler("plans", plans_command))
+    app.add_handler(CommandHandler("admininfo", admininfo_command))
     app.add_handler(CommandHandler("pause", pause_quiz_command))
     app.add_handler(CommandHandler("resume", resume_quiz_command))
     app.add_handler(CommandHandler("stop", stop_quiz_command))

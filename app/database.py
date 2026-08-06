@@ -151,11 +151,69 @@ def init_db():
             UNIQUE(user_id, date_str)
         )
     ''')
+
+    cursor.execute('''
+        CREATE TABLE IF NOT EXISTS payment_transactions (
+            id INTEGER PRIMARY KEY AUTOINCREMENT,
+            user_id INTEGER,
+            plan_key TEXT,
+            amount INTEGER,
+            payment_id TEXT,
+            txn_date TEXT,
+            txn_month TEXT,
+            timestamp_str TEXT
+        )
+    ''')
     
     cursor.execute("INSERT OR IGNORE INTO bot_settings (key, value) VALUES ('maintenance_until', '0')")
     
     conn.commit()
     conn.close()
+
+def record_payment_transaction(user_id: int, plan_key: str, amount: int, payment_id: str):
+    """Records payment transactions for financial reporting in admin."""
+    conn = get_db()
+    cursor = conn.cursor()
+    
+    now_ist = get_ist_now()
+    dt_str = now_ist.strftime("%Y-%m-%d")
+    month_str = now_ist.strftime("%Y-%m")
+    ts_str = get_ist_timestamp_str()
+
+    cursor.execute('''
+        INSERT INTO payment_transactions (user_id, plan_key, amount, payment_id, txn_date, txn_month, timestamp_str)
+        VALUES (?, ?, ?, ?, ?, ?, ?)
+    ''', (user_id, plan_key, amount, payment_id, dt_str, month_str, ts_str))
+    
+    conn.commit()
+    conn.close()
+
+def get_earnings_analytics():
+    """Calculates overall, daily, and monthly revenue totals."""
+    conn = get_db()
+    cursor = conn.cursor()
+    
+    cursor.execute("SELECT SUM(amount) as total_amt, COUNT(id) as total_cnt FROM payment_transactions")
+    row_total = cursor.fetchone()
+    total_rev = row_total['total_amt'] if row_total and row_total['total_amt'] else 0
+    total_cnt = row_total['total_cnt'] if row_total and row_total['total_cnt'] else 0
+
+    cursor.execute("SELECT txn_date, SUM(amount) as sum_amt, COUNT(id) as cnt FROM payment_transactions GROUP BY txn_date ORDER BY txn_date DESC LIMIT 30")
+    rows_daily = cursor.fetchall()
+    daily_map = {r['txn_date']: {"amount": r['sum_amt'], "count": r['cnt']} for r in rows_daily}
+
+    cursor.execute("SELECT txn_month, SUM(amount) as sum_amt, COUNT(id) as cnt FROM payment_transactions GROUP BY txn_month ORDER BY txn_month DESC LIMIT 12")
+    rows_monthly = cursor.fetchall()
+    monthly_map = {r['txn_month']: {"amount": r['sum_amt'], "count": r['cnt']} for r in rows_monthly}
+
+    conn.close()
+
+    return {
+        "total_revenue": total_rev,
+        "total_transactions": total_cnt,
+        "daily_breakdown": daily_map,
+        "monthly_breakdown": monthly_map
+    }
 
 def generate_student_id(full_name: str, dob_str: str) -> str:
     clean_name = "".join(filter(str.isalpha, full_name))
@@ -304,6 +362,7 @@ def admin_delete_user_account(user_id: int):
             logger.error(f"Error removing JSON profile on deletion: {e}")
 
 def get_paid_users():
+    """Retrieves ONLY paid users (excludes free-tier / demo accounts)."""
     conn = get_db()
     cursor = conn.cursor()
     cursor.execute("SELECT * FROM users WHERE paid_question_balance > 20 ORDER BY created_at DESC")
@@ -477,6 +536,7 @@ def save_user_profile(user_id, full_name, username, phone, target_exam, dob, age
             is_verified=1
     ''', (user_id, student_id, full_name, username, phone, target_exam, dob, age, gender, pin, sec_q, sec_a, country, state, referred_by, demo_plan["daily_limit"], demo_expiry, now_str, now_str, now_epoch, now_str, now_str, now_epoch, now_str))
     
+    # REFERRAL PROGRAM: EVERY 3 REFERRALS GIVE +10 BONUS QUOTA
     if referred_by and referred_by != user_id:
         cursor.execute("UPDATE users SET referral_count = referral_count + 1 WHERE user_id = ?", (referred_by,))
         cursor.execute("SELECT referral_count FROM users WHERE user_id = ?", (referred_by,))

@@ -238,8 +238,8 @@ def init_db():
     conn.commit()
     conn.close()
 
+# Activity and Maintenance Functions
 def refresh_user_activity_epoch(user_id: int):
-    """Refreshes active user timestamp and epoch."""
     now_str = get_ist_timestamp_str()
     now_epoch = int(get_ist_now().timestamp())
     conn = get_db()
@@ -249,11 +249,9 @@ def refresh_user_activity_epoch(user_id: int):
     conn.close()
 
 def check_and_update_inactivity(user_id: int):
-    """Updates user last active timestamp and checks inactivity status."""
     refresh_user_activity_epoch(user_id)
 
 def log_user_activity_time(user_id: int, seconds_spent: int = 10):
-    """Tracks active learning time spent by a student per day."""
     conn = get_db()
     cursor = conn.cursor()
     dt_str = get_ist_date_str()
@@ -267,9 +265,7 @@ def log_user_activity_time(user_id: int, seconds_spent: int = 10):
             ON CONFLICT (user_id, date_str) DO UPDATE SET
                 seconds_spent = user_activity_time.seconds_spent + EXCLUDED.seconds_spent
         ''', (user_id, dt_str, seconds_spent))
-        cursor.execute('''
-            UPDATE users SET last_active = ?, last_activity_epoch = ? WHERE user_id = ?
-        ''', (now_str, now_epoch, user_id))
+        cursor.execute('UPDATE users SET last_active = ?, last_activity_epoch = ? WHERE user_id = ?', (now_str, now_epoch, user_id))
     else:
         cursor.execute('''
             INSERT INTO user_activity_time (user_id, date_str, seconds_spent)
@@ -277,12 +273,51 @@ def log_user_activity_time(user_id: int, seconds_spent: int = 10):
             ON CONFLICT(user_id, date_str) DO UPDATE SET
                 seconds_spent = seconds_spent + excluded.seconds_spent
         ''', (user_id, dt_str, seconds_spent))
-        cursor.execute('''
-            UPDATE users SET last_active = ?, last_activity_epoch = ? WHERE user_id = ?
-        ''', (now_str, now_epoch, user_id))
+        cursor.execute('UPDATE users SET last_active = ?, last_activity_epoch = ? WHERE user_id = ?', (now_str, now_epoch, user_id))
 
     conn.commit()
     conn.close()
+
+# Administrative Control Functions
+def admin_update_user_name(user_id: int, new_name: str):
+    conn = get_db()
+    cursor = conn.cursor()
+    cursor.execute("UPDATE users SET full_name = ? WHERE user_id = ?", (new_name, user_id))
+    conn.commit()
+    conn.close()
+    sync_user_json_profile(user_id)
+
+def admin_update_phone(user_id: int, new_phone: str):
+    conn = get_db()
+    cursor = conn.cursor()
+    cursor.execute("UPDATE users SET phone_number = ? WHERE user_id = ?", (new_phone, user_id))
+    conn.commit()
+    conn.close()
+    sync_user_json_profile(user_id)
+
+def admin_update_exam(user_id: int, new_exam: str):
+    conn = get_db()
+    cursor = conn.cursor()
+    cursor.execute("UPDATE users SET target_exam = ? WHERE user_id = ?", (new_exam, user_id))
+    conn.commit()
+    conn.close()
+    sync_user_json_profile(user_id)
+
+def admin_update_balance(user_id: int, new_balance: int):
+    conn = get_db()
+    cursor = conn.cursor()
+    cursor.execute("UPDATE users SET paid_question_balance = ? WHERE user_id = ?", (new_balance, user_id))
+    conn.commit()
+    conn.close()
+    sync_user_json_profile(user_id)
+
+def admin_toggle_ban(user_id: int, ban_status: int):
+    conn = get_db()
+    cursor = conn.cursor()
+    cursor.execute("UPDATE users SET is_banned = ? WHERE user_id = ?", (ban_status, user_id))
+    conn.commit()
+    conn.close()
+    sync_user_json_profile(user_id)
 
 def record_payment_transaction(user_id: int, plan_key: str, amount: int, payment_id: str):
     conn = get_db()

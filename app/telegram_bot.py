@@ -36,11 +36,12 @@ from app.pyq_fetcher import fetch_pyqs_for_quiz
 NEGATIVE_WORDS = ["bad", "worst", "useless", "trash", "fake", "hate", "terrible", "waste", "horrible", "fraud", "stupid", "scam"]
 
 def generate_razorpay_link_sync(user_id: int, plan_key: str) -> str:
-    """Generates a live Razorpay payment link via direct REST API call using urllib."""
+    """Generates a live Razorpay payment link via direct REST API call with sanitized payload."""
     plan = PLAN_TIERS.get(plan_key)
     if not plan or plan["price"] == 0:
         return None
 
+    # Load and sanitize keys
     key_id = (os.getenv("RAZORPAY_KEY_ID") or RAZORPAY_KEY_ID or "").strip()
     key_secret = (os.getenv("RAZORPAY_KEY_SECRET") or RAZORPAY_KEY_SECRET or "").strip()
 
@@ -54,28 +55,34 @@ def generate_razorpay_link_sync(user_id: int, plan_key: str) -> str:
 
     profile = get_user_profile(user_id)
     raw_name = profile.get("full_name", "Student Scholar") if profile else "Student Scholar"
-    raw_phone = str(profile.get("phone_number", "9999999999")) if profile else "9999999999"
+    raw_phone = str(profile.get("phone_number", "9123456789")) if profile else "9123456789"
+    
+    # Strip non-numeric characters
     clean_phone = "".join(filter(str.isdigit, raw_phone))
-    if len(clean_phone) >= 10:
+    if len(clean_phone) > 10:
         clean_phone = clean_phone[-10:]
-    else:
-        clean_phone = "9999999999"
+    elif len(clean_phone) < 10:
+        clean_phone = "9123456789"
+
+    # Razorpay 400 Prevention: Strict string sanitization
+    safe_name = "".join(c for c in raw_name if c.isalnum() or c in " .").strip() or "Student Scholar"
+    callback_uri = (os.getenv("RENDER_EXTERNAL_URL") or "https://learn-with-him-quiz-book.onrender.com").rstrip("/") + "/razorpay-webhook"
 
     payload = {
-        "amount": int(plan["price"] * 100),
+        "amount": int(plan["price"] * 100),  # Amount in paise (e.g. ₹5 = 500)
         "currency": "INR",
         "accept_partial": False,
-        "description": f"Learn with HiM Subscription - {plan['name']}",
+        "description": f"Subscription - {plan['name'][:20]}",
         "customer": {
-            "name": raw_name[:30],
+            "name": safe_name[:30],
             "contact": clean_phone,
-            "email": f"student_{user_id}@learnwithhim.com"
+            "email": f"student{user_id}@gmail.com"
         },
         "notes": {
             "user_id": str(user_id),
-            "plan_key": plan_key
+            "plan_key": str(plan_key)
         },
-        "callback_url": RENDER_EXTERNAL_URL if RENDER_EXTERNAL_URL else "https://learn-with-him-quiz-book.onrender.com",
+        "callback_url": callback_uri,
         "callback_method": "get"
     }
 
@@ -85,14 +92,40 @@ def generate_razorpay_link_sync(user_id: int, plan_key: str) -> str:
     req.add_header("Content-Type", "application/json")
 
     try:
-        with urllib.request.urlopen(req, timeout=10) as response:
+        with urllib.request.urlopen(req, timeout=12) as response:
             res_body = response.read().decode("utf-8")
             res_json = json.loads(res_body)
-            if response.status == 200 and "short_url" in res_json:
+            if response.status in (200, 201) and "short_url" in res_json:
                 return res_json["short_url"]
             else:
-                logging.error(f"[RAZORPAY API ERROR] {res_body}")
+                logging.error(f"[RAZORPAY API FAIL RESPONSE] Status: {response.status}, Body: {res_body}")
                 return None
+    except urllib.error.HTTPError as http_err:
+        err_body = http_err.read().decode("utf-8") if http_err.fp else ""
+        logging.error(f"[RAZORPAY HTTP ERROR] Code: {http_err.code}, Reason: {http_err.reason}, Details: {err_body}")
+        return None
+    except Exception as e:
+        logging.error(f"[RAZORPAY EXCEPTION] {e}")
+        return None
+
+    req_data = json.dumps(payload).encode("utf-8")
+    req = urllib.request.Request(url, data=req_data, method="POST")
+    req.add_header("Authorization", f"Basic {encoded_auth}")
+    req.add_header("Content-Type", "application/json")
+
+    try:
+        with urllib.request.urlopen(req, timeout=12) as response:
+            res_body = response.read().decode("utf-8")
+            res_json = json.loads(res_body)
+            if response.status in (200, 201) and "short_url" in res_json:
+                return res_json["short_url"]
+            else:
+                logging.error(f"[RAZORPAY API FAIL RESPONSE] Status: {response.status}, Body: {res_body}")
+                return None
+    except urllib.error.HTTPError as http_err:
+        err_body = http_err.read().decode("utf-8") if http_err.fp else ""
+        logging.error(f"[RAZORPAY HTTP ERROR] Code: {http_err.code}, Reason: {http_err.reason}, Details: {err_body}")
+        return None
     except Exception as e:
         logging.error(f"[RAZORPAY EXCEPTION] {e}")
         return None

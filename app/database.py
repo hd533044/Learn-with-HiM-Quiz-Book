@@ -238,9 +238,32 @@ def init_db():
     conn.commit()
     conn.close()
 
+# ID Generation Function
+def generate_student_id(full_name: str, dob_str: str) -> str:
+    clean_name = "".join(filter(str.isalpha, full_name))
+    prefix = clean_name[:2].capitalize() if len(clean_name) >= 2 else "ST"
+    try:
+        parts = dob_str.split("-")
+        dob_code = f"{parts[0]}{parts[1]}{parts[2][-2:]}"
+    except Exception:
+        dob_code = "010100"
+    base_id = f"{prefix}{dob_code}"
+    
+    conn = get_db()
+    cursor = conn.cursor()
+    student_id = base_id
+    counter = 1
+    while True:
+        cursor.execute("SELECT 1 FROM users WHERE student_id = ?", (student_id,))
+        if not cursor.fetchone():
+            break
+        student_id = f"{base_id}_{counter}"
+        counter += 1
+    conn.close()
+    return student_id
+
 # Onboarding Profile Editing Rules
 def can_user_edit_profile(user_id: int):
-    """Checks if the student can edit their profile (limit once every 24 hours)."""
     user = get_user_profile(user_id)
     if not user or not user.get("last_profile_edit"):
         return True, ""
@@ -500,14 +523,7 @@ def save_user_profile(user_id, full_name, username, phone, target_exam, dob, age
     now_str = get_ist_timestamp_str()
     now_epoch = int(get_ist_now().timestamp())
     
-    clean_name = "".join(filter(str.isalpha, full_name))
-    prefix = clean_name[:2].capitalize() if len(clean_name) >= 2 else "ST"
-    try:
-        parts = dob.split("-")
-        dob_code = f"{parts[0]}{parts[1]}{parts[2][-2:]}"
-    except Exception:
-        dob_code = "010100"
-    student_id = f"{prefix}{dob_code}"
+    student_id = generate_student_id(full_name, dob)
 
     demo_plan = PLAN_TIERS.get("FREE_DEMO", {"days": 2, "daily_limit": 20})
     demo_expiry = (datetime.now(IST) + timedelta(days=demo_plan["days"])).strftime("%Y-%m-%d %H:%M:%S IST")

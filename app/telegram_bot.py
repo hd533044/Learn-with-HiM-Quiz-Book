@@ -945,8 +945,7 @@ async def post_init(application: Application):
 
     allowed_commands = [
         BotCommand("quiz", "🚀 Start Computer Quiz"),
-        BotCommand("myplan", "💳 View Current Plan & Quota"),
-        BotCommand("plans", "💳 VIP Subscription Plans"),
+        BotCommand("myplan", "💵 Subscriptions"),
         BotCommand("pdfreport", "📄 Export Academic PDF Report"),
         BotCommand("wrongquestions", "❌ View Wrong Questions"),
         BotCommand("unattemptedquestions", "⏭️ View Unattempted Questions"),
@@ -964,6 +963,9 @@ async def post_init(application: Application):
         BotCommand("stop", "🛑 Stop Quiz Completely"),
         BotCommand("help", "🤖 Show Command Directory")
     ]
+    
+    await application.bot.set_my_commands(allowed_commands, scope=BotCommandScopeDefault())
+    await application.bot.set_my_commands(allowed_commands, scope=BotCommandScopeAllPrivateChats())
     
     await application.bot.set_my_commands(allowed_commands, scope=BotCommandScopeDefault())
     await application.bot.set_my_commands(allowed_commands, scope=BotCommandScopeAllPrivateChats())

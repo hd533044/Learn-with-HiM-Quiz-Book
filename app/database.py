@@ -238,6 +238,16 @@ def init_db():
     conn.commit()
     conn.close()
 
+def check_and_update_inactivity(user_id: int):
+    """Updates user last active timestamp and checks for long inactivity."""
+    now_str = get_ist_timestamp_str()
+    now_epoch = int(get_ist_now().timestamp())
+    conn = get_db()
+    cursor = conn.cursor()
+    cursor.execute("UPDATE users SET last_active = ?, last_activity_epoch = ? WHERE user_id = ?", (now_str, now_epoch, user_id))
+    conn.commit()
+    conn.close()
+
 def log_user_activity_time(user_id: int, seconds_spent: int = 10):
     """Tracks active learning time spent by a student per day."""
     conn = get_db()

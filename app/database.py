@@ -240,7 +240,6 @@ def init_db():
 
 # Onboarding Security & Profile Helpers
 def update_user_pin(user_id: int, new_pin: str):
-    """Updates a student's security PIN."""
     conn = get_db()
     cursor = conn.cursor()
     cursor.execute("UPDATE users SET pin = ? WHERE user_id = ?", (new_pin, user_id))
@@ -249,7 +248,6 @@ def update_user_pin(user_id: int, new_pin: str):
     sync_user_json_profile(user_id)
 
 def update_user_sec_question(user_id: int, sec_q: str, sec_a: str):
-    """Updates a student's security question and answer."""
     conn = get_db()
     cursor = conn.cursor()
     cursor.execute("UPDATE users SET security_question = ?, security_answer = ? WHERE user_id = ?", (sec_q, sec_a, user_id))
@@ -346,7 +344,21 @@ def log_user_activity_time(user_id: int, seconds_spent: int = 10):
     conn.commit()
     conn.close()
 
-# Admin Control Panel Helpers
+# Admin Control Panel Helpers & Aliases
+def admin_toggle_ban(user_id: int, ban_status: int = 1):
+    conn = get_db()
+    cursor = conn.cursor()
+    cursor.execute("UPDATE users SET is_banned = ? WHERE user_id = ?", (ban_status, user_id))
+    conn.commit()
+    conn.close()
+    sync_user_json_profile(user_id)
+
+def toggle_user_ban_status(user_id: int):
+    user = get_user_profile(user_id)
+    if user:
+        new_ban = 0 if user.get("is_banned") else 1
+        admin_toggle_ban(user_id, new_ban)
+
 def admin_update_user_name(user_id: int, new_name: str):
     conn = get_db()
     cursor = conn.cursor()
@@ -375,14 +387,6 @@ def admin_update_balance(user_id: int, new_balance: int):
     conn = get_db()
     cursor = conn.cursor()
     cursor.execute("UPDATE users SET paid_question_balance = ? WHERE user_id = ?", (new_balance, user_id))
-    conn.commit()
-    conn.close()
-    sync_user_json_profile(user_id)
-
-def admin_toggle_ban(user_id: int, ban_status: int):
-    conn = get_db()
-    cursor = conn.cursor()
-    cursor.execute("UPDATE users SET is_banned = ? WHERE user_id = ?", (ban_status, user_id))
     conn.commit()
     conn.close()
     sync_user_json_profile(user_id)

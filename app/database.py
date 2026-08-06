@@ -238,7 +238,25 @@ def init_db():
     conn.commit()
     conn.close()
 
-# ID Generation Function
+# Onboarding Security & Profile Helpers
+def update_user_pin(user_id: int, new_pin: str):
+    """Updates a student's security PIN."""
+    conn = get_db()
+    cursor = conn.cursor()
+    cursor.execute("UPDATE users SET pin = ? WHERE user_id = ?", (new_pin, user_id))
+    conn.commit()
+    conn.close()
+    sync_user_json_profile(user_id)
+
+def update_user_sec_question(user_id: int, sec_q: str, sec_a: str):
+    """Updates a student's security question and answer."""
+    conn = get_db()
+    cursor = conn.cursor()
+    cursor.execute("UPDATE users SET security_question = ?, security_answer = ? WHERE user_id = ?", (sec_q, sec_a, user_id))
+    conn.commit()
+    conn.close()
+    sync_user_json_profile(user_id)
+
 def generate_student_id(full_name: str, dob_str: str) -> str:
     clean_name = "".join(filter(str.isalpha, full_name))
     prefix = clean_name[:2].capitalize() if len(clean_name) >= 2 else "ST"
@@ -262,7 +280,6 @@ def generate_student_id(full_name: str, dob_str: str) -> str:
     conn.close()
     return student_id
 
-# Onboarding Profile Editing Rules
 def can_user_edit_profile(user_id: int):
     user = get_user_profile(user_id)
     if not user or not user.get("last_profile_edit"):

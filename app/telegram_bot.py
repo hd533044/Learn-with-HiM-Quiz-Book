@@ -933,7 +933,12 @@ def build_application() -> Application:
     
     app.add_handler(CommandHandler("admin", admin_portal_command))
     app.add_handler(CommandHandler("admit", admin_portal_command))
-    app.add_handler(CommandHandler("editprofile", edit_profile_command))
+  
+    # Conversation handlers must be registered before generic callback/text
+    # routers. Otherwise buttons such as `trigger_start` and `cmd_editprofile`
+    # are consumed by `button_router`, so the onboarding/edit-profile state is
+    # never entered and the next user messages appear to get no response.
+    app.add_handler(get_onboarding_handler())
 
     app.add_handler(CallbackQueryHandler(quiz_count_callback, pattern="^qcount_"))
     app.add_handler(CallbackQueryHandler(quiz_timer_callback, pattern="^qtimer_"))
@@ -941,8 +946,6 @@ def build_application() -> Application:
     app.add_handler(CallbackQueryHandler(admin_callback_handler, pattern="^(admin_|audit_|genpdf_)"))
     app.add_handler(CallbackQueryHandler(button_router))
 
-    # 2. REGISTER ONBOARDING CONVERSATION HANDLER AFTER
-    app.add_handler(get_onboarding_handler())
     
     app.add_handler(MessageHandler(filters.TEXT & ~filters.COMMAND, handle_text_messages))
     app.add_handler(PollAnswerHandler(handle_poll_answer))

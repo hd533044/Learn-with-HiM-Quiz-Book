@@ -229,6 +229,14 @@ async def run_bot():
     bot_app_instance = app
 
     await app.initialize()
+    
+    # `Application.run_polling()` calls post_init automatically, but this app
+    # uses the lower-level initialize/start/start_polling sequence so it can run
+    # the aiohttp keep-alive and webhook server in the same event loop. Call the
+    # hook explicitly to keep the Telegram command menu in sync.
+    if app.post_init:
+        await app.post_init(app)
+
     await app.start()
     
     # Safe Webhook Reset

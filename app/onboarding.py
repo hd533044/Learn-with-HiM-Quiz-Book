@@ -380,7 +380,7 @@ async def sec_q_callback(update: Update, context: ContextTypes.DEFAULT_TYPE):
     selected_q = PRESET_SEC_QUESTIONS[q_idx]
     context.user_data["security_question"] = selected_q
 
-    await query.edit_message_text(
+    await query.message.edit_text(
         f"🛡 **Security Question:** *{selected_q}*\n\n"
         f"✍️ Please reply with your secret answer below:",
         parse_mode="Markdown"

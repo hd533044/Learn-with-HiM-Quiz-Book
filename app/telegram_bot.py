@@ -786,7 +786,7 @@ async def button_router(update: Update, context: ContextTypes.DEFAULT_TYPE):
 
     if not await check_user_registration(update): return
 
-    if data == "cmd_quiz":
+    if data in ("cmd_quiz", "cmd_start_fresh_quiz"):
         profile = get_user_profile(user.id)
         attempted_today = get_today_attempts(user.id)
         
@@ -797,6 +797,8 @@ async def button_router(update: Update, context: ContextTypes.DEFAULT_TYPE):
         if attempted_today >= allowed_limit:
             await query.answer("🛑 Daily Limit Exhausted!", show_alert=True)
             return
+        if data == "cmd_start_fresh_quiz":
+            clear_paused_quiz_state(user.id)
         await launch_quiz_setup(update, context)
     elif data == "cmd_myplan":
         await myplan_command(update, context)
@@ -808,11 +810,11 @@ async def button_router(update: Update, context: ContextTypes.DEFAULT_TYPE):
         await help_command(update, context)
     elif data == "cmd_pdfreport":
         await pdfreport_command(update, context)
-    elif data == "cmd_wrongquestions":
+    elif data in ("cmd_wrongquestions", "cmd_wrong_qs"):
         await wrongquestions_command(update, context)
-    elif data == "cmd_attemptedquestions":
+    elif data in ("cmd_attemptedquestions", "cmd_attempted_qs"):
         await attemptedquestions_command(update, context)
-    elif data == "cmd_unattemptedquestions":
+    elif data in ("cmd_unattemptedquestions", "cmd_unattempted_qs"):
         await unattemptedquestions_command(update, context)
     elif data == "cmd_pause_quiz":
         await pause_quiz_command(update, context)
@@ -824,9 +826,6 @@ async def button_router(update: Update, context: ContextTypes.DEFAULT_TYPE):
         await saved_questions_command(update, context)
     elif data == "cmd_save_question":
         await save_question_callback(update, context)
-    elif data == "cmd_start_fresh_quiz":
-        clear_paused_quiz_state(user.id)
-        await launch_quiz_setup(update, context)
     elif data == "cmd_profile":
         await myprofile_command(update, context)
     elif data == "cmd_toppers":
@@ -968,6 +967,7 @@ def build_application() -> Application:
     init_db()
     app = Application.builder().token(BOT_TOKEN).post_init(post_init).build()
 
+    # The onboarding ConversationHandler MUST be registered first
     app.add_handler(get_onboarding_handler())
     
     app.add_handler(CommandHandler("quiz", strict_quiz_command_guard))
@@ -993,13 +993,14 @@ def build_application() -> Application:
     
     app.add_handler(CommandHandler("admin", admin_portal_command))
     app.add_handler(CommandHandler("admit", admin_portal_command))
-    app.add_handler(CommandHandler("editprofile", edit_profile_command))
 
     app.add_handler(CallbackQueryHandler(quiz_count_callback, pattern="^qcount_"))
     app.add_handler(CallbackQueryHandler(quiz_timer_callback, pattern="^qtimer_"))
     app.add_handler(CallbackQueryHandler(user_pdf_callback_handler, pattern="^usergenpdf_"))
     app.add_handler(CallbackQueryHandler(admin_callback_handler, pattern="^(admin_|audit_|genpdf_)"))
-    app.add_handler(CallbackQueryHandler(button_router, pattern="^cmd_|^fb_|^trigger_start|^buy_plan_"))
+    
+    # Catch-all pattern for general menu callbacks
+    app.add_handler(CallbackQueryHandler(button_router, pattern=".*"))
 
     app.add_handler(MessageHandler(filters.TEXT & ~filters.COMMAND, handle_text_messages))
     app.add_handler(PollAnswerHandler(handle_poll_answer))

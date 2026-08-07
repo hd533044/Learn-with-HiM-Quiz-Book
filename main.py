@@ -260,6 +260,7 @@ async def run_bot():
     print("  Learn with HiM Quiz Book Bot Engine")
     print("==================================================")
     
+    # Initialize database tables in Supabase
     init_db()
     
     await start_web_server()
@@ -268,12 +269,16 @@ async def run_bot():
     app = build_application()
     global bot_app_instance
     bot_app_instance = app
+    
     await app.initialize()
-    await app.start()
+    # FORCE DELETE WEBHOOK TO ALLOW LONG POLLING TO WORK
     await app.bot.delete_webhook(drop_pending_updates=True)
+    
+    await app.start()
     await app.updater.start_polling(drop_pending_updates=True)
     print("  Bot is online, synchronized, and listening!")
     print("==================================================")
+    
     stop_event = asyncio.Event()
     try:
         await stop_event.wait()

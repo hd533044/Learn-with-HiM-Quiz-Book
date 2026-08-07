@@ -2,6 +2,7 @@ import json
 import os
 import logging
 import sqlite3
+import time
 from datetime import datetime, timedelta
 import pytz
 from app.config import (
@@ -19,6 +20,24 @@ if DATABASE_URL:
         HAS_PG = True
     except ImportError:
         HAS_PG = False
+
+# A PostgreSQL connection is opened for each database operation.  When the
+# Supabase host is temporarily unavailable, repeatedly waiting for the driver
+# timeout blocks the Telegram update loop and makes the bot look unresponsive.
+# Keep the timeout short and temporarily use the local fallback after a failed
+# connection attempt.  Supabase remains the preferred database and is retried
+# automatically after the cooldown.
+def _positive_int_env(name: str, default: int) -> int:
+    try:
+        return max(1, int(os.getenv(name, str(default))))
+    except (TypeError, ValueError):
+        logger.warning("Invalid %s value; using %s seconds", name, default)
+        return default
+
+
+PG_CONNECT_TIMEOUT_SECONDS = _positive_int_env("DATABASE_CONNECT_TIMEOUT", 3)
+PG_RETRY_COOLDOWN_SECONDS = _positive_int_env("DATABASE_RETRY_COOLDOWN", 60)
+_postgres_retry_after = 0.0
 
 class PostgresRow:
     def __init__(self, keys, values):
@@ -94,6 +113,10 @@ class PostgresConnWrapper:
             self.conn.commit()
         self.conn.close()
 
+def is_postgres_connection(conn) -> bool:
+    """Return whether *conn* is an active PostgreSQL connection wrapper."""
+    return isinstance(conn, PostgresConnWrapper)
+
 def get_ist_now():
     return datetime.now(IST)
 
@@ -104,12 +127,25 @@ def get_ist_timestamp_str():
     return get_ist_now().strftime("%Y-%m-%d %H:%M:%S IST")
 
 def get_db():
+    global _postgres_retry_after
+
     if HAS_PG and DATABASE_URL:
-        try:
-            conn = psycopg2.connect(DATABASE_URL, connect_timeout=10)
-            return PostgresConnWrapper(conn)
-        except Exception as e:
-            logger.error(f"PostgreSQL Connection Error: {e}, falling back to local SQLite")
+        now = time.monotonic()
+        if now >= _postgres_retry_after:
+            try:
+                conn = psycopg2.connect(
+                    DATABASE_URL,
+                    connect_timeout=PG_CONNECT_TIMEOUT_SECONDS,
+                )
+                _postgres_retry_after = 0.0
+                return PostgresConnWrapper(conn)
+            except Exception as e:
+                _postgres_retry_after = now + PG_RETRY_COOLDOWN_SECONDS
+                logger.error(
+                    "PostgreSQL connection failed; using SQLite for the next %s seconds: %s",
+                    PG_RETRY_COOLDOWN_SECONDS,
+                    e,
+                )
     
     conn = sqlite3.connect(DB_FILE)
     conn.row_factory = sqlite3.Row
@@ -120,7 +156,10 @@ def init_db():
         conn = get_db()
         cursor = conn.cursor()
         
-        is_postgres = HAS_PG and DATABASE_URL is not None and len(DATABASE_URL) > 0
+        # The configured backend and the connected backend can differ when a
+        # Supabase outage triggers the SQLite fallback.  Always generate SQL
+        # for the connection that was actually returned.
+        is_postgres = is_postgres_connection(conn)
         
         id_pk = "SERIAL PRIMARY KEY" if is_postgres else "INTEGER PRIMARY KEY AUTOINCREMENT"
         bigint_t = "BIGINT" if is_postgres else "INTEGER"
@@ -331,7 +370,7 @@ def save_user_profile(user_id, full_name, username, phone, target_exam, dob, age
         demo_plan = PLAN_TIERS.get("FREE_DEMO", {"days": 2, "daily_limit": 20})
         demo_expiry = (datetime.now(IST) + timedelta(days=demo_plan["days"])).strftime("%Y-%m-%d %H:%M:%S IST")
 
-        if DATABASE_URL and HAS_PG:
+        if is_postgres_connection(conn):
             cursor.execute('''
                 INSERT INTO users (user_id, student_id, full_name, username, phone_number, target_exam, dob, age, gender, pin, security_question, security_answer, country, state, referred_by, paid_question_balance, vip_pass_expiry, demo_used, last_profile_edit, last_active, last_activity_epoch, is_banned, is_verified, created_at)
                 VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, 1, ?, ?, ?, 0, 1, ?)
@@ -441,7 +480,7 @@ def log_user_activity_time(user_id: int, seconds_spent: int = 10):
         now_str = get_ist_timestamp_str()
         now_epoch = int(get_ist_now().timestamp())
 
-        if DATABASE_URL and HAS_PG:
+        if is_postgres_connection(conn):
             cursor.execute('''
                 INSERT INTO user_activity_time (user_id, date_str, seconds_spent)
                 VALUES (?, ?, ?)
@@ -575,7 +614,7 @@ def mark_questions_as_seen(user_id, question_ids):
     cursor = conn.cursor()
     now_str = get_ist_timestamp_str()
     for qid in question_ids:
-        if DATABASE_URL and HAS_PG:
+        if is_postgres_connection(conn):
             cursor.execute("INSERT INTO seen_questions (user_id, question_id, seen_at) VALUES (?, ?, ?) ON CONFLICT (user_id, question_id) DO NOTHING", (user_id, str(qid), now_str))
         else:
             cursor.execute("INSERT OR IGNORE INTO seen_questions (user_id, question_id, seen_at) VALUES (?, ?, ?)", (user_id, str(qid), now_str))
@@ -631,7 +670,7 @@ def save_paused_quiz_state(user_id: int, quiz_state: dict):
     conn = get_db()
     cursor = conn.cursor()
     now_str = get_ist_timestamp_str()
-    if DATABASE_URL and HAS_PG:
+    if is_postgres_connection(conn):
         cursor.execute('''
             INSERT INTO paused_quizzes (user_id, quiz_state, saved_at)
             VALUES (?, ?, ?)

@@ -23,7 +23,7 @@ from app.config import (
     RAZORPAY_KEY_ID, RAZORPAY_KEY_SECRET, RAZORPAY_WEBHOOK_SECRET, 
     PLAN_TIERS
 )
-from app.database import sync_user_json_profile, get_ist_timestamp_str, record_payment_transaction, init_db
+from app.database import sync_user_json_profile, get_ist_timestamp_str, record_payment_transaction
 
 logging.basicConfig(
     format="%(asctime)s - %(levelname)s - %(message)s",
@@ -59,8 +59,8 @@ async def activate_user_subscription(user_id: int, plan_key: str, payment_id: st
         
         if plan_key == "FREE_DEMO":
             cursor.execute(
-                "UPDATE users SET paid_question_balance = max(paid_question_balance, ?), vip_pass_expiry = ?, demo_used = 1 WHERE user_id = ?",
-                (plan["daily_limit"], expiry_str, user_id)
+                "UPDATE users SET paid_question_balance = CASE WHEN paid_question_balance > ? THEN paid_question_balance ELSE ? END, vip_pass_expiry = ?, demo_used = 1 WHERE user_id = ?",
+                (plan["daily_limit"], plan["daily_limit"], expiry_str, user_id)
             )
         else:
             cursor.execute(
@@ -209,12 +209,6 @@ async def render_self_ping_loop():
 
 async def run_bot():
     logging.info("Starting Learn with HiM Quiz Book Bot Engine...")
-    
-    # Initialize Database safely
-    try:
-        init_db()
-    except Exception as db_err:
-        logging.error(f"Database initialization warning: {db_err}")
 
     # Start Aiohttp Web Server
     try:
@@ -232,10 +226,14 @@ async def run_bot():
     
     # `Application.run_polling()` calls post_init automatically, but this app
     # uses the lower-level initialize/start/start_polling sequence so it can run
-    # the aiohttp keep-alive and webhook server in the same event loop. Call the
-    # hook explicitly to keep the Telegram command menu in sync.
+    # the aiohttp keep-alive and webhook server in the same event loop. Command
+    # menu setup must never prevent polling from starting if Telegram has a
+    # temporary API issue.
     if app.post_init:
-        await app.post_init(app)
+        try:
+            await app.post_init(app)
+        except Exception as command_menu_err:
+            logging.warning("Command menu setup skipped: %s", command_menu_err)
 
     await app.start()
     

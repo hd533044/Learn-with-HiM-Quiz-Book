@@ -122,8 +122,38 @@ async def check_user_registration(update: Update) -> bool:
     user = update.effective_user
     if not user:
         return False
-    profile = get_user_profile(user.id)
+    
+    try:
+        profile = get_user_profile(user.id)
+    except Exception as e:
+        logging.error(f"Error fetching user profile during registration check: {e}")
+        profile = None
+
+    # If profile doesn't exist in DB, check if a local JSON profile exists as a fallback backup
     if not profile or not profile.get("is_verified"):
+        try:
+            from app.config import USER_PROFILES_DIR
+            import glob
+            # Check if any json file matches this user_id
+            json_files = glob.glob(os.path.join(USER_PROFILES_DIR, "*.json"))
+            found_fallback = False
+            for jf in json_files:
+                try:
+                    with open(jf, "r", encoding="utf-8") as f:
+                        data = json.load(f)
+                        reg_info = data.get("registration_info", {})
+                        if str(reg_info.get("user_id")) == str(user.id):
+                            found_fallback = True
+                            break
+                except Exception:
+                    continue
+            
+            if found_fallback:
+                # Bypass prompt if valid backup profile exists
+                return True
+        except Exception:
+            pass
+
         await send_registration_prompt(update)
         return False
 

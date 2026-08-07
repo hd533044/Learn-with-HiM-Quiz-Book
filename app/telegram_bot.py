@@ -782,7 +782,6 @@ async def button_router(update: Update, context: ContextTypes.DEFAULT_TYPE):
 
     if data == "trigger_start":
         await query.answer()
-        # Directly execute the onboarding start text and return the first state (NAME)
         msg_text = (
             "💖 **WELCOME TO LEARN WITH HIM QUIZ BOOK** 💖\n\n"
             "📝 **STUDENT REGISTRATION (STEP 1/7)** 📝\n\n"
@@ -791,7 +790,8 @@ async def button_router(update: Update, context: ContextTypes.DEFAULT_TYPE):
         await query.message.reply_text(msg_text, parse_mode="Markdown")
         return
 
-    if not await check_user_registration(update): return
+    if not await check_user_registration(update): 
+        return
 
     if data == "cmd_quiz":
         await launch_quiz_setup(update, context)
@@ -835,13 +835,6 @@ async def button_router(update: Update, context: ContextTypes.DEFAULT_TYPE):
     elif data == "cmd_editprofile":
         from app.onboarding import edit_profile_command
         await edit_profile_command(update, context)
-    elif data.startswith("fb_p"):
-        presets = {"fb_p1": "10/10 Quality Quizzes!"}
-        save_student_feedback(user.id, user.full_name, presets.get(data, "Great bot!"))
-        await query.edit_message_text("🎉 Thank you for your feedback!", parse_mode="Markdown")
-    elif data == "fb_custom":
-        context.user_data["awaiting_custom_feedback"] = True
-        await query.edit_message_text("✍️ Please reply with your custom feedback below:")
 
 async def handle_text_messages(update: Update, context: ContextTypes.DEFAULT_TYPE):
     user = update.effective_user

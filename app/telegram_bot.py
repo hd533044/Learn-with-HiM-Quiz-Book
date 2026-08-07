@@ -227,7 +227,6 @@ async def send_response(update: Update, text: str, reply_markup=None):
         await update.message.reply_text(text, reply_markup=markup, parse_mode="Markdown")
 
 async def myplan_command(update: Update, context: ContextTypes.DEFAULT_TYPE):
-    """Displays current subscription plan details and daily quota limits."""
     if not await maintenance_guard(update, context): return
     if not await check_user_registration(update): return
 
@@ -969,6 +968,7 @@ def build_application() -> Application:
     init_db()
     app = Application.builder().token(BOT_TOKEN).post_init(post_init).build()
 
+    # Conversation handler MUST be added first
     app.add_handler(get_onboarding_handler())
     
     app.add_handler(CommandHandler("quiz", strict_quiz_command_guard))

@@ -463,7 +463,10 @@ def get_user_profile(user_id):
         cursor.execute("SELECT * FROM users WHERE user_id = ?", (user_id,))
         row = cursor.fetchone()
         conn.close()
-        return row_to_dict(row)
+        d = row_to_dict(row)
+        if d and d.get("is_verified") is None:
+            d["is_verified"] = 1
+        return d
     except Exception as e:
         logger.error(f"Error getting profile for {user_id}: {e}")
         return None

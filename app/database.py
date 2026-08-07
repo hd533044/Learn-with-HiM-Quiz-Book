@@ -25,7 +25,7 @@ class PostgresRow:
         self._data = dict(zip(keys, values))
 
     def __getitem__(self, key):
-        return self._data[key]
+        return self._data.get(key)
 
     def get(self, key, default=None):
         return self._data.get(key, default)
@@ -149,42 +149,6 @@ def row_to_dict(row):
         return dict(row)
     except Exception:
         return row
-
-def execute_read_one(query: str, params: tuple = ()):
-    try:
-        conn = get_db()
-        cursor = conn.cursor()
-        cursor.execute(query, params)
-        row = cursor.fetchone()
-        conn.close()
-        return row_to_dict(row)
-    except Exception as e:
-        logger.error(f"DB Read One Error: {e} | Query: {query}")
-        return None
-
-def execute_read_all(query: str, params: tuple = ()):
-    try:
-        conn = get_db()
-        cursor = conn.cursor()
-        cursor.execute(query, params)
-        rows = cursor.fetchall()
-        conn.close()
-        return [row_to_dict(r) for r in rows if r]
-    except Exception as e:
-        logger.error(f"DB Read All Error: {e} | Query: {query}")
-        return []
-
-def execute_write(query: str, params: tuple = ()):
-    try:
-        conn = get_db()
-        cursor = conn.cursor()
-        cursor.execute(query, params)
-        conn.commit()
-        conn.close()
-        return True
-    except Exception as e:
-        logger.error(f"DB Write Error: {e} | Query: {query}")
-        return False
 
 def init_db():
     try:

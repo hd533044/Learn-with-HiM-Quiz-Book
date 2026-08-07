@@ -4,10 +4,10 @@ import json
 import os
 import urllib.request
 import base64
-import traceback
 from telegram import (
     Update, InlineKeyboardMarkup, InlineKeyboardButton, 
-    BotCommand, BotCommandScopeDefault, ReplyKeyboardRemove
+    BotCommand, BotCommandScopeDefault, BotCommandScopeAllPrivateChats, 
+    BotCommandScopeAllGroupChats, ReplyKeyboardRemove
 )
 from telegram.ext import (
     Application, CommandHandler, CallbackQueryHandler, PollAnswerHandler, 
@@ -24,7 +24,7 @@ from app.database import (
     check_and_update_inactivity, refresh_user_activity_epoch, get_db, get_seen_question_ids,
     admin_update_user_name
 )
-from app.onboarding import get_onboarding_handler, start_onboarding, edit_profile_command
+from app.onboarding import get_onboarding_handler, start_onboarding
 from app.quiz_engine import (
     launch_quiz_setup, quiz_count_callback, quiz_timer_callback, handle_poll_answer,
     pause_quiz_command, resume_quiz_command, stop_quiz_command, save_question_callback
@@ -45,25 +45,23 @@ def generate_razorpay_link_sync(user_id: int, plan_key: str) -> str:
     key_secret = (os.getenv("RAZORPAY_KEY_SECRET") or RAZORPAY_KEY_SECRET or "").strip()
 
     if not key_id or not key_secret:
+        logging.error("[PAYMENT ERROR] Razorpay API keys are missing or unconfigured.")
         return None
 
     url = "https://api.razorpay.com/v1/payment_links"
     auth_str = f"{key_id}:{key_secret}"
     encoded_auth = base64.b64encode(auth_str.encode("ascii")).decode("ascii")
 
-    try:
-        profile = get_user_profile(user_id) or {}
-    except Exception:
-        profile = {}
-        
-    raw_phone = str(profile.get("phone_number") or "9123456789")
+    profile = get_user_profile(user_id)
+    raw_phone = str(profile.get("phone_number", "9123456789")) if profile else "9123456789"
+    
     clean_phone = "".join(filter(str.isdigit, raw_phone))
     if len(clean_phone) > 10:
         clean_phone = clean_phone[-10:]
     elif len(clean_phone) < 10:
         clean_phone = "9123456789"
 
-    base_render_url = (os.getenv("RENDER_EXTERNAL_URL") or "https://learnwithhimquiz.onrender.com").rstrip("/")
+    base_render_url = (os.getenv("RENDER_EXTERNAL_URL") or "https://learn-with-him-quiz-book.onrender.com").rstrip("/")
     callback_uri = f"{base_render_url}/razorpay-webhook?user_id={user_id}&plan_key={plan_key}"
 
     payload = {
@@ -84,19 +82,27 @@ def generate_razorpay_link_sync(user_id: int, plan_key: str) -> str:
         "callback_method": "get"
     }
 
+    req_data = json.dumps(payload).encode("utf-8")
+    req = urllib.request.Request(url, data=req_data, method="POST")
+    req.add_header("Authorization", f"Basic {encoded_auth}")
+    req.add_header("Content-Type", "application/json")
+
     try:
-        req_data = json.dumps(payload).encode("utf-8")
-        req = urllib.request.Request(url, data=req_data, method="POST")
-        req.add_header("Authorization", f"Basic {encoded_auth}")
-        req.add_header("Content-Type", "application/json")
         with urllib.request.urlopen(req, timeout=12) as response:
             res_body = response.read().decode("utf-8")
             res_json = json.loads(res_body)
             if response.status in (200, 201) and "short_url" in res_json:
                 return res_json["short_url"]
+            else:
+                logging.error(f"[RAZORPAY API FAIL RESPONSE] Status: {response.status}, Body: {res_body}")
+                return None
+    except urllib.error.HTTPError as http_err:
+        err_body = http_err.read().decode("utf-8") if http_err.fp else ""
+        logging.error(f"[RAZORPAY HTTP ERROR] Code: {http_err.code}, Reason: {http_err.reason}, Details: {err_body}")
+        return None
     except Exception as e:
         logging.error(f"[RAZORPAY EXCEPTION] {e}")
-    return None
+        return None
 
 async def send_registration_prompt(update: Update):
     msg = (
@@ -116,18 +122,13 @@ async def check_user_registration(update: Update) -> bool:
     user = update.effective_user
     if not user:
         return False
-    try:
-        profile = get_user_profile(user.id)
-    except Exception as e:
-        logging.error(f"Database error in check_user_registration: {e}")
-        profile = None
-
-    if not profile:
+    profile = get_user_profile(user.id)
+    if not profile or not profile.get("is_verified"):
         await send_registration_prompt(update)
         return False
 
     if profile.get("is_banned"):
-        ban_msg = "🛑 **ACCOUNT BANNED!**\n\nYour account has been suspended by the administrator."
+        ban_msg = "🛑 **ACCOUNT BANNED!**\n\nYour account has been suspended by the administrator. Access to quizzes and services is restricted."
         if update.callback_query:
             await update.callback_query.answer("🛑 Account Banned!", show_alert=True)
             await update.callback_query.message.reply_text(ban_msg, parse_mode="Markdown")
@@ -137,43 +138,73 @@ async def check_user_registration(update: Update) -> bool:
 
     return True
 
-async def maintenance_guard(update: Update, context: ContextTypes.DEFAULT_TYPE) -> bool:
-    try:
-        m_until = get_maintenance_until()
-    except Exception:
-        m_until = 0
+async def inactivity_guard(update: Update, context: ContextTypes.DEFAULT_TYPE) -> bool:
+    user = update.effective_user
+    if not user:
+        return True
 
+    user_id = user.id
+    if user_id == PRIMARY_ADMIN_ID:
+        refresh_user_activity_epoch(user_id)
+        return True
+
+    is_locked, diff_sec = check_and_update_inactivity(user_id)
+    if is_locked:
+        context.user_data["is_account_locked"] = True
+        rec_btn = InlineKeyboardMarkup([[InlineKeyboardButton("🔑 Reset Your PIN / Password", callback_data="login_forgot_pin")]])
+        msg = (
+            f"🔒 **ACCOUNT LOCKED DUE TO INACTIVITY** 🔒\n"
+            f"━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\n"
+            f"You were inactive for `{diff_sec // 60} mins`.\n\n"
+            f"🔑 **Please reply with your 4-Digit Secret PIN to unlock your account:**"
+        )
+        if update.callback_query:
+            await update.callback_query.answer("🔒 Account Locked due to 5 mins of inactivity!", show_alert=True)
+            await update.callback_query.message.reply_text(msg, reply_markup=rec_btn, parse_mode="Markdown")
+        elif update.message:
+            await update.message.reply_text(msg, reply_markup=rec_btn, parse_mode="Markdown")
+        return False
+    return True
+
+async def maintenance_guard(update: Update, context: ContextTypes.DEFAULT_TYPE) -> bool:
+    if not await inactivity_guard(update, context):
+        return False
+
+    m_until = get_maintenance_until()
     if int(time.time()) < m_until:
         remaining_sec = m_until - int(time.time())
         mins_left = max(1, (remaining_sec + 59) // 60)
-        msg = f"🛠 **ADMIN HAS PAUSED THE SERVICE CURRENTLY** 🛠\n\n⏰ Service will resume in approx `{mins_left} mins`."
+        msg = f"🛠 **ADMIN HAS PAUSED THE SERVICE CURRENTLY** 🛠\n\n⏰ Service will resume in approx `{mins_left} mins`. Please try again later!"
         
         if update.callback_query:
-            await update.callback_query.answer(f"🛠 Service Paused!", show_alert=True)
+            await update.callback_query.answer(f"🛠 Service Paused! Resuming in ~{mins_left} mins.", show_alert=True)
         elif update.message:
             await update.message.reply_text(msg, parse_mode="Markdown", reply_markup=ReplyKeyboardRemove())
         return False
     return True
 
 async def strict_quiz_command_guard(update: Update, context: ContextTypes.DEFAULT_TYPE):
-    if not await maintenance_guard(update, context): return
-    if not await check_user_registration(update): return
+    if not await maintenance_guard(update, context): 
+        return
+
+    if not await check_user_registration(update):
+        return
 
     user = update.effective_user
     log_user_activity_time(user.id, seconds=10)
-    profile = get_user_profile(user.id) or {}
+    profile = get_user_profile(user.id)
 
     attempted_today = get_today_attempts(user.id)
-    paid_bal = int(profile.get("paid_question_balance") or 0)
+    paid_bal = profile.get("paid_question_balance", 0) or 0
     base_limit = max(DAILY_QUESTION_LIMIT, paid_bal)
-    bonus_q = int(profile.get("bonus_quota") or 0)
-    allowed_limit = 10000 if user.id == PRIMARY_ADMIN_ID else base_limit + bonus_q
+    allowed_limit = 10000 if user.id == PRIMARY_ADMIN_ID else base_limit + profile.get("bonus_quota", 0)
 
     if attempted_today >= allowed_limit:
         limit_msg = (
             f"🛑 **Daily Limit Exhausted!** 🛑\n\n"
-            f"You have reached your daily limit of `{allowed_limit}` questions for today.\n"
-            f"Unlock higher limits via **💳 VIP Payment Plans**!"
+            f"You have reached your daily limit of `{allowed_limit}` questions for today (00:00 to 23:59).\n"
+            f"The `/quiz` command has been **deactivated** for your account until tomorrow.\n\n"
+            f"💡 **Upgrade Limit:** Unlock higher daily questions via **💳 VIP Payment Plans**!"
         )
         keyboard = InlineKeyboardMarkup([
             [InlineKeyboardButton("💳 View VIP Payment Plans", callback_data="cmd_plans")],
@@ -192,23 +223,25 @@ async def send_response(update: Update, text: str, reply_markup=None):
         except Exception:
             await update.callback_query.message.reply_text(text, reply_markup=reply_markup, parse_mode="Markdown")
     elif update.message:
-        await update.message.reply_text(text, reply_markup=reply_markup, parse_mode="Markdown")
+        markup = reply_markup if reply_markup else ReplyKeyboardRemove()
+        await update.message.reply_text(text, reply_markup=markup, parse_mode="Markdown")
 
 async def myplan_command(update: Update, context: ContextTypes.DEFAULT_TYPE):
+    """Displays current subscription plan details and daily quota limits."""
     if not await maintenance_guard(update, context): return
     if not await check_user_registration(update): return
 
     user = update.effective_user
     log_user_activity_time(user.id, seconds=10)
-    profile = get_user_profile(user.id) or {}
+    profile = get_user_profile(user.id)
 
     today_used = get_today_attempts(user.id)
-    paid_bal = int(profile.get("paid_question_balance") or 0)
+    paid_bal = profile.get("paid_question_balance", 0) or 0
     base_limit = max(DAILY_QUESTION_LIMIT, paid_bal)
-    bonus_q = int(profile.get("bonus_quota") or 0)
-    allowed_limit = 10000 if user.id == PRIMARY_ADMIN_ID else base_limit + bonus_q
+    allowed_limit = 10000 if user.id == PRIMARY_ADMIN_ID else base_limit + profile.get("bonus_quota", 0)
     remaining = max(0, allowed_limit - today_used)
 
+    # Determine active plan key & name
     active_plan_name = "🎁 FREE DEMO PLAN"
     for p_key, p_val in PLAN_TIERS.items():
         if p_val.get("daily_limit") == paid_bal:
@@ -225,6 +258,9 @@ async def myplan_command(update: Update, context: ContextTypes.DEFAULT_TYPE):
         f"📊 **Used Today:** `{today_used}` / `{allowed_limit}` Qs\n"
         f"🟢 **Remaining Today:** `{remaining}` Qs Available\n"
         f"⏳ **Pass Expiry Date:** `{expiry}`\n"
+        f"🎁 **Bonus Quota:** `+{profile.get('bonus_quota', 0)} Qs`\n"
+        f"━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\n"
+        f"💡 *Upgrade your daily limit anytime by choosing a VIP Pack below:*"
     )
 
     buttons = InlineKeyboardMarkup([
@@ -240,7 +276,7 @@ async def plans_command(update: Update, context: ContextTypes.DEFAULT_TYPE):
 
     user = update.effective_user
     log_user_activity_time(user.id, seconds=10)
-    profile = get_user_profile(user.id) or {}
+    profile = get_user_profile(user.id)
 
     keyboard = []
     if not profile.get("demo_used"):
@@ -260,7 +296,7 @@ async def plans_command(update: Update, context: ContextTypes.DEFAULT_TYPE):
     msg = (
         f"👑 **LEARN WITH HIM QUIZ BOOK — VIP MEMBERSHIP PACKS** 👑\n"
         f"━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\n"
-        f"Select a pack below to pay securely and instantly unlock daily limits:"
+        f"Select a pack below to pay securely and instantly unlock daily question limits:"
     )
 
     await send_response(update, msg, reply_markup=InlineKeyboardMarkup(keyboard))
@@ -277,7 +313,7 @@ async def handle_buy_plan_callback(update: Update, context: ContextTypes.DEFAULT
         await query.message.reply_text("⚠️ Invalid plan selected.")
         return
 
-    profile = get_user_profile(user_id) or {}
+    profile = get_user_profile(user_id)
 
     if plan_key == "FREE_DEMO":
         if profile and profile.get("demo_used"):
@@ -309,11 +345,12 @@ async def handle_buy_plan_callback(update: Update, context: ContextTypes.DEFAULT
             f"💰 **Amount Payable:** ₹{plan_info['price']}\n"
             f"📅 **Validity:** {plan_info['days']} Days\n"
             f"⚡ **Daily Limit:** {plan_info['daily_limit']} Questions/Day\n\n"
-            f"Tap **💳 Pay Now** to complete payment. Quota activates automatically!"
+            f"Tap the **💳 Pay Now** button below to complete payment via UPI, GPay, PhonePe, or Cards. "
+            f"Your VIP quota activates automatically upon payment!"
         )
         await query.edit_message_text(msg, reply_markup=InlineKeyboardMarkup(keyboard), parse_mode="Markdown")
     else:
-        await query.message.reply_text("⚠️ Unable to generate payment link. Verify Razorpay credentials.")
+        await query.message.reply_text("⚠️ Unable to generate payment link. Please verify Razorpay live keys in Render Environment Variables.")
 
 async def pdfreport_command(update: Update, context: ContextTypes.DEFAULT_TYPE):
     if not await maintenance_guard(update, context): return
@@ -337,7 +374,11 @@ async def pdfreport_command(update: Update, context: ContextTypes.DEFAULT_TYPE):
         f"✨ Select your preferred report format below to instantly generate and download your personal academic PDF report card:"
     )
 
-    await send_response(update, msg, reply_markup=buttons)
+    if update.callback_query:
+        await update.callback_query.answer()
+        await update.callback_query.edit_message_text(msg, reply_markup=buttons, parse_mode="Markdown")
+    else:
+        await update.message.reply_text(msg, reply_markup=buttons, parse_mode="Markdown")
 
 async def wrongquestions_command(update: Update, context: ContextTypes.DEFAULT_TYPE):
     if not await maintenance_guard(update, context): return
@@ -347,9 +388,7 @@ async def wrongquestions_command(update: Update, context: ContextTypes.DEFAULT_T
     log_user_activity_time(user.id, seconds=10)
 
     conn = get_db()
-    cursor = conn.cursor()
-    cursor.execute("SELECT * FROM quiz_attempts WHERE user_id = ? ORDER BY id DESC LIMIT 5", (user.id,))
-    attempts = cursor.fetchall()
+    attempts = conn.execute("SELECT * FROM quiz_attempts WHERE user_id = ? ORDER BY id DESC LIMIT 5", (user.id,)).fetchall()
     conn.close()
 
     lines = [
@@ -361,13 +400,8 @@ async def wrongquestions_command(update: Update, context: ContextTypes.DEFAULT_T
     for a in attempts:
         ad = dict(a)
         dt = ad.get("attempt_timestamp", "N/A")
-        details = []
-        if ad.get("details_json"):
-            try:
-                details = ad["details_json"] if isinstance(ad["details_json"], list) else json.loads(ad["details_json"])
-            except Exception:
-                details = []
-        wrong_items = [q for q in details if isinstance(q, dict) and q.get("status") == "WRONG"]
+        details = json.loads(ad["details_json"]) if ad.get("details_json") else []
+        wrong_items = [q for q in details if q.get("status") == "WRONG"]
         
         if wrong_items:
             found_wrong = True
@@ -396,9 +430,7 @@ async def attemptedquestions_command(update: Update, context: ContextTypes.DEFAU
     log_user_activity_time(user.id, seconds=10)
 
     conn = get_db()
-    cursor = conn.cursor()
-    cursor.execute("SELECT * FROM quiz_attempts WHERE user_id = ? ORDER BY id DESC LIMIT 5", (user.id,))
-    attempts = cursor.fetchall()
+    attempts = conn.execute("SELECT * FROM quiz_attempts WHERE user_id = ? ORDER BY id DESC LIMIT 5", (user.id,)).fetchall()
     conn.close()
 
     lines = [
@@ -410,21 +442,15 @@ async def attemptedquestions_command(update: Update, context: ContextTypes.DEFAU
     for a in attempts:
         ad = dict(a)
         dt = ad.get("attempt_timestamp", "N/A")
-        details = []
-        if ad.get("details_json"):
-            try:
-                details = ad["details_json"] if isinstance(ad["details_json"], list) else json.loads(ad["details_json"])
-            except Exception:
-                details = []
+        details = json.loads(ad["details_json"]) if ad.get("details_json") else []
         if details:
             found_any = True
             lines.append(f"📅 **Quiz At:** `{dt}`")
             for idx, q_item in enumerate(details, start=1):
-                if isinstance(q_item, dict):
-                    q_text = q_item.get("question_text", "N/A")
-                    ans_text = q_item.get("correct_answer_text", "N/A")
-                    status_icon = "✅" if q_item.get("status") == "CORRECT" else "❌" if q_item.get("status") == "WRONG" else "⏭"
-                    lines.append(f" {idx}. {status_icon} `{q_text}`\n    👉 **Ans:** `{ans_text}`")
+                q_text = q_item.get("question_text", "N/A")
+                ans_text = q_item.get("correct_answer_text", "N/A")
+                status_icon = "✅" if q_item.get("status") == "CORRECT" else "❌" if q_item.get("status") == "WRONG" else "⏭"
+                lines.append(f" {idx}. {status_icon} `{q_text}`\n    👉 **Ans:** `{ans_text}`")
             lines.append("")
 
     if not found_any:
@@ -477,9 +503,9 @@ async def user_pdf_callback_handler(update: Update, context: ContextTypes.DEFAUL
     await query.edit_message_text("⏳ **Generating Your Custom PDF Report Card...**\nFormatting telemetry, tables, and compiling layout...", parse_mode="Markdown")
 
     pdf_file = generate_student_pdf_report(user_id, filter_mode)
-    profile = get_user_profile(user_id) or {}
-    student_name = profile.get("full_name") or "Student"
-    sid = profile.get("student_id") or f"USER_{user_id}"
+    profile = get_user_profile(user_id)
+    student_name = profile.get("full_name", "Student") if profile else "Student"
+    sid = profile.get("student_id", f"USER_{user_id}") if profile else f"USER_{user_id}"
 
     if pdf_file == "NO_ATTEMPTS":
         nav = InlineKeyboardMarkup([[InlineKeyboardButton("📄 Back to PDF Center", callback_data="cmd_pdfreport")]])
@@ -568,7 +594,7 @@ async def saved_questions_command(update: Update, context: ContextTypes.DEFAULT_
     ]
 
     for idx, sq in enumerate(saved[:15], start=1):
-        opts_list = sq['options_json'] if isinstance(sq['options_json'], list) else (json.loads(sq['options_json']) if sq.get('options_json') else [])
+        opts_list = json.loads(sq['options_json']) if sq['options_json'] else []
         corr_idx = sq['correct_option']
         corr_ans = opts_list[corr_idx] if 0 <= corr_idx < len(opts_list) else 'N/A'
         
@@ -596,41 +622,33 @@ async def myprofile_command(update: Update, context: ContextTypes.DEFAULT_TYPE):
 
     user = update.effective_user
     log_user_activity_time(user.id, seconds=10)
-    profile = get_user_profile(user.id) or {}
+    profile = get_user_profile(user.id)
 
     today_used = get_today_attempts(user.id)
-    paid_bal = int(profile.get("paid_question_balance") or 0)
+    paid_bal = profile.get("paid_question_balance", 0) or 0
     base_limit = max(DAILY_QUESTION_LIMIT, paid_bal)
-    bonus_q = int(profile.get("bonus_quota") or 0)
-    allowed_limit = 10000 if user.id == PRIMARY_ADMIN_ID else base_limit + bonus_q
+    allowed_limit = 10000 if user.id == PRIMARY_ADMIN_ID else base_limit + profile.get("bonus_quota", 0)
 
     remaining = max(0, allowed_limit - today_used)
-    student_id = profile.get("student_id") or f"USER_{user.id}"
+    student_id = profile.get("student_id", f"USER_{user.id}")
     expiry = profile.get("vip_pass_expiry") or "N/A"
-    full_name = profile.get("full_name") or "N/A"
-    target_exam = profile.get("target_exam") or "N/A"
-    gender = profile.get("gender") or "N/A"
-    dob = profile.get("dob") or "N/A"
-    state = profile.get("state") or "N/A"
-    phone = profile.get("phone_number") or "N/A"
-    ref_count = int(profile.get("referral_count") or 0)
 
     msg = (
         f"👤 **STUDENT PROFILE CARD** 👤\n"
         f"📚 **Learn with HiM Quiz Book**\n"
         f"━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\n"
-        f"• **Full Name:** {full_name}\n"
+        f"• **Full Name:** {profile['full_name']}\n"
         f"• **Student ID:** `{student_id}` 🪪\n"
-        f"• **Telegram ID:** `{profile.get('user_id', user.id)}` 🆔\n"
-        f"• **Target Exam:** `{target_exam}` 🎯\n"
-        f"• **DOB / Gender:** `{dob}` / `{gender}` 🎂\n"
-        f"• **Location:** `{state}, India` 📍\n"
-        f"• **Phone:** `{phone}` 📱 *(Private)*\n\n"
+        f"• **Telegram ID:** `{profile['user_id']}` 🆔\n"
+        f"• **Target Exam:** `{profile['target_exam']}` 🎯\n"
+        f"• **DOB / Gender:** `{profile.get('dob', 'N/A')}` / `{profile['gender']}` 🎂\n"
+        f"• **Location:** `{profile.get('state', 'N/A')}, India` 📍\n"
+        f"• **Phone:** `{profile['phone_number']}` 📱 *(Private)*\n\n"
         f"📊 **DAILY QUOTA & SUBSCRIPTION:**\n"
         f"• **Used Today:** `{today_used}` / `{allowed_limit}` Qs 🖥\n"
         f"• **Remaining Today:** `{remaining}` Qs ⚡\n"
         f"• **VIP Expiry:** `{expiry}`\n"
-        f"• **Referrals:** `{ref_count}` / 4 friends 🤝\n"
+        f"• **Referrals:** `{profile.get('referral_count', 0)}` / 4 friends 🤝\n"
         f"━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━"
     )
 
@@ -649,20 +667,20 @@ async def wholestate_command(update: Update, context: ContextTypes.DEFAULT_TYPE)
 
     user = update.effective_user
     log_user_activity_time(user.id, seconds=10)
-    profile = get_user_profile(user.id) or {}
+    profile = get_user_profile(user.id)
 
     perf = get_user_performance_summary(user.id)
     rank = calculate_user_rank(user.id)
     percentile = calculate_user_percentile(user.id)
-    student_id = profile.get("student_id") or f"USER_{user.id}"
+    student_id = profile.get("student_id", f"USER_{user.id}")
 
     msg = (
         f"🎓 **STUDENT ACADEMIC REPORT CARD** 🎓\n"
         f"━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\n"
-        f"👤 **Name:** {profile.get('full_name') or 'N/A'}\n"
+        f"👤 **Name:** {profile['full_name']}\n"
         f"🪪 **Student ID:** `{student_id}`\n"
-        f"🎯 **Target Exam:** `{profile.get('target_exam') or 'N/A'}`\n"
-        f"📍 **Location:** `{profile.get('state') or 'N/A'}, India` 🇮🇳\n\n"
+        f"🎯 **Target Exam:** `{profile['target_exam']}`\n"
+        f"📍 **Location:** `{profile.get('state', 'N/A')}, India` 🇮🇳\n\n"
         f"📈 **PERFORMANCE METRICS:**\n"
         f"• **Tests Completed:** `{perf.get('total_tests', 0)}` 📚\n"
         f"• **Questions Attempted:** `{perf.get('total_qs', 0)}` 🖥\n"
@@ -757,10 +775,9 @@ async def referral_command(update: Update, context: ContextTypes.DEFAULT_TYPE):
     await send_response(update, msg)
 
 async def button_router(update: Update, context: ContextTypes.DEFAULT_TYPE):
+    if not await maintenance_guard(update, context): return
+
     query = update.callback_query
-    if not query:
-        return
-    
     data = query.data
     user = query.from_user
     log_user_activity_time(user.id, seconds=5)
@@ -769,23 +786,19 @@ async def button_router(update: Update, context: ContextTypes.DEFAULT_TYPE):
         await start_onboarding(update, context)
         return
 
-    if not await check_user_registration(update): 
-        return
+    if not await check_user_registration(update): return
 
-    if data in ("cmd_quiz", "cmd_start_fresh_quiz"):
-        profile = get_user_profile(user.id) or {}
+    if data == "cmd_quiz":
+        profile = get_user_profile(user.id)
         attempted_today = get_today_attempts(user.id)
         
-        paid_bal = int(profile.get("paid_question_balance") or 0)
+        paid_bal = profile.get("paid_question_balance", 0) or 0 if profile else 0
         base_limit = max(DAILY_QUESTION_LIMIT, paid_bal)
-        bonus_q = int(profile.get("bonus_quota") or 0)
-        allowed_limit = 10000 if user.id == PRIMARY_ADMIN_ID else base_limit + bonus_q
+        allowed_limit = 10000 if user.id == PRIMARY_ADMIN_ID else base_limit + (profile.get("bonus_quota", 0) if profile else 0)
 
         if attempted_today >= allowed_limit:
             await query.answer("🛑 Daily Limit Exhausted!", show_alert=True)
             return
-        if data == "cmd_start_fresh_quiz":
-            clear_paused_quiz_state(user.id)
         await launch_quiz_setup(update, context)
     elif data == "cmd_myplan":
         await myplan_command(update, context)
@@ -797,11 +810,11 @@ async def button_router(update: Update, context: ContextTypes.DEFAULT_TYPE):
         await help_command(update, context)
     elif data == "cmd_pdfreport":
         await pdfreport_command(update, context)
-    elif data in ("cmd_wrongquestions", "cmd_wrong_qs"):
+    elif data == "cmd_wrongquestions":
         await wrongquestions_command(update, context)
-    elif data in ("cmd_attemptedquestions", "cmd_attempted_qs"):
+    elif data == "cmd_attemptedquestions":
         await attemptedquestions_command(update, context)
-    elif data in ("cmd_unattemptedquestions", "cmd_unattempted_qs"):
+    elif data == "cmd_unattemptedquestions":
         await unattemptedquestions_command(update, context)
     elif data == "cmd_pause_quiz":
         await pause_quiz_command(update, context)
@@ -813,6 +826,9 @@ async def button_router(update: Update, context: ContextTypes.DEFAULT_TYPE):
         await saved_questions_command(update, context)
     elif data == "cmd_save_question":
         await save_question_callback(update, context)
+    elif data == "cmd_start_fresh_quiz":
+        clear_paused_quiz_state(user.id)
+        await launch_quiz_setup(update, context)
     elif data == "cmd_profile":
         await myprofile_command(update, context)
     elif data == "cmd_toppers":
@@ -832,23 +848,38 @@ async def button_router(update: Update, context: ContextTypes.DEFAULT_TYPE):
             "fb_p3": "Great Daily Limits & Routine!"
         }
         fb_text = presets.get(data, "Great educational bot!")
-        profile = get_user_profile(user.id) or {}
-        name = profile.get("full_name") or user.full_name
+        profile = get_user_profile(user.id)
+        name = profile.get("full_name") if profile else user.full_name
         save_student_feedback(user.id, name, fb_text)
         await query.edit_message_text(f"🎉 **Thank you, {name}!** Your review has been saved:\n\n💬 *\"{fb_text}\"*", parse_mode="Markdown")
+
     elif data == "fb_custom":
         context.user_data["awaiting_custom_feedback"] = True
         await query.edit_message_text("✍️ Please reply with your custom feedback below:")
 
 async def handle_text_messages(update: Update, context: ContextTypes.DEFAULT_TYPE):
     user = update.effective_user
-    if not update.message or not update.message.text:
-        return
     text = update.message.text.strip()
-    
+
+    if context.user_data.get("is_account_locked"):
+        profile = get_user_profile(user.id)
+        if profile and profile.get("pin") == text:
+            context.user_data["is_account_locked"] = False
+            refresh_user_activity_epoch(user.id)
+            await update.message.reply_text("🔓 **ACCOUNT UNLOCKED SUCCESSFULLY!**\nYou may continue learning.", reply_markup=ReplyKeyboardRemove())
+        else:
+            rec_btn = InlineKeyboardMarkup([[InlineKeyboardButton("🔑 Reset Options", callback_data="login_forgot_pin")]])
+            await update.message.reply_text(
+                "❌ **INCORRECT PIN!**\n\nPlease enter your correct 4-digit secret PIN, or tap below to reset:",
+                reply_markup=rec_btn,
+                parse_mode="Markdown"
+            )
+        return
+
     if not await maintenance_guard(update, context): return
     log_user_activity_time(user.id, seconds=10)
 
+    # Handle Admin Editing Student Name
     if user.id == PRIMARY_ADMIN_ID and context.user_data.get("awaiting_admin_editname"):
         target_uid = context.user_data.pop("awaiting_admin_editname")
         admin_update_user_name(target_uid, text)
@@ -878,8 +909,13 @@ async def handle_text_messages(update: Update, context: ContextTypes.DEFAULT_TYP
 
     if context.user_data.get("awaiting_custom_feedback"):
         context.user_data["awaiting_custom_feedback"] = False
-        profile = get_user_profile(user.id) or {}
-        name = profile.get("full_name") or user.full_name
+        
+        if any(bad_word in text.lower() for bad_word in NEGATIVE_WORDS):
+            await update.message.reply_text("🙏 Thank you for your feedback! We are working hard to improve your learning experience.", reply_markup=ReplyKeyboardRemove())
+            return
+
+        profile = get_user_profile(user.id)
+        name = profile.get("full_name") if profile else user.full_name
         save_student_feedback(user.id, name, text)
         await update.message.reply_text(f"🎉 **Feedback Received!** Thank you *{name}*:\n\n💬 *\"{text}\"*", reply_markup=ReplyKeyboardRemove(), parse_mode="Markdown")
         return
@@ -897,18 +933,19 @@ async def handle_text_messages(update: Update, context: ContextTypes.DEFAULT_TYP
         await update.message.reply_text(f"✅ Announcement sent to {sent} users!", reply_markup=ReplyKeyboardRemove())
 
 async def global_error_handler(update: object, context: ContextTypes.DEFAULT_TYPE) -> None:
-    logging.error(f"Global Error Handler caught: {context.error}", exc_info=context.error)
+    logging.debug(f"Exception caught in global error handler: {context.error}")
 
 async def post_init(application: Application):
     try:
         await application.bot.delete_my_commands(scope=BotCommandScopeDefault())
-    except Exception:
-        pass
+        await application.bot.delete_my_commands(scope=BotCommandScopeAllPrivateChats())
+        await application.bot.delete_my_commands(scope=BotCommandScopeAllGroupChats())
+    except Exception as e:
+        logging.warning(f"Note on command purge: {e}")
 
     allowed_commands = [
         BotCommand("quiz", "🚀 Start Computer Quiz"),
         BotCommand("myplan", "💵 Subscriptions"),
-        BotCommand("plans", "💳 VIP Membership Plans"),
         BotCommand("pdfreport", "📄 Export Academic PDF Report"),
         BotCommand("wrongquestions", "❌ View Wrong Questions"),
         BotCommand("unattemptedquestions", "⏭️ View Unattempted Questions"),
@@ -926,12 +963,19 @@ async def post_init(application: Application):
         BotCommand("stop", "🛑 Stop Quiz Completely"),
         BotCommand("help", "🤖 Show Command Directory")
     ]
+    
     await application.bot.set_my_commands(allowed_commands, scope=BotCommandScopeDefault())
+    await application.bot.set_my_commands(allowed_commands, scope=BotCommandScopeAllPrivateChats())
+    
+    await application.bot.set_my_commands(allowed_commands, scope=BotCommandScopeDefault())
+    await application.bot.set_my_commands(allowed_commands, scope=BotCommandScopeAllPrivateChats())
 
 def build_application() -> Application:
     init_db()
     app = Application.builder().token(BOT_TOKEN).post_init(post_init).build()
 
+    app.add_handler(get_onboarding_handler())
+    
     app.add_handler(CommandHandler("quiz", strict_quiz_command_guard))
     app.add_handler(CommandHandler("myplan", myplan_command))
     app.add_handler(CommandHandler("plans", plans_command))
@@ -955,16 +999,13 @@ def build_application() -> Application:
     
     app.add_handler(CommandHandler("admin", admin_portal_command))
     app.add_handler(CommandHandler("admit", admin_portal_command))
-    app.add_handler(CommandHandler("editprofile", edit_profile_command))
 
     app.add_handler(CallbackQueryHandler(quiz_count_callback, pattern="^qcount_"))
     app.add_handler(CallbackQueryHandler(quiz_timer_callback, pattern="^qtimer_"))
     app.add_handler(CallbackQueryHandler(user_pdf_callback_handler, pattern="^usergenpdf_"))
     app.add_handler(CallbackQueryHandler(admin_callback_handler, pattern="^(admin_|audit_|genpdf_)"))
-    app.add_handler(CallbackQueryHandler(button_router))
+    app.add_handler(CallbackQueryHandler(button_router, pattern="^cmd_|^fb_|^trigger_start|^buy_plan_"))
 
-    app.add_handler(get_onboarding_handler())
-    
     app.add_handler(MessageHandler(filters.TEXT & ~filters.COMMAND, handle_text_messages))
     app.add_handler(PollAnswerHandler(handle_poll_answer))
     app.add_error_handler(global_error_handler)

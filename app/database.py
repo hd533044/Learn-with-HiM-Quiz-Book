@@ -115,6 +115,17 @@ def get_db():
     conn.row_factory = sqlite3.Row
     return conn
 
+def row_to_dict(row):
+    if not row:
+        return None
+    if isinstance(row, dict):
+        return row
+    if hasattr(row, "_data"):
+        return row._data
+    if hasattr(row, "keys"):
+        return dict(row)
+    return row
+
 def init_db():
     try:
         conn = get_db()
@@ -421,17 +432,6 @@ def save_user_profile(user_id, full_name, username, phone, target_exam, dob, age
     except Exception as e:
         logger.error(f"Error saving user profile for {user_id}: {e}")
 
-def row_to_dict(row):
-    if not row:
-        return None
-    if isinstance(row, dict):
-        return row
-    if hasattr(row, "_data"):
-        return row._data
-    if hasattr(row, "keys"):
-        return dict(row)
-    return row
-
 def get_user_profile(user_id):
     try:
         conn = get_db()
@@ -581,7 +581,7 @@ def get_today_attempts(user_id):
         row = cursor.fetchone()
         conn.close()
         d = row_to_dict(row)
-        return d['total'] if d and d.get('total') else 0
+        return int(d['total']) if d and d.get('total') is not None else 0
     except Exception:
         return 0
 
@@ -782,14 +782,17 @@ def sync_user_json_profile(user_id: int):
         for ad in attempts_rows:
             if ad.get("details_json"):
                 try:
-                    ad["question_details"] = json.loads(ad["details_json"])
+                    if isinstance(ad["details_json"], (list, dict)):
+                        ad["question_details"] = ad["details_json"]
+                    else:
+                        ad["question_details"] = json.loads(ad["details_json"])
                 except Exception:
                     ad["question_details"] = []
                 del ad["details_json"]
             formatted_attempts.append(ad)
 
             dt = ad.get("attempt_date", "Unknown")
-            qs = ad.get("questions_attempted", 0)
+            qs = ad.get("questions_attempted", 0) or 0
 
             daily_questions_count[dt] = daily_questions_count.get(dt, 0) + qs
 
@@ -805,17 +808,20 @@ def sync_user_json_profile(user_id: int):
             
             datewise_quiz_summary[dt]["total_quizzes"] += 1
             datewise_quiz_summary[dt]["total_questions"] += qs
-            datewise_quiz_summary[dt]["total_correct"] += ad.get("correct_answers", 0)
-            datewise_quiz_summary[dt]["total_wrong"] += ad.get("wrong_answers", 0)
-            datewise_quiz_summary[dt]["total_score"] += ad.get("score", 0.0)
-            datewise_quiz_summary[dt]["total_time_seconds"] += ad.get("time_taken", 0)
+            datewise_quiz_summary[dt]["total_correct"] += ad.get("correct_answers", 0) or 0
+            datewise_quiz_summary[dt]["total_wrong"] += ad.get("wrong_answers", 0) or 0
+            datewise_quiz_summary[dt]["total_score"] += float(ad.get("score") or 0.0)
+            datewise_quiz_summary[dt]["total_time_seconds"] += ad.get("time_taken", 0) or 0
 
         formatted_saved_qs = []
         datewise_saved_summary = {}
         for sd in saved_rows:
             if sd.get("options_json"):
                 try:
-                    sd["options"] = json.loads(sd["options_json"])
+                    if isinstance(sd["options_json"], (list, dict)):
+                        sd["options"] = sd["options_json"]
+                    else:
+                        sd["options"] = json.loads(sd["options_json"])
                 except Exception:
                     sd["options"] = []
                 del sd["options_json"]
@@ -824,10 +830,10 @@ def sync_user_json_profile(user_id: int):
             s_date = sd.get("saved_at", "").split(" ")[0] if sd.get("saved_at") else "Unknown"
             datewise_saved_summary[s_date] = datewise_saved_summary.get(s_date, 0) + 1
 
-        activity_log = {r["date_str"]: f"{r['seconds_spent']} seconds ({round(r['seconds_spent']/60, 2)} mins)" for r in time_rows}
-        total_time_seconds = sum([r["seconds_spent"] for r in time_rows])
+        activity_log = {r["date_str"]: f"{r['seconds_spent']} seconds ({round((r['seconds_spent'] or 0)/60, 2)} mins)" for r in time_rows}
+        total_time_seconds = sum([(r["seconds_spent"] or 0) for r in time_rows])
 
-        paid_balance = user_dict.get("paid_question_balance", 0)
+        paid_balance = user_dict.get("paid_question_balance", 0) or 0
         vip_expiry = user_dict.get("vip_pass_expiry")
         
         sub_status = "FREE_TIER"
@@ -847,10 +853,10 @@ def sync_user_json_profile(user_id: int):
             },
             "academic_summary": {
                 "total_quizzes_attempted": len(formatted_attempts),
-                "total_questions_attempted": sum([a.get("questions_attempted", 0) for a in formatted_attempts]),
-                "total_correct": sum([a.get("correct_answers", 0) for a in formatted_attempts]),
-                "total_wrong": sum([a.get("wrong_answers", 0) for a in formatted_attempts]),
-                "total_skipped": sum([a.get("skipped_count", 0) for a in formatted_attempts]),
+                "total_questions_attempted": sum([(a.get("questions_attempted") or 0) for a in formatted_attempts]),
+                "total_correct": sum([(a.get("correct_answers") or 0) for a in formatted_attempts]),
+                "total_wrong": sum([(a.get("wrong_answers") or 0) for a in formatted_attempts]),
+                "total_skipped": sum([(a.get("skipped_count") or 0) for a in formatted_attempts]),
                 "datewise_quiz_summary": datewise_quiz_summary
             },
             "saved_questions_ledger": {

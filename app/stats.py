@@ -3,7 +3,7 @@ import json
 import logging
 from telegram import Update, InlineKeyboardButton, InlineKeyboardMarkup
 from telegram.ext import ContextTypes
-from app.database import get_user_profile, get_saved_questions, get_all_users, get_db
+from app.database import get_user_profile, get_saved_questions, get_all_users, get_db, row_to_dict
 
 logger = logging.getLogger(__name__)
 
@@ -13,7 +13,7 @@ def get_overall_leaderboard(limit: int = 10):
         conn = get_db()
         cursor = conn.cursor()
         cursor.execute("""
-            SELECT u.user_id, u.full_name, AVG(q.score) as avg_score, COUNT(q.id) as total_quizzes
+            SELECT u.user_id, u.full_name, COALESCE(AVG(q.score), 0.0) as avg_score, COUNT(q.id) as total_quizzes
             FROM users u
             JOIN quiz_attempts q ON u.user_id = q.user_id
             GROUP BY u.user_id, u.full_name
@@ -23,13 +23,19 @@ def get_overall_leaderboard(limit: int = 10):
         """, (limit,))
         rows = cursor.fetchall()
         conn.close()
-        return [dict(r) for r in rows]
+        res = []
+        for r in rows:
+            d = row_to_dict(r)
+            if d:
+                d['avg_score'] = float(d.get('avg_score') or 0.0)
+                res.append(d)
+        return res
     except Exception as e:
         logger.error(f"Error fetching leaderboard: {e}")
         return []
 
 def get_user_performance_summary(user_id: int):
-    """Returns aggregated academic metrics for a student profile."""
+    """Returns aggregated academic metrics for a student profile, guaranteed type-safe."""
     try:
         conn = get_db()
         cursor = conn.cursor()
@@ -46,10 +52,20 @@ def get_user_performance_summary(user_id: int):
         """, (user_id,))
         row = cursor.fetchone()
         conn.close()
-        return dict(row) if row else {}
+        d = row_to_dict(row) if row else {}
+        if d:
+            return {
+                'total_tests': int(d.get('total_tests') or 0),
+                'total_qs': int(d.get('total_qs') or 0),
+                'total_correct': int(d.get('total_correct') or 0),
+                'total_wrong': int(d.get('total_wrong') or 0),
+                'total_skipped': int(d.get('total_skipped') or 0),
+                'avg_score': float(d.get('avg_score') or 0.0)
+            }
+        return {'total_tests': 0, 'total_qs': 0, 'total_correct': 0, 'total_wrong': 0, 'total_skipped': 0, 'avg_score': 0.0}
     except Exception as e:
         logger.error(f"Error getting performance summary for {user_id}: {e}")
-        return {}
+        return {'total_tests': 0, 'total_qs': 0, 'total_correct': 0, 'total_wrong': 0, 'total_skipped': 0, 'avg_score': 0.0}
 
 def calculate_user_rank(user_id: int) -> int:
     """Calculates overall student rank based on total score across all quiz attempts."""
@@ -66,7 +82,8 @@ def calculate_user_rank(user_id: int) -> int:
         conn.close()
         
         for rank, row in enumerate(rows, start=1):
-            if row["user_id"] == user_id:
+            r = row_to_dict(row)
+            if r and r.get("user_id") == user_id:
                 return rank
         return 1
     except Exception as e:
@@ -92,17 +109,17 @@ async def stats_command(update: Update, context: ContextTypes.DEFAULT_TYPE):
     """Handles the /stats command and displays the academic dashboard."""
     user = update.effective_user
     user_id = user.id
-    profile = get_user_profile(user_id)
+    profile = get_user_profile(user_id) or {}
 
     if not profile or not profile.get("is_verified"):
         await update.message.reply_text("⚠️ You must complete registration first! Tap /start to begin.")
         return
 
-    student_id = profile.get("student_id", "N/A")
-    full_name = profile.get("full_name", user.full_name)
-    target_exam = profile.get("target_exam", "N/A")
-    phone_number = profile.get("phone_number", "N/A")
-    paid_balance = profile.get("paid_question_balance", 20)
+    student_id = profile.get("student_id") or f"USER_{user_id}"
+    full_name = profile.get("full_name") or user.full_name
+    target_exam = profile.get("target_exam") or "N/A"
+    phone_number = profile.get("phone_number") or "N/A"
+    paid_balance = int(profile.get("paid_question_balance") or 20)
     vip_expiry = profile.get("vip_pass_expiry") or "Free Tier"
     
     rank = calculate_user_rank(user_id)
@@ -142,20 +159,20 @@ async def stats_callback_handler(update: Update, context: ContextTypes.DEFAULT_T
 
         msg = "📚 **YOUR SAVED QUESTIONS** 📚\n\n"
         for i, sq in enumerate(saved[:10], 1):
-            q_text = sq.get("question_text", sq.get("question", "Question"))
+            q_text = sq.get("question_text", "Question")
             expl = sq.get("explanation", "N/A")
             msg += f"**{i}. {q_text}**\n💡 *Explanation:* {expl}\n\n"
 
         await query.message.reply_text(msg, parse_mode="Markdown")
 
     elif data == "stats_refresh":
-        profile = get_user_profile(user_id)
+        profile = get_user_profile(user_id) or {}
         if profile:
-            student_id = profile.get("student_id", "N/A")
-            full_name = profile.get("full_name", "Student")
-            target_exam = profile.get("target_exam", "N/A")
-            phone_number = profile.get("phone_number", "N/A")
-            paid_balance = profile.get("paid_question_balance", 20)
+            student_id = profile.get("student_id") or f"USER_{user_id}"
+            full_name = profile.get("full_name") or "Student"
+            target_exam = profile.get("target_exam") or "N/A"
+            phone_number = profile.get("phone_number") or "N/A"
+            paid_balance = int(profile.get("paid_question_balance") or 20)
             vip_expiry = profile.get("vip_pass_expiry") or "Free Tier"
             
             rank = calculate_user_rank(user_id)

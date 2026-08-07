@@ -164,9 +164,9 @@ async def strict_quiz_command_guard(update: Update, context: ContextTypes.DEFAUL
     profile = get_user_profile(user.id) or {}
 
     attempted_today = get_today_attempts(user.id)
-    paid_bal = profile.get("paid_question_balance") or 0
+    paid_bal = int(profile.get("paid_question_balance") or 0)
     base_limit = max(DAILY_QUESTION_LIMIT, paid_bal)
-    bonus_q = profile.get("bonus_quota") or 0
+    bonus_q = int(profile.get("bonus_quota") or 0)
     allowed_limit = 10000 if user.id == PRIMARY_ADMIN_ID else base_limit + bonus_q
 
     if attempted_today >= allowed_limit:
@@ -203,9 +203,9 @@ async def myplan_command(update: Update, context: ContextTypes.DEFAULT_TYPE):
     profile = get_user_profile(user.id) or {}
 
     today_used = get_today_attempts(user.id)
-    paid_bal = profile.get("paid_question_balance") or 0
+    paid_bal = int(profile.get("paid_question_balance") or 0)
     base_limit = max(DAILY_QUESTION_LIMIT, paid_bal)
-    bonus_q = profile.get("bonus_quota") or 0
+    bonus_q = int(profile.get("bonus_quota") or 0)
     allowed_limit = 10000 if user.id == PRIMARY_ADMIN_ID else base_limit + bonus_q
     remaining = max(0, allowed_limit - today_used)
 
@@ -361,8 +361,13 @@ async def wrongquestions_command(update: Update, context: ContextTypes.DEFAULT_T
     for a in attempts:
         ad = dict(a)
         dt = ad.get("attempt_timestamp", "N/A")
-        details = json.loads(ad["details_json"]) if ad.get("details_json") else []
-        wrong_items = [q for q in details if q.get("status") == "WRONG"]
+        details = []
+        if ad.get("details_json"):
+            try:
+                details = ad["details_json"] if isinstance(ad["details_json"], list) else json.loads(ad["details_json"])
+            except Exception:
+                details = []
+        wrong_items = [q for q in details if isinstance(q, dict) and q.get("status") == "WRONG"]
         
         if wrong_items:
             found_wrong = True
@@ -405,15 +410,21 @@ async def attemptedquestions_command(update: Update, context: ContextTypes.DEFAU
     for a in attempts:
         ad = dict(a)
         dt = ad.get("attempt_timestamp", "N/A")
-        details = json.loads(ad["details_json"]) if ad.get("details_json") else []
+        details = []
+        if ad.get("details_json"):
+            try:
+                details = ad["details_json"] if isinstance(ad["details_json"], list) else json.loads(ad["details_json"])
+            except Exception:
+                details = []
         if details:
             found_any = True
             lines.append(f"📅 **Quiz At:** `{dt}`")
             for idx, q_item in enumerate(details, start=1):
-                q_text = q_item.get("question_text", "N/A")
-                ans_text = q_item.get("correct_answer_text", "N/A")
-                status_icon = "✅" if q_item.get("status") == "CORRECT" else "❌" if q_item.get("status") == "WRONG" else "⏭"
-                lines.append(f" {idx}. {status_icon} `{q_text}`\n    👉 **Ans:** `{ans_text}`")
+                if isinstance(q_item, dict):
+                    q_text = q_item.get("question_text", "N/A")
+                    ans_text = q_item.get("correct_answer_text", "N/A")
+                    status_icon = "✅" if q_item.get("status") == "CORRECT" else "❌" if q_item.get("status") == "WRONG" else "⏭"
+                    lines.append(f" {idx}. {status_icon} `{q_text}`\n    👉 **Ans:** `{ans_text}`")
             lines.append("")
 
     if not found_any:
@@ -557,7 +568,7 @@ async def saved_questions_command(update: Update, context: ContextTypes.DEFAULT_
     ]
 
     for idx, sq in enumerate(saved[:15], start=1):
-        opts_list = json.loads(sq['options_json']) if sq['options_json'] else []
+        opts_list = sq['options_json'] if isinstance(sq['options_json'], list) else (json.loads(sq['options_json']) if sq.get('options_json') else [])
         corr_idx = sq['correct_option']
         corr_ans = opts_list[corr_idx] if 0 <= corr_idx < len(opts_list) else 'N/A'
         
@@ -588,9 +599,9 @@ async def myprofile_command(update: Update, context: ContextTypes.DEFAULT_TYPE):
     profile = get_user_profile(user.id) or {}
 
     today_used = get_today_attempts(user.id)
-    paid_bal = profile.get("paid_question_balance") or 0
+    paid_bal = int(profile.get("paid_question_balance") or 0)
     base_limit = max(DAILY_QUESTION_LIMIT, paid_bal)
-    bonus_q = profile.get("bonus_quota") or 0
+    bonus_q = int(profile.get("bonus_quota") or 0)
     allowed_limit = 10000 if user.id == PRIMARY_ADMIN_ID else base_limit + bonus_q
 
     remaining = max(0, allowed_limit - today_used)
@@ -602,7 +613,7 @@ async def myprofile_command(update: Update, context: ContextTypes.DEFAULT_TYPE):
     dob = profile.get("dob") or "N/A"
     state = profile.get("state") or "N/A"
     phone = profile.get("phone_number") or "N/A"
-    ref_count = profile.get("referral_count") or 0
+    ref_count = int(profile.get("referral_count") or 0)
 
     msg = (
         f"👤 **STUDENT PROFILE CARD** 👤\n"
@@ -765,9 +776,9 @@ async def button_router(update: Update, context: ContextTypes.DEFAULT_TYPE):
         profile = get_user_profile(user.id) or {}
         attempted_today = get_today_attempts(user.id)
         
-        paid_bal = profile.get("paid_question_balance") or 0
+        paid_bal = int(profile.get("paid_question_balance") or 0)
         base_limit = max(DAILY_QUESTION_LIMIT, paid_bal)
-        bonus_q = profile.get("bonus_quota") or 0
+        bonus_q = int(profile.get("bonus_quota") or 0)
         allowed_limit = 10000 if user.id == PRIMARY_ADMIN_ID else base_limit + bonus_q
 
         if attempted_today >= allowed_limit:
@@ -822,7 +833,7 @@ async def button_router(update: Update, context: ContextTypes.DEFAULT_TYPE):
         }
         fb_text = presets.get(data, "Great educational bot!")
         profile = get_user_profile(user.id) or {}
-        name = profile.get("full_name") if profile else user.full_name
+        name = profile.get("full_name") or user.full_name
         save_student_feedback(user.id, name, fb_text)
         await query.edit_message_text(f"🎉 **Thank you, {name}!** Your review has been saved:\n\n💬 *\"{fb_text}\"*", parse_mode="Markdown")
     elif data == "fb_custom":
@@ -868,7 +879,7 @@ async def handle_text_messages(update: Update, context: ContextTypes.DEFAULT_TYP
     if context.user_data.get("awaiting_custom_feedback"):
         context.user_data["awaiting_custom_feedback"] = False
         profile = get_user_profile(user.id) or {}
-        name = profile.get("full_name") if profile else user.full_name
+        name = profile.get("full_name") or user.full_name
         save_student_feedback(user.id, name, text)
         await update.message.reply_text(f"🎉 **Feedback Received!** Thank you *{name}*:\n\n💬 *\"{text}\"*", reply_markup=ReplyKeyboardRemove(), parse_mode="Markdown")
         return
@@ -886,16 +897,7 @@ async def handle_text_messages(update: Update, context: ContextTypes.DEFAULT_TYP
         await update.message.reply_text(f"✅ Announcement sent to {sent} users!", reply_markup=ReplyKeyboardRemove())
 
 async def global_error_handler(update: object, context: ContextTypes.DEFAULT_TYPE) -> None:
-    logging.error(f"Exception caught in global error handler: {context.error}")
-    traceback.print_exception(type(context.error), context.error, context.error.__traceback__)
-    if update and isinstance(update, Update) and update.effective_chat:
-        try:
-            await context.bot.send_message(
-                chat_id=update.effective_chat.id,
-                text="⚠️ An unexpected error occurred while processing your command. Please try again or type /start."
-            )
-        except Exception:
-            pass
+    logging.error(f"Global Error Handler caught: {context.error}", exc_info=context.error)
 
 async def post_init(application: Application):
     try:
@@ -930,7 +932,6 @@ def build_application() -> Application:
     init_db()
     app = Application.builder().token(BOT_TOKEN).post_init(post_init).build()
 
-    # 1. REGISTER STANDARD COMMANDS AND ROUTERS FIRST
     app.add_handler(CommandHandler("quiz", strict_quiz_command_guard))
     app.add_handler(CommandHandler("myplan", myplan_command))
     app.add_handler(CommandHandler("plans", plans_command))
@@ -962,7 +963,6 @@ def build_application() -> Application:
     app.add_handler(CallbackQueryHandler(admin_callback_handler, pattern="^(admin_|audit_|genpdf_)"))
     app.add_handler(CallbackQueryHandler(button_router))
 
-    # 2. REGISTER ONBOARDING CONVERSATION HANDLER AFTER
     app.add_handler(get_onboarding_handler())
     
     app.add_handler(MessageHandler(filters.TEXT & ~filters.COMMAND, handle_text_messages))

@@ -6,3 +6,4 @@ aiohttp>=3.8.0
 httpx>=0.24.0
 reportlab
 razorpay>=1.4.1
+Postgres>=2.9.1

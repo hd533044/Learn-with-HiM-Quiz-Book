@@ -210,20 +210,20 @@ async def render_self_ping_loop():
 async def run_bot():
     logging.info("Starting Learn with HiM Quiz Book Bot Engine...")
     
-    # 1. Safe Database Initialization
+    # Initialize Database safely
     try:
         init_db()
     except Exception as db_err:
-        logging.error(f"Database init warning (continuing startup): {db_err}")
+        logging.error(f"Database initialization warning: {db_err}")
 
-    # 2. Start Keep-Alive / Webhook HTTP Server
+    # Start Aiohttp Web Server
     try:
         await start_web_server()
         asyncio.create_task(render_self_ping_loop())
     except Exception as web_err:
-        logging.error(f"Web server warning: {web_err}")
+        logging.error(f"Web server start warning: {web_err}")
 
-    # 3. Build & Initialize Application
+    # Build Application
     global bot_app_instance
     app = build_application()
     bot_app_instance = app
@@ -231,13 +231,13 @@ async def run_bot():
     await app.initialize()
     await app.start()
     
-    # 4. Safe non-blocking webhook reset (after app.start)
+    # Safe Webhook Reset
     try:
         await asyncio.wait_for(app.bot.delete_webhook(drop_pending_updates=True), timeout=5.0)
     except Exception as e:
         logging.warning(f"Webhook reset skipped: {e}")
 
-    # 5. Start Polling Engine
+    # Start Polling
     await app.updater.start_polling(drop_pending_updates=True, allowed_updates=Update.ALL_TYPES)
     logging.info("Bot is online, synchronized, and actively listening!")
 

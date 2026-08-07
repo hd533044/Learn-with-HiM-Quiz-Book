@@ -5,7 +5,6 @@ import json
 import logging
 import os
 import sys
-import socket
 import warnings
 from datetime import datetime, timedelta
 import pytz
@@ -35,18 +34,6 @@ logging.getLogger("httpx").setLevel(logging.WARNING)
 logging.getLogger("apscheduler").setLevel(logging.WARNING)
 logging.getLogger("telegram.ext").setLevel(logging.WARNING)
 logging.getLogger("aiohttp.access").setLevel(logging.WARNING)
-
-# SINGLE-INSTANCE SOCKET LOCK
-LOCK_SOCKET = None
-def ensure_single_instance():
-    global LOCK_SOCKET
-    try:
-        LOCK_SOCKET = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
-        # Bind to a local port to ensure only ONE python process runs on the host
-        LOCK_SOCKET.bind(("127.0.0.1", 47382))
-    except socket.error:
-        logging.error("⚠️ ANOTHER PROCESS IS ALREADY RUNNING LOCALLY! EXITING CONFLICTING INSTANCE.")
-        sys.exit(0)
 
 razorpay_client = None
 if HAS_RAZORPAY and RAZORPAY_KEY_ID and RAZORPAY_KEY_SECRET:
@@ -101,16 +88,16 @@ async def send_payment_invoice_telegram(user_id: int, plan_key: str, payment_id:
     plan_name = plan_info.get('name', plan_key)
     
     invoice_msg = (
-        f"🎉 **CONGRATULATIONS! PACK ACTIVATED!**\n\n"
-        f"🌟 **Your {plan_name} has been successfully activated!**\n"
+        f"  **CONGRATULATIONS! PACK ACTIVATED!**\n\n"
+        f"  **Your {plan_name} has been successfully activated!**\n"
         f"You can now start your preparation immediately.\n\n"
-        f"🧾 **OFFICIAL PAYMENT INVOICE**\n"
-        f"• **Unlocked Pack:** `{plan_name}`\n"
-        f"• **Amount Paid:** ₹{plan_info.get('price', 0)}\n"
-        f"• **Payment / Txn ID:** `{payment_id}`\n"
-        f"• **Date & Time:** `{txn_time}`\n"
-        f"• **Validity:** `{plan_info.get('days')} Days`\n"
-        f"• **Added Daily Limit:** `+{plan_info.get('daily_limit')} Questions / Day`\n\n"
+        f"  **OFFICIAL PAYMENT INVOICE**\n"
+        f"  **Unlocked Pack:** `{plan_name}`\n"
+        f"  **Amount Paid:**  {plan_info.get('price', 0)}\n"
+        f"  **Payment / Txn ID:** `{payment_id}`\n"
+        f"  **Date & Time:** `{txn_time}`\n"
+        f"  **Validity:** `{plan_info.get('days')} Days`\n"
+        f"  **Added Daily Limit:** `+{plan_info.get('daily_limit')} Questions / Day`\n\n"
         f"Tap **/quiz** to launch your Computer Quiz practice session now!"
     )
     try:
@@ -138,6 +125,7 @@ async def handle_razorpay_callback_get(request):
                 await send_payment_invoice_telegram(uid, plan_key, razorpay_payment_id)
         except Exception as e:
             logging.error(f"Error activating from GET callback redirect: {e}")
+            
     html_content = f"""
     <!DOCTYPE html>
     <html>
@@ -145,64 +133,14 @@ async def handle_razorpay_callback_get(request):
         <title>Payment Successful - Learn with HiM Quiz Book</title>
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <style>
-            body {{
-                font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-                background: #0f172a;
-                color: #f8fafc;
-                display: flex;
-                justify-content: center;
-                align-items: center;
-                min-height: 100vh;
-                margin: 0;
-                padding: 20px;
-            }}
-            .card {{
-                background: #1e293b;
-                border-radius: 16px;
-                padding: 32px;
-                max-width: 420px;
-                width: 100%;
-                box-shadow: 0 10px 25px rgba(0, 0, 0, 0.5);
-                text-align: center;
-                border: 1px solid #334155;
-            }}
-            .icon {{
-                font-size: 56px;
-                margin-bottom: 16px;
-            }}
-            h2 {{
-                color: #38bdf8;
-                margin-bottom: 8px;
-            }}
-            p {{
-                color: #94a3b8;
-                font-size: 15px;
-                line-height: 1.5;
-            }}
-            .id-box {{
-                background: #0f172a;
-                padding: 12px;
-                border-radius: 8px;
-                font-family: monospace;
-                color: #38bdf8;
-                margin: 16px 0;
-                word-break: break-all;
-            }}
-            .btn {{
-                display: inline-block;
-                background: #2563eb;
-                color: white;
-                text-decoration: none;
-                padding: 12px 24px;
-                border-radius: 8px;
-                font-weight: bold;
-                margin-top: 16px;
-            }}
+            body {{ font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; background: #0f172a; color: #f8fafc; display: flex; justify-content: center; align-items: center; min-height: 100vh; margin: 0; padding: 20px; }}
+            .card {{ background: #1e293b; border-radius: 16px; padding: 32px; max-width: 420px; width: 100%; box-shadow: 0 10px 25px rgba(0, 0, 0, 0.5); text-align: center; border: 1px solid #334155; }}
+            .id-box {{ background: #0f172a; padding: 12px; border-radius: 8px; font-family: monospace; color: #38bdf8; margin: 16px 0; word-break: break-all; }}
+            .btn {{ display: inline-block; background: #2563eb; color: white; text-decoration: none; padding: 12px 24px; border-radius: 8px; font-weight: bold; margin-top: 16px; }}
         </style>
     </head>
     <body>
         <div class="card">
-            <div class="icon">✅</div>
             <h2>Payment Successful!</h2>
             <p>Congratulations! Your VIP plan has been activated.</p>
             <div class="id-box">Payment ID: {razorpay_payment_id}</div>
@@ -255,7 +193,7 @@ async def start_web_server():
     await runner.setup()
     site = web.TCPSite(runner, "0.0.0.0", port)
     await site.start()
-    print(f"  Keep-Alive & Webhook Server running on port {port}")
+    logging.info(f"Keep-Alive & Webhook Server running on port {port}")
 
 async def render_self_ping_loop():
     import httpx
@@ -271,33 +209,42 @@ async def render_self_ping_loop():
                 pass
 
 async def run_bot():
-    ensure_single_instance()
     print("==================================================")
-    print("  Learn with HiM Quiz Book Bot Engine")
+    print("  Learn with HiM Quiz Book Bot Engine Starting...")
     print("==================================================")
     
-    init_db()
-    
-    await start_web_server()
-    asyncio.create_task(render_self_ping_loop())
-    
-    app = build_application()
+    # Non-blocking Database Initialization
+    try:
+        init_db()
+    except Exception as db_err:
+        logging.error(f"Database initialization warning: {db_err}")
+
+    # Web Server Startup
+    try:
+        await start_web_server()
+        asyncio.create_task(render_self_ping_loop())
+    except Exception as web_err:
+        logging.error(f"Web server failed to start: {web_err}")
+
+    # Bot Initialization & Safe Polling Start
     global bot_app_instance
+    app = build_application()
     bot_app_instance = app
-    
+
     await app.initialize()
+    await app.start()
     
+    # Clear webhooks non-blockingly
     try:
         await app.bot.delete_webhook(drop_pending_updates=True)
-        logging.info("Successfully cleared existing Telegram webhooks.")
     except Exception as e:
-        logging.warning(f"Could not clear webhook: {e}")
+        logging.warning(f"Webhook clear warning: {e}")
 
-    await app.start()
     await app.updater.start_polling(drop_pending_updates=True, allowed_updates=Update.ALL_TYPES)
+    print("==================================================")
     print("  Bot is online, synchronized, and listening!")
     print("==================================================")
-    
+
     stop_event = asyncio.Event()
     try:
         await stop_event.wait()

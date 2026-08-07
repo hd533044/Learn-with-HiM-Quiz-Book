@@ -4,7 +4,6 @@ import hashlib
 import json
 import logging
 import os
-import sys
 import warnings
 from datetime import datetime, timedelta
 import pytz
@@ -209,24 +208,22 @@ async def render_self_ping_loop():
                 pass
 
 async def run_bot():
-    print("==================================================")
-    print("  Learn with HiM Quiz Book Bot Engine Starting...")
-    print("==================================================")
+    logging.info("Starting Learn with HiM Quiz Book Bot Engine...")
     
-    # 1. Non-blocking DB Initialization
+    # 1. Safe Database Initialization
     try:
         init_db()
     except Exception as db_err:
-        logging.error(f"Database initialization warning: {db_err}")
+        logging.error(f"Database init warning (continuing startup): {db_err}")
 
-    # 2. Start Web Server
+    # 2. Start Keep-Alive / Webhook HTTP Server
     try:
         await start_web_server()
         asyncio.create_task(render_self_ping_loop())
     except Exception as web_err:
-        logging.error(f"Web server start warning: {web_err}")
+        logging.error(f"Web server warning: {web_err}")
 
-    # 3. Build Telegram Application
+    # 3. Build & Initialize Application
     global bot_app_instance
     app = build_application()
     bot_app_instance = app
@@ -234,7 +231,7 @@ async def run_bot():
     await app.initialize()
     await app.start()
     
-    # 4. Clear Webhook with strict 5-second timeout safeguard
+    # 4. Safe non-blocking webhook reset (after app.start)
     try:
         await asyncio.wait_for(app.bot.delete_webhook(drop_pending_updates=True), timeout=5.0)
     except Exception as e:
@@ -242,15 +239,13 @@ async def run_bot():
 
     # 5. Start Polling Engine
     await app.updater.start_polling(drop_pending_updates=True, allowed_updates=Update.ALL_TYPES)
-    print("==================================================")
-    print("  Bot is online, synchronized, and listening!")
-    print("==================================================")
+    logging.info("Bot is online, synchronized, and actively listening!")
 
     stop_event = asyncio.Event()
     try:
         await stop_event.wait()
     except (KeyboardInterrupt, SystemExit):
-        print("\n  Shutting down bot gracefully...")
+        logging.info("Shutting down bot gracefully...")
     finally:
         await app.updater.stop()
         await app.stop()
@@ -260,7 +255,7 @@ def main():
     try:
         asyncio.run(run_bot())
     except (KeyboardInterrupt, SystemExit):
-        print("  Bot offline.")
+        logging.info("Bot offline.")
 
 if __name__ == "__main__":
     main()

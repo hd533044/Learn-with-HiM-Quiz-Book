@@ -95,11 +95,12 @@ def generate_student_pdf_report(user_id: int, filter_mode: str = "last_1_month_d
         is_month_filter = "last_1_month" in filter_mode
 
         # -------------------------------------------------------------
-        # HANDLING 5TH OPTION: SAVED QUESTIONS EXPORT
+        # HANDLING SAVED QUESTIONS EXPORT
         # -------------------------------------------------------------
         if filter_mode == "saved_questions_only":
-            cursor.execute("SELECT * FROM saved_questions WHERE user_id = ? ORDER BY id DESC", (user_id,))
+            cursor.execute("SELECT * FROM saved_questions WHERE user_id = %s ORDER BY id DESC", (user_id,))
             saved_rows = [dict(r) for r in cursor.fetchall()]
+            cursor.close()
             conn.close()
 
             if not saved_rows:
@@ -162,7 +163,6 @@ def generate_student_pdf_report(user_id: int, filter_mode: str = "last_1_month_d
 
             story = []
 
-            # Header with Logos
             logo_left_path = os.path.join(BASE_DIR, "assets", "logo.png")
             logo_right_path = os.path.join(BASE_DIR, "assets", "logohim.png")
 
@@ -193,7 +193,6 @@ def generate_student_pdf_report(user_id: int, filter_mode: str = "last_1_month_d
             story.append(header_table)
             story.append(Spacer(1, 6))
 
-            # Student Profile Overview
             sid = clean_str(u.get("student_id") or f"USER_{user_id}")
             masked_phone = mask_phone(u.get("phone_number", ""))
             masked_pin = "XX" + str(u.get("pin", ""))[-2:] if u.get("pin") else "XXXX"
@@ -218,7 +217,6 @@ def generate_student_pdf_report(user_id: int, filter_mode: str = "last_1_month_d
             story.append(prof_table)
             story.append(Spacer(1, 6))
 
-            # Saved Questions Table
             story.append(Paragraph("💾 <b>BOOKMARKED & SAVED QUESTIONS REPORT</b>", section_heading))
 
             saved_table_data = [[
@@ -258,8 +256,9 @@ def generate_student_pdf_report(user_id: int, filter_mode: str = "last_1_month_d
         # -------------------------------------------------------------
         # STANDARD ATTEMPT LOGS & QUIZ SUMMARY PROCESSING
         # -------------------------------------------------------------
-        cursor.execute("SELECT * FROM quiz_attempts WHERE user_id = ? ORDER BY id DESC", (user_id,))
+        cursor.execute("SELECT * FROM quiz_attempts WHERE user_id = %s ORDER BY id DESC", (user_id,))
         all_attempts = [dict(r) for r in cursor.fetchall()]
+        cursor.close()
         conn.close()
 
         filtered_attempts = []
@@ -332,7 +331,6 @@ def generate_student_pdf_report(user_id: int, filter_mode: str = "last_1_month_d
 
         story = []
 
-        # Header with Both Logos
         logo_left_path = os.path.join(BASE_DIR, "assets", "logo.png")
         logo_right_path = os.path.join(BASE_DIR, "assets", "logohim.png")
 
@@ -363,7 +361,6 @@ def generate_student_pdf_report(user_id: int, filter_mode: str = "last_1_month_d
         story.append(header_table)
         story.append(Spacer(1, 6))
 
-        # Student Profile Overview
         sid = clean_str(u.get("student_id") or f"USER_{user_id}")
         masked_phone = mask_phone(u.get("phone_number", ""))
         masked_pin = "XX" + str(u.get("pin", ""))[-2:] if u.get("pin") else "XXXX"
@@ -388,7 +385,6 @@ def generate_student_pdf_report(user_id: int, filter_mode: str = "last_1_month_d
         story.append(prof_table)
         story.append(Spacer(1, 6))
 
-        # Academic Performance Summary
         total_quizzes = len(filtered_attempts)
         total_qs = sum([a.get('questions_attempted', 0) or 0 for a in filtered_attempts])
         total_correct = sum([a.get('correct_answers', 0) or 0 for a in filtered_attempts])

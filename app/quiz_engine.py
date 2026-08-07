@@ -35,7 +35,6 @@ def get_pause_resume_keyboard():
     ])
 
 def get_quizbook_nav_keyboard():
-    """Persistent inline navigation menu attached across all response screens."""
     return InlineKeyboardMarkup([
         [
             InlineKeyboardButton("❌ Wrong Qs", callback_data="cmd_wrong_qs"),
@@ -76,7 +75,7 @@ async def launch_quiz_setup(update: Update, context: ContextTypes.DEFAULT_TYPE):
     if not await check_quiz_maintenance(update): return
 
     user = update.effective_user
-    log_user_activity_time(user.id, seconds=10)
+    asyncio.create_task(asyncio.to_thread(log_user_activity_time, user.id, 10))
     profile = await asyncio.to_thread(get_user_profile, user.id)
     
     if not profile or not profile.get("is_verified"):
@@ -85,7 +84,6 @@ async def launch_quiz_setup(update: Update, context: ContextTypes.DEFAULT_TYPE):
 
     attempted_today = await asyncio.to_thread(get_today_attempts, user.id)
     
-    # Calculate Quota: Standard limit OR Paid VIP pass balance
     paid_bal = profile.get("paid_question_balance", 0) or 0
     base_limit = max(DAILY_QUESTION_LIMIT, paid_bal)
     allowed_limit = 10000 if user.id == PRIMARY_ADMIN_ID else base_limit + profile.get("bonus_quota", 0)
@@ -157,7 +155,7 @@ async def quiz_count_callback(update: Update, context: ContextTypes.DEFAULT_TYPE
 
     query = update.callback_query
     user_id = query.from_user.id
-    log_user_activity_time(user_id, seconds=10)
+    asyncio.create_task(asyncio.to_thread(log_user_activity_time, user_id, 10))
     
     profile = get_user_profile(user_id)
     attempted_today = get_today_attempts(user_id)
@@ -203,7 +201,7 @@ async def quiz_timer_callback(update: Update, context: ContextTypes.DEFAULT_TYPE
     query = update.callback_query
     user_id = query.from_user.id
     chat_id = query.message.chat_id
-    log_user_activity_time(user_id, seconds=15)
+    asyncio.create_task(asyncio.to_thread(log_user_activity_time, user_id, 15))
     
     profile = get_user_profile(user_id)
     attempted_today = get_today_attempts(user_id)
@@ -266,7 +264,7 @@ async def quiz_timer_callback(update: Update, context: ContextTypes.DEFAULT_TYPE
 async def save_question_callback(update: Update, context: ContextTypes.DEFAULT_TYPE):
     query = update.callback_query
     user_id = query.from_user.id
-    log_user_activity_time(user_id, seconds=5)
+    asyncio.create_task(asyncio.to_thread(log_user_activity_time, user_id, 5))
     session = ACTIVE_SESSIONS.get(user_id)
     
     if not session or "current_question" not in session:
@@ -289,7 +287,7 @@ async def save_question_callback(update: Update, context: ContextTypes.DEFAULT_T
 async def pause_quiz_command(update: Update, context: ContextTypes.DEFAULT_TYPE):
     user_id = update.effective_user.id
     chat_id = update.effective_chat.id
-    log_user_activity_time(user_id, seconds=5)
+    asyncio.create_task(asyncio.to_thread(log_user_activity_time, user_id, 5))
 
     session = ACTIVE_SESSIONS.get(user_id)
     if not session or session.get("is_paused"):
@@ -342,7 +340,7 @@ async def pause_quiz_command(update: Update, context: ContextTypes.DEFAULT_TYPE)
 async def resume_quiz_command(update: Update, context: ContextTypes.DEFAULT_TYPE):
     user_id = update.effective_user.id
     chat_id = update.effective_chat.id
-    log_user_activity_time(user_id, seconds=5)
+    asyncio.create_task(asyncio.to_thread(log_user_activity_time, user_id, 5))
 
     paused = get_paused_quiz_state(user_id)
     if not paused:
@@ -403,7 +401,7 @@ async def resume_quiz_command(update: Update, context: ContextTypes.DEFAULT_TYPE
 async def stop_quiz_command(update: Update, context: ContextTypes.DEFAULT_TYPE):
     user_id = update.effective_user.id
     chat_id = update.effective_chat.id
-    log_user_activity_time(user_id, seconds=5)
+    asyncio.create_task(asyncio.to_thread(log_user_activity_time, user_id, 5))
 
     session = ACTIVE_SESSIONS.pop(user_id, None)
     paused = get_paused_quiz_state(user_id)
@@ -557,7 +555,7 @@ async def handle_poll_answer(update: Update, context: ContextTypes.DEFAULT_TYPE)
     data = POLL_MAP.pop(poll_id)
     user_id = data["user_id"]
     chat_id = data["chat_id"]
-    log_user_activity_time(user_id, seconds=data.get("timer_sec", 15))
+    asyncio.create_task(asyncio.to_thread(log_user_activity_time, user_id, data.get("timer_sec", 15)))
 
     if user_id in TIMER_TASKS and not TIMER_TASKS[user_id].done():
         TIMER_TASKS[user_id].cancel()

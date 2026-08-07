@@ -4,6 +4,7 @@ import json
 import os
 import urllib.request
 import base64
+import asyncio
 from telegram import (
     Update, InlineKeyboardMarkup, InlineKeyboardButton, 
     BotCommand, BotCommandScopeDefault, BotCommandScopeAllPrivateChats, 
@@ -191,7 +192,7 @@ async def strict_quiz_command_guard(update: Update, context: ContextTypes.DEFAUL
         return
 
     user = update.effective_user
-    log_user_activity_time(user.id, seconds=10)
+    asyncio.create_task(asyncio.to_thread(log_user_activity_time, user.id, 10))
     profile = get_user_profile(user.id)
 
     attempted_today = get_today_attempts(user.id)
@@ -231,7 +232,7 @@ async def myplan_command(update: Update, context: ContextTypes.DEFAULT_TYPE):
     if not await check_user_registration(update): return
 
     user = update.effective_user
-    log_user_activity_time(user.id, seconds=10)
+    asyncio.create_task(asyncio.to_thread(log_user_activity_time, user.id, 10))
     profile = get_user_profile(user.id)
 
     today_used = get_today_attempts(user.id)
@@ -273,7 +274,7 @@ async def plans_command(update: Update, context: ContextTypes.DEFAULT_TYPE):
     if not await check_user_registration(update): return
 
     user = update.effective_user
-    log_user_activity_time(user.id, seconds=10)
+    asyncio.create_task(asyncio.to_thread(log_user_activity_time, user.id, 10))
     profile = get_user_profile(user.id)
 
     keyboard = []
@@ -355,7 +356,7 @@ async def pdfreport_command(update: Update, context: ContextTypes.DEFAULT_TYPE):
     if not await check_user_registration(update): return
 
     user = update.effective_user
-    log_user_activity_time(user.id, seconds=10)
+    asyncio.create_task(asyncio.to_thread(log_user_activity_time, user.id, 10))
 
     buttons = InlineKeyboardMarkup([
         [InlineKeyboardButton("📋 1. Last 1 Month Full Data Report", callback_data="usergenpdf_last_1_month_data")],
@@ -383,7 +384,7 @@ async def wrongquestions_command(update: Update, context: ContextTypes.DEFAULT_T
     if not await check_user_registration(update): return
 
     user = update.effective_user
-    log_user_activity_time(user.id, seconds=10)
+    asyncio.create_task(asyncio.to_thread(log_user_activity_time, user.id, 10))
 
     conn = get_db()
     cursor = conn.cursor()
@@ -428,7 +429,7 @@ async def attemptedquestions_command(update: Update, context: ContextTypes.DEFAU
     if not await check_user_registration(update): return
 
     user = update.effective_user
-    log_user_activity_time(user.id, seconds=10)
+    asyncio.create_task(asyncio.to_thread(log_user_activity_time, user.id, 10))
 
     conn = get_db()
     cursor = conn.cursor()
@@ -472,7 +473,7 @@ async def unattemptedquestions_command(update: Update, context: ContextTypes.DEF
     if not await check_user_registration(update): return
 
     user = update.effective_user
-    log_user_activity_time(user.id, seconds=10)
+    asyncio.create_task(asyncio.to_thread(log_user_activity_time, user.id, 10))
 
     seen_ids = get_seen_question_ids(user.id)
     all_qs = fetch_pyqs_for_quiz(needed_count=1000, seen_ids=[])
@@ -551,7 +552,7 @@ async def help_command(update: Update, context: ContextTypes.DEFAULT_TYPE):
     if not await check_user_registration(update): return
     
     user = update.effective_user
-    log_user_activity_time(user.id, seconds=10)
+    asyncio.create_task(asyncio.to_thread(log_user_activity_time, user.id, 10))
 
     msg = (
         "🤖 **LEARN WITH HIM QUIZ BOOK — COMMAND DIRECTORY** 🤖\n"
@@ -577,7 +578,7 @@ async def saved_questions_command(update: Update, context: ContextTypes.DEFAULT_
     if not await check_user_registration(update): return
 
     user = update.effective_user
-    log_user_activity_time(user.id, seconds=10)
+    asyncio.create_task(asyncio.to_thread(log_user_activity_time, user.id, 10))
     saved = get_saved_questions(user.id)
     
     if not saved:
@@ -625,7 +626,7 @@ async def myprofile_command(update: Update, context: ContextTypes.DEFAULT_TYPE):
     if not await check_user_registration(update): return
 
     user = update.effective_user
-    log_user_activity_time(user.id, seconds=10)
+    asyncio.create_task(asyncio.to_thread(log_user_activity_time, user.id, 10))
     profile = get_user_profile(user.id)
 
     today_used = get_today_attempts(user.id)
@@ -670,7 +671,7 @@ async def wholestate_command(update: Update, context: ContextTypes.DEFAULT_TYPE)
     if not await check_user_registration(update): return
 
     user = update.effective_user
-    log_user_activity_time(user.id, seconds=10)
+    asyncio.create_task(asyncio.to_thread(log_user_activity_time, user.id, 10))
     profile = get_user_profile(user.id)
 
     perf = get_user_performance_summary(user.id)
@@ -703,7 +704,7 @@ async def toppers_command(update: Update, context: ContextTypes.DEFAULT_TYPE):
     if not await check_user_registration(update): return
 
     user = update.effective_user
-    log_user_activity_time(user.id, seconds=10)
+    asyncio.create_task(asyncio.to_thread(log_user_activity_time, user.id, 10))
     toppers = get_overall_leaderboard(limit=10)
     
     if not toppers:
@@ -724,7 +725,7 @@ async def feedback_command(update: Update, context: ContextTypes.DEFAULT_TYPE):
     if not await check_user_registration(update): return
 
     user = update.effective_user
-    log_user_activity_time(user.id, seconds=10)
+    asyncio.create_task(asyncio.to_thread(log_user_activity_time, user.id, 10))
 
     keyboard = [
         [InlineKeyboardButton("🌟 10/10 Quality Quizzes!", callback_data="fb_p1")],
@@ -747,7 +748,7 @@ async def viewfeedbacks_command(update: Update, context: ContextTypes.DEFAULT_TY
     if not await check_user_registration(update): return
 
     user = update.effective_user
-    log_user_activity_time(user.id, seconds=10)
+    asyncio.create_task(asyncio.to_thread(log_user_activity_time, user.id, 10))
     feedbacks = get_all_student_feedbacks(limit=15)
 
     if not feedbacks:
@@ -765,7 +766,7 @@ async def referral_command(update: Update, context: ContextTypes.DEFAULT_TYPE):
     if not await check_user_registration(update): return
 
     user = update.effective_user
-    log_user_activity_time(user.id, seconds=10)
+    asyncio.create_task(asyncio.to_thread(log_user_activity_time, user.id, 10))
     bot_username = context.bot.username
     ref_link = f"https://t.me/{bot_username}?start=ref_{user.id}"
 
@@ -784,7 +785,7 @@ async def button_router(update: Update, context: ContextTypes.DEFAULT_TYPE):
     query = update.callback_query
     data = query.data
     user = query.from_user
-    log_user_activity_time(user.id, seconds=5)
+    asyncio.create_task(asyncio.to_thread(log_user_activity_time, user.id, 5))
 
     if data == "trigger_start":
         await start_onboarding(update, context)
@@ -881,9 +882,8 @@ async def handle_text_messages(update: Update, context: ContextTypes.DEFAULT_TYP
         return
 
     if not await maintenance_guard(update, context): return
-    log_user_activity_time(user.id, seconds=10)
+    asyncio.create_task(asyncio.to_thread(log_user_activity_time, user.id, 10))
 
-    # Handle Admin Editing Student Name
     if user.id == PRIMARY_ADMIN_ID and context.user_data.get("awaiting_admin_editname"):
         target_uid = context.user_data.pop("awaiting_admin_editname")
         admin_update_user_name(target_uid, text)
@@ -967,9 +967,6 @@ async def post_init(application: Application):
         BotCommand("stop", "🛑 Stop Quiz Completely"),
         BotCommand("help", "🤖 Show Command Directory")
     ]
-    
-    await application.bot.set_my_commands(allowed_commands, scope=BotCommandScopeDefault())
-    await application.bot.set_my_commands(allowed_commands, scope=BotCommandScopeAllPrivateChats())
     
     await application.bot.set_my_commands(allowed_commands, scope=BotCommandScopeDefault())
     await application.bot.set_my_commands(allowed_commands, scope=BotCommandScopeAllPrivateChats())

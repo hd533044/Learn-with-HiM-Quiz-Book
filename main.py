@@ -4,6 +4,8 @@ import hashlib
 import json
 import logging
 import os
+import sys
+import socket
 import warnings
 from datetime import datetime, timedelta
 import pytz
@@ -33,6 +35,18 @@ logging.getLogger("httpx").setLevel(logging.WARNING)
 logging.getLogger("apscheduler").setLevel(logging.WARNING)
 logging.getLogger("telegram.ext").setLevel(logging.WARNING)
 logging.getLogger("aiohttp.access").setLevel(logging.WARNING)
+
+# SINGLE-INSTANCE SOCKET LOCK
+LOCK_SOCKET = None
+def ensure_single_instance():
+    global LOCK_SOCKET
+    try:
+        LOCK_SOCKET = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
+        # Bind to a local port to ensure only ONE python process runs on the host
+        LOCK_SOCKET.bind(("127.0.0.1", 47382))
+    except socket.error:
+        logging.error("⚠️ ANOTHER PROCESS IS ALREADY RUNNING LOCALLY! EXITING CONFLICTING INSTANCE.")
+        sys.exit(0)
 
 razorpay_client = None
 if HAS_RAZORPAY and RAZORPAY_KEY_ID and RAZORPAY_KEY_SECRET:
@@ -257,6 +271,7 @@ async def render_self_ping_loop():
                 pass
 
 async def run_bot():
+    ensure_single_instance()
     print("==================================================")
     print("  Learn with HiM Quiz Book Bot Engine")
     print("==================================================")
@@ -272,7 +287,6 @@ async def run_bot():
     
     await app.initialize()
     
-    # Drop pending updates and clear remote webhooks completely to avoid polling conflicts
     try:
         await app.bot.delete_webhook(drop_pending_updates=True)
         logging.info("Successfully cleared existing Telegram webhooks.")

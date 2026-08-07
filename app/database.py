@@ -48,10 +48,6 @@ class PostgresCursorWrapper:
         cols = [desc[0] for desc in self.cursor.description] if self.cursor.description else []
         return [PostgresRow(cols, r) for r in rows]
 
-    @property
-    def lastrowid(self):
-        return getattr(self.cursor, "lastrowid", None)
-
 class PostgresRow:
     def __init__(self, keys, values):
         self._data = dict(zip(keys, values))
@@ -73,16 +69,6 @@ class PostgresConnWrapper:
         self.conn.commit()
 
     def close(self):
-        self.conn.close()
-
-    def __enter__(self):
-        return self
-
-    def __exit__(self, exc_type, exc_val, exc_tb):
-        if exc_type:
-            self.conn.rollback()
-        else:
-            self.conn.commit()
         self.conn.close()
 
 def get_ist_now():
@@ -110,9 +96,7 @@ def get_db():
 def init_db():
     conn = get_db()
     cursor = conn.cursor()
-    
     is_postgres = HAS_PG and DATABASE_URL is not None and len(DATABASE_URL) > 0
-    
     id_pk = "SERIAL PRIMARY KEY" if is_postgres else "INTEGER PRIMARY KEY AUTOINCREMENT"
     bigint_t = "BIGINT" if is_postgres else "INTEGER"
     
@@ -204,13 +188,13 @@ def init_db():
         )
     ''')
     
-    cursor.execute('''
+    cursor.execute(f'''
         CREATE TABLE IF NOT EXISTS paused_quizzes (
             user_id {bigint_t} PRIMARY KEY,
             quiz_state TEXT,
             saved_at TEXT
         )
-    '''.format(bigint_t=bigint_t))
+    ''')
 
     cursor.execute(f'''
         CREATE TABLE IF NOT EXISTS user_activity_time (
@@ -266,56 +250,12 @@ def generate_student_id(full_name: str, dob_str: str) -> str:
     conn.close()
     return student_id
 
-def update_user_pin(user_id: int, new_pin: str):
-    conn = get_db()
-    cursor = conn.cursor()
-    cursor.execute("UPDATE users SET pin = ? WHERE user_id = ?", (new_pin, user_id))
-    conn.commit()
-    conn.close()
-    sync_user_json_profile(user_id)
-
-def update_user_sec_question(user_id: int, sec_q: str, sec_a: str):
-    conn = get_db()
-    cursor = conn.cursor()
-    cursor.execute("UPDATE users SET security_question = ?, security_answer = ? WHERE user_id = ?", (sec_q, sec_a, user_id))
-    conn.commit()
-    conn.close()
-    sync_user_json_profile(user_id)
-
-def can_user_edit_profile(user_id: int):
-    user = get_user_profile(user_id)
-    if not user or not user.get("last_profile_edit"):
-        return True, ""
-
-    try:
-        last_edit_str = user["last_profile_edit"]
-        last_edit_time = datetime.strptime(last_edit_str, "%Y-%m-%d %H:%M:%S IST")
-        last_edit_time = IST.localize(last_edit_time)
-        
-        now = get_ist_now()
-        time_diff = now - last_edit_time
-        
-        if time_diff < timedelta(hours=24):
-            remaining = timedelta(hours=24) - time_diff
-            hours, remainder = divmod(int(remaining.total_seconds()), 3600)
-            minutes, _ = divmod(remainder, 60)
-            return False, f"{hours}h {minutes}m"
-        return True, ""
-    except Exception as e:
-        logger.error(f"Error checking profile edit eligibility for {user_id}: {e}")
-        return True, ""
-
-def can_edit_profile(user_id: int):
-    return can_user_edit_profile(user_id)
-
 def save_user_profile(user_id, full_name, username, phone, target_exam, dob, age, gender, pin, sec_q, sec_a, country="India", state="N/A", referred_by=None):
     conn = get_db()
     cursor = conn.cursor()
     now_str = get_ist_timestamp_str()
     now_epoch = int(get_ist_now().timestamp())
-    
     student_id = generate_student_id(full_name, dob)
-
     demo_plan = PLAN_TIERS.get("FREE_DEMO", {"days": 2, "daily_limit": 20})
     demo_expiry = (datetime.now(IST) + timedelta(days=demo_plan["days"])).strftime("%Y-%m-%d %H:%M:%S IST")
 
@@ -324,48 +264,24 @@ def save_user_profile(user_id, full_name, username, phone, target_exam, dob, age
             INSERT INTO users (user_id, student_id, full_name, username, phone_number, target_exam, dob, age, gender, pin, security_question, security_answer, country, state, referred_by, paid_question_balance, vip_pass_expiry, demo_used, last_profile_edit, last_active, last_activity_epoch, is_banned, is_verified, created_at)
             VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, 1, ?, ?, ?, 0, 1, ?)
             ON CONFLICT (user_id) DO UPDATE SET
-                student_id=EXCLUDED.student_id,
-                full_name=EXCLUDED.full_name,
-                username=EXCLUDED.username,
-                phone_number=EXCLUDED.phone_number,
-                target_exam=EXCLUDED.target_exam,
-                dob=EXCLUDED.dob,
-                age=EXCLUDED.age,
-                gender=EXCLUDED.gender,
-                pin=EXCLUDED.pin,
-                security_question=EXCLUDED.security_question,
-                security_answer=EXCLUDED.security_answer,
-                country=EXCLUDED.country,
-                state=EXCLUDED.state,
-                last_profile_edit=EXCLUDED.last_profile_edit,
-                last_active=EXCLUDED.last_active,
-                last_activity_epoch=EXCLUDED.last_activity_epoch,
-                is_verified=1
+                student_id=EXCLUDED.student_id, full_name=EXCLUDED.full_name, username=EXCLUDED.username,
+                phone_number=EXCLUDED.phone_number, target_exam=EXCLUDED.target_exam, dob=EXCLUDED.dob,
+                age=EXCLUDED.age, gender=EXCLUDED.gender, pin=EXCLUDED.pin, security_question=EXCLUDED.security_question,
+                security_answer=EXCLUDED.security_answer, country=EXCLUDED.country, state=EXCLUDED.state,
+                last_profile_edit=EXCLUDED.last_profile_edit, last_active=EXCLUDED.last_active,
+                last_activity_epoch=EXCLUDED.last_activity_epoch, is_verified=1
         ''', (user_id, student_id, full_name, username, phone, target_exam, dob, age, gender, pin, sec_q, sec_a, country, state, referred_by, demo_plan["daily_limit"], demo_expiry, now_str, now_str, now_epoch, now_str))
     else:
         cursor.execute('''
             INSERT INTO users (user_id, student_id, full_name, username, phone_number, target_exam, dob, age, gender, pin, security_question, security_answer, country, state, referred_by, paid_question_balance, vip_pass_expiry, demo_used, last_profile_edit, last_active, last_activity_epoch, is_banned, is_verified, created_at)
             VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, 1, ?, ?, ?, 0, 1, ?)
             ON CONFLICT(user_id) DO UPDATE SET
-                student_id=excluded.student_id,
-                full_name=excluded.full_name,
-                username=excluded.username,
-                phone_number=excluded.phone_number,
-                target_exam=excluded.target_exam,
-                dob=excluded.dob,
-                age=excluded.age,
-                gender=excluded.gender,
-                pin=excluded.pin,
-                security_question=excluded.security_question,
-                security_answer=excluded.security_answer,
-                country=excluded.country,
-                state=excluded.state,
-                last_profile_edit=?,
-                last_active=?,
-                last_activity_epoch=?,
-                is_verified=1
+                student_id=excluded.student_id, full_name=excluded.full_name, username=excluded.username,
+                phone_number=excluded.phone_number, target_exam=excluded.target_exam, dob=excluded.dob,
+                age=excluded.age, gender=excluded.gender, pin=excluded.pin, security_question=excluded.security_question,
+                security_answer=excluded.security_answer, country=excluded.country, state=excluded.state,
+                last_profile_edit=?, last_active=?, last_activity_epoch=?, is_verified=1
         ''', (user_id, student_id, full_name, username, phone, target_exam, dob, age, gender, pin, sec_q, sec_a, country, state, referred_by, demo_plan["daily_limit"], demo_expiry, now_str, now_str, now_epoch, now_str, now_str, now_epoch, now_str))
-    
     conn.commit()
     conn.close()
     sync_user_json_profile(user_id)
@@ -378,13 +294,18 @@ def get_user_profile(user_id):
     conn.close()
     return dict(row) if row else None
 
-def get_all_users():
+def get_today_attempts(user_id):
     conn = get_db()
     cursor = conn.cursor()
-    cursor.execute("SELECT * FROM users ORDER BY created_at DESC")
-    rows = cursor.fetchall()
+    today_date = get_ist_date_str()
+    cursor.execute('''
+        SELECT SUM(questions_attempted) as total 
+        FROM quiz_attempts 
+        WHERE user_id = ? AND attempt_date = ?
+    ''', (user_id, today_date))
+    row = cursor.fetchone()
     conn.close()
-    return [dict(r) for r in rows]
+    return row['total'] if row and row['total'] else 0
 
 def refresh_user_activity_epoch(user_id: int):
     now_str = get_ist_timestamp_str()
@@ -400,11 +321,9 @@ def check_and_update_inactivity(user_id: int):
     if not user or not user.get("last_activity_epoch"):
         refresh_user_activity_epoch(user_id)
         return False, 0
-
     now_epoch = int(get_ist_now().timestamp())
     last_epoch = user.get("last_activity_epoch", 0)
     diff_sec = now_epoch - last_epoch
-
     refresh_user_activity_epoch(user_id)
     return False, diff_sec
 
@@ -422,7 +341,6 @@ def log_user_activity_time(user_id: int, seconds_spent: int = 10):
             ON CONFLICT (user_id, date_str) DO UPDATE SET
                 seconds_spent = user_activity_time.seconds_spent + EXCLUDED.seconds_spent
         ''', (user_id, dt_str, seconds_spent))
-        cursor.execute('UPDATE users SET last_active = ?, last_activity_epoch = ? WHERE user_id = ?', (now_str, now_epoch, user_id))
     else:
         cursor.execute('''
             INSERT INTO user_activity_time (user_id, date_str, seconds_spent)
@@ -430,108 +348,17 @@ def log_user_activity_time(user_id: int, seconds_spent: int = 10):
             ON CONFLICT(user_id, date_str) DO UPDATE SET
                 seconds_spent = seconds_spent + excluded.seconds_spent
         ''', (user_id, dt_str, seconds_spent))
-        cursor.execute('UPDATE users SET last_active = ?, last_activity_epoch = ? WHERE user_id = ?', (now_str, now_epoch, user_id))
-
+    cursor.execute('UPDATE users SET last_active = ?, last_activity_epoch = ? WHERE user_id = ?', (now_str, now_epoch, user_id))
     conn.commit()
     conn.close()
 
-def get_paid_users():
+def get_maintenance_until() -> int:
     conn = get_db()
     cursor = conn.cursor()
-    cursor.execute("SELECT * FROM users WHERE paid_question_balance > 20 ORDER BY paid_question_balance DESC")
-    rows = cursor.fetchall()
-    conn.close()
-    return [dict(r) for r in rows]
-
-def admin_delete_user_account(user_id: int):
-    conn = get_db()
-    cursor = conn.cursor()
-    cursor.execute("DELETE FROM users WHERE user_id = ?", (user_id,))
-    cursor.execute("DELETE FROM quiz_attempts WHERE user_id = ?", (user_id,))
-    cursor.execute("DELETE FROM seen_questions WHERE user_id = ?", (user_id,))
-    cursor.execute("DELETE FROM saved_questions WHERE user_id = ?", (user_id,))
-    cursor.execute("DELETE FROM student_feedback WHERE user_id = ?", (user_id,))
-    cursor.execute("DELETE FROM paused_quizzes WHERE user_id = ?", (user_id,))
-    cursor.execute("DELETE FROM user_activity_time WHERE user_id = ?", (user_id,))
-    conn.commit()
-    conn.close()
-
-def admin_toggle_ban(user_id: int, ban_status: int = 1):
-    conn = get_db()
-    cursor = conn.cursor()
-    cursor.execute("UPDATE users SET is_banned = ? WHERE user_id = ?", (ban_status, user_id))
-    conn.commit()
-    conn.close()
-    sync_user_json_profile(user_id)
-
-def toggle_user_ban_status(user_id: int):
-    user = get_user_profile(user_id)
-    if user:
-        new_ban = 0 if user.get("is_banned") else 1
-        admin_toggle_ban(user_id, new_ban)
-        return new_ban
-    return 0
-
-def admin_update_user_name(user_id: int, new_name: str):
-    conn = get_db()
-    cursor = conn.cursor()
-    cursor.execute("UPDATE users SET full_name = ? WHERE user_id = ?", (new_name, user_id))
-    conn.commit()
-    conn.close()
-    sync_user_json_profile(user_id)
-
-def admin_update_phone(user_id: int, new_phone: str):
-    conn = get_db()
-    cursor = conn.cursor()
-    cursor.execute("UPDATE users SET phone_number = ? WHERE user_id = ?", (new_phone, user_id))
-    conn.commit()
-    conn.close()
-    sync_user_json_profile(user_id)
-
-def admin_update_exam(user_id: int, new_exam: str):
-    conn = get_db()
-    cursor = conn.cursor()
-    cursor.execute("UPDATE users SET target_exam = ? WHERE user_id = ?", (new_exam, user_id))
-    conn.commit()
-    conn.close()
-    sync_user_json_profile(user_id)
-
-def admin_update_balance(user_id: int, new_balance: int):
-    conn = get_db()
-    cursor = conn.cursor()
-    cursor.execute("UPDATE users SET paid_question_balance = ? WHERE user_id = ?", (new_balance, user_id))
-    conn.commit()
-    conn.close()
-    sync_user_json_profile(user_id)
-
-def get_today_attempts(user_id):
-    conn = get_db()
-    cursor = conn.cursor()
-    today_date = get_ist_date_str()
-    cursor.execute('''
-        SELECT SUM(questions_attempted) as total 
-        FROM quiz_attempts 
-        WHERE user_id = ? AND attempt_date = ?
-    ''', (user_id, today_date))
+    cursor.execute("SELECT value FROM bot_settings WHERE key = 'maintenance_until'")
     row = cursor.fetchone()
     conn.close()
-    return row['total'] if row and row['total'] else 0
-
-def record_quiz_result(user_id, quiz_id="computer_awareness_mock", score=0.0, total_questions=0, correct_count=0, wrong_count=0, skipped_count=0, time_taken=0, question_details=None):
-    conn = get_db()
-    cursor = conn.cursor()
-    today_date = get_ist_date_str()
-    timestamp_str = get_ist_timestamp_str()
-    details_str = json.dumps(question_details) if question_details else json.dumps([])
-    
-    cursor.execute('''
-        INSERT INTO quiz_attempts (user_id, quiz_id, questions_attempted, total_questions, correct_answers, wrong_answers, skipped_count, score, time_taken, attempt_timestamp, attempt_date, details_json)
-        VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
-    ''', (user_id, quiz_id, total_questions, total_questions, correct_count, wrong_count, skipped_count, score, time_taken, timestamp_str, today_date, details_str))
-    conn.commit()
-    conn.close()
-    
-    sync_user_json_profile(user_id)
+    return int(row['value']) if row and str(row['value']).isdigit() else 0
 
 def get_seen_question_ids(user_id):
     conn = get_db()
@@ -606,17 +433,13 @@ def save_paused_quiz_state(user_id: int, quiz_state: dict):
         cursor.execute('''
             INSERT INTO paused_quizzes (user_id, quiz_state, saved_at)
             VALUES (?, ?, ?)
-            ON CONFLICT (user_id) DO UPDATE SET
-                quiz_state = EXCLUDED.quiz_state,
-                saved_at = EXCLUDED.saved_at
+            ON CONFLICT (user_id) DO UPDATE SET quiz_state = EXCLUDED.quiz_state, saved_at = EXCLUDED.saved_at
         ''', (user_id, json.dumps(quiz_state), now_str))
     else:
         cursor.execute('''
             INSERT INTO paused_quizzes (user_id, quiz_state, saved_at)
             VALUES (?, ?, ?)
-            ON CONFLICT(user_id) DO UPDATE SET
-                quiz_state = excluded.quiz_state,
-                saved_at = excluded.saved_at
+            ON CONFLICT(user_id) DO UPDATE SET quiz_state = excluded.quiz_state, saved_at = excluded.saved_at
         ''', (user_id, json.dumps(quiz_state), now_str))
     conn.commit()
     conn.close()
@@ -636,188 +459,118 @@ def clear_paused_quiz_state(user_id: int):
     conn.commit()
     conn.close()
 
-def set_maintenance_until(epoch_timestamp: int):
+def record_quiz_result(user_id, quiz_id="computer_awareness_mock", score=0.0, total_questions=0, correct_count=0, wrong_count=0, skipped_count=0, time_taken=0, question_details=None):
     conn = get_db()
     cursor = conn.cursor()
-    cursor.execute("UPDATE bot_settings SET value = ? WHERE key = 'maintenance_until'", (str(epoch_timestamp),))
-    conn.commit()
-    conn.close()
-
-def get_maintenance_until() -> int:
-    conn = get_db()
-    cursor = conn.cursor()
-    cursor.execute("SELECT value FROM bot_settings WHERE key = 'maintenance_until'")
-    row = cursor.fetchone()
-    conn.close()
-    return int(row['value']) if row and row['value'].isdigit() else 0
-
-def record_payment_transaction(user_id: int, plan_key: str, amount: int, payment_id: str):
-    conn = get_db()
-    cursor = conn.cursor()
-    now_ist = get_ist_now()
-    dt_str = now_ist.strftime("%Y-%m-%d")
-    month_str = now_ist.strftime("%Y-%m")
-    ts_str = get_ist_timestamp_str()
-
+    today_date = get_ist_date_str()
+    timestamp_str = get_ist_timestamp_str()
+    details_str = json.dumps(question_details) if question_details else json.dumps([])
     cursor.execute('''
-        INSERT INTO payment_transactions (user_id, plan_key, amount, payment_id, txn_date, txn_month, timestamp_str)
-        VALUES (?, ?, ?, ?, ?, ?, ?)
-    ''', (user_id, plan_key, amount, payment_id, dt_str, month_str, ts_str))
+        INSERT INTO quiz_attempts (user_id, quiz_id, questions_attempted, total_questions, correct_answers, wrong_answers, skipped_count, score, time_taken, attempt_timestamp, attempt_date, details_json)
+        VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
+    ''', (user_id, quiz_id, total_questions, total_questions, correct_count, wrong_count, skipped_count, score, time_taken, timestamp_str, today_date, details_str))
     conn.commit()
     conn.close()
-
-def get_earnings_analytics():
-    conn = get_db()
-    cursor = conn.cursor()
-    cursor.execute("SELECT SUM(amount) as total_amt, COUNT(id) as total_cnt FROM payment_transactions")
-    row_total = cursor.fetchone()
-    total_rev = row_total['total_amt'] if row_total and row_total['total_amt'] else 0
-    total_cnt = row_total['total_cnt'] if row_total and row_total['total_cnt'] else 0
-
-    cursor.execute("SELECT txn_date, SUM(amount) as sum_amt, COUNT(id) as cnt FROM payment_transactions GROUP BY txn_date ORDER BY txn_date DESC LIMIT 30")
-    rows_daily = cursor.fetchall()
-    daily_map = {r['txn_date']: {"amount": r['sum_amt'], "count": r['cnt']} for r in rows_daily}
-
-    cursor.execute("SELECT txn_month, SUM(amount) as sum_amt, COUNT(id) as cnt FROM payment_transactions GROUP BY txn_month ORDER BY txn_month DESC LIMIT 12")
-    rows_monthly = cursor.fetchall()
-    monthly_map = {r['txn_month']: {"amount": r['sum_amt'], "count": r['cnt']} for r in rows_monthly}
-
-    conn.close()
-    return {
-        "total_revenue": total_rev,
-        "total_transactions": total_cnt,
-        "daily_breakdown": daily_map,
-        "monthly_breakdown": monthly_map
-    }
+    sync_user_json_profile(user_id)
 
 def sync_user_json_profile(user_id: int):
-    conn = get_db()
-    cursor = conn.cursor()
-    
-    cursor.execute("SELECT * FROM users WHERE user_id = ?", (user_id,))
-    user_row = cursor.fetchone()
-    if not user_row:
-        conn.close()
-        return
-
-    user_dict = dict(user_row)
-    student_id = user_dict.get("student_id") or f"USER_{user_id}"
-
-    cursor.execute("SELECT * FROM quiz_attempts WHERE user_id = ? ORDER BY id DESC", (user_id,))
-    attempts_rows = cursor.fetchall()
-    
-    cursor.execute("SELECT * FROM saved_questions WHERE user_id = ? ORDER BY id DESC", (user_id,))
-    saved_rows = cursor.fetchall()
-
-    cursor.execute("SELECT * FROM student_feedback WHERE user_id = ? ORDER BY id DESC", (user_id,))
-    feedback_rows = cursor.fetchall()
-
-    cursor.execute("SELECT date_str, seconds_spent FROM user_activity_time WHERE user_id = ? ORDER BY date_str DESC", (user_id,))
-    time_rows = cursor.fetchall()
-    conn.close()
-
-    formatted_attempts = []
-    datewise_quiz_summary = {}
-    daily_questions_count = {}
-
-    for a in attempts_rows:
-        ad = dict(a)
-        if ad.get("details_json"):
-            try:
-                ad["question_details"] = json.loads(ad["details_json"])
-            except Exception:
-                ad["question_details"] = []
-            del ad["details_json"]
-        formatted_attempts.append(ad)
-
-        dt = ad.get("attempt_date", "Unknown")
-        qs = ad.get("questions_attempted", 0)
-
-        daily_questions_count[dt] = daily_questions_count.get(dt, 0) + qs
-
-        if dt not in datewise_quiz_summary:
-            datewise_quiz_summary[dt] = {
-                "total_quizzes": 0,
-                "total_questions": 0,
-                "total_correct": 0,
-                "total_wrong": 0,
-                "total_score": 0.0,
-                "total_time_seconds": 0
-            }
-        
-        datewise_quiz_summary[dt]["total_quizzes"] += 1
-        datewise_quiz_summary[dt]["total_questions"] += qs
-        datewise_quiz_summary[dt]["total_correct"] += ad.get("correct_answers", 0)
-        datewise_quiz_summary[dt]["total_wrong"] += ad.get("wrong_answers", 0)
-        datewise_quiz_summary[dt]["total_score"] += ad.get("score", 0.0)
-        datewise_quiz_summary[dt]["total_time_seconds"] += ad.get("time_taken", 0)
-
-    formatted_saved_qs = []
-    datewise_saved_summary = {}
-    for s in saved_rows:
-        sd = dict(s)
-        if sd.get("options_json"):
-            try:
-                sd["options"] = json.loads(sd["options_json"])
-            except Exception:
-                sd["options"] = []
-            del sd["options_json"]
-        formatted_saved_qs.append(sd)
-
-        s_date = sd.get("saved_at", "").split(" ")[0] if sd.get("saved_at") else "Unknown"
-        datewise_saved_summary[s_date] = datewise_saved_summary.get(s_date, 0) + 1
-
-    activity_log = {r["date_str"]: f"{r['seconds_spent']} seconds ({round(r['seconds_spent']/60, 2)} mins)" for r in time_rows}
-    total_time_seconds = sum([r["seconds_spent"] for r in time_rows])
-
-    paid_balance = user_dict.get("paid_question_balance", 0)
-    vip_expiry = user_dict.get("vip_pass_expiry")
-    
-    sub_status = "FREE_TIER"
-    for p_key, p_val in PLAN_TIERS.items():
-        if p_val.get("daily_limit") == paid_balance and paid_balance > DAILY_QUESTION_LIMIT:
-            sub_status = p_key
-            break
-
-    profile_data = {
-        "student_id": student_id,
-        "registration_info": user_dict,
-        "bot_engagement_metrics": {
-            "last_login_timestamp": user_dict.get("last_active") or user_dict.get("created_at"),
-            "total_time_spent_overall": f"{total_time_seconds} seconds ({round(total_time_seconds/60, 2)} mins)",
-            "daily_spent_time_breakdown": activity_log,
-            "questions_attempted_per_day": daily_questions_count
-        },
-        "academic_summary": {
-            "total_quizzes_attempted": len(formatted_attempts),
-            "total_questions_attempted": sum([a.get("questions_attempted", 0) for a in formatted_attempts]),
-            "total_correct": sum([a.get("correct_answers", 0) for a in formatted_attempts]),
-            "total_wrong": sum([a.get("wrong_answers", 0) for a in formatted_attempts]),
-            "total_skipped": sum([a.get("skipped_count", 0) for a in formatted_attempts]),
-            "datewise_quiz_summary": datewise_quiz_summary
-        },
-        "saved_questions_ledger": {
-            "total_saved": len(formatted_saved_qs),
-            "datewise_saved_summary": datewise_saved_summary,
-            "saved_questions": formatted_saved_qs
-        },
-        "student_reviews_given": [dict(f) for f in feedback_rows],
-        "subscription_ledger": {
-            "status": sub_status,
-            "paid_question_balance": paid_balance,
-            "vip_pass_expiry": vip_expiry
-        },
-        "badges_and_achievements": {
-            "earned_badges": ["Early Learner", "Registered Scholar"],
-            "streak_days": len(daily_questions_count)
-        },
-        "full_quiz_history": formatted_attempts,
-        "last_synced": get_ist_timestamp_str()
-    }
-
-    filepath = os.path.join(USER_PROFILES_DIR, f"{student_id}.json")
     try:
+        conn = get_db()
+        cursor = conn.cursor()
+        cursor.execute("SELECT * FROM users WHERE user_id = ?", (user_id,))
+        user_row = cursor.fetchone()
+        if not user_row:
+            conn.close()
+            return
+
+        user_dict = dict(user_row)
+        student_id = user_dict.get("student_id") or f"USER_{user_id}"
+
+        cursor.execute("SELECT * FROM quiz_attempts WHERE user_id = ? ORDER BY id DESC", (user_id,))
+        attempts_rows = cursor.fetchall()
+        cursor.execute("SELECT * FROM saved_questions WHERE user_id = ? ORDER BY id DESC", (user_id,))
+        saved_rows = cursor.fetchall()
+        cursor.execute("SELECT * FROM student_feedback WHERE user_id = ? ORDER BY id DESC", (user_id,))
+        feedback_rows = cursor.fetchall()
+        cursor.execute("SELECT date_str, seconds_spent FROM user_activity_time WHERE user_id = ? ORDER BY date_str DESC", (user_id,))
+        time_rows = cursor.fetchall()
+        conn.close()
+
+        formatted_attempts = []
+        datewise_quiz_summary = {}
+        daily_questions_count = {}
+
+        for a in attempts_rows:
+            ad = dict(a)
+            if ad.get("details_json"):
+                try:
+                    ad["question_details"] = json.loads(ad["details_json"])
+                except Exception:
+                    ad["question_details"] = []
+                del ad["details_json"]
+            formatted_attempts.append(ad)
+
+            dt = ad.get("attempt_date", "Unknown")
+            qs = ad.get("questions_attempted", 0)
+            daily_questions_count[dt] = daily_questions_count.get(dt, 0) + qs
+
+            if dt not in datewise_quiz_summary:
+                datewise_quiz_summary[dt] = {
+                    "total_quizzes": 0, "total_questions": 0, "total_correct": 0,
+                    "total_wrong": 0, "total_score": 0.0, "total_time_seconds": 0
+                }
+            datewise_quiz_summary[dt]["total_quizzes"] += 1
+            datewise_quiz_summary[dt]["total_questions"] += qs
+            datewise_quiz_summary[dt]["total_correct"] += ad.get("correct_answers", 0)
+            datewise_quiz_summary[dt]["total_wrong"] += ad.get("wrong_answers", 0)
+            datewise_quiz_summary[dt]["total_score"] += ad.get("score", 0.0)
+
+        formatted_saved_qs = []
+        datewise_saved_summary = {}
+        for s in saved_rows:
+            sd = dict(s)
+            if sd.get("options_json"):
+                try:
+                    sd["options"] = json.loads(sd["options_json"])
+                except Exception:
+                    sd["options"] = []
+                del sd["options_json"]
+            formatted_saved_qs.append(sd)
+            s_date = sd.get("saved_at", "").split(" ")[0] if sd.get("saved_at") else "Unknown"
+            datewise_saved_summary[s_date] = datewise_saved_summary.get(s_date, 0) + 1
+
+        activity_log = {r["date_str"]: f"{r['seconds_spent']} seconds" for r in time_rows}
+        total_time_seconds = sum([r["seconds_spent"] for r in time_rows])
+
+        profile_data = {
+            "student_id": student_id,
+            "registration_info": user_dict,
+            "bot_engagement_metrics": {
+                "last_login_timestamp": user_dict.get("last_active") or user_dict.get("created_at"),
+                "total_time_spent_overall": f"{total_time_seconds} seconds",
+                "daily_spent_time_breakdown": activity_log,
+                "questions_attempted_per_day": daily_questions_count
+            },
+            "academic_summary": {
+                "total_quizzes_attempted": len(formatted_attempts),
+                "total_questions_attempted": sum([a.get("questions_attempted", 0) for a in formatted_attempts]),
+                "total_correct": sum([a.get("correct_answers", 0) for a in formatted_attempts]),
+                "total_wrong": sum([a.get("wrong_answers", 0) for a in formatted_attempts]),
+                "total_skipped": sum([a.get("skipped_count", 0) for a in formatted_attempts]),
+                "datewise_quiz_summary": datewise_quiz_summary
+            },
+            "saved_questions_ledger": {
+                "total_saved": len(formatted_saved_qs),
+                "datewise_saved_summary": datewise_saved_summary,
+                "saved_questions": formatted_saved_qs
+            },
+            "student_reviews_given": [dict(f) for f in feedback_rows],
+            "full_quiz_history": formatted_attempts,
+            "last_synced": get_ist_timestamp_str()
+        }
+
+        filepath = os.path.join(USER_PROFILES_DIR, f"{student_id}.json")
         with open(filepath, "w", encoding="utf-8") as f:
             json.dump(profile_data, f, indent=4, ensure_ascii=False)
     except Exception as e:
-        logger.error(f"Failed to sync JSON profile for student {student_id}: {e}")
+        logger.error(f"Failed to sync JSON profile for {user_id}: {e}")

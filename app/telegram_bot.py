@@ -61,7 +61,7 @@ def generate_razorpay_link_sync(user_id: int, plan_key: str) -> str:
     elif len(clean_phone) < 10:
         clean_phone = "9123456789"
 
-    base_render_url = (os.getenv("RENDER_EXTERNAL_URL") or "https://learn-with-him-quiz-book.onrender.com").rstrip("/")
+    base_render_url = (os.getenv("RENDER_EXTERNAL_URL") or "https://learnwithhimquiz.onrender.com").rstrip("/")
     callback_uri = f"{base_render_url}/razorpay-webhook?user_id={user_id}&plan_key={plan_key}"
 
     payload = {
@@ -773,8 +773,6 @@ async def referral_command(update: Update, context: ContextTypes.DEFAULT_TYPE):
     await send_response(update, msg)
 
 async def button_router(update: Update, context: ContextTypes.DEFAULT_TYPE):
-    if not await maintenance_guard(update, context): return
-
     query = update.callback_query
     data = query.data
     user = query.from_user
@@ -784,7 +782,8 @@ async def button_router(update: Update, context: ContextTypes.DEFAULT_TYPE):
         await start_onboarding(update, context)
         return
 
-    if not await check_user_registration(update): return
+    if not await check_user_registration(update): 
+        return
 
     if data in ("cmd_quiz", "cmd_start_fresh_quiz"):
         profile = get_user_profile(user.id)
@@ -967,8 +966,7 @@ def build_application() -> Application:
     init_db()
     app = Application.builder().token(BOT_TOKEN).post_init(post_init).build()
 
-    app.add_handler(get_onboarding_handler())
-    
+    # 1. REGISTER STANDARD COMMANDS AND ROUTERS FIRST
     app.add_handler(CommandHandler("quiz", strict_quiz_command_guard))
     app.add_handler(CommandHandler("myplan", myplan_command))
     app.add_handler(CommandHandler("plans", plans_command))
@@ -998,9 +996,11 @@ def build_application() -> Application:
     app.add_handler(CallbackQueryHandler(quiz_timer_callback, pattern="^qtimer_"))
     app.add_handler(CallbackQueryHandler(user_pdf_callback_handler, pattern="^usergenpdf_"))
     app.add_handler(CallbackQueryHandler(admin_callback_handler, pattern="^(admin_|audit_|genpdf_)"))
-    
     app.add_handler(CallbackQueryHandler(button_router))
 
+    # 2. REGISTER ONBOARDING CONVERSATION HANDLER AFTER
+    app.add_handler(get_onboarding_handler())
+    
     app.add_handler(MessageHandler(filters.TEXT & ~filters.COMMAND, handle_text_messages))
     app.add_handler(PollAnswerHandler(handle_poll_answer))
     app.add_error_handler(global_error_handler)

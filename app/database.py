@@ -97,7 +97,7 @@ def get_ist_timestamp_str():
 def get_db():
     if HAS_PG and DATABASE_URL:
         try:
-            conn = psycopg2.connect(DATABASE_URL)
+            conn = psycopg2.connect(DATABASE_URL, connect_timeout=10)
             return PostgresConnWrapper(conn)
         except Exception as e:
             logger.error(f"PostgreSQL Connection Error: {e}, falling back to local SQLite")
@@ -237,8 +237,6 @@ def init_db():
     
     conn.commit()
     conn.close()
-
-# --- ONBOARDING & PROFILE HELPERS ---
 
 def generate_student_id(full_name: str, dob_str: str) -> str:
     clean_name = "".join(filter(str.isalpha, full_name))
@@ -383,8 +381,6 @@ def get_all_users():
     conn.close()
     return [dict(r) for r in rows]
 
-# --- ACTIVITY & TIME TRACKER HELPERS ---
-
 def refresh_user_activity_epoch(user_id: int):
     now_str = get_ist_timestamp_str()
     now_epoch = int(get_ist_now().timestamp())
@@ -403,9 +399,6 @@ def check_and_update_inactivity(user_id: int):
     now_epoch = int(get_ist_now().timestamp())
     last_epoch = user.get("last_activity_epoch", 0)
     diff_sec = now_epoch - last_epoch
-
-    if diff_sec > 300:  # 5 Minutes Inactivity Threshold
-        return True, diff_sec
 
     refresh_user_activity_epoch(user_id)
     return False, diff_sec
@@ -436,8 +429,6 @@ def log_user_activity_time(user_id: int, seconds_spent: int = 10):
 
     conn.commit()
     conn.close()
-
-# --- ADMIN PANEL HELPERS ---
 
 def get_paid_users():
     conn = get_db()
@@ -507,8 +498,6 @@ def admin_update_balance(user_id: int, new_balance: int):
     conn.commit()
     conn.close()
     sync_user_json_profile(user_id)
-
-# --- QUIZ & ACADEMIC HELPERS ---
 
 def get_today_attempts(user_id):
     conn = get_db()

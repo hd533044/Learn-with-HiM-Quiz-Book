@@ -260,7 +260,6 @@ async def run_bot():
     print("  Learn with HiM Quiz Book Bot Engine")
     print("==================================================")
     
-    # Initialize database tables in Supabase
     init_db()
     
     await start_web_server()
@@ -271,11 +270,16 @@ async def run_bot():
     bot_app_instance = app
     
     await app.initialize()
-    # FORCE DELETE WEBHOOK TO ALLOW LONG POLLING TO WORK
-    await app.bot.delete_webhook(drop_pending_updates=True)
     
+    # AGGRESSIVE CONFLICT RESOLUTION: Drop pending updates and clear remote webhooks completely
+    try:
+        await app.bot.delete_webhook(drop_pending_updates=True)
+        logging.info("Successfully cleared existing Telegram webhooks.")
+    except Exception as e:
+        logging.warning(f"Could not clear webhook: {e}")
+
     await app.start()
-    await app.updater.start_polling(drop_pending_updates=True)
+    await app.updater.start_polling(drop_pending_updates=True, allowed_updates=Update.ALL_TYPES)
     print("  Bot is online, synchronized, and listening!")
     print("==================================================")
     

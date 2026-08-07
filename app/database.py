@@ -111,9 +111,14 @@ def init_db():
     conn = get_db()
     cursor = conn.cursor()
     
-    cursor.execute('''
+    is_postgres = HAS_PG and DATABASE_URL is not None and len(DATABASE_URL) > 0
+    
+    id_pk = "SERIAL PRIMARY KEY" if is_postgres else "INTEGER PRIMARY KEY AUTOINCREMENT"
+    bigint_t = "BIGINT" if is_postgres else "INTEGER"
+    
+    cursor.execute(f'''
         CREATE TABLE IF NOT EXISTS users (
-            user_id BIGINT PRIMARY KEY,
+            user_id {bigint_t} PRIMARY KEY,
             student_id TEXT UNIQUE,
             full_name TEXT,
             username TEXT,
@@ -127,7 +132,7 @@ def init_db():
             pin TEXT,
             security_question TEXT,
             security_answer TEXT,
-            referred_by BIGINT,
+            referred_by {bigint_t},
             referral_count INTEGER DEFAULT 0,
             bonus_quota INTEGER DEFAULT 0,
             paid_question_balance INTEGER DEFAULT 0,
@@ -135,17 +140,17 @@ def init_db():
             demo_used INTEGER DEFAULT 0,
             last_profile_edit TEXT,
             last_active TEXT,
-            last_activity_epoch BIGINT DEFAULT 0,
+            last_activity_epoch {bigint_t} DEFAULT 0,
             is_banned INTEGER DEFAULT 0,
             is_verified INTEGER DEFAULT 1,
             created_at TEXT
         )
     ''')
 
-    cursor.execute('''
+    cursor.execute(f'''
         CREATE TABLE IF NOT EXISTS quiz_attempts (
-            id SERIAL PRIMARY KEY,
-            user_id BIGINT,
+            id {id_pk},
+            user_id {bigint_t},
             quiz_id TEXT DEFAULT 'computer_awareness_mock',
             questions_attempted INTEGER DEFAULT 0,
             total_questions INTEGER DEFAULT 0,
@@ -160,20 +165,20 @@ def init_db():
         )
     ''')
 
-    cursor.execute('''
+    cursor.execute(f'''
         CREATE TABLE IF NOT EXISTS seen_questions (
-            id SERIAL PRIMARY KEY,
-            user_id BIGINT,
+            id {id_pk},
+            user_id {bigint_t},
             question_id TEXT,
             seen_at TEXT,
             UNIQUE(user_id, question_id)
         )
     ''')
 
-    cursor.execute('''
+    cursor.execute(f'''
         CREATE TABLE IF NOT EXISTS saved_questions (
-            id SERIAL PRIMARY KEY,
-            user_id BIGINT,
+            id {id_pk},
+            user_id {bigint_t},
             question_text TEXT,
             options_json TEXT,
             correct_option INTEGER,
@@ -182,10 +187,10 @@ def init_db():
         )
     ''')
 
-    cursor.execute('''
+    cursor.execute(f'''
         CREATE TABLE IF NOT EXISTS student_feedback (
-            id SERIAL PRIMARY KEY,
-            user_id BIGINT,
+            id {id_pk},
+            user_id {bigint_t},
             full_name TEXT,
             feedback_text TEXT,
             submitted_at TEXT
@@ -201,26 +206,26 @@ def init_db():
     
     cursor.execute('''
         CREATE TABLE IF NOT EXISTS paused_quizzes (
-            user_id BIGINT PRIMARY KEY,
+            user_id {bigint_t} PRIMARY KEY,
             quiz_state TEXT,
             saved_at TEXT
         )
-    ''')
+    '''.format(bigint_t=bigint_t))
 
-    cursor.execute('''
+    cursor.execute(f'''
         CREATE TABLE IF NOT EXISTS user_activity_time (
-            id SERIAL PRIMARY KEY,
-            user_id BIGINT,
+            id {id_pk},
+            user_id {bigint_t},
             date_str TEXT,
             seconds_spent INTEGER DEFAULT 0,
             UNIQUE(user_id, date_str)
         )
     ''')
 
-    cursor.execute('''
+    cursor.execute(f'''
         CREATE TABLE IF NOT EXISTS payment_transactions (
-            id SERIAL PRIMARY KEY,
-            user_id BIGINT,
+            id {id_pk},
+            user_id {bigint_t},
             plan_key TEXT,
             amount INTEGER,
             payment_id TEXT,
@@ -230,7 +235,7 @@ def init_db():
         )
     ''')
     
-    if DATABASE_URL and HAS_PG:
+    if is_postgres:
         cursor.execute("INSERT INTO bot_settings (key, value) VALUES ('maintenance_until', '0') ON CONFLICT (key) DO NOTHING")
     else:
         cursor.execute("INSERT OR IGNORE INTO bot_settings (key, value) VALUES ('maintenance_until', '0')")

@@ -213,20 +213,20 @@ async def run_bot():
     print("  Learn with HiM Quiz Book Bot Engine Starting...")
     print("==================================================")
     
-    # Non-blocking Database Initialization
+    # 1. Non-blocking DB Initialization
     try:
         init_db()
     except Exception as db_err:
         logging.error(f"Database initialization warning: {db_err}")
 
-    # Web Server Startup
+    # 2. Start Web Server First
     try:
         await start_web_server()
         asyncio.create_task(render_self_ping_loop())
     except Exception as web_err:
-        logging.error(f"Web server failed to start: {web_err}")
+        logging.error(f"Web server start warning: {web_err}")
 
-    # Bot Initialization & Safe Polling Start
+    # 3. Build & Initialize Application
     global bot_app_instance
     app = build_application()
     bot_app_instance = app
@@ -234,12 +234,13 @@ async def run_bot():
     await app.initialize()
     await app.start()
     
-    # Clear webhooks non-blockingly
+    # 4. Safe Webhook Deletion (Non-blocking)
     try:
-        await app.bot.delete_webhook(drop_pending_updates=True)
+        await asyncio.wait_for(app.bot.delete_webhook(drop_pending_updates=True), timeout=5.0)
     except Exception as e:
-        logging.warning(f"Webhook clear warning: {e}")
+        logging.warning(f"Could not clear webhooks (continuing anyway): {e}")
 
+    # 5. Start Polling Engine
     await app.updater.start_polling(drop_pending_updates=True, allowed_updates=Update.ALL_TYPES)
     print("==================================================")
     print("  Bot is online, synchronized, and listening!")

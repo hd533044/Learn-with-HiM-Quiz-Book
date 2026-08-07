@@ -35,7 +35,6 @@ def get_pause_resume_keyboard():
     ])
 
 def get_quizbook_nav_keyboard():
-    """Persistent inline navigation menu attached across all response screens."""
     return InlineKeyboardMarkup([
         [
             InlineKeyboardButton("❌ Wrong Qs", callback_data="cmd_wrong_qs"),
@@ -59,7 +58,11 @@ def get_quizbook_nav_keyboard():
     ])
 
 async def check_quiz_maintenance(update: Update) -> bool:
-    m_until = get_maintenance_until()
+    try:
+        m_until = get_maintenance_until()
+    except Exception:
+        m_until = 0
+
     if int(time.time()) < m_until:
         remaining_sec = m_until - int(time.time())
         mins_left = max(1, (remaining_sec + 59) // 60)
@@ -77,7 +80,7 @@ async def launch_quiz_setup(update: Update, context: ContextTypes.DEFAULT_TYPE):
 
     user = update.effective_user
     log_user_activity_time(user.id, seconds=10)
-    profile = await asyncio.to_thread(get_user_profile, user.id)
+    profile = await asyncio.to_thread(get_user_profile, user.id) or {}
     
     if not profile or not profile.get("is_verified"):
         await update.message.reply_text("⚠️ Please type /start to complete registration before attempting quizzes!")
@@ -85,9 +88,10 @@ async def launch_quiz_setup(update: Update, context: ContextTypes.DEFAULT_TYPE):
 
     attempted_today = await asyncio.to_thread(get_today_attempts, user.id)
     
-    paid_bal = profile.get("paid_question_balance", 0) or 0
+    paid_bal = profile.get("paid_question_balance") or 0
     base_limit = max(DAILY_QUESTION_LIMIT, paid_bal)
-    allowed_limit = 10000 if user.id == PRIMARY_ADMIN_ID else base_limit + profile.get("bonus_quota", 0)
+    bonus_q = profile.get("bonus_quota") or 0
+    allowed_limit = 10000 if user.id == PRIMARY_ADMIN_ID else base_limit + bonus_q
 
     if attempted_today >= allowed_limit:
         exhausted_msg = (
@@ -158,12 +162,13 @@ async def quiz_count_callback(update: Update, context: ContextTypes.DEFAULT_TYPE
     user_id = query.from_user.id
     log_user_activity_time(user_id, seconds=10)
     
-    profile = get_user_profile(user_id)
+    profile = get_user_profile(user_id) or {}
     attempted_today = get_today_attempts(user_id)
     
-    paid_bal = profile.get("paid_question_balance", 0) or 0 if profile else 0
+    paid_bal = profile.get("paid_question_balance") or 0
     base_limit = max(DAILY_QUESTION_LIMIT, paid_bal)
-    allowed_limit = 10000 if user_id == PRIMARY_ADMIN_ID else base_limit + (profile.get("bonus_quota", 0) if profile else 0)
+    bonus_q = profile.get("bonus_quota") or 0
+    allowed_limit = 10000 if user_id == PRIMARY_ADMIN_ID else base_limit + bonus_q
 
     if attempted_today >= allowed_limit:
         await query.answer("🛑 Daily Limit Exhausted!", show_alert=True)
@@ -204,12 +209,13 @@ async def quiz_timer_callback(update: Update, context: ContextTypes.DEFAULT_TYPE
     chat_id = query.message.chat_id
     log_user_activity_time(user_id, seconds=15)
     
-    profile = get_user_profile(user_id)
+    profile = get_user_profile(user_id) or {}
     attempted_today = get_today_attempts(user_id)
     
-    paid_bal = profile.get("paid_question_balance", 0) or 0 if profile else 0
+    paid_bal = profile.get("paid_question_balance") or 0
     base_limit = max(DAILY_QUESTION_LIMIT, paid_bal)
-    allowed_limit = 10000 if user_id == PRIMARY_ADMIN_ID else base_limit + (profile.get("bonus_quota", 0) if profile else 0)
+    bonus_q = profile.get("bonus_quota") or 0
+    allowed_limit = 10000 if user_id == PRIMARY_ADMIN_ID else base_limit + bonus_q
 
     if attempted_today >= allowed_limit:
         await query.answer("🛑 Daily Limit Exhausted!", show_alert=True)
@@ -457,7 +463,11 @@ async def stop_quiz_command(update: Update, context: ContextTypes.DEFAULT_TYPE):
         await update.message.reply_text(msg, reply_markup=get_quizbook_nav_keyboard(), parse_mode="Markdown")
 
 async def send_next_question(chat_id: int, user_id: int, context: ContextTypes.DEFAULT_TYPE):
-    m_until = get_maintenance_until()
+    try:
+        m_until = get_maintenance_until()
+    except Exception:
+        m_until = 0
+
     if int(time.time()) < m_until:
         await context.bot.send_message(chat_id=chat_id, text="🛠 **ADMIN HAS PAUSED THE SERVICE CURRENTLY**\nQuiz session paused!")
         return
@@ -561,7 +571,11 @@ async def handle_poll_answer(update: Update, context: ContextTypes.DEFAULT_TYPE)
     if user_id in TIMER_TASKS and not TIMER_TASKS[user_id].done():
         TIMER_TASKS[user_id].cancel()
 
-    m_until = get_maintenance_until()
+    try:
+        m_until = get_maintenance_until()
+    except Exception:
+        m_until = 0
+
     if int(time.time()) < m_until:
         await context.bot.send_message(chat_id=chat_id, text="🛠 **ADMIN HAS PAUSED THE SERVICE CURRENTLY**")
         return

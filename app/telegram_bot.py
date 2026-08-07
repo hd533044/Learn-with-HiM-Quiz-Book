@@ -52,11 +52,11 @@ def generate_razorpay_link_sync(user_id: int, plan_key: str) -> str:
     encoded_auth = base64.b64encode(auth_str.encode("ascii")).decode("ascii")
 
     try:
-        profile = get_user_profile(user_id)
+        profile = get_user_profile(user_id) or {}
     except Exception:
         profile = {}
         
-    raw_phone = str(profile.get("phone_number", "9123456789")) if profile else "9123456789"
+    raw_phone = str(profile.get("phone_number") or "9123456789")
     clean_phone = "".join(filter(str.isdigit, raw_phone))
     if len(clean_phone) > 10:
         clean_phone = clean_phone[-10:]
@@ -164,9 +164,10 @@ async def strict_quiz_command_guard(update: Update, context: ContextTypes.DEFAUL
     profile = get_user_profile(user.id) or {}
 
     attempted_today = get_today_attempts(user.id)
-    paid_bal = profile.get("paid_question_balance", 0) or 0
+    paid_bal = profile.get("paid_question_balance") or 0
     base_limit = max(DAILY_QUESTION_LIMIT, paid_bal)
-    allowed_limit = 10000 if user.id == PRIMARY_ADMIN_ID else base_limit + profile.get("bonus_quota", 0)
+    bonus_q = profile.get("bonus_quota") or 0
+    allowed_limit = 10000 if user.id == PRIMARY_ADMIN_ID else base_limit + bonus_q
 
     if attempted_today >= allowed_limit:
         limit_msg = (
@@ -202,9 +203,10 @@ async def myplan_command(update: Update, context: ContextTypes.DEFAULT_TYPE):
     profile = get_user_profile(user.id) or {}
 
     today_used = get_today_attempts(user.id)
-    paid_bal = profile.get("paid_question_balance", 0) or 0
+    paid_bal = profile.get("paid_question_balance") or 0
     base_limit = max(DAILY_QUESTION_LIMIT, paid_bal)
-    allowed_limit = 10000 if user.id == PRIMARY_ADMIN_ID else base_limit + profile.get("bonus_quota", 0)
+    bonus_q = profile.get("bonus_quota") or 0
+    allowed_limit = 10000 if user.id == PRIMARY_ADMIN_ID else base_limit + bonus_q
     remaining = max(0, allowed_limit - today_used)
 
     active_plan_name = "🎁 FREE DEMO PLAN"
@@ -465,8 +467,8 @@ async def user_pdf_callback_handler(update: Update, context: ContextTypes.DEFAUL
 
     pdf_file = generate_student_pdf_report(user_id, filter_mode)
     profile = get_user_profile(user_id) or {}
-    student_name = profile.get("full_name", "Student")
-    sid = profile.get("student_id", f"USER_{user_id}")
+    student_name = profile.get("full_name") or "Student"
+    sid = profile.get("student_id") or f"USER_{user_id}"
 
     if pdf_file == "NO_ATTEMPTS":
         nav = InlineKeyboardMarkup([[InlineKeyboardButton("📄 Back to PDF Center", callback_data="cmd_pdfreport")]])
@@ -586,30 +588,38 @@ async def myprofile_command(update: Update, context: ContextTypes.DEFAULT_TYPE):
     profile = get_user_profile(user.id) or {}
 
     today_used = get_today_attempts(user.id)
-    paid_bal = profile.get("paid_question_balance", 0) or 0
+    paid_bal = profile.get("paid_question_balance") or 0
     base_limit = max(DAILY_QUESTION_LIMIT, paid_bal)
-    allowed_limit = 10000 if user.id == PRIMARY_ADMIN_ID else base_limit + profile.get("bonus_quota", 0)
+    bonus_q = profile.get("bonus_quota") or 0
+    allowed_limit = 10000 if user.id == PRIMARY_ADMIN_ID else base_limit + bonus_q
 
     remaining = max(0, allowed_limit - today_used)
-    student_id = profile.get("student_id", f"USER_{user.id}")
+    student_id = profile.get("student_id") or f"USER_{user.id}"
     expiry = profile.get("vip_pass_expiry") or "N/A"
+    full_name = profile.get("full_name") or "N/A"
+    target_exam = profile.get("target_exam") or "N/A"
+    gender = profile.get("gender") or "N/A"
+    dob = profile.get("dob") or "N/A"
+    state = profile.get("state") or "N/A"
+    phone = profile.get("phone_number") or "N/A"
+    ref_count = profile.get("referral_count") or 0
 
     msg = (
         f"👤 **STUDENT PROFILE CARD** 👤\n"
         f"📚 **Learn with HiM Quiz Book**\n"
         f"━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\n"
-        f"• **Full Name:** {profile.get('full_name', 'N/A')}\n"
+        f"• **Full Name:** {full_name}\n"
         f"• **Student ID:** `{student_id}` 🪪\n"
         f"• **Telegram ID:** `{profile.get('user_id', user.id)}` 🆔\n"
-        f"• **Target Exam:** `{profile.get('target_exam', 'N/A')}` 🎯\n"
-        f"• **DOB / Gender:** `{profile.get('dob', 'N/A')}` / `{profile.get('gender', 'N/A')}` 🎂\n"
-        f"• **Location:** `{profile.get('state', 'N/A')}, India` 📍\n"
-        f"• **Phone:** `{profile.get('phone_number', 'N/A')}` 📱 *(Private)*\n\n"
+        f"• **Target Exam:** `{target_exam}` 🎯\n"
+        f"• **DOB / Gender:** `{dob}` / `{gender}` 🎂\n"
+        f"• **Location:** `{state}, India` 📍\n"
+        f"• **Phone:** `{phone}` 📱 *(Private)*\n\n"
         f"📊 **DAILY QUOTA & SUBSCRIPTION:**\n"
         f"• **Used Today:** `{today_used}` / `{allowed_limit}` Qs 🖥\n"
         f"• **Remaining Today:** `{remaining}` Qs ⚡\n"
         f"• **VIP Expiry:** `{expiry}`\n"
-        f"• **Referrals:** `{profile.get('referral_count', 0)}` / 4 friends 🤝\n"
+        f"• **Referrals:** `{ref_count}` / 4 friends 🤝\n"
         f"━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━"
     )
 
@@ -633,15 +643,15 @@ async def wholestate_command(update: Update, context: ContextTypes.DEFAULT_TYPE)
     perf = get_user_performance_summary(user.id)
     rank = calculate_user_rank(user.id)
     percentile = calculate_user_percentile(user.id)
-    student_id = profile.get("student_id", f"USER_{user.id}")
+    student_id = profile.get("student_id") or f"USER_{user.id}"
 
     msg = (
         f"🎓 **STUDENT ACADEMIC REPORT CARD** 🎓\n"
         f"━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\n"
-        f"👤 **Name:** {profile.get('full_name', 'N/A')}\n"
+        f"👤 **Name:** {profile.get('full_name') or 'N/A'}\n"
         f"🪪 **Student ID:** `{student_id}`\n"
-        f"🎯 **Target Exam:** `{profile.get('target_exam', 'N/A')}`\n"
-        f"📍 **Location:** `{profile.get('state', 'N/A')}, India` 🇮🇳\n\n"
+        f"🎯 **Target Exam:** `{profile.get('target_exam') or 'N/A'}`\n"
+        f"📍 **Location:** `{profile.get('state') or 'N/A'}, India` 🇮🇳\n\n"
         f"📈 **PERFORMANCE METRICS:**\n"
         f"• **Tests Completed:** `{perf.get('total_tests', 0)}` 📚\n"
         f"• **Questions Attempted:** `{perf.get('total_qs', 0)}` 🖥\n"
@@ -755,9 +765,10 @@ async def button_router(update: Update, context: ContextTypes.DEFAULT_TYPE):
         profile = get_user_profile(user.id) or {}
         attempted_today = get_today_attempts(user.id)
         
-        paid_bal = profile.get("paid_question_balance", 0) or 0
+        paid_bal = profile.get("paid_question_balance") or 0
         base_limit = max(DAILY_QUESTION_LIMIT, paid_bal)
-        allowed_limit = 10000 if user.id == PRIMARY_ADMIN_ID else base_limit + profile.get("bonus_quota", 0)
+        bonus_q = profile.get("bonus_quota") or 0
+        allowed_limit = 10000 if user.id == PRIMARY_ADMIN_ID else base_limit + bonus_q
 
         if attempted_today >= allowed_limit:
             await query.answer("🛑 Daily Limit Exhausted!", show_alert=True)

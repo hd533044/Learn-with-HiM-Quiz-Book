@@ -6,8 +6,7 @@ import urllib.request
 import base64
 from telegram import (
     Update, InlineKeyboardMarkup, InlineKeyboardButton, 
-    BotCommand, BotCommandScopeDefault, BotCommandScopeAllPrivateChats, 
-    BotCommandScopeAllGroupChats, ReplyKeyboardRemove
+    BotCommand, BotCommandScopeDefault, ReplyKeyboardRemove
 )
 from telegram.ext import (
     Application, CommandHandler, CallbackQueryHandler, PollAnswerHandler, 
@@ -119,7 +118,7 @@ async def check_user_registration(update: Update) -> bool:
     if not user:
         return False
     profile = get_user_profile(user.id)
-    if not profile or not profile.get("is_verified"):
+    if not profile:
         await send_registration_prompt(update)
         return False
 
@@ -167,9 +166,8 @@ async def strict_quiz_command_guard(update: Update, context: ContextTypes.DEFAUL
     if attempted_today >= allowed_limit:
         limit_msg = (
             f"🛑 **Daily Limit Exhausted!** 🛑\n\n"
-            f"You have reached your daily limit of `{allowed_limit}` questions for today (00:00 to 23:59).\n"
-            f"The `/quiz` command has been **deactivated** for your account until tomorrow.\n\n"
-            f"💡 **Upgrade Limit:** Unlock higher daily questions via **💳 VIP Payment Plans**!"
+            f"You have reached your daily limit of `{allowed_limit}` questions for today.\n"
+            f"Unlock higher limits via **💳 VIP Payment Plans**!"
         )
         keyboard = InlineKeyboardMarkup([
             [InlineKeyboardButton("💳 View VIP Payment Plans", callback_data="cmd_plans")],
@@ -220,9 +218,6 @@ async def myplan_command(update: Update, context: ContextTypes.DEFAULT_TYPE):
         f"📊 **Used Today:** `{today_used}` / `{allowed_limit}` Qs\n"
         f"🟢 **Remaining Today:** `{remaining}` Qs Available\n"
         f"⏳ **Pass Expiry Date:** `{expiry}`\n"
-        f"🎁 **Bonus Quota:** `+{profile.get('bonus_quota', 0)} Qs`\n"
-        f"━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\n"
-        f"💡 *Upgrade your daily limit anytime by choosing a VIP Pack below:*"
     )
 
     buttons = InlineKeyboardMarkup([
@@ -258,7 +253,7 @@ async def plans_command(update: Update, context: ContextTypes.DEFAULT_TYPE):
     msg = (
         f"👑 **LEARN WITH HIM QUIZ BOOK — VIP MEMBERSHIP PACKS** 👑\n"
         f"━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\n"
-        f"Select a pack below to pay securely and instantly unlock daily limit:"
+        f"Select a pack below to pay securely and instantly unlock daily limits:"
     )
 
     await send_response(update, msg, reply_markup=InlineKeyboardMarkup(keyboard))
@@ -741,6 +736,9 @@ async def referral_command(update: Update, context: ContextTypes.DEFAULT_TYPE):
 
 async def button_router(update: Update, context: ContextTypes.DEFAULT_TYPE):
     query = update.callback_query
+    if not query:
+        return
+    
     data = query.data
     user = query.from_user
     log_user_activity_time(user.id, seconds=5)
@@ -815,30 +813,16 @@ async def button_router(update: Update, context: ContextTypes.DEFAULT_TYPE):
         name = profile.get("full_name") if profile else user.full_name
         save_student_feedback(user.id, name, fb_text)
         await query.edit_message_text(f"🎉 **Thank you, {name}!** Your review has been saved:\n\n💬 *\"{fb_text}\"*", parse_mode="Markdown")
-
     elif data == "fb_custom":
         context.user_data["awaiting_custom_feedback"] = True
         await query.edit_message_text("✍️ Please reply with your custom feedback below:")
 
 async def handle_text_messages(update: Update, context: ContextTypes.DEFAULT_TYPE):
     user = update.effective_user
-    text = update.message.text.strip()
-
-    if context.user_data.get("is_account_locked"):
-        profile = get_user_profile(user.id)
-        if profile and profile.get("pin") == text:
-            context.user_data["is_account_locked"] = False
-            refresh_user_activity_epoch(user.id)
-            await update.message.reply_text("🔓 **ACCOUNT UNLOCKED SUCCESSFULLY!**\nYou may continue learning.", reply_markup=ReplyKeyboardRemove())
-        else:
-            rec_btn = InlineKeyboardMarkup([[InlineKeyboardButton("🔑 Reset Options", callback_data="login_forgot_pin")]])
-            await update.message.reply_text(
-                "❌ **INCORRECT PIN!**\n\nPlease enter your correct 4-digit secret PIN, or tap below to reset:",
-                reply_markup=rec_btn,
-                parse_mode="Markdown"
-            )
+    if not update.message or not update.message.text:
         return
-
+    text = update.message.text.strip()
+    
     if not await maintenance_guard(update, context): return
     log_user_activity_time(user.id, seconds=10)
 
@@ -871,11 +855,6 @@ async def handle_text_messages(update: Update, context: ContextTypes.DEFAULT_TYP
 
     if context.user_data.get("awaiting_custom_feedback"):
         context.user_data["awaiting_custom_feedback"] = False
-        
-        if any(bad_word in text.lower() for bad_word in NEGATIVE_WORDS):
-            await update.message.reply_text("🙏 Thank you for your feedback! We are working hard to improve your learning experience.", reply_markup=ReplyKeyboardRemove())
-            return
-
         profile = get_user_profile(user.id)
         name = profile.get("full_name") if profile else user.full_name
         save_student_feedback(user.id, name, text)
@@ -900,14 +879,13 @@ async def global_error_handler(update: object, context: ContextTypes.DEFAULT_TYP
 async def post_init(application: Application):
     try:
         await application.bot.delete_my_commands(scope=BotCommandScopeDefault())
-        await application.bot.delete_my_commands(scope=BotCommandScopeAllPrivateChats())
-        await application.bot.delete_my_commands(scope=BotCommandScopeAllGroupChats())
-    except Exception as e:
-        logging.warning(f"Note on command purge: {e}")
+    except Exception:
+        pass
 
     allowed_commands = [
         BotCommand("quiz", "🚀 Start Computer Quiz"),
         BotCommand("myplan", "💵 Subscriptions"),
+        BotCommand("plans", "💳 VIP Membership Plans"),
         BotCommand("pdfreport", "📄 Export Academic PDF Report"),
         BotCommand("wrongquestions", "❌ View Wrong Questions"),
         BotCommand("unattemptedquestions", "⏭️ View Unattempted Questions"),
@@ -925,9 +903,7 @@ async def post_init(application: Application):
         BotCommand("stop", "🛑 Stop Quiz Completely"),
         BotCommand("help", "🤖 Show Command Directory")
     ]
-    
     await application.bot.set_my_commands(allowed_commands, scope=BotCommandScopeDefault())
-    await application.bot.set_my_commands(allowed_commands, scope=BotCommandScopeAllPrivateChats())
 
 def build_application() -> Application:
     init_db()

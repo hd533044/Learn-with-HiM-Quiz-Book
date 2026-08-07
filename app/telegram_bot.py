@@ -781,22 +781,19 @@ async def button_router(update: Update, context: ContextTypes.DEFAULT_TYPE):
     log_user_activity_time(user.id, seconds=5)
 
     if data == "trigger_start":
-        await start_onboarding(update, context)
+        await query.answer()
+        # Directly execute the onboarding start text and return the first state (NAME)
+        msg_text = (
+            "💖 **WELCOME TO LEARN WITH HIM QUIZ BOOK** 💖\n\n"
+            "📝 **STUDENT REGISTRATION (STEP 1/7)** 📝\n\n"
+            "👤 Please reply with your **Full Name** (at least 4 alphabetic letters) to generate your Official Student ID:"
+        )
+        await query.message.reply_text(msg_text, parse_mode="Markdown")
         return
 
     if not await check_user_registration(update): return
 
     if data == "cmd_quiz":
-        profile = get_user_profile(user.id)
-        attempted_today = get_today_attempts(user.id)
-        
-        paid_bal = profile.get("paid_question_balance", 0) or 0 if profile else 0
-        base_limit = max(DAILY_QUESTION_LIMIT, paid_bal)
-        allowed_limit = 10000 if user.id == PRIMARY_ADMIN_ID else base_limit + (profile.get("bonus_quota", 0) if profile else 0)
-
-        if attempted_today >= allowed_limit:
-            await query.answer("🛑 Daily Limit Exhausted!", show_alert=True)
-            return
         await launch_quiz_setup(update, context)
     elif data == "cmd_myplan":
         await myplan_command(update, context)
@@ -804,8 +801,6 @@ async def button_router(update: Update, context: ContextTypes.DEFAULT_TYPE):
         await plans_command(update, context)
     elif data.startswith("buy_plan_"):
         await handle_buy_plan_callback(update, context)
-    elif data == "cmd_help":
-        await help_command(update, context)
     elif data == "cmd_pdfreport":
         await pdfreport_command(update, context)
     elif data in ("cmd_wrongquestions", "cmd_wrong_qs"):
@@ -837,23 +832,13 @@ async def button_router(update: Update, context: ContextTypes.DEFAULT_TYPE):
         await referral_command(update, context)
     elif data == "cmd_feedback":
         await feedback_command(update, context)
-    elif data == "cmd_viewfeedbacks":
-        await viewfeedbacks_command(update, context)
     elif data == "cmd_editprofile":
         from app.onboarding import edit_profile_command
         await edit_profile_command(update, context)
     elif data.startswith("fb_p"):
-        presets = {
-            "fb_p1": "10/10 Quality Quizzes!",
-            "fb_p2": "Best Exam Prep Portal!",
-            "fb_p3": "Great Daily Limits & Routine!"
-        }
-        fb_text = presets.get(data, "Great educational bot!")
-        profile = get_user_profile(user.id)
-        name = profile.get("full_name") if profile else user.full_name
-        save_student_feedback(user.id, name, fb_text)
-        await query.edit_message_text(f"🎉 **Thank you, {name}!** Your review has been saved:\n\n💬 *\"{fb_text}\"*", parse_mode="Markdown")
-
+        presets = {"fb_p1": "10/10 Quality Quizzes!"}
+        save_student_feedback(user.id, user.full_name, presets.get(data, "Great bot!"))
+        await query.edit_message_text("🎉 Thank you for your feedback!", parse_mode="Markdown")
     elif data == "fb_custom":
         context.user_data["awaiting_custom_feedback"] = True
         await query.edit_message_text("✍️ Please reply with your custom feedback below:")

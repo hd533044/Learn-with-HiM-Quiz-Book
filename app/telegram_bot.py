@@ -195,9 +195,9 @@ async def strict_quiz_command_guard(update: Update, context: ContextTypes.DEFAUL
     profile = get_user_profile(user.id)
 
     attempted_today = get_today_attempts(user.id)
-    paid_bal = profile.get("paid_question_balance", 0) or 0 if profile else 0
+    paid_bal = profile.get("paid_question_balance", 0) or 0
     base_limit = max(DAILY_QUESTION_LIMIT, paid_bal)
-    allowed_limit = 10000 if user.id == PRIMARY_ADMIN_ID else base_limit + (profile.get("bonus_quota", 0) if profile else 0)
+    allowed_limit = 10000 if user.id == PRIMARY_ADMIN_ID else base_limit + profile.get("bonus_quota", 0)
 
     if attempted_today >= allowed_limit:
         limit_msg = (
@@ -235,9 +235,9 @@ async def myplan_command(update: Update, context: ContextTypes.DEFAULT_TYPE):
     profile = get_user_profile(user.id)
 
     today_used = get_today_attempts(user.id)
-    paid_bal = profile.get("paid_question_balance", 0) or 0 if profile else 0
+    paid_bal = profile.get("paid_question_balance", 0) or 0
     base_limit = max(DAILY_QUESTION_LIMIT, paid_bal)
-    allowed_limit = 10000 if user.id == PRIMARY_ADMIN_ID else base_limit + (profile.get("bonus_quota", 0) if profile else 0)
+    allowed_limit = 10000 if user.id == PRIMARY_ADMIN_ID else base_limit + profile.get("bonus_quota", 0)
     remaining = max(0, allowed_limit - today_used)
 
     active_plan_name = "🎁 FREE DEMO PLAN"
@@ -246,7 +246,7 @@ async def myplan_command(update: Update, context: ContextTypes.DEFAULT_TYPE):
             active_plan_name = p_val.get("name")
             break
 
-    expiry = profile.get("vip_pass_expiry") or "N/A" if profile else "N/A"
+    expiry = profile.get("vip_pass_expiry") or "N/A"
 
     msg = (
         f"💳 **YOUR CURRENT SUBSCRIPTION PLAN** 💳\n"
@@ -256,7 +256,7 @@ async def myplan_command(update: Update, context: ContextTypes.DEFAULT_TYPE):
         f"📊 **Used Today:** `{today_used}` / `{allowed_limit}` Qs\n"
         f"🟢 **Remaining Today:** `{remaining}` Qs Available\n"
         f"⏳ **Pass Expiry Date:** `{expiry}`\n"
-        f"🎁 **Bonus Quota:** `+{profile.get('bonus_quota', 0) if profile else 0} Qs`\n"
+        f"🎁 **Bonus Quota:** `+{profile.get('bonus_quota', 0)} Qs`\n"
         f"━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\n"
         f"💡 *Upgrade your daily limit anytime by choosing a VIP Pack below:*"
     )
@@ -277,7 +277,7 @@ async def plans_command(update: Update, context: ContextTypes.DEFAULT_TYPE):
     profile = get_user_profile(user.id)
 
     keyboard = []
-    if not profile or not profile.get("demo_used"):
+    if not profile.get("demo_used"):
         keyboard.append([InlineKeyboardButton("🎁 FREE DEMO TRIAL (2 Days - 20 Qs/Day)", callback_data="buy_plan_FREE_DEMO")])
 
     keyboard.extend([
@@ -386,7 +386,10 @@ async def wrongquestions_command(update: Update, context: ContextTypes.DEFAULT_T
     log_user_activity_time(user.id, seconds=10)
 
     conn = get_db()
-    attempts = conn.execute("SELECT * FROM quiz_attempts WHERE user_id = ? ORDER BY id DESC LIMIT 5", (user.id,)).fetchall()
+    cursor = conn.cursor()
+    cursor.execute("SELECT * FROM quiz_attempts WHERE user_id = %s ORDER BY id DESC LIMIT 5", (user.id,))
+    attempts = cursor.fetchall()
+    cursor.close()
     conn.close()
 
     lines = [
@@ -428,7 +431,10 @@ async def attemptedquestions_command(update: Update, context: ContextTypes.DEFAU
     log_user_activity_time(user.id, seconds=10)
 
     conn = get_db()
-    attempts = conn.execute("SELECT * FROM quiz_attempts WHERE user_id = ? ORDER BY id DESC LIMIT 5", (user.id,)).fetchall()
+    cursor = conn.cursor()
+    cursor.execute("SELECT * FROM quiz_attempts WHERE user_id = %s ORDER BY id DESC LIMIT 5", (user.id,))
+    attempts = cursor.fetchall()
+    cursor.close()
     conn.close()
 
     lines = [
@@ -623,30 +629,30 @@ async def myprofile_command(update: Update, context: ContextTypes.DEFAULT_TYPE):
     profile = get_user_profile(user.id)
 
     today_used = get_today_attempts(user.id)
-    paid_bal = profile.get("paid_question_balance", 0) or 0 if profile else 0
+    paid_bal = profile.get("paid_question_balance", 0) or 0
     base_limit = max(DAILY_QUESTION_LIMIT, paid_bal)
-    allowed_limit = 10000 if user.id == PRIMARY_ADMIN_ID else base_limit + (profile.get("bonus_quota", 0) if profile else 0)
+    allowed_limit = 10000 if user.id == PRIMARY_ADMIN_ID else base_limit + profile.get("bonus_quota", 0)
 
     remaining = max(0, allowed_limit - today_used)
-    student_id = profile.get("student_id", f"USER_{user.id}") if profile else f"USER_{user.id}"
-    expiry = profile.get("vip_pass_expiry") or "N/A" if profile else "N/A"
+    student_id = profile.get("student_id", f"USER_{user.id}")
+    expiry = profile.get("vip_pass_expiry") or "N/A"
 
     msg = (
         f"👤 **STUDENT PROFILE CARD** 👤\n"
         f"📚 **Learn with HiM Quiz Book**\n"
         f"━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\n"
-        f"• **Full Name:** {profile['full_name'] if profile else user.full_name}\n"
+        f"• **Full Name:** {profile['full_name']}\n"
         f"• **Student ID:** `{student_id}` 🪪\n"
-        f"• **Telegram ID:** `{profile.get('user_id', user.id) if profile else user.id}` 🆔\n"
-        f"• **Target Exam:** `{profile.get('target_exam', 'N/A') if profile else 'N/A'}` 🎯\n"
-        f"• **DOB / Gender:** `{profile.get('dob', 'N/A') if profile else 'N/A'}` / `{profile.get('gender', 'N/A') if profile else 'N/A'}` 🎂\n"
-        f"• **Location:** `{profile.get('state', 'N/A') if profile else 'N/A'}, India` 📍\n"
-        f"• **Phone:** `{profile.get('phone_number', 'N/A') if profile else 'N/A'}` 📱 *(Private)*\n\n"
+        f"• **Telegram ID:** `{profile['user_id']}` 🆔\n"
+        f"• **Target Exam:** `{profile['target_exam']}` 🎯\n"
+        f"• **DOB / Gender:** `{profile.get('dob', 'N/A')}` / `{profile['gender']}` 🎂\n"
+        f"• **Location:** `{profile.get('state', 'N/A')}, India` 📍\n"
+        f"• **Phone:** `{profile['phone_number']}` 📱 *(Private)*\n\n"
         f"📊 **DAILY QUOTA & SUBSCRIPTION:**\n"
         f"• **Used Today:** `{today_used}` / `{allowed_limit}` Qs 🖥\n"
         f"• **Remaining Today:** `{remaining}` Qs ⚡\n"
         f"• **VIP Expiry:** `{expiry}`\n"
-        f"• **Referrals:** `{profile.get('referral_count', 0) if profile else 0}` / 4 friends 🤝\n"
+        f"• **Referrals:** `{profile.get('referral_count', 0)}` / 4 friends 🤝\n"
         f"━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━"
     )
 
@@ -657,7 +663,7 @@ async def myprofile_command(update: Update, context: ContextTypes.DEFAULT_TYPE):
         [InlineKeyboardButton("🤝 Invite Friends", callback_data="cmd_referral")]
     ]
 
-    await send_response(update, msg, reply_markup=buttons)
+    await send_response(update, msg, reply_markup=InlineKeyboardMarkup(buttons))
 
 async def wholestate_command(update: Update, context: ContextTypes.DEFAULT_TYPE):
     if not await maintenance_guard(update, context): return
@@ -670,15 +676,15 @@ async def wholestate_command(update: Update, context: ContextTypes.DEFAULT_TYPE)
     perf = get_user_performance_summary(user.id)
     rank = calculate_user_rank(user.id)
     percentile = calculate_user_percentile(user.id)
-    student_id = profile.get("student_id", f"USER_{user.id}") if profile else f"USER_{user.id}"
+    student_id = profile.get("student_id", f"USER_{user.id}")
 
     msg = (
         f"🎓 **STUDENT ACADEMIC REPORT CARD** 🎓\n"
         f"━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\n"
-        f"👤 **Name:** {profile['full_name'] if profile else user.full_name}\n"
+        f"👤 **Name:** {profile['full_name']}\n"
         f"🪪 **Student ID:** `{student_id}`\n"
-        f"🎯 **Target Exam:** `{profile.get('target_exam', 'N/A') if profile else 'N/A'}`\n"
-        f"📍 **Location:** `{profile.get('state', 'N/A') if profile else 'N/A'}, India` 🇮🇳\n\n"
+        f"🎯 **Target Exam:** `{profile['target_exam']}`\n"
+        f"📍 **Location:** `{profile.get('state', 'N/A')}, India` 🇮🇳\n\n"
         f"📈 **PERFORMANCE METRICS:**\n"
         f"• **Tests Completed:** `{perf.get('total_tests', 0)}` 📚\n"
         f"• **Questions Attempted:** `{perf.get('total_qs', 0)}` 🖥\n"
@@ -690,7 +696,7 @@ async def wholestate_command(update: Update, context: ContextTypes.DEFAULT_TYPE)
         [InlineKeyboardButton("🚀 Launch Quiz", callback_data="cmd_quiz"), InlineKeyboardButton("📄 PDF Report Center", callback_data="cmd_pdfreport")],
         [InlineKeyboardButton("🏆 Toppers Leaderboard", callback_data="cmd_toppers")]
     ]
-    await send_response(update, msg, reply_markup=buttons)
+    await send_response(update, msg, reply_markup=InlineKeyboardMarkup(buttons))
 
 async def toppers_command(update: Update, context: ContextTypes.DEFAULT_TYPE):
     if not await maintenance_guard(update, context): return
@@ -773,27 +779,30 @@ async def referral_command(update: Update, context: ContextTypes.DEFAULT_TYPE):
     await send_response(update, msg)
 
 async def button_router(update: Update, context: ContextTypes.DEFAULT_TYPE):
+    if not await maintenance_guard(update, context): return
+
     query = update.callback_query
-    if not query:
-        return
     data = query.data
     user = query.from_user
     log_user_activity_time(user.id, seconds=5)
 
     if data == "trigger_start":
-        await query.answer()
-        # Directly execute the onboarding start text and return the first state (NAME)
-        msg_text = (
-            "💖 **WELCOME TO LEARN WITH HIM QUIZ BOOK** 💖\n\n"
-            "📝 **STUDENT REGISTRATION (STEP 1/7)** 📝\n\n"
-            "👤 Please reply with your **Full Name** (at least 4 alphabetic letters) to generate your Official Student ID:"
-        )
-        await query.message.reply_text(msg_text, parse_mode="Markdown")
+        await start_onboarding(update, context)
         return
 
     if not await check_user_registration(update): return
 
     if data == "cmd_quiz":
+        profile = get_user_profile(user.id)
+        attempted_today = get_today_attempts(user.id)
+        
+        paid_bal = profile.get("paid_question_balance", 0) or 0 if profile else 0
+        base_limit = max(DAILY_QUESTION_LIMIT, paid_bal)
+        allowed_limit = 10000 if user.id == PRIMARY_ADMIN_ID else base_limit + (profile.get("bonus_quota", 0) if profile else 0)
+
+        if attempted_today >= allowed_limit:
+            await query.answer("🛑 Daily Limit Exhausted!", show_alert=True)
+            return
         await launch_quiz_setup(update, context)
     elif data == "cmd_myplan":
         await myplan_command(update, context)
@@ -801,13 +810,15 @@ async def button_router(update: Update, context: ContextTypes.DEFAULT_TYPE):
         await plans_command(update, context)
     elif data.startswith("buy_plan_"):
         await handle_buy_plan_callback(update, context)
+    elif data == "cmd_help":
+        await help_command(update, context)
     elif data == "cmd_pdfreport":
         await pdfreport_command(update, context)
-    elif data in ("cmd_wrongquestions", "cmd_wrong_qs"):
+    elif data == "cmd_wrongquestions":
         await wrongquestions_command(update, context)
-    elif data in ("cmd_attemptedquestions", "cmd_attempted_qs"):
+    elif data == "cmd_attemptedquestions":
         await attemptedquestions_command(update, context)
-    elif data in ("cmd_unattemptedquestions", "cmd_unattempted_qs"):
+    elif data == "cmd_unattemptedquestions":
         await unattemptedquestions_command(update, context)
     elif data == "cmd_pause_quiz":
         await pause_quiz_command(update, context)
@@ -832,13 +843,20 @@ async def button_router(update: Update, context: ContextTypes.DEFAULT_TYPE):
         await referral_command(update, context)
     elif data == "cmd_feedback":
         await feedback_command(update, context)
-    elif data == "cmd_editprofile":
-        from app.onboarding import edit_profile_command
-        await edit_profile_command(update, context)
+    elif data == "cmd_viewfeedbacks":
+        await viewfeedbacks_command(update, context)
     elif data.startswith("fb_p"):
-        presets = {"fb_p1": "10/10 Quality Quizzes!"}
-        save_student_feedback(user.id, user.full_name, presets.get(data, "Great bot!"))
-        await query.edit_message_text("🎉 Thank you for your feedback!", parse_mode="Markdown")
+        presets = {
+            "fb_p1": "10/10 Quality Quizzes!",
+            "fb_p2": "Best Exam Prep Portal!",
+            "fb_p3": "Great Daily Limits & Routine!"
+        }
+        fb_text = presets.get(data, "Great educational bot!")
+        profile = get_user_profile(user.id)
+        name = profile.get("full_name") if profile else user.full_name
+        save_student_feedback(user.id, name, fb_text)
+        await query.edit_message_text(f"🎉 **Thank you, {name}!** Your review has been saved:\n\n💬 *\"{fb_text}\"*", parse_mode="Markdown")
+
     elif data == "fb_custom":
         context.user_data["awaiting_custom_feedback"] = True
         await query.edit_message_text("✍️ Please reply with your custom feedback below:")
@@ -865,6 +883,7 @@ async def handle_text_messages(update: Update, context: ContextTypes.DEFAULT_TYP
     if not await maintenance_guard(update, context): return
     log_user_activity_time(user.id, seconds=10)
 
+    # Handle Admin Editing Student Name
     if user.id == PRIMARY_ADMIN_ID and context.user_data.get("awaiting_admin_editname"):
         target_uid = context.user_data.pop("awaiting_admin_editname")
         admin_update_user_name(target_uid, text)
@@ -931,7 +950,6 @@ async def post_init(application: Application):
     allowed_commands = [
         BotCommand("quiz", "🚀 Start Computer Quiz"),
         BotCommand("myplan", "💵 Subscriptions"),
-        BotCommand("plans", "💳 VIP Membership Plans"),
         BotCommand("pdfreport", "📄 Export Academic PDF Report"),
         BotCommand("wrongquestions", "❌ View Wrong Questions"),
         BotCommand("unattemptedquestions", "⏭️ View Unattempted Questions"),
@@ -952,12 +970,16 @@ async def post_init(application: Application):
     
     await application.bot.set_my_commands(allowed_commands, scope=BotCommandScopeDefault())
     await application.bot.set_my_commands(allowed_commands, scope=BotCommandScopeAllPrivateChats())
+    
+    await application.bot.set_my_commands(allowed_commands, scope=BotCommandScopeDefault())
+    await application.bot.set_my_commands(allowed_commands, scope=BotCommandScopeAllPrivateChats())
 
 def build_application() -> Application:
     init_db()
     app = Application.builder().token(BOT_TOKEN).post_init(post_init).build()
 
-    # 1. REGISTER STANDARD COMMANDS FIRST SO THEY NEVER GET BLOCKED BY CONVERSATION HANDLERS
+    app.add_handler(get_onboarding_handler())
+    
     app.add_handler(CommandHandler("quiz", strict_quiz_command_guard))
     app.add_handler(CommandHandler("myplan", myplan_command))
     app.add_handler(CommandHandler("plans", plans_command))
@@ -978,19 +1000,16 @@ def build_application() -> Application:
     app.add_handler(CommandHandler("viewfeedbacks", viewfeedbacks_command))
     app.add_handler(CommandHandler("help", help_command))
     app.add_handler(CommandHandler("invite", referral_command))
+    
     app.add_handler(CommandHandler("admin", admin_portal_command))
     app.add_handler(CommandHandler("admit", admin_portal_command))
 
-    # 2. REGISTER ALL CALLBACK QUERY HANDLERS BEFORE CONVERSATION HANDLER
     app.add_handler(CallbackQueryHandler(quiz_count_callback, pattern="^qcount_"))
     app.add_handler(CallbackQueryHandler(quiz_timer_callback, pattern="^qtimer_"))
     app.add_handler(CallbackQueryHandler(user_pdf_callback_handler, pattern="^usergenpdf_"))
     app.add_handler(CallbackQueryHandler(admin_callback_handler, pattern="^(admin_|audit_|genpdf_)"))
-    app.add_handler(CallbackQueryHandler(button_router))
+    app.add_handler(CallbackQueryHandler(button_router, pattern="^cmd_|^fb_|^trigger_start|^buy_plan_"))
 
-    # 3. REGISTER ONBOARDING CONVERSATION HANDLER AFTER COMMANDS
-    app.add_handler(get_onboarding_handler())
-    
     app.add_handler(MessageHandler(filters.TEXT & ~filters.COMMAND, handle_text_messages))
     app.add_handler(PollAnswerHandler(handle_poll_answer))
     app.add_error_handler(global_error_handler)

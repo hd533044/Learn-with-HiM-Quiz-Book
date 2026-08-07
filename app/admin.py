@@ -482,7 +482,10 @@ async def admin_callback_handler(update: Update, context: ContextTypes.DEFAULT_T
         u = get_user_profile(target_uid)
         
         conn = get_db()
-        rows = conn.execute("SELECT date_str, seconds_spent FROM user_activity_time WHERE user_id = ? ORDER BY date_str DESC", (target_uid,)).fetchall()
+        cursor = conn.cursor()
+        cursor.execute("SELECT date_str, seconds_spent FROM user_activity_time WHERE user_id = %s ORDER BY date_str DESC", (target_uid,))
+        rows = cursor.fetchall()
+        cursor.close()
         conn.close()
 
         total_sec = sum([r['seconds_spent'] for r in rows])
@@ -542,7 +545,10 @@ async def admin_callback_handler(update: Update, context: ContextTypes.DEFAULT_T
         u = get_user_profile(target_uid)
 
         conn = get_db()
-        attempts = conn.execute("SELECT * FROM quiz_attempts WHERE user_id = ? ORDER BY id DESC", (target_uid,)).fetchall()
+        cursor = conn.cursor()
+        cursor.execute("SELECT * FROM quiz_attempts WHERE user_id = %s ORDER BY id DESC", (target_uid,))
+        attempts = cursor.fetchall()
+        cursor.close()
         conn.close()
 
         lines = [
@@ -582,7 +588,10 @@ async def admin_callback_handler(update: Update, context: ContextTypes.DEFAULT_T
         u = get_user_profile(target_uid)
 
         conn = get_db()
-        attempts = conn.execute("SELECT * FROM quiz_attempts WHERE user_id = ? ORDER BY id DESC LIMIT 5", (target_uid,)).fetchall()
+        cursor = conn.cursor()
+        cursor.execute("SELECT * FROM quiz_attempts WHERE user_id = %s ORDER BY id DESC LIMIT 5", (target_uid,))
+        attempts = cursor.fetchall()
+        cursor.close()
         conn.close()
 
         lines = [
@@ -622,7 +631,10 @@ async def admin_callback_handler(update: Update, context: ContextTypes.DEFAULT_T
         u = get_user_profile(target_uid)
 
         conn = get_db()
-        attempts = conn.execute("SELECT * FROM quiz_attempts WHERE user_id = ? ORDER BY id DESC LIMIT 5", (target_uid,)).fetchall()
+        cursor = conn.cursor()
+        cursor.execute("SELECT * FROM quiz_attempts WHERE user_id = %s ORDER BY id DESC LIMIT 5", (target_uid,))
+        attempts = cursor.fetchall()
+        cursor.close()
         conn.close()
 
         lines = [
@@ -662,7 +674,10 @@ async def admin_callback_handler(update: Update, context: ContextTypes.DEFAULT_T
         u = get_user_profile(target_uid)
 
         conn = get_db()
-        saved = conn.execute("SELECT * FROM saved_questions WHERE user_id = ? ORDER BY id DESC", (target_uid,)).fetchall()
+        cursor = conn.cursor()
+        cursor.execute("SELECT * FROM saved_questions WHERE user_id = %s ORDER BY id DESC", (target_uid,))
+        saved = cursor.fetchall()
+        cursor.close()
         conn.close()
 
         lines = [
@@ -696,7 +711,10 @@ async def admin_callback_handler(update: Update, context: ContextTypes.DEFAULT_T
         u = get_user_profile(target_uid)
 
         conn = get_db()
-        fbs = conn.execute("SELECT * FROM student_feedback WHERE user_id = ? ORDER BY id DESC", (target_uid,)).fetchall()
+        cursor = conn.cursor()
+        cursor.execute("SELECT * FROM student_feedback WHERE user_id = %s ORDER BY id DESC", (target_uid,))
+        fbs = cursor.fetchall()
+        cursor.close()
         conn.close()
 
         lines = [
@@ -720,8 +738,10 @@ async def admin_callback_handler(update: Update, context: ContextTypes.DEFAULT_T
         await query.answer()
         target_uid = int(data.replace("audit_grant_", ""))
         conn = get_db()
-        conn.execute("UPDATE users SET bonus_quota = bonus_quota + 20 WHERE user_id = ?", (target_uid,))
+        cursor = conn.cursor()
+        cursor.execute("UPDATE users SET bonus_quota = bonus_quota + 20 WHERE user_id = %s", (target_uid,))
         conn.commit()
+        cursor.close()
         conn.close()
         sync_user_json_profile(target_uid)
 

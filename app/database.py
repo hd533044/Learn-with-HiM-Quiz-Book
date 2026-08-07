@@ -2,7 +2,6 @@ import json
 import os
 import logging
 import sqlite3
-import time
 from datetime import datetime, timedelta
 import pytz
 from app.config import (
@@ -20,24 +19,6 @@ if DATABASE_URL:
         HAS_PG = True
     except ImportError:
         HAS_PG = False
-
-# A PostgreSQL connection is opened for each database operation.  When the
-# Supabase host is temporarily unavailable, repeatedly waiting for the driver
-# timeout blocks the Telegram update loop and makes the bot look unresponsive.
-# Keep the timeout short and temporarily use the local fallback after a failed
-# connection attempt.  Supabase remains the preferred database and is retried
-# automatically after the cooldown.
-def _positive_int_env(name: str, default: int) -> int:
-    try:
-        return max(1, int(os.getenv(name, str(default))))
-    except (TypeError, ValueError):
-        logger.warning("Invalid %s value; using %s seconds", name, default)
-        return default
-
-
-PG_CONNECT_TIMEOUT_SECONDS = _positive_int_env("DATABASE_CONNECT_TIMEOUT", 3)
-PG_RETRY_COOLDOWN_SECONDS = _positive_int_env("DATABASE_RETRY_COOLDOWN", 60)
-_postgres_retry_after = 0.0
 
 class PostgresRow:
     def __init__(self, keys, values):
@@ -113,10 +94,6 @@ class PostgresConnWrapper:
             self.conn.commit()
         self.conn.close()
 
-def is_postgres_connection(conn) -> bool:
-    """Return whether *conn* is an active PostgreSQL connection wrapper."""
-    return isinstance(conn, PostgresConnWrapper)
-
 def get_ist_now():
     return datetime.now(IST)
 
@@ -127,25 +104,13 @@ def get_ist_timestamp_str():
     return get_ist_now().strftime("%Y-%m-%d %H:%M:%S IST")
 
 def get_db():
-    global _postgres_retry_after
-
     if HAS_PG and DATABASE_URL:
-        now = time.monotonic()
-        if now >= _postgres_retry_after:
-            try:
-                conn = psycopg2.connect(
-                    DATABASE_URL,
-                    connect_timeout=PG_CONNECT_TIMEOUT_SECONDS,
-                )
-                _postgres_retry_after = 0.0
-                return PostgresConnWrapper(conn)
-            except Exception as e:
-                _postgres_retry_after = now + PG_RETRY_COOLDOWN_SECONDS
-                logger.error(
-                    "PostgreSQL connection failed; using SQLite for the next %s seconds: %s",
-                    PG_RETRY_COOLDOWN_SECONDS,
-                    e,
-                )
+        try:
+            # Strict 3-second timeout prevents bot from hanging if Supabase lags
+            conn = psycopg2.connect(DATABASE_URL, connect_timeout=3)
+            return PostgresConnWrapper(conn)
+        except Exception as e:
+            logger.error(f"PostgreSQL Connection Error: {e}, falling back to local SQLite")
     
     conn = sqlite3.connect(DB_FILE)
     conn.row_factory = sqlite3.Row
@@ -156,10 +121,7 @@ def init_db():
         conn = get_db()
         cursor = conn.cursor()
         
-        # The configured backend and the connected backend can differ when a
-        # Supabase outage triggers the SQLite fallback.  Always generate SQL
-        # for the connection that was actually returned.
-        is_postgres = is_postgres_connection(conn)
+        is_postgres = HAS_PG and DATABASE_URL is not None and len(DATABASE_URL) > 0
         
         id_pk = "SERIAL PRIMARY KEY" if is_postgres else "INTEGER PRIMARY KEY AUTOINCREMENT"
         bigint_t = "BIGINT" if is_postgres else "INTEGER"
@@ -284,7 +246,10 @@ def init_db():
         ''')
         
         if is_postgres:
-            cursor.execute("INSERT INTO bot_settings (key, value) VALUES ('maintenance_until', '0') ON CONFLICT (key) DO NOTHING")
+            try:
+                cursor.execute("INSERT INTO bot_settings (key, value) VALUES ('maintenance_until', '0') ON CONFLICT (key) DO NOTHING")
+            except Exception:
+                pass
         else:
             cursor.execute("INSERT OR IGNORE INTO bot_settings (key, value) VALUES ('maintenance_until', '0')")
         
@@ -303,34 +268,43 @@ def generate_student_id(full_name: str, dob_str: str) -> str:
         dob_code = "010100"
     base_id = f"{prefix}{dob_code}"
     
-    conn = get_db()
-    cursor = conn.cursor()
-    student_id = base_id
-    counter = 1
-    while True:
-        cursor.execute("SELECT 1 FROM users WHERE student_id = ?", (student_id,))
-        if not cursor.fetchone():
-            break
-        student_id = f"{base_id}_{counter}"
-        counter += 1
-    conn.close()
-    return student_id
+    try:
+        conn = get_db()
+        cursor = conn.cursor()
+        student_id = base_id
+        counter = 1
+        while True:
+            cursor.execute("SELECT 1 FROM users WHERE student_id = ?", (student_id,))
+            if not cursor.fetchone():
+                break
+            student_id = f"{base_id}_{counter}"
+            counter += 1
+        conn.close()
+        return student_id
+    except Exception:
+        return base_id
 
 def update_user_pin(user_id: int, new_pin: str):
-    conn = get_db()
-    cursor = conn.cursor()
-    cursor.execute("UPDATE users SET pin = ? WHERE user_id = ?", (new_pin, user_id))
-    conn.commit()
-    conn.close()
-    sync_user_json_profile(user_id)
+    try:
+        conn = get_db()
+        cursor = conn.cursor()
+        cursor.execute("UPDATE users SET pin = ? WHERE user_id = ?", (new_pin, user_id))
+        conn.commit()
+        conn.close()
+        sync_user_json_profile(user_id)
+    except Exception as e:
+        logger.error(f"Error updating PIN: {e}")
 
 def update_user_sec_question(user_id: int, sec_q: str, sec_a: str):
-    conn = get_db()
-    cursor = conn.cursor()
-    cursor.execute("UPDATE users SET security_question = ?, security_answer = ? WHERE user_id = ?", (sec_q, sec_a, user_id))
-    conn.commit()
-    conn.close()
-    sync_user_json_profile(user_id)
+    try:
+        conn = get_db()
+        cursor = conn.cursor()
+        cursor.execute("UPDATE users SET security_question = ?, security_answer = ? WHERE user_id = ?", (sec_q, sec_a, user_id))
+        conn.commit()
+        conn.close()
+        sync_user_json_profile(user_id)
+    except Exception as e:
+        logger.error(f"Error updating security question: {e}")
 
 def can_user_edit_profile(user_id: int):
     user = get_user_profile(user_id)
@@ -349,7 +323,7 @@ def can_user_edit_profile(user_id: int):
             remaining = timedelta(hours=24) - time_diff
             hours, remainder = divmod(int(remaining.total_seconds()), 3600)
             minutes, _ = divmod(remainder, 60)
-            return False, f"{hours}h {minutes}m"
+            return False, f"{hours} hours and {minutes} minutes"
         return True, ""
     except Exception as e:
         logger.error(f"Error checking profile edit eligibility for {user_id}: {e}")
@@ -370,7 +344,7 @@ def save_user_profile(user_id, full_name, username, phone, target_exam, dob, age
         demo_plan = PLAN_TIERS.get("FREE_DEMO", {"days": 2, "daily_limit": 20})
         demo_expiry = (datetime.now(IST) + timedelta(days=demo_plan["days"])).strftime("%Y-%m-%d %H:%M:%S IST")
 
-        if is_postgres_connection(conn):
+        if DATABASE_URL and HAS_PG:
             cursor.execute('''
                 INSERT INTO users (user_id, student_id, full_name, username, phone_number, target_exam, dob, age, gender, pin, security_question, security_answer, country, state, referred_by, paid_question_balance, vip_pass_expiry, demo_used, last_profile_edit, last_active, last_activity_epoch, is_banned, is_verified, created_at)
                 VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, 1, ?, ?, ?, 0, 1, ?)
@@ -435,29 +409,40 @@ def row_to_dict(row):
     return row
 
 def get_user_profile(user_id):
-    conn = get_db()
-    cursor = conn.cursor()
-    cursor.execute("SELECT * FROM users WHERE user_id = ?", (user_id,))
-    row = cursor.fetchone()
-    conn.close()
-    return row_to_dict(row)
+    try:
+        conn = get_db()
+        cursor = conn.cursor()
+        cursor.execute("SELECT * FROM users WHERE user_id = ?", (user_id,))
+        row = cursor.fetchone()
+        conn.close()
+        return row_to_dict(row)
+    except Exception as e:
+        logger.error(f"Error getting profile for {user_id}: {e}")
+        return None
 
 def get_all_users():
-    conn = get_db()
-    cursor = conn.cursor()
-    cursor.execute("SELECT * FROM users ORDER BY created_at DESC")
-    rows = cursor.fetchall()
-    conn.close()
-    return [row_to_dict(r) for r in rows]
+    try:
+        conn = get_db()
+        cursor = conn.cursor()
+        cursor.execute("SELECT * FROM users ORDER BY created_at DESC")
+        rows = cursor.fetchall()
+        conn.close()
+        return [row_to_dict(r) for r in rows]
+    except Exception as e:
+        logger.error(f"Error getting all users: {e}")
+        return []
 
 def refresh_user_activity_epoch(user_id: int):
-    now_str = get_ist_timestamp_str()
-    now_epoch = int(get_ist_now().timestamp())
-    conn = get_db()
-    cursor = conn.cursor()
-    cursor.execute("UPDATE users SET last_active = ?, last_activity_epoch = ? WHERE user_id = ?", (now_str, now_epoch, user_id))
-    conn.commit()
-    conn.close()
+    try:
+        now_str = get_ist_timestamp_str()
+        now_epoch = int(get_ist_now().timestamp())
+        conn = get_db()
+        cursor = conn.cursor()
+        cursor.execute("UPDATE users SET last_active = ?, last_activity_epoch = ? WHERE user_id = ?", (now_str, now_epoch, user_id))
+        conn.commit()
+        conn.close()
+    except Exception as e:
+        logger.error(f"Error refreshing activity epoch: {e}")
 
 def check_and_update_inactivity(user_id: int):
     user = get_user_profile(user_id)
@@ -480,7 +465,7 @@ def log_user_activity_time(user_id: int, seconds_spent: int = 10):
         now_str = get_ist_timestamp_str()
         now_epoch = int(get_ist_now().timestamp())
 
-        if is_postgres_connection(conn):
+        if DATABASE_URL and HAS_PG:
             cursor.execute('''
                 INSERT INTO user_activity_time (user_id, date_str, seconds_spent)
                 VALUES (?, ?, ?)
@@ -503,33 +488,42 @@ def log_user_activity_time(user_id: int, seconds_spent: int = 10):
         logger.error(f"Error logging activity time for {user_id}: {e}")
 
 def get_paid_users():
-    conn = get_db()
-    cursor = conn.cursor()
-    cursor.execute("SELECT * FROM users WHERE paid_question_balance > 20 ORDER BY paid_question_balance DESC")
-    rows = cursor.fetchall()
-    conn.close()
-    return [row_to_dict(r) for r in rows]
+    try:
+        conn = get_db()
+        cursor = conn.cursor()
+        cursor.execute("SELECT * FROM users WHERE paid_question_balance > 20 ORDER BY paid_question_balance DESC")
+        rows = cursor.fetchall()
+        conn.close()
+        return [row_to_dict(r) for r in rows]
+    except Exception:
+        return []
 
 def admin_delete_user_account(user_id: int):
-    conn = get_db()
-    cursor = conn.cursor()
-    cursor.execute("DELETE FROM users WHERE user_id = ?", (user_id,))
-    cursor.execute("DELETE FROM quiz_attempts WHERE user_id = ?", (user_id,))
-    cursor.execute("DELETE FROM seen_questions WHERE user_id = ?", (user_id,))
-    cursor.execute("DELETE FROM saved_questions WHERE user_id = ?", (user_id,))
-    cursor.execute("DELETE FROM student_feedback WHERE user_id = ?", (user_id,))
-    cursor.execute("DELETE FROM paused_quizzes WHERE user_id = ?", (user_id,))
-    cursor.execute("DELETE FROM user_activity_time WHERE user_id = ?", (user_id,))
-    conn.commit()
-    conn.close()
+    try:
+        conn = get_db()
+        cursor = conn.cursor()
+        cursor.execute("DELETE FROM users WHERE user_id = ?", (user_id,))
+        cursor.execute("DELETE FROM quiz_attempts WHERE user_id = ?", (user_id,))
+        cursor.execute("DELETE FROM seen_questions WHERE user_id = ?", (user_id,))
+        cursor.execute("DELETE FROM saved_questions WHERE user_id = ?", (user_id,))
+        cursor.execute("DELETE FROM student_feedback WHERE user_id = ?", (user_id,))
+        cursor.execute("DELETE FROM paused_quizzes WHERE user_id = ?", (user_id,))
+        cursor.execute("DELETE FROM user_activity_time WHERE user_id = ?", (user_id,))
+        conn.commit()
+        conn.close()
+    except Exception as e:
+        logger.error(f"Error deleting user account: {e}")
 
 def admin_toggle_ban(user_id: int, ban_status: int = 1):
-    conn = get_db()
-    cursor = conn.cursor()
-    cursor.execute("UPDATE users SET is_banned = ? WHERE user_id = ?", (ban_status, user_id))
-    conn.commit()
-    conn.close()
-    sync_user_json_profile(user_id)
+    try:
+        conn = get_db()
+        cursor = conn.cursor()
+        cursor.execute("UPDATE users SET is_banned = ? WHERE user_id = ?", (ban_status, user_id))
+        conn.commit()
+        conn.close()
+        sync_user_json_profile(user_id)
+    except Exception as e:
+        logger.error(f"Error toggling ban: {e}")
 
 def toggle_user_ban_status(user_id: int):
     user = get_user_profile(user_id)
@@ -540,225 +534,207 @@ def toggle_user_ban_status(user_id: int):
     return 0
 
 def admin_update_user_name(user_id: int, new_name: str):
-    conn = get_db()
-    cursor = conn.cursor()
-    cursor.execute("UPDATE users SET full_name = ? WHERE user_id = ?", (new_name, user_id))
-    conn.commit()
-    conn.close()
-    sync_user_json_profile(user_id)
-
-def admin_update_phone(user_id: int, new_phone: str):
-    conn = get_db()
-    cursor = conn.cursor()
-    cursor.execute("UPDATE users SET phone_number = ? WHERE user_id = ?", (new_phone, user_id))
-    conn.commit()
-    conn.close()
-    sync_user_json_profile(user_id)
-
-def admin_update_exam(user_id: int, new_exam: str):
-    conn = get_db()
-    cursor = conn.cursor()
-    cursor.execute("UPDATE users SET target_exam = ? WHERE user_id = ?", (new_exam, user_id))
-    conn.commit()
-    conn.close()
-    sync_user_json_profile(user_id)
-
-def admin_update_balance(user_id: int, new_balance: int):
-    conn = get_db()
-    cursor = conn.cursor()
-    cursor.execute("UPDATE users SET paid_question_balance = ? WHERE user_id = ?", (new_balance, user_id))
-    conn.commit()
-    conn.close()
-    sync_user_json_profile(user_id)
+    try:
+        conn = get_db()
+        cursor = conn.cursor()
+        cursor.execute("UPDATE users SET full_name = ? WHERE user_id = ?", (new_name, user_id))
+        conn.commit()
+        conn.close()
+        sync_user_json_profile(user_id)
+    except Exception as e:
+        logger.error(f"Error updating name: {e}")
 
 def get_today_attempts(user_id):
-    conn = get_db()
-    cursor = conn.cursor()
-    today_date = get_ist_date_str()
-    cursor.execute('''
-        SELECT SUM(questions_attempted) as total 
-        FROM quiz_attempts 
-        WHERE user_id = ? AND attempt_date = ?
-    ''', (user_id, today_date))
-    row = cursor.fetchone()
-    conn.close()
-    d = row_to_dict(row)
-    return d['total'] if d and d.get('total') else 0
+    try:
+        conn = get_db()
+        cursor = conn.cursor()
+        today_date = get_ist_date_str()
+        cursor.execute('''
+            SELECT SUM(questions_attempted) as total 
+            FROM quiz_attempts 
+            WHERE user_id = ? AND attempt_date = ?
+        ''', (user_id, today_date))
+        row = cursor.fetchone()
+        conn.close()
+        d = row_to_dict(row)
+        return d['total'] if d and d.get('total') else 0
+    except Exception:
+        return 0
 
 def record_quiz_result(user_id, quiz_id="computer_awareness_mock", score=0.0, total_questions=0, correct_count=0, wrong_count=0, skipped_count=0, time_taken=0, question_details=None):
-    conn = get_db()
-    cursor = conn.cursor()
-    today_date = get_ist_date_str()
-    timestamp_str = get_ist_timestamp_str()
-    details_str = json.dumps(question_details) if question_details else json.dumps([])
-    
-    cursor.execute('''
-        INSERT INTO quiz_attempts (user_id, quiz_id, questions_attempted, total_questions, correct_answers, wrong_answers, skipped_count, score, time_taken, attempt_timestamp, attempt_date, details_json)
-        VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
-    ''', (user_id, quiz_id, total_questions, total_questions, correct_count, wrong_count, skipped_count, score, time_taken, timestamp_str, today_date, details_str))
-    conn.commit()
-    conn.close()
-    
-    sync_user_json_profile(user_id)
+    try:
+        conn = get_db()
+        cursor = conn.cursor()
+        today_date = get_ist_date_str()
+        timestamp_str = get_ist_timestamp_str()
+        details_str = json.dumps(question_details) if question_details else json.dumps([])
+        
+        cursor.execute('''
+            INSERT INTO quiz_attempts (user_id, quiz_id, questions_attempted, total_questions, correct_answers, wrong_answers, skipped_count, score, time_taken, attempt_timestamp, attempt_date, details_json)
+            VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
+        ''', (user_id, quiz_id, total_questions, total_questions, correct_count, wrong_count, skipped_count, score, time_taken, timestamp_str, today_date, details_str))
+        conn.commit()
+        conn.close()
+        sync_user_json_profile(user_id)
+    except Exception as e:
+        logger.error(f"Error recording quiz result: {e}")
 
 def get_seen_question_ids(user_id):
-    conn = get_db()
-    cursor = conn.cursor()
-    cursor.execute("SELECT question_id FROM seen_questions WHERE user_id = ?", (user_id,))
-    rows = cursor.fetchall()
-    conn.close()
-    return {str(row_to_dict(r)['question_id']) for r in rows}
+    try:
+        conn = get_db()
+        cursor = conn.cursor()
+        cursor.execute("SELECT question_id FROM seen_questions WHERE user_id = ?", (user_id,))
+        rows = cursor.fetchall()
+        conn.close()
+        return {str(row_to_dict(r)['question_id']) for r in rows}
+    except Exception:
+        return set()
 
 def mark_questions_as_seen(user_id, question_ids):
-    conn = get_db()
-    cursor = conn.cursor()
-    now_str = get_ist_timestamp_str()
-    for qid in question_ids:
-        if is_postgres_connection(conn):
-            cursor.execute("INSERT INTO seen_questions (user_id, question_id, seen_at) VALUES (?, ?, ?) ON CONFLICT (user_id, question_id) DO NOTHING", (user_id, str(qid), now_str))
-        else:
-            cursor.execute("INSERT OR IGNORE INTO seen_questions (user_id, question_id, seen_at) VALUES (?, ?, ?)", (user_id, str(qid), now_str))
-    conn.commit()
-    conn.close()
+    try:
+        conn = get_db()
+        cursor = conn.cursor()
+        now_str = get_ist_timestamp_str()
+        for qid in question_ids:
+            if DATABASE_URL and HAS_PG:
+                cursor.execute("INSERT INTO seen_questions (user_id, question_id, seen_at) VALUES (?, ?, ?) ON CONFLICT (user_id, question_id) DO NOTHING", (user_id, str(qid), now_str))
+            else:
+                cursor.execute("INSERT OR IGNORE INTO seen_questions (user_id, question_id, seen_at) VALUES (?, ?, ?)", (user_id, str(qid), now_str))
+        conn.commit()
+        conn.close()
+    except Exception as e:
+        logger.error(f"Error marking seen questions: {e}")
 
 def save_question_to_db(user_id: int, q_text: str, options: list, correct_option: int, explanation: str):
-    conn = get_db()
-    cursor = conn.cursor()
-    now_str = get_ist_timestamp_str()
     try:
+        conn = get_db()
+        cursor = conn.cursor()
+        now_str = get_ist_timestamp_str()
         cursor.execute('''
             INSERT INTO saved_questions (user_id, question_text, options_json, correct_option, explanation, saved_at)
             VALUES (?, ?, ?, ?, ?, ?)
         ''', (user_id, q_text, json.dumps(options), correct_option, explanation, now_str))
         conn.commit()
-        success = True
+        conn.close()
+        sync_user_json_profile(user_id)
+        return True
     except Exception:
-        success = False
-    conn.close()
-    sync_user_json_profile(user_id)
-    return success
+        return False
 
 def get_saved_questions(user_id: int):
-    conn = get_db()
-    cursor = conn.cursor()
-    cursor.execute("SELECT * FROM saved_questions WHERE user_id = ? ORDER BY id DESC", (user_id,))
-    rows = cursor.fetchall()
-    conn.close()
-    return [row_to_dict(r) for r in rows]
+    try:
+        conn = get_db()
+        cursor = conn.cursor()
+        cursor.execute("SELECT * FROM saved_questions WHERE user_id = ? ORDER BY id DESC", (user_id,))
+        rows = cursor.fetchall()
+        conn.close()
+        return [row_to_dict(r) for r in rows]
+    except Exception:
+        return []
 
 def save_student_feedback(user_id: int, full_name: str, feedback_text: str):
-    conn = get_db()
-    cursor = conn.cursor()
-    now_str = get_ist_timestamp_str()
-    cursor.execute('''
-        INSERT INTO student_feedback (user_id, full_name, feedback_text, submitted_at)
-        VALUES (?, ?, ?, ?)
-    ''', (user_id, full_name, feedback_text, now_str))
-    conn.commit()
-    conn.close()
-    sync_user_json_profile(user_id)
+    try:
+        conn = get_db()
+        cursor = conn.cursor()
+        now_str = get_ist_timestamp_str()
+        cursor.execute('''
+            INSERT INTO student_feedback (user_id, full_name, feedback_text, submitted_at)
+            VALUES (?, ?, ?, ?)
+        ''', (user_id, full_name, feedback_text, now_str))
+        conn.commit()
+        conn.close()
+        sync_user_json_profile(user_id)
+    except Exception as e:
+        logger.error(f"Error saving feedback: {e}")
 
 def get_all_student_feedbacks(limit: int = 15):
-    conn = get_db()
-    cursor = conn.cursor()
-    cursor.execute("SELECT full_name, feedback_text, submitted_at FROM student_feedback ORDER BY id DESC LIMIT ?", (limit,))
-    rows = cursor.fetchall()
-    conn.close()
-    return [row_to_dict(r) for r in rows]
+    try:
+        conn = get_db()
+        cursor = conn.cursor()
+        cursor.execute("SELECT full_name, feedback_text, submitted_at FROM student_feedback ORDER BY id DESC LIMIT ?", (limit,))
+        rows = cursor.fetchall()
+        conn.close()
+        return [row_to_dict(r) for r in rows]
+    except Exception:
+        return []
 
 def save_paused_quiz_state(user_id: int, quiz_state: dict):
-    conn = get_db()
-    cursor = conn.cursor()
-    now_str = get_ist_timestamp_str()
-    if is_postgres_connection(conn):
-        cursor.execute('''
-            INSERT INTO paused_quizzes (user_id, quiz_state, saved_at)
-            VALUES (?, ?, ?)
-            ON CONFLICT (user_id) DO UPDATE SET
-                quiz_state = EXCLUDED.quiz_state,
-                saved_at = EXCLUDED.saved_at
-        ''', (user_id, json.dumps(quiz_state), now_str))
-    else:
-        cursor.execute('''
-            INSERT INTO paused_quizzes (user_id, quiz_state, saved_at)
-            VALUES (?, ?, ?)
-            ON CONFLICT(user_id) DO UPDATE SET
-                quiz_state = excluded.quiz_state,
-                saved_at = excluded.saved_at
-        ''', (user_id, json.dumps(quiz_state), now_str))
-    conn.commit()
-    conn.close()
+    try:
+        conn = get_db()
+        cursor = conn.cursor()
+        now_str = get_ist_timestamp_str()
+        if DATABASE_URL and HAS_PG:
+            cursor.execute('''
+                INSERT INTO paused_quizzes (user_id, quiz_state, saved_at)
+                VALUES (?, ?, ?)
+                ON CONFLICT (user_id) DO UPDATE SET
+                    quiz_state = EXCLUDED.quiz_state,
+                    saved_at = EXCLUDED.saved_at
+            ''', (user_id, json.dumps(quiz_state), now_str))
+        else:
+            cursor.execute('''
+                INSERT INTO paused_quizzes (user_id, quiz_state, saved_at)
+                VALUES (?, ?, ?)
+                ON CONFLICT(user_id) DO UPDATE SET
+                    quiz_state = excluded.quiz_state,
+                    saved_at = excluded.saved_at
+            ''', (user_id, json.dumps(quiz_state), now_str))
+        conn.commit()
+        conn.close()
+    except Exception as e:
+        logger.error(f"Error saving paused quiz: {e}")
 
 def get_paused_quiz_state(user_id: int):
-    conn = get_db()
-    cursor = conn.cursor()
-    cursor.execute("SELECT quiz_state FROM paused_quizzes WHERE user_id = ?", (user_id,))
-    row = cursor.fetchone()
-    conn.close()
-    d = row_to_dict(row)
-    return json.loads(d['quiz_state']) if d and d.get('quiz_state') else None
+    try:
+        conn = get_db()
+        cursor = conn.cursor()
+        cursor.execute("SELECT quiz_state FROM paused_quizzes WHERE user_id = ?", (user_id,))
+        row = cursor.fetchone()
+        conn.close()
+        d = row_to_dict(row)
+        return json.loads(d['quiz_state']) if d and d.get('quiz_state') else None
+    except Exception:
+        return None
 
 def clear_paused_quiz_state(user_id: int):
-    conn = get_db()
-    cursor = conn.cursor()
-    cursor.execute("DELETE FROM paused_quizzes WHERE user_id = ?", (user_id,))
-    conn.commit()
-    conn.close()
-
-def set_maintenance_until(epoch_timestamp: int):
-    conn = get_db()
-    cursor = conn.cursor()
-    cursor.execute("UPDATE bot_settings SET value = ? WHERE key = 'maintenance_until'", (str(epoch_timestamp),))
-    conn.commit()
-    conn.close()
+    try:
+        conn = get_db()
+        cursor = conn.cursor()
+        cursor.execute("DELETE FROM paused_quizzes WHERE user_id = ?", (user_id,))
+        conn.commit()
+        conn.close()
+    except Exception:
+        pass
 
 def get_maintenance_until() -> int:
-    conn = get_db()
-    cursor = conn.cursor()
-    cursor.execute("SELECT value FROM bot_settings WHERE key = 'maintenance_until'")
-    row = cursor.fetchone()
-    conn.close()
-    d = row_to_dict(row)
-    return int(d['value']) if d and str(d.get('value', '')).isdigit() else 0
+    try:
+        conn = get_db()
+        cursor = conn.cursor()
+        cursor.execute("SELECT value FROM bot_settings WHERE key = 'maintenance_until'")
+        row = cursor.fetchone()
+        conn.close()
+        d = row_to_dict(row)
+        return int(d['value']) if d and str(d.get('value', '')).isdigit() else 0
+    except Exception:
+        return 0
 
 def record_payment_transaction(user_id: int, plan_key: str, amount: int, payment_id: str):
-    conn = get_db()
-    cursor = conn.cursor()
-    now_ist = get_ist_now()
-    dt_str = now_ist.strftime("%Y-%m-%d")
-    month_str = now_ist.strftime("%Y-%m")
-    ts_str = get_ist_timestamp_str()
+    try:
+        conn = get_db()
+        cursor = conn.cursor()
+        now_ist = get_ist_now()
+        dt_str = now_ist.strftime("%Y-%m-%d")
+        month_str = now_ist.strftime("%Y-%m")
+        ts_str = get_ist_timestamp_str()
 
-    cursor.execute('''
-        INSERT INTO payment_transactions (user_id, plan_key, amount, payment_id, txn_date, txn_month, timestamp_str)
-        VALUES (?, ?, ?, ?, ?, ?, ?)
-    ''', (user_id, plan_key, amount, payment_id, dt_str, month_str, ts_str))
-    conn.commit()
-    conn.close()
-
-def get_earnings_analytics():
-    conn = get_db()
-    cursor = conn.cursor()
-    cursor.execute("SELECT SUM(amount) as total_amt, COUNT(id) as total_cnt FROM payment_transactions")
-    row_total = row_to_dict(cursor.fetchone())
-    total_rev = row_total['total_amt'] if row_total and row_total.get('total_amt') else 0
-    total_cnt = row_total['total_cnt'] if row_total and row_total.get('total_cnt') else 0
-
-    cursor.execute("SELECT txn_date, SUM(amount) as sum_amt, COUNT(id) as cnt FROM payment_transactions GROUP BY txn_date ORDER BY txn_date DESC LIMIT 30")
-    rows_daily = [row_to_dict(r) for r in cursor.fetchall()]
-    daily_map = {r['txn_date']: {"amount": r['sum_amt'], "count": r['cnt']} for r in rows_daily}
-
-    cursor.execute("SELECT txn_month, SUM(amount) as sum_amt, COUNT(id) as cnt FROM payment_transactions GROUP BY txn_month ORDER BY txn_month DESC LIMIT 12")
-    rows_monthly = [row_to_dict(r) for r in cursor.fetchall()]
-    monthly_map = {r['txn_month']: {"amount": r['sum_amt'], "count": r['cnt']} for r in rows_monthly}
-
-    conn.close()
-    return {
-        "total_revenue": total_rev,
-        "total_transactions": total_cnt,
-        "daily_breakdown": daily_map,
-        "monthly_breakdown": monthly_map
-    }
+        cursor.execute('''
+            INSERT INTO payment_transactions (user_id, plan_key, amount, payment_id, txn_date, txn_month, timestamp_str)
+            VALUES (?, ?, ?, ?, ?, ?, ?)
+        ''', (user_id, plan_key, amount, payment_id, dt_str, month_str, ts_str))
+        conn.commit()
+        conn.close()
+    except Exception as e:
+        logger.error(f"Error recording payment: {e}")
 
 def sync_user_json_profile(user_id: int):
     try:

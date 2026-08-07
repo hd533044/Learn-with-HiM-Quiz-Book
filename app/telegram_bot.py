@@ -4,6 +4,7 @@ import json
 import os
 import urllib.request
 import base64
+import traceback
 from telegram import (
     Update, InlineKeyboardMarkup, InlineKeyboardButton, 
     BotCommand, BotCommandScopeDefault, ReplyKeyboardRemove
@@ -44,16 +45,18 @@ def generate_razorpay_link_sync(user_id: int, plan_key: str) -> str:
     key_secret = (os.getenv("RAZORPAY_KEY_SECRET") or RAZORPAY_KEY_SECRET or "").strip()
 
     if not key_id or not key_secret:
-        logging.error("[PAYMENT ERROR] Razorpay API keys are missing or unconfigured.")
         return None
 
     url = "https://api.razorpay.com/v1/payment_links"
     auth_str = f"{key_id}:{key_secret}"
     encoded_auth = base64.b64encode(auth_str.encode("ascii")).decode("ascii")
 
-    profile = get_user_profile(user_id)
+    try:
+        profile = get_user_profile(user_id)
+    except Exception:
+        profile = {}
+        
     raw_phone = str(profile.get("phone_number", "9123456789")) if profile else "9123456789"
-    
     clean_phone = "".join(filter(str.isdigit, raw_phone))
     if len(clean_phone) > 10:
         clean_phone = clean_phone[-10:]
@@ -81,23 +84,19 @@ def generate_razorpay_link_sync(user_id: int, plan_key: str) -> str:
         "callback_method": "get"
     }
 
-    req_data = json.dumps(payload).encode("utf-8")
-    req = urllib.request.Request(url, data=req_data, method="POST")
-    req.add_header("Authorization", f"Basic {encoded_auth}")
-    req.add_header("Content-Type", "application/json")
-
     try:
+        req_data = json.dumps(payload).encode("utf-8")
+        req = urllib.request.Request(url, data=req_data, method="POST")
+        req.add_header("Authorization", f"Basic {encoded_auth}")
+        req.add_header("Content-Type", "application/json")
         with urllib.request.urlopen(req, timeout=12) as response:
             res_body = response.read().decode("utf-8")
             res_json = json.loads(res_body)
             if response.status in (200, 201) and "short_url" in res_json:
                 return res_json["short_url"]
-            else:
-                logging.error(f"[RAZORPAY API FAIL RESPONSE] Status: {response.status}, Body: {res_body}")
-                return None
     except Exception as e:
         logging.error(f"[RAZORPAY EXCEPTION] {e}")
-        return None
+    return None
 
 async def send_registration_prompt(update: Update):
     msg = (
@@ -117,7 +116,12 @@ async def check_user_registration(update: Update) -> bool:
     user = update.effective_user
     if not user:
         return False
-    profile = get_user_profile(user.id)
+    try:
+        profile = get_user_profile(user.id)
+    except Exception as e:
+        logging.error(f"Database error in check_user_registration: {e}")
+        profile = None
+
     if not profile:
         await send_registration_prompt(update)
         return False
@@ -134,7 +138,11 @@ async def check_user_registration(update: Update) -> bool:
     return True
 
 async def maintenance_guard(update: Update, context: ContextTypes.DEFAULT_TYPE) -> bool:
-    m_until = get_maintenance_until()
+    try:
+        m_until = get_maintenance_until()
+    except Exception:
+        m_until = 0
+
     if int(time.time()) < m_until:
         remaining_sec = m_until - int(time.time())
         mins_left = max(1, (remaining_sec + 59) // 60)
@@ -148,15 +156,12 @@ async def maintenance_guard(update: Update, context: ContextTypes.DEFAULT_TYPE) 
     return True
 
 async def strict_quiz_command_guard(update: Update, context: ContextTypes.DEFAULT_TYPE):
-    if not await maintenance_guard(update, context): 
-        return
-
-    if not await check_user_registration(update):
-        return
+    if not await maintenance_guard(update, context): return
+    if not await check_user_registration(update): return
 
     user = update.effective_user
     log_user_activity_time(user.id, seconds=10)
-    profile = get_user_profile(user.id)
+    profile = get_user_profile(user.id) or {}
 
     attempted_today = get_today_attempts(user.id)
     paid_bal = profile.get("paid_question_balance", 0) or 0
@@ -194,7 +199,7 @@ async def myplan_command(update: Update, context: ContextTypes.DEFAULT_TYPE):
 
     user = update.effective_user
     log_user_activity_time(user.id, seconds=10)
-    profile = get_user_profile(user.id)
+    profile = get_user_profile(user.id) or {}
 
     today_used = get_today_attempts(user.id)
     paid_bal = profile.get("paid_question_balance", 0) or 0
@@ -233,7 +238,7 @@ async def plans_command(update: Update, context: ContextTypes.DEFAULT_TYPE):
 
     user = update.effective_user
     log_user_activity_time(user.id, seconds=10)
-    profile = get_user_profile(user.id)
+    profile = get_user_profile(user.id) or {}
 
     keyboard = []
     if not profile.get("demo_used"):
@@ -270,7 +275,7 @@ async def handle_buy_plan_callback(update: Update, context: ContextTypes.DEFAULT
         await query.message.reply_text("⚠️ Invalid plan selected.")
         return
 
-    profile = get_user_profile(user_id)
+    profile = get_user_profile(user_id) or {}
 
     if plan_key == "FREE_DEMO":
         if profile and profile.get("demo_used"):
@@ -330,11 +335,7 @@ async def pdfreport_command(update: Update, context: ContextTypes.DEFAULT_TYPE):
         f"✨ Select your preferred report format below to instantly generate and download your personal academic PDF report card:"
     )
 
-    if update.callback_query:
-        await update.callback_query.answer()
-        await update.callback_query.edit_message_text(msg, reply_markup=buttons, parse_mode="Markdown")
-    else:
-        await update.message.reply_text(msg, reply_markup=buttons, parse_mode="Markdown")
+    await send_response(update, msg, reply_markup=buttons)
 
 async def wrongquestions_command(update: Update, context: ContextTypes.DEFAULT_TYPE):
     if not await maintenance_guard(update, context): return
@@ -463,9 +464,9 @@ async def user_pdf_callback_handler(update: Update, context: ContextTypes.DEFAUL
     await query.edit_message_text("⏳ **Generating Your Custom PDF Report Card...**\nFormatting telemetry, tables, and compiling layout...", parse_mode="Markdown")
 
     pdf_file = generate_student_pdf_report(user_id, filter_mode)
-    profile = get_user_profile(user_id)
-    student_name = profile.get("full_name", "Student") if profile else "Student"
-    sid = profile.get("student_id", f"USER_{user_id}") if profile else f"USER_{user_id}"
+    profile = get_user_profile(user_id) or {}
+    student_name = profile.get("full_name", "Student")
+    sid = profile.get("student_id", f"USER_{user_id}")
 
     if pdf_file == "NO_ATTEMPTS":
         nav = InlineKeyboardMarkup([[InlineKeyboardButton("📄 Back to PDF Center", callback_data="cmd_pdfreport")]])
@@ -582,7 +583,7 @@ async def myprofile_command(update: Update, context: ContextTypes.DEFAULT_TYPE):
 
     user = update.effective_user
     log_user_activity_time(user.id, seconds=10)
-    profile = get_user_profile(user.id)
+    profile = get_user_profile(user.id) or {}
 
     today_used = get_today_attempts(user.id)
     paid_bal = profile.get("paid_question_balance", 0) or 0
@@ -597,13 +598,13 @@ async def myprofile_command(update: Update, context: ContextTypes.DEFAULT_TYPE):
         f"👤 **STUDENT PROFILE CARD** 👤\n"
         f"📚 **Learn with HiM Quiz Book**\n"
         f"━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\n"
-        f"• **Full Name:** {profile['full_name']}\n"
+        f"• **Full Name:** {profile.get('full_name', 'N/A')}\n"
         f"• **Student ID:** `{student_id}` 🪪\n"
-        f"• **Telegram ID:** `{profile['user_id']}` 🆔\n"
-        f"• **Target Exam:** `{profile['target_exam']}` 🎯\n"
-        f"• **DOB / Gender:** `{profile.get('dob', 'N/A')}` / `{profile['gender']}` 🎂\n"
+        f"• **Telegram ID:** `{profile.get('user_id', user.id)}` 🆔\n"
+        f"• **Target Exam:** `{profile.get('target_exam', 'N/A')}` 🎯\n"
+        f"• **DOB / Gender:** `{profile.get('dob', 'N/A')}` / `{profile.get('gender', 'N/A')}` 🎂\n"
         f"• **Location:** `{profile.get('state', 'N/A')}, India` 📍\n"
-        f"• **Phone:** `{profile['phone_number']}` 📱 *(Private)*\n\n"
+        f"• **Phone:** `{profile.get('phone_number', 'N/A')}` 📱 *(Private)*\n\n"
         f"📊 **DAILY QUOTA & SUBSCRIPTION:**\n"
         f"• **Used Today:** `{today_used}` / `{allowed_limit}` Qs 🖥\n"
         f"• **Remaining Today:** `{remaining}` Qs ⚡\n"
@@ -627,7 +628,7 @@ async def wholestate_command(update: Update, context: ContextTypes.DEFAULT_TYPE)
 
     user = update.effective_user
     log_user_activity_time(user.id, seconds=10)
-    profile = get_user_profile(user.id)
+    profile = get_user_profile(user.id) or {}
 
     perf = get_user_performance_summary(user.id)
     rank = calculate_user_rank(user.id)
@@ -637,9 +638,9 @@ async def wholestate_command(update: Update, context: ContextTypes.DEFAULT_TYPE)
     msg = (
         f"🎓 **STUDENT ACADEMIC REPORT CARD** 🎓\n"
         f"━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\n"
-        f"👤 **Name:** {profile['full_name']}\n"
+        f"👤 **Name:** {profile.get('full_name', 'N/A')}\n"
         f"🪪 **Student ID:** `{student_id}`\n"
-        f"🎯 **Target Exam:** `{profile['target_exam']}`\n"
+        f"🎯 **Target Exam:** `{profile.get('target_exam', 'N/A')}`\n"
         f"📍 **Location:** `{profile.get('state', 'N/A')}, India` 🇮🇳\n\n"
         f"📈 **PERFORMANCE METRICS:**\n"
         f"• **Tests Completed:** `{perf.get('total_tests', 0)}` 📚\n"
@@ -751,12 +752,12 @@ async def button_router(update: Update, context: ContextTypes.DEFAULT_TYPE):
         return
 
     if data in ("cmd_quiz", "cmd_start_fresh_quiz"):
-        profile = get_user_profile(user.id)
+        profile = get_user_profile(user.id) or {}
         attempted_today = get_today_attempts(user.id)
         
-        paid_bal = profile.get("paid_question_balance", 0) or 0 if profile else 0
+        paid_bal = profile.get("paid_question_balance", 0) or 0
         base_limit = max(DAILY_QUESTION_LIMIT, paid_bal)
-        allowed_limit = 10000 if user.id == PRIMARY_ADMIN_ID else base_limit + (profile.get("bonus_quota", 0) if profile else 0)
+        allowed_limit = 10000 if user.id == PRIMARY_ADMIN_ID else base_limit + profile.get("bonus_quota", 0)
 
         if attempted_today >= allowed_limit:
             await query.answer("🛑 Daily Limit Exhausted!", show_alert=True)
@@ -809,7 +810,7 @@ async def button_router(update: Update, context: ContextTypes.DEFAULT_TYPE):
             "fb_p3": "Great Daily Limits & Routine!"
         }
         fb_text = presets.get(data, "Great educational bot!")
-        profile = get_user_profile(user.id)
+        profile = get_user_profile(user.id) or {}
         name = profile.get("full_name") if profile else user.full_name
         save_student_feedback(user.id, name, fb_text)
         await query.edit_message_text(f"🎉 **Thank you, {name}!** Your review has been saved:\n\n💬 *\"{fb_text}\"*", parse_mode="Markdown")
@@ -855,7 +856,7 @@ async def handle_text_messages(update: Update, context: ContextTypes.DEFAULT_TYP
 
     if context.user_data.get("awaiting_custom_feedback"):
         context.user_data["awaiting_custom_feedback"] = False
-        profile = get_user_profile(user.id)
+        profile = get_user_profile(user.id) or {}
         name = profile.get("full_name") if profile else user.full_name
         save_student_feedback(user.id, name, text)
         await update.message.reply_text(f"🎉 **Feedback Received!** Thank you *{name}*:\n\n💬 *\"{text}\"*", reply_markup=ReplyKeyboardRemove(), parse_mode="Markdown")
@@ -874,7 +875,16 @@ async def handle_text_messages(update: Update, context: ContextTypes.DEFAULT_TYP
         await update.message.reply_text(f"✅ Announcement sent to {sent} users!", reply_markup=ReplyKeyboardRemove())
 
 async def global_error_handler(update: object, context: ContextTypes.DEFAULT_TYPE) -> None:
-    logging.debug(f"Exception caught in global error handler: {context.error}")
+    logging.error(f"Exception caught in global error handler: {context.error}")
+    traceback.print_exception(type(context.error), context.error, context.error.__traceback__)
+    if update and isinstance(update, Update) and update.effective_chat:
+        try:
+            await context.bot.send_message(
+                chat_id=update.effective_chat.id,
+                text="⚠️ An unexpected error occurred while processing your command. Please try again or type /start."
+            )
+        except Exception:
+            pass
 
 async def post_init(application: Application):
     try:
@@ -933,12 +943,7 @@ def build_application() -> Application:
     
     app.add_handler(CommandHandler("admin", admin_portal_command))
     app.add_handler(CommandHandler("admit", admin_portal_command))
-  
-    # Conversation handlers must be registered before generic callback/text
-    # routers. Otherwise buttons such as `trigger_start` and `cmd_editprofile`
-    # are consumed by `button_router`, so the onboarding/edit-profile state is
-    # never entered and the next user messages appear to get no response.
-    app.add_handler(get_onboarding_handler())
+    app.add_handler(CommandHandler("editprofile", edit_profile_command))
 
     app.add_handler(CallbackQueryHandler(quiz_count_callback, pattern="^qcount_"))
     app.add_handler(CallbackQueryHandler(quiz_timer_callback, pattern="^qtimer_"))
@@ -946,6 +951,8 @@ def build_application() -> Application:
     app.add_handler(CallbackQueryHandler(admin_callback_handler, pattern="^(admin_|audit_|genpdf_)"))
     app.add_handler(CallbackQueryHandler(button_router))
 
+    # 2. REGISTER ONBOARDING CONVERSATION HANDLER AFTER
+    app.add_handler(get_onboarding_handler())
     
     app.add_handler(MessageHandler(filters.TEXT & ~filters.COMMAND, handle_text_messages))
     app.add_handler(PollAnswerHandler(handle_poll_answer))

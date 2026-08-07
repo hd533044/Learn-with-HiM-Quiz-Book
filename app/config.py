@@ -32,7 +32,7 @@ RAZORPAY_KEY_ID = os.getenv("RAZORPAY_KEY_ID", "rzp_test_TMB1bZp7hh2k2R").strip(
 RAZORPAY_KEY_SECRET = os.getenv("RAZORPAY_KEY_SECRET", "MPgns1qhndStgrXNwWEGfkjq").strip()
 RAZORPAY_WEBHOOK_SECRET = os.getenv("RAZORPAY_WEBHOOK_SECRET", "learnwithhim_secret_123").strip()
 
-RENDER_EXTERNAL_URL = os.getenv("RENDER_EXTERNAL_URL", "https://learnwithhimquiz.onrender.com").strip()
+RENDER_EXTERNAL_URL = os.getenv("RENDER_EXTERNAL_URL", "https://learn-with-him-quiz-book.onrender.com").strip()
 
 PLAN_TIERS = {
     "FREE_DEMO": {"name": "🎁 FREE DEMO TRIAL", "price": 0, "days": 2, "daily_limit": 20},

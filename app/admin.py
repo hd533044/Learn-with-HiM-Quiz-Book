@@ -359,7 +359,6 @@ async def admin_callback_handler(update: Update, context: ContextTypes.DEFAULT_T
         status_msg = "🔴 Student Banned successfully!" if new_ban else "🟢 Student Unbanned successfully!"
         await query.message.reply_text(status_msg)
         
-        # Refresh inspection panel
         query.data = f"admin_inspect_u_{target_uid}"
         await admin_callback_handler(update, context)
 

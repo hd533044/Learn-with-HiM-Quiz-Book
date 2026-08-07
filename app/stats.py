@@ -3,12 +3,93 @@ import json
 import logging
 from telegram import Update, InlineKeyboardButton, InlineKeyboardMarkup
 from telegram.ext import ContextTypes
-from app.database import get_user_profile, get_saved_questions
+from app.database import get_user_profile, get_saved_questions, get_all_users, get_db
 
 logger = logging.getLogger(__name__)
 
+def get_overall_leaderboard(limit: int = 10):
+    """Retrieves top performers ranked by average quiz score."""
+    try:
+        conn = get_db()
+        cursor = conn.cursor()
+        cursor.execute("""
+            SELECT u.user_id, u.full_name, AVG(q.score) as avg_score, COUNT(q.id) as total_quizzes
+            FROM users u
+            JOIN quiz_attempts q ON u.user_id = q.user_id
+            GROUP BY u.user_id, u.full_name
+            HAVING COUNT(q.id) > 0
+            ORDER BY avg_score DESC, total_quizzes DESC
+            LIMIT ?
+        """, (limit,))
+        rows = cursor.fetchall()
+        conn.close()
+        return [dict(r) for r in rows]
+    except Exception as e:
+        logger.error(f"Error fetching leaderboard: {e}")
+        return []
+
+def get_user_performance_summary(user_id: int):
+    """Returns aggregated academic metrics for a student profile."""
+    try:
+        conn = get_db()
+        cursor = conn.cursor()
+        cursor.execute("""
+            SELECT 
+                COUNT(id) as total_tests,
+                SUM(questions_attempted) as total_qs,
+                SUM(correct_answers) as total_correct,
+                SUM(wrong_answers) as total_wrong,
+                SUM(skipped_count) as total_skipped,
+                AVG(score) as avg_score
+            FROM quiz_attempts 
+            WHERE user_id = ?
+        """, (user_id,))
+        row = cursor.fetchone()
+        conn.close()
+        return dict(row) if row else {}
+    except Exception as e:
+        logger.error(f"Error getting performance summary for {user_id}: {e}")
+        return {}
+
+def calculate_user_rank(user_id: int) -> int:
+    """Calculates overall student rank based on total score across all quiz attempts."""
+    try:
+        conn = get_db()
+        cursor = conn.cursor()
+        cursor.execute("""
+            SELECT user_id, SUM(score) as total_score 
+            FROM quiz_attempts 
+            GROUP BY user_id 
+            ORDER BY total_score DESC
+        """)
+        rows = cursor.fetchall()
+        conn.close()
+        
+        for rank, row in enumerate(rows, start=1):
+            if row["user_id"] == user_id:
+                return rank
+        return 1
+    except Exception as e:
+        logger.error(f"Error calculating rank for user {user_id}: {e}")
+        return 1
+
+def calculate_user_percentile(user_id: int) -> float:
+    """Calculates student performance percentile relative to all registered users."""
+    try:
+        all_users = get_all_users()
+        total_users = len(all_users)
+        if total_users <= 1:
+            return 100.0
+
+        user_rank = calculate_user_rank(user_id)
+        percentile = ((total_users - user_rank) / total_users) * 100
+        return round(max(1.0, min(99.9, percentile)), 1)
+    except Exception as e:
+        logger.error(f"Error calculating percentile for user {user_id}: {e}")
+        return 95.0
+
 async def stats_command(update: Update, context: ContextTypes.DEFAULT_TYPE):
-    """Handles the /stats command and displays the user profile dashboard."""
+    """Handles the /stats command and displays the academic dashboard."""
     user = update.effective_user
     user_id = user.id
     profile = get_user_profile(user_id)
@@ -23,6 +104,9 @@ async def stats_command(update: Update, context: ContextTypes.DEFAULT_TYPE):
     phone_number = profile.get("phone_number", "N/A")
     paid_balance = profile.get("paid_question_balance", 20)
     vip_expiry = profile.get("vip_pass_expiry") or "Free Tier"
+    
+    rank = calculate_user_rank(user_id)
+    percentile = calculate_user_percentile(user_id)
 
     text = (
         f"👤 **STUDENT ACADEMIC PROFILE** 👤\n\n"
@@ -31,6 +115,8 @@ async def stats_command(update: Update, context: ContextTypes.DEFAULT_TYPE):
         f"🎯 **Target Exam:** {target_exam}\n"
         f"📞 **Phone:** `{phone_number}`\n\n"
         f"📊 **PERFORMANCE & SUBSCRIPTION LEDGER**\n"
+        f"🏆 **Overall Rank:** `#{rank}`\n"
+        f"📈 **Percentile:** `{percentile}%`\n"
         f"💳 **Daily Limit Balance:** `{paid_balance} Questions`\n"
         f"⭐ **VIP Expiry:** `{vip_expiry}`\n"
     )
@@ -42,7 +128,7 @@ async def stats_command(update: Update, context: ContextTypes.DEFAULT_TYPE):
     await update.message.reply_text(text, reply_markup=InlineKeyboardMarkup(keyboard), parse_mode="Markdown")
 
 async def stats_callback_handler(update: Update, context: ContextTypes.DEFAULT_TYPE):
-    """Handles callback buttons for the stats menu."""
+    """Handles callback menu buttons for stats/profile view."""
     query = update.callback_query
     await query.answer()
     data = query.data
@@ -71,6 +157,9 @@ async def stats_callback_handler(update: Update, context: ContextTypes.DEFAULT_T
             phone_number = profile.get("phone_number", "N/A")
             paid_balance = profile.get("paid_question_balance", 20)
             vip_expiry = profile.get("vip_pass_expiry") or "Free Tier"
+            
+            rank = calculate_user_rank(user_id)
+            percentile = calculate_user_percentile(user_id)
 
             text = (
                 f"👤 **STUDENT ACADEMIC PROFILE** 👤\n\n"
@@ -79,6 +168,8 @@ async def stats_callback_handler(update: Update, context: ContextTypes.DEFAULT_T
                 f"🎯 **Target Exam:** {target_exam}\n"
                 f"📞 **Phone:** `{phone_number}`\n\n"
                 f"📊 **PERFORMANCE & SUBSCRIPTION LEDGER**\n"
+                f"🏆 **Overall Rank:** `#{rank}`\n"
+                f"📈 **Percentile:** `{percentile}%`\n"
                 f"💳 **Daily Limit Balance:** `{paid_balance} Questions`\n"
                 f"⭐ **VIP Expiry:** `{vip_expiry}`\n"
             )

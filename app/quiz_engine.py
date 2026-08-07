@@ -85,7 +85,6 @@ async def launch_quiz_setup(update: Update, context: ContextTypes.DEFAULT_TYPE):
 
     attempted_today = await asyncio.to_thread(get_today_attempts, user.id)
     
-    # Calculate Quota: Standard limit OR Paid VIP pass balance
     paid_bal = profile.get("paid_question_balance", 0) or 0
     base_limit = max(DAILY_QUESTION_LIMIT, paid_bal)
     allowed_limit = 10000 if user.id == PRIMARY_ADMIN_ID else base_limit + profile.get("bonus_quota", 0)

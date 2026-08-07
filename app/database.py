@@ -395,7 +395,20 @@ def refresh_user_activity_epoch(user_id: int):
     conn.close()
 
 def check_and_update_inactivity(user_id: int):
+    user = get_user_profile(user_id)
+    if not user or not user.get("last_activity_epoch"):
+        refresh_user_activity_epoch(user_id)
+        return False, 0
+
+    now_epoch = int(get_ist_now().timestamp())
+    last_epoch = user.get("last_activity_epoch", 0)
+    diff_sec = now_epoch - last_epoch
+
+    if diff_sec > 300:  # 5 Minutes Inactivity Threshold
+        return True, diff_sec
+
     refresh_user_activity_epoch(user_id)
+    return False, diff_sec
 
 def log_user_activity_time(user_id: int, seconds_spent: int = 10):
     conn = get_db()
@@ -460,6 +473,8 @@ def toggle_user_ban_status(user_id: int):
     if user:
         new_ban = 0 if user.get("is_banned") else 1
         admin_toggle_ban(user_id, new_ban)
+        return new_ban
+    return 0
 
 def admin_update_user_name(user_id: int, new_name: str):
     conn = get_db()

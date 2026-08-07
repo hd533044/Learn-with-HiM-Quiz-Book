@@ -241,7 +241,6 @@ async def myplan_command(update: Update, context: ContextTypes.DEFAULT_TYPE):
     allowed_limit = 10000 if user.id == PRIMARY_ADMIN_ID else base_limit + profile.get("bonus_quota", 0)
     remaining = max(0, allowed_limit - today_used)
 
-    # Determine active plan key & name
     active_plan_name = "🎁 FREE DEMO PLAN"
     for p_key, p_val in PLAN_TIERS.items():
         if p_val.get("daily_limit") == paid_bal:
@@ -879,7 +878,6 @@ async def handle_text_messages(update: Update, context: ContextTypes.DEFAULT_TYP
     if not await maintenance_guard(update, context): return
     log_user_activity_time(user.id, seconds=10)
 
-    # Handle Admin Editing Student Name
     if user.id == PRIMARY_ADMIN_ID and context.user_data.get("awaiting_admin_editname"):
         target_uid = context.user_data.pop("awaiting_admin_editname")
         admin_update_user_name(target_uid, text)
@@ -963,9 +961,6 @@ async def post_init(application: Application):
         BotCommand("stop", "🛑 Stop Quiz Completely"),
         BotCommand("help", "🤖 Show Command Directory")
     ]
-    
-    await application.bot.set_my_commands(allowed_commands, scope=BotCommandScopeDefault())
-    await application.bot.set_my_commands(allowed_commands, scope=BotCommandScopeAllPrivateChats())
     
     await application.bot.set_my_commands(allowed_commands, scope=BotCommandScopeDefault())
     await application.bot.set_my_commands(allowed_commands, scope=BotCommandScopeAllPrivateChats())

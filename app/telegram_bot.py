@@ -24,7 +24,7 @@ from app.database import (
     check_and_update_inactivity, refresh_user_activity_epoch, get_db, get_seen_question_ids,
     admin_update_user_name
 )
-from app.onboarding import get_onboarding_handler, start_onboarding
+from app.onboarding import get_onboarding_handler, start_onboarding, edit_profile_command
 from app.quiz_engine import (
     launch_quiz_setup, quiz_count_callback, quiz_timer_callback, handle_poll_answer,
     pause_quiz_command, resume_quiz_command, stop_quiz_command, save_question_callback
@@ -968,7 +968,6 @@ def build_application() -> Application:
     init_db()
     app = Application.builder().token(BOT_TOKEN).post_init(post_init).build()
 
-    # Conversation handler MUST be added first
     app.add_handler(get_onboarding_handler())
     
     app.add_handler(CommandHandler("quiz", strict_quiz_command_guard))
@@ -994,6 +993,7 @@ def build_application() -> Application:
     
     app.add_handler(CommandHandler("admin", admin_portal_command))
     app.add_handler(CommandHandler("admit", admin_portal_command))
+    app.add_handler(CommandHandler("editprofile", edit_profile_command))
 
     app.add_handler(CallbackQueryHandler(quiz_count_callback, pattern="^qcount_"))
     app.add_handler(CallbackQueryHandler(quiz_timer_callback, pattern="^qtimer_"))

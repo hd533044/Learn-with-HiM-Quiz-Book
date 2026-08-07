@@ -7,7 +7,7 @@ load_dotenv()
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 DATA_DIR = os.path.join(BASE_DIR, "data")
 USER_PROFILES_DIR = os.path.join(DATA_DIR, "user_profiles")
-QUESTION_BANK_DIR = os.path.join(BASE_DIR, "question_bank")
+QUESTION_BANK_DIR = os.path.join(DATA_DIR, "question_bank")
 
 os.makedirs(DATA_DIR, exist_ok=True)
 os.makedirs(USER_PROFILES_DIR, exist_ok=True)
@@ -17,26 +17,23 @@ BOT_TOKEN = os.getenv("BOT_TOKEN", "").strip()
 if not BOT_TOKEN:
     logging.warning("⚠️ BOT_TOKEN is empty! Please set it in your environment variables.")
 
-CHANNEL_USERNAME = os.getenv("CHANNEL_USERNAME", "@LEARNWITHHIM")
+CHANNEL_USERNAME = os.getenv("CHANNEL_USERNAME", "@LearnwithHiM")
 YOUTUBE_CHANNEL_URL = os.getenv("YOUTUBE_CHANNEL_URL", "https://www.youtube.com/@learnwithhim")
 
 DAILY_QUESTION_LIMIT = int(os.getenv("DAILY_QUESTION_LIMIT", "20"))
 
-# Remote PostgreSQL Cloud URL or fallback to local SQLite
 DATABASE_URL = os.getenv("DATABASE_URL", "").strip()
 DB_FILE = os.getenv("DB_FILE", os.path.join(DATA_DIR, "quiz_bot.db"))
 
 PRIMARY_ADMIN_ID = int(os.getenv("ADMIN_USER_ID", "1091057353"))
 ADMIN_IDS = [1091057353, 2070531704]
 
-# Razorpay Credentials Configuration
 RAZORPAY_KEY_ID = os.getenv("RAZORPAY_KEY_ID", "rzp_test_TMB1bZp7hh2k2R").strip()
 RAZORPAY_KEY_SECRET = os.getenv("RAZORPAY_KEY_SECRET", "MPgns1qhndStgrXNwWEGfkjq").strip()
 RAZORPAY_WEBHOOK_SECRET = os.getenv("RAZORPAY_WEBHOOK_SECRET", "learnwithhim_secret_123").strip()
 
 RENDER_EXTERNAL_URL = os.getenv("RENDER_EXTERNAL_URL", "https://learnwithhimquiz.onrender.com").strip()
 
-# Subscription Plan Matrix
 PLAN_TIERS = {
     "FREE_DEMO": {"name": "🎁 FREE DEMO TRIAL", "price": 0, "days": 2, "daily_limit": 20},
     "BRONZE": {"name": "📦 BRONZE PACK", "price": 5, "days": 3, "daily_limit": 80},

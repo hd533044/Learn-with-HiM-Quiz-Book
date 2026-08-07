@@ -238,7 +238,7 @@ def init_db():
     conn.commit()
     conn.close()
 
-# --- ONBOARDING & PROFILE HELPERS ---
+# --- ONBOARDING & USER PROFILE HELPERS ---
 
 def generate_student_id(full_name: str, dob_str: str) -> str:
     clean_name = "".join(filter(str.isalpha, full_name))
@@ -383,7 +383,7 @@ def get_all_users():
     conn.close()
     return [dict(r) for r in rows]
 
-# --- ACTIVITY & TRACKING HELPERS ---
+# --- ACTIVITY & TIME TRACKER HELPERS ---
 
 def refresh_user_activity_epoch(user_id: int):
     now_str = get_ist_timestamp_str()
@@ -493,7 +493,7 @@ def admin_update_balance(user_id: int, new_balance: int):
     conn.close()
     sync_user_json_profile(user_id)
 
-# --- QUIZ & DATA HELPERS ---
+# --- QUIZ & ACADEMIC HELPERS ---
 
 def get_today_attempts(user_id):
     conn = get_db()

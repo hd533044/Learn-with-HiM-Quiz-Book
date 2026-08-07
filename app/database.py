@@ -33,6 +33,15 @@ class PostgresRow:
     def keys(self):
         return self._data.keys()
 
+    def __iter__(self):
+        return iter(self._data)
+
+    def items(self):
+        return self._data.items()
+
+    def values(self):
+        return self._data.values()
+
 class PostgresCursorWrapper:
     def __init__(self, cursor, conn):
         self.cursor = cursor
@@ -74,10 +83,22 @@ class PostgresConnWrapper:
         return PostgresCursorWrapper(self.conn.cursor(), self.conn)
 
     def commit(self):
-        self.conn.commit()
+        try:
+            self.conn.commit()
+        except Exception as e:
+            logger.error(f"Postgres commit error: {e}")
+
+    def rollback(self):
+        try:
+            self.conn.rollback()
+        except Exception:
+            pass
 
     def close(self):
-        self.conn.close()
+        try:
+            self.conn.close()
+        except Exception:
+            pass
 
     def execute(self, query, params=None):
         cur = self.cursor()
@@ -89,10 +110,10 @@ class PostgresConnWrapper:
 
     def __exit__(self, exc_type, exc_val, exc_tb):
         if exc_type:
-            self.conn.rollback()
+            self.rollback()
         else:
-            self.conn.commit()
-        self.conn.close()
+            self.commit()
+        self.close()
 
 def get_ist_now():
     return datetime.now(IST)
@@ -121,10 +142,13 @@ def row_to_dict(row):
     if isinstance(row, dict):
         return row
     if hasattr(row, "_data"):
-        return row._data
+        return dict(row._data)
     if hasattr(row, "keys"):
         return dict(row)
-    return row
+    try:
+        return dict(row)
+    except Exception:
+        return row
 
 def init_db():
     try:
@@ -475,7 +499,7 @@ def check_and_update_inactivity(user_id: int):
         return False, 0
 
     now_epoch = int(get_ist_now().timestamp())
-    last_epoch = user.get("last_activity_epoch", 0)
+    last_epoch = int(user.get("last_activity_epoch") or 0)
     diff_sec = now_epoch - last_epoch
 
     refresh_user_activity_epoch(user_id)
@@ -610,7 +634,7 @@ def get_seen_question_ids(user_id):
         cursor.execute("SELECT question_id FROM seen_questions WHERE user_id = ?", (user_id,))
         rows = cursor.fetchall()
         conn.close()
-        return {str(row_to_dict(r)['question_id']) for r in rows}
+        return {str(row_to_dict(r)['question_id']) for r in rows if row_to_dict(r).get('question_id')}
     except Exception:
         return set()
 
@@ -792,7 +816,7 @@ def sync_user_json_profile(user_id: int):
             formatted_attempts.append(ad)
 
             dt = ad.get("attempt_date", "Unknown")
-            qs = ad.get("questions_attempted", 0) or 0
+            qs = int(ad.get("questions_attempted") or 0)
 
             daily_questions_count[dt] = daily_questions_count.get(dt, 0) + qs
 
@@ -808,10 +832,10 @@ def sync_user_json_profile(user_id: int):
             
             datewise_quiz_summary[dt]["total_quizzes"] += 1
             datewise_quiz_summary[dt]["total_questions"] += qs
-            datewise_quiz_summary[dt]["total_correct"] += ad.get("correct_answers", 0) or 0
-            datewise_quiz_summary[dt]["total_wrong"] += ad.get("wrong_answers", 0) or 0
+            datewise_quiz_summary[dt]["total_correct"] += int(ad.get("correct_answers") or 0)
+            datewise_quiz_summary[dt]["total_wrong"] += int(ad.get("wrong_answers") or 0)
             datewise_quiz_summary[dt]["total_score"] += float(ad.get("score") or 0.0)
-            datewise_quiz_summary[dt]["total_time_seconds"] += ad.get("time_taken", 0) or 0
+            datewise_quiz_summary[dt]["total_time_seconds"] += int(ad.get("time_taken") or 0)
 
         formatted_saved_qs = []
         datewise_saved_summary = {}
@@ -830,10 +854,10 @@ def sync_user_json_profile(user_id: int):
             s_date = sd.get("saved_at", "").split(" ")[0] if sd.get("saved_at") else "Unknown"
             datewise_saved_summary[s_date] = datewise_saved_summary.get(s_date, 0) + 1
 
-        activity_log = {r["date_str"]: f"{r['seconds_spent']} seconds ({round((r['seconds_spent'] or 0)/60, 2)} mins)" for r in time_rows}
-        total_time_seconds = sum([(r["seconds_spent"] or 0) for r in time_rows])
+        activity_log = {r["date_str"]: f"{r['seconds_spent']} seconds ({round(int(r['seconds_spent'] or 0)/60, 2)} mins)" for r in time_rows}
+        total_time_seconds = sum([int(r["seconds_spent"] or 0) for r in time_rows])
 
-        paid_balance = user_dict.get("paid_question_balance", 0) or 0
+        paid_balance = int(user_dict.get("paid_question_balance") or 0)
         vip_expiry = user_dict.get("vip_pass_expiry")
         
         sub_status = "FREE_TIER"
@@ -853,10 +877,10 @@ def sync_user_json_profile(user_id: int):
             },
             "academic_summary": {
                 "total_quizzes_attempted": len(formatted_attempts),
-                "total_questions_attempted": sum([(a.get("questions_attempted") or 0) for a in formatted_attempts]),
-                "total_correct": sum([(a.get("correct_answers") or 0) for a in formatted_attempts]),
-                "total_wrong": sum([(a.get("wrong_answers") or 0) for a in formatted_attempts]),
-                "total_skipped": sum([(a.get("skipped_count") or 0) for a in formatted_attempts]),
+                "total_questions_attempted": sum([int(a.get("questions_attempted") or 0) for a in formatted_attempts]),
+                "total_correct": sum([int(a.get("correct_answers") or 0) for a in formatted_attempts]),
+                "total_wrong": sum([int(a.get("wrong_answers") or 0) for a in formatted_attempts]),
+                "total_skipped": sum([int(a.get("skipped_count") or 0) for a in formatted_attempts]),
                 "datewise_quiz_summary": datewise_quiz_summary
             },
             "saved_questions_ledger": {

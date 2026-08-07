@@ -3,16 +3,14 @@ import json
 import logging
 from telegram import Update, InlineKeyboardButton, InlineKeyboardMarkup
 from telegram.ext import ContextTypes
-from app.database import get_user_profile, get_saved_questions, get_all_users, get_db, row_to_dict
+from app.database import get_user_profile, get_saved_questions, get_all_users, execute_read_one, execute_read_all
 
 logger = logging.getLogger(__name__)
 
 def get_overall_leaderboard(limit: int = 10):
     """Retrieves top performers ranked by average quiz score."""
     try:
-        conn = get_db()
-        cursor = conn.cursor()
-        cursor.execute("""
+        rows = execute_read_all("""
             SELECT u.user_id, u.full_name, COALESCE(AVG(q.score), 0.0) as avg_score, COUNT(q.id) as total_quizzes
             FROM users u
             JOIN quiz_attempts q ON u.user_id = q.user_id
@@ -21,14 +19,12 @@ def get_overall_leaderboard(limit: int = 10):
             ORDER BY avg_score DESC, total_quizzes DESC
             LIMIT ?
         """, (limit,))
-        rows = cursor.fetchall()
-        conn.close()
+        
         res = []
         for r in rows:
-            d = row_to_dict(r)
-            if d:
-                d['avg_score'] = float(d.get('avg_score') or 0.0)
-                res.append(d)
+            if r:
+                r['avg_score'] = float(r.get('avg_score') or 0.0)
+                res.append(r)
         return res
     except Exception as e:
         logger.error(f"Error fetching leaderboard: {e}")
@@ -37,9 +33,7 @@ def get_overall_leaderboard(limit: int = 10):
 def get_user_performance_summary(user_id: int):
     """Returns aggregated academic metrics for a student profile, guaranteed type-safe."""
     try:
-        conn = get_db()
-        cursor = conn.cursor()
-        cursor.execute("""
+        row = execute_read_one("""
             SELECT 
                 COUNT(id) as total_tests,
                 SUM(questions_attempted) as total_qs,
@@ -50,17 +44,15 @@ def get_user_performance_summary(user_id: int):
             FROM quiz_attempts 
             WHERE user_id = ?
         """, (user_id,))
-        row = cursor.fetchone()
-        conn.close()
-        d = row_to_dict(row) if row else {}
-        if d:
+        
+        if row:
             return {
-                'total_tests': int(d.get('total_tests') or 0),
-                'total_qs': int(d.get('total_qs') or 0),
-                'total_correct': int(d.get('total_correct') or 0),
-                'total_wrong': int(d.get('total_wrong') or 0),
-                'total_skipped': int(d.get('total_skipped') or 0),
-                'avg_score': float(d.get('avg_score') or 0.0)
+                'total_tests': int(row.get('total_tests') or 0),
+                'total_qs': int(row.get('total_qs') or 0),
+                'total_correct': int(row.get('total_correct') or 0),
+                'total_wrong': int(row.get('total_wrong') or 0),
+                'total_skipped': int(row.get('total_skipped') or 0),
+                'avg_score': float(row.get('avg_score') or 0.0)
             }
         return {'total_tests': 0, 'total_qs': 0, 'total_correct': 0, 'total_wrong': 0, 'total_skipped': 0, 'avg_score': 0.0}
     except Exception as e:
@@ -70,19 +62,14 @@ def get_user_performance_summary(user_id: int):
 def calculate_user_rank(user_id: int) -> int:
     """Calculates overall student rank based on total score across all quiz attempts."""
     try:
-        conn = get_db()
-        cursor = conn.cursor()
-        cursor.execute("""
+        rows = execute_read_all("""
             SELECT user_id, SUM(score) as total_score 
             FROM quiz_attempts 
             GROUP BY user_id 
             ORDER BY total_score DESC
         """)
-        rows = cursor.fetchall()
-        conn.close()
         
-        for rank, row in enumerate(rows, start=1):
-            r = row_to_dict(row)
+        for rank, r in enumerate(rows, start=1):
             if r and r.get("user_id") == user_id:
                 return rank
         return 1

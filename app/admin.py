@@ -10,8 +10,7 @@ from app.config import PRIMARY_ADMIN_ID, USER_PROFILES_DIR, PLAN_TIERS
 from app.database import (
     get_all_users, set_maintenance_until, get_maintenance_until, 
     get_user_profile, get_db, sync_user_json_profile, toggle_user_ban_status,
-    get_paid_users, admin_update_user_name, admin_delete_user_account,
-    get_earnings_analytics
+    get_paid_users, admin_update_user_name, admin_delete_user_account
 )
 from app.pdf_generator import generate_student_pdf_report
 from app.stats import get_user_performance_summary, calculate_user_rank, calculate_user_percentile
@@ -22,11 +21,6 @@ USERS_PER_PAGE = 8
 async def admin_portal_command(update: Update, context: ContextTypes.DEFAULT_TYPE):
     user_id = update.effective_user.id
     if user_id != PRIMARY_ADMIN_ID:
-        msg = "You are not Himanshu Sir, I only listens for Himanshu Sir 😄"
-        if update.callback_query:
-            await update.callback_query.answer(msg, show_alert=True)
-        elif update.message:
-            await update.message.reply_text(msg)
         return
 
     users = get_all_users()
@@ -35,10 +29,7 @@ async def admin_portal_command(update: Update, context: ContextTypes.DEFAULT_TYP
     now_ts = int(time.time())
     m_status = "🟢 Active (Online)" if now_ts >= m_until else "🔴 PAUSED (Maintenance Mode)"
 
-    earnings = get_earnings_analytics()
-
     keyboard = [
-        [InlineKeyboardButton("💰 Financial Earnings Ledger", callback_data="admin_earnings_menu")],
         [InlineKeyboardButton("👥 Student Directory (/user_profiles)", callback_data="admin_users_page_0")],
         [InlineKeyboardButton("💳 Paid Students Directory", callback_data="admin_paid_users_page_0")],
         [InlineKeyboardButton("🔍 Search Student (ID/Phone/Name)", callback_data="admin_search_prompt")],
@@ -53,7 +44,6 @@ async def admin_portal_command(update: Update, context: ContextTypes.DEFAULT_TYP
         f"━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\n"
         f"📊 **Total Registered Students:** `{len(users)}`\n"
         f"💳 **Total Paid VIP Subscribers:** `{len(paid_users)}`\n"
-        f"💵 **Total All-Time Revenue:** `₹{earnings['total_revenue']}`\n"
         f"⚡ **Bot System Status:** `{m_status}`\n\n"
         f"Select an administrative action below:"
     )
@@ -70,85 +60,11 @@ async def admin_callback_handler(update: Update, context: ContextTypes.DEFAULT_T
     data = query.data
 
     if user_id != PRIMARY_ADMIN_ID:
-        await query.answer("You are not Himanshu Sir, I only listens for Himanshu Sir 😄", show_alert=True)
         return
 
     users = get_all_users()
 
-    if data == "admin_earnings_menu":
-        await query.answer()
-        earnings = get_earnings_analytics()
-        
-        keyboard = [
-            [InlineKeyboardButton("💵 All-Time Total Revenue", callback_data="admin_earnings_total")],
-            [InlineKeyboardButton("📅 Date-Wise Earnings Breakdown", callback_data="admin_earnings_daily")],
-            [InlineKeyboardButton("🗓 Month-Wise Earnings Breakdown", callback_data="admin_earnings_monthly")],
-            [InlineKeyboardButton("🔙 Back to Admin Portal", callback_data="admin_home")]
-        ]
-
-        msg = (
-            f"💰 **PLATFORM REVENUE & EARNINGS CENTER** 💰\n"
-            f"━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\n"
-            f"💵 **All-Time Gross Revenue:** `₹{earnings['total_revenue']}`\n"
-            f"💳 **Total Paid Transactions:** `{earnings['total_transactions']}`\n\n"
-            f"Select an option below to view broken-down financial reports:"
-        )
-        await query.edit_message_text(msg, reply_markup=InlineKeyboardMarkup(keyboard), parse_mode="Markdown")
-
-    elif data == "admin_earnings_total":
-        await query.answer()
-        earnings = get_earnings_analytics()
-        keyboard = [[InlineKeyboardButton("🔙 Back to Earnings Menu", callback_data="admin_earnings_menu")]]
-        
-        msg = (
-            f"💵 **ALL-TIME TOTAL EARNINGS REPORT** 💵\n"
-            f"━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\n"
-            f"💰 **Total Gross Revenue Collected:** `₹{earnings['total_revenue']}`\n"
-            f"🛒 **Total Successful VIP Sales:** `{earnings['total_transactions']} packs`\n"
-            f"📊 **Average Revenue per Paid User:** `₹{round(earnings['total_revenue'] / max(1, earnings['total_transactions']), 2)}`\n"
-            f"━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━"
-        )
-        await query.edit_message_text(msg, reply_markup=InlineKeyboardMarkup(keyboard), parse_mode="Markdown")
-
-    elif data == "admin_earnings_daily":
-        await query.answer()
-        earnings = get_earnings_analytics()
-        keyboard = [[InlineKeyboardButton("🔙 Back to Earnings Menu", callback_data="admin_earnings_menu")]]
-        
-        lines = [
-            f"📅 **DATE-WISE REVENUE BREAKDOWN** 📅",
-            f"━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\n"
-        ]
-        
-        if earnings["daily_breakdown"]:
-            for dt, val in earnings["daily_breakdown"].items():
-                lines.append(f"• `{dt}`: **₹{val['amount']}** *({val['count']} sales)*")
-        else:
-            lines.append("*No transaction records logged yet.*")
-
-        msg = "\n".join(lines)
-        await query.edit_message_text(msg, reply_markup=InlineKeyboardMarkup(keyboard), parse_mode="Markdown")
-
-    elif data == "admin_earnings_monthly":
-        await query.answer()
-        earnings = get_earnings_analytics()
-        keyboard = [[InlineKeyboardButton("🔙 Back to Earnings Menu", callback_data="admin_earnings_menu")]]
-        
-        lines = [
-            f"🗓 **MONTH-WISE REVENUE BREAKDOWN** 🗓",
-            f"━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\n"
-        ]
-        
-        if earnings["monthly_breakdown"]:
-            for mn, val in earnings["monthly_breakdown"].items():
-                lines.append(f"• `{mn}`: **₹{val['amount']}** *({val['count']} sales)*")
-        else:
-            lines.append("*No monthly transaction records logged yet.*")
-
-        msg = "\n".join(lines)
-        await query.edit_message_text(msg, reply_markup=InlineKeyboardMarkup(keyboard), parse_mode="Markdown")
-
-    elif data == "admin_export_zip":
+    if data == "admin_export_zip":
         await query.answer()
         await query.edit_message_text("⏳ **Generating Bulk Zip Package...**\nZipping all student JSON ledgers...", parse_mode="Markdown")
         
@@ -321,7 +237,7 @@ async def admin_callback_handler(update: Update, context: ContextTypes.DEFAULT_T
         for u in page_users:
             sid = u.get("student_id") or f"USER_{u['user_id']}"
             ban_flag = " 🛑" if u.get("is_banned") else ""
-            paid_flag = " 💳" if u.get("paid_question_balance", 0) > 20 else ""
+            paid_flag = " 💳" if u.get("paid_question_balance", 0) > 0 else ""
             btn_text = f"👤 {u['full_name']}{paid_flag}{ban_flag} (ID: {sid})"
             keyboard.append([InlineKeyboardButton(btn_text, callback_data=f"admin_inspect_u_{u['user_id']}")])
 
@@ -407,8 +323,8 @@ async def admin_callback_handler(update: Update, context: ContextTypes.DEFAULT_T
         ban_btn_label = "🔴 Ban Student" if not is_banned else "🟢 Unban Student"
 
         paid_bal = u.get("paid_question_balance", 0)
-        is_paid = paid_bal > 20
-        paid_text = f"💳 PAID VIP ({paid_bal} Qs/Day)" if is_paid else "🆓 FREE TIER / DEMO"
+        is_paid = paid_bal > 0
+        paid_text = f"💳 PAID VIP ({paid_bal} Qs/Day)" if is_paid else "🆓 FREE TIER"
 
         keyboard = [
             [InlineKeyboardButton("📋 Personal Details", callback_data=f"audit_personal_{target_uid}"), InlineKeyboardButton("🔑 PIN & Security Questions", callback_data=f"audit_pinsec_{target_uid}")],
@@ -442,6 +358,8 @@ async def admin_callback_handler(update: Update, context: ContextTypes.DEFAULT_T
         new_ban = toggle_user_ban_status(target_uid)
         status_msg = "🔴 Student Banned successfully!" if new_ban else "🟢 Student Unbanned successfully!"
         await query.message.reply_text(status_msg)
+        
+        # Refresh inspection panel
         query.data = f"admin_inspect_u_{target_uid}"
         await admin_callback_handler(update, context)
 
@@ -529,7 +447,7 @@ async def admin_callback_handler(update: Update, context: ContextTypes.DEFAULT_T
         remaining_edits = max(0, 3 - edit_cnt)
 
         paid_bal = u.get("paid_question_balance", 0)
-        paid_str = f"💳 YES ({paid_bal} Qs/Day)" if paid_bal > 20 else "🆓 NO (Free Tier)"
+        paid_str = f"💳 YES ({paid_bal} Qs/Day)" if paid_bal > 0 else "🆓 NO (Free Tier)"
 
         msg = (
             f"📋 **STUDENT PERSONAL DETAILS** 📋\n"

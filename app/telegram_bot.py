@@ -96,10 +96,6 @@ def generate_razorpay_link_sync(user_id: int, plan_key: str) -> str:
             else:
                 logging.error(f"[RAZORPAY API FAIL RESPONSE] Status: {response.status}, Body: {res_body}")
                 return None
-    except urllib.error.HTTPError as http_err:
-        err_body = http_err.read().decode("utf-8") if http_err.fp else ""
-        logging.error(f"[RAZORPAY HTTP ERROR] Code: {http_err.code}, Reason: {http_err.reason}, Details: {err_body}")
-        return None
     except Exception as e:
         logging.error(f"[RAZORPAY EXCEPTION] {e}")
         return None
@@ -128,7 +124,7 @@ async def check_user_registration(update: Update) -> bool:
         return False
 
     if profile.get("is_banned"):
-        ban_msg = "🛑 **ACCOUNT BANNED!**\n\nYour account has been suspended by the administrator. Access to quizzes and services is restricted."
+        ban_msg = "🛑 **ACCOUNT BANNED!**\n\nYour account has been suspended by the administrator."
         if update.callback_query:
             await update.callback_query.answer("🛑 Account Banned!", show_alert=True)
             await update.callback_query.message.reply_text(ban_msg, parse_mode="Markdown")
@@ -138,46 +134,15 @@ async def check_user_registration(update: Update) -> bool:
 
     return True
 
-async def inactivity_guard(update: Update, context: ContextTypes.DEFAULT_TYPE) -> bool:
-    user = update.effective_user
-    if not user:
-        return True
-
-    user_id = user.id
-    if user_id == PRIMARY_ADMIN_ID:
-        refresh_user_activity_epoch(user_id)
-        return True
-
-    is_locked, diff_sec = check_and_update_inactivity(user_id)
-    if is_locked:
-        context.user_data["is_account_locked"] = True
-        rec_btn = InlineKeyboardMarkup([[InlineKeyboardButton("🔑 Reset Your PIN / Password", callback_data="login_forgot_pin")]])
-        msg = (
-            f"🔒 **ACCOUNT LOCKED DUE TO INACTIVITY** 🔒\n"
-            f"━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\n"
-            f"You were inactive for `{diff_sec // 60} mins`.\n\n"
-            f"🔑 **Please reply with your 4-Digit Secret PIN to unlock your account:**"
-        )
-        if update.callback_query:
-            await update.callback_query.answer("🔒 Account Locked due to 5 mins of inactivity!", show_alert=True)
-            await update.callback_query.message.reply_text(msg, reply_markup=rec_btn, parse_mode="Markdown")
-        elif update.message:
-            await update.message.reply_text(msg, reply_markup=rec_btn, parse_mode="Markdown")
-        return False
-    return True
-
 async def maintenance_guard(update: Update, context: ContextTypes.DEFAULT_TYPE) -> bool:
-    if not await inactivity_guard(update, context):
-        return False
-
     m_until = get_maintenance_until()
     if int(time.time()) < m_until:
         remaining_sec = m_until - int(time.time())
         mins_left = max(1, (remaining_sec + 59) // 60)
-        msg = f"🛠 **ADMIN HAS PAUSED THE SERVICE CURRENTLY** 🛠\n\n⏰ Service will resume in approx `{mins_left} mins`. Please try again later!"
+        msg = f"🛠 **ADMIN HAS PAUSED THE SERVICE CURRENTLY** 🛠\n\n⏰ Service will resume in approx `{mins_left} mins`."
         
         if update.callback_query:
-            await update.callback_query.answer(f"🛠 Service Paused! Resuming in ~{mins_left} mins.", show_alert=True)
+            await update.callback_query.answer(f"🛠 Service Paused!", show_alert=True)
         elif update.message:
             await update.message.reply_text(msg, parse_mode="Markdown", reply_markup=ReplyKeyboardRemove())
         return False
@@ -223,8 +188,7 @@ async def send_response(update: Update, text: str, reply_markup=None):
         except Exception:
             await update.callback_query.message.reply_text(text, reply_markup=reply_markup, parse_mode="Markdown")
     elif update.message:
-        markup = reply_markup if reply_markup else ReplyKeyboardRemove()
-        await update.message.reply_text(text, reply_markup=markup, parse_mode="Markdown")
+        await update.message.reply_text(text, reply_markup=reply_markup, parse_mode="Markdown")
 
 async def myplan_command(update: Update, context: ContextTypes.DEFAULT_TYPE):
     if not await maintenance_guard(update, context): return
@@ -294,7 +258,7 @@ async def plans_command(update: Update, context: ContextTypes.DEFAULT_TYPE):
     msg = (
         f"👑 **LEARN WITH HIM QUIZ BOOK — VIP MEMBERSHIP PACKS** 👑\n"
         f"━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\n"
-        f"Select a pack below to pay securely and instantly unlock daily question limits:"
+        f"Select a pack below to pay securely and instantly unlock daily limit:"
     )
 
     await send_response(update, msg, reply_markup=InlineKeyboardMarkup(keyboard))
@@ -343,12 +307,11 @@ async def handle_buy_plan_callback(update: Update, context: ContextTypes.DEFAULT
             f"💰 **Amount Payable:** ₹{plan_info['price']}\n"
             f"📅 **Validity:** {plan_info['days']} Days\n"
             f"⚡ **Daily Limit:** {plan_info['daily_limit']} Questions/Day\n\n"
-            f"Tap the **💳 Pay Now** button below to complete payment via UPI, GPay, PhonePe, or Cards. "
-            f"Your VIP quota activates automatically upon payment!"
+            f"Tap **💳 Pay Now** to complete payment. Quota activates automatically!"
         )
         await query.edit_message_text(msg, reply_markup=InlineKeyboardMarkup(keyboard), parse_mode="Markdown")
     else:
-        await query.message.reply_text("⚠️ Unable to generate payment link. Please verify Razorpay live keys in Render Environment Variables.")
+        await query.message.reply_text("⚠️ Unable to generate payment link. Verify Razorpay credentials.")
 
 async def pdfreport_command(update: Update, context: ContextTypes.DEFAULT_TYPE):
     if not await maintenance_guard(update, context): return
@@ -386,7 +349,9 @@ async def wrongquestions_command(update: Update, context: ContextTypes.DEFAULT_T
     log_user_activity_time(user.id, seconds=10)
 
     conn = get_db()
-    attempts = conn.execute("SELECT * FROM quiz_attempts WHERE user_id = ? ORDER BY id DESC LIMIT 5", (user.id,)).fetchall()
+    cursor = conn.cursor()
+    cursor.execute("SELECT * FROM quiz_attempts WHERE user_id = ? ORDER BY id DESC LIMIT 5", (user.id,))
+    attempts = cursor.fetchall()
     conn.close()
 
     lines = [
@@ -428,7 +393,9 @@ async def attemptedquestions_command(update: Update, context: ContextTypes.DEFAU
     log_user_activity_time(user.id, seconds=10)
 
     conn = get_db()
-    attempts = conn.execute("SELECT * FROM quiz_attempts WHERE user_id = ? ORDER BY id DESC LIMIT 5", (user.id,)).fetchall()
+    cursor = conn.cursor()
+    cursor.execute("SELECT * FROM quiz_attempts WHERE user_id = ? ORDER BY id DESC LIMIT 5", (user.id,))
+    attempts = cursor.fetchall()
     conn.close()
 
     lines = [

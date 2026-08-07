@@ -967,7 +967,6 @@ def build_application() -> Application:
     init_db()
     app = Application.builder().token(BOT_TOKEN).post_init(post_init).build()
 
-    # The onboarding ConversationHandler MUST be registered first
     app.add_handler(get_onboarding_handler())
     
     app.add_handler(CommandHandler("quiz", strict_quiz_command_guard))
@@ -993,14 +992,14 @@ def build_application() -> Application:
     
     app.add_handler(CommandHandler("admin", admin_portal_command))
     app.add_handler(CommandHandler("admit", admin_portal_command))
+    app.add_handler(CommandHandler("editprofile", edit_profile_command))
 
     app.add_handler(CallbackQueryHandler(quiz_count_callback, pattern="^qcount_"))
     app.add_handler(CallbackQueryHandler(quiz_timer_callback, pattern="^qtimer_"))
     app.add_handler(CallbackQueryHandler(user_pdf_callback_handler, pattern="^usergenpdf_"))
     app.add_handler(CallbackQueryHandler(admin_callback_handler, pattern="^(admin_|audit_|genpdf_)"))
     
-    # Catch-all pattern for general menu callbacks
-    app.add_handler(CallbackQueryHandler(button_router, pattern=".*"))
+    app.add_handler(CallbackQueryHandler(button_router))
 
     app.add_handler(MessageHandler(filters.TEXT & ~filters.COMMAND, handle_text_messages))
     app.add_handler(PollAnswerHandler(handle_poll_answer))

@@ -106,7 +106,6 @@ def get_ist_timestamp_str():
 def get_db():
     if HAS_PG and DATABASE_URL:
         try:
-            # Strict 3-second timeout prevents bot from hanging if Supabase lags
             conn = psycopg2.connect(DATABASE_URL, connect_timeout=3)
             return PostgresConnWrapper(conn)
         except Exception as e:
@@ -257,6 +256,31 @@ def init_db():
         conn.close()
     except Exception as e:
         logger.error(f"Error in init_db: {e}")
+
+def set_maintenance_until(epoch_timestamp: int):
+    try:
+        conn = get_db()
+        cursor = conn.cursor()
+        if HAS_PG and DATABASE_URL:
+            cursor.execute("INSERT INTO bot_settings (key, value) VALUES ('maintenance_until', ?) ON CONFLICT (key) DO UPDATE SET value = EXCLUDED.value", (str(epoch_timestamp),))
+        else:
+            cursor.execute("INSERT OR REPLACE INTO bot_settings (key, value) VALUES ('maintenance_until', ?)", (str(epoch_timestamp),))
+        conn.commit()
+        conn.close()
+    except Exception as e:
+        logger.error(f"Error setting maintenance until: {e}")
+
+def get_maintenance_until() -> int:
+    try:
+        conn = get_db()
+        cursor = conn.cursor()
+        cursor.execute("SELECT value FROM bot_settings WHERE key = 'maintenance_until'")
+        row = cursor.fetchone()
+        conn.close()
+        d = row_to_dict(row)
+        return int(d['value']) if d and str(d.get('value', '')).isdigit() else 0
+    except Exception:
+        return 0
 
 def generate_student_id(full_name: str, dob_str: str) -> str:
     clean_name = "".join(filter(str.isalpha, full_name))
@@ -705,18 +729,6 @@ def clear_paused_quiz_state(user_id: int):
         conn.close()
     except Exception:
         pass
-
-def get_maintenance_until() -> int:
-    try:
-        conn = get_db()
-        cursor = conn.cursor()
-        cursor.execute("SELECT value FROM bot_settings WHERE key = 'maintenance_until'")
-        row = cursor.fetchone()
-        conn.close()
-        d = row_to_dict(row)
-        return int(d['value']) if d and str(d.get('value', '')).isdigit() else 0
-    except Exception:
-        return 0
 
 def record_payment_transaction(user_id: int, plan_key: str, amount: int, payment_id: str):
     try:

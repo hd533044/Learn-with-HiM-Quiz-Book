@@ -65,7 +65,6 @@ def build_year_keyboard(prefix="doby_"):
 
 def build_month_keyboard(prefix="dobm_"):
     months = ["Jan ❄️", "Feb 🍫", "Mar 🌸", "Apr 🌧", "May ☀️", "Jun 🌿", "Jul ☔", "Aug 🌴", "Sep 🍂", "Oct 🍁", "Nov 🌾", "Dec ⛄"]
-    raw_months = ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"]
     keyboard = []
     for i in range(0, len(months), 3):
         row = [InlineKeyboardButton(months[idx], callback_data=f"{prefix}{idx+1:02d}") for idx in range(i, min(i+3, len(months)))]
@@ -115,7 +114,11 @@ async def start_onboarding(update: Update, context: ContextTypes.DEFAULT_TYPE):
     profile = get_user_profile(user.id)
     if profile and profile.get("is_verified") and not context.user_data.get("is_editing_profile"):
         student_id = profile.get("student_id", "N/A")
-        await update.effective_message.reply_text(
+        msg_target = update.callback_query.message if update.callback_query else update.effective_message
+        if update.callback_query:
+            await update.callback_query.answer()
+        
+        await msg_target.reply_text(
             f"⚡ **Welcome back, {profile['full_name']}!** 👋\n"
             f"━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\n"
             f"🪪 **Student ID:** `{student_id}`\n"
@@ -131,13 +134,18 @@ async def start_onboarding(update: Update, context: ContextTypes.DEFAULT_TYPE):
         )
         return ConversationHandler.END
 
-    await update.effective_message.reply_text(
+    msg_text = (
         f"{WELCOME_CARD_TEXT}\n\n"
         f"━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\n"
         f"📝 **STUDENT REGISTRATION (STEP 1/7)** 📝\n\n"
-        f"👤 Please reply with your **Full Name** (at least 4 alphabetic letters) to generate your Official Student ID:",
-        parse_mode="Markdown"
+        f"👤 Please reply with your **Full Name** (at least 4 alphabetic letters) to generate your Official Student ID:"
     )
+
+    if update.callback_query:
+        await update.callback_query.answer()
+        await update.callback_query.message.reply_text(msg_text, parse_mode="Markdown")
+    else:
+        await update.message.reply_text(msg_text, parse_mode="Markdown")
     return NAME
 
 async def name_step(update: Update, context: ContextTypes.DEFAULT_TYPE):
@@ -372,7 +380,7 @@ async def sec_q_callback(update: Update, context: ContextTypes.DEFAULT_TYPE):
     selected_q = PRESET_SEC_QUESTIONS[q_idx]
     context.user_data["security_question"] = selected_q
 
-    await query.edit_message_text(
+    await query.message.edit_text(
         f"🛡 **Security Question:** *{selected_q}*\n\n"
         f"✍️ Please reply with your secret answer below:",
         parse_mode="Markdown"
@@ -409,7 +417,6 @@ async def sec_ans_step(update: Update, context: ContextTypes.DEFAULT_TYPE):
         referred_by=context.user_data.get("referred_by")
     )
 
-    # AUTOMATED WELCOME & DEMO PLAN ACTIVATION NOTICE
     demo_msg = (
         f"🎉 **STUDENT REGISTRATION COMPLETE!** 🎉\n"
         f"━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\n"
@@ -447,7 +454,7 @@ async def edit_profile_command(update: Update, context: ContextTypes.DEFAULT_TYP
     can_edit, days_left = can_user_edit_profile(user.id)
     
     if not can_edit:
-        msg = f"⏳ **PROFILE EDIT LOCKED!** ⏳\n\nProfile updates are permitted once every **30 days**.\nPlease try again in `{days_left} days`."
+        msg = f"⏳ **PROFILE EDIT LOCKED!** ⏳\n\nProfile updates are permitted once every **30 days**.\nPlease try again in `{days_left}`."
         if update.callback_query:
             await update.callback_query.answer(msg, show_alert=True)
         else:

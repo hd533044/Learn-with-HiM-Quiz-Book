@@ -8,6 +8,7 @@ import warnings
 from datetime import datetime, timedelta
 import pytz
 from aiohttp import web
+from telegram import Update
 
 try:
     import razorpay
@@ -270,14 +271,7 @@ async def run_bot():
     bot_app_instance = app
     
     await app.initialize()
-    
-    # AGGRESSIVE CONFLICT RESOLUTION: Drop pending updates and clear remote webhooks completely
-    try:
-        await app.bot.delete_webhook(drop_pending_updates=True)
-        logging.info("Successfully cleared existing Telegram webhooks.")
-    except Exception as e:
-        logging.warning(f"Could not clear webhook: {e}")
-
+    await app.bot.delete_webhook(drop_pending_updates=True)
     await app.start()
     await app.updater.start_polling(drop_pending_updates=True, allowed_updates=Update.ALL_TYPES)
     print("  Bot is online, synchronized, and listening!")

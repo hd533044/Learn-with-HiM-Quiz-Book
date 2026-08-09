@@ -36,12 +36,12 @@ def get_latest_user_transaction(user_id: int):
         return None
 
 
-def get_ttf_font(size: int):
+def get_ttf_font(size: int, bold: bool = False):
+    """Loads crisp system fonts for high-definition rendering."""
     font_paths = [
-        "C:\\Windows\\Fonts\\arialbd.ttf",
-        "C:\\Windows\\Fonts\\arial.ttf",
-        "/usr/share/fonts/truetype/dejavu/DejaVuSans-Bold.ttf",
-        "/usr/share/fonts/truetype/liberation/LiberationSans-Bold.ttf",
+        "C:\\Windows\\Fonts\\arialbd.ttf" if bold else "C:\\Windows\\Fonts\\arial.ttf",
+        "/usr/share/fonts/truetype/dejavu/DejaVuSans-Bold.ttf" if bold else "/usr/share/fonts/truetype/dejavu/DejaVuSans.ttf",
+        "/usr/share/fonts/truetype/liberation/LiberationSans-Bold.ttf" if bold else "/usr/share/fonts/truetype/liberation/LiberationSans-Regular.ttf",
         "/System/Library/Fonts/Helvetica.ttc"
     ]
     for path in font_paths:
@@ -55,8 +55,8 @@ def get_ttf_font(size: int):
 
 def generate_payment_invoice_card(user_id: int, plan_key: str = None, payment_id: str = None, txn_time_str: str = None) -> str:
     """
-    Generates an official academic fee receipt modeled exactly after the classic institutional receipt format.
-    Includes logo.png at top-left corner, clean underlined metadata, red amount box, and signature block.
+    Generates an official academic fee receipt with zero text overlapping.
+    Top header banner styled in Light Navy Blue (#1E3A8A).
     """
     try:
         profile = get_user_profile(user_id) or {}
@@ -126,117 +126,130 @@ def generate_payment_invoice_card(user_id: int, plan_key: str = None, payment_id
         else:
             expiry_display_str = "N/A"
 
-        # Vertical Document Canvas Dimensions (High-Resolution A4 proportions: 1400x1800)
-        width, height = 1400, 1800
+        # Canvas Dimensions
+        width, height = 1400, 1850
         image = Image.new("RGBA", (width, height), "#FFFFFF")
         draw = ImageDraw.Draw(image)
 
         # Fonts
-        font_inst_title = get_ttf_font(42)
-        font_sub_banner = get_ttf_font(30)
-        font_label_bold = get_ttf_font(28)
-        font_val = get_ttf_font(28)
-        font_amount_box = get_ttf_font(38)
-        font_footer = get_ttf_font(22)
+        font_title = get_ttf_font(38, bold=True)
+        font_sub = get_ttf_font(26, bold=True)
+        font_label = get_ttf_font(24, bold=True)
+        font_val = get_ttf_font(24, bold=False)
+        font_amount = get_ttf_font(36, bold=True)
+        font_footer = get_ttf_font(20, bold=False)
 
-        # 1. Top Black Header Bar
-        draw.rectangle([0, 0, width, 180], fill="#000000")
+        # Light Navy Color Palette
+        NAVY_DARK = "#0F172A"
+        NAVY_LIGHT = "#1E3A8A"
+        TEXT_BLUE = "#0284C7"
+        TEXT_GREEN = "#15803D"
+        TEXT_ORANGE = "#D97706"
 
-        # 2. Main Crimson Red Institution Banner Block
-        draw.rectangle([120, 50, width - 120, 210], fill="#B91C1C")
-        draw.text((360, 100), "LEARN WITH HIM QUIZ BOOK", fill="#FFFFFF", font=font_inst_title)
+        # 1. Top Black/Navy Dark Base & Light Navy Main Banner
+        draw.rectangle([0, 0, width, 180], fill=NAVY_DARK)
+        draw.rectangle([100, 45, width - 100, 205], fill=NAVY_LIGHT)
+        draw.text((320, 100), "LEARN WITH HIM QUIZ BOOK", fill="#FFFFFF", font=font_title)
 
-        # Logo Placement (Top-Left corner of header)
+        # Brand Logo Placement
         logo_path = os.path.join(BASE_DIR, "assets", "logo.png")
         if os.path.exists(logo_path):
             try:
                 logo_img = Image.open(logo_path).convert("RGBA")
                 logo_img = logo_img.resize((130, 130), Image.Resampling.LANCZOS)
-                image.paste(logo_img, (140, 65), logo_img)
+                image.paste(logo_img, (120, 60), logo_img)
             except Exception:
                 pass
 
-        # Platform Contact Header Info
-        draw.text((120, 250), "Telegram Channel:", fill="#000000", font=font_label_bold)
-        draw.line([370, 280, 800, 280], fill="#B91C1C", width=2)
-        draw.text((380, 248), "@Learnwithhim", fill="#1E293B", font=font_val)
+        # 2. Contact Meta Information Row (Dynamic Offsets)
+        y = 250
+        lbl1 = "Telegram Channel: "
+        draw.text((100, y), lbl1, fill=NAVY_DARK, font=font_label)
+        w1 = draw.textlength(lbl1, font=font_label)
+        draw.text((100 + w1, y), "@Learnwithhim", fill=TEXT_BLUE, font=font_val)
 
-        draw.text((830, 250), "Support:", fill="#000000", font=font_label_bold)
-        draw.line([950, 280, 1280, 280], fill="#B91C1C", width=2)
-        draw.text((960, 248), "Online Bot Support", fill="#1E293B", font=font_val)
+        lbl2 = "Support: "
+        draw.text((800, y), lbl2, fill=NAVY_DARK, font=font_label)
+        w2 = draw.textlength(lbl2, font=font_label)
+        draw.text((800 + w2, y), "Online Bot Support", fill="#334155", font=font_val)
 
-        draw.text((120, 310), "Masked Phone:", fill="#000000", font=font_label_bold)
-        draw.line([330, 340, 800, 340], fill="#B91C1C", width=2)
-        draw.text((340, 308), f"{masked_phone}", fill="#1E293B", font=font_val)
+        y += 60
+        lbl3 = "Masked Phone: "
+        draw.text((100, y), lbl3, fill=NAVY_DARK, font=font_label)
+        w3 = draw.textlength(lbl3, font=font_label)
+        draw.text((100 + w3, y), f"{masked_phone}", fill="#334155", font=font_val)
 
-        draw.text((830, 310), "Txn ID:", fill="#000000", font=font_label_bold)
-        draw.line([940, 340, 1280, 340], fill="#B91C1C", width=2)
-        draw.text((950, 308), f"{real_payment_id}", fill="#1E293B", font=font_val)
+        lbl4 = "Txn ID: "
+        draw.text((800, y), lbl4, fill=NAVY_DARK, font=font_label)
+        w4 = draw.textlength(lbl4, font=font_label)
+        draw.text((800 + w4, y), f"{real_payment_id}", fill="#334155", font=font_val)
 
-        # 3. Crimson Red Sub-Header Banner (FEE RECEIPT)
-        draw.rectangle([120, 390, width - 120, 460], fill="#B91C1C")
-        draw.text((380, 408), "OFFICIAL VIP SUBSCRIPTION FEE RECEIPT", fill="#FFFFFF", font=font_sub_banner)
+        # 3. Light Navy Blue Sub-Header Banner
+        y += 70
+        draw.rectangle([100, y, width - 100, y + 65], fill=NAVY_LIGHT)
+        draw.text((320, y + 15), "OFFICIAL VIP SUBSCRIPTION FEE RECEIPT", fill="#FFFFFF", font=font_sub)
 
-        # 4. Form Fields with Crimson Red Underlines
-        y = 510
-        draw.text((120, y), "No:", fill="#000000", font=font_label_bold)
-        draw.line([180, y + 32, 600, y + 32], fill="#B91C1C", width=2)
-        draw.text((190, y - 2), f"{invoice_no}", fill="#1E3A8A", font=font_val)
+        # 4. Form Fields (With Dynamic X Offsets to Prevent Overlapping)
+        y += 100
+        lbl_no = "No: "
+        draw.text((100, y), lbl_no, fill=NAVY_DARK, font=font_label)
+        w_no = draw.textlength(lbl_no, font=font_label)
+        draw.text((100 + w_no, y), f"{invoice_no}", fill=NAVY_LIGHT, font=font_val)
 
-        draw.text((650, y), "Date:", fill="#000000", font=font_label_bold)
-        draw.line([730, y + 32, 1280, y + 32], fill="#B91C1C", width=2)
-        draw.text((740, y - 2), f"{payment_date_str}", fill="#1E293B", font=font_val)
+        lbl_dt = "Date: "
+        draw.text((750, y), lbl_dt, fill=NAVY_DARK, font=font_label)
+        w_dt = draw.textlength(lbl_dt, font=font_label)
+        draw.text((750 + w_dt, y), f"{payment_date_str}", fill="#334155", font=font_val)
 
-        y += 80
-        draw.text((120, y), "Received with thanks from", fill="#000000", font=font_val)
-        draw.line([490, y + 32, 1280, y + 32], fill="#B91C1C", width=2)
-        draw.text((500, y - 2), f"{full_name}  (Student ID: {student_id})", fill="#1E3A8A", font=font_label_bold)
+        y += 70
+        lbl_rec = "Received with thanks from: "
+        draw.text((100, y), lbl_rec, fill=NAVY_DARK, font=font_label)
+        w_rec = draw.textlength(lbl_rec, font=font_label)
+        draw.text((100 + w_rec, y), f"{full_name}  (Student ID: {student_id})", fill=NAVY_LIGHT, font=font_label)
 
-        y += 80
-        draw.text((120, y), "Rupees", fill="#000000", font=font_val)
-        draw.line([230, y + 32, 600, y + 32], fill="#B91C1C", width=2)
-        draw.text((240, y - 2), f"₹{p_price} INR ONLY", fill="#15803D", font=font_label_bold)
+        y += 70
+        lbl_rup = "Rupees: "
+        draw.text((100, y), lbl_rup, fill=NAVY_DARK, font=font_label)
+        w_rup = draw.textlength(lbl_rup, font=font_label)
+        draw.text((100 + w_rup, y), f"₹{p_price} INR ONLY", fill=TEXT_GREEN, font=font_label)
 
-        draw.text((620, y), "towards", fill="#000000", font=font_val)
-        draw.line([740, y + 32, 1180, y + 32], fill="#B91C1C", width=2)
-        draw.text((750, y - 2), f"{p_name} ({p_days} Days Access)", fill="#1E3A8A", font=font_label_bold)
+        lbl_tow = "towards: "
+        draw.text((550, y), lbl_tow, fill=NAVY_DARK, font=font_label)
+        w_tow = draw.textlength(lbl_tow, font=font_label)
+        draw.text((550 + w_tow, y), f"{p_name} ({p_days} Days Access)", fill=NAVY_LIGHT, font=font_label)
 
-        draw.text((1190, y), "course", fill="#000000", font=font_val)
+        y += 70
+        lbl_q = "Daily Question Quota: "
+        draw.text((100, y), lbl_q, fill=NAVY_DARK, font=font_label)
+        w_q = draw.textlength(lbl_q, font=font_label)
+        draw.text((100 + w_q, y), f"{total_daily_quota} Questions / Day", fill=TEXT_BLUE, font=font_label)
 
-        y += 80
-        draw.text((120, y), "Daily Question Quota:", fill="#000000", font=font_val)
-        draw.line([420, y + 32, 800, y + 32], fill="#B91C1C", width=2)
-        draw.text((430, y - 2), f"{total_daily_quota} Questions / Day", fill="#0284C7", font=font_label_bold)
+        y += 70
+        lbl_exp = "Pass Expiry Date: "
+        draw.text((100, y), lbl_exp, fill=NAVY_DARK, font=font_label)
+        w_exp = draw.textlength(lbl_exp, font=font_label)
+        draw.text((100 + w_exp, y), f"{expiry_display_str}", fill=TEXT_ORANGE, font=font_label)
 
-        y += 80
-        draw.text((120, y), "Pass Expiry Date:", fill="#000000", font=font_val)
-        draw.line([370, y + 32, 800, y + 32], fill="#B91C1C", width=2)
-        draw.text((380, y - 2), f"{expiry_display_str}", fill="#D97706", font=font_label_bold)
+        y += 70
+        lbl_gw = "Payment Gateway: "
+        draw.text((100, y), lbl_gw, fill=NAVY_DARK, font=font_label)
+        w_gw = draw.textlength(lbl_gw, font=font_label)
+        draw.text((100 + w_gw, y), "Razorpay Secure (UPI / Cards / NetBanking)", fill="#334155", font=font_val)
 
-        y += 80
-        draw.text((120, y), "By cash / online gateway:", fill="#000000", font=font_val)
-        draw.line([450, y + 32, 1280, y + 32], fill="#B91C1C", width=2)
-        draw.text((460, y - 2), "Razorpay Secure Online Gateway (UPI / Cards / NetBanking)", fill="#1E293B", font=font_val)
+        # 5. Highlighted Light Navy Amount Box
+        y += 120
+        draw.rectangle([100, y, 480, y + 80], fill=NAVY_LIGHT, outline=NAVY_DARK, width=2)
+        draw.text((130, y + 20), f"Rs: ₹{p_price}/-", fill="#FFFFFF", font=font_amount)
 
-        # 5. Red Highlighted Amount Box (Bottom Left)
-        y += 110
-        draw.rectangle([120, y, 550, y + 80], fill="#B91C1C", outline="#7F1D1D", width=2)
-        draw.text((150, y + 20), f"Rs: ₹{p_price}/-", fill="#FFFFFF", font=font_amount_box)
-
-        # 6. Receiver Signature Block & Verification Seal (Bottom Right)
-        draw.line([850, y + 40, 1280, y + 40], fill="#B91C1C", width=2)
-        draw.text((870, y + 50), "Receiver Signature:", fill="#B91C1C", font=font_label_bold)
-        draw.text((1120, y + 50), "Himanshu Sir", fill="#000000", font=font_label_bold)
-
-        # Stamp
-        draw.rectangle([850, y - 60, 1280, y + 10], outline="#16A34A", width=3)
-        draw.text((880, y - 45), "RAZORPAY VERIFIED ✔", fill="#16A34A", font=font_label_bold)
-        draw.text((880, y - 10), "PAYMENT RECEIVED", fill="#16A34A", font=font_val)
+        # 6. Receiver Signature Block & Verification Seal
+        draw.rectangle([800, y - 40, 1300, y + 80], outline="#16A34A", width=2)
+        draw.text((830, y - 25), "RAZORPAY VERIFIED ✔", fill="#16A34A", font=font_label)
+        draw.text((830, y + 15), "Receiver Signature: Himanshu Sir", fill=NAVY_DARK, font=font_val)
 
         # 7. Document Footer Note
-        draw.rectangle([120, 1600, width - 120, 1720], fill="#0F172A")
-        draw.text((150, 1625), "-> Curated by Himanshu Sir • Telegram Channel: @Learnwithhim", fill="#FFFFFF", font=font_footer)
-        draw.text((150, 1665), "-> Thank you for subscribing! Good luck with your preparation!", fill="#38BDF8", font=font_footer)
+        draw.rectangle([100, 1680, width - 100, 1780], fill=NAVY_DARK)
+        draw.text((130, 1705), "-> Curated by Himanshu Sir • Telegram Channel: @Learnwithhim", fill="#FFFFFF", font=font_footer)
+        draw.text((130, 1740), "-> Thank you for subscribing! Good luck with your preparation!", fill="#38BDF8", font=font_footer)
 
         filename = f"Invoice_{user_id}_{p_key}.png"
         filepath = os.path.join(USER_PROFILES_DIR, filename)

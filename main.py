@@ -21,7 +21,8 @@ from app.config import (
     RAZORPAY_KEY_ID, RAZORPAY_KEY_SECRET, RAZORPAY_WEBHOOK_SECRET, 
     PLAN_TIERS
 )
-from app.database import sync_user_json_profile, get_ist_timestamp_str, get_db
+from app.database import sync_user_json_profile, get_ist_timestamp_str, get_db, release_db, get_user_profile
+from app.invoice_generator import generate_payment_invoice_card, mask_phone_number
 
 logging.basicConfig(
     format="%(asctime)s - %(levelname)s - %(message)s",
@@ -54,6 +55,7 @@ async def activate_user_subscription(user_id: int, plan_key: str):
     expiry = now + timedelta(days=plan["days"])
     expiry_str = expiry.strftime("%Y-%m-%d %H:%M:%S IST")
 
+    conn = None
     try:
         conn = get_db()
         cursor = conn.cursor()
@@ -71,32 +73,38 @@ async def activate_user_subscription(user_id: int, plan_key: str):
 
         conn.commit()
         cursor.close()
-        conn.close()
+        release_db(conn)
 
         sync_user_json_profile(user_id)
         logging.info(f"Successfully activated {plan_key} for User ID: {user_id}")
         return True
     except Exception as e:
+        if conn:
+            release_db(conn)
         logging.error(f"Error updating subscription for user {user_id}: {e}")
         return False
 
 
 async def send_payment_invoice_telegram(user_id: int, plan_key: str, payment_id: str = "N/A"):
+    """Sends official text invoice AND generated Graphic Invoice Receipt Card."""
     if not bot_app_instance:
         return
 
     plan_info = PLAN_TIERS.get(plan_key, {})
     txn_time = get_ist_timestamp_str()
     plan_name = plan_info.get('name', plan_key)
-    
+
+    profile = await asyncio.to_thread(get_user_profile, user_id) or {}
+    sid = profile.get("student_id", f"USER_{user_id}")
+
     invoice_msg = (
         f"🥳 **CONGRATULATIONS! PACK ACTIVATED!** 🥳\n"
         f"━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\n"
         f"🎉 **Your {plan_name} has been successfully activated!**\n"
         f"✨ You can now start your preparation immediately.\n\n"
-        f"🧾 **OFFICIAL PAYMENT INVOICE**\n"
+        f"🧾 **OFFICIAL PAYMENT RECEIPT**\n"
         f"• **Unlocked Pack:** `{plan_name}`\n"
-        f"• **Amount Paid:** ₹{plan_info.get('price', 0)}\n"
+        f"• **Amount Paid:** ₹{plan_info.get('price', 0)} INR\n"
         f"• **Payment / Txn ID:** `{payment_id}`\n"
         f"• **Date & Time:** `{txn_time}`\n"
         f"• **Validity:** `{plan_info.get('days')} Days`\n"
@@ -105,11 +113,25 @@ async def send_payment_invoice_telegram(user_id: int, plan_key: str, payment_id:
         f"🚀 Tap **/quiz** to launch your Computer Quiz practice session now!"
     )
     try:
+        # Send text invoice
         await bot_app_instance.bot.send_message(
             chat_id=user_id,
             text=invoice_msg,
             parse_mode="Markdown"
         )
+
+        # Generate & send Graphic Receipt Image Card
+        img_card_path = await asyncio.to_thread(generate_payment_invoice_card, user_id, plan_key, payment_id)
+        if img_card_path and os.path.exists(img_card_path):
+            with open(img_card_path, "rb") as card_file:
+                await bot_app_instance.bot.send_photo(
+                    chat_id=user_id,
+                    photo=card_file,
+                    caption=f"💳 **OFFICIAL PAYMENT RECEIPT CARD** — `{sid}`\n🏷 Verified by Razorpay & Learn with HiM",
+                    parse_mode="Markdown"
+                )
+            os.remove(img_card_path)
+
     except Exception as err:
         logging.error(f"Failed to notify user {user_id} via Telegram: {err}")
 
@@ -202,7 +224,7 @@ async def handle_razorpay_callback_get(request):
             <h2>Payment Successful!</h2>
             <p>Congratulations! Your VIP plan has been activated.</p>
             <div class="id-box">Payment ID: {razorpay_payment_id}</div>
-            <p>An official invoice and pack receipt have been sent to your Telegram chat.</p>
+            <p>An official invoice and receipt card have been sent to your Telegram chat.</p>
             <a href="https://t.me/LearnwithHiMQuizzzbot" class="btn">Return to Telegram Bot</a>
         </div>
     </body>

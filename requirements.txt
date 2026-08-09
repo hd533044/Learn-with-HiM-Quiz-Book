@@ -7,3 +7,5 @@ httpx>=0.24.0
 reportlab
 razorpay>=1.4.1
 Postgres>=2.9.1
+psycopg2-binary>=2.9.1
+Pillow>=10.0.0

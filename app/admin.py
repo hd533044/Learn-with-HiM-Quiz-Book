@@ -177,19 +177,32 @@ async def admin_execute_grant_callback(update: Update, context: ContextTypes.DEF
         conn = get_db()
         cursor = conn.cursor()
         
+        # 1. Update user balance and expiry in users table
         cursor.execute(
             "UPDATE users SET paid_question_balance = %s, vip_pass_expiry = %s, payment_id = %s, payment_timestamp = %s WHERE user_id = %s",
             (new_bal, expiry_str, payment_id, payment_time_str, target_uid)
         )
 
-        cursor.execute(
-            """
-            INSERT INTO payment_transactions 
-            (user_id, payment_id, plan_key, plan_name, amount_paid, daily_quota, validity_days, created_at, expiry_at)
-            VALUES (%s, %s, %s, %s, %s, %s, %s, %s, %s)
-            """,
-            (target_uid, payment_id, plan_key, plan["name"], plan["price"], plan["daily_limit"], plan["days"], payment_time_str, expiry_str)
-        )
+        # 2. Safe log transaction entry (handles presence/absence of expiry_at column automatically)
+        try:
+            cursor.execute(
+                """
+                INSERT INTO payment_transactions 
+                (user_id, payment_id, plan_key, plan_name, amount_paid, daily_quota, validity_days, created_at, expiry_at)
+                VALUES (%s, %s, %s, %s, %s, %s, %s, %s, %s)
+                """,
+                (target_uid, payment_id, plan_key, plan["name"], plan["price"], plan["daily_limit"], plan["days"], payment_time_str, expiry_str)
+            )
+        except Exception:
+            conn.rollback()
+            cursor.execute(
+                """
+                INSERT INTO payment_transactions 
+                (user_id, payment_id, plan_key, plan_name, amount_paid, daily_quota, validity_days, created_at)
+                VALUES (%s, %s, %s, %s, %s, %s, %s, %s)
+                """,
+                (target_uid, payment_id, plan_key, plan["name"], plan["price"], plan["daily_limit"], plan["days"], payment_time_str)
+            )
 
         conn.commit()
         cursor.close()
@@ -202,6 +215,7 @@ async def admin_execute_grant_callback(update: Update, context: ContextTypes.DEF
         await query.message.reply_text(f"⚠️ Failed granting plan: {e}")
         return
 
+    # Notify student in Telegram chat automatically with success text invoice
     from main import send_payment_invoice_telegram
     await send_payment_invoice_telegram(target_uid, plan_key, payment_id)
 

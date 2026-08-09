@@ -58,7 +58,7 @@ def get_quizbook_nav_keyboard():
     ])
 
 async def check_quiz_maintenance(update: Update) -> bool:
-    m_until = get_maintenance_until()
+    m_until = await asyncio.to_thread(get_maintenance_until)
     if int(time.time()) < m_until:
         remaining_sec = m_until - int(time.time())
         mins_left = max(1, (remaining_sec + 59) // 60)
@@ -157,8 +157,8 @@ async def quiz_count_callback(update: Update, context: ContextTypes.DEFAULT_TYPE
     user_id = query.from_user.id
     asyncio.create_task(asyncio.to_thread(log_user_activity_time, user_id, 10))
     
-    profile = get_user_profile(user_id)
-    attempted_today = get_today_attempts(user_id)
+    profile = await asyncio.to_thread(get_user_profile, user_id)
+    attempted_today = await asyncio.to_thread(get_today_attempts, user_id)
     
     paid_bal = profile.get("paid_question_balance", 0) or 0 if profile else 0
     base_limit = max(DAILY_QUESTION_LIMIT, paid_bal)
@@ -203,8 +203,8 @@ async def quiz_timer_callback(update: Update, context: ContextTypes.DEFAULT_TYPE
     chat_id = query.message.chat_id
     asyncio.create_task(asyncio.to_thread(log_user_activity_time, user_id, 15))
     
-    profile = get_user_profile(user_id)
-    attempted_today = get_today_attempts(user_id)
+    profile = await asyncio.to_thread(get_user_profile, user_id)
+    attempted_today = await asyncio.to_thread(get_today_attempts, user_id)
     
     paid_bal = profile.get("paid_question_balance", 0) or 0 if profile else 0
     base_limit = max(DAILY_QUESTION_LIMIT, paid_bal)
@@ -224,15 +224,15 @@ async def quiz_timer_callback(update: Update, context: ContextTypes.DEFAULT_TYPE
     if count > remaining_quota:
         count = max(1, remaining_quota)
 
-    seen_ids = get_seen_question_ids(user_id)
-    questions = fetch_pyqs_for_quiz(needed_count=count, seen_ids=seen_ids)
+    seen_ids = await asyncio.to_thread(get_seen_question_ids, user_id)
+    questions = await asyncio.to_thread(fetch_pyqs_for_quiz, count, seen_ids)
 
     if not questions:
         await query.edit_message_text("🎉 **CONGRATULATIONS!** You have completed all available questions in the bank!", reply_markup=get_quizbook_nav_keyboard())
         return
 
     q_ids = [q["id"] for q in questions if q.get("id") is not None]
-    mark_questions_as_seen(user_id, q_ids)
+    asyncio.create_task(asyncio.to_thread(mark_questions_as_seen, user_id, q_ids))
 
     session = {
         "user_id": user_id,
@@ -272,12 +272,13 @@ async def save_question_callback(update: Update, context: ContextTypes.DEFAULT_T
         return
     
     q = session["current_question"]
-    success = save_question_to_db(
-        user_id=user_id,
-        q_text=q["question"],
-        options=q["options"],
-        correct_option=q["correct_option"],
-        explanation=q.get("explanation", "")
+    success = await asyncio.to_thread(
+        save_question_to_db,
+        user_id,
+        q["question"],
+        q["options"],
+        q["correct_option"],
+        q.get("explanation", "")
     )
     if success:
         await query.answer("💾 Question bookmarked successfully!", show_alert=True)
@@ -315,7 +316,7 @@ async def pause_quiz_command(update: Update, context: ContextTypes.DEFAULT_TYPE)
         "start_time": session["start_time"],
         "detailed_logs": session.get("detailed_logs", [])
     }
-    save_paused_quiz_state(user_id, save_state)
+    asyncio.create_task(asyncio.to_thread(save_paused_quiz_state, user_id, save_state))
     ACTIVE_SESSIONS.pop(user_id, None)
 
     remaining_qs = session["total"] - session["current_index"]
@@ -342,7 +343,7 @@ async def resume_quiz_command(update: Update, context: ContextTypes.DEFAULT_TYPE
     chat_id = update.effective_chat.id
     asyncio.create_task(asyncio.to_thread(log_user_activity_time, user_id, 5))
 
-    paused = get_paused_quiz_state(user_id)
+    paused = await asyncio.to_thread(get_paused_quiz_state, user_id)
     if not paused:
         msg = "ℹ️ No paused quiz found. Type /quiz to launch a new session!"
         if update.callback_query:
@@ -351,7 +352,7 @@ async def resume_quiz_command(update: Update, context: ContextTypes.DEFAULT_TYPE
             await update.message.reply_text(msg)
         return
 
-    clear_paused_quiz_state(user_id)
+    asyncio.create_task(asyncio.to_thread(clear_paused_quiz_state, user_id))
 
     session = {
         "user_id": user_id,
@@ -404,7 +405,7 @@ async def stop_quiz_command(update: Update, context: ContextTypes.DEFAULT_TYPE):
     asyncio.create_task(asyncio.to_thread(log_user_activity_time, user_id, 5))
 
     session = ACTIVE_SESSIONS.pop(user_id, None)
-    paused = get_paused_quiz_state(user_id)
+    paused = await asyncio.to_thread(get_paused_quiz_state, user_id)
     
     if not session and not paused:
         msg = "ℹ️ No active or paused quiz session found to stop."
@@ -414,32 +415,38 @@ async def stop_quiz_command(update: Update, context: ContextTypes.DEFAULT_TYPE):
             await update.message.reply_text(msg, reply_markup=get_quizbook_nav_keyboard())
         return
 
-    clear_paused_quiz_state(user_id)
+    asyncio.create_task(asyncio.to_thread(clear_paused_quiz_state, user_id))
     if user_id in TIMER_TASKS and not TIMER_TASKS[user_id].done():
         TIMER_TASKS[user_id].cancel()
 
     if session:
         if session["current_index"] > 0:
-            record_quiz_result(
-                user_id, 
-                score=session["score"], 
-                total_questions=session["current_index"], 
-                correct_count=session["correct"], 
-                wrong_count=session["wrong"], 
-                skipped_count=session["skipped"],
-                question_details=session.get("detailed_logs", [])
-            )
+            asyncio.create_task(asyncio.to_thread(
+                record_quiz_result,
+                user_id,
+                "computer_awareness_mock",
+                session["score"],
+                session["current_index"],
+                session["correct"],
+                session["wrong"],
+                session["skipped"],
+                0,
+                session.get("detailed_logs", [])
+            ))
     elif paused:
         if paused.get("current_index", 0) > 0:
-            record_quiz_result(
-                user_id, 
-                score=paused["score"], 
-                total_questions=paused["current_index"], 
-                correct_count=paused["correct"], 
-                wrong_count=paused["wrong"], 
-                skipped_count=paused["skipped"],
-                question_details=paused.get("detailed_logs", [])
-            )
+            asyncio.create_task(asyncio.to_thread(
+                record_quiz_result,
+                user_id,
+                "computer_awareness_mock",
+                paused["score"],
+                paused["current_index"],
+                paused["correct"],
+                paused["wrong"],
+                paused["skipped"],
+                0,
+                paused.get("detailed_logs", [])
+            ))
 
     msg = (
         f"🛑 **QUIZ STOPPED** 🛑\n"
@@ -456,7 +463,7 @@ async def stop_quiz_command(update: Update, context: ContextTypes.DEFAULT_TYPE):
         await update.message.reply_text(msg, reply_markup=get_quizbook_nav_keyboard(), parse_mode="Markdown")
 
 async def send_next_question(chat_id: int, user_id: int, context: ContextTypes.DEFAULT_TYPE):
-    m_until = get_maintenance_until()
+    m_until = await asyncio.to_thread(get_maintenance_until)
     if int(time.time()) < m_until:
         await context.bot.send_message(chat_id=chat_id, text="🛠 **ADMIN HAS PAUSED THE SERVICE CURRENTLY**\nQuiz session paused!")
         return
@@ -560,7 +567,7 @@ async def handle_poll_answer(update: Update, context: ContextTypes.DEFAULT_TYPE)
     if user_id in TIMER_TASKS and not TIMER_TASKS[user_id].done():
         TIMER_TASKS[user_id].cancel()
 
-    m_until = get_maintenance_until()
+    m_until = await asyncio.to_thread(get_maintenance_until)
     if int(time.time()) < m_until:
         await context.bot.send_message(chat_id=chat_id, text="🛠 **ADMIN HAS PAUSED THE SERVICE CURRENTLY**")
         return
@@ -609,18 +616,21 @@ async def finish_quiz_and_send_report(chat_id: int, user_id: int, context: Conte
     score = session["score"]
     detailed_logs = session.get("detailed_logs", [])
 
-    record_quiz_result(
-        user_id, 
-        score=score, 
-        total_questions=total, 
-        correct_count=correct, 
-        wrong_count=wrong, 
-        skipped_count=skipped,
-        question_details=detailed_logs
-    )
+    asyncio.create_task(asyncio.to_thread(
+        record_quiz_result,
+        user_id,
+        "computer_awareness_mock",
+        score,
+        total,
+        correct,
+        wrong,
+        skipped,
+        0,
+        detailed_logs
+    ))
 
-    percentile = calculate_user_percentile(user_id)
-    rank_str = calculate_user_rank(user_id)
+    percentile = await asyncio.to_thread(calculate_user_percentile, user_id)
+    rank_str = await asyncio.to_thread(calculate_user_rank, user_id)
 
     report_card = (
         f"🏆 **OFFICIAL QUIZ REPORT CARD** 🏆\n"

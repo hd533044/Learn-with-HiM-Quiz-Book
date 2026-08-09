@@ -123,7 +123,7 @@ async def check_user_registration(update: Update) -> bool:
     user = update.effective_user
     if not user:
         return False
-    profile = get_user_profile(user.id)
+    profile = await asyncio.to_thread(get_user_profile, user.id)
     if not profile or not profile.get("is_verified"):
         await send_registration_prompt(update)
         return False
@@ -146,10 +146,10 @@ async def inactivity_guard(update: Update, context: ContextTypes.DEFAULT_TYPE) -
 
     user_id = user.id
     if user_id == PRIMARY_ADMIN_ID:
-        refresh_user_activity_epoch(user_id)
+        asyncio.create_task(asyncio.to_thread(refresh_user_activity_epoch, user_id))
         return True
 
-    is_locked, diff_sec = check_and_update_inactivity(user_id)
+    is_locked, diff_sec = await asyncio.to_thread(check_and_update_inactivity, user_id)
     if is_locked:
         context.user_data["is_account_locked"] = True
         rec_btn = InlineKeyboardMarkup([[InlineKeyboardButton("🔑 Reset Your PIN / Password", callback_data="login_forgot_pin")]])
@@ -171,7 +171,7 @@ async def maintenance_guard(update: Update, context: ContextTypes.DEFAULT_TYPE) 
     if not await inactivity_guard(update, context):
         return False
 
-    m_until = get_maintenance_until()
+    m_until = await asyncio.to_thread(get_maintenance_until)
     if int(time.time()) < m_until:
         remaining_sec = m_until - int(time.time())
         mins_left = max(1, (remaining_sec + 59) // 60)
@@ -193,9 +193,9 @@ async def strict_quiz_command_guard(update: Update, context: ContextTypes.DEFAUL
 
     user = update.effective_user
     asyncio.create_task(asyncio.to_thread(log_user_activity_time, user.id, 10))
-    profile = get_user_profile(user.id)
+    profile = await asyncio.to_thread(get_user_profile, user.id)
 
-    attempted_today = get_today_attempts(user.id)
+    attempted_today = await asyncio.to_thread(get_today_attempts, user.id)
     paid_bal = profile.get("paid_question_balance", 0) or 0
     base_limit = max(DAILY_QUESTION_LIMIT, paid_bal)
     allowed_limit = 10000 if user.id == PRIMARY_ADMIN_ID else base_limit + profile.get("bonus_quota", 0)
@@ -233,9 +233,9 @@ async def myplan_command(update: Update, context: ContextTypes.DEFAULT_TYPE):
 
     user = update.effective_user
     asyncio.create_task(asyncio.to_thread(log_user_activity_time, user.id, 10))
-    profile = get_user_profile(user.id)
+    profile = await asyncio.to_thread(get_user_profile, user.id)
 
-    today_used = get_today_attempts(user.id)
+    today_used = await asyncio.to_thread(get_today_attempts, user.id)
     paid_bal = profile.get("paid_question_balance", 0) or 0
     base_limit = max(DAILY_QUESTION_LIMIT, paid_bal)
     allowed_limit = 10000 if user.id == PRIMARY_ADMIN_ID else base_limit + profile.get("bonus_quota", 0)
@@ -275,7 +275,7 @@ async def plans_command(update: Update, context: ContextTypes.DEFAULT_TYPE):
 
     user = update.effective_user
     asyncio.create_task(asyncio.to_thread(log_user_activity_time, user.id, 10))
-    profile = get_user_profile(user.id)
+    profile = await asyncio.to_thread(get_user_profile, user.id)
 
     keyboard = []
     if not profile.get("demo_used"):
@@ -312,7 +312,7 @@ async def handle_buy_plan_callback(update: Update, context: ContextTypes.DEFAULT
         await query.message.reply_text("⚠️ Invalid plan selected.")
         return
 
-    profile = get_user_profile(user_id)
+    profile = await asyncio.to_thread(get_user_profile, user_id)
 
     if plan_key == "FREE_DEMO":
         if profile and profile.get("demo_used"):
@@ -386,12 +386,16 @@ async def wrongquestions_command(update: Update, context: ContextTypes.DEFAULT_T
     user = update.effective_user
     asyncio.create_task(asyncio.to_thread(log_user_activity_time, user.id, 10))
 
-    conn = get_db()
-    cursor = conn.cursor()
-    cursor.execute("SELECT * FROM quiz_attempts WHERE user_id = %s ORDER BY id DESC LIMIT 5", (user.id,))
-    attempts = cursor.fetchall()
-    cursor.close()
-    conn.close()
+    def fetch_attempts():
+        conn = get_db()
+        cursor = conn.cursor()
+        cursor.execute("SELECT * FROM quiz_attempts WHERE user_id = %s ORDER BY id DESC LIMIT 5", (user.id,))
+        rows = cursor.fetchall()
+        cursor.close()
+        conn.close()
+        return rows
+
+    attempts = await asyncio.to_thread(fetch_attempts)
 
     lines = [
         f"❌ **YOUR INCORRECT QUESTIONS LOG** ❌",
@@ -431,12 +435,16 @@ async def attemptedquestions_command(update: Update, context: ContextTypes.DEFAU
     user = update.effective_user
     asyncio.create_task(asyncio.to_thread(log_user_activity_time, user.id, 10))
 
-    conn = get_db()
-    cursor = conn.cursor()
-    cursor.execute("SELECT * FROM quiz_attempts WHERE user_id = %s ORDER BY id DESC LIMIT 5", (user.id,))
-    attempts = cursor.fetchall()
-    cursor.close()
-    conn.close()
+    def fetch_attempts():
+        conn = get_db()
+        cursor = conn.cursor()
+        cursor.execute("SELECT * FROM quiz_attempts WHERE user_id = %s ORDER BY id DESC LIMIT 5", (user.id,))
+        rows = cursor.fetchall()
+        cursor.close()
+        conn.close()
+        return rows
+
+    attempts = await asyncio.to_thread(fetch_attempts)
 
     lines = [
         f"🎯 **YOUR RECENT ATTEMPTED QUESTIONS** 🎯",
@@ -475,8 +483,8 @@ async def unattemptedquestions_command(update: Update, context: ContextTypes.DEF
     user = update.effective_user
     asyncio.create_task(asyncio.to_thread(log_user_activity_time, user.id, 10))
 
-    seen_ids = get_seen_question_ids(user.id)
-    all_qs = fetch_pyqs_for_quiz(needed_count=1000, seen_ids=[])
+    seen_ids = await asyncio.to_thread(get_seen_question_ids, user.id)
+    all_qs = await asyncio.to_thread(fetch_pyqs_for_quiz, 1000, set())
     total_bank = len(all_qs)
     seen_count = len(seen_ids)
     remaining_count = max(0, total_bank - seen_count)
@@ -507,8 +515,8 @@ async def user_pdf_callback_handler(update: Update, context: ContextTypes.DEFAUL
     await query.answer()
     await query.edit_message_text("⏳ **Generating Your Custom PDF Report Card...**\nFormatting telemetry, tables, and compiling layout...", parse_mode="Markdown")
 
-    pdf_file = generate_student_pdf_report(user_id, filter_mode)
-    profile = get_user_profile(user_id)
+    pdf_file = await asyncio.to_thread(generate_student_pdf_report, user_id, filter_mode)
+    profile = await asyncio.to_thread(get_user_profile, user_id)
     student_name = profile.get("full_name", "Student") if profile else "Student"
     sid = profile.get("student_id", f"USER_{user_id}") if profile else f"USER_{user_id}"
 
@@ -579,7 +587,7 @@ async def saved_questions_command(update: Update, context: ContextTypes.DEFAULT_
 
     user = update.effective_user
     asyncio.create_task(asyncio.to_thread(log_user_activity_time, user.id, 10))
-    saved = get_saved_questions(user.id)
+    saved = await asyncio.to_thread(get_saved_questions, user.id)
     
     if not saved:
         msg = (
@@ -627,9 +635,9 @@ async def myprofile_command(update: Update, context: ContextTypes.DEFAULT_TYPE):
 
     user = update.effective_user
     asyncio.create_task(asyncio.to_thread(log_user_activity_time, user.id, 10))
-    profile = get_user_profile(user.id)
+    profile = await asyncio.to_thread(get_user_profile, user.id)
 
-    today_used = get_today_attempts(user.id)
+    today_used = await asyncio.to_thread(get_today_attempts, user.id)
     paid_bal = profile.get("paid_question_balance", 0) or 0
     base_limit = max(DAILY_QUESTION_LIMIT, paid_bal)
     allowed_limit = 10000 if user.id == PRIMARY_ADMIN_ID else base_limit + profile.get("bonus_quota", 0)
@@ -672,11 +680,11 @@ async def wholestate_command(update: Update, context: ContextTypes.DEFAULT_TYPE)
 
     user = update.effective_user
     asyncio.create_task(asyncio.to_thread(log_user_activity_time, user.id, 10))
-    profile = get_user_profile(user.id)
+    profile = await asyncio.to_thread(get_user_profile, user.id)
 
-    perf = get_user_performance_summary(user.id)
-    rank = calculate_user_rank(user.id)
-    percentile = calculate_user_percentile(user.id)
+    perf = await asyncio.to_thread(get_user_performance_summary, user.id)
+    rank = await asyncio.to_thread(calculate_user_rank, user.id)
+    percentile = await asyncio.to_thread(calculate_user_percentile, user.id)
     student_id = profile.get("student_id", f"USER_{user.id}")
 
     msg = (
@@ -705,7 +713,7 @@ async def toppers_command(update: Update, context: ContextTypes.DEFAULT_TYPE):
 
     user = update.effective_user
     asyncio.create_task(asyncio.to_thread(log_user_activity_time, user.id, 10))
-    toppers = get_overall_leaderboard(limit=10)
+    toppers = await asyncio.to_thread(get_overall_leaderboard, 10)
     
     if not toppers:
         await send_response(update, "🏆 No leaderboard records available yet. Be the first to attempt a quiz!")
@@ -749,7 +757,7 @@ async def viewfeedbacks_command(update: Update, context: ContextTypes.DEFAULT_TY
 
     user = update.effective_user
     asyncio.create_task(asyncio.to_thread(log_user_activity_time, user.id, 10))
-    feedbacks = get_all_student_feedbacks(limit=15)
+    feedbacks = await asyncio.to_thread(get_all_student_feedbacks, 15)
 
     if not feedbacks:
         await send_response(update, "📖 No student reviews submitted yet. Be the first to leave feedback using /feedback!")
@@ -794,8 +802,8 @@ async def button_router(update: Update, context: ContextTypes.DEFAULT_TYPE):
     if not await check_user_registration(update): return
 
     if data == "cmd_quiz":
-        profile = get_user_profile(user.id)
-        attempted_today = get_today_attempts(user.id)
+        profile = await asyncio.to_thread(get_user_profile, user.id)
+        attempted_today = await asyncio.to_thread(get_today_attempts, user.id)
         
         paid_bal = profile.get("paid_question_balance", 0) or 0 if profile else 0
         base_limit = max(DAILY_QUESTION_LIMIT, paid_bal)
@@ -832,7 +840,7 @@ async def button_router(update: Update, context: ContextTypes.DEFAULT_TYPE):
     elif data == "cmd_save_question":
         await save_question_callback(update, context)
     elif data == "cmd_start_fresh_quiz":
-        clear_paused_quiz_state(user.id)
+        await asyncio.to_thread(clear_paused_quiz_state, user.id)
         await launch_quiz_setup(update, context)
     elif data == "cmd_profile":
         await myprofile_command(update, context)
@@ -853,9 +861,9 @@ async def button_router(update: Update, context: ContextTypes.DEFAULT_TYPE):
             "fb_p3": "Great Daily Limits & Routine!"
         }
         fb_text = presets.get(data, "Great educational bot!")
-        profile = get_user_profile(user.id)
+        profile = await asyncio.to_thread(get_user_profile, user.id)
         name = profile.get("full_name") if profile else user.full_name
-        save_student_feedback(user.id, name, fb_text)
+        await asyncio.to_thread(save_student_feedback, user.id, name, fb_text)
         await query.edit_message_text(f"🎉 **Thank you, {name}!** Your review has been saved:\n\n💬 *\"{fb_text}\"*", parse_mode="Markdown")
 
     elif data == "fb_custom":
@@ -867,10 +875,10 @@ async def handle_text_messages(update: Update, context: ContextTypes.DEFAULT_TYP
     text = update.message.text.strip()
 
     if context.user_data.get("is_account_locked"):
-        profile = get_user_profile(user.id)
+        profile = await asyncio.to_thread(get_user_profile, user.id)
         if profile and profile.get("pin") == text:
             context.user_data["is_account_locked"] = False
-            refresh_user_activity_epoch(user.id)
+            asyncio.create_task(asyncio.to_thread(refresh_user_activity_epoch, user.id))
             await update.message.reply_text("🔓 **ACCOUNT UNLOCKED SUCCESSFULLY!**\nYou may continue learning.", reply_markup=ReplyKeyboardRemove())
         else:
             rec_btn = InlineKeyboardMarkup([[InlineKeyboardButton("🔑 Reset Options", callback_data="login_forgot_pin")]])
@@ -886,13 +894,13 @@ async def handle_text_messages(update: Update, context: ContextTypes.DEFAULT_TYP
 
     if user.id == PRIMARY_ADMIN_ID and context.user_data.get("awaiting_admin_editname"):
         target_uid = context.user_data.pop("awaiting_admin_editname")
-        admin_update_user_name(target_uid, text)
+        await asyncio.to_thread(admin_update_user_name, target_uid, text)
         await update.message.reply_text(f"✅ **Student name updated to:** `{text}` for user `{target_uid}`!", parse_mode="Markdown")
         return
 
     if user.id == PRIMARY_ADMIN_ID and context.user_data.get("awaiting_admin_search"):
         context.user_data["awaiting_admin_search"] = False
-        all_u = get_all_users()
+        all_u = await asyncio.to_thread(get_all_users)
         matches = [
             u for u in all_u if text.lower() in str(u.get("student_id", "")).lower() 
             or text.lower() in str(u.get("phone_number", "")).lower() 
@@ -918,15 +926,15 @@ async def handle_text_messages(update: Update, context: ContextTypes.DEFAULT_TYP
             await update.message.reply_text("🙏 Thank you for your feedback! We are working hard to improve your learning experience.", reply_markup=ReplyKeyboardRemove())
             return
 
-        profile = get_user_profile(user.id)
+        profile = await asyncio.to_thread(get_user_profile, user.id)
         name = profile.get("full_name") if profile else user.full_name
-        save_student_feedback(user.id, name, text)
+        await asyncio.to_thread(save_student_feedback, user.id, name, text)
         await update.message.reply_text(f"🎉 **Feedback Received!** Thank you *{name}*:\n\n💬 *\"{text}\"*", reply_markup=ReplyKeyboardRemove(), parse_mode="Markdown")
         return
 
     if context.user_data.get("awaiting_broadcast"):
         context.user_data["awaiting_broadcast"] = False
-        users = get_all_users()
+        users = await asyncio.to_thread(get_all_users)
         sent = 0
         for u in users:
             try:

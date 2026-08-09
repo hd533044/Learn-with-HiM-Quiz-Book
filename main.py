@@ -16,7 +16,7 @@ except ImportError:
     HAS_RAZORPAY = False
 
 warnings.filterwarnings("ignore")
-from app.telegram_bot import build_application
+from app.telegram_bot import build_application, PROFILE_CACHE
 from app.config import (
     RAZORPAY_KEY_ID, RAZORPAY_KEY_SECRET, RAZORPAY_WEBHOOK_SECRET, 
     PLAN_TIERS
@@ -47,16 +47,16 @@ bot_app_instance = None
 async def activate_user_subscription(user_id: int, plan_key: str, payment_id: str = "OFFICIAL_SUBSCRIBED"):
     """
     Activates subscription, records entry in database, and updates user profile limits.
-    Calculates exact dynamic expiry from the second code is run.
+    Invalidate fast profile cache to ensure instant UI sync.
     """
     plan = PLAN_TIERS.get(plan_key)
     if not plan:
+        logging.error(f"Plan key {plan_key} not found in PLAN_TIERS")
         return False
 
     ist = pytz.timezone("Asia/Kolkata")
     now = datetime.now(ist)
     
-    # Calculate exact dynamic expiry timestamp
     expiry_dt = now + timedelta(days=plan["days"])
     expiry_str = expiry_dt.strftime("%Y-%m-%d %H:%M:%S IST")
     payment_time_str = now.strftime("%d %b %Y, %I:%M %p IST")
@@ -64,7 +64,6 @@ async def activate_user_subscription(user_id: int, plan_key: str, payment_id: st
     profile = get_user_profile(user_id) or {}
     current_bal = profile.get("paid_question_balance", 0) or 0
 
-    # Stack daily quota accurately
     new_bal = current_bal + plan["daily_limit"]
 
     conn = None
@@ -72,7 +71,6 @@ async def activate_user_subscription(user_id: int, plan_key: str, payment_id: st
         conn = get_db()
         cursor = conn.cursor()
         
-        # 1. Update user record
         if plan_key == "FREE_DEMO":
             cursor.execute(
                 "UPDATE users SET paid_question_balance = %s, vip_pass_expiry = %s, payment_id = %s, payment_timestamp = %s, demo_used = 1 WHERE user_id = %s",
@@ -84,7 +82,6 @@ async def activate_user_subscription(user_id: int, plan_key: str, payment_id: st
                 (new_bal, expiry_str, payment_id, payment_time_str, user_id)
             )
 
-        # 2. Log payment transaction
         cursor.execute(
             """
             INSERT INTO payment_transactions 
@@ -98,13 +95,16 @@ async def activate_user_subscription(user_id: int, plan_key: str, payment_id: st
         cursor.close()
         release_db(conn)
 
+        # Invalidate in-memory profile cache for instant bot sync
+        PROFILE_CACHE.pop(user_id, None)
+
         sync_user_json_profile(user_id)
         logging.info(f"Activated plan {plan_key} for user {user_id}. Quota: {new_bal}, Expiry: {expiry_str}")
         return True
     except Exception as e:
         if conn:
             release_db(conn)
-        logging.error(f"Error activating subscription: {e}")
+        logging.error(f"Error activating subscription for {user_id}: {e}")
         return False
 
 
@@ -138,14 +138,12 @@ async def send_payment_invoice_telegram(user_id: int, plan_key: str, payment_id:
         f"🚀 Use **/quiz** to start practicing!"
     )
     try:
-        # Send prompted text invoice
         await bot_app_instance.bot.send_message(
             chat_id=user_id,
             text=prompted_invoice_msg,
             parse_mode="Markdown"
         )
 
-        # Generate and send graphic image card invoice
         img_card_path = await asyncio.to_thread(
             generate_payment_invoice_card, 
             user_id, 
@@ -174,21 +172,51 @@ async def handle_ping(request):
 
 async def handle_razorpay_callback_get(request):
     params = request.query
-    razorpay_payment_id = params.get("razorpay_payment_id", "OFFICIAL_SUBSCRIBED")
+    razorpay_payment_id = params.get("razorpay_payment_id") or params.get("razorpay_payment_link_id") or "OFFICIAL_SUBSCRIBED"
 
-    user_id = params.get("user_id") or params.get("notes[user_id]")
+    raw_user_id = params.get("user_id") or params.get("notes[user_id]")
     plan_key = params.get("plan_key") or params.get("notes[plan_key]")
 
-    if user_id and plan_key:
+    logging.info(f"[CALLBACK GET] Received params: user_id={raw_user_id}, plan_key={plan_key}, payment_id={razorpay_payment_id}")
+
+    if raw_user_id and plan_key:
         try:
-            uid = int(user_id)
+            uid = int(raw_user_id)
             activated = await activate_user_subscription(uid, plan_key, razorpay_payment_id)
             if activated:
                 await send_payment_invoice_telegram(uid, plan_key, razorpay_payment_id)
         except Exception as e:
-            logging.error(f"Callback error: {e}")
+            logging.error(f"Callback GET error: {e}")
 
-    return web.Response(text="Payment Processed Successfully", content_type="text/html")
+    html_content = f"""
+    <!DOCTYPE html>
+    <html>
+    <head>
+        <title>Payment Successful - Learn with HiM Quiz Book</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <style>
+            body {{ font-family: 'Segoe UI', sans-serif; background: #0f172a; color: #f8fafc; display: flex; justify-content: center; align-items: center; min-height: 100vh; margin: 0; padding: 20px; }}
+            .card {{ background: #1e293b; border-radius: 16px; padding: 32px; max-width: 420px; width: 100%; text-align: center; border: 1px solid #334155; }}
+            .icon {{ font-size: 56px; margin-bottom: 16px; }}
+            h2 {{ color: #38bdf8; margin-bottom: 8px; }}
+            p {{ color: #94a3b8; font-size: 15px; line-height: 1.5; }}
+            .id-box {{ background: #0f172a; padding: 12px; border-radius: 8px; font-family: monospace; color: #38bdf8; margin: 16px 0; word-break: break-all; }}
+            .btn {{ display: inline-block; background: #2563eb; color: white; text-decoration: none; padding: 12px 24px; border-radius: 8px; font-weight: bold; margin-top: 16px; }}
+        </style>
+    </head>
+    <body>
+        <div class="card">
+            <div class="icon">🎉</div>
+            <h2>Payment Successful!</h2>
+            <p>Congratulations! Your VIP plan has been activated & stacked.</p>
+            <div class="id-box">Payment ID: {razorpay_payment_id}</div>
+            <p>An official invoice card has been sent to your Telegram chat.</p>
+            <a href="https://t.me/LearnwithHiMQuizzzbot" class="btn">Return to Telegram Bot</a>
+        </div>
+    </body>
+    </html>
+    """
+    return web.Response(text=html_content, content_type="text/html")
 
 
 async def handle_razorpay_webhook(request):
@@ -253,7 +281,7 @@ async def run_bot():
     await app.bot.delete_webhook(drop_pending_updates=True)
     await app.updater.start_polling(drop_pending_updates=True)
 
-    stop_event = asyncio.Event()
+    stop_event = asyncio.event() if hasattr(asyncio, 'event') else asyncio.Event()
     try:
         await stop_event.wait()
     finally:

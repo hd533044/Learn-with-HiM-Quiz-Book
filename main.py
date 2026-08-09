@@ -23,6 +23,9 @@ from app.config import (
 )
 from app.database import sync_user_json_profile, get_ist_timestamp_str, get_db
 
+# AUTOMATED DATA MIGRATION IMPORT
+from migrate_json_to_db import migrate_student_profiles
+
 logging.basicConfig(
     format="%(asctime)s - %(levelname)s - %(message)s",
     level=logging.INFO
@@ -284,6 +287,9 @@ async def run_bot():
 
     await start_web_server()
     asyncio.create_task(render_self_ping_loop())
+
+    # AUTOMATED DATA MIGRATION: RUNS ONCE ON RENDER STARTUP
+    asyncio.create_task(asyncio.to_thread(migrate_student_profiles))
     
     app = build_application()
     bot_app_instance = app

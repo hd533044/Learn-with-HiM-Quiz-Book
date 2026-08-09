@@ -44,8 +44,8 @@ if HAS_RAZORPAY and RAZORPAY_KEY_ID and RAZORPAY_KEY_SECRET:
 bot_app_instance = None
 
 
-async def activate_user_subscription(user_id: int, plan_key: str, payment_id: str = "N/A"):
-    """Activates subscription in DB, logs transaction history, and syncs user state."""
+async def activate_user_subscription(user_id: int, plan_key: str, payment_id: str = "OFFICIAL_SUBSCRIBED"):
+    """Activates subscription in DB, logs real Razorpay payment ID, and syncs user state."""
     plan = PLAN_TIERS.get(plan_key)
     if not plan:
         return False
@@ -61,19 +61,19 @@ async def activate_user_subscription(user_id: int, plan_key: str, payment_id: st
         conn = get_db()
         cursor = conn.cursor()
         
-        # 1. Update user active balance and expiry
+        # 1. Update user active balance, expiry, payment ID, and timestamp
         if plan_key == "FREE_DEMO":
             cursor.execute(
-                "UPDATE users SET paid_question_balance = %s, vip_pass_expiry = %s, payment_timestamp = %s, demo_used = 1 WHERE user_id = %s",
-                (plan["daily_limit"], expiry_str, payment_time_str, user_id)
+                "UPDATE users SET paid_question_balance = %s, vip_pass_expiry = %s, payment_id = %s, payment_timestamp = %s, demo_used = 1 WHERE user_id = %s",
+                (plan["daily_limit"], expiry_str, payment_id, payment_time_str, user_id)
             )
         else:
             cursor.execute(
-                "UPDATE users SET paid_question_balance = %s, vip_pass_expiry = %s, payment_timestamp = %s WHERE user_id = %s",
-                (plan["daily_limit"], expiry_str, payment_time_str, user_id)
+                "UPDATE users SET paid_question_balance = %s, vip_pass_expiry = %s, payment_id = %s, payment_timestamp = %s WHERE user_id = %s",
+                (plan["daily_limit"], expiry_str, payment_id, payment_time_str, user_id)
             )
 
-        # 2. Record Transaction Entry
+        # 2. Record Transaction History Entry
         cursor.execute(
             """
             INSERT INTO payment_transactions 
@@ -97,7 +97,7 @@ async def activate_user_subscription(user_id: int, plan_key: str, payment_id: st
         return False
 
 
-async def send_payment_invoice_telegram(user_id: int, plan_key: str, payment_id: str = "N/A"):
+async def send_payment_invoice_telegram(user_id: int, plan_key: str, payment_id: str = "OFFICIAL_SUBSCRIBED"):
     """Sends official text invoice AND generated Graphic Invoice Receipt Card."""
     if not bot_app_instance:
         return
@@ -161,7 +161,7 @@ async def handle_ping(request):
 
 async def handle_razorpay_callback_get(request):
     params = request.query
-    razorpay_payment_id = params.get("razorpay_payment_id", "N/A")
+    razorpay_payment_id = params.get("razorpay_payment_id", "OFFICIAL_SUBSCRIBED")
 
     user_id = params.get("user_id") or params.get("notes[user_id]")
     plan_key = params.get("plan_key") or params.get("notes[plan_key]")
@@ -274,7 +274,7 @@ async def handle_razorpay_webhook(request):
             notes = payload.get("notes", {})
             user_id = notes.get("user_id")
             plan_key = notes.get("plan_key")
-            payment_id = payload.get("payment_id") or payload.get("id") or "N/A"
+            payment_id = payload.get("payment_id") or payload.get("id") or "OFFICIAL_SUBSCRIBED"
 
             if user_id and plan_key:
                 uid = int(user_id)

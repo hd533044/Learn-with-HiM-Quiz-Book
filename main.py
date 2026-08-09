@@ -44,10 +44,10 @@ bot_app_instance = None
 
 
 async def activate_user_subscription(user_id: int, plan_key: str, payment_id: str = "N/A"):
-    """Bulletproof plan activator with transaction recording for /myplan breakdown."""
+    """Bulletproof plan activator with robust transaction logging and quota stacking."""
     plan = PLAN_TIERS.get(plan_key)
     if not plan:
-        logging.error(f"[ACTIVATION ERROR] Plan key '{plan_key}' not found in PLAN_TIERS.")
+        logging.error(f"[ACTIVATION CRITICAL ERROR] Plan key '{plan_key}' is invalid or missing from PLAN_TIERS.")
         return False
 
     ist = pytz.timezone("Asia/Kolkata")
@@ -76,7 +76,7 @@ async def activate_user_subscription(user_id: int, plan_key: str, payment_id: st
                 (new_bal, expiry_str, user_id)
             )
 
-        # Log entry in payment_transactions so /myplan breakdown displays active multi-plans
+        # Record payment transaction history for /myplan active breakdown
         cursor.execute(
             """
             INSERT INTO payment_transactions 
@@ -91,16 +91,16 @@ async def activate_user_subscription(user_id: int, plan_key: str, payment_id: st
         release_db(conn)
 
         sync_user_json_profile(user_id)
-        logging.info(f"[SUCCESS] Activated and stacked {plan_key} for User ID: {user_id}. New Quota: {new_bal}")
+        logging.info(f"[ACTIVATION SUCCESS] User ID {user_id} credited with {plan_key}. New Balance: {new_bal}")
         return True
     except Exception as e:
-        logging.error(f"[DB ERROR] Error updating subscription for user {user_id}: {e}")
+        logging.error(f"[ACTIVATION DB EXCEPTION] Failed updating user {user_id}: {e}")
         return False
 
 
 async def send_payment_invoice_telegram(user_id: int, plan_key: str, payment_id: str = "N/A"):
     if not bot_app_instance:
-        logging.error("[TELEGRAM ERROR] bot_app_instance is not initialized.")
+        logging.error("[TELEGRAM ERROR] bot_app_instance is uninitialized when attempting to send invoice.")
         return
 
     plan_info = PLAN_TIERS.get(plan_key, {})
@@ -134,9 +134,9 @@ async def send_payment_invoice_telegram(user_id: int, plan_key: str, payment_id:
             text=invoice_msg,
             parse_mode="Markdown"
         )
-        logging.info(f"[INVOICE SENT] Successfully pushed success invoice to user {user_id}")
+        logging.info(f"[INVOICE SENT] Successfully delivered invoice text to Telegram chat {user_id}")
     except Exception as err:
-        logging.error(f"[TELEGRAM SEND ERROR] Failed to notify user {user_id}: {err}")
+        logging.error(f"[TELEGRAM SEND ERROR] Could not deliver message to {user_id}: {err}")
 
 
 async def handle_ping(request):
@@ -145,13 +145,13 @@ async def handle_ping(request):
 
 async def handle_razorpay_callback_get(request):
     params = request.query
-    razorpay_payment_id = params.get("razorpay_payment_id") or params.get("razorpay_payment_link_id") or "N/A"
+    razorpay_payment_id = params.get("razorpay_payment_id") or params.get("razorpay_payment_link_id") or params.get("razorpay_payment_id") or "N/A"
 
-    # Robust parameter extraction
+    # Multi-fallback parameter checking
     user_id = params.get("user_id") or params.get("notes[user_id]")
     plan_key = params.get("plan_key") or params.get("notes[plan_key]")
 
-    logging.info(f"[GET CALLBACK] Received query params -> user_id: {user_id}, plan_key: {plan_key}, payment_id: {razorpay_payment_id}")
+    logging.info(f"[CALLBACK GET] Query parameters captured -> user_id: {user_id}, plan_key: {plan_key}, payment_id: {razorpay_payment_id}")
 
     if user_id and plan_key:
         try:
@@ -160,7 +160,9 @@ async def handle_razorpay_callback_get(request):
             if activated:
                 await send_payment_invoice_telegram(uid, plan_key, razorpay_payment_id)
         except Exception as e:
-            logging.error(f"[GET CALLBACK EXCEPTION] {e}")
+            logging.error(f"[CALLBACK GET EXCEPTION] {e}")
+    else:
+        logging.warning(f"[CALLBACK GET WARNING] Missing user_id or plan_key in query string! Full query: {dict(params)}")
 
     html_content = f"""
     <!DOCTYPE html>
@@ -287,32 +289,11 @@ async def start_web_server():
     await runner.setup()
     site = web.TCPSite(runner, "0.0.0.0", port)
     await site.start()
-    print(f"  Keep-Alive & Webhook Server running on port {port}")
-
-
-async def render_self_ping_loop():
-    import httpx
-    render_url = os.getenv("RENDER_EXTERNAL_URL")
-    if not render_url:
-        return
-    async with httpx.AsyncClient() as client:
-        while True:
-            await asyncio.sleep(300)
-            try:
-                await client.get(f"{render_url}/ping")
-            except Exception:
-                pass
 
 
 async def run_bot():
     global bot_app_instance
-    print("==================================================")
-    print("  Learn with HiM Quiz Book Bot Engine")
-    print("==================================================")
-
     await start_web_server()
-    asyncio.create_task(render_self_ping_loop())
-    
     app = build_application()
     bot_app_instance = app
 
@@ -321,14 +302,9 @@ async def run_bot():
     await app.bot.delete_webhook(drop_pending_updates=True)
     await app.updater.start_polling(drop_pending_updates=True)
 
-    print("  Bot is online, synchronized, and listening!")
-    print("==================================================")
-
     stop_event = asyncio.Event()
     try:
         await stop_event.wait()
-    except (KeyboardInterrupt, SystemExit):
-        print("\n  Shutting down bot gracefully...")
     finally:
         await app.updater.stop()
         await app.stop()
@@ -339,7 +315,7 @@ def main():
     try:
         asyncio.run(run_bot())
     except (KeyboardInterrupt, SystemExit):
-        print("  Bot offline.")
+        pass
 
 
 if __name__ == "__main__":

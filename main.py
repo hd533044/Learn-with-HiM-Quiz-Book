@@ -4,7 +4,6 @@ import hashlib
 import json
 import logging
 import os
-import sqlite3
 import warnings
 from datetime import datetime, timedelta
 import pytz
@@ -20,9 +19,9 @@ warnings.filterwarnings("ignore")
 from app.telegram_bot import build_application
 from app.config import (
     RAZORPAY_KEY_ID, RAZORPAY_KEY_SECRET, RAZORPAY_WEBHOOK_SECRET, 
-    PLAN_TIERS, DB_FILE
+    PLAN_TIERS
 )
-from app.database import sync_user_json_profile, get_ist_timestamp_str
+from app.database import sync_user_json_profile, get_ist_timestamp_str, get_db
 
 logging.basicConfig(
     format="%(asctime)s - %(levelname)s - %(message)s",
@@ -45,7 +44,7 @@ bot_app_instance = None
 
 
 async def activate_user_subscription(user_id: int, plan_key: str):
-    """Activates subscription ledger in SQLite DB, sets demo_used flag if applicable, & syncs JSON profile."""
+    """Activates subscription ledger in PostgreSQL DB & syncs JSON profile."""
     plan = PLAN_TIERS.get(plan_key)
     if not plan:
         return False
@@ -56,28 +55,22 @@ async def activate_user_subscription(user_id: int, plan_key: str):
     expiry_str = expiry.strftime("%Y-%m-%d %H:%M:%S IST")
 
     try:
-        conn = sqlite3.connect(DB_FILE)
+        conn = get_db()
         cursor = conn.cursor()
         
-        # Check if user table has demo_used column, else fallback gracefully
         if plan_key == "FREE_DEMO":
-            try:
-                cursor.execute(
-                    "UPDATE users SET paid_question_balance = ?, vip_pass_expiry = ?, demo_used = 1 WHERE user_id = ?",
-                    (plan["daily_limit"], expiry_str, user_id)
-                )
-            except sqlite3.OperationalError:
-                cursor.execute(
-                    "UPDATE users SET paid_question_balance = ?, vip_pass_expiry = ? WHERE user_id = ?",
-                    (plan["daily_limit"], expiry_str, user_id)
-                )
+            cursor.execute(
+                "UPDATE users SET paid_question_balance = %s, vip_pass_expiry = %s, demo_used = 1 WHERE user_id = %s",
+                (plan["daily_limit"], expiry_str, user_id)
+            )
         else:
             cursor.execute(
-                "UPDATE users SET paid_question_balance = ?, vip_pass_expiry = ? WHERE user_id = ?",
+                "UPDATE users SET paid_question_balance = %s, vip_pass_expiry = %s WHERE user_id = %s",
                 (plan["daily_limit"], expiry_str, user_id)
             )
 
         conn.commit()
+        cursor.close()
         conn.close()
 
         sync_user_json_profile(user_id)
@@ -89,7 +82,6 @@ async def activate_user_subscription(user_id: int, plan_key: str):
 
 
 async def send_payment_invoice_telegram(user_id: int, plan_key: str, payment_id: str = "N/A"):
-    """Sends an official payment receipt & celebratory activation message to Telegram."""
     if not bot_app_instance:
         return
 
@@ -123,16 +115,13 @@ async def send_payment_invoice_telegram(user_id: int, plan_key: str, payment_id:
 
 
 async def handle_ping(request):
-    """Render Web Service Healthcheck Endpoint."""
     return web.Response(text="Learn with HiM Quiz Book Bot is Online & Active!")
 
 
 async def handle_razorpay_callback_get(request):
-    """Handles GET redirects from Razorpay checkout after user completes payment."""
     params = request.query
     razorpay_payment_id = params.get("razorpay_payment_id", "N/A")
 
-    # Extract parameters passed directly or via notes
     user_id = params.get("user_id") or params.get("notes[user_id]")
     plan_key = params.get("plan_key") or params.get("notes[plan_key]")
 
@@ -223,7 +212,6 @@ async def handle_razorpay_callback_get(request):
 
 
 async def handle_razorpay_webhook(request):
-    """Webhook Handler for Automated VIP Activation."""
     try:
         body = await request.text()
         signature = request.headers.get("X-Razorpay-Signature", "")
@@ -260,7 +248,6 @@ async def handle_razorpay_webhook(request):
 
 
 async def start_web_server():
-    """Starts a web server for keep-alive calls, user redirects & Razorpay Webhooks."""
     app = web.Application()
     app.router.add_get("/", handle_ping)
     app.router.add_get("/ping", handle_ping)
@@ -276,7 +263,6 @@ async def start_web_server():
 
 
 async def render_self_ping_loop():
-    """Heartbeat loop that pings every 5 minutes to prevent Render sleep."""
     import httpx
     render_url = os.getenv("RENDER_EXTERNAL_URL")
     if not render_url:

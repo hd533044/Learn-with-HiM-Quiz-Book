@@ -45,42 +45,53 @@ bot_app_instance = None
 
 
 async def activate_user_subscription(user_id: int, plan_key: str, payment_id: str = "OFFICIAL_SUBSCRIBED"):
-    """Activates subscription in DB, logs real Razorpay payment ID, and syncs user state."""
+    """
+    Activates subscription, records entry in database, and updates user profile limits.
+    Calculates exact dynamic expiry from the second code is run.
+    """
     plan = PLAN_TIERS.get(plan_key)
     if not plan:
         return False
 
     ist = pytz.timezone("Asia/Kolkata")
     now = datetime.now(ist)
-    expiry = now + timedelta(days=plan["days"])
-    expiry_str = expiry.strftime("%Y-%m-%d %H:%M:%S IST")
+    
+    # Calculate exact dynamic expiry timestamp
+    expiry_dt = now + timedelta(days=plan["days"])
+    expiry_str = expiry_dt.strftime("%Y-%m-%d %H:%M:%S IST")
     payment_time_str = now.strftime("%d %b %Y, %I:%M %p IST")
+
+    profile = get_user_profile(user_id) or {}
+    current_bal = profile.get("paid_question_balance", 0) or 0
+
+    # Stack daily quota accurately
+    new_bal = current_bal + plan["daily_limit"]
 
     conn = None
     try:
         conn = get_db()
         cursor = conn.cursor()
         
-        # 1. Update user active balance, expiry, payment ID, and timestamp
+        # 1. Update user record
         if plan_key == "FREE_DEMO":
             cursor.execute(
                 "UPDATE users SET paid_question_balance = %s, vip_pass_expiry = %s, payment_id = %s, payment_timestamp = %s, demo_used = 1 WHERE user_id = %s",
-                (plan["daily_limit"], expiry_str, payment_id, payment_time_str, user_id)
+                (new_bal, expiry_str, payment_id, payment_time_str, user_id)
             )
         else:
             cursor.execute(
                 "UPDATE users SET paid_question_balance = %s, vip_pass_expiry = %s, payment_id = %s, payment_timestamp = %s WHERE user_id = %s",
-                (plan["daily_limit"], expiry_str, payment_id, payment_time_str, user_id)
+                (new_bal, expiry_str, payment_id, payment_time_str, user_id)
             )
 
-        # 2. Record Transaction History Entry
+        # 2. Log payment transaction
         cursor.execute(
             """
             INSERT INTO payment_transactions 
-            (user_id, payment_id, plan_key, plan_name, amount_paid, daily_quota, validity_days, created_at)
-            VALUES (%s, %s, %s, %s, %s, %s, %s, %s)
+            (user_id, payment_id, plan_key, plan_name, amount_paid, daily_quota, validity_days, created_at, expiry_at)
+            VALUES (%s, %s, %s, %s, %s, %s, %s, %s, %s)
             """,
-            (user_id, payment_id, plan_key, plan["name"], plan["price"], plan["daily_limit"], plan["days"], payment_time_str)
+            (user_id, payment_id, plan_key, plan["name"], plan["price"], plan["daily_limit"], plan["days"], payment_time_str, expiry_str)
         )
 
         conn.commit()
@@ -88,52 +99,53 @@ async def activate_user_subscription(user_id: int, plan_key: str, payment_id: st
         release_db(conn)
 
         sync_user_json_profile(user_id)
-        logging.info(f"Successfully recorded transaction {payment_id} ({plan_key}) for user {user_id}")
+        logging.info(f"Activated plan {plan_key} for user {user_id}. Quota: {new_bal}, Expiry: {expiry_str}")
         return True
     except Exception as e:
         if conn:
             release_db(conn)
-        logging.error(f"Error updating subscription for user {user_id}: {e}")
+        logging.error(f"Error activating subscription: {e}")
         return False
 
 
 async def send_payment_invoice_telegram(user_id: int, plan_key: str, payment_id: str = "OFFICIAL_SUBSCRIBED"):
-    """Sends official text invoice AND generated Graphic Invoice Receipt Card."""
+    """
+    Delivers prompted text invoice AND HD receipt image card to user on payment completion.
+    """
     if not bot_app_instance:
         return
 
     plan_info = PLAN_TIERS.get(plan_key, {})
-    txn_time = get_ist_timestamp_str()
     plan_name = plan_info.get('name', plan_key)
 
     profile = await asyncio.to_thread(get_user_profile, user_id) or {}
     sid = profile.get("student_id", f"USER_{user_id}")
-    orig_payment_time = profile.get("payment_timestamp") or txn_time
+    orig_payment_time = profile.get("payment_timestamp") or get_ist_timestamp_str()
+    total_quota = profile.get("paid_question_balance", 0)
 
-    invoice_msg = (
-        f"🥳 **CONGRATULATIONS! PACK ACTIVATED!** 🥳\n"
+    prompted_invoice_msg = (
+        f"🥳 **PAYMENT CONFIRMED & PACK ACTIVATED!** 🥳\n"
         f"━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\n"
-        f"🎉 **Your {plan_name} has been successfully activated!**\n"
-        f"✨ You can now start your preparation immediately.\n\n"
+        f"🎉 **Purchased Plan:** `{plan_name}`\n"
+        f"⚡ **New Daily Limit:** `{total_quota} Questions / Day`\n"
+        f"⏳ **Pass Expiry Date:** `{profile.get('vip_pass_expiry')}`\n\n"
         f"🧾 **OFFICIAL PAYMENT RECEIPT**\n"
-        f"• **Unlocked Pack:** `{plan_name}`\n"
         f"• **Amount Paid:** ₹{plan_info.get('price', 0)} INR\n"
-        f"• **Payment / Txn ID:** `{payment_id}`\n"
-        f"• **Date & Time:** `{orig_payment_time}`\n"
-        f"• **Validity:** `{plan_info.get('days')} Days`\n"
-        f"• **Daily Question Limit:** `{plan_info.get('daily_limit')} Questions / Day`\n"
+        f"• **Txn / Payment ID:** `{payment_id}`\n"
+        f"• **Payment Date:** `{orig_payment_time}`\n"
+        f"• **Pack Validity:** `{plan_info.get('days')} Days`\n"
         f"━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\n"
-        f"🚀 Tap **/quiz** to launch your Computer Quiz practice session now!"
+        f"🚀 Use **/quiz** to start practicing!"
     )
     try:
-        # Send text invoice
+        # Send prompted text invoice
         await bot_app_instance.bot.send_message(
             chat_id=user_id,
-            text=invoice_msg,
+            text=prompted_invoice_msg,
             parse_mode="Markdown"
         )
 
-        # Generate & send Graphic Receipt Image Card
+        # Generate and send graphic image card invoice
         img_card_path = await asyncio.to_thread(
             generate_payment_invoice_card, 
             user_id, 
@@ -146,17 +158,18 @@ async def send_payment_invoice_telegram(user_id: int, plan_key: str, payment_id:
                 await bot_app_instance.bot.send_photo(
                     chat_id=user_id,
                     photo=card_file,
-                    caption=f"💳 **OFFICIAL PAYMENT RECEIPT CARD** — `{sid}`\n🏷 Verified by Razorpay & Learn with HiM",
+                    caption=f"💳 **OFFICIAL ULTRA-HD RECEIPT CARD** — `{sid}`\n🏷 Verified by Razorpay & Learn with HiM",
                     parse_mode="Markdown"
                 )
-            os.remove(img_card_path)
+            if os.path.exists(img_card_path):
+                os.remove(img_card_path)
 
     except Exception as err:
-        logging.error(f"Failed to notify user {user_id} via Telegram: {err}")
+        logging.error(f"Failed to send Telegram invoice notification: {err}")
 
 
 async def handle_ping(request):
-    return web.Response(text="Learn with HiM Quiz Book Bot is Online & Active!")
+    return web.Response(text="Bot Engine is Active")
 
 
 async def handle_razorpay_callback_get(request):
@@ -173,83 +186,9 @@ async def handle_razorpay_callback_get(request):
             if activated:
                 await send_payment_invoice_telegram(uid, plan_key, razorpay_payment_id)
         except Exception as e:
-            logging.error(f"Error activating from GET callback redirect: {e}")
+            logging.error(f"Callback error: {e}")
 
-    html_content = f"""
-    <!DOCTYPE html>
-    <html>
-    <head>
-        <title>Payment Successful - Learn with HiM Quiz Book</title>
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <style>
-            body {{
-                font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-                background: #0f172a;
-                color: #f8fafc;
-                display: flex;
-                justify-content: center;
-                align-items: center;
-                min-height: 100vh;
-                margin: 0;
-                padding: 20px;
-            }}
-            .card {{
-                background: #1e293b;
-                border-radius: 16px;
-                padding: 32px;
-                max-width: 420px;
-                width: 100%;
-                box-shadow: 0 10px 25px rgba(0, 0, 0, 0.5);
-                text-align: center;
-                border: 1px solid #334155;
-            }}
-            .icon {{
-                font-size: 56px;
-                margin-bottom: 16px;
-            }}
-            h2 {{
-                color: #38bdf8;
-                margin-bottom: 8px;
-            }}
-            p {{
-                color: #94a3b8;
-                font-size: 15px;
-                line-height: 1.5;
-            }}
-            .id-box {{
-                background: #0f172a;
-                padding: 12px;
-                border-radius: 8px;
-                font-family: monospace;
-                color: #38bdf8;
-                margin: 16px 0;
-                word-break: break-all;
-            }}
-            .btn {{
-                display: inline-block;
-                background: #2563eb;
-                color: white;
-                text-decoration: none;
-                padding: 12px 24px;
-                border-radius: 8px;
-                font-weight: bold;
-                margin-top: 16px;
-            }}
-        </style>
-    </head>
-    <body>
-        <div class="card">
-            <div class="icon">🎉</div>
-            <h2>Payment Successful!</h2>
-            <p>Congratulations! Your VIP plan has been activated.</p>
-            <div class="id-box">Payment ID: {razorpay_payment_id}</div>
-            <p>An official invoice and receipt card have been sent to your Telegram chat.</p>
-            <a href="https://t.me/LearnwithHiMQuizzzbot" class="btn">Return to Telegram Bot</a>
-        </div>
-    </body>
-    </html>
-    """
-    return web.Response(text=html_content, content_type="text/html")
+    return web.Response(text="Payment Processed Successfully", content_type="text/html")
 
 
 async def handle_razorpay_webhook(request):
@@ -272,8 +211,9 @@ async def handle_razorpay_webhook(request):
         if event in ("payment_link.paid", "payment.captured"):
             payload = data.get("payload", {}).get("payment_link", {}).get("entity", {}) or data.get("payload", {}).get("payment", {}).get("entity", {})
             notes = payload.get("notes", {})
-            user_id = notes.get("user_id")
-            plan_key = notes.get("plan_key")
+            
+            user_id = notes.get("user_id") or payload.get("notes", {}).get("user_id")
+            plan_key = notes.get("plan_key") or payload.get("notes", {}).get("plan_key")
             payment_id = payload.get("payment_id") or payload.get("id") or "OFFICIAL_SUBSCRIBED"
 
             if user_id and plan_key:
@@ -282,7 +222,7 @@ async def handle_razorpay_webhook(request):
                 if success:
                     await send_payment_invoice_telegram(uid, plan_key, payment_id)
 
-        return web.Response(status=200, text="Webhook Processed")
+        return web.Response(status=200, text="OK")
     except Exception as e:
         logging.error(f"Webhook error: {e}")
         return web.Response(status=500, text=str(e))
@@ -300,32 +240,11 @@ async def start_web_server():
     await runner.setup()
     site = web.TCPSite(runner, "0.0.0.0", port)
     await site.start()
-    print(f"  Keep-Alive & Webhook Server running on port {port}")
-
-
-async def render_self_ping_loop():
-    import httpx
-    render_url = os.getenv("RENDER_EXTERNAL_URL")
-    if not render_url:
-        return
-    async with httpx.AsyncClient() as client:
-        while True:
-            await asyncio.sleep(300)
-            try:
-                await client.get(f"{render_url}/ping")
-            except Exception:
-                pass
 
 
 async def run_bot():
     global bot_app_instance
-    print("==================================================")
-    print("  Learn with HiM Quiz Book Bot Engine")
-    print("==================================================")
-
     await start_web_server()
-    asyncio.create_task(render_self_ping_loop())
-    
     app = build_application()
     bot_app_instance = app
 
@@ -334,14 +253,9 @@ async def run_bot():
     await app.bot.delete_webhook(drop_pending_updates=True)
     await app.updater.start_polling(drop_pending_updates=True)
 
-    print("  Bot is online, synchronized, and listening!")
-    print("==================================================")
-
     stop_event = asyncio.Event()
     try:
         await stop_event.wait()
-    except (KeyboardInterrupt, SystemExit):
-        print("\n  Shutting down bot gracefully...")
     finally:
         await app.updater.stop()
         await app.stop()
@@ -352,7 +266,7 @@ def main():
     try:
         asyncio.run(run_bot())
     except (KeyboardInterrupt, SystemExit):
-        print("  Bot offline.")
+        pass
 
 
 if __name__ == "__main__":

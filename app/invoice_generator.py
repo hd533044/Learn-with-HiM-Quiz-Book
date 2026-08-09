@@ -18,7 +18,7 @@ def mask_phone_number(phone_str: str) -> str:
 
 
 def clean_plan_name(name_str: str) -> str:
-    """Strips emoji icons like 📦 or 🎁 to prevent broken [] square symbols on system fonts."""
+    """Strips emoji icons like 📦 or 🎁 to avoid font fallback issues."""
     if not name_str:
         return "BRONZE PACK"
     clean = re.sub(r'[^\x00-\x7F]+', '', name_str).strip()
@@ -26,7 +26,7 @@ def clean_plan_name(name_str: str) -> str:
 
 
 def get_latest_user_transaction(user_id: int):
-    """Fetches the most recent payment transaction log for the user."""
+    """Retrieves the latest transaction record from payment_transactions."""
     conn = None
     try:
         conn = get_db()
@@ -63,8 +63,7 @@ def get_ttf_font(size: int, bold: bool = False):
 
 def generate_payment_invoice_card(user_id: int, plan_key: str = None, payment_id: str = None, txn_time_str: str = None) -> str:
     """
-    Generates an executive-grade academic fee receipt card.
-    Strictly displays base plan quota without bonus calculations.
+    Generates an exact 2K Ultra-HD fee receipt matching current payment timestamps and active plan parameters.
     """
     try:
         profile = get_user_profile(user_id) or {}
@@ -77,17 +76,17 @@ def generate_payment_invoice_card(user_id: int, plan_key: str = None, payment_id
         paid_bal = profile.get("paid_question_balance", 0) or 80
         vip_expiry_raw = profile.get("vip_pass_expiry") or "N/A"
 
-        # Determine Real Razorpay Payment / Txn ID
+        # Determine Razorpay Payment ID
         real_payment_id = payment_id or profile.get("payment_id")
         if latest_txn and (not real_payment_id or real_payment_id == "OFFICIAL_SUBSCRIBED"):
             real_payment_id = latest_txn.get("payment_id")
         if not real_payment_id or real_payment_id == "N/A":
             real_payment_id = "OFFICIAL_SUBSCRIBED"
 
-        # Permanent Deterministic Invoice Number
+        # Invoice ID
         invoice_no = f"INV-{student_id}-{user_id}"
 
-        # Resolve Active Plan Info directly from PLAN_TIERS
+        # Resolve Plan Specs
         if latest_txn:
             p_key = latest_txn.get("plan_key") or plan_key or "BRONZE"
             p_name = clean_plan_name(latest_txn.get("plan_name"))
@@ -108,10 +107,9 @@ def generate_payment_invoice_card(user_id: int, plan_key: str = None, payment_id
             base_quota = p_info.get("daily_limit")
             payment_date_str = None
 
-        # STRICTLY DISPLAY PLAN PACK BASE QUOTA
         quota_display_str = f"{base_quota} Questions / Day"
 
-        # Synchronize Payment Date
+        # Synchronize Payment Date precisely
         ist = pytz.timezone("Asia/Kolkata")
         if not payment_date_str or payment_date_str == "N/A":
             payment_date_str = profile.get("payment_timestamp")
@@ -137,7 +135,7 @@ def generate_payment_invoice_card(user_id: int, plan_key: str = None, payment_id
         else:
             expiry_display_str = "N/A"
 
-        # Canvas Dimensions
+        # Image Dimensions
         width, height = 1400, 1850
         image = Image.new("RGBA", (width, height), "#FFFFFF")
         draw = ImageDraw.Draw(image)
@@ -157,7 +155,7 @@ def generate_payment_invoice_card(user_id: int, plan_key: str = None, payment_id
         TEXT_GREEN = "#15803D"
         TEXT_ORANGE = "#D97706"
 
-        # 1. Top Header Banner
+        # 1. Header Banner
         draw.rectangle([0, 0, width, 180], fill=NAVY_DARK)
         draw.rectangle([100, 45, width - 100, 205], fill=NAVY_LIGHT)
         draw.text((320, 100), "LEARN WITH HIM QUIZ BOOK", fill="#FFFFFF", font=font_title)
@@ -258,7 +256,7 @@ def generate_payment_invoice_card(user_id: int, plan_key: str = None, payment_id
         draw.rectangle([100, y, 480, y + 80], fill=NAVY_LIGHT, outline=NAVY_DARK, width=2)
         draw.text((130, y + 20), f"Rs: ₹{p_price}/-", fill="#FFFFFF", font=font_amount)
 
-        # 6. Verification Seal (ISSUED BY REMOVED)
+        # 6. Verification Seal
         draw.rectangle([750, y, 1300, y + 80], outline="#16A34A", width=2)
         draw.text((780, y + 15), "RAZORPAY SECURE VERIFIED ✔", fill="#16A34A", font=font_label)
         draw.text((780, y + 45), "STATUS: PAYMENT_SUCCESS", fill=TEXT_GREEN, font=font_val)

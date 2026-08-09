@@ -1,0 +1,64 @@
+{
+    "student_id": "Me140105",
+    "registration_info": {
+        "user_id": 5749704601,
+        "student_id": "Me140105",
+        "full_name": "Mehak sharma",
+        "username": "mehaksha_2005",
+        "phone_number": "917834865839",
+        "target_exam": "BSF HCM",
+        "dob": "14-01-2005",
+        "age": 21,
+        "gender": "Female",
+        "country": "India",
+        "state": "Delhi",
+        "pin": "4321",
+        "security_question": "🐾 What is your pet's name?",
+        "security_answer": "sam",
+        "referred_by": null,
+        "referral_count": 0,
+        "bonus_quota": 0,
+        "paid_question_balance": 0,
+        "vip_pass_expiry": null,
+        "last_profile_edit": null,
+        "last_active": "2026-08-05 15:21:52 IST",
+        "last_activity_epoch": 0,
+        "is_banned": 0,
+        "is_verified": 1,
+        "created_at": "2026-08-05 15:16:19 IST"
+    },
+    "bot_engagement_metrics": {
+        "last_login_timestamp": "2026-08-05 15:21:52 IST",
+        "total_time_spent_overall": "0 seconds (0.0 mins)",
+        "daily_spent_time_breakdown": {},
+        "questions_attempted_per_day": {}
+    },
+    "academic_summary": {
+        "total_quizzes_attempted": 0,
+        "total_questions_attempted": 0,
+        "total_correct": 0,
+        "total_wrong": 0,
+        "total_skipped": 0,
+        "datewise_quiz_summary": {}
+    },
+    "saved_questions_ledger": {
+        "total_saved": 0,
+        "datewise_saved_summary": {},
+        "saved_questions": []
+    },
+    "student_reviews_given": [],
+    "subscription_ledger": {
+        "status": "FREE_TIER",
+        "paid_question_balance": 0,
+        "vip_pass_expiry": null
+    },
+    "badges_and_achievements": {
+        "earned_badges": [
+            "Early Learner",
+            "Registered Scholar"
+        ],
+        "streak_days": 0
+    },
+    "full_quiz_history": [],
+    "last_synced": "2026-08-05 20:33:22 IST"
+}

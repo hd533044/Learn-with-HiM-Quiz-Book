@@ -1,0 +1,74 @@
+{
+    "student_id": "Tu050202",
+    "registration_info": {
+        "user_id": 5374831084,
+        "student_id": "Tu050202",
+        "full_name": "TUNA JAGADALA",
+        "username": "N/A",
+        "phone_number": "917326920636",
+        "target_exam": "BSF HCM",
+        "dob": "05-02-2002",
+        "age": 24,
+        "gender": "Male",
+        "country": "India",
+        "state": "Odisha",
+        "pin": "0120",
+        "security_question": "🏫 What was the name of your first school?",
+        "security_answer": "Panchayat school",
+        "referred_by": null,
+        "referral_count": 0,
+        "bonus_quota": 0,
+        "paid_question_balance": 0,
+        "vip_pass_expiry": null,
+        "last_profile_edit": null,
+        "last_active": "2026-08-05 19:35:08 IST",
+        "last_activity_epoch": 1785938708,
+        "is_banned": 0,
+        "is_verified": 1,
+        "created_at": "2026-08-05 11:19:16 IST"
+    },
+    "bot_engagement_metrics": {
+        "last_login_timestamp": "2026-08-05 19:35:08 IST",
+        "total_time_spent_overall": "40 seconds (0.67 mins)",
+        "daily_spent_time_breakdown": {
+            "2026-08-05": "40 seconds (0.67 mins)"
+        },
+        "questions_attempted_per_day": {}
+    },
+    "academic_summary": {
+        "total_quizzes_attempted": 0,
+        "total_questions_attempted": 0,
+        "total_correct": 0,
+        "total_wrong": 0,
+        "total_skipped": 0,
+        "datewise_quiz_summary": {}
+    },
+    "saved_questions_ledger": {
+        "total_saved": 0,
+        "datewise_saved_summary": {},
+        "saved_questions": []
+    },
+    "student_reviews_given": [
+        {
+            "id": 8,
+            "user_id": 5374831084,
+            "full_name": "TUNA JAGADALA",
+            "feedback_text": "10/10 Quality Quizzes!",
+            "submitted_at": "2026-08-05 19:34:44 IST"
+        }
+    ],
+    "subscription_ledger": {
+        "status": "FREE_TIER",
+        "paid_question_balance": 0,
+        "vip_pass_expiry": null
+    },
+    "badges_and_achievements": {
+        "earned_badges": [
+            "Early Learner",
+            "Registered Scholar"
+        ],
+        "streak_days": 0
+    },
+    "full_quiz_history": [],
+    "last_synced": "2026-08-05 20:33:22 IST"
+}

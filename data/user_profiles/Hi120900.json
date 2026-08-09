@@ -1,0 +1,66 @@
+{
+    "student_id": "Hi120900",
+    "registration_info": {
+        "user_id": 1091057353,
+        "student_id": "Hi120900",
+        "full_name": "Himanshu",
+        "username": "iamhimnshu",
+        "phone_number": "917073923272",
+        "target_exam": "SSC CGL",
+        "dob": "12-09-2000",
+        "age": 26,
+        "gender": "Male",
+        "country": "India",
+        "state": "Delhi",
+        "pin": "5330",
+        "security_question": "🏙 Which is your favorite city?",
+        "security_answer": "Delhi",
+        "referred_by": null,
+        "referral_count": 0,
+        "bonus_quota": 0,
+        "paid_question_balance": 0,
+        "vip_pass_expiry": null,
+        "last_profile_edit": null,
+        "last_active": "2026-08-05 19:41:55 IST",
+        "last_activity_epoch": 1785939115,
+        "is_banned": 0,
+        "is_verified": 1,
+        "created_at": "2026-08-05 08:52:33 IST"
+    },
+    "bot_engagement_metrics": {
+        "last_login_timestamp": "2026-08-05 19:41:55 IST",
+        "total_time_spent_overall": "240 seconds (4.0 mins)",
+        "daily_spent_time_breakdown": {
+            "2026-08-05": "240 seconds (4.0 mins)"
+        },
+        "questions_attempted_per_day": {}
+    },
+    "academic_summary": {
+        "total_quizzes_attempted": 0,
+        "total_questions_attempted": 0,
+        "total_correct": 0,
+        "total_wrong": 0,
+        "total_skipped": 0,
+        "datewise_quiz_summary": {}
+    },
+    "saved_questions_ledger": {
+        "total_saved": 0,
+        "datewise_saved_summary": {},
+        "saved_questions": []
+    },
+    "student_reviews_given": [],
+    "subscription_ledger": {
+        "status": "FREE_TIER",
+        "paid_question_balance": 0,
+        "vip_pass_expiry": null
+    },
+    "badges_and_achievements": {
+        "earned_badges": [
+            "Early Learner",
+            "Registered Scholar"
+        ],
+        "streak_days": 0
+    },
+    "full_quiz_history": [],
+    "last_synced": "2026-08-05 20:33:22 IST"
+}

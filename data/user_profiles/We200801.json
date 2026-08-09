@@ -1,0 +1,64 @@
+{
+    "student_id": "We200801",
+    "registration_info": {
+        "user_id": 5782985083,
+        "student_id": "We200801",
+        "full_name": "❤️ WELCOME TO LEARN WITH HIM QUIZ BOOK ❤️\n👑 THE BEST-IN-CLASS QUIZ BOOK BY HIMANSHU SIR 👑\n\n✨ Sharpen your skills with high-quality, exam-focused quizzes designed to help you learn faster, practice smarter, and score higher! 🚀\n\n📚 Curated Questions • ⚡ Instant Results • 📈 Performance Tracking • 🏆 Daily Improvement\n\n🎯 PRACTICE. LEARN. ACHIEVE. 🎯\n\n🌟 Welcome to the Learn with HiM family. Wishing you ultimate success in every exam! ❤️\n\n━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\n📝 STUDENT REGISTRATION (STEP 1/7) 📝\n\n👤 Please reply with your Full Name (at least 4 alphabetic letters) to generate your Official Student ID:",
+        "username": "N/A",
+        "phone_number": "917457974092",
+        "target_exam": "CAPF HCM",
+        "dob": "20-08-2001",
+        "age": 25,
+        "gender": "Male",
+        "country": "India",
+        "state": "Uttar Pradesh",
+        "pin": "4321",
+        "security_question": "🐾 What is your pet's name?",
+        "security_answer": "7457",
+        "referred_by": null,
+        "referral_count": 0,
+        "bonus_quota": 0,
+        "paid_question_balance": 0,
+        "vip_pass_expiry": null,
+        "last_profile_edit": null,
+        "last_active": "2026-08-05 13:11:53 IST",
+        "last_activity_epoch": 0,
+        "is_banned": 0,
+        "is_verified": 1,
+        "created_at": "2026-08-05 13:04:44 IST"
+    },
+    "bot_engagement_metrics": {
+        "last_login_timestamp": "2026-08-05 13:11:53 IST",
+        "total_time_spent_overall": "0 seconds (0.0 mins)",
+        "daily_spent_time_breakdown": {},
+        "questions_attempted_per_day": {}
+    },
+    "academic_summary": {
+        "total_quizzes_attempted": 0,
+        "total_questions_attempted": 0,
+        "total_correct": 0,
+        "total_wrong": 0,
+        "total_skipped": 0,
+        "datewise_quiz_summary": {}
+    },
+    "saved_questions_ledger": {
+        "total_saved": 0,
+        "datewise_saved_summary": {},
+        "saved_questions": []
+    },
+    "student_reviews_given": [],
+    "subscription_ledger": {
+        "status": "FREE_TIER",
+        "paid_question_balance": 0,
+        "vip_pass_expiry": null
+    },
+    "badges_and_achievements": {
+        "earned_badges": [
+            "Early Learner",
+            "Registered Scholar"
+        ],
+        "streak_days": 0
+    },
+    "full_quiz_history": [],
+    "last_synced": "2026-08-05 20:33:22 IST"
+}

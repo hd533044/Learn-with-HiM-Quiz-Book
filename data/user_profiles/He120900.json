@@ -1,0 +1,184 @@
+{
+    "student_id": "He120900",
+    "registration_info": {
+        "user_id": 2070531704,
+        "student_id": "He120900",
+        "full_name": "Hemant",
+        "username": "Himnshusharma",
+        "phone_number": "917611993669",
+        "target_exam": "SSC CGL",
+        "dob": "12-09-2000",
+        "age": 26,
+        "gender": "Male",
+        "country": "India",
+        "state": "Delhi",
+        "pin": "7073",
+        "security_question": "🏙 Which is your favorite city?",
+        "security_answer": "Delhi",
+        "referred_by": null,
+        "referral_count": 0,
+        "bonus_quota": 0,
+        "paid_question_balance": 0,
+        "vip_pass_expiry": null,
+        "last_profile_edit": "2026-08-05 17:56:01 IST",
+        "last_active": "2026-08-05 19:43:04 IST",
+        "last_activity_epoch": 1785939184,
+        "is_banned": 0,
+        "is_verified": 1,
+        "created_at": "2026-08-05 17:56:01 IST"
+    },
+    "bot_engagement_metrics": {
+        "last_login_timestamp": "2026-08-05 19:43:04 IST",
+        "total_time_spent_overall": "240 seconds (4.0 mins)",
+        "daily_spent_time_breakdown": {
+            "2026-08-05": "240 seconds (4.0 mins)"
+        },
+        "questions_attempted_per_day": {
+            "2026-08-05": 10
+        }
+    },
+    "academic_summary": {
+        "total_quizzes_attempted": 1,
+        "total_questions_attempted": 10,
+        "total_correct": 5,
+        "total_wrong": 5,
+        "total_skipped": 0,
+        "datewise_quiz_summary": {
+            "2026-08-05": {
+                "total_quizzes": 1,
+                "total_questions": 10,
+                "total_correct": 5,
+                "total_wrong": 5,
+                "total_score": 5.0,
+                "total_time_seconds": 0
+            }
+        }
+    },
+    "saved_questions_ledger": {
+        "total_saved": 0,
+        "datewise_saved_summary": {},
+        "saved_questions": []
+    },
+    "student_reviews_given": [],
+    "subscription_ledger": {
+        "status": "FREE_TIER",
+        "paid_question_balance": 0,
+        "vip_pass_expiry": null
+    },
+    "badges_and_achievements": {
+        "earned_badges": [
+            "Early Learner",
+            "Registered Scholar"
+        ],
+        "streak_days": 1
+    },
+    "full_quiz_history": [
+        {
+            "id": 10,
+            "user_id": 2070531704,
+            "quiz_id": "computer_awareness_mock",
+            "questions_attempted": 10,
+            "total_questions": 10,
+            "correct_answers": 5,
+            "wrong_answers": 5,
+            "skipped_count": 0,
+            "score": 5.0,
+            "time_taken": 0,
+            "attempt_timestamp": "2026-08-05 17:58:07 IST",
+            "attempt_date": "2026-08-05",
+            "question_details": [
+                {
+                    "question_id": 42,
+                    "question_text": "What is the purpose of Win Keys + No. 1,2,3,4,5?",
+                    "status": "CORRECT",
+                    "selected_option": 0,
+                    "correct_option": 0,
+                    "correct_answer_text": "To show the active window one by one",
+                    "timestamp": "2026-08-05 17:56:43 IST"
+                },
+                {
+                    "question_id": 299,
+                    "question_text": "What is the primary function of Network Attached Storage (NAS)?",
+                    "status": "WRONG",
+                    "selected_option": 3,
+                    "correct_option": 1,
+                    "correct_answer_text": "To provide a centralized disk storage",
+                    "timestamp": "2026-08-05 17:56:54 IST"
+                },
+                {
+                    "question_id": 237,
+                    "question_text": "What is the purpose of a router in repackaging data packets?",
+                    "status": "WRONG",
+                    "selected_option": 3,
+                    "correct_option": 0,
+                    "correct_answer_text": "To reduce the size of the packets",
+                    "timestamp": "2026-08-05 17:57:03 IST"
+                },
+                {
+                    "question_id": 97,
+                    "question_text": "How many rows and columns are there in a worksheet of MS-Excel 2010?",
+                    "status": "CORRECT",
+                    "selected_option": 1,
+                    "correct_option": 1,
+                    "correct_answer_text": "1,048,576 rows and 16,384 columns",
+                    "timestamp": "2026-08-05 17:57:08 IST"
+                },
+                {
+                    "question_id": 177,
+                    "question_text": "What is the function of the keyboard shortcut Ctrl + Tab?",
+                    "status": "WRONG",
+                    "selected_option": 0,
+                    "correct_option": 1,
+                    "correct_answer_text": "Moves to the next open workbook or window",
+                    "timestamp": "2026-08-05 17:57:19 IST"
+                },
+                {
+                    "question_id": 553,
+                    "question_text": "What is the purpose of the Exclusion Dictionary in Microsoft Word?",
+                    "status": "WRONG",
+                    "selected_option": 1,
+                    "correct_option": 0,
+                    "correct_answer_text": "To exclude specific sections or types of text from the spelling and grammar check",
+                    "timestamp": "2026-08-05 17:57:30 IST"
+                },
+                {
+                    "question_id": 538,
+                    "question_text": "What is an example of system software?",
+                    "status": "CORRECT",
+                    "selected_option": 2,
+                    "correct_option": 2,
+                    "correct_answer_text": "Windows operating system",
+                    "timestamp": "2026-08-05 17:57:37 IST"
+                },
+                {
+                    "question_id": 248,
+                    "question_text": "What is the function of a router in repackaging data packets?",
+                    "status": "CORRECT",
+                    "selected_option": 0,
+                    "correct_option": 0,
+                    "correct_answer_text": "To reduce the size of the packets",
+                    "timestamp": "2026-08-05 17:57:48 IST"
+                },
+                {
+                    "question_id": 61,
+                    "question_text": "What is the purpose of Alt + Space + X in a Windows system?",
+                    "status": "WRONG",
+                    "selected_option": 1,
+                    "correct_option": 0,
+                    "correct_answer_text": "To maximize a window",
+                    "timestamp": "2026-08-05 17:57:59 IST"
+                },
+                {
+                    "question_id": 371,
+                    "question_text": "In what year was Apple Inc. founded?",
+                    "status": "CORRECT",
+                    "selected_option": 1,
+                    "correct_option": 1,
+                    "correct_answer_text": "1976",
+                    "timestamp": "2026-08-05 17:58:07 IST"
+                }
+            ]
+        }
+    ],
+    "last_synced": "2026-08-05 20:33:22 IST"
+}

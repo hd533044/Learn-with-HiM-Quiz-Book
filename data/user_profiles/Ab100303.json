@@ -1,0 +1,251 @@
+{
+    "student_id": "Ab100303",
+    "registration_info": {
+        "user_id": 1428644275,
+        "student_id": "Ab100303",
+        "full_name": "Abhishek Singh",
+        "username": "N/A",
+        "phone_number": "918318540600",
+        "target_exam": "CAPF HCM",
+        "dob": "10-03-2003",
+        "age": 23,
+        "gender": "Male",
+        "country": "India",
+        "state": "Uttar Pradesh",
+        "pin": "0600",
+        "security_question": "🏙 Which is your favorite city?",
+        "security_answer": "Mumbai",
+        "referred_by": null,
+        "referral_count": 0,
+        "bonus_quota": 0,
+        "paid_question_balance": 0,
+        "vip_pass_expiry": null,
+        "last_profile_edit": null,
+        "last_active": "2026-08-05 18:51:47 IST",
+        "last_activity_epoch": 1785936107,
+        "is_banned": 0,
+        "is_verified": 1,
+        "created_at": "2026-08-05 14:52:12 IST"
+    },
+    "bot_engagement_metrics": {
+        "last_login_timestamp": "2026-08-05 18:51:47 IST",
+        "total_time_spent_overall": "390 seconds (6.5 mins)",
+        "daily_spent_time_breakdown": {
+            "2026-08-05": "390 seconds (6.5 mins)"
+        },
+        "questions_attempted_per_day": {
+            "2026-08-05": 14
+        }
+    },
+    "academic_summary": {
+        "total_quizzes_attempted": 2,
+        "total_questions_attempted": 14,
+        "total_correct": 3,
+        "total_wrong": 11,
+        "total_skipped": 0,
+        "datewise_quiz_summary": {
+            "2026-08-05": {
+                "total_quizzes": 2,
+                "total_questions": 14,
+                "total_correct": 3,
+                "total_wrong": 11,
+                "total_score": 3.0,
+                "total_time_seconds": 0
+            }
+        }
+    },
+    "saved_questions_ledger": {
+        "total_saved": 0,
+        "datewise_saved_summary": {},
+        "saved_questions": []
+    },
+    "student_reviews_given": [
+        {
+            "id": 5,
+            "user_id": 1428644275,
+            "full_name": "Abhishek Singh",
+            "feedback_text": "Ok",
+            "submitted_at": "2026-08-05 18:48:33 IST"
+        },
+        {
+            "id": 2,
+            "user_id": 1428644275,
+            "full_name": "Abhishek Singh",
+            "feedback_text": "Best Exam Prep Portal!",
+            "submitted_at": "2026-08-05 16:43:45 IST"
+        }
+    ],
+    "subscription_ledger": {
+        "status": "FREE_TIER",
+        "paid_question_balance": 0,
+        "vip_pass_expiry": null
+    },
+    "badges_and_achievements": {
+        "earned_badges": [
+            "Early Learner",
+            "Registered Scholar"
+        ],
+        "streak_days": 1
+    },
+    "full_quiz_history": [
+        {
+            "id": 13,
+            "user_id": 1428644275,
+            "quiz_id": "computer_awareness_mock",
+            "questions_attempted": 4,
+            "total_questions": 4,
+            "correct_answers": 1,
+            "wrong_answers": 3,
+            "skipped_count": 0,
+            "score": 1.0,
+            "time_taken": 0,
+            "attempt_timestamp": "2026-08-05 18:51:47 IST",
+            "attempt_date": "2026-08-05",
+            "question_details": [
+                {
+                    "question_id": 474,
+                    "question_text": "What is the purpose of F2 alone when editing is turned off for the cell?",
+                    "status": "WRONG",
+                    "selected_option": 1,
+                    "correct_option": 0,
+                    "correct_answer_text": "Move the insertion point into the formula bar",
+                    "timestamp": "2026-08-05 18:51:16 IST"
+                },
+                {
+                    "question_id": 507,
+                    "question_text": "Which of the following is an example of multi-factor authentication for PC security?",
+                    "status": "WRONG",
+                    "selected_option": 0,
+                    "correct_option": 1,
+                    "correct_answer_text": "Fingerprint scan",
+                    "timestamp": "2026-08-05 18:51:28 IST"
+                },
+                {
+                    "question_id": 307,
+                    "question_text": "What is the purpose of computer codes?",
+                    "status": "CORRECT",
+                    "selected_option": 2,
+                    "correct_option": 2,
+                    "correct_answer_text": "To represent any character in a unique coded pattern",
+                    "timestamp": "2026-08-05 18:51:32 IST"
+                },
+                {
+                    "question_id": 111,
+                    "question_text": "What is the purpose of the DATEVALUE function?",
+                    "status": "WRONG",
+                    "selected_option": 3,
+                    "correct_option": 1,
+                    "correct_answer_text": "To convert a text string to a date",
+                    "timestamp": "2026-08-05 18:51:44 IST"
+                }
+            ]
+        },
+        {
+            "id": 12,
+            "user_id": 1428644275,
+            "quiz_id": "computer_awareness_mock",
+            "questions_attempted": 10,
+            "total_questions": 10,
+            "correct_answers": 2,
+            "wrong_answers": 8,
+            "skipped_count": 0,
+            "score": 2.0,
+            "time_taken": 0,
+            "attempt_timestamp": "2026-08-05 18:50:55 IST",
+            "attempt_date": "2026-08-05",
+            "question_details": [
+                {
+                    "question_id": 69,
+                    "question_text": "Which tab in MS-EXCEL contains the 'Function Library' and 'Formula Auditing' groups?",
+                    "status": "WRONG",
+                    "selected_option": 0,
+                    "correct_option": 2,
+                    "correct_answer_text": "Formula",
+                    "timestamp": "2026-08-05 18:49:47 IST"
+                },
+                {
+                    "question_id": 210,
+                    "question_text": "Which Internet protocol specifies how data is broken down into packets and exchanged over the Internet?",
+                    "status": "CORRECT",
+                    "selected_option": 0,
+                    "correct_option": 0,
+                    "correct_answer_text": "TCP",
+                    "timestamp": "2026-08-05 18:49:55 IST"
+                },
+                {
+                    "question_id": 473,
+                    "question_text": "What is the shortcut to restore the window size of the selected workbook window?",
+                    "status": "WRONG",
+                    "selected_option": 3,
+                    "correct_option": 0,
+                    "correct_answer_text": "Ctrl+F5",
+                    "timestamp": "2026-08-05 18:50:08 IST"
+                },
+                {
+                    "question_id": 445,
+                    "question_text": "How to preview page breaks and layouts?",
+                    "status": "WRONG",
+                    "selected_option": 0,
+                    "correct_option": 1,
+                    "correct_answer_text": "Alt+W",
+                    "timestamp": "2026-08-05 18:50:17 IST"
+                },
+                {
+                    "question_id": 328,
+                    "question_text": "Which layer is responsible for framing, physical addressing, and error control?",
+                    "status": "WRONG",
+                    "selected_option": 3,
+                    "correct_option": 2,
+                    "correct_answer_text": "Data Link Layer",
+                    "timestamp": "2026-08-05 18:50:24 IST"
+                },
+                {
+                    "question_id": 32,
+                    "question_text": "Which port is used for external modems and older computer mouse and has 9 pins and 25 pins versions?",
+                    "status": "WRONG",
+                    "selected_option": 1,
+                    "correct_option": 3,
+                    "correct_answer_text": "Serial Port",
+                    "timestamp": "2026-08-05 18:50:29 IST"
+                },
+                {
+                    "question_id": 20,
+                    "question_text": "Which port is used for scanners and printers?",
+                    "status": "WRONG",
+                    "selected_option": 2,
+                    "correct_option": 1,
+                    "correct_answer_text": "Parallel Port",
+                    "timestamp": "2026-08-05 18:50:33 IST"
+                },
+                {
+                    "question_id": 471,
+                    "question_text": "What is the purpose of F6 alone in a worksheet that has been split?",
+                    "status": "CORRECT",
+                    "selected_option": 0,
+                    "correct_option": 0,
+                    "correct_answer_text": "Switches between the worksheet, ribbon, task pane, and Zoom controls, including split panes",
+                    "timestamp": "2026-08-05 18:50:37 IST"
+                },
+                {
+                    "question_id": 438,
+                    "question_text": "What is the shortcut to move one screen to the left in a worksheet?",
+                    "status": "WRONG",
+                    "selected_option": 1,
+                    "correct_option": 0,
+                    "correct_answer_text": "Alt+Page up",
+                    "timestamp": "2026-08-05 18:50:47 IST"
+                },
+                {
+                    "question_id": 23,
+                    "question_text": "Which of the following ports is used for external modems and older computer mouse?",
+                    "status": "WRONG",
+                    "selected_option": 1,
+                    "correct_option": 3,
+                    "correct_answer_text": "Serial Port",
+                    "timestamp": "2026-08-05 18:50:54 IST"
+                }
+            ]
+        }
+    ],
+    "last_synced": "2026-08-05 20:33:22 IST"
+}

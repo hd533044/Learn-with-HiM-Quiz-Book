@@ -37,7 +37,6 @@ def get_latest_user_transaction(user_id: int):
 
 
 def get_ttf_font(size: int, bold: bool = False):
-    """Loads crisp system fonts for high-definition rendering."""
     font_paths = [
         "C:\\Windows\\Fonts\\arialbd.ttf" if bold else "C:\\Windows\\Fonts\\arial.ttf",
         "/usr/share/fonts/truetype/dejavu/DejaVuSans-Bold.ttf" if bold else "/usr/share/fonts/truetype/dejavu/DejaVuSans.ttf",
@@ -55,8 +54,9 @@ def get_ttf_font(size: int, bold: bool = False):
 
 def generate_payment_invoice_card(user_id: int, plan_key: str = None, payment_id: str = None, txn_time_str: str = None) -> str:
     """
-    Generates an official academic fee receipt with zero text overlapping.
-    Top header banner styled in Light Navy Blue (#1E3A8A).
+    Generates an official academic fee receipt card.
+    Student Name placed first in metadata. Receiver signature removed.
+    Platform Name: Learn with HiM Quiz Book Bot displayed.
     """
     try:
         profile = get_user_profile(user_id) or {}
@@ -70,13 +70,6 @@ def generate_payment_invoice_card(user_id: int, plan_key: str = None, payment_id
         bonus_q = profile.get("bonus_quota", 0) or 0
         total_daily_quota = paid_bal + bonus_q
         vip_expiry_raw = profile.get("vip_pass_expiry") or "N/A"
-
-        # Determine Real Razorpay Payment / Txn ID
-        real_payment_id = payment_id or profile.get("payment_id")
-        if latest_txn and (not real_payment_id or real_payment_id == "OFFICIAL_SUBSCRIBED"):
-            real_payment_id = latest_txn.get("payment_id")
-        if not real_payment_id or real_payment_id == "N/A":
-            real_payment_id = "OFFICIAL_SUBSCRIBED"
 
         # Permanent Deterministic Invoice Number
         invoice_no = f"INV-{student_id}-{user_id}"
@@ -139,19 +132,19 @@ def generate_payment_invoice_card(user_id: int, plan_key: str = None, payment_id
         font_amount = get_ttf_font(36, bold=True)
         font_footer = get_ttf_font(20, bold=False)
 
-        # Light Navy Color Palette
+        # Palette
         NAVY_DARK = "#0F172A"
         NAVY_LIGHT = "#1E3A8A"
         TEXT_BLUE = "#0284C7"
         TEXT_GREEN = "#15803D"
         TEXT_ORANGE = "#D97706"
 
-        # 1. Top Black/Navy Dark Base & Light Navy Main Banner
+        # 1. Top Banner
         draw.rectangle([0, 0, width, 180], fill=NAVY_DARK)
         draw.rectangle([100, 45, width - 100, 205], fill=NAVY_LIGHT)
         draw.text((320, 100), "LEARN WITH HIM QUIZ BOOK", fill="#FFFFFF", font=font_title)
 
-        # Brand Logo Placement
+        # Logo Placement
         logo_path = os.path.join(BASE_DIR, "assets", "logo.png")
         if os.path.exists(logo_path):
             try:
@@ -161,35 +154,35 @@ def generate_payment_invoice_card(user_id: int, plan_key: str = None, payment_id
             except Exception:
                 pass
 
-        # 2. Contact Meta Information Row (Dynamic Offsets)
+        # 2. Metadata Section (STUDENT NAME IN FIRST OPENING POSITION)
         y = 250
-        lbl1 = "Telegram Channel: "
-        draw.text((100, y), lbl1, fill=NAVY_DARK, font=font_label)
-        w1 = draw.textlength(lbl1, font=font_label)
-        draw.text((100 + w1, y), "@Learnwithhim", fill=TEXT_BLUE, font=font_val)
+        lbl_sname = "Student Name: "
+        draw.text((100, y), lbl_sname, fill=NAVY_DARK, font=font_label)
+        w_sname = draw.textlength(lbl_sname, font=font_label)
+        draw.text((100 + w_sname, y), f"{full_name} ({student_id})", fill=NAVY_LIGHT, font=font_label)
 
-        lbl2 = "Support: "
-        draw.text((800, y), lbl2, fill=NAVY_DARK, font=font_label)
-        w2 = draw.textlength(lbl2, font=font_label)
-        draw.text((800 + w2, y), "Online Bot Support", fill="#334155", font=font_val)
+        lbl_tg = "Telegram Channel: "
+        draw.text((800, y), lbl_tg, fill=NAVY_DARK, font=font_label)
+        w_tg = draw.textlength(lbl_tg, font=font_label)
+        draw.text((800 + w_tg, y), "@Learnwithhim", fill=TEXT_BLUE, font=font_val)
 
         y += 60
-        lbl3 = "Masked Phone: "
-        draw.text((100, y), lbl3, fill=NAVY_DARK, font=font_label)
-        w3 = draw.textlength(lbl3, font=font_label)
-        draw.text((100 + w3, y), f"{masked_phone}", fill="#334155", font=font_val)
+        lbl_bot = "Platform Name: "
+        draw.text((100, y), lbl_bot, fill=NAVY_DARK, font=font_label)
+        w_bot = draw.textlength(lbl_bot, font=font_label)
+        draw.text((100 + w_bot, y), "Learn with HiM Quiz Book Bot", fill="#334155", font=font_val)
 
-        lbl4 = "Txn ID: "
-        draw.text((800, y), lbl4, fill=NAVY_DARK, font=font_label)
-        w4 = draw.textlength(lbl4, font=font_label)
-        draw.text((800 + w4, y), f"{real_payment_id}", fill="#334155", font=font_val)
+        lbl_ph = "Masked Phone: "
+        draw.text((800, y), lbl_ph, fill=NAVY_DARK, font=font_label)
+        w_ph = draw.textlength(lbl_ph, font=font_label)
+        draw.text((800 + w_ph, y), f"{masked_phone}", fill="#334155", font=font_val)
 
         # 3. Light Navy Blue Sub-Header Banner
         y += 70
         draw.rectangle([100, y, width - 100, y + 65], fill=NAVY_LIGHT)
         draw.text((320, y + 15), "OFFICIAL VIP SUBSCRIPTION FEE RECEIPT", fill="#FFFFFF", font=font_sub)
 
-        # 4. Form Fields (With Dynamic X Offsets to Prevent Overlapping)
+        # 4. Form Fields
         y += 100
         lbl_no = "No: "
         draw.text((100, y), lbl_no, fill=NAVY_DARK, font=font_label)
@@ -236,15 +229,15 @@ def generate_payment_invoice_card(user_id: int, plan_key: str = None, payment_id
         w_gw = draw.textlength(lbl_gw, font=font_label)
         draw.text((100 + w_gw, y), "Razorpay Secure (UPI / Cards / NetBanking)", fill="#334155", font=font_val)
 
-        # 5. Highlighted Light Navy Amount Box
+        # 5. Highlighted Amount Box
         y += 120
         draw.rectangle([100, y, 480, y + 80], fill=NAVY_LIGHT, outline=NAVY_DARK, width=2)
         draw.text((130, y + 20), f"Rs: ₹{p_price}/-", fill="#FFFFFF", font=font_amount)
 
-        # 6. Receiver Signature Block & Verification Seal
-        draw.rectangle([800, y - 40, 1300, y + 80], outline="#16A34A", width=2)
-        draw.text((830, y - 25), "RAZORPAY VERIFIED ✔", fill="#16A34A", font=font_label)
-        draw.text((830, y + 15), "Receiver Signature: Himanshu Sir", fill=NAVY_DARK, font=font_val)
+        # 6. Verification Seal (Receiver Signature Completely Removed)
+        draw.rectangle([800, y, 1300, y + 80], outline="#16A34A", width=2)
+        draw.text((840, y + 15), "RAZORPAY VERIFIED ✔", fill="#16A34A", font=font_label)
+        draw.text((840, y + 45), "PAYMENT RECEIVED & ISSUED", fill=NAVY_DARK, font=font_val)
 
         # 7. Document Footer Note
         draw.rectangle([100, 1680, width - 100, 1780], fill=NAVY_DARK)

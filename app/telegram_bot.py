@@ -321,35 +321,22 @@ async def handle_download_invoice_callback(update: Update, context: ContextTypes
     )
 
     if img_card_path and os.path.exists(img_card_path):
-        with open(img_card_path, "rb") as card_file:
-            await context.bot.send_photo(
-                chat_id=query.message.chat_id,
-                photo=card_file,
-                caption=f"💳 **OFFICIAL ULTRA-HD PAYMENT INVOICE RECEIPT** — `{sid}`\n🏷 Verified by Razorpay & Learn with HiM",
-                parse_mode="Markdown"
-            )
         try:
-            os.remove(img_card_path)
-        except Exception:
-            pass
-    else:
-        await query.message.reply_text("⚠️ Unable to generate invoice card at the moment. Please try again later.")
+            with open(img_card_path, "rb") as card_file:
+                await context.bot.send_photo(
+                    chat_id=query.message.chat_id,
+                    photo=card_file,
+                    caption=f"💳 **OFFICIAL ULTRA-HD PAYMENT INVOICE RECEIPT** — `{sid}`\n🏷 Verified by Razorpay & Learn with HiM",
+                    parse_mode="Markdown"
+                )
+            if os.path.exists(img_card_path):
+                os.remove(img_card_path)
+            return
+        except Exception as err:
+            logging.error(f"Error sending invoice photo: {err}")
 
-    if img_card_path and os.path.exists(img_card_path):
-        with open(img_card_path, "rb") as card_file:
-            await context.bot.send_photo(
-                chat_id=query.message.chat_id,
-                photo=card_file,
-                caption=f"💳 **OFFICIAL ULTRA-HD PAYMENT INVOICE RECEIPT** — `{sid}`\n🏷 Verified by Razorpay & Learn with HiM",
-                parse_mode="Markdown"
-            )
-        try:
-            os.remove(img_card_path)
-        except Exception:
-            pass
-    else:
-        await query.message.reply_text("⚠️ Unable to generate invoice card at the moment. Please try again later.")
-
+    await query.message.reply_text("⚠️ Unable to generate invoice card at the moment. Please try again later.")
+    
 async def plans_command(update: Update, context: ContextTypes.DEFAULT_TYPE):
     if not await maintenance_guard(update, context): return
     if not await check_user_registration(update): return

@@ -3,6 +3,8 @@ import json
 import traceback
 import xml.sax.saxutils as saxutils
 from datetime import datetime, timedelta
+import psycopg2
+from psycopg2.extras import RealDictCursor
 from reportlab.lib.pagesizes import letter
 from reportlab.lib import colors
 from reportlab.lib.units import inch
@@ -86,7 +88,7 @@ def generate_student_pdf_report(user_id: int, filter_mode: str = "last_1_month_d
             return "ERROR: User profile not found in database."
 
         conn = get_db()
-        cursor = conn.cursor()
+        cursor = conn.cursor(cursor_factory=RealDictCursor)
         
         now_date = datetime.now()
         one_month_ago = now_date - timedelta(days=30)
@@ -100,10 +102,14 @@ def generate_student_pdf_report(user_id: int, filter_mode: str = "last_1_month_d
         # -------------------------------------------------------------
         if filter_mode == "saved_questions_only":
             cursor.execute("SELECT * FROM saved_questions WHERE user_id = %s ORDER BY id DESC", (user_id,))
-            saved_rows = cursor.fetchall()
+            raw_saved = cursor.fetchall()
             cursor.close()
             release_db(conn)
             conn = None
+
+            saved_rows = []
+            for r in raw_saved:
+                saved_rows.append(dict(r) if isinstance(r, dict) else dict(r))
 
             if not saved_rows:
                 return "NO_SAVED_QUESTIONS"
@@ -259,10 +265,34 @@ def generate_student_pdf_report(user_id: int, filter_mode: str = "last_1_month_d
         # STANDARD ATTEMPT LOGS & QUIZ SUMMARY PROCESSING
         # -------------------------------------------------------------
         cursor.execute("SELECT * FROM quiz_attempts WHERE user_id = %s ORDER BY id DESC", (user_id,))
-        all_attempts = cursor.fetchall()
+        raw_attempts = cursor.fetchall()
         cursor.close()
         release_db(conn)
         conn = None
+
+        all_attempts = []
+        for r in raw_attempts:
+            if isinstance(r, dict):
+                all_attempts.append(dict(r))
+            elif hasattr(r, '_asdict'):
+                all_attempts.append(r._asdict())
+            else:
+                # Safe conversion if database returns raw tuples
+                all_attempts.append({
+                    "id": r[0],
+                    "user_id": r[1],
+                    "quiz_id": r[2],
+                    "questions_attempted": r[3],
+                    "total_questions": r[4],
+                    "correct_answers": r[5],
+                    "wrong_answers": r[6],
+                    "skipped_count": r[7],
+                    "score": r[8],
+                    "time_taken": r[9],
+                    "attempt_timestamp": r[10],
+                    "attempt_date": r[11],
+                    "details_json": r[12] if len(r) > 12 else None
+                })
 
         filtered_attempts = []
         for a in all_attempts:

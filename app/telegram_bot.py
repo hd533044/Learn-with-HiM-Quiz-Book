@@ -39,9 +39,8 @@ from app.pyq_fetcher import fetch_pyqs_for_quiz
 
 NEGATIVE_WORDS = ["bad", "worst", "useless", "trash", "fake", "hate", "terrible", "waste", "horrible", "fraud", "stupid", "scam"]
 
-# In-Memory Speed Caches (TTLs)
 PROFILE_CACHE = {}
-CACHE_TTL = 30  # seconds
+CACHE_TTL = 30 
 
 def get_cached_profile(user_id):
     now = time.time()
@@ -294,7 +293,6 @@ async def myplan_command(update: Update, context: ContextTypes.DEFAULT_TYPE):
         [InlineKeyboardButton("💳 Upgrade / VIP Plans", callback_data="cmd_plans")]
     ]
 
-    # Show HD Invoice Download option if user has active paid subscription
     if paid_bal > 0 or active_plan_key != "FREE_DEMO":
         btn_list.append([InlineKeyboardButton("🧾 Download HD Invoice Card", callback_data=f"download_invoice_{active_plan_key}")])
 
@@ -313,10 +311,17 @@ async def handle_download_invoice_callback(update: Update, context: ContextTypes
     plan_key = data.replace("download_invoice_", "")
     await query.answer("⏳ Generating 2K Ultra-HD Payment Invoice Card...", show_alert=True)
 
-    profile = await fetch_user_profile_fast(user_id)
-    sid = profile.get("student_id", f"USER_{user_id}") if profile else f"USER_{user_id}"
+    profile = await fetch_user_profile_fast(user_id) or {}
+    sid = profile.get("student_id", f"USER_{user_id}")
+    orig_payment_time = profile.get("payment_timestamp") or profile.get("created_at")
 
-    img_card_path = await asyncio.to_thread(generate_payment_invoice_card, user_id, plan_key, "OFFICIAL_SUBSCRIBED")
+    img_card_path = await asyncio.to_thread(
+        generate_payment_invoice_card, 
+        user_id, 
+        plan_key, 
+        "OFFICIAL_SUBSCRIBED", 
+        orig_payment_time
+    )
 
     if img_card_path and os.path.exists(img_card_path):
         with open(img_card_path, "rb") as card_file:

@@ -56,7 +56,7 @@ def get_ttf_font(size: int):
 def generate_payment_invoice_card(user_id: int, plan_key: str, payment_id: str = "N/A", txn_time_str: str = None) -> str:
     """
     Generates an official, executive-style 2K HD Payment Invoice Card.
-    Returns the file path of the generated image.
+    Always uses the original purchase date & timestamp.
     """
     try:
         profile = get_user_profile(user_id) or {}
@@ -67,10 +67,11 @@ def generate_payment_invoice_card(user_id: int, plan_key: str, payment_id: str =
         masked_phone = mask_phone_number(profile.get("phone_number", ""))
         invoice_no = get_next_invoice_number()
         
-        # Original payment timestamp handling
         if not txn_time_str:
-            ist = pytz.timezone("Asia/Kolkata")
-            txn_time_str = datetime.now(ist).strftime("%d %b %Y, %I:%M %p IST")
+            txn_time_str = profile.get("payment_timestamp") or profile.get("created_at")
+            if not txn_time_str:
+                ist = pytz.timezone("Asia/Kolkata")
+                txn_time_str = datetime.now(ist).strftime("%d %b %Y, %I:%M %p IST")
 
         # 2K Canvas Dimensions (1800x1200)
         width, height = 1800, 1200
@@ -120,14 +121,12 @@ def generate_payment_invoice_card(user_id: int, plan_key: str, payment_id: str =
         draw.rectangle([55, 255, width - 55, 300], fill="#F1F5F9")
         draw.text((75, 265), "STUDENT & TRANSACTION INFORMATION", fill="#1E293B", font=font_sec_title)
 
-        # FIXED OVERLAPPING OFFSET FOR STUDENT NAME
         draw.text((75, 320), "Student Name:", fill="#64748B", font=font_label)
         draw.text((310, 318), f"{full_name}", fill="#0F172A", font=font_val_bold)
 
         draw.text((1000, 320), "Student ID:", fill="#64748B", font=font_label)
         draw.text((1220, 318), f"{student_id}", fill="#0284C7", font=font_val_bold)
 
-        # FIXED OVERLAPPING OFFSET FOR MASKED PHONE
         draw.text((75, 375), "Masked Phone:", fill="#64748B", font=font_label)
         draw.text((310, 375), f"{masked_phone}", fill="#334155", font=font_val)
 
@@ -139,9 +138,8 @@ def generate_payment_invoice_card(user_id: int, plan_key: str, payment_id: str =
         draw.rectangle([55, 455, 1150, 500], fill="#E0F2FE")
         draw.text((75, 465), "SUBSCRIPTION & PLAN BREAKDOWN", fill="#0369A1", font=font_sec_title)
 
-        # Cleaned Plan Title with Right Tickmark Symbol
         y = 525
-        plan_display_name = f"✔ {plan_info.get('name')}"
+        plan_display_name = f"{plan_info.get('name')}"
         draw.text((85, y), "Unlocked Pack:", fill="#64748B", font=font_label)
         draw.text((450, y - 5), plan_display_name, fill="#1E3A8A", font=font_price)
 
@@ -155,7 +153,6 @@ def generate_payment_invoice_card(user_id: int, plan_key: str, payment_id: str =
         y += 75
         draw.line([85, y, 1120, y], fill="#E2E8F0", width=2)
 
-        # FIXED OVERLAPPING OFFSETS FOR PLAN SPECS
         y += 25
         draw.text((85, y), "Daily Question Quota:", fill="#64748B", font=font_label)
         draw.text((450, y), f"{plan_info.get('daily_limit')} Questions / Day", fill="#0284C7", font=font_val_bold)
@@ -183,7 +180,7 @@ def generate_payment_invoice_card(user_id: int, plan_key: str, payment_id: str =
         stamp_box = [1210, 540, 1715, 780]
         draw.rectangle(stamp_box, fill="#0284C7", outline="#0369A1", width=3)
         draw.text((1250, 565), "RAZORPAY SECURE", fill="#FFFFFF", font=font_stamp_title)
-        draw.text((1250, 625), "PAID & VERIFIED ✔", fill="#86EFAC", font=font_stamp_title)
+        draw.text((1250, 625), "PAID & VERIFIED", fill="#86EFAC", font=font_stamp_title)
         draw.text((1250, 695), f"₹{plan_info.get('price', 0)} RECEIVED", fill="#FEF08A", font=font_stamp_sub)
 
         # Platform Terms
@@ -191,10 +188,10 @@ def generate_payment_invoice_card(user_id: int, plan_key: str, payment_id: str =
         draw.text((1200, 870), "• Gateway: Razorpay UPI/Cards", fill="#475569", font=font_footer)
         draw.text((1200, 910), "• Support: @Learnwithhim", fill="#475569", font=font_footer)
 
-        # Footer with Arrow Sign Before Curated
+        # Footer
         draw.rectangle([55, 1005, width - 55, 1145], fill="#0F172A")
-        draw.text((85, 1030), "➜ Curated by Himanshu Sir • Telegram Channel: @Learnwithhim", fill="#F8FAFC", font=font_footer)
-        draw.text((85, 1080), "➜ Thank you for your purchase! Start practicing now using the /quiz command in bot.", fill="#38BDF8", font=font_footer)
+        draw.text((85, 1030), "-> Curated by Himanshu Sir • Telegram Channel: @Learnwithhim", fill="#F8FAFC", font=font_footer)
+        draw.text((85, 1080), "-> Thank you for your purchase! Start practicing now using the /quiz command in bot.", fill="#38BDF8", font=font_footer)
 
         filename = f"Invoice_{user_id}_{plan_key}.png"
         filepath = os.path.join(USER_PROFILES_DIR, filename)

@@ -22,7 +22,7 @@ from app.config import (
     PLAN_TIERS
 )
 from app.database import sync_user_json_profile, get_ist_timestamp_str, get_db, release_db, get_user_profile
-from app.invoice_generator import generate_payment_invoice_card, mask_phone_number
+from app.invoice_generator import generate_payment_invoice_card
 
 logging.basicConfig(
     format="%(asctime)s - %(levelname)s - %(message)s",
@@ -45,7 +45,7 @@ bot_app_instance = None
 
 
 async def activate_user_subscription(user_id: int, plan_key: str):
-    """Activates subscription ledger in PostgreSQL DB & syncs JSON profile."""
+    """Activates subscription ledger in PostgreSQL DB & stores original purchase timestamp."""
     plan = PLAN_TIERS.get(plan_key)
     if not plan:
         return False
@@ -54,6 +54,7 @@ async def activate_user_subscription(user_id: int, plan_key: str):
     now = datetime.now(ist)
     expiry = now + timedelta(days=plan["days"])
     expiry_str = expiry.strftime("%Y-%m-%d %H:%M:%S IST")
+    payment_time_str = now.strftime("%d %b %Y, %I:%M %p IST")
 
     conn = None
     try:
@@ -62,13 +63,13 @@ async def activate_user_subscription(user_id: int, plan_key: str):
         
         if plan_key == "FREE_DEMO":
             cursor.execute(
-                "UPDATE users SET paid_question_balance = %s, vip_pass_expiry = %s, demo_used = 1 WHERE user_id = %s",
-                (plan["daily_limit"], expiry_str, user_id)
+                "UPDATE users SET paid_question_balance = %s, vip_pass_expiry = %s, payment_timestamp = %s, demo_used = 1 WHERE user_id = %s",
+                (plan["daily_limit"], expiry_str, payment_time_str, user_id)
             )
         else:
             cursor.execute(
-                "UPDATE users SET paid_question_balance = %s, vip_pass_expiry = %s WHERE user_id = %s",
-                (plan["daily_limit"], expiry_str, user_id)
+                "UPDATE users SET paid_question_balance = %s, vip_pass_expiry = %s, payment_timestamp = %s WHERE user_id = %s",
+                (plan["daily_limit"], expiry_str, payment_time_str, user_id)
             )
 
         conn.commit()
@@ -96,6 +97,7 @@ async def send_payment_invoice_telegram(user_id: int, plan_key: str, payment_id:
 
     profile = await asyncio.to_thread(get_user_profile, user_id) or {}
     sid = profile.get("student_id", f"USER_{user_id}")
+    orig_payment_time = profile.get("payment_timestamp") or txn_time
 
     invoice_msg = (
         f"🥳 **CONGRATULATIONS! PACK ACTIVATED!** 🥳\n"
@@ -106,7 +108,7 @@ async def send_payment_invoice_telegram(user_id: int, plan_key: str, payment_id:
         f"• **Unlocked Pack:** `{plan_name}`\n"
         f"• **Amount Paid:** ₹{plan_info.get('price', 0)} INR\n"
         f"• **Payment / Txn ID:** `{payment_id}`\n"
-        f"• **Date & Time:** `{txn_time}`\n"
+        f"• **Date & Time:** `{orig_payment_time}`\n"
         f"• **Validity:** `{plan_info.get('days')} Days`\n"
         f"• **Daily Question Limit:** `{plan_info.get('daily_limit')} Questions / Day`\n"
         f"━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\n"
@@ -121,7 +123,13 @@ async def send_payment_invoice_telegram(user_id: int, plan_key: str, payment_id:
         )
 
         # Generate & send Graphic Receipt Image Card
-        img_card_path = await asyncio.to_thread(generate_payment_invoice_card, user_id, plan_key, payment_id)
+        img_card_path = await asyncio.to_thread(
+            generate_payment_invoice_card, 
+            user_id, 
+            plan_key, 
+            payment_id, 
+            orig_payment_time
+        )
         if img_card_path and os.path.exists(img_card_path):
             with open(img_card_path, "rb") as card_file:
                 await bot_app_instance.bot.send_photo(

@@ -14,6 +14,7 @@ from telegram.ext import (
     Application, CommandHandler, CallbackQueryHandler, PollAnswerHandler, 
     MessageHandler, filters, ContextTypes
 )
+from psycopg2.extras import RealDictCursor
 from app.config import (
     BOT_TOKEN, PRIMARY_ADMIN_ID, DAILY_QUESTION_LIMIT, PLAN_TIERS,
     RAZORPAY_KEY_ID, RAZORPAY_KEY_SECRET, RENDER_EXTERNAL_URL
@@ -22,8 +23,8 @@ from app.database import (
     init_db, get_maintenance_until, get_user_profile, 
     get_all_users, get_today_attempts, save_student_feedback, get_all_student_feedbacks,
     clear_paused_quiz_state, get_saved_questions, log_user_activity_time,
-    check_and_update_inactivity, refresh_user_activity_epoch, get_db, get_seen_question_ids,
-    admin_update_user_name
+    check_and_update_inactivity, refresh_user_activity_epoch, get_db, release_db,
+    get_seen_question_ids, admin_update_user_name, get_ist_date_str
 )
 from app.onboarding import get_onboarding_handler, start_onboarding
 from app.quiz_engine import (
@@ -410,46 +411,64 @@ async def wrongquestions_command(update: Update, context: ContextTypes.DEFAULT_T
     user = update.effective_user
     asyncio.create_task(asyncio.to_thread(log_user_activity_time, user.id, 10))
 
-    def fetch_attempts():
+    today_str = get_ist_date_str()
+
+    def fetch_today_attempts():
         conn = get_db()
-        cursor = conn.cursor()
-        cursor.execute("SELECT * FROM quiz_attempts WHERE user_id = %s ORDER BY id DESC LIMIT 5", (user.id,))
+        cursor = conn.cursor(cursor_factory=RealDictCursor)
+        cursor.execute(
+            "SELECT * FROM quiz_attempts WHERE user_id = %s AND attempt_date = %s ORDER BY id DESC", 
+            (user.id, today_str)
+        )
         rows = cursor.fetchall()
         cursor.close()
-        conn.close()
+        release_db(conn)
         return rows
 
-    attempts = await asyncio.to_thread(fetch_attempts)
+    attempts = await asyncio.to_thread(fetch_today_attempts)
 
     lines = [
-        f"❌ **YOUR INCORRECT QUESTIONS LOG** ❌",
+        f"❌ **YOUR INCORRECT QUESTIONS LOG (TODAY: {today_str})** ❌",
         f"━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\n"
     ]
 
     found_wrong = False
+    wrong_count = 0
+
     for a in attempts:
-        ad = dict(a)
-        dt = ad.get("attempt_timestamp", "N/A")
-        details = json.loads(ad["details_json"]) if ad.get("details_json") else []
-        wrong_items = [q for q in details if q.get("status") == "WRONG"]
+        ad = dict(a) if not isinstance(a, dict) else a
+        dt = ad.get("attempt_timestamp") or ad.get("attempt_date") or "Today"
         
-        if wrong_items:
-            found_wrong = True
-            lines.append(f"📅 **Quiz At:** `{dt}`")
-            for idx, q_item in enumerate(wrong_items, start=1):
-                q_text = q_item.get("question_text", "N/A")
-                ans_text = q_item.get("correct_answer_text", "N/A")
-                lines.append(f" {idx}. ❌ `{q_text}`\n    👉 **Correct Answer:** `{ans_text}`")
-            lines.append("")
+        raw_details = ad.get("details_json")
+        details = []
+        if raw_details:
+            try:
+                details = json.loads(raw_details) if isinstance(raw_details, str) else raw_details
+            except Exception:
+                details = []
+
+        if isinstance(details, list):
+            wrong_items = [q for q in details if isinstance(q, dict) and str(q.get("status", "")).upper() == "WRONG"]
+            if wrong_items:
+                found_wrong = True
+                lines.append(f"📅 **Quiz Session at:** `{dt}`")
+                for q_item in wrong_items:
+                    wrong_count += 1
+                    q_text = q_item.get("question_text") or q_item.get("question") or "N/A"
+                    ans_text = q_item.get("correct_answer_text") or q_item.get("correct_answer") or "N/A"
+                    lines.append(f" {wrong_count}. ❌ `{q_text}`\n    👉 **Correct Answer:** `{ans_text}`")
+                lines.append("")
 
     if not found_wrong:
-        lines.append("🎉 *Zero wrong questions logged in your recent attempts! Excellent job.*")
+        lines.append("🎉 *Zero wrong questions logged for today! Excellent performance.*")
 
     msg = "\n".join(lines)
     if len(msg) > 4000:
-        msg = msg[:3950] + "\n\n*(Truncated due to length limit)*"
+        msg = msg[:3950] + "\n\n*(Truncated due to Telegram message length limit)*"
 
-    nav = InlineKeyboardMarkup([[InlineKeyboardButton("🚀 Launch Quiz", callback_data="cmd_quiz")]])
+    nav = InlineKeyboardMarkup([
+        [InlineKeyboardButton("🚀 Launch Quiz", callback_data="cmd_quiz"), InlineKeyboardButton("👤 Profile", callback_data="cmd_profile")]
+    ])
     await send_response(update, msg, reply_markup=nav)
 
 async def attemptedquestions_command(update: Update, context: ContextTypes.DEFAULT_TYPE):
@@ -459,45 +478,66 @@ async def attemptedquestions_command(update: Update, context: ContextTypes.DEFAU
     user = update.effective_user
     asyncio.create_task(asyncio.to_thread(log_user_activity_time, user.id, 10))
 
-    def fetch_attempts():
+    today_str = get_ist_date_str()
+
+    def fetch_today_attempts():
         conn = get_db()
-        cursor = conn.cursor()
-        cursor.execute("SELECT * FROM quiz_attempts WHERE user_id = %s ORDER BY id DESC LIMIT 5", (user.id,))
+        cursor = conn.cursor(cursor_factory=RealDictCursor)
+        cursor.execute(
+            "SELECT * FROM quiz_attempts WHERE user_id = %s AND attempt_date = %s ORDER BY id DESC", 
+            (user.id, today_str)
+        )
         rows = cursor.fetchall()
         cursor.close()
-        conn.close()
+        release_db(conn)
         return rows
 
-    attempts = await asyncio.to_thread(fetch_attempts)
+    attempts = await asyncio.to_thread(fetch_today_attempts)
 
     lines = [
-        f"🎯 **YOUR RECENT ATTEMPTED QUESTIONS** 🎯",
+        f"🎯 **YOUR TODAY'S ATTEMPTED QUESTIONS LOG ({today_str})** 🎯",
         f"━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\n"
     ]
 
     found_any = False
+    question_counter = 0
+
     for a in attempts:
-        ad = dict(a)
-        dt = ad.get("attempt_timestamp", "N/A")
-        details = json.loads(ad["details_json"]) if ad.get("details_json") else []
-        if details:
+        ad = dict(a) if not isinstance(a, dict) else a
+        dt = ad.get("attempt_timestamp") or ad.get("attempt_date") or "Today"
+        
+        raw_details = ad.get("details_json")
+        details = []
+        if raw_details:
+            try:
+                details = json.loads(raw_details) if isinstance(raw_details, str) else raw_details
+            except Exception:
+                details = []
+
+        if isinstance(details, list) and details:
             found_any = True
-            lines.append(f"📅 **Quiz At:** `{dt}`")
-            for idx, q_item in enumerate(details, start=1):
-                q_text = q_item.get("question_text", "N/A")
-                ans_text = q_item.get("correct_answer_text", "N/A")
-                status_icon = "✅" if q_item.get("status") == "CORRECT" else "❌" if q_item.get("status") == "WRONG" else "⏭"
-                lines.append(f" {idx}. {status_icon} `{q_text}`\n    👉 **Ans:** `{ans_text}`")
+            lines.append(f"📅 **Quiz Session at:** `{dt}`")
+            for q_item in details:
+                if isinstance(q_item, dict):
+                    question_counter += 1
+                    q_text = q_item.get("question_text") or q_item.get("question") or "N/A"
+                    ans_text = q_item.get("correct_answer_text") or q_item.get("correct_answer") or "N/A"
+                    st = str(q_item.get("status", "")).upper()
+                    
+                    status_icon = "✅" if st == "CORRECT" else "❌" if st == "WRONG" else "⏭"
+                    lines.append(f" {question_counter}. {status_icon} `{q_text}`\n    👉 **Correct Ans:** `{ans_text}`")
             lines.append("")
 
     if not found_any:
-        lines.append("*No question attempt logs found yet. Type /quiz to start!*")
+        lines.append("*No question attempt logs found for today. Type /quiz to start practicing!*")
 
     msg = "\n".join(lines)
     if len(msg) > 4000:
-        msg = msg[:3950] + "\n\n*(Truncated due to length limit)*"
+        msg = msg[:3950] + "\n\n*(Truncated due to Telegram message length limit)*"
 
-    nav = InlineKeyboardMarkup([[InlineKeyboardButton("🚀 Launch Quiz", callback_data="cmd_quiz")]])
+    nav = InlineKeyboardMarkup([
+        [InlineKeyboardButton("🚀 Launch Quiz", callback_data="cmd_quiz"), InlineKeyboardButton("👤 Profile", callback_data="cmd_profile")]
+    ])
     await send_response(update, msg, reply_markup=nav)
 
 async def unattemptedquestions_command(update: Update, context: ContextTypes.DEFAULT_TYPE):
@@ -847,11 +887,11 @@ async def button_router(update: Update, context: ContextTypes.DEFAULT_TYPE):
         await help_command(update, context)
     elif data == "cmd_pdfreport":
         await pdfreport_command(update, context)
-    elif data == "cmd_wrongquestions":
+    elif data == "cmd_wrongquestions" or data == "cmd_wrong_qs":
         await wrongquestions_command(update, context)
-    elif data == "cmd_attemptedquestions":
+    elif data == "cmd_attemptedquestions" or data == "cmd_attempted_qs":
         await attemptedquestions_command(update, context)
-    elif data == "cmd_unattemptedquestions":
+    elif data == "cmd_unattemptedquestions" or data == "cmd_unattempted_qs":
         await unattemptedquestions_command(update, context)
     elif data == "cmd_pause_quiz":
         await pause_quiz_command(update, context)

@@ -313,15 +313,27 @@ async def handle_download_invoice_callback(update: Update, context: ContextTypes
 
     profile = await fetch_user_profile_fast(user_id) or {}
     sid = profile.get("student_id", f"USER_{user_id}")
-    orig_payment_time = profile.get("payment_timestamp") or profile.get("created_at")
 
     img_card_path = await asyncio.to_thread(
         generate_payment_invoice_card, 
         user_id, 
-        plan_key, 
-        "OFFICIAL_SUBSCRIBED", 
-        orig_payment_time
+        plan_key
     )
+
+    if img_card_path and os.path.exists(img_card_path):
+        with open(img_card_path, "rb") as card_file:
+            await context.bot.send_photo(
+                chat_id=query.message.chat_id,
+                photo=card_file,
+                caption=f"💳 **OFFICIAL ULTRA-HD PAYMENT INVOICE RECEIPT** — `{sid}`\n🏷 Verified by Razorpay & Learn with HiM",
+                parse_mode="Markdown"
+            )
+        try:
+            os.remove(img_card_path)
+        except Exception:
+            pass
+    else:
+        await query.message.reply_text("⚠️ Unable to generate invoice card at the moment. Please try again later.")
 
     if img_card_path and os.path.exists(img_card_path):
         with open(img_card_path, "rb") as card_file:

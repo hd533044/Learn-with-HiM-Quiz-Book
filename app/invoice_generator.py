@@ -1,6 +1,6 @@
 import os
 import pytz
-from datetime import datetime
+from datetime import datetime, timedelta
 from PIL import Image, ImageDraw, ImageFont
 from app.config import USER_PROFILES_DIR, BASE_DIR, PLAN_TIERS
 from app.database import get_user_profile, get_db, release_db
@@ -16,13 +16,13 @@ def mask_phone_number(phone_str: str) -> str:
     return "XXXXXX0000"
 
 
-def get_next_invoice_number() -> str:
-    """Generates sequential invoice numbers starting specifically from 533001."""
+def get_next_invoice_number(user_id: int) -> str:
+    """Generates a consistent, clean sequential invoice number for the student."""
     conn = None
     try:
         conn = get_db()
         cursor = conn.cursor()
-        cursor.execute("SELECT COUNT(*) FROM payment_transactions")
+        cursor.execute("SELECT COUNT(*) FROM users WHERE user_id <= %s", (user_id,))
         row = cursor.fetchone()
         cursor.close()
         release_db(conn)
@@ -33,7 +33,7 @@ def get_next_invoice_number() -> str:
     except Exception:
         if conn:
             release_db(conn)
-        return "INV-533001"
+        return f"INV-533001"
 
 
 def get_latest_user_transaction(user_id: int):
@@ -76,43 +76,71 @@ def get_ttf_font(size: int):
 def generate_payment_invoice_card(user_id: int, plan_key: str = None, payment_id: str = None, txn_time_str: str = None) -> str:
     """
     Generates an official, executive-style 2K HD Payment Invoice Card.
-    Fetches the user's latest transaction details automatically.
+    Synchronizes Payment Date, Pass Expiry Date, and Daily Limits perfectly with bot interface.
     """
     try:
         profile = get_user_profile(user_id) or {}
         latest_txn = get_latest_user_transaction(user_id)
 
-        # Priority resolution for latest payment details
+        paid_bal = profile.get("paid_question_balance", 0) or 80
+        bonus_q = profile.get("bonus_quota", 0) or 0
+        total_daily_quota = paid_bal + bonus_q
+
+        vip_expiry_raw = profile.get("vip_pass_expiry") or "N/A"
+
+        # Determine Plan Information
         if latest_txn:
-            p_key = latest_txn.get("plan_key") or plan_key
+            p_key = latest_txn.get("plan_key") or plan_key or "BRONZE"
             p_name = latest_txn.get("plan_name")
             p_price = latest_txn.get("amount_paid")
-            p_limit = latest_txn.get("daily_quota")
             p_days = latest_txn.get("validity_days")
             payment_id = latest_txn.get("payment_id") or payment_id or "OFFICIAL_SUBSCRIBED"
-            txn_time_str = latest_txn.get("created_at") or txn_time_str
+            payment_date_str = latest_txn.get("created_at")
         else:
             p_key = plan_key or "BRONZE"
-            p_info = PLAN_TIERS.get(p_key, {"name": p_key, "price": 5, "days": 3, "daily_limit": 80})
+            for pk, pv in PLAN_TIERS.items():
+                if pv.get("daily_limit") == paid_bal:
+                    p_key = pk
+                    break
+            p_info = PLAN_TIERS.get(p_key, {"name": "BRONZE PACK", "price": 5, "days": 3, "daily_limit": 80})
             p_name = p_info.get("name")
             p_price = p_info.get("price")
-            p_limit = p_info.get("daily_limit")
             p_days = p_info.get("days")
             payment_id = payment_id or "OFFICIAL_SUBSCRIBED"
+            payment_date_str = None
 
-        if not txn_time_str:
-            txn_time_str = profile.get("payment_timestamp") or profile.get("created_at")
-            if not txn_time_str:
-                ist = pytz.timezone("Asia/Kolkata")
-                txn_time_str = datetime.now(ist).strftime("%d %b %Y, %I:%M %p IST")
+        # Calculate Mathematically Precise Payment Date from Expiry if not found
+        ist = pytz.timezone("Asia/Kolkata")
+        if not payment_date_str or payment_date_str == "N/A":
+            if vip_expiry_raw and vip_expiry_raw != "N/A":
+                try:
+                    clean_exp = vip_expiry_raw.replace(" IST", "").strip()
+                    expiry_dt = datetime.strptime(clean_exp, "%Y-%m-%d %H:%M:%S")
+                    payment_dt = expiry_dt - timedelta(days=p_days)
+                    payment_date_str = payment_dt.strftime("%d %b %Y, %I:%M %p IST")
+                except Exception:
+                    payment_date_str = datetime.now(ist).strftime("%d %b %Y, %I:%M %p IST")
+            else:
+                payment_date_str = datetime.now(ist).strftime("%d %b %Y, %I:%M %p IST")
+
+        # Format Pass Expiry Date nicely
+        if vip_expiry_raw and vip_expiry_raw != "N/A":
+            try:
+                clean_exp = vip_expiry_raw.replace(" IST", "").strip()
+                exp_dt = datetime.strptime(clean_exp, "%Y-%m-%d %H:%M:%S")
+                expiry_display_str = exp_dt.strftime("%d %b %Y, %I:%M %p IST")
+            except Exception:
+                expiry_display_str = vip_expiry_raw
+        else:
+            expiry_display_str = "N/A"
 
         full_name = profile.get("full_name", "Student")
         student_id = profile.get("student_id", f"USER_{user_id}")
         masked_phone = mask_phone_number(profile.get("phone_number", ""))
-        invoice_no = get_next_invoice_number()
+        invoice_no = get_next_invoice_number(user_id)
 
-        # Canvas Dimensions
-        width, height = 1800, 1200
+        # 2K Canvas Dimensions
+        width, height = 1800, 1250
         image = Image.new("RGBA", (width, height), "#F8FAFC")
         draw = ImageDraw.Draw(image)
 
@@ -128,14 +156,14 @@ def generate_payment_invoice_card(user_id: int, plan_key: str = None, payment_id
         font_stamp_sub = get_ttf_font(24)
         font_footer = get_ttf_font(22)
 
-        # Outer Frame
+        # Outer Double Frame
         draw.rectangle([30, 30, width - 30, height - 30], outline="#1E3A8A", width=5)
         draw.rectangle([42, 46, width - 42, height - 46], outline="#CBD5E1", width=2)
 
         # Executive Dark Navy Header Bar
         draw.rectangle([55, 55, width - 55, 230], fill="#0F172A")
 
-        # Brand Logo
+        # Brand Logo Placement
         logo_path = os.path.join(BASE_DIR, "assets", "logo.png")
         if os.path.exists(logo_path):
             try:
@@ -145,15 +173,16 @@ def generate_payment_invoice_card(user_id: int, plan_key: str = None, payment_id
             except Exception:
                 pass
 
+        # Header Titles
         draw.text((245, 80), "LEARN WITH HIM QUIZ BOOK", fill="#FFFFFF", font=font_header_title)
         draw.text((245, 142), "OFFICIAL ACADEMIC PAYMENT RECEIPT & INVOICE", fill="#38BDF8", font=font_header_sub)
 
-        # Badge & Invoice No Top Right
+        # Invoice Badge Top Right
         draw.rectangle([1380, 80, 1715, 130], fill="#166534", outline="#22C55E", width=2)
         draw.text((1415, 92), "VERIFIED OFFICIAL", fill="#FFFFFF", font=font_sec_title)
         draw.text((1350, 150), f"INVOICE #: {invoice_no}", fill="#F8FAFC", font=font_sec_title)
 
-        # Section 1: Student Details
+        # Section 1: Student & Transaction Info
         draw.rectangle([55, 255, width - 55, 430], fill="#FFFFFF", outline="#E2E8F0", width=2)
         draw.rectangle([55, 255, width - 55, 300], fill="#F1F5F9")
         draw.text((75, 265), "STUDENT & TRANSACTION INFORMATION", fill="#1E293B", font=font_sec_title)
@@ -170,8 +199,8 @@ def generate_payment_invoice_card(user_id: int, plan_key: str = None, payment_id
         draw.text((1000, 375), "Txn / Payment ID:", fill="#64748B", font=font_label)
         draw.text((1300, 375), f"{payment_id}", fill="#334155", font=font_val)
 
-        # Section 2: Plan Details
-        draw.rectangle([55, 455, 1150, 980], fill="#FFFFFF", outline="#CBD5E1", width=2)
+        # Section 2: Purchased Plan Details
+        draw.rectangle([55, 455, 1150, 1030], fill="#FFFFFF", outline="#CBD5E1", width=2)
         draw.rectangle([55, 455, 1150, 500], fill="#E0F2FE")
         draw.text((75, 465), "SUBSCRIPTION & PLAN BREAKDOWN", fill="#0369A1", font=font_sec_title)
 
@@ -191,24 +220,28 @@ def generate_payment_invoice_card(user_id: int, plan_key: str = None, payment_id
 
         y += 25
         draw.text((85, y), "Daily Question Quota:", fill="#64748B", font=font_label)
-        draw.text((450, y), f"{p_limit} Questions / Day", fill="#0284C7", font=font_val_bold)
+        draw.text((450, y), f"{total_daily_quota} Questions / Day", fill="#0284C7", font=font_val_bold)
 
-        y += 60
+        y += 55
         draw.text((85, y), "Subscription Validity:", fill="#64748B", font=font_label)
         draw.text((450, y), f"{p_days} Days Access", fill="#0F172A", font=font_val)
 
-        y += 60
+        y += 55
         draw.text((85, y), "Payment Date & Time:", fill="#64748B", font=font_label)
-        draw.text((450, y), f"{txn_time_str}", fill="#334155", font=font_val)
+        draw.text((450, y), f"{payment_date_str}", fill="#334155", font=font_val)
 
-        # Inclusions
-        y += 70
-        draw.rectangle([85, y, 1120, y + 100], fill="#F8FAFC", outline="#E2E8F0", width=1)
-        draw.text((105, y + 15), "INCLUDED PLAN FEATURES:", fill="#0F172A", font=font_sec_title)
-        draw.text((105, y + 55), "• Full Question Explanations  • Custom PDF Export  • State Leaderboards", fill="#475569", font=font_footer)
+        y += 55
+        draw.text((85, y), "Pass Expiry Date:", fill="#64748B", font=font_label)
+        draw.text((450, y), f"{expiry_display_str}", fill="#D97706", font=font_val_bold)
+
+        # Plan Feature List
+        y += 65
+        draw.rectangle([85, y, 1120, y + 90], fill="#F8FAFC", outline="#E2E8F0", width=1)
+        draw.text((105, y + 12), "INCLUDED PLAN FEATURES:", fill="#0F172A", font=font_sec_title)
+        draw.text((105, y + 48), "• Full Question Explanations  • Custom PDF Export  • State Leaderboards", fill="#475569", font=font_footer)
 
         # Section 3: Stamp & Verification
-        draw.rectangle([1180, 455, width - 55, 980], fill="#FFFFFF", outline="#CBD5E1", width=2)
+        draw.rectangle([1180, 455, width - 55, 1030], fill="#FFFFFF", outline="#CBD5E1", width=2)
         draw.rectangle([1180, 455, width - 55, 500], fill="#F1F5F9")
         draw.text((1200, 465), "PAYMENT AUTHENTICATION", fill="#0F172A", font=font_sec_title)
 
@@ -221,11 +254,12 @@ def generate_payment_invoice_card(user_id: int, plan_key: str = None, payment_id
         draw.text((1200, 820), "• Status: PAYMENT_SUCCESS", fill="#16A34A", font=font_label)
         draw.text((1200, 870), "• Gateway: Razorpay UPI/Cards", fill="#475569", font=font_footer)
         draw.text((1200, 910), "• Support: @Learnwithhim", fill="#475569", font=font_footer)
+        draw.text((1200, 950), "• Invoice Status: ISSUED", fill="#0284C7", font=font_footer)
 
         # Footer
-        draw.rectangle([55, 1005, width - 55, 1145], fill="#0F172A")
-        draw.text((85, 1030), "-> Curated by Himanshu Sir • Telegram Channel: @Learnwithhim", fill="#F8FAFC", font=font_footer)
-        draw.text((85, 1080), "-> Thank you for your purchase! Start practicing now using the /quiz command in bot.", fill="#38BDF8", font=font_footer)
+        draw.rectangle([55, 1055, width - 55, 1195], fill="#0F172A")
+        draw.text((85, 1080), "-> Curated by Himanshu Sir • Telegram Channel: @Learnwithhim", fill="#F8FAFC", font=font_footer)
+        draw.text((85, 1130), "-> Thank you for your purchase! Start practicing now using the /quiz command in bot.", fill="#38BDF8", font=font_footer)
 
         filename = f"Invoice_{user_id}_{p_key}.png"
         filepath = os.path.join(USER_PROFILES_DIR, filename)

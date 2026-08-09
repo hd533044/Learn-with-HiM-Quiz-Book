@@ -44,8 +44,8 @@ if HAS_RAZORPAY and RAZORPAY_KEY_ID and RAZORPAY_KEY_SECRET:
 bot_app_instance = None
 
 
-async def activate_user_subscription(user_id: int, plan_key: str):
-    """Activates subscription ledger in PostgreSQL DB & stores original purchase timestamp."""
+async def activate_user_subscription(user_id: int, plan_key: str, payment_id: str = "N/A"):
+    """Activates subscription in DB, logs transaction history, and syncs user state."""
     plan = PLAN_TIERS.get(plan_key)
     if not plan:
         return False
@@ -61,6 +61,7 @@ async def activate_user_subscription(user_id: int, plan_key: str):
         conn = get_db()
         cursor = conn.cursor()
         
+        # 1. Update user active balance and expiry
         if plan_key == "FREE_DEMO":
             cursor.execute(
                 "UPDATE users SET paid_question_balance = %s, vip_pass_expiry = %s, payment_timestamp = %s, demo_used = 1 WHERE user_id = %s",
@@ -72,12 +73,22 @@ async def activate_user_subscription(user_id: int, plan_key: str):
                 (plan["daily_limit"], expiry_str, payment_time_str, user_id)
             )
 
+        # 2. Record Transaction Entry
+        cursor.execute(
+            """
+            INSERT INTO payment_transactions 
+            (user_id, payment_id, plan_key, plan_name, amount_paid, daily_quota, validity_days, created_at)
+            VALUES (%s, %s, %s, %s, %s, %s, %s, %s)
+            """,
+            (user_id, payment_id, plan_key, plan["name"], plan["price"], plan["daily_limit"], plan["days"], payment_time_str)
+        )
+
         conn.commit()
         cursor.close()
         release_db(conn)
 
         sync_user_json_profile(user_id)
-        logging.info(f"Successfully activated {plan_key} for User ID: {user_id}")
+        logging.info(f"Successfully recorded transaction {payment_id} ({plan_key}) for user {user_id}")
         return True
     except Exception as e:
         if conn:
@@ -158,7 +169,7 @@ async def handle_razorpay_callback_get(request):
     if user_id and plan_key:
         try:
             uid = int(user_id)
-            activated = await activate_user_subscription(uid, plan_key)
+            activated = await activate_user_subscription(uid, plan_key, razorpay_payment_id)
             if activated:
                 await send_payment_invoice_telegram(uid, plan_key, razorpay_payment_id)
         except Exception as e:
@@ -267,7 +278,7 @@ async def handle_razorpay_webhook(request):
 
             if user_id and plan_key:
                 uid = int(user_id)
-                success = await activate_user_subscription(uid, plan_key)
+                success = await activate_user_subscription(uid, plan_key, payment_id)
                 if success:
                     await send_payment_invoice_telegram(uid, plan_key, payment_id)
 

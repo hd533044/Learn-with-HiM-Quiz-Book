@@ -37,6 +37,30 @@ from app.pyq_fetcher import fetch_pyqs_for_quiz
 
 NEGATIVE_WORDS = ["bad", "worst", "useless", "trash", "fake", "hate", "terrible", "waste", "horrible", "fraud", "stupid", "scam"]
 
+# In-Memory Speed Caches (TTLs)
+PROFILE_CACHE = {}
+CACHE_TTL = 30  # seconds
+
+def get_cached_profile(user_id):
+    now = time.time()
+    if user_id in PROFILE_CACHE:
+        prof, timestamp = PROFILE_CACHE[user_id]
+        if now - timestamp < CACHE_TTL:
+            return prof
+    return None
+
+def set_cached_profile(user_id, profile):
+    PROFILE_CACHE[user_id] = (profile, time.time())
+
+async def fetch_user_profile_fast(user_id):
+    cached = get_cached_profile(user_id)
+    if cached is not None:
+        return cached
+    prof = await asyncio.to_thread(get_user_profile, user_id)
+    if prof:
+        set_cached_profile(user_id, prof)
+    return prof
+
 def generate_razorpay_link_sync(user_id: int, plan_key: str) -> str:
     plan = PLAN_TIERS.get(plan_key)
     if not plan or plan["price"] == 0:
@@ -123,7 +147,7 @@ async def check_user_registration(update: Update) -> bool:
     user = update.effective_user
     if not user:
         return False
-    profile = await asyncio.to_thread(get_user_profile, user.id)
+    profile = await fetch_user_profile_fast(user.id)
     if not profile or not profile.get("is_verified"):
         await send_registration_prompt(update)
         return False
@@ -193,7 +217,7 @@ async def strict_quiz_command_guard(update: Update, context: ContextTypes.DEFAUL
 
     user = update.effective_user
     asyncio.create_task(asyncio.to_thread(log_user_activity_time, user.id, 10))
-    profile = await asyncio.to_thread(get_user_profile, user.id)
+    profile = await fetch_user_profile_fast(user.id)
 
     attempted_today = await asyncio.to_thread(get_today_attempts, user.id)
     paid_bal = profile.get("paid_question_balance", 0) or 0
@@ -233,7 +257,7 @@ async def myplan_command(update: Update, context: ContextTypes.DEFAULT_TYPE):
 
     user = update.effective_user
     asyncio.create_task(asyncio.to_thread(log_user_activity_time, user.id, 10))
-    profile = await asyncio.to_thread(get_user_profile, user.id)
+    profile = await fetch_user_profile_fast(user.id)
 
     today_used = await asyncio.to_thread(get_today_attempts, user.id)
     paid_bal = profile.get("paid_question_balance", 0) or 0
@@ -275,7 +299,7 @@ async def plans_command(update: Update, context: ContextTypes.DEFAULT_TYPE):
 
     user = update.effective_user
     asyncio.create_task(asyncio.to_thread(log_user_activity_time, user.id, 10))
-    profile = await asyncio.to_thread(get_user_profile, user.id)
+    profile = await fetch_user_profile_fast(user.id)
 
     keyboard = []
     if not profile.get("demo_used"):
@@ -312,7 +336,7 @@ async def handle_buy_plan_callback(update: Update, context: ContextTypes.DEFAULT
         await query.message.reply_text("⚠️ Invalid plan selected.")
         return
 
-    profile = await asyncio.to_thread(get_user_profile, user_id)
+    profile = await fetch_user_profile_fast(user_id)
 
     if plan_key == "FREE_DEMO":
         if profile and profile.get("demo_used"):
@@ -516,7 +540,7 @@ async def user_pdf_callback_handler(update: Update, context: ContextTypes.DEFAUL
     await query.edit_message_text("⏳ **Generating Your Custom PDF Report Card...**\nFormatting telemetry, tables, and compiling layout...", parse_mode="Markdown")
 
     pdf_file = await asyncio.to_thread(generate_student_pdf_report, user_id, filter_mode)
-    profile = await asyncio.to_thread(get_user_profile, user_id)
+    profile = await fetch_user_profile_fast(user_id)
     student_name = profile.get("full_name", "Student") if profile else "Student"
     sid = profile.get("student_id", f"USER_{user_id}") if profile else f"USER_{user_id}"
 
@@ -635,7 +659,7 @@ async def myprofile_command(update: Update, context: ContextTypes.DEFAULT_TYPE):
 
     user = update.effective_user
     asyncio.create_task(asyncio.to_thread(log_user_activity_time, user.id, 10))
-    profile = await asyncio.to_thread(get_user_profile, user.id)
+    profile = await fetch_user_profile_fast(user.id)
 
     today_used = await asyncio.to_thread(get_today_attempts, user.id)
     paid_bal = profile.get("paid_question_balance", 0) or 0
@@ -680,7 +704,7 @@ async def wholestate_command(update: Update, context: ContextTypes.DEFAULT_TYPE)
 
     user = update.effective_user
     asyncio.create_task(asyncio.to_thread(log_user_activity_time, user.id, 10))
-    profile = await asyncio.to_thread(get_user_profile, user.id)
+    profile = await fetch_user_profile_fast(user.id)
 
     perf = await asyncio.to_thread(get_user_performance_summary, user.id)
     rank = await asyncio.to_thread(calculate_user_rank, user.id)
@@ -802,7 +826,7 @@ async def button_router(update: Update, context: ContextTypes.DEFAULT_TYPE):
     if not await check_user_registration(update): return
 
     if data == "cmd_quiz":
-        profile = await asyncio.to_thread(get_user_profile, user.id)
+        profile = await fetch_user_profile_fast(user.id)
         attempted_today = await asyncio.to_thread(get_today_attempts, user.id)
         
         paid_bal = profile.get("paid_question_balance", 0) or 0 if profile else 0
@@ -861,9 +885,9 @@ async def button_router(update: Update, context: ContextTypes.DEFAULT_TYPE):
             "fb_p3": "Great Daily Limits & Routine!"
         }
         fb_text = presets.get(data, "Great educational bot!")
-        profile = await asyncio.to_thread(get_user_profile, user.id)
+        profile = await fetch_user_profile_fast(user.id)
         name = profile.get("full_name") if profile else user.full_name
-        await asyncio.to_thread(save_student_feedback, user.id, name, fb_text)
+        asyncio.create_task(asyncio.to_thread(save_student_feedback, user.id, name, fb_text))
         await query.edit_message_text(f"🎉 **Thank you, {name}!** Your review has been saved:\n\n💬 *\"{fb_text}\"*", parse_mode="Markdown")
 
     elif data == "fb_custom":
@@ -875,7 +899,7 @@ async def handle_text_messages(update: Update, context: ContextTypes.DEFAULT_TYP
     text = update.message.text.strip()
 
     if context.user_data.get("is_account_locked"):
-        profile = await asyncio.to_thread(get_user_profile, user.id)
+        profile = await fetch_user_profile_fast(user.id)
         if profile and profile.get("pin") == text:
             context.user_data["is_account_locked"] = False
             asyncio.create_task(asyncio.to_thread(refresh_user_activity_epoch, user.id))
@@ -894,7 +918,7 @@ async def handle_text_messages(update: Update, context: ContextTypes.DEFAULT_TYP
 
     if user.id == PRIMARY_ADMIN_ID and context.user_data.get("awaiting_admin_editname"):
         target_uid = context.user_data.pop("awaiting_admin_editname")
-        await asyncio.to_thread(admin_update_user_name, target_uid, text)
+        asyncio.create_task(asyncio.to_thread(admin_update_user_name, target_uid, text))
         await update.message.reply_text(f"✅ **Student name updated to:** `{text}` for user `{target_uid}`!", parse_mode="Markdown")
         return
 
@@ -926,9 +950,9 @@ async def handle_text_messages(update: Update, context: ContextTypes.DEFAULT_TYP
             await update.message.reply_text("🙏 Thank you for your feedback! We are working hard to improve your learning experience.", reply_markup=ReplyKeyboardRemove())
             return
 
-        profile = await asyncio.to_thread(get_user_profile, user.id)
+        profile = await fetch_user_profile_fast(user.id)
         name = profile.get("full_name") if profile else user.full_name
-        await asyncio.to_thread(save_student_feedback, user.id, name, text)
+        asyncio.create_task(asyncio.to_thread(save_student_feedback, user.id, name, text))
         await update.message.reply_text(f"🎉 **Feedback Received!** Thank you *{name}*:\n\n💬 *\"{text}\"*", reply_markup=ReplyKeyboardRemove(), parse_mode="Markdown")
         return
 

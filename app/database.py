@@ -5,12 +5,35 @@ from datetime import datetime, timedelta
 import pytz
 import psycopg2
 from psycopg2.extras import RealDictCursor
+from psycopg2 import pool
 from app.config import USER_PROFILES_DIR, PLAN_TIERS, DAILY_QUESTION_LIMIT
 
 logger = logging.getLogger(__name__)
 IST = pytz.timezone("Asia/Kolkata")
 
 DATABASE_URL = os.getenv("DATABASE_URL", "postgres://user:password@localhost:5432/dbname")
+
+# Connection Pool to avoid TCP/SSL Handshake latency on every command
+db_pool = None
+
+def init_pool():
+    global db_pool
+    if db_pool is None:
+        try:
+            db_pool = psycopg2.pool.SimpleConnectionPool(1, 20, DATABASE_URL)
+        except Exception as e:
+            logger.error(f"Failed to initialize database pool: {e}")
+
+def get_db():
+    global db_pool
+    if db_pool is None:
+        init_pool()
+    return db_pool.getconn()
+
+def release_db(conn):
+    global db_pool
+    if db_pool and conn:
+        db_pool.putconn(conn)
 
 def get_ist_now():
     return datetime.now(IST)
@@ -21,11 +44,8 @@ def get_ist_date_str():
 def get_ist_timestamp_str():
     return get_ist_now().strftime("%Y-%m-%d %H:%M:%S IST")
 
-def get_db():
-    conn = psycopg2.connect(DATABASE_URL, cursor_factory=RealDictCursor)
-    return conn
-
 def init_db():
+    init_pool()
     conn = get_db()
     cursor = conn.cursor()
     
@@ -140,7 +160,7 @@ def init_db():
     
     conn.commit()
     cursor.close()
-    conn.close()
+    release_db(conn)
 
 def generate_student_id(full_name: str, dob_str: str) -> str:
     clean_name = "".join(filter(str.isalpha, full_name))
@@ -155,7 +175,7 @@ def generate_student_id(full_name: str, dob_str: str) -> str:
     base_id = f"{prefix}{dob_code}"
     
     conn = get_db()
-    cursor = conn.cursor()
+    cursor = conn.cursor(cursor_factory=RealDictCursor)
     student_id = base_id
     counter = 1
     while True:
@@ -165,16 +185,16 @@ def generate_student_id(full_name: str, dob_str: str) -> str:
         student_id = f"{base_id}_{counter}"
         counter += 1
     cursor.close()
-    conn.close()
+    release_db(conn)
     return student_id
 
 def get_user_by_student_id(student_id: str):
     conn = get_db()
-    cursor = conn.cursor()
+    cursor = conn.cursor(cursor_factory=RealDictCursor)
     cursor.execute("SELECT * FROM users WHERE LOWER(student_id) = LOWER(%s)", (student_id.strip(),))
     row = cursor.fetchone()
     cursor.close()
-    conn.close()
+    release_db(conn)
     return dict(row) if row else None
 
 def update_user_pin(user_id: int, new_pin: str):
@@ -183,12 +203,12 @@ def update_user_pin(user_id: int, new_pin: str):
     cursor.execute("UPDATE users SET pin = %s WHERE user_id = %s", (new_pin, user_id))
     conn.commit()
     cursor.close()
-    conn.close()
+    release_db(conn)
     sync_user_json_profile(user_id)
 
 def check_and_update_inactivity(user_id: int) -> tuple[bool, int]:
     conn = get_db()
-    cursor = conn.cursor()
+    cursor = conn.cursor(cursor_factory=RealDictCursor)
     now_epoch = int(get_ist_now().timestamp())
     
     cursor.execute("SELECT last_activity_epoch, pin FROM users WHERE user_id = %s", (user_id,))
@@ -196,7 +216,7 @@ def check_and_update_inactivity(user_id: int) -> tuple[bool, int]:
     
     if not row or not row['pin']:
         cursor.close()
-        conn.close()
+        release_db(conn)
         return False, 0
 
     last_epoch = row['last_activity_epoch'] or 0
@@ -204,13 +224,13 @@ def check_and_update_inactivity(user_id: int) -> tuple[bool, int]:
 
     if last_epoch > 0 and diff > 300:
         cursor.close()
-        conn.close()
+        release_db(conn)
         return True, diff
 
     cursor.execute("UPDATE users SET last_activity_epoch = %s, last_active = %s WHERE user_id = %s", (now_epoch, get_ist_timestamp_str(), user_id))
     conn.commit()
     cursor.close()
-    conn.close()
+    release_db(conn)
     return False, diff
 
 def refresh_user_activity_epoch(user_id: int):
@@ -220,7 +240,7 @@ def refresh_user_activity_epoch(user_id: int):
     cursor.execute("UPDATE users SET last_activity_epoch = %s, last_active = %s WHERE user_id = %s", (now_epoch, get_ist_timestamp_str(), user_id))
     conn.commit()
     cursor.close()
-    conn.close()
+    release_db(conn)
 
 def log_user_activity_time(user_id: int, seconds: int = 15):
     conn = get_db()
@@ -239,11 +259,11 @@ def log_user_activity_time(user_id: int, seconds: int = 15):
     cursor.execute("UPDATE users SET last_active = %s, last_activity_epoch = %s WHERE user_id = %s", (now_str, now_epoch, user_id))
     conn.commit()
     cursor.close()
-    conn.close()
+    release_db(conn)
 
 def toggle_user_ban_status(user_id: int) -> bool:
     conn = get_db()
-    cursor = conn.cursor()
+    cursor = conn.cursor(cursor_factory=RealDictCursor)
     cursor.execute("SELECT is_banned FROM users WHERE user_id = %s", (user_id,))
     row = cursor.fetchone()
     current_status = row['is_banned'] if row and row['is_banned'] else 0
@@ -251,7 +271,7 @@ def toggle_user_ban_status(user_id: int) -> bool:
     cursor.execute("UPDATE users SET is_banned = %s WHERE user_id = %s", (new_status, user_id))
     conn.commit()
     cursor.close()
-    conn.close()
+    release_db(conn)
     sync_user_json_profile(user_id)
     return bool(new_status)
 
@@ -261,12 +281,12 @@ def admin_update_user_name(user_id: int, new_name: str):
     cursor.execute("UPDATE users SET full_name = %s WHERE user_id = %s", (new_name.strip(), user_id))
     conn.commit()
     cursor.close()
-    conn.close()
+    release_db(conn)
     sync_user_json_profile(user_id)
 
 def admin_delete_user_account(user_id: int):
     conn = get_db()
-    cursor = conn.cursor()
+    cursor = conn.cursor(cursor_factory=RealDictCursor)
     cursor.execute("SELECT student_id FROM users WHERE user_id = %s", (user_id,))
     row = cursor.fetchone()
     sid = row['student_id'] if row and row['student_id'] else f"USER_{user_id}"
@@ -280,7 +300,7 @@ def admin_delete_user_account(user_id: int):
     cursor.execute("DELETE FROM user_activity_time WHERE user_id = %s", (user_id,))
     conn.commit()
     cursor.close()
-    conn.close()
+    release_db(conn)
 
     json_path = os.path.join(USER_PROFILES_DIR, f"{sid}.json")
     if os.path.exists(json_path):
@@ -291,22 +311,22 @@ def admin_delete_user_account(user_id: int):
 
 def get_paid_users():
     conn = get_db()
-    cursor = conn.cursor()
+    cursor = conn.cursor(cursor_factory=RealDictCursor)
     cursor.execute("SELECT * FROM users WHERE paid_question_balance > 0 ORDER BY created_at DESC")
     rows = cursor.fetchall()
     cursor.close()
-    conn.close()
+    release_db(conn)
     return [dict(r) for r in rows]
 
 def sync_user_json_profile(user_id: int):
     conn = get_db()
-    cursor = conn.cursor()
+    cursor = conn.cursor(cursor_factory=RealDictCursor)
     
     cursor.execute("SELECT * FROM users WHERE user_id = %s", (user_id,))
     user_row = cursor.fetchone()
     if not user_row:
         cursor.close()
-        conn.close()
+        release_db(conn)
         return
 
     user_dict = dict(user_row)
@@ -324,7 +344,7 @@ def sync_user_json_profile(user_id: int):
     cursor.execute("SELECT date_str, seconds_spent FROM user_activity_time WHERE user_id = %s ORDER BY date_str DESC", (user_id,))
     time_rows = cursor.fetchall()
     cursor.close()
-    conn.close()
+    release_db(conn)
 
     formatted_attempts = []
     datewise_quiz_summary = {}
@@ -428,7 +448,7 @@ def sync_user_json_profile(user_id: int):
 
 def save_user_profile(user_id, full_name, username, phone, target_exam, dob, age, gender, pin, sec_q, sec_a, country="India", state="N/A", referred_by=None):
     conn = get_db()
-    cursor = conn.cursor()
+    cursor = conn.cursor(cursor_factory=RealDictCursor)
     now_str = get_ist_timestamp_str()
     now_epoch = int(get_ist_now().timestamp())
     
@@ -468,7 +488,7 @@ def save_user_profile(user_id, full_name, username, phone, target_exam, dob, age
             
     conn.commit()
     cursor.close()
-    conn.close()
+    release_db(conn)
     
     sync_user_json_profile(user_id)
     if referred_by:
@@ -476,11 +496,11 @@ def save_user_profile(user_id, full_name, username, phone, target_exam, dob, age
 
 def can_user_edit_profile(user_id: int) -> tuple[bool, int]:
     conn = get_db()
-    cursor = conn.cursor()
+    cursor = conn.cursor(cursor_factory=RealDictCursor)
     cursor.execute("SELECT last_profile_edit FROM users WHERE user_id = %s", (user_id,))
     row = cursor.fetchone()
     cursor.close()
-    conn.close()
+    release_db(conn)
 
     if not row or not row['last_profile_edit']:
         return True, 0
@@ -496,25 +516,25 @@ def can_user_edit_profile(user_id: int) -> tuple[bool, int]:
 
 def get_user_profile(user_id):
     conn = get_db()
-    cursor = conn.cursor()
+    cursor = conn.cursor(cursor_factory=RealDictCursor)
     cursor.execute("SELECT * FROM users WHERE user_id = %s", (user_id,))
     row = cursor.fetchone()
     cursor.close()
-    conn.close()
+    release_db(conn)
     return dict(row) if row else None
 
 def get_all_users():
     conn = get_db()
-    cursor = conn.cursor()
+    cursor = conn.cursor(cursor_factory=RealDictCursor)
     cursor.execute("SELECT * FROM users ORDER BY created_at DESC")
     rows = cursor.fetchall()
     cursor.close()
-    conn.close()
+    release_db(conn)
     return [dict(r) for r in rows]
 
 def get_today_attempts(user_id):
     conn = get_db()
-    cursor = conn.cursor()
+    cursor = conn.cursor(cursor_factory=RealDictCursor)
     today_date = get_ist_date_str()
     cursor.execute('''
         SELECT SUM(questions_attempted) as total 
@@ -523,7 +543,7 @@ def get_today_attempts(user_id):
     ''', (user_id, today_date))
     row = cursor.fetchone()
     cursor.close()
-    conn.close()
+    release_db(conn)
     return row['total'] if row and row['total'] else 0
 
 def record_quiz_result(user_id, quiz_id="computer_awareness_mock", score=0.0, total_questions=0, correct_count=0, wrong_count=0, skipped_count=0, time_taken=0, question_details=None):
@@ -539,16 +559,16 @@ def record_quiz_result(user_id, quiz_id="computer_awareness_mock", score=0.0, to
     ''', (user_id, quiz_id, total_questions, total_questions, correct_count, wrong_count, skipped_count, score, time_taken, timestamp_str, today_date, details_str))
     conn.commit()
     cursor.close()
-    conn.close()
+    release_db(conn)
     sync_user_json_profile(user_id)
 
 def get_seen_question_ids(user_id):
     conn = get_db()
-    cursor = conn.cursor()
+    cursor = conn.cursor(cursor_factory=RealDictCursor)
     cursor.execute("SELECT question_id FROM seen_questions WHERE user_id = %s", (user_id,))
     rows = cursor.fetchall()
     cursor.close()
-    conn.close()
+    release_db(conn)
     return {str(r['question_id']) for r in rows}
 
 def mark_questions_as_seen(user_id, question_ids):
@@ -559,7 +579,7 @@ def mark_questions_as_seen(user_id, question_ids):
         cursor.execute("INSERT INTO seen_questions (user_id, question_id, seen_at) VALUES (%s, %s, %s) ON CONFLICT (user_id, question_id) DO NOTHING", (user_id, str(qid), now_str))
     conn.commit()
     cursor.close()
-    conn.close()
+    release_db(conn)
 
 def save_question_to_db(user_id: int, q_text: str, options: list, correct_option: int, explanation: str):
     conn = get_db()
@@ -575,17 +595,17 @@ def save_question_to_db(user_id: int, q_text: str, options: list, correct_option
     except Exception:
         success = False
     cursor.close()
-    conn.close()
+    release_db(conn)
     sync_user_json_profile(user_id)
     return success
 
 def get_saved_questions(user_id: int):
     conn = get_db()
-    cursor = conn.cursor()
+    cursor = conn.cursor(cursor_factory=RealDictCursor)
     cursor.execute("SELECT * FROM saved_questions WHERE user_id = %s ORDER BY id DESC", (user_id,))
     rows = cursor.fetchall()
     cursor.close()
-    conn.close()
+    release_db(conn)
     return [dict(r) for r in rows]
 
 def save_student_feedback(user_id: int, full_name: str, feedback_text: str):
@@ -598,16 +618,16 @@ def save_student_feedback(user_id: int, full_name: str, feedback_text: str):
     ''', (user_id, full_name, feedback_text, now_str))
     conn.commit()
     cursor.close()
-    conn.close()
+    release_db(conn)
     sync_user_json_profile(user_id)
 
 def get_all_student_feedbacks(limit: int = 15):
     conn = get_db()
-    cursor = conn.cursor()
+    cursor = conn.cursor(cursor_factory=RealDictCursor)
     cursor.execute("SELECT full_name, feedback_text, submitted_at FROM student_feedback ORDER BY id DESC LIMIT %s", (limit,))
     rows = cursor.fetchall()
     cursor.close()
-    conn.close()
+    release_db(conn)
     return [dict(r) for r in rows]
 
 def set_maintenance_until(epoch_timestamp: int):
@@ -616,16 +636,16 @@ def set_maintenance_until(epoch_timestamp: int):
     cursor.execute("UPDATE bot_settings SET value = %s WHERE key = 'maintenance_until'", (str(epoch_timestamp),))
     conn.commit()
     cursor.close()
-    conn.close()
+    release_db(conn)
 
 def get_maintenance_until() -> int:
     conn = get_db()
-    cursor = conn.cursor()
+    cursor = conn.cursor(cursor_factory=RealDictCursor)
     cursor.execute("SELECT value FROM bot_settings WHERE key = 'maintenance_until'")
     row = cursor.fetchone()
     cursor.close()
-    conn.close()
-    return int(row['value']) if row and row['value'].isdigit() else 0
+    release_db(conn)
+    return int(row['value']) if row and str(row['value']).isdigit() else 0
 
 def save_paused_quiz_state(user_id: int, quiz_state: dict):
     conn = get_db()
@@ -640,15 +660,15 @@ def save_paused_quiz_state(user_id: int, quiz_state: dict):
     ''', (user_id, json.dumps(quiz_state), now_str))
     conn.commit()
     cursor.close()
-    conn.close()
+    release_db(conn)
 
 def get_paused_quiz_state(user_id: int):
     conn = get_db()
-    cursor = conn.cursor()
+    cursor = conn.cursor(cursor_factory=RealDictCursor)
     cursor.execute("SELECT quiz_state FROM paused_quizzes WHERE user_id = %s", (user_id,))
     row = cursor.fetchone()
     cursor.close()
-    conn.close()
+    release_db(conn)
     return json.loads(row['quiz_state']) if row and row['quiz_state'] else None
 
 def clear_paused_quiz_state(user_id: int):
@@ -657,4 +677,4 @@ def clear_paused_quiz_state(user_id: int):
     cursor.execute("DELETE FROM paused_quizzes WHERE user_id = %s", (user_id,))
     conn.commit()
     cursor.close()
-    conn.close()
+    release_db(conn)

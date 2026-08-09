@@ -36,7 +36,6 @@ from app.quiz_engine import (
 from app.stats import get_overall_leaderboard, calculate_user_percentile, calculate_user_rank, get_user_performance_summary
 from app.admin import admin_portal_command, admin_callback_handler
 from app.pdf_generator import generate_student_pdf_report
-from app.invoice_generator import generate_payment_invoice_card
 from app.pyq_fetcher import fetch_pyqs_for_quiz
 
 NEGATIVE_WORDS = ["bad", "worst", "useless", "trash", "fake", "hate", "terrible", "waste", "horrible", "fraud", "stupid", "scam"]
@@ -65,7 +64,7 @@ async def fetch_user_profile_fast(user_id):
     return prof
 
 def get_user_active_plans_history(user_id: int):
-    """Retrieves all subscribed plan transactions for a user to display active plans breakdown."""
+    """Retrieves all subscribed plan transactions for a user to display active plans."""
     conn = None
     try:
         conn = get_db()
@@ -283,7 +282,7 @@ async def myplan_command(update: Update, context: ContextTypes.DEFAULT_TYPE):
     user = update.effective_user
     asyncio.create_task(asyncio.to_thread(log_user_activity_time, user.id, 10))
     
-    # Invalidate profile cache on explicit /myplan command to guarantee fresh DB read
+    # Invalidate profile cache to fetch latest DB values
     PROFILE_CACHE.pop(user.id, None)
     profile = await fetch_user_profile_fast(user.id)
 
@@ -330,53 +329,15 @@ async def myplan_command(update: Update, context: ContextTypes.DEFAULT_TYPE):
     )
 
     btn_list = [
-        [InlineKeyboardButton("💳 Upgrade / VIP Plans", callback_data="cmd_plans")]
+        [InlineKeyboardButton("💳 Upgrade / VIP Plans", callback_data="cmd_plans")],
+        [
+            InlineKeyboardButton("🚀 Launch Quiz", callback_data="cmd_quiz"), 
+            InlineKeyboardButton("👤 Profile Card", callback_data="cmd_profile")
+        ]
     ]
-
-    if paid_bal > 0 or active_plan_key != "FREE_DEMO":
-        btn_list.append([InlineKeyboardButton("🧾 Download HD Invoice Card", callback_data=f"download_invoice_{active_plan_key}")])
-
-    btn_list.append([
-        InlineKeyboardButton("🚀 Launch Quiz", callback_data="cmd_quiz"), 
-        InlineKeyboardButton("👤 Profile Card", callback_data="cmd_profile")
-    ])
 
     await send_response(update, msg, reply_markup=InlineKeyboardMarkup(btn_list))
 
-async def handle_download_invoice_callback(update: Update, context: ContextTypes.DEFAULT_TYPE):
-    query = update.callback_query
-    user_id = query.from_user.id
-    data = query.data
-
-    plan_key = data.replace("download_invoice_", "")
-    await query.answer("⏳ Generating 2K Ultra-HD Payment Invoice Card...", show_alert=True)
-
-    profile = await fetch_user_profile_fast(user_id) or {}
-    sid = profile.get("student_id", f"USER_{user_id}")
-
-    img_card_path = await asyncio.to_thread(
-        generate_payment_invoice_card, 
-        user_id, 
-        plan_key
-    )
-
-    if img_card_path and os.path.exists(img_card_path):
-        try:
-            with open(img_card_path, "rb") as card_file:
-                await context.bot.send_photo(
-                    chat_id=query.message.chat_id,
-                    photo=card_file,
-                    caption=f"💳 **OFFICIAL ULTRA-HD PAYMENT INVOICE RECEIPT** — `{sid}`\n🏷 Verified by Razorpay & Learn with HiM",
-                    parse_mode="Markdown"
-                )
-            if os.path.exists(img_card_path):
-                os.remove(img_card_path)
-            return
-        except Exception as err:
-            logging.error(f"Error sending invoice photo: {err}")
-
-    await query.message.reply_text("⚠️ Unable to generate invoice card at the moment. Please try again later.")
-    
 async def plans_command(update: Update, context: ContextTypes.DEFAULT_TYPE):
     if not await maintenance_guard(update, context): return
     if not await check_user_registration(update): return
@@ -968,8 +929,6 @@ async def button_router(update: Update, context: ContextTypes.DEFAULT_TYPE):
         await plans_command(update, context)
     elif data.startswith("buy_plan_"):
         await handle_buy_plan_callback(update, context)
-    elif data.startswith("download_invoice_"):
-        await handle_download_invoice_callback(update, context)
     elif data == "cmd_help":
         await help_command(update, context)
     elif data == "cmd_pdfreport":
@@ -1163,7 +1122,6 @@ def build_application() -> Application:
     app.add_handler(CallbackQueryHandler(quiz_count_callback, pattern="^qcount_"))
     app.add_handler(CallbackQueryHandler(quiz_timer_callback, pattern="^qtimer_"))
     app.add_handler(CallbackQueryHandler(user_pdf_callback_handler, pattern="^usergenpdf_"))
-    app.add_handler(CallbackQueryHandler(handle_download_invoice_callback, pattern="^download_invoice_"))
     app.add_handler(CallbackQueryHandler(admin_callback_handler, pattern="^(admin_|audit_|genpdf_)"))
     app.add_handler(CallbackQueryHandler(button_router, pattern="^cmd_|^fb_|^trigger_start|^buy_plan_"))
 

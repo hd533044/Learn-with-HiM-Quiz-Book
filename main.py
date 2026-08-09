@@ -22,7 +22,6 @@ from app.config import (
     PLAN_TIERS
 )
 from app.database import sync_user_json_profile, get_ist_timestamp_str, get_db, release_db, get_user_profile
-from app.invoice_generator import generate_payment_invoice_card
 
 logging.basicConfig(
     format="%(asctime)s - %(levelname)s - %(message)s",
@@ -46,7 +45,7 @@ bot_app_instance = None
 
 async def activate_user_subscription(user_id: int, plan_key: str, payment_id: str = "OFFICIAL_SUBSCRIBED"):
     """
-    MASTER BULLETPROOF ACTIVATOR:
+    BULLETPROOF ACTIVATOR:
     1. Stacks daily question limit.
     2. Extends VIP pass expiry sequentially.
     3. Logs transaction permanently into payment_transactions.
@@ -114,8 +113,7 @@ async def activate_user_subscription(user_id: int, plan_key: str, payment_id: st
 
 async def send_payment_invoice_telegram(user_id: int, plan_key: str, payment_id: str = "OFFICIAL_SUBSCRIBED"):
     """
-    MASTER PUSH NOTIFICATION:
-    Pushes BOTH the formal text success invoice AND the HD image receipt card straight into Telegram chat.
+    Pushes a robust text success invoice directly into the user's Telegram chat with a prompt to check /myplan.
     """
     if not bot_app_instance:
         logging.error("[TELEGRAM PUSH ERROR] bot_app_instance is uninitialized.")
@@ -142,37 +140,17 @@ async def send_payment_invoice_telegram(user_id: int, plan_key: str, payment_id:
         f"• **Payment Timestamp:** `{orig_payment_time}`\n"
         f"• **Added Validity:** `{plan_info.get('days')} Days Access`\n"
         f"━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\n"
+        f"📊 Tap **/myplan** anytime to check your active quota and plan details.\n"
         f"🚀 Tap **/quiz** to launch your practice session now!"
     )
     
     try:
-        # 1. Push Text Invoice Message
         await bot_app_instance.bot.send_message(
             chat_id=user_id,
             text=success_text_invoice,
             parse_mode="Markdown"
         )
-
-        # 2. Generate and Push HD Image Receipt Card
-        img_card_path = await asyncio.to_thread(
-            generate_payment_invoice_card, 
-            user_id, 
-            plan_key, 
-            payment_id, 
-            orig_payment_time
-        )
-        if img_card_path and os.path.exists(img_card_path):
-            with open(img_card_path, "rb") as card_file:
-                await bot_app_instance.bot.send_photo(
-                    chat_id=user_id,
-                    photo=card_file,
-                    caption=f"💳 **OFFICIAL ULTRA-HD RECEIPT CARD** — `{sid}`\n🏷 Verified by Razorpay & Learn with HiM",
-                    parse_mode="Markdown"
-                )
-            if os.path.exists(img_card_path):
-                os.remove(img_card_path)
-
-        logging.info(f"[INVOICE DELIVERED] Successfully pushed text and image invoices to user {user_id}")
+        logging.info(f"[INVOICE DELIVERED] Successfully pushed text success invoice to user {user_id}")
     except Exception as err:
         logging.error(f"[DELIVERY ERROR] Failed to push notifications to user {user_id}: {err}")
 

@@ -1,4 +1,5 @@
 import os
+import re
 import pytz
 from datetime import datetime, timedelta
 from PIL import Image, ImageDraw, ImageFont
@@ -14,6 +15,14 @@ def mask_phone_number(phone_str: str) -> str:
     if len(clean_p) >= 4:
         return "XXXXXX" + clean_p[-4:]
     return "XXXXXX0000"
+
+
+def clean_plan_name(name_str: str) -> str:
+    """Strips emoji icons like 📦 or 🎁 to prevent broken [] square symbols on system fonts."""
+    if not name_str:
+        return "BRONZE PACK"
+    clean = re.sub(r'[^\x00-\x7F]+', '', name_str).strip()
+    return clean if clean else name_str
 
 
 def get_latest_user_transaction(user_id: int):
@@ -54,9 +63,8 @@ def get_ttf_font(size: int, bold: bool = False):
 
 def generate_payment_invoice_card(user_id: int, plan_key: str = None, payment_id: str = None, txn_time_str: str = None) -> str:
     """
-    Generates an official academic fee receipt card.
-    Student Name placed first in metadata. Receiver signature removed.
-    Platform Name: Learn with HiM Quiz Book Bot displayed.
+    Generates an executive-grade academic fee receipt card.
+    Strictly displays base plan quota without bonus calculations.
     """
     try:
         profile = get_user_profile(user_id) or {}
@@ -67,19 +75,25 @@ def generate_payment_invoice_card(user_id: int, plan_key: str = None, payment_id
         masked_phone = mask_phone_number(profile.get("phone_number", ""))
 
         paid_bal = profile.get("paid_question_balance", 0) or 80
-        bonus_q = profile.get("bonus_quota", 0) or 0
-        total_daily_quota = paid_bal + bonus_q
         vip_expiry_raw = profile.get("vip_pass_expiry") or "N/A"
+
+        # Determine Real Razorpay Payment / Txn ID
+        real_payment_id = payment_id or profile.get("payment_id")
+        if latest_txn and (not real_payment_id or real_payment_id == "OFFICIAL_SUBSCRIBED"):
+            real_payment_id = latest_txn.get("payment_id")
+        if not real_payment_id or real_payment_id == "N/A":
+            real_payment_id = "OFFICIAL_SUBSCRIBED"
 
         # Permanent Deterministic Invoice Number
         invoice_no = f"INV-{student_id}-{user_id}"
 
-        # Resolve Active Plan Info
+        # Resolve Active Plan Info directly from PLAN_TIERS
         if latest_txn:
             p_key = latest_txn.get("plan_key") or plan_key or "BRONZE"
-            p_name = latest_txn.get("plan_name")
+            p_name = clean_plan_name(latest_txn.get("plan_name"))
             p_price = latest_txn.get("amount_paid")
             p_days = latest_txn.get("validity_days")
+            base_quota = latest_txn.get("daily_quota") or 80
             payment_date_str = latest_txn.get("created_at")
         else:
             p_key = plan_key or "BRONZE"
@@ -88,10 +102,14 @@ def generate_payment_invoice_card(user_id: int, plan_key: str = None, payment_id
                     p_key = pk
                     break
             p_info = PLAN_TIERS.get(p_key, {"name": "BRONZE PACK", "price": 5, "days": 3, "daily_limit": 80})
-            p_name = p_info.get("name")
+            p_name = clean_plan_name(p_info.get("name"))
             p_price = p_info.get("price")
             p_days = p_info.get("days")
+            base_quota = p_info.get("daily_limit")
             payment_date_str = None
+
+        # STRICTLY DISPLAY PLAN PACK BASE QUOTA
+        quota_display_str = f"{base_quota} Questions / Day"
 
         # Synchronize Payment Date
         ist = pytz.timezone("Asia/Kolkata")
@@ -139,7 +157,7 @@ def generate_payment_invoice_card(user_id: int, plan_key: str = None, payment_id
         TEXT_GREEN = "#15803D"
         TEXT_ORANGE = "#D97706"
 
-        # 1. Top Banner
+        # 1. Top Header Banner
         draw.rectangle([0, 0, width, 180], fill=NAVY_DARK)
         draw.rectangle([100, 45, width - 100, 205], fill=NAVY_LIGHT)
         draw.text((320, 100), "LEARN WITH HIM QUIZ BOOK", fill="#FFFFFF", font=font_title)
@@ -154,7 +172,7 @@ def generate_payment_invoice_card(user_id: int, plan_key: str = None, payment_id
             except Exception:
                 pass
 
-        # 2. Metadata Section (STUDENT NAME IN FIRST OPENING POSITION)
+        # 2. Metadata Section
         y = 250
         lbl_sname = "Student Name: "
         draw.text((100, y), lbl_sname, fill=NAVY_DARK, font=font_label)
@@ -177,7 +195,7 @@ def generate_payment_invoice_card(user_id: int, plan_key: str = None, payment_id
         w_ph = draw.textlength(lbl_ph, font=font_label)
         draw.text((800 + w_ph, y), f"{masked_phone}", fill="#334155", font=font_val)
 
-        # 3. Light Navy Blue Sub-Header Banner
+        # 3. Sub-Header Banner
         y += 70
         draw.rectangle([100, y, width - 100, y + 65], fill=NAVY_LIGHT)
         draw.text((320, y + 15), "OFFICIAL VIP SUBSCRIPTION FEE RECEIPT", fill="#FFFFFF", font=font_sub)
@@ -207,15 +225,15 @@ def generate_payment_invoice_card(user_id: int, plan_key: str = None, payment_id
         draw.text((100 + w_rup, y), f"₹{p_price} INR ONLY", fill=TEXT_GREEN, font=font_label)
 
         lbl_tow = "towards: "
-        draw.text((550, y), lbl_tow, fill=NAVY_DARK, font=font_label)
+        draw.text((600, y), lbl_tow, fill=NAVY_DARK, font=font_label)
         w_tow = draw.textlength(lbl_tow, font=font_label)
-        draw.text((550 + w_tow, y), f"{p_name} ({p_days} Days Access)", fill=NAVY_LIGHT, font=font_label)
+        draw.text((600 + w_tow, y), f"{p_name} ({p_days} Days Access)", fill=NAVY_LIGHT, font=font_label)
 
         y += 70
         lbl_q = "Daily Question Quota: "
         draw.text((100, y), lbl_q, fill=NAVY_DARK, font=font_label)
         w_q = draw.textlength(lbl_q, font=font_label)
-        draw.text((100 + w_q, y), f"{total_daily_quota} Questions / Day", fill=TEXT_BLUE, font=font_label)
+        draw.text((100 + w_q, y), f"{quota_display_str}", fill=TEXT_BLUE, font=font_label)
 
         y += 70
         lbl_exp = "Pass Expiry Date: "
@@ -229,20 +247,26 @@ def generate_payment_invoice_card(user_id: int, plan_key: str = None, payment_id
         w_gw = draw.textlength(lbl_gw, font=font_label)
         draw.text((100 + w_gw, y), "Razorpay Secure (UPI / Cards / NetBanking)", fill="#334155", font=font_val)
 
+        y += 70
+        lbl_txn = "Txn / Payment ID: "
+        draw.text((100, y), lbl_txn, fill=NAVY_DARK, font=font_label)
+        w_txn = draw.textlength(lbl_txn, font=font_label)
+        draw.text((100 + w_txn, y), f"{real_payment_id}", fill=NAVY_LIGHT, font=font_val)
+
         # 5. Highlighted Amount Box
         y += 120
         draw.rectangle([100, y, 480, y + 80], fill=NAVY_LIGHT, outline=NAVY_DARK, width=2)
         draw.text((130, y + 20), f"Rs: ₹{p_price}/-", fill="#FFFFFF", font=font_amount)
 
-        # 6. Verification Seal (Receiver Signature Completely Removed)
-        draw.rectangle([800, y, 1300, y + 80], outline="#16A34A", width=2)
-        draw.text((840, y + 15), "RAZORPAY VERIFIED ✔", fill="#16A34A", font=font_label)
-        draw.text((840, y + 45), "PAYMENT RECEIVED & ISSUED", fill=NAVY_DARK, font=font_val)
+        # 6. Verification Seal (ISSUED BY REMOVED)
+        draw.rectangle([750, y, 1300, y + 80], outline="#16A34A", width=2)
+        draw.text((780, y + 15), "RAZORPAY SECURE VERIFIED ✔", fill="#16A34A", font=font_label)
+        draw.text((780, y + 45), "STATUS: PAYMENT_SUCCESS", fill=TEXT_GREEN, font=font_val)
 
         # 7. Document Footer Note
         draw.rectangle([100, 1680, width - 100, 1780], fill=NAVY_DARK)
         draw.text((130, 1705), "-> Curated by Himanshu Sir • Telegram Channel: @Learnwithhim", fill="#FFFFFF", font=font_footer)
-        draw.text((130, 1740), "-> Thank you for subscribing! Good luck with your preparation!", fill="#38BDF8", font=font_footer)
+        draw.text((130, 1740), "-> Official Educational Tax Invoice • Terms: Non-refundable academic pass", fill="#38BDF8", font=font_footer)
 
         filename = f"Invoice_{user_id}_{p_key}.png"
         filepath = os.path.join(USER_PROFILES_DIR, filename)

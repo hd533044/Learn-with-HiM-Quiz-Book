@@ -21,7 +21,7 @@ from app.config import (
     RAZORPAY_KEY_ID, RAZORPAY_KEY_SECRET, RAZORPAY_WEBHOOK_SECRET, 
     PLAN_TIERS
 )
-from app.database import sync_user_json_profile, get_ist_timestamp_str, get_db
+from app.database import sync_user_json_profile, get_ist_timestamp_str, get_db, release_db, get_user_profile
 
 logging.basicConfig(
     format="%(asctime)s - %(levelname)s - %(message)s",
@@ -43,16 +43,23 @@ if HAS_RAZORPAY and RAZORPAY_KEY_ID and RAZORPAY_KEY_SECRET:
 bot_app_instance = None
 
 
-async def activate_user_subscription(user_id: int, plan_key: str):
-    """Activates subscription ledger in PostgreSQL DB & syncs JSON profile."""
+async def activate_user_subscription(user_id: int, plan_key: str, payment_id: str = "N/A"):
+    """Activates subscription ledger in PostgreSQL DB, stacks limits, logs transaction, & syncs JSON profile."""
     plan = PLAN_TIERS.get(plan_key)
     if not plan:
         return False
 
     ist = pytz.timezone("Asia/Kolkata")
     now = datetime.now(ist)
+    
+    # Calculate exact dynamic expiry timestamp
     expiry = now + timedelta(days=plan["days"])
     expiry_str = expiry.strftime("%Y-%m-%d %H:%M:%S IST")
+    payment_time_str = now.strftime("%d %b %Y, %I:%M %p IST")
+
+    profile = get_user_profile(user_id) or {}
+    current_bal = profile.get("paid_question_balance", 0) or 0
+    new_bal = current_bal + plan["daily_limit"]
 
     try:
         conn = get_db()
@@ -61,20 +68,30 @@ async def activate_user_subscription(user_id: int, plan_key: str):
         if plan_key == "FREE_DEMO":
             cursor.execute(
                 "UPDATE users SET paid_question_balance = %s, vip_pass_expiry = %s, demo_used = 1 WHERE user_id = %s",
-                (plan["daily_limit"], expiry_str, user_id)
+                (new_bal, expiry_str, user_id)
             )
         else:
             cursor.execute(
                 "UPDATE users SET paid_question_balance = %s, vip_pass_expiry = %s WHERE user_id = %s",
-                (plan["daily_limit"], expiry_str, user_id)
+                (new_bal, expiry_str, user_id)
             )
+
+        # Log entry in payment_transactions so /myplan breakdown displays active multi-plans
+        cursor.execute(
+            """
+            INSERT INTO payment_transactions 
+            (user_id, payment_id, plan_key, plan_name, amount_paid, daily_quota, validity_days, created_at, expiry_at)
+            VALUES (%s, %s, %s, %s, %s, %s, %s, %s, %s)
+            """,
+            (user_id, payment_id, plan_key, plan["name"], plan["price"], plan["daily_limit"], plan["days"], payment_time_str, expiry_str)
+        )
 
         conn.commit()
         cursor.close()
-        conn.close()
+        release_db(conn)
 
         sync_user_json_profile(user_id)
-        logging.info(f"Successfully activated {plan_key} for User ID: {user_id}")
+        logging.info(f"Successfully activated and stacked {plan_key} for User ID: {user_id}. New Quota: {new_bal}")
         return True
     except Exception as e:
         logging.error(f"Error updating subscription for user {user_id}: {e}")
@@ -88,6 +105,10 @@ async def send_payment_invoice_telegram(user_id: int, plan_key: str, payment_id:
     plan_info = PLAN_TIERS.get(plan_key, {})
     txn_time = get_ist_timestamp_str()
     plan_name = plan_info.get('name', plan_key)
+
+    profile = await asyncio.to_thread(get_user_profile, user_id) or {}
+    sid = profile.get("student_id", f"USER_{user_id}")
+    total_quota = profile.get("paid_question_balance", 0)
     
     invoice_msg = (
         f"🥳 **CONGRATULATIONS! PACK ACTIVATED!** 🥳\n"
@@ -95,13 +116,15 @@ async def send_payment_invoice_telegram(user_id: int, plan_key: str, payment_id:
         f"🎉 **Your {plan_name} has been successfully activated!**\n"
         f"✨ You can now start your preparation immediately.\n\n"
         f"🧾 **OFFICIAL PAYMENT INVOICE**\n"
+        f"• **Student ID:** `{sid}`\n"
         f"• **Unlocked Pack:** `{plan_name}`\n"
         f"• **Amount Paid:** ₹{plan_info.get('price', 0)}\n"
         f"• **Payment / Txn ID:** `{payment_id}`\n"
         f"• **Date & Time:** `{txn_time}`\n"
         f"• **Validity:** `{plan_info.get('days')} Days`\n"
-        f"• **Daily Question Limit:** `{plan_info.get('daily_limit')} Questions / Day`\n"
+        f"• **Stacked Daily Limit:** `{total_quota} Questions / Day`\n"
         f"━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\n"
+        f"📊 Tap **/myplan** anytime to check your active quota breakdown.\n"
         f"🚀 Tap **/quiz** to launch your Computer Quiz practice session now!"
     )
     try:
@@ -120,7 +143,7 @@ async def handle_ping(request):
 
 async def handle_razorpay_callback_get(request):
     params = request.query
-    razorpay_payment_id = params.get("razorpay_payment_id", "N/A")
+    razorpay_payment_id = params.get("razorpay_payment_id") or params.get("razorpay_payment_link_id") or "N/A"
 
     user_id = params.get("user_id") or params.get("notes[user_id]")
     plan_key = params.get("plan_key") or params.get("notes[plan_key]")
@@ -128,7 +151,7 @@ async def handle_razorpay_callback_get(request):
     if user_id and plan_key:
         try:
             uid = int(user_id)
-            activated = await activate_user_subscription(uid, plan_key)
+            activated = await activate_user_subscription(uid, plan_key, razorpay_payment_id)
             if activated:
                 await send_payment_invoice_telegram(uid, plan_key, razorpay_payment_id)
         except Exception as e:
@@ -200,9 +223,9 @@ async def handle_razorpay_callback_get(request):
         <div class="card">
             <div class="icon">🎉</div>
             <h2>Payment Successful!</h2>
-            <p>Congratulations! Your VIP plan has been activated.</p>
+            <p>Congratulations! Your VIP plan has been activated & credited.</p>
             <div class="id-box">Payment ID: {razorpay_payment_id}</div>
-            <p>An official invoice and pack receipt have been sent to your Telegram chat.</p>
+            <p>An official success invoice and pack receipt have been sent to your Telegram chat.</p>
             <a href="https://t.me/LearnwithHiMQuizzzbot" class="btn">Return to Telegram Bot</a>
         </div>
     </body>
@@ -231,13 +254,13 @@ async def handle_razorpay_webhook(request):
         if event in ("payment_link.paid", "payment.captured"):
             payload = data.get("payload", {}).get("payment_link", {}).get("entity", {}) or data.get("payload", {}).get("payment", {}).get("entity", {})
             notes = payload.get("notes", {})
-            user_id = notes.get("user_id")
-            plan_key = notes.get("plan_key")
+            user_id = notes.get("user_id") or payload.get("notes", {}).get("user_id")
+            plan_key = notes.get("plan_key") or payload.get("notes", {}).get("plan_key")
             payment_id = payload.get("payment_id") or payload.get("id") or "N/A"
 
             if user_id and plan_key:
                 uid = int(user_id)
-                success = await activate_user_subscription(uid, plan_key)
+                success = await activate_user_subscription(uid, plan_key, payment_id)
                 if success:
                     await send_payment_invoice_telegram(uid, plan_key, payment_id)
 

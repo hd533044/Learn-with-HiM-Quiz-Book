@@ -5,6 +5,8 @@ import os
 import urllib.request
 import base64
 import asyncio
+from datetime import datetime
+import pytz
 from telegram import (
     Update, InlineKeyboardMarkup, InlineKeyboardButton, 
     BotCommand, BotCommandScopeDefault, BotCommandScopeAllPrivateChats, 
@@ -32,15 +34,17 @@ from app.quiz_engine import (
     pause_quiz_command, resume_quiz_command, stop_quiz_command, save_question_callback
 )
 from app.stats import get_overall_leaderboard, calculate_user_percentile, calculate_user_rank, get_user_performance_summary
-from app.admin import admin_portal_command, admin_callback_handler
+from app.admin import (
+    admin_portal_command, admin_callback_handler,
+    admin_view_user_payments_callback, admin_grant_plan_menu_callback, admin_execute_grant_callback
+)
 from app.pdf_generator import generate_student_pdf_report
 from app.pyq_fetcher import fetch_pyqs_for_quiz
 
 NEGATIVE_WORDS = ["bad", "worst", "useless", "trash", "fake", "hate", "terrible", "waste", "horrible", "fraud", "stupid", "scam"]
 
-# In-Memory Speed Caches (TTLs)
 PROFILE_CACHE = {}
-CACHE_TTL = 30  # seconds
+CACHE_TTL = 30 
 
 def get_cached_profile(user_id):
     now = time.time()
@@ -61,6 +65,25 @@ async def fetch_user_profile_fast(user_id):
     if prof:
         set_cached_profile(user_id, prof)
     return prof
+
+def get_user_active_plans_history(user_id: int):
+    """Retrieves all subscribed plan transactions for a user to display active plans breakdown."""
+    conn = None
+    try:
+        conn = get_db()
+        cursor = conn.cursor(cursor_factory=RealDictCursor)
+        cursor.execute(
+            "SELECT * FROM payment_transactions WHERE user_id = %s ORDER BY id DESC",
+            (user_id,)
+        )
+        rows = cursor.fetchall()
+        cursor.close()
+        release_db(conn)
+        return [dict(r) for r in rows] if rows else []
+    except Exception:
+        if conn:
+            release_db(conn)
+        return []
 
 def generate_razorpay_link_sync(user_id: int, plan_key: str) -> str:
     plan = PLAN_TIERS.get(plan_key)
@@ -253,11 +276,17 @@ async def send_response(update: Update, text: str, reply_markup=None):
         await update.message.reply_text(text, reply_markup=markup, parse_mode="Markdown")
 
 async def myplan_command(update: Update, context: ContextTypes.DEFAULT_TYPE):
+    """
+    Displays the current subscription plan, total daily limits, and breakdown of all active subscribed plans.
+    """
     if not await maintenance_guard(update, context): return
     if not await check_user_registration(update): return
 
     user = update.effective_user
     asyncio.create_task(asyncio.to_thread(log_user_activity_time, user.id, 10))
+    
+    # Invalidate profile cache to fetch latest DB values
+    PROFILE_CACHE.pop(user.id, None)
     profile = await fetch_user_profile_fast(user.id)
 
     today_used = await asyncio.to_thread(get_today_attempts, user.id)
@@ -267,32 +296,50 @@ async def myplan_command(update: Update, context: ContextTypes.DEFAULT_TYPE):
     remaining = max(0, allowed_limit - today_used)
 
     active_plan_name = "🎁 FREE DEMO PLAN"
+    active_plan_key = "FREE_DEMO"
     for p_key, p_val in PLAN_TIERS.items():
         if p_val.get("daily_limit") == paid_bal:
             active_plan_name = p_val.get("name")
+            active_plan_key = p_key
             break
 
     expiry = profile.get("vip_pass_expiry") or "N/A"
 
+    # Fetch all active subscribed plans for breakdown
+    history_plans = await asyncio.to_thread(get_user_active_plans_history, user.id)
+    
+    plans_text = ""
+    if history_plans:
+        plans_text = "\n📦 **ACTIVE SUBSCRIBED PACKS BREAKDOWN:**\n"
+        for idx, hp in enumerate(history_plans[:5], start=1):
+            plans_text += f" {idx}. **{hp['plan_name']}** (`₹{hp['amount_paid']}`)\n    👉 Quota: `+{hp['daily_quota']} Qs` | Date: `{hp['created_at']}`\n"
+    else:
+        plans_text = f"\n📦 **ACTIVE SUBSCRIBED PACKS BREAKDOWN:**\n • `{active_plan_name}`\n"
+
     msg = (
         f"💳 **YOUR CURRENT SUBSCRIPTION PLAN** 💳\n"
         f"━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\n"
-        f"👑 **Active Plan:** `{active_plan_name}`\n"
-        f"⚡ **Daily Question Limit:** `{allowed_limit} Questions / Day`\n"
+        f"👑 **Primary Pack:** `{active_plan_name}`\n"
+        f"⚡ **Total Daily Limit:** `{allowed_limit} Questions / Day`\n"
         f"📊 **Used Today:** `{today_used}` / `{allowed_limit}` Qs\n"
         f"🟢 **Remaining Today:** `{remaining}` Qs Available\n"
         f"⏳ **Pass Expiry Date:** `{expiry}`\n"
         f"🎁 **Bonus Quota:** `+{profile.get('bonus_quota', 0)} Qs`\n"
+        f"━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━"
+        f"{plans_text}"
         f"━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\n"
         f"💡 *Upgrade your daily limit anytime by choosing a VIP Pack below:*"
     )
 
-    buttons = InlineKeyboardMarkup([
+    btn_list = [
         [InlineKeyboardButton("💳 Upgrade / VIP Plans", callback_data="cmd_plans")],
-        [InlineKeyboardButton("🚀 Launch Quiz", callback_data="cmd_quiz"), InlineKeyboardButton("👤 Profile Card", callback_data="cmd_profile")]
-    ])
+        [
+            InlineKeyboardButton("🚀 Launch Quiz", callback_data="cmd_quiz"), 
+            InlineKeyboardButton("👤 Profile Card", callback_data="cmd_profile")
+        ]
+    ]
 
-    await send_response(update, msg, reply_markup=buttons)
+    await send_response(update, msg, reply_markup=InlineKeyboardMarkup(btn_list))
 
 async def plans_command(update: Update, context: ContextTypes.DEFAULT_TYPE):
     if not await maintenance_guard(update, context): return
@@ -699,6 +746,8 @@ async def myprofile_command(update: Update, context: ContextTypes.DEFAULT_TYPE):
 
     user = update.effective_user
     asyncio.create_task(asyncio.to_thread(log_user_activity_time, user.id, 10))
+    
+    PROFILE_CACHE.pop(user.id, None)
     profile = await fetch_user_profile_fast(user.id)
 
     today_used = await asyncio.to_thread(get_today_attempts, user.id)
@@ -1076,6 +1125,9 @@ def build_application() -> Application:
     app.add_handler(CallbackQueryHandler(quiz_count_callback, pattern="^qcount_"))
     app.add_handler(CallbackQueryHandler(quiz_timer_callback, pattern="^qtimer_"))
     app.add_handler(CallbackQueryHandler(user_pdf_callback_handler, pattern="^usergenpdf_"))
+    app.add_handler(CallbackQueryHandler(admin_view_user_payments_callback, pattern="^admin_view_payments_"))
+    app.add_handler(CallbackQueryHandler(admin_grant_plan_menu_callback, pattern="^admin_grant_menu_"))
+    app.add_handler(CallbackQueryHandler(admin_execute_grant_callback, pattern="^admin_exec_grant_"))
     app.add_handler(CallbackQueryHandler(admin_callback_handler, pattern="^(admin_|audit_|genpdf_)"))
     app.add_handler(CallbackQueryHandler(button_router, pattern="^cmd_|^fb_|^trigger_start|^buy_plan_"))
 

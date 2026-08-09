@@ -100,7 +100,7 @@ def generate_student_pdf_report(user_id: int, filter_mode: str = "last_1_month_d
         # -------------------------------------------------------------
         if filter_mode == "saved_questions_only":
             cursor.execute("SELECT * FROM saved_questions WHERE user_id = %s ORDER BY id DESC", (user_id,))
-            saved_rows = [dict(r) if not isinstance(r, dict) else r for r in cursor.fetchall()]
+            saved_rows = cursor.fetchall()
             cursor.close()
             release_db(conn)
             conn = None
@@ -259,7 +259,7 @@ def generate_student_pdf_report(user_id: int, filter_mode: str = "last_1_month_d
         # STANDARD ATTEMPT LOGS & QUIZ SUMMARY PROCESSING
         # -------------------------------------------------------------
         cursor.execute("SELECT * FROM quiz_attempts WHERE user_id = %s ORDER BY id DESC", (user_id,))
-        all_attempts = [dict(r) if not isinstance(r, dict) else r for r in cursor.fetchall()]
+        all_attempts = cursor.fetchall()
         cursor.close()
         release_db(conn)
         conn = None

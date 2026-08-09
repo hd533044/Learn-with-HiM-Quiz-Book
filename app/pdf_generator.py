@@ -11,7 +11,7 @@ from reportlab.platypus import (
 )
 from reportlab.lib.styles import getSampleStyleSheet, ParagraphStyle
 from app.config import USER_PROFILES_DIR, BASE_DIR
-from app.database import get_user_profile, get_db
+from app.database import get_user_profile, get_db, release_db
 
 
 def draw_pdf_footer(canvas, doc):
@@ -79,6 +79,7 @@ def clean_str(text) -> str:
 
 
 def generate_student_pdf_report(user_id: int, filter_mode: str = "last_1_month_data") -> str:
+    conn = None
     try:
         u = get_user_profile(user_id)
         if not u:
@@ -99,9 +100,10 @@ def generate_student_pdf_report(user_id: int, filter_mode: str = "last_1_month_d
         # -------------------------------------------------------------
         if filter_mode == "saved_questions_only":
             cursor.execute("SELECT * FROM saved_questions WHERE user_id = %s ORDER BY id DESC", (user_id,))
-            saved_rows = [dict(r) for r in cursor.fetchall()]
+            saved_rows = [dict(r) if not isinstance(r, dict) else r for r in cursor.fetchall()]
             cursor.close()
-            conn.close()
+            release_db(conn)
+            conn = None
 
             if not saved_rows:
                 return "NO_SAVED_QUESTIONS"
@@ -257,9 +259,10 @@ def generate_student_pdf_report(user_id: int, filter_mode: str = "last_1_month_d
         # STANDARD ATTEMPT LOGS & QUIZ SUMMARY PROCESSING
         # -------------------------------------------------------------
         cursor.execute("SELECT * FROM quiz_attempts WHERE user_id = %s ORDER BY id DESC", (user_id,))
-        all_attempts = [dict(r) for r in cursor.fetchall()]
+        all_attempts = [dict(r) if not isinstance(r, dict) else r for r in cursor.fetchall()]
         cursor.close()
-        conn.close()
+        release_db(conn)
+        conn = None
 
         filtered_attempts = []
         for a in all_attempts:
@@ -541,5 +544,7 @@ def generate_student_pdf_report(user_id: int, filter_mode: str = "last_1_month_d
         return pdf_path
 
     except Exception as e:
+        if conn:
+            release_db(conn)
         err_msg = f"ERROR_DETAILS:\n{traceback.format_exc()}"
         return err_msg

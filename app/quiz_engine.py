@@ -601,7 +601,6 @@ async def handle_poll_answer(update: Update, context: ContextTypes.DEFAULT_TYPE)
         })
 
         session["current_index"] += 1
-        await asyncio.sleep(0.8)
         await send_next_question(chat_id, user_id, context)
 
 async def finish_quiz_and_send_report(chat_id: int, user_id: int, context: ContextTypes.DEFAULT_TYPE):
@@ -616,22 +615,7 @@ async def finish_quiz_and_send_report(chat_id: int, user_id: int, context: Conte
     score = session["score"]
     detailed_logs = session.get("detailed_logs", [])
 
-    asyncio.create_task(asyncio.to_thread(
-        record_quiz_result,
-        user_id,
-        "computer_awareness_mock",
-        score,
-        total,
-        correct,
-        wrong,
-        skipped,
-        0,
-        detailed_logs
-    ))
-
-    percentile = await asyncio.to_thread(calculate_user_percentile, user_id)
-    rank_str = await asyncio.to_thread(calculate_user_rank, user_id)
-
+    # Send report card immediately
     report_card = (
         f"🏆 **OFFICIAL QUIZ REPORT CARD** 🏆\n"
         f"📚 **Learn with HiM Quiz Book by Himanshu Sir**\n"
@@ -643,9 +627,6 @@ async def finish_quiz_and_send_report(chat_id: int, user_id: int, context: Conte
         f"• **Wrong Answers:** `{wrong}` ❌\n"
         f"• **Skipped Questions:** `{skipped}` ⏭\n"
         f"• **Final Score:** `{score} / {total}` ⭐\n\n"
-        f"🎖 **RANK & PERCENTILE:**\n"
-        f"• **Global Rank:** `{rank_str}` 🥇\n"
-        f"• **Percentile Rating:** `{percentile}%` 📈\n"
         f"━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\n"
         f"👇 **INLINE QUIZ BOOK NAVIGATION:**"
     )
@@ -682,3 +663,17 @@ async def finish_quiz_and_send_report(chat_id: int, user_id: int, context: Conte
         reply_markup=InlineKeyboardMarkup(end_quiz_buttons), 
         parse_mode="Markdown"
     )
+
+    # Fire and forget database saving to avoid delaying message delivery
+    asyncio.create_task(asyncio.to_thread(
+        record_quiz_result,
+        user_id,
+        "computer_awareness_mock",
+        score,
+        total,
+        correct,
+        wrong,
+        skipped,
+        0,
+        detailed_logs
+    ))

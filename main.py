@@ -44,15 +44,15 @@ bot_app_instance = None
 
 
 async def activate_user_subscription(user_id: int, plan_key: str, payment_id: str = "N/A"):
-    """Activates subscription ledger in PostgreSQL DB, stacks limits, logs transaction, & syncs JSON profile."""
+    """Bulletproof plan activator with transaction recording for /myplan breakdown."""
     plan = PLAN_TIERS.get(plan_key)
     if not plan:
+        logging.error(f"[ACTIVATION ERROR] Plan key '{plan_key}' not found in PLAN_TIERS.")
         return False
 
     ist = pytz.timezone("Asia/Kolkata")
     now = datetime.now(ist)
     
-    # Calculate exact dynamic expiry timestamp
     expiry = now + timedelta(days=plan["days"])
     expiry_str = expiry.strftime("%Y-%m-%d %H:%M:%S IST")
     payment_time_str = now.strftime("%d %b %Y, %I:%M %p IST")
@@ -91,15 +91,16 @@ async def activate_user_subscription(user_id: int, plan_key: str, payment_id: st
         release_db(conn)
 
         sync_user_json_profile(user_id)
-        logging.info(f"Successfully activated and stacked {plan_key} for User ID: {user_id}. New Quota: {new_bal}")
+        logging.info(f"[SUCCESS] Activated and stacked {plan_key} for User ID: {user_id}. New Quota: {new_bal}")
         return True
     except Exception as e:
-        logging.error(f"Error updating subscription for user {user_id}: {e}")
+        logging.error(f"[DB ERROR] Error updating subscription for user {user_id}: {e}")
         return False
 
 
 async def send_payment_invoice_telegram(user_id: int, plan_key: str, payment_id: str = "N/A"):
     if not bot_app_instance:
+        logging.error("[TELEGRAM ERROR] bot_app_instance is not initialized.")
         return
 
     plan_info = PLAN_TIERS.get(plan_key, {})
@@ -133,8 +134,9 @@ async def send_payment_invoice_telegram(user_id: int, plan_key: str, payment_id:
             text=invoice_msg,
             parse_mode="Markdown"
         )
+        logging.info(f"[INVOICE SENT] Successfully pushed success invoice to user {user_id}")
     except Exception as err:
-        logging.error(f"Failed to notify user {user_id} via Telegram: {err}")
+        logging.error(f"[TELEGRAM SEND ERROR] Failed to notify user {user_id}: {err}")
 
 
 async def handle_ping(request):
@@ -145,8 +147,11 @@ async def handle_razorpay_callback_get(request):
     params = request.query
     razorpay_payment_id = params.get("razorpay_payment_id") or params.get("razorpay_payment_link_id") or "N/A"
 
+    # Robust parameter extraction
     user_id = params.get("user_id") or params.get("notes[user_id]")
     plan_key = params.get("plan_key") or params.get("notes[plan_key]")
+
+    logging.info(f"[GET CALLBACK] Received query params -> user_id: {user_id}, plan_key: {plan_key}, payment_id: {razorpay_payment_id}")
 
     if user_id and plan_key:
         try:
@@ -155,7 +160,7 @@ async def handle_razorpay_callback_get(request):
             if activated:
                 await send_payment_invoice_telegram(uid, plan_key, razorpay_payment_id)
         except Exception as e:
-            logging.error(f"Error activating from GET callback redirect: {e}")
+            logging.error(f"[GET CALLBACK EXCEPTION] {e}")
 
     html_content = f"""
     <!DOCTYPE html>

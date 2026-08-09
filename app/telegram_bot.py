@@ -65,7 +65,7 @@ async def fetch_user_profile_fast(user_id):
     return prof
 
 def get_user_active_plans_history(user_id: int):
-    """Retrieves all subscribed plan transactions for a user to display active plans."""
+    """Retrieves all subscribed plan transactions for a user to display active plans breakdown."""
     conn = None
     try:
         conn = get_db()
@@ -282,6 +282,9 @@ async def myplan_command(update: Update, context: ContextTypes.DEFAULT_TYPE):
 
     user = update.effective_user
     asyncio.create_task(asyncio.to_thread(log_user_activity_time, user.id, 10))
+    
+    # Invalidate profile cache on explicit /myplan command to guarantee fresh DB read
+    PROFILE_CACHE.pop(user.id, None)
     profile = await fetch_user_profile_fast(user.id)
 
     today_used = await asyncio.to_thread(get_today_attempts, user.id)
@@ -779,6 +782,8 @@ async def myprofile_command(update: Update, context: ContextTypes.DEFAULT_TYPE):
 
     user = update.effective_user
     asyncio.create_task(asyncio.to_thread(log_user_activity_time, user.id, 10))
+    
+    PROFILE_CACHE.pop(user.id, None)
     profile = await fetch_user_profile_fast(user.id)
 
     today_used = await asyncio.to_thread(get_today_attempts, user.id)

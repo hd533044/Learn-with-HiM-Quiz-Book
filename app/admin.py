@@ -4,12 +4,16 @@ import logging
 import math
 import os
 import zipfile
+import asyncio
+import pytz
+from datetime import datetime, timedelta
 from telegram import Update, InlineKeyboardMarkup, InlineKeyboardButton
 from telegram.ext import ContextTypes
+from psycopg2.extras import RealDictCursor
 from app.config import PRIMARY_ADMIN_ID, USER_PROFILES_DIR, PLAN_TIERS
 from app.database import (
     get_all_users, set_maintenance_until, get_maintenance_until, 
-    get_user_profile, get_db, sync_user_json_profile, toggle_user_ban_status,
+    get_user_profile, get_db, release_db, sync_user_json_profile, toggle_user_ban_status,
     get_paid_users, admin_update_user_name, admin_delete_user_account
 )
 from app.pdf_generator import generate_student_pdf_report
@@ -53,6 +57,167 @@ async def admin_portal_command(update: Update, context: ContextTypes.DEFAULT_TYP
         await update.callback_query.edit_message_text(msg, reply_markup=InlineKeyboardMarkup(keyboard), parse_mode="Markdown")
     else:
         await update.message.reply_text(msg, reply_markup=InlineKeyboardMarkup(keyboard), parse_mode="Markdown")
+
+async def admin_view_user_payments_callback(update: Update, context: ContextTypes.DEFAULT_TYPE):
+    query = update.callback_query
+    if query.from_user.id != PRIMARY_ADMIN_ID:
+        await query.answer("Unauthorized!", show_alert=True)
+        return
+
+    await query.answer()
+    data = query.data
+    target_uid = int(data.replace("admin_view_payments_", ""))
+
+    conn = None
+    try:
+        conn = get_db()
+        cursor = conn.cursor(cursor_factory=RealDictCursor)
+        cursor.execute("SELECT * FROM payment_transactions WHERE user_id = %s ORDER BY id DESC LIMIT 5", (target_uid,))
+        rows = cursor.fetchall()
+        cursor.close()
+        release_db(conn)
+    except Exception:
+        if conn:
+            release_db(conn)
+        rows = []
+
+    profile = get_user_profile(target_uid) or {}
+    sid = profile.get("student_id", f"USER_{target_uid}")
+    name = profile.get("full_name", "Student")
+
+    lines = [
+        f"💳 **RECENT PAYMENTS FOR STUDENT** 💳\n"
+        f"━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\n"
+        f"👤 **Name:** {name} (`{sid}`)\n"
+        f"🆔 **Telegram ID:** `{target_uid}`\n"
+        f"━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\n"
+    ]
+
+    if rows:
+        for idx, r in enumerate(rows, start=1):
+            lines.append(
+                f"**{idx}. Plan:** `{r['plan_name']}` (₹{r['amount_paid']})\n"
+                f"    🆔 Txn ID: `{r['payment_id']}`\n"
+                f"    ⚡ Quota: `+{r['daily_quota']} Qs` | Days: `{r['validity_days']}`\n"
+                f"    📅 Date: `{r['created_at']}`\n"
+                f"    ──────────────────────────"
+            )
+    else:
+        lines.append("ℹ️ *No payment transactions recorded for this user yet.*")
+
+    back_btn = InlineKeyboardMarkup([
+        [InlineKeyboardButton("🔙 Back to Student Profile", callback_data=f"admin_inspect_u_{target_uid}")]
+    ])
+
+    await query.edit_message_text("\n".join(lines), reply_markup=back_btn, parse_mode="Markdown")
+
+
+async def admin_grant_plan_menu_callback(update: Update, context: ContextTypes.DEFAULT_TYPE):
+    query = update.callback_query
+    if query.from_user.id != PRIMARY_ADMIN_ID:
+        await query.answer("Unauthorized!", show_alert=True)
+        return
+
+    await query.answer()
+    target_uid = int(query.data.replace("admin_grant_menu_", ""))
+
+    profile = get_user_profile(target_uid) or {}
+    name = profile.get("full_name", "Student")
+
+    keyboard = [
+        [InlineKeyboardButton("📦 Grant BRONZE (₹5 - 80 Qs)", callback_data=f"admin_exec_grant_{target_uid}_BRONZE")],
+        [InlineKeyboardButton("📦 Grant SILVER (₹10 - 100 Qs)", callback_data=f"admin_exec_grant_{target_uid}_SILVER")],
+        [InlineKeyboardButton("📦 Grant GOLD (₹15 - 120 Qs)", callback_data=f"admin_exec_grant_{target_uid}_GOLD")],
+        [InlineKeyboardButton("📦 Grant DIAMOND (₹20 - 150 Qs)", callback_data=f"admin_exec_grant_{target_uid}_DIAMOND")],
+        [InlineKeyboardButton("📦 Grant LEARNWITHHIM (₹25 - 250 Qs)", callback_data=f"admin_exec_grant_{target_uid}_LEARNWITHHIM")],
+        [InlineKeyboardButton("📦 Grant PLATINUM (₹40 - 300 Qs)", callback_data=f"admin_exec_grant_{target_uid}_PLATINUM")],
+        [InlineKeyboardButton("📦 Grant RUBY (₹50 - 400 Qs)", callback_data=f"admin_exec_grant_{target_uid}_RUBY")],
+        [InlineKeyboardButton("📦 Grant MEGA PACK (₹80 - 500 Qs)", callback_data=f"admin_exec_grant_{target_uid}_MEGA")],
+        [InlineKeyboardButton("🔙 Back to Student Profile", callback_data=f"admin_inspect_u_{target_uid}")]
+    ]
+
+    msg = (
+        f"👑 **ADMIN PORTAL — GRANT PAID PACK** 👑\n"
+        f"━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\n"
+        f"Select a paid plan below to instantly credit and stack for **{name}** (`{target_uid}`):"
+    )
+
+    await query.edit_message_text(msg, reply_markup=InlineKeyboardMarkup(keyboard), parse_mode="Markdown")
+
+
+async def admin_execute_grant_callback(update: Update, context: ContextTypes.DEFAULT_TYPE):
+    query = update.callback_query
+    if query.from_user.id != PRIMARY_ADMIN_ID:
+        await query.answer("Unauthorized!", show_alert=True)
+        return
+
+    await query.answer()
+    parts = query.data.replace("admin_exec_grant_", "").split("_", 1)
+    target_uid = int(parts[0])
+    plan_key = parts[1]
+
+    plan = PLAN_TIERS.get(plan_key)
+    if not plan:
+        await query.answer("⚠️ Invalid plan selected!", show_alert=True)
+        return
+
+    ist = pytz.timezone("Asia/Kolkata")
+    now = datetime.now(ist)
+    expiry_dt = now + timedelta(days=plan["days"])
+    expiry_str = expiry_dt.strftime("%Y-%m-%d %H:%M:%S IST")
+    payment_time_str = now.strftime("%d %b %Y, %I:%M %p IST")
+    payment_id = f"ADMIN_MANUAL_GRANT_{int(time.time())}"
+
+    profile = get_user_profile(target_uid) or {}
+    current_bal = profile.get("paid_question_balance", 0) or 0
+    new_bal = current_bal + plan["daily_limit"]
+
+    conn = None
+    try:
+        conn = get_db()
+        cursor = conn.cursor()
+        
+        cursor.execute(
+            "UPDATE users SET paid_question_balance = %s, vip_pass_expiry = %s, payment_id = %s, payment_timestamp = %s WHERE user_id = %s",
+            (new_bal, expiry_str, payment_id, payment_time_str, target_uid)
+        )
+
+        cursor.execute(
+            """
+            INSERT INTO payment_transactions 
+            (user_id, payment_id, plan_key, plan_name, amount_paid, daily_quota, validity_days, created_at, expiry_at)
+            VALUES (%s, %s, %s, %s, %s, %s, %s, %s, %s)
+            """,
+            (target_uid, payment_id, plan_key, plan["name"], plan["price"], plan["daily_limit"], plan["days"], payment_time_str, expiry_str)
+        )
+
+        conn.commit()
+        cursor.close()
+        release_db(conn)
+
+        sync_user_json_profile(target_uid)
+    except Exception as e:
+        if conn:
+            release_db(conn)
+        await query.message.reply_text(f"⚠️ Failed granting plan: {e}")
+        return
+
+    from main import send_payment_invoice_telegram
+    await send_payment_invoice_telegram(target_uid, plan_key, payment_id)
+
+    back_btn = InlineKeyboardMarkup([
+        [InlineKeyboardButton("🔙 Back to Student Profile", callback_data=f"admin_inspect_u_{target_uid}")]
+    ])
+
+    success_msg = (
+        f"✅ **PLAN SUCCESSFULLY GRANTED BY ADMIN!** ✅\n"
+        f"━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\n"
+        f"👑 **Plan:** `{plan['name']}`\n"
+        f"⚡ **Stacked Limit:** `{new_bal} Qs/Day`\n"
+        f"⏳ **New Expiry:** `{expiry_str}`\n"
+        f"👤 **Student ID:** `{target_uid}`"
+    )
+    await query.edit_message_text(success_msg, reply_markup=back_btn, parse_mode="Markdown")
 
 async def admin_callback_handler(update: Update, context: ContextTypes.DEFAULT_TYPE):
     query = update.callback_query
@@ -327,6 +492,7 @@ async def admin_callback_handler(update: Update, context: ContextTypes.DEFAULT_T
         paid_text = f"💳 PAID VIP ({paid_bal} Qs/Day)" if is_paid else "🆓 FREE TIER"
 
         keyboard = [
+            [InlineKeyboardButton("💳 View Recent Payments", callback_data=f"admin_view_payments_{target_uid}"), InlineKeyboardButton("👑 Grant Paid Plan", callback_data=f"admin_grant_menu_{target_uid}")],
             [InlineKeyboardButton("📋 Personal Details", callback_data=f"audit_personal_{target_uid}"), InlineKeyboardButton("🔑 PIN & Security Questions", callback_data=f"audit_pinsec_{target_uid}")],
             [InlineKeyboardButton("⏱ Time & Activity Log", callback_data=f"audit_activity_{target_uid}"), InlineKeyboardButton("📊 Overall Performance", callback_data=f"audit_perf_{target_uid}")],
             [InlineKeyboardButton("📅 Date-wise Quiz Summary", callback_data=f"audit_datesummary_{target_uid}"), InlineKeyboardButton("🎯 Attempted Questions", callback_data=f"audit_attempted_{target_uid}")],
@@ -486,7 +652,7 @@ async def admin_callback_handler(update: Update, context: ContextTypes.DEFAULT_T
         cursor.execute("SELECT date_str, seconds_spent FROM user_activity_time WHERE user_id = %s ORDER BY date_str DESC", (target_uid,))
         rows = cursor.fetchall()
         cursor.close()
-        conn.close()
+        release_db(conn)
 
         total_sec = sum([r['seconds_spent'] for r in rows])
         
@@ -549,7 +715,7 @@ async def admin_callback_handler(update: Update, context: ContextTypes.DEFAULT_T
         cursor.execute("SELECT * FROM quiz_attempts WHERE user_id = %s ORDER BY id DESC", (target_uid,))
         attempts = cursor.fetchall()
         cursor.close()
-        conn.close()
+        release_db(conn)
 
         lines = [
             f"📅 **DATE-WISE QUIZ SUMMARY** 📅",
@@ -592,7 +758,7 @@ async def admin_callback_handler(update: Update, context: ContextTypes.DEFAULT_T
         cursor.execute("SELECT * FROM quiz_attempts WHERE user_id = %s ORDER BY id DESC LIMIT 5", (target_uid,))
         attempts = cursor.fetchall()
         cursor.close()
-        conn.close()
+        release_db(conn)
 
         lines = [
             f"🎯 **ATTEMPTED QUESTIONS LOG** 🎯",
@@ -635,7 +801,7 @@ async def admin_callback_handler(update: Update, context: ContextTypes.DEFAULT_T
         cursor.execute("SELECT * FROM quiz_attempts WHERE user_id = %s ORDER BY id DESC LIMIT 5", (target_uid,))
         attempts = cursor.fetchall()
         cursor.close()
-        conn.close()
+        release_db(conn)
 
         lines = [
             f"❌ **WRONG QUESTIONS LOG** ❌",
@@ -678,7 +844,7 @@ async def admin_callback_handler(update: Update, context: ContextTypes.DEFAULT_T
         cursor.execute("SELECT * FROM saved_questions WHERE user_id = %s ORDER BY id DESC", (target_uid,))
         saved = cursor.fetchall()
         cursor.close()
-        conn.close()
+        release_db(conn)
 
         lines = [
             f"💾 **SAVED QUESTIONS REPORT** 💾",
@@ -715,7 +881,7 @@ async def admin_callback_handler(update: Update, context: ContextTypes.DEFAULT_T
         cursor.execute("SELECT * FROM student_feedback WHERE user_id = %s ORDER BY id DESC", (target_uid,))
         fbs = cursor.fetchall()
         cursor.close()
-        conn.close()
+        release_db(conn)
 
         lines = [
             f"💬 **STUDENT FEEDBACK & REVIEWS** 💬",
@@ -742,7 +908,7 @@ async def admin_callback_handler(update: Update, context: ContextTypes.DEFAULT_T
         cursor.execute("UPDATE users SET bonus_quota = bonus_quota + 20 WHERE user_id = %s", (target_uid,))
         conn.commit()
         cursor.close()
-        conn.close()
+        release_db(conn)
         sync_user_json_profile(target_uid)
 
         await query.edit_message_text(

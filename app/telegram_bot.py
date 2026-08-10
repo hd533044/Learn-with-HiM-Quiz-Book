@@ -46,6 +46,25 @@ NEGATIVE_WORDS = ["bad", "worst", "useless", "trash", "fake", "hate", "terrible"
 PROFILE_CACHE = {}
 CACHE_TTL = 30 
 
+def log_command_usage(user_id: int, command_name: str):
+    """Logs command execution into command_analytics for administrative telemetry."""
+    conn = None
+    try:
+        ist = pytz.timezone("Asia/Kolkata")
+        now_str = datetime.now(ist).strftime("%Y-%m-%d %H:%M:%S IST")
+        conn = get_db()
+        cursor = conn.cursor()
+        cursor.execute(
+            "INSERT INTO command_analytics (user_id, command_name, executed_at) VALUES (%s, %s, %s)",
+            (user_id, command_name, now_str)
+        )
+        conn.commit()
+        cursor.close()
+        release_db(conn)
+    except Exception:
+        if conn:
+            release_db(conn)
+
 def get_cached_profile(user_id):
     now = time.time()
     if user_id in PROFILE_CACHE:
@@ -67,7 +86,7 @@ async def fetch_user_profile_fast(user_id):
     return prof
 
 def get_user_active_plans_history(user_id: int):
-    """Retrieves all subscribed plan transactions for a user from PostgreSQL."""
+    """Retrieves all subscribed plan transactions for a user including individual pack expiry dates."""
     conn = None
     try:
         conn = get_db()
@@ -236,6 +255,7 @@ async def strict_quiz_command_guard(update: Update, context: ContextTypes.DEFAUL
         return
 
     user = update.effective_user
+    asyncio.create_task(asyncio.to_thread(log_command_usage, user.id, "/quiz"))
     asyncio.create_task(asyncio.to_thread(log_user_activity_time, user.id, 10))
     profile = await fetch_user_profile_fast(user.id)
 
@@ -273,12 +293,13 @@ async def send_response(update: Update, text: str, reply_markup=None):
 
 async def myplan_command(update: Update, context: ContextTypes.DEFAULT_TYPE):
     """
-    Displays current subscription, daily limits, and breakdown of active subscribed plans.
+    Displays subscription plan, total daily limits, and breakdown of active subscribed plans with individual expiries.
     """
     if not await maintenance_guard(update, context): return
     if not await check_user_registration(update): return
 
     user = update.effective_user
+    asyncio.create_task(asyncio.to_thread(log_command_usage, user.id, "/myplan"))
     asyncio.create_task(asyncio.to_thread(log_user_activity_time, user.id, 10))
     
     # Invalidate profile cache to fetch latest DB values
@@ -297,14 +318,20 @@ async def myplan_command(update: Update, context: ContextTypes.DEFAULT_TYPE):
 
     expiry = profile.get("vip_pass_expiry") or "N/A"
 
-    # Fetch all active subscribed plans for breakdown
+    # Fetch all active subscribed plans for detailed breakdown
     history_plans = await asyncio.to_thread(get_user_active_plans_history, user.id)
     
     plans_text = ""
     if history_plans:
         plans_text = "\n📦 **ACTIVE SUBSCRIBED PACKS BREAKDOWN:**\n"
         for idx, hp in enumerate(history_plans[:5], start=1):
-            plans_text += f" {idx}. **{hp['plan_name']}** (`₹{hp['amount_paid']}`)\n    👉 Quota: `+{hp['daily_quota']} Qs` | Txn ID: `{hp['payment_id']}`\n    📅 Date: `{hp['created_at']}`\n"
+            p_exp = hp.get('expiry_at') or 'Active'
+            plans_text += (
+                f" {idx}. **{hp['plan_name']}** (`₹{hp['amount_paid']}`)\n"
+                f"    👉 Quota: `+{hp['daily_quota']} Qs` | Txn ID: `{hp['payment_id']}`\n"
+                f"    📅 Date: `{hp['created_at']}`\n"
+                f"    ⏳ Expiry: `{p_exp}`\n"
+            )
     else:
         plans_text = f"\n📦 **ACTIVE SUBSCRIBED PACKS BREAKDOWN:**\n • `{active_plan_name}`\n"
 
@@ -315,7 +342,7 @@ async def myplan_command(update: Update, context: ContextTypes.DEFAULT_TYPE):
         f"⚡ **Total Daily Limit:** `{allowed_limit} Questions / Day`\n"
         f"📊 **Used Today:** `{today_used}` / `{allowed_limit}` Qs\n"
         f"🟢 **Remaining Today:** `{remaining}` Qs Available\n"
-        f"⏳ **Pass Expiry Date:** `{expiry}`\n"
+        f"⏳ **Overall Pass Expiry:** `{expiry}`\n"
         f"🎁 **Bonus Quota:** `+{profile.get('bonus_quota', 0)} Qs`\n"
         f"━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━"
         f"{plans_text}"
@@ -338,6 +365,7 @@ async def plans_command(update: Update, context: ContextTypes.DEFAULT_TYPE):
     if not await check_user_registration(update): return
 
     user = update.effective_user
+    asyncio.create_task(asyncio.to_thread(log_command_usage, user.id, "/plans"))
     asyncio.create_task(asyncio.to_thread(log_user_activity_time, user.id, 10))
     profile = await fetch_user_profile_fast(user.id)
 
@@ -420,6 +448,7 @@ async def pdfreport_command(update: Update, context: ContextTypes.DEFAULT_TYPE):
     if not await check_user_registration(update): return
 
     user = update.effective_user
+    asyncio.create_task(asyncio.to_thread(log_command_usage, user.id, "/pdfreport"))
     asyncio.create_task(asyncio.to_thread(log_user_activity_time, user.id, 10))
 
     buttons = InlineKeyboardMarkup([
@@ -448,6 +477,7 @@ async def wrongquestions_command(update: Update, context: ContextTypes.DEFAULT_T
     if not await check_user_registration(update): return
 
     user = update.effective_user
+    asyncio.create_task(asyncio.to_thread(log_command_usage, user.id, "/wrongquestions"))
     asyncio.create_task(asyncio.to_thread(log_user_activity_time, user.id, 10))
 
     today_str = get_ist_date_str()
@@ -515,6 +545,7 @@ async def attemptedquestions_command(update: Update, context: ContextTypes.DEFAU
     if not await check_user_registration(update): return
 
     user = update.effective_user
+    asyncio.create_task(asyncio.to_thread(log_command_usage, user.id, "/attemptedquestions"))
     asyncio.create_task(asyncio.to_thread(log_user_activity_time, user.id, 10))
 
     today_str = get_ist_date_str()
@@ -584,6 +615,7 @@ async def unattemptedquestions_command(update: Update, context: ContextTypes.DEF
     if not await check_user_registration(update): return
 
     user = update.effective_user
+    asyncio.create_task(asyncio.to_thread(log_command_usage, user.id, "/unattemptedquestions"))
     asyncio.create_task(asyncio.to_thread(log_user_activity_time, user.id, 10))
 
     seen_ids = await asyncio.to_thread(get_seen_question_ids, user.id)
@@ -663,6 +695,7 @@ async def help_command(update: Update, context: ContextTypes.DEFAULT_TYPE):
     if not await check_user_registration(update): return
     
     user = update.effective_user
+    asyncio.create_task(asyncio.to_thread(log_command_usage, user.id, "/help"))
     asyncio.create_task(asyncio.to_thread(log_user_activity_time, user.id, 10))
 
     msg = (
@@ -689,6 +722,7 @@ async def saved_questions_command(update: Update, context: ContextTypes.DEFAULT_
     if not await check_user_registration(update): return
 
     user = update.effective_user
+    asyncio.create_task(asyncio.to_thread(log_command_usage, user.id, "/savedquestions"))
     asyncio.create_task(asyncio.to_thread(log_user_activity_time, user.id, 10))
     saved = await asyncio.to_thread(get_saved_questions, user.id)
     
@@ -737,6 +771,7 @@ async def myprofile_command(update: Update, context: ContextTypes.DEFAULT_TYPE):
     if not await check_user_registration(update): return
 
     user = update.effective_user
+    asyncio.create_task(asyncio.to_thread(log_command_usage, user.id, "/myprofile"))
     asyncio.create_task(asyncio.to_thread(log_user_activity_time, user.id, 10))
     
     PROFILE_CACHE.pop(user.id, None)
@@ -784,6 +819,7 @@ async def wholestate_command(update: Update, context: ContextTypes.DEFAULT_TYPE)
     if not await check_user_registration(update): return
 
     user = update.effective_user
+    asyncio.create_task(asyncio.to_thread(log_command_usage, user.id, "/mywholestate"))
     asyncio.create_task(asyncio.to_thread(log_user_activity_time, user.id, 10))
     profile = await fetch_user_profile_fast(user.id)
 
@@ -817,6 +853,7 @@ async def toppers_command(update: Update, context: ContextTypes.DEFAULT_TYPE):
     if not await check_user_registration(update): return
 
     user = update.effective_user
+    asyncio.create_task(asyncio.to_thread(log_command_usage, user.id, "/toppername"))
     asyncio.create_task(asyncio.to_thread(log_user_activity_time, user.id, 10))
     toppers = await asyncio.to_thread(get_overall_leaderboard, 10)
     
@@ -838,6 +875,7 @@ async def feedback_command(update: Update, context: ContextTypes.DEFAULT_TYPE):
     if not await check_user_registration(update): return
 
     user = update.effective_user
+    asyncio.create_task(asyncio.to_thread(log_command_usage, user.id, "/feedback"))
     asyncio.create_task(asyncio.to_thread(log_user_activity_time, user.id, 10))
 
     keyboard = [
@@ -861,6 +899,7 @@ async def viewfeedbacks_command(update: Update, context: ContextTypes.DEFAULT_TY
     if not await check_user_registration(update): return
 
     user = update.effective_user
+    asyncio.create_task(asyncio.to_thread(log_command_usage, user.id, "/reviews"))
     asyncio.create_task(asyncio.to_thread(log_user_activity_time, user.id, 10))
     feedbacks = await asyncio.to_thread(get_all_student_feedbacks, 15)
 
@@ -879,6 +918,7 @@ async def referral_command(update: Update, context: ContextTypes.DEFAULT_TYPE):
     if not await check_user_registration(update): return
 
     user = update.effective_user
+    asyncio.create_task(asyncio.to_thread(log_command_usage, user.id, "/invite"))
     asyncio.create_task(asyncio.to_thread(log_user_activity_time, user.id, 10))
     bot_username = context.bot.username
     ref_link = f"https://t.me/{bot_username}?start=ref_{user.id}"

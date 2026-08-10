@@ -45,16 +45,15 @@ bot_app_instance = None
 
 async def activate_user_subscription(user_id: int, plan_key: str, payment_id: str = "OFFICIAL_SUBSCRIBED"):
     """
-    CRITICAL FIX:
-    1. PostgreSQL (%s) parameterized query execution.
-    2. Stacks daily question limit onto current paid_question_balance.
-    3. Extends pass validity.
-    4. Logs transaction in payment_transactions table for /myplan.
-    5. Flushes local memory cache so /myplan and /myprofile update instantly.
+    ACTIVATION ENGINE:
+    1. Stacks daily question limit onto current paid_question_balance.
+    2. Extends pass validity.
+    3. Logs transaction permanently into payment_transactions with unique payment_id constraint.
+    4. Invalidates local memory cache for instant synchronization.
     """
     plan = PLAN_TIERS.get(plan_key)
     if not plan:
-        logging.error(f"[ACTIVATION CRITICAL ERROR] Invalid plan key: '{plan_key}'")
+        logging.error(f"[ACTIVATION ERROR] Invalid plan key received: {plan_key}")
         return False
 
     ist = pytz.timezone("Asia/Kolkata")
@@ -85,23 +84,25 @@ async def activate_user_subscription(user_id: int, plan_key: str, payment_id: st
                 (new_bal, expiry_str, payment_id, payment_time_str, user_id)
             )
 
-        # 2. Record transaction history entry
+        # 2. Record transaction history entry (Ignore duplicate insertions if webhook fires twice)
         try:
             cursor.execute(
                 """
                 INSERT INTO payment_transactions 
                 (user_id, payment_id, plan_key, plan_name, amount_paid, daily_quota, validity_days, created_at, expiry_at)
                 VALUES (%s, %s, %s, %s, %s, %s, %s, %s, %s)
+                ON CONFLICT (payment_id) DO NOTHING
                 """,
                 (user_id, payment_id, plan_key, plan["name"], plan["price"], plan["daily_limit"], plan["days"], payment_time_str, expiry_str)
             )
         except Exception as tx_err:
-            logging.warning(f"[TX LOG FALLBACK] Fallback query without expiry_at: {tx_err}")
+            logging.warning(f"[TX LOG FALLBACK] Fallback insertion without expiry_at: {tx_err}")
             cursor.execute(
                 """
                 INSERT INTO payment_transactions 
                 (user_id, payment_id, plan_key, plan_name, amount_paid, daily_quota, validity_days, created_at)
                 VALUES (%s, %s, %s, %s, %s, %s, %s, %s)
+                ON CONFLICT (payment_id) DO NOTHING
                 """,
                 (user_id, payment_id, plan_key, plan["name"], plan["price"], plan["daily_limit"], plan["days"], payment_time_str)
             )
@@ -114,19 +115,17 @@ async def activate_user_subscription(user_id: int, plan_key: str, payment_id: st
         PROFILE_CACHE.pop(user_id, None)
         sync_user_json_profile(user_id)
         
-        logging.info(f"[ACTIVATION SUCCESS] Activated and stacked {plan_key} for User ID: {user_id}. New Quota: {new_bal}")
+        logging.info(f"[SUCCESS] Activated and stacked plan {plan_key} for User ID: {user_id}. New Quota: {new_bal}")
         return True
     except Exception as e:
         if conn:
             release_db(conn)
-        logging.error(f"[ACTIVATION DB EXCEPTION] Failed activating plan for user {user_id}: {e}")
+        logging.error(f"[DATABASE ERROR] Failed activating plan for user {user_id}: {e}")
         return False
 
 
 async def send_payment_invoice_telegram(user_id: int, plan_key: str, payment_id: str = "OFFICIAL_SUBSCRIBED"):
-    """
-    CRITICAL FIX: Pushes a robust text success invoice directly into the user's Telegram chat.
-    """
+    """Pushes a text success invoice directly into the user's Telegram chat."""
     if not bot_app_instance:
         logging.error("[TELEGRAM PUSH ERROR] bot_app_instance is uninitialized.")
         return
@@ -152,7 +151,7 @@ async def send_payment_invoice_telegram(user_id: int, plan_key: str, payment_id:
         f"• **Payment Timestamp:** `{orig_payment_time}`\n"
         f"• **Added Validity:** `{plan_info.get('days')} Days Access`\n"
         f"━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\n"
-        f"📊 Tap **/myplan** or **/myprofile** anytime to check your active quota and plan details.\n"
+        f"📊 Tap **/myplan** anytime to check your active quota and plan details.\n"
         f"🚀 Tap **/quiz** to launch your practice session now!"
     )
     
@@ -162,9 +161,9 @@ async def send_payment_invoice_telegram(user_id: int, plan_key: str, payment_id:
             text=success_text_invoice,
             parse_mode="Markdown"
         )
-        logging.info(f"[INVOICE DELIVERED] Pushed text success invoice to user {user_id}")
+        logging.info(f"[INVOICE DELIVERED] Pushed text invoice to user {user_id}")
     except Exception as err:
-        logging.error(f"[INVOICE DELIVERY ERROR] Could not notify user {user_id}: {err}")
+        logging.error(f"[DELIVERY ERROR] Failed to push notification to user {user_id}: {err}")
 
 
 async def handle_ping(request):
@@ -178,7 +177,7 @@ async def handle_razorpay_callback_get(request):
     raw_user_id = params.get("user_id") or params.get("notes[user_id]")
     plan_key = params.get("plan_key") or params.get("notes[plan_key]")
 
-    logging.info(f"[GET CALLBACK] user_id={raw_user_id}, plan_key={plan_key}, payment_id={razorpay_payment_id}")
+    logging.info(f"[GET CALLBACK] Captured params: user_id={raw_user_id}, plan_key={plan_key}, payment_id={razorpay_payment_id}")
 
     if raw_user_id and plan_key:
         try:

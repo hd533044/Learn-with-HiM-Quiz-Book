@@ -86,7 +86,7 @@ async def fetch_user_profile_fast(user_id):
     return prof
 
 def get_user_active_plans_history(user_id: int):
-    """Retrieves unique active plan transactions for a user from PostgreSQL."""
+    """Retrieves ALL subscribed plan transactions for a user from PostgreSQL without artificial limits."""
     conn = None
     try:
         conn = get_db()
@@ -293,7 +293,7 @@ async def send_response(update: Update, text: str, reply_markup=None):
 
 async def myplan_command(update: Update, context: ContextTypes.DEFAULT_TYPE):
     """
-    Displays subscription plan, total daily limits, and breakdown of active subscribed plans with exact expiry dates.
+    Displays subscription plan, total daily limits, and breakdown of ALL active subscribed plans with exact expiry dates.
     """
     if not await maintenance_guard(update, context): return
     if not await check_user_registration(update): return
@@ -318,14 +318,14 @@ async def myplan_command(update: Update, context: ContextTypes.DEFAULT_TYPE):
 
     expiry = profile.get("vip_pass_expiry") or "N/A"
 
-    # Fetch all active subscribed plans for detailed breakdown
+    # Fetch ALL active subscribed plans for detailed breakdown without artificial truncation
     history_plans = await asyncio.to_thread(get_user_active_plans_history, user.id)
     
     plans_text = ""
     if history_plans:
         plans_text = "\n📦 **ACTIVE SUBSCRIBED PACKS BREAKDOWN:**\n"
         ist = pytz.timezone("Asia/Kolkata")
-        for idx, hp in enumerate(history_plans[:5], start=1):
+        for idx, hp in enumerate(history_plans, start=1):
             p_exp = hp.get('expiry_at')
             # Calculate dynamic expiry if record shows 'Active' or NULL
             if not p_exp or p_exp == 'Active':

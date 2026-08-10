@@ -62,7 +62,7 @@ async def admin_portal_command(update: Update, context: ContextTypes.DEFAULT_TYP
 
 
 async def admin_view_user_payments_callback(update: Update, context: ContextTypes.DEFAULT_TYPE):
-    """Fetches unique transaction history from payment_transactions for admin audit."""
+    """Fetches full transaction history from payment_transactions for admin audit without artificial limits."""
     query = update.callback_query
     if query.from_user.id != PRIMARY_ADMIN_ID:
         await query.answer("Unauthorized!", show_alert=True)
@@ -76,7 +76,7 @@ async def admin_view_user_payments_callback(update: Update, context: ContextType
     try:
         conn = get_db()
         cursor = conn.cursor(cursor_factory=RealDictCursor)
-        cursor.execute("SELECT DISTINCT ON (payment_id) * FROM payment_transactions WHERE user_id = %s ORDER BY payment_id, id DESC LIMIT 5", (target_uid,))
+        cursor.execute("SELECT DISTINCT ON (payment_id) * FROM payment_transactions WHERE user_id = %s ORDER BY payment_id, id DESC", (target_uid,))
         rows = cursor.fetchall()
         cursor.close()
         release_db(conn)
@@ -91,7 +91,7 @@ async def admin_view_user_payments_callback(update: Update, context: ContextType
     name = profile.get("full_name", "Student")
 
     lines = [
-        f"💳 **RECENT PAYMENTS FOR STUDENT** 💳\n"
+        f"💳 **ALL PAYMENTS FOR STUDENT** 💳\n"
         f"━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\n"
         f"👤 **Name:** {name} (`{sid}`)\n"
         f"🆔 **Telegram ID:** `{target_uid}`\n"
@@ -113,11 +113,15 @@ async def admin_view_user_payments_callback(update: Update, context: ContextType
     else:
         lines.append("ℹ️ *No payment transactions recorded for this user yet.*")
 
+    msg = "\n".join(lines)
+    if len(msg) > 4000:
+        msg = msg[:3950] + "\n\n*(Truncated due to Telegram length limit)*"
+
     back_btn = InlineKeyboardMarkup([
         [InlineKeyboardButton("🔙 Back to Student Profile", callback_data=f"admin_inspect_u_{target_uid}")]
     ])
 
-    await query.edit_message_text("\n".join(lines), reply_markup=back_btn, parse_mode="Markdown")
+    await query.edit_message_text(msg, reply_markup=back_btn, parse_mode="Markdown")
 
 
 async def admin_grant_plan_menu_callback(update: Update, context: ContextTypes.DEFAULT_TYPE):
@@ -179,6 +183,7 @@ async def admin_execute_grant_callback(update: Update, context: ContextTypes.DEF
     profile = get_user_profile(target_uid) or {}
     current_bal = profile.get("paid_question_balance", 0) or 0
     new_bal = current_bal + plan["daily_limit"]
+    sid = profile.get("student_id", f"USER_{target_uid}")
 
     conn = None
     try:
@@ -191,7 +196,7 @@ async def admin_execute_grant_callback(update: Update, context: ContextTypes.DEF
             (new_bal, expiry_str, payment_id, payment_time_str, target_uid)
         )
 
-        # 2. Safe transaction logging with unique constraint handling
+        # 2. Transaction logging
         try:
             cursor.execute(
                 """
@@ -222,6 +227,8 @@ async def admin_execute_grant_callback(update: Update, context: ContextTypes.DEF
         cursor.close()
         release_db(conn)
 
+        from app.telegram_bot import PROFILE_CACHE
+        PROFILE_CACHE.pop(target_uid, None)
         sync_user_json_profile(target_uid)
     except Exception as e:
         if conn:
@@ -229,9 +236,32 @@ async def admin_execute_grant_callback(update: Update, context: ContextTypes.DEF
         await query.message.reply_text(f"⚠️ Failed granting plan: {e}")
         return
 
-    # ALWAYS BROADCAST ANNOUNCEMENT DIRECTLY TO USER'S TELEGRAM CHAT
-    from main import send_payment_invoice_telegram
-    await send_payment_invoice_telegram(target_uid, plan_key, payment_id)
+    # GUARANTEED DIRECT BROADCAST NOTIFICATION TO USER CHAT
+    user_broadcast_text = (
+        f"🎁 **SPECIAL ANNOUNCEMENT: VIP PLAN GRANTED!** 🎁\n"
+        f"━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\n"
+        f"🎉 **Himanshu Sir has granted you the {plan['name']}!**\n\n"
+        f"⚡ **Stacked Daily Limit:** `{new_bal} Questions / Day`\n"
+        f"⏳ **VIP Pass Expiry:** `{expiry_str}`\n"
+        f"🧾 **Grant Reference ID:** `{payment_id}`\n"
+        f"━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\n"
+        f"✨ Your account has been upgraded! Tap **/myplan** to see all active plans.\n"
+        f"🚀 Tap **/quiz** below to launch your practice session now!"
+    )
+
+    try:
+        user_btn = InlineKeyboardMarkup([
+            [InlineKeyboardButton("🚀 Launch Quiz Now", callback_data="cmd_quiz"), InlineKeyboardButton("💳 My Plan", callback_data="cmd_myplan")]
+        ])
+        await context.bot.send_message(
+            chat_id=target_uid,
+            text=user_broadcast_text,
+            reply_markup=user_btn,
+            parse_mode="Markdown"
+        )
+        logger.info(f"[GRANT BROADCAST SUCCESS] Sent notification to student {target_uid}")
+    except Exception as notify_err:
+        logger.error(f"[GRANT BROADCAST FAILED] Could not notify user {target_uid}: {notify_err}")
 
     back_btn = InlineKeyboardMarkup([
         [InlineKeyboardButton("🔙 Back to Student Profile", callback_data=f"admin_inspect_u_{target_uid}")]
@@ -243,8 +273,8 @@ async def admin_execute_grant_callback(update: Update, context: ContextTypes.DEF
         f"👑 **Granted Plan:** `{plan['name']}`\n"
         f"⚡ **New Stacked Quota:** `{new_bal} Qs/Day`\n"
         f"⏳ **Pass Expiry:** `{expiry_str}`\n"
-        f"👤 **Student ID:** `{target_uid}`\n\n"
-        f"📢 *An official activation announcement has been pushed directly into the student's Telegram chat.*"
+        f"👤 **Student ID:** `{sid}` (`{target_uid}`)\n\n"
+        f"📢 *An official activation announcement was pushed directly into the student's Telegram chat.*"
     )
     await query.edit_message_text(success_msg, reply_markup=back_btn, parse_mode="Markdown")
 
@@ -298,6 +328,9 @@ async def admin_callback_handler(update: Update, context: ContextTypes.DEFAULT_T
         conn.commit()
         cursor.close()
         release_db(conn)
+        
+        from app.telegram_bot import PROFILE_CACHE
+        PROFILE_CACHE.pop(target_uid, None)
         sync_user_json_profile(target_uid)
 
         # BROADCAST QUOTA INCREASE ANNOUNCEMENT TO USER

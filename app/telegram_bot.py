@@ -37,7 +37,7 @@ from app.stats import get_overall_leaderboard, calculate_user_percentile, calcul
 from app.admin import (
     admin_portal_command, admin_callback_handler,
     admin_view_user_payments_callback, admin_grant_plan_menu_callback, admin_execute_grant_callback,
-    ADMIN_PASSWORD, ADMIN_AUTH_SESSIONS
+    get_stored_admin_password, update_admin_password_db, ADMIN_AUTH_SESSIONS
 )
 from app.pdf_generator import generate_student_pdf_report
 from app.pyq_fetcher import fetch_pyqs_for_quiz
@@ -1120,15 +1120,69 @@ async def handle_text_messages(update: Update, context: ContextTypes.DEFAULT_TYP
     user = update.effective_user
     text = update.message.text.strip()
 
+    # Password Recovery Flow: Step 1 (DOB Check)
+    if user.id == PRIMARY_ADMIN_ID and context.user_data.get("awaiting_admin_rec_dob"):
+        context.user_data["awaiting_admin_rec_dob"] = False
+        if text.replace("-", "").replace("/", "") == "09081999":
+            context.user_data["awaiting_admin_rec_email"] = True
+            await update.message.reply_text(
+                "✅ **DOB VERIFIED! (STEP 2/2)**\n"
+                "━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\n"
+                "Please reply with Himanshu Sir's recovery Email Address:",
+                parse_mode="Markdown"
+            )
+        else:
+            await update.message.reply_text("❌ **INCORRECT DOB!** Recovery attempt failed.", parse_mode="Markdown")
+        return
+
+    # Password Recovery Flow: Step 2 (Email Check & Reset Prompt)
+    if user.id == PRIMARY_ADMIN_ID and context.user_data.get("awaiting_admin_rec_email"):
+        context.user_data["awaiting_admin_rec_email"] = False
+        if text.lower() == "hd533044@gmail.com":
+            context.user_data["awaiting_admin_new_pass"] = True
+            await update.message.reply_text(
+                "🎉 **RECOVERY CREDENTIALS VERIFIED!** 🎉\n"
+                "━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\n"
+                "Please reply with your new Master Admin Password now:",
+                parse_mode="Markdown"
+            )
+        else:
+            await update.message.reply_text("❌ **INCORRECT RECOVERY EMAIL!** Recovery attempt failed.", parse_mode="Markdown")
+        return
+
+    # Set / Update New Admin Password
+    if user.id == PRIMARY_ADMIN_ID and context.user_data.get("awaiting_admin_new_pass"):
+        context.user_data["awaiting_admin_new_pass"] = False
+        if len(text) < 4:
+            await update.message.reply_text("⚠️ Password must be at least 4 characters long.")
+            return
+
+        success = update_admin_password_db(text)
+        if success:
+            ADMIN_AUTH_SESSIONS[user.id] = time.time()
+            await update.message.reply_text(
+                f"🎉 **ADMIN PASSWORD CHANGED & SAVED IN SUPABASE!** 🎉\n"
+                f"━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\n"
+                f"🔑 **New Master Password:** `{text}`\n"
+                f"✨ Admin session authenticated for 30 minutes.",
+                parse_mode="Markdown"
+            )
+            await admin_portal_command(update, context)
+        else:
+            await update.message.reply_text("⚠️ Error saving new password in database. Please try again.")
+        return
+
     # Password Challenge Check for Admin
     if user.id == PRIMARY_ADMIN_ID and context.user_data.get("awaiting_admin_password"):
         context.user_data["awaiting_admin_password"] = False
-        if text == ADMIN_PASSWORD:
+        stored_pass = get_stored_admin_password()
+        if text == stored_pass:
             ADMIN_AUTH_SESSIONS[user.id] = time.time()
             await update.message.reply_text("🔓 **MASTER ADMIN ACCESS GRANTED!**\nSession active for 30 mins.", parse_mode="Markdown")
             await admin_portal_command(update, context)
         else:
-            await update.message.reply_text("❌ **INCORRECT PASSWORD!** Access denied.", parse_mode="Markdown")
+            reset_btn = InlineKeyboardMarkup([[InlineKeyboardButton("🔑 Forgot Password / Recovery Reset", callback_data="admin_forgot_pass_step1")]])
+            await update.message.reply_text("❌ **INCORRECT PASSWORD!** Access denied.\nTap below if you need to recover password:", reply_markup=reset_btn, parse_mode="Markdown")
         return
 
     # Secret Communication Reply Handler for Admin

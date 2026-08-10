@@ -21,15 +21,60 @@ from app.stats import get_user_performance_summary, calculate_user_rank, calcula
 
 logger = logging.getLogger(__name__)
 USERS_PER_PAGE = 8
-ADMIN_PASSWORD = os.getenv("ADMIN_PASSWORD", "Himanshu@123").strip()
 ADMIN_AUTH_SESSIONS = {}  # {user_id: auth_timestamp}
+
+
+def get_stored_admin_password() -> str:
+    """Fetches the current active Admin Password from Supabase database."""
+    conn = None
+    try:
+        conn = get_db()
+        cursor = conn.cursor()
+        cursor.execute("SELECT password_hash FROM admin_security WHERE id = 1")
+        row = cursor.fetchone()
+        cursor.close()
+        release_db(conn)
+        if row and row[0]:
+            return str(row[0]).strip()
+        return "Him@5330"
+    except Exception:
+        if conn:
+            release_db(conn)
+        return "Him@5330"
+
+
+def update_admin_password_db(new_pass: str) -> bool:
+    """Updates and saves Himanshu Sir's new password permanently in Supabase."""
+    conn = None
+    try:
+        ist = pytz.timezone("Asia/Kolkata")
+        now_str = datetime.now(ist).strftime("%Y-%m-%d %I:%M %p IST")
+        conn = get_db()
+        cursor = conn.cursor()
+        cursor.execute(
+            """
+            INSERT INTO admin_security (id, admin_id, password_hash, dob_recovery, email_recovery, updated_at)
+            VALUES (1, %s, %s, '09081999', 'hd533044@gmail.com', %s)
+            ON CONFLICT (id) DO UPDATE SET password_hash = EXCLUDED.password_hash, updated_at = EXCLUDED.updated_at
+            """,
+            (PRIMARY_ADMIN_ID, new_pass, now_str)
+        )
+        conn.commit()
+        cursor.close()
+        release_db(conn)
+        return True
+    except Exception as err:
+        if conn:
+            release_db(conn)
+        logger.error(f"[ADMIN PASS UPDATE DB ERROR] {err}")
+        return False
 
 
 def is_admin_authenticated(user_id: int) -> bool:
     if user_id != PRIMARY_ADMIN_ID:
         return False
     auth_time = ADMIN_AUTH_SESSIONS.get(user_id, 0)
-    return (time.time() - auth_time) < 1800  # 30 mins session duration
+    return (time.time() - auth_time) < 1800  # 30 minutes session duration
 
 
 def get_pending_queries_count() -> int:
@@ -102,7 +147,7 @@ async def admin_portal_command(update: Update, context: ContextTypes.DEFAULT_TYP
     if user_id != PRIMARY_ADMIN_ID:
         return
 
-    # Password Challenge Check
+    # Security Lock Password Check
     if not is_admin_authenticated(user_id):
         context.user_data["awaiting_admin_password"] = True
         msg = (
@@ -110,11 +155,12 @@ async def admin_portal_command(update: Update, context: ContextTypes.DEFAULT_TYP
             "━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\n"
             "🔑 Please reply with the Master Admin Password to access the portal:"
         )
+        reset_btn = InlineKeyboardMarkup([[InlineKeyboardButton("🔑 Forgot Password / Recovery Reset", callback_data="admin_forgot_pass_step1")]])
         if update.callback_query:
             await update.callback_query.answer("🔒 Password Required!", show_alert=True)
-            await update.callback_query.message.reply_text(msg, parse_mode="Markdown")
+            await update.callback_query.message.reply_text(msg, reply_markup=reset_btn, parse_mode="Markdown")
         else:
-            await update.message.reply_text(msg, parse_mode="Markdown")
+            await update.message.reply_text(msg, reply_markup=reset_btn, parse_mode="Markdown")
         return
 
     users = get_all_users()
@@ -133,7 +179,8 @@ async def admin_portal_command(update: Update, context: ContextTypes.DEFAULT_TYP
         [InlineKeyboardButton("📊 Command Usage Analytics", callback_data="admin_command_stats"), InlineKeyboardButton("📦 Export All Json Ledgers (.zip)", callback_data="admin_export_zip")],
         [InlineKeyboardButton("⏸ Pause 5m", callback_data="admin_pause_5"), InlineKeyboardButton("⏸ Pause 10m", callback_data="admin_pause_10"), InlineKeyboardButton("⏸ Pause 3h", callback_data="admin_pause_180")],
         [InlineKeyboardButton("⏸ Pause 6h", callback_data="admin_pause_360"), InlineKeyboardButton("⏸ Pause 24h", callback_data="admin_pause_1440"), InlineKeyboardButton("▶️ Resume Bot Now", callback_data="admin_resume_now")],
-        [InlineKeyboardButton("📢 Global Broadcast", callback_data="admin_broadcast"), InlineKeyboardButton("🔒 Lock Admin Session", callback_data="admin_lock_session")]
+        [InlineKeyboardButton("🔑 Change Admin Password", callback_data="admin_change_pass_prompt"), InlineKeyboardButton("🔒 Lock Admin Session", callback_data="admin_lock_session")],
+        [InlineKeyboardButton("📢 Global Broadcast", callback_data="admin_broadcast")]
     ]
 
     msg = (
@@ -154,15 +201,13 @@ async def admin_portal_command(update: Update, context: ContextTypes.DEFAULT_TYP
 
 
 async def admin_view_user_payments_callback(update: Update, context: ContextTypes.DEFAULT_TYPE):
-    """Fetches full transaction history from payment_transactions for admin audit without artificial limits."""
     query = update.callback_query
     if query.from_user.id != PRIMARY_ADMIN_ID:
         await query.answer("Unauthorized!", show_alert=True)
         return
 
     await query.answer()
-    data = query.data
-    target_uid = int(data.replace("admin_view_payments_", ""))
+    target_uid = int(query.data.replace("admin_view_payments_", ""))
 
     conn = None
     try:
@@ -212,19 +257,15 @@ async def admin_view_user_payments_callback(update: Update, context: ContextType
     back_btn = InlineKeyboardMarkup([
         [InlineKeyboardButton("🔙 Back to Student Profile", callback_data=f"admin_inspect_u_{target_uid}")]
     ])
-
     await query.edit_message_text(msg, reply_markup=back_btn, parse_mode="Markdown")
 
 
 async def admin_grant_plan_menu_callback(update: Update, context: ContextTypes.DEFAULT_TYPE):
     query = update.callback_query
-    if query.from_user.id != PRIMARY_ADMIN_ID:
-        await query.answer("Unauthorized!", show_alert=True)
-        return
-
+    if query.from_user.id != PRIMARY_ADMIN_ID: return
     await query.answer()
-    target_uid = int(query.data.replace("admin_grant_menu_", ""))
 
+    target_uid = int(query.data.replace("admin_grant_menu_", ""))
     profile = get_user_profile(target_uid) or {}
     name = profile.get("full_name", "Student")
 
@@ -240,30 +281,21 @@ async def admin_grant_plan_menu_callback(update: Update, context: ContextTypes.D
         [InlineKeyboardButton("🔙 Back to Student Profile", callback_data=f"admin_inspect_u_{target_uid}")]
     ]
 
-    msg = (
-        f"👑 **ADMIN PORTAL — GRANT PAID PACK** 👑\n"
-        f"━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\n"
-        f"Select a paid plan below to instantly credit and stack for **{name}** (`{target_uid}`):"
-    )
-
+    msg = f"👑 **GRANT PAID PACK TO {name}** 👑\nSelect a VIP plan to credit and stack:"
     await query.edit_message_text(msg, reply_markup=InlineKeyboardMarkup(keyboard), parse_mode="Markdown")
 
 
 async def admin_execute_grant_callback(update: Update, context: ContextTypes.DEFAULT_TYPE):
     query = update.callback_query
-    if query.from_user.id != PRIMARY_ADMIN_ID:
-        await query.answer("Unauthorized!", show_alert=True)
-        return
-
+    if query.from_user.id != PRIMARY_ADMIN_ID: return
     await query.answer()
+
     parts = query.data.replace("admin_exec_grant_", "").split("_", 1)
     target_uid = int(parts[0])
     plan_key = parts[1]
 
     plan = PLAN_TIERS.get(plan_key)
-    if not plan:
-        await query.answer("⚠️ Invalid plan selected!", show_alert=True)
-        return
+    if not plan: return
 
     ist = pytz.timezone("Asia/Kolkata")
     now = datetime.now(ist)
@@ -281,40 +313,19 @@ async def admin_execute_grant_callback(update: Update, context: ContextTypes.DEF
     try:
         conn = get_db()
         cursor = conn.cursor()
-        
-        # 1. Update user balance & pass expiry
         cursor.execute(
             "UPDATE users SET paid_question_balance = %s, vip_pass_expiry = %s, payment_id = %s, payment_timestamp = %s WHERE user_id = %s",
             (new_bal, expiry_str, payment_id, payment_time_str, target_uid)
         )
-
-        # 2. Transaction logging
-        try:
-            cursor.execute(
-                """
-                INSERT INTO payment_transactions 
-                (user_id, payment_id, plan_key, plan_name, amount_paid, daily_quota, validity_days, created_at, expiry_at)
-                VALUES (%s, %s, %s, %s, %s, %s, %s, %s, %s)
-                ON CONFLICT (payment_id) DO NOTHING
-                """,
-                (target_uid, payment_id, plan_key, plan["name"], plan["price"], plan["daily_limit"], plan["days"], payment_time_str, expiry_str)
-            )
-        except Exception:
-            conn.rollback()
-            cursor.execute(
-                "UPDATE users SET paid_question_balance = %s, vip_pass_expiry = %s, payment_id = %s, payment_timestamp = %s WHERE user_id = %s",
-                (new_bal, expiry_str, payment_id, payment_time_str, target_uid)
-            )
-            cursor.execute(
-                """
-                INSERT INTO payment_transactions 
-                (user_id, payment_id, plan_key, plan_name, amount_paid, daily_quota, validity_days, created_at)
-                VALUES (%s, %s, %s, %s, %s, %s, %s, %s)
-                ON CONFLICT (payment_id) DO NOTHING
-                """,
-                (target_uid, payment_id, plan_key, plan["name"], plan["price"], plan["daily_limit"], plan["days"], payment_time_str)
-            )
-
+        cursor.execute(
+            """
+            INSERT INTO payment_transactions 
+            (user_id, payment_id, plan_key, plan_name, amount_paid, daily_quota, validity_days, created_at, expiry_at)
+            VALUES (%s, %s, %s, %s, %s, %s, %s, %s, %s)
+            ON CONFLICT (payment_id) DO NOTHING
+            """,
+            (target_uid, payment_id, plan_key, plan["name"], plan["price"], plan["daily_limit"], plan["days"], payment_time_str, expiry_str)
+        )
         conn.commit()
         cursor.close()
         release_db(conn)
@@ -323,12 +334,11 @@ async def admin_execute_grant_callback(update: Update, context: ContextTypes.DEF
         PROFILE_CACHE.pop(target_uid, None)
         sync_user_json_profile(target_uid)
     except Exception as e:
-        if conn:
-            release_db(conn)
-        await query.message.reply_text(f"⚠️ Failed granting plan: {e}")
+        if conn: release_db(conn)
+        await query.message.reply_text(f"⚠️ Error: {e}")
         return
 
-    # GUARANTEED DIRECT BROADCAST NOTIFICATION TO USER CHAT
+    # Broadcast notification to student
     user_broadcast_text = (
         f"🎁 **SPECIAL ANNOUNCEMENT: VIP PLAN GRANTED!** 🎁\n"
         f"━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\n"
@@ -337,38 +347,17 @@ async def admin_execute_grant_callback(update: Update, context: ContextTypes.DEF
         f"⏳ **VIP Pass Expiry:** `{expiry_str}`\n"
         f"🧾 **Grant Reference ID:** `{payment_id}`\n"
         f"━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\n"
-        f"✨ Your account has been upgraded! Tap **/myplan** to see all active plans.\n"
         f"🚀 Tap **/quiz** below to launch your practice session now!"
     )
 
     try:
-        user_btn = InlineKeyboardMarkup([
-            [InlineKeyboardButton("🚀 Launch Quiz Now", callback_data="cmd_quiz"), InlineKeyboardButton("💳 My Plan", callback_data="cmd_myplan")]
-        ])
-        await context.bot.send_message(
-            chat_id=target_uid,
-            text=user_broadcast_text,
-            reply_markup=user_btn,
-            parse_mode="Markdown"
-        )
-        logger.info(f"[GRANT BROADCAST SUCCESS] Sent notification to student {target_uid}")
-    except Exception as notify_err:
-        logger.error(f"[GRANT BROADCAST FAILED] Could not notify user {target_uid}: {notify_err}")
+        user_btn = InlineKeyboardMarkup([[InlineKeyboardButton("🚀 Launch Quiz Now", callback_data="cmd_quiz"), InlineKeyboardButton("💳 My Plan", callback_data="cmd_myplan")]])
+        await context.bot.send_message(chat_id=target_uid, text=user_broadcast_text, reply_markup=user_btn, parse_mode="Markdown")
+    except Exception:
+        pass
 
-    back_btn = InlineKeyboardMarkup([
-        [InlineKeyboardButton("🔙 Back to Student Profile", callback_data=f"admin_inspect_u_{target_uid}")]
-    ])
-
-    success_msg = (
-        f"✅ **PLAN SUCCESSFULLY GRANTED & BROADCASTED!** ✅\n"
-        f"━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\n"
-        f"👑 **Granted Plan:** `{plan['name']}`\n"
-        f"⚡ **New Stacked Quota:** `{new_bal} Qs/Day`\n"
-        f"⏳ **Pass Expiry:** `{expiry_str}`\n"
-        f"👤 **Student ID:** `{sid}` (`{target_uid}`)\n\n"
-        f"📢 *An official activation announcement was pushed directly into the student's Telegram chat.*"
-    )
-    await query.edit_message_text(success_msg, reply_markup=back_btn, parse_mode="Markdown")
+    back_btn = InlineKeyboardMarkup([[InlineKeyboardButton("🔙 Back to Student Profile", callback_data=f"admin_inspect_u_{target_uid}")]])
+    await query.edit_message_text(f"✅ **PLAN GRANTED & BROADCASTED!**\nGranted `{plan['name']}` to user `{target_uid}`.", reply_markup=back_btn, parse_mode="Markdown")
 
 
 async def admin_callback_handler(update: Update, context: ContextTypes.DEFAULT_TYPE):
@@ -376,13 +365,34 @@ async def admin_callback_handler(update: Update, context: ContextTypes.DEFAULT_T
     user_id = query.from_user.id
     data = query.data
 
+    if data == "admin_forgot_pass_step1":
+        await query.answer()
+        context.user_data["awaiting_admin_rec_dob"] = True
+        await query.edit_message_text(
+            "🔑 **ADMIN PASSWORD RECOVERY (STEP 1/2)**\n"
+            "━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\n"
+            "Please reply with Himanshu Sir's Date of Birth (DDMMYYYY format):",
+            parse_mode="Markdown"
+        )
+        return
+
     if not is_admin_authenticated(user_id):
         await query.answer("🔒 Session expired or unauthorized! Please type /admin and enter password.", show_alert=True)
         return
 
     users = get_all_users()
 
-    if data == "admin_lock_session":
+    if data == "admin_change_pass_prompt":
+        await query.answer()
+        context.user_data["awaiting_admin_new_pass"] = True
+        await query.edit_message_text(
+            "🔑 **CHANGE ADMIN PASSWORD**\n"
+            "━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\n"
+            "Please reply with your new Master Admin Password:",
+            parse_mode="Markdown"
+        )
+
+    elif data == "admin_lock_session":
         await query.answer()
         ADMIN_AUTH_SESSIONS.pop(user_id, None)
         await query.edit_message_text("🔒 **ADMIN SESSION LOCKED.**\nType /admin and enter password to log in again.", parse_mode="Markdown")

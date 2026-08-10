@@ -145,6 +145,11 @@ def calculate_financial_revenue():
 async def admin_portal_command(update: Update, context: ContextTypes.DEFAULT_TYPE):
     user_id = update.effective_user.id
     if user_id != PRIMARY_ADMIN_ID:
+        reject_msg = "I only listen to Himanshu Sir, sorry you're not Himanshu Sir 😎"
+        if update.callback_query:
+            await update.callback_query.answer(reject_msg, show_alert=True)
+        else:
+            await update.message.reply_text(reject_msg)
         return
 
     # Security Lock Password Check
@@ -176,7 +181,7 @@ async def admin_portal_command(update: Update, context: ContextTypes.DEFAULT_TYP
         [InlineKeyboardButton("💳 Paid Students Directory", callback_data="admin_paid_users_page_0")],
         [InlineKeyboardButton("💰 Revenue & Earnings Dashboard", callback_data="admin_financial_stats"), InlineKeyboardButton("🔍 Search Student (ID/Phone/Name)", callback_data="admin_search_prompt")],
         [InlineKeyboardButton("🎁 Gift Quota Boost to ALL Users", callback_data="admin_mass_grant_menu")],
-        [InlineKeyboardButton("📊 Command Usage Analytics", callback_data="admin_command_stats"), InlineKeyboardButton("📦 Export All Json Ledgers (.zip)", callback_data="admin_export_zip")],
+        [InlineKeyboardButton("📊 Command Usage Analytics", callback_data="admin_command_stats"), InlineKeyboardButton("📦 Export Ledgers (.zip)", callback_data="admin_export_zip")],
         [InlineKeyboardButton("⏸ Pause 5m", callback_data="admin_pause_5"), InlineKeyboardButton("⏸ Pause 10m", callback_data="admin_pause_10"), InlineKeyboardButton("⏸ Pause 3h", callback_data="admin_pause_180")],
         [InlineKeyboardButton("⏸ Pause 6h", callback_data="admin_pause_360"), InlineKeyboardButton("⏸ Pause 24h", callback_data="admin_pause_1440"), InlineKeyboardButton("▶️ Resume Bot Now", callback_data="admin_resume_now")],
         [InlineKeyboardButton("🔑 Change Admin Password", callback_data="admin_change_pass_prompt"), InlineKeyboardButton("🔒 Lock Admin Session", callback_data="admin_lock_session")],

@@ -301,6 +301,46 @@ async def askadmin_command(update: Update, context: ContextTypes.DEFAULT_TYPE):
     else:
         await update.message.reply_text(msg, parse_mode="Markdown")
 
+async def admininfo_command(update: Update, context: ContextTypes.DEFAULT_TYPE):
+    if not await maintenance_guard(update, context): return
+    if not await check_user_registration(update): return
+    user = update.effective_user
+    asyncio.create_task(asyncio.to_thread(log_command_usage, user.id, "/admininfo"))
+
+    msg = (
+        "👋 **Hello & Welcome, Guyzzz!** ❤️\n\n"
+        "🎯 **Welcome to the Learn with HiM Quiz Book** — created by **Himanshu Sir** with one mission: "
+        "smart revision through relevant questions in a fast & effective quiz format! 📚⚡\n\n"
+        "💡 During his own preparation, Himanshu Sir noticed how difficult it was to find relevant questions + quick revision material. "
+        "So, after lots of effort, he created this platform to make your preparation easier, faster & more exam-oriented! 🚀\n\n"
+        "🏆 **About Himanshu Sir:**\n"
+        "🇮🇳 Currently working as **BSF HCM**\n"
+        "🥇 **AIR #65 | 96.7/100 Marks** in BSF HCM\n"
+        "✅ **SSC CGL** — 3×\n"
+        "✅ **SSC CHSL** — 3×\n"
+        "✅ **SSC Steno C & D** — 3×\n"
+        "✅ **SSC Selection Phase** — 2×\n"
+        "✅ **SSC CPO** — 3×\n"
+        "✅ **DP HCM** — 1×\n"
+        "✅ **DDA JSA** — 1×\n\n"
+        "🎯 **His goal:** Give students relevant, to-the-point & exam-focused content — nothing unnecessary! 💯\n\n"
+        "📲 **Join Our Community:**\n"
+        "🔹 **Telegram:** [t.me/learnwithhim](https://t.me/learnwithhim)\n"
+        "🔹 **Instagram:** [instagram.com/learnwithhimm](https://instagram.com/learnwithhimm)\n"
+        "🔹 **YouTube:** [youtube.com/learnwithhim](https://youtube.com/learnwithhim)\n"
+        "🔹 **WhatsApp Channel:** [whatsapp.com/channel/0029Vb8KetR3LdQbsQTxrG3e](https://whatsapp.com/channel/0029Vb8KetR3LdQbsQTxrG3e)\n\n"
+        "💬 **Have a query?**\n"
+        "👉 Click **/askadmin** to ask your question!\n\n"
+        "❤️ **Study Smart • Revise Fast • Score Better** 🚀"
+    )
+
+    buttons = InlineKeyboardMarkup([
+        [InlineKeyboardButton("💬 Secret Message Admin (/askadmin)", callback_data="cmd_askadmin")],
+        [InlineKeyboardButton("🚀 Launch Quiz", callback_data="cmd_quiz"), InlineKeyboardButton("💳 VIP Plans", callback_data="cmd_plans")]
+    ])
+
+    await send_response(update, msg, reply_markup=buttons)
+
 async def send_response(update: Update, text: str, reply_markup=None):
     if update.callback_query:
         await update.callback_query.answer()
@@ -736,6 +776,27 @@ async def help_command(update: Update, context: ContextTypes.DEFAULT_TYPE):
     msg = (
         "🤖 **LEARN WITH HIM QUIZ BOOK — COMMAND DIRECTORY** 🤖\n"
         "━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\n"
+        "• **/quiz** — 🚀 Launch Computer Quiz\n"
+        "• **/myplan** — 💵 Subscription Status & Packs Breakdown\n"
+        "• **/plans** — 💳 VIP Payment Plans & Pricing\n"
+        "• **/askadmin** — 💬 Secret Communication with Himanshu Sir\n"
+        "• **/admininfo** — 👨‍🏫 About Himanshu Sir & Community Links\n"
+        "• **/pdfreport** — 📄 Export Custom Academic PDF Reports\n"
+        "• **/wrongquestions** — ❌ View Today's Wrong Questions Log\n"
+        "• **/attemptedquestions** — 🎯 View Today's Attempted Questions Log\n"
+        "• **/unattemptedquestions** — ⏭️ View Unattempted Question Bank\n"
+        "• **/savedquestions** — 💾 View Bookmarked Questions\n"
+        "• **/myprofile** — 👤 View Personal Student Profile Card\n"
+        "• **/mywholestate** — 📊 View Global Rank & Percentile\n"
+        "• **/toppername** — 🏆 View Global Leaderboard\n"
+        "• **/feedback** — 💬 Submit Platform Review/Feedback\n"
+        "• **/reviews** — 📖 View All Student Reviews\n"
+        "• **/invite** — 🤝 Invite Friends (+10 Quota Boost)\n"
+        "• **/pause** — ⏸️ Pause Current Running Quiz\n"
+        "• **/resume** — ▶️ Resume Saved Paused Quiz\n"
+        "• **/stop** — 🛑 Stop Quiz Session Completely\n"
+        "• **/help** — 🤖 Show Command Directory\n"
+        "━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\n"
         "Tap any interactive button below or use the blue **[≡ Menu]** button:\n"
     )
 
@@ -744,11 +805,10 @@ async def help_command(update: Update, context: ContextTypes.DEFAULT_TYPE):
         [InlineKeyboardButton("💳 VIP Plans (/plans)", callback_data="cmd_plans"), InlineKeyboardButton("📄 PDF Reports (/pdfreport)", callback_data="cmd_pdfreport")],
         [InlineKeyboardButton("💾 Bookmarks (/savedquestions)", callback_data="cmd_savedquestions"), InlineKeyboardButton("❌ Wrong Qs (/wrongquestions)", callback_data="cmd_wrongquestions")],
         [InlineKeyboardButton("🎯 Attempted Qs (/attemptedquestions)", callback_data="cmd_attemptedquestions"), InlineKeyboardButton("⏭️ Unattempted Qs (/unattemptedquestions)", callback_data="cmd_unattemptedquestions")],
-        [InlineKeyboardButton("👤 My Profile (/myprofile)", callback_data="cmd_profile"), InlineKeyboardButton("✏️ Edit Profile (/editprofile)", callback_data="cmd_editprofile")],
+        [InlineKeyboardButton("👤 My Profile (/myprofile)", callback_data="cmd_profile"), InlineKeyboardButton("👨‍🏫 About Himanshu Sir (/admininfo)", callback_data="cmd_admininfo")],
         [InlineKeyboardButton("📊 My Rank (/mywholestate)", callback_data="cmd_wholestate"), InlineKeyboardButton("🏆 Leaderboard (/toppername)", callback_data="cmd_toppers")],
         [InlineKeyboardButton("💬 Submit Feedback (/feedback)", callback_data="cmd_feedback"), InlineKeyboardButton("📖 Reviews (/reviews)", callback_data="cmd_viewfeedbacks")],
-        [InlineKeyboardButton("🤝 Invite Friends (/invite)", callback_data="cmd_referral")],
-        [InlineKeyboardButton("💬 Secret Message Admin (/askadmin)", callback_data="cmd_askadmin")]
+        [InlineKeyboardButton("🤝 Invite Friends (/invite)", callback_data="cmd_referral"), InlineKeyboardButton("💬 Secret Message Admin (/askadmin)", callback_data="cmd_askadmin")]
     ]
 
     await send_response(update, msg, reply_markup=InlineKeyboardMarkup(buttons))
@@ -945,7 +1005,8 @@ async def viewfeedbacks_command(update: Update, context: ContextTypes.DEFAULT_TY
 
     lines = ["📖 **STUDENT REVIEWS & FEEDBACK BOARD** 📖\n━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\n"]
     for idx, fb in enumerate(feedbacks, start=1):
-        lines.append(f"**{idx}. {fb['full_name']}**:\n 💬 *\"{fb['feedback_text']}\"*\n")
+        dt_str = fb.get('submitted_at', 'N/A')
+        lines.append(f"**{idx}. {fb['full_name']}** `[{dt_str}]`:\n 💬 *\"{fb['feedback_text']}\"*\n")
 
     await send_response(update, "\n".join(lines))
 
@@ -984,6 +1045,8 @@ async def button_router(update: Update, context: ContextTypes.DEFAULT_TYPE):
 
     if data == "cmd_askadmin":
         await askadmin_command(update, context)
+    elif data == "cmd_admininfo":
+        await admininfo_command(update, context)
     elif data == "cmd_quiz":
         profile = await fetch_user_profile_fast(user.id)
         attempted_today = await asyncio.to_thread(get_today_attempts, user.id)
@@ -1072,7 +1135,7 @@ async def handle_text_messages(update: Update, context: ContextTypes.DEFAULT_TYP
     if user.id == PRIMARY_ADMIN_ID and context.user_data.get("awaiting_admin_reply_qid"):
         qid = context.user_data.pop("awaiting_admin_reply_qid")
         ist = pytz.timezone("Asia/Kolkata")
-        now_str = datetime.now(ist).strftime("%Y-%m-%d %H:%M:%S IST")
+        now_str = datetime.now(ist).strftime("%Y-%m-%d %I:%M %p IST")
 
         conn = get_db()
         cursor = conn.cursor(cursor_factory=RealDictCursor)
@@ -1107,7 +1170,7 @@ async def handle_text_messages(update: Update, context: ContextTypes.DEFAULT_TYP
     if context.user_data.get("awaiting_user_query"):
         context.user_data["awaiting_user_query"] = False
         ist = pytz.timezone("Asia/Kolkata")
-        now_str = datetime.now(ist).strftime("%Y-%m-%d %H:%M:%S IST")
+        now_str = datetime.now(ist).strftime("%Y-%m-%d %I:%M %p IST")
         profile = get_user_profile(user.id) or {}
         name = profile.get("full_name", user.full_name)
 
@@ -1224,7 +1287,9 @@ async def post_init(application: Application):
     allowed_commands = [
         BotCommand("quiz", "🚀 Start Computer Quiz"),
         BotCommand("myplan", "💵 Subscriptions"),
+        BotCommand("plans", "💳 VIP Payment Plans"),
         BotCommand("askadmin", "💬 Secret Communication with Admin"),
+        BotCommand("admininfo", "👨‍🏫 About Himanshu Sir & Channels"),
         BotCommand("pdfreport", "📄 Export Academic PDF Report"),
         BotCommand("wrongquestions", "❌ View Wrong Questions"),
         BotCommand("unattemptedquestions", "⏭️ View Unattempted Questions"),
@@ -1256,6 +1321,7 @@ def build_application() -> Application:
     app.add_handler(CommandHandler("myplan", myplan_command))
     app.add_handler(CommandHandler("plans", plans_command))
     app.add_handler(CommandHandler("askadmin", askadmin_command))
+    app.add_handler(CommandHandler("admininfo", admininfo_command))
     app.add_handler(CommandHandler("pause", pause_quiz_command))
     app.add_handler(CommandHandler("resume", resume_quiz_command))
     app.add_handler(CommandHandler("stop", stop_quiz_command))

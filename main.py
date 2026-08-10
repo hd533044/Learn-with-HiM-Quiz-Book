@@ -345,8 +345,8 @@ async def scheduled_expiry_reminder_check():
 
 async def scheduled_daily_quiz_reminder():
     """
-    AUTOMATED DAILY PRACTICE BROADCASTER:
-    Broadcasting daily at 08:00 AM IST to all registered users:
+    AUTOMATED 4X DAILY PRACTICE BROADCASTER:
+    Broadcasting daily at 09:00 AM, 12:30 PM, 05:00 PM & 09:00 PM IST:
     "IT IS YOUR QUIZZZ TIME GUYZZZ, KINDLY ATTEMPT AND ANALYSIS THE QUIZZ!! 😁💯"
     """
     global LAST_QUIZ_BROADCAST_DATE
@@ -364,9 +364,16 @@ async def scheduled_daily_quiz_reminder():
         current_hour = now.hour
         current_minute = now.minute
 
-        # Broadcast daily at 08:00 AM IST (and 08:00 PM IST)
-        if (current_hour == 8 and current_minute == 0) or (current_hour == 20 and current_minute == 0):
-            broadcast_key = f"{today_date_str}_{current_hour}"
+        # 4 Scheduled Times: 09:00 AM (9:00), 12:30 PM (12:30), 05:00 PM (17:00), 09:00 PM (21:00) IST
+        is_time_slot = (
+            (current_hour == 9 and current_minute == 0) or
+            (current_hour == 12 and current_minute == 30) or
+            (current_hour == 17 and current_minute == 0) or
+            (current_hour == 21 and current_minute == 0)
+        )
+
+        if is_time_slot:
+            broadcast_key = f"{today_date_str}_{current_hour}_{current_minute}"
             
             if LAST_QUIZ_BROADCAST_DATE != broadcast_key:
                 LAST_QUIZ_BROADCAST_DATE = broadcast_key
@@ -402,7 +409,7 @@ async def scheduled_daily_quiz_reminder():
                         except Exception:
                             pass
 
-                    logging.info(f"[DAILY QUIZ BROADCAST SENT] Delivered to {sent_count} registered users at {now.strftime('%I:%M %p IST')}")
+                    logging.info(f"[DAILY 4X QUIZ BROADCAST SENT] Delivered to {sent_count} registered users at {now.strftime('%I:%M %p IST')}")
                 except Exception as err:
                     if conn:
                         release_db(conn)

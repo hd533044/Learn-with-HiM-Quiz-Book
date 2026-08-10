@@ -513,10 +513,12 @@ async def send_next_question(chat_id: int, user_id: int, context: ContextTypes.D
             "q_data": q
         }
 
+        # Updated text formatting for Bold + Italic without raw asterisks
         await context.bot.send_message(
             chat_id=chat_id,
-            text="⚡ **Quiz Controls:**",
-            reply_markup=get_pause_resume_keyboard()
+            text="⚡ ***Quiz Controls:***",
+            reply_markup=get_pause_resume_keyboard(),
+            parse_mode="Markdown"
         )
 
         if user_id in TIMER_TASKS and not TIMER_TASKS[user_id].done():

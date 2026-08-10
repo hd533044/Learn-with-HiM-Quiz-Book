@@ -207,7 +207,8 @@ async def admin_view_user_payments_callback(update: Update, context: ContextType
         return
 
     await query.answer()
-    target_uid = int(query.data.replace("admin_view_payments_", ""))
+    data = query.data
+    target_uid = int(data.replace("admin_view_payments_", ""))
 
     conn = None
     try:
@@ -257,15 +258,19 @@ async def admin_view_user_payments_callback(update: Update, context: ContextType
     back_btn = InlineKeyboardMarkup([
         [InlineKeyboardButton("🔙 Back to Student Profile", callback_data=f"admin_inspect_u_{target_uid}")]
     ])
+
     await query.edit_message_text(msg, reply_markup=back_btn, parse_mode="Markdown")
 
 
 async def admin_grant_plan_menu_callback(update: Update, context: ContextTypes.DEFAULT_TYPE):
     query = update.callback_query
-    if query.from_user.id != PRIMARY_ADMIN_ID: return
-    await query.answer()
+    if query.from_user.id != PRIMARY_ADMIN_ID:
+        await query.answer("Unauthorized!", show_alert=True)
+        return
 
+    await query.answer()
     target_uid = int(query.data.replace("admin_grant_menu_", ""))
+
     profile = get_user_profile(target_uid) or {}
     name = profile.get("full_name", "Student")
 
@@ -281,21 +286,30 @@ async def admin_grant_plan_menu_callback(update: Update, context: ContextTypes.D
         [InlineKeyboardButton("🔙 Back to Student Profile", callback_data=f"admin_inspect_u_{target_uid}")]
     ]
 
-    msg = f"👑 **GRANT PAID PACK TO {name}** 👑\nSelect a VIP plan to credit and stack:"
+    msg = (
+        f"👑 **ADMIN PORTAL — GRANT PAID PACK** 👑\n"
+        f"━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\n"
+        f"Select a paid plan below to instantly credit and stack for **{name}** (`{target_uid}`):"
+    )
+
     await query.edit_message_text(msg, reply_markup=InlineKeyboardMarkup(keyboard), parse_mode="Markdown")
 
 
 async def admin_execute_grant_callback(update: Update, context: ContextTypes.DEFAULT_TYPE):
     query = update.callback_query
-    if query.from_user.id != PRIMARY_ADMIN_ID: return
-    await query.answer()
+    if query.from_user.id != PRIMARY_ADMIN_ID:
+        await query.answer("Unauthorized!", show_alert=True)
+        return
 
+    await query.answer()
     parts = query.data.replace("admin_exec_grant_", "").split("_", 1)
     target_uid = int(parts[0])
     plan_key = parts[1]
 
     plan = PLAN_TIERS.get(plan_key)
-    if not plan: return
+    if not plan:
+        await query.answer("⚠️ Invalid plan selected!", show_alert=True)
+        return
 
     ist = pytz.timezone("Asia/Kolkata")
     now = datetime.now(ist)
@@ -313,19 +327,40 @@ async def admin_execute_grant_callback(update: Update, context: ContextTypes.DEF
     try:
         conn = get_db()
         cursor = conn.cursor()
+        
+        # 1. Update user balance & pass expiry
         cursor.execute(
             "UPDATE users SET paid_question_balance = %s, vip_pass_expiry = %s, payment_id = %s, payment_timestamp = %s WHERE user_id = %s",
             (new_bal, expiry_str, payment_id, payment_time_str, target_uid)
         )
-        cursor.execute(
-            """
-            INSERT INTO payment_transactions 
-            (user_id, payment_id, plan_key, plan_name, amount_paid, daily_quota, validity_days, created_at, expiry_at)
-            VALUES (%s, %s, %s, %s, %s, %s, %s, %s, %s)
-            ON CONFLICT (payment_id) DO NOTHING
-            """,
-            (target_uid, payment_id, plan_key, plan["name"], plan["price"], plan["daily_limit"], plan["days"], payment_time_str, expiry_str)
-        )
+
+        # 2. Transaction logging
+        try:
+            cursor.execute(
+                """
+                INSERT INTO payment_transactions 
+                (user_id, payment_id, plan_key, plan_name, amount_paid, daily_quota, validity_days, created_at, expiry_at)
+                VALUES (%s, %s, %s, %s, %s, %s, %s, %s, %s)
+                ON CONFLICT (payment_id) DO NOTHING
+                """,
+                (target_uid, payment_id, plan_key, plan["name"], plan["price"], plan["daily_limit"], plan["days"], payment_time_str, expiry_str)
+            )
+        except Exception:
+            conn.rollback()
+            cursor.execute(
+                "UPDATE users SET paid_question_balance = %s, vip_pass_expiry = %s, payment_id = %s, payment_timestamp = %s WHERE user_id = %s",
+                (new_bal, expiry_str, payment_id, payment_time_str, target_uid)
+            )
+            cursor.execute(
+                """
+                INSERT INTO payment_transactions 
+                (user_id, payment_id, plan_key, plan_name, amount_paid, daily_quota, validity_days, created_at)
+                VALUES (%s, %s, %s, %s, %s, %s, %s, %s)
+                ON CONFLICT (payment_id) DO NOTHING
+                """,
+                (target_uid, payment_id, plan_key, plan["name"], plan["price"], plan["daily_limit"], plan["days"], payment_time_str)
+            )
+
         conn.commit()
         cursor.close()
         release_db(conn)
@@ -334,11 +369,12 @@ async def admin_execute_grant_callback(update: Update, context: ContextTypes.DEF
         PROFILE_CACHE.pop(target_uid, None)
         sync_user_json_profile(target_uid)
     except Exception as e:
-        if conn: release_db(conn)
-        await query.message.reply_text(f"⚠️ Error: {e}")
+        if conn:
+            release_db(conn)
+        await query.message.reply_text(f"⚠️ Failed granting plan: {e}")
         return
 
-    # Broadcast notification to student
+    # GUARANTEED DIRECT BROADCAST NOTIFICATION TO USER CHAT
     user_broadcast_text = (
         f"🎁 **SPECIAL ANNOUNCEMENT: VIP PLAN GRANTED!** 🎁\n"
         f"━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\n"
@@ -347,17 +383,38 @@ async def admin_execute_grant_callback(update: Update, context: ContextTypes.DEF
         f"⏳ **VIP Pass Expiry:** `{expiry_str}`\n"
         f"🧾 **Grant Reference ID:** `{payment_id}`\n"
         f"━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\n"
+        f"✨ Your account has been upgraded! Tap **/myplan** to see all active plans.\n"
         f"🚀 Tap **/quiz** below to launch your practice session now!"
     )
 
     try:
-        user_btn = InlineKeyboardMarkup([[InlineKeyboardButton("🚀 Launch Quiz Now", callback_data="cmd_quiz"), InlineKeyboardButton("💳 My Plan", callback_data="cmd_myplan")]])
-        await context.bot.send_message(chat_id=target_uid, text=user_broadcast_text, reply_markup=user_btn, parse_mode="Markdown")
-    except Exception:
-        pass
+        user_btn = InlineKeyboardMarkup([
+            [InlineKeyboardButton("🚀 Launch Quiz Now", callback_data="cmd_quiz"), InlineKeyboardButton("💳 My Plan", callback_data="cmd_myplan")]
+        ])
+        await context.bot.send_message(
+            chat_id=target_uid,
+            text=user_broadcast_text,
+            reply_markup=user_btn,
+            parse_mode="Markdown"
+        )
+        logger.info(f"[GRANT BROADCAST SUCCESS] Sent notification to student {target_uid}")
+    except Exception as notify_err:
+        logger.error(f"[GRANT BROADCAST FAILED] Could not notify user {target_uid}: {notify_err}")
 
-    back_btn = InlineKeyboardMarkup([[InlineKeyboardButton("🔙 Back to Student Profile", callback_data=f"admin_inspect_u_{target_uid}")]])
-    await query.edit_message_text(f"✅ **PLAN GRANTED & BROADCASTED!**\nGranted `{plan['name']}` to user `{target_uid}`.", reply_markup=back_btn, parse_mode="Markdown")
+    back_btn = InlineKeyboardMarkup([
+        [InlineKeyboardButton("🔙 Back to Student Profile", callback_data=f"admin_inspect_u_{target_uid}")]
+    ])
+
+    success_msg = (
+        f"✅ **PLAN SUCCESSFULLY GRANTED & BROADCASTED!** ✅\n"
+        f"━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\n"
+        f"👑 **Granted Plan:** `{plan['name']}`\n"
+        f"⚡ **New Stacked Quota:** `{new_bal} Qs/Day`\n"
+        f"⏳ **Pass Expiry:** `{expiry_str}`\n"
+        f"👤 **Student ID:** `{sid}` (`{target_uid}`)\n\n"
+        f"📢 *An official activation announcement was pushed directly into the student's Telegram chat.*"
+    )
+    await query.edit_message_text(success_msg, reply_markup=back_btn, parse_mode="Markdown")
 
 
 async def admin_callback_handler(update: Update, context: ContextTypes.DEFAULT_TYPE):

@@ -77,12 +77,13 @@ def is_admin_authenticated(user_id: int) -> bool:
     return (time.time() - auth_time) < 1800  # 30 minutes session duration
 
 
-def get_pending_queries_count() -> int:
+def get_unique_students_with_queries_count() -> int:
+    """Counts unique students who have submitted support queries."""
     conn = None
     try:
         conn = get_db()
         cursor = conn.cursor()
-        cursor.execute("SELECT COUNT(*) FROM student_queries WHERE status = 'PENDING'")
+        cursor.execute("SELECT COUNT(DISTINCT user_id) FROM student_queries WHERE status = 'PENDING'")
         count = cursor.fetchone()[0]
         cursor.close()
         release_db(conn)
@@ -170,21 +171,20 @@ async def admin_portal_command(update: Update, context: ContextTypes.DEFAULT_TYP
 
     users = get_all_users()
     paid_users = get_paid_users()
-    pending_q = get_pending_queries_count()
+    pending_students_count = get_unique_students_with_queries_count()
     m_until = get_maintenance_until()
     now_ts = int(time.time())
     m_status = "🟢 Active (Online)" if now_ts >= m_until else "🔴 PAUSED (Maintenance Mode)"
 
     keyboard = [
-        [InlineKeyboardButton(f"📩 Pending Student Queries ({pending_q})", callback_data="admin_view_queries_0")],
-        [InlineKeyboardButton("👥 Student Directory (/user_profiles)", callback_data="admin_users_page_0")],
-        [InlineKeyboardButton("💳 Paid Students Directory", callback_data="admin_paid_users_page_0")],
-        [InlineKeyboardButton("💰 Revenue & Earnings Dashboard", callback_data="admin_financial_stats"), InlineKeyboardButton("🔍 Search Student (ID/Phone/Name)", callback_data="admin_search_prompt")],
+        [InlineKeyboardButton(f"📩 Student Support Threads ({pending_students_count} Students)", callback_data="admin_view_student_threads_0")],
+        [InlineKeyboardButton("👥 Student Directory", callback_data="admin_users_page_0"), InlineKeyboardButton("💳 Paid VIP Subscribers", callback_data="admin_paid_users_page_0")],
+        [InlineKeyboardButton("💰 Revenue & Earnings Dashboard", callback_data="admin_financial_stats"), InlineKeyboardButton("🔍 Search Student", callback_data="admin_search_prompt")],
         [InlineKeyboardButton("🎁 Gift Quota Boost to ALL Users", callback_data="admin_mass_grant_menu")],
         [InlineKeyboardButton("📊 Command Usage Analytics", callback_data="admin_command_stats"), InlineKeyboardButton("📦 Export Ledgers (.zip)", callback_data="admin_export_zip")],
         [InlineKeyboardButton("⏸ Pause 5m", callback_data="admin_pause_5"), InlineKeyboardButton("⏸ Pause 10m", callback_data="admin_pause_10"), InlineKeyboardButton("⏸ Pause 3h", callback_data="admin_pause_180")],
-        [InlineKeyboardButton("⏸ Pause 6h", callback_data="admin_pause_360"), InlineKeyboardButton("⏸ Pause 24h", callback_data="admin_pause_1440"), InlineKeyboardButton("▶️ Resume Bot Now", callback_data="admin_resume_now")],
-        [InlineKeyboardButton("🔑 Change Admin Password", callback_data="admin_change_pass_prompt"), InlineKeyboardButton("🔒 Lock Admin Session", callback_data="admin_lock_session")],
+        [InlineKeyboardButton("⏸ Pause 6h", callback_data="admin_pause_360"), InlineKeyboardButton("⏸ Pause 24h", callback_data="admin_pause_1440"), InlineKeyboardButton("▶️ Resume Bot", callback_data="admin_resume_now")],
+        [InlineKeyboardButton("🔑 Change Password", callback_data="admin_change_pass_prompt"), InlineKeyboardButton("🔒 Lock Session", callback_data="admin_lock_session")],
         [InlineKeyboardButton("📢 Global Broadcast", callback_data="admin_broadcast")]
     ]
 
@@ -193,7 +193,7 @@ async def admin_portal_command(update: Update, context: ContextTypes.DEFAULT_TYP
         f"━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\n"
         f"📊 **Total Registered Students:** `{len(users)}`\n"
         f"💳 **Total Paid VIP Subscribers:** `{len(paid_users)}`\n"
-        f"📩 **Pending Student Enquiries:** `{pending_q}`\n"
+        f"📩 **Students with Pending Queries:** `{pending_students_count}`\n"
         f"⚡ **Bot System Status:** `{m_status}`\n\n"
         f"Select an administrative action below:"
     )
@@ -212,8 +212,7 @@ async def admin_view_user_payments_callback(update: Update, context: ContextType
         return
 
     await query.answer()
-    data = query.data
-    target_uid = int(data.replace("admin_view_payments_", ""))
+    target_uid = int(query.data.replace("admin_view_payments_", ""))
 
     conn = None
     try:
@@ -227,7 +226,6 @@ async def admin_view_user_payments_callback(update: Update, context: ContextType
         if conn:
             release_db(conn)
         rows = []
-        logging.error(f"Error fetching payments for admin: {e}")
 
     profile = get_user_profile(target_uid) or {}
     sid = profile.get("student_id", f"USER_{target_uid}")
@@ -263,19 +261,15 @@ async def admin_view_user_payments_callback(update: Update, context: ContextType
     back_btn = InlineKeyboardMarkup([
         [InlineKeyboardButton("🔙 Back to Student Profile", callback_data=f"admin_inspect_u_{target_uid}")]
     ])
-
     await query.edit_message_text(msg, reply_markup=back_btn, parse_mode="Markdown")
 
 
 async def admin_grant_plan_menu_callback(update: Update, context: ContextTypes.DEFAULT_TYPE):
     query = update.callback_query
-    if query.from_user.id != PRIMARY_ADMIN_ID:
-        await query.answer("Unauthorized!", show_alert=True)
-        return
-
+    if query.from_user.id != PRIMARY_ADMIN_ID: return
     await query.answer()
-    target_uid = int(query.data.replace("admin_grant_menu_", ""))
 
+    target_uid = int(query.data.replace("admin_grant_menu_", ""))
     profile = get_user_profile(target_uid) or {}
     name = profile.get("full_name", "Student")
 
@@ -291,30 +285,21 @@ async def admin_grant_plan_menu_callback(update: Update, context: ContextTypes.D
         [InlineKeyboardButton("🔙 Back to Student Profile", callback_data=f"admin_inspect_u_{target_uid}")]
     ]
 
-    msg = (
-        f"👑 **ADMIN PORTAL — GRANT PAID PACK** 👑\n"
-        f"━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\n"
-        f"Select a paid plan below to instantly credit and stack for **{name}** (`{target_uid}`):"
-    )
-
+    msg = f"👑 **GRANT PAID PACK TO {name}** 👑\nSelect a VIP plan to credit and stack:"
     await query.edit_message_text(msg, reply_markup=InlineKeyboardMarkup(keyboard), parse_mode="Markdown")
 
 
 async def admin_execute_grant_callback(update: Update, context: ContextTypes.DEFAULT_TYPE):
     query = update.callback_query
-    if query.from_user.id != PRIMARY_ADMIN_ID:
-        await query.answer("Unauthorized!", show_alert=True)
-        return
-
+    if query.from_user.id != PRIMARY_ADMIN_ID: return
     await query.answer()
+
     parts = query.data.replace("admin_exec_grant_", "").split("_", 1)
     target_uid = int(parts[0])
     plan_key = parts[1]
 
     plan = PLAN_TIERS.get(plan_key)
-    if not plan:
-        await query.answer("⚠️ Invalid plan selected!", show_alert=True)
-        return
+    if not plan: return
 
     ist = pytz.timezone("Asia/Kolkata")
     now = datetime.now(ist)
@@ -332,40 +317,19 @@ async def admin_execute_grant_callback(update: Update, context: ContextTypes.DEF
     try:
         conn = get_db()
         cursor = conn.cursor()
-        
-        # 1. Update user balance & pass expiry
         cursor.execute(
             "UPDATE users SET paid_question_balance = %s, vip_pass_expiry = %s, payment_id = %s, payment_timestamp = %s WHERE user_id = %s",
             (new_bal, expiry_str, payment_id, payment_time_str, target_uid)
         )
-
-        # 2. Transaction logging
-        try:
-            cursor.execute(
-                """
-                INSERT INTO payment_transactions 
-                (user_id, payment_id, plan_key, plan_name, amount_paid, daily_quota, validity_days, created_at, expiry_at)
-                VALUES (%s, %s, %s, %s, %s, %s, %s, %s, %s)
-                ON CONFLICT (payment_id) DO NOTHING
-                """,
-                (target_uid, payment_id, plan_key, plan["name"], plan["price"], plan["daily_limit"], plan["days"], payment_time_str, expiry_str)
-            )
-        except Exception:
-            conn.rollback()
-            cursor.execute(
-                "UPDATE users SET paid_question_balance = %s, vip_pass_expiry = %s, payment_id = %s, payment_timestamp = %s WHERE user_id = %s",
-                (new_bal, expiry_str, payment_id, payment_time_str, target_uid)
-            )
-            cursor.execute(
-                """
-                INSERT INTO payment_transactions 
-                (user_id, payment_id, plan_key, plan_name, amount_paid, daily_quota, validity_days, created_at)
-                VALUES (%s, %s, %s, %s, %s, %s, %s, %s)
-                ON CONFLICT (payment_id) DO NOTHING
-                """,
-                (target_uid, payment_id, plan_key, plan["name"], plan["price"], plan["daily_limit"], plan["days"], payment_time_str)
-            )
-
+        cursor.execute(
+            """
+            INSERT INTO payment_transactions 
+            (user_id, payment_id, plan_key, plan_name, amount_paid, daily_quota, validity_days, created_at, expiry_at)
+            VALUES (%s, %s, %s, %s, %s, %s, %s, %s, %s)
+            ON CONFLICT (payment_id) DO NOTHING
+            """,
+            (target_uid, payment_id, plan_key, plan["name"], plan["price"], plan["daily_limit"], plan["days"], payment_time_str, expiry_str)
+        )
         conn.commit()
         cursor.close()
         release_db(conn)
@@ -374,12 +338,11 @@ async def admin_execute_grant_callback(update: Update, context: ContextTypes.DEF
         PROFILE_CACHE.pop(target_uid, None)
         sync_user_json_profile(target_uid)
     except Exception as e:
-        if conn:
-            release_db(conn)
-        await query.message.reply_text(f"⚠️ Failed granting plan: {e}")
+        if conn: release_db(conn)
+        await query.message.reply_text(f"⚠️ Error: {e}")
         return
 
-    # GUARANTEED DIRECT BROADCAST NOTIFICATION TO USER CHAT
+    # Broadcast notification to student
     user_broadcast_text = (
         f"🎁 **SPECIAL ANNOUNCEMENT: VIP PLAN GRANTED!** 🎁\n"
         f"━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\n"
@@ -388,38 +351,17 @@ async def admin_execute_grant_callback(update: Update, context: ContextTypes.DEF
         f"⏳ **VIP Pass Expiry:** `{expiry_str}`\n"
         f"🧾 **Grant Reference ID:** `{payment_id}`\n"
         f"━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\n"
-        f"✨ Your account has been upgraded! Tap **/myplan** to see all active plans.\n"
         f"🚀 Tap **/quiz** below to launch your practice session now!"
     )
 
     try:
-        user_btn = InlineKeyboardMarkup([
-            [InlineKeyboardButton("🚀 Launch Quiz Now", callback_data="cmd_quiz"), InlineKeyboardButton("💳 My Plan", callback_data="cmd_myplan")]
-        ])
-        await context.bot.send_message(
-            chat_id=target_uid,
-            text=user_broadcast_text,
-            reply_markup=user_btn,
-            parse_mode="Markdown"
-        )
-        logger.info(f"[GRANT BROADCAST SUCCESS] Sent notification to student {target_uid}")
-    except Exception as notify_err:
-        logger.error(f"[GRANT BROADCAST FAILED] Could not notify user {target_uid}: {notify_err}")
+        user_btn = InlineKeyboardMarkup([[InlineKeyboardButton("🚀 Launch Quiz Now", callback_data="cmd_quiz"), InlineKeyboardButton("💳 My Plan", callback_data="cmd_myplan")]])
+        await context.bot.send_message(chat_id=target_uid, text=user_broadcast_text, reply_markup=user_btn, parse_mode="Markdown")
+    except Exception:
+        pass
 
-    back_btn = InlineKeyboardMarkup([
-        [InlineKeyboardButton("🔙 Back to Student Profile", callback_data=f"admin_inspect_u_{target_uid}")]
-    ])
-
-    success_msg = (
-        f"✅ **PLAN SUCCESSFULLY GRANTED & BROADCASTED!** ✅\n"
-        f"━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\n"
-        f"👑 **Granted Plan:** `{plan['name']}`\n"
-        f"⚡ **New Stacked Quota:** `{new_bal} Qs/Day`\n"
-        f"⏳ **Pass Expiry:** `{expiry_str}`\n"
-        f"👤 **Student ID:** `{sid}` (`{target_uid}`)\n\n"
-        f"📢 *An official activation announcement was pushed directly into the student's Telegram chat.*"
-    )
-    await query.edit_message_text(success_msg, reply_markup=back_btn, parse_mode="Markdown")
+    back_btn = InlineKeyboardMarkup([[InlineKeyboardButton("🔙 Back to Student Profile", callback_data=f"admin_inspect_u_{target_uid}")]])
+    await query.edit_message_text(f"✅ **PLAN GRANTED & BROADCASTED!**\nGranted `{plan['name']}` to user `{target_uid}`.", reply_markup=back_btn, parse_mode="Markdown")
 
 
 async def admin_callback_handler(update: Update, context: ContextTypes.DEFAULT_TYPE):
@@ -517,67 +459,94 @@ async def admin_callback_handler(update: Update, context: ContextTypes.DEFAULT_T
         back_btn = InlineKeyboardMarkup([[InlineKeyboardButton("🔙 Back to Admin Portal", callback_data="admin_home")]])
         await query.edit_message_text(f"✅ **GIFTED +{amount} DAILY QS TO ALL USERS!**\nBroadcasted to {sent} active students.", reply_markup=back_btn, parse_mode="Markdown")
 
-    elif data.startswith("admin_view_queries_"):
+    elif data.startswith("admin_view_student_threads_"):
         await query.answer()
-        page = int(data.replace("admin_view_queries_", ""))
+        page = int(data.replace("admin_view_student_threads_", ""))
         conn = get_db()
         cursor = conn.cursor(cursor_factory=RealDictCursor)
-        cursor.execute("SELECT * FROM student_queries ORDER BY id DESC")
-        queries_list = cursor.fetchall()
+        # Group queries by student user_id
+        cursor.execute(
+            """
+            SELECT user_id, student_name, MAX(created_at) as last_query_time, 
+                   SUM(CASE WHEN status = 'PENDING' THEN 1 ELSE 0 END) as pending_count,
+                   COUNT(*) as total_queries
+            FROM student_queries 
+            GROUP BY user_id, student_name 
+            ORDER BY last_query_time DESC
+            """
+        )
+        students_list = cursor.fetchall()
         cursor.close()
         release_db(conn)
 
-        if not queries_list:
+        if not students_list:
             back_btn = InlineKeyboardMarkup([[InlineKeyboardButton("🔙 Back to Admin Portal", callback_data="admin_home")]])
-            await query.edit_message_text("📩 **STUDENT SUPPORT ENQUIRIES**\n\nNo student queries submitted yet.", reply_markup=back_btn, parse_mode="Markdown")
+            await query.edit_message_text("📩 **STUDENT SUPPORT THREADS**\n\nNo student queries submitted yet.", reply_markup=back_btn, parse_mode="Markdown")
             return
 
-        total_q = len(queries_list)
-        total_pages = math.ceil(total_q / USERS_PER_PAGE)
+        total_s = len(students_list)
+        total_pages = math.ceil(total_s / USERS_PER_PAGE)
         page = max(0, min(page, total_pages - 1))
-        page_items = queries_list[page * USERS_PER_PAGE:(page + 1) * USERS_PER_PAGE]
+        page_items = students_list[page * USERS_PER_PAGE:(page + 1) * USERS_PER_PAGE]
 
         keyboard = []
-        for q_item in page_items:
-            st_icon = "🔴" if q_item["status"] == "PENDING" else "🟢"
-            btn_txt = f"{st_icon} {q_item['student_name']} (Q #{q_item['id']})"
-            keyboard.append([InlineKeyboardButton(btn_txt, callback_data=f"admin_inspect_query_{q_item['id']}")])
+        for s in page_items:
+            pend_badge = f"🔴 ({s['pending_count']} unread)" if s['pending_count'] > 0 else "🟢 (Resolved)"
+            btn_txt = f"💬 {s['student_name']} — {pend_badge}"
+            keyboard.append([InlineKeyboardButton(btn_txt, callback_data=f"admin_student_thread_{s['user_id']}")])
 
         nav_row = []
-        if page > 0: nav_row.append(InlineKeyboardButton("◀️ Prev", callback_data=f"admin_view_queries_{page - 1}"))
+        if page > 0: nav_row.append(InlineKeyboardButton("◀️ Prev", callback_data=f"admin_view_student_threads_{page - 1}"))
         nav_row.append(InlineKeyboardButton(f"📄 Page {page + 1}/{total_pages}", callback_data="ignore"))
-        if page < total_pages - 1: nav_row.append(InlineKeyboardButton("Next ▶️", callback_data=f"admin_view_queries_{page + 1}"))
+        if page < total_pages - 1: nav_row.append(InlineKeyboardButton("Next ▶️", callback_data=f"admin_view_student_threads_{page + 1}"))
         keyboard.append(nav_row)
         keyboard.append([InlineKeyboardButton("🔙 Back to Admin Portal", callback_data="admin_home")])
 
-        await query.edit_message_text(f"📩 **STUDENT SUPPORT ENQUIRIES ({total_q} Total)**", reply_markup=InlineKeyboardMarkup(keyboard), parse_mode="Markdown")
+        await query.edit_message_text(f"📩 **STUDENT SUPPORT THREADS ({total_s} Students)**\nSelect a student to view their entire query history:", reply_markup=InlineKeyboardMarkup(keyboard), parse_mode="Markdown")
 
-    elif data.startswith("admin_inspect_query_"):
+    elif data.startswith("admin_student_thread_"):
         await query.answer()
-        qid = int(data.replace("admin_inspect_query_", ""))
+        target_uid = int(data.replace("admin_student_thread_", ""))
         conn = get_db()
         cursor = conn.cursor(cursor_factory=RealDictCursor)
-        cursor.execute("SELECT * FROM student_queries WHERE id = %s", (qid,))
-        q_item = cursor.fetchone()
+        cursor.execute("SELECT * FROM student_queries WHERE user_id = %s ORDER BY id ASC", (target_uid,))
+        queries = cursor.fetchall()
         cursor.close()
         release_db(conn)
 
-        if not q_item: return
+        if not queries:
+            await query.edit_message_text("ℹ️ No queries found for this student.", reply_markup=InlineKeyboardMarkup([[InlineKeyboardButton("🔙 Back", callback_data="admin_view_student_threads_0")]]))
+            return
 
-        reply_str = q_item["admin_reply"] or "Not Replied Yet"
-        msg = (
-            f"📩 **STUDENT ENQUIRY INSPECTION (Q #{q_item['id']})** 📩\n"
+        st_name = queries[0]["student_name"]
+        lines = [
+            f"💬 **SUPPORT THREAD: {st_name}** (`{target_uid}`)\n"
             f"━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\n"
-            f"👤 **Student:** {q_item['student_name']} (`{q_item['user_id']}`)\n"
-            f"📅 **Submitted:** `{q_item['created_at']}`\n"
-            f"⚡ **Status:** `{q_item['status']}`\n\n"
-            f"❓ **Student Query:**\n*\"{q_item['query_text']}\"*\n\n"
-            f"💬 **Admin Reply:**\n`{reply_str}`"
-        )
-        keyboard = [
-            [InlineKeyboardButton("✍️ Secret Reply to Student", callback_data=f"admin_reply_prompt_{q_item['id']}")],
-            [InlineKeyboardButton("🔙 Back to Enquiries List", callback_data="admin_view_queries_0")]
         ]
+
+        # Pick the latest pending query ID for quick replying
+        latest_pending_qid = None
+        for q in queries:
+            if q["status"] == "PENDING":
+                latest_pending_qid = q["id"]
+
+            reply_status = f"`{q['admin_reply']}`" if q["admin_reply"] else "*(Not Replied Yet)*"
+            lines.append(
+                f"🏷 **Query ID #{q['id']}** `[{q['created_at']}]`\n"
+                f"❓ *\"{q['query_text']}\"*\n"
+                f"👨‍🏫 **Admin Reply:** {reply_status}\n"
+                f"──────────────────────────────"
+            )
+
+        msg = "\n".join(lines)
+        if len(msg) > 3900:
+            msg = msg[:3850] + "\n\n*(Truncated)*"
+
+        keyboard = []
+        if latest_pending_qid:
+            keyboard.append([InlineKeyboardButton(f"✍️ Reply to Latest Pending Query (# {latest_pending_qid})", callback_data=f"admin_reply_prompt_{latest_pending_qid}")])
+        keyboard.append([InlineKeyboardButton("🔙 Back to Threads", callback_data="admin_view_student_threads_0")])
+
         await query.edit_message_text(msg, reply_markup=InlineKeyboardMarkup(keyboard), parse_mode="Markdown")
 
     elif data.startswith("admin_reply_prompt_"):

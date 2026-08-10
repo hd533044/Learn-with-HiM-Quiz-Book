@@ -574,9 +574,6 @@ async def wrongquestions_command(update: Update, context: ContextTypes.DEFAULT_T
                     q_text = q_item.get("question_text") or q_item.get("question") or "N/A"
                     ans_text = q_item.get("correct_answer_text") or q_item.get("correct_answer") or "N/A"
                     
-                    # Encode data payload safely for AI Explainer callback
-                    ai_payload = f"aiexplain_{q_text[:60]}||{ans_text}||Wrong Answer"
-                    
                     lines.append(f" {wrong_count}. ❌ `{q_text}`\n    👉 **Correct Answer:** `{ans_text}`")
                 lines.append("")
 

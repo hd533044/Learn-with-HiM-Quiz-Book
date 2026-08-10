@@ -1,7 +1,7 @@
-import asyncio
+import json
 import logging
 import time
-import os
+import asyncio
 from telegram import Update, Poll, InlineKeyboardMarkup, InlineKeyboardButton
 from telegram.ext import ContextTypes
 from app.config import DAILY_QUESTION_LIMIT, CHANNEL_USERNAME, YOUTUBE_CHANNEL_URL, PRIMARY_ADMIN_ID
@@ -580,6 +580,7 @@ async def handle_poll_answer(update: Update, context: ContextTypes.DEFAULT_TYPE)
         opts = q.get("options", [])
 
         c_ans_text = opts[correct_id] if 0 <= correct_id < len(opts) else "N/A"
+        u_ans_text = opts[selected] if 0 <= selected < len(opts) else "Skipped"
 
         is_correct = (selected == correct_id)
         if is_correct:
@@ -589,6 +590,26 @@ async def handle_poll_answer(update: Update, context: ContextTypes.DEFAULT_TYPE)
         else:
             session["wrong"] += 1
             status = "WRONG"
+
+            # INSTANT AI EXPLAINER FOLLOW-UP MESSAGE
+            try:
+                clean_q = str(q.get("question", "N/A"))[:30].strip()
+                clean_c = str(c_ans_text)[:20].strip()
+                clean_u = str(u_ans_text)[:20].strip()
+                
+                ai_payload = f"{clean_q}||{clean_c}||{clean_u}"
+                ai_keyboard = InlineKeyboardMarkup([
+                    [InlineKeyboardButton("💡 Explain with AI", callback_data=f"aiexplain_{ai_payload}")],
+                    [InlineKeyboardButton("💾 Save Question", callback_data="cmd_save_question")]
+                ])
+                await context.bot.send_message(
+                    chat_id=chat_id,
+                    text=f"❌ **Incorrect Answer!**\n\n❓ **Q:** `{q.get('question', 'N/A')}`\n✅ **Correct:** `{c_ans_text}`\n\nTap below for an instant AI academic breakdown:",
+                    reply_markup=ai_keyboard,
+                    parse_mode="Markdown"
+                )
+            except Exception as err:
+                logger.error(f"[AI EXPLAIN FOLLOW-UP ERROR] {err}")
 
         session.setdefault("detailed_logs", []).append({
             "question_id": q.get("id"),
@@ -615,7 +636,6 @@ async def finish_quiz_and_send_report(chat_id: int, user_id: int, context: Conte
     score = session["score"]
     detailed_logs = session.get("detailed_logs", [])
 
-    # Send report card immediately
     report_card = (
         f"🏆 **OFFICIAL QUIZ REPORT CARD** 🏆\n"
         f"📚 **Learn with HiM Quiz Book by Himanshu Sir**\n"
@@ -664,7 +684,6 @@ async def finish_quiz_and_send_report(chat_id: int, user_id: int, context: Conte
         parse_mode="Markdown"
     )
 
-    # Fire and forget database saving to avoid delaying message delivery
     asyncio.create_task(asyncio.to_thread(
         record_quiz_result,
         user_id,

@@ -38,6 +38,7 @@ async def admin_portal_command(update: Update, context: ContextTypes.DEFAULT_TYP
         [InlineKeyboardButton("👥 Student Directory (/user_profiles)", callback_data="admin_users_page_0")],
         [InlineKeyboardButton("💳 Paid Students Directory", callback_data="admin_paid_users_page_0")],
         [InlineKeyboardButton("🔍 Search Student (ID/Phone/Name)", callback_data="admin_search_prompt")],
+        [InlineKeyboardButton("📊 Command Usage Analytics", callback_data="admin_command_stats")],
         [InlineKeyboardButton("📦 Export All Json Ledgers (.zip)", callback_data="admin_export_zip")],
         [InlineKeyboardButton("⏸ Pause Bot 5 Mins", callback_data="admin_pause_5"), InlineKeyboardButton("⏸ Pause Bot 10 Mins", callback_data="admin_pause_10")],
         [InlineKeyboardButton("▶️ Resume Bot Now", callback_data="admin_resume_now")],
@@ -61,7 +62,7 @@ async def admin_portal_command(update: Update, context: ContextTypes.DEFAULT_TYP
 
 
 async def admin_view_user_payments_callback(update: Update, context: ContextTypes.DEFAULT_TYPE):
-    """Fetches real transaction history from payment_transactions for admin audit."""
+    """Fetches unique transaction history from payment_transactions for admin audit."""
     query = update.callback_query
     if query.from_user.id != PRIMARY_ADMIN_ID:
         await query.answer("Unauthorized!", show_alert=True)
@@ -75,7 +76,7 @@ async def admin_view_user_payments_callback(update: Update, context: ContextType
     try:
         conn = get_db()
         cursor = conn.cursor(cursor_factory=RealDictCursor)
-        cursor.execute("SELECT * FROM payment_transactions WHERE user_id = %s ORDER BY id DESC LIMIT 5", (target_uid,))
+        cursor.execute("SELECT DISTINCT ON (payment_id) * FROM payment_transactions WHERE user_id = %s ORDER BY payment_id, id DESC LIMIT 5", (target_uid,))
         rows = cursor.fetchall()
         cursor.close()
         release_db(conn)
@@ -100,11 +101,13 @@ async def admin_view_user_payments_callback(update: Update, context: ContextType
     if rows:
         for idx, r in enumerate(rows, start=1):
             created_time = r.get('created_at') or 'N/A'
+            p_exp = r.get('expiry_at') or 'Active'
             lines.append(
                 f"**{idx}. Plan:** `{r.get('plan_name', 'VIP PACK')}` (₹{r.get('amount_paid', 0)})\n"
                 f"    🆔 Txn ID: `{r.get('payment_id', 'N/A')}`\n"
                 f"    ⚡ Quota: `+{r.get('daily_quota', 0)} Qs` | Days: `{r.get('validity_days', 0)}`\n"
                 f"    📅 Date: `{created_time}`\n"
+                f"    ⏳ Expiry: `{p_exp}`\n"
                 f"    ──────────────────────────"
             )
     else:
@@ -188,13 +191,14 @@ async def admin_execute_grant_callback(update: Update, context: ContextTypes.DEF
             (new_bal, expiry_str, payment_id, payment_time_str, target_uid)
         )
 
-        # 2. Safe transaction logging (handles presence/absence of expiry_at column gracefully)
+        # 2. Safe transaction logging with unique constraint handling
         try:
             cursor.execute(
                 """
                 INSERT INTO payment_transactions 
                 (user_id, payment_id, plan_key, plan_name, amount_paid, daily_quota, validity_days, created_at, expiry_at)
                 VALUES (%s, %s, %s, %s, %s, %s, %s, %s, %s)
+                ON CONFLICT (payment_id) DO NOTHING
                 """,
                 (target_uid, payment_id, plan_key, plan["name"], plan["price"], plan["daily_limit"], plan["days"], payment_time_str, expiry_str)
             )
@@ -209,6 +213,7 @@ async def admin_execute_grant_callback(update: Update, context: ContextTypes.DEF
                 INSERT INTO payment_transactions 
                 (user_id, payment_id, plan_key, plan_name, amount_paid, daily_quota, validity_days, created_at)
                 VALUES (%s, %s, %s, %s, %s, %s, %s, %s)
+                ON CONFLICT (payment_id) DO NOTHING
                 """,
                 (target_uid, payment_id, plan_key, plan["name"], plan["price"], plan["daily_limit"], plan["days"], payment_time_str)
             )
@@ -253,7 +258,37 @@ async def admin_callback_handler(update: Update, context: ContextTypes.DEFAULT_T
 
     users = get_all_users()
 
-    if data == "admin_export_zip":
+    if data == "admin_command_stats":
+        await query.answer()
+        conn = None
+        try:
+            conn = get_db()
+            cursor = conn.cursor(cursor_factory=RealDictCursor)
+            cursor.execute(
+                "SELECT command_name, COUNT(*) as count FROM command_analytics GROUP BY command_name ORDER BY count DESC LIMIT 10"
+            )
+            rows = cursor.fetchall()
+            cursor.close()
+            release_db(conn)
+        except Exception:
+            if conn:
+                release_db(conn)
+            rows = []
+
+        lines = [
+            f"📊 **COMMAND USAGE ANALYTICS** 📊\n"
+            f"━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\n"
+        ]
+        if rows:
+            for idx, r in enumerate(rows, start=1):
+                lines.append(f"{idx}. `{r['command_name']}` — `{r['count']} uses`")
+        else:
+            lines.append("ℹ️ *No command execution metrics logged yet.*")
+
+        back_btn = InlineKeyboardMarkup([[InlineKeyboardButton("🔙 Back to Admin Portal", callback_data="admin_home")]])
+        await query.edit_message_text("\n".join(lines), reply_markup=back_btn, parse_mode="Markdown")
+
+    elif data == "admin_export_zip":
         await query.answer()
         await query.edit_message_text("⏳ **Generating Bulk Zip Package...**\nZipping all student JSON ledgers...", parse_mode="Markdown")
         

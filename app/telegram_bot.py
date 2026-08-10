@@ -5,7 +5,7 @@ import os
 import urllib.request
 import base64
 import asyncio
-from datetime import datetime
+from datetime import datetime, timedelta
 import pytz
 from telegram import (
     Update, InlineKeyboardMarkup, InlineKeyboardButton, 
@@ -86,13 +86,13 @@ async def fetch_user_profile_fast(user_id):
     return prof
 
 def get_user_active_plans_history(user_id: int):
-    """Retrieves all subscribed plan transactions for a user including individual pack expiry dates."""
+    """Retrieves unique active plan transactions for a user from PostgreSQL."""
     conn = None
     try:
         conn = get_db()
         cursor = conn.cursor(cursor_factory=RealDictCursor)
         cursor.execute(
-            "SELECT * FROM payment_transactions WHERE user_id = %s ORDER BY id DESC",
+            "SELECT DISTINCT ON (payment_id) * FROM payment_transactions WHERE user_id = %s ORDER BY payment_id, id DESC",
             (user_id,)
         )
         rows = cursor.fetchall()
@@ -293,7 +293,7 @@ async def send_response(update: Update, text: str, reply_markup=None):
 
 async def myplan_command(update: Update, context: ContextTypes.DEFAULT_TYPE):
     """
-    Displays subscription plan, total daily limits, and breakdown of active subscribed plans with individual expiries.
+    Displays subscription plan, total daily limits, and breakdown of active subscribed plans with exact expiry dates.
     """
     if not await maintenance_guard(update, context): return
     if not await check_user_registration(update): return
@@ -324,8 +324,20 @@ async def myplan_command(update: Update, context: ContextTypes.DEFAULT_TYPE):
     plans_text = ""
     if history_plans:
         plans_text = "\n📦 **ACTIVE SUBSCRIBED PACKS BREAKDOWN:**\n"
+        ist = pytz.timezone("Asia/Kolkata")
         for idx, hp in enumerate(history_plans[:5], start=1):
-            p_exp = hp.get('expiry_at') or 'Active'
+            p_exp = hp.get('expiry_at')
+            # Calculate dynamic expiry if record shows 'Active' or NULL
+            if not p_exp or p_exp == 'Active':
+                created_str = hp.get('created_at', '')
+                try:
+                    c_dt = datetime.strptime(created_str, "%d %b %Y, %I:%M %p IST")
+                    v_days = hp.get('validity_days', 7)
+                    calc_exp = c_dt + timedelta(days=v_days)
+                    p_exp = calc_exp.strftime("%Y-%m-%d %H:%M:%S IST")
+                except Exception:
+                    p_exp = expiry
+
             plans_text += (
                 f" {idx}. **{hp['plan_name']}** (`₹{hp['amount_paid']}`)\n"
                 f"    👉 Quota: `+{hp['daily_quota']} Qs` | Txn ID: `{hp['payment_id']}`\n"

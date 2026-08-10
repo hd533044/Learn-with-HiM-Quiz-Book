@@ -67,7 +67,7 @@ async def fetch_user_profile_fast(user_id):
     return prof
 
 def get_user_active_plans_history(user_id: int):
-    """Retrieves all subscribed plan transactions for a user to display active plans breakdown."""
+    """Retrieves all subscribed plan transactions for a user from PostgreSQL."""
     conn = None
     try:
         conn = get_db()
@@ -111,7 +111,6 @@ def generate_razorpay_link_sync(user_id: int, plan_key: str) -> str:
         clean_phone = "9123456789"
 
     base_render_url = (os.getenv("RENDER_EXTERNAL_URL") or "https://learn-with-him-quiz-book.onrender.com").rstrip("/")
-    # Explicitly append parameters to both URL query string and Razorpay notes object
     callback_uri = f"{base_render_url}/razorpay-webhook?user_id={user_id}&plan_key={plan_key}"
 
     payload = {
@@ -274,7 +273,7 @@ async def send_response(update: Update, text: str, reply_markup=None):
 
 async def myplan_command(update: Update, context: ContextTypes.DEFAULT_TYPE):
     """
-    Displays the current subscription plan, total daily limits, and breakdown of all active subscribed plans.
+    Displays current subscription, daily limits, and breakdown of active subscribed plans.
     """
     if not await maintenance_guard(update, context): return
     if not await check_user_registration(update): return
@@ -293,12 +292,8 @@ async def myplan_command(update: Update, context: ContextTypes.DEFAULT_TYPE):
     remaining = max(0, allowed_limit - today_used)
 
     active_plan_name = "🎁 FREE DEMO PLAN"
-    active_plan_key = "FREE_DEMO"
-    for p_key, p_val in PLAN_TIERS.items():
-        if p_val.get("daily_limit") == paid_bal:
-            active_plan_name = p_val.get("name")
-            active_plan_key = p_key
-            break
+    if paid_bal > 0:
+        active_plan_name = f"💳 VIP PLAN ({paid_bal} Qs/Day)"
 
     expiry = profile.get("vip_pass_expiry") or "N/A"
 
@@ -309,14 +304,14 @@ async def myplan_command(update: Update, context: ContextTypes.DEFAULT_TYPE):
     if history_plans:
         plans_text = "\n📦 **ACTIVE SUBSCRIBED PACKS BREAKDOWN:**\n"
         for idx, hp in enumerate(history_plans[:5], start=1):
-            plans_text += f" {idx}. **{hp['plan_name']}** (`₹{hp['amount_paid']}`)\n    👉 Quota: `+{hp['daily_quota']} Qs` | Date: `{hp['created_at']}`\n"
+            plans_text += f" {idx}. **{hp['plan_name']}** (`₹{hp['amount_paid']}`)\n    👉 Quota: `+{hp['daily_quota']} Qs` | Txn ID: `{hp['payment_id']}`\n    📅 Date: `{hp['created_at']}`\n"
     else:
         plans_text = f"\n📦 **ACTIVE SUBSCRIBED PACKS BREAKDOWN:**\n • `{active_plan_name}`\n"
 
     msg = (
         f"💳 **YOUR CURRENT SUBSCRIPTION PLAN** 💳\n"
         f"━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\n"
-        f"👑 **Primary Pack:** `{active_plan_name}`\n"
+        f"👑 **Primary Pass Status:** `{active_plan_name}`\n"
         f"⚡ **Total Daily Limit:** `{allowed_limit} Questions / Day`\n"
         f"📊 **Used Today:** `{today_used}` / `{allowed_limit}` Qs\n"
         f"🟢 **Remaining Today:** `{remaining}` Qs Available\n"

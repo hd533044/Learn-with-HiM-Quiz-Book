@@ -229,7 +229,7 @@ async def admin_execute_grant_callback(update: Update, context: ContextTypes.DEF
         await query.message.reply_text(f"⚠️ Failed granting plan: {e}")
         return
 
-    # BROADCAST ANNOUNCEMENT DIRECTLY TO USER CHAT
+    # ALWAYS BROADCAST ANNOUNCEMENT DIRECTLY TO USER'S TELEGRAM CHAT
     from main import send_payment_invoice_telegram
     await send_payment_invoice_telegram(target_uid, plan_key, payment_id)
 

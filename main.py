@@ -41,8 +41,8 @@ if HAS_RAZORPAY and RAZORPAY_KEY_ID and RAZORPAY_KEY_SECRET:
         logging.error(f"Failed to initialize Razorpay Client: {e}")
 
 bot_app_instance = None
-SENT_EXPIRY_REMINDERS = set()  # Tracks sent reminder keys: "user_id_milestone"
-LAST_QUIZ_BROADCAST_DATE = ""   # Prevents duplicate daily quiz time blasts
+SENT_EXPIRY_REMINDERS = set()
+LAST_QUIZ_BROADCAST_DATE = ""
 
 
 async def activate_user_subscription(user_id: int, plan_key: str, payment_id: str = "OFFICIAL_SUBSCRIBED"):
@@ -127,10 +127,15 @@ async def activate_user_subscription(user_id: int, plan_key: str, payment_id: st
 
 
 async def send_payment_invoice_telegram(user_id: int, plan_key: str, payment_id: str = "OFFICIAL_SUBSCRIBED"):
-    """Pushes a text success invoice directly into the user's Telegram chat."""
+    """
+    Pushes an instant, celebratory text invoice directly into the user's Telegram chat.
+    Guaranteed delivery with interactive action buttons.
+    """
     if not bot_app_instance:
         logging.error("[TELEGRAM PUSH ERROR] bot_app_instance is uninitialized.")
         return
+
+    from telegram import InlineKeyboardMarkup, InlineKeyboardButton
 
     plan_info = PLAN_TIERS.get(plan_key, {})
     plan_name = plan_info.get('name', plan_key)
@@ -139,31 +144,52 @@ async def send_payment_invoice_telegram(user_id: int, plan_key: str, payment_id:
     sid = profile.get("student_id", f"USER_{user_id}")
     orig_payment_time = profile.get("payment_timestamp") or get_ist_timestamp_str()
     total_quota = profile.get("paid_question_balance", 0)
+    expiry_date = profile.get("vip_pass_expiry", "N/A")
 
-    success_text_invoice = (
-        f"🥳 **PAYMENT CONFIRMED & PLAN CREDITED!** 🥳\n"
-        f"━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\n"
-        f"🎉 **Purchased Pack:** `{plan_name}`\n"
-        f"⚡ **Stacked Daily Quota:** `{total_quota} Questions / Day`\n"
-        f"⏳ **New VIP Pass Expiry:** `{profile.get('vip_pass_expiry')}`\n\n"
-        f"🧾 **OFFICIAL PAYMENT SUCCESS INVOICE**\n"
-        f"• **Student ID:** `{sid}`\n"
-        f"• **Amount Paid:** ₹{plan_info.get('price', 0)} INR\n"
-        f"• **Txn / Payment ID:** `{payment_id}`\n"
-        f"• **Payment Timestamp:** `{orig_payment_time}`\n"
-        f"• **Added Validity:** `{plan_info.get('days')} Days Access`\n"
-        f"━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\n"
-        f"📊 Tap **/myplan** anytime to check your active quota and plan details.\n"
-        f"🚀 Tap **/quiz** to launch your practice session now!"
-    )
+    is_admin_grant = "ADMIN" in str(payment_id).upper()
+
+    if is_admin_grant:
+        broadcast_msg = (
+            f"🎁 **SPECIAL ANNOUNCEMENT: VIP PLAN GRANTED!** 🎁\n"
+            f"━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\n"
+            f"🎉 **Himanshu Sir has granted you the {plan_name}!**\n\n"
+            f"⚡ **New Daily Limit:** `{total_quota} Questions / Day`\n"
+            f"⏳ **VIP Pass Expiry:** `{expiry_date}`\n"
+            f"🧾 **Reference ID:** `{payment_id}`\n"
+            f"━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\n"
+            f"✨ You can now attempt more practice questions every single day!\n"
+            f"🚀 Tap **/quiz** below to launch your session now!"
+        )
+    else:
+        broadcast_msg = (
+            f"🥳 **PAYMENT CONFIRMED & PLAN CREDITED!** 🥳\n"
+            f"━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\n"
+            f"🎉 **Purchased Pack:** `{plan_name}`\n"
+            f"⚡ **Stacked Daily Quota:** `{total_quota} Questions / Day`\n"
+            f"⏳ **New VIP Pass Expiry:** `{expiry_date}`\n\n"
+            f"🧾 **OFFICIAL PAYMENT SUCCESS INVOICE**\n"
+            f"• **Student ID:** `{sid}`\n"
+            f"• **Amount Paid:** ₹{plan_info.get('price', 0)} INR\n"
+            f"• **Txn / Payment ID:** `{payment_id}`\n"
+            f"• **Payment Timestamp:** `{orig_payment_time}`\n"
+            f"• **Added Validity:** `{plan_info.get('days')} Days Access`\n"
+            f"━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\n"
+            f"📊 Tap **/myplan** anytime to check your active quota breakdown.\n"
+            f"🚀 Tap **/quiz** to launch your practice session now!"
+        )
     
+    btn = InlineKeyboardMarkup([
+        [InlineKeyboardButton("🚀 Launch Quiz Now", callback_data="cmd_quiz"), InlineKeyboardButton("💳 My Plan", callback_data="cmd_myplan")]
+    ])
+
     try:
         await bot_app_instance.bot.send_message(
             chat_id=user_id,
-            text=success_text_invoice,
+            text=broadcast_msg,
+            reply_markup=btn,
             parse_mode="Markdown"
         )
-        logging.info(f"[INVOICE DELIVERED] Pushed text invoice to user {user_id}")
+        logging.info(f"[INVOICE/BROADCAST DELIVERED] Successfully sent to user {user_id}")
     except Exception as err:
         logging.error(f"[DELIVERY ERROR] Failed to push notification to user {user_id}: {err}")
 
@@ -189,7 +215,6 @@ async def scheduled_expiry_reminder_check():
         try:
             conn = get_db()
             cursor = conn.cursor()
-            # Selected ALL active accounts (both Paid VIP and Free Demo users) that have an expiry timestamp
             cursor.execute("SELECT user_id, full_name, paid_question_balance, vip_pass_expiry, demo_used FROM users WHERE vip_pass_expiry IS NOT NULL AND is_banned = 0")
             users = cursor.fetchall()
             cursor.close()
@@ -339,7 +364,7 @@ async def scheduled_daily_quiz_reminder():
         current_hour = now.hour
         current_minute = now.minute
 
-        # Broadcast daily at 08:00 AM IST (and optionally 08:00 PM IST)
+        # Broadcast daily at 08:00 AM IST (and 08:00 PM IST)
         if (current_hour == 8 and current_minute == 0) or (current_hour == 20 and current_minute == 0):
             broadcast_key = f"{today_date_str}_{current_hour}"
             

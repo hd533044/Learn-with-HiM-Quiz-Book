@@ -94,7 +94,7 @@ def generate_razorpay_link_sync(user_id: int, plan_key: str) -> str:
     key_secret = (os.getenv("RAZORPAY_KEY_SECRET") or RAZORPAY_KEY_SECRET or "").strip()
 
     if not key_id or not key_secret:
-        logging.error("[PAYMENT ERROR] Razorpay API keys are missing or unconfigured.")
+        logging.error("[PAYMENT ERROR] Razorpay API keys missing.")
         return None
 
     url = "https://api.razorpay.com/v1/payment_links"
@@ -111,6 +111,7 @@ def generate_razorpay_link_sync(user_id: int, plan_key: str) -> str:
         clean_phone = "9123456789"
 
     base_render_url = (os.getenv("RENDER_EXTERNAL_URL") or "https://learn-with-him-quiz-book.onrender.com").rstrip("/")
+    # Explicitly append parameters to both URL query string and Razorpay notes object
     callback_uri = f"{base_render_url}/razorpay-webhook?user_id={user_id}&plan_key={plan_key}"
 
     payload = {
@@ -119,7 +120,7 @@ def generate_razorpay_link_sync(user_id: int, plan_key: str) -> str:
         "accept_partial": False,
         "description": f"Subscription - {plan_key}",
         "customer": {
-            "name": "Student",
+            "name": profile.get("full_name", "Student") if profile else "Student",
             "contact": clean_phone,
             "email": f"user{user_id}@gmail.com"
         },
@@ -143,12 +144,8 @@ def generate_razorpay_link_sync(user_id: int, plan_key: str) -> str:
             if response.status in (200, 201) and "short_url" in res_json:
                 return res_json["short_url"]
             else:
-                logging.error(f"[RAZORPAY API FAIL RESPONSE] Status: {response.status}, Body: {res_body}")
+                logging.error(f"[RAZORPAY FAIL] Status: {response.status}, Body: {res_body}")
                 return None
-    except urllib.error.HTTPError as http_err:
-        err_body = http_err.read().decode("utf-8") if http_err.fp else ""
-        logging.error(f"[RAZORPAY HTTP ERROR] Code: {http_err.code}, Reason: {http_err.reason}, Details: {err_body}")
-        return None
     except Exception as e:
         logging.error(f"[RAZORPAY EXCEPTION] {e}")
         return None

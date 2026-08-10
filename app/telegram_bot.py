@@ -36,7 +36,8 @@ from app.quiz_engine import (
 from app.stats import get_overall_leaderboard, calculate_user_percentile, calculate_user_rank, get_user_performance_summary
 from app.admin import (
     admin_portal_command, admin_callback_handler,
-    admin_view_user_payments_callback, admin_grant_plan_menu_callback, admin_execute_grant_callback
+    admin_view_user_payments_callback, admin_grant_plan_menu_callback, admin_execute_grant_callback,
+    ADMIN_PASSWORD, ADMIN_AUTH_SESSIONS
 )
 from app.pdf_generator import generate_student_pdf_report
 from app.pyq_fetcher import fetch_pyqs_for_quiz
@@ -280,6 +281,26 @@ async def strict_quiz_command_guard(update: Update, context: ContextTypes.DEFAUL
 
     await launch_quiz_setup(update, context)
 
+async def askadmin_command(update: Update, context: ContextTypes.DEFAULT_TYPE):
+    if not await maintenance_guard(update, context): return
+    if not await check_user_registration(update): return
+    user = update.effective_user
+    asyncio.create_task(asyncio.to_thread(log_command_usage, user.id, "/askadmin"))
+
+    context.user_data["awaiting_user_query"] = True
+    msg = (
+        "💬 **SECRET COMMUNICATION WITH HIMANSHU SIR** 💬\n"
+        "━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\n"
+        "Please reply with your question or query below.\n\n"
+        "🔒 Your message will be sent directly to Himanshu Sir's Admin Dashboard. "
+        "You will receive an instant notification as soon as he replies!"
+    )
+    if update.callback_query:
+        await update.callback_query.answer()
+        await update.callback_query.message.reply_text(msg, parse_mode="Markdown")
+    else:
+        await update.message.reply_text(msg, parse_mode="Markdown")
+
 async def send_response(update: Update, text: str, reply_markup=None):
     if update.callback_query:
         await update.callback_query.answer()
@@ -363,7 +384,7 @@ async def myplan_command(update: Update, context: ContextTypes.DEFAULT_TYPE):
     )
 
     btn_list = [
-        [InlineKeyboardButton("💳 Upgrade / VIP Plans", callback_data="cmd_plans")],
+        [InlineKeyboardButton("💳 Upgrade / VIP Plans", callback_data="cmd_plans"), InlineKeyboardButton("💬 Secret Message Admin", callback_data="cmd_askadmin")],
         [
             InlineKeyboardButton("🚀 Launch Quiz", callback_data="cmd_quiz"), 
             InlineKeyboardButton("👤 Profile Card", callback_data="cmd_profile")
@@ -394,6 +415,7 @@ async def plans_command(update: Update, context: ContextTypes.DEFAULT_TYPE):
         [InlineKeyboardButton("📦 PLATINUM (₹40 - 60 Days - 300 Qs/Day)", callback_data="buy_plan_PLATINUM")],
         [InlineKeyboardButton("📦 RUBY (₹50 - 90 Days - 400 Qs/Day)", callback_data="buy_plan_RUBY")],
         [InlineKeyboardButton("📦 MEGA PACK (₹80 - 180 Days - 500 Qs/Day)", callback_data="buy_plan_MEGA")],
+        [InlineKeyboardButton("💬 Secret Message Admin", callback_data="cmd_askadmin")]
     ])
 
     msg = (
@@ -440,7 +462,8 @@ async def handle_buy_plan_callback(update: Update, context: ContextTypes.DEFAULT
     if payment_url:
         keyboard = [
             [InlineKeyboardButton(f"💳 Pay ₹{plan_info['price']} via Razorpay", url=payment_url)],
-            [InlineKeyboardButton("🔙 Back to Plans", callback_data="cmd_plans")]
+            [InlineKeyboardButton("🔙 Back to Plans", callback_data="cmd_plans")],
+            [InlineKeyboardButton("💬 Secret Message Admin", callback_data="cmd_askadmin")]
         ]
         msg = (
             f"🛒 **SELECTED PACK:** {plan_info['name']}\n"
@@ -724,7 +747,8 @@ async def help_command(update: Update, context: ContextTypes.DEFAULT_TYPE):
         [InlineKeyboardButton("👤 My Profile (/myprofile)", callback_data="cmd_profile"), InlineKeyboardButton("✏️ Edit Profile (/editprofile)", callback_data="cmd_editprofile")],
         [InlineKeyboardButton("📊 My Rank (/mywholestate)", callback_data="cmd_wholestate"), InlineKeyboardButton("🏆 Leaderboard (/toppername)", callback_data="cmd_toppers")],
         [InlineKeyboardButton("💬 Submit Feedback (/feedback)", callback_data="cmd_feedback"), InlineKeyboardButton("📖 Reviews (/reviews)", callback_data="cmd_viewfeedbacks")],
-        [InlineKeyboardButton("🤝 Invite Friends (/invite)", callback_data="cmd_referral")]
+        [InlineKeyboardButton("🤝 Invite Friends (/invite)", callback_data="cmd_referral")],
+        [InlineKeyboardButton("💬 Secret Message Admin (/askadmin)", callback_data="cmd_askadmin")]
     ]
 
     await send_response(update, msg, reply_markup=InlineKeyboardMarkup(buttons))
@@ -821,7 +845,7 @@ async def myprofile_command(update: Update, context: ContextTypes.DEFAULT_TYPE):
         [InlineKeyboardButton("🚀 Launch Quiz", callback_data="cmd_quiz"), InlineKeyboardButton("📄 PDF Report Center", callback_data="cmd_pdfreport")],
         [InlineKeyboardButton("💳 My Plan", callback_data="cmd_myplan"), InlineKeyboardButton("💳 VIP Plans", callback_data="cmd_plans")],
         [InlineKeyboardButton("💾 Bookmarks", callback_data="cmd_savedquestions"), InlineKeyboardButton("✏️ Edit Profile", callback_data="cmd_editprofile")],
-        [InlineKeyboardButton("🤝 Invite Friends", callback_data="cmd_referral")]
+        [InlineKeyboardButton("🤝 Invite Friends", callback_data="cmd_referral"), InlineKeyboardButton("💬 Secret Message Admin", callback_data="cmd_askadmin")]
     ]
 
     await send_response(update, msg, reply_markup=InlineKeyboardMarkup(buttons))
@@ -958,7 +982,9 @@ async def button_router(update: Update, context: ContextTypes.DEFAULT_TYPE):
 
     if not await check_user_registration(update): return
 
-    if data == "cmd_quiz":
+    if data == "cmd_askadmin":
+        await askadmin_command(update, context)
+    elif data == "cmd_quiz":
         profile = await fetch_user_profile_fast(user.id)
         attempted_today = await asyncio.to_thread(get_today_attempts, user.id)
         
@@ -1030,6 +1056,89 @@ async def button_router(update: Update, context: ContextTypes.DEFAULT_TYPE):
 async def handle_text_messages(update: Update, context: ContextTypes.DEFAULT_TYPE):
     user = update.effective_user
     text = update.message.text.strip()
+
+    # Password Challenge Check for Admin
+    if user.id == PRIMARY_ADMIN_ID and context.user_data.get("awaiting_admin_password"):
+        context.user_data["awaiting_admin_password"] = False
+        if text == ADMIN_PASSWORD:
+            ADMIN_AUTH_SESSIONS[user.id] = time.time()
+            await update.message.reply_text("🔓 **MASTER ADMIN ACCESS GRANTED!**\nSession active for 30 mins.", parse_mode="Markdown")
+            await admin_portal_command(update, context)
+        else:
+            await update.message.reply_text("❌ **INCORRECT PASSWORD!** Access denied.", parse_mode="Markdown")
+        return
+
+    # Secret Communication Reply Handler for Admin
+    if user.id == PRIMARY_ADMIN_ID and context.user_data.get("awaiting_admin_reply_qid"):
+        qid = context.user_data.pop("awaiting_admin_reply_qid")
+        ist = pytz.timezone("Asia/Kolkata")
+        now_str = datetime.now(ist).strftime("%Y-%m-%d %H:%M:%S IST")
+
+        conn = get_db()
+        cursor = conn.cursor(cursor_factory=RealDictCursor)
+        cursor.execute(
+            "UPDATE student_queries SET admin_reply = %s, status = 'RESOLVED', replied_at = %s WHERE id = %s RETURNING user_id, query_text",
+            (text, now_str, qid)
+        )
+        row = cursor.fetchone()
+        conn.commit()
+        cursor.close()
+        release_db(conn)
+
+        if row:
+            student_uid = row["user_id"]
+            user_msg = (
+                f"💬 **SECRET RESPONSE FROM HIMANSHU SIR!** 💬\n"
+                f"━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\n"
+                f"❓ **Your Question:**\n*\"{row['query_text']}\"*\n\n"
+                f"👨‍🏫 **Himanshu Sir's Reply:**\n`{text}`\n"
+                f"━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\n"
+                f"🔒 *Confidential communication between you and Admin.*"
+            )
+            try:
+                btn = InlineKeyboardMarkup([[InlineKeyboardButton("💬 Reply Back to Admin", callback_data="cmd_askadmin")]])
+                await context.bot.send_message(chat_id=student_uid, text=user_msg, reply_markup=btn, parse_mode="Markdown")
+                await update.message.reply_text(f"✅ **Reply sent secretly to student `{student_uid}`!**", parse_mode="Markdown")
+            except Exception as e:
+                await update.message.reply_text(f"⚠️ Reply saved, but failed sending message to user: {e}")
+        return
+
+    # Student Support Inquiry Submission Handler
+    if context.user_data.get("awaiting_user_query"):
+        context.user_data["awaiting_user_query"] = False
+        ist = pytz.timezone("Asia/Kolkata")
+        now_str = datetime.now(ist).strftime("%Y-%m-%d %H:%M:%S IST")
+        profile = get_user_profile(user.id) or {}
+        name = profile.get("full_name", user.full_name)
+
+        conn = get_db()
+        cursor = conn.cursor()
+        cursor.execute(
+            "INSERT INTO student_queries (user_id, student_name, query_text, created_at) VALUES (%s, %s, %s, %s)",
+            (user.id, name, text, now_str)
+        )
+        conn.commit()
+        cursor.close()
+        release_db(conn)
+
+        try:
+            admin_notice = (
+                f"📩 **NEW STUDENT ENQUIRY RECEIVED!**\n"
+                f"👤 **Student:** {name} (`{user.id}`)\n"
+                f"❓ **Query:** *\"{text}\"*\n\n"
+                f"Type /admin to inspect and reply."
+            )
+            await context.bot.send_message(chat_id=PRIMARY_ADMIN_ID, text=admin_notice, parse_mode="Markdown")
+        except Exception:
+            pass
+
+        await update.message.reply_text(
+            "✅ **QUERY SENT TO HIMANSHU SIR!**\n\n"
+            "Himanshu Sir has received your message in his Admin Dashboard and will reply to you shortly.",
+            reply_markup=ReplyKeyboardRemove(),
+            parse_mode="Markdown"
+        )
+        return
 
     if context.user_data.get("is_account_locked"):
         profile = await fetch_user_profile_fast(user.id)
@@ -1115,6 +1224,7 @@ async def post_init(application: Application):
     allowed_commands = [
         BotCommand("quiz", "🚀 Start Computer Quiz"),
         BotCommand("myplan", "💵 Subscriptions"),
+        BotCommand("askadmin", "💬 Secret Communication with Admin"),
         BotCommand("pdfreport", "📄 Export Academic PDF Report"),
         BotCommand("wrongquestions", "❌ View Wrong Questions"),
         BotCommand("unattemptedquestions", "⏭️ View Unattempted Questions"),
@@ -1145,6 +1255,7 @@ def build_application() -> Application:
     app.add_handler(CommandHandler("quiz", strict_quiz_command_guard))
     app.add_handler(CommandHandler("myplan", myplan_command))
     app.add_handler(CommandHandler("plans", plans_command))
+    app.add_handler(CommandHandler("askadmin", askadmin_command))
     app.add_handler(CommandHandler("pause", pause_quiz_command))
     app.add_handler(CommandHandler("resume", resume_quiz_command))
     app.add_handler(CommandHandler("stop", stop_quiz_command))

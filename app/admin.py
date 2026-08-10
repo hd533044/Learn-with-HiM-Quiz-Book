@@ -21,6 +21,80 @@ from app.stats import get_user_performance_summary, calculate_user_rank, calcula
 
 logger = logging.getLogger(__name__)
 USERS_PER_PAGE = 8
+ADMIN_PASSWORD = os.getenv("ADMIN_PASSWORD", "Himanshu@123").strip()
+ADMIN_AUTH_SESSIONS = {}  # {user_id: auth_timestamp}
+
+
+def is_admin_authenticated(user_id: int) -> bool:
+    if user_id != PRIMARY_ADMIN_ID:
+        return False
+    auth_time = ADMIN_AUTH_SESSIONS.get(user_id, 0)
+    return (time.time() - auth_time) < 1800  # 30 mins session duration
+
+
+def get_pending_queries_count() -> int:
+    conn = None
+    try:
+        conn = get_db()
+        cursor = conn.cursor()
+        cursor.execute("SELECT COUNT(*) FROM student_queries WHERE status = 'PENDING'")
+        count = cursor.fetchone()[0]
+        cursor.close()
+        release_db(conn)
+        return count
+    except Exception:
+        if conn:
+            release_db(conn)
+        return 0
+
+
+def calculate_financial_revenue():
+    ist = pytz.timezone("Asia/Kolkata")
+    now = datetime.now(ist)
+    today_start = now.replace(hour=0, minute=0, second=0, microsecond=0)
+    week_start = now - timedelta(days=now.weekday())
+    month_start = now.replace(day=1, hour=0, minute=0, second=0, microsecond=0)
+
+    conn = None
+    try:
+        conn = get_db()
+        cursor = conn.cursor(cursor_factory=RealDictCursor)
+        cursor.execute("SELECT amount_paid, created_at FROM payment_transactions")
+        rows = cursor.fetchall()
+        cursor.close()
+        release_db(conn)
+
+        rev_today = 0
+        rev_week = 0
+        rev_month = 0
+        rev_all = 0
+
+        for r in rows:
+            amt = r.get("amount_paid", 0) or 0
+            rev_all += amt
+            dt_str = r.get("created_at", "")
+            try:
+                dt = datetime.strptime(dt_str, "%d %b %Y, %I:%M %p IST")
+                dt = ist.localize(dt) if dt.tzinfo is None else dt
+                if dt >= today_start:
+                    rev_today += amt
+                if dt >= week_start.replace(hour=0, minute=0, second=0, microsecond=0):
+                    rev_week += amt
+                if dt >= month_start:
+                    rev_month += amt
+            except Exception:
+                pass
+
+        return {
+            "today": rev_today,
+            "week": rev_week,
+            "month": rev_month,
+            "all": rev_all
+        }
+    except Exception:
+        if conn:
+            release_db(conn)
+        return {"today": 0, "week": 0, "month": 0, "all": 0}
 
 
 async def admin_portal_command(update: Update, context: ContextTypes.DEFAULT_TYPE):
@@ -28,21 +102,38 @@ async def admin_portal_command(update: Update, context: ContextTypes.DEFAULT_TYP
     if user_id != PRIMARY_ADMIN_ID:
         return
 
+    # Password Challenge Check
+    if not is_admin_authenticated(user_id):
+        context.user_data["awaiting_admin_password"] = True
+        msg = (
+            "🔒 **MASTER ADMIN CONTROL PANEL — SECURITY LOCK** 🔒\n"
+            "━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\n"
+            "🔑 Please reply with the Master Admin Password to access the portal:"
+        )
+        if update.callback_query:
+            await update.callback_query.answer("🔒 Password Required!", show_alert=True)
+            await update.callback_query.message.reply_text(msg, parse_mode="Markdown")
+        else:
+            await update.message.reply_text(msg, parse_mode="Markdown")
+        return
+
     users = get_all_users()
     paid_users = get_paid_users()
+    pending_q = get_pending_queries_count()
     m_until = get_maintenance_until()
     now_ts = int(time.time())
     m_status = "🟢 Active (Online)" if now_ts >= m_until else "🔴 PAUSED (Maintenance Mode)"
 
     keyboard = [
+        [InlineKeyboardButton(f"📩 Pending Student Queries ({pending_q})", callback_data="admin_view_queries_0")],
         [InlineKeyboardButton("👥 Student Directory (/user_profiles)", callback_data="admin_users_page_0")],
         [InlineKeyboardButton("💳 Paid Students Directory", callback_data="admin_paid_users_page_0")],
-        [InlineKeyboardButton("🔍 Search Student (ID/Phone/Name)", callback_data="admin_search_prompt")],
-        [InlineKeyboardButton("📊 Command Usage Analytics", callback_data="admin_command_stats")],
-        [InlineKeyboardButton("📦 Export All Json Ledgers (.zip)", callback_data="admin_export_zip")],
-        [InlineKeyboardButton("⏸ Pause Bot 5 Mins", callback_data="admin_pause_5"), InlineKeyboardButton("⏸ Pause Bot 10 Mins", callback_data="admin_pause_10")],
-        [InlineKeyboardButton("▶️ Resume Bot Now", callback_data="admin_resume_now")],
-        [InlineKeyboardButton("📢 Global Broadcast", callback_data="admin_broadcast")]
+        [InlineKeyboardButton("💰 Revenue & Earnings Dashboard", callback_data="admin_financial_stats"), InlineKeyboardButton("🔍 Search Student (ID/Phone/Name)", callback_data="admin_search_prompt")],
+        [InlineKeyboardButton("🎁 Gift Quota Boost to ALL Users", callback_data="admin_mass_grant_menu")],
+        [InlineKeyboardButton("📊 Command Usage Analytics", callback_data="admin_command_stats"), InlineKeyboardButton("📦 Export All Json Ledgers (.zip)", callback_data="admin_export_zip")],
+        [InlineKeyboardButton("⏸ Pause 5m", callback_data="admin_pause_5"), InlineKeyboardButton("⏸ Pause 10m", callback_data="admin_pause_10"), InlineKeyboardButton("⏸ Pause 3h", callback_data="admin_pause_180")],
+        [InlineKeyboardButton("⏸ Pause 6h", callback_data="admin_pause_360"), InlineKeyboardButton("⏸ Pause 24h", callback_data="admin_pause_1440"), InlineKeyboardButton("▶️ Resume Bot Now", callback_data="admin_resume_now")],
+        [InlineKeyboardButton("📢 Global Broadcast", callback_data="admin_broadcast"), InlineKeyboardButton("🔒 Lock Admin Session", callback_data="admin_lock_session")]
     ]
 
     msg = (
@@ -50,6 +141,7 @@ async def admin_portal_command(update: Update, context: ContextTypes.DEFAULT_TYP
         f"━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\n"
         f"📊 **Total Registered Students:** `{len(users)}`\n"
         f"💳 **Total Paid VIP Subscribers:** `{len(paid_users)}`\n"
+        f"📩 **Pending Student Enquiries:** `{pending_q}`\n"
         f"⚡ **Bot System Status:** `{m_status}`\n\n"
         f"Select an administrative action below:"
     )
@@ -284,12 +376,166 @@ async def admin_callback_handler(update: Update, context: ContextTypes.DEFAULT_T
     user_id = query.from_user.id
     data = query.data
 
-    if user_id != PRIMARY_ADMIN_ID:
+    if not is_admin_authenticated(user_id):
+        await query.answer("🔒 Session expired or unauthorized! Please type /admin and enter password.", show_alert=True)
         return
 
     users = get_all_users()
 
-    if data == "admin_command_stats":
+    if data == "admin_lock_session":
+        await query.answer()
+        ADMIN_AUTH_SESSIONS.pop(user_id, None)
+        await query.edit_message_text("🔒 **ADMIN SESSION LOCKED.**\nType /admin and enter password to log in again.", parse_mode="Markdown")
+
+    elif data == "admin_financial_stats":
+        await query.answer()
+        rev = calculate_financial_revenue()
+        msg = (
+            f"💰 **FINANCIAL REVENUE & EARNINGS DASHBOARD** 💰\n"
+            f"━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\n"
+            f"📅 **Today's Revenue:** `₹{rev['today']} INR`\n"
+            f"🗓 **This Week's Revenue:** `₹{rev['week']} INR`\n"
+            f"📊 **This Month's Revenue:** `₹{rev['month']} INR`\n"
+            f"📈 **All-Time Gross Revenue:** `₹{rev['all']} INR`\n"
+            f"━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\n"
+            f"💳 Real-time totals aggregated from completed payment transactions."
+        )
+        back_btn = InlineKeyboardMarkup([[InlineKeyboardButton("🔙 Back to Admin Portal", callback_data="admin_home")]])
+        await query.edit_message_text(msg, reply_markup=back_btn, parse_mode="Markdown")
+
+    elif data == "admin_mass_grant_menu":
+        await query.answer()
+        keyboard = [
+            [InlineKeyboardButton("🎁 Gift +10 Daily Qs to ALL Users", callback_data="admin_exec_mass_10")],
+            [InlineKeyboardButton("🎁 Gift +20 Daily Qs to ALL Users", callback_data="admin_exec_mass_20")],
+            [InlineKeyboardButton("🎁 Gift +30 Daily Qs to ALL Users", callback_data="admin_exec_mass_30")],
+            [InlineKeyboardButton("🎁 Gift +40 Daily Qs to ALL Users", callback_data="admin_exec_mass_40")],
+            [InlineKeyboardButton("🔙 Back to Admin Portal", callback_data="admin_home")]
+        ]
+        msg = "🎁 **MASS QUOTA BOOST MENU**\nSelect bonus daily question amount to grant to ALL registered students:"
+        await query.edit_message_text(msg, reply_markup=InlineKeyboardMarkup(keyboard), parse_mode="Markdown")
+
+    elif data.startswith("admin_exec_mass_"):
+        await query.answer()
+        amount = int(data.replace("admin_exec_mass_", ""))
+        conn = get_db()
+        cursor = conn.cursor()
+        cursor.execute("UPDATE users SET bonus_quota = bonus_quota + %s WHERE is_banned = 0 AND is_verified = 1", (amount,))
+        conn.commit()
+        cursor.close()
+        release_db(conn)
+
+        broadcast_msg = (
+            f"🎁 **SPECIAL GIFT ANNOUNCEMENT FROM HIMANSHU SIR!** 🎁\n"
+            f"━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\n"
+            f"🎉 **Himanshu Sir has gifted ALL students +{amount} Extra Daily Questions!**\n\n"
+            f"⚡ Your daily question quota has been automatically increased!\n"
+            f"🚀 Tap **/quiz** to start practicing right now!"
+        )
+        btn = InlineKeyboardMarkup([[InlineKeyboardButton("🚀 Launch Quiz Now", callback_data="cmd_quiz")]])
+
+        sent = 0
+        for u in users:
+            try:
+                await context.bot.send_message(chat_id=u['user_id'], text=broadcast_msg, reply_markup=btn, parse_mode="Markdown")
+                sent += 1
+            except Exception:
+                pass
+
+        back_btn = InlineKeyboardMarkup([[InlineKeyboardButton("🔙 Back to Admin Portal", callback_data="admin_home")]])
+        await query.edit_message_text(f"✅ **GIFTED +{amount} DAILY QS TO ALL USERS!**\nBroadcasted to {sent} active students.", reply_markup=back_btn, parse_mode="Markdown")
+
+    elif data.startswith("admin_view_queries_"):
+        await query.answer()
+        page = int(data.replace("admin_view_queries_", ""))
+        conn = get_db()
+        cursor = conn.cursor(cursor_factory=RealDictCursor)
+        cursor.execute("SELECT * FROM student_queries ORDER BY id DESC")
+        queries_list = cursor.fetchall()
+        cursor.close()
+        release_db(conn)
+
+        if not queries_list:
+            back_btn = InlineKeyboardMarkup([[InlineKeyboardButton("🔙 Back to Admin Portal", callback_data="admin_home")]])
+            await query.edit_message_text("📩 **STUDENT SUPPORT ENQUIRIES**\n\nNo student queries submitted yet.", reply_markup=back_btn, parse_mode="Markdown")
+            return
+
+        total_q = len(queries_list)
+        total_pages = math.ceil(total_q / USERS_PER_PAGE)
+        page = max(0, min(page, total_pages - 1))
+        page_items = queries_list[page * USERS_PER_PAGE:(page + 1) * USERS_PER_PAGE]
+
+        keyboard = []
+        for q_item in page_items:
+            st_icon = "🔴" if q_item["status"] == "PENDING" else "🟢"
+            btn_txt = f"{st_icon} {q_item['student_name']} (Q #{q_item['id']})"
+            keyboard.append([InlineKeyboardButton(btn_txt, callback_data=f"admin_inspect_query_{q_item['id']}")])
+
+        nav_row = []
+        if page > 0: nav_row.append(InlineKeyboardButton("◀️ Prev", callback_data=f"admin_view_queries_{page - 1}"))
+        nav_row.append(InlineKeyboardButton(f"📄 Page {page + 1}/{total_pages}", callback_data="ignore"))
+        if page < total_pages - 1: nav_row.append(InlineKeyboardButton("Next ▶️", callback_data=f"admin_view_queries_{page + 1}"))
+        keyboard.append(nav_row)
+        keyboard.append([InlineKeyboardButton("🔙 Back to Admin Portal", callback_data="admin_home")])
+
+        await query.edit_message_text(f"📩 **STUDENT SUPPORT ENQUIRIES ({total_q} Total)**", reply_markup=InlineKeyboardMarkup(keyboard), parse_mode="Markdown")
+
+    elif data.startswith("admin_inspect_query_"):
+        await query.answer()
+        qid = int(data.replace("admin_inspect_query_", ""))
+        conn = get_db()
+        cursor = conn.cursor(cursor_factory=RealDictCursor)
+        cursor.execute("SELECT * FROM student_queries WHERE id = %s", (qid,))
+        q_item = cursor.fetchone()
+        cursor.close()
+        release_db(conn)
+
+        if not q_item: return
+
+        reply_str = q_item["admin_reply"] or "Not Replied Yet"
+        msg = (
+            f"📩 **STUDENT ENQUIRY INSPECTION (Q #{q_item['id']})** 📩\n"
+            f"━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\n"
+            f"👤 **Student:** {q_item['student_name']} (`{q_item['user_id']}`)\n"
+            f"📅 **Submitted:** `{q_item['created_at']}`\n"
+            f"⚡ **Status:** `{q_item['status']}`\n\n"
+            f"❓ **Student Query:**\n*\"{q_item['query_text']}\"*\n\n"
+            f"💬 **Admin Reply:**\n`{reply_str}`"
+        )
+        keyboard = [
+            [InlineKeyboardButton("✍️ Secret Reply to Student", callback_data=f"admin_reply_prompt_{q_item['id']}")],
+            [InlineKeyboardButton("🔙 Back to Enquiries List", callback_data="admin_view_queries_0")]
+        ]
+        await query.edit_message_text(msg, reply_markup=InlineKeyboardMarkup(keyboard), parse_mode="Markdown")
+
+    elif data.startswith("admin_reply_prompt_"):
+        await query.answer()
+        qid = int(data.replace("admin_reply_prompt_", ""))
+        context.user_data["awaiting_admin_reply_qid"] = qid
+        await query.edit_message_text(f"✍️ **SECRET REPLY TO QUERY #{qid}**\n\nPlease reply with your response text for this student:", parse_mode="Markdown")
+
+    elif data.startswith("admin_pause_"):
+        await query.answer()
+        mins = int(data.replace("admin_pause_", ""))
+        set_maintenance_until(int(time.time()) + (mins * 60))
+        await query.edit_message_text(f"🛑 **Bot Service PAUSED for {mins} Minutes.**\nBroadcasting notice to all users...", parse_mode="Markdown")
+        for u in users:
+            try:
+                await context.bot.send_message(chat_id=u['user_id'], text=f"📢 **ADMIN HAS PAUSED SERVICE FOR {mins} MINS**", parse_mode="Markdown")
+            except Exception:
+                pass
+
+    elif data == "admin_resume_now":
+        await query.answer()
+        set_maintenance_until(0)
+        await query.edit_message_text("🟢 **Bot Service RESUMED Immediately.**", parse_mode="Markdown")
+        for u in users:
+            try:
+                await context.bot.send_message(chat_id=u['user_id'], text="📢 **ADMIN HAS RESUMED SERVICES! YOU CAN ATTEMPT QUIZZES NOW!**", parse_mode="Markdown")
+            except Exception:
+                pass
+
+    elif data == "admin_command_stats":
         await query.answer()
         conn = None
         try:
@@ -387,48 +633,6 @@ async def admin_callback_handler(update: Update, context: ContextTypes.DEFAULT_T
             await admin_portal_command(update, context)
         except Exception as e:
             await query.message.reply_text(f"⚠️ Error creating zip archive: {e}")
-
-    elif data == "admin_pause_5":
-        await query.answer()
-        set_maintenance_until(int(time.time()) + 300)
-        await query.edit_message_text("🛑 **Bot Service PAUSED for 5 Minutes.**\nBroadcasting notice to all users...", parse_mode="Markdown")
-        for u in users:
-            try:
-                await context.bot.send_message(
-                    chat_id=u['user_id'], 
-                    text="📢 **ADMIN HAS PAUSED SERVICE FOR 5 MINS**\n\n⏰ Services will automatically resume in 5 minutes.",
-                    parse_mode="Markdown"
-                )
-            except Exception:
-                pass
-
-    elif data == "admin_pause_10":
-        await query.answer()
-        set_maintenance_until(int(time.time()) + 600)
-        await query.edit_message_text("🛑 **Bot Service PAUSED for 10 Minutes.**\nBroadcasting notice to all users...", parse_mode="Markdown")
-        for u in users:
-            try:
-                await context.bot.send_message(
-                    chat_id=u['user_id'], 
-                    text="📢 **ADMIN HAS PAUSED SERVICE FOR 10 MINS**\n\n⏰ Services will automatically resume in 10 minutes.",
-                    parse_mode="Markdown"
-                )
-            except Exception:
-                pass
-
-    elif data == "admin_resume_now":
-        await query.answer()
-        set_maintenance_until(0)
-        await query.edit_message_text("🟢 **Bot Service RESUMED Immediately.**\nBroadcasting notice to all users...", parse_mode="Markdown")
-        for u in users:
-            try:
-                await context.bot.send_message(
-                    chat_id=u['user_id'], 
-                    text="📢 **ADMIN HAS RESUMED SERVICES! YOU CAN ATTEMPT QUIZZES NOW!**",
-                    parse_mode="Markdown"
-                )
-            except Exception:
-                pass
 
     elif data == "admin_search_prompt":
         await query.answer()

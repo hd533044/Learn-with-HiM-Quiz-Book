@@ -1330,14 +1330,10 @@ async def handle_text_messages(update: Update, context: ContextTypes.DEFAULT_TYP
 async def global_error_handler(update: object, context: ContextTypes.DEFAULT_TYPE) -> None:
     logging.debug(f"Exception caught in global error handler: {context.error}")
 
-async def post_init(application: Application):
-    try:
-        await application.bot.delete_my_commands(scope=BotCommandScopeDefault())
-        await application.bot.delete_my_commands(scope=BotCommandScopeAllPrivateChats())
-        await application.bot.delete_my_commands(scope=BotCommandScopeAllGroupChats())
-    except Exception as e:
-        logging.warning(f"Note on command purge: {e}")
+from telegram import BotCommand, BotCommandScopeDefault, BotCommandScopeAllPrivateChats, BotCommandScopeChat
 
+async def post_init(application: Application):
+    # List of all standard commands
     allowed_commands = [
         BotCommand("quiz", "🚀 Start Computer Quiz"),
         BotCommand("myplan", "💵 Subscriptions"),
@@ -1361,10 +1357,19 @@ async def post_init(application: Application):
         BotCommand("stop", "🛑 Stop Quiz Completely"),
         BotCommand("help", "🤖 Show Command Directory")
     ]
-    
+
+    try:
+        # 1. Purge all cached scope overrides
+        await application.bot.delete_my_commands(scope=BotCommandScopeDefault())
+        await application.bot.delete_my_commands(scope=BotCommandScopeAllPrivateChats())
+        await application.bot.delete_my_commands(scope=BotCommandScopeChat(chat_id=PRIMARY_ADMIN_ID))
+    except Exception as e:
+        logging.warning(f"Note on command purge: {e}")
+
+    # 2. Set new unified menu for Default, All Private Chats, and explicitly for Admin Chat ID
     await application.bot.set_my_commands(allowed_commands, scope=BotCommandScopeDefault())
     await application.bot.set_my_commands(allowed_commands, scope=BotCommandScopeAllPrivateChats())
-
+    await application.bot.set_my_commands(allowed_commands, scope=BotCommandScopeChat(chat_id=PRIMARY_ADMIN_ID))
 def build_application() -> Application:
     init_db()
     app = Application.builder().token(BOT_TOKEN).post_init(post_init).build()

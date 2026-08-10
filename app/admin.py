@@ -229,7 +229,7 @@ async def admin_execute_grant_callback(update: Update, context: ContextTypes.DEF
         await query.message.reply_text(f"⚠️ Failed granting plan: {e}")
         return
 
-    # Automatically notify student in Telegram
+    # BROADCAST ANNOUNCEMENT DIRECTLY TO USER CHAT
     from main import send_payment_invoice_telegram
     await send_payment_invoice_telegram(target_uid, plan_key, payment_id)
 
@@ -238,12 +238,13 @@ async def admin_execute_grant_callback(update: Update, context: ContextTypes.DEF
     ])
 
     success_msg = (
-        f"✅ **PLAN SUCCESSFULLY GRANTED BY ADMIN!** ✅\n"
+        f"✅ **PLAN SUCCESSFULLY GRANTED & BROADCASTED!** ✅\n"
         f"━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\n"
-        f"👑 **Plan:** `{plan['name']}`\n"
-        f"⚡ **New Quota:** `{new_bal} Qs/Day`\n"
+        f"👑 **Granted Plan:** `{plan['name']}`\n"
+        f"⚡ **New Stacked Quota:** `{new_bal} Qs/Day`\n"
         f"⏳ **Pass Expiry:** `{expiry_str}`\n"
-        f"👤 **Student ID:** `{target_uid}`"
+        f"👤 **Student ID:** `{target_uid}`\n\n"
+        f"📢 *An official activation announcement has been pushed directly into the student's Telegram chat.*"
     )
     await query.edit_message_text(success_msg, reply_markup=back_btn, parse_mode="Markdown")
 
@@ -287,6 +288,40 @@ async def admin_callback_handler(update: Update, context: ContextTypes.DEFAULT_T
 
         back_btn = InlineKeyboardMarkup([[InlineKeyboardButton("🔙 Back to Admin Portal", callback_data="admin_home")]])
         await query.edit_message_text("\n".join(lines), reply_markup=back_btn, parse_mode="Markdown")
+
+    elif data.startswith("audit_grant_"):
+        await query.answer()
+        target_uid = int(data.replace("audit_grant_", ""))
+        conn = get_db()
+        cursor = conn.cursor()
+        cursor.execute("UPDATE users SET bonus_quota = bonus_quota + 20 WHERE user_id = %s", (target_uid,))
+        conn.commit()
+        cursor.close()
+        release_db(conn)
+        sync_user_json_profile(target_uid)
+
+        # BROADCAST QUOTA INCREASE ANNOUNCEMENT TO USER
+        profile = get_user_profile(target_uid) or {}
+        tot_quota = (profile.get("paid_question_balance", 0) or 20) + profile.get("bonus_quota", 0)
+        user_announcement = (
+            f"🎁 **SPECIAL ANNOUNCEMENT: BONUS QUOTA INCREASED!** 🎁\n"
+            f"━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\n"
+            f"🎉 **Himanshu Sir has granted you +20 Extra Daily Questions!**\n\n"
+            f"⚡ **Your New Daily Limit:** `{tot_quota} Questions / Day`\n"
+            f"✨ You can now attempt more practice questions every single day!\n"
+            f"━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\n"
+            f"🚀 Tap **/quiz** to launch your daily session now!"
+        )
+        try:
+            btn = InlineKeyboardMarkup([[InlineKeyboardButton("🚀 Launch Quiz Now", callback_data="cmd_quiz")]])
+            await context.bot.send_message(chat_id=target_uid, text=user_announcement, reply_markup=btn, parse_mode="Markdown")
+        except Exception as e:
+            logger.error(f"Failed broadcasting bonus quota notice: {e}")
+
+        await query.edit_message_text(
+            f"🎉 **Bonus Quota Granted & Broadcasted!** 🎉\n\nAdded +20 daily question quota to user `{target_uid}` and pushed notification to their chat.",
+            reply_markup=InlineKeyboardMarkup([[InlineKeyboardButton("🔙 Back to Dashboard", callback_data=f"admin_inspect_u_{target_uid}")]])
+        )
 
     elif data == "admin_export_zip":
         await query.answer()
@@ -958,22 +993,6 @@ async def admin_callback_handler(update: Update, context: ContextTypes.DEFAULT_T
         msg = "\n".join(lines)
         keyboard = [[InlineKeyboardButton("🔙 Back to Dashboard", callback_data=f"admin_inspect_u_{target_uid}")]]
         await query.edit_message_text(msg, reply_markup=InlineKeyboardMarkup(keyboard), parse_mode="Markdown")
-
-    elif data.startswith("audit_grant_"):
-        await query.answer()
-        target_uid = int(data.replace("audit_grant_", ""))
-        conn = get_db()
-        cursor = conn.cursor()
-        cursor.execute("UPDATE users SET bonus_quota = bonus_quota + 20 WHERE user_id = %s", (target_uid,))
-        conn.commit()
-        cursor.close()
-        release_db(conn)
-        sync_user_json_profile(target_uid)
-
-        await query.edit_message_text(
-            f"🎉 **Bonus Quota Granted!** 🎉\n\nAdded +20 daily question quota to user `{target_uid}`.",
-            reply_markup=InlineKeyboardMarkup([[InlineKeyboardButton("🔙 Back to Dashboard", callback_data=f"admin_inspect_u_{target_uid}")]])
-        )
 
     elif data.startswith("audit_exportjson_"):
         await query.answer()

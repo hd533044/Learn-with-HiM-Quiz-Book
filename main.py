@@ -41,6 +41,8 @@ if HAS_RAZORPAY and RAZORPAY_KEY_ID and RAZORPAY_KEY_SECRET:
         logging.error(f"Failed to initialize Razorpay Client: {e}")
 
 bot_app_instance = None
+SENT_EXPIRY_REMINDERS = set()  # Tracks sent reminder keys: "user_id_milestone"
+LAST_QUIZ_BROADCAST_DATE = ""   # Prevents duplicate daily quiz time blasts
 
 
 async def activate_user_subscription(user_id: int, plan_key: str, payment_id: str = "OFFICIAL_SUBSCRIBED"):
@@ -84,7 +86,7 @@ async def activate_user_subscription(user_id: int, plan_key: str, payment_id: st
                 (new_bal, expiry_str, payment_id, payment_time_str, user_id)
             )
 
-        # 2. Record transaction history entry (Ignore duplicate insertions if webhook fires twice)
+        # 2. Record transaction history entry
         try:
             cursor.execute(
                 """
@@ -164,6 +166,222 @@ async def send_payment_invoice_telegram(user_id: int, plan_key: str, payment_id:
         logging.info(f"[INVOICE DELIVERED] Pushed text invoice to user {user_id}")
     except Exception as err:
         logging.error(f"[DELIVERY ERROR] Failed to push notification to user {user_id}: {err}")
+
+
+async def scheduled_expiry_reminder_check():
+    """
+    BACKGROUND WORKER:
+    Checks expiration dates for ALL users (both Paid VIP and FREE DEMO users) and sends reminders:
+    - 24 Hours (1 Day) before expiry
+    - 6 Hours before expiry
+    - 1 Hour before expiry
+    """
+    from telegram import InlineKeyboardMarkup, InlineKeyboardButton
+    
+    ist = pytz.timezone("Asia/Kolkata")
+    
+    while True:
+        await asyncio.sleep(120)  # Check every 2 minutes
+        if not bot_app_instance:
+            continue
+
+        conn = None
+        try:
+            conn = get_db()
+            cursor = conn.cursor()
+            # Selected ALL active accounts (both Paid VIP and Free Demo users) that have an expiry timestamp
+            cursor.execute("SELECT user_id, full_name, paid_question_balance, vip_pass_expiry, demo_used FROM users WHERE vip_pass_expiry IS NOT NULL AND is_banned = 0")
+            users = cursor.fetchall()
+            cursor.close()
+            release_db(conn)
+
+            now = datetime.now(ist)
+
+            for u in users:
+                uid = u['user_id']
+                name = u['full_name'] or "Student"
+                exp_str = u['vip_pass_expiry']
+                is_demo = bool(u.get('demo_used') and u.get('paid_question_balance', 0) <= 20)
+
+                if not exp_str:
+                    continue
+
+                try:
+                    exp_dt = datetime.strptime(exp_str, "%Y-%m-%d %H:%M:%S IST")
+                    exp_dt = ist.localize(exp_dt) if exp_dt.tzinfo is None else exp_dt
+                except Exception:
+                    continue
+
+                diff_seconds = (exp_dt - now).total_seconds()
+
+                if diff_seconds <= 0:
+                    continue  # Expired
+
+                hours_left = diff_seconds / 3600.0
+
+                # Milestone 1: 24 Hours (1 Day) Reminder
+                if 23.0 <= hours_left <= 25.0:
+                    rem_key = f"{uid}_24h"
+                    if rem_key not in SENT_EXPIRY_REMINDERS:
+                        SENT_EXPIRY_REMINDERS.add(rem_key)
+                        
+                        if is_demo:
+                            msg = (
+                                f"⏰ **FREE DEMO TRIAL EXPIRING IN 24 HOURS!** ⏰\n"
+                                f"━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\n"
+                                f"Hello **{name}**, your Free Demo Trial pass will expire in **24 Hours** (1 Day)!\n\n"
+                                f"⏳ **Demo Expiry:** `{exp_str}`\n\n"
+                                f"💡 **Upgrade to VIP:** Upgrade to a paid VIP Plan now via **/plans** to unlock higher daily questions and keep practicing uninterrupted!"
+                            )
+                        else:
+                            msg = (
+                                f"⏰ **VIP PASS EXPIRING IN 24 HOURS (1 DAY)!** ⏰\n"
+                                f"━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\n"
+                                f"Hello **{name}**, your VIP Subscription Pass will expire in **24 Hours**.\n\n"
+                                f"⏳ **Pass Expiry Date:** `{exp_str}`\n"
+                                f"⚡ **Current Daily Quota:** `{u['paid_question_balance']} Qs/Day`\n\n"
+                                f"💡 **Recharge Now:** Tap **/plans** to renew or upgrade your plan to prevent any interruption in your daily quiz practice!"
+                            )
+                            
+                        btn = InlineKeyboardMarkup([[InlineKeyboardButton("💳 Recharge / Upgrade VIP Plan", callback_data="cmd_plans")]])
+                        try:
+                            await bot_app_instance.bot.send_message(chat_id=uid, text=msg, reply_markup=btn, parse_mode="Markdown")
+                            logging.info(f"[EXPIRY REMINDER 24H SENT] Delivered to user {uid}")
+                        except Exception as e:
+                            logging.error(f"[EXPIRY REMINDER ERROR] {e}")
+
+                # Milestone 2: 6 Hours Reminder
+                elif 5.5 <= hours_left <= 6.5:
+                    rem_key = f"{uid}_6h"
+                    if rem_key not in SENT_EXPIRY_REMINDERS:
+                        SENT_EXPIRY_REMINDERS.add(rem_key)
+                        
+                        if is_demo:
+                            msg = (
+                                f"⏳ **FREE DEMO TRIAL EXPIRING IN 6 HOURS!** ⏳\n"
+                                f"━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\n"
+                                f"Hello **{name}**, your Free Demo Trial pass is expiring in **6 Hours**!\n\n"
+                                f"⏳ **Exact Expiry:** `{exp_str}`\n\n"
+                                f"🔔 **Recharge to VIP:** Tap **/plans** to upgrade to a VIP plan now and retain your daily quota!"
+                            )
+                        else:
+                            msg = (
+                                f"⏳ **VIP PASS EXPIRING IN 6 HOURS!** ⏳\n"
+                                f"━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\n"
+                                f"Hello **{name}**, your VIP Subscription Pass is expiring in **6 Hours**!\n\n"
+                                f"⏳ **Exact Expiry:** `{exp_str}`\n"
+                                f"⚡ **Current Quota:** `{u['paid_question_balance']} Qs/Day`\n\n"
+                                f"🔔 **Avoid Disruption:** Recharge now to continue practicing uninterrupted!"
+                            )
+
+                        btn = InlineKeyboardMarkup([[InlineKeyboardButton("💳 Recharge Plan Now", callback_data="cmd_plans")]])
+                        try:
+                            await bot_app_instance.bot.send_message(chat_id=uid, text=msg, reply_markup=btn, parse_mode="Markdown")
+                            logging.info(f"[EXPIRY REMINDER 6H SENT] Delivered to user {uid}")
+                        except Exception as e:
+                            logging.error(f"[EXPIRY REMINDER ERROR] {e}")
+
+                # Milestone 3: 1 Hour Urgent Reminder
+                elif 0.8 <= hours_left <= 1.2:
+                    rem_key = f"{uid}_1h"
+                    if rem_key not in SENT_EXPIRY_REMINDERS:
+                        SENT_EXPIRY_REMINDERS.add(rem_key)
+                        
+                        if is_demo:
+                            msg = (
+                                f"🚨 **FINAL NOTICE: FREE DEMO EXPIRING IN 1 HOUR!** 🚨\n"
+                                f"━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\n"
+                                f"Attention **{name}**, your Free Demo Trial pass expires in **less than 1 Hour**!\n\n"
+                                f"⏳ **Pass Expiry:** `{exp_str}`\n\n"
+                                f"⚡ **Upgrade Instantly:** Tap below to upgrade to a VIP Plan and keep practicing!"
+                            )
+                        else:
+                            msg = (
+                                f"🚨 **FINAL NOTICE: VIP PASS EXPIRING IN 1 HOUR!** 🚨\n"
+                                f"━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\n"
+                                f"Attention **{name}**, your VIP Pass will expire in **less than 1 Hour**!\n\n"
+                                f"⏳ **Pass Expiry:** `{exp_str}`\n"
+                                f"⚡ **Daily Quota:** `{u['paid_question_balance']} Qs/Day`\n\n"
+                                f"⚡ **Recharge Immediately:** Tap below to renew your plan and keep your daily limit active!"
+                            )
+
+                        btn = InlineKeyboardMarkup([[InlineKeyboardButton("⚡ Instant Recharge Now", callback_data="cmd_plans")]])
+                        try:
+                            await bot_app_instance.bot.send_message(chat_id=uid, text=msg, reply_markup=btn, parse_mode="Markdown")
+                            logging.info(f"[EXPIRY REMINDER 1H SENT] Delivered to user {uid}")
+                        except Exception as e:
+                            logging.error(f"[EXPIRY REMINDER ERROR] {e}")
+
+        except Exception as err:
+            if conn:
+                release_db(conn)
+            logging.error(f"[SCHEDULED CHECK EXCEPTION] {err}")
+
+
+async def scheduled_daily_quiz_reminder():
+    """
+    AUTOMATED DAILY PRACTICE BROADCASTER:
+    Broadcasting daily at 08:00 AM IST to all registered users:
+    "IT IS YOUR QUIZZZ TIME GUYZZZ, KINDLY ATTEMPT AND ANALYSIS THE QUIZZ!! 😁💯"
+    """
+    global LAST_QUIZ_BROADCAST_DATE
+    from telegram import InlineKeyboardMarkup, InlineKeyboardButton
+    
+    ist = pytz.timezone("Asia/Kolkata")
+
+    while True:
+        await asyncio.sleep(60)  # Check every minute
+        if not bot_app_instance:
+            continue
+
+        now = datetime.now(ist)
+        today_date_str = now.strftime("%Y-%m-%d")
+        current_hour = now.hour
+        current_minute = now.minute
+
+        # Broadcast daily at 08:00 AM IST (and optionally 08:00 PM IST)
+        if (current_hour == 8 and current_minute == 0) or (current_hour == 20 and current_minute == 0):
+            broadcast_key = f"{today_date_str}_{current_hour}"
+            
+            if LAST_QUIZ_BROADCAST_DATE != broadcast_key:
+                LAST_QUIZ_BROADCAST_DATE = broadcast_key
+                
+                conn = None
+                try:
+                    conn = get_db()
+                    cursor = conn.cursor()
+                    cursor.execute("SELECT user_id FROM users WHERE is_banned = 0 AND is_verified = 1")
+                    users = cursor.fetchall()
+                    cursor.close()
+                    release_db(conn)
+
+                    reminder_text = (
+                        f"📢 **DAILY QUIZ PRACTICE REMINDER** 📢\n"
+                        f"━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\n"
+                        f"IT IS YOUR QUIZZZ TIME GUYZZZ, KINDLY ATTEMPT AND ANALYSIS THE QUIZZ!! 😁💯\n"
+                        f"━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\n"
+                        f"⚡ Daily consistent practice makes perfect! Tap the button below to launch your session now:"
+                    )
+                    btn = InlineKeyboardMarkup([[InlineKeyboardButton("🚀 Launch Quiz Now", callback_data="cmd_quiz")]])
+
+                    sent_count = 0
+                    for u in users:
+                        try:
+                            await bot_app_instance.bot.send_message(
+                                chat_id=u['user_id'], 
+                                text=reminder_text, 
+                                reply_markup=btn, 
+                                parse_mode="Markdown"
+                            )
+                            sent_count += 1
+                        except Exception:
+                            pass
+
+                    logging.info(f"[DAILY QUIZ BROADCAST SENT] Delivered to {sent_count} registered users at {now.strftime('%I:%M %p IST')}")
+                except Exception as err:
+                    if conn:
+                        release_db(conn)
+                    logging.error(f"[DAILY BROADCAST ERROR] {err}")
 
 
 async def handle_ping(request):
@@ -279,6 +497,10 @@ async def run_bot():
     await app.start()
     await app.bot.delete_webhook(drop_pending_updates=True)
     await app.updater.start_polling(drop_pending_updates=True)
+
+    # Launch background automated expiry reminder and daily quiz notification workers
+    asyncio.create_task(scheduled_expiry_reminder_check())
+    asyncio.create_task(scheduled_daily_quiz_reminder())
 
     stop_event = asyncio.Event()
     try:

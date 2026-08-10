@@ -40,7 +40,6 @@ from app.admin import (
 )
 from app.pdf_generator import generate_student_pdf_report
 from app.pyq_fetcher import fetch_pyqs_for_quiz
-from app.ai_explainer import get_ai_question_explanation
 
 NEGATIVE_WORDS = ["bad", "worst", "useless", "trash", "fake", "hate", "terrible", "waste", "horrible", "fraud", "stupid", "scam"]
 
@@ -292,44 +291,6 @@ async def send_response(update: Update, text: str, reply_markup=None):
         markup = reply_markup if reply_markup else ReplyKeyboardRemove()
         await update.message.reply_text(text, reply_markup=markup, parse_mode="Markdown")
 
-async def ai_explain_callback_handler(update: Update, context: ContextTypes.DEFAULT_TYPE):
-    """
-    Handles '💡 Explain with AI' button taps across wrong questions and bookmarks.
-    Uses Groq LLM API to generate instant, structured academic breakdowns.
-    """
-    if not await maintenance_guard(update, context): return
-    if not await check_user_registration(update): return
-
-    query = update.callback_query
-    await query.answer()
-
-    await query.message.reply_text("💡 **AI Tutor is analyzing this question...**\nGenerating detailed academic breakdown via Groq AI Engine...", parse_mode="Markdown")
-
-    data_payload = query.data.replace("aiexplain_", "")
-    data_parts = data_payload.split("||")
-    
-    q_text = data_parts[0] if len(data_parts) > 0 else "N/A"
-    c_ans = data_parts[1] if len(data_parts) > 1 else "N/A"
-    u_ans = data_parts[2] if len(data_parts) > 2 else None
-
-    ai_response = await asyncio.to_thread(get_ai_question_explanation, q_text, c_ans, u_ans)
-
-    msg = (
-        f"💡 **AI TUTOR ACADEMIC BREAKDOWN** 💡\n"
-        f"━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\n"
-        f"{ai_response}\n"
-        f"━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\n"
-        f"🏷 *Powered by Learn with HiM AI Engine*"
-    )
-
-    nav_btn = InlineKeyboardMarkup([[InlineKeyboardButton("🚀 Launch Quiz", callback_data="cmd_quiz")]])
-    await context.bot.send_message(
-        chat_id=query.message.chat_id,
-        text=msg,
-        reply_markup=nav_btn,
-        parse_mode="Markdown"
-    )
-
 async def myplan_command(update: Update, context: ContextTypes.DEFAULT_TYPE):
     """
     Displays subscription plan, total daily limits, and breakdown of ALL active subscribed plans with exact expiry dates.
@@ -341,6 +302,7 @@ async def myplan_command(update: Update, context: ContextTypes.DEFAULT_TYPE):
     asyncio.create_task(asyncio.to_thread(log_command_usage, user.id, "/myplan"))
     asyncio.create_task(asyncio.to_thread(log_user_activity_time, user.id, 10))
     
+    # Invalidate profile cache to fetch latest DB values
     PROFILE_CACHE.pop(user.id, None)
     profile = await fetch_user_profile_fast(user.id)
 
@@ -356,6 +318,7 @@ async def myplan_command(update: Update, context: ContextTypes.DEFAULT_TYPE):
 
     expiry = profile.get("vip_pass_expiry") or "N/A"
 
+    # Fetch ALL active subscribed plans for detailed breakdown without artificial truncation
     history_plans = await asyncio.to_thread(get_user_active_plans_history, user.id)
     
     plans_text = ""
@@ -364,6 +327,7 @@ async def myplan_command(update: Update, context: ContextTypes.DEFAULT_TYPE):
         ist = pytz.timezone("Asia/Kolkata")
         for idx, hp in enumerate(history_plans, start=1):
             p_exp = hp.get('expiry_at')
+            # Calculate dynamic expiry if record shows 'Active' or NULL
             if not p_exp or p_exp == 'Active':
                 created_str = hp.get('created_at', '')
                 try:
@@ -573,7 +537,6 @@ async def wrongquestions_command(update: Update, context: ContextTypes.DEFAULT_T
                     wrong_count += 1
                     q_text = q_item.get("question_text") or q_item.get("question") or "N/A"
                     ans_text = q_item.get("correct_answer_text") or q_item.get("correct_answer") or "N/A"
-                    
                     lines.append(f" {wrong_count}. ❌ `{q_text}`\n    👉 **Correct Answer:** `{ans_text}`")
                 lines.append("")
 
@@ -1210,7 +1173,6 @@ def build_application() -> Application:
     app.add_handler(CallbackQueryHandler(admin_grant_plan_menu_callback, pattern="^admin_grant_menu_"))
     app.add_handler(CallbackQueryHandler(admin_execute_grant_callback, pattern="^admin_exec_grant_"))
     app.add_handler(CallbackQueryHandler(admin_callback_handler, pattern="^(admin_|audit_|genpdf_)"))
-    app.add_handler(CallbackQueryHandler(ai_explain_callback_handler, pattern="^aiexplain_"))
     app.add_handler(CallbackQueryHandler(button_router, pattern="^cmd_|^fb_|^trigger_start|^buy_plan_"))
 
     app.add_handler(MessageHandler(filters.TEXT & ~filters.COMMAND, handle_text_messages))

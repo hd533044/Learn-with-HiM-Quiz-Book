@@ -16,12 +16,13 @@ except ImportError:
     HAS_RAZORPAY = False
 
 warnings.filterwarnings("ignore")
-from app.telegram_bot import build_application
+from app.telegram_bot import build_application, PROFILE_CACHE
 from app.config import (
     RAZORPAY_KEY_ID, RAZORPAY_KEY_SECRET, RAZORPAY_WEBHOOK_SECRET, 
     PLAN_TIERS
 )
 from app.database import sync_user_json_profile, get_ist_timestamp_str, get_db, release_db, get_user_profile
+from app.invoice_generator import generate_payment_invoice_card
 
 logging.basicConfig(
     format="%(asctime)s - %(levelname)s - %(message)s",
@@ -43,40 +44,45 @@ if HAS_RAZORPAY and RAZORPAY_KEY_ID and RAZORPAY_KEY_SECRET:
 bot_app_instance = None
 
 
-async def activate_user_subscription(user_id: int, plan_key: str, payment_id: str = "N/A"):
-    """Bulletproof plan activator with robust transaction logging and quota stacking."""
+async def activate_user_subscription(user_id: int, plan_key: str, payment_id: str = "OFFICIAL_SUBSCRIBED"):
+    """
+    Activates subscription in PostgreSQL, stacks daily limits, 
+    extends pass validity, and invalidates in-memory profile cache.
+    """
     plan = PLAN_TIERS.get(plan_key)
     if not plan:
-        logging.error(f"[ACTIVATION CRITICAL ERROR] Plan key '{plan_key}' is invalid or missing from PLAN_TIERS.")
+        logging.error(f"[ACTIVATION FAIL] Invalid plan key: {plan_key}")
         return False
 
     ist = pytz.timezone("Asia/Kolkata")
     now = datetime.now(ist)
     
-    expiry = now + timedelta(days=plan["days"])
-    expiry_str = expiry.strftime("%Y-%m-%d %H:%M:%S IST")
+    expiry_dt = now + timedelta(days=plan["days"])
+    expiry_str = expiry_dt.strftime("%Y-%m-%d %H:%M:%S IST")
     payment_time_str = now.strftime("%d %b %Y, %I:%M %p IST")
 
     profile = get_user_profile(user_id) or {}
     current_bal = profile.get("paid_question_balance", 0) or 0
     new_bal = current_bal + plan["daily_limit"]
 
+    conn = None
     try:
         conn = get_db()
         cursor = conn.cursor()
         
+        # 1. Update user record balance & expiry
         if plan_key == "FREE_DEMO":
             cursor.execute(
-                "UPDATE users SET paid_question_balance = %s, vip_pass_expiry = %s, demo_used = 1 WHERE user_id = %s",
-                (new_bal, expiry_str, user_id)
+                "UPDATE users SET paid_question_balance = %s, vip_pass_expiry = %s, payment_id = %s, payment_timestamp = %s, demo_used = 1 WHERE user_id = %s",
+                (new_bal, expiry_str, payment_id, payment_time_str, user_id)
             )
         else:
             cursor.execute(
-                "UPDATE users SET paid_question_balance = %s, vip_pass_expiry = %s WHERE user_id = %s",
-                (new_bal, expiry_str, user_id)
+                "UPDATE users SET paid_question_balance = %s, vip_pass_expiry = %s, payment_id = %s, payment_timestamp = %s WHERE user_id = %s",
+                (new_bal, expiry_str, payment_id, payment_time_str, user_id)
             )
 
-        # Record payment transaction history for /myplan active breakdown
+        # 2. Log transaction entry in payment_transactions
         cursor.execute(
             """
             INSERT INTO payment_transactions 
@@ -90,68 +96,95 @@ async def activate_user_subscription(user_id: int, plan_key: str, payment_id: st
         cursor.close()
         release_db(conn)
 
+        # Invalidate in-memory profile cache for immediate UI sync
+        PROFILE_CACHE.pop(user_id, None)
+
         sync_user_json_profile(user_id)
-        logging.info(f"[ACTIVATION SUCCESS] User ID {user_id} credited with {plan_key}. New Balance: {new_bal}")
+        logging.info(f"[SUCCESS] Activated {plan_key} for user {user_id}. New Quota: {new_bal}, Expiry: {expiry_str}")
         return True
     except Exception as e:
-        logging.error(f"[ACTIVATION DB EXCEPTION] Failed updating user {user_id}: {e}")
+        if conn:
+            release_db(conn)
+        logging.error(f"[DB ERROR] Subscription update failed for {user_id}: {e}")
         return False
 
 
-async def send_payment_invoice_telegram(user_id: int, plan_key: str, payment_id: str = "N/A"):
+async def send_payment_invoice_telegram(user_id: int, plan_key: str, payment_id: str = "OFFICIAL_SUBSCRIBED"):
+    """
+    Delivers text invoice and HD receipt image card to user on payment completion.
+    """
     if not bot_app_instance:
-        logging.error("[TELEGRAM ERROR] bot_app_instance is uninitialized when attempting to send invoice.")
+        logging.error("[TELEGRAM PUSH ERROR] bot_app_instance uninitialized.")
         return
 
     plan_info = PLAN_TIERS.get(plan_key, {})
-    txn_time = get_ist_timestamp_str()
     plan_name = plan_info.get('name', plan_key)
 
     profile = await asyncio.to_thread(get_user_profile, user_id) or {}
     sid = profile.get("student_id", f"USER_{user_id}")
+    orig_payment_time = profile.get("payment_timestamp") or get_ist_timestamp_str()
     total_quota = profile.get("paid_question_balance", 0)
-    
+
     invoice_msg = (
-        f"🥳 **CONGRATULATIONS! PACK ACTIVATED!** 🥳\n"
+        f"🥳 **PAYMENT CONFIRMED & PACK ACTIVATED!** 🥳\n"
         f"━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\n"
-        f"🎉 **Your {plan_name} has been successfully activated!**\n"
-        f"✨ You can now start your preparation immediately.\n\n"
-        f"🧾 **OFFICIAL PAYMENT INVOICE**\n"
-        f"• **Student ID:** `{sid}`\n"
-        f"• **Unlocked Pack:** `{plan_name}`\n"
-        f"• **Amount Paid:** ₹{plan_info.get('price', 0)}\n"
-        f"• **Payment / Txn ID:** `{payment_id}`\n"
-        f"• **Date & Time:** `{txn_time}`\n"
-        f"• **Validity:** `{plan_info.get('days')} Days`\n"
-        f"• **Stacked Daily Limit:** `{total_quota} Questions / Day`\n"
+        f"🎉 **Purchased Plan:** `{plan_name}`\n"
+        f"⚡ **New Daily Limit:** `{total_quota} Questions / Day`\n"
+        f"⏳ **Pass Expiry Date:** `{profile.get('vip_pass_expiry')}`\n\n"
+        f"🧾 **OFFICIAL PAYMENT RECEIPT**\n"
+        f"• **Amount Paid:** ₹{plan_info.get('price', 0)} INR\n"
+        f"• **Txn / Payment ID:** `{payment_id}`\n"
+        f"• **Payment Date:** `{orig_payment_time}`\n"
+        f"• **Pack Validity:** `{plan_info.get('days')} Days`\n"
         f"━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\n"
-        f"📊 Tap **/myplan** anytime to check your active quota breakdown.\n"
-        f"🚀 Tap **/quiz** to launch your Computer Quiz practice session now!"
+        f"🚀 Use **/quiz** to start practicing!"
     )
     try:
+        # Send text invoice
         await bot_app_instance.bot.send_message(
             chat_id=user_id,
             text=invoice_msg,
             parse_mode="Markdown"
         )
-        logging.info(f"[INVOICE SENT] Successfully delivered invoice text to Telegram chat {user_id}")
+
+        # Generate and send image card safely
+        try:
+            img_card_path = await asyncio.to_thread(
+                generate_payment_invoice_card, 
+                user_id, 
+                plan_key, 
+                payment_id, 
+                orig_payment_time
+            )
+            if img_card_path and os.path.exists(img_card_path):
+                with open(img_card_path, "rb") as card_file:
+                    await bot_app_instance.bot.send_photo(
+                        chat_id=user_id,
+                        photo=card_file,
+                        caption=f"💳 **OFFICIAL ULTRA-HD RECEIPT** — `{sid}`\n🏷 Verified by Razorpay & Learn with HiM",
+                        parse_mode="Markdown"
+                    )
+                if os.path.exists(img_card_path):
+                    os.remove(img_card_path)
+        except Exception as img_err:
+            logging.error(f"Image receipt generation skipped: {img_err}")
+
     except Exception as err:
-        logging.error(f"[TELEGRAM SEND ERROR] Could not deliver message to {user_id}: {err}")
+        logging.error(f"Failed to send Telegram invoice notification: {err}")
 
 
 async def handle_ping(request):
-    return web.Response(text="Learn with HiM Quiz Book Bot is Online & Active!")
+    return web.Response(text="Bot Engine is Active")
 
 
 async def handle_razorpay_callback_get(request):
     params = request.query
-    razorpay_payment_id = params.get("razorpay_payment_id") or params.get("razorpay_payment_link_id") or params.get("razorpay_payment_id") or "N/A"
+    razorpay_payment_id = params.get("razorpay_payment_id") or params.get("razorpay_payment_link_id") or "OFFICIAL_SUBSCRIBED"
 
-    # Multi-fallback parameter checking
     user_id = params.get("user_id") or params.get("notes[user_id]")
     plan_key = params.get("plan_key") or params.get("notes[plan_key]")
 
-    logging.info(f"[CALLBACK GET] Query parameters captured -> user_id: {user_id}, plan_key: {plan_key}, payment_id: {razorpay_payment_id}")
+    logging.info(f"[CALLBACK GET] user_id={user_id}, plan_key={plan_key}, payment_id={razorpay_payment_id}")
 
     if user_id and plan_key:
         try:
@@ -160,9 +193,7 @@ async def handle_razorpay_callback_get(request):
             if activated:
                 await send_payment_invoice_telegram(uid, plan_key, razorpay_payment_id)
         except Exception as e:
-            logging.error(f"[CALLBACK GET EXCEPTION] {e}")
-    else:
-        logging.warning(f"[CALLBACK GET WARNING] Missing user_id or plan_key in query string! Full query: {dict(params)}")
+            logging.error(f"Callback GET error: {e}")
 
     html_content = f"""
     <!DOCTYPE html>
@@ -171,59 +202,13 @@ async def handle_razorpay_callback_get(request):
         <title>Payment Successful - Learn with HiM Quiz Book</title>
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <style>
-            body {{
-                font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-                background: #0f172a;
-                color: #f8fafc;
-                display: flex;
-                justify-content: center;
-                align-items: center;
-                min-height: 100vh;
-                margin: 0;
-                padding: 20px;
-            }}
-            .card {{
-                background: #1e293b;
-                border-radius: 16px;
-                padding: 32px;
-                max-width: 420px;
-                width: 100%;
-                box-shadow: 0 10px 25px rgba(0, 0, 0, 0.5);
-                text-align: center;
-                border: 1px solid #334155;
-            }}
-            .icon {{
-                font-size: 56px;
-                margin-bottom: 16px;
-            }}
-            h2 {{
-                color: #38bdf8;
-                margin-bottom: 8px;
-            }}
-            p {{
-                color: #94a3b8;
-                font-size: 15px;
-                line-height: 1.5;
-            }}
-            .id-box {{
-                background: #0f172a;
-                padding: 12px;
-                border-radius: 8px;
-                font-family: monospace;
-                color: #38bdf8;
-                margin: 16px 0;
-                word-break: break-all;
-            }}
-            .btn {{
-                display: inline-block;
-                background: #2563eb;
-                color: white;
-                text-decoration: none;
-                padding: 12px 24px;
-                border-radius: 8px;
-                font-weight: bold;
-                margin-top: 16px;
-            }}
+            body {{ font-family: 'Segoe UI', sans-serif; background: #0f172a; color: #f8fafc; display: flex; justify-content: center; align-items: center; min-height: 100vh; margin: 0; padding: 20px; }}
+            .card {{ background: #1e293b; border-radius: 16px; padding: 32px; max-width: 420px; width: 100%; text-align: center; border: 1px solid #334155; }}
+            .icon {{ font-size: 56px; margin-bottom: 16px; }}
+            h2 {{ color: #38bdf8; margin-bottom: 8px; }}
+            p {{ color: #94a3b8; font-size: 15px; line-height: 1.5; }}
+            .id-box {{ background: #0f172a; padding: 12px; border-radius: 8px; font-family: monospace; color: #38bdf8; margin: 16px 0; word-break: break-all; }}
+            .btn {{ display: inline-block; background: #2563eb; color: white; text-decoration: none; padding: 12px 24px; border-radius: 8px; font-weight: bold; margin-top: 16px; }}
         </style>
     </head>
     <body>
@@ -261,9 +246,10 @@ async def handle_razorpay_webhook(request):
         if event in ("payment_link.paid", "payment.captured"):
             payload = data.get("payload", {}).get("payment_link", {}).get("entity", {}) or data.get("payload", {}).get("payment", {}).get("entity", {})
             notes = payload.get("notes", {})
+            
             user_id = notes.get("user_id") or payload.get("notes", {}).get("user_id")
             plan_key = notes.get("plan_key") or payload.get("notes", {}).get("plan_key")
-            payment_id = payload.get("payment_id") or payload.get("id") or "N/A"
+            payment_id = payload.get("payment_id") or payload.get("id") or "OFFICIAL_SUBSCRIBED"
 
             if user_id and plan_key:
                 uid = int(user_id)
@@ -271,7 +257,7 @@ async def handle_razorpay_webhook(request):
                 if success:
                     await send_payment_invoice_telegram(uid, plan_key, payment_id)
 
-        return web.Response(status=200, text="Webhook Processed")
+        return web.Response(status=200, text="OK")
     except Exception as e:
         logging.error(f"Webhook error: {e}")
         return web.Response(status=500, text=str(e))

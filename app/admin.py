@@ -22,6 +22,7 @@ from app.stats import get_user_performance_summary, calculate_user_rank, calcula
 logger = logging.getLogger(__name__)
 USERS_PER_PAGE = 8
 
+
 async def admin_portal_command(update: Update, context: ContextTypes.DEFAULT_TYPE):
     user_id = update.effective_user.id
     if user_id != PRIMARY_ADMIN_ID:
@@ -58,7 +59,9 @@ async def admin_portal_command(update: Update, context: ContextTypes.DEFAULT_TYP
     else:
         await update.message.reply_text(msg, reply_markup=InlineKeyboardMarkup(keyboard), parse_mode="Markdown")
 
+
 async def admin_view_user_payments_callback(update: Update, context: ContextTypes.DEFAULT_TYPE):
+    """Fetches real transaction history from payment_transactions for admin audit."""
     query = update.callback_query
     if query.from_user.id != PRIMARY_ADMIN_ID:
         await query.answer("Unauthorized!", show_alert=True)
@@ -76,10 +79,11 @@ async def admin_view_user_payments_callback(update: Update, context: ContextType
         rows = cursor.fetchall()
         cursor.close()
         release_db(conn)
-    except Exception:
+    except Exception as e:
         if conn:
             release_db(conn)
         rows = []
+        logging.error(f"Error fetching payments for admin: {e}")
 
     profile = get_user_profile(target_uid) or {}
     sid = profile.get("student_id", f"USER_{target_uid}")
@@ -95,11 +99,12 @@ async def admin_view_user_payments_callback(update: Update, context: ContextType
 
     if rows:
         for idx, r in enumerate(rows, start=1):
+            created_time = r.get('created_at') or 'N/A'
             lines.append(
-                f"**{idx}. Plan:** `{r['plan_name']}` (₹{r['amount_paid']})\n"
-                f"    🆔 Txn ID: `{r['payment_id']}`\n"
-                f"    ⚡ Quota: `+{r['daily_quota']} Qs` | Days: `{r['validity_days']}`\n"
-                f"    📅 Date: `{r['created_at']}`\n"
+                f"**{idx}. Plan:** `{r.get('plan_name', 'VIP PACK')}` (₹{r.get('amount_paid', 0)})\n"
+                f"    🆔 Txn ID: `{r.get('payment_id', 'N/A')}`\n"
+                f"    ⚡ Quota: `+{r.get('daily_quota', 0)} Qs` | Days: `{r.get('validity_days', 0)}`\n"
+                f"    📅 Date: `{created_time}`\n"
                 f"    ──────────────────────────"
             )
     else:
@@ -166,7 +171,7 @@ async def admin_execute_grant_callback(update: Update, context: ContextTypes.DEF
     expiry_dt = now + timedelta(days=plan["days"])
     expiry_str = expiry_dt.strftime("%Y-%m-%d %H:%M:%S IST")
     payment_time_str = now.strftime("%d %b %Y, %I:%M %p IST")
-    payment_id = f"ADMIN_MANUAL_GRANT_{int(time.time())}"
+    payment_id = f"ADMIN_GRANT_{int(time.time())}"
 
     profile = get_user_profile(target_uid) or {}
     current_bal = profile.get("paid_question_balance", 0) or 0
@@ -177,13 +182,13 @@ async def admin_execute_grant_callback(update: Update, context: ContextTypes.DEF
         conn = get_db()
         cursor = conn.cursor()
         
-        # 1. Update user balance and expiry in users table
+        # 1. Update user balance & pass expiry
         cursor.execute(
             "UPDATE users SET paid_question_balance = %s, vip_pass_expiry = %s, payment_id = %s, payment_timestamp = %s WHERE user_id = %s",
             (new_bal, expiry_str, payment_id, payment_time_str, target_uid)
         )
 
-        # 2. Safe log transaction entry (handles presence/absence of expiry_at column automatically)
+        # 2. Safe transaction logging (handles presence/absence of expiry_at column gracefully)
         try:
             cursor.execute(
                 """
@@ -195,6 +200,10 @@ async def admin_execute_grant_callback(update: Update, context: ContextTypes.DEF
             )
         except Exception:
             conn.rollback()
+            cursor.execute(
+                "UPDATE users SET paid_question_balance = %s, vip_pass_expiry = %s, payment_id = %s, payment_timestamp = %s WHERE user_id = %s",
+                (new_bal, expiry_str, payment_id, payment_time_str, target_uid)
+            )
             cursor.execute(
                 """
                 INSERT INTO payment_transactions 
@@ -215,7 +224,7 @@ async def admin_execute_grant_callback(update: Update, context: ContextTypes.DEF
         await query.message.reply_text(f"⚠️ Failed granting plan: {e}")
         return
 
-    # Notify student in Telegram chat automatically with success text invoice
+    # Automatically notify student in Telegram
     from main import send_payment_invoice_telegram
     await send_payment_invoice_telegram(target_uid, plan_key, payment_id)
 
@@ -227,11 +236,12 @@ async def admin_execute_grant_callback(update: Update, context: ContextTypes.DEF
         f"✅ **PLAN SUCCESSFULLY GRANTED BY ADMIN!** ✅\n"
         f"━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\n"
         f"👑 **Plan:** `{plan['name']}`\n"
-        f"⚡ **Stacked Limit:** `{new_bal} Qs/Day`\n"
-        f"⏳ **New Expiry:** `{expiry_str}`\n"
+        f"⚡ **New Quota:** `{new_bal} Qs/Day`\n"
+        f"⏳ **Pass Expiry:** `{expiry_str}`\n"
         f"👤 **Student ID:** `{target_uid}`"
     )
     await query.edit_message_text(success_msg, reply_markup=back_btn, parse_mode="Markdown")
+
 
 async def admin_callback_handler(update: Update, context: ContextTypes.DEFAULT_TYPE):
     query = update.callback_query

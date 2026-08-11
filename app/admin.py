@@ -193,6 +193,64 @@ def calculate_financial_revenue():
         return {"today": 0, "week": 0, "month": 0, "all": 0}
 
 
+def get_currently_online_users():
+    """Fetches users who were active or attempting quizzes in the last 15 minutes."""
+    conn = None
+    try:
+        ist = pytz.timezone("Asia/Kolkata")
+        now_epoch = int(datetime.now(ist).timestamp())
+        fifteen_mins_ago = now_epoch - 900
+
+        conn = get_db()
+        cursor = conn.cursor(cursor_factory=RealDictCursor)
+        cursor.execute(
+            "SELECT user_id, full_name, student_id, last_active FROM users WHERE last_activity_epoch >= %s ORDER BY last_activity_epoch DESC",
+            (fifteen_mins_ago,)
+        )
+        rows = cursor.fetchall()
+        cursor.close()
+        release_db(conn)
+        return [dict(r) for r in rows] if rows else []
+    except Exception:
+        if conn:
+            release_db(conn)
+        return []
+
+
+def get_pdf_generation_analytics():
+    """Retrieves PDF generation logs."""
+    conn = None
+    try:
+        conn = get_db()
+        cursor = conn.cursor(cursor_factory=RealDictCursor)
+        cursor.execute(
+            """
+            CREATE TABLE IF NOT EXISTS pdf_generation_logs (
+                id SERIAL PRIMARY KEY,
+                user_id BIGINT,
+                pdf_type TEXT,
+                generated_at TEXT
+            )
+            """
+        )
+        cursor.execute(
+            """
+            SELECT p.user_id, u.full_name, u.student_id, p.pdf_type, p.generated_at 
+            FROM pdf_generation_logs p 
+            LEFT JOIN users u ON p.user_id = u.user_id 
+            ORDER BY p.id DESC LIMIT 30
+            """
+        )
+        rows = cursor.fetchall()
+        cursor.close()
+        release_db(conn)
+        return [dict(r) for r in rows] if rows else []
+    except Exception:
+        if conn:
+            release_db(conn)
+        return []
+
+
 async def admin_portal_command(update: Update, context: ContextTypes.DEFAULT_TYPE):
     user_id = update.effective_user.id
     if user_id != PRIMARY_ADMIN_ID:
@@ -203,7 +261,6 @@ async def admin_portal_command(update: Update, context: ContextTypes.DEFAULT_TYP
             await update.message.reply_text(reject_msg)
         return
 
-    # Security Lock Password Check
     if not is_admin_authenticated(user_id):
         context.user_data["awaiting_admin_password"] = True
         msg = (
@@ -222,6 +279,7 @@ async def admin_portal_command(update: Update, context: ContextTypes.DEFAULT_TYP
     users = get_all_users()
     paid_users = get_strict_paid_users()
     demo_users = get_strict_demo_users()
+    online_users = get_currently_online_users()
     pending_students_count = get_unique_students_with_queries_count()
     m_until = get_maintenance_until()
     now_ts = int(time.time())
@@ -232,6 +290,10 @@ async def admin_portal_command(update: Update, context: ContextTypes.DEFAULT_TYP
         [
             InlineKeyboardButton(f"💳 Paid VIP ({len(paid_users)})", callback_data="admin_paid_users_page_0"),
             InlineKeyboardButton(f"🎁 Free Demo ({len(demo_users)})", callback_data="admin_demo_users_page_0")
+        ],
+        [
+            InlineKeyboardButton(f"⚡ Currently Online Users ({len(online_users)})", callback_data="admin_live_users"),
+            InlineKeyboardButton("📄 PDF Generation Logs", callback_data="admin_pdf_logs")
         ],
         [InlineKeyboardButton("👥 Student Directory", callback_data="admin_users_page_0"), InlineKeyboardButton("🔍 Search Student", callback_data="admin_search_prompt")],
         [InlineKeyboardButton("💰 Revenue & Earnings Dashboard", callback_data="admin_financial_stats"), InlineKeyboardButton("🎁 Gift Quota Boost to ALL", callback_data="admin_mass_grant_menu")],
@@ -248,6 +310,7 @@ async def admin_portal_command(update: Update, context: ContextTypes.DEFAULT_TYP
         f"📊 **Total Registered Students:** `{len(users)}`\n"
         f"💎 **Actual Paid VIP Subscribers:** `{len(paid_users)}`\n"
         f"🎁 **Free Demo Users:** `{len(demo_users)}`\n"
+        f"⚡ **Currently Online Users:** `{len(online_users)}`\n"
         f"📩 **Students with Pending Queries:** `{pending_students_count}`\n"
         f"⚡ **Bot System Status:** `{m_status}`\n\n"
         f"Select an administrative action below:"
@@ -366,7 +429,6 @@ async def admin_execute_grant_callback(update: Update, context: ContextTypes.DEF
     profile = get_user_profile(target_uid) or {}
     current_bal = profile.get("paid_question_balance", 0) or 0
     new_bal = current_bal + plan["daily_limit"]
-    sid = profile.get("student_id", f"USER_{target_uid}")
 
     conn = None
     try:
@@ -397,7 +459,6 @@ async def admin_execute_grant_callback(update: Update, context: ContextTypes.DEF
         await query.message.reply_text(f"⚠️ Error: {e}")
         return
 
-    # Broadcast notification to student
     user_broadcast_text = (
         f"🎁 **SPECIAL ANNOUNCEMENT: VIP PLAN GRANTED!** 🎁\n"
         f"━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\n"
@@ -441,7 +502,52 @@ async def admin_callback_handler(update: Update, context: ContextTypes.DEFAULT_T
 
     users = get_all_users()
 
-    if data == "admin_change_pass_prompt":
+    if data == "admin_live_users":
+        await query.answer()
+        online_users = get_currently_online_users()
+        lines = [
+            f"⚡ **CURRENTLY ONLINE STUDENTS ({len(online_users)})** ⚡\n"
+            f"━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\n"
+            f"📌 *Active or practicing within the last 15 minutes*\n"
+        ]
+        if online_users:
+            for idx, u in enumerate(online_users, start=1):
+                sid = u.get("student_id") or f"USER_{u['user_id']}"
+                lines.append(f"{idx}. **{u['full_name']}** (`{sid}`) — Active: `{u.get('last_active', 'Just now')}`")
+        else:
+            lines.append("ℹ️ *No active students currently online.*")
+
+        back_btn = InlineKeyboardMarkup([[InlineKeyboardButton("🔙 Back to Admin Portal", callback_data="admin_home")]])
+        await query.edit_message_text("\n".join(lines), reply_markup=back_btn, parse_mode="Markdown")
+
+    elif data == "admin_pdf_logs":
+        await query.answer()
+        logs = get_pdf_generation_analytics()
+        lines = [
+            f"📄 **PDF GENERATION LOGS & ANALYTICS** 📄\n"
+            f"━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\n"
+        ]
+        if logs:
+            for idx, l in enumerate(logs, start=1):
+                name = l.get("full_name") or f"User {l['user_id']}"
+                sid = l.get("student_id") or f"USER_{l['user_id']}"
+                ptype = str(l.get("pdf_type", "")).replace("_", " ").title()
+                lines.append(
+                    f"**{idx}. {name}** (`{sid}`)\n"
+                    f"   👉 Report Type: `{ptype}`\n"
+                    f"   📅 Time: `{l['generated_at']}`\n"
+                )
+        else:
+            lines.append("ℹ️ *No PDF generation events logged yet.*")
+
+        msg = "\n".join(lines)
+        if len(msg) > 4000:
+            msg = msg[:3950] + "\n\n*(Truncated due to length)*"
+
+        back_btn = InlineKeyboardMarkup([[InlineKeyboardButton("🔙 Back to Admin Portal", callback_data="admin_home")]])
+        await query.edit_message_text(msg, reply_markup=back_btn, parse_mode="Markdown")
+
+    elif data == "admin_change_pass_prompt":
         await query.answer()
         context.user_data["awaiting_admin_new_pass"] = True
         await query.edit_message_text(
@@ -519,7 +625,6 @@ async def admin_callback_handler(update: Update, context: ContextTypes.DEFAULT_T
         page = int(data.replace("admin_view_student_threads_", ""))
         conn = get_db()
         cursor = conn.cursor(cursor_factory=RealDictCursor)
-        # Group queries by student user_id
         cursor.execute(
             """
             SELECT user_id, student_name, MAX(created_at) as last_query_time, 
@@ -1008,7 +1113,6 @@ async def admin_callback_handler(update: Update, context: ContextTypes.DEFAULT_T
         status_msg = "🔴 Student Banned successfully!" if new_ban else "🟢 Student Unbanned successfully!"
         await query.message.reply_text(status_msg)
         
-        # Refresh inspection panel
         query.data = f"admin_inspect_u_{target_uid}"
         await admin_callback_handler(update, context)
 
@@ -1132,13 +1236,13 @@ async def admin_callback_handler(update: Update, context: ContextTypes.DEFAULT_T
         u = get_user_profile(target_uid)
         
         conn = get_db()
-        cursor = conn.cursor()
+        cursor = conn.cursor(cursor_factory=RealDictCursor)
         cursor.execute("SELECT date_str, seconds_spent FROM user_activity_time WHERE user_id = %s ORDER BY date_str DESC", (target_uid,))
         rows = cursor.fetchall()
         cursor.close()
         release_db(conn)
 
-        total_sec = sum([r['seconds_spent'] for r in rows])
+        total_sec = sum([r['seconds_spent'] for r in rows]) if rows else 0
         
         lines = [
             f"⏱ **STUDENT ACTIVITY & TIME LOG** ⏱",
@@ -1195,7 +1299,7 @@ async def admin_callback_handler(update: Update, context: ContextTypes.DEFAULT_T
         u = get_user_profile(target_uid)
 
         conn = get_db()
-        cursor = conn.cursor()
+        cursor = conn.cursor(cursor_factory=RealDictCursor)
         cursor.execute("SELECT * FROM quiz_attempts WHERE user_id = %s ORDER BY id DESC", (target_uid,))
         attempts = cursor.fetchall()
         cursor.close()
@@ -1215,20 +1319,23 @@ async def admin_callback_handler(update: Update, context: ContextTypes.DEFAULT_T
                 if dt not in summary:
                     summary[dt] = {"tests": 0, "qs": 0, "correct": 0, "score": 0.0}
                 summary[dt]["tests"] += 1
-                summary[dt]["qs"] += ad.get("questions_attempted", 0)
-                summary[dt]["correct"] += ad.get("correct_answers", 0)
-                summary[dt]["score"] += ad.get("score", 0.0)
+                summary[dt]["qs"] += ad.get("questions_attempted", 0) or 0
+                summary[dt]["correct"] += ad.get("correct_answers", 0) or 0
+                summary[dt]["score"] += ad.get("score", 0.0) or 0.0
 
             for dt, stats in summary.items():
                 lines.append(
                     f"🗓 **Date:** `{dt}`\n"
                     f" • Quizzes: `{stats['tests']}` | Questions: `{stats['qs']}`\n"
-                    f" • Correct: `{stats['correct']}` | Score: `{stats['score']}`\n"
+                    f" • Correct: `{stats['correct']}` | Score: `{round(stats['score'], 2)}`\n"
                 )
         else:
             lines.append("*No quiz attempts found for this student.*")
 
         msg = "\n".join(lines)
+        if len(msg) > 4000:
+            msg = msg[:3950] + "\n\n*(Truncated due to length)*"
+
         keyboard = [[InlineKeyboardButton("🔙 Back to Dashboard", callback_data=f"admin_inspect_u_{target_uid}")]]
         await query.edit_message_text(msg, reply_markup=InlineKeyboardMarkup(keyboard), parse_mode="Markdown")
 
@@ -1238,7 +1345,7 @@ async def admin_callback_handler(update: Update, context: ContextTypes.DEFAULT_T
         u = get_user_profile(target_uid)
 
         conn = get_db()
-        cursor = conn.cursor()
+        cursor = conn.cursor(cursor_factory=RealDictCursor)
         cursor.execute("SELECT * FROM quiz_attempts WHERE user_id = %s ORDER BY id DESC LIMIT 5", (target_uid,))
         attempts = cursor.fetchall()
         cursor.close()
@@ -1259,10 +1366,11 @@ async def admin_callback_handler(update: Update, context: ContextTypes.DEFAULT_T
                 found_any = True
                 lines.append(f"📅 **Quiz At:** `{dt}`")
                 for idx, q_item in enumerate(details, start=1):
-                    q_text = q_item.get("question_text", "N/A")
-                    ans_text = q_item.get("correct_answer_text", "N/A")
-                    status_icon = "✅" if q_item.get("status") == "CORRECT" else "❌" if q_item.get("status") == "WRONG" else "⏭"
-                    lines.append(f" {idx}. {status_icon} `{q_text}`\n    👉 **Ans:** `{ans_text}`")
+                    if isinstance(q_item, dict):
+                        q_text = q_item.get("question_text") or q_item.get("question") or "N/A"
+                        ans_text = q_item.get("correct_answer_text") or "N/A"
+                        status_icon = "✅" if q_item.get("status") == "CORRECT" else "❌" if q_item.get("status") == "WRONG" else "⏭"
+                        lines.append(f" {idx}. {status_icon} `{q_text}`\n    👉 **Ans:** `{ans_text}`")
                 lines.append("")
 
         if not found_any:
@@ -1281,7 +1389,7 @@ async def admin_callback_handler(update: Update, context: ContextTypes.DEFAULT_T
         u = get_user_profile(target_uid)
 
         conn = get_db()
-        cursor = conn.cursor()
+        cursor = conn.cursor(cursor_factory=RealDictCursor)
         cursor.execute("SELECT * FROM quiz_attempts WHERE user_id = %s ORDER BY id DESC LIMIT 5", (target_uid,))
         attempts = cursor.fetchall()
         cursor.close()
@@ -1298,13 +1406,13 @@ async def admin_callback_handler(update: Update, context: ContextTypes.DEFAULT_T
             ad = dict(a)
             dt = ad.get("attempt_timestamp", "N/A")
             details = json.loads(ad["details_json"]) if ad.get("details_json") else []
-            wrong_items = [q for q in details if q.get("status") == "WRONG"]
+            wrong_items = [q for q in details if isinstance(q, dict) and q.get("status") == "WRONG"]
             if wrong_items:
                 found_wrong = True
                 lines.append(f"📅 **Quiz At:** `{dt}`")
                 for idx, q_item in enumerate(wrong_items, start=1):
-                    q_text = q_item.get("question_text", "N/A")
-                    ans_text = q_item.get("correct_answer_text", "N/A")
+                    q_text = q_item.get("question_text") or q_item.get("question") or "N/A"
+                    ans_text = q_item.get("correct_answer_text") or "N/A"
                     lines.append(f" {idx}. ❌ `{q_text}`\n    👉 **Correct Ans:** `{ans_text}`")
                 lines.append("")
 
@@ -1324,7 +1432,7 @@ async def admin_callback_handler(update: Update, context: ContextTypes.DEFAULT_T
         u = get_user_profile(target_uid)
 
         conn = get_db()
-        cursor = conn.cursor()
+        cursor = conn.cursor(cursor_factory=RealDictCursor)
         cursor.execute("SELECT * FROM saved_questions WHERE user_id = %s ORDER BY id DESC", (target_uid,))
         saved = cursor.fetchall()
         cursor.close()
@@ -1361,7 +1469,7 @@ async def admin_callback_handler(update: Update, context: ContextTypes.DEFAULT_T
         u = get_user_profile(target_uid)
 
         conn = get_db()
-        cursor = conn.cursor()
+        cursor = conn.cursor(cursor_factory=RealDictCursor)
         cursor.execute("SELECT * FROM student_feedback WHERE user_id = %s ORDER BY id DESC", (target_uid,))
         fbs = cursor.fetchall()
         cursor.close()

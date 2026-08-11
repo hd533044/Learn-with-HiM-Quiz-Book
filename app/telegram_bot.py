@@ -52,12 +52,41 @@ def log_command_usage(user_id: int, command_name: str):
     conn = None
     try:
         ist = pytz.timezone("Asia/Kolkata")
-        now_str = datetime.now(ist).strftime("%Y-%m-%d %H:%M:%S IST")
+        now_str = datetime.now(ist).strftime("%Y-%m-%d %I:%M %p IST")
         conn = get_db()
         cursor = conn.cursor()
         cursor.execute(
             "INSERT INTO command_analytics (user_id, command_name, executed_at) VALUES (%s, %s, %s)",
             (user_id, command_name, now_str)
+        )
+        conn.commit()
+        cursor.close()
+        release_db(conn)
+    except Exception:
+        if conn:
+            release_db(conn)
+
+def log_pdf_generation_event(user_id: int, pdf_type: str):
+    """Logs PDF generation event for administrative tracking."""
+    conn = None
+    try:
+        ist = pytz.timezone("Asia/Kolkata")
+        now_str = datetime.now(ist).strftime("%Y-%m-%d %I:%M %p IST")
+        conn = get_db()
+        cursor = conn.cursor()
+        cursor.execute(
+            """
+            CREATE TABLE IF NOT EXISTS pdf_generation_logs (
+                id SERIAL PRIMARY KEY,
+                user_id BIGINT,
+                pdf_type TEXT,
+                generated_at TEXT
+            )
+            """
+        )
+        cursor.execute(
+            "INSERT INTO pdf_generation_logs (user_id, pdf_type, generated_at) VALUES (%s, %s, %s)",
+            (user_id, pdf_type, now_str)
         )
         conn.commit()
         cursor.close()
@@ -718,6 +747,8 @@ async def user_pdf_callback_handler(update: Update, context: ContextTypes.DEFAUL
     await query.answer()
     await query.edit_message_text("⏳ **Generating Your Custom PDF Report Card...**\nFormatting telemetry, tables, and compiling layout...", parse_mode="Markdown")
 
+    asyncio.create_task(asyncio.to_thread(log_pdf_generation_event, user_id, filter_mode))
+
     pdf_file = await asyncio.to_thread(generate_student_pdf_report, user_id, filter_mode)
     profile = await fetch_user_profile_fast(user_id)
     student_name = profile.get("full_name", "Student") if profile else "Student"
@@ -782,7 +813,7 @@ async def help_command(update: Update, context: ContextTypes.DEFAULT_TYPE):
         "• **/myprofile** — 👤 View Personal Student Profile Card\n"
         "• **/mywholestate** — 📊 View Global Rank & Percentile\n"
         "• **/toppername** — 🏆 View Global Leaderboard\n"
-        "• **/feedback** — 💬 Submit Feedback\n"
+        "• **/feedback** — 💬 Submit Platform Review/Feedback\n"
         "• **/reviews** — 📖 View All Student Reviews\n"
         "• **/invite** — 🤝 Invite Friends (+10 Quota Boost)\n"
         "• **/pause** — ⏸️ Pause Current Running Quiz\n"
@@ -1022,83 +1053,6 @@ async def referral_command(update: Update, context: ContextTypes.DEFAULT_TYPE):
     )
     await send_response(update, msg)
 
-async def admin_list_subscribers_router(update: Update, context: ContextTypes.DEFAULT_TYPE):
-    """
-    STRICT SEPARATION: Separates Paid VIP Users vs Free Demo Users.
-    """
-    query = update.callback_query
-    await query.answer()
-
-    if query.from_user.id != PRIMARY_ADMIN_ID:
-        await query.answer("⛔ Admin access only!", show_alert=True)
-        return
-
-    data = query.data
-    conn = get_db()
-    cursor = conn.cursor(cursor_factory=RealDictCursor)
-
-    if data == "admin_paid_users":
-        title = "💎 **PAID VIP SUBSCRIBERS LIST** 💎"
-        cursor.execute(
-            "SELECT DISTINCT u.user_id, u.full_name, u.paid_question_balance, u.vip_pass_expiry "
-            "FROM users u INNER JOIN payment_transactions pt ON u.user_id = pt.user_id "
-            "WHERE pt.plan_key != 'FREE_DEMO' AND pt.amount_paid > 0 "
-            "ORDER BY u.user_id DESC"
-        )
-    elif data == "admin_demo_users":
-        title = "🎁 **FREE DEMO USERS LIST** 🎁"
-        cursor.execute(
-            "SELECT user_id, full_name, paid_question_balance, vip_pass_expiry "
-            "FROM users WHERE demo_used = 1 AND (payment_id IS NULL OR payment_id = 'DEMO_PASS') "
-            "ORDER BY id DESC"
-        )
-    else:
-        title = "👥 **ALL REGISTERED STUDENTS** 👥"
-        cursor.execute("SELECT user_id, full_name, paid_question_balance, vip_pass_expiry FROM users ORDER BY id DESC LIMIT 50")
-
-    users = cursor.fetchall()
-    cursor.close()
-    release_db(conn)
-
-    if not users:
-        text = f"{title}\n\n*No students found in this category.*"
-        btn = InlineKeyboardMarkup([[InlineKeyboardButton("🔙 Back to Admin", callback_data="admin_main_portal")]])
-        await query.edit_message_text(text, reply_markup=btn, parse_mode="Markdown")
-        return
-
-    buttons = []
-    for u in users[:30]:
-        uid = u['user_id']
-        name = u['full_name'] or f"User {uid}"
-        buttons.append([InlineKeyboardButton(f"👤 {name} (ID: {uid})", callback_data=f"admin_inspect_u_{uid}")])
-
-    buttons.append([InlineKeyboardButton("🔙 Back to Admin", callback_data="admin_main_portal")])
-    await query.edit_message_text(
-        f"{title}\nTotal Students: {len(users)}\nSelect a student to view profile or send a direct message:",
-        reply_markup=InlineKeyboardMarkup(buttons),
-        parse_mode="Markdown"
-    )
-
-async def admin_start_direct_message_prompt(update: Update, context: ContextTypes.DEFAULT_TYPE):
-    """Prompts Admin to send a direct message to a specific student."""
-    query = update.callback_query
-    await query.answer()
-
-    if query.from_user.id != PRIMARY_ADMIN_ID:
-        await query.answer("⛔ Admin access only!", show_alert=True)
-        return
-
-    target_user_id = int(query.data.replace("admin_direct_msg_", ""))
-    context.user_data["awaiting_admin_direct_msg_uid"] = target_user_id
-
-    msg = (
-        f"✉️ **DIRECT MESSAGE TO STUDENT (`{target_user_id}`)**\n"
-        f"━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\n"
-        f"Please reply with the message text you want to send directly to this student.\n\n"
-        f"🔒 *This message will be instantly delivered into the student's personal chat.*"
-    )
-    await query.edit_message_text(msg, parse_mode="Markdown")
-
 async def button_router(update: Update, context: ContextTypes.DEFAULT_TYPE):
     if not await maintenance_guard(update, context): return
 
@@ -1139,11 +1093,11 @@ async def button_router(update: Update, context: ContextTypes.DEFAULT_TYPE):
         await help_command(update, context)
     elif data == "cmd_pdfreport":
         await pdfreport_command(update, context)
-    elif data == "cmd_wrongquestions" or data == "cmd_wrong_qs":
+    elif data in ("cmd_wrongquestions", "cmd_wrong_qs"):
         await wrongquestions_command(update, context)
-    elif data == "cmd_attemptedquestions" or data == "cmd_attempted_qs":
+    elif data in ("cmd_attemptedquestions", "cmd_attempted_qs"):
         await attemptedquestions_command(update, context)
-    elif data == "cmd_unattemptedquestions" or data == "cmd_unattempted_qs":
+    elif data in ("cmd_unattemptedquestions", "cmd_unattempted_qs"):
         await unattemptedquestions_command(update, context)
     elif data == "cmd_pause_quiz":
         await pause_quiz_command(update, context)
@@ -1170,10 +1124,6 @@ async def button_router(update: Update, context: ContextTypes.DEFAULT_TYPE):
         await feedback_command(update, context)
     elif data == "cmd_viewfeedbacks":
         await viewfeedbacks_command(update, context)
-    elif data in ("admin_paid_users", "admin_demo_users", "admin_all_users"):
-        await admin_list_subscribers_router(update, context)
-    elif data.startswith("admin_direct_msg_"):
-        await admin_start_direct_message_prompt(update, context)
     elif data.startswith("fb_p"):
         presets = {
             "fb_p1": "10/10 Quality Quizzes!",
@@ -1200,7 +1150,8 @@ async def handle_text_messages(update: Update, context: ContextTypes.DEFAULT_TYP
         if text.replace("-", "").replace("/", "") == "09081999":
             context.user_data["awaiting_admin_rec_email"] = True
             await update.message.reply_text(
-                "✅ **DOB VERIFIED! (STEP 2/2)**\n━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\n"
+                "✅ **DOB VERIFIED! (STEP 2/2)**\n"
+                "━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\n"
                 "Please reply with Himanshu Sir's recovery Email Address:",
                 parse_mode="Markdown"
             )
@@ -1214,7 +1165,8 @@ async def handle_text_messages(update: Update, context: ContextTypes.DEFAULT_TYP
         if text.lower() == "hd533044@gmail.com":
             context.user_data["awaiting_admin_new_pass"] = True
             await update.message.reply_text(
-                "🎉 **RECOVERY CREDENTIALS VERIFIED!** 🎉\n━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\n"
+                "🎉 **RECOVERY CREDENTIALS VERIFIED!** 🎉\n"
+                "━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\n"
                 "Please reply with your new Master Admin Password now:",
                 parse_mode="Markdown"
             )
@@ -1233,8 +1185,10 @@ async def handle_text_messages(update: Update, context: ContextTypes.DEFAULT_TYP
         if success:
             ADMIN_AUTH_SESSIONS[user.id] = time.time()
             await update.message.reply_text(
-                f"🎉 **ADMIN PASSWORD CHANGED & SAVED IN SUPABASE!** 🎉\n━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\n"
-                f"🔑 **New Master Password:** `{text}`\n✨ Admin session authenticated for 30 minutes.",
+                f"🎉 **ADMIN PASSWORD CHANGED & SAVED IN SUPABASE!** 🎉\n"
+                f"━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\n"
+                f"🔑 **New Master Password:** `{text}`\n"
+                f"✨ Admin session authenticated for 30 minutes.",
                 parse_mode="Markdown"
             )
             await admin_portal_command(update, context)
@@ -1491,8 +1445,10 @@ def build_application() -> Application:
     app.add_handler(CallbackQueryHandler(admin_view_user_payments_callback, pattern="^admin_view_payments_"))
     app.add_handler(CallbackQueryHandler(admin_grant_plan_menu_callback, pattern="^admin_grant_menu_"))
     app.add_handler(CallbackQueryHandler(admin_execute_grant_callback, pattern="^admin_exec_grant_"))
+    
+    # Fully expanded regex to catch all admin, audit, pdf analytics, online users, and inspection callbacks
     app.add_handler(CallbackQueryHandler(admin_callback_handler, pattern="^(admin_|audit_|genpdf_)"))
-    app.add_handler(CallbackQueryHandler(button_router, pattern="^cmd_|^fb_|^trigger_start|^buy_plan_|^admin_paid_users|^admin_demo_users|^admin_all_users|^admin_direct_msg_"))
+    app.add_handler(CallbackQueryHandler(button_router, pattern="^cmd_|^fb_|^trigger_start|^buy_plan_"))
 
     app.add_handler(MessageHandler(filters.TEXT & ~filters.COMMAND, handle_text_messages))
     app.add_handler(PollAnswerHandler(handle_poll_answer))

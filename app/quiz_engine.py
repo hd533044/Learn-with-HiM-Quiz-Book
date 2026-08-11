@@ -485,7 +485,7 @@ async def send_next_question(chat_id: int, user_id: int, context: ContextTypes.D
         header_text = header_text[:297] + "..."
 
     clean_opts = [str(opt)[:97] for opt in q["options"]]
-    expl_text = q.get("explanation") or "Learn with HiM Quiz Book by Himanshu Sir"
+    expl_text = q.get("explanation") or "Quiz with HiM by Himanshu Sir"
     if len(expl_text) > 200:
         expl_text = expl_text[:197] + "..."
 
@@ -620,7 +620,7 @@ async def finish_quiz_and_send_report(chat_id: int, user_id: int, context: Conte
     # Send report card immediately
     report_card = (
         f"🏆 **OFFICIAL QUIZ REPORT CARD** 🏆\n"
-        f"📚 **Learn with HiM Quiz Book by Himanshu Sir**\n"
+        f"📚 **Quiz with HiM by Himanshu Sir**\n"
         f"━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\n"
         f"📅 **Attempted At:** `{session['start_time']}`\n\n"
         f"📊 **PERFORMANCE BREAKDOWN:**\n"

@@ -774,7 +774,7 @@ async def help_command(update: Update, context: ContextTypes.DEFAULT_TYPE):
     asyncio.create_task(asyncio.to_thread(log_user_activity_time, user.id, 10))
 
     msg = (
-        "🤖 **LEARN WITH HIM QUIZ BOOK — COMMAND DIRECTORY** 🤖\n"
+        "🤖 **QUIZ WITH HIM — COMMAND DIRECTORY** 🤖\n"
         "━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\n"
         "• **/quiz** — 🚀 Launch Computer Quiz\n"
         "• **/myplan** — 💵 Subscription Status & Packs Breakdown\n"
@@ -884,7 +884,7 @@ async def myprofile_command(update: Update, context: ContextTypes.DEFAULT_TYPE):
 
     msg = (
         f"👤 **STUDENT PROFILE CARD** 👤\n"
-        f"📚 **Learn with HiM Quiz Book**\n"
+        f"📚 **QUIZ WITH HIM**\n"
         f"━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\n"
         f"• **Full Name:** {profile['full_name']}\n"
         f"• **Student ID:** `{student_id}` 🪪\n"

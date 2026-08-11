@@ -14,7 +14,7 @@ from app.config import PRIMARY_ADMIN_ID, USER_PROFILES_DIR, PLAN_TIERS
 from app.database import (
     get_all_users, set_maintenance_until, get_maintenance_until, 
     get_user_profile, get_db, release_db, sync_user_json_profile, toggle_user_ban_status,
-    get_paid_users, admin_update_user_name, admin_delete_user_account
+    get_paid_users, admin_update_user_name, admin_delete_user_account, get_ist_date_str
 )
 from app.pdf_generator import generate_student_pdf_report
 from app.stats import get_user_performance_summary, calculate_user_rank, calculate_user_percentile
@@ -296,7 +296,7 @@ async def admin_portal_command(update: Update, context: ContextTypes.DEFAULT_TYP
             InlineKeyboardButton("📄 PDF Generation Logs", callback_data="admin_pdf_logs")
         ],
         [InlineKeyboardButton("👥 Student Directory", callback_data="admin_users_page_0"), InlineKeyboardButton("🔍 Search Student", callback_data="admin_search_prompt")],
-        [InlineKeyboardButton("💰 Revenue & Earnings Dashboard", callback_data="admin_financial_stats"), InlineKeyboardButton("🎁 Gift Quota Boost to ALL", callback_data="admin_mass_grant_menu")],
+        [InlineKeyboardButton("💰 Revenue & Earnings Dashboard", callback_data="admin_financial_stats"), InlineKeyboardButton("🎁 Gift 1-Day Quota Boost to ALL", callback_data="admin_mass_grant_menu")],
         [InlineKeyboardButton("📊 Command Usage Analytics", callback_data="admin_command_stats"), InlineKeyboardButton("📦 Export Ledgers (.zip)", callback_data="admin_export_zip")],
         [InlineKeyboardButton("⏸ Pause 5m", callback_data="admin_pause_5"), InlineKeyboardButton("⏸ Pause 10m", callback_data="admin_pause_10"), InlineKeyboardButton("⏸ Pause 3h", callback_data="admin_pause_180")],
         [InlineKeyboardButton("⏸ Pause 6h", callback_data="admin_pause_360"), InlineKeyboardButton("⏸ Pause 24h", callback_data="admin_pause_1440"), InlineKeyboardButton("▶️ Resume Bot", callback_data="admin_resume_now")],
@@ -581,30 +581,44 @@ async def admin_callback_handler(update: Update, context: ContextTypes.DEFAULT_T
     elif data == "admin_mass_grant_menu":
         await query.answer()
         keyboard = [
-            [InlineKeyboardButton("🎁 Gift +10 Daily Qs to ALL Users", callback_data="admin_exec_mass_10")],
-            [InlineKeyboardButton("🎁 Gift +20 Daily Qs to ALL Users", callback_data="admin_exec_mass_20")],
-            [InlineKeyboardButton("🎁 Gift +30 Daily Qs to ALL Users", callback_data="admin_exec_mass_30")],
-            [InlineKeyboardButton("🎁 Gift +40 Daily Qs to ALL Users", callback_data="admin_exec_mass_40")],
+            [InlineKeyboardButton("🎁 Gift +10 Today's Qs to ALL Users", callback_data="admin_exec_mass_10")],
+            [InlineKeyboardButton("🎁 Gift +20 Today's Qs to ALL Users", callback_data="admin_exec_mass_20")],
+            [InlineKeyboardButton("🎁 Gift +30 Today's Qs to ALL Users", callback_data="admin_exec_mass_30")],
+            [InlineKeyboardButton("🎁 Gift +40 Today's Qs to ALL Users", callback_data="admin_exec_mass_40")],
             [InlineKeyboardButton("🔙 Back to Admin Portal", callback_data="admin_home")]
         ]
-        msg = "🎁 **MASS QUOTA BOOST MENU**\nSelect bonus daily question amount to grant to ALL registered students:"
+        msg = (
+            "🎁 **SAME-DAY MASS QUOTA BOOST MENU (1 DAY ONLY)**\n"
+            "━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\n"
+            "Select bonus question amount to gift to ALL registered students for **TODAY ONLY**.\n"
+            "*(This limit boost will automatically reset tomorrow)*:"
+        )
         await query.edit_message_text(msg, reply_markup=InlineKeyboardMarkup(keyboard), parse_mode="Markdown")
 
     elif data.startswith("admin_exec_mass_"):
         await query.answer()
         amount = int(data.replace("admin_exec_mass_", ""))
+        today_date = get_ist_date_str()
+        
         conn = get_db()
         cursor = conn.cursor()
-        cursor.execute("UPDATE users SET bonus_quota = bonus_quota + %s WHERE is_banned = 0 AND is_verified = 1", (amount,))
+        cursor.execute("ALTER TABLE users ADD COLUMN IF NOT EXISTS temporary_bonus_quota INTEGER DEFAULT 0;")
+        cursor.execute("ALTER TABLE users ADD COLUMN IF NOT EXISTS gift_granted_date TEXT;")
+        
+        cursor.execute(
+            "UPDATE users SET temporary_bonus_quota = %s, gift_granted_date = %s WHERE is_banned = 0 AND is_verified = 1",
+            (amount, today_date)
+        )
         conn.commit()
         cursor.close()
         release_db(conn)
 
         broadcast_msg = (
-            f"🎁 **SPECIAL GIFT ANNOUNCEMENT FROM HIMANSHU SIR!** 🎁\n"
+            f"🎁 **SPECIAL SAME-DAY GIFT FROM HIMANSHU SIR!** 🎁\n"
             f"━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\n"
-            f"🎉 **Himanshu Sir has gifted ALL students +{amount} Extra Daily Questions!**\n\n"
-            f"⚡ Your daily question quota has been automatically increased!\n"
+            f"🎉 **Himanshu Sir has gifted ALL students +{amount} Extra Questions for TODAY ONLY!**\n\n"
+            f"⚡ Your question limit for today ({today_date}) has been increased by +{amount} Qs!\n"
+            f"⏳ *Note: This bonus limit is valid for 1 day only and expires at midnight.*\n\n"
             f"🚀 Tap **/quiz** to start practicing right now!"
         )
         btn = InlineKeyboardMarkup([[InlineKeyboardButton("🚀 Launch Quiz Now", callback_data="cmd_quiz")]])
@@ -618,7 +632,7 @@ async def admin_callback_handler(update: Update, context: ContextTypes.DEFAULT_T
                 pass
 
         back_btn = InlineKeyboardMarkup([[InlineKeyboardButton("🔙 Back to Admin Portal", callback_data="admin_home")]])
-        await query.edit_message_text(f"✅ **GIFTED +{amount} DAILY QS TO ALL USERS!**\nBroadcasted to {sent} active students.", reply_markup=back_btn, parse_mode="Markdown")
+        await query.edit_message_text(f"✅ **GIFTED +{amount} SAME-DAY QS TO ALL USERS!**\nBroadcasted to {sent} active students.", reply_markup=back_btn, parse_mode="Markdown")
 
     elif data.startswith("admin_view_student_threads_"):
         await query.answer()

@@ -345,9 +345,9 @@ async def scheduled_expiry_reminder_check():
 
 async def scheduled_daily_quiz_reminder():
     """
-    AUTOMATED 4X DAILY PRACTICE BROADCASTER:
-    Broadcasting daily at 09:00 AM, 12:30 PM, 05:00 PM & 09:00 PM IST:
-    "IT IS YOUR QUIZZZ TIME GUYZZZ, KINDLY ATTEMPT AND ANALYSIS THE QUIZZ!! 😁💯"
+    AUTOMATED 5X DAILY PRACTICE BROADCASTER:
+    Broadcasting daily at 09:00 AM, 12:00 PM, 04:00 PM, 07:00 PM & 10:00 PM IST:
+    "Guyzzz attempt the Quiz Now, because everyday quiz will take you to one step closer to your selection💯"
     """
     global LAST_QUIZ_BROADCAST_DATE
     from telegram import InlineKeyboardMarkup, InlineKeyboardButton
@@ -355,7 +355,7 @@ async def scheduled_daily_quiz_reminder():
     ist = pytz.timezone("Asia/Kolkata")
 
     while True:
-        await asyncio.sleep(60)  # Check every minute
+        await asyncio.sleep(30)  # Check every 30 seconds
         if not bot_app_instance:
             continue
 
@@ -364,12 +364,13 @@ async def scheduled_daily_quiz_reminder():
         current_hour = now.hour
         current_minute = now.minute
 
-        # 4 Scheduled Times: 09:00 AM (9:00), 12:30 PM (12:30), 05:00 PM (17:00), 09:00 PM (21:00) IST
+        # 5 Scheduled Times: 09:00 AM (9:0), 12:00 PM (12:0), 04:00 PM (16:0), 07:00 PM (19:0), 10:00 PM (22:0) IST
         is_time_slot = (
             (current_hour == 9 and current_minute == 0) or
-            (current_hour == 12 and current_minute == 30) or
-            (current_hour == 17 and current_minute == 0) or
-            (current_hour == 21 and current_minute == 0)
+            (current_hour == 12 and current_minute == 0) or
+            (current_hour == 16 and current_minute == 0) or
+            (current_hour == 19 and current_minute == 0) or
+            (current_hour == 22 and current_minute == 0)
         )
 
         if is_time_slot:
@@ -390,9 +391,9 @@ async def scheduled_daily_quiz_reminder():
                     reminder_text = (
                         f"📢 **DAILY QUIZ PRACTICE REMINDER** 📢\n"
                         f"━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\n"
-                        f"IT IS YOUR QUIZZZ TIME GUYZZZ, KINDLY ATTEMPT AND ANALYSIS THE QUIZZ!! 😁💯\n"
+                        f"Guyzzz attempt the Quiz Now, because everyday quiz will take you to one step closer to your selection💯\n"
                         f"━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\n"
-                        f"⚡ Daily consistent practice makes perfect! Tap the button below to launch your session now:"
+                        f"⚡ Tap the button below to start practicing now:"
                     )
                     btn = InlineKeyboardMarkup([[InlineKeyboardButton("🚀 Launch Quiz Now", callback_data="cmd_quiz")]])
 
@@ -409,7 +410,7 @@ async def scheduled_daily_quiz_reminder():
                         except Exception:
                             pass
 
-                    logging.info(f"[DAILY 4X QUIZ BROADCAST SENT] Delivered to {sent_count} registered users at {now.strftime('%I:%M %p IST')}")
+                    logging.info(f"[DAILY 5X QUIZ BROADCAST SENT] Delivered to {sent_count} registered users at {now.strftime('%I:%M %p IST')}")
                 except Exception as err:
                     if conn:
                         release_db(conn)

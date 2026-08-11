@@ -22,6 +22,7 @@ from app.config import (
     PLAN_TIERS
 )
 from app.database import sync_user_json_profile, get_ist_timestamp_str, get_db, release_db, get_user_profile
+from app.quiz_engine import get_random_questions
 
 logging.basicConfig(
     format="%(asctime)s - %(levelname)s - %(message)s",
@@ -420,6 +421,45 @@ async def handle_ping(request):
     return web.Response(text="Bot Engine & Payment Gateway Active")
 
 
+async def handle_mini_app(request):
+    """Serves the Web Mini App HTML Interface"""
+    try:
+        with open("templates/index.html", "r", encoding="utf-8") as f:
+            html = f.read()
+        return web.Response(text=html, content_type="text/html")
+    except Exception as e:
+        return web.Response(text=f"Error loading App UI: {e}", status=500)
+
+
+async def handle_get_questions(request):
+    """API Endpoint for Mini App to fetch practice questions dynamically"""
+    user_id = request.query.get("user_id")
+    questions = get_random_questions(count=10)
+    return web.json_response({"questions": questions})
+
+
+async def handle_submit_quiz(request):
+    """API Endpoint for Mini App to record quiz score and notify student"""
+    data = await request.json()
+    user_id = data.get("user_id")
+    score = data.get("score")
+    total = data.get("total")
+
+    if bot_app_instance and user_id:
+        msg = (
+            f"🎉 **MINI APP SESSION COMPLETED!** 🎉\n"
+            f"━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\n"
+            f"📊 **Score:** `{score} / {total}`\n"
+            f"🏆 Great attempt! Tap **/quiz** to launch another session anytime."
+        )
+        try:
+            await bot_app_instance.bot.send_message(chat_id=int(user_id), text=msg, parse_mode="Markdown")
+        except Exception as e:
+            logging.error(f"[MINI APP SUBMIT NOTIFICATION ERROR] {e}")
+
+    return web.json_response({"status": "success"})
+
+
 async def handle_razorpay_callback_get(request):
     params = request.query
     razorpay_payment_id = params.get("razorpay_payment_id") or params.get("razorpay_payment_link_id") or "OFFICIAL_SUBSCRIBED"
@@ -509,6 +549,9 @@ async def start_web_server():
     app = web.Application()
     app.router.add_get("/", handle_ping)
     app.router.add_get("/ping", handle_ping)
+    app.router.add_get("/app", handle_mini_app)
+    app.router.add_get("/api/get-questions", handle_get_questions)
+    app.router.add_post("/api/submit-quiz", handle_submit_quiz)
     app.router.add_get("/razorpay-webhook", handle_razorpay_callback_get)
     app.router.add_post("/razorpay-webhook", handle_razorpay_webhook)
 

@@ -424,11 +424,15 @@ async def handle_ping(request):
 async def handle_mini_app(request):
     """Serves the Web Mini App HTML Interface"""
     try:
-        with open("templates/index.html", "r", encoding="utf-8") as f:
+        base_dir = os.path.dirname(os.path.abspath(__file__))
+        template_path = os.path.join(base_dir, "templates", "index.html")
+        
+        with open(template_path, "r", encoding="utf-8") as f:
             html = f.read()
         return web.Response(text=html, content_type="text/html")
     except Exception as e:
-        return web.Response(text=f"Error loading App UI: {e}", status=500)
+        logging.error(f"[MINI APP LOAD ERROR] {e}")
+        return web.Response(text=f"<h3>Error loading App UI: {e}</h3>", status=500, content_type="text/html")
 
 
 async def handle_get_questions(request):

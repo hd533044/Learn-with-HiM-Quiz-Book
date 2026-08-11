@@ -443,7 +443,7 @@ async def handle_razorpay_callback_get(request):
     <!DOCTYPE html>
     <html>
     <head>
-        <title>Payment Successful - Learn with HiM Quiz Book</title>
+        <title>Payment Successful - Quiz with HiM</title>
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <style>
             body {{ font-family: 'Segoe UI', sans-serif; background: #0f172a; color: #f8fafc; display: flex; justify-content: center; align-items: center; min-height: 100vh; margin: 0; padding: 20px; }}
@@ -461,7 +461,7 @@ async def handle_razorpay_callback_get(request):
             <h2>Payment Successful!</h2>
             <p>Your plan has been credited and an official invoice has been pushed to your Telegram chat.</p>
             <div class="id-box">Payment ID: {razorpay_payment_id}</div>
-            <a href="https://t.me/LearnwithHiMQuizzzbot" class="btn">Return to Telegram Bot</a>
+            <a href="https://t.me/quizwithhimbot" class="btn">Return to Telegram Bot</a>
         </div>
     </body>
     </html>

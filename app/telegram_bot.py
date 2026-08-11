@@ -87,7 +87,7 @@ async def fetch_user_profile_fast(user_id):
     return prof
 
 def get_user_active_plans_history(user_id: int):
-    """Retrieves ALL subscribed plan transactions for a user from PostgreSQL without artificial limits."""
+    """Retrieves ALL subscribed plan transactions for a user from PostgreSQL."""
     conn = None
     try:
         conn = get_db()
@@ -353,9 +353,6 @@ async def send_response(update: Update, text: str, reply_markup=None):
         await update.message.reply_text(text, reply_markup=markup, parse_mode="Markdown")
 
 async def myplan_command(update: Update, context: ContextTypes.DEFAULT_TYPE):
-    """
-    Displays subscription plan, total daily limits, and breakdown of ALL active subscribed plans with exact expiry dates.
-    """
     if not await maintenance_guard(update, context): return
     if not await check_user_registration(update): return
 
@@ -383,7 +380,6 @@ async def myplan_command(update: Update, context: ContextTypes.DEFAULT_TYPE):
     plans_text = ""
     if history_plans:
         plans_text = "\n📦 **ACTIVE SUBSCRIBED PACKS BREAKDOWN:**\n"
-        ist = pytz.timezone("Asia/Kolkata")
         for idx, hp in enumerate(history_plans, start=1):
             p_exp = hp.get('expiry_at')
             if not p_exp or p_exp == 'Active':
@@ -786,7 +782,7 @@ async def help_command(update: Update, context: ContextTypes.DEFAULT_TYPE):
         "• **/myprofile** — 👤 View Personal Student Profile Card\n"
         "• **/mywholestate** — 📊 View Global Rank & Percentile\n"
         "• **/toppername** — 🏆 View Global Leaderboard\n"
-        "• **/feedback** — 💬 Submit Platform Review/Feedback\n"
+        "• **/feedback** — 💬 Submit Feedback\n"
         "• **/reviews** — 📖 View All Student Reviews\n"
         "• **/invite** — 🤝 Invite Friends (+10 Quota Boost)\n"
         "• **/pause** — ⏸️ Pause Current Running Quiz\n"
@@ -1028,7 +1024,7 @@ async def referral_command(update: Update, context: ContextTypes.DEFAULT_TYPE):
 
 async def admin_list_subscribers_router(update: Update, context: ContextTypes.DEFAULT_TYPE):
     """
-    Renders Paid VIP users vs Free Demo users distinctly without mixing user tiers.
+    STRICT SEPARATION: Separates Paid VIP Users vs Free Demo Users.
     """
     query = update.callback_query
     await query.answer()
@@ -1044,20 +1040,21 @@ async def admin_list_subscribers_router(update: Update, context: ContextTypes.DE
     if data == "admin_paid_users":
         title = "💎 **PAID VIP SUBSCRIBERS LIST** 💎"
         cursor.execute(
-            "SELECT user_id, full_name, paid_question_balance, vip_pass_expiry, payment_id FROM users "
-            "WHERE payment_id IS NOT NULL AND payment_id NOT IN ('DEMO_PASS', 'OFFICIAL_SUBSCRIBED') "
-            "ORDER BY id DESC"
+            "SELECT DISTINCT u.user_id, u.full_name, u.paid_question_balance, u.vip_pass_expiry "
+            "FROM users u INNER JOIN payment_transactions pt ON u.user_id = pt.user_id "
+            "WHERE pt.plan_key != 'FREE_DEMO' AND pt.amount_paid > 0 "
+            "ORDER BY u.user_id DESC"
         )
     elif data == "admin_demo_users":
         title = "🎁 **FREE DEMO USERS LIST** 🎁"
         cursor.execute(
-            "SELECT user_id, full_name, paid_question_balance, vip_pass_expiry, payment_id FROM users "
-            "WHERE demo_used = 1 AND (payment_id IS NULL OR payment_id = 'DEMO_PASS') "
+            "SELECT user_id, full_name, paid_question_balance, vip_pass_expiry "
+            "FROM users WHERE demo_used = 1 AND (payment_id IS NULL OR payment_id = 'DEMO_PASS') "
             "ORDER BY id DESC"
         )
     else:
         title = "👥 **ALL REGISTERED STUDENTS** 👥"
-        cursor.execute("SELECT user_id, full_name, paid_question_balance, vip_pass_expiry, payment_id FROM users ORDER BY id DESC LIMIT 50")
+        cursor.execute("SELECT user_id, full_name, paid_question_balance, vip_pass_expiry FROM users ORDER BY id DESC LIMIT 50")
 
     users = cursor.fetchall()
     cursor.close()
@@ -1077,15 +1074,13 @@ async def admin_list_subscribers_router(update: Update, context: ContextTypes.DE
 
     buttons.append([InlineKeyboardButton("🔙 Back to Admin", callback_data="admin_main_portal")])
     await query.edit_message_text(
-        f"{title}\nTotal Students: {len(users)}\nSelect a student to view details or send a direct message:",
+        f"{title}\nTotal Students: {len(users)}\nSelect a student to view profile or send a direct message:",
         reply_markup=InlineKeyboardMarkup(buttons),
         parse_mode="Markdown"
     )
 
 async def admin_start_direct_message_prompt(update: Update, context: ContextTypes.DEFAULT_TYPE):
-    """
-    Sets context to accept custom direct message text from Admin to a specific student.
-    """
+    """Prompts Admin to send a direct message to a specific student."""
     query = update.callback_query
     await query.answer()
 
@@ -1175,7 +1170,7 @@ async def button_router(update: Update, context: ContextTypes.DEFAULT_TYPE):
         await feedback_command(update, context)
     elif data == "cmd_viewfeedbacks":
         await viewfeedbacks_command(update, context)
-    elif data.startswith("admin_paid_users") or data.startswith("admin_demo_users") or data.startswith("admin_all_users"):
+    elif data in ("admin_paid_users", "admin_demo_users", "admin_all_users"):
         await admin_list_subscribers_router(update, context)
     elif data.startswith("admin_direct_msg_"):
         await admin_start_direct_message_prompt(update, context)
@@ -1199,14 +1194,13 @@ async def handle_text_messages(update: Update, context: ContextTypes.DEFAULT_TYP
     user = update.effective_user
     text = update.message.text.strip()
 
-    # Password Recovery Flow: Step 1 (DOB Check)
+    # Password Recovery Flow: Step 1
     if user.id == PRIMARY_ADMIN_ID and context.user_data.get("awaiting_admin_rec_dob"):
         context.user_data["awaiting_admin_rec_dob"] = False
         if text.replace("-", "").replace("/", "") == "09081999":
             context.user_data["awaiting_admin_rec_email"] = True
             await update.message.reply_text(
-                "✅ **DOB VERIFIED! (STEP 2/2)**\n"
-                "━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\n"
+                "✅ **DOB VERIFIED! (STEP 2/2)**\n━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\n"
                 "Please reply with Himanshu Sir's recovery Email Address:",
                 parse_mode="Markdown"
             )
@@ -1214,14 +1208,13 @@ async def handle_text_messages(update: Update, context: ContextTypes.DEFAULT_TYP
             await update.message.reply_text("❌ **INCORRECT DOB!** Recovery attempt failed.", parse_mode="Markdown")
         return
 
-    # Password Recovery Flow: Step 2 (Email Check & Reset Prompt)
+    # Password Recovery Flow: Step 2
     if user.id == PRIMARY_ADMIN_ID and context.user_data.get("awaiting_admin_rec_email"):
         context.user_data["awaiting_admin_rec_email"] = False
         if text.lower() == "hd533044@gmail.com":
             context.user_data["awaiting_admin_new_pass"] = True
             await update.message.reply_text(
-                "🎉 **RECOVERY CREDENTIALS VERIFIED!** 🎉\n"
-                "━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\n"
+                "🎉 **RECOVERY CREDENTIALS VERIFIED!** 🎉\n━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\n"
                 "Please reply with your new Master Admin Password now:",
                 parse_mode="Markdown"
             )
@@ -1240,10 +1233,8 @@ async def handle_text_messages(update: Update, context: ContextTypes.DEFAULT_TYP
         if success:
             ADMIN_AUTH_SESSIONS[user.id] = time.time()
             await update.message.reply_text(
-                f"🎉 **ADMIN PASSWORD CHANGED & SAVED IN SUPABASE!** 🎉\n"
-                f"━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\n"
-                f"🔑 **New Master Password:** `{text}`\n"
-                f"✨ Admin session authenticated for 30 minutes.",
+                f"🎉 **ADMIN PASSWORD CHANGED & SAVED IN SUPABASE!** 🎉\n━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\n"
+                f"🔑 **New Master Password:** `{text}`\n✨ Admin session authenticated for 30 minutes.",
                 parse_mode="Markdown"
             )
             await admin_portal_command(update, context)

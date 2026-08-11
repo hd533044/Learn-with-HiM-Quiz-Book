@@ -94,6 +94,56 @@ def get_unique_students_with_queries_count() -> int:
         return 0
 
 
+def get_strict_paid_users():
+    """Retrieves strictly paid VIP subscribers excluding free demo trials."""
+    conn = None
+    try:
+        conn = get_db()
+        cursor = conn.cursor(cursor_factory=RealDictCursor)
+        cursor.execute(
+            """
+            SELECT DISTINCT u.* FROM users u
+            INNER JOIN payment_transactions pt ON u.user_id = pt.user_id
+            WHERE pt.plan_key != 'FREE_DEMO' AND pt.amount_paid > 0
+            ORDER BY u.created_at DESC
+            """
+        )
+        rows = cursor.fetchall()
+        cursor.close()
+        release_db(conn)
+        return [dict(r) for r in rows] if rows else []
+    except Exception:
+        if conn:
+            release_db(conn)
+        return []
+
+
+def get_strict_demo_users():
+    """Retrieves strictly free demo users."""
+    conn = None
+    try:
+        conn = get_db()
+        cursor = conn.cursor(cursor_factory=RealDictCursor)
+        cursor.execute(
+            """
+            SELECT * FROM users 
+            WHERE demo_used = 1 AND (payment_id IS NULL OR payment_id = 'DEMO_PASS' OR payment_id = 'OFFICIAL_SUBSCRIBED')
+            AND user_id NOT IN (
+                SELECT user_id FROM payment_transactions WHERE plan_key != 'FREE_DEMO' AND amount_paid > 0
+            )
+            ORDER BY created_at DESC
+            """
+        )
+        rows = cursor.fetchall()
+        cursor.close()
+        release_db(conn)
+        return [dict(r) for r in rows] if rows else []
+    except Exception:
+        if conn:
+            release_db(conn)
+        return []
+
+
 def calculate_financial_revenue():
     ist = pytz.timezone("Asia/Kolkata")
     now = datetime.now(ist)
@@ -105,7 +155,7 @@ def calculate_financial_revenue():
     try:
         conn = get_db()
         cursor = conn.cursor(cursor_factory=RealDictCursor)
-        cursor.execute("SELECT amount_paid, created_at FROM payment_transactions")
+        cursor.execute("SELECT amount_paid, created_at FROM payment_transactions WHERE plan_key != 'FREE_DEMO'")
         rows = cursor.fetchall()
         cursor.close()
         release_db(conn)
@@ -170,7 +220,8 @@ async def admin_portal_command(update: Update, context: ContextTypes.DEFAULT_TYP
         return
 
     users = get_all_users()
-    paid_users = get_paid_users()
+    paid_users = get_strict_paid_users()
+    demo_users = get_strict_demo_users()
     pending_students_count = get_unique_students_with_queries_count()
     m_until = get_maintenance_until()
     now_ts = int(time.time())
@@ -178,9 +229,12 @@ async def admin_portal_command(update: Update, context: ContextTypes.DEFAULT_TYP
 
     keyboard = [
         [InlineKeyboardButton(f"📩 Student Support Threads ({pending_students_count} Students)", callback_data="admin_view_student_threads_0")],
-        [InlineKeyboardButton("👥 Student Directory", callback_data="admin_users_page_0"), InlineKeyboardButton("💳 Paid VIP Subscribers", callback_data="admin_paid_users_page_0")],
-        [InlineKeyboardButton("💰 Revenue & Earnings Dashboard", callback_data="admin_financial_stats"), InlineKeyboardButton("🔍 Search Student", callback_data="admin_search_prompt")],
-        [InlineKeyboardButton("🎁 Gift Quota Boost to ALL Users", callback_data="admin_mass_grant_menu")],
+        [
+            InlineKeyboardButton(f"💳 Paid VIP ({len(paid_users)})", callback_data="admin_paid_users_page_0"),
+            InlineKeyboardButton(f"🎁 Free Demo ({len(demo_users)})", callback_data="admin_demo_users_page_0")
+        ],
+        [InlineKeyboardButton("👥 Student Directory", callback_data="admin_users_page_0"), InlineKeyboardButton("🔍 Search Student", callback_data="admin_search_prompt")],
+        [InlineKeyboardButton("💰 Revenue & Earnings Dashboard", callback_data="admin_financial_stats"), InlineKeyboardButton("🎁 Gift Quota Boost to ALL", callback_data="admin_mass_grant_menu")],
         [InlineKeyboardButton("📊 Command Usage Analytics", callback_data="admin_command_stats"), InlineKeyboardButton("📦 Export Ledgers (.zip)", callback_data="admin_export_zip")],
         [InlineKeyboardButton("⏸ Pause 5m", callback_data="admin_pause_5"), InlineKeyboardButton("⏸ Pause 10m", callback_data="admin_pause_10"), InlineKeyboardButton("⏸ Pause 3h", callback_data="admin_pause_180")],
         [InlineKeyboardButton("⏸ Pause 6h", callback_data="admin_pause_360"), InlineKeyboardButton("⏸ Pause 24h", callback_data="admin_pause_1440"), InlineKeyboardButton("▶️ Resume Bot", callback_data="admin_resume_now")],
@@ -192,7 +246,8 @@ async def admin_portal_command(update: Update, context: ContextTypes.DEFAULT_TYP
         f"👑 **MASTER ADMIN PORTAL — Himanshu Sir** 👑\n"
         f"━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\n"
         f"📊 **Total Registered Students:** `{len(users)}`\n"
-        f"💳 **Total Paid VIP Subscribers:** `{len(paid_users)}`\n"
+        f"💎 **Actual Paid VIP Subscribers:** `{len(paid_users)}`\n"
+        f"🎁 **Free Demo Users:** `{len(demo_users)}`\n"
         f"📩 **Students with Pending Queries:** `{pending_students_count}`\n"
         f"⚡ **Bot System Status:** `{m_status}`\n\n"
         f"Select an administrative action below:"
@@ -524,7 +579,6 @@ async def admin_callback_handler(update: Update, context: ContextTypes.DEFAULT_T
             f"━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\n"
         ]
 
-        # Pick the latest pending query ID for quick replying
         latest_pending_qid = None
         for q in queries:
             if q["status"] == "PENDING":
@@ -545,6 +599,7 @@ async def admin_callback_handler(update: Update, context: ContextTypes.DEFAULT_T
         keyboard = []
         if latest_pending_qid:
             keyboard.append([InlineKeyboardButton(f"✍️ Reply to Latest Pending Query (# {latest_pending_qid})", callback_data=f"admin_reply_prompt_{latest_pending_qid}")])
+        keyboard.append([InlineKeyboardButton("📩 Direct Message Student", callback_data=f"admin_direct_msg_{target_uid}")])
         keyboard.append([InlineKeyboardButton("🔙 Back to Threads", callback_data="admin_view_student_threads_0")])
 
         await query.edit_message_text(msg, reply_markup=InlineKeyboardMarkup(keyboard), parse_mode="Markdown")
@@ -554,6 +609,18 @@ async def admin_callback_handler(update: Update, context: ContextTypes.DEFAULT_T
         qid = int(data.replace("admin_reply_prompt_", ""))
         context.user_data["awaiting_admin_reply_qid"] = qid
         await query.edit_message_text(f"✍️ **SECRET REPLY TO QUERY #{qid}**\n\nPlease reply with your response text for this student:", parse_mode="Markdown")
+
+    elif data.startswith("admin_direct_msg_"):
+        await query.answer()
+        target_uid = int(data.replace("admin_direct_msg_", ""))
+        context.user_data["awaiting_admin_direct_msg_uid"] = target_uid
+        msg = (
+            f"✉️ **DIRECT MESSAGE TO STUDENT (`{target_uid}`)**\n"
+            f"━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\n"
+            f"Please reply with the message text you want to send directly to this student.\n\n"
+            f"🔒 *This message will be delivered into the student's personal chat.*"
+        )
+        await query.edit_message_text(msg, parse_mode="Markdown")
 
     elif data.startswith("admin_pause_"):
         await query.answer()
@@ -620,7 +687,6 @@ async def admin_callback_handler(update: Update, context: ContextTypes.DEFAULT_T
         PROFILE_CACHE.pop(target_uid, None)
         sync_user_json_profile(target_uid)
 
-        # BROADCAST QUOTA INCREASE ANNOUNCEMENT TO USER
         profile = get_user_profile(target_uid) or {}
         tot_quota = (profile.get("paid_question_balance", 0) or 20) + profile.get("bonus_quota", 0)
         user_announcement = (
@@ -800,7 +866,7 @@ async def admin_callback_handler(update: Update, context: ContextTypes.DEFAULT_T
     elif data.startswith("admin_paid_users_page_"):
         await query.answer()
         page = int(data.replace("admin_paid_users_page_", ""))
-        paid_users = get_paid_users()
+        paid_users = get_strict_paid_users()
         total_paid = len(paid_users)
 
         if total_paid == 0:
@@ -841,6 +907,50 @@ async def admin_callback_handler(update: Update, context: ContextTypes.DEFAULT_T
         )
         await query.edit_message_text(msg, reply_markup=InlineKeyboardMarkup(keyboard), parse_mode="Markdown")
 
+    elif data.startswith("admin_demo_users_page_"):
+        await query.answer()
+        page = int(data.replace("admin_demo_users_page_", ""))
+        demo_users = get_strict_demo_users()
+        total_demo = len(demo_users)
+
+        if total_demo == 0:
+            keyboard = [[InlineKeyboardButton("🔙 Back to Admin Portal", callback_data="admin_home")]]
+            await query.edit_message_text("🎁 **FREE DEMO USERS**\n\nNo free demo users found in the database.", reply_markup=InlineKeyboardMarkup(keyboard), parse_mode="Markdown")
+            return
+
+        total_pages = math.ceil(total_demo / USERS_PER_PAGE)
+        page = max(0, min(page, total_pages - 1))
+
+        start_idx = page * USERS_PER_PAGE
+        end_idx = start_idx + USERS_PER_PAGE
+        page_users = demo_users[start_idx:end_idx]
+
+        keyboard = []
+        for u in page_users:
+            sid = u.get("student_id") or f"USER_{u['user_id']}"
+            ban_flag = " 🛑" if u.get("is_banned") else ""
+            btn_text = f"🎁 {u['full_name']}{ban_flag} (ID: {sid})"
+            keyboard.append([InlineKeyboardButton(btn_text, callback_data=f"admin_inspect_u_{u['user_id']}")])
+
+        nav_row = []
+        if page > 0:
+            nav_row.append(InlineKeyboardButton("◀️ Prev", callback_data=f"admin_demo_users_page_{page - 1}"))
+        nav_row.append(InlineKeyboardButton(f"📄 Page {page + 1}/{total_pages}", callback_data="ignore"))
+        if page < total_pages - 1:
+            nav_row.append(InlineKeyboardButton("Next ▶️", callback_data=f"admin_demo_users_page_{page + 1}"))
+        
+        keyboard.append(nav_row)
+        keyboard.append([InlineKeyboardButton("🔙 Back to Admin Portal", callback_data="admin_home")])
+
+        msg = (
+            f"🎁 **FREE DEMO USERS DIRECTORY**\n"
+            f"━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\n"
+            f"• **Total Free Demo Users:** `{total_demo}`\n"
+            f"• **Page:** `{page + 1}` of `{total_pages}`\n\n"
+            f"Tap any demo student below to inspect profile and subscription ledger:"
+        )
+        await query.edit_message_text(msg, reply_markup=InlineKeyboardMarkup(keyboard), parse_mode="Markdown")
+
     elif data == "admin_home":
         await query.answer()
         await admin_portal_command(update, context)
@@ -860,10 +970,11 @@ async def admin_callback_handler(update: Update, context: ContextTypes.DEFAULT_T
         ban_btn_label = "🔴 Ban Student" if not is_banned else "🟢 Unban Student"
 
         paid_bal = u.get("paid_question_balance", 0)
-        is_paid = paid_bal > 0
-        paid_text = f"💳 PAID VIP ({paid_bal} Qs/Day)" if is_paid else "🆓 FREE TIER"
+        is_paid = paid_bal > 20 and u.get("payment_id") and u.get("payment_id") not in ('DEMO_PASS', 'OFFICIAL_SUBSCRIBED')
+        paid_text = f"💳 PAID VIP ({paid_bal} Qs/Day)" if is_paid else "🆓 FREE DEMO / TIER"
 
         keyboard = [
+            [InlineKeyboardButton("📩 Direct Message Student", callback_data=f"admin_direct_msg_{target_uid}")],
             [InlineKeyboardButton("💳 View Recent Payments", callback_data=f"admin_view_payments_{target_uid}"), InlineKeyboardButton("👑 Grant Paid Plan", callback_data=f"admin_grant_menu_{target_uid}")],
             [InlineKeyboardButton("📋 Personal Details", callback_data=f"audit_personal_{target_uid}"), InlineKeyboardButton("🔑 PIN & Security Questions", callback_data=f"audit_pinsec_{target_uid}")],
             [InlineKeyboardButton("⏱ Time & Activity Log", callback_data=f"audit_activity_{target_uid}"), InlineKeyboardButton("📊 Overall Performance", callback_data=f"audit_perf_{target_uid}")],
@@ -985,7 +1096,8 @@ async def admin_callback_handler(update: Update, context: ContextTypes.DEFAULT_T
         remaining_edits = max(0, 3 - edit_cnt)
 
         paid_bal = u.get("paid_question_balance", 0)
-        paid_str = f"💳 YES ({paid_bal} Qs/Day)" if paid_bal > 0 else "🆓 NO (Free Tier)"
+        is_paid = paid_bal > 20 and u.get("payment_id") and u.get("payment_id") not in ('DEMO_PASS', 'OFFICIAL_SUBSCRIBED')
+        paid_str = f"💳 YES ({paid_bal} Qs/Day)" if is_paid else "🆓 NO (Free Demo / Tier)"
 
         msg = (
             f"📋 **STUDENT PERSONAL DETAILS** 📋\n"

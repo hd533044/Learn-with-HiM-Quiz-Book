@@ -363,7 +363,6 @@ async def myplan_command(update: Update, context: ContextTypes.DEFAULT_TYPE):
     asyncio.create_task(asyncio.to_thread(log_command_usage, user.id, "/myplan"))
     asyncio.create_task(asyncio.to_thread(log_user_activity_time, user.id, 10))
     
-    # Invalidate profile cache to fetch latest DB values
     PROFILE_CACHE.pop(user.id, None)
     profile = await fetch_user_profile_fast(user.id)
 
@@ -379,7 +378,6 @@ async def myplan_command(update: Update, context: ContextTypes.DEFAULT_TYPE):
 
     expiry = profile.get("vip_pass_expiry") or "N/A"
 
-    # Fetch ALL active subscribed plans for detailed breakdown without artificial truncation
     history_plans = await asyncio.to_thread(get_user_active_plans_history, user.id)
     
     plans_text = ""
@@ -388,7 +386,6 @@ async def myplan_command(update: Update, context: ContextTypes.DEFAULT_TYPE):
         ist = pytz.timezone("Asia/Kolkata")
         for idx, hp in enumerate(history_plans, start=1):
             p_exp = hp.get('expiry_at')
-            # Calculate dynamic expiry if record shows 'Active' or NULL
             if not p_exp or p_exp == 'Active':
                 created_str = hp.get('created_at', '')
                 try:
@@ -1029,6 +1026,84 @@ async def referral_command(update: Update, context: ContextTypes.DEFAULT_TYPE):
     )
     await send_response(update, msg)
 
+async def admin_list_subscribers_router(update: Update, context: ContextTypes.DEFAULT_TYPE):
+    """
+    Renders Paid VIP users vs Free Demo users distinctly without mixing user tiers.
+    """
+    query = update.callback_query
+    await query.answer()
+
+    if query.from_user.id != PRIMARY_ADMIN_ID:
+        await query.answer("⛔ Admin access only!", show_alert=True)
+        return
+
+    data = query.data
+    conn = get_db()
+    cursor = conn.cursor(cursor_factory=RealDictCursor)
+
+    if data == "admin_paid_users":
+        title = "💎 **PAID VIP SUBSCRIBERS LIST** 💎"
+        cursor.execute(
+            "SELECT user_id, full_name, paid_question_balance, vip_pass_expiry, payment_id FROM users "
+            "WHERE payment_id IS NOT NULL AND payment_id NOT IN ('DEMO_PASS', 'OFFICIAL_SUBSCRIBED') "
+            "ORDER BY id DESC"
+        )
+    elif data == "admin_demo_users":
+        title = "🎁 **FREE DEMO USERS LIST** 🎁"
+        cursor.execute(
+            "SELECT user_id, full_name, paid_question_balance, vip_pass_expiry, payment_id FROM users "
+            "WHERE demo_used = 1 AND (payment_id IS NULL OR payment_id = 'DEMO_PASS') "
+            "ORDER BY id DESC"
+        )
+    else:
+        title = "👥 **ALL REGISTERED STUDENTS** 👥"
+        cursor.execute("SELECT user_id, full_name, paid_question_balance, vip_pass_expiry, payment_id FROM users ORDER BY id DESC LIMIT 50")
+
+    users = cursor.fetchall()
+    cursor.close()
+    release_db(conn)
+
+    if not users:
+        text = f"{title}\n\n*No students found in this category.*"
+        btn = InlineKeyboardMarkup([[InlineKeyboardButton("🔙 Back to Admin", callback_data="admin_main_portal")]])
+        await query.edit_message_text(text, reply_markup=btn, parse_mode="Markdown")
+        return
+
+    buttons = []
+    for u in users[:30]:
+        uid = u['user_id']
+        name = u['full_name'] or f"User {uid}"
+        buttons.append([InlineKeyboardButton(f"👤 {name} (ID: {uid})", callback_data=f"admin_inspect_u_{uid}")])
+
+    buttons.append([InlineKeyboardButton("🔙 Back to Admin", callback_data="admin_main_portal")])
+    await query.edit_message_text(
+        f"{title}\nTotal Students: {len(users)}\nSelect a student to view details or send a direct message:",
+        reply_markup=InlineKeyboardMarkup(buttons),
+        parse_mode="Markdown"
+    )
+
+async def admin_start_direct_message_prompt(update: Update, context: ContextTypes.DEFAULT_TYPE):
+    """
+    Sets context to accept custom direct message text from Admin to a specific student.
+    """
+    query = update.callback_query
+    await query.answer()
+
+    if query.from_user.id != PRIMARY_ADMIN_ID:
+        await query.answer("⛔ Admin access only!", show_alert=True)
+        return
+
+    target_user_id = int(query.data.replace("admin_direct_msg_", ""))
+    context.user_data["awaiting_admin_direct_msg_uid"] = target_user_id
+
+    msg = (
+        f"✉️ **DIRECT MESSAGE TO STUDENT (`{target_user_id}`)**\n"
+        f"━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\n"
+        f"Please reply with the message text you want to send directly to this student.\n\n"
+        f"🔒 *This message will be instantly delivered into the student's personal chat.*"
+    )
+    await query.edit_message_text(msg, parse_mode="Markdown")
+
 async def button_router(update: Update, context: ContextTypes.DEFAULT_TYPE):
     if not await maintenance_guard(update, context): return
 
@@ -1100,6 +1175,10 @@ async def button_router(update: Update, context: ContextTypes.DEFAULT_TYPE):
         await feedback_command(update, context)
     elif data == "cmd_viewfeedbacks":
         await viewfeedbacks_command(update, context)
+    elif data.startswith("admin_paid_users") or data.startswith("admin_demo_users") or data.startswith("admin_all_users"):
+        await admin_list_subscribers_router(update, context)
+    elif data.startswith("admin_direct_msg_"):
+        await admin_start_direct_message_prompt(update, context)
     elif data.startswith("fb_p"):
         presets = {
             "fb_p1": "10/10 Quality Quizzes!",
@@ -1183,6 +1262,24 @@ async def handle_text_messages(update: Update, context: ContextTypes.DEFAULT_TYP
         else:
             reset_btn = InlineKeyboardMarkup([[InlineKeyboardButton("🔑 Forgot Password / Recovery Reset", callback_data="admin_forgot_pass_step1")]])
             await update.message.reply_text("❌ **INCORRECT PASSWORD!** Access denied.\nTap below if you need to recover password:", reply_markup=reset_btn, parse_mode="Markdown")
+        return
+
+    # Direct Message Handler from Admin to Student
+    if user.id == PRIMARY_ADMIN_ID and context.user_data.get("awaiting_admin_direct_msg_uid"):
+        target_student_id = context.user_data.pop("awaiting_admin_direct_msg_uid")
+        outbound_msg = (
+            f"📩 **OFFICIAL MESSAGE FROM HIMANSHU SIR / ADMIN**\n"
+            f"━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\n"
+            f"{text}\n"
+            f"━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\n"
+            f"💬 *Reply anytime via /askadmin if you have questions!*"
+        )
+        try:
+            btn = InlineKeyboardMarkup([[InlineKeyboardButton("💬 Reply Back to Admin", callback_data="cmd_askadmin")]])
+            await context.bot.send_message(chat_id=target_student_id, text=outbound_msg, reply_markup=btn, parse_mode="Markdown")
+            await update.message.reply_text(f"✅ **Direct Message successfully sent to Student (`{target_student_id}`)!**", parse_mode="Markdown")
+        except Exception as e:
+            await update.message.reply_text(f"❌ **Failed to deliver direct message:** {e}", parse_mode="Markdown")
         return
 
     # Secret Communication Reply Handler for Admin
@@ -1404,7 +1501,7 @@ def build_application() -> Application:
     app.add_handler(CallbackQueryHandler(admin_grant_plan_menu_callback, pattern="^admin_grant_menu_"))
     app.add_handler(CallbackQueryHandler(admin_execute_grant_callback, pattern="^admin_exec_grant_"))
     app.add_handler(CallbackQueryHandler(admin_callback_handler, pattern="^(admin_|audit_|genpdf_)"))
-    app.add_handler(CallbackQueryHandler(button_router, pattern="^cmd_|^fb_|^trigger_start|^buy_plan_"))
+    app.add_handler(CallbackQueryHandler(button_router, pattern="^cmd_|^fb_|^trigger_start|^buy_plan_|^admin_paid_users|^admin_demo_users|^admin_all_users|^admin_direct_msg_"))
 
     app.add_handler(MessageHandler(filters.TEXT & ~filters.COMMAND, handle_text_messages))
     app.add_handler(PollAnswerHandler(handle_poll_answer))

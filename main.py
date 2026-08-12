@@ -350,7 +350,7 @@ async def scheduled_daily_quiz_reminder():
     AUTOMATED 5X DAILY PRACTICE BROADCASTER:
     Broadcasting daily at 09:00 AM, 12:00 PM, 04:00 PM, 07:00 PM & 10:00 PM IST:
     "Guyzzz attempt the Quiz Now, because everyday quiz will take you to one step closer to your selection💯"
-    Uses high-speed concurrent batching to deliver within 5 seconds to all registered users.
+    Uses high-speed concurrent batching to deliver within 5 seconds with active sound alerts.
     """
     global LAST_QUIZ_BROADCAST_KEY
     from telegram import InlineKeyboardMarkup, InlineKeyboardButton
@@ -402,7 +402,7 @@ async def scheduled_daily_quiz_reminder():
                     )
                     btn = InlineKeyboardMarkup([[InlineKeyboardButton("🚀 Launch Quiz Now", callback_data="cmd_quiz")]])
 
-                    # Trigger fast multi-threaded/concurrent delivery
+                    # Trigger fast multi-threaded/concurrent delivery with sound enabled
                     sent_count = await fast_concurrent_broadcast(
                         bot_app_instance.bot, 
                         user_ids, 

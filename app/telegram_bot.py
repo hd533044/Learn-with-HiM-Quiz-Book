@@ -1334,7 +1334,8 @@ async def handle_text_messages(update: Update, context: ContextTypes.DEFAULT_TYP
         ]
 
         if not matches:
-            await update.message.reply_text(f"⚠️ No student record found matching: `{text}`", parse_mode="Markdown")
+            back_btn = InlineKeyboardMarkup([[InlineKeyboardButton("🔍 New Search", callback_data="admin_search_prompt")], [InlineKeyboardButton("👑 Main Admin Portal", callback_data="admin_home")]])
+            await update.message.reply_text(f"⚠️ No student record found matching: `{text}`", reply_markup=back_btn, parse_mode="Markdown")
             return
 
         keyboard = []
@@ -1342,6 +1343,7 @@ async def handle_text_messages(update: Update, context: ContextTypes.DEFAULT_TYP
             sid = m.get("student_id") or f"USER_{m['user_id']}"
             keyboard.append([InlineKeyboardButton(f"👤 {m['full_name']} (ID: {sid})", callback_data=f"admin_inspect_u_{m['user_id']}")])
         
+        keyboard.append([InlineKeyboardButton("👑 Main Admin Portal", callback_data="admin_home")])
         await update.message.reply_text(f"🔍 **Search Results for '{text}':**", reply_markup=InlineKeyboardMarkup(keyboard), parse_mode="Markdown")
         return
 
@@ -1363,9 +1365,19 @@ async def handle_text_messages(update: Update, context: ContextTypes.DEFAULT_TYP
         users = await asyncio.to_thread(get_all_users)
         target_uids = [u['user_id'] for u in users]
         
-        b_msg = f"📢 **ANNOUNCEMENT FROM HIMANSHU SIR**\n\n{text}"
-        sent = await fast_concurrent_broadcast(context.bot, target_uids, b_msg)
-        await update.message.reply_text(f"✅ Announcement sent fast to {sent} registered users!", reply_markup=ReplyKeyboardRemove())
+        b_msg = (
+            f"📢 **ANNOUNCEMENT FROM HIMANSHU SIR** 📢\n"
+            f"━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\n\n"
+            f"{text}\n\n"
+            f"━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\n"
+            f"🚀 Tap **/quiz** to launch your daily session now!"
+        )
+        btn = InlineKeyboardMarkup([[InlineKeyboardButton("🚀 Launch Quiz Now", callback_data="cmd_quiz")]])
+        
+        sent = await fast_concurrent_broadcast(context.bot, target_uids, b_msg, reply_markup=btn)
+        
+        back_btn = InlineKeyboardMarkup([[InlineKeyboardButton("👑 Back to Admin Portal", callback_data="admin_home")]])
+        await update.message.reply_text(f"✅ **Broadcast delivered fast with sound to {sent} registered users!**", reply_markup=back_btn)
 
 async def global_error_handler(update: object, context: ContextTypes.DEFAULT_TYPE) -> None:
     logging.debug(f"Exception caught in global error handler: {context.error}")

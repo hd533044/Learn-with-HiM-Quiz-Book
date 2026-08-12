@@ -326,10 +326,19 @@ async def admin_portal_command(update: Update, context: ContextTypes.DEFAULT_TYP
         [InlineKeyboardButton("👥 Student Directory", callback_data="admin_users_page_0"), InlineKeyboardButton("🔍 Search Student", callback_data="admin_search_prompt")],
         [InlineKeyboardButton("💰 Revenue & Earnings Dashboard", callback_data="admin_financial_stats"), InlineKeyboardButton("🎁 Gift 1-Day Quota Boost to ALL", callback_data="admin_mass_grant_menu")],
         [InlineKeyboardButton("📊 Command Usage Analytics", callback_data="admin_command_stats"), InlineKeyboardButton("📦 Export Ledgers (.zip)", callback_data="admin_export_zip")],
-        [InlineKeyboardButton("⏸ Pause 5m", callback_data="admin_pause_5"), InlineKeyboardButton("⏸ Pause 10m", callback_data="admin_pause_10"), InlineKeyboardButton("⏸ Pause 3h", callback_data="admin_pause_180")],
-        [InlineKeyboardButton("⏸ Pause 6h", callback_data="admin_pause_360"), InlineKeyboardButton("⏸ Pause 24h", callback_data="admin_pause_1440"), InlineKeyboardButton("▶️ Resume Bot", callback_data="admin_resume_now")],
+        [
+            InlineKeyboardButton("⏸ Pause 5m", callback_data="admin_pause_5"), 
+            InlineKeyboardButton("⏸ Pause 10m", callback_data="admin_pause_10"),
+            InlineKeyboardButton("⏸ Pause 1h", callback_data="admin_pause_60")
+        ],
+        [
+            InlineKeyboardButton("⏸ Pause 3h", callback_data="admin_pause_180"),
+            InlineKeyboardButton("⏸ Pause 6h", callback_data="admin_pause_360"),
+            InlineKeyboardButton("⏸ Pause 24h", callback_data="admin_pause_1440")
+        ],
+        [InlineKeyboardButton("▶️ Resume Bot Services Immediately", callback_data="admin_resume_now")],
         [InlineKeyboardButton("🔑 Change Password", callback_data="admin_change_pass_prompt"), InlineKeyboardButton("🔒 Lock Session", callback_data="admin_lock_session")],
-        [InlineKeyboardButton("📢 Global Broadcast", callback_data="admin_broadcast")]
+        [InlineKeyboardButton("📢 Global Broadcast to ALL Users", callback_data="admin_broadcast")]
     ]
 
     msg = (
@@ -405,7 +414,9 @@ async def admin_view_user_payments_callback(update: Update, context: ContextType
         msg = msg[:3950] + "\n\n*(Truncated due to Telegram length limit)*"
 
     back_btn = InlineKeyboardMarkup([
-        [InlineKeyboardButton("🔙 Back to Student Profile", callback_data=f"admin_inspect_u_{target_uid}")]
+        [InlineKeyboardButton("👑 Grant Paid VIP Pack", callback_data=f"admin_grant_menu_{target_uid}")],
+        [InlineKeyboardButton("🔙 Back to Student Profile", callback_data=f"admin_inspect_u_{target_uid}")],
+        [InlineKeyboardButton("👑 Main Admin Portal", callback_data="admin_home")]
     ])
     await query.edit_message_text(msg, reply_markup=back_btn, parse_mode="Markdown")
 
@@ -428,7 +439,8 @@ async def admin_grant_plan_menu_callback(update: Update, context: ContextTypes.D
         [InlineKeyboardButton("📦 Grant PLATINUM (₹40 - 300 Qs)", callback_data=f"admin_exec_grant_{target_uid}_PLATINUM")],
         [InlineKeyboardButton("📦 Grant RUBY (₹50 - 400 Qs)", callback_data=f"admin_exec_grant_{target_uid}_RUBY")],
         [InlineKeyboardButton("📦 Grant MEGA PACK (₹80 - 500 Qs)", callback_data=f"admin_exec_grant_{target_uid}_MEGA")],
-        [InlineKeyboardButton("🔙 Back to Student Profile", callback_data=f"admin_inspect_u_{target_uid}")]
+        [InlineKeyboardButton("🔙 Back to Student Profile", callback_data=f"admin_inspect_u_{target_uid}")],
+        [InlineKeyboardButton("👑 Main Admin Portal", callback_data="admin_home")]
     ]
 
     msg = f"👑 **GRANT PAID PACK TO {name}** 👑\nSelect a VIP plan to credit and stack:"
@@ -504,7 +516,10 @@ async def admin_execute_grant_callback(update: Update, context: ContextTypes.DEF
     except Exception:
         pass
 
-    back_btn = InlineKeyboardMarkup([[InlineKeyboardButton("🔙 Back to Student Profile", callback_data=f"admin_inspect_u_{target_uid}")]])
+    back_btn = InlineKeyboardMarkup([
+        [InlineKeyboardButton("🔙 Back to Student Profile", callback_data=f"admin_inspect_u_{target_uid}")],
+        [InlineKeyboardButton("👑 Main Admin Portal", callback_data="admin_home")]
+    ])
     await query.edit_message_text(f"✅ **PLAN GRANTED & BROADCASTED!**\nGranted `{plan['name']}` to user `{target_uid}`.", reply_markup=back_btn, parse_mode="Markdown")
 
 
@@ -743,6 +758,7 @@ async def admin_callback_handler(update: Update, context: ContextTypes.DEFAULT_T
             keyboard.append([InlineKeyboardButton(f"✍️ Reply to Latest Pending Query (# {latest_pending_qid})", callback_data=f"admin_reply_prompt_{latest_pending_qid}")])
         keyboard.append([InlineKeyboardButton("📩 Direct Message Student", callback_data=f"admin_direct_msg_{target_uid}")])
         keyboard.append([InlineKeyboardButton("🔙 Back to Threads", callback_data="admin_view_student_threads_0")])
+        keyboard.append([InlineKeyboardButton("👑 Main Admin Portal", callback_data="admin_home")])
 
         await query.edit_message_text(msg, reply_markup=InlineKeyboardMarkup(keyboard), parse_mode="Markdown")
 
@@ -768,16 +784,29 @@ async def admin_callback_handler(update: Update, context: ContextTypes.DEFAULT_T
         await query.answer()
         mins = int(data.replace("admin_pause_", ""))
         set_maintenance_until(int(time.time()) + (mins * 60))
-        await query.edit_message_text(f"🛑 **Bot Service PAUSED for {mins} Minutes.**\nBroadcasting notice to all users...", parse_mode="Markdown")
+        
+        hours_label = f"{mins // 60} Hour(s)" if mins >= 60 else f"{mins} Minutes"
+        back_btn = InlineKeyboardMarkup([
+            [InlineKeyboardButton("▶️ Resume Bot Services Now", callback_data="admin_resume_now")],
+            [InlineKeyboardButton("👑 Back to Admin Portal", callback_data="admin_home")]
+        ])
+        
+        await query.edit_message_text(
+            f"🛑 **Bot Services PAUSED for {hours_label}.**\n"
+            f"Broadcasting pause notification to all registered users...", 
+            reply_markup=back_btn,
+            parse_mode="Markdown"
+        )
         
         target_uids = [u['user_id'] for u in users]
-        pause_txt = f"📢 **ADMIN HAS PAUSED SERVICE FOR {mins} MINS**"
+        pause_txt = f"📢 **ADMIN NOTICE:** Bot services have been temporarily paused for {hours_label}."
         await fast_concurrent_broadcast(context.bot, target_uids, pause_txt)
 
     elif data == "admin_resume_now":
         await query.answer()
         set_maintenance_until(0)
-        await query.edit_message_text("🟢 **Bot Service RESUMED Immediately.**", parse_mode="Markdown")
+        back_btn = InlineKeyboardMarkup([[InlineKeyboardButton("👑 Back to Admin Portal", callback_data="admin_home")]])
+        await query.edit_message_text("🟢 **Bot Service RESUMED Immediately.**\nBroadcasting service status to all users...", reply_markup=back_btn, parse_mode="Markdown")
         
         target_uids = [u['user_id'] for u in users]
         resume_txt = "📢 **ADMIN HAS RESUMED SERVICES! YOU CAN ATTEMPT QUIZZES NOW!**"
@@ -1551,4 +1580,5 @@ async def admin_callback_handler(update: Update, context: ContextTypes.DEFAULT_T
     elif data == "admin_broadcast":
         await query.answer()
         context.user_data["awaiting_broadcast"] = True
-        await query.edit_message_text("📢 Send the message text you wish to broadcast to all registered users:", parse_mode="Markdown")
+        cancel_btn = InlineKeyboardMarkup([[InlineKeyboardButton("❌ Cancel Broadcast", callback_data="admin_home")]])
+        await query.edit_message_text("📢 **GLOBAL BROADCAST CENTER**\n\nSend the message text you wish to broadcast with audio alert to ALL registered users:", reply_markup=cancel_btn, parse_mode="Markdown")

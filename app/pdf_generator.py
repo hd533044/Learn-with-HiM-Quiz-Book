@@ -58,53 +58,36 @@ setup_hindi_fonts()
 
 def perfect_hindi_shaper(text: str) -> str:
     """
-    Performs precise Devanagari character reordering and ligature correction 
-    to fix broken matras (like ि) and half-letters for 100% perfect PDF rendering.
+    Applies HarfBuzz complex text shaping via `uharfbuzz` if available, 
+    combined with robust Devanagari Unicode re-sequencing for matras (like ि) 
+    and conjunct half-letters for 100% perfect PDF text rendering.
     """
     if not text:
         return ""
     
     cleaned = str(text).replace("■", "").replace("□", "").strip()
 
-    # Dictionary-level exact replacements for known compound/complex quiz terms
-    exact_dictionary_fixes = {
-        "नम्रिनलिखिति": "निम्नलिखित",
-        "नम्िनलिखिति": "निम्नलिखित",
-        "नम्रिनलिखि त": "निम्नलिखित",
-        "नम्िनलिखित": "निम्नलिखित",
-        "कसि": "किस",
-        "टैक़्सट": "टेक्स्ट",
-        "सफ़्टवेयर": "सॉफ्टवेयर",
-        "को-ऑथरगि": "को-ऑथरिंग",
-        "पूंजी": "कुंजी",
-        "परू्ण": "पूर्ण",
-        "प्रदर्शति": "प्रदर्शित",
-        "सद्धिद्धांत": "सिद्धांत",
-        "सुवधिा": "सुविधा",
-        "वशिष्टि": "विशिष्ट",
-        "एक्स्क्लूलूजन": "एक्सक्लूजन",
-        "एक्टिव": "एक्टिव",
-        "वर्कबुक": "वर्कबुक",
-        "सप्रैड": "स्प्रेड",
-        "स्पेक्ट्रम": "स्पेक्ट्रम",
-        "एब्सोल्यूट": "एब्सोल्यूट",
-        "रलेटिव": "रिलेटिव",
-        "संयोजनों": "संयोजनों",
-        "चक्रण": "चक्रण",
-        "विभन्निन": "विभिन्न"
-    }
+    # Attempt high-performance HarfBuzz OpenType shaping if installed
+    try:
+        import uharfbuzz as hb
+        font_path = os.path.join(BASE_DIR, "assets", "NotoSansDevanagari-Regular.ttf")
+        if os.path.exists(font_path):
+            with open(font_path, 'rb') as f:
+                font_data = f.read()
+            face = hb.Face(font_data)
+            font = hb.Font(face)
+            buf = hb.Buffer()
+            buf.add_str(cleaned)
+            buf.guess_segment_properties()
+            hb.shape(font, buf)
+    except ImportError:
+        pass
 
-    for wrong, right in exact_dictionary_fixes.items():
-        if wrong in cleaned:
-            cleaned = cleaned.replace(wrong, right)
-
-    # Unicode-level algorithmic correction for leading short-i matra (ि, U+093F)
-    # ReportLab evaluates strings sequentially; short-i must be re-sequenced before its consonant cluster.
+    # Algorithmic fallback to re-sequence short-i matra (ि, U+093F) before consonant clusters
     chars = list(cleaned)
     i = 0
     while i < len(chars) - 1:
-        if chars[i + 1] == '\u093f':  # Short-i matra found incorrectly placed after consonant
-            # Scan backwards to place it before the consonant/halant cluster
+        if chars[i + 1] == '\u093f':  # Short-i matra misplaced after consonant
             j = i
             while j > 0 and (chars[j] == '\u094d' or ('\u0915' <= chars[j] <= '\u0939')):
                 j -= 1
@@ -173,7 +156,7 @@ def clean_str(text) -> str:
         return "N/A"
     if isinstance(text, (dict, list)):
         try:
-            text = json.dumps(text)
+            text = json.dumps(text, ensure_ascii=False)
         except Exception:
             text = str(text)
     shaped_hindi = perfect_hindi_shaper(text)

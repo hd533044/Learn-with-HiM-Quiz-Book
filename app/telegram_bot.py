@@ -37,7 +37,8 @@ from app.stats import get_overall_leaderboard, calculate_user_percentile, calcul
 from app.admin import (
     admin_portal_command, admin_callback_handler,
     admin_view_user_payments_callback, admin_grant_plan_menu_callback, admin_execute_grant_callback,
-    get_stored_admin_password, update_admin_password_db, ADMIN_AUTH_SESSIONS
+    get_stored_admin_password, update_admin_password_db, ADMIN_AUTH_SESSIONS,
+    fast_concurrent_broadcast
 )
 from app.pdf_generator import generate_student_pdf_report
 from app.pyq_fetcher import fetch_pyqs_for_quiz
@@ -1221,7 +1222,7 @@ async def handle_text_messages(update: Update, context: ContextTypes.DEFAULT_TYP
         )
         try:
             btn = InlineKeyboardMarkup([[InlineKeyboardButton("💬 Reply Back to Admin", callback_data="cmd_askadmin")]])
-            await context.bot.send_message(chat_id=target_student_id, text=outbound_msg, reply_markup=btn, parse_mode="Markdown")
+            await context.bot.send_message(chat_id=target_student_id, text=outbound_msg, reply_markup=btn, parse_mode="Markdown", disable_notification=False)
             await update.message.reply_text(f"✅ **Direct Message successfully sent to Student (`{target_student_id}`)!**", parse_mode="Markdown")
         except Exception as e:
             await update.message.reply_text(f"❌ **Failed to deliver direct message:** {e}", parse_mode="Markdown")
@@ -1256,7 +1257,7 @@ async def handle_text_messages(update: Update, context: ContextTypes.DEFAULT_TYP
             )
             try:
                 btn = InlineKeyboardMarkup([[InlineKeyboardButton("💬 Reply Back to Admin", callback_data="cmd_askadmin")]])
-                await context.bot.send_message(chat_id=student_uid, text=user_msg, reply_markup=btn, parse_mode="Markdown")
+                await context.bot.send_message(chat_id=student_uid, text=user_msg, reply_markup=btn, parse_mode="Markdown", disable_notification=False)
                 await update.message.reply_text(f"✅ **Reply sent secretly to student `{student_uid}`!**", parse_mode="Markdown")
             except Exception as e:
                 await update.message.reply_text(f"⚠️ Reply saved, but failed sending message to user: {e}")
@@ -1287,7 +1288,7 @@ async def handle_text_messages(update: Update, context: ContextTypes.DEFAULT_TYP
                 f"❓ **Query:** *\"{text}\"*\n\n"
                 f"Type /admin to inspect and reply."
             )
-            await context.bot.send_message(chat_id=PRIMARY_ADMIN_ID, text=admin_notice, parse_mode="Markdown")
+            await context.bot.send_message(chat_id=PRIMARY_ADMIN_ID, text=admin_notice, parse_mode="Markdown", disable_notification=False)
         except Exception:
             pass
 
@@ -1360,14 +1361,11 @@ async def handle_text_messages(update: Update, context: ContextTypes.DEFAULT_TYP
     if context.user_data.get("awaiting_broadcast"):
         context.user_data["awaiting_broadcast"] = False
         users = await asyncio.to_thread(get_all_users)
-        sent = 0
-        for u in users:
-            try:
-                await context.bot.send_message(chat_id=u['user_id'], text=f"📢 **ANNOUNCEMENT FROM HIMANSHU SIR**\n\n{text}", parse_mode="Markdown")
-                sent += 1
-            except Exception:
-                pass
-        await update.message.reply_text(f"✅ Announcement sent to {sent} users!", reply_markup=ReplyKeyboardRemove())
+        target_uids = [u['user_id'] for u in users]
+        
+        b_msg = f"📢 **ANNOUNCEMENT FROM HIMANSHU SIR**\n\n{text}"
+        sent = await fast_concurrent_broadcast(context.bot, target_uids, b_msg)
+        await update.message.reply_text(f"✅ Announcement sent fast to {sent} registered users!", reply_markup=ReplyKeyboardRemove())
 
 async def global_error_handler(update: object, context: ContextTypes.DEFAULT_TYPE) -> None:
     logging.debug(f"Exception caught in global error handler: {context.error}")
@@ -1446,7 +1444,6 @@ def build_application() -> Application:
     app.add_handler(CallbackQueryHandler(admin_grant_plan_menu_callback, pattern="^admin_grant_menu_"))
     app.add_handler(CallbackQueryHandler(admin_execute_grant_callback, pattern="^admin_exec_grant_"))
     
-    # Fully expanded regex to catch all admin, audit, pdf analytics, online users, and inspection callbacks
     app.add_handler(CallbackQueryHandler(admin_callback_handler, pattern="^(admin_|audit_|genpdf_)"))
     app.add_handler(CallbackQueryHandler(button_router, pattern="^cmd_|^fb_|^trigger_start|^buy_plan_"))
 

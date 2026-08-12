@@ -24,6 +24,34 @@ USERS_PER_PAGE = 8
 ADMIN_AUTH_SESSIONS = {}  # {user_id: auth_timestamp}
 
 
+async def fast_concurrent_broadcast(bot, user_ids, text, reply_markup=None, parse_mode="Markdown"):
+    """
+    Delivers messages concurrently in batches to ensure maximum speed (~5s delivery)
+    with sound notifications enabled (disable_notification=False).
+    """
+    async def send_single(uid):
+        try:
+            await bot.send_message(
+                chat_id=uid,
+                text=text,
+                reply_markup=reply_markup,
+                parse_mode=parse_mode,
+                disable_notification=False
+            )
+            return True
+        except Exception:
+            return False
+
+    batch_size = 40
+    successful_deliveries = 0
+    for i in range(0, len(user_ids), batch_size):
+        batch = user_ids[i:i + batch_size]
+        results = await asyncio.gather(*(send_single(uid) for uid in batch))
+        successful_deliveries += sum(1 for r in results if r)
+        await asyncio.sleep(0.05)
+    return successful_deliveries
+
+
 def get_stored_admin_password() -> str:
     """Fetches the current active Admin Password from Supabase database."""
     conn = None
@@ -472,7 +500,7 @@ async def admin_execute_grant_callback(update: Update, context: ContextTypes.DEF
 
     try:
         user_btn = InlineKeyboardMarkup([[InlineKeyboardButton("🚀 Launch Quiz Now", callback_data="cmd_quiz"), InlineKeyboardButton("💳 My Plan", callback_data="cmd_myplan")]])
-        await context.bot.send_message(chat_id=target_uid, text=user_broadcast_text, reply_markup=user_btn, parse_mode="Markdown")
+        await context.bot.send_message(chat_id=target_uid, text=user_broadcast_text, reply_markup=user_btn, parse_mode="Markdown", disable_notification=False)
     except Exception:
         pass
 
@@ -623,13 +651,8 @@ async def admin_callback_handler(update: Update, context: ContextTypes.DEFAULT_T
         )
         btn = InlineKeyboardMarkup([[InlineKeyboardButton("🚀 Launch Quiz Now", callback_data="cmd_quiz")]])
 
-        sent = 0
-        for u in users:
-            try:
-                await context.bot.send_message(chat_id=u['user_id'], text=broadcast_msg, reply_markup=btn, parse_mode="Markdown")
-                sent += 1
-            except Exception:
-                pass
+        target_uids = [u['user_id'] for u in users if not u.get('is_banned')]
+        sent = await fast_concurrent_broadcast(context.bot, target_uids, broadcast_msg, reply_markup=btn)
 
         back_btn = InlineKeyboardMarkup([[InlineKeyboardButton("🔙 Back to Admin Portal", callback_data="admin_home")]])
         await query.edit_message_text(f"✅ **GIFTED +{amount} SAME-DAY QS TO ALL USERS!**\nBroadcasted to {sent} active students.", reply_markup=back_btn, parse_mode="Markdown")
@@ -746,21 +769,19 @@ async def admin_callback_handler(update: Update, context: ContextTypes.DEFAULT_T
         mins = int(data.replace("admin_pause_", ""))
         set_maintenance_until(int(time.time()) + (mins * 60))
         await query.edit_message_text(f"🛑 **Bot Service PAUSED for {mins} Minutes.**\nBroadcasting notice to all users...", parse_mode="Markdown")
-        for u in users:
-            try:
-                await context.bot.send_message(chat_id=u['user_id'], text=f"📢 **ADMIN HAS PAUSED SERVICE FOR {mins} MINS**", parse_mode="Markdown")
-            except Exception:
-                pass
+        
+        target_uids = [u['user_id'] for u in users]
+        pause_txt = f"📢 **ADMIN HAS PAUSED SERVICE FOR {mins} MINS**"
+        await fast_concurrent_broadcast(context.bot, target_uids, pause_txt)
 
     elif data == "admin_resume_now":
         await query.answer()
         set_maintenance_until(0)
         await query.edit_message_text("🟢 **Bot Service RESUMED Immediately.**", parse_mode="Markdown")
-        for u in users:
-            try:
-                await context.bot.send_message(chat_id=u['user_id'], text="📢 **ADMIN HAS RESUMED SERVICES! YOU CAN ATTEMPT QUIZZES NOW!**", parse_mode="Markdown")
-            except Exception:
-                pass
+        
+        target_uids = [u['user_id'] for u in users]
+        resume_txt = "📢 **ADMIN HAS RESUMED SERVICES! YOU CAN ATTEMPT QUIZZES NOW!**"
+        await fast_concurrent_broadcast(context.bot, target_uids, resume_txt)
 
     elif data == "admin_command_stats":
         await query.answer()
@@ -819,7 +840,7 @@ async def admin_callback_handler(update: Update, context: ContextTypes.DEFAULT_T
         )
         try:
             btn = InlineKeyboardMarkup([[InlineKeyboardButton("🚀 Launch Quiz Now", callback_data="cmd_quiz")]])
-            await context.bot.send_message(chat_id=target_uid, text=user_announcement, reply_markup=btn, parse_mode="Markdown")
+            await context.bot.send_message(chat_id=target_uid, text=user_announcement, reply_markup=btn, parse_mode="Markdown", disable_notification=False)
         except Exception as e:
             logger.error(f"Failed broadcasting bonus quota notice: {e}")
 

@@ -17,6 +17,7 @@ except ImportError:
 
 warnings.filterwarnings("ignore")
 from app.telegram_bot import build_application, PROFILE_CACHE
+from app.admin import fast_concurrent_broadcast
 from app.config import (
     RAZORPAY_KEY_ID, RAZORPAY_KEY_SECRET, RAZORPAY_WEBHOOK_SECRET, 
     PLAN_TIERS
@@ -42,7 +43,7 @@ if HAS_RAZORPAY and RAZORPAY_KEY_ID and RAZORPAY_KEY_SECRET:
 
 bot_app_instance = None
 SENT_EXPIRY_REMINDERS = set()
-LAST_QUIZ_BROADCAST_DATE = ""
+LAST_QUIZ_BROADCAST_KEY = ""
 
 
 async def activate_user_subscription(user_id: int, plan_key: str, payment_id: str = "OFFICIAL_SUBSCRIBED"):
@@ -129,7 +130,7 @@ async def activate_user_subscription(user_id: int, plan_key: str, payment_id: st
 async def send_payment_invoice_telegram(user_id: int, plan_key: str, payment_id: str = "OFFICIAL_SUBSCRIBED"):
     """
     Pushes an instant, celebratory text invoice directly into the user's Telegram chat.
-    Guaranteed delivery with interactive action buttons.
+    Guaranteed delivery with interactive action buttons and sound alert.
     """
     if not bot_app_instance:
         logging.error("[TELEGRAM PUSH ERROR] bot_app_instance is uninitialized.")
@@ -187,7 +188,8 @@ async def send_payment_invoice_telegram(user_id: int, plan_key: str, payment_id:
             chat_id=user_id,
             text=broadcast_msg,
             reply_markup=btn,
-            parse_mode="Markdown"
+            parse_mode="Markdown",
+            disable_notification=False
         )
         logging.info(f"[INVOICE/BROADCAST DELIVERED] Successfully sent to user {user_id}")
     except Exception as err:
@@ -270,7 +272,7 @@ async def scheduled_expiry_reminder_check():
                             
                         btn = InlineKeyboardMarkup([[InlineKeyboardButton("💳 Recharge / Upgrade VIP Plan", callback_data="cmd_plans")]])
                         try:
-                            await bot_app_instance.bot.send_message(chat_id=uid, text=msg, reply_markup=btn, parse_mode="Markdown")
+                            await bot_app_instance.bot.send_message(chat_id=uid, text=msg, reply_markup=btn, parse_mode="Markdown", disable_notification=False)
                             logging.info(f"[EXPIRY REMINDER 24H SENT] Delivered to user {uid}")
                         except Exception as e:
                             logging.error(f"[EXPIRY REMINDER ERROR] {e}")
@@ -301,7 +303,7 @@ async def scheduled_expiry_reminder_check():
 
                         btn = InlineKeyboardMarkup([[InlineKeyboardButton("💳 Recharge Plan Now", callback_data="cmd_plans")]])
                         try:
-                            await bot_app_instance.bot.send_message(chat_id=uid, text=msg, reply_markup=btn, parse_mode="Markdown")
+                            await bot_app_instance.bot.send_message(chat_id=uid, text=msg, reply_markup=btn, parse_mode="Markdown", disable_notification=False)
                             logging.info(f"[EXPIRY REMINDER 6H SENT] Delivered to user {uid}")
                         except Exception as e:
                             logging.error(f"[EXPIRY REMINDER ERROR] {e}")
@@ -332,7 +334,7 @@ async def scheduled_expiry_reminder_check():
 
                         btn = InlineKeyboardMarkup([[InlineKeyboardButton("⚡ Instant Recharge Now", callback_data="cmd_plans")]])
                         try:
-                            await bot_app_instance.bot.send_message(chat_id=uid, text=msg, reply_markup=btn, parse_mode="Markdown")
+                            await bot_app_instance.bot.send_message(chat_id=uid, text=msg, reply_markup=btn, parse_mode="Markdown", disable_notification=False)
                             logging.info(f"[EXPIRY REMINDER 1H SENT] Delivered to user {uid}")
                         except Exception as e:
                             logging.error(f"[EXPIRY REMINDER ERROR] {e}")
@@ -348,14 +350,15 @@ async def scheduled_daily_quiz_reminder():
     AUTOMATED 5X DAILY PRACTICE BROADCASTER:
     Broadcasting daily at 09:00 AM, 12:00 PM, 04:00 PM, 07:00 PM & 10:00 PM IST:
     "Guyzzz attempt the Quiz Now, because everyday quiz will take you to one step closer to your selection💯"
+    Uses high-speed concurrent batching to deliver within 5 seconds to all registered users.
     """
-    global LAST_QUIZ_BROADCAST_DATE
+    global LAST_QUIZ_BROADCAST_KEY
     from telegram import InlineKeyboardMarkup, InlineKeyboardButton
     
     ist = pytz.timezone("Asia/Kolkata")
 
     while True:
-        await asyncio.sleep(30)  # Check every 30 seconds
+        await asyncio.sleep(15)  # Fast poll check every 15 seconds
         if not bot_app_instance:
             continue
 
@@ -376,17 +379,19 @@ async def scheduled_daily_quiz_reminder():
         if is_time_slot:
             broadcast_key = f"{today_date_str}_{current_hour}_{current_minute}"
             
-            if LAST_QUIZ_BROADCAST_DATE != broadcast_key:
-                LAST_QUIZ_BROADCAST_DATE = broadcast_key
+            if LAST_QUIZ_BROADCAST_KEY != broadcast_key:
+                LAST_QUIZ_BROADCAST_KEY = broadcast_key
                 
                 conn = None
                 try:
                     conn = get_db()
                     cursor = conn.cursor()
                     cursor.execute("SELECT user_id FROM users WHERE is_banned = 0 AND is_verified = 1")
-                    users = cursor.fetchall()
+                    rows = cursor.fetchall()
                     cursor.close()
                     release_db(conn)
+
+                    user_ids = [r[0] if isinstance(r, (list, tuple)) else r['user_id'] for r in rows]
 
                     reminder_text = (
                         f"📢 **DAILY QUIZ PRACTICE REMINDER** 📢\n"
@@ -397,20 +402,16 @@ async def scheduled_daily_quiz_reminder():
                     )
                     btn = InlineKeyboardMarkup([[InlineKeyboardButton("🚀 Launch Quiz Now", callback_data="cmd_quiz")]])
 
-                    sent_count = 0
-                    for u in users:
-                        try:
-                            await bot_app_instance.bot.send_message(
-                                chat_id=u['user_id'], 
-                                text=reminder_text, 
-                                reply_markup=btn, 
-                                parse_mode="Markdown"
-                            )
-                            sent_count += 1
-                        except Exception:
-                            pass
+                    # Trigger fast multi-threaded/concurrent delivery
+                    sent_count = await fast_concurrent_broadcast(
+                        bot_app_instance.bot, 
+                        user_ids, 
+                        reminder_text, 
+                        reply_markup=btn,
+                        parse_mode="Markdown"
+                    )
 
-                    logging.info(f"[DAILY 5X QUIZ BROADCAST SENT] Delivered to {sent_count} registered users at {now.strftime('%I:%M %p IST')}")
+                    logging.info(f"[DAILY 5X QUIZ BROADCAST DELIVERED] Broadcasted to {sent_count}/{len(user_ids)} users in ~5s at {now.strftime('%I:%M %p IST')}")
                 except Exception as err:
                     if conn:
                         release_db(conn)

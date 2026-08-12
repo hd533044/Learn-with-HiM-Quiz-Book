@@ -12,105 +12,8 @@ from reportlab.platypus import (
     SimpleDocTemplate, Paragraph, Spacer, Table, TableStyle, Image
 )
 from reportlab.lib.styles import getSampleStyleSheet, ParagraphStyle
-from reportlab.pdfbase import pdfmetrics
-from reportlab.pdfbase.ttfonts import TTFont
 from app.config import USER_PROFILES_DIR, BASE_DIR
 from app.database import get_user_profile, get_db, release_db
-
-# -----------------------------------------------------------------------------
-# REGISTER DEVANAGARI / HINDI FONT SUPPORT FOR REPORTLAB
-# -----------------------------------------------------------------------------
-HINDI_FONT_NAME = "Times-Roman"  # Fallback default
-
-def setup_hindi_fonts():
-    """
-    Registers Devanagari TTF fonts for rendering Hindi text in ReportLab.
-    Searches system paths and local assets directory.
-    """
-    global HINDI_FONT_NAME
-
-    candidate_paths = [
-        os.path.join(BASE_DIR, "assets", "NotoSansDevanagari-Regular.ttf"),
-        os.path.join(BASE_DIR, "assets", "NotoSansDevanagari_SemiCondensed-Regular.ttf"),
-        os.path.join(BASE_DIR, "assets", "NotoSansDevanagari_Condensed-Regular.ttf"),
-        os.path.join(BASE_DIR, "assets", "Mangal.ttf"),
-        os.path.join(BASE_DIR, "assets", "FreeSans.ttf"),
-        "/usr/share/fonts/truetype/noto/NotoSansDevanagari-Regular.ttf",
-        "/usr/share/fonts/truetype/dejavu/DejaVuSans.ttf",
-        "/usr/share/fonts/truetype/freefont/FreeSans.ttf",
-        "C:\\Windows\\Fonts\\mangal.ttf",
-        "C:\\Windows\\Fonts\\Nirmala.ttf",
-        "C:\\Windows\\Fonts\\arial.ttf"
-    ]
-
-    for font_path in candidate_paths:
-        if os.path.exists(font_path):
-            try:
-                font_alias = "DevanagariFont"
-                pdfmetrics.registerFont(TTFont(font_alias, font_path))
-                HINDI_FONT_NAME = font_alias
-                return
-            except Exception:
-                pass
-
-setup_hindi_fonts()
-
-
-def perfect_hindi_shaper(text: str) -> str:
-    """
-    Performs precise Devanagari character reordering and ligature correction 
-    to fix broken matras (like ि) and half-letters for 100% perfect PDF rendering.
-    """
-    if not text:
-        return ""
-    
-    cleaned = str(text).replace("■", "").replace("□", "").strip()
-
-    # Dictionary-level exact replacements for known compound/complex quiz terms
-    exact_dictionary_fixes = {
-        "नम्रिनलिखिति": "निम्नलिखित",
-        "नम्िनलिखिति": "निम्नलिखित",
-        "नम्रिनलिखि त": "निम्नलिखित",
-        "नम्िनलिखित": "निम्नलिखित",
-        "कसि": "किस",
-        "टैक़्सट": "टेक्स्ट",
-        "सफ़्टवेयर": "सॉफ्टवेयर",
-        "को-ऑथरगि": "को-ऑथरिंग",
-        "पूंजी": "कुंजी",
-        "परू्ण": "पूर्ण",
-        "प्रदर्शति": "प्रदर्शित",
-        "सद्धिद्धांत": "सिद्धांत",
-        "सुवधिा": "सुविधा",
-        "वशिष्टि": "विशिष्ट",
-        "एक्स्क्लूलूजन": "एक्सक्लूजन",
-        "एक्टिव": "एक्टिव",
-        "वर्कबुक": "वर्कबुक",
-        "सप्रैड": "स्प्रेड",
-        "स्पेक्ट्रम": "स्पेक्ट्रम",
-        "एब्सोल्यूट": "एब्सोल्यूट",
-        "रलेटिव": "रिलेटिव",
-        "संयोजनों": "संयोजनों",
-        "चक्रण": "चक्रण",
-        "विभन्निन": "विभिन्न"
-    }
-
-    for wrong, right in exact_dictionary_fixes.items():
-        if wrong in cleaned:
-            cleaned = cleaned.replace(wrong, right)
-
-    # Unicode-level algorithmic correction for leading short-i matra (ि, U+093F)
-    chars = list(cleaned)
-    i = 0
-    while i < len(chars) - 1:
-        if chars[i + 1] == '\u093f':  # Short-i matra placed after consonant
-            j = i
-            while j > 0 and (chars[j] == '\u094d' or ('\u0915' <= chars[j] <= '\u0939')):
-                j -= 1
-            matra = chars.pop(i + 1)
-            chars.insert(max(0, j), matra)
-        i += 1
-
-    return "".join(chars)
 
 
 def draw_pdf_footer(canvas, doc):
@@ -166,7 +69,7 @@ def parse_date_only(date_str: str) -> str:
 
 
 def clean_str(text) -> str:
-    """Safely converts any value into escaped XML text for ReportLab with 100% Hindi accuracy."""
+    """Safely converts any value into escaped XML text for ReportLab."""
     if text is None:
         return "N/A"
     if isinstance(text, (dict, list)):
@@ -174,8 +77,7 @@ def clean_str(text) -> str:
             text = json.dumps(text)
         except Exception:
             text = str(text)
-    shaped_hindi = perfect_hindi_shaper(text)
-    return saxutils.escape(shaped_hindi)
+    return saxutils.escape(str(text))
 
 
 def generate_student_pdf_report(user_id: int, filter_mode: str = "last_1_month_data") -> str:
@@ -252,7 +154,7 @@ def generate_student_pdf_report(user_id: int, filter_mode: str = "last_1_month_d
             body_style = ParagraphStyle(
                 'BodyTextTimes',
                 parent=styles['Normal'],
-                fontName=HINDI_FONT_NAME,
+                fontName='Times-Roman',
                 fontSize=8.5,
                 leading=11,
                 textColor=colors.HexColor("#334155")
@@ -375,6 +277,7 @@ def generate_student_pdf_report(user_id: int, filter_mode: str = "last_1_month_d
             elif hasattr(r, '_asdict'):
                 all_attempts.append(r._asdict())
             else:
+                # Safe conversion if database returns raw tuples
                 all_attempts.append({
                     "id": r[0],
                     "user_id": r[1],
@@ -444,7 +347,7 @@ def generate_student_pdf_report(user_id: int, filter_mode: str = "last_1_month_d
         body_style = ParagraphStyle(
             'BodyTextTimes',
             parent=styles['Normal'],
-            fontName=HINDI_FONT_NAME,
+            fontName='Times-Roman',
             fontSize=8.5,
             leading=11,
             textColor=colors.HexColor("#334155")
@@ -664,7 +567,7 @@ def generate_student_pdf_report(user_id: int, filter_mode: str = "last_1_month_d
                 correct_q_list, 
                 bg_header="#D1FAE5", 
                 border_color="#34D399", 
-                empty_cmg="No correct questions logged yet."
+                empty_msg="No correct questions logged yet."
             ))
 
         doc.build(story, onFirstPage=draw_pdf_footer, onLaterPages=draw_pdf_footer)

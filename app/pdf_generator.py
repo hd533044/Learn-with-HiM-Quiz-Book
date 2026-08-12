@@ -20,15 +20,27 @@ from app.database import get_user_profile, get_db, release_db
 # -----------------------------------------------------------------------------
 # REGISTER DEVANAGARI / HINDI FONT SUPPORT FOR REPORTLAB
 # -----------------------------------------------------------------------------
-HINDI_FONT_NAME = "Times-Roman"  # Fallback font
+HINDI_FONT_NAME = "Times-Roman"  # Fallback default
 
 def setup_hindi_fonts():
+    """
+    Registers Devanagari TTF fonts for rendering Hindi text in ReportLab.
+    Searches system paths and local assets directory.
+    """
     global HINDI_FONT_NAME
 
     candidate_paths = [
         os.path.join(BASE_DIR, "assets", "NotoSansDevanagari-Regular.ttf"),
+        os.path.join(BASE_DIR, "assets", "NotoSansDevanagari_SemiCondensed-Regular.ttf"),
+        os.path.join(BASE_DIR, "assets", "NotoSansDevanagari_Condensed-Regular.ttf"),
+        os.path.join(BASE_DIR, "assets", "Mangal.ttf"),
+        os.path.join(BASE_DIR, "assets", "FreeSans.ttf"),
         "/usr/share/fonts/truetype/noto/NotoSansDevanagari-Regular.ttf",
-        "C:\\Windows\\Fonts\\mangal.ttf"
+        "/usr/share/fonts/truetype/dejavu/DejaVuSans.ttf",
+        "/usr/share/fonts/truetype/freefont/FreeSans.ttf",
+        "C:\\Windows\\Fonts\\mangal.ttf",
+        "C:\\Windows\\Fonts\\Nirmala.ttf",
+        "C:\\Windows\\Fonts\\arial.ttf"
     ]
 
     for font_path in candidate_paths:
@@ -97,7 +109,7 @@ def parse_date_only(date_str: str) -> str:
 
 
 def clean_str(text) -> str:
-    """Safely converts any value into escaped XML text for ReportLab."""
+    """Safely converts any value into escaped XML text for ReportLab and removes undefined square symbols."""
     if text is None:
         return "N/A"
     if isinstance(text, (dict, list)):
@@ -105,7 +117,8 @@ def clean_str(text) -> str:
             text = json.dumps(text)
         except Exception:
             text = str(text)
-    return saxutils.escape(str(text))
+    clean_text = str(text).replace("■", "").replace("□", "")
+    return saxutils.escape(clean_text)
 
 
 def generate_student_pdf_report(user_id: int, filter_mode: str = "last_1_month_data") -> str:
@@ -161,7 +174,7 @@ def generate_student_pdf_report(user_id: int, filter_mode: str = "last_1_month_d
             main_heading_style = ParagraphStyle(
                 'MainTitleDarkBlue',
                 parent=styles['Heading1'],
-                fontName=HINDI_FONT_NAME,
+                fontName='Times-Bold',
                 fontSize=18,
                 leading=22,
                 textColor=colors.HexColor("#1E3A8A"),
@@ -171,7 +184,7 @@ def generate_student_pdf_report(user_id: int, filter_mode: str = "last_1_month_d
             section_heading = ParagraphStyle(
                 'SecHeading',
                 parent=styles['Heading2'],
-                fontName=HINDI_FONT_NAME,
+                fontName='Times-Bold',
                 fontSize=11,
                 leading=15,
                 textColor=colors.HexColor("#0F172A"),
@@ -191,7 +204,7 @@ def generate_student_pdf_report(user_id: int, filter_mode: str = "last_1_month_d
             body_style_bold = ParagraphStyle(
                 'BodyTextTimesBold',
                 parent=styles['Normal'],
-                fontName=HINDI_FONT_NAME,
+                fontName='Times-Bold',
                 fontSize=8.5,
                 leading=11,
                 textColor=colors.HexColor("#0F172A")
@@ -353,7 +366,7 @@ def generate_student_pdf_report(user_id: int, filter_mode: str = "last_1_month_d
         main_heading_style = ParagraphStyle(
             'MainTitleDarkBlue',
             parent=styles['Heading1'],
-            fontName=HINDI_FONT_NAME,
+            fontName='Times-Bold',
             fontSize=18,
             leading=22,
             textColor=colors.HexColor("#1E3A8A"),
@@ -363,7 +376,7 @@ def generate_student_pdf_report(user_id: int, filter_mode: str = "last_1_month_d
         section_heading = ParagraphStyle(
             'SecHeading',
             parent=styles['Heading2'],
-            fontName=HINDI_FONT_NAME,
+            fontName='Times-Bold',
             fontSize=11,
             leading=15,
             textColor=colors.HexColor("#0F172A"),
@@ -383,7 +396,7 @@ def generate_student_pdf_report(user_id: int, filter_mode: str = "last_1_month_d
         body_style_bold = ParagraphStyle(
             'BodyTextTimesBold',
             parent=styles['Normal'],
-            fontName=HINDI_FONT_NAME,
+            fontName='Times-Bold',
             fontSize=8.5,
             leading=11,
             textColor=colors.HexColor("#0F172A")

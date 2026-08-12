@@ -138,7 +138,7 @@ async def launch_quiz_setup(update: Update, context: ContextTypes.DEFAULT_TYPE):
     keyboard = [buttons[:3], buttons[3:]]
 
     msg_text = (
-        f"📚 **LEARN WITH HIM QUIZ SETUP (STEP 1/2)** 📚\n"
+        f"📚 **LEARN WITH HIM QUIZ SETUP (STEP 1/3)** 📚\n"
         f"━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\n"
         f"📊 **Daily Quota Used:** `{attempted_today}` / `{allowed_limit}` Qs\n"
         f"⚡ **Available Quota:** `{remaining_quota}` Qs\n\n"
@@ -182,14 +182,49 @@ async def quiz_count_callback(update: Update, context: ContextTypes.DEFAULT_TYPE
 
     QUIZ_SETUP_CACHE[user_id] = {"count": count}
 
+    # STEP 2: Language Selection Prompt
+    lang_keyboard = InlineKeyboardMarkup([
+        [
+            InlineKeyboardButton("🇬🇧 English", callback_data="qlang_english"),
+            InlineKeyboardButton("🇮🇳 हिन्दी (Hindi)", callback_data="qlang_hindi")
+        ]
+    ])
+
+    await query.edit_message_text(
+        f"🌐 **LEARN WITH HIM QUIZ SETUP (STEP 2/3)** 🌐\n"
+        f"━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\n"
+        f"📝 Selected: `{count} Questions`\n\n"
+        f"Choose your preferred language for this quiz session:",
+        reply_markup=lang_keyboard,
+        parse_mode="Markdown"
+    )
+
+async def quiz_lang_callback(update: Update, context: ContextTypes.DEFAULT_TYPE):
+    if not await check_quiz_maintenance(update): return
+
+    query = update.callback_query
+    user_id = query.from_user.id
+    await query.answer()
+
+    selected_lang = query.data.replace("qlang_", "")
+    
+    # Store chosen language into cache
+    if user_id in QUIZ_SETUP_CACHE:
+        QUIZ_SETUP_CACHE[user_id]["lang"] = selected_lang
+    else:
+        QUIZ_SETUP_CACHE[user_id] = {"count": 20, "lang": selected_lang}
+
+    lang_display = "🇬🇧 English" if selected_lang == "english" else "🇮🇳 हिन्दी (Hindi)"
+
+    # STEP 3: Timer Selection Prompt
     timers = [12, 15, 18, 20, 25, 30]
     buttons = [InlineKeyboardButton(f"⏱ {t}s", callback_data=f"qtimer_{t}") for t in timers]
     keyboard = [buttons[:3], buttons[3:]]
 
     await query.edit_message_text(
-        f"⏱ **LEARN WITH HIM QUIZ SETUP (STEP 2/2)** ⏱\n"
+        f"⏱ **LEARN WITH HIM QUIZ SETUP (STEP 3/3)** ⏱\n"
         f"━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\n"
-        f"📝 Selected: `{count} Questions` (Available Quota: `{remaining_quota}`)\n\n"
+        f"📝 Questions: `{QUIZ_SETUP_CACHE[user_id]['count']}` | 🌐 Language: `{lang_display}`\n\n"
         f"⏱ Choose timer duration per question:",
         reply_markup=InlineKeyboardMarkup(keyboard),
         parse_mode="Markdown"
@@ -217,22 +252,25 @@ async def quiz_timer_callback(update: Update, context: ContextTypes.DEFAULT_TYPE
 
     await query.answer()
     timer_sec = int(query.data.replace("qtimer_", ""))
-    setup = QUIZ_SETUP_CACHE.pop(user_id, {"count": 20})
+    setup = QUIZ_SETUP_CACHE.pop(user_id, {"count": 20, "lang": "english"})
     count = setup.get("count", 20)
+    lang = setup.get("lang", "english")
 
     remaining_quota = allowed_limit - attempted_today
     if count > remaining_quota:
         count = max(1, remaining_quota)
 
     seen_ids = await asyncio.to_thread(get_seen_question_ids, user_id)
-    questions = await asyncio.to_thread(fetch_pyqs_for_quiz, count, seen_ids)
+    questions = await asyncio.to_thread(fetch_pyqs_for_quiz, count, seen_ids, lang)
 
     if not questions:
-        await query.edit_message_text("🎉 **CONGRATULATIONS!** You have completed all available questions in the bank!", reply_markup=get_quizbook_nav_keyboard())
+        await query.edit_message_text("🎉 **CONGRATULATIONS!** You have completed all available questions in this language bank!", reply_markup=get_quizbook_nav_keyboard())
         return
 
     q_ids = [q["id"] for q in questions if q.get("id") is not None]
     asyncio.create_task(asyncio.to_thread(mark_questions_as_seen, user_id, q_ids))
+
+    lang_display = "🇬🇧 English" if lang == "english" else "🇮🇳 हिन्दी"
 
     session = {
         "user_id": user_id,
@@ -245,6 +283,7 @@ async def quiz_timer_callback(update: Update, context: ContextTypes.DEFAULT_TYPE
         "skipped": 0,
         "total": len(questions),
         "timer_sec": timer_sec,
+        "lang": lang,
         "is_paused": False,
         "start_time": get_ist_timestamp_str(),
         "detailed_logs": []
@@ -254,8 +293,8 @@ async def quiz_timer_callback(update: Update, context: ContextTypes.DEFAULT_TYPE
     await query.edit_message_text(
         f"🚀 **QUIZ SESSION STARTED!** 🚀\n"
         f"━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\n"
-        f"📝 **Questions:** `{len(questions)}` | ⏱ **Timer:** `{timer_sec}s/question`\n"
-        f"📅 **Attempt Date:** `{session['start_time']}`\n\n"
+        f"📝 **Questions:** `{len(questions)}` | 🌐 **Language:** `{lang_display}`\n"
+        f"⏱ **Timer:** `{timer_sec}s/question` | 📅 **Date:** `{session['start_time']}`\n\n"
         f"⚡ Loading Question 1/{len(questions)}...",
         parse_mode="Markdown"
     )
@@ -313,6 +352,7 @@ async def pause_quiz_command(update: Update, context: ContextTypes.DEFAULT_TYPE)
         "skipped": session["skipped"],
         "total": session["total"],
         "timer_sec": session["timer_sec"],
+        "lang": session.get("lang", "english"),
         "start_time": session["start_time"],
         "detailed_logs": session.get("detailed_logs", [])
     }
@@ -364,6 +404,7 @@ async def resume_quiz_command(update: Update, context: ContextTypes.DEFAULT_TYPE
         "skipped": paused["skipped"],
         "total": paused["total"],
         "timer_sec": paused["timer_sec"],
+        "lang": paused.get("lang", "english"),
         "is_paused": False,
         "start_time": paused["start_time"],
         "detailed_logs": paused.get("detailed_logs", [])
@@ -513,7 +554,6 @@ async def send_next_question(chat_id: int, user_id: int, context: ContextTypes.D
             "q_data": q
         }
 
-        # Updated text formatting for Bold + Italic without raw asterisks
         await context.bot.send_message(
             chat_id=chat_id,
             text="⚡ ***Quiz Controls:***",
@@ -617,7 +657,6 @@ async def finish_quiz_and_send_report(chat_id: int, user_id: int, context: Conte
     score = session["score"]
     detailed_logs = session.get("detailed_logs", [])
 
-    # Send report card immediately
     report_card = (
         f"🏆 **OFFICIAL QUIZ REPORT CARD** 🏆\n"
         f"📚 **Quiz with HiM by Himanshu Sir**\n"
@@ -666,7 +705,6 @@ async def finish_quiz_and_send_report(chat_id: int, user_id: int, context: Conte
         parse_mode="Markdown"
     )
 
-    # Fire and forget database saving to avoid delaying message delivery
     asyncio.create_task(asyncio.to_thread(
         record_quiz_result,
         user_id,

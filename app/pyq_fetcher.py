@@ -28,12 +28,21 @@ def verify_and_correct_question(q: dict) -> dict:
         "explanation": str(expl).strip()
     }
 
-def fetch_pyqs_for_quiz(needed_count: int = 20, seen_ids: set = None) -> list:
+def fetch_pyqs_for_quiz(needed_count: int = 20, seen_ids: set = None, lang: str = "english") -> list:
+    """
+    Fetches PYQ questions based on selected language ('english' or 'hindi').
+    Searches in data/question_bank/<lang>/ directory.
+    """
     if seen_ids is None:
         seen_ids = set()
 
     all_raw_questions = []
-    search_dirs = [QUESTION_BANK_DIR, DATA_DIR]
+    
+    # Specific language directory path
+    lang_bank_dir = os.path.join(QUESTION_BANK_DIR, lang.lower())
+    
+    # Fallback search directories if subfolder doesn't exist
+    search_dirs = [lang_bank_dir] if os.path.exists(lang_bank_dir) else [QUESTION_BANK_DIR, DATA_DIR]
 
     for search_dir in search_dirs:
         if not os.path.exists(search_dir):

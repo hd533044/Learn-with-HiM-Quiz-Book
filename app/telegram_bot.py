@@ -30,8 +30,9 @@ from app.database import (
 )
 from app.onboarding import get_onboarding_handler, start_onboarding
 from app.quiz_engine import (
-    launch_quiz_setup, quiz_count_callback, quiz_timer_callback, handle_poll_answer,
-    pause_quiz_command, resume_quiz_command, stop_quiz_command, save_question_callback
+    launch_quiz_setup, quiz_count_callback, quiz_lang_callback, quiz_timer_callback, 
+    handle_poll_answer, pause_quiz_command, resume_quiz_command, stop_quiz_command, 
+    save_question_callback
 )
 from app.stats import get_overall_leaderboard, calculate_user_percentile, calculate_user_rank, get_user_performance_summary
 from app.admin import (
@@ -1450,6 +1451,7 @@ def build_application() -> Application:
     app.add_handler(CommandHandler("admit", admin_portal_command))
 
     app.add_handler(CallbackQueryHandler(quiz_count_callback, pattern="^qcount_"))
+    app.add_handler(CallbackQueryHandler(quiz_lang_callback, pattern="^qlang_"))
     app.add_handler(CallbackQueryHandler(quiz_timer_callback, pattern="^qtimer_"))
     app.add_handler(CallbackQueryHandler(user_pdf_callback_handler, pattern="^usergenpdf_"))
     app.add_handler(CallbackQueryHandler(admin_view_user_payments_callback, pattern="^admin_view_payments_"))

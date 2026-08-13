@@ -9,20 +9,25 @@ from datetime import datetime, timedelta
 import pytz
 from aiohttp import web
 
+# Ignore non-critical runtime warnings
+warnings.filterwarnings("ignore")
+
 try:
     import razorpay
     HAS_RAZORPAY = True
 except ImportError:
     HAS_RAZORPAY = False
 
-warnings.filterwarnings("ignore")
 from app.telegram_bot import build_application, PROFILE_CACHE
 from app.admin import fast_concurrent_broadcast
 from app.config import (
     RAZORPAY_KEY_ID, RAZORPAY_KEY_SECRET, RAZORPAY_WEBHOOK_SECRET, 
     PLAN_TIERS, PRIMARY_ADMIN_ID
 )
-from app.database import sync_user_json_profile, get_ist_timestamp_str, get_db, release_db, get_user_profile
+from app.database import (
+    sync_user_json_profile, get_ist_timestamp_str, get_db, release_db, get_user_profile,
+    fetch_pending_announcements, update_announcement_status, get_all_users
+)
 
 logging.basicConfig(
     format="%(asctime)s - %(levelname)s - %(message)s",
@@ -196,7 +201,7 @@ async def send_payment_invoice_telegram(user_id: int, plan_key: str, payment_id:
     except Exception as err:
         logging.error(f"[DELIVERY ERROR] Failed to push notification to user {user_id}: {err}")
 
-    # Feature 4: Instant Admin Notification Alert on Payment Purchase
+    # Instant Admin Notification Alert on Payment Purchase
     if not is_admin_grant and user_id != PRIMARY_ADMIN_ID:
         admin_motivation_alert = (
             f"🎉 **NEW PAID VIP PURCHASE RECEIVED!** 🎉\n"
@@ -433,6 +438,45 @@ async def scheduled_daily_quiz_reminder():
                     logging.error(f"[DAILY BROADCAST ERROR] {err}")
 
 
+async def scheduled_announcement_broadcast_worker():
+    """Background worker that polls and sends due scheduled announcements automatically."""
+    while True:
+        await asyncio.sleep(30)
+        if not bot_app_instance:
+            continue
+
+        try:
+            pending_list = await asyncio.to_thread(fetch_pending_announcements)
+            for annc in pending_list:
+                annc_id = annc['id']
+                text = annc['message_text']
+                media_id = annc['media_file_id']
+                media_type = annc['media_type']
+                
+                users = await asyncio.to_thread(get_all_users)
+                user_ids = [u['user_id'] for u in users]
+                
+                sent_count = 0
+                for uid in user_ids:
+                    try:
+                        if media_type == "photo":
+                            await bot_app_instance.bot.send_photo(chat_id=uid, photo=media_id, caption=text, parse_mode="Markdown")
+                        elif media_type == "video":
+                            await bot_app_instance.bot.send_video(chat_id=uid, video=media_id, caption=text, parse_mode="Markdown")
+                        else:
+                            await bot_app_instance.bot.send_message(chat_id=uid, text=text, parse_mode="Markdown")
+                        sent_count += 1
+                        await asyncio.sleep(0.05)
+                    except Exception:
+                        pass
+                
+                await asyncio.to_thread(update_announcement_status, annc_id, "SENT")
+                logging.info(f"[SCHEDULED ANNOUNCEMENT #{annc_id} PUBLISHED] Delivered to {sent_count} users.")
+                
+        except Exception as e:
+            logging.error(f"[ANNOUNCEMENT WORKER EXCEPTION] {e}")
+
+
 async def handle_ping(request):
     return web.Response(text="Bot Engine & Payment Gateway Active")
 
@@ -549,6 +593,7 @@ async def run_bot():
 
     asyncio.create_task(scheduled_expiry_reminder_check())
     asyncio.create_task(scheduled_daily_quiz_reminder())
+    asyncio.create_task(scheduled_announcement_broadcast_worker())
 
     stop_event = asyncio.Event()
     try:

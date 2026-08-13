@@ -365,6 +365,10 @@ async def admin_portal_command(update: Update, context: ContextTypes.DEFAULT_TYP
         [InlineKeyboardButton("📊 Quick Overview Pop-Up", callback_data="admin_popup_overview")],
         [InlineKeyboardButton(f"📩 Student Support Threads ({pending_students_count} Unread)", callback_data="admin_view_student_threads_0")],
         [
+            InlineKeyboardButton("🎟 Create Promo Code", callback_data="admin_create_promo"),
+            InlineKeyboardButton("📢 Schedule Announcement", callback_data="admin_schedule_annc")
+        ],
+        [
             InlineKeyboardButton(f"💳 Paid VIP ({len(paid_users)})", callback_data="admin_paid_users_page_0"),
             InlineKeyboardButton(f"🎁 Free Demo ({len(demo_users)})", callback_data="admin_demo_users_page_0")
         ],
@@ -813,7 +817,7 @@ async def admin_callback_handler(update: Update, context: ContextTypes.DEFAULT_T
         back_btn = InlineKeyboardMarkup([[InlineKeyboardButton("🔙 Back to Admin Portal", callback_data="admin_home")]])
         await query.edit_message_text(f"✅ **GIFTED +{amount} SAME-DAY QS TO ALL USERS!**\nBroadcasted to {sent} active students.", reply_markup=back_btn, parse_mode="Markdown")
 
-    # FIXED: Robust Callback Parsing for Resolved Archive View
+    # Robust Callback Parsing for Resolved Archive View
     elif data.startswith("admin_view_student_threads_"):
         await query.answer()
         raw_param = data.replace("admin_view_student_threads_", "")
@@ -1274,7 +1278,7 @@ async def admin_callback_handler(update: Update, context: ContextTypes.DEFAULT_T
 
         if total_paid == 0:
             keyboard = [[InlineKeyboardButton("👑 Main Admin Portal", callback_data="admin_home")]]
-            await query.edit_message_text("💳 **PAID VIP SUBSCRIBERS**\n\nNo paid users found in the database yet.", reply_markup=InlineKeyboardMarkup(keyboard), parse_mode="Markdown")
+            await query.edit_message_text("💳 **PAID VIP STUDENTS**\n\nNo paid users found in the database yet.", reply_markup=InlineKeyboardMarkup(keyboard), parse_mode="Markdown")
             return
 
         total_pages = math.ceil(total_paid / USERS_PER_PAGE)

@@ -14,7 +14,7 @@ from telegram import (
 )
 from telegram.ext import (
     Application, CommandHandler, CallbackQueryHandler, PollAnswerHandler, 
-    MessageHandler, filters, ContextTypes
+    MessageHandler, filters, ContextTypes, ConversationHandler
 )
 from psycopg2.extras import RealDictCursor
 from app.config import (
@@ -26,7 +26,8 @@ from app.database import (
     get_all_users, get_today_attempts, save_student_feedback, get_all_student_feedbacks,
     clear_paused_quiz_state, get_saved_questions, log_user_activity_time,
     check_and_update_inactivity, refresh_user_activity_epoch, get_db, release_db,
-    get_seen_question_ids, admin_update_user_name, get_ist_date_str
+    get_seen_question_ids, admin_update_user_name, get_ist_date_str,
+    create_promo_code, schedule_announcement
 )
 from app.onboarding import get_onboarding_handler, start_onboarding
 from app.quiz_engine import (
@@ -47,6 +48,10 @@ NEGATIVE_WORDS = ["bad", "worst", "useless", "trash", "fake", "hate", "terrible"
 
 PROFILE_CACHE = {}
 CACHE_TTL = 30 
+
+# Conversation States for Admin Promo & Announcement Tools
+PROMO_NAME, PROMO_TYPE, PROMO_VALUE, PROMO_DAYS = range(100, 104)
+ANNC_CONTENT, ANNC_DATETIME = range(104, 106)
 
 def log_command_usage(user_id: int, command_name: str):
     conn = None
@@ -1050,6 +1055,171 @@ async def referral_command(update: Update, context: ContextTypes.DEFAULT_TYPE):
     )
     await send_response(update, msg)
 
+# -------------------------------------------------------------
+# 🎟️ PROMO CODE GENERATOR BOT HANDLERS
+# -------------------------------------------------------------
+
+async def start_promo_creation(update: Update, context: ContextTypes.DEFAULT_TYPE):
+    query = update.callback_query
+    await query.answer()
+
+    if query.from_user.id != PRIMARY_ADMIN_ID:
+        await query.message.reply_text("🛑 Access restricted to Primary Admin.")
+        return ConversationHandler.END
+
+    await query.edit_message_text(
+        "🎟 **PROMO CODE GENERATOR**\n\n"
+        "Please type the custom Promo Code Name (e.g., `HIM50`, `OFFER2026`, `SPECIAL10`):",
+        parse_mode="Markdown"
+    )
+    return PROMO_NAME
+
+async def set_promo_name(update: Update, context: ContextTypes.DEFAULT_TYPE):
+    code_name = update.message.text.strip().upper()
+    context.user_data['promo_name'] = code_name
+    
+    keyboard = [
+        [InlineKeyboardButton("Percentage Discount (%)", callback_data="TYPE_PERCENT")],
+        [InlineKeyboardButton("Flat Amount Discount (₹)", callback_data="TYPE_FLAT")]
+    ]
+    await update.message.reply_text(
+        f"Selected Promo Code: `{code_name}`\n\nSelect the discount type:",
+        reply_markup=InlineKeyboardMarkup(keyboard),
+        parse_mode="Markdown"
+    )
+    return PROMO_TYPE
+
+async def set_promo_type(update: Update, context: ContextTypes.DEFAULT_TYPE):
+    query = update.callback_query
+    await query.answer()
+    disc_type = "PERCENT" if query.data == "TYPE_PERCENT" else "FLAT"
+    context.user_data['promo_type'] = disc_type
+    
+    unit = "%" if disc_type == "PERCENT" else "₹"
+    await query.edit_message_text(f"Type the discount value to waive off (in {unit}):")
+    return PROMO_VALUE
+
+async def set_promo_value(update: Update, context: ContextTypes.DEFAULT_TYPE):
+    try:
+        val = float(update.message.text.strip())
+        context.user_data['promo_value'] = val
+    except ValueError:
+        await update.message.reply_text("❌ Invalid number! Please enter a valid numerical value:")
+        return PROMO_VALUE
+
+    keyboard = [
+        [InlineKeyboardButton("1 Day", callback_data="DAYS_1"), InlineKeyboardButton("2 Days", callback_data="DAYS_2")],
+        [InlineKeyboardButton("3 Days", callback_data="DAYS_3"), InlineKeyboardButton("5 Days", callback_data="DAYS_5")],
+        [InlineKeyboardButton("7 Days (Max)", callback_data="DAYS_7")]
+    ]
+    await update.message.reply_text(
+        "Select the **Validity Duration** for this Promo Code:",
+        reply_markup=InlineKeyboardMarkup(keyboard),
+        parse_mode="Markdown"
+    )
+    return PROMO_DAYS
+
+async def finalize_promo_code(update: Update, context: ContextTypes.DEFAULT_TYPE):
+    query = update.callback_query
+    await query.answer()
+    days = int(query.data.replace("DAYS_", ""))
+    
+    code = context.user_data['promo_name']
+    disc_type = context.user_data['promo_type']
+    disc_val = context.user_data['promo_value']
+    admin_id = query.from_user.id
+    
+    res = await asyncio.to_thread(create_promo_code, code, disc_type, disc_val, days, admin_id)
+    
+    if "error" in res:
+        await query.edit_message_text("❌ **Error:** A promo code with this name already exists!")
+    else:
+        unit = "%" if disc_type == "PERCENT" else "₹"
+        exp_date = res['valid_until'].strftime("%Y-%m-%d %H:%M:%S IST")
+        await query.edit_message_text(
+            f"✅ **PROMO CODE CREATED SUCCESSFULLY!** 🎉\n\n"
+            f"🎟 **Code:** `{code}`\n"
+            f"💰 **Discount:** {disc_val}{unit} OFF\n"
+            f"⏳ **Validity:** {days} Days (Expires: {exp_date})\n\n"
+            f"Users can now redeem this during checkout!",
+            parse_mode="Markdown"
+        )
+    return ConversationHandler.END
+
+# -------------------------------------------------------------
+# 📢 SCHEDULED ANNOUNCEMENT BOT HANDLERS
+# -------------------------------------------------------------
+
+async def start_announcement_schedule(update: Update, context: ContextTypes.DEFAULT_TYPE):
+    query = update.callback_query
+    await query.answer()
+
+    if query.from_user.id != PRIMARY_ADMIN_ID:
+        await query.message.reply_text("🛑 Access restricted to Primary Admin.")
+        return ConversationHandler.END
+
+    await query.edit_message_text(
+        "📢 **SCHEDULED ANNOUNCEMENT SYSTEM**\n\n"
+        "Send the Announcement Post now (Text, Photo, or Video with Caption):"
+    )
+    return ANNC_CONTENT
+
+async def receive_announcement_content(update: Update, context: ContextTypes.DEFAULT_TYPE):
+    msg = update.message
+    if msg.photo:
+        context.user_data['annc_media_id'] = msg.photo[-1].file_id
+        context.user_data['annc_media_type'] = "photo"
+        context.user_data['annc_text'] = msg.caption or ""
+    elif msg.video:
+        context.user_data['annc_media_id'] = msg.video.file_id
+        context.user_data['annc_media_type'] = "video"
+        context.user_data['annc_text'] = msg.caption or ""
+    else:
+        context.user_data['annc_media_id'] = None
+        context.user_data['annc_media_type'] = "text"
+        context.user_data['annc_text'] = msg.text or ""
+
+    await msg.reply_text(
+        "📅 **Enter Schedule Date & Time**\n\n"
+        "Please type the exact publishing time in format:\n"
+        "`YYYY-MM-DD HH:MM` (24-Hour Clock)\n"
+        "Example: `2026-08-15 14:30`",
+        parse_mode="Markdown"
+    )
+    return ANNC_DATETIME
+
+async def finalize_announcement_schedule(update: Update, context: ContextTypes.DEFAULT_TYPE):
+    dt_str = update.message.text.strip()
+    try:
+        scheduled_dt = datetime.strptime(dt_str, "%Y-%m-%d %H:%M")
+        if scheduled_dt <= datetime.now():
+            await update.message.reply_text("❌ Scheduled time must be in the future! Please enter a valid date and time:")
+            return ANNC_DATETIME
+    except ValueError:
+        await update.message.reply_text("❌ Invalid format! Use `YYYY-MM-DD HH:MM` (e.g., `2026-08-15 14:30`):")
+        return ANNC_DATETIME
+
+    txt = context.user_data['annc_text']
+    media_id = context.user_data['annc_media_id']
+    media_type = context.user_data['annc_media_type']
+    admin_id = update.message.from_user.id
+
+    res = await asyncio.to_thread(schedule_announcement, txt, media_id, media_type, scheduled_dt, admin_id)
+
+    await update.message.reply_text(
+        f"✅ **ANNOUNCEMENT SCHEDULED!**\n\n"
+        f"📌 **ID:** #{res['id']}\n"
+        f"⏰ **Publish Time:** {scheduled_dt.strftime('%Y-%m-%d %I:%M %p')}\n"
+        f"📝 **Media Type:** {media_type.upper()}\n\n"
+        f"The background scheduler will automatically broadcast this to all users at the exact scheduled time!",
+        parse_mode="Markdown"
+    )
+    return ConversationHandler.END
+
+async def cancel_admin_action(update: Update, context: ContextTypes.DEFAULT_TYPE):
+    await update.message.reply_text("Action canceled.")
+    return ConversationHandler.END
+
 async def button_router(update: Update, context: ContextTypes.DEFAULT_TYPE):
     if not await maintenance_guard(update, context): return
 
@@ -1467,6 +1637,31 @@ def build_application() -> Application:
     app = Application.builder().token(BOT_TOKEN).post_init(post_init).build()
 
     app.add_handler(get_onboarding_handler())
+
+    # Add Promo Code Conversation Handler
+    promo_conv_handler = ConversationHandler(
+        entry_points=[CallbackQueryHandler(start_promo_creation, pattern="^admin_create_promo$")],
+        states={
+            PROMO_NAME: [MessageHandler(filters.TEXT & ~filters.COMMAND, set_promo_name)],
+            PROMO_TYPE: [CallbackQueryHandler(set_promo_type, pattern="^TYPE_")],
+            PROMO_VALUE: [MessageHandler(filters.TEXT & ~filters.COMMAND, set_promo_value)],
+            PROMO_DAYS: [CallbackQueryHandler(finalize_promo_code, pattern="^DAYS_")],
+        },
+        fallbacks=[CommandHandler("cancel", cancel_admin_action)]
+    )
+
+    # Add Scheduled Announcement Conversation Handler
+    annc_conv_handler = ConversationHandler(
+        entry_points=[CallbackQueryHandler(start_announcement_schedule, pattern="^admin_schedule_annc$")],
+        states={
+            ANNC_CONTENT: [MessageHandler(filters.ALL & ~filters.COMMAND, receive_announcement_content)],
+            ANNC_DATETIME: [MessageHandler(filters.TEXT & ~filters.COMMAND, finalize_announcement_schedule)],
+        },
+        fallbacks=[CommandHandler("cancel", cancel_admin_action)]
+    )
+
+    app.add_handler(promo_conv_handler)
+    app.add_handler(annc_conv_handler)
     
     app.add_handler(CommandHandler("quiz", strict_quiz_command_guard))
     app.add_handler(CommandHandler("myplan", myplan_command))

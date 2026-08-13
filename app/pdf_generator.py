@@ -62,8 +62,7 @@ def clean_str(text) -> str:
 def generate_html_report(user_profile: dict, attempts: list, saved_qs: list, rank: str, percentile: float, filter_mode: str) -> str:
     """
     Builds a pixel-perfect HTML document with Google Noto Sans Devanagari font CSS, clickable logos, 
-    larger cover page layout, colorful multi-metric SVG charts (Pie & Bar graphs for attempt stats, accuracy, and percentile), 
-    bold & italic personal details, and middle-aligned icon footers on every page.
+    non-overlapping bar graphs with numerical values on bars, and exact hyperlinked iconized footer links on every page.
     """
     now_date = datetime.now()
     one_month_ago = now_date - timedelta(days=30)
@@ -77,7 +76,6 @@ def generate_html_report(user_profile: dict, attempts: list, saved_qs: list, ran
     raw_pin = user_profile.get("pin")
     masked_pin = "XX" + str(raw_pin)[-2:] if raw_pin else "XXXX"
     
-    # Personal detail values formatted in bold & italic
     full_name_clean = f"<b><i>{clean_str(user_profile.get('full_name'))}</i></b>"
     target_exam_clean = f"<b><i>{clean_str(user_profile.get('target_exam'))}</i></b>"
     
@@ -99,7 +97,6 @@ def generate_html_report(user_profile: dict, attempts: list, saved_qs: list, ran
     user_plan = f"<b><i>{clean_str(user_profile.get('plan', 'Premium Pro / Active Learner'))}</i></b>"
     user_progress = "<b><i>Steady Improvement (Exam Ready)</i></b>"
 
-    # Absolute paths for logos with 2mm larger size (~65px width/height)
     logo_left_path = os.path.abspath(os.path.join(BASE_DIR, "assets", "logo.png"))
     logo_right_path = os.path.abspath(os.path.join(BASE_DIR, "assets", "logohim.png"))
 
@@ -125,7 +122,7 @@ def generate_html_report(user_profile: dict, attempts: list, saved_qs: list, ran
 
     summary_title = f"MONTHLY REPORT ({one_month_ago_str} TO {now_date_str})" if is_month_filter else "ALL-TIME CUMULATIVE ACADEMIC REPORT"
 
-    # SVG Analytics Calculations for Cover Page
+    # SVG Analytics Calculations
     try:
         pct_val = float(str(percentile).replace("%", ""))
     except Exception:
@@ -140,11 +137,11 @@ def generate_html_report(user_profile: dict, attempts: list, saved_qs: list, ran
     acc_val = max(0.0, min(100.0, acc_val))
     dash_val_acc = (acc_val / 100.0) * 251.2
 
-    # Attempt stats calculations for bar graph
+    # Bar graph height calculations (max height 75px to leave clean space for text)
     max_qs = max(total_qs, total_correct, total_wrong, 1)
-    bar_h_q = int((total_qs / max_qs) * 90)
-    bar_h_c = int((total_correct / max_qs) * 90)
-    bar_h_w = int((total_wrong / max_qs) * 90)
+    bar_h_q = int((total_qs / max_qs) * 75)
+    bar_h_c = int((total_correct / max_qs) * 75)
+    bar_h_w = int((total_wrong / max_qs) * 75)
 
     html_lines = [
         "<!DOCTYPE html>",
@@ -153,8 +150,8 @@ def generate_html_report(user_profile: dict, attempts: list, saved_qs: list, ran
         "<meta charset='utf-8'/>",
         "<style>",
         "@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+Devanagari:wght@400;600;700&display=swap');",
-        # Page margin and middle-aligned bottom footer with social icons on EVERY page
-        "@page { size: letter; margin: 20mm 15mm 22mm 15mm; @bottom-right { content: 'Page ' counter(page); font-size: 8.5px; font-family: 'Times New Roman', serif; color: #64748B; } @bottom-left { content: ''; } @bottom-center { content: '📸 Insta: @Learnwithhimm  |  📺 YT: @LearnwithHiM  |  📢 TG: @learnwithhim'; font-size: 8px; font-family: 'Times New Roman', serif; color: #0284C7; font-weight: bold; } }",
+        # Middle-aligned footer with styled inline icons on EVERY page matching user screenshot 2
+        "@page { size: letter; margin: 20mm 15mm 22mm 15mm; @bottom-right { content: 'Page ' counter(page); font-size: 8.5px; font-family: 'Times New Roman', serif; color: #64748B; } @bottom-left { content: ''; } @bottom-center { content: '📷 Insta: @Learnwithhimm  |  📺 YT: @LearnwithHiM  |  ✈️ TG: @Learnwithhim  |  💬 TG Chat: @Learnwithhimm  |  ✉️ Direct DM'; font-size: 8px; font-family: 'Times New Roman', serif; color: #0284C7; font-weight: bold; } }",
         "body { font-family: 'Noto Sans Devanagari', 'Times New Roman', Helvetica, Arial, sans-serif; margin: 0; padding: 0; color: #334155; font-size: 11.5px; line-height: 1.45; direction: ltr; background-color: #ffffff; }",
         "a { color: inherit; text-decoration: none; }",
         ".header-table { width: 100%; border-collapse: collapse; margin-bottom: 12px; }",
@@ -191,7 +188,7 @@ def generate_html_report(user_profile: dict, attempts: list, saved_qs: list, ran
         "<div class='wm-text' style='top: 92%; left: 60%;'>Quiz with HiM</div>",
         "</div>",
         
-        # --- INTRODUCTORY COVER PAGE (Enlarged fonts & bigger charts) ---
+        # --- INTRODUCTORY COVER PAGE ---
         "<div class='cover-page'>",
         f"<table class='header-table'><tr>"
         f"<td style='width: 15%; text-align: left;'>{left_logo_html}</td>"
@@ -201,7 +198,7 @@ def generate_html_report(user_profile: dict, attempts: list, saved_qs: list, ran
         "<br/>",
         "<h2 style='text-align: center; color: #1E3A8A; font-family: \"Times New Roman\", serif; font-size: 20px; margin-bottom: 15px;'>OFFICIAL STUDENT INTRODUCTION & PROFILE REPORT</h2>",
         
-        # Profile Table with Bold & Italic values and larger font
+        # Profile Table
         "<table class='data-table prof-table' style='font-size: 12px;'>",
         f"<tr><td class='prof-label' style='padding: 7px;'>Student Name:</td><td style='padding: 7px;'>{full_name_clean}</td><td class='prof-label' style='padding: 7px;'>Student ID:</td><td style='padding: 7px;'>{sid_val}</td></tr>",
         f"<tr><td class='prof-label' style='padding: 7px;'>Target Exam:</td><td style='padding: 7px;'>{target_exam_clean}</td><td class='prof-label' style='padding: 7px;'>Location:</td><td style='padding: 7px;'>{location_clean}</td></tr>",
@@ -211,11 +208,11 @@ def generate_html_report(user_profile: dict, attempts: list, saved_qs: list, ran
         f"<tr><td class='prof-label' style='padding: 7px;'>Active Plan:</td><td style='padding: 7px;'>{user_plan}</td><td class='prof-label' style='padding: 7px;'>Overall Progress:</td><td style='padding: 7px;'>{user_progress}</td></tr>",
         "</table>",
 
-        # Enhanced Analytics Section with Bigger Colorful Charts in Free Space
+        # Enhanced Analytics Section with Non-Overlapping Bar Graph and Numerical Values on Bars
         "<h3 style='font-size: 13px; margin-top: 18px;'>📈 PERFORMANCE & ANALYTICS OVERVIEW</h3>",
         "<table class='analytics-container'>",
         "<tr>",
-        # Box 1: Colorful Pie Charts for Percentile & Accuracy
+        # Box 1: Pie Charts
         f"<td class='analytics-box' style='width: 48%;'>"
         f"<div style='font-weight: bold; font-size: 12px; color: #1E3A8A; margin-bottom: 8px;'>Percentile & Accuracy Gauges</div>"
         f"<div style='display: inline-block; margin-right: 15px; text-align: center;'>"
@@ -237,22 +234,24 @@ def generate_html_report(user_profile: dict, attempts: list, saved_qs: list, ran
         f"<div style='font-size: 10.5px; color: #64748B; margin-top: 6px;'>Standing ahead of {percentile}% of aspirants with {acc}% accuracy</div>"
         f"</td>",
 
-        # Box 2: Colorful Dynamic Bar Graph for Total Attempted, Correct, and Wrong Questions
+        # Box 2: Bar Graph with Numerical Values directly on top of bars & proper spacing
         f"<td class='analytics-box' style='width: 52%;'>"
         f"<div style='font-weight: bold; font-size: 12px; color: #1E3A8A; margin-bottom: 8px;'>Question Attempt Breakdown</div>"
         f"<svg width='220' height='130' viewBox='0 0 220 130'>"
-        # Background Axis
-        f"<line x1='25' y1='110' x2='205' y2='110' stroke='#CBD5E1' stroke-width='1'></line>"
-        f"<line x1='25' y1='65' x2='205' y2='65' stroke='#E2E8F0' stroke-width='0.5' stroke-dasharray='3'></line>"
-        # Bar 1: Total Attempted Questions
-        f"<rect x='40' y='{110 - bar_h_q}' width='35' height='{bar_h_q}' fill='#38BDF8' rx='4'></rect>"
-        f"<text x='57' y='122' text-anchor='middle' font-size='9.5' font-weight='bold' fill='#334155'>Attempted ({total_qs})</text>"
-        # Bar 2: Total Correct
-        f"<rect x='100' y='{110 - bar_h_c}' width='35' height='{bar_h_c}' fill='#16A34A' rx='4'></rect>"
-        f"<text x='117' y='122' text-anchor='middle' font-size='9.5' font-weight='bold' fill='#334155'>Correct ({total_correct})</text>"
-        # Bar 3: Total Wrong
-        f"<rect x='160' y='{110 - bar_h_w}' width='35' height='{bar_h_w}' fill='#EF4444' rx='4'></rect>"
-        f"<text x='177' y='122' text-anchor='middle' font-size='9.5' font-weight='bold' fill='#334155'>Wrong ({total_wrong})</text>"
+        f"<line x1='20' y1='105' x2='205' y2='105' stroke='#CBD5E1' stroke-width='1'></line>"
+        f"<line x1='20' y1='60' x2='205' y2='60' stroke='#E2E8F0' stroke-width='0.5' stroke-dasharray='3'></line>"
+        # Bar 1: Attempted
+        f"<rect x='35' y='{105 - bar_h_q}' width='35' height='{bar_h_q}' fill='#38BDF8' rx='4'></rect>"
+        f"<text x='52.5' y='{100 - bar_h_q}' text-anchor='middle' font-size='9.5' font-weight='bold' fill='#0F172A'>{total_qs}</text>"
+        f"<text x='52.5' y='117' text-anchor='middle' font-size='9.5' font-weight='bold' fill='#334155'>Attempted</text>"
+        # Bar 2: Correct
+        f"<rect x='95' y='{105 - bar_h_c}' width='35' height='{bar_h_c}' fill='#16A34A' rx='4'></rect>"
+        f"<text x='112.5' y='{100 - bar_h_c}' text-anchor='middle' font-size='9.5' font-weight='bold' fill='#0F172A'>{total_correct}</text>"
+        f"<text x='112.5' y='117' text-anchor='middle' font-size='9.5' font-weight='bold' fill='#334155'>Correct</text>"
+        # Bar 3: Wrong
+        f"<rect x='155' y='{105 - bar_h_w}' width='35' height='{bar_h_w}' fill='#EF4444' rx='4'></rect>"
+        f"<text x='172.5' y='{100 - bar_h_w}' text-anchor='middle' font-size='9.5' font-weight='bold' fill='#0F172A'>{total_wrong}</text>"
+        f"<text x='172.5' y='117' text-anchor='middle' font-size='9.5' font-weight='bold' fill='#334155'>Wrong</text>"
         f"</svg>"
         f"<div style='font-size: 10.5px; color: #64748B; margin-top: 4px;'>Total Attempted: {total_qs} | Correct: {total_correct} | Wrong: {total_wrong}</div>"
         f"</td>",

@@ -2,6 +2,7 @@ import os
 import json
 import traceback
 import xml.sax.saxutils as saxutils
+import urllib.request
 from datetime import datetime, timedelta
 import psycopg2
 from psycopg2.extras import RealDictCursor
@@ -12,7 +13,6 @@ from reportlab.platypus import (
     SimpleDocTemplate, Paragraph, Spacer, Table, TableStyle, Image
 )
 from reportlab.lib.styles import getSampleStyleSheet, ParagraphStyle
-from reportlab.pdfgen import canvas
 from reportlab.pdfbase import pdfmetrics
 from reportlab.pdfbase.ttfonts import TTFont
 
@@ -21,29 +21,57 @@ from app.database import get_user_profile, get_db, release_db
 from app.stats import calculate_user_rank, calculate_user_percentile
 
 # -------------------------------------------------------------
-# HINDI FONT REGISTRATION ENGINE
+# AUTOMATED DEVANAGARI / HINDI FONT DOWNLOAD & REGISTRATION
 # -------------------------------------------------------------
-HINDI_FONT_NAME = "Times-Roman"
-try:
-    # Look for standard Devanagari TTF fonts in system or local assets
-    font_candidates = [
-        os.path.join(BASE_DIR, "assets", "FreeSans.ttf"),
-        os.path.join(BASE_DIR, "assets", "NotoSansDevanagari-Regular.ttf"),
-        "/usr/share/fonts/truetype/dejavu/FreeSans.ttf",
-        "/usr/share/fonts/truetype/noto/NotoSansDevanagari-Regular.ttf"
+DEVANAGARI_FONT_NAME = "DevanagariFont"
+
+def setup_devanagari_font():
+    """
+    Ensures a Devanagari TTF font is downloaded and registered with ReportLab
+    so Hindi text never renders as black boxes (████).
+    """
+    font_dir = os.path.join(BASE_DIR, "assets")
+    os.makedirs(font_dir, exist_ok=True)
+    font_path = os.path.join(font_dir, "NotoSansDevanagari-Regular.ttf")
+
+    # If font file does not exist locally, download Noto Sans Devanagari automatically
+    if not os.path.exists(font_path):
+        try:
+            download_url = "https://raw.githubusercontent.com/googlefonts/noto-fonts/main/hinted/ttf/NotoSansDevanagari/NotoSansDevanagari-Regular.ttf"
+            urllib.request.urlretrieve(download_url, font_path)
+        except Exception as e:
+            pass
+
+    # System fallback paths if download fails
+    candidate_paths = [
+        font_path,
+        "/usr/share/fonts/truetype/noto/NotoSansDevanagari-Regular.ttf",
+        "/usr/share/fonts/truetype/dejavu/DejaVuSans.ttf",
+        "/usr/share/fonts/truetype/freefont/FreeSans.ttf"
     ]
-    for font_path in font_candidates:
-        if os.path.exists(font_path):
-            pdfmetrics.registerFont(TTFont("DevanagariFont", font_path))
-            HINDI_FONT_NAME = "DevanagariFont"
-            break
-except Exception as f_err:
-    pass
+
+    registered = False
+    for path in candidate_paths:
+        if os.path.exists(path):
+            try:
+                pdfmetrics.registerFont(TTFont(DEVANAGARI_FONT_NAME, path))
+                registered = True
+                break
+            except Exception:
+                continue
+
+    if not registered:
+        # Fallback to Helvetica if no Devanagari font registered
+        return "Helvetica"
+    return DEVANAGARI_FONT_NAME
+
+
+ACTIVE_HINDI_FONT = setup_devanagari_font()
 
 
 def draw_pdf_watermark_and_footer(canvas_obj, doc):
     """
-    Draws slightly darker background watermarks repeated 5 times each per page
+    Draws background watermarks repeated 5 times each per page
     (5x "Learn with HiM" & 5x "Quiz with HiM") and attaches social links + page numbers.
     """
     canvas_obj.saveState()
@@ -52,7 +80,7 @@ def draw_pdf_watermark_and_footer(canvas_obj, doc):
     canvas_obj.setStrokeColor(colors.HexColor("#94A3B8"))
     
     if hasattr(canvas_obj, "setFillAlpha"):
-        canvas_obj.setFillAlpha(0.16)
+        canvas_obj.setFillAlpha(0.14)
 
     canvas_obj.setFont("Times-Bold", 24)
 
@@ -216,11 +244,11 @@ def generate_student_pdf_report(user_id: int, filter_mode: str = "last_1_month_d
             )
 
             body_style = ParagraphStyle(
-                'BodyTextTimes',
+                'BodyTextHindi',
                 parent=styles['Normal'],
-                fontName=HINDI_FONT_NAME,
+                fontName=ACTIVE_HINDI_FONT,
                 fontSize=8.5,
-                leading=11,
+                leading=12,
                 textColor=colors.HexColor("#334155")
             )
 
@@ -238,8 +266,8 @@ def generate_student_pdf_report(user_id: int, filter_mode: str = "last_1_month_d
             logo_left_path = os.path.join(BASE_DIR, "assets", "logo.png")
             logo_right_path = os.path.join(BASE_DIR, "assets", "logohim.png")
 
-            img_left = Image(logo_left_path, width=0.8*inch, height=0.8*inch) if os.path.exists(logo_left_path) else Paragraph("<b>Logo</b>", body_style)
-            img_right = Image(logo_right_path, width=0.8*inch, height=0.8*inch) if os.path.exists(logo_right_path) else Paragraph("<b>@LearnwithHiM</b>", body_style)
+            img_left = Image(logo_left_path, width=0.8*inch, height=0.8*inch) if os.path.exists(logo_left_path) else Paragraph("<b>Logo</b>", body_style_bold)
+            img_right = Image(logo_right_path, width=0.8*inch, height=0.8*inch) if os.path.exists(logo_right_path) else Paragraph("<b>@LearnwithHiM</b>", body_style_bold)
 
             if hasattr(img_left, 'preserveAspectRatio'):
                 img_left.preserveAspectRatio = True
@@ -272,11 +300,11 @@ def generate_student_pdf_report(user_id: int, filter_mode: str = "last_1_month_d
             story.append(Paragraph("<b>STUDENT PROFILE OVERVIEW</b>", section_heading))
 
             profile_data = [
-                [Paragraph("Student Name:", body_style_bold), Paragraph(clean_str(u.get('full_name')), body_style), Paragraph("Student ID:", body_style_bold), Paragraph(sid, body_style)],
-                [Paragraph("Target Exam:", body_style_bold), Paragraph(clean_str(u.get('target_exam')), body_style), Paragraph("Location:", body_style_bold), Paragraph(clean_str(f"{u.get('state')}, {u.get('country')}"), body_style)],
-                [Paragraph("DOB / Age:", body_style_bold), Paragraph(clean_str(f"{u.get('dob')} ({u.get('age')} yrs)"), body_style), Paragraph("Phone (Masked):", body_style_bold), Paragraph(masked_phone, body_style)],
-                [Paragraph("Account Status:", body_style_bold), Paragraph("ACTIVE 🟢", body_style), Paragraph("Secret PIN:", body_style_bold), Paragraph(masked_pin, body_style)],
-                [Paragraph("Global Rank:", body_style_bold), Paragraph(clean_str(rank), body_style), Paragraph("Overall Percentile:", body_style_bold), Paragraph(f"{percentile}%", body_style)]
+                [Paragraph("Student Name:", body_style_bold), Paragraph(clean_str(u.get('full_name')), body_style_bold), Paragraph("Student ID:", body_style_bold), Paragraph(sid, body_style_bold)],
+                [Paragraph("Target Exam:", body_style_bold), Paragraph(clean_str(u.get('target_exam')), body_style_bold), Paragraph("Location:", body_style_bold), Paragraph(clean_str(f"{u.get('state')}, {u.get('country')}"), body_style_bold)],
+                [Paragraph("DOB / Age:", body_style_bold), Paragraph(clean_str(f"{u.get('dob')} ({u.get('age')} yrs)"), body_style_bold), Paragraph("Phone (Masked):", body_style_bold), Paragraph(masked_phone, body_style_bold)],
+                [Paragraph("Account Status:", body_style_bold), Paragraph("ACTIVE 🟢", body_style_bold), Paragraph("Secret PIN:", body_style_bold), Paragraph(masked_pin, body_style_bold)],
+                [Paragraph("Global Rank:", body_style_bold), Paragraph(clean_str(rank), body_style_bold), Paragraph("Overall Percentile:", body_style_bold), Paragraph(f"{percentile}%", body_style_bold)]
             ]
 
             prof_table = Table(profile_data, colWidths=[1.3*inch, 2.2*inch, 1.3*inch, 2.2*inch])
@@ -307,7 +335,7 @@ def generate_student_pdf_report(user_id: int, filter_mode: str = "last_1_month_d
                     q_desc += f"<br/><font color='#64748B'><b>Exp:</b> {clean_str(sq.get('explanation'))}</font>"
 
                 saved_table_data.append([
-                    Paragraph(f"{sq.get('saved_at', 'N/A')}", body_style),
+                    Paragraph(f"{sq.get('saved_at', 'N/A')}", body_style_bold),
                     Paragraph(q_desc, body_style),
                     Paragraph(clean_str(ans_txt), body_style)
                 ])
@@ -405,11 +433,11 @@ def generate_student_pdf_report(user_id: int, filter_mode: str = "last_1_month_d
         )
 
         body_style = ParagraphStyle(
-            'BodyTextTimes',
+            'BodyTextHindi',
             parent=styles['Normal'],
-            fontName=HINDI_FONT_NAME,
+            fontName=ACTIVE_HINDI_FONT,
             fontSize=8.5,
-            leading=11,
+            leading=12,
             textColor=colors.HexColor("#334155")
         )
 
@@ -427,8 +455,8 @@ def generate_student_pdf_report(user_id: int, filter_mode: str = "last_1_month_d
         logo_left_path = os.path.join(BASE_DIR, "assets", "logo.png")
         logo_right_path = os.path.join(BASE_DIR, "assets", "logohim.png")
 
-        img_left = Image(logo_left_path, width=0.8*inch, height=0.8*inch) if os.path.exists(logo_left_path) else Paragraph("<b>Logo</b>", body_style)
-        img_right = Image(logo_right_path, width=0.8*inch, height=0.8*inch) if os.path.exists(logo_right_path) else Paragraph("<b>@LearnwithHiM</b>", body_style)
+        img_left = Image(logo_left_path, width=0.8*inch, height=0.8*inch) if os.path.exists(logo_left_path) else Paragraph("<b>Logo</b>", body_style_bold)
+        img_right = Image(logo_right_path, width=0.8*inch, height=0.8*inch) if os.path.exists(logo_right_path) else Paragraph("<b>@LearnwithHiM</b>", body_style_bold)
 
         if hasattr(img_left, 'preserveAspectRatio'):
             img_left.preserveAspectRatio = True
@@ -461,11 +489,11 @@ def generate_student_pdf_report(user_id: int, filter_mode: str = "last_1_month_d
         story.append(Paragraph("<b>STUDENT PROFILE OVERVIEW</b>", section_heading))
 
         profile_data = [
-            [Paragraph("Student Name:", body_style_bold), Paragraph(clean_str(u.get('full_name')), body_style), Paragraph("Student ID:", body_style_bold), Paragraph(sid, body_style)],
-            [Paragraph("Target Exam:", body_style_bold), Paragraph(clean_str(u.get('target_exam')), body_style), Paragraph("Location:", body_style_bold), Paragraph(clean_str(f"{u.get('state')}, {u.get('country')}"), body_style)],
-            [Paragraph("DOB / Age:", body_style_bold), Paragraph(clean_str(f"{u.get('dob')} ({u.get('age')} yrs)"), body_style), Paragraph("Phone (Masked):", body_style_bold), Paragraph(masked_phone, body_style)],
-            [Paragraph("Account Status:", body_style_bold), Paragraph("ACTIVE 🟢", body_style), Paragraph("Secret PIN:", body_style_bold), Paragraph(masked_pin, body_style)],
-            [Paragraph("Global Rank:", body_style_bold), Paragraph(clean_str(rank), body_style), Paragraph("Overall Percentile:", body_style_bold), Paragraph(f"{percentile}%", body_style)]
+            [Paragraph("Student Name:", body_style_bold), Paragraph(clean_str(u.get('full_name')), body_style_bold), Paragraph("Student ID:", body_style_bold), Paragraph(sid, body_style_bold)],
+            [Paragraph("Target Exam:", body_style_bold), Paragraph(clean_str(u.get('target_exam')), body_style_bold), Paragraph("Location:", body_style_bold), Paragraph(clean_str(f"{u.get('state')}, {u.get('country')}"), body_style_bold)],
+            [Paragraph("DOB / Age:", body_style_bold), Paragraph(clean_str(f"{u.get('dob')} ({u.get('age')} yrs)"), body_style_bold), Paragraph("Phone (Masked):", body_style_bold), Paragraph(masked_phone, body_style_bold)],
+            [Paragraph("Account Status:", body_style_bold), Paragraph("ACTIVE 🟢", body_style_bold), Paragraph("Secret PIN:", body_style_bold), Paragraph(masked_pin, body_style_bold)],
+            [Paragraph("Global Rank:", body_style_bold), Paragraph(clean_str(rank), body_style_bold), Paragraph("Overall Percentile:", body_style_bold), Paragraph(f"{percentile}%", body_style_bold)]
         ]
 
         prof_table = Table(profile_data, colWidths=[1.3*inch, 2.2*inch, 1.3*inch, 2.2*inch])
@@ -490,7 +518,7 @@ def generate_student_pdf_report(user_id: int, filter_mode: str = "last_1_month_d
 
         stats_data = [
             [Paragraph("Quizzes", body_style_bold), Paragraph("Total Questions", body_style_bold), Paragraph("Correct ✅", body_style_bold), Paragraph("Wrong ❌", body_style_bold), Paragraph("Accuracy", body_style_bold)],
-            [Paragraph(f"{total_quizzes}", body_style), Paragraph(f"{total_qs}", body_style), Paragraph(f"{total_correct}", body_style), Paragraph(f"{total_wrong}", body_style), Paragraph(f"{acc}%", body_style)]
+            [Paragraph(f"{total_quizzes}", body_style_bold), Paragraph(f"{total_qs}", body_style_bold), Paragraph(f"{total_correct}", body_style_bold), Paragraph(f"{total_wrong}", body_style_bold), Paragraph(f"{acc}%", body_style_bold)]
         ]
         stats_table = Table(stats_data, colWidths=[1.4*inch, 1.4*inch, 1.4*inch, 1.4*inch, 1.4*inch])
         stats_table.setStyle(TableStyle([
@@ -528,12 +556,12 @@ def generate_student_pdf_report(user_id: int, filter_mode: str = "last_1_month_d
 
             for dt, st in date_groups.items():
                 date_summary_data.append([
-                    Paragraph(f"{dt}", body_style),
-                    Paragraph(f"{st['qs']}", body_style),
-                    Paragraph(f"{st['correct']}", body_style),
-                    Paragraph(f"{st['wrong']}", body_style),
-                    Paragraph(f"{st['skipped']}", body_style),
-                    Paragraph(f"{round(st['score'], 2)}", body_style)
+                    Paragraph(f"{dt}", body_style_bold),
+                    Paragraph(f"{st['qs']}", body_style_bold),
+                    Paragraph(f"{st['correct']}", body_style_bold),
+                    Paragraph(f"{st['wrong']}", body_style_bold),
+                    Paragraph(f"{st['skipped']}", body_style_bold),
+                    Paragraph(f"{round(st['score'], 2)}", body_style_bold)
                 ])
 
             date_table = Table(date_summary_data, colWidths=[1.2*inch, 1.1*inch, 1.1*inch, 1.1*inch, 1.1*inch, 1.4*inch], repeatRows=1)
@@ -582,14 +610,14 @@ def generate_student_pdf_report(user_id: int, filter_mode: str = "last_1_month_d
                     q_txt = clean_str(q.get("question_text") or q.get("question") or "N/A")
                     c_ans = clean_str(q.get("correct_answer_text") or "N/A")
                     table_data.append([
-                        Paragraph(f"{q.get('attempt_date', 'N/A')}", body_style),
+                        Paragraph(f"{q.get('attempt_date', 'N/A')}", body_style_bold),
                         Paragraph(q_txt, body_style),
                         Paragraph(c_ans, body_style)
                     ])
 
                 if len(table_data) == 1:
                     table_data.append([
-                        Paragraph("N/A", body_style), 
+                        Paragraph("N/A", body_style_bold), 
                         Paragraph(empty_msg, body_style), 
                         Paragraph("N/A", body_style)
                     ])

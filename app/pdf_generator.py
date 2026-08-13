@@ -5,6 +5,7 @@ import xml.sax.saxutils as saxutils
 import urllib.request
 import unicodedata
 from datetime import datetime, timedelta
+import asyncio
 import psycopg2
 from psycopg2.extras import RealDictCursor
 
@@ -12,22 +13,21 @@ from app.config import USER_PROFILES_DIR, BASE_DIR
 from app.database import get_user_profile, get_db, release_db
 from app.stats import calculate_user_rank, calculate_user_percentile
 
-# Attempt WeasyPrint Import for Native Unicode Shaping & Perfect Hindi Rendering
+# Attempt Playwright Import for Native Chromium PDF Rendering (Guaranteed Hindi HarfBuzz Shaping)
+HAS_PLAYWRIGHT = False
+try:
+    from playwright.async_api import async_playwright
+    HAS_PLAYWRIGHT = True
+except ImportError:
+    HAS_PLAYWRIGHT = False
+
+# Attempt WeasyPrint Import as Secondary Fallback
 HAS_WEASYPRINT = False
 try:
     import weasyprint
     HAS_WEASYPRINT = True
 except ImportError:
     HAS_WEASYPRINT = False
-
-# Attempt Playwright Import as Secondary Fallback
-HAS_PLAYWRIGHT = False
-try:
-    from playwright.async_api import async_playwright
-    import asyncio
-    HAS_PLAYWRIGHT = True
-except ImportError:
-    HAS_PLAYWRIGHT = False
 
 
 def mask_phone(phone_str: str) -> str:
@@ -70,8 +70,8 @@ def clean_str(text) -> str:
 
 def generate_html_report(user_profile: dict, attempts: list, saved_qs: list, rank: str, percentile: float, filter_mode: str) -> str:
     """
-    Builds a pixel-perfect HTML document with Google Noto Sans Devanagari font CSS.
-    WeasyPrint / HarfBuzz renders complex Devanagari ligatures, matras, and glyphs flawlessly.
+    Builds a pixel-perfect HTML document with Google Noto Sans Devanagari font CSS and absolute logo paths.
+    Chromium renders complex Devanagari ligatures, matras, and glyphs flawlessly.
     """
     now_date = datetime.now()
     one_month_ago = now_date - timedelta(days=30)
@@ -96,8 +96,12 @@ def generate_html_report(user_profile: dict, attempts: list, saved_qs: list, ran
     age_val = user_profile.get('age', '')
     dob_age_clean = clean_str(f"{dob_val} ({age_val} yrs)")
     
-    logo_left_path = os.path.join(BASE_DIR, "assets", "logo.png")
-    logo_right_path = os.path.join(BASE_DIR, "assets", "logohim.png")
+    # Absolute paths for logos to ensure 100% visibility in Chromium PDF compilation
+    logo_left_path = os.path.abspath(os.path.join(BASE_DIR, "assets", "logo.png"))
+    logo_right_path = os.path.abspath(os.path.join(BASE_DIR, "assets", "logohim.png"))
+
+    left_logo_html = f'<img src="file://{logo_left_path}" style="width: 55px; height: 55px; object-fit: contain;" />' if os.path.exists(logo_left_path) else '<b>Logo</b>'
+    right_logo_html = f'<img src="file://{logo_right_path}" style="width: 55px; height: 55px; object-fit: contain;" />' if os.path.exists(logo_right_path) else '<b>@LearnwithHiM</b>'
 
     # Filter Attempts
     filtered_attempts = []
@@ -117,9 +121,6 @@ def generate_html_report(user_profile: dict, attempts: list, saved_qs: list, ran
     acc = round((total_correct / total_qs) * 100, 2) if total_qs > 0 else 0.0
 
     summary_title = f"MONTHLY REPORT ({one_month_ago_str} TO {now_date_str})" if is_month_filter else "ALL-TIME CUMULATIVE ACADEMIC REPORT"
-
-    left_logo_html = f'<img src="file://{logo_left_path}" width="55"/>' if os.path.exists(logo_left_path) else '<b>Logo</b>'
-    right_logo_html = f'<img src="file://{logo_right_path}" width="55"/>' if os.path.exists(logo_right_path) else '<b>@LearnwithHiM</b>'
 
     # HTML & CSS Template Construction with Google Noto Sans Devanagari & Exact Styling
     html_lines = [
@@ -162,7 +163,7 @@ def generate_html_report(user_profile: dict, attempts: list, saved_qs: list, ran
         "<div class='wm-text' style='top: 92%; left: 60%;'>Quiz with HiM</div>",
         "</div>",
         
-        # Header Table
+        # Header Table with Logos
         "<table class='header-table'>",
         "<tr>",
         f"<td style='width: 15%; text-align: left;'>{left_logo_html}</td>",
@@ -322,15 +323,7 @@ def generate_student_pdf_report(user_id: int, filter_mode: str = "last_1_month_d
 
         html_content = generate_html_report(u, attempts, saved_qs, str(rank), percentile, filter_mode)
 
-        # Compile via WeasyPrint (Primary High-Performance Unicode & Devanagari HarfBuzz Shaper)
-        if HAS_WEASYPRINT:
-            try:
-                weasyprint.HTML(string=html_content).write_pdf(pdf_path)
-                return pdf_path
-            except Exception as wp_err:
-                pass
-
-        # Secondary Fallback via Playwright Chromium
+        # Compile via Playwright Chromium (Primary High-Performance PDF Engine with HarfBuzz Devanagari Shaping)
         if HAS_PLAYWRIGHT:
             try:
                 async def render_pw():
@@ -338,26 +331,40 @@ def generate_student_pdf_report(user_id: int, filter_mode: str = "last_1_month_d
                         browser = await p.chromium.launch(headless=True)
                         page = await browser.new_page()
                         await page.set_content(html_content, wait_until="networkidle")
-                        await page.pdf(path=pdf_path, format="Letter", print_background=True)
+                        await page.pdf(path=pdf_path, format="Letter", print_background=True, prefer_css_page_size=True)
                         await browser.close()
                 
-                loop = asyncio.get_event_loop()
-                if loop.is_running():
-                    asyncio.run_coroutine_threadsafe(render_pw(), loop).result(timeout=25)
+                try:
+                    loop = asyncio.get_running_loop()
+                except RuntimeError:
+                    loop = None
+
+                if loop and loop.is_running():
+                    # If called from an async event loop, run synchronously in a separate thread/executor or run_until_complete
+                    import concurrent.futures
+                    with concurrent.futures.ThreadPoolExecutor() as pool:
+                        pool.submit(asyncio.run, render_pw()).result(timeout=30)
                 else:
-                    loop.run_until_complete(render_pw())
-                return pdf_path
+                    asyncio.run(render_pw())
+
+                if os.path.exists(pdf_path):
+                    return pdf_path
             except Exception as pw_err:
                 pass
 
-        # Final HTML Fallback if PDF engines fail
-        html_path = pdf_path.replace(".pdf", ".html")
-        with open(html_path, "w", encoding="utf-8") as f:
-            f.write(html_content)
-        return html_path
+        # Secondary Compile via WeasyPrint
+        if HAS_WEASYPRINT:
+            try:
+                weasyprint.HTML(string=html_content).write_pdf(pdf_path)
+                if os.path.exists(pdf_path):
+                    return pdf_path
+            except Exception as wp_err:
+                pass
+
+        return "ERROR: Failed to compile PDF. Ensure Playwright or WeasyPrint dependencies are installed."
 
     except Exception as e:
         if conn:
             release_db(conn)
         error_trace = traceback.format_exc()
-        return "ERROR_DETAILS:\n" + error_trace
+        return f"ERROR_DETAILS:\n{error_trace}"

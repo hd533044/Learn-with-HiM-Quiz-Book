@@ -102,7 +102,7 @@ def is_admin_authenticated(user_id: int) -> bool:
     if user_id != PRIMARY_ADMIN_ID:
         return False
     auth_time = ADMIN_AUTH_SESSIONS.get(user_id, 0)
-    return (time.time() - auth_time) < 1800  # 30 minutes session duration (Feature 6)
+    return (time.time() - auth_time) < 1800  # 30 minutes session duration
 
 
 def get_unique_students_with_queries_count() -> int:
@@ -221,19 +221,22 @@ def calculate_financial_revenue():
         return {"today": 0, "week": 0, "month": 0, "all": 0}
 
 
-def get_currently_online_users():
-    """Fetches users who were active or attempting quizzes in the last 15 minutes."""
+# -------------------------------------------------------------
+# Feature 2: Multi-Window Online Active Users (1m / 5m / 15m)
+# -------------------------------------------------------------
+def get_currently_online_users(minutes: int = 15):
+    """Fetches users active within the given minute window."""
     conn = None
     try:
         ist = pytz.timezone("Asia/Kolkata")
         now_epoch = int(datetime.now(ist).timestamp())
-        fifteen_mins_ago = now_epoch - 900
+        threshold_epoch = now_epoch - (minutes * 60)
 
         conn = get_db()
         cursor = conn.cursor(cursor_factory=RealDictCursor)
         cursor.execute(
             "SELECT user_id, full_name, student_id, last_active FROM users WHERE last_activity_epoch >= %s ORDER BY last_activity_epoch DESC",
-            (fifteen_mins_ago,)
+            (threshold_epoch,)
         )
         rows = cursor.fetchall()
         cursor.close()
@@ -243,6 +246,29 @@ def get_currently_online_users():
         if conn:
             release_db(conn)
         return []
+
+
+# -------------------------------------------------------------
+# Feature 3: Full Platform Usage Telemetry Summary
+# -------------------------------------------------------------
+def get_platform_usage_summary():
+    """Calculates overall cumulative time spent across all students on the platform."""
+    conn = None
+    try:
+        conn = get_db()
+        cursor = conn.cursor()
+        cursor.execute("SELECT SUM(seconds_spent) FROM user_activity_time")
+        total_sec = cursor.fetchone()[0] or 0
+        cursor.close()
+        release_db(conn)
+
+        hours = round(total_sec / 3600.0, 2)
+        mins = round(total_sec / 60.0, 1)
+        return {"seconds": total_sec, "minutes": mins, "hours": hours}
+    except Exception:
+        if conn:
+            release_db(conn)
+        return {"seconds": 0, "minutes": 0.0, "hours": 0.0}
 
 
 def get_pdf_generation_analytics():
@@ -289,7 +315,6 @@ async def admin_portal_command(update: Update, context: ContextTypes.DEFAULT_TYP
             await update.message.reply_text(reject_msg)
         return
 
-    # Feature 6: Inline Password Unlock Prompt on 30-min Auto-Lock
     if not is_admin_authenticated(user_id):
         context.user_data["awaiting_admin_password"] = True
         msg = (
@@ -312,8 +337,10 @@ async def admin_portal_command(update: Update, context: ContextTypes.DEFAULT_TYP
     users = get_all_users()
     paid_users = get_strict_paid_users()
     demo_users = get_strict_demo_users()
-    online_users = get_currently_online_users()
+    online_15m = get_currently_online_users(15)
     pending_students_count = get_unique_students_with_queries_count()
+    usage_stats = get_platform_usage_summary()
+
     m_until = get_maintenance_until()
     now_ts = int(time.time())
     m_status = "🟢 Active (Online)" if now_ts >= m_until else "🔴 PAUSED (Maintenance Mode)"
@@ -326,11 +353,12 @@ async def admin_portal_command(update: Update, context: ContextTypes.DEFAULT_TYP
             InlineKeyboardButton(f"🎁 Free Demo ({len(demo_users)})", callback_data="admin_demo_users_page_0")
         ],
         [
-            InlineKeyboardButton(f"⚡ Currently Online Users ({len(online_users)})", callback_data="admin_live_users"),
+            InlineKeyboardButton(f"⚡ Currently Online Users ({len(online_15m)})", callback_data="admin_live_users_menu"),
             InlineKeyboardButton("📄 PDF Generation Logs", callback_data="admin_pdf_logs")
         ],
         [InlineKeyboardButton("👥 Student Directory", callback_data="admin_users_page_0"), InlineKeyboardButton("🔍 Search Student", callback_data="admin_search_prompt")],
-        [InlineKeyboardButton("💰 Revenue & Earnings Dashboard", callback_data="admin_financial_stats"), InlineKeyboardButton("🎁 Gift 1-Day Quota Boost to ALL", callback_data="admin_mass_grant_menu")],
+        [InlineKeyboardButton("💰 Revenue Dashboard", callback_data="admin_financial_stats"), InlineKeyboardButton("⏱ Platform Time Telemetry", callback_data="admin_total_platform_usage")],
+        [InlineKeyboardButton("🎁 Gift 1-Day Quota Boost to ALL", callback_data="admin_mass_grant_menu")],
         [InlineKeyboardButton("📊 Command Usage Analytics", callback_data="admin_command_stats"), InlineKeyboardButton("📦 Export Ledgers (.zip)", callback_data="admin_export_zip")],
         [
             InlineKeyboardButton("⏸ Pause 5m", callback_data="admin_pause_5"), 
@@ -353,7 +381,8 @@ async def admin_portal_command(update: Update, context: ContextTypes.DEFAULT_TYP
         f"📊 **Total Registered Students:** `{len(users)}`\n"
         f"💎 **Actual Paid VIP Subscribers:** `{len(paid_users)}`\n"
         f"🎁 **Free Demo Users:** `{len(demo_users)}`\n"
-        f"⚡ **Currently Online Users:** `{len(online_users)}`\n"
+        f"⚡ **Online Users (15m):** `{len(online_15m)}`\n"
+        f"⏱ **Total Platform Practice Time:** `{usage_stats['hours']} Hours` ({usage_stats['minutes']} mins)\n"
         f"📩 **Students with Pending Queries:** `{pending_students_count}`\n"
         f"⚡ **Bot System Status:** `{m_status}`\n\n"
         f"Select an administrative action below:"
@@ -534,7 +563,6 @@ async def admin_callback_handler(update: Update, context: ContextTypes.DEFAULT_T
     user_id = query.from_user.id
     data = query.data
 
-    # Feature 6: Password unlock prompt callback
     if data == "admin_unlock_prompt":
         await query.answer()
         context.user_data["awaiting_admin_password"] = True
@@ -558,7 +586,6 @@ async def admin_callback_handler(update: Update, context: ContextTypes.DEFAULT_T
 
     users = get_all_users()
 
-    # Feature 5: Admin Live Analytics Modal Pop-Up
     if data == "admin_popup_overview":
         conn = get_db()
         cursor = conn.cursor()
@@ -597,23 +624,65 @@ async def admin_callback_handler(update: Update, context: ContextTypes.DEFAULT_T
         await query.answer(text=popup_text, show_alert=True)
         return
 
-    if data == "admin_live_users":
+    # Feature 2: Multi-Window Active Student Detection (1m, 5m, 15m)
+    elif data == "admin_live_users_menu":
         await query.answer()
-        online_users = get_currently_online_users()
-        lines = [
-            f"⚡ **CURRENTLY ONLINE STUDENTS ({len(online_users)})** ⚡\n"
-            f"━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\n"
-            f"📌 *Active or practicing within the last 15 minutes*\n"
-        ]
-        if online_users:
-            for idx, u in enumerate(online_users, start=1):
-                sid = u.get("student_id") or f"USER_{u['user_id']}"
-                lines.append(f"{idx}. **{u['full_name']}** (`{sid}`) — Active: `{u.get('last_active', 'Just now')}`")
-        else:
-            lines.append("ℹ️ *No active students currently online.*")
+        online_1m = get_currently_online_users(1)
+        online_5m = get_currently_online_users(5)
+        online_15m = get_currently_online_users(15)
 
-        back_btn = InlineKeyboardMarkup([[InlineKeyboardButton("🔙 Back to Admin Portal", callback_data="admin_home")]])
+        keyboard = [
+            [InlineKeyboardButton(f"🟢 Active in Last 1 Min ({len(online_1m)})", callback_data="admin_show_online_1")],
+            [InlineKeyboardButton(f"🟡 Active in Last 5 Mins ({len(online_5m)})", callback_data="admin_show_online_5")],
+            [InlineKeyboardButton(f"🟠 Active in Last 15 Mins ({len(online_15m)})", callback_data="admin_show_online_15")],
+            [InlineKeyboardButton("🔙 Back to Admin Portal", callback_data="admin_home")]
+        ]
+
+        msg = (
+            f"⚡ **LIVE ONLINE STUDENT TELEMETRY** ⚡\n"
+            f"━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\n"
+            f"• **1-Minute Realtime Active:** `{len(online_1m)} Students` 🟢\n"
+            f"• **5-Minutes Active Window:** `{len(online_5m)} Students` 🟡\n"
+            f"• **15-Minutes Active Window:** `{len(online_15m)} Students` 🟠\n\n"
+            f"Select a time window below to view student details:"
+        )
+        await query.edit_message_text(msg, reply_markup=InlineKeyboardMarkup(keyboard), parse_mode="Markdown")
+
+    elif data.startswith("admin_show_online_"):
+        await query.answer()
+        mins = int(data.replace("admin_show_online_", ""))
+        online_list = get_currently_online_users(mins)
+
+        lines = [
+            f"⚡ **ACTIVE STUDENTS IN LAST {mins} MINUTE(S) ({len(online_list)})** ⚡\n"
+            f"━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\n"
+        ]
+
+        if online_list:
+            for idx, u in enumerate(online_list, start=1):
+                sid = u.get("student_id") or f"USER_{u['user_id']}"
+                lines.append(f"{idx}. **{u['full_name']}** (`{sid}`) — Last Active: `{u.get('last_active', 'Just now')}`")
+        else:
+            lines.append("ℹ️ *No active students in this time window.*")
+
+        back_btn = InlineKeyboardMarkup([[InlineKeyboardButton("🔙 Back to Online Menu", callback_data="admin_live_users_menu")], [InlineKeyboardButton("👑 Main Admin Portal", callback_data="admin_home")]])
         await query.edit_message_text("\n".join(lines), reply_markup=back_btn, parse_mode="Markdown")
+
+    # Feature 3: Full Platform Usage Telemetry
+    elif data == "admin_total_platform_usage":
+        await query.answer()
+        usage = get_platform_usage_summary()
+        msg = (
+            f"⏱ **FULL PLATFORM USAGE & PRACTICE TIME TELEMETRY** ⏱\n"
+            f"━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\n"
+            f"• **Total Hours Spent:** `{usage['hours']} Hours` ⏳\n"
+            f"• **Total Minutes Spent:** `{usage['minutes']} Mins` ⏱\n"
+            f"• **Total Raw Seconds:** `{usage['seconds']} Sec` 📊\n"
+            f"━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\n"
+            f"💡 Real-time aggregate duration spent across all student practice sessions."
+        )
+        back_btn = InlineKeyboardMarkup([[InlineKeyboardButton("🔙 Back to Admin Portal", callback_data="admin_home")]])
+        await query.edit_message_text(msg, reply_markup=back_btn, parse_mode="Markdown")
 
     elif data == "admin_pdf_logs":
         await query.answer()
@@ -930,7 +999,6 @@ async def admin_callback_handler(update: Update, context: ContextTypes.DEFAULT_T
             reply_markup=InlineKeyboardMarkup([[InlineKeyboardButton("🔙 Back to Dashboard", callback_data=f"admin_inspect_u_{target_uid}")]])
         )
 
-    # Feature 2: Issue Warning Prompt to User
     elif data.startswith("admin_issue_warning_prompt_"):
         await query.answer()
         target_uid = int(data.replace("admin_issue_warning_prompt_", ""))
@@ -1372,20 +1440,23 @@ async def admin_callback_handler(update: Update, context: ContextTypes.DEFAULT_T
         release_db(conn)
 
         total_sec = sum([r['seconds_spent'] for r in rows]) if rows else 0
+        total_hrs = round(total_sec / 3600.0, 2)
+        total_mins = round(total_sec / 60.0, 1)
         
         lines = [
             f"⏱ **STUDENT ACTIVITY & TIME LOG** ⏱",
             f"━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━",
             f"👤 **Student:** {u.get('full_name')} (`{u.get('student_id')}`)",
             f"• **Last Active:** `{u.get('last_active', 'N/A')}`",
-            f"• **Total Time Spent:** `{total_sec} sec` ({round(total_sec/60, 2)} mins)\n",
+            f"• **Cumulative Practice Time:** `{total_hrs} Hours` ({total_mins} mins / {total_sec} sec)\n",
             f"📅 **Date-Wise Time Spent Breakdown:**"
         ]
 
         if rows:
             for r in rows:
                 mins = round(r['seconds_spent'] / 60, 2)
-                lines.append(f" • `{r['date_str']}`: {r['seconds_spent']}s ({mins} mins)")
+                hrs = round(r['seconds_spent'] / 3600.0, 2)
+                lines.append(f" • `{r['date_str']}`: {hrs} hrs ({mins} mins / {r['seconds_spent']}s)")
         else:
             lines.append(" • *No activity time recorded yet.*")
 

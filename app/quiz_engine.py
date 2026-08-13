@@ -513,7 +513,6 @@ async def send_next_question(chat_id: int, user_id: int, context: ContextTypes.D
             "q_data": q
         }
 
-        # Updated text formatting for Bold + Italic without raw asterisks
         await context.bot.send_message(
             chat_id=chat_id,
             text="⚡ ***Quiz Controls:***",
@@ -617,7 +616,10 @@ async def finish_quiz_and_send_report(chat_id: int, user_id: int, context: Conte
     score = session["score"]
     detailed_logs = session.get("detailed_logs", [])
 
-    # Send report card immediately
+    # Feature 4: Dynamic Rank & Percentile in Post-Quiz Summary Report
+    rank = await asyncio.to_thread(calculate_user_rank, user_id)
+    percentile = await asyncio.to_thread(calculate_user_percentile, user_id)
+
     report_card = (
         f"🏆 **OFFICIAL QUIZ REPORT CARD** 🏆\n"
         f"📚 **Quiz with HiM by Himanshu Sir**\n"
@@ -629,6 +631,9 @@ async def finish_quiz_and_send_report(chat_id: int, user_id: int, context: Conte
         f"• **Wrong Answers:** `{wrong}` ❌\n"
         f"• **Skipped Questions:** `{skipped}` ⏭\n"
         f"• **Final Score:** `{score} / {total}` ⭐\n\n"
+        f"🏆 **RANKING & PERCENTILE:**\n"
+        f"• **Global Rank:** `{rank}` 🥇\n"
+        f"• **Overall Percentile:** `{percentile}%` 📊\n"
         f"━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\n"
         f"👇 **INLINE QUIZ BOOK NAVIGATION:**"
     )
@@ -666,7 +671,7 @@ async def finish_quiz_and_send_report(chat_id: int, user_id: int, context: Conte
         parse_mode="Markdown"
     )
 
-    # Fire and forget database saving to avoid delaying message delivery
+    # Save attempt log in database concurrently
     asyncio.create_task(asyncio.to_thread(
         record_quiz_result,
         user_id,

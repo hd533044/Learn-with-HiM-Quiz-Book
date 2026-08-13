@@ -17,16 +17,50 @@ from app.database import get_user_profile, get_db, release_db
 from app.stats import calculate_user_rank, calculate_user_percentile
 
 
-def draw_pdf_footer(canvas, doc):
-    """Draws social links and dynamic page number natively on every page footer."""
+def draw_pdf_watermark_and_footer(canvas, doc):
+    """
+    Draws faint, highly transparent diagonal watermarks across the page
+    and attaches social links + page numbers on every PDF page.
+    """
     canvas.saveState()
 
-    # Footer Separator Line
+    # -------------------------------------------------------------
+    # Feature 1: Highly Transparent Diagonal Watermarks
+    # -------------------------------------------------------------
+    canvas.setFillColor(colors.HexColor("#CBD5E1"))
+    canvas.setStrokeColor(colors.HexColor("#CBD5E1"))
+    
+    # Set extreme transparency so background text visibility is 100% preserved
+    if hasattr(canvas, "setFillAlpha"):
+        canvas.setFillAlpha(0.08)
+
+    canvas.setFont("Times-Bold", 32)
+
+    # Top-Left Diagonal Watermark
+    canvas.saveState()
+    canvas.translate(180, 520)
+    canvas.rotate(35)
+    canvas.drawCentredString(0, 0, "Learn with HiM")
+    canvas.restoreState()
+
+    # Bottom-Right Diagonal Watermark
+    canvas.saveState()
+    canvas.translate(410, 260)
+    canvas.rotate(35)
+    canvas.drawCentredString(0, 0, "Quiz with HiM")
+    canvas.restoreState()
+
+    # Reset Alpha for Footer Rendering
+    if hasattr(canvas, "setFillAlpha"):
+        canvas.setFillAlpha(1.0)
+
+    # -------------------------------------------------------------
+    # Footer Rendering
+    # -------------------------------------------------------------
     canvas.setStrokeColor(colors.HexColor("#CBD5E1"))
     canvas.setLineWidth(0.8)
     canvas.line(30, 42, 582, 42)
 
-    # Clickable Social Media Links
     canvas.setFont("Times-Bold", 8)
     canvas.setFillColor(colors.HexColor("#0284C7"))
     
@@ -98,13 +132,9 @@ def generate_student_pdf_report(user_id: int, filter_mode: str = "last_1_month_d
 
         is_month_filter = "last_1_month" in filter_mode
 
-        # Calculate student Rank & Percentile for PDF report (Feature 1)
         rank = calculate_user_rank(user_id)
         percentile = calculate_user_percentile(user_id)
 
-        # -------------------------------------------------------------
-        # HANDLING SAVED QUESTIONS EXPORT
-        # -------------------------------------------------------------
         if filter_mode == "saved_questions_only":
             cursor.execute("SELECT * FROM saved_questions WHERE user_id = %s ORDER BY id DESC", (user_id,))
             raw_saved = cursor.fetchall()
@@ -263,12 +293,9 @@ def generate_student_pdf_report(user_id: int, filter_mode: str = "last_1_month_d
             ]))
             story.append(sq_table)
 
-            doc.build(story, onFirstPage=draw_pdf_footer, onLaterPages=draw_pdf_footer)
+            doc.build(story, onFirstPage=draw_pdf_watermark_and_footer, onLaterPages=draw_pdf_watermark_and_footer)
             return pdf_path
 
-        # -------------------------------------------------------------
-        # STANDARD ATTEMPT LOGS & QUIZ SUMMARY PROCESSING
-        # -------------------------------------------------------------
         cursor.execute("SELECT * FROM quiz_attempts WHERE user_id = %s ORDER BY id DESC", (user_id,))
         raw_attempts = cursor.fetchall()
         cursor.close()
@@ -574,7 +601,7 @@ def generate_student_pdf_report(user_id: int, filter_mode: str = "last_1_month_d
                 empty_msg="No correct questions logged yet."
             ))
 
-        doc.build(story, onFirstPage=draw_pdf_footer, onLaterPages=draw_pdf_footer)
+        doc.build(story, onFirstPage=draw_pdf_watermark_and_footer, onLaterPages=draw_pdf_watermark_and_footer)
         return pdf_path
 
     except Exception as e:

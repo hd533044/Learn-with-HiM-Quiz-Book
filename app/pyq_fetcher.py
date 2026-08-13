@@ -28,12 +28,23 @@ def verify_and_correct_question(q: dict) -> dict:
         "explanation": str(expl).strip()
     }
 
-def fetch_pyqs_for_quiz(needed_count: int = 20, seen_ids: set = None) -> list:
+def fetch_pyqs_for_quiz(needed_count: int = 20, seen_ids: set = None, language: str = "en") -> list:
+    """
+    Retrieves questions dynamically based on requested language ('en' or 'hi').
+    Loads Hindi questions directly from /data/question_bank/hindi/
+    """
     if seen_ids is None:
         seen_ids = set()
 
     all_raw_questions = []
-    search_dirs = [QUESTION_BANK_DIR, DATA_DIR]
+
+    if language == "hi":
+        search_dirs = [
+            os.path.join(QUESTION_BANK_DIR, "hindi"),
+            os.path.join(DATA_DIR, "question_bank", "hindi")
+        ]
+    else:
+        search_dirs = [QUESTION_BANK_DIR, DATA_DIR]
 
     for search_dir in search_dirs:
         if not os.path.exists(search_dir):

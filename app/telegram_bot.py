@@ -30,7 +30,7 @@ from app.database import (
 )
 from app.onboarding import get_onboarding_handler, start_onboarding
 from app.quiz_engine import (
-    launch_quiz_setup, quiz_count_callback, quiz_timer_callback, handle_poll_answer,
+    launch_quiz_setup, quiz_language_callback, quiz_count_callback, quiz_timer_callback, handle_poll_answer,
     pause_quiz_command, resume_quiz_command, stop_quiz_command, save_question_callback
 )
 from app.stats import get_overall_leaderboard, calculate_user_percentile, calculate_user_rank, get_user_performance_summary
@@ -815,7 +815,7 @@ async def help_command(update: Update, context: ContextTypes.DEFAULT_TYPE):
         "• **/invite** — 🤝 Invite Friends (+10 Quota Boost)\n"
         "• **/pause** — ⏸️ Pause Current Running Quiz\n"
         "• **/resume** — ▶️ Resume Saved Paused Quiz\n"
-        "• **/stop** — 🛑 Stop Quiz Session Completely\n"
+        "• **/stop** — 🛑 Stop Quiz Completely\n"
         "• **/help** — 🤖 Show Command Directory\n"
         "━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\n"
         "Tap any interactive button below or use the blue **[≡ Menu]** button:\n"
@@ -1462,7 +1462,7 @@ async def post_init(application: Application):
         BotCommand("feedback", "💬 Submit Feedback"),
         BotCommand("reviews", "📖 View Student Reviews"),
         BotCommand("invite", "🤝 Invite Friends (+10 Quota)"),
-        BotCommand("pause", "⏸️ Pause Running Quiz"),
+        BotCommand("pause", "⏸️ Pause Current Running Quiz"),
         BotCommand("resume", "▶️ Resume Paused Quiz"),
         BotCommand("stop", "🛑 Stop Quiz Completely"),
         BotCommand("help", "🤖 Show Command Directory")

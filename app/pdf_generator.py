@@ -12,31 +12,50 @@ from reportlab.platypus import (
     SimpleDocTemplate, Paragraph, Spacer, Table, TableStyle, Image
 )
 from reportlab.lib.styles import getSampleStyleSheet, ParagraphStyle
+from reportlab.pdfgen import canvas
+from reportlab.pdfbase import pdfmetrics
+from reportlab.pdfbase.ttfonts import TTFont
+
 from app.config import USER_PROFILES_DIR, BASE_DIR
 from app.database import get_user_profile, get_db, release_db
 from app.stats import calculate_user_rank, calculate_user_percentile
 
+# -------------------------------------------------------------
+# HINDI FONT REGISTRATION ENGINE
+# -------------------------------------------------------------
+HINDI_FONT_NAME = "Times-Roman"
+try:
+    # Look for standard Devanagari TTF fonts in system or local assets
+    font_candidates = [
+        os.path.join(BASE_DIR, "assets", "FreeSans.ttf"),
+        os.path.join(BASE_DIR, "assets", "NotoSansDevanagari-Regular.ttf"),
+        "/usr/share/fonts/truetype/dejavu/FreeSans.ttf",
+        "/usr/share/fonts/truetype/noto/NotoSansDevanagari-Regular.ttf"
+    ]
+    for font_path in font_candidates:
+        if os.path.exists(font_path):
+            pdfmetrics.registerFont(TTFont("DevanagariFont", font_path))
+            HINDI_FONT_NAME = "DevanagariFont"
+            break
+except Exception as f_err:
+    pass
 
-def draw_pdf_watermark_and_footer(canvas, doc):
+
+def draw_pdf_watermark_and_footer(canvas_obj, doc):
     """
     Draws slightly darker background watermarks repeated 5 times each per page
     (5x "Learn with HiM" & 5x "Quiz with HiM") and attaches social links + page numbers.
     """
-    canvas.saveState()
+    canvas_obj.saveState()
 
-    # -------------------------------------------------------------
-    # Feature 1: Watermark Enhancement (Slightly Darker, 5 Each Per Page)
-    # -------------------------------------------------------------
-    canvas.setFillColor(colors.HexColor("#94A3B8"))
-    canvas.setStrokeColor(colors.HexColor("#94A3B8"))
+    canvas_obj.setFillColor(colors.HexColor("#94A3B8"))
+    canvas_obj.setStrokeColor(colors.HexColor("#94A3B8"))
     
-    # Set transparency to 0.16 (Slightly darker than 0.08, perfectly visible yet legible)
-    if hasattr(canvas, "setFillAlpha"):
-        canvas.setFillAlpha(0.16)
+    if hasattr(canvas_obj, "setFillAlpha"):
+        canvas_obj.setFillAlpha(0.16)
 
-    canvas.setFont("Times-Bold", 24)
+    canvas_obj.setFont("Times-Bold", 24)
 
-    # 5 Positions for "Learn with HiM"
     learn_positions = [
         (120, 700),
         (380, 620),
@@ -46,13 +65,12 @@ def draw_pdf_watermark_and_footer(canvas, doc):
     ]
 
     for x, y in learn_positions:
-        canvas.saveState()
-        canvas.translate(x, y)
-        canvas.rotate(30)
-        canvas.drawCentredString(0, 0, "Learn with HiM")
-        canvas.restoreState()
+        canvas_obj.saveState()
+        canvas_obj.translate(x, y)
+        canvas_obj.rotate(30)
+        canvas_obj.drawCentredString(0, 0, "Learn with HiM")
+        canvas_obj.restoreState()
 
-    # 5 Positions for "Quiz with HiM"
     quiz_positions = [
         (380, 720),
         (120, 580),
@@ -62,47 +80,43 @@ def draw_pdf_watermark_and_footer(canvas, doc):
     ]
 
     for x, y in quiz_positions:
-        canvas.saveState()
-        canvas.translate(x, y)
-        canvas.rotate(30)
-        canvas.drawCentredString(0, 0, "Quiz with HiM")
-        canvas.restoreState()
+        canvas_obj.saveState()
+        canvas_obj.translate(x, y)
+        canvas_obj.rotate(30)
+        canvas_obj.drawCentredString(0, 0, "Quiz with HiM")
+        canvas_obj.restoreState()
 
-    # Reset Alpha for Footer
-    if hasattr(canvas, "setFillAlpha"):
-        canvas.setFillAlpha(1.0)
+    if hasattr(canvas_obj, "setFillAlpha"):
+        canvas_obj.setFillAlpha(1.0)
 
-    # -------------------------------------------------------------
-    # Footer Rendering
-    # -------------------------------------------------------------
-    canvas.setStrokeColor(colors.HexColor("#CBD5E1"))
-    canvas.setLineWidth(0.8)
-    canvas.line(30, 42, 582, 42)
+    canvas_obj.setStrokeColor(colors.HexColor("#CBD5E1"))
+    canvas_obj.setLineWidth(0.8)
+    canvas_obj.line(30, 42, 582, 42)
 
-    canvas.setFont("Times-Bold", 8)
-    canvas.setFillColor(colors.HexColor("#0284C7"))
+    canvas_obj.setFont("Times-Bold", 8)
+    canvas_obj.setFillColor(colors.HexColor("#0284C7"))
     
     y_pos = 28
-    canvas.drawString(30, y_pos, "📸 Insta: @Learnwithhimm")
-    canvas.linkURL("https://instagram.com/Learnwithhimm", (30, y_pos-2, 120, y_pos+8))
+    canvas_obj.drawString(30, y_pos, "📸 Insta: @Learnwithhimm")
+    canvas_obj.linkURL("https://instagram.com/Learnwithhimm", (30, y_pos-2, 120, y_pos+8))
 
-    canvas.drawString(130, y_pos, "📺 YT: @LearnwithHiM")
-    canvas.linkURL("https://youtube.com/@LearnwithHiM", (130, y_pos-2, 210, y_pos+8))
+    canvas_obj.drawString(130, y_pos, "📺 YT: @LearnwithHiM")
+    canvas_obj.linkURL("https://youtube.com/@LearnwithHiM", (130, y_pos-2, 210, y_pos+8))
 
-    canvas.drawString(220, y_pos, "📢 TG: @Learnwithhim")
-    canvas.linkURL("https://t.me/Learnwithhim", (220, y_pos-2, 300, y_pos+8))
+    canvas_obj.drawString(220, y_pos, "📢 TG: @Learnwithhim")
+    canvas_obj.linkURL("https://t.me/Learnwithhim", (220, y_pos-2, 300, y_pos+8))
 
-    canvas.drawString(310, y_pos, "💬 TG Chat: @Learnwithhimm")
-    canvas.linkURL("https://t.me/Learnwithhimm", (310, y_pos-2, 410, y_pos+8))
+    canvas_obj.drawString(310, y_pos, "💬 TG Chat: @Learnwithhimm")
+    canvas_obj.linkURL("https://t.me/Learnwithhimm", (310, y_pos-2, 410, y_pos+8))
 
-    canvas.drawString(420, y_pos, "✉️ Direct DM")
-    canvas.linkURL("https://t.me/Learnwithhim?direct", (420, y_pos-2, 480, y_pos+8))
+    canvas_obj.drawString(420, y_pos, "✉️ Direct DM")
+    canvas_obj.linkURL("https://t.me/Learnwithhim?direct", (420, y_pos-2, 480, y_pos+8))
 
-    canvas.setFont("Times-Roman", 8)
-    canvas.setFillColor(colors.HexColor("#64748B"))
-    canvas.drawRightString(582, y_pos, f"Page {doc.page}")
+    canvas_obj.setFont("Times-Roman", 8)
+    canvas_obj.setFillColor(colors.HexColor("#64748B"))
+    canvas_obj.drawRightString(582, y_pos, f"Page {doc.page}")
 
-    canvas.restoreState()
+    canvas_obj.restoreState()
 
 
 def mask_phone(phone_str: str) -> str:
@@ -122,12 +136,11 @@ def parse_date_only(date_str: str) -> str:
 
 
 def clean_str(text) -> str:
-    """Safely converts any value into escaped XML text for ReportLab."""
     if text is None:
         return "N/A"
     if isinstance(text, (dict, list)):
         try:
-            text = json.dumps(text)
+            text = json.dumps(text, ensure_ascii=False)
         except Exception:
             text = str(text)
     return saxutils.escape(str(text))
@@ -160,9 +173,7 @@ def generate_student_pdf_report(user_id: int, filter_mode: str = "last_1_month_d
             release_db(conn)
             conn = None
 
-            saved_rows = []
-            for r in raw_saved:
-                saved_rows.append(dict(r) if isinstance(r, dict) else dict(r))
+            saved_rows = [dict(r) if isinstance(r, dict) else dict(r) for r in raw_saved]
 
             if not saved_rows:
                 return "NO_SAVED_QUESTIONS"
@@ -207,7 +218,7 @@ def generate_student_pdf_report(user_id: int, filter_mode: str = "last_1_month_d
             body_style = ParagraphStyle(
                 'BodyTextTimes',
                 parent=styles['Normal'],
-                fontName='Times-Roman',
+                fontName=HINDI_FONT_NAME,
                 fontSize=8.5,
                 leading=11,
                 textColor=colors.HexColor("#334155")
@@ -396,7 +407,7 @@ def generate_student_pdf_report(user_id: int, filter_mode: str = "last_1_month_d
         body_style = ParagraphStyle(
             'BodyTextTimes',
             parent=styles['Normal'],
-            fontName='Times-Roman',
+            fontName=HINDI_FONT_NAME,
             fontSize=8.5,
             leading=11,
             textColor=colors.HexColor("#334155")

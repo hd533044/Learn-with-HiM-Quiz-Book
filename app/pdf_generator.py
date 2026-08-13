@@ -23,24 +23,24 @@ from app.database import get_user_profile, get_db, release_db
 from app.stats import calculate_user_rank, calculate_user_percentile
 
 # -------------------------------------------------------------
-# GUARANTEED KRUTI DEV & DEVANAGARI FONT LOADER ENGINE
+# GUARANTEED DEVANAGARI / HINDI FONT LOADER ENGINE
 # -------------------------------------------------------------
-DEVANAGARI_FONT_NAME = "KrutiDev"
+DEVANAGARI_FONT_NAME = "NotoSansDevanagari"
 
 def get_devanagari_font():
     """
-    Guarantees that Kruti Dev 010 TTF font is downloaded and registered
-    so legacy ASCII Hindi text from JSON question banks renders with 100% accuracy.
+    Guarantees that a valid Devanagari TTF font is downloaded and registered.
+    Prevents empty boxes (🔲🔲🔲) on production servers.
     """
     font_dir = os.path.join(BASE_DIR, "assets")
     os.makedirs(font_dir, exist_ok=True)
-    font_path = os.path.join(font_dir, "Kruti_Dev_010.ttf")
+    font_path = os.path.join(font_dir, "NotoSansDevanagari-Regular.ttf")
 
-    # Download Kruti Dev font if not present
+    # Download font if not present
     if not os.path.exists(font_path) or os.path.getsize(font_path) < 10000:
         urls = [
-            "https://github.com/google/fonts/raw/main/apache/krutidev/Kruti%20Dev%20010%20Regular.ttf",
-            "https://raw.githubusercontent.com/manishtwr/hindi-fonts/master/Kruti_Dev_010.ttf",
+            "https://github.com/google/fonts/raw/main/ofl/notosansdevanagari/NotoSansDevanagari%5Bwdth%2Cwght%5D.ttf",
+            "https://raw.githubusercontent.com/googlefonts/noto-fonts/main/hinted/ttf/NotoSansDevanagari/NotoSansDevanagari-Regular.ttf",
             "https://cdn.jsdelivr.net/gh/googlefonts/noto-fonts@main/hinted/ttf/NotoSansDevanagari/NotoSansDevanagari-Regular.ttf"
         ]
         for url in urls:
@@ -53,6 +53,7 @@ def get_devanagari_font():
             except Exception:
                 continue
 
+    # Register the downloaded font or system fallback
     candidate_paths = [
         font_path,
         "/usr/share/fonts/truetype/noto/NotoSansDevanagari-Regular.ttf",
@@ -63,7 +64,7 @@ def get_devanagari_font():
     for path in candidate_paths:
         if os.path.exists(path) and os.path.getsize(path) > 10000:
             try:
-                font_id = f"HindiFont_{os.path.basename(path)}"
+                font_id = f"Devanagari_{os.path.basename(path)}"
                 pdfmetrics.registerFont(TTFont(font_id, path))
                 return font_id
             except Exception:
@@ -170,7 +171,8 @@ def parse_date_only(date_str: str) -> str:
 
 def clean_str(text) -> str:
     """
-    Safely normalizes text to XML-escaped string while preserving legacy encoding.
+    Safely normalizes Devanagari Unicode characters (NFC form) and consolidates whitespace
+    so matras, halants, and vowel signs bind correctly without separation or spacing bugs.
     """
     if text is None:
         return "N/A"
@@ -184,7 +186,10 @@ def clean_str(text) -> str:
     if not val_str:
         return "N/A"
     
-    return saxutils.escape(val_str)
+    # Normalize Devanagari Unicode to NFC form and clean up internal whitespace
+    normalized_str = unicodedata.normalize('NFC', val_str)
+    cleaned_spacing = " ".join(normalized_str.split())
+    return saxutils.escape(cleaned_spacing)
 
 
 def generate_student_pdf_report(user_id: int, filter_mode: str = "last_1_month_data") -> str:
@@ -248,12 +253,12 @@ def generate_student_pdf_report(user_id: int, filter_mode: str = "last_1_month_d
             textColor=colors.HexColor("#0F172A")
         )
 
-        # Unified Cell Style mapped to active Kruti Dev / Devanagari TTF Font
+        # Unified Cell Style mapped to active Devanagari TTF Font
         content_cell_style = ParagraphStyle(
             'ContentCellText',
             parent=styles['Normal'],
             fontName=ACTIVE_HINDI_FONT,
-            fontSize=9.0,
+            fontSize=8.5,
             leading=13,
             textColor=colors.HexColor("#334155")
         )

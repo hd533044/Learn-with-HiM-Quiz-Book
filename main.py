@@ -20,7 +20,7 @@ from app.telegram_bot import build_application, PROFILE_CACHE
 from app.admin import fast_concurrent_broadcast
 from app.config import (
     RAZORPAY_KEY_ID, RAZORPAY_KEY_SECRET, RAZORPAY_WEBHOOK_SECRET, 
-    PLAN_TIERS
+    PLAN_TIERS, PRIMARY_ADMIN_ID
 )
 from app.database import sync_user_json_profile, get_ist_timestamp_str, get_db, release_db, get_user_profile
 
@@ -129,8 +129,8 @@ async def activate_user_subscription(user_id: int, plan_key: str, payment_id: st
 
 async def send_payment_invoice_telegram(user_id: int, plan_key: str, payment_id: str = "OFFICIAL_SUBSCRIBED"):
     """
-    Pushes an instant, celebratory text invoice directly into the user's Telegram chat.
-    Guaranteed delivery with interactive action buttons and sound alert.
+    Pushes an instant, celebratory text invoice directly into the user's Telegram chat
+    AND notifies Himanshu Sir in the Admin Dashboard with full purchase details!
     """
     if not bot_app_instance:
         logging.error("[TELEGRAM PUSH ERROR] bot_app_instance is uninitialized.")
@@ -142,6 +142,7 @@ async def send_payment_invoice_telegram(user_id: int, plan_key: str, payment_id:
     plan_name = plan_info.get('name', plan_key)
 
     profile = await asyncio.to_thread(get_user_profile, user_id) or {}
+    student_name = profile.get("full_name", "Student")
     sid = profile.get("student_id", f"USER_{user_id}")
     orig_payment_time = profile.get("payment_timestamp") or get_ist_timestamp_str()
     total_quota = profile.get("paid_question_balance", 0)
@@ -195,15 +196,40 @@ async def send_payment_invoice_telegram(user_id: int, plan_key: str, payment_id:
     except Exception as err:
         logging.error(f"[DELIVERY ERROR] Failed to push notification to user {user_id}: {err}")
 
+    # Feature 4: Instant Admin Notification Alert on Payment Purchase
+    if not is_admin_grant and user_id != PRIMARY_ADMIN_ID:
+        admin_motivation_alert = (
+            f"🎉 **NEW PAID VIP PURCHASE RECEIVED!** 🎉\n"
+            f"━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\n"
+            f"👤 **Student Name:** {student_name}\n"
+            f"🪪 **Student ID:** `{sid}`\n"
+            f"🆔 **Telegram ID:** `{user_id}`\n\n"
+            f"📦 **Purchased Pack:** `{plan_name}`\n"
+            f"💰 **Amount Paid:** `₹{plan_info.get('price', 0)} INR`\n"
+            f"⚡ **New Stacked Quota:** `{total_quota} Qs/Day`\n"
+            f"⏳ **VIP Pass Expiry:** `{expiry_date}`\n"
+            f"🧾 **Payment ID:** `{payment_id}`\n"
+            f"⏰ **Timestamp:** `{orig_payment_time}`\n"
+            f"━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\n"
+            f"🚀 *Your Quiz Book platform is growing! Keep up the great work, Himanshu Sir!*"
+        )
+        admin_nav = InlineKeyboardMarkup([
+            [InlineKeyboardButton("👤 Inspect Student Profile", callback_data=f"admin_inspect_u_{user_id}")],
+            [InlineKeyboardButton("👑 Main Admin Portal", callback_data="admin_home")]
+        ])
+        try:
+            await bot_app_instance.bot.send_message(
+                chat_id=PRIMARY_ADMIN_ID,
+                text=admin_motivation_alert,
+                reply_markup=admin_nav,
+                parse_mode="Markdown",
+                disable_notification=False
+            )
+        except Exception as a_err:
+            logging.error(f"[ADMIN PAYMENT ALERT ERROR] {a_err}")
+
 
 async def scheduled_expiry_reminder_check():
-    """
-    BACKGROUND WORKER:
-    Checks expiration dates for ALL users (both Paid VIP and FREE DEMO users) and sends reminders:
-    - 24 Hours (1 Day) before expiry
-    - 6 Hours before expiry
-    - 1 Hour before expiry
-    """
     from telegram import InlineKeyboardMarkup, InlineKeyboardButton
     
     ist = pytz.timezone("Asia/Kolkata")
@@ -246,7 +272,6 @@ async def scheduled_expiry_reminder_check():
 
                 hours_left = diff_seconds / 3600.0
 
-                # Milestone 1: 24 Hours (1 Day) Reminder
                 if 23.0 <= hours_left <= 25.0:
                     rem_key = f"{uid}_24h"
                     if rem_key not in SENT_EXPIRY_REMINDERS:
@@ -277,7 +302,6 @@ async def scheduled_expiry_reminder_check():
                         except Exception as e:
                             logging.error(f"[EXPIRY REMINDER ERROR] {e}")
 
-                # Milestone 2: 6 Hours Reminder
                 elif 5.5 <= hours_left <= 6.5:
                     rem_key = f"{uid}_6h"
                     if rem_key not in SENT_EXPIRY_REMINDERS:
@@ -308,7 +332,6 @@ async def scheduled_expiry_reminder_check():
                         except Exception as e:
                             logging.error(f"[EXPIRY REMINDER ERROR] {e}")
 
-                # Milestone 3: 1 Hour Urgent Reminder
                 elif 0.8 <= hours_left <= 1.2:
                     rem_key = f"{uid}_1h"
                     if rem_key not in SENT_EXPIRY_REMINDERS:
@@ -346,19 +369,13 @@ async def scheduled_expiry_reminder_check():
 
 
 async def scheduled_daily_quiz_reminder():
-    """
-    AUTOMATED 5X DAILY PRACTICE BROADCASTER:
-    Broadcasting daily at 09:00 AM, 12:00 PM, 04:00 PM, 07:00 PM & 10:00 PM IST:
-    "Guyzzz attempt the Quiz Now, because everyday quiz will take you to one step closer to your selection💯"
-    Uses high-speed concurrent batching to deliver within 5 seconds with active sound alerts.
-    """
     global LAST_QUIZ_BROADCAST_KEY
     from telegram import InlineKeyboardMarkup, InlineKeyboardButton
     
     ist = pytz.timezone("Asia/Kolkata")
 
     while True:
-        await asyncio.sleep(15)  # Fast poll check every 15 seconds
+        await asyncio.sleep(15)
         if not bot_app_instance:
             continue
 
@@ -367,7 +384,6 @@ async def scheduled_daily_quiz_reminder():
         current_hour = now.hour
         current_minute = now.minute
 
-        # 5 Scheduled Times: 09:00 AM (9:0), 12:00 PM (12:0), 04:00 PM (16:0), 07:00 PM (19:0), 10:00 PM (22:0) IST
         is_time_slot = (
             (current_hour == 9 and current_minute == 0) or
             (current_hour == 12 and current_minute == 0) or
@@ -402,7 +418,6 @@ async def scheduled_daily_quiz_reminder():
                     )
                     btn = InlineKeyboardMarkup([[InlineKeyboardButton("🚀 Launch Quiz Now", callback_data="cmd_quiz")]])
 
-                    # Trigger fast multi-threaded/concurrent delivery with sound enabled
                     sent_count = await fast_concurrent_broadcast(
                         bot_app_instance.bot, 
                         user_ids, 
@@ -532,7 +547,6 @@ async def run_bot():
     await app.bot.delete_webhook(drop_pending_updates=True)
     await app.updater.start_polling(drop_pending_updates=True)
 
-    # Launch background automated expiry reminder and daily quiz notification workers
     asyncio.create_task(scheduled_expiry_reminder_check())
     asyncio.create_task(scheduled_daily_quiz_reminder())
 

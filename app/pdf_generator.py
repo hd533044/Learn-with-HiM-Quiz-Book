@@ -63,7 +63,7 @@ def generate_html_report(user_profile: dict, attempts: list, saved_qs: list, ran
     """
     Builds a pixel-perfect HTML document with Google Noto Sans Devanagari font CSS, clickable logos, 
     enhanced analytics cover page, non-overlapping bar graphs with numerical values, serial numbers, 
-    timestamps, and fully clickable styled footer social links matching the target design across every page.
+    timestamps, and exact styled hyperlinked iconized social links repeating on every page footer.
     """
     now_date = datetime.now()
     one_month_ago = now_date - timedelta(days=30)
@@ -143,17 +143,6 @@ def generate_html_report(user_profile: dict, attempts: list, saved_qs: list, ran
     bar_h_c = int((total_correct / max_qs) * 75)
     bar_h_w = int((total_wrong / max_qs) * 75)
 
-    # HTML Snippet for exact hyperlinked footer social links matching target image
-    footer_links_html = (
-        "<div class='footer-links-flow'>"
-        "<a href='https://instagram.com/Learnwithhimm' target='_blank'>📷 Insta: @Learnwithhimm</a> &nbsp;|&nbsp; "
-        "<a href='https://youtube.com/@LearnwithHiM' target='_blank'>📺 YT: @LearnwithHiM</a> &nbsp;|&nbsp; "
-        "<a href='https://t.me/learnwithhim' target='_blank'>✈️ TG: @Learnwithhim</a> &nbsp;|&nbsp; "
-        "<a href='https://t.me/Learnwithhimm' target='_blank'>✈️ TG Chat: @Learnwithhimm</a> &nbsp;|&nbsp; "
-        "<a href='https://t.me/learnwithhim?direct' target='_blank'>✈️ Direct DM</a>"
-        "</div>"
-    )
-
     html_lines = [
         "<!DOCTYPE html>",
         "<html>",
@@ -163,6 +152,7 @@ def generate_html_report(user_profile: dict, attempts: list, saved_qs: list, ran
         "@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+Devanagari:wght@400;600;700&display=swap');",
         "@page { size: letter; margin: 20mm 15mm 22mm 15mm; @bottom-right { content: 'Page ' counter(page); font-size: 8.5px; font-family: 'Times New Roman', serif; color: #64748B; } @bottom-left { content: ''; } }",
         "body { font-family: 'Noto Sans Devanagari', 'Times New Roman', Helvetica, Arial, sans-serif; margin: 0; padding: 0; color: #334155; font-size: 11.5px; line-height: 1.45; direction: ltr; background-color: #ffffff; }",
+        "a { color: inherit; text-decoration: none; }",
         ".header-table { width: 100%; border-collapse: collapse; margin-bottom: 12px; }",
         ".header-title { text-align: center; color: #1E3A8A; font-size: 22px; font-weight: bold; font-family: 'Times New Roman', serif; }",
         ".sub-title { color: #16A34A; font-size: 12px; text-align: center; font-weight: bold; margin-top: 4px; font-family: 'Times New Roman', serif; }",
@@ -181,9 +171,12 @@ def generate_html_report(user_profile: dict, attempts: list, saved_qs: list, ran
         ".cover-page { page-break-after: always; }",
         ".analytics-container { width: 100%; margin-top: 12px; border-collapse: collapse; }",
         ".analytics-box { border: 0.5px solid #CBD5E1; background-color: #F8FAFC; padding: 12px; text-align: center; vertical-align: middle; }",
-        # Explicit styled hyperlinked footer block matching target image exactly
-        ".footer-links-flow { margin-top: 25px; padding-top: 8px; border-top: 0.5px solid #CBD5E1; font-size: 9px; font-family: 'Times New Roman', serif; text-align: center; page-break-inside: avoid; }",
-        ".footer-links-flow a { color: #0284C7; font-weight: bold; text-decoration: underline; }",
+        
+        # Position fixed repeats on EVERY SINGLE PAGE at bottom margin area
+        ".pdf-footer { position: fixed; bottom: -15mm; left: 0; width: 100%; text-align: center; border-top: 0.5px solid #CBD5E1; padding-top: 6px; font-size: 8.5pt; font-family: 'Times New Roman', serif; white-space: nowrap; z-index: 1000; }",
+        ".footer-link { color: #0284C7; font-weight: bold; text-decoration: underline; margin: 0 3px; display: inline-block; vertical-align: middle; }",
+        ".footer-icon { width: 12px; height: 12px; vertical-align: middle; margin-right: 3px; display: inline-block; }",
+        ".pipe { color: #94A3B8; margin: 0 4px; font-size: 9pt; }",
         "</style>",
         "</head>",
         "<body>",
@@ -200,6 +193,19 @@ def generate_html_report(user_profile: dict, attempts: list, saved_qs: list, ran
         "<div class='wm-text' style='top: 92%; left: 60%;'>Quiz with HiM</div>",
         "</div>",
         
+        # REPEATING HYPERLINKED FOOTER WITH EXACT SVG ICONS MATCHING TARGET SCREENSHOT (Repeats on Page 1, Page 2, Page 3, etc.)
+        "<div class='pdf-footer'>",
+        "<a href='https://instagram.com/Learnwithhimm' class='footer-link' target='_blank'><svg class='footer-icon' viewBox='0 0 24 24' fill='none' stroke='#0284C7' stroke-width='2.2' stroke-linecap='round' stroke-linejoin='round'><rect x='2' y='2' width='20' height='20' rx='5' ry='5'></rect><path d='M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z'></path><line x1='17.5' y1='6.5' x2='17.51' y2='6.5'></line></svg>Insta: @Learnwithhimm</a>",
+        "<span class='pipe'>|</span>",
+        "<a href='https://youtube.com/@LearnwithHiM' class='footer-link' target='_blank'><svg class='footer-icon' viewBox='0 0 24 24' fill='none' stroke='#0284C7' stroke-width='2.2' stroke-linecap='round' stroke-linejoin='round'><path d='M22.54 6.42a2.78 2.78 0 0 0-1.95-1.96C18.88 4 12 4 12 4s-6.88 0-8.59.46a2.78 2.78 0 0 0-1.95 1.96A29 29 0 0 0 1 12a29 29 0 0 0 .46 5.58 2.78 2.78 0 0 0 1.95 1.96C5.12 20 12 20 12 20s6.88 0 8.59-.46a2.78 2.78 0 0 0 1.95-1.96A29 29 0 0 0 23 12a29 29 0 0 0-.46-5.58z'></path><polygon points='9.75 15.02 15.5 12 9.75 8.98 9.75 15.02' fill='#0284C7'></polygon></svg>YT: @LearnwithHiM</a>",
+        "<span class='pipe'>|</span>",
+        "<a href='https://t.me/learnwithhim' class='footer-link' target='_blank'><svg class='footer-icon' viewBox='0 0 24 24' fill='none' stroke='#0284C7' stroke-width='2.2' stroke-linecap='round' stroke-linejoin='round'><line x1='22' y1='2' x2='11' y2='13'></line><polygon points='22 2 15 22 11 13 2 9 22 2'></polygon></svg>TG: @Learnwithhim</a>",
+        "<span class='pipe'>|</span>",
+        "<a href='https://t.me/Learnwithhimm' class='footer-link' target='_blank'><svg class='footer-icon' viewBox='0 0 24 24' fill='none' stroke='#0284C7' stroke-width='2.2' stroke-linecap='round' stroke-linejoin='round'><line x1='22' y1='2' x2='11' y2='13'></line><polygon points='22 2 15 22 11 13 2 9 22 2'></polygon></svg>TG Chat: @Learnwithhimm</a>",
+        "<span class='pipe'>|</span>",
+        "<a href='https://t.me/learnwithhim?direct' class='footer-link' target='_blank'><svg class='footer-icon' viewBox='0 0 24 24' fill='none' stroke='#0284C7' stroke-width='2.2' stroke-linecap='round' stroke-linejoin='round'><line x1='22' y1='2' x2='11' y2='13'></line><polygon points='22 2 15 22 11 13 2 9 22 2'></polygon></svg>Direct DM</a>",
+        "</div>",
+
         # --- INTRODUCTORY COVER PAGE ---
         "<div class='cover-page'>",
         f"<table class='header-table'><tr>"
@@ -271,7 +277,6 @@ def generate_html_report(user_profile: dict, attempts: list, saved_qs: list, ran
         "</table>",
 
         "<div style='text-align: center; margin-top: 20px; color: #64748B; font-style: italic; font-size: 11px;'>Official certified academic report generated by Learn with HiM Platform.</div>",
-        footer_links_html,
         "</div>", # End Cover Page
 
         # --- MAIN REPORT PAGES HEADER ---
@@ -377,9 +382,6 @@ def generate_html_report(user_profile: dict, attempts: list, saved_qs: list, ran
             html_lines.append(build_html_q_table_with_sno("❌ WRONG QUESTIONS REPORT", wrong_q_list, "wrong-header", "Zero wrong questions in this timeframe! 🎉"))
             html_lines.append(build_html_q_table_with_sno("⏭ UN-ATTEMPTED / SKIPPED QUESTIONS REPORT", skipped_q_list, "skipped-header", "Zero skipped questions in this timeframe!"))
             html_lines.append(build_html_q_table_with_sno("✅ CORRECT QUESTIONS REPORT", correct_q_list, "correct-header", "No correct questions logged yet."))
-
-    # Fully Hyperlinked Footer Block with exact iconized social links matching target image across all subsequent pages
-    html_lines.append(footer_links_html)
 
     html_lines.append("</body></html>")
     return "\n".join(html_lines)

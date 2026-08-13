@@ -61,7 +61,8 @@ def clean_str(text) -> str:
 
 def generate_html_report(user_profile: dict, attempts: list, saved_qs: list, rank: str, percentile: float, filter_mode: str) -> str:
     """
-    Builds a pixel-perfect HTML document with Google Noto Sans Devanagari font CSS, clickable logos, and clickable footer links.
+    Builds a pixel-perfect HTML document with Google Noto Sans Devanagari font CSS, clickable logos (slightly larger size), 
+    bold & italic personal detail values on a dedicated introduction cover page, and clickable footer links.
     """
     now_date = datetime.now()
     one_month_ago = now_date - timedelta(days=30)
@@ -75,25 +76,33 @@ def generate_html_report(user_profile: dict, attempts: list, saved_qs: list, ran
     raw_pin = user_profile.get("pin")
     masked_pin = "XX" + str(raw_pin)[-2:] if raw_pin else "XXXX"
     
-    full_name_clean = clean_str(user_profile.get('full_name'))
-    target_exam_clean = clean_str(user_profile.get('target_exam'))
+    # Personal detail values formatted in bold & italic as requested
+    full_name_clean = f"<b><i>{clean_str(user_profile.get('full_name'))}</i></b>"
+    target_exam_clean = f"<b><i>{clean_str(user_profile.get('target_exam'))}</i></b>"
     
     state_val = user_profile.get('state', '')
     country_val = user_profile.get('country', '')
-    location_clean = clean_str(f"{state_val}, {country_val}")
+    location_clean = f"<b><i>{clean_str(f'{state_val}, {country_val}')}</i></b>"
     
     dob_val = user_profile.get('dob', '')
     age_val = user_profile.get('age', '')
-    dob_age_clean = clean_str(f"{dob_val} ({age_val} yrs)")
+    dob_age_clean = f"<b><i>{clean_str(f'{dob_val} ({age_val} yrs)')}</i></b>"
     
-    # Absolute paths for logos ensuring 100% visibility and wrapping them with clickable Telegram link
+    sid_val = f"<b><i>{sid}</i></b>"
+    masked_phone_val = f"<b><i>{masked_phone}</i></b>"
+    account_status_val = "<b><i>ACTIVE 🟢</i></b>"
+    masked_pin_val = f"<b><i>{masked_pin}</i></b>"
+    rank_val = f"<b><i>{clean_str(rank)}</i></b>"
+    percentile_val = f"<b><i>{percentile}%</i></b>"
+
+    # Absolute paths for logos with slightly increased dimensions (~2mm larger all around -> ~65px width/height)
     logo_left_path = os.path.abspath(os.path.join(BASE_DIR, "assets", "logo.png"))
     logo_right_path = os.path.abspath(os.path.join(BASE_DIR, "assets", "logohim.png"))
 
     target_link = "https://t.me/@learnwithhim"
 
-    left_logo_html = f'<a href="{target_link}" target="_blank"><img src="file://{logo_left_path}" style="width: 55px; height: 55px; object-fit: contain; border: none;" /></a>' if os.path.exists(logo_left_path) else f'<a href="{target_link}"><b>Logo</b></a>'
-    right_logo_html = f'<a href="{target_link}" target="_blank"><img src="file://{logo_right_path}" style="width: 55px; height: 55px; object-fit: contain; border: none;" /></a>' if os.path.exists(logo_right_path) else f'<a href="{target_link}"><b>@LearnwithHiM</b></a>'
+    left_logo_html = f'<a href="{target_link}" target="_blank"><img src="file://{logo_left_path}" style="width: 65px; height: 65px; object-fit: contain; border: none;" /></a>' if os.path.exists(logo_left_path) else f'<a href="{target_link}"><b>Logo</b></a>'
+    right_logo_html = f'<a href="{target_link}" target="_blank"><img src="file://{logo_right_path}" style="width: 65px; height: 65px; object-fit: contain; border: none;" /></a>' if os.path.exists(logo_right_path) else f'<a href="{target_link}"><b>@LearnwithHiM</b></a>'
 
     filtered_attempts = []
     for a in attempts:
@@ -119,11 +128,9 @@ def generate_html_report(user_profile: dict, attempts: list, saved_qs: list, ran
         "<meta charset='utf-8'/>",
         "<style>",
         "@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+Devanagari:wght@400;600;700&display=swap');",
-        "@page { size: letter; margin: 20mm 15mm 22mm 15mm; @bottom-right { content: 'Page ' counter(page); font-size: 8.5px; font-family: 'Times New Roman', serif; color: #64748B; } @bottom-left { content: '📸 Insta: @Learnwithhimm  |  📺 YT: @LearnwithHiM  |  📢 TG: @Learnwithhim  |  💬 TG Chat: @Learnwithhimm'; font-size: 8px; font-family: 'Times New Roman', serif; color: #0284C7; font-weight: bold; } }",
+        "@page { size: letter; margin: 20mm 15mm 22mm 15mm; @bottom-right { content: 'Page ' counter(page); font-size: 8.5px; font-family: 'Times New Roman', serif; color: #64748B; } }",
         "body { font-family: 'Noto Sans Devanagari', 'Times New Roman', Helvetica, Arial, sans-serif; margin: 0; padding: 0; color: #334155; font-size: 11.5px; line-height: 1.45; direction: ltr; background-color: #ffffff; }",
         "a { color: inherit; text-decoration: none; }",
-        "/* Clickable footer links styling inside page margins */",
-        "@page { @bottom-left { content: '📸 Insta: @Learnwithhimm  |  📺 YT: @LearnwithHiM  |  📢 TG: @Learnwithhim'; } }",
         ".header-table { width: 100%; border-collapse: collapse; margin-bottom: 12px; }",
         ".header-title { text-align: center; color: #1E3A8A; font-size: 20px; font-weight: bold; font-family: 'Times New Roman', serif; }",
         ".sub-title { color: #16A34A; font-size: 11px; text-align: center; font-weight: bold; margin-top: 3px; font-family: 'Times New Roman', serif; }",
@@ -141,6 +148,7 @@ def generate_html_report(user_profile: dict, attempts: list, saved_qs: list, ran
         ".wm-text { position: absolute; font-family: 'Times New Roman', serif; font-weight: bold; font-size: 24px; color: #94A3B8; opacity: 0.14; transform: rotate(30deg); white-space: nowrap; }",
         ".footer-links { margin-top: 25px; padding-top: 8px; border-top: 0.5px solid #CBD5E1; font-size: 8.5px; font-family: 'Times New Roman', serif; text-align: center; }",
         ".footer-links a { color: #0284C7; font-weight: bold; margin: 0 6px; text-decoration: underline; }",
+        ".cover-page { page-break-after: always; height: 100%; display: flex; flex-direction: column; justify-content: center; }",
         "</style>",
         "</head>",
         "<body>",
@@ -157,23 +165,31 @@ def generate_html_report(user_profile: dict, attempts: list, saved_qs: list, ran
         "<div class='wm-text' style='top: 92%; left: 60%;'>Quiz with HiM</div>",
         "</div>",
         
-        # Header Table with Clickable Logos
-        "<table class='header-table'>",
-        "<tr>",
-        f"<td style='width: 15%; text-align: left;'>{left_logo_html}</td>",
-        "<td class='header-title'>Learn with HiM Quiz Book<div class='sub-title'>Smart Quiz! Smart Study! Better Improvement! Exam Relevant!</div></td>",
-        f"<td style='width: 15%; text-align: right;'>{right_logo_html}</td>",
-        "</tr>",
+        # --- INTRODUCTORY COVER PAGE ---
+        "<div class='cover-page'>",
+        f"<table class='header-table'><tr>"
+        f"<td style='width: 15%; text-align: left;'>{left_logo_html}</td>"
+        f"<td class='header-title'>Learn with HiM Quiz Book<div class='sub-title'>Smart Quiz! Smart Study! Better Improvement! Exam Relevant!</div></td>"
+        f"<td style='width: 15%; text-align: right;'>{right_logo_html}</td>"
+        f"</tr></table>",
+        "<br/><br/>",
+        "<h2 style='text-align: center; color: #1E3A8A; font-family: \"Times New Roman\", serif; font-size: 22px; margin-bottom: 25px;'>OFFICIAL STUDENT INTRODUCTION & PROFILE REPORT</h2>",
+        "<table class='data-table prof-table' style='font-size: 12px;'>",
+        f"<tr><td class='prof-label' style='padding: 10px;'>Student Name:</td><td style='padding: 10px;'>{full_name_clean}</td><td class='prof-label' style='padding: 10px;'>Student ID:</td><td style='padding: 10px;'>{sid_val}</td></tr>",
+        f"<tr><td class='prof-label' style='padding: 10px;'>Target Exam:</td><td style='padding: 10px;'>{target_exam_clean}</td><td class='prof-label' style='padding: 10px;'>Location:</td><td style='padding: 10px;'>{location_clean}</td></tr>",
+        f"<tr><td class='prof-label' style='padding: 10px;'>DOB / Age:</td><td style='padding: 10px;'>{dob_age_clean}</td><td class='prof-label' style='padding: 10px;'>Phone (Masked):</td><td style='padding: 10px;'>{masked_phone_val}</td></tr>",
+        f"<tr><td class='prof-label' style='padding: 10px;'>Account Status:</td><td style='padding: 10px;'>{account_status_val}</td><td class='prof-label' style='padding: 10px;'>Secret PIN:</td><td style='padding: 10px;'>{masked_pin_val}</td></tr>",
+        f"<tr><td class='prof-label' style='padding: 10px;'>Global Rank:</td><td style='padding: 10px;'>{rank_val}</td><td class='prof-label' style='padding: 10px;'>Overall Percentile:</td><td style='padding: 10px;'>{percentile_val}</td></tr>",
         "</table>",
+        "<div style='text-align: center; margin-top: 40px; color: #64748B; font-style: italic; font-size: 11px;'>This document certifies the official academic performance metrics recorded on Learn with HiM Platform.</div>",
+        "</div>", # End Cover Page
 
-        "<h3>STUDENT PROFILE OVERVIEW</h3>",
-        "<table class='data-table prof-table'>",
-        f"<tr><td class='prof-label'>Student Name:</td><td>{full_name_clean}</td><td class='prof-label'>Student ID:</td><td>{sid}</td></tr>",
-        f"<tr><td class='prof-label'>Target Exam:</td><td>{target_exam_clean}</td><td class='prof-label'>Location:</td><td>{location_clean}</td></tr>",
-        f"<tr><td class='prof-label'>DOB / Age:</td><td>{dob_age_clean}</td><td class='prof-label'>Phone (Masked):</td><td>{masked_phone}</td></tr>",
-        f"<tr><td class='prof-label'>Account Status:</td><td>ACTIVE 🟢</td><td class='prof-label'>Secret PIN:</td><td>{masked_pin}</td></tr>",
-        f"<tr><td class='prof-label'>Global Rank:</td><td>{clean_str(rank)}</td><td class='prof-label'>Overall Percentile:</td><td>{percentile}%</td></tr>",
-        "</table>"
+        # --- MAIN REPORT PAGES HEADER ---
+        f"<table class='header-table'><tr>"
+        f"<td style='width: 15%; text-align: left;'>{left_logo_html}</td>"
+        f"<td class='header-title'>Learn with HiM Quiz Book<div class='sub-title'>Smart Quiz! Smart Study! Better Improvement! Exam Relevant!</div></td>"
+        f"<td style='width: 15%; text-align: right;'>{right_logo_html}</td>"
+        f"</tr></table>"
     ]
 
     if filter_mode == "saved_questions_only":
@@ -266,7 +282,7 @@ def generate_html_report(user_profile: dict, attempts: list, saved_qs: list, ran
             html_lines.append(build_html_q_table("⏭ UN-ATTEMPTED / SKIPPED QUESTIONS REPORT", skipped_q_list, "skipped-header", "Zero skipped questions in this timeframe!"))
             html_lines.append(build_html_q_table("✅ CORRECT QUESTIONS REPORT", correct_q_list, "correct-header", "No correct questions logged yet."))
 
-    # Explicit Clickable Footer Links Section inside the document flow
+    # Clickable Footer Links Section
     html_lines.append(
         "<div class='footer-links'>"
         "<a href='https://instagram.com/Learnwithhimm' target='_blank'>📸 Insta: @Learnwithhimm</a> | "

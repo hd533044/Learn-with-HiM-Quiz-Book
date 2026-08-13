@@ -61,8 +61,7 @@ def clean_str(text) -> str:
 
 def generate_html_report(user_profile: dict, attempts: list, saved_qs: list, rank: str, percentile: float, filter_mode: str) -> str:
     """
-    Builds a pixel-perfect HTML document with Google Noto Sans Devanagari font CSS and absolute logo paths.
-    WeasyPrint / HarfBuzz renders complex Devanagari ligatures, matras, and glyphs flawlessly.
+    Builds a pixel-perfect HTML document with Google Noto Sans Devanagari font CSS, clickable logos, and clickable footer links.
     """
     now_date = datetime.now()
     one_month_ago = now_date - timedelta(days=30)
@@ -87,12 +86,14 @@ def generate_html_report(user_profile: dict, attempts: list, saved_qs: list, ran
     age_val = user_profile.get('age', '')
     dob_age_clean = clean_str(f"{dob_val} ({age_val} yrs)")
     
-    # Absolute paths for logos ensuring 100% visibility in PDF compilation
+    # Absolute paths for logos ensuring 100% visibility and wrapping them with clickable Telegram link
     logo_left_path = os.path.abspath(os.path.join(BASE_DIR, "assets", "logo.png"))
     logo_right_path = os.path.abspath(os.path.join(BASE_DIR, "assets", "logohim.png"))
 
-    left_logo_html = f'<img src="file://{logo_left_path}" style="width: 55px; height: 55px; object-fit: contain;" />' if os.path.exists(logo_left_path) else '<b>Logo</b>'
-    right_logo_html = f'<img src="file://{logo_right_path}" style="width: 55px; height: 55px; object-fit: contain;" />' if os.path.exists(logo_right_path) else '<b>@LearnwithHiM</b>'
+    target_link = "https://t.me/@learnwithhim"
+
+    left_logo_html = f'<a href="{target_link}" target="_blank"><img src="file://{logo_left_path}" style="width: 55px; height: 55px; object-fit: contain; border: none;" /></a>' if os.path.exists(logo_left_path) else f'<a href="{target_link}"><b>Logo</b></a>'
+    right_logo_html = f'<a href="{target_link}" target="_blank"><img src="file://{logo_right_path}" style="width: 55px; height: 55px; object-fit: contain; border: none;" /></a>' if os.path.exists(logo_right_path) else f'<a href="{target_link}"><b>@LearnwithHiM</b></a>'
 
     filtered_attempts = []
     for a in attempts:
@@ -120,6 +121,9 @@ def generate_html_report(user_profile: dict, attempts: list, saved_qs: list, ran
         "@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+Devanagari:wght@400;600;700&display=swap');",
         "@page { size: letter; margin: 20mm 15mm 22mm 15mm; @bottom-right { content: 'Page ' counter(page); font-size: 8.5px; font-family: 'Times New Roman', serif; color: #64748B; } @bottom-left { content: '📸 Insta: @Learnwithhimm  |  📺 YT: @LearnwithHiM  |  📢 TG: @Learnwithhim  |  💬 TG Chat: @Learnwithhimm'; font-size: 8px; font-family: 'Times New Roman', serif; color: #0284C7; font-weight: bold; } }",
         "body { font-family: 'Noto Sans Devanagari', 'Times New Roman', Helvetica, Arial, sans-serif; margin: 0; padding: 0; color: #334155; font-size: 11.5px; line-height: 1.45; direction: ltr; background-color: #ffffff; }",
+        "a { color: inherit; text-decoration: none; }",
+        "/* Clickable footer links styling inside page margins */",
+        "@page { @bottom-left { content: '📸 Insta: @Learnwithhimm  |  📺 YT: @LearnwithHiM  |  📢 TG: @Learnwithhim'; } }",
         ".header-table { width: 100%; border-collapse: collapse; margin-bottom: 12px; }",
         ".header-title { text-align: center; color: #1E3A8A; font-size: 20px; font-weight: bold; font-family: 'Times New Roman', serif; }",
         ".sub-title { color: #16A34A; font-size: 11px; text-align: center; font-weight: bold; margin-top: 3px; font-family: 'Times New Roman', serif; }",
@@ -135,6 +139,8 @@ def generate_html_report(user_profile: dict, attempts: list, saved_qs: list, ran
         ".correct-header { background-color: #D1FAE5 !important; color: #065F46 !important; border-color: #34D399 !important; }",
         ".watermark-container { position: fixed; top: 0; left: 0; width: 100%; height: 100%; z-index: -1000; overflow: hidden; pointer-events: none; }",
         ".wm-text { position: absolute; font-family: 'Times New Roman', serif; font-weight: bold; font-size: 24px; color: #94A3B8; opacity: 0.14; transform: rotate(30deg); white-space: nowrap; }",
+        ".footer-links { margin-top: 25px; padding-top: 8px; border-top: 0.5px solid #CBD5E1; font-size: 8.5px; font-family: 'Times New Roman', serif; text-align: center; }",
+        ".footer-links a { color: #0284C7; font-weight: bold; margin: 0 6px; text-decoration: underline; }",
         "</style>",
         "</head>",
         "<body>",
@@ -151,6 +157,7 @@ def generate_html_report(user_profile: dict, attempts: list, saved_qs: list, ran
         "<div class='wm-text' style='top: 92%; left: 60%;'>Quiz with HiM</div>",
         "</div>",
         
+        # Header Table with Clickable Logos
         "<table class='header-table'>",
         "<tr>",
         f"<td style='width: 15%; text-align: left;'>{left_logo_html}</td>",
@@ -258,6 +265,17 @@ def generate_html_report(user_profile: dict, attempts: list, saved_qs: list, ran
             html_lines.append(build_html_q_table("❌ WRONG QUESTIONS REPORT", wrong_q_list, "wrong-header", "Zero wrong questions in this timeframe! 🎉"))
             html_lines.append(build_html_q_table("⏭ UN-ATTEMPTED / SKIPPED QUESTIONS REPORT", skipped_q_list, "skipped-header", "Zero skipped questions in this timeframe!"))
             html_lines.append(build_html_q_table("✅ CORRECT QUESTIONS REPORT", correct_q_list, "correct-header", "No correct questions logged yet."))
+
+    # Explicit Clickable Footer Links Section inside the document flow
+    html_lines.append(
+        "<div class='footer-links'>"
+        "<a href='https://instagram.com/Learnwithhimm' target='_blank'>📸 Insta: @Learnwithhimm</a> | "
+        "<a href='https://youtube.com/@LearnwithHiM' target='_blank'>📺 YT: @LearnwithHiM</a> | "
+        "<a href='https://t.me/Learnwithhim' target='_blank'>📢 TG: @Learnwithhim</a> | "
+        "<a href='https://t.me/Learnwithhimm' target='_blank'>💬 TG Chat: @Learnwithhimm</a> | "
+        "<a href='https://t.me/Learnwithhim?direct' target='_blank'>✉️ Direct DM</a>"
+        "</div>"
+    )
 
     html_lines.append("</body></html>")
     return "\n".join(html_lines)

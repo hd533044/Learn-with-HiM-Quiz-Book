@@ -62,8 +62,8 @@ def clean_str(text) -> str:
 def generate_html_report(user_profile: dict, attempts: list, saved_qs: list, rank: str, percentile: float, filter_mode: str) -> str:
     """
     Builds a pixel-perfect HTML document with Google Noto Sans Devanagari font CSS, clickable logos, 
-    enhanced cover page analytics (Pie chart for percentile & Bar graph for rank/accuracy), 
-    bold & italic details, and social icons in the footer.
+    larger cover page layout, colorful multi-metric SVG charts (Pie & Bar graphs for attempt stats, accuracy, and percentile), 
+    bold & italic personal details, and middle-aligned icon footers on every page.
     """
     now_date = datetime.now()
     one_month_ago = now_date - timedelta(days=30)
@@ -96,7 +96,6 @@ def generate_html_report(user_profile: dict, attempts: list, saved_qs: list, ran
     rank_val = f"<b><i>{clean_str(rank)}</i></b>"
     percentile_val = f"<b><i>{percentile}%</i></b>"
 
-    # User Plan & Progress extra details
     user_plan = f"<b><i>{clean_str(user_profile.get('plan', 'Premium Pro / Active Learner'))}</i></b>"
     user_progress = "<b><i>Steady Improvement (Exam Ready)</i></b>"
 
@@ -132,14 +131,20 @@ def generate_html_report(user_profile: dict, attempts: list, saved_qs: list, ran
     except Exception:
         pct_val = 50.0
     pct_val = max(0.0, min(100.0, pct_val))
-    # Pie chart dasharray calculation (circumference = 2 * pi * 40 ≈ 251.2)
-    dash_val = (pct_val / 100.0) * 251.2
+    dash_val_pct = (pct_val / 100.0) * 251.2
 
     try:
         acc_val = float(str(acc).replace("%", ""))
     except Exception:
         acc_val = 0.0
-    acc_height = max(10, min(120, acc_val * 1.2)) # bar height scaling
+    acc_val = max(0.0, min(100.0, acc_val))
+    dash_val_acc = (acc_val / 100.0) * 251.2
+
+    # Attempt stats calculations for bar graph
+    max_qs = max(total_qs, total_correct, total_wrong, 1)
+    bar_h_q = int((total_qs / max_qs) * 90)
+    bar_h_c = int((total_correct / max_qs) * 90)
+    bar_h_w = int((total_wrong / max_qs) * 90)
 
     html_lines = [
         "<!DOCTYPE html>",
@@ -148,16 +153,17 @@ def generate_html_report(user_profile: dict, attempts: list, saved_qs: list, ran
         "<meta charset='utf-8'/>",
         "<style>",
         "@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+Devanagari:wght@400;600;700&display=swap');",
-        "@page { size: letter; margin: 20mm 15mm 22mm 15mm; @bottom-right { content: 'Page ' counter(page); font-size: 8.5px; font-family: 'Times New Roman', serif; color: #64748B; } @bottom-left { content: '📸 Insta: instagram.com/Learnwithhimm  |  📺 YT: youtube.com/@LearnwithHiM  |  📢 TG: t.me/learnwithhim'; font-size: 7.5px; font-family: 'Times New Roman', serif; color: #0284C7; font-weight: bold; } }",
+        # Page margin and middle-aligned bottom footer with social icons on EVERY page
+        "@page { size: letter; margin: 20mm 15mm 22mm 15mm; @bottom-right { content: 'Page ' counter(page); font-size: 8.5px; font-family: 'Times New Roman', serif; color: #64748B; } @bottom-left { content: ''; } @bottom-center { content: '📸 Insta: @Learnwithhimm  |  📺 YT: @LearnwithHiM  |  📢 TG: @learnwithhim'; font-size: 8px; font-family: 'Times New Roman', serif; color: #0284C7; font-weight: bold; } }",
         "body { font-family: 'Noto Sans Devanagari', 'Times New Roman', Helvetica, Arial, sans-serif; margin: 0; padding: 0; color: #334155; font-size: 11.5px; line-height: 1.45; direction: ltr; background-color: #ffffff; }",
         "a { color: inherit; text-decoration: none; }",
         ".header-table { width: 100%; border-collapse: collapse; margin-bottom: 12px; }",
-        ".header-title { text-align: center; color: #1E3A8A; font-size: 20px; font-weight: bold; font-family: 'Times New Roman', serif; }",
-        ".sub-title { color: #16A34A; font-size: 11px; text-align: center; font-weight: bold; margin-top: 3px; font-family: 'Times New Roman', serif; }",
-        "h3 { font-size: 11px; color: #0F172A; text-transform: uppercase; margin-top: 15px; margin-bottom: 6px; font-weight: bold; font-family: 'Times New Roman', serif; page-break-after: avoid; }",
+        ".header-title { text-align: center; color: #1E3A8A; font-size: 22px; font-weight: bold; font-family: 'Times New Roman', serif; }",
+        ".sub-title { color: #16A34A; font-size: 12px; text-align: center; font-weight: bold; margin-top: 4px; font-family: 'Times New Roman', serif; }",
+        "h3 { font-size: 12px; color: #0F172A; text-transform: uppercase; margin-top: 15px; margin-bottom: 6px; font-weight: bold; font-family: 'Times New Roman', serif; page-break-after: avoid; }",
         ".data-table { width: 100%; border-collapse: collapse; margin-bottom: 12px; page-break-inside: auto; }",
         ".data-table tr { page-break-inside: avoid; page-break-after: auto; }",
-        ".data-table th, .data-table td { border: 0.5px solid #CBD5E1; padding: 5px 7px; text-align: left; vertical-align: top; font-size: 10px; word-break: break-word; }",
+        ".data-table th, .data-table td { border: 0.5px solid #CBD5E1; padding: 6px 9px; text-align: left; vertical-align: top; font-size: 11px; word-break: break-word; }",
         ".data-table th { background-color: #E0F2FE; color: #0F172A; font-weight: bold; font-family: 'Times New Roman', serif; }",
         ".prof-table td { background-color: #F8FAFC; }",
         ".prof-label { font-weight: bold; color: #0F172A; width: 18%; font-family: 'Times New Roman', serif; }",
@@ -166,11 +172,9 @@ def generate_html_report(user_profile: dict, attempts: list, saved_qs: list, ran
         ".correct-header { background-color: #D1FAE5 !important; color: #065F46 !important; border-color: #34D399 !important; }",
         ".watermark-container { position: fixed; top: 0; left: 0; width: 100%; height: 100%; z-index: -1000; overflow: hidden; pointer-events: none; }",
         ".wm-text { position: absolute; font-family: 'Times New Roman', serif; font-weight: bold; font-size: 24px; color: #94A3B8; opacity: 0.14; transform: rotate(30deg); white-space: nowrap; }",
-        ".footer-links { margin-top: 25px; padding-top: 8px; border-top: 0.5px solid #CBD5E1; font-size: 8.5px; font-family: 'Times New Roman', serif; text-align: center; }",
-        ".footer-links a { color: #0284C7; font-weight: bold; margin: 0 6px; text-decoration: underline; }",
         ".cover-page { page-break-after: always; }",
-        ".analytics-container { width: 100%; margin-top: 15px; border-collapse: collapse; }",
-        ".analytics-box { border: 0.5px solid #CBD5E1; background-color: #F8FAFC; padding: 10px; text-align: center; vertical-align: middle; }",
+        ".analytics-container { width: 100%; margin-top: 12px; border-collapse: collapse; }",
+        ".analytics-box { border: 0.5px solid #CBD5E1; background-color: #F8FAFC; padding: 12px; text-align: center; vertical-align: middle; }",
         "</style>",
         "</head>",
         "<body>",
@@ -187,7 +191,7 @@ def generate_html_report(user_profile: dict, attempts: list, saved_qs: list, ran
         "<div class='wm-text' style='top: 92%; left: 60%;'>Quiz with HiM</div>",
         "</div>",
         
-        # --- INTRODUCTORY COVER PAGE ---
+        # --- INTRODUCTORY COVER PAGE (Enlarged fonts & bigger charts) ---
         "<div class='cover-page'>",
         f"<table class='header-table'><tr>"
         f"<td style='width: 15%; text-align: left;'>{left_logo_html}</td>"
@@ -195,56 +199,67 @@ def generate_html_report(user_profile: dict, attempts: list, saved_qs: list, ran
         f"<td style='width: 15%; text-align: right;'>{right_logo_html}</td>"
         f"</tr></table>",
         "<br/>",
-        "<h2 style='text-align: center; color: #1E3A8A; font-family: \"Times New Roman\", serif; font-size: 18px; margin-bottom: 12px;'>OFFICIAL STUDENT INTRODUCTION & PROFILE REPORT</h2>",
+        "<h2 style='text-align: center; color: #1E3A8A; font-family: \"Times New Roman\", serif; font-size: 20px; margin-bottom: 15px;'>OFFICIAL STUDENT INTRODUCTION & PROFILE REPORT</h2>",
         
-        # Profile Table with Bold & Italic values
-        "<table class='data-table prof-table' style='font-size: 11px;'>",
-        f"<tr><td class='prof-label'>Student Name:</td><td>{full_name_clean}</td><td class='prof-label'>Student ID:</td><td>{sid_val}</td></tr>",
-        f"<tr><td class='prof-label'>Target Exam:</td><td>{target_exam_clean}</td><td class='prof-label'>Location:</td><td>{location_clean}</td></tr>",
-        f"<tr><td class='prof-label'>DOB / Age:</td><td>{dob_age_clean}</td><td class='prof-label'>Phone (Masked):</td><td>{masked_phone_val}</td></tr>",
-        f"<tr><td class='prof-label'>Account Status:</td><td>{account_status_val}</td><td class='prof-label'>Secret PIN:</td><td>{masked_pin_val}</td></tr>",
-        f"<tr><td class='prof-label'>Global Rank:</td><td>{rank_val}</td><td class='prof-label'>Overall Percentile:</td><td>{percentile_val}</td></tr>",
-        f"<tr><td class='prof-label'>Active Plan:</td><td>{user_plan}</td><td class='prof-label'>Overall Progress:</td><td>{user_progress}</td></tr>",
+        # Profile Table with Bold & Italic values and larger font
+        "<table class='data-table prof-table' style='font-size: 12px;'>",
+        f"<tr><td class='prof-label' style='padding: 7px;'>Student Name:</td><td style='padding: 7px;'>{full_name_clean}</td><td class='prof-label' style='padding: 7px;'>Student ID:</td><td style='padding: 7px;'>{sid_val}</td></tr>",
+        f"<tr><td class='prof-label' style='padding: 7px;'>Target Exam:</td><td style='padding: 7px;'>{target_exam_clean}</td><td class='prof-label' style='padding: 7px;'>Location:</td><td style='padding: 7px;'>{location_clean}</td></tr>",
+        f"<tr><td class='prof-label' style='padding: 7px;'>DOB / Age:</td><td style='padding: 7px;'>{dob_age_clean}</td><td class='prof-label' style='padding: 7px;'>Phone (Masked):</td><td style='padding: 7px;'>{masked_phone_val}</td></tr>",
+        f"<tr><td class='prof-label' style='padding: 7px;'>Account Status:</td><td style='padding: 7px;'>{account_status_val}</td><td class='prof-label' style='padding: 7px;'>Secret PIN:</td><td style='padding: 7px;'>{masked_pin_val}</td></tr>",
+        f"<tr><td class='prof-label' style='padding: 7px;'>Global Rank:</td><td style='padding: 7px;'>{rank_val}</td><td class='prof-label' style='padding: 7px;'>Overall Percentile:</td><td style='padding: 7px;'>{percentile_val}</td></tr>",
+        f"<tr><td class='prof-label' style='padding: 7px;'>Active Plan:</td><td style='padding: 7px;'>{user_plan}</td><td class='prof-label' style='padding: 7px;'>Overall Progress:</td><td style='padding: 7px;'>{user_progress}</td></tr>",
         "</table>",
 
-        # Dynamic Analytics Section (Pie Chart & Bar Graph in Free Space)
-        "<h3>📈 PERFORMANCE & ANALYTICS OVERVIEW</h3>",
+        # Enhanced Analytics Section with Bigger Colorful Charts in Free Space
+        "<h3 style='font-size: 13px; margin-top: 18px;'>📈 PERFORMANCE & ANALYTICS OVERVIEW</h3>",
         "<table class='analytics-container'>",
         "<tr>",
-        # Left Box: Dynamic SVG Pie Chart for Percentile
-        f"<td class='analytics-box' style='width: 50%;'>"
-        f"<div style='font-weight: bold; font-size: 11px; color: #1E3A8A; margin-bottom: 5px;'>Percentile Distribution Gauge</div>"
-        f"<svg width='120' height='120' viewBox='0 0 100 100'>"
+        # Box 1: Colorful Pie Charts for Percentile & Accuracy
+        f"<td class='analytics-box' style='width: 48%;'>"
+        f"<div style='font-weight: bold; font-size: 12px; color: #1E3A8A; margin-bottom: 8px;'>Percentile & Accuracy Gauges</div>"
+        f"<div style='display: inline-block; margin-right: 15px; text-align: center;'>"
+        f"<svg width='110' height='110' viewBox='0 0 100 100'>"
         f"<circle cx='50' cy='50' r='40' fill='none' stroke='#E2E8F0' stroke-width='14'></circle>"
-        f"<circle cx='50' cy='50' r='40' fill='none' stroke='#0284C7' stroke-width='14' stroke-dasharray='{dash_val} 251.2' transform='rotate(-90 50 50)'></circle>"
-        f"<text x='50' y='55' text-anchor='middle' font-size='14' font-weight='bold' fill='#0F172A'>{percentile}%</text>"
+        f"<circle cx='50' cy='50' r='40' fill='none' stroke='#0284C7' stroke-width='14' stroke-dasharray='{dash_val_pct} 251.2' transform='rotate(-90 50 50)'></circle>"
+        f"<text x='50' y='55' text-anchor='middle' font-size='13' font-weight='bold' fill='#0F172A'>{percentile}%</text>"
         f"</svg>"
-        f"<div style='font-size: 10px; color: #64748B; margin-top: 5px;'>Standing ahead of {percentile}% of aspirants</div>"
+        f"<div style='font-size: 10px; color: #0284C7; font-weight: bold;'>Percentile</div>"
+        f"</div>"
+        f"<div style='display: inline-block; text-align: center;'>"
+        f"<svg width='110' height='110' viewBox='0 0 100 100'>"
+        f"<circle cx='50' cy='50' r='40' fill='none' stroke='#E2E8F0' stroke-width='14'></circle>"
+        f"<circle cx='50' cy='50' r='40' fill='none' stroke='#16A34A' stroke-width='14' stroke-dasharray='{dash_val_acc} 251.2' transform='rotate(-90 50 50)'></circle>"
+        f"<text x='50' y='55' text-anchor='middle' font-size='13' font-weight='bold' fill='#0F172A'>{acc}%</text>"
+        f"</svg>"
+        f"<div style='font-size: 10px; color: #16A34A; font-weight: bold;'>Accuracy</div>"
+        f"</div>"
+        f"<div style='font-size: 10.5px; color: #64748B; margin-top: 6px;'>Standing ahead of {percentile}% of aspirants with {acc}% accuracy</div>"
         f"</td>",
 
-        # Right Box: Dynamic SVG Bar Graph for Accuracy & Quizzes
-        f"<td class='analytics-box' style='width: 50%;'>"
-        f"<div style='font-weight: bold; font-size: 11px; color: #1E3A8A; margin-bottom: 5px;'>Attempt & Accuracy Metrics</div>"
-        f"<svg width='180' height='120' viewBox='0 0 180 120'>"
-        # Background Grid lines
-        f"<line x1='20' y1='100' x2='170' y2='100' stroke='#CBD5E1' stroke-width='1'></line>"
-        f"<line x1='20' y1='60' x2='170' y2='60' stroke='#E2E8F0' stroke-width='0.5' stroke-dasharray='3'></line>"
-        # Bar 1: Quizzes Attempted
-        f"<rect x='35' y='{100 - min(80, total_quizzes * 10)}' width='25' height='{min(80, total_quizzes * 10)}' fill='#38BDF8' rx='3'></rect>"
-        f"<text x='47' y='112' text-anchor='middle' font-size='9' fill='#334155'>Quizzes ({total_quizzes})</text>"
-        # Bar 2: Accuracy %
-        f"<rect x='85' y='{100 - acc_height}' width='25' height='{acc_height}' fill='#16A34A' rx='3'></rect>"
-        f"<text x='97' y='112' text-anchor='middle' font-size='9' fill='#334155'>Accuracy</text>"
-        # Bar 3: Total Correct
-        f"<rect x='135' y='{100 - min(80, total_correct * 2)}' width='25' height='{min(80, total_correct * 2)}' fill='#1E3A8A' rx='3'></rect>"
-        f"<text x='147' y='112' text-anchor='middle' font-size='9' fill='#334155'>Correct</text>"
+        # Box 2: Colorful Dynamic Bar Graph for Total Attempted, Correct, and Wrong Questions
+        f"<td class='analytics-box' style='width: 52%;'>"
+        f"<div style='font-weight: bold; font-size: 12px; color: #1E3A8A; margin-bottom: 8px;'>Question Attempt Breakdown</div>"
+        f"<svg width='220' height='130' viewBox='0 0 220 130'>"
+        # Background Axis
+        f"<line x1='25' y1='110' x2='205' y2='110' stroke='#CBD5E1' stroke-width='1'></line>"
+        f"<line x1='25' y1='65' x2='205' y2='65' stroke='#E2E8F0' stroke-width='0.5' stroke-dasharray='3'></line>"
+        # Bar 1: Total Attempted Questions
+        f"<rect x='40' y='{110 - bar_h_q}' width='35' height='{bar_h_q}' fill='#38BDF8' rx='4'></rect>"
+        f"<text x='57' y='122' text-anchor='middle' font-size='9.5' font-weight='bold' fill='#334155'>Attempted ({total_qs})</text>"
+        # Bar 2: Total Correct
+        f"<rect x='100' y='{110 - bar_h_c}' width='35' height='{bar_h_c}' fill='#16A34A' rx='4'></rect>"
+        f"<text x='117' y='122' text-anchor='middle' font-size='9.5' font-weight='bold' fill='#334155'>Correct ({total_correct})</text>"
+        # Bar 3: Total Wrong
+        f"<rect x='160' y='{110 - bar_h_w}' width='35' height='{bar_h_w}' fill='#EF4444' rx='4'></rect>"
+        f"<text x='177' y='122' text-anchor='middle' font-size='9.5' font-weight='bold' fill='#334155'>Wrong ({total_wrong})</text>"
         f"</svg>"
-        f"<div style='font-size: 10px; color: #64748B; margin-top: 5px;'>Total Quizzes: {total_quizzes} | Total Correct: {total_correct}</div>"
+        f"<div style='font-size: 10.5px; color: #64748B; margin-top: 4px;'>Total Attempted: {total_qs} | Correct: {total_correct} | Wrong: {total_wrong}</div>"
         f"</td>",
         "</tr>",
         "</table>",
 
-        "<div style='text-align: center; margin-top: 25px; color: #64748B; font-style: italic; font-size: 10.5px;'>Official certified academic report generated by Learn with HiM Platform.</div>",
+        "<div style='text-align: center; margin-top: 20px; color: #64748B; font-style: italic; font-size: 11px;'>Official certified academic report generated by Learn with HiM Platform.</div>",
         "</div>", # End Cover Page
 
         # --- MAIN REPORT PAGES HEADER ---
@@ -344,21 +359,6 @@ def generate_html_report(user_profile: dict, attempts: list, saved_qs: list, ran
             html_lines.append(build_html_q_table("❌ WRONG QUESTIONS REPORT", wrong_q_list, "wrong-header", "Zero wrong questions in this timeframe! 🎉"))
             html_lines.append(build_html_q_table("⏭ UN-ATTEMPTED / SKIPPED QUESTIONS REPORT", skipped_q_list, "skipped-header", "Zero skipped questions in this timeframe!"))
             html_lines.append(build_html_q_table("✅ CORRECT QUESTIONS REPORT", correct_q_list, "correct-header", "No correct questions logged yet."))
-
-    # Footer Links Section with SVG Icons (Instagram, YouTube, Telegram)
-    insta_svg = '<svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="#0284C7" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" style="vertical-align: middle; margin-right: 2px;"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line></svg>'
-    yt_svg = '<svg width="13" height="11" viewBox="0 0 24 24" fill="none" stroke="#0284C7" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" style="vertical-align: middle; margin-right: 2px;"><path d="M22.54 6.42a2.78 2.78 0 0 0-1.95-1.96C18.88 4 12 4 12 4s-6.88 0-8.59.46a2.78 2.78 0 0 0-1.95 1.96A29 29 0 0 0 1 12a29 29 0 0 0 .46 5.58 2.78 2.78 0 0 0 1.95 1.96C5.12 20 12 20 12 20s6.88 0 8.59-.46a2.78 2.78 0 0 0 1.95-1.96A29 29 0 0 0 23 12a29 29 0 0 0-.46-5.58z"></path><polygon points="9.75 15.02 15.5 12 9.75 8.98 9.75 15.02" fill="#0284C7"></polygon></svg>'
-    tg_svg = '<svg width="12" height="11" viewBox="0 0 24 24" fill="none" stroke="#0284C7" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" style="vertical-align: middle; margin-right: 2px;"><line x1="22" y1="2" x2="11" y2="13"></line><polygon points="22 2 15 22 11 13 2 9 22 2"></polygon></svg>'
-
-    html_lines.append(
-        f"<div class='footer-links'>"
-        f"<a href='https://instagram.com/Learnwithhimm' target='_blank'>{insta_svg} Insta: @Learnwithhimm</a> | "
-        f"<a href='https://youtube.com/@LearnwithHiM' target='_blank'>{yt_svg} YT: @LearnwithHiM</a> | "
-        f"<a href='https://t.me/learnwithhim' target='_blank'>{tg_svg} TG: @Learnwithhim</a> | "
-        f"<a href='https://t.me/Learnwithhimm' target='_blank'>{tg_svg} TG Chat: @Learnwithhimm</a> | "
-        f"<a href='https://t.me/learnwithhim?direct' target='_blank'>{tg_svg} Direct DM</a>"
-        f"</div>"
-    )
 
     html_lines.append("</body></html>")
     return "\n".join(html_lines)

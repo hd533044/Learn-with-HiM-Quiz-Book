@@ -14,7 +14,15 @@ from app.config import USER_PROFILES_DIR, BASE_DIR
 from app.database import get_user_profile, get_db, release_db
 from app.stats import calculate_user_rank, calculate_user_percentile
 
-# Attempt Playwright Import for Native Chromium PDF Rendering
+# Attempt WeasyPrint Import
+HAS_WEASYPRINT = False
+try:
+    import weasyprint
+    HAS_WEASYPRINT = True
+except ImportError:
+    HAS_WEASYPRINT = False
+
+# Attempt Playwright Import
 HAS_PLAYWRIGHT = False
 try:
     from playwright.async_api import async_playwright
@@ -22,13 +30,16 @@ try:
 except ImportError:
     HAS_PLAYWRIGHT = False
 
-# Attempt WeasyPrint Import as Secondary PDF Engine
-HAS_WEASYPRINT = False
-try:
-    import weasyprint
-    HAS_WEASYPRINT = True
-except ImportError:
-    HAS_WEASYPRINT = False
+# ReportLab Fallback Imports for Guaranteed PDF Generation
+from reportlab.lib.pagesizes import letter
+from reportlab.lib import colors
+from reportlab.lib.units import inch
+from reportlab.platypus import (
+    SimpleDocTemplate, Paragraph, Spacer, Table, TableStyle, Image as RLImage
+)
+from reportlab.lib.styles import getSampleStyleSheet, ParagraphStyle
+from reportlab.pdfbase import pdfmetrics
+from reportlab.pdfbase.ttfonts import TTFont
 
 
 def mask_phone(phone_str: str) -> str:
@@ -89,7 +100,6 @@ def generate_html_report(user_profile: dict, attempts: list, saved_qs: list, ran
     age_val = user_profile.get('age', '')
     dob_age_clean = clean_str(f"{dob_val} ({age_val} yrs)")
     
-    # Absolute paths for logos ensuring 100% visibility in PDF compilation
     logo_left_path = os.path.abspath(os.path.join(BASE_DIR, "assets", "logo.png"))
     logo_right_path = os.path.abspath(os.path.join(BASE_DIR, "assets", "logohim.png"))
 
@@ -306,16 +316,16 @@ def generate_student_pdf_report(user_id: int, filter_mode: str = "last_1_month_d
 
         html_content = generate_html_report(u, attempts, saved_qs, str(rank), percentile, filter_mode)
 
-        # 1. Primary Engine: WeasyPrint (Generates .pdf directly with HarfBuzz Hindi font shaping)
+        # 1. Primary Engine: WeasyPrint
         if HAS_WEASYPRINT:
             try:
                 weasyprint.HTML(string=html_content).write_pdf(pdf_path)
-                if os.path.exists(pdf_path) and os.path.getsize(pdf_path) > 100:
+                if os.path.exists(pdf_path) and os.path.getsize(pdf_path) > 500:
                     return pdf_path
             except Exception as wp_err:
                 pass
 
-        # 2. Secondary Engine: Playwright Chromium PDF Generator
+        # 2. Secondary Engine: Playwright Chromium
         if HAS_PLAYWRIGHT:
             try:
                 async def render_pw():
@@ -337,16 +347,118 @@ def generate_student_pdf_report(user_id: int, filter_mode: str = "last_1_month_d
                 else:
                     asyncio.run(render_pw())
 
-                if os.path.exists(pdf_path) and os.path.getsize(pdf_path) > 100:
+                if os.path.exists(pdf_path) and os.path.getsize(pdf_path) > 500:
                     return pdf_path
             except Exception as pw_err:
                 pass
 
-        # 3. Final Fallback: Embedded Headless Chromium / WeasyPrint CLI Executable or Error Trace
-        return f"ERROR: Failed to compile direct PDF. Please ensure weasyprint or playwright is installed in your requirements.txt."
+        # 3. Guaranteed ReportLab Fallback (Fully scoped variables to prevent undefined name errors)
+        try:
+            doc = SimpleDocTemplate(pdf_path, pagesize=letter, rightMargin=30, leftMargin=30, topMargin=25, bottomMargin=50)
+            story = []
+            
+            font_dir = os.path.join(BASE_DIR, "assets")
+            os.makedirs(font_dir, exist_ok=True)
+            font_path = os.path.join(font_dir, "NotoSansDevanagari-Regular.ttf")
+            fallback_font = "Helvetica"
+            if os.path.exists(font_path):
+                try:
+                    pdfmetrics.registerFont(TTFont("FallbackDevanagari", font_path))
+                    fallback_font = "FallbackDevanagari"
+                except Exception:
+                    pass
+
+            styles = getSampleStyleSheet()
+            title_style = ParagraphStyle('TitleStyle', parent=styles['Heading1'], fontName='Times-Bold', fontSize=16, leading=20, textColor=colors.HexColor("#1E3A8A"), alignment=1)
+            body_style = ParagraphStyle('BodyStyle', parent=styles['Normal'], fontName=fallback_font, fontSize=9.5, leading=14, textColor=colors.HexColor("#334155"))
+            bold_style = ParagraphStyle('BoldStyle', parent=styles['Normal'], fontName='Times-Bold', fontSize=9.5, leading=14, textColor=colors.HexColor("#0F172A"))
+
+            logo_l = os.path.join(BASE_DIR, "assets", "logo.png")
+            logo_r = os.path.join(BASE_DIR, "assets", "logohim.png")
+            img_l = RLImage(logo_l, width=0.7*inch, height=0.7*inch) if os.path.exists(logo_l) else Paragraph("<b>Logo</b>", bold_style)
+            img_r = RLImage(logo_r, width=0.7*inch, height=0.7*inch) if os.path.exists(logo_r) else Paragraph("<b>@LearnwithHiM</b>", bold_style)
+
+            header_p = Paragraph("<b><font color='#1E3A8A'>Learn with HiM Quiz Book</font></b><br/><font color='#16A34A' size=9><b>Smart Quiz! Smart Study! Better Improvement! Exam Relevant!</b></font>", title_style)
+            header_tbl = Table([[img_l, header_p, img_r]], colWidths=[1.0*inch, 4.6*inch, 1.0*inch])
+            header_tbl.setStyle(TableStyle([('VALIGN', (0,0), (-1,-1), 'MIDDLE'), ('ALIGN', (1,0), (1,0), 'CENTER')]))
+            story.append(header_tbl)
+            story.append(Spacer(1, 10))
+
+            story.append(Paragraph("<b>STUDENT PROFILE OVERVIEW</b>", ParagraphStyle('Sec', parent=styles['Heading2'], fontName='Times-Bold', fontSize=11, textColor=colors.HexColor("#0F172A"))))
+            
+            # Scoped variables calculation for fallback
+            now_date = datetime.now()
+            one_month_ago = now_date - timedelta(days=30)
+            one_month_ago_str = one_month_ago.strftime("%Y-%m-%d")
+            now_date_str = now_date.strftime("%Y-%m-%d")
+            is_month_filter = "last_1_month" in filter_mode
+            summary_title = f"MONTHLY REPORT ({one_month_ago_str} TO {now_date_str})" if is_month_filter else "ALL-TIME CUMULATIVE ACADEMIC REPORT"
+
+            filtered_attempts = []
+            for a in attempts:
+                a_date = parse_date_only(a.get("attempt_date") or a.get("attempt_timestamp"))
+                if is_month_filter:
+                    if a_date >= one_month_ago_str:
+                        filtered_attempts.append(a)
+                else:
+                    filtered_attempts.append(a)
+
+            total_quizzes = len(filtered_attempts)
+            total_qs = sum([a.get('questions_attempted', 0) or 0 for a in filtered_attempts])
+            total_correct = sum([a.get('correct_answers', 0) or 0 for a in filtered_attempts])
+            total_wrong = sum([a.get('wrong_answers', 0) or 0 for a in filtered_attempts])
+            acc = round((total_correct / total_qs) * 100, 2) if total_qs > 0 else 0.0
+
+            prof_data = [
+                [Paragraph("Student Name:", bold_style), Paragraph(clean_str(u.get('full_name')), body_style), Paragraph("Student ID:", bold_style), Paragraph(clean_str(u.get('student_id')), body_style)],
+                [Paragraph("Target Exam:", bold_style), Paragraph(clean_str(u.get('target_exam')), body_style), Paragraph("Location:", bold_style), Paragraph(clean_str(f"{u.get('state')}, {u.get('country')}"), body_style)],
+                [Paragraph("Global Rank:", bold_style), Paragraph(str(rank), body_style), Paragraph("Overall Percentile:", bold_style), Paragraph(f"{percentile}%", body_style)]
+            ]
+            prof_tbl = Table(prof_data, colWidths=[1.3*inch, 2.2*inch, 1.3*inch, 2.2*inch])
+            prof_tbl.setStyle(TableStyle([('BACKGROUND', (0,0), (-1,-1), colors.HexColor("#F8FAFC")), ('GRID', (0,0), (-1,-1), 0.5, colors.HexColor("#CBD5E1")), ('PADDING', (0,0), (-1,-1), 4)]))
+            story.append(prof_tbl)
+            story.append(Spacer(1, 10))
+
+            story.append(Paragraph(f"<b>ACADEMIC SUMMARY — {summary_title}</b>", ParagraphStyle('Sec2', parent=styles['Heading2'], fontName='Times-Bold', fontSize=11, textColor=colors.HexColor("#0F172A"))))
+            stats_data = [
+                [Paragraph("Quizzes", bold_style), Paragraph("Total Questions", bold_style), Paragraph("Correct ✅", bold_style), Paragraph("Wrong ❌", bold_style), Paragraph("Accuracy", bold_style)],
+                [Paragraph(str(total_quizzes), body_style), Paragraph(str(total_qs), body_style), Paragraph(str(total_correct), body_style), Paragraph(str(total_wrong), body_style), Paragraph(f"{acc}%", body_style)]
+            ]
+            stats_tbl = Table(stats_data, colWidths=[1.4*inch, 1.4*inch, 1.4*inch, 1.4*inch, 1.4*inch])
+            stats_tbl.setStyle(TableStyle([('BACKGROUND', (0,0), (-1,0), colors.HexColor("#E0F2FE")), ('GRID', (0,0), (-1,-1), 0.5, colors.HexColor("#38BDF8")), ('ALIGN', (0,0), (-1,-1), 'CENTER'), ('PADDING', (0,0), (-1,-1), 4)]))
+            story.append(stats_tbl)
+            story.append(Spacer(1, 10))
+
+            if filter_mode != "saved_questions_only" and not "quiz" in filter_mode:
+                story.append(Paragraph("❌ <b>WRONG QUESTIONS REPORT</b>", ParagraphStyle('Sec3', parent=styles['Heading2'], fontName='Times-Bold', fontSize=11, textColor=colors.HexColor("#0F172A"))))
+                wrong_tbl_data = [[Paragraph("Attempt Date", bold_style), Paragraph("Question Text", bold_style), Paragraph("Correct Answer", bold_style)]]
+                
+                for a in filtered_attempts:
+                    details = json.loads(a["details_json"]) if a.get("details_json") else []
+                    if isinstance(details, list):
+                        for q in details:
+                            if isinstance(q, dict) and str(q.get("status", "")).upper() == "WRONG":
+                                wrong_tbl_data.append([
+                                    Paragraph(parse_date_only(a.get("attempt_date")), body_style),
+                                    Paragraph(clean_str(q.get("question_text") or q.get("question")), body_style),
+                                    Paragraph(clean_str(q.get("correct_answer_text")), body_style)
+                                ])
+                if len(wrong_tbl_data) == 1:
+                    wrong_tbl_data.append([Paragraph("N/A", body_style), Paragraph("Zero wrong questions in this timeframe! 🎉", body_style), Paragraph("N/A", body_style)])
+
+                w_tbl = Table(wrong_tbl_data, colWidths=[1.1*inch, 3.9*inch, 2.0*inch], repeatRows=1)
+                w_tbl.setStyle(TableStyle([('BACKGROUND', (0,0), (-1,0), colors.HexColor("#FFE4E6")), ('GRID', (0,0), (-1,-1), 0.5, colors.HexColor("#FB7185")), ('PADDING', (0,0), (-1,-1), 4)]))
+                story.append(w_tbl)
+
+            doc.build(story, onFirstPage=lambda c, d: None, onLaterPages=lambda c, d: None)
+            if os.path.exists(pdf_path) and os.path.getsize(pdf_path) > 500:
+                return pdf_path
+        except Exception as fb_err:
+            pass
+
+        return "ERROR: Failed to generate PDF file. Please check logs."
 
     except Exception as e:
         if conn:
             release_db(conn)
-        error_trace = traceback.format_exc()
-        return f"ERROR_DETAILS:\n{error_trace}"
+        return f"ERROR_DETAILS:\n{traceback.format_exc()}"

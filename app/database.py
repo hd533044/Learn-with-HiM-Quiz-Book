@@ -13,7 +13,6 @@ IST = pytz.timezone("Asia/Kolkata")
 
 DATABASE_URL = os.getenv("DATABASE_URL", "postgres://user:password@localhost:5432/dbname")
 
-# Connection Pool to avoid TCP/SSL Handshake latency on every command
 db_pool = None
 
 def init_pool():
@@ -130,7 +129,23 @@ def init_db():
             submitted_at TEXT
         )
     ''')
-    
+
+    cursor.execute('''
+        CREATE TABLE IF NOT EXISTS student_queries (
+            id SERIAL PRIMARY KEY,
+            user_id BIGINT,
+            student_name TEXT,
+            query_text TEXT,
+            photo_file_id TEXT,
+            admin_reply TEXT,
+            status TEXT DEFAULT 'PENDING',
+            created_at TEXT,
+            replied_at TEXT
+        )
+    ''')
+
+    cursor.execute("ALTER TABLE student_queries ADD COLUMN IF NOT EXISTS photo_file_id TEXT;")
+
     cursor.execute('''
         CREATE TABLE IF NOT EXISTS bot_settings (
             key TEXT PRIMARY KEY,
@@ -298,6 +313,7 @@ def admin_delete_user_account(user_id: int):
     cursor.execute("DELETE FROM student_feedback WHERE user_id = %s", (user_id,))
     cursor.execute("DELETE FROM paused_quizzes WHERE user_id = %s", (user_id,))
     cursor.execute("DELETE FROM user_activity_time WHERE user_id = %s", (user_id,))
+    cursor.execute("DELETE FROM student_queries WHERE user_id = %s", (user_id,))
     conn.commit()
     cursor.close()
     release_db(conn)

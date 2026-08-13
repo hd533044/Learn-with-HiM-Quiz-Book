@@ -24,6 +24,17 @@ USERS_PER_PAGE = 8
 ADMIN_AUTH_SESSIONS = {}  # {user_id: auth_timestamp}
 
 
+def get_admin_nav_buttons(target_uid: int = None):
+    """Helper to generate persistent navigation buttons after admin actions."""
+    row1 = [InlineKeyboardButton("👑 Return to Admin Portal", callback_data="admin_home")]
+    if target_uid:
+        row1.append(InlineKeyboardButton("🔙 Student Dashboard", callback_data=f"admin_inspect_u_{target_uid}"))
+    return InlineKeyboardMarkup([
+        row1,
+        [InlineKeyboardButton("📩 Student Support Threads", callback_data="admin_view_student_threads_0")]
+    ])
+
+
 async def fast_concurrent_broadcast(bot, user_ids, text, reply_markup=None, parse_mode="Markdown"):
     """
     Delivers messages concurrently in batches to ensure maximum speed (~5s delivery)
@@ -221,9 +232,6 @@ def calculate_financial_revenue():
         return {"today": 0, "week": 0, "month": 0, "all": 0}
 
 
-# -------------------------------------------------------------
-# Feature 2: Multi-Window Online Active Users (1m / 5m / 15m)
-# -------------------------------------------------------------
 def get_currently_online_users(minutes: int = 15):
     """Fetches users active within the given minute window."""
     conn = None
@@ -248,9 +256,6 @@ def get_currently_online_users(minutes: int = 15):
         return []
 
 
-# -------------------------------------------------------------
-# Feature 3: Full Platform Usage Telemetry Summary
-# -------------------------------------------------------------
 def get_platform_usage_summary():
     """Calculates overall cumulative time spent across all students on the platform."""
     conn = None
@@ -315,6 +320,7 @@ async def admin_portal_command(update: Update, context: ContextTypes.DEFAULT_TYP
             await update.message.reply_text(reject_msg)
         return
 
+    # Feature 1 Fix: Password entry button directly attached so admin never has to re-type /admin
     if not is_admin_authenticated(user_id):
         context.user_data["awaiting_admin_password"] = True
         msg = (
@@ -324,7 +330,7 @@ async def admin_portal_command(update: Update, context: ContextTypes.DEFAULT_TYP
             "🔑 Please reply with the Master Admin Password or tap below to enter password:"
         )
         unlock_btn = InlineKeyboardMarkup([
-            [InlineKeyboardButton("🔑 Enter Password / Unlock Portal", callback_data="admin_unlock_prompt")],
+            [InlineKeyboardButton("🔑 Enter Password & Unlock Dashboard", callback_data="admin_unlock_prompt")],
             [InlineKeyboardButton("🔑 Forgot Password / Recovery Reset", callback_data="admin_forgot_pass_step1")]
         ])
         if update.callback_query:
@@ -624,7 +630,6 @@ async def admin_callback_handler(update: Update, context: ContextTypes.DEFAULT_T
         await query.answer(text=popup_text, show_alert=True)
         return
 
-    # Feature 2: Multi-Window Active Student Detection (1m, 5m, 15m)
     elif data == "admin_live_users_menu":
         await query.answer()
         online_1m = get_currently_online_users(1)
@@ -668,7 +673,6 @@ async def admin_callback_handler(update: Update, context: ContextTypes.DEFAULT_T
         back_btn = InlineKeyboardMarkup([[InlineKeyboardButton("🔙 Back to Online Menu", callback_data="admin_live_users_menu")], [InlineKeyboardButton("👑 Main Admin Portal", callback_data="admin_home")]])
         await query.edit_message_text("\n".join(lines), reply_markup=back_btn, parse_mode="Markdown")
 
-    # Feature 3: Full Platform Usage Telemetry
     elif data == "admin_total_platform_usage":
         await query.answer()
         usage = get_platform_usage_summary()
@@ -837,6 +841,7 @@ async def admin_callback_handler(update: Update, context: ContextTypes.DEFAULT_T
 
         await query.edit_message_text(f"📩 **STUDENT SUPPORT THREADS ({total_s} Students)**\nSelect a student to view their entire query history:", reply_markup=InlineKeyboardMarkup(keyboard), parse_mode="Markdown")
 
+    # Multi-Query Selective Reply System & Query Deletion / Ignoring
     elif data.startswith("admin_student_thread_"):
         await query.answer()
         target_uid = int(data.replace("admin_student_thread_", ""))
@@ -857,49 +862,69 @@ async def admin_callback_handler(update: Update, context: ContextTypes.DEFAULT_T
             f"━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\n"
         ]
 
-        latest_pending_qid = None
+        keyboard = []
         for q in queries:
-            if q["status"] == "PENDING":
-                latest_pending_qid = q["id"]
-
             reply_status = f"`{q['admin_reply']}`" if q["admin_reply"] else "*(Not Replied Yet)*"
+            photo_badge = " 📷 [Image Attached]" if q.get("photo_file_id") else ""
             lines.append(
-                f"🏷 **Query ID #{q['id']}** `[{q['created_at']}]`\n"
-                f"❓ *\"{q['query_text']}\"*\n"
+                f"🏷 **Query ID #{q['id']}** `[{q['created_at']}]`{photo_badge}\n"
+                f"❓ *\"{q['query_text'] or 'Image Query'}\"*\n"
                 f"👨‍🏫 **Admin Reply:** {reply_status}\n"
                 f"──────────────────────────────"
             )
+
+            # Feature 3 & 4: Selective multi-query reply & ignore/delete buttons per query
+            if q["status"] == "PENDING":
+                keyboard.append([
+                    InlineKeyboardButton(f"✍️ Reply Query #{q['id']}", callback_data=f"admin_reply_prompt_{q['id']}"),
+                    InlineKeyboardButton(f"🗑 Ignore/Delete #{q['id']}", callback_data=f"admin_delete_query_{q['id']}_{target_uid}")
+                ])
 
         msg = "\n".join(lines)
         if len(msg) > 3900:
             msg = msg[:3850] + "\n\n*(Truncated)*"
 
-        keyboard = []
-        if latest_pending_qid:
-            keyboard.append([InlineKeyboardButton(f"✍️ Reply to Latest Pending Query (# {latest_pending_qid})", callback_data=f"admin_reply_prompt_{latest_pending_qid}")])
-        keyboard.append([InlineKeyboardButton("📩 Direct Message Student", callback_data=f"admin_direct_msg_{target_uid}")])
-        keyboard.append([InlineKeyboardButton("🔙 Back to Threads", callback_data="admin_view_student_threads_0")])
+        keyboard.append([InlineKeyboardButton("✉️ Direct Message (Text/Image)", callback_data=f"admin_direct_msg_{target_uid}")])
+        keyboard.append([InlineKeyboardButton("🔙 Back to Support Threads", callback_data="admin_view_student_threads_0")])
         keyboard.append([InlineKeyboardButton("👑 Main Admin Portal", callback_data="admin_home")])
 
         await query.edit_message_text(msg, reply_markup=InlineKeyboardMarkup(keyboard), parse_mode="Markdown")
+
+    elif data.startswith("admin_delete_query_"):
+        await query.answer()
+        parts = data.replace("admin_delete_query_", "").split("_")
+        qid = int(parts[0])
+        target_uid = int(parts[1])
+
+        conn = get_db()
+        cursor = conn.cursor()
+        cursor.execute("DELETE FROM student_queries WHERE id = %s", (qid,))
+        conn.commit()
+        cursor.close()
+        release_db(conn)
+
+        query.data = f"admin_student_thread_{target_uid}"
+        await admin_callback_handler(update, context)
 
     elif data.startswith("admin_reply_prompt_"):
         await query.answer()
         qid = int(data.replace("admin_reply_prompt_", ""))
         context.user_data["awaiting_admin_reply_qid"] = qid
-        await query.edit_message_text(f"✍️ **SECRET REPLY TO QUERY #{qid}**\n\nPlease reply with your response text for this student:", parse_mode="Markdown")
+        cancel_btn = InlineKeyboardMarkup([[InlineKeyboardButton("❌ Cancel Reply", callback_data="admin_home")]])
+        await query.edit_message_text(f"✍️ **SECRET REPLY TO QUERY #{qid}**\n\nPlease reply with text or **upload an Image/Photo** to send to this student:", reply_markup=cancel_btn, parse_mode="Markdown")
 
     elif data.startswith("admin_direct_msg_"):
         await query.answer()
         target_uid = int(data.replace("admin_direct_msg_", ""))
         context.user_data["awaiting_admin_direct_msg_uid"] = target_uid
+        cancel_btn = InlineKeyboardMarkup([[InlineKeyboardButton("❌ Cancel Message", callback_data="admin_home")]])
         msg = (
             f"✉️ **DIRECT MESSAGE TO STUDENT (`{target_uid}`)**\n"
             f"━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\n"
-            f"Please reply with the message text you want to send directly to this student.\n\n"
-            f"🔒 *This message will be delivered into the student's personal chat.*"
+            f"Please reply with text or **upload an Image/Photo** to send directly to this student.\n\n"
+            f"🔒 *Will be delivered into the student's personal chat.*"
         )
-        await query.edit_message_text(msg, parse_mode="Markdown")
+        await query.edit_message_text(msg, reply_markup=cancel_btn, parse_mode="Markdown")
 
     elif data.startswith("admin_pause_"):
         await query.answer()
@@ -1711,10 +1736,10 @@ async def admin_callback_handler(update: Update, context: ContextTypes.DEFAULT_T
                     parse_mode="Markdown"
                 )
         else:
-            await query.message.reply_text("⚠️ JSON file not found on disk.", parse_mode="Markdown")
+            await query.message.reply_text("⚠️ JSON file not found on disk.")
 
     elif data == "admin_broadcast":
         await query.answer()
         context.user_data["awaiting_broadcast"] = True
         cancel_btn = InlineKeyboardMarkup([[InlineKeyboardButton("❌ Cancel Broadcast", callback_data="admin_home")]])
-        await query.edit_message_text("📢 **GLOBAL BROADCAST CENTER**\n\nSend the message text you wish to broadcast with audio alert to ALL registered users:", reply_markup=cancel_btn, parse_mode="Markdown")
+        await query.edit_message_text("📢 **GLOBAL BROADCAST CENTER**\n\nSend the message text or photo you wish to broadcast to ALL registered users:", reply_markup=cancel_btn, parse_mode="Markdown")

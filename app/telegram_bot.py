@@ -35,7 +35,7 @@ from app.quiz_engine import (
 )
 from app.stats import get_overall_leaderboard, calculate_user_percentile, calculate_user_rank, get_user_performance_summary
 from app.admin import (
-    admin_portal_command, admin_callback_handler,
+    admin_portal_command, admin_callback_handler, get_admin_nav_buttons,
     admin_view_user_payments_callback, admin_grant_plan_menu_callback, admin_execute_grant_callback,
     get_stored_admin_password, update_admin_password_db, ADMIN_AUTH_SESSIONS,
     fast_concurrent_broadcast
@@ -49,7 +49,6 @@ PROFILE_CACHE = {}
 CACHE_TTL = 30 
 
 def log_command_usage(user_id: int, command_name: str):
-    """Logs command execution into command_analytics for administrative telemetry."""
     conn = None
     try:
         ist = pytz.timezone("Asia/Kolkata")
@@ -68,7 +67,6 @@ def log_command_usage(user_id: int, command_name: str):
             release_db(conn)
 
 def log_pdf_generation_event(user_id: int, pdf_type: str):
-    """Logs PDF generation event for administrative tracking."""
     conn = None
     try:
         ist = pytz.timezone("Asia/Kolkata")
@@ -117,7 +115,6 @@ async def fetch_user_profile_fast(user_id):
     return prof
 
 def get_user_active_plans_history(user_id: int):
-    """Retrieves ALL subscribed plan transactions for a user from PostgreSQL."""
     conn = None
     try:
         conn = get_db()
@@ -321,9 +318,8 @@ async def askadmin_command(update: Update, context: ContextTypes.DEFAULT_TYPE):
     msg = (
         "💬 **SECRET COMMUNICATION WITH HIMANSHU SIR** 💬\n"
         "━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\n"
-        "Please reply with your question or query below.\n\n"
-        "🔒 Your message will be sent directly to Himanshu Sir's Admin Dashboard. "
-        "You will receive an instant notification as soon as he replies!"
+        "Please reply with your question or **upload an Image/Photo** below.\n\n"
+        "🔒 Your message will be sent directly to Himanshu Sir's Admin Dashboard."
     )
     if update.callback_query:
         await update.callback_query.answer()
@@ -1143,7 +1139,10 @@ async def button_router(update: Update, context: ContextTypes.DEFAULT_TYPE):
 
 async def handle_text_messages(update: Update, context: ContextTypes.DEFAULT_TYPE):
     user = update.effective_user
-    text = update.message.text.strip()
+    msg_obj = update.message
+    text = msg_obj.text.strip() if msg_obj and msg_obj.text else ""
+    photo = msg_obj.photo[-1] if msg_obj and msg_obj.photo else None
+    caption = msg_obj.caption.strip() if msg_obj and msg_obj.caption else ""
 
     # Password Recovery Flow: Step 1
     if user.id == PRIMARY_ADMIN_ID and context.user_data.get("awaiting_admin_rec_dob"):
@@ -1190,9 +1189,9 @@ async def handle_text_messages(update: Update, context: ContextTypes.DEFAULT_TYP
                 f"━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\n"
                 f"🔑 **New Master Password:** `{text}`\n"
                 f"✨ Admin session authenticated for 30 minutes.",
+                reply_markup=get_admin_nav_buttons(),
                 parse_mode="Markdown"
             )
-            await admin_portal_command(update, context)
         else:
             await update.message.reply_text("⚠️ Error saving new password in database. Please try again.")
         return
@@ -1203,62 +1202,73 @@ async def handle_text_messages(update: Update, context: ContextTypes.DEFAULT_TYP
         stored_pass = get_stored_admin_password()
         if text == stored_pass:
             ADMIN_AUTH_SESSIONS[user.id] = time.time()
-            await update.message.reply_text("🔓 **MASTER ADMIN ACCESS GRANTED!**\nSession active for 30 mins.", parse_mode="Markdown")
+            await update.message.reply_text("🔓 **MASTER ADMIN ACCESS GRANTED!**\nSession active for 30 mins.", reply_markup=get_admin_nav_buttons(), parse_mode="Markdown")
             await admin_portal_command(update, context)
         else:
             reset_btn = InlineKeyboardMarkup([[InlineKeyboardButton("🔑 Forgot Password / Recovery Reset", callback_data="admin_forgot_pass_step1")]])
             await update.message.reply_text("❌ **INCORRECT PASSWORD!** Access denied.\nTap below if you need to recover password:", reply_markup=reset_btn, parse_mode="Markdown")
         return
 
-    # Feature 2: Issue Administrative Warning Message Handler
+    # Issue Administrative Warning Message Handler
     if user.id == PRIMARY_ADMIN_ID and context.user_data.get("awaiting_admin_warning_msg_uid"):
         target_student_id = context.user_data.pop("awaiting_admin_warning_msg_uid")
         warning_notice = (
             f"⚠️ **OFFICIAL ADMINISTRATIVE WARNING** ⚠️\n"
             f"━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\n"
             f"Dear Student, an official warning has been issued to your account by Himanshu Sir.\n\n"
-            f"📝 **Reason / Message:**\n`{text}`\n"
+            f"📝 **Reason / Message:**\n`{text or caption}`\n"
             f"⏰ **Timestamp:** `{datetime.now(pytz.timezone('Asia/Kolkata')).strftime('%d %b %Y, %I:%M %p IST')}`\n"
             f"━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\n"
             f"Please ensure full compliance with platform rules to prevent account suspension."
         )
         try:
             btn = InlineKeyboardMarkup([[InlineKeyboardButton("🚀 Return to Quiz Practice", callback_data="cmd_quiz")]])
-            await context.bot.send_message(chat_id=target_student_id, text=warning_notice, reply_markup=btn, parse_mode="Markdown", disable_notification=False)
-            await update.message.reply_text(f"✅ **Official Administrative Warning issued and delivered to student (`{target_student_id}`)!**", parse_mode="Markdown")
+            if photo:
+                await context.bot.send_photo(chat_id=target_student_id, photo=photo.file_id, caption=warning_notice, reply_markup=btn, parse_mode="Markdown", disable_notification=False)
+            else:
+                await context.bot.send_message(chat_id=target_student_id, text=warning_notice, reply_markup=btn, parse_mode="Markdown", disable_notification=False)
+            
+            await update.message.reply_text(f"✅ **Official Administrative Warning issued to student (`{target_student_id}`)!**", reply_markup=get_admin_nav_buttons(target_student_id), parse_mode="Markdown")
         except Exception as e:
-            await update.message.reply_text(f"❌ **Failed to deliver warning message:** {e}", parse_mode="Markdown")
+            await update.message.reply_text(f"❌ **Failed to deliver warning message:** {e}", reply_markup=get_admin_nav_buttons(target_student_id), parse_mode="Markdown")
         return
 
-    # Direct Message Handler from Admin to Student
+    # Direct Message Handler from Admin to Student (Text + Photo Support)
     if user.id == PRIMARY_ADMIN_ID and context.user_data.get("awaiting_admin_direct_msg_uid"):
         target_student_id = context.user_data.pop("awaiting_admin_direct_msg_uid")
+        outbound_text = text or caption
         outbound_msg = (
             f"📩 **OFFICIAL MESSAGE FROM HIMANSHU SIR / ADMIN**\n"
             f"━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\n"
-            f"{text}\n"
+            f"{outbound_text}\n"
             f"━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\n"
             f"💬 *Reply anytime via /askadmin if you have questions!*"
         )
         try:
             btn = InlineKeyboardMarkup([[InlineKeyboardButton("💬 Reply Back to Admin", callback_data="cmd_askadmin")]])
-            await context.bot.send_message(chat_id=target_student_id, text=outbound_msg, reply_markup=btn, parse_mode="Markdown", disable_notification=False)
-            await update.message.reply_text(f"✅ **Direct Message successfully sent to Student (`{target_student_id}`)!**", parse_mode="Markdown")
+            if photo:
+                await context.bot.send_photo(chat_id=target_student_id, photo=photo.file_id, caption=outbound_msg, reply_markup=btn, parse_mode="Markdown", disable_notification=False)
+            else:
+                await context.bot.send_message(chat_id=target_student_id, text=outbound_msg, reply_markup=btn, parse_mode="Markdown", disable_notification=False)
+            
+            await update.message.reply_text(f"✅ **Direct Message successfully sent to Student (`{target_student_id}`)!**", reply_markup=get_admin_nav_buttons(target_student_id), parse_mode="Markdown")
         except Exception as e:
-            await update.message.reply_text(f"❌ **Failed to deliver direct message:** {e}", parse_mode="Markdown")
+            await update.message.reply_text(f"❌ **Failed to deliver direct message:** {e}", reply_markup=get_admin_nav_buttons(target_student_id), parse_mode="Markdown")
         return
 
-    # Secret Communication Reply Handler for Admin
+    # Secret Communication Reply Handler for Admin (Text + Photo Support)
     if user.id == PRIMARY_ADMIN_ID and context.user_data.get("awaiting_admin_reply_qid"):
         qid = context.user_data.pop("awaiting_admin_reply_qid")
         ist = pytz.timezone("Asia/Kolkata")
         now_str = datetime.now(ist).strftime("%Y-%m-%d %I:%M %p IST")
 
+        reply_content = text or caption or "[Photo Attachment]"
+
         conn = get_db()
         cursor = conn.cursor(cursor_factory=RealDictCursor)
         cursor.execute(
             "UPDATE student_queries SET admin_reply = %s, status = 'RESOLVED', replied_at = %s WHERE id = %s RETURNING user_id, query_text",
-            (text, now_str, qid)
+            (reply_content, now_str, qid)
         )
         row = cursor.fetchone()
         conn.commit()
@@ -1270,20 +1280,24 @@ async def handle_text_messages(update: Update, context: ContextTypes.DEFAULT_TYP
             user_msg = (
                 f"💬 **SECRET RESPONSE FROM HIMANSHU SIR!** 💬\n"
                 f"━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\n"
-                f"❓ **Your Question:**\n*\"{row['query_text']}\"*\n\n"
-                f"👨‍🏫 **Himanshu Sir's Reply:**\n`{text}`\n"
+                f"❓ **Your Question:**\n*\"{row['query_text'] or 'Image Query'}\"*\n\n"
+                f"👨‍🏫 **Himanshu Sir's Reply:**\n`{reply_content}`\n"
                 f"━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\n"
                 f"🔒 *Confidential communication between you and Admin.*"
             )
             try:
                 btn = InlineKeyboardMarkup([[InlineKeyboardButton("💬 Reply Back to Admin", callback_data="cmd_askadmin")]])
-                await context.bot.send_message(chat_id=student_uid, text=user_msg, reply_markup=btn, parse_mode="Markdown", disable_notification=False)
-                await update.message.reply_text(f"✅ **Reply sent secretly to student `{student_uid}`!**", parse_mode="Markdown")
+                if photo:
+                    await context.bot.send_photo(chat_id=student_uid, photo=photo.file_id, caption=user_msg, reply_markup=btn, parse_mode="Markdown", disable_notification=False)
+                else:
+                    await context.bot.send_message(chat_id=student_uid, text=user_msg, reply_markup=btn, parse_mode="Markdown", disable_notification=False)
+                
+                await update.message.reply_text(f"✅ **Reply sent secretly to query #{qid} (Student ID `{student_uid}`)!**", reply_markup=get_admin_nav_buttons(student_uid), parse_mode="Markdown")
             except Exception as e:
-                await update.message.reply_text(f"⚠️ Reply saved, but failed sending message to user: {e}")
+                await update.message.reply_text(f"⚠️ Reply saved, but failed sending message to user: {e}", reply_markup=get_admin_nav_buttons(student_uid), parse_mode="Markdown")
         return
 
-    # Student Support Inquiry Submission Handler
+    # Student Support Inquiry Submission Handler (Text + Photo Upload Support)
     if context.user_data.get("awaiting_user_query"):
         context.user_data["awaiting_user_query"] = False
         ist = pytz.timezone("Asia/Kolkata")
@@ -1291,11 +1305,14 @@ async def handle_text_messages(update: Update, context: ContextTypes.DEFAULT_TYP
         profile = get_user_profile(user.id) or {}
         name = profile.get("full_name", user.full_name)
 
+        query_text_val = text or caption or "Attached Photo Query"
+        photo_fid = photo.file_id if photo else None
+
         conn = get_db()
         cursor = conn.cursor()
         cursor.execute(
-            "INSERT INTO student_queries (user_id, student_name, query_text, created_at) VALUES (%s, %s, %s, %s)",
-            (user.id, name, text, now_str)
+            "INSERT INTO student_queries (user_id, student_name, query_text, photo_file_id, created_at) VALUES (%s, %s, %s, %s, %s)",
+            (user.id, name, query_text_val, photo_fid, now_str)
         )
         conn.commit()
         cursor.close()
@@ -1305,22 +1322,26 @@ async def handle_text_messages(update: Update, context: ContextTypes.DEFAULT_TYP
             admin_notice = (
                 f"📩 **NEW STUDENT ENQUIRY RECEIVED!**\n"
                 f"👤 **Student:** {name} (`{user.id}`)\n"
-                f"❓ **Query:** *\"{text}\"*\n\n"
-                f"Type /admin to inspect and reply."
+                f"❓ **Query:** *\"{query_text_val}\"*\n\n"
+                f"Type /admin or tap Student Support Threads to inspect and reply."
             )
-            await context.bot.send_message(chat_id=PRIMARY_ADMIN_ID, text=admin_notice, parse_mode="Markdown", disable_notification=False)
+            btn = InlineKeyboardMarkup([[InlineKeyboardButton("📩 Inspect Support Threads", callback_data="admin_view_student_threads_0")]])
+            if photo_fid:
+                await context.bot.send_photo(chat_id=PRIMARY_ADMIN_ID, photo=photo_fid, caption=admin_notice, reply_markup=btn, parse_mode="Markdown", disable_notification=False)
+            else:
+                await context.bot.send_message(chat_id=PRIMARY_ADMIN_ID, text=admin_notice, reply_markup=btn, parse_mode="Markdown", disable_notification=False)
         except Exception:
             pass
 
         await update.message.reply_text(
             "✅ **QUERY SENT TO HIMANSHU SIR!**\n\n"
-            "Himanshu Sir has received your message in his Admin Dashboard and will reply to you shortly.",
+            "Himanshu Sir has received your message/photo in his Admin Dashboard and will reply to you shortly.",
             reply_markup=ReplyKeyboardRemove(),
             parse_mode="Markdown"
         )
         return
 
-    # Feature 4: Secret PIN Unlocking Interactive Menu
+    # Secret PIN Unlocking Interactive Menu
     if context.user_data.get("is_account_locked"):
         profile = await fetch_user_profile_fast(user.id)
         if profile and profile.get("pin") == text:
@@ -1354,7 +1375,7 @@ async def handle_text_messages(update: Update, context: ContextTypes.DEFAULT_TYP
     if user.id == PRIMARY_ADMIN_ID and context.user_data.get("awaiting_admin_editname"):
         target_uid = context.user_data.pop("awaiting_admin_editname")
         asyncio.create_task(asyncio.to_thread(admin_update_user_name, target_uid, text))
-        await update.message.reply_text(f"✅ **Student name updated to:** `{text}` for user `{target_uid}`!", parse_mode="Markdown")
+        await update.message.reply_text(f"✅ **Student name updated to:** `{text}` for user `{target_uid}`!", reply_markup=get_admin_nav_buttons(target_uid), parse_mode="Markdown")
         return
 
     if user.id == PRIMARY_ADMIN_ID and context.user_data.get("awaiting_admin_search"):
@@ -1401,7 +1422,7 @@ async def handle_text_messages(update: Update, context: ContextTypes.DEFAULT_TYP
         b_msg = (
             f"📢 **ANNOUNCEMENT FROM HIMANSHU SIR** 📢\n"
             f"━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\n\n"
-            f"{text}\n\n"
+            f"{text or caption}\n\n"
             f"━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\n"
             f"🚀 Tap **/quiz** to launch your daily session now!"
         )
@@ -1492,7 +1513,7 @@ def build_application() -> Application:
     app.add_handler(CallbackQueryHandler(admin_callback_handler, pattern="^(admin_|audit_|genpdf_)"))
     app.add_handler(CallbackQueryHandler(button_router, pattern="^cmd_|^fb_|^trigger_start|^buy_plan_"))
 
-    app.add_handler(MessageHandler(filters.TEXT & ~filters.COMMAND, handle_text_messages))
+    app.add_handler(MessageHandler((filters.TEXT | filters.PHOTO) & ~filters.COMMAND, handle_text_messages))
     app.add_handler(PollAnswerHandler(handle_poll_answer))
     app.add_error_handler(global_error_handler)
 

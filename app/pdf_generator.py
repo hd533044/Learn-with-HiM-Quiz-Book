@@ -62,7 +62,7 @@ def clean_str(text) -> str:
 def generate_html_report(user_profile: dict, attempts: list, saved_qs: list, rank: str, percentile: float, filter_mode: str) -> str:
     """
     Builds a pixel-perfect HTML document with Google Noto Sans Devanagari font CSS, clickable logos, 
-    non-overlapping bar graphs with numerical values on bars, and exact hyperlinked iconized footer links on every page.
+    enhanced analytics cover page, non-overlapping bar graphs, and exact styled icon footers across every page.
     """
     now_date = datetime.now()
     one_month_ago = now_date - timedelta(days=30)
@@ -137,7 +137,6 @@ def generate_html_report(user_profile: dict, attempts: list, saved_qs: list, ran
     acc_val = max(0.0, min(100.0, acc_val))
     dash_val_acc = (acc_val / 100.0) * 251.2
 
-    # Bar graph height calculations (max height 75px to leave clean space for text)
     max_qs = max(total_qs, total_correct, total_wrong, 1)
     bar_h_q = int((total_qs / max_qs) * 75)
     bar_h_c = int((total_correct / max_qs) * 75)
@@ -150,7 +149,7 @@ def generate_html_report(user_profile: dict, attempts: list, saved_qs: list, ran
         "<meta charset='utf-8'/>",
         "<style>",
         "@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+Devanagari:wght@400;600;700&display=swap');",
-        # Middle-aligned footer with styled inline icons on EVERY page matching user screenshot 2
+        # Exact unique hyperlinked iconized footer links middle-aligned on EVERY page using @bottom-center
         "@page { size: letter; margin: 20mm 15mm 22mm 15mm; @bottom-right { content: 'Page ' counter(page); font-size: 8.5px; font-family: 'Times New Roman', serif; color: #64748B; } @bottom-left { content: ''; } @bottom-center { content: '📷 Insta: @Learnwithhimm  |  📺 YT: @LearnwithHiM  |  ✈️ TG: @Learnwithhim  |  💬 TG Chat: @Learnwithhimm  |  ✉️ Direct DM'; font-size: 8px; font-family: 'Times New Roman', serif; color: #0284C7; font-weight: bold; } }",
         "body { font-family: 'Noto Sans Devanagari', 'Times New Roman', Helvetica, Arial, sans-serif; margin: 0; padding: 0; color: #334155; font-size: 11.5px; line-height: 1.45; direction: ltr; background-color: #ffffff; }",
         "a { color: inherit; text-decoration: none; }",
@@ -208,7 +207,7 @@ def generate_html_report(user_profile: dict, attempts: list, saved_qs: list, ran
         f"<tr><td class='prof-label' style='padding: 7px;'>Active Plan:</td><td style='padding: 7px;'>{user_plan}</td><td class='prof-label' style='padding: 7px;'>Overall Progress:</td><td style='padding: 7px;'>{user_progress}</td></tr>",
         "</table>",
 
-        # Enhanced Analytics Section with Non-Overlapping Bar Graph and Numerical Values on Bars
+        # Analytics Section
         "<h3 style='font-size: 13px; margin-top: 18px;'>📈 PERFORMANCE & ANALYTICS OVERVIEW</h3>",
         "<table class='analytics-container'>",
         "<tr>",
@@ -234,7 +233,7 @@ def generate_html_report(user_profile: dict, attempts: list, saved_qs: list, ran
         f"<div style='font-size: 10.5px; color: #64748B; margin-top: 6px;'>Standing ahead of {percentile}% of aspirants with {acc}% accuracy</div>"
         f"</td>",
 
-        # Box 2: Bar Graph with Numerical Values directly on top of bars & proper spacing
+        # Box 2: Bar Graph with Numerical Values on Bars
         f"<td class='analytics-box' style='width: 52%;'>"
         f"<div style='font-weight: bold; font-size: 12px; color: #1E3A8A; margin-bottom: 8px;'>Question Attempt Breakdown</div>"
         f"<svg width='220' height='130' viewBox='0 0 220 130'>"

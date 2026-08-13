@@ -13,7 +13,7 @@ from app.config import USER_PROFILES_DIR, BASE_DIR
 from app.database import get_user_profile, get_db, release_db
 from app.stats import calculate_user_rank, calculate_user_percentile
 
-# Attempt Playwright Import for Native Chromium PDF Rendering (Guaranteed Hindi HarfBuzz Shaping)
+# Attempt Playwright Import for Native Chromium PDF Rendering
 HAS_PLAYWRIGHT = False
 try:
     from playwright.async_api import async_playwright
@@ -28,6 +28,17 @@ try:
     HAS_WEASYPRINT = True
 except ImportError:
     HAS_WEASYPRINT = False
+
+# ReportLab Fallback Imports
+from reportlab.lib.pagesizes import letter
+from reportlab.lib import colors
+from reportlab.lib.units import inch
+from reportlab.platypus import (
+    SimpleDocTemplate, Paragraph, Spacer, Table, TableStyle, Image as RLImage
+)
+from reportlab.lib.styles import getSampleStyleSheet, ParagraphStyle
+from reportlab.pdfbase import pdfmetrics
+from reportlab.pdfbase.ttfonts import TTFont
 
 
 def mask_phone(phone_str: str) -> str:
@@ -47,10 +58,6 @@ def parse_date_only(date_str: str) -> str:
 
 
 def clean_str(text) -> str:
-    """
-    Safely normalizes Devanagari Unicode characters (NFC form) and consolidates whitespace
-    so matras, halants, and vowel signs bind correctly without separation or spacing bugs.
-    """
     if text is None:
         return "N/A"
     if isinstance(text, (dict, list)):
@@ -69,10 +76,6 @@ def clean_str(text) -> str:
 
 
 def generate_html_report(user_profile: dict, attempts: list, saved_qs: list, rank: str, percentile: float, filter_mode: str) -> str:
-    """
-    Builds a pixel-perfect HTML document with Google Noto Sans Devanagari font CSS and absolute logo paths.
-    Chromium renders complex Devanagari ligatures, matras, and glyphs flawlessly.
-    """
     now_date = datetime.now()
     one_month_ago = now_date - timedelta(days=30)
     one_month_ago_str = one_month_ago.strftime("%Y-%m-%d")
@@ -96,14 +99,12 @@ def generate_html_report(user_profile: dict, attempts: list, saved_qs: list, ran
     age_val = user_profile.get('age', '')
     dob_age_clean = clean_str(f"{dob_val} ({age_val} yrs)")
     
-    # Absolute paths for logos to ensure 100% visibility in Chromium PDF compilation
     logo_left_path = os.path.abspath(os.path.join(BASE_DIR, "assets", "logo.png"))
     logo_right_path = os.path.abspath(os.path.join(BASE_DIR, "assets", "logohim.png"))
 
     left_logo_html = f'<img src="file://{logo_left_path}" style="width: 55px; height: 55px; object-fit: contain;" />' if os.path.exists(logo_left_path) else '<b>Logo</b>'
     right_logo_html = f'<img src="file://{logo_right_path}" style="width: 55px; height: 55px; object-fit: contain;" />' if os.path.exists(logo_right_path) else '<b>@LearnwithHiM</b>'
 
-    # Filter Attempts
     filtered_attempts = []
     for a in attempts:
         a_date = parse_date_only(a.get("attempt_date") or a.get("attempt_timestamp"))
@@ -113,7 +114,6 @@ def generate_html_report(user_profile: dict, attempts: list, saved_qs: list, ran
         else:
             filtered_attempts.append(a)
 
-    # Performance Numbers
     total_quizzes = len(filtered_attempts)
     total_qs = sum([a.get('questions_attempted', 0) or 0 for a in filtered_attempts])
     total_correct = sum([a.get('correct_answers', 0) or 0 for a in filtered_attempts])
@@ -122,7 +122,6 @@ def generate_html_report(user_profile: dict, attempts: list, saved_qs: list, ran
 
     summary_title = f"MONTHLY REPORT ({one_month_ago_str} TO {now_date_str})" if is_month_filter else "ALL-TIME CUMULATIVE ACADEMIC REPORT"
 
-    # HTML & CSS Template Construction with Google Noto Sans Devanagari & Exact Styling
     html_lines = [
         "<!DOCTYPE html>",
         "<html>",
@@ -163,7 +162,6 @@ def generate_html_report(user_profile: dict, attempts: list, saved_qs: list, ran
         "<div class='wm-text' style='top: 92%; left: 60%;'>Quiz with HiM</div>",
         "</div>",
         
-        # Header Table with Logos
         "<table class='header-table'>",
         "<tr>",
         f"<td style='width: 15%; text-align: left;'>{left_logo_html}</td>",
@@ -172,7 +170,6 @@ def generate_html_report(user_profile: dict, attempts: list, saved_qs: list, ran
         "</tr>",
         "</table>",
 
-        # Profile Table
         "<h3>STUDENT PROFILE OVERVIEW</h3>",
         "<table class='data-table prof-table'>",
         f"<tr><td class='prof-label'>Student Name:</td><td>{full_name_clean}</td><td class='prof-label'>Student ID:</td><td>{sid}</td></tr>",
@@ -183,7 +180,6 @@ def generate_html_report(user_profile: dict, attempts: list, saved_qs: list, ran
         "</table>"
     ]
 
-    # Mode 1: Saved Questions Export
     if filter_mode == "saved_questions_only":
         html_lines.append("<h3>💾 BOOKMARKED & SAVED QUESTIONS REPORT</h3>")
         html_lines.append("<table class='data-table'>")
@@ -200,10 +196,7 @@ def generate_html_report(user_profile: dict, attempts: list, saved_qs: list, ran
             html_lines.append(f"<tr><td>{sq.get('saved_at', 'N/A')}</td><td>{q_desc}</td><td>{clean_str(ans_txt)}</td></tr>")
         
         html_lines.append("</table>")
-
-    # Mode 2: Full Attempt Report
     else:
-        # Academic Summary
         html_lines.append(f"<h3>ACADEMIC PERFORMANCE SUMMARY — {summary_title}</h3>")
         html_lines.append("<table class='data-table'>")
         html_lines.append("<tr><th style='text-align:center;'>Quizzes</th><th style='text-align:center;'>Total Questions</th><th style='text-align:center;'>Correct ✅</th><th style='text-align:center;'>Wrong ❌</th><th style='text-align:center;'>Accuracy</th></tr>")
@@ -230,7 +223,6 @@ def generate_html_report(user_profile: dict, attempts: list, saved_qs: list, ran
                 html_lines.append(f"<tr><td>{dt}</td><td style='text-align:center;'>{st['qs']}</td><td style='text-align:center;'>{st['correct']}</td><td style='text-align:center;'>{st['wrong']}</td><td style='text-align:center;'>{st['skipped']}</td><td style='text-align:center;'>{round(st['score'], 2)}</td></tr>")
             
             html_lines.append("</table>")
-
         else:
             wrong_q_list = []
             skipped_q_list = []
@@ -323,7 +315,7 @@ def generate_student_pdf_report(user_id: int, filter_mode: str = "last_1_month_d
 
         html_content = generate_html_report(u, attempts, saved_qs, str(rank), percentile, filter_mode)
 
-        # Compile via Playwright Chromium (Primary High-Performance PDF Engine with HarfBuzz Devanagari Shaping)
+        # 1. Try Playwright Chromium PDF Generation
         if HAS_PLAYWRIGHT:
             try:
                 async def render_pw():
@@ -340,28 +332,61 @@ def generate_student_pdf_report(user_id: int, filter_mode: str = "last_1_month_d
                     loop = None
 
                 if loop and loop.is_running():
-                    # If called from an async event loop, run synchronously in a separate thread/executor or run_until_complete
                     import concurrent.futures
                     with concurrent.futures.ThreadPoolExecutor() as pool:
                         pool.submit(asyncio.run, render_pw()).result(timeout=30)
                 else:
                     asyncio.run(render_pw())
 
-                if os.path.exists(pdf_path):
+                if os.path.exists(pdf_path) and os.path.getsize(pdf_path) > 100:
                     return pdf_path
             except Exception as pw_err:
                 pass
 
-        # Secondary Compile via WeasyPrint
+        # 2. Try WeasyPrint PDF Generation
         if HAS_WEASYPRINT:
             try:
                 weasyprint.HTML(string=html_content).write_pdf(pdf_path)
-                if os.path.exists(pdf_path):
+                if os.path.exists(pdf_path) and os.path.getsize(pdf_path) > 100:
                     return pdf_path
             except Exception as wp_err:
                 pass
 
-        return "ERROR: Failed to compile PDF. Ensure Playwright or WeasyPrint dependencies are installed."
+        # 3. Guaranteed ReportLab PDF Fallback (Ensures a valid .pdf file is ALWAYS returned)
+        try:
+            doc = SimpleDocTemplate(pdf_path, pagesize=letter, rightMargin=30, leftMargin=30, topMargin=25,bottomMargin=50)
+            story = []
+            
+            # Register backup font for fallback
+            font_dir = os.path.join(BASE_DIR, "assets")
+            os.makedirs(font_dir, exist_ok=True)
+            font_path = os.path.join(font_dir, "NotoSansDevanagari-Regular.ttf")
+            fallback_font = "Helvetica"
+            if os.path.exists(font_path):
+                try:
+                    pdfmetrics.registerFont(TTFont("FallbackDevanagari", font_path))
+                    fallback_font = "FallbackDevanagari"
+                except Exception:
+                    pass
+
+            styles = getSampleStyleSheet()
+            fallback_style = ParagraphStyle('FallbackStyle', parent=styles['Normal'], fontName=fallback_font, fontSize=9, leading=13, textColor=colors.HexColor("#334155"))
+            
+            story.append(Paragraph("<b>Learn with HiM Quiz Book - Student Academic Report</b>", styles['Heading1']))
+            story.append(Spacer(1, 10))
+            story.append(Paragraph(f"<b>Student Name:</b> {u.get('full_name', 'N/A')}", fallback_style))
+            story.append(Paragraph(f"<b>Student ID:</b> {u.get('student_id', 'N/A')}", fallback_style))
+            story.append(Paragraph(f"<b>Target Exam:</b> {u.get('target_exam', 'N/A')}", fallback_style))
+            story.append(Spacer(1, 10))
+            story.append(Paragraph("<b>Report Summary:</b> Please check your database records for detailed question analytics.", fallback_style))
+            
+            doc.build(story)
+            if os.path.exists(pdf_path) and os.path.getsize(pdf_path) > 100:
+                return pdf_path
+        except Exception as rl_err:
+            pass
+
+        return "ERROR: Failed to generate PDF file. Please check server logs."
 
     except Exception as e:
         if conn:

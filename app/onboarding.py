@@ -65,7 +65,6 @@ def build_year_keyboard(prefix="doby_"):
 
 def build_month_keyboard(prefix="dobm_"):
     months = ["Jan ❄️", "Feb 🍫", "Mar 🌸", "Apr 🌧", "May ☀️", "Jun 🌿", "Jul ☔", "Aug 🌴", "Sep 🍂", "Oct 🍁", "Nov 🌾", "Dec ⛄"]
-    raw_months = ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"]
     keyboard = []
     for i in range(0, len(months), 3):
         row = [InlineKeyboardButton(months[idx], callback_data=f"{prefix}{idx+1:02d}") for idx in range(i, min(i+3, len(months)))]
@@ -409,7 +408,6 @@ async def sec_ans_step(update: Update, context: ContextTypes.DEFAULT_TYPE):
         referred_by=context.user_data.get("referred_by")
     )
 
-    # AUTOMATED WELCOME & DEMO PLAN ACTIVATION NOTICE
     demo_msg = (
         f"🎉 **STUDENT REGISTRATION COMPLETE!** 🎉\n"
         f"━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\n"
@@ -689,6 +687,7 @@ async def rec_dob_day_callback(update: Update, context: ContextTypes.DEFAULT_TYP
     )
     return RESET_PIN
 
+# Feature 4: Interactive Navigation Menu on Account PIN Unlock
 async def reset_pin_step(update: Update, context: ContextTypes.DEFAULT_TYPE):
     new_pin = update.message.text.strip()
     if not new_pin.isdigit() or len(new_pin) != 4:
@@ -703,17 +702,19 @@ async def reset_pin_step(update: Update, context: ContextTypes.DEFAULT_TYPE):
     target_uid = u['user_id']
     update_user_pin(target_uid, new_pin)
 
+    unlocked_menu_btn = InlineKeyboardMarkup([
+        [InlineKeyboardButton("🚀 Launch Quiz Now", callback_data="cmd_quiz"), InlineKeyboardButton("👤 My Profile", callback_data="cmd_profile")],
+        [InlineKeyboardButton("💳 My Plan", callback_data="cmd_myplan"), InlineKeyboardButton("❓ Help & Support", callback_data="cmd_help")]
+    ])
+
     await update.message.reply_text(
-        f"🎉 **PIN RESET SUCCESSFUL!** 🎉\n"
+        f"🔓 **ACCOUNT UNLOCKED SUCCESSFULLY!** 🔓\n"
         f"━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\n"
-        f"👤 **Student Name:** {u['full_name']}\n"
+        f"🎉 **Welcome back, {u['full_name']}!** Your identity has been verified.\n"
         f"🪪 **Student ID:** `{u['student_id']}`\n"
-        f"🔑 **Your New Secret PIN:** `{new_pin}`\n\n"
-        f"✅ Account fully active! Scores, bookmarks, and quota remain 100% intact.\n\n"
-        f"🚀 Tap **Launch Quiz** below or type /quiz to start practicing!",
-        reply_markup=InlineKeyboardMarkup([
-            [InlineKeyboardButton("🚀 Launch Quiz", callback_data="cmd_quiz"), InlineKeyboardButton("👤 Profile Card", callback_data="cmd_profile")]
-        ]),
+        f"🔑 **New Secret PIN:** `{new_pin}`\n\n"
+        f"✨ Select an option below to continue practicing on **Learn with HiM Quiz Book**:",
+        reply_markup=unlocked_menu_btn,
         parse_mode="Markdown"
     )
     return ConversationHandler.END

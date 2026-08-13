@@ -14,6 +14,7 @@ from reportlab.platypus import (
 from reportlab.lib.styles import getSampleStyleSheet, ParagraphStyle
 from app.config import USER_PROFILES_DIR, BASE_DIR
 from app.database import get_user_profile, get_db, release_db
+from app.stats import calculate_user_rank, calculate_user_percentile
 
 
 def draw_pdf_footer(canvas, doc):
@@ -96,6 +97,10 @@ def generate_student_pdf_report(user_id: int, filter_mode: str = "last_1_month_d
         now_date_str = now_date.strftime("%Y-%m-%d")
 
         is_month_filter = "last_1_month" in filter_mode
+
+        # Calculate student Rank & Percentile for PDF report (Feature 1)
+        rank = calculate_user_rank(user_id)
+        percentile = calculate_user_percentile(user_id)
 
         # -------------------------------------------------------------
         # HANDLING SAVED QUESTIONS EXPORT
@@ -212,7 +217,7 @@ def generate_student_pdf_report(user_id: int, filter_mode: str = "last_1_month_d
                 [Paragraph("Target Exam:", body_style_bold), Paragraph(clean_str(u.get('target_exam')), body_style), Paragraph("Location:", body_style_bold), Paragraph(clean_str(f"{u.get('state')}, {u.get('country')}"), body_style)],
                 [Paragraph("DOB / Age:", body_style_bold), Paragraph(clean_str(f"{u.get('dob')} ({u.get('age')} yrs)"), body_style), Paragraph("Phone (Masked):", body_style_bold), Paragraph(masked_phone, body_style)],
                 [Paragraph("Account Status:", body_style_bold), Paragraph("ACTIVE 🟢", body_style), Paragraph("Secret PIN:", body_style_bold), Paragraph(masked_pin, body_style)],
-                [Paragraph("Registered At:", body_style_bold), Paragraph(clean_str(u.get('created_at')), body_style), Paragraph("Last Active:", body_style_bold), Paragraph(clean_str(u.get('last_active')), body_style)]
+                [Paragraph("Global Rank:", body_style_bold), Paragraph(clean_str(rank), body_style), Paragraph("Overall Percentile:", body_style_bold), Paragraph(f"{percentile}%", body_style)]
             ]
 
             prof_table = Table(profile_data, colWidths=[1.3*inch, 2.2*inch, 1.3*inch, 2.2*inch])
@@ -277,7 +282,6 @@ def generate_student_pdf_report(user_id: int, filter_mode: str = "last_1_month_d
             elif hasattr(r, '_asdict'):
                 all_attempts.append(r._asdict())
             else:
-                # Safe conversion if database returns raw tuples
                 all_attempts.append({
                     "id": r[0],
                     "user_id": r[1],
@@ -405,7 +409,7 @@ def generate_student_pdf_report(user_id: int, filter_mode: str = "last_1_month_d
             [Paragraph("Target Exam:", body_style_bold), Paragraph(clean_str(u.get('target_exam')), body_style), Paragraph("Location:", body_style_bold), Paragraph(clean_str(f"{u.get('state')}, {u.get('country')}"), body_style)],
             [Paragraph("DOB / Age:", body_style_bold), Paragraph(clean_str(f"{u.get('dob')} ({u.get('age')} yrs)"), body_style), Paragraph("Phone (Masked):", body_style_bold), Paragraph(masked_phone, body_style)],
             [Paragraph("Account Status:", body_style_bold), Paragraph("ACTIVE 🟢", body_style), Paragraph("Secret PIN:", body_style_bold), Paragraph(masked_pin, body_style)],
-            [Paragraph("Registered At:", body_style_bold), Paragraph(clean_str(u.get('created_at')), body_style), Paragraph("Last Active:", body_style_bold), Paragraph(clean_str(u.get('last_active')), body_style)]
+            [Paragraph("Global Rank:", body_style_bold), Paragraph(clean_str(rank), body_style), Paragraph("Overall Percentile:", body_style_bold), Paragraph(f"{percentile}%", body_style)]
         ]
 
         prof_table = Table(profile_data, colWidths=[1.3*inch, 2.2*inch, 1.3*inch, 2.2*inch])

@@ -102,7 +102,7 @@ def is_admin_authenticated(user_id: int) -> bool:
     if user_id != PRIMARY_ADMIN_ID:
         return False
     auth_time = ADMIN_AUTH_SESSIONS.get(user_id, 0)
-    return (time.time() - auth_time) < 1800  # 30 minutes session duration
+    return (time.time() - auth_time) < 1800  # 30 minutes session duration (Feature 6)
 
 
 def get_unique_students_with_queries_count() -> int:
@@ -289,19 +289,24 @@ async def admin_portal_command(update: Update, context: ContextTypes.DEFAULT_TYP
             await update.message.reply_text(reject_msg)
         return
 
+    # Feature 6: Inline Password Unlock Prompt on 30-min Auto-Lock
     if not is_admin_authenticated(user_id):
         context.user_data["awaiting_admin_password"] = True
         msg = (
-            "🔒 **MASTER ADMIN CONTROL PANEL — SECURITY LOCK** 🔒\n"
+            "🔒 **HIMANSHU'S ADMIN PORTAL HAS BEEN LOCKED ENTER PASSWORD TO UNLOCK** 🔒\n"
             "━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\n"
-            "🔑 Please reply with the Master Admin Password to access the portal:"
+            "Your session timed out after 30 minutes of inactivity.\n"
+            "🔑 Please reply with the Master Admin Password or tap below to enter password:"
         )
-        reset_btn = InlineKeyboardMarkup([[InlineKeyboardButton("🔑 Forgot Password / Recovery Reset", callback_data="admin_forgot_pass_step1")]])
+        unlock_btn = InlineKeyboardMarkup([
+            [InlineKeyboardButton("🔑 Enter Password / Unlock Portal", callback_data="admin_unlock_prompt")],
+            [InlineKeyboardButton("🔑 Forgot Password / Recovery Reset", callback_data="admin_forgot_pass_step1")]
+        ])
         if update.callback_query:
-            await update.callback_query.answer("🔒 Password Required!", show_alert=True)
-            await update.callback_query.message.reply_text(msg, reply_markup=reset_btn, parse_mode="Markdown")
+            await update.callback_query.answer("🔒 Admin Portal Locked!", show_alert=True)
+            await update.callback_query.message.reply_text(msg, reply_markup=unlock_btn, parse_mode="Markdown")
         else:
-            await update.message.reply_text(msg, reply_markup=reset_btn, parse_mode="Markdown")
+            await update.message.reply_text(msg, reply_markup=unlock_btn, parse_mode="Markdown")
         return
 
     users = get_all_users()
@@ -314,6 +319,7 @@ async def admin_portal_command(update: Update, context: ContextTypes.DEFAULT_TYP
     m_status = "🟢 Active (Online)" if now_ts >= m_until else "🔴 PAUSED (Maintenance Mode)"
 
     keyboard = [
+        [InlineKeyboardButton("📊 Quick Overview Pop-Up", callback_data="admin_popup_overview")],
         [InlineKeyboardButton(f"📩 Student Support Threads ({pending_students_count} Students)", callback_data="admin_view_student_threads_0")],
         [
             InlineKeyboardButton(f"💳 Paid VIP ({len(paid_users)})", callback_data="admin_paid_users_page_0"),
@@ -528,6 +534,13 @@ async def admin_callback_handler(update: Update, context: ContextTypes.DEFAULT_T
     user_id = query.from_user.id
     data = query.data
 
+    # Feature 6: Password unlock prompt callback
+    if data == "admin_unlock_prompt":
+        await query.answer()
+        context.user_data["awaiting_admin_password"] = True
+        await query.edit_message_text("🔑 **ENTER ADMIN PASSWORD**\n\nPlease reply with your Master Admin Password to unlock the dashboard:", parse_mode="Markdown")
+        return
+
     if data == "admin_forgot_pass_step1":
         await query.answer()
         context.user_data["awaiting_admin_rec_dob"] = True
@@ -544,6 +557,45 @@ async def admin_callback_handler(update: Update, context: ContextTypes.DEFAULT_T
         return
 
     users = get_all_users()
+
+    # Feature 5: Admin Live Analytics Modal Pop-Up
+    if data == "admin_popup_overview":
+        conn = get_db()
+        cursor = conn.cursor()
+
+        cursor.execute("SELECT COUNT(*) FROM users")
+        reg_count = cursor.fetchone()[0]
+
+        cursor.execute("SELECT COUNT(*) FROM payment_transactions WHERE plan_key != 'FREE_DEMO'")
+        tx_count = cursor.fetchone()[0]
+
+        cursor.execute("SELECT COUNT(*) FROM quiz_attempts")
+        attempt_count = cursor.fetchone()[0]
+
+        cursor.execute("SELECT COUNT(*) FROM student_feedback")
+        review_count = cursor.fetchone()[0]
+
+        cursor.execute("SELECT COUNT(*) FROM student_queries")
+        query_count = cursor.fetchone()[0]
+
+        cursor.execute("SELECT COUNT(*) FROM pdf_generation_logs")
+        pdf_count = cursor.fetchone()[0]
+
+        cursor.close()
+        release_db(conn)
+
+        popup_text = (
+            f"📊 ADMIN LIVE OVERVIEW SUMMARY 📊\n"
+            f"━━━━━━━━━━━━━━━━━━━━━━━━━━\n"
+            f"• Registrations: {reg_count}\n"
+            f"• Plan Purchases: {tx_count}\n"
+            f"• Quiz Attempts: {attempt_count}\n"
+            f"• Student Reviews: {review_count}\n"
+            f"• Support Queries: {query_count}\n"
+            f"• Generated PDFs: {pdf_count}"
+        )
+        await query.answer(text=popup_text, show_alert=True)
+        return
 
     if data == "admin_live_users":
         await query.answer()
@@ -878,6 +930,19 @@ async def admin_callback_handler(update: Update, context: ContextTypes.DEFAULT_T
             reply_markup=InlineKeyboardMarkup([[InlineKeyboardButton("🔙 Back to Dashboard", callback_data=f"admin_inspect_u_{target_uid}")]])
         )
 
+    # Feature 2: Issue Warning Prompt to User
+    elif data.startswith("admin_issue_warning_prompt_"):
+        await query.answer()
+        target_uid = int(data.replace("admin_issue_warning_prompt_", ""))
+        context.user_data["awaiting_admin_warning_msg_uid"] = target_uid
+        msg = (
+            f"⚠️ **ISSUE WARNING TO STUDENT (`{target_uid}`)** ⚠️\n"
+            f"━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\n"
+            f"Please reply with the exact warning reason/message to send to this student.\n\n"
+            f"🔔 *This official warning notice will be delivered instantly to the user's chat.*"
+        )
+        await query.edit_message_text(msg, parse_mode="Markdown")
+
     elif data == "admin_export_zip":
         await query.answer()
         await query.edit_message_text("⏳ **Generating Bulk Zip Package...**\nZipping all student JSON ledgers...", parse_mode="Markdown")
@@ -1143,7 +1208,7 @@ async def admin_callback_handler(update: Update, context: ContextTypes.DEFAULT_T
         paid_text = f"💳 PAID VIP ({paid_bal} Qs/Day)" if is_paid else "🆓 FREE DEMO / TIER"
 
         keyboard = [
-            [InlineKeyboardButton("📩 Direct Message Student", callback_data=f"admin_direct_msg_{target_uid}")],
+            [InlineKeyboardButton("📩 Direct Message Student", callback_data=f"admin_direct_msg_{target_uid}"), InlineKeyboardButton("⚠️ Issue Warning", callback_data=f"admin_issue_warning_prompt_{target_uid}")],
             [InlineKeyboardButton("💳 View Recent Payments", callback_data=f"admin_view_payments_{target_uid}"), InlineKeyboardButton("👑 Grant Paid Plan", callback_data=f"admin_grant_menu_{target_uid}")],
             [InlineKeyboardButton("📋 Personal Details", callback_data=f"audit_personal_{target_uid}"), InlineKeyboardButton("🔑 PIN & Security Questions", callback_data=f"audit_pinsec_{target_uid}")],
             [InlineKeyboardButton("⏱ Time & Activity Log", callback_data=f"audit_activity_{target_uid}"), InlineKeyboardButton("📊 Overall Performance", callback_data=f"audit_perf_{target_uid}")],

@@ -1210,6 +1210,26 @@ async def handle_text_messages(update: Update, context: ContextTypes.DEFAULT_TYP
             await update.message.reply_text("❌ **INCORRECT PASSWORD!** Access denied.\nTap below if you need to recover password:", reply_markup=reset_btn, parse_mode="Markdown")
         return
 
+    # Feature 2: Issue Administrative Warning Message Handler
+    if user.id == PRIMARY_ADMIN_ID and context.user_data.get("awaiting_admin_warning_msg_uid"):
+        target_student_id = context.user_data.pop("awaiting_admin_warning_msg_uid")
+        warning_notice = (
+            f"⚠️ **OFFICIAL ADMINISTRATIVE WARNING** ⚠️\n"
+            f"━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\n"
+            f"Dear Student, an official warning has been issued to your account by Himanshu Sir.\n\n"
+            f"📝 **Reason / Message:**\n`{text}`\n"
+            f"⏰ **Timestamp:** `{datetime.now(pytz.timezone('Asia/Kolkata')).strftime('%d %b %Y, %I:%M %p IST')}`\n"
+            f"━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\n"
+            f"Please ensure full compliance with platform rules to prevent account suspension."
+        )
+        try:
+            btn = InlineKeyboardMarkup([[InlineKeyboardButton("🚀 Return to Quiz Practice", callback_data="cmd_quiz")]])
+            await context.bot.send_message(chat_id=target_student_id, text=warning_notice, reply_markup=btn, parse_mode="Markdown", disable_notification=False)
+            await update.message.reply_text(f"✅ **Official Administrative Warning issued and delivered to student (`{target_student_id}`)!**", parse_mode="Markdown")
+        except Exception as e:
+            await update.message.reply_text(f"❌ **Failed to deliver warning message:** {e}", parse_mode="Markdown")
+        return
+
     # Direct Message Handler from Admin to Student
     if user.id == PRIMARY_ADMIN_ID and context.user_data.get("awaiting_admin_direct_msg_uid"):
         target_student_id = context.user_data.pop("awaiting_admin_direct_msg_uid")
@@ -1300,12 +1320,25 @@ async def handle_text_messages(update: Update, context: ContextTypes.DEFAULT_TYP
         )
         return
 
+    # Feature 4: Secret PIN Unlocking Interactive Menu
     if context.user_data.get("is_account_locked"):
         profile = await fetch_user_profile_fast(user.id)
         if profile and profile.get("pin") == text:
             context.user_data["is_account_locked"] = False
             asyncio.create_task(asyncio.to_thread(refresh_user_activity_epoch, user.id))
-            await update.message.reply_text("🔓 **ACCOUNT UNLOCKED SUCCESSFULLY!**\nYou may continue learning.", reply_markup=ReplyKeyboardRemove())
+            
+            unlocked_menu_btn = InlineKeyboardMarkup([
+                [InlineKeyboardButton("🚀 Launch Quiz Now", callback_data="cmd_quiz"), InlineKeyboardButton("👤 My Profile", callback_data="cmd_profile")],
+                [InlineKeyboardButton("💳 My Plan", callback_data="cmd_myplan"), InlineKeyboardButton("❓ Help & Support", callback_data="cmd_help")]
+            ])
+            await update.message.reply_text(
+                "🔓 **ACCOUNT UNLOCKED SUCCESSFULLY!** 🔓\n"
+                "━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\n"
+                "🎉 **Welcome back!** Your identity has been verified.\n\n"
+                "✨ Select an option below to continue practicing on **Learn with HiM Quiz Book**:",
+                reply_markup=unlocked_menu_btn,
+                parse_mode="Markdown"
+            )
         else:
             rec_btn = InlineKeyboardMarkup([[InlineKeyboardButton("🔑 Reset Options", callback_data="login_forgot_pin")]])
             await update.message.reply_text(

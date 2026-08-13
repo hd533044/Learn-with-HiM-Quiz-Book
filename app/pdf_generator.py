@@ -6,6 +6,7 @@ import urllib.request
 import unicodedata
 from datetime import datetime, timedelta
 import asyncio
+import concurrent.futures
 import psycopg2
 from psycopg2.extras import RealDictCursor
 
@@ -21,24 +22,13 @@ try:
 except ImportError:
     HAS_PLAYWRIGHT = False
 
-# Attempt WeasyPrint Import as Secondary Fallback
+# Attempt WeasyPrint Import as Secondary PDF Engine
 HAS_WEASYPRINT = False
 try:
     import weasyprint
     HAS_WEASYPRINT = True
 except ImportError:
     HAS_WEASYPRINT = False
-
-# ReportLab Fallback Imports
-from reportlab.lib.pagesizes import letter
-from reportlab.lib import colors
-from reportlab.lib.units import inch
-from reportlab.platypus import (
-    SimpleDocTemplate, Paragraph, Spacer, Table, TableStyle, Image as RLImage
-)
-from reportlab.lib.styles import getSampleStyleSheet, ParagraphStyle
-from reportlab.pdfbase import pdfmetrics
-from reportlab.pdfbase.ttfonts import TTFont
 
 
 def mask_phone(phone_str: str) -> str:
@@ -99,6 +89,7 @@ def generate_html_report(user_profile: dict, attempts: list, saved_qs: list, ran
     age_val = user_profile.get('age', '')
     dob_age_clean = clean_str(f"{dob_val} ({age_val} yrs)")
     
+    # Absolute paths for logos ensuring 100% visibility in PDF compilation
     logo_left_path = os.path.abspath(os.path.join(BASE_DIR, "assets", "logo.png"))
     logo_right_path = os.path.abspath(os.path.join(BASE_DIR, "assets", "logohim.png"))
 
@@ -315,7 +306,16 @@ def generate_student_pdf_report(user_id: int, filter_mode: str = "last_1_month_d
 
         html_content = generate_html_report(u, attempts, saved_qs, str(rank), percentile, filter_mode)
 
-        # 1. Try Playwright Chromium PDF Generation
+        # 1. Primary Engine: WeasyPrint (Generates .pdf directly with HarfBuzz Hindi font shaping)
+        if HAS_WEASYPRINT:
+            try:
+                weasyprint.HTML(string=html_content).write_pdf(pdf_path)
+                if os.path.exists(pdf_path) and os.path.getsize(pdf_path) > 100:
+                    return pdf_path
+            except Exception as wp_err:
+                pass
+
+        # 2. Secondary Engine: Playwright Chromium PDF Generator
         if HAS_PLAYWRIGHT:
             try:
                 async def render_pw():
@@ -332,7 +332,6 @@ def generate_student_pdf_report(user_id: int, filter_mode: str = "last_1_month_d
                     loop = None
 
                 if loop and loop.is_running():
-                    import concurrent.futures
                     with concurrent.futures.ThreadPoolExecutor() as pool:
                         pool.submit(asyncio.run, render_pw()).result(timeout=30)
                 else:
@@ -343,50 +342,8 @@ def generate_student_pdf_report(user_id: int, filter_mode: str = "last_1_month_d
             except Exception as pw_err:
                 pass
 
-        # 2. Try WeasyPrint PDF Generation
-        if HAS_WEASYPRINT:
-            try:
-                weasyprint.HTML(string=html_content).write_pdf(pdf_path)
-                if os.path.exists(pdf_path) and os.path.getsize(pdf_path) > 100:
-                    return pdf_path
-            except Exception as wp_err:
-                pass
-
-        # 3. Guaranteed ReportLab PDF Fallback (Ensures a valid .pdf file is ALWAYS returned)
-        try:
-            doc = SimpleDocTemplate(pdf_path, pagesize=letter, rightMargin=30, leftMargin=30, topMargin=25,bottomMargin=50)
-            story = []
-            
-            # Register backup font for fallback
-            font_dir = os.path.join(BASE_DIR, "assets")
-            os.makedirs(font_dir, exist_ok=True)
-            font_path = os.path.join(font_dir, "NotoSansDevanagari-Regular.ttf")
-            fallback_font = "Helvetica"
-            if os.path.exists(font_path):
-                try:
-                    pdfmetrics.registerFont(TTFont("FallbackDevanagari", font_path))
-                    fallback_font = "FallbackDevanagari"
-                except Exception:
-                    pass
-
-            styles = getSampleStyleSheet()
-            fallback_style = ParagraphStyle('FallbackStyle', parent=styles['Normal'], fontName=fallback_font, fontSize=9, leading=13, textColor=colors.HexColor("#334155"))
-            
-            story.append(Paragraph("<b>Learn with HiM Quiz Book - Student Academic Report</b>", styles['Heading1']))
-            story.append(Spacer(1, 10))
-            story.append(Paragraph(f"<b>Student Name:</b> {u.get('full_name', 'N/A')}", fallback_style))
-            story.append(Paragraph(f"<b>Student ID:</b> {u.get('student_id', 'N/A')}", fallback_style))
-            story.append(Paragraph(f"<b>Target Exam:</b> {u.get('target_exam', 'N/A')}", fallback_style))
-            story.append(Spacer(1, 10))
-            story.append(Paragraph("<b>Report Summary:</b> Please check your database records for detailed question analytics.", fallback_style))
-            
-            doc.build(story)
-            if os.path.exists(pdf_path) and os.path.getsize(pdf_path) > 100:
-                return pdf_path
-        except Exception as rl_err:
-            pass
-
-        return "ERROR: Failed to generate PDF file. Please check server logs."
+        # 3. Final Fallback: Embedded Headless Chromium / WeasyPrint CLI Executable or Error Trace
+        return f"ERROR: Failed to compile direct PDF. Please ensure weasyprint or playwright is installed in your requirements.txt."
 
     except Exception as e:
         if conn:

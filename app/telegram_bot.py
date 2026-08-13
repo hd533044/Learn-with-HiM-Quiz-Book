@@ -1144,7 +1144,6 @@ async def handle_text_messages(update: Update, context: ContextTypes.DEFAULT_TYP
     photo = msg_obj.photo[-1] if msg_obj and msg_obj.photo else None
     caption = msg_obj.caption.strip() if msg_obj and msg_obj.caption else ""
 
-    # Password Recovery Flow: Step 1
     if user.id == PRIMARY_ADMIN_ID and context.user_data.get("awaiting_admin_rec_dob"):
         context.user_data["awaiting_admin_rec_dob"] = False
         if text.replace("-", "").replace("/", "") == "09081999":
@@ -1159,7 +1158,6 @@ async def handle_text_messages(update: Update, context: ContextTypes.DEFAULT_TYP
             await update.message.reply_text("❌ **INCORRECT DOB!** Recovery attempt failed.", parse_mode="Markdown")
         return
 
-    # Password Recovery Flow: Step 2
     if user.id == PRIMARY_ADMIN_ID and context.user_data.get("awaiting_admin_rec_email"):
         context.user_data["awaiting_admin_rec_email"] = False
         if text.lower() == "hd533044@gmail.com":
@@ -1174,7 +1172,6 @@ async def handle_text_messages(update: Update, context: ContextTypes.DEFAULT_TYP
             await update.message.reply_text("❌ **INCORRECT RECOVERY EMAIL!** Recovery attempt failed.", parse_mode="Markdown")
         return
 
-    # Set / Update New Admin Password
     if user.id == PRIMARY_ADMIN_ID and context.user_data.get("awaiting_admin_new_pass"):
         context.user_data["awaiting_admin_new_pass"] = False
         if len(text) < 4:
@@ -1196,7 +1193,6 @@ async def handle_text_messages(update: Update, context: ContextTypes.DEFAULT_TYP
             await update.message.reply_text("⚠️ Error saving new password in database. Please try again.")
         return
 
-    # Password Challenge Check for Admin
     if user.id == PRIMARY_ADMIN_ID and context.user_data.get("awaiting_admin_password"):
         context.user_data["awaiting_admin_password"] = False
         stored_pass = get_stored_admin_password()
@@ -1209,7 +1205,6 @@ async def handle_text_messages(update: Update, context: ContextTypes.DEFAULT_TYP
             await update.message.reply_text("❌ **INCORRECT PASSWORD!** Access denied.\nTap below if you need to recover password:", reply_markup=reset_btn, parse_mode="Markdown")
         return
 
-    # Issue Administrative Warning Message Handler
     if user.id == PRIMARY_ADMIN_ID and context.user_data.get("awaiting_admin_warning_msg_uid"):
         target_student_id = context.user_data.pop("awaiting_admin_warning_msg_uid")
         warning_notice = (
@@ -1233,7 +1228,6 @@ async def handle_text_messages(update: Update, context: ContextTypes.DEFAULT_TYP
             await update.message.reply_text(f"❌ **Failed to deliver warning message:** {e}", reply_markup=get_admin_nav_buttons(target_student_id), parse_mode="Markdown")
         return
 
-    # Direct Message Handler from Admin to Student (Text + Photo Support)
     if user.id == PRIMARY_ADMIN_ID and context.user_data.get("awaiting_admin_direct_msg_uid"):
         target_student_id = context.user_data.pop("awaiting_admin_direct_msg_uid")
         outbound_text = text or caption
@@ -1256,7 +1250,6 @@ async def handle_text_messages(update: Update, context: ContextTypes.DEFAULT_TYP
             await update.message.reply_text(f"❌ **Failed to deliver direct message:** {e}", reply_markup=get_admin_nav_buttons(target_student_id), parse_mode="Markdown")
         return
 
-    # Secret Communication Reply Handler for Admin (Text + Photo Support)
     if user.id == PRIMARY_ADMIN_ID and context.user_data.get("awaiting_admin_reply_qid"):
         qid = context.user_data.pop("awaiting_admin_reply_qid")
         ist = pytz.timezone("Asia/Kolkata")
@@ -1297,7 +1290,6 @@ async def handle_text_messages(update: Update, context: ContextTypes.DEFAULT_TYP
                 await update.message.reply_text(f"⚠️ Reply saved, but failed sending message to user: {e}", reply_markup=get_admin_nav_buttons(student_uid), parse_mode="Markdown")
         return
 
-    # Student Support Inquiry Submission Handler (Text + Photo Upload Support)
     if context.user_data.get("awaiting_user_query"):
         context.user_data["awaiting_user_query"] = False
         ist = pytz.timezone("Asia/Kolkata")
@@ -1341,7 +1333,6 @@ async def handle_text_messages(update: Update, context: ContextTypes.DEFAULT_TYP
         )
         return
 
-    # Secret PIN Unlocking Interactive Menu
     if context.user_data.get("is_account_locked"):
         profile = await fetch_user_profile_fast(user.id)
         if profile and profile.get("pin") == text:
@@ -1503,6 +1494,7 @@ def build_application() -> Application:
     app.add_handler(CommandHandler("admin", admin_portal_command))
     app.add_handler(CommandHandler("admit", admin_portal_command))
 
+    app.add_handler(CallbackQueryHandler(quiz_language_callback, pattern="^qlang_"))
     app.add_handler(CallbackQueryHandler(quiz_count_callback, pattern="^qcount_"))
     app.add_handler(CallbackQueryHandler(quiz_timer_callback, pattern="^qtimer_"))
     app.add_handler(CallbackQueryHandler(user_pdf_callback_handler, pattern="^usergenpdf_"))

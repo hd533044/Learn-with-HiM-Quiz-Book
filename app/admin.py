@@ -813,11 +813,14 @@ async def admin_callback_handler(update: Update, context: ContextTypes.DEFAULT_T
         back_btn = InlineKeyboardMarkup([[InlineKeyboardButton("🔙 Back to Admin Portal", callback_data="admin_home")]])
         await query.edit_message_text(f"✅ **GIFTED +{amount} SAME-DAY QS TO ALL USERS!**\nBroadcasted to {sent} active students.", reply_markup=back_btn, parse_mode="Markdown")
 
-    # Feature 1 Fix: Support Threads Sorted Oldest-First Chronologically + Old Queries Sub-Menu
+    # FIXED: Robust Callback Parsing for Resolved Archive View
     elif data.startswith("admin_view_student_threads_"):
         await query.answer()
-        page = int(data.replace("admin_view_student_threads_", ""))
-        show_resolved = "resolved" in data
+        raw_param = data.replace("admin_view_student_threads_", "")
+        show_resolved = "resolved" in raw_param
+        
+        clean_page_str = raw_param.replace("_resolved", "").strip()
+        page = int(clean_page_str) if clean_page_str.isdigit() else 0
 
         conn = get_db()
         cursor = conn.cursor(cursor_factory=RealDictCursor)
@@ -921,7 +924,6 @@ async def admin_callback_handler(update: Update, context: ContextTypes.DEFAULT_T
                 f"──────────────────────────────"
             )
 
-            # Feature 1 Fix: Multi-query selective reply, delete, AND ignore (mark read) options per query
             if q["status"] == "PENDING":
                 keyboard.append([
                     InlineKeyboardButton(f"✍️ Reply #{q['id']}", callback_data=f"admin_reply_prompt_{q['id']}"),

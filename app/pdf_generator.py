@@ -186,7 +186,7 @@ def clean_str(text) -> str:
     if not val_str:
         return "N/A"
     
-    # Normalize Devanagari Unicode to NFC form and clean up internal whitespace
+    # Normalize Devanagari Unicode to NFC form so matras, halants, and vowel signs bind correctly
     normalized_str = unicodedata.normalize('NFC', val_str)
     cleaned_spacing = " ".join(normalized_str.split())
     return saxutils.escape(cleaned_spacing)
@@ -253,13 +253,13 @@ def generate_student_pdf_report(user_id: int, filter_mode: str = "last_1_month_d
             textColor=colors.HexColor("#0F172A")
         )
 
-        # Unified Cell Style mapped to active Devanagari TTF Font
+        # Unified Cell Style mapped to active Devanagari TTF Font with optimal leading for matras
         content_cell_style = ParagraphStyle(
             'ContentCellText',
             parent=styles['Normal'],
             fontName=ACTIVE_HINDI_FONT,
-            fontSize=8.5,
-            leading=13,
+            fontSize=9.0,
+            leading=14.0,
             textColor=colors.HexColor("#334155")
         )
 

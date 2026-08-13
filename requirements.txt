@@ -8,3 +8,4 @@ reportlab
 razorpay>=1.4.1
 Postgres>=2.9.1
 playwright
+weasyprint>=60.0

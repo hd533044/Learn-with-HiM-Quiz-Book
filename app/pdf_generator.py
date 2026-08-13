@@ -63,7 +63,7 @@ def generate_html_report(user_profile: dict, attempts: list, saved_qs: list, ran
     """
     Builds a pixel-perfect HTML document with Google Noto Sans Devanagari font CSS, clickable logos, 
     enhanced analytics cover page, non-overlapping bar graphs with numerical values, serial numbers, 
-    timestamps, and exact styled hyperlinked iconized social links repeating on every page footer.
+    timestamps as the last column, repeating table headers across pages (<thead>), and clickable footer links.
     """
     now_date = datetime.now()
     one_month_ago = now_date - timedelta(days=30)
@@ -158,6 +158,8 @@ def generate_html_report(user_profile: dict, attempts: list, saved_qs: list, ran
         ".sub-title { color: #16A34A; font-size: 12px; text-align: center; font-weight: bold; margin-top: 4px; font-family: 'Times New Roman', serif; }",
         "h3 { font-size: 12px; color: #0F172A; text-transform: uppercase; margin-top: 15px; margin-bottom: 6px; font-weight: bold; font-family: 'Times New Roman', serif; page-break-after: avoid; }",
         ".data-table { width: 100%; border-collapse: collapse; margin-bottom: 12px; page-break-inside: auto; }",
+        ".data-table thead { display: table-header-group; }",
+        ".data-table tbody { display: table-row-group; }",
         ".data-table tr { page-break-inside: avoid; page-break-after: auto; }",
         ".data-table th, .data-table td { border: 0.5px solid #CBD5E1; padding: 6px 9px; text-align: left; vertical-align: top; font-size: 11px; word-break: break-word; }",
         ".data-table th { background-color: #E0F2FE; color: #0F172A; font-weight: bold; font-family: 'Times New Roman', serif; }",
@@ -193,7 +195,7 @@ def generate_html_report(user_profile: dict, attempts: list, saved_qs: list, ran
         "<div class='wm-text' style='top: 92%; left: 60%;'>Quiz with HiM</div>",
         "</div>",
         
-        # REPEATING HYPERLINKED FOOTER WITH EXACT SVG ICONS MATCHING TARGET SCREENSHOT (Repeats on Page 1, Page 2, Page 3, etc.)
+        # REPEATING HYPERLINKED FOOTER WITH EXACT SVG ICONS
         "<div class='pdf-footer'>",
         "<a href='https://instagram.com/Learnwithhimm' class='footer-link' target='_blank'><svg class='footer-icon' viewBox='0 0 24 24' fill='none' stroke='#0284C7' stroke-width='2.2' stroke-linecap='round' stroke-linejoin='round'><rect x='2' y='2' width='20' height='20' rx='5' ry='5'></rect><path d='M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z'></path><line x1='17.5' y1='6.5' x2='17.51' y2='6.5'></line></svg>Insta: @Learnwithhimm</a>",
         "<span class='pipe'>|</span>",
@@ -290,7 +292,14 @@ def generate_html_report(user_profile: dict, attempts: list, saved_qs: list, ran
     if filter_mode == "saved_questions_only":
         html_lines.append("<h3>💾 BOOKMARKED & SAVED QUESTIONS REPORT</h3>")
         html_lines.append("<table class='data-table'>")
-        html_lines.append("<tr><th style='width: 8%; text-align:center;'>S.No.</th><th style='width: 18%;'>Saved Timestamp</th><th style='width: 46%;'>Question Text</th><th style='width: 28%;'>Correct Answer</th></tr>")
+        html_lines.append(
+            "<thead><tr>"
+            "<th style='width: 7%; text-align:center;'>S.No.</th>"
+            "<th style='width: 48%;'>Question Text</th>"
+            "<th style='width: 25%;'>Correct Answer</th>"
+            "<th style='width: 20%;'>Saved Timestamp</th>"
+            "</tr></thead><tbody>"
+        )
         
         s_no = 1
         for sq in saved_qs:
@@ -302,21 +311,38 @@ def generate_html_report(user_profile: dict, attempts: list, saved_qs: list, ran
                 q_desc += f"<br/><small style='color: #64748B;'><b>Exp:</b> {clean_str(sq.get('explanation'))}</small>"
             
             saved_time = sq.get('saved_at', 'N/A')
-            html_lines.append(f"<tr><td style='text-align:center;'>{s_no}</td><td>{saved_time}</td><td>{q_desc}</td><td>{clean_str(ans_txt)}</td></tr>")
+            html_lines.append(f"<tr><td style='text-align:center;'>{s_no}</td><td>{q_desc}</td><td>{clean_str(ans_txt)}</td><td>{saved_time}</td></tr>")
             s_no += 1
         
-        html_lines.append("</table>")
+        html_lines.append("tbody></table>")
     else:
         html_lines.append(f"<h3>ACADEMIC PERFORMANCE SUMMARY — {summary_title}</h3>")
         html_lines.append("<table class='data-table'>")
-        html_lines.append("<tr><th style='text-align:center;'>Quizzes</th><th style='text-align:center;'>Total Questions</th><th style='text-align:center;'>Correct ✅</th><th style='text-align:center;'>Wrong ❌</th><th style='text-align:center;'>Accuracy</th></tr>")
+        html_lines.append(
+            "<thead><tr>"
+            "<th style='text-align:center;'>Quizzes</th>"
+            "<th style='text-align:center;'>Total Questions</th>"
+            "<th style='text-align:center;'>Correct ✅</th>"
+            "<th style='text-align:center;'>Wrong ❌</th>"
+            "<th style='text-align:center;'>Accuracy</th>"
+            "</tr></thead><tbody>"
+        )
         html_lines.append(f"<tr><td style='text-align:center;'>{total_quizzes}</td><td style='text-align:center;'>{total_qs}</td><td style='text-align:center;'>{total_correct}</td><td style='text-align:center;'>{total_wrong}</td><td style='text-align:center;'>{acc}%</td></tr>")
-        html_lines.append("</table>")
+        html_lines.append("</tbody></table>")
 
         if "quiz" in filter_mode:
             html_lines.append("<h3>🗓 DATE-WISE QUIZ SUMMARY REPORT</h3>")
             html_lines.append("<table class='data-table'>")
-            html_lines.append("<tr><th>Attempt Timestamp</th><th style='text-align:center;'>Questions</th><th style='text-align:center;'>Correct ✅</th><th style='text-align:center;'>Wrong ❌</th><th style='text-align:center;'>Skipped ⏭</th><th style='text-align:center;'>Total Score</th></tr>")
+            html_lines.append(
+                "<thead><tr>"
+                "<th>Attempt Timestamp</th>"
+                "<th style='text-align:center;'>Questions</th>"
+                "<th style='text-align:center;'>Correct ✅</th>"
+                "<th style='text-align:center;'>Wrong ❌</th>"
+                "<th style='text-align:center;'>Skipped ⏭</th>"
+                "<th style='text-align:center;'>Total Score</th>"
+                "</tr></thead><tbody>"
+            )
             
             date_groups = {}
             for a in filtered_attempts:
@@ -332,7 +358,7 @@ def generate_html_report(user_profile: dict, attempts: list, saved_qs: list, ran
             for dt, st in date_groups.items():
                 html_lines.append(f"<tr><td>{dt}</td><td style='text-align:center;'>{st['qs']}</td><td style='text-align:center;'>{st['correct']}</td><td style='text-align:center;'>{st['wrong']}</td><td style='text-align:center;'>{st['skipped']}</td><td style='text-align:center;'>{round(st['score'], 2)}</td></tr>")
             
-            html_lines.append("</table>")
+            html_lines.append("</tbody></table>")
         else:
             wrong_q_list = []
             skipped_q_list = []
@@ -361,7 +387,14 @@ def generate_html_report(user_profile: dict, attempts: list, saved_qs: list, ran
 
             def build_html_q_table_with_sno(title, q_list, header_class, empty_msg):
                 res = [f"<h3>{title}</h3>", "<table class='data-table'>"]
-                res.append(f"<tr><th class='{header_class}' style='width: 7%; text-align:center;'>S.No.</th><th class='{header_class}' style='width: 20%;'>Attempt Timestamp</th><th class='{header_class}' style='width: 45%;'>Question Text</th><th class='{header_class}' style='width: 28%;'>Correct Answer Text</th></tr>")
+                res.append(
+                    f"<thead><tr>"
+                    f"<th class='{header_class}' style='width: 7%; text-align:center;'>S.No.</th>"
+                    f"<th class='{header_class}' style='width: 48%;'>Question Text</th>"
+                    f"<th class='{header_class}' style='width: 25%;'>Correct Answer Text</th>"
+                    f"<th class='{header_class}' style='width: 20%;'>Attempt Timestamp</th>"
+                    f"</tr></thead><tbody>"
+                )
                 
                 if q_list:
                     idx = 1
@@ -371,12 +404,12 @@ def generate_html_report(user_profile: dict, attempts: list, saved_qs: list, ran
                         q_txt = clean_str(raw_q_text) if raw_q_text else f"Question #{q.get('question_id', 'N/A')}"
                         c_ans = clean_str(raw_c_ans) if raw_c_ans else "N/A"
                         ts = q.get('attempt_timestamp', 'N/A')
-                        res.append(f"<tr><td style='text-align:center;'>{idx}</td><td>{ts}</td><td>{q_txt}</td><td>{c_ans}</td></tr>")
+                        res.append(f"<tr><td style='text-align:center;'>{idx}</td><td>{q_txt}</td><td>{c_ans}</td><td>{ts}</td></tr>")
                         idx += 1
                 else:
-                    res.append(f"<tr><td style='text-align:center;'>-</td><td>N/A</td><td>{empty_msg}</td><td>N/A</td></tr>")
+                    res.append(f"<tr><td style='text-align:center;'>-</td><td>{empty_msg}</td><td>N/A</td><td>N/A</td></tr>")
                 
-                res.append("</table>")
+                res.append("</tbody></table>")
                 return "".join(res)
 
             html_lines.append(build_html_q_table_with_sno("❌ WRONG QUESTIONS REPORT", wrong_q_list, "wrong-header", "Zero wrong questions in this timeframe! 🎉"))

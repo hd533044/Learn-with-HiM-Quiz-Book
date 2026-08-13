@@ -19,38 +19,56 @@ from app.stats import calculate_user_rank, calculate_user_percentile
 
 def draw_pdf_watermark_and_footer(canvas, doc):
     """
-    Draws faint, highly transparent diagonal watermarks across the page
-    and attaches social links + page numbers on every PDF page.
+    Draws slightly darker background watermarks repeated 5 times each per page
+    (5x "Learn with HiM" & 5x "Quiz with HiM") and attaches social links + page numbers.
     """
     canvas.saveState()
 
     # -------------------------------------------------------------
-    # Feature 1: Highly Transparent Diagonal Watermarks
+    # Feature 1: Watermark Enhancement (Slightly Darker, 5 Each Per Page)
     # -------------------------------------------------------------
-    canvas.setFillColor(colors.HexColor("#CBD5E1"))
-    canvas.setStrokeColor(colors.HexColor("#CBD5E1"))
+    canvas.setFillColor(colors.HexColor("#94A3B8"))
+    canvas.setStrokeColor(colors.HexColor("#94A3B8"))
     
-    # Set extreme transparency so background text visibility is 100% preserved
+    # Set transparency to 0.16 (Slightly darker than 0.08, perfectly visible yet legible)
     if hasattr(canvas, "setFillAlpha"):
-        canvas.setFillAlpha(0.08)
+        canvas.setFillAlpha(0.16)
 
-    canvas.setFont("Times-Bold", 32)
+    canvas.setFont("Times-Bold", 24)
 
-    # Top-Left Diagonal Watermark
-    canvas.saveState()
-    canvas.translate(180, 520)
-    canvas.rotate(35)
-    canvas.drawCentredString(0, 0, "Learn with HiM")
-    canvas.restoreState()
+    # 5 Positions for "Learn with HiM"
+    learn_positions = [
+        (120, 700),
+        (380, 620),
+        (120, 480),
+        (380, 360),
+        (120, 200)
+    ]
 
-    # Bottom-Right Diagonal Watermark
-    canvas.saveState()
-    canvas.translate(410, 260)
-    canvas.rotate(35)
-    canvas.drawCentredString(0, 0, "Quiz with HiM")
-    canvas.restoreState()
+    for x, y in learn_positions:
+        canvas.saveState()
+        canvas.translate(x, y)
+        canvas.rotate(30)
+        canvas.drawCentredString(0, 0, "Learn with HiM")
+        canvas.restoreState()
 
-    # Reset Alpha for Footer Rendering
+    # 5 Positions for "Quiz with HiM"
+    quiz_positions = [
+        (380, 720),
+        (120, 580),
+        (380, 460),
+        (120, 320),
+        (380, 180)
+    ]
+
+    for x, y in quiz_positions:
+        canvas.saveState()
+        canvas.translate(x, y)
+        canvas.rotate(30)
+        canvas.drawCentredString(0, 0, "Quiz with HiM")
+        canvas.restoreState()
+
+    # Reset Alpha for Footer
     if hasattr(canvas, "setFillAlpha"):
         canvas.setFillAlpha(1.0)
 

@@ -3,6 +3,7 @@ import json
 import traceback
 import xml.sax.saxutils as saxutils
 import urllib.request
+import unicodedata
 from datetime import datetime, timedelta
 import psycopg2
 from psycopg2.extras import RealDictCursor
@@ -170,8 +171,8 @@ def parse_date_only(date_str: str) -> str:
 
 def clean_str(text) -> str:
     """
-    Safely converts text to XML-escaped string while preserving
-    both English characters and Hindi Unicode script.
+    Safely normalizes Unicode Devanagari characters (NFC form) and escapes XML entities
+    so matras, halants, and conjunct letters stay properly combined and readable.
     """
     if text is None:
         return "N/A"
@@ -185,8 +186,9 @@ def clean_str(text) -> str:
     if not val_str:
         return "N/A"
     
-    escaped = saxutils.escape(val_str)
-    return escaped
+    # Normalize Devanagari Unicode to NFC form so matras/halants bind correctly
+    normalized_str = unicodedata.normalize('NFC', val_str)
+    return saxutils.escape(normalized_str)
 
 
 def generate_student_pdf_report(user_id: int, filter_mode: str = "last_1_month_data") -> str:
@@ -256,7 +258,7 @@ def generate_student_pdf_report(user_id: int, filter_mode: str = "last_1_month_d
             parent=styles['Normal'],
             fontName=ACTIVE_HINDI_FONT,
             fontSize=8.5,
-            leading=12,
+            leading=13,
             textColor=colors.HexColor("#334155")
         )
 
@@ -659,5 +661,4 @@ def generate_student_pdf_report(user_id: int, filter_mode: str = "last_1_month_d
     except Exception as e:
         if conn:
             release_db(conn)
-        err_msg = f"ERROR_DETAILS:\n{traceback.format_exc()}"
-        return err_msg
+        return f"ERROR_DETAILS:\n{traceback.format_exc()}"

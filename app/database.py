@@ -210,7 +210,7 @@ def init_db():
         )
     ''')
 
-    # Real-Time Broadcast Message Tracking Table (For Live Edit / Unsend from User Chats)
+    # Broadcast Message Delivery Tracking Table (For Live Edit & Live Unsend from User Chats)
     cursor.execute('''
         CREATE TABLE IF NOT EXISTS broadcast_deliveries (
             id SERIAL PRIMARY KEY,
@@ -836,6 +836,10 @@ def schedule_announcement(message_text: str, media_file_id: str, media_type: str
         annc = cursor.fetchone()
         conn.commit()
         return dict(annc)
+    except Exception as e:
+        conn.rollback()
+        logger.error(f"Error scheduling announcement: {e}")
+        return {"error": str(e)}
     finally:
         cursor.close()
         release_db(conn)
@@ -851,6 +855,9 @@ def fetch_pending_announcements() -> list:
             ORDER BY scheduled_time ASC;
         """, (now_ist_str,))
         return [dict(r) for r in cursor.fetchall()]
+    except Exception as e:
+        logger.error(f"Error fetching pending announcements: {e}")
+        return []
     finally:
         cursor.close()
         release_db(conn)
@@ -861,6 +868,9 @@ def update_announcement_status(announcement_id: int, status: str):
     try:
         cursor.execute("UPDATE scheduled_announcements SET status = %s WHERE id = %s", (status, announcement_id))
         conn.commit()
+    except Exception as e:
+        conn.rollback()
+        logger.error(f"Error updating announcement status: {e}")
     finally:
         cursor.close()
         release_db(conn)
@@ -884,6 +894,7 @@ def update_announcement_content(announcement_id: int, new_text: str, media_file_
         conn.commit()
         return True
     except Exception as e:
+        conn.rollback()
         logger.error(f"Error updating announcement content: {e}")
         return False
     finally:
@@ -902,6 +913,7 @@ def update_announcement_time(announcement_id: int, new_time: datetime) -> bool:
         conn.commit()
         return True
     except Exception as e:
+        conn.rollback()
         logger.error(f"Error updating announcement time: {e}")
         return False
     finally:
@@ -912,11 +924,12 @@ def delete_scheduled_announcement(announcement_id: int) -> bool:
     conn = get_db()
     cursor = conn.cursor()
     try:
-        cursor.execute("DELETE FROM scheduled_announcements WHERE id = %s", (announcement_id,))
         cursor.execute("DELETE FROM broadcast_deliveries WHERE announcement_id = %s", (announcement_id,))
+        cursor.execute("DELETE FROM scheduled_announcements WHERE id = %s", (announcement_id,))
         conn.commit()
         return True
     except Exception as e:
+        conn.rollback()
         logger.error(f"Error deleting scheduled announcement: {e}")
         return False
     finally:
@@ -936,6 +949,10 @@ def create_instant_broadcast_record(message_text: str, media_file_id: str = None
         row = cursor.fetchone()
         conn.commit()
         return row['id'] if row else 0
+    except Exception as e:
+        conn.rollback()
+        logger.error(f"Error recording instant broadcast: {e}")
+        return 0
     finally:
         cursor.close()
         release_db(conn)
@@ -949,6 +966,9 @@ def record_broadcast_delivery(announcement_id: int, user_id: int, message_id: in
             VALUES (%s, %s, %s)
         """, (announcement_id, user_id, message_id))
         conn.commit()
+    except Exception as e:
+        conn.rollback()
+        logger.error(f"Error recording broadcast delivery: {e}")
     finally:
         cursor.close()
         release_db(conn)
@@ -959,6 +979,9 @@ def get_broadcast_deliveries(announcement_id: int) -> list:
     try:
         cursor.execute("SELECT user_id, message_id FROM broadcast_deliveries WHERE announcement_id = %s", (announcement_id,))
         return [dict(r) for r in cursor.fetchall()]
+    except Exception as e:
+        logger.error(f"Error getting broadcast deliveries: {e}")
+        return []
     finally:
         cursor.close()
         release_db(conn)
@@ -973,6 +996,9 @@ def get_pending_announcements_list() -> list:
             ORDER BY scheduled_time ASC;
         """)
         return [dict(r) for r in cursor.fetchall()]
+    except Exception as e:
+        logger.error(f"Error getting pending announcements: {e}")
+        return []
     finally:
         cursor.close()
         release_db(conn)
@@ -990,6 +1016,9 @@ def get_sent_announcements_list(limit: int = 20) -> list:
             ORDER BY a.id DESC LIMIT %s;
         """, (limit,))
         return [dict(r) for r in cursor.fetchall()]
+    except Exception as e:
+        logger.error(f"Error getting sent announcements: {e}")
+        return []
     finally:
         cursor.close()
         release_db(conn)
@@ -1001,6 +1030,9 @@ def get_announcement_by_id(announcement_id: int) -> dict:
         cursor.execute("SELECT * FROM scheduled_announcements WHERE id = %s", (announcement_id,))
         row = cursor.fetchone()
         return dict(row) if row else None
+    except Exception as e:
+        logger.error(f"Error getting announcement by ID: {e}")
+        return None
     finally:
         cursor.close()
         release_db(conn)

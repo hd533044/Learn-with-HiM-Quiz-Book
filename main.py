@@ -26,7 +26,7 @@ from app.config import (
 )
 from app.database import (
     sync_user_json_profile, get_ist_timestamp_str, get_db, release_db, get_user_profile,
-    fetch_pending_announcements, update_announcement_status, get_all_users
+    fetch_pending_announcements, update_announcement_status, get_all_users, record_broadcast_delivery
 )
 
 logging.basicConfig(
@@ -355,7 +355,7 @@ async def scheduled_expiry_reminder_check():
                                 f"🚨 **FINAL NOTICE: VIP PASS EXPIRING IN 1 HOUR!** 🚨\n"
                                 f"━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\n"
                                 f"Attention **{name}**, your VIP Pass will expire in **less than 1 Hour**!\n\n"
-                                f"⏳ **Pass Expiry:** `{exp_str}`\n"
+                                f"⏳ **Pass Expiry:** `{exp_str}`\n\n"
                                 f"⚡ **Daily Quota:** `{u['paid_question_balance']} Qs/Day`\n\n"
                                 f"⚡ **Recharge Immediately:** Tap below to renew your plan and keep your daily limit active!"
                             )
@@ -439,7 +439,7 @@ async def scheduled_daily_quiz_reminder():
 
 
 async def scheduled_announcement_broadcast_worker():
-    """Background worker that polls every 15s and delivers scheduled announcements."""
+    """Background worker that polls every 15s and delivers scheduled announcements with real-time delivery tracking."""
     while True:
         await asyncio.sleep(15)
         if not bot_app_instance:
@@ -459,12 +459,16 @@ async def scheduled_announcement_broadcast_worker():
                 sent_count = 0
                 for uid in user_ids:
                     try:
+                        m = None
                         if media_type == "photo":
-                            await bot_app_instance.bot.send_photo(chat_id=uid, photo=media_id, caption=text, parse_mode="Markdown")
+                            m = await bot_app_instance.bot.send_photo(chat_id=uid, photo=media_id, caption=text, parse_mode="Markdown")
                         elif media_type == "video":
-                            await bot_app_instance.bot.send_video(chat_id=uid, video=media_id, caption=text, parse_mode="Markdown")
+                            m = await bot_app_instance.bot.send_video(chat_id=uid, video=media_id, caption=text, parse_mode="Markdown")
                         else:
-                            await bot_app_instance.bot.send_message(chat_id=uid, text=text, parse_mode="Markdown")
+                            m = await bot_app_instance.bot.send_message(chat_id=uid, text=text, parse_mode="Markdown")
+                        
+                        if m:
+                            await asyncio.to_thread(record_broadcast_delivery, annc_id, uid, m.message_id)
                         sent_count += 1
                         await asyncio.sleep(0.04) # Telegram rate-limit compliance
                     except Exception:

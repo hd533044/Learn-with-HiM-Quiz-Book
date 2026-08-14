@@ -815,8 +815,9 @@ async def help_command(update: Update, context: ContextTypes.DEFAULT_TYPE):
         "• **/unattemptedquestions** — ⏭️ View Unattempted Question Bank\n"
         "• **/savedquestions** — 💾 View Bookmarked Questions\n"
         "• **/myprofile** — 👤 View Personal Student Profile Card\n"
-        "• **/mywholestate** — 📊 View Global Rank & Percentile\n"
-        "• **/toppername** — 🏆 View Global Leaderboard\n"
+        "• **/editprofile** — ✏️ Edit Profile Details\n"
+        "• **/mywholestate** — 📊 View Performance & Rank\n"
+        "• **/toppername** — 🏆 Global Leaderboard\n"
         "• **/feedback** — 💬 Submit Platform Review/Feedback\n"
         "• **/reviews** — 📖 View All Student Reviews\n"
         "• **/invite** — 🤝 Invite Friends (+10 Quota Boost)\n"
@@ -1149,7 +1150,7 @@ async def finalize_promo_code(update: Update, context: ContextTypes.DEFAULT_TYPE
     return ConversationHandler.END
 
 # -------------------------------------------------------------
-# 📢 SCHEDULED ANNOUNCEMENT BOT HANDLERS (IST SYNCED)
+# 📢 SCHEDULED ANNOUNCEMENT BOT HANDLERS (IST SYNCED + QUICK ACTIONS)
 # -------------------------------------------------------------
 
 async def start_announcement_schedule(update: Update, context: ContextTypes.DEFAULT_TYPE):
@@ -1197,6 +1198,7 @@ async def finalize_announcement_schedule(update: Update, context: ContextTypes.D
         ist = pytz.timezone("Asia/Kolkata")
         now_ist = datetime.now(ist).replace(tzinfo=None)
         
+        # Check against IST current time strictly
         if scheduled_dt <= now_ist:
             await update.message.reply_text("❌ Scheduled time must be in the future! Please enter a valid future IST date and time:")
             return ANNC_DATETIME
@@ -1210,13 +1212,30 @@ async def finalize_announcement_schedule(update: Update, context: ContextTypes.D
     admin_id = update.message.from_user.id
 
     res = await asyncio.to_thread(schedule_announcement, txt, media_id, media_type, scheduled_dt, admin_id)
+    annc_id = res['id']
+
+    keyboard = [
+        [
+            InlineKeyboardButton("✍️ Edit Content", callback_data=f"admin_edit_annc_content_prompt_{annc_id}"),
+            InlineKeyboardButton("⏰ Edit Time", callback_data=f"admin_edit_annc_time_prompt_{annc_id}")
+        ],
+        [
+            InlineKeyboardButton("🗑 Delete Scheduled Post", callback_data=f"admin_del_pending_annc_{annc_id}")
+        ],
+        [
+            InlineKeyboardButton("📋 Manage All Scheduled Posts", callback_data="admin_list_pending_annc_0"),
+            InlineKeyboardButton("👑 Admin Portal", callback_data="admin_home")
+        ]
+    ]
 
     await update.message.reply_text(
-        f"✅ **ANNOUNCEMENT SCHEDULED!**\n\n"
+        f"✅ **ANNOUNCEMENT SCHEDULED SUCCESSFULLY!**\n\n"
         f"📌 **ID:** #{res['id']}\n"
         f"⏰ **Publish Time (IST):** {scheduled_dt.strftime('%Y-%m-%d %I:%M %p')}\n"
         f"📝 **Media Type:** {media_type.upper()}\n\n"
-        f"The background scheduler will automatically broadcast this to all users at the exact scheduled time!",
+        f"The background scheduler will automatically broadcast this to all users at the exact scheduled time!\n\n"
+        f"👇 **Quick Actions for this Post:**",
+        reply_markup=InlineKeyboardMarkup(keyboard),
         parse_mode="Markdown"
     )
     return ConversationHandler.END
@@ -1654,7 +1673,7 @@ async def handle_text_messages(update: Update, context: ContextTypes.DEFAULT_TYP
         await update.message.reply_text(f"🎉 **Feedback Received!** Thank you *{name}*:\n\n💬 *\"{text}\"*", reply_markup=ReplyKeyboardRemove(), parse_mode="Markdown")
         return
 
-    # 4. Instant Broadcast with Message Delivery Tracking
+    # 4. Instant Broadcast with Message Delivery Tracking & Immediate Actions
     if context.user_data.get("awaiting_broadcast"):
         context.user_data["awaiting_broadcast"] = False
         users = await asyncio.to_thread(get_all_users)
@@ -1669,15 +1688,18 @@ async def handle_text_messages(update: Update, context: ContextTypes.DEFAULT_TYP
         )
         btn = InlineKeyboardMarkup([[InlineKeyboardButton("🚀 Launch Quiz Now", callback_data="cmd_quiz")]])
         
-        media_fid = photo.file_id if photo else None
-        m_type = "photo" if photo else "text"
+        media_fid = photo.file_id if photo else (video.file_id if video else None)
+        m_type = "photo" if photo else ("video" if video else "text")
         annc_id = await asyncio.to_thread(create_instant_broadcast_record, b_msg, media_fid, m_type, user.id)
 
         sent_count = 0
         for uid in target_uids:
             try:
+                m = None
                 if photo:
                     m = await context.bot.send_photo(chat_id=uid, photo=media_fid, caption=b_msg, reply_markup=btn, parse_mode="Markdown", disable_notification=False)
+                elif video:
+                    m = await context.bot.send_video(chat_id=uid, video=media_fid, caption=b_msg, reply_markup=btn, parse_mode="Markdown", disable_notification=False)
                 else:
                     m = await context.bot.send_message(chat_id=uid, text=b_msg, reply_markup=btn, parse_mode="Markdown", disable_notification=False)
                 
@@ -1688,8 +1710,22 @@ async def handle_text_messages(update: Update, context: ContextTypes.DEFAULT_TYP
             except Exception:
                 pass
         
-        back_btn = InlineKeyboardMarkup([[InlineKeyboardButton("👑 Back to Admin Portal", callback_data="admin_home")]])
-        await update.message.reply_text(f"✅ **Broadcast delivered fast with sound to {sent_count} registered users!**", reply_markup=back_btn)
+        keyboard = [
+            [
+                InlineKeyboardButton("✍️ Live Edit in Users' Chats", callback_data=f"admin_edit_sent_broadcast_prompt_{annc_id}"),
+                InlineKeyboardButton("🗑 Live Unsend / Delete for All", callback_data=f"admin_delete_sent_broadcast_{annc_id}")
+            ],
+            [
+                InlineKeyboardButton("📢 Live Sent Broadcasts History", callback_data="admin_list_sent_annc_0"),
+                InlineKeyboardButton("👑 Main Admin Portal", callback_data="admin_home")
+            ]
+        ]
+        await update.message.reply_text(
+            f"✅ **Broadcast delivered fast with sound to {sent_count} registered users!**\n\n"
+            f"👇 **Quick Actions for this Broadcast:**",
+            reply_markup=InlineKeyboardMarkup(keyboard),
+            parse_mode="Markdown"
+        )
 
 async def global_error_handler(update: object, context: ContextTypes.DEFAULT_TYPE) -> None:
     logging.debug(f"Exception caught in global error handler: {context.error}")

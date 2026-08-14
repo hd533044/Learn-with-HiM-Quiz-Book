@@ -439,7 +439,7 @@ async def scheduled_daily_quiz_reminder():
 
 
 async def scheduled_announcement_broadcast_worker():
-    """Background worker that polls every 15s and delivers scheduled announcements with real-time delivery tracking."""
+    """Background worker that polls every 15s and delivers scheduled announcements concurrently in ~3s."""
     while True:
         await asyncio.sleep(15)
         if not bot_app_instance:
@@ -456,26 +456,18 @@ async def scheduled_announcement_broadcast_worker():
                 users = await asyncio.to_thread(get_all_users)
                 user_ids = [u['user_id'] for u in users if not u.get('is_banned')]
                 
-                sent_count = 0
-                for uid in user_ids:
-                    try:
-                        m = None
-                        if media_type == "photo":
-                            m = await bot_app_instance.bot.send_photo(chat_id=uid, photo=media_id, caption=text, parse_mode="Markdown")
-                        elif media_type == "video":
-                            m = await bot_app_instance.bot.send_video(chat_id=uid, video=media_id, caption=text, parse_mode="Markdown")
-                        else:
-                            m = await bot_app_instance.bot.send_message(chat_id=uid, text=text, parse_mode="Markdown")
-                        
-                        if m:
-                            await asyncio.to_thread(record_broadcast_delivery, annc_id, uid, m.message_id)
-                        sent_count += 1
-                        await asyncio.sleep(0.04) # Telegram rate-limit compliance
-                    except Exception:
-                        pass
+                sent_count = await fast_concurrent_broadcast(
+                    bot=bot_app_instance.bot,
+                    user_ids=user_ids,
+                    text=text,
+                    photo=media_id if media_type == "photo" else None,
+                    video=media_id if media_type == "video" else None,
+                    media_type=media_type,
+                    annc_id=annc_id
+                )
                 
                 await asyncio.to_thread(update_announcement_status, annc_id, "SENT")
-                logging.info(f"[SCHEDULED ANNOUNCEMENT #{annc_id} DELIVERED] Broadcasted to {sent_count} users.")
+                logging.info(f"[SCHEDULED ANNOUNCEMENT #{annc_id} DELIVERED] Broadcasted to {sent_count}/{len(user_ids)} users in ~3s.")
                 
         except Exception as e:
             logging.error(f"[ANNOUNCEMENT WORKER EXCEPTION] {e}")

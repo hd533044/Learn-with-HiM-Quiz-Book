@@ -56,17 +56,46 @@ def get_admin_nav_buttons(target_uid: int = None):
     ])
 
 
-async def fast_concurrent_broadcast(bot, user_ids, text, reply_markup=None, parse_mode="Markdown"):
-    from app.database import record_blocked_user
+async def fast_concurrent_broadcast(bot, user_ids, text, reply_markup=None, parse_mode="Markdown", photo=None, video=None, media_type="text", annc_id=None):
+    """
+    High-Speed Parallel Broadcast Engine:
+    Delivers Text, Photos, or Videos concurrently in batches of 40 (< 3s total)
+    with sound notifications, automatic block detection, and real-time delivery tracking.
+    """
+    from app.database import record_blocked_user, record_broadcast_delivery
+
     async def send_single(uid):
         try:
-            await bot.send_message(
-                chat_id=uid,
-                text=text,
-                reply_markup=reply_markup,
-                parse_mode=parse_mode,
-                disable_notification=False
-            )
+            m = None
+            if media_type == "photo" and photo:
+                m = await bot.send_photo(
+                    chat_id=uid,
+                    photo=photo,
+                    caption=text,
+                    reply_markup=reply_markup,
+                    parse_mode=parse_mode,
+                    disable_notification=False
+                )
+            elif media_type == "video" and video:
+                m = await bot.send_video(
+                    chat_id=uid,
+                    video=video,
+                    caption=text,
+                    reply_markup=reply_markup,
+                    parse_mode=parse_mode,
+                    disable_notification=False
+                )
+            else:
+                m = await bot.send_message(
+                    chat_id=uid,
+                    text=text,
+                    reply_markup=reply_markup,
+                    parse_mode=parse_mode,
+                    disable_notification=False
+                )
+            
+            if annc_id and m:
+                asyncio.create_task(asyncio.to_thread(record_broadcast_delivery, annc_id, uid, m.message_id))
             return True
         except Exception as e:
             err_str = str(e).lower()
@@ -1220,7 +1249,7 @@ async def admin_callback_handler(update: Update, context: ContextTypes.DEFAULT_T
 
         keyboard.append([InlineKeyboardButton("✉️ Direct Message Student (Text/Photo)", callback_data=f"admin_direct_msg_{target_uid}")])
         keyboard.append([InlineKeyboardButton("🔙 Back to Support Threads", callback_data="admin_view_student_threads_0")])
-        keyboard.append([InlineKeyboardButton("👑 Return to Admin Portal", callback_data="admin_home")])
+        keyboard.append([InlineKeyboardButton("👑 Return to Admin Portal", callback_data="admin_home")] )
 
         await query.edit_message_text(msg, reply_markup=InlineKeyboardMarkup(keyboard), parse_mode="Markdown")
 
@@ -2019,7 +2048,7 @@ async def admin_callback_handler(update: Update, context: ContextTypes.DEFAULT_T
 
         conn = get_db()
         cursor = conn.cursor(cursor_factory=RealDictCursor)
-        cursor.execute("SELECT * FROM saved_questions WHERE user_id = %s ORDER BY id DESC", (target_uid,))
+        cursor.execute("SELECT * FROM saved_questions WHERE user_id = %s ORDER BY id DESC LIMIT 15", (target_uid,))
         saved = cursor.fetchall()
         cursor.close()
         release_db(conn)

@@ -1673,7 +1673,7 @@ async def handle_text_messages(update: Update, context: ContextTypes.DEFAULT_TYP
         await update.message.reply_text(f"🎉 **Feedback Received!** Thank you *{name}*:\n\n💬 *\"{text}\"*", reply_markup=ReplyKeyboardRemove(), parse_mode="Markdown")
         return
 
-    # 4. Instant Broadcast with Message Delivery Tracking & Immediate Actions
+ # 4. Instant Broadcast with Fast Concurrent Delivery & Delivery Tracking
     if context.user_data.get("awaiting_broadcast"):
         context.user_data["awaiting_broadcast"] = False
         users = await asyncio.to_thread(get_all_users)
@@ -1692,23 +1692,16 @@ async def handle_text_messages(update: Update, context: ContextTypes.DEFAULT_TYP
         m_type = "photo" if photo else ("video" if video else "text")
         annc_id = await asyncio.to_thread(create_instant_broadcast_record, b_msg, media_fid, m_type, user.id)
 
-        sent_count = 0
-        for uid in target_uids:
-            try:
-                m = None
-                if photo:
-                    m = await context.bot.send_photo(chat_id=uid, photo=media_fid, caption=b_msg, reply_markup=btn, parse_mode="Markdown", disable_notification=False)
-                elif video:
-                    m = await context.bot.send_video(chat_id=uid, video=media_fid, caption=b_msg, reply_markup=btn, parse_mode="Markdown", disable_notification=False)
-                else:
-                    m = await context.bot.send_message(chat_id=uid, text=b_msg, reply_markup=btn, parse_mode="Markdown", disable_notification=False)
-                
-                if annc_id and m:
-                    asyncio.create_task(asyncio.to_thread(record_broadcast_delivery, annc_id, uid, m.message_id))
-                sent_count += 1
-                await asyncio.sleep(0.04)
-            except Exception:
-                pass
+        sent_count = await fast_concurrent_broadcast(
+            bot=context.bot,
+            user_ids=target_uids,
+            text=b_msg,
+            reply_markup=btn,
+            photo=media_fid if m_type == "photo" else None,
+            video=media_fid if m_type == "video" else None,
+            media_type=m_type,
+            annc_id=annc_id
+        )
         
         keyboard = [
             [
@@ -1721,7 +1714,7 @@ async def handle_text_messages(update: Update, context: ContextTypes.DEFAULT_TYP
             ]
         ]
         await update.message.reply_text(
-            f"✅ **Broadcast delivered fast with sound to {sent_count} registered users!**\n\n"
+            f"✅ **Broadcast delivered fast with sound to {sent_count}/{len(target_uids)} registered users!**\n\n"
             f"👇 **Quick Actions for this Broadcast:**",
             reply_markup=InlineKeyboardMarkup(keyboard),
             parse_mode="Markdown"

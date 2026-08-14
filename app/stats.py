@@ -2,14 +2,25 @@ from app.database import get_db, release_db
 from psycopg2.extras import RealDictCursor
 
 def get_overall_leaderboard(limit: int = 10):
+    """
+    Returns global leaderboard ranked by Normalized Accuracy Percentage 
+    (Correct Answers / Questions Attempted * 100) and total tests completed.
+    """
     conn = get_db()
     cursor = conn.cursor(cursor_factory=RealDictCursor)
     query = """
-    SELECT u.full_name, AVG(q.score) as avg_score, COUNT(q.id) as total_tests
+    SELECT u.full_name,
+           CASE 
+               WHEN SUM(q.questions_attempted) > 0 
+               THEN ROUND(((SUM(q.correct_answers)::NUMERIC / SUM(q.questions_attempted)::NUMERIC) * 100.0), 2)
+               ELSE 0.0 
+           END as avg_score,
+           COUNT(q.id) as total_tests
     FROM quiz_attempts q
     JOIN users u ON q.user_id = u.user_id
-    GROUP BY u.full_name
-    ORDER BY avg_score DESC
+    GROUP BY u.user_id, u.full_name
+    HAVING SUM(q.questions_attempted) > 0
+    ORDER BY avg_score DESC, total_tests DESC
     LIMIT %s
     """
     cursor.execute(query, (limit,))
@@ -19,22 +30,32 @@ def get_overall_leaderboard(limit: int = 10):
     return [dict(r) for r in rows]
 
 def calculate_user_percentile(user_id: int) -> float:
+    """
+    Fair Normalized Percentile Calculation:
+    Normalizes every user's total score into an accuracy percentage rating
+    (total_correct / total_attempted * 100) so test count does not inflate percentile.
+    """
     conn = get_db()
     cursor = conn.cursor(cursor_factory=RealDictCursor)
     
-    # Fast single-query percentile calculation
     query = """
-    WITH user_avgs AS (
-        SELECT user_id, AVG(score) as avg_s
+    WITH user_metrics AS (
+        SELECT 
+            user_id,
+            CASE 
+                WHEN SUM(questions_attempted) > 0 
+                THEN (SUM(correct_answers)::FLOAT / SUM(questions_attempted)::FLOAT) * 100.0
+                ELSE 0.0 
+            END as normalized_accuracy
         FROM quiz_attempts
         GROUP BY user_id
     ),
     target_user AS (
-        SELECT avg_s FROM user_avgs WHERE user_id = %s
+        SELECT normalized_accuracy FROM user_metrics WHERE user_id = %s
     )
     SELECT 
-        (SELECT COUNT(*) FROM user_avgs) as total_users,
-        (SELECT COUNT(*) FROM user_avgs WHERE avg_s < (SELECT avg_s FROM target_user)) as users_below;
+        (SELECT COUNT(*) FROM user_metrics) as total_users,
+        (SELECT COUNT(*) FROM user_metrics WHERE normalized_accuracy < (SELECT normalized_accuracy FROM target_user)) as users_below;
     """
     cursor.execute(query, (user_id,))
     row = cursor.fetchone()
@@ -50,14 +71,28 @@ def calculate_user_percentile(user_id: int) -> float:
     return round(percentile, 2)
 
 def calculate_user_rank(user_id: int) -> str:
+    """
+    Calculates user rank based on fair Normalized Accuracy Rating.
+    """
     conn = get_db()
     cursor = conn.cursor(cursor_factory=RealDictCursor)
     query = """
-    WITH user_ranks AS (
-        SELECT user_id, 
-               RANK() OVER (ORDER BY AVG(score) DESC) as pos
+    WITH user_metrics AS (
+        SELECT 
+            user_id,
+            CASE 
+                WHEN SUM(questions_attempted) > 0 
+                THEN (SUM(correct_answers)::FLOAT / SUM(questions_attempted)::FLOAT) * 100.0
+                ELSE 0.0 
+            END as normalized_accuracy,
+            COUNT(id) as test_count
         FROM quiz_attempts
         GROUP BY user_id
+    ),
+    user_ranks AS (
+        SELECT user_id, 
+               RANK() OVER (ORDER BY normalized_accuracy DESC, test_count DESC) as pos
+        FROM user_metrics
     )
     SELECT pos FROM user_ranks WHERE user_id = %s;
     """
@@ -82,7 +117,11 @@ def get_user_performance_summary(user_id: int):
                SUM(correct_answers) as total_correct,
                SUM(wrong_answers) as total_wrong,
                SUM(skipped_count) as total_skipped,
-               AVG(score) as avg_score
+               CASE 
+                   WHEN SUM(questions_attempted) > 0 
+                   THEN (SUM(correct_answers)::FLOAT / SUM(questions_attempted)::FLOAT) * 100.0
+                   ELSE 0.0 
+               END as avg_score
         FROM quiz_attempts
         WHERE user_id = %s
     """, (user_id,))

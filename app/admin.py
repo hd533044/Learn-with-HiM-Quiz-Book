@@ -24,7 +24,7 @@ from app.stats import get_user_performance_summary, calculate_user_rank, calcula
 
 logger = logging.getLogger(__name__)
 USERS_PER_PAGE = 8
-ADMIN_AUTH_SESSIONS = {}  # {user_id: auth_timestamp}
+ADMIN_AUTH_SESSIONS = {}
 
 DISCOUNT_OPTIONS = [5, 10, 15, 20, 25, 30, 40]
 DURATION_OPTIONS = [
@@ -198,10 +198,10 @@ def update_admin_password_db(new_pass: str) -> bool:
         cursor.execute(
             """
             INSERT INTO admin_security (id, admin_id, password_hash, dob_recovery, email_recovery, updated_at)
-            VALUES (%s, %s, %s, %s, %s, %s)
+            VALUES (%s, %s, %s, '09081999', 'hd533044@gmail.com', %s)
             ON CONFLICT (id) DO UPDATE SET password_hash = EXCLUDED.password_hash, updated_at = EXCLUDED.updated_at
             """,
-            (1, PRIMARY_ADMIN_ID, new_pass, '09081999', 'hd533044@gmail.com', now_str)
+            (1, PRIMARY_ADMIN_ID, new_pass, now_str)
         )
         conn.commit()
         cursor.close()
@@ -452,10 +452,10 @@ async def admin_portal_command(update: Update, context: ContextTypes.DEFAULT_TYP
     m_status = "🟢 Active (Online)" if now_ts >= m_until else "🔴 PAUSED (Maintenance Mode)"
 
     active_sale = get_active_flash_sale()
-    sale_btn_label = f"🔥 Sale Offers (🟢 {int(active_sale['discount_percent'])}% Live)" if active_sale else "⚡ Sale Offers & Discounts"
+    sale_btn_label = f"🔥 Sale Offers (🟢 {int(float(active_sale['discount_percent']))}% Live)" if active_sale else "⚡ Sale Offers & Discounts"
 
     keyboard = [
-        [InlineKeyboardButton("📊 Quick Overview Pop-Up", callback_data="admin_popup_overview")],
+        [InlineKeyboardButton("📊 Power Live Intelligence Overview", callback_data="admin_popup_overview")],
         [InlineKeyboardButton(f"📩 Student Support Threads ({pending_students_count} Unread)", callback_data="admin_view_student_threads_0")],
         [
             InlineKeyboardButton(sale_btn_label, callback_data="admin_sale_dashboard"),
@@ -499,7 +499,7 @@ async def admin_portal_command(update: Update, context: ContextTypes.DEFAULT_TYP
         [InlineKeyboardButton("📢 Global Broadcast to ALL Users", callback_data="admin_broadcast")]
     ]
 
-    sale_summary_line = f"🔥 **Active Flash Sale:** `{active_sale['sale_name']} ({int(active_sale['discount_percent'])}% OFF)`" if active_sale else "🔥 **Flash Sale Status:** `🔴 Inactive (Normal Prices)`"
+    sale_summary_line = f"🔥 **Active Flash Sale:** `{active_sale['sale_name']} ({int(float(active_sale['discount_percent']))}% OFF)`" if active_sale else "🔥 **Flash Sale Status:** `🔴 Inactive (Normal Prices)`"
 
     msg = (
         f"👑 **MASTER ADMIN PORTAL — Himanshu Sir** 👑\n"
@@ -719,19 +719,149 @@ async def admin_callback_handler(update: Update, context: ContextTypes.DEFAULT_T
     users = get_all_users()
 
     # ==============================================================
+    # 📊 POWER LIVE INTELLIGENCE OVERVIEW
+    # ==============================================================
+    if data == "admin_popup_overview":
+        await query.answer("📊 Loading Real-Time Power Overview...", show_alert=False)
+
+        ist = pytz.timezone("Asia/Kolkata")
+        now = datetime.now(ist)
+        today_date_str = get_ist_date_str()
+        today_start = now.replace(hour=0, minute=0, second=0, microsecond=0)
+
+        conn = get_db()
+        cursor = conn.cursor(cursor_factory=RealDictCursor)
+
+        cursor.execute("SELECT COUNT(*) as count FROM users")
+        reg_count = cursor.fetchone()['count']
+
+        cursor.execute("""
+            SELECT pt.amount_paid, pt.plan_name, pt.created_at, u.full_name, u.student_id, u.user_id
+            FROM payment_transactions pt
+            LEFT JOIN users u ON pt.user_id = u.user_id
+            WHERE pt.plan_key != 'FREE_DEMO'
+            ORDER BY pt.id DESC
+        """)
+        all_txs = cursor.fetchall()
+
+        rev_today = 0
+        rev_all = 0
+        today_paid_students = []
+
+        for r in all_txs:
+            amt = r.get("amount_paid", 0) or 0
+            rev_all += amt
+            dt_str = r.get("created_at", "")
+            try:
+                dt = datetime.strptime(dt_str, "%d %b %Y, %I:%M %p IST")
+                dt = ist.localize(dt) if dt.tzinfo is None else dt
+                if dt >= today_start:
+                    rev_today += amt
+                    today_paid_students.append({
+                        "name": r.get("full_name") or f"User {r.get('user_id')}",
+                        "sid": r.get("student_id") or "N/A",
+                        "plan": r.get("plan_name") or "VIP Plan",
+                        "amt": amt
+                    })
+            except Exception:
+                pass
+
+        cursor.execute("""
+            SELECT COUNT(*) as total_attempts_today,
+                   COUNT(DISTINCT user_id) as unique_quiz_students,
+                   COALESCE(SUM(questions_attempted), 0) as total_qs_today
+            FROM quiz_attempts 
+            WHERE attempt_date = %s
+        """, (today_date_str,))
+        quiz_today_stats = cursor.fetchone()
+
+        cursor.execute("SELECT COUNT(*) as count FROM quiz_attempts")
+        all_time_attempts = cursor.fetchone()['count']
+
+        cursor.execute("SELECT COUNT(*) as count FROM student_queries WHERE status = 'PENDING'")
+        pending_queries = cursor.fetchone()['count']
+
+        cursor.execute("SELECT COUNT(*) as count FROM blocked_bot_users")
+        blocked_count = cursor.fetchone()['count']
+
+        cursor.close()
+        release_db(conn)
+
+        active_sale = get_active_flash_sale()
+        if active_sale:
+            pct = int(float(active_sale['discount_percent']))
+            now_dt = datetime.now(ist).replace(tzinfo=None)
+            valid_until = active_sale['valid_until']
+            if hasattr(valid_until, 'tzinfo') and valid_until.tzinfo is not None:
+                valid_until = valid_until.astimezone(ist).replace(tzinfo=None)
+            diff_sec = max(0, int((valid_until - now_dt).total_seconds()))
+            hrs_left = diff_sec // 3600
+            mins_left = (diff_sec % 3600) // 60
+            sale_line = f"🔥 **Active Flash Sale:** `{active_sale['sale_name']} ({pct}% OFF - {hrs_left}h {mins_left}m left)`"
+        else:
+            sale_line = "🔥 **Active Flash Sale:** `🔴 Inactive (Normal Base Prices)`"
+
+        if today_paid_students:
+            paid_st_lines = []
+            for idx, s in enumerate(today_paid_students[:10], start=1):
+                paid_st_lines.append(f"  {idx}. **{s['name']}** (`{s['sid']}`) — `{s['plan']}` (₹{s['amt']})")
+            paid_st_display = "\n".join(paid_st_lines)
+            if len(today_paid_students) > 10:
+                paid_st_display += f"\n  *(+ {len(today_paid_students) - 10} more students today)*"
+        else:
+            paid_st_display = "  ℹ️ *No paid plan purchases recorded today yet.*"
+
+        online_15m = get_currently_online_users(15)
+
+        overview_msg = (
+            f"📊 **POWER LIVE INTELLIGENCE DASHBOARD** 📊\n"
+            f"━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\n"
+            f"📅 **Date (IST):** `{today_date_str}`\n"
+            f"{sale_line}\n"
+            f"━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\n"
+            f"💰 **FINANCIAL REVENUE TELEMETRY:**\n"
+            f"• **Today's Revenue:** `₹{rev_today} INR` ({len(today_paid_students)} Purchases)\n"
+            f"• **All-Time Gross Revenue:** `₹{rev_all} INR`\n\n"
+            f"💳 **TODAY'S PAID VIP STUDENTS ({len(today_paid_students)}):**\n"
+            f"{paid_st_display}\n\n"
+            f"🎯 **TODAY'S QUIZ ACTIVITY TELEMETRY:**\n"
+            f"• **Students Practicing Today:** `{quiz_today_stats['unique_quiz_students']} Students`\n"
+            f"• **Quizzes Submitted Today:** `{quiz_today_stats['total_attempts_today']} Quizzes`\n"
+            f"• **Total Questions Solved Today:** `{quiz_today_stats['total_qs_today']} Questions`\n\n"
+            f"👥 **PLATFORM HEALTH METRICS:**\n"
+            f"• **Total Registered Students:** `{reg_count}`\n"
+            f"• **Active in Last 15 Mins:** `{len(online_15m)} Students`\n"
+            f"• **Unread Support Queries:** `{pending_queries}`\n"
+            f"• **Blocked Users:** `{blocked_count}`\n"
+            f"• **All-Time Quizzes Attempted:** `{all_time_attempts}`\n"
+            f"━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\n"
+            f"👑 *Master Admin Telemetry — Learn with HiM*"
+        )
+
+        keyboard = [
+            [InlineKeyboardButton("🔄 Refresh Real-Time Data", callback_data="admin_popup_overview")],
+            [InlineKeyboardButton("👑 Main Admin Portal", callback_data="admin_home")]
+        ]
+        await query.edit_message_text(overview_msg, reply_markup=InlineKeyboardMarkup(keyboard), parse_mode="Markdown")
+        return
+
+    # ==============================================================
     # ⚡ FLASH SALE & DISCOUNT OFFER WIZARD AND LIVE CONTROLS
     # ==============================================================
-    if data == "admin_sale_dashboard":
+    elif data == "admin_sale_dashboard":
         await query.answer()
         active_sale = get_active_flash_sale()
 
         if active_sale:
             now_dt = datetime.now(pytz.timezone("Asia/Kolkata")).replace(tzinfo=None)
-            diff_sec = max(0, int((active_sale['valid_until'] - now_dt).total_seconds()))
+            valid_until = active_sale['valid_until']
+            if hasattr(valid_until, 'tzinfo') and valid_until.tzinfo is not None:
+                valid_until = valid_until.astimezone(pytz.timezone("Asia/Kolkata")).replace(tzinfo=None)
+            diff_sec = max(0, int((valid_until - now_dt).total_seconds()))
             hrs_left = diff_sec // 3600
             mins_left = (diff_sec % 3600) // 60
-            valid_until_str = active_sale['valid_until'].strftime("%d %b %Y, %I:%M %p IST")
-            pct = int(active_sale['discount_percent'])
+            valid_until_str = valid_until.strftime("%d %b %Y, %I:%M %p IST")
+            pct = int(float(active_sale['discount_percent']))
 
             table_lines = ["\n📊 **Calculated Discounted Pricing Matrix:**"]
             for k, p in PLAN_TIERS.items():
@@ -925,7 +1055,7 @@ async def admin_callback_handler(update: Update, context: ContextTypes.DEFAULT_T
         await query.edit_message_text(
             f"⚠️ **CONFIRM SALE TERMINATION** ⚠️\n"
             f"━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\n"
-            f"Are you sure you want to stop **{active_sale['sale_name']}** ({int(active_sale['discount_percent'])}% OFF) right now?\n\n"
+            f"Are you sure you want to stop **{active_sale['sale_name']}** ({int(float(active_sale['discount_percent']))}% OFF) right now?\n\n"
             f"This will immediately reinstate original prices for all students on **/plans**.",
             reply_markup=confirm_btn,
             parse_mode="Markdown"
@@ -953,10 +1083,13 @@ async def admin_callback_handler(update: Update, context: ContextTypes.DEFAULT_T
             return
 
         now_dt = datetime.now(pytz.timezone("Asia/Kolkata")).replace(tzinfo=None)
-        diff_sec = max(0, int((active_sale['valid_until'] - now_dt).total_seconds()))
+        valid_until = active_sale['valid_until']
+        if hasattr(valid_until, 'tzinfo') and valid_until.tzinfo is not None:
+            valid_until = valid_until.astimezone(pytz.timezone("Asia/Kolkata")).replace(tzinfo=None)
+        diff_sec = max(0, int((valid_until - now_dt).total_seconds()))
         hrs_left = diff_sec // 3600
         mins_left = (diff_sec % 3600) // 60
-        pct = int(active_sale['discount_percent'])
+        pct = int(float(active_sale['discount_percent']))
 
         b_msg = (
             f"⏰ **REMINDER: {active_sale['sale_name'].upper()} ENDING SOON!** 🔥\n"
@@ -1108,11 +1241,14 @@ async def admin_callback_handler(update: Update, context: ContextTypes.DEFAULT_T
         await query.answer()
         annc_id = int(data.replace("admin_del_pending_annc_", ""))
         delete_scheduled_announcement(annc_id)
-        nav = InlineKeyboardMarkup([[InlineKeyboardButton("🔙 Back to Scheduled List", callback_data="admin_list_pending_annc_0")], [InlineKeyboardButton("👑 Admin Portal", callback_data="admin_home")]])
+        nav = InlineKeyboardMarkup([
+            [InlineKeyboardButton("🔙 Back to Scheduled List", callback_data="admin_list_pending_annc_0")],
+            [InlineKeyboardButton("👑 Admin Portal", callback_data="admin_home")]
+        ])
         await query.edit_message_text(f"🗑 **SCHEDULED ANNOUNCEMENT #{annc_id} DELETED SUCCESSFULLY!**", reply_markup=nav, parse_mode="Markdown")
 
     # ==============================================================
-    # 📢 LIVE BROADCASTS MANAGEMENT (FAST CONCURRENT EDIT / DELETE)
+    # 📢 LIVE BROADCASTS MANAGEMENT
     # ==============================================================
     elif data.startswith("admin_list_sent_annc_"):
         await query.answer()
@@ -1189,46 +1325,11 @@ async def admin_callback_handler(update: Update, context: ContextTypes.DEFAULT_T
         deleted_count = await fast_concurrent_delete(context.bot, deliveries)
 
         delete_scheduled_announcement(annc_id)
-        nav = InlineKeyboardMarkup([[InlineKeyboardButton("🔙 Back to Sent History", callback_data="admin_list_sent_annc_0")], [InlineKeyboardButton("👑 Admin Portal", callback_data="admin_home")]])
+        nav = InlineKeyboardMarkup([
+            [InlineKeyboardButton("🔙 Back to Sent History", callback_data="admin_list_sent_annc_0")],
+            [InlineKeyboardButton("👑 Admin Portal", callback_data="admin_home")]
+        ])
         await query.edit_message_text(f"🗑 **LIVE UNSEND COMPLETE!**\nSuccessfully deleted message from `{deleted_count}` out of `{len(deliveries)}` chats and removed from log.", reply_markup=nav, parse_mode="Markdown")
-
-    elif data == "admin_popup_overview":
-        conn = get_db()
-        cursor = conn.cursor()
-
-        cursor.execute("SELECT COUNT(*) FROM users")
-        reg_count = cursor.fetchone()[0]
-
-        cursor.execute("SELECT COUNT(*) FROM payment_transactions WHERE plan_key != 'FREE_DEMO'")
-        tx_count = cursor.fetchone()[0]
-
-        cursor.execute("SELECT COUNT(*) FROM quiz_attempts")
-        attempt_count = cursor.fetchone()[0]
-
-        cursor.execute("SELECT COUNT(*) FROM student_feedback")
-        review_count = cursor.fetchone()[0]
-
-        cursor.execute("SELECT COUNT(*) FROM student_queries")
-        query_count = cursor.fetchone()[0]
-
-        cursor.execute("SELECT COUNT(*) FROM pdf_generation_logs")
-        pdf_count = cursor.fetchone()[0]
-
-        cursor.close()
-        release_db(conn)
-
-        popup_text = (
-            f"📊 ADMIN LIVE OVERVIEW SUMMARY 📊\n"
-            f"━━━━━━━━━━━━━━━━━━━━━━━━━━\n"
-            f"• Registrations: {reg_count}\n"
-            f"• Plan Purchases: {tx_count}\n"
-            f"• Quiz Attempts: {attempt_count}\n"
-            f"• Student Reviews: {review_count}\n"
-            f"• Support Queries: {query_count}\n"
-            f"• Generated PDFs: {pdf_count}"
-        )
-        await query.answer(text=popup_text, show_alert=True)
-        return
 
     elif data == "admin_live_users_menu":
         await query.answer()
@@ -1270,7 +1371,10 @@ async def admin_callback_handler(update: Update, context: ContextTypes.DEFAULT_T
         else:
             lines.append("ℹ️ *No active students in this time window.*")
 
-        back_btn = InlineKeyboardMarkup([[InlineKeyboardButton("🔙 Back to Online Menu", callback_data="admin_live_users_menu")], [InlineKeyboardButton("👑 Main Admin Portal", callback_data="admin_home")]])
+        back_btn = InlineKeyboardMarkup([
+            [InlineKeyboardButton("🔙 Back to Online Menu", callback_data="admin_live_users_menu")],
+            [InlineKeyboardButton("👑 Main Admin Portal", callback_data="admin_home")]
+        ])
         await query.edit_message_text("\n".join(lines), reply_markup=back_btn, parse_mode="Markdown")
 
     elif data == "admin_total_platform_usage":
@@ -1522,7 +1626,7 @@ async def admin_callback_handler(update: Update, context: ContextTypes.DEFAULT_T
 
         keyboard.append([InlineKeyboardButton("✉️ Direct Message Student (Text/Photo)", callback_data=f"admin_direct_msg_{target_uid}")])
         keyboard.append([InlineKeyboardButton("🔙 Back to Support Threads", callback_data="admin_view_student_threads_0")])
-        keyboard.append([InlineKeyboardButton("👑 Return to Admin Portal", callback_data="admin_home")] )
+        keyboard.append([InlineKeyboardButton("👑 Return to Admin Portal", callback_data="admin_home")])
 
         await query.edit_message_text(msg, reply_markup=InlineKeyboardMarkup(keyboard), parse_mode="Markdown")
 
@@ -1677,7 +1781,10 @@ async def admin_callback_handler(update: Update, context: ContextTypes.DEFAULT_T
 
         await query.edit_message_text(
             f"🎉 **Bonus Quota Granted & Broadcasted!** 🎉\n\nAdded +20 daily question quota to user `{target_uid}` and pushed notification to their chat.",
-            reply_markup=InlineKeyboardMarkup([[InlineKeyboardButton("🔙 Back to Dashboard", callback_data=f"admin_inspect_u_{target_uid}")], [InlineKeyboardButton("👑 Main Admin Portal", callback_data="admin_home")]])
+            reply_markup=InlineKeyboardMarkup([
+                [InlineKeyboardButton("🔙 Back to Dashboard", callback_data=f"admin_inspect_u_{target_uid}")],
+                [InlineKeyboardButton("👑 Main Admin Portal", callback_data="admin_home")]
+            ])
         )
 
     elif data.startswith("admin_issue_warning_prompt_"):
@@ -2044,7 +2151,10 @@ async def admin_callback_handler(update: Update, context: ContextTypes.DEFAULT_T
             f"• **Security Answer:** `{u.get('security_answer', 'Not Set')}`\n\n"
             f"⚠️ *Confidential: Visible strictly to Primary Admin.*"
         )
-        keyboard = [[InlineKeyboardButton("🔙 Back to Dashboard", callback_data=f"admin_inspect_u_{target_uid}")], [InlineKeyboardButton("👑 Main Admin Portal", callback_data="admin_home")]]
+        keyboard = [
+            [InlineKeyboardButton("🔙 Back to Dashboard", callback_data=f"admin_inspect_u_{target_uid}")],
+            [InlineKeyboardButton("👑 Main Admin Portal", callback_data="admin_home")]
+        ]
         await query.edit_message_text(msg, reply_markup=InlineKeyboardMarkup(keyboard), parse_mode="Markdown")
 
     elif data.startswith("audit_pdfmenu_"):
@@ -2112,7 +2222,10 @@ async def admin_callback_handler(update: Update, context: ContextTypes.DEFAULT_T
             f"• **Referred By ID:** `{u.get('referred_by') or 'None'}`\n"
             f"• **Referral Count:** `{u.get('referral_count', 0)}` friends"
         )
-        keyboard = [[InlineKeyboardButton("🔙 Back to Dashboard", callback_data=f"admin_inspect_u_{target_uid}")], [InlineKeyboardButton("👑 Main Admin Portal", callback_data="admin_home")]]
+        keyboard = [
+            [InlineKeyboardButton("🔙 Back to Dashboard", callback_data=f"admin_inspect_u_{target_uid}")],
+            [InlineKeyboardButton("👑 Main Admin Portal", callback_data="admin_home")]
+        ]
         await query.edit_message_text(msg, reply_markup=InlineKeyboardMarkup(keyboard), parse_mode="Markdown")
 
     elif data.startswith("audit_activity_"):
@@ -2149,7 +2262,10 @@ async def admin_callback_handler(update: Update, context: ContextTypes.DEFAULT_T
             lines.append(" • *No activity time recorded yet.*")
 
         msg = "\n".join(lines)
-        keyboard = [[InlineKeyboardButton("🔙 Back to Dashboard", callback_data=f"admin_inspect_u_{target_uid}")], [InlineKeyboardButton("👑 Main Admin Portal", callback_data="admin_home")]]
+        keyboard = [
+            [InlineKeyboardButton("🔙 Back to Dashboard", callback_data=f"admin_inspect_u_{target_uid}")],
+            [InlineKeyboardButton("👑 Main Admin Portal", callback_data="admin_home")]
+        ]
         await query.edit_message_text(msg, reply_markup=InlineKeyboardMarkup(keyboard), parse_mode="Markdown")
 
     elif data.startswith("audit_perf_"):
@@ -2174,11 +2290,14 @@ async def admin_callback_handler(update: Update, context: ContextTypes.DEFAULT_T
             f"• **Wrong Answers:** `{perf.get('total_wrong', 0)}` ❌\n"
             f"• **Skipped Questions:** `{perf.get('total_skipped', 0)}` ⏭\n"
             f"• **Accuracy Rating:** `{acc}%`\n"
-            f"• **Average Score:** `{round(perf.get('avg_score', 0.0) or 0.0, 2)}`\n"
+            f"• **Normalized Score:** `{round(perf.get('avg_score', 0.0) or 0.0, 2)}%`\n"
             f"• **Global Rank:** `{rank}` 🥇\n"
             f"• **Overall Percentile:** `{percentile}%`"
         )
-        keyboard = [[InlineKeyboardButton("🔙 Back to Dashboard", callback_data=f"admin_inspect_u_{target_uid}")], [InlineKeyboardButton("👑 Main Admin Portal", callback_data="admin_home")]]
+        keyboard = [
+            [InlineKeyboardButton("🔙 Back to Dashboard", callback_data=f"admin_inspect_u_{target_uid}")],
+            [InlineKeyboardButton("👑 Main Admin Portal", callback_data="admin_home")]
+        ]
         await query.edit_message_text(msg, reply_markup=InlineKeyboardMarkup(keyboard), parse_mode="Markdown")
 
     elif data.startswith("audit_datesummary_"):
@@ -2224,7 +2343,10 @@ async def admin_callback_handler(update: Update, context: ContextTypes.DEFAULT_T
         if len(msg) > 4000:
             msg = msg[:3950] + "\n\n*(Truncated due to length)*"
 
-        keyboard = [[InlineKeyboardButton("🔙 Back to Dashboard", callback_data=f"admin_inspect_u_{target_uid}")], [InlineKeyboardButton("👑 Main Admin Portal", callback_data="admin_home")]]
+        keyboard = [
+            [InlineKeyboardButton("🔙 Back to Dashboard", callback_data=f"admin_inspect_u_{target_uid}")],
+            [InlineKeyboardButton("👑 Main Admin Portal", callback_data="admin_home")]
+        ]
         await query.edit_message_text(msg, reply_markup=InlineKeyboardMarkup(keyboard), parse_mode="Markdown")
 
     elif data.startswith("audit_attempted_"):
@@ -2268,7 +2390,10 @@ async def admin_callback_handler(update: Update, context: ContextTypes.DEFAULT_T
         if len(msg) > 4000:
             msg = msg[:3950] + "\n\n*(Truncated due to Telegram length limit)*"
 
-        keyboard = [[InlineKeyboardButton("🔙 Back to Dashboard", callback_data=f"admin_inspect_u_{target_uid}")], [InlineKeyboardButton("👑 Main Admin Portal", callback_data="admin_home")]]
+        keyboard = [
+            [InlineKeyboardButton("🔙 Back to Dashboard", callback_data=f"admin_inspect_u_{target_uid}")],
+            [InlineKeyboardButton("👑 Main Admin Portal", callback_data="admin_home")]
+        ]
         await query.edit_message_text(msg, reply_markup=InlineKeyboardMarkup(keyboard), parse_mode="Markdown")
 
     elif data.startswith("audit_wrong_"):
@@ -2311,7 +2436,10 @@ async def admin_callback_handler(update: Update, context: ContextTypes.DEFAULT_T
         if len(msg) > 4000:
             msg = msg[:3950] + "\n\n*(Truncated due to Telegram length limit)*"
 
-        keyboard = [[InlineKeyboardButton("🔙 Back to Dashboard", callback_data=f"admin_inspect_u_{target_uid}")], [InlineKeyboardButton("👑 Main Admin Portal", callback_data="admin_home")]]
+        keyboard = [
+            [InlineKeyboardButton("🔙 Back to Dashboard", callback_data=f"admin_inspect_u_{target_uid}")],
+            [InlineKeyboardButton("👑 Main Admin Portal", callback_data="admin_home")]
+        ]
         await query.edit_message_text(msg, reply_markup=InlineKeyboardMarkup(keyboard), parse_mode="Markdown")
 
     elif data.startswith("audit_saved_"):
@@ -2348,7 +2476,10 @@ async def admin_callback_handler(update: Update, context: ContextTypes.DEFAULT_T
         if len(msg) > 4000:
             msg = msg[:3950] + "\n\n*(Truncated due to Telegram length limit)*"
 
-        keyboard = [[InlineKeyboardButton("🔙 Back to Dashboard", callback_data=f"admin_inspect_u_{target_uid}")], [InlineKeyboardButton("👑 Main Admin Portal", callback_data="admin_home")]]
+        keyboard = [
+            [InlineKeyboardButton("🔙 Back to Dashboard", callback_data=f"admin_inspect_u_{target_uid}")],
+            [InlineKeyboardButton("👑 Main Admin Portal", callback_data="admin_home")]
+        ]
         await query.edit_message_text(msg, reply_markup=InlineKeyboardMarkup(keyboard), parse_mode="Markdown")
 
     elif data.startswith("audit_feedback_"):
@@ -2377,7 +2508,10 @@ async def admin_callback_handler(update: Update, context: ContextTypes.DEFAULT_T
             lines.append("*No reviews or feedback submitted by this student yet.*")
 
         msg = "\n".join(lines)
-        keyboard = [[InlineKeyboardButton("🔙 Back to Dashboard", callback_data=f"admin_inspect_u_{target_uid}")], [InlineKeyboardButton("👑 Main Admin Portal", callback_data="admin_home")]]
+        keyboard = [
+            [InlineKeyboardButton("🔙 Back to Dashboard", callback_data=f"admin_inspect_u_{target_uid}")],
+            [InlineKeyboardButton("👑 Main Admin Portal", callback_data="admin_home")]
+        ]
         await query.edit_message_text(msg, reply_markup=InlineKeyboardMarkup(keyboard), parse_mode="Markdown")
 
     elif data.startswith("audit_exportjson_"):

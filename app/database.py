@@ -43,13 +43,18 @@ def get_ist_date_str():
 def get_ist_timestamp_str():
     return get_ist_now().strftime("%Y-%m-%d %H:%M:%S IST")
 
-def calculate_discounted_price(original_price: float, discount_percent: float) -> int:
-    """Calculates discounted price rounded down/nearest integer (minimum 1 INR)."""
-    if discount_percent <= 0 or original_price <= 0:
-        return int(original_price)
-    discount_amount = (original_price * discount_percent) / 100.0
-    final_price = max(1, int(round(original_price - discount_amount)))
-    return final_price
+def calculate_discounted_price(original_price, discount_percent) -> int:
+    """Calculates discounted price safely with float conversion (minimum 1 INR)."""
+    try:
+        orig = float(original_price)
+        disc = float(discount_percent)
+        if disc <= 0 or orig <= 0:
+            return int(orig)
+        discount_amount = (orig * disc) / 100.0
+        final_price = max(1, int(round(orig - discount_amount)))
+        return final_price
+    except Exception:
+        return int(original_price) if original_price else 1
 
 def init_db():
     init_pool()
@@ -179,7 +184,6 @@ def init_db():
         )
     ''')
 
-    # Promo Codes Master Table
     cursor.execute('''
         CREATE TABLE IF NOT EXISTS promo_codes (
             id SERIAL PRIMARY KEY,
@@ -193,7 +197,6 @@ def init_db():
         )
     ''')
 
-    # Promo Code Redemptions Tracking Table
     cursor.execute('''
         CREATE TABLE IF NOT EXISTS promo_redemptions (
             id SERIAL PRIMARY KEY,
@@ -204,7 +207,6 @@ def init_db():
         )
     ''')
 
-    # Scheduled Announcements Master Table
     cursor.execute('''
         CREATE TABLE IF NOT EXISTS scheduled_announcements (
             id SERIAL PRIMARY KEY,
@@ -218,7 +220,6 @@ def init_db():
         )
     ''')
 
-    # Broadcast Message Delivery Tracking Table
     cursor.execute('''
         CREATE TABLE IF NOT EXISTS broadcast_deliveries (
             id SERIAL PRIMARY KEY,
@@ -229,7 +230,6 @@ def init_db():
         )
     ''')
 
-    # Blocked Users Tracking Table
     cursor.execute('''
         CREATE TABLE IF NOT EXISTS blocked_bot_users (
             user_id BIGINT PRIMARY KEY,
@@ -237,7 +237,6 @@ def init_db():
         )
     ''')
 
-    # Flash Sales / Discount Offers Table
     cursor.execute('''
         CREATE TABLE IF NOT EXISTS flash_sales (
             id SERIAL PRIMARY KEY,
@@ -853,18 +852,20 @@ def create_flash_sale(sale_name: str, discount_percent: float, valid_until: date
     cursor = conn.cursor(cursor_factory=RealDictCursor)
     try:
         now_dt = datetime.now(IST).replace(tzinfo=None)
-        # Deactivate any previous running sales
         cursor.execute("UPDATE flash_sales SET is_active = FALSE WHERE is_active = TRUE;")
         
         cursor.execute("""
             INSERT INTO flash_sales (sale_name, discount_percent, valid_from, valid_until, is_active, created_by)
             VALUES (%s, %s, %s, %s, TRUE, %s)
             RETURNING *;
-        """, (sale_name.strip(), discount_percent, now_dt, valid_until, created_by))
+        """, (sale_name.strip(), float(discount_percent), now_dt, valid_until, created_by))
         
         row = cursor.fetchone()
         conn.commit()
-        return dict(row) if row else {}
+        res = dict(row) if row else {}
+        if res.get("discount_percent") is not None:
+            res["discount_percent"] = float(res["discount_percent"])
+        return res
     except Exception as e:
         conn.rollback()
         logger.error(f"Error creating flash sale: {e}")
@@ -885,11 +886,13 @@ def get_active_flash_sale() -> dict:
         """, (now_dt,))
         row = cursor.fetchone()
         if not row:
-            # Auto-deactivate expired sales
             cursor.execute("UPDATE flash_sales SET is_active = FALSE WHERE is_active = TRUE AND valid_until <= %s;", (now_dt,))
             conn.commit()
             return None
-        return dict(row)
+        res = dict(row)
+        if res.get("discount_percent") is not None:
+            res["discount_percent"] = float(res["discount_percent"])
+        return res
     except Exception as e:
         logger.error(f"Error getting active flash sale: {e}")
         return None

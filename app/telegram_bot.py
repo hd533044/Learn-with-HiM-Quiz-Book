@@ -52,7 +52,6 @@ NEGATIVE_WORDS = ["bad", "worst", "useless", "trash", "fake", "hate", "terrible"
 PROFILE_CACHE = {}
 CACHE_TTL = 30 
 
-# Conversation States for Admin Promo & Announcement Tools
 PROMO_NAME, PROMO_TYPE, PROMO_VALUE, PROMO_DAYS = range(100, 104)
 ANNC_CONTENT, ANNC_DATETIME = range(104, 106)
 
@@ -173,7 +172,7 @@ def generate_razorpay_link_sync(user_id: int, plan_key: str) -> str:
 
     desc = f"Subscription - {plan_key}"
     if active_sale:
-        desc += f" ({int(active_sale['discount_percent'])}% OFF - {active_sale['sale_name']})"
+        desc += f" ({int(float(active_sale['discount_percent']))}% OFF - {active_sale['sale_name']})"
 
     payload = {
         "amount": int(final_price * 100),
@@ -482,7 +481,7 @@ async def plans_command(update: Update, context: ContextTypes.DEFAULT_TYPE):
     active_sale = await asyncio.to_thread(get_active_flash_sale)
 
     keyboard = []
-    if not profile.get("demo_used"):
+    if profile and not profile.get("demo_used"):
         keyboard.append([InlineKeyboardButton("🎁 FREE DEMO TRIAL (2 Days - 20 Qs/Day)", callback_data="buy_plan_FREE_DEMO")])
 
     for k, p in PLAN_TIERS.items():
@@ -490,7 +489,7 @@ async def plans_command(update: Update, context: ContextTypes.DEFAULT_TYPE):
             continue
         if active_sale:
             disc_price = calculate_discounted_price(p["price"], active_sale["discount_percent"])
-            btn_txt = f"📦 {k} (~₹{p['price']}~ ₹{disc_price} - {p['days']}D - {p['daily_limit']} Qs/D)"
+            btn_txt = f"📦 {k} (₹{p['price']} -> ₹{disc_price} - {p['days']}D - {p['daily_limit']} Qs/D)"
         else:
             btn_txt = f"📦 {k} (₹{p['price']} - {p['days']} Days - {p['daily_limit']} Qs/Day)"
         keyboard.append([InlineKeyboardButton(btn_txt, callback_data=f"buy_plan_{k}")])
@@ -499,13 +498,17 @@ async def plans_command(update: Update, context: ContextTypes.DEFAULT_TYPE):
 
     if active_sale:
         now_dt = datetime.now(pytz.timezone("Asia/Kolkata")).replace(tzinfo=None)
-        diff_sec = max(0, int((active_sale['valid_until'] - now_dt).total_seconds()))
+        valid_until = active_sale['valid_until']
+        if hasattr(valid_until, 'tzinfo') and valid_until.tzinfo is not None:
+            valid_until = valid_until.astimezone(pytz.timezone("Asia/Kolkata")).replace(tzinfo=None)
+        diff_sec = max(0, int((valid_until - now_dt).total_seconds()))
         hrs_left = diff_sec // 3600
         mins_left = (diff_sec % 3600) // 60
-        pct = int(active_sale['discount_percent'])
+        pct = int(float(active_sale['discount_percent']))
+        clean_sale_name = str(active_sale['sale_name']).replace("*", "").replace("_", " ").replace("`", "").upper()
 
         msg = (
-            f"🔥 **SPECIAL SALE OFFER: {active_sale['sale_name'].upper()} ({pct}% OFF)!** 🔥\n"
+            f"🔥 **SPECIAL SALE OFFER: {clean_sale_name} ({pct}% OFF)!** 🔥\n"
             f"━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\n"
             f"🎉 **Limited-Time Discount Active!** All VIP packs are currently discounted by **{pct}%**.\n"
             f"⏰ **Hurry, offer ends in:** `{hrs_left}h {mins_left}m`!\n"
@@ -567,7 +570,7 @@ async def handle_buy_plan_callback(update: Update, context: ContextTypes.DEFAULT
         if active_sale:
             price_details = (
                 f"💰 **Original Price:** ~₹{plan_info['price']}~\n"
-                f"🔥 **Sale Discount ({int(active_sale['discount_percent'])}% OFF):** -₹{plan_info['price'] - charge_price}\n"
+                f"🔥 **Sale Discount ({int(float(active_sale['discount_percent']))}% OFF):** -₹{plan_info['price'] - charge_price}\n"
                 f"✨ **Final Amount Payable:** **₹{charge_price} INR**"
             )
         else:
@@ -1380,7 +1383,6 @@ async def handle_text_messages(update: Update, context: ContextTypes.DEFAULT_TYP
     caption = msg_obj.caption.strip() if msg_obj and msg_obj.caption else ""
     video = msg_obj.video if msg_obj and msg_obj.video else None
 
-    # 0. Flash Sale Setup Wizard Step 1 Text Handler
     if user.id == PRIMARY_ADMIN_ID and context.user_data.get("awaiting_sale_name"):
         context.user_data["awaiting_sale_name"] = False
         sale_name = text.strip() or "Special Discount Offer"
@@ -1406,7 +1408,6 @@ async def handle_text_messages(update: Update, context: ContextTypes.DEFAULT_TYP
         await update.message.reply_text(msg, reply_markup=InlineKeyboardMarkup(pct_buttons), parse_mode="Markdown")
         return
 
-    # 1. Edit Scheduled Announcement Content
     if user.id == PRIMARY_ADMIN_ID and context.user_data.get("awaiting_edit_annc_content"):
         annc_id = context.user_data.pop("awaiting_edit_annc_content")
         new_text = caption if (photo or video) else text
@@ -1421,7 +1422,6 @@ async def handle_text_messages(update: Update, context: ContextTypes.DEFAULT_TYP
             await update.message.reply_text("❌ Error updating announcement content.")
         return
 
-    # 2. Edit Scheduled Announcement Publish Time
     if user.id == PRIMARY_ADMIN_ID and context.user_data.get("awaiting_edit_annc_time"):
         annc_id = context.user_data.pop("awaiting_edit_annc_time")
         try:
@@ -1442,7 +1442,6 @@ async def handle_text_messages(update: Update, context: ContextTypes.DEFAULT_TYP
             await update.message.reply_text("❌ Invalid format! Use `YYYY-MM-DD HH:MM` (e.g. `2026-08-14 18:30`):")
         return
 
-    # 3. Live Edit Sent Broadcast across All Users' Chats
     if user.id == PRIMARY_ADMIN_ID and context.user_data.get("awaiting_edit_live_broadcast"):
         annc_id = context.user_data.pop("awaiting_edit_live_broadcast")
         new_text = text or caption
@@ -1740,7 +1739,6 @@ async def handle_text_messages(update: Update, context: ContextTypes.DEFAULT_TYP
         await update.message.reply_text(f"🎉 **Feedback Received!** Thank you *{name}*:\n\n💬 *\"{text}\"*", reply_markup=ReplyKeyboardRemove(), parse_mode="Markdown")
         return
 
-    # 4. Instant Broadcast with Fast Concurrent Delivery & Delivery Tracking
     if context.user_data.get("awaiting_broadcast"):
         context.user_data["awaiting_broadcast"] = False
         users = await asyncio.to_thread(get_all_users)
@@ -1788,7 +1786,7 @@ async def handle_text_messages(update: Update, context: ContextTypes.DEFAULT_TYP
         )
 
 async def global_error_handler(update: object, context: ContextTypes.DEFAULT_TYPE) -> None:
-    logging.debug(f"Exception caught in global error handler: {context.error}")
+    logging.error(f"Exception caught in global error handler: {context.error}")
 
 async def post_init(application: Application):
     try:
@@ -1831,7 +1829,6 @@ def build_application() -> Application:
 
     app.add_handler(get_onboarding_handler())
 
-    # Add Promo Code Conversation Handler
     promo_conv_handler = ConversationHandler(
         entry_points=[CallbackQueryHandler(start_promo_creation, pattern="^admin_create_promo$")],
         states={
@@ -1843,7 +1840,6 @@ def build_application() -> Application:
         fallbacks=[CommandHandler("cancel", cancel_admin_action)]
     )
 
-    # Add Scheduled Announcement Conversation Handler
     annc_conv_handler = ConversationHandler(
         entry_points=[CallbackQueryHandler(start_announcement_schedule, pattern="^admin_schedule_annc$")],
         states={

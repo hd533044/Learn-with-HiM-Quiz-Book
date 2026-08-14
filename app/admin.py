@@ -16,7 +16,7 @@ from app.database import (
     get_user_profile, get_db, release_db, sync_user_json_profile, toggle_user_ban_status,
     get_paid_users, admin_update_user_name, admin_delete_user_account, get_ist_date_str,
     get_pending_announcements_list, get_sent_announcements_list, get_announcement_by_id,
-    delete_scheduled_announcement, get_broadcast_deliveries
+    delete_scheduled_announcement, get_broadcast_deliveries, get_blocked_bot_users
 )
 from app.pdf_generator import generate_student_pdf_report
 from app.stats import get_user_performance_summary, calculate_user_rank, calculate_user_percentile
@@ -27,7 +27,6 @@ ADMIN_AUTH_SESSIONS = {}  # {user_id: auth_timestamp}
 
 
 def clear_admin_user_data_states(context: ContextTypes.DEFAULT_TYPE):
-    """Clears all awaiting admin input flags to prevent accidental broadcasting or misdirected messages."""
     keys_to_clear = [
         "awaiting_broadcast",
         "awaiting_admin_direct_msg_uid",
@@ -48,7 +47,6 @@ def clear_admin_user_data_states(context: ContextTypes.DEFAULT_TYPE):
 
 
 def get_admin_nav_buttons(target_uid: int = None):
-    """Helper to generate persistent navigation buttons after admin actions."""
     row1 = [InlineKeyboardButton("👑 Return to Admin Portal", callback_data="admin_home")]
     if target_uid:
         row1.append(InlineKeyboardButton("🔙 Student Dashboard", callback_data=f"admin_inspect_u_{target_uid}"))
@@ -59,10 +57,7 @@ def get_admin_nav_buttons(target_uid: int = None):
 
 
 async def fast_concurrent_broadcast(bot, user_ids, text, reply_markup=None, parse_mode="Markdown"):
-    """
-    Delivers messages concurrently in batches to ensure maximum speed (~3s delivery)
-    with sound notifications enabled (disable_notification=False).
-    """
+    from app.database import record_blocked_user
     async def send_single(uid):
         try:
             await bot.send_message(
@@ -73,7 +68,10 @@ async def fast_concurrent_broadcast(bot, user_ids, text, reply_markup=None, pars
                 disable_notification=False
             )
             return True
-        except Exception:
+        except Exception as e:
+            err_str = str(e).lower()
+            if "forbidden" in err_str or "blocked" in err_str or "deactivated" in err_str or "chat not found" in err_str:
+                asyncio.create_task(asyncio.to_thread(record_blocked_user, uid))
             return False
 
     batch_size = 40
@@ -87,7 +85,6 @@ async def fast_concurrent_broadcast(bot, user_ids, text, reply_markup=None, pars
 
 
 async def fast_concurrent_edit(bot, deliveries, new_text):
-    """Live edits broadcast messages across all users' chats concurrently in under 3 seconds."""
     async def edit_single(d):
         try:
             await bot.edit_message_text(
@@ -120,7 +117,6 @@ async def fast_concurrent_edit(bot, deliveries, new_text):
 
 
 async def fast_concurrent_delete(bot, deliveries):
-    """Deletes/unsends broadcast messages across all users' chats concurrently in under 3 seconds."""
     async def delete_single(d):
         try:
             await bot.delete_message(chat_id=d['user_id'], message_id=d['message_id'])
@@ -186,7 +182,7 @@ def is_admin_authenticated(user_id: int) -> bool:
     if user_id != PRIMARY_ADMIN_ID:
         return False
     auth_time = ADMIN_AUTH_SESSIONS.get(user_id, 0)
-    return (time.time() - auth_time) < 1800  # 30 minutes session duration
+    return (time.time() - auth_time) < 1800
 
 
 def get_unique_students_with_queries_count() -> int:
@@ -411,6 +407,7 @@ async def admin_portal_command(update: Update, context: ContextTypes.DEFAULT_TYP
     paid_users = get_strict_paid_users()
     demo_users = get_strict_demo_users()
     online_15m = get_currently_online_users(15)
+    blocked_users = get_blocked_bot_users()
     pending_students_count = get_unique_students_with_queries_count()
     usage_stats = get_platform_usage_summary()
 
@@ -430,16 +427,19 @@ async def admin_portal_command(update: Update, context: ContextTypes.DEFAULT_TYP
             InlineKeyboardButton("📢 Live Sent Broadcasts", callback_data="admin_list_sent_annc_0")
         ],
         [
+            InlineKeyboardButton(f"🛑 Blocked Users ({len(blocked_users)})", callback_data="admin_list_blocked_users_0"),
+            InlineKeyboardButton(f"⚡ Online (15m: {len(online_15m)})", callback_data="admin_live_users_menu")
+        ],
+        [
             InlineKeyboardButton(f"💳 Paid VIP ({len(paid_users)})", callback_data="admin_paid_users_page_0"),
             InlineKeyboardButton(f"🎁 Free Demo ({len(demo_users)})", callback_data="admin_demo_users_page_0")
         ],
         [
-            InlineKeyboardButton(f"⚡ Currently Online Users ({len(online_15m)})", callback_data="admin_live_users_menu"),
-            InlineKeyboardButton("📄 PDF Generation Logs", callback_data="admin_pdf_logs")
+            InlineKeyboardButton("📄 PDF Generation Logs", callback_data="admin_pdf_logs"),
+            InlineKeyboardButton("👥 Student Directory", callback_data="admin_users_page_0")
         ],
-        [InlineKeyboardButton("👥 Student Directory", callback_data="admin_users_page_0"), InlineKeyboardButton("🔍 Search Student", callback_data="admin_search_prompt")],
-        [InlineKeyboardButton("💰 Revenue Dashboard", callback_data="admin_financial_stats"), InlineKeyboardButton("⏱ Platform Time Telemetry", callback_data="admin_total_platform_usage")],
-        [InlineKeyboardButton("🎁 Gift 1-Day Quota Boost to ALL", callback_data="admin_mass_grant_menu")],
+        [InlineKeyboardButton("🔍 Search Student", callback_data="admin_search_prompt"), InlineKeyboardButton("💰 Revenue Dashboard", callback_data="admin_financial_stats")],
+        [InlineKeyboardButton("⏱ Platform Time Telemetry", callback_data="admin_total_platform_usage"), InlineKeyboardButton("🎁 Gift Quota Boost to ALL", callback_data="admin_mass_grant_menu")],
         [InlineKeyboardButton("📊 Command Usage Analytics", callback_data="admin_command_stats"), InlineKeyboardButton("📦 Export Ledgers (.zip)", callback_data="admin_export_zip")],
         [
             InlineKeyboardButton("⏸ Pause 5m", callback_data="admin_pause_5"), 
@@ -462,9 +462,10 @@ async def admin_portal_command(update: Update, context: ContextTypes.DEFAULT_TYP
         f"📊 **Total Registered Students:** `{len(users)}`\n"
         f"💎 **Actual Paid VIP Subscribers:** `{len(paid_users)}`\n"
         f"🎁 **Free Demo Users:** `{len(demo_users)}`\n"
+        f"🛑 **Blocked / Inactive Users:** `{len(blocked_users)}`\n"
         f"⚡ **Online Users (15m):** `{len(online_15m)}`\n"
-        f"⏱ **Total Platform Practice Time:** `{usage_stats['hours']} Hours` ({usage_stats['minutes']} mins)\n"
-        f"📩 **Unread Student Support Queries:** `{pending_students_count}`\n"
+        f"⏱ **Total Platform Practice Time:** `{usage_stats['hours']} Hours`\n"
+        f"📩 **Unread Support Queries:** `{pending_students_count}`\n"
         f"⚡ **Bot System Status:** `{m_status}`\n\n"
         f"Select an administrative action below:"
     )
@@ -672,9 +673,49 @@ async def admin_callback_handler(update: Update, context: ContextTypes.DEFAULT_T
     users = get_all_users()
 
     # ==============================================================
-    # 📢 SCHEDULED ANNOUNCEMENTS MANAGEMENT (EDIT CONTENT / EDIT TIME / DELETE)
+    # 🛑 BLOCKED / INACTIVE USERS AUDIT MODULE
     # ==============================================================
-    if data.startswith("admin_list_pending_annc_"):
+    if data.startswith("admin_list_blocked_users_"):
+        await query.answer()
+        page = int(data.replace("admin_list_blocked_users_", ""))
+        blocked = get_blocked_bot_users()
+
+        if not blocked:
+            nav = InlineKeyboardMarkup([[InlineKeyboardButton("👑 Return to Admin Portal", callback_data="admin_home")]])
+            await query.edit_message_text("🛑 **BLOCKED USERS AUDIT**\n\n🎉 No users have blocked the bot yet!", reply_markup=nav, parse_mode="Markdown")
+            return
+
+        total_b = len(blocked)
+        total_pages = math.ceil(total_b / USERS_PER_PAGE)
+        page = max(0, min(page, total_pages - 1))
+        page_items = blocked[page * USERS_PER_PAGE:(page + 1) * USERS_PER_PAGE]
+
+        keyboard = []
+        for b in page_items:
+            name = b.get('full_name') or f"User {b['user_id']}"
+            sid = b.get('student_id') or 'N/A'
+            b_time = b.get('blocked_at', 'N/A')
+            btn_txt = f"🛑 {name} ({sid}) — {b_time}"
+            keyboard.append([InlineKeyboardButton(btn_txt, callback_data=f"admin_inspect_u_{b['user_id']}")])
+
+        nav_row = []
+        if page > 0: nav_row.append(InlineKeyboardButton("◀️ Prev", callback_data=f"admin_list_blocked_users_{page - 1}"))
+        nav_row.append(InlineKeyboardButton(f"📄 Page {page + 1}/{total_pages}", callback_data="ignore"))
+        if page < total_pages - 1: nav_row.append(InlineKeyboardButton("Next ▶️", callback_data=f"admin_list_blocked_users_{page + 1}"))
+        keyboard.append(nav_row)
+        keyboard.append([InlineKeyboardButton("👑 Main Admin Portal", callback_data="admin_home")])
+
+        await query.edit_message_text(
+            f"🛑 **BLOCKED / INACTIVE USERS AUDIT ({total_b} Total)**\n"
+            f"These students blocked or deactivated the bot. Tap any student to inspect profile or send a direct message:",
+            reply_markup=InlineKeyboardMarkup(keyboard),
+            parse_mode="Markdown"
+        )
+
+    # ==============================================================
+    # 📢 SCHEDULED ANNOUNCEMENTS MANAGEMENT
+    # ==============================================================
+    elif data.startswith("admin_list_pending_annc_"):
         await query.answer()
         page = int(data.replace("admin_list_pending_annc_", ""))
         pending = get_pending_announcements_list()

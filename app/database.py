@@ -210,7 +210,7 @@ def init_db():
         )
     ''')
 
-    # Broadcast Message Delivery Tracking Table (For Live Edit & Live Unsend from User Chats)
+    # Broadcast Message Delivery Tracking Table
     cursor.execute('''
         CREATE TABLE IF NOT EXISTS broadcast_deliveries (
             id SERIAL PRIMARY KEY,
@@ -218,6 +218,14 @@ def init_db():
             user_id BIGINT NOT NULL,
             message_id BIGINT NOT NULL,
             delivered_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+        )
+    ''')
+
+    # Blocked Users Tracking Table
+    cursor.execute('''
+        CREATE TABLE IF NOT EXISTS blocked_bot_users (
+            user_id BIGINT PRIMARY KEY,
+            blocked_at TEXT
         )
     ''')
     
@@ -364,6 +372,7 @@ def admin_delete_user_account(user_id: int):
     cursor.execute("DELETE FROM paused_quizzes WHERE user_id = %s", (user_id,))
     cursor.execute("DELETE FROM user_activity_time WHERE user_id = %s", (user_id,))
     cursor.execute("DELETE FROM student_queries WHERE user_id = %s", (user_id,))
+    cursor.execute("DELETE FROM blocked_bot_users WHERE user_id = %s", (user_id,))
     conn.commit()
     cursor.close()
     release_db(conn)
@@ -1033,6 +1042,42 @@ def get_announcement_by_id(announcement_id: int) -> dict:
     except Exception as e:
         logger.error(f"Error getting announcement by ID: {e}")
         return None
+    finally:
+        cursor.close()
+        release_db(conn)
+
+def record_blocked_user(user_id: int):
+    conn = get_db()
+    cursor = conn.cursor()
+    try:
+        now_str = get_ist_timestamp_str()
+        cursor.execute("""
+            INSERT INTO blocked_bot_users (user_id, blocked_at)
+            VALUES (%s, %s)
+            ON CONFLICT (user_id) DO NOTHING;
+        """, (user_id, now_str))
+        conn.commit()
+    except Exception as e:
+        conn.rollback()
+        logger.error(f"Error recording blocked user: {e}")
+    finally:
+        cursor.close()
+        release_db(conn)
+
+def get_blocked_bot_users() -> list:
+    conn = get_db()
+    cursor = conn.cursor(cursor_factory=RealDictCursor)
+    try:
+        cursor.execute("""
+            SELECT b.user_id, b.blocked_at, u.full_name, u.student_id, u.username, u.phone_number 
+            FROM blocked_bot_users b
+            LEFT JOIN users u ON b.user_id = u.user_id
+            ORDER BY b.blocked_at DESC;
+        """)
+        return [dict(r) for r in cursor.fetchall()]
+    except Exception as e:
+        logger.error(f"Error fetching blocked bot users: {e}")
+        return []
     finally:
         cursor.close()
         release_db(conn)

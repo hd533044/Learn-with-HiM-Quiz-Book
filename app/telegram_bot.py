@@ -10,7 +10,7 @@ import pytz
 from telegram import (
     Update, InlineKeyboardMarkup, InlineKeyboardButton, 
     BotCommand, BotCommandScopeDefault, BotCommandScopeAllPrivateChats, 
-    BotCommandScopeAllGroupChats, ReplyKeyboardRemove
+    BotCommandScopeAllGroupChats, BotCommandScopeChat, ReplyKeyboardRemove
 )
 from telegram.ext import (
     Application, CommandHandler, CallbackQueryHandler, PollAnswerHandler, 
@@ -55,6 +55,37 @@ CACHE_TTL = 30
 PROMO_NAME, PROMO_TYPE, PROMO_VALUE, PROMO_DAYS = range(100, 104)
 ANNC_CONTENT, ANNC_DATETIME = range(104, 106)
 
+
+def build_user_keypad_markup() -> InlineKeyboardMarkup:
+    """Builds the visual numeric keypad for Student PIN unlock."""
+    keyboard = [
+        [
+            InlineKeyboardButton("1", callback_data="userkp_digit_1"),
+            InlineKeyboardButton("2", callback_data="userkp_digit_2"),
+            InlineKeyboardButton("3", callback_data="userkp_digit_3")
+        ],
+        [
+            InlineKeyboardButton("4", callback_data="userkp_digit_4"),
+            InlineKeyboardButton("5", callback_data="userkp_digit_5"),
+            InlineKeyboardButton("6", callback_data="userkp_digit_6")
+        ],
+        [
+            InlineKeyboardButton("7", callback_data="userkp_digit_7"),
+            InlineKeyboardButton("8", callback_data="userkp_digit_8"),
+            InlineKeyboardButton("9", callback_data="userkp_digit_9")
+        ],
+        [
+            InlineKeyboardButton("⌫ Clear", callback_data="userkp_clear"),
+            InlineKeyboardButton("0", callback_data="userkp_digit_0"),
+            InlineKeyboardButton("🔓 Unlock", callback_data="userkp_submit")
+        ],
+        [
+            InlineKeyboardButton("🔑 Forgot PIN / Security Recovery", callback_data="login_forgot_pin")
+        ]
+    ]
+    return InlineKeyboardMarkup(keyboard)
+
+
 def log_command_usage(user_id: int, command_name: str):
     conn = None
     try:
@@ -72,6 +103,7 @@ def log_command_usage(user_id: int, command_name: str):
     except Exception:
         if conn:
             release_db(conn)
+
 
 def log_pdf_generation_event(user_id: int, pdf_type: str):
     conn = None
@@ -101,6 +133,7 @@ def log_pdf_generation_event(user_id: int, pdf_type: str):
         if conn:
             release_db(conn)
 
+
 def get_cached_profile(user_id):
     now = time.time()
     if user_id in PROFILE_CACHE:
@@ -109,8 +142,10 @@ def get_cached_profile(user_id):
             return prof
     return None
 
+
 def set_cached_profile(user_id, profile):
     PROFILE_CACHE[user_id] = (profile, time.time())
+
 
 async def fetch_user_profile_fast(user_id):
     cached = get_cached_profile(user_id)
@@ -120,6 +155,7 @@ async def fetch_user_profile_fast(user_id):
     if prof:
         set_cached_profile(user_id, prof)
     return prof
+
 
 def get_user_active_plans_history(user_id: int):
     conn = None
@@ -138,6 +174,7 @@ def get_user_active_plans_history(user_id: int):
         if conn:
             release_db(conn)
         return []
+
 
 def generate_razorpay_link_sync(user_id: int, plan_key: str) -> str:
     plan = PLAN_TIERS.get(plan_key)
@@ -213,6 +250,7 @@ def generate_razorpay_link_sync(user_id: int, plan_key: str) -> str:
         logging.error(f"[RAZORPAY EXCEPTION] {e}")
         return None
 
+
 async def send_registration_prompt(update: Update):
     msg = (
         "⚠️ **REGISTRATION REQUIRED!** ⚠️\n\n"
@@ -226,6 +264,7 @@ async def send_registration_prompt(update: Update):
         await update.callback_query.message.reply_text(msg, reply_markup=keyboard, parse_mode="Markdown")
     elif update.message:
         await update.message.reply_text(msg, reply_markup=keyboard, parse_mode="Markdown")
+
 
 async def check_user_registration(update: Update) -> bool:
     user = update.effective_user
@@ -247,6 +286,7 @@ async def check_user_registration(update: Update) -> bool:
 
     return True
 
+
 async def inactivity_guard(update: Update, context: ContextTypes.DEFAULT_TYPE) -> bool:
     user = update.effective_user
     if not user:
@@ -260,20 +300,26 @@ async def inactivity_guard(update: Update, context: ContextTypes.DEFAULT_TYPE) -
     is_locked, diff_sec = await asyncio.to_thread(check_and_update_inactivity, user_id)
     if is_locked:
         context.user_data["is_account_locked"] = True
-        rec_btn = InlineKeyboardMarkup([[InlineKeyboardButton("🔑 Reset Your PIN / Password", callback_data="login_forgot_pin")]])
+        context.user_data["user_keypad_pin"] = ""
         msg = (
             f"🔒 **ACCOUNT LOCKED DUE TO INACTIVITY** 🔒\n"
             f"━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\n"
             f"You were inactive for `{diff_sec // 60} mins`.\n\n"
-            f"🔑 **Please reply with your 4-Digit Secret PIN to unlock your account:**"
+            f"🔑 **PIN Status:** `[ ◯ ◯ ◯ ◯ ]`\n"
+            f"👉 *Tap the visual keypad below to enter your secret 4-digit PIN:*"
         )
+        markup = build_user_keypad_markup()
         if update.callback_query:
             await update.callback_query.answer("🔒 Account Locked due to 5 mins of inactivity!", show_alert=True)
-            await update.callback_query.message.reply_text(msg, reply_markup=rec_btn, parse_mode="Markdown")
+            try:
+                await update.callback_query.edit_message_text(msg, reply_markup=markup, parse_mode="Markdown")
+            except Exception:
+                await update.callback_query.message.reply_text(msg, reply_markup=markup, parse_mode="Markdown")
         elif update.message:
-            await update.message.reply_text(msg, reply_markup=rec_btn, parse_mode="Markdown")
+            await update.message.reply_text(msg, reply_markup=markup, parse_mode="Markdown")
         return False
     return True
+
 
 async def maintenance_guard(update: Update, context: ContextTypes.DEFAULT_TYPE) -> bool:
     if not await inactivity_guard(update, context):
@@ -291,6 +337,7 @@ async def maintenance_guard(update: Update, context: ContextTypes.DEFAULT_TYPE) 
             await update.message.reply_text(msg, parse_mode="Markdown", reply_markup=ReplyKeyboardRemove())
         return False
     return True
+
 
 async def strict_quiz_command_guard(update: Update, context: ContextTypes.DEFAULT_TYPE):
     if not await maintenance_guard(update, context): 
@@ -325,6 +372,7 @@ async def strict_quiz_command_guard(update: Update, context: ContextTypes.DEFAUL
 
     await launch_quiz_setup(update, context)
 
+
 async def askadmin_command(update: Update, context: ContextTypes.DEFAULT_TYPE):
     if not await maintenance_guard(update, context): return
     if not await check_user_registration(update): return
@@ -343,6 +391,7 @@ async def askadmin_command(update: Update, context: ContextTypes.DEFAULT_TYPE):
         await update.callback_query.message.reply_text(msg, parse_mode="Markdown")
     else:
         await update.message.reply_text(msg, parse_mode="Markdown")
+
 
 async def admininfo_command(update: Update, context: ContextTypes.DEFAULT_TYPE):
     if not await maintenance_guard(update, context): return
@@ -384,6 +433,7 @@ async def admininfo_command(update: Update, context: ContextTypes.DEFAULT_TYPE):
 
     await send_response(update, msg, reply_markup=buttons)
 
+
 async def send_response(update: Update, text: str, reply_markup=None):
     if update.callback_query:
         await update.callback_query.answer()
@@ -394,6 +444,7 @@ async def send_response(update: Update, text: str, reply_markup=None):
     elif update.message:
         markup = reply_markup if reply_markup else ReplyKeyboardRemove()
         await update.message.reply_text(text, reply_markup=markup, parse_mode="Markdown")
+
 
 async def myplan_command(update: Update, context: ContextTypes.DEFAULT_TYPE):
     if not await maintenance_guard(update, context): return
@@ -469,6 +520,7 @@ async def myplan_command(update: Update, context: ContextTypes.DEFAULT_TYPE):
 
     await send_response(update, msg, reply_markup=InlineKeyboardMarkup(btn_list))
 
+
 async def plans_command(update: Update, context: ContextTypes.DEFAULT_TYPE):
     if not await maintenance_guard(update, context): return
     if not await check_user_registration(update): return
@@ -523,6 +575,7 @@ async def plans_command(update: Update, context: ContextTypes.DEFAULT_TYPE):
         )
 
     await send_response(update, msg, reply_markup=InlineKeyboardMarkup(keyboard))
+
 
 async def handle_buy_plan_callback(update: Update, context: ContextTypes.DEFAULT_TYPE):
     query = update.callback_query
@@ -589,6 +642,7 @@ async def handle_buy_plan_callback(update: Update, context: ContextTypes.DEFAULT
     else:
         await query.message.reply_text("⚠️ Unable to generate payment link. Please verify Razorpay live keys in Render Environment Variables.")
 
+
 async def pdfreport_command(update: Update, context: ContextTypes.DEFAULT_TYPE):
     if not await maintenance_guard(update, context): return
     if not await check_user_registration(update): return
@@ -617,6 +671,7 @@ async def pdfreport_command(update: Update, context: ContextTypes.DEFAULT_TYPE):
         await update.callback_query.edit_message_text(msg, reply_markup=buttons, parse_mode="Markdown")
     else:
         await update.message.reply_text(msg, reply_markup=buttons, parse_mode="Markdown")
+
 
 async def wrongquestions_command(update: Update, context: ContextTypes.DEFAULT_TYPE):
     if not await maintenance_guard(update, context): return
@@ -685,6 +740,7 @@ async def wrongquestions_command(update: Update, context: ContextTypes.DEFAULT_T
         [InlineKeyboardButton("🚀 Launch Quiz", callback_data="cmd_quiz"), InlineKeyboardButton("👤 Profile", callback_data="cmd_profile")]
     ])
     await send_response(update, msg, reply_markup=nav)
+
 
 async def attemptedquestions_command(update: Update, context: ContextTypes.DEFAULT_TYPE):
     if not await maintenance_guard(update, context): return
@@ -756,6 +812,7 @@ async def attemptedquestions_command(update: Update, context: ContextTypes.DEFAU
     ])
     await send_response(update, msg, reply_markup=nav)
 
+
 async def unattemptedquestions_command(update: Update, context: ContextTypes.DEFAULT_TYPE):
     if not await maintenance_guard(update, context): return
     if not await check_user_registration(update): return
@@ -780,6 +837,7 @@ async def unattemptedquestions_command(update: Update, context: ContextTypes.DEF
     )
     nav = InlineKeyboardMarkup([[InlineKeyboardButton("🚀 Launch Quiz", callback_data="cmd_quiz")]])
     await send_response(update, msg, reply_markup=nav)
+
 
 async def user_pdf_callback_handler(update: Update, context: ContextTypes.DEFAULT_TYPE):
     if not await maintenance_guard(update, context): return
@@ -838,6 +896,7 @@ async def user_pdf_callback_handler(update: Update, context: ContextTypes.DEFAUL
         nav = InlineKeyboardMarkup([[InlineKeyboardButton("📄 Back to PDF Center", callback_data="cmd_pdfreport")]])
         await query.edit_message_text("⚠️ **Failed to generate PDF file.**", reply_markup=nav, parse_mode="Markdown")
 
+
 async def help_command(update: Update, context: ContextTypes.DEFAULT_TYPE):
     if not await maintenance_guard(update, context): return
     if not await check_user_registration(update): return
@@ -886,6 +945,7 @@ async def help_command(update: Update, context: ContextTypes.DEFAULT_TYPE):
     ]
 
     await send_response(update, msg, reply_markup=InlineKeyboardMarkup(buttons))
+
 
 async def saved_questions_command(update: Update, context: ContextTypes.DEFAULT_TYPE):
     if not await maintenance_guard(update, context): return
@@ -936,6 +996,7 @@ async def saved_questions_command(update: Update, context: ContextTypes.DEFAULT_
     ]
     await send_response(update, msg, reply_markup=InlineKeyboardMarkup(buttons))
 
+
 async def myprofile_command(update: Update, context: ContextTypes.DEFAULT_TYPE):
     if not await maintenance_guard(update, context): return
     if not await check_user_registration(update): return
@@ -984,6 +1045,7 @@ async def myprofile_command(update: Update, context: ContextTypes.DEFAULT_TYPE):
 
     await send_response(update, msg, reply_markup=InlineKeyboardMarkup(buttons))
 
+
 async def wholestate_command(update: Update, context: ContextTypes.DEFAULT_TYPE):
     if not await maintenance_guard(update, context): return
     if not await check_user_registration(update): return
@@ -1018,6 +1080,7 @@ async def wholestate_command(update: Update, context: ContextTypes.DEFAULT_TYPE)
     ]
     await send_response(update, msg, reply_markup=InlineKeyboardMarkup(buttons))
 
+
 async def toppers_command(update: Update, context: ContextTypes.DEFAULT_TYPE):
     if not await maintenance_guard(update, context): return
     if not await check_user_registration(update): return
@@ -1039,6 +1102,7 @@ async def toppers_command(update: Update, context: ContextTypes.DEFAULT_TYPE):
     msg = "🏆 **GLOBAL SCHOLAR LEADERBOARD** 🏆\n━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\n\n" + "\n".join(lines)
     buttons = [[InlineKeyboardButton("🚀 Attempt Quiz", callback_data="cmd_quiz")]]
     await send_response(update, msg, reply_markup=InlineKeyboardMarkup(buttons))
+
 
 async def feedback_command(update: Update, context: ContextTypes.DEFAULT_TYPE):
     if not await maintenance_guard(update, context): return
@@ -1064,6 +1128,7 @@ async def feedback_command(update: Update, context: ContextTypes.DEFAULT_TYPE):
     )
     await send_response(update, msg, reply_markup=InlineKeyboardMarkup(keyboard))
 
+
 async def viewfeedbacks_command(update: Update, context: ContextTypes.DEFAULT_TYPE):
     if not await maintenance_guard(update, context): return
     if not await check_user_registration(update): return
@@ -1084,6 +1149,7 @@ async def viewfeedbacks_command(update: Update, context: ContextTypes.DEFAULT_TY
 
     await send_response(update, "\n".join(lines))
 
+
 async def referral_command(update: Update, context: ContextTypes.DEFAULT_TYPE):
     if not await maintenance_guard(update, context): return
     if not await check_user_registration(update): return
@@ -1102,6 +1168,7 @@ async def referral_command(update: Update, context: ContextTypes.DEFAULT_TYPE):
         f"When 4 friends register using your link, you automatically receive +10 extra questions added to your daily quota!"
     )
     await send_response(update, msg)
+
 
 # -------------------------------------------------------------
 # 🎟️ PROMO CODE GENERATOR BOT HANDLERS
@@ -1122,6 +1189,7 @@ async def start_promo_creation(update: Update, context: ContextTypes.DEFAULT_TYP
     )
     return PROMO_NAME
 
+
 async def set_promo_name(update: Update, context: ContextTypes.DEFAULT_TYPE):
     code_name = update.message.text.strip().upper()
     context.user_data['promo_name'] = code_name
@@ -1137,6 +1205,7 @@ async def set_promo_name(update: Update, context: ContextTypes.DEFAULT_TYPE):
     )
     return PROMO_TYPE
 
+
 async def set_promo_type(update: Update, context: ContextTypes.DEFAULT_TYPE):
     query = update.callback_query
     await query.answer()
@@ -1146,6 +1215,7 @@ async def set_promo_type(update: Update, context: ContextTypes.DEFAULT_TYPE):
     unit = "%" if disc_type == "PERCENT" else "₹"
     await query.edit_message_text(f"Type the discount value to waive off (in {unit}):")
     return PROMO_VALUE
+
 
 async def set_promo_value(update: Update, context: ContextTypes.DEFAULT_TYPE):
     try:
@@ -1166,6 +1236,7 @@ async def set_promo_value(update: Update, context: ContextTypes.DEFAULT_TYPE):
         parse_mode="Markdown"
     )
     return PROMO_DAYS
+
 
 async def finalize_promo_code(update: Update, context: ContextTypes.DEFAULT_TYPE):
     query = update.callback_query
@@ -1194,6 +1265,7 @@ async def finalize_promo_code(update: Update, context: ContextTypes.DEFAULT_TYPE
         )
     return ConversationHandler.END
 
+
 # -------------------------------------------------------------
 # 📢 SCHEDULED ANNOUNCEMENT BOT HANDLERS (IST SYNCED + QUICK ACTIONS)
 # -------------------------------------------------------------
@@ -1211,6 +1283,7 @@ async def start_announcement_schedule(update: Update, context: ContextTypes.DEFA
         "Send the Announcement Post now (Text, Photo, or Video with Caption):"
     )
     return ANNC_CONTENT
+
 
 async def receive_announcement_content(update: Update, context: ContextTypes.DEFAULT_TYPE):
     msg = update.message
@@ -1235,6 +1308,7 @@ async def receive_announcement_content(update: Update, context: ContextTypes.DEF
         parse_mode="Markdown"
     )
     return ANNC_DATETIME
+
 
 async def finalize_announcement_schedule(update: Update, context: ContextTypes.DEFAULT_TYPE):
     dt_str = update.message.text.strip()
@@ -1284,16 +1358,77 @@ async def finalize_announcement_schedule(update: Update, context: ContextTypes.D
     )
     return ConversationHandler.END
 
+
 async def cancel_admin_action(update: Update, context: ContextTypes.DEFAULT_TYPE):
     await update.message.reply_text("Action canceled.")
     return ConversationHandler.END
 
-async def button_router(update: Update, context: ContextTypes.DEFAULT_TYPE):
-    if not await maintenance_guard(update, context): return
 
+async def button_router(update: Update, context: ContextTypes.DEFAULT_TYPE):
     query = update.callback_query
     data = query.data
     user = query.from_user
+
+    # ==============================================================
+    # 🔑 USER OPTION A VISUAL KEYPAD INTERACTION
+    # ==============================================================
+    if data.startswith("userkp_"):
+        current_pin = context.user_data.get("user_keypad_pin", "")
+
+        if data.startswith("userkp_digit_"):
+            digit = data.replace("userkp_digit_", "")
+            if len(current_pin) < 4:
+                current_pin += digit
+                context.user_data["user_keypad_pin"] = current_pin
+            await query.answer()
+
+        elif data == "userkp_clear":
+            context.user_data["user_keypad_pin"] = ""
+            current_pin = ""
+            await query.answer("Cleared!")
+
+        elif data == "userkp_submit":
+            profile = await fetch_user_profile_fast(user.id)
+            if profile and profile.get("pin") == current_pin:
+                context.user_data["is_account_locked"] = False
+                context.user_data.pop("user_keypad_pin", None)
+                asyncio.create_task(asyncio.to_thread(refresh_user_activity_epoch, user.id))
+                await query.answer("🔓 Account Unlocked Successfully!", show_alert=True)
+
+                unlocked_menu_btn = InlineKeyboardMarkup([
+                    [InlineKeyboardButton("🚀 Launch Quiz Now", callback_data="cmd_quiz"), InlineKeyboardButton("👤 My Profile", callback_data="cmd_profile")],
+                    [InlineKeyboardButton("💳 My Plan", callback_data="cmd_myplan"), InlineKeyboardButton("❓ Help & Support", callback_data="cmd_help")]
+                ])
+                await query.edit_message_text(
+                    f"🔓 **ACCOUNT UNLOCKED SUCCESSFULLY!** 🔓\n"
+                    f"━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\n"
+                    f"🎉 **Welcome back, {profile['full_name']}!** Your identity has been verified.\n\n"
+                    f"✨ Select an option below to continue practicing on **Quiz with HiM**:",
+                    reply_markup=unlocked_menu_btn,
+                    parse_mode="Markdown"
+                )
+                return
+            else:
+                context.user_data["user_keypad_pin"] = ""
+                await query.answer("❌ Incorrect PIN! Try again.", show_alert=True)
+                current_pin = ""
+
+        # Update PIN display indicator
+        masked = "".join(["⬤ " for _ in range(len(current_pin))]) + "".join(["◯ " for _ in range(max(0, 4 - len(current_pin)))])
+        msg = (
+            f"🔒 **ACCOUNT LOCKED DUE TO INACTIVITY** 🔒\n"
+            f"━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\n"
+            f"🔑 **PIN Status:** `[ {masked.strip()} ]`\n"
+            f"👉 *Tap the visual keypad below to enter your secret 4-digit PIN:*"
+        )
+        try:
+            await query.edit_message_text(msg, reply_markup=build_user_keypad_markup(), parse_mode="Markdown")
+        except Exception:
+            pass
+        return
+
+    if not await maintenance_guard(update, context): return
+
     asyncio.create_task(asyncio.to_thread(log_user_activity_time, user.id, 5))
 
     if data == "trigger_start":
@@ -1374,6 +1509,7 @@ async def button_router(update: Update, context: ContextTypes.DEFAULT_TYPE):
     elif data == "fb_custom":
         context.user_data["awaiting_custom_feedback"] = True
         await query.edit_message_text("✍️ Please reply with your custom feedback below:")
+
 
 async def handle_text_messages(update: Update, context: ContextTypes.DEFAULT_TYPE):
     user = update.effective_user
@@ -1499,7 +1635,7 @@ async def handle_text_messages(update: Update, context: ContextTypes.DEFAULT_TYP
             await update.message.reply_text(
                 "🎉 **RECOVERY CREDENTIALS VERIFIED!** 🎉\n"
                 "━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\n"
-                "Please reply with your new Master Admin Password now:",
+                "Please reply with your new Master Admin PIN now:",
                 parse_mode="Markdown"
             )
         else:
@@ -1509,34 +1645,22 @@ async def handle_text_messages(update: Update, context: ContextTypes.DEFAULT_TYP
     if user.id == PRIMARY_ADMIN_ID and context.user_data.get("awaiting_admin_new_pass"):
         context.user_data["awaiting_admin_new_pass"] = False
         if len(text) < 4:
-            await update.message.reply_text("⚠️ Password must be at least 4 characters long.")
+            await update.message.reply_text("⚠️ PIN must be at least 4 characters long.")
             return
 
         success = update_admin_password_db(text)
         if success:
             ADMIN_AUTH_SESSIONS[user.id] = time.time()
             await update.message.reply_text(
-                f"🎉 **ADMIN PASSWORD CHANGED & SAVED IN DATABASE!** 🎉\n"
+                f"🎉 **ADMIN MASTER PIN CHANGED & SAVED IN DATABASE!** 🎉\n"
                 f"━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\n"
-                f"🔑 **New Master Password:** `{text}`\n"
+                f"🔑 **New Master PIN:** `{text}`\n"
                 f"✨ Admin session authenticated for 30 minutes.",
                 reply_markup=get_admin_nav_buttons(),
                 parse_mode="Markdown"
             )
         else:
-            await update.message.reply_text("⚠️ Error saving new password in database. Please try again.")
-        return
-
-    if user.id == PRIMARY_ADMIN_ID and context.user_data.get("awaiting_admin_password"):
-        context.user_data["awaiting_admin_password"] = False
-        stored_pass = get_stored_admin_password()
-        if text == stored_pass:
-            ADMIN_AUTH_SESSIONS[user.id] = time.time()
-            await update.message.reply_text("🔓 **MASTER ADMIN ACCESS GRANTED!**\nSession active for 30 mins.", reply_markup=get_admin_nav_buttons(), parse_mode="Markdown")
-            await admin_portal_command(update, context)
-        else:
-            reset_btn = InlineKeyboardMarkup([[InlineKeyboardButton("🔑 Forgot Password / Recovery Reset", callback_data="admin_forgot_pass_step1")]])
-            await update.message.reply_text("❌ **INCORRECT PASSWORD!** Access denied.\nTap below if you need to recover password:", reply_markup=reset_btn, parse_mode="Markdown")
+            await update.message.reply_text("⚠️ Error saving new PIN in database. Please try again.")
         return
 
     if user.id == PRIMARY_ADMIN_ID and context.user_data.get("awaiting_admin_warning_msg_uid"):
@@ -1649,7 +1773,7 @@ async def handle_text_messages(update: Update, context: ContextTypes.DEFAULT_TYP
                 f"📩 **NEW STUDENT ENQUIRY RECEIVED!**\n"
                 f"👤 **Student:** {name} (`{user.id}`)\n"
                 f"❓ **Query:** *\"{query_text_val}\"*\n\n"
-                f"Type /admin or tap Student Support Threads to inspect and reply."
+                f"Type /him or tap Student Support Threads to inspect and reply."
             )
             btn = InlineKeyboardMarkup([[InlineKeyboardButton("📩 Inspect Support Threads", callback_data="admin_view_student_threads_0")]])
             if photo_fid:
@@ -1665,33 +1789,6 @@ async def handle_text_messages(update: Update, context: ContextTypes.DEFAULT_TYP
             reply_markup=ReplyKeyboardRemove(),
             parse_mode="Markdown"
         )
-        return
-
-    if context.user_data.get("is_account_locked"):
-        profile = await fetch_user_profile_fast(user.id)
-        if profile and profile.get("pin") == text:
-            context.user_data["is_account_locked"] = False
-            asyncio.create_task(asyncio.to_thread(refresh_user_activity_epoch, user.id))
-            
-            unlocked_menu_btn = InlineKeyboardMarkup([
-                [InlineKeyboardButton("🚀 Launch Quiz Now", callback_data="cmd_quiz"), InlineKeyboardButton("👤 My Profile", callback_data="cmd_profile")],
-                [InlineKeyboardButton("💳 My Plan", callback_data="cmd_myplan"), InlineKeyboardButton("❓ Help & Support", callback_data="cmd_help")]
-            ])
-            await update.message.reply_text(
-                "🔓 **ACCOUNT UNLOCKED SUCCESSFULLY!** 🔓\n"
-                "━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\n"
-                "🎉 **Welcome back!** Your identity has been verified.\n\n"
-                "✨ Select an option below to continue practicing on **Quiz with HiM**:",
-                reply_markup=unlocked_menu_btn,
-                parse_mode="Markdown"
-            )
-        else:
-            rec_btn = InlineKeyboardMarkup([[InlineKeyboardButton("🔑 Reset Options", callback_data="login_forgot_pin")]])
-            await update.message.reply_text(
-                "❌ **INCORRECT PIN!**\n\nPlease enter your correct 4-digit secret PIN, or tap below to reset:",
-                reply_markup=rec_btn,
-                parse_mode="Markdown"
-            )
         return
 
     if not await maintenance_guard(update, context): return
@@ -1713,7 +1810,7 @@ async def handle_text_messages(update: Update, context: ContextTypes.DEFAULT_TYP
         ]
 
         if not matches:
-            back_btn = InlineKeyboardMarkup([[InlineKeyboardButton("🔍 New Search", callback_data="admin_search_prompt")], [InlineKeyboardButton("👑 Main Admin Portal", callback_data="admin_home")]])
+            back_btn = InlineKeyboardMarkup([[InlineKeyboardButton("🔍 New Search", callback_data="admin_search_prompt")], [InlineKeyboardButton("👑 Himanshu Sir's Portal (/him)", callback_data="admin_home")]])
             await update.message.reply_text(f"⚠️ No student record found matching: `{text}`", reply_markup=back_btn, parse_mode="Markdown")
             return
 
@@ -1722,7 +1819,7 @@ async def handle_text_messages(update: Update, context: ContextTypes.DEFAULT_TYP
             sid = m.get("student_id") or f"USER_{m['user_id']}"
             keyboard.append([InlineKeyboardButton(f"👤 {m['full_name']} (ID: {sid})", callback_data=f"admin_inspect_u_{m['user_id']}")])
         
-        keyboard.append([InlineKeyboardButton("👑 Main Admin Portal", callback_data="admin_home")])
+        keyboard.append([InlineKeyboardButton("👑 Himanshu Sir's Portal (/him)", callback_data="admin_home")])
         await update.message.reply_text(f"🔍 **Search Results for '{text}':**", reply_markup=InlineKeyboardMarkup(keyboard), parse_mode="Markdown")
         return
 
@@ -1775,7 +1872,7 @@ async def handle_text_messages(update: Update, context: ContextTypes.DEFAULT_TYP
             ],
             [
                 InlineKeyboardButton("📢 Live Sent Broadcasts History", callback_data="admin_list_sent_annc_0"),
-                InlineKeyboardButton("👑 Main Admin Portal", callback_data="admin_home")
+                InlineKeyboardButton("👑 Himanshu Sir's Portal (/him)", callback_data="admin_home")
             ]
         ]
         await update.message.reply_text(
@@ -1785,8 +1882,10 @@ async def handle_text_messages(update: Update, context: ContextTypes.DEFAULT_TYP
             parse_mode="Markdown"
         )
 
+
 async def global_error_handler(update: object, context: ContextTypes.DEFAULT_TYPE) -> None:
     logging.error(f"Exception caught in global error handler: {context.error}")
+
 
 async def post_init(application: Application):
     try:
@@ -1796,6 +1895,7 @@ async def post_init(application: Application):
     except Exception as e:
         logging.warning(f"Note on command purge: {e}")
 
+    # Standard Student Commands (Default Scope)
     allowed_commands = [
         BotCommand("quiz", "🚀 Start Computer Quiz"),
         BotCommand("myplan", "💵 Subscriptions"),
@@ -1822,6 +1922,17 @@ async def post_init(application: Application):
     
     await application.bot.set_my_commands(allowed_commands, scope=BotCommandScopeDefault())
     await application.bot.set_my_commands(allowed_commands, scope=BotCommandScopeAllPrivateChats())
+
+    # Exclusive Admin Commands (Pinned to Himanshu Sir's Telegram Chat Scope)
+    try:
+        admin_commands = [
+            BotCommand("him", "👑 Open Master Admin Portal"),
+            BotCommand("admin", "👑 Master Dashboard")
+        ] + allowed_commands
+        await application.bot.set_my_commands(admin_commands, scope=BotCommandScopeChat(chat_id=PRIMARY_ADMIN_ID))
+    except Exception as e:
+        logging.warning(f"Admin command scope setup note: {e}")
+
 
 def build_application() -> Application:
     init_db()
@@ -1875,6 +1986,8 @@ def build_application() -> Application:
     app.add_handler(CommandHandler("help", help_command))
     app.add_handler(CommandHandler("invite", referral_command))
     
+    # Unified /him and /admin Handlers
+    app.add_handler(CommandHandler("him", admin_portal_command))
     app.add_handler(CommandHandler("admin", admin_portal_command))
     app.add_handler(CommandHandler("admit", admin_portal_command))
 
@@ -1886,8 +1999,8 @@ def build_application() -> Application:
     app.add_handler(CallbackQueryHandler(admin_grant_plan_menu_callback, pattern="^admin_grant_menu_"))
     app.add_handler(CallbackQueryHandler(admin_execute_grant_callback, pattern="^admin_exec_grant_"))
     
-    app.add_handler(CallbackQueryHandler(admin_callback_handler, pattern="^(admin_|audit_|genpdf_)"))
-    app.add_handler(CallbackQueryHandler(button_router, pattern="^cmd_|^fb_|^trigger_start|^buy_plan_"))
+    app.add_handler(CallbackQueryHandler(admin_callback_handler, pattern="^(admin_|audit_|genpdf_|adminkp_)"))
+    app.add_handler(CallbackQueryHandler(button_router, pattern="^cmd_|^fb_|^trigger_start|^buy_plan_|^userkp_"))
 
     app.add_handler(MessageHandler((filters.TEXT | filters.PHOTO | filters.VIDEO) & ~filters.COMMAND, handle_text_messages))
     app.add_handler(PollAnswerHandler(handle_poll_answer))

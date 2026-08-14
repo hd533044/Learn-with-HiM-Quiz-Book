@@ -43,6 +43,14 @@ def get_ist_date_str():
 def get_ist_timestamp_str():
     return get_ist_now().strftime("%Y-%m-%d %H:%M:%S IST")
 
+def calculate_discounted_price(original_price: float, discount_percent: float) -> int:
+    """Calculates discounted price rounded down/nearest integer (minimum 1 INR)."""
+    if discount_percent <= 0 or original_price <= 0:
+        return int(original_price)
+    discount_amount = (original_price * discount_percent) / 100.0
+    final_price = max(1, int(round(original_price - discount_amount)))
+    return final_price
+
 def init_db():
     init_pool()
     conn = get_db()
@@ -226,6 +234,21 @@ def init_db():
         CREATE TABLE IF NOT EXISTS blocked_bot_users (
             user_id BIGINT PRIMARY KEY,
             blocked_at TEXT
+        )
+    ''')
+
+    # Flash Sales / Discount Offers Table
+    cursor.execute('''
+        CREATE TABLE IF NOT EXISTS flash_sales (
+            id SERIAL PRIMARY KEY,
+            sale_name TEXT NOT NULL,
+            discount_percent NUMERIC(5, 2) NOT NULL,
+            valid_from TIMESTAMP NOT NULL,
+            valid_until TIMESTAMP NOT NULL,
+            is_active BOOLEAN DEFAULT TRUE,
+            broadcast_sent BOOLEAN DEFAULT FALSE,
+            created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+            created_by BIGINT
         )
     ''')
     
@@ -647,12 +670,6 @@ def get_seen_question_ids(user_id):
     return {str(r['question_id']) for r in rows}
 
 def get_user_question_intel(user_id: int) -> dict:
-    """
-    Intelligent telemetry fetcher for question repetition:
-    - Identifies question seen timestamps
-    - Identifies wrong & skipped/unattempted questions
-    - Identifies mature questions seen >= 12 days ago
-    """
     conn = get_db()
     cursor = conn.cursor(cursor_factory=RealDictCursor)
     
@@ -826,6 +843,74 @@ def clear_paused_quiz_state(user_id: int):
     conn.commit()
     cursor.close()
     release_db(conn)
+
+# ==========================================
+# ⚡ FLASH SALE & DISCOUNT OFFER SERVICES
+# ==========================================
+
+def create_flash_sale(sale_name: str, discount_percent: float, valid_until: datetime, created_by: int) -> dict:
+    conn = get_db()
+    cursor = conn.cursor(cursor_factory=RealDictCursor)
+    try:
+        now_dt = datetime.now(IST).replace(tzinfo=None)
+        # Deactivate any previous running sales
+        cursor.execute("UPDATE flash_sales SET is_active = FALSE WHERE is_active = TRUE;")
+        
+        cursor.execute("""
+            INSERT INTO flash_sales (sale_name, discount_percent, valid_from, valid_until, is_active, created_by)
+            VALUES (%s, %s, %s, %s, TRUE, %s)
+            RETURNING *;
+        """, (sale_name.strip(), discount_percent, now_dt, valid_until, created_by))
+        
+        row = cursor.fetchone()
+        conn.commit()
+        return dict(row) if row else {}
+    except Exception as e:
+        conn.rollback()
+        logger.error(f"Error creating flash sale: {e}")
+        return {"error": str(e)}
+    finally:
+        cursor.close()
+        release_db(conn)
+
+def get_active_flash_sale() -> dict:
+    conn = get_db()
+    cursor = conn.cursor(cursor_factory=RealDictCursor)
+    try:
+        now_dt = datetime.now(IST).replace(tzinfo=None)
+        cursor.execute("""
+            SELECT * FROM flash_sales 
+            WHERE is_active = TRUE AND valid_until > %s
+            ORDER BY id DESC LIMIT 1;
+        """, (now_dt,))
+        row = cursor.fetchone()
+        if not row:
+            # Auto-deactivate expired sales
+            cursor.execute("UPDATE flash_sales SET is_active = FALSE WHERE is_active = TRUE AND valid_until <= %s;", (now_dt,))
+            conn.commit()
+            return None
+        return dict(row)
+    except Exception as e:
+        logger.error(f"Error getting active flash sale: {e}")
+        return None
+    finally:
+        cursor.close()
+        release_db(conn)
+
+def stop_active_flash_sale() -> bool:
+    conn = get_db()
+    cursor = conn.cursor()
+    try:
+        cursor.execute("UPDATE flash_sales SET is_active = FALSE WHERE is_active = TRUE;")
+        conn.commit()
+        return True
+    except Exception as e:
+        conn.rollback()
+        logger.error(f"Error stopping flash sale: {e}")
+        return False
+    finally:
+        cursor.close()
+        release_db(conn)
 
 # ==========================================
 # 🎟️ PROMO CODE GENERATOR DATABASE SERVICES

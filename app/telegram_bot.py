@@ -29,7 +29,8 @@ from app.database import (
     get_seen_question_ids, admin_update_user_name, get_ist_date_str,
     create_promo_code, schedule_announcement,
     update_announcement_content, update_announcement_time,
-    get_broadcast_deliveries, record_broadcast_delivery, create_instant_broadcast_record
+    get_broadcast_deliveries, record_broadcast_delivery, create_instant_broadcast_record,
+    get_active_flash_sale, calculate_discounted_price
 )
 from app.onboarding import get_onboarding_handler, start_onboarding
 from app.quiz_engine import (
@@ -41,7 +42,7 @@ from app.admin import (
     admin_portal_command, admin_callback_handler, get_admin_nav_buttons,
     admin_view_user_payments_callback, admin_grant_plan_menu_callback, admin_execute_grant_callback,
     get_stored_admin_password, update_admin_password_db, ADMIN_AUTH_SESSIONS,
-    fast_concurrent_broadcast, clear_admin_user_data_states
+    fast_concurrent_broadcast, clear_admin_user_data_states, DISCOUNT_OPTIONS
 )
 from app.pdf_generator import generate_student_pdf_report
 from app.pyq_fetcher import fetch_pyqs_for_quiz
@@ -151,6 +152,9 @@ def generate_razorpay_link_sync(user_id: int, plan_key: str) -> str:
         logging.error("[PAYMENT ERROR] Razorpay API keys missing.")
         return None
 
+    active_sale = get_active_flash_sale()
+    final_price = calculate_discounted_price(plan["price"], active_sale["discount_percent"]) if active_sale else plan["price"]
+
     url = "https://api.razorpay.com/v1/payment_links"
     auth_str = f"{key_id}:{key_secret}"
     encoded_auth = base64.b64encode(auth_str.encode("ascii")).decode("ascii")
@@ -165,13 +169,17 @@ def generate_razorpay_link_sync(user_id: int, plan_key: str) -> str:
         clean_phone = "9123456789"
 
     base_render_url = (os.getenv("RENDER_EXTERNAL_URL") or "https://learn-with-him-quiz-book.onrender.com").rstrip("/")
-    callback_uri = f"{base_render_url}/razorpay-webhook?user_id={user_id}&plan_key={plan_key}"
+    callback_uri = f"{base_render_url}/razorpay-webhook?user_id={user_id}&plan_key={plan_key}&final_price={final_price}"
+
+    desc = f"Subscription - {plan_key}"
+    if active_sale:
+        desc += f" ({int(active_sale['discount_percent'])}% OFF - {active_sale['sale_name']})"
 
     payload = {
-        "amount": int(plan["price"] * 100),
+        "amount": int(final_price * 100),
         "currency": "INR",
         "accept_partial": False,
-        "description": f"Subscription - {plan_key}",
+        "description": desc,
         "customer": {
             "name": profile.get("full_name", "Student") if profile else "Student",
             "contact": clean_phone,
@@ -179,7 +187,10 @@ def generate_razorpay_link_sync(user_id: int, plan_key: str) -> str:
         },
         "notes": {
             "user_id": str(user_id),
-            "plan_key": str(plan_key)
+            "plan_key": str(plan_key),
+            "original_price": str(plan["price"]),
+            "amount_paid": str(final_price),
+            "sale_applied": active_sale["sale_name"] if active_sale else "NONE"
         },
         "callback_url": callback_uri,
         "callback_method": "get"
@@ -468,27 +479,45 @@ async def plans_command(update: Update, context: ContextTypes.DEFAULT_TYPE):
     asyncio.create_task(asyncio.to_thread(log_user_activity_time, user.id, 10))
     profile = await fetch_user_profile_fast(user.id)
 
+    active_sale = await asyncio.to_thread(get_active_flash_sale)
+
     keyboard = []
     if not profile.get("demo_used"):
         keyboard.append([InlineKeyboardButton("🎁 FREE DEMO TRIAL (2 Days - 20 Qs/Day)", callback_data="buy_plan_FREE_DEMO")])
 
-    keyboard.extend([
-        [InlineKeyboardButton("📦 BRONZE (₹5 - 3 Days - 80 Qs/Day)", callback_data="buy_plan_BRONZE")],
-        [InlineKeyboardButton("📦 SILVER (₹10 - 7 Days - 100 Qs/Day)", callback_data="buy_plan_SILVER")],
-        [InlineKeyboardButton("📦 GOLD (₹15 - 12 Days - 120 Qs/Day)", callback_data="buy_plan_GOLD")],
-        [InlineKeyboardButton("📦 DIAMOND (₹20 - 18 Days - 150 Qs/Day)", callback_data="buy_plan_DIAMOND")],
-        [InlineKeyboardButton("📦 LEARNWITHHIM (₹25 - 30 Days - 250 Qs/Day)", callback_data="buy_plan_LEARNWITHHIM")],
-        [InlineKeyboardButton("📦 PLATINUM (₹40 - 60 Days - 300 Qs/Day)", callback_data="buy_plan_PLATINUM")],
-        [InlineKeyboardButton("📦 RUBY (₹50 - 90 Days - 400 Qs/Day)", callback_data="buy_plan_RUBY")],
-        [InlineKeyboardButton("📦 MEGA PACK (₹80 - 180 Days - 500 Qs/Day)", callback_data="buy_plan_MEGA")],
-        [InlineKeyboardButton("💬 Secret Message Admin", callback_data="cmd_askadmin")]
-    ])
+    for k, p in PLAN_TIERS.items():
+        if k == "FREE_DEMO":
+            continue
+        if active_sale:
+            disc_price = calculate_discounted_price(p["price"], active_sale["discount_percent"])
+            btn_txt = f"📦 {k} (~₹{p['price']}~ ₹{disc_price} - {p['days']}D - {p['daily_limit']} Qs/D)"
+        else:
+            btn_txt = f"📦 {k} (₹{p['price']} - {p['days']} Days - {p['daily_limit']} Qs/Day)"
+        keyboard.append([InlineKeyboardButton(btn_txt, callback_data=f"buy_plan_{k}")])
 
-    msg = (
-        f"👑 **QUIZ WITH HIM — VIP MEMBERSHIP PACKS** 👑\n"
-        f"━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\n"
-        f"Select a pack below to pay securely and instantly unlock daily question limits:"
-    )
+    keyboard.append([InlineKeyboardButton("💬 Secret Message Admin", callback_data="cmd_askadmin")])
+
+    if active_sale:
+        now_dt = datetime.now(pytz.timezone("Asia/Kolkata")).replace(tzinfo=None)
+        diff_sec = max(0, int((active_sale['valid_until'] - now_dt).total_seconds()))
+        hrs_left = diff_sec // 3600
+        mins_left = (diff_sec % 3600) // 60
+        pct = int(active_sale['discount_percent'])
+
+        msg = (
+            f"🔥 **SPECIAL SALE OFFER: {active_sale['sale_name'].upper()} ({pct}% OFF)!** 🔥\n"
+            f"━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\n"
+            f"🎉 **Limited-Time Discount Active!** All VIP packs are currently discounted by **{pct}%**.\n"
+            f"⏰ **Hurry, offer ends in:** `{hrs_left}h {mins_left}m`!\n"
+            f"━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\n"
+            f"Select a pack below to pay securely and instantly unlock daily question limits:"
+        )
+    else:
+        msg = (
+            f"👑 **QUIZ WITH HIM — VIP MEMBERSHIP PACKS** 👑\n"
+            f"━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\n"
+            f"Select a pack below to pay securely and instantly unlock daily question limits:"
+        )
 
     await send_response(update, msg, reply_markup=InlineKeyboardMarkup(keyboard))
 
@@ -523,18 +552,31 @@ async def handle_buy_plan_callback(update: Update, context: ContextTypes.DEFAULT
         )
         return
 
+    active_sale = await asyncio.to_thread(get_active_flash_sale)
+    charge_price = calculate_discounted_price(plan_info["price"], active_sale["discount_percent"]) if active_sale else plan_info["price"]
+
     payment_url = generate_razorpay_link_sync(user_id, plan_key)
 
     if payment_url:
         keyboard = [
-            [InlineKeyboardButton(f"💳 Pay ₹{plan_info['price']} via Razorpay", url=payment_url)],
+            [InlineKeyboardButton(f"💳 Pay ₹{charge_price} via Razorpay", url=payment_url)],
             [InlineKeyboardButton("🔙 Back to Plans", callback_data="cmd_plans")],
             [InlineKeyboardButton("💬 Secret Message Admin", callback_data="cmd_askadmin")]
         ]
+
+        if active_sale:
+            price_details = (
+                f"💰 **Original Price:** ~₹{plan_info['price']}~\n"
+                f"🔥 **Sale Discount ({int(active_sale['discount_percent'])}% OFF):** -₹{plan_info['price'] - charge_price}\n"
+                f"✨ **Final Amount Payable:** **₹{charge_price} INR**"
+            )
+        else:
+            price_details = f"💰 **Amount Payable:** ₹{charge_price} INR"
+
         msg = (
             f"🛒 **SELECTED PACK:** {plan_info['name']}\n"
             f"━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\n"
-            f"💰 **Amount Payable:** ₹{plan_info['price']}\n"
+            f"{price_details}\n"
             f"📅 **Validity:** {plan_info['days']} Days\n"
             f"⚡ **Daily Limit:** {plan_info['daily_limit']} Questions/Day\n\n"
             f"Tap the **💳 Pay Now** button below to complete payment via UPI, GPay, PhonePe, or Cards. "
@@ -1337,6 +1379,32 @@ async def handle_text_messages(update: Update, context: ContextTypes.DEFAULT_TYP
     photo = msg_obj.photo[-1] if msg_obj and msg_obj.photo else None
     caption = msg_obj.caption.strip() if msg_obj and msg_obj.caption else ""
     video = msg_obj.video if msg_obj and msg_obj.video else None
+
+    # 0. Flash Sale Setup Wizard Step 1 Text Handler
+    if user.id == PRIMARY_ADMIN_ID and context.user_data.get("awaiting_sale_name"):
+        context.user_data["awaiting_sale_name"] = False
+        sale_name = text.strip() or "Special Discount Offer"
+        context.user_data["sale_name"] = sale_name
+
+        pct_buttons = []
+        row = []
+        for pct in DISCOUNT_OPTIONS:
+            row.append(InlineKeyboardButton(f"💸 {pct}% OFF", callback_data=f"admin_sale_pct_{pct}"))
+            if len(row) == 2:
+                pct_buttons.append(row)
+                row = []
+        if row:
+            pct_buttons.append(row)
+        pct_buttons.append([InlineKeyboardButton("❌ Cancel", callback_data="admin_sale_dashboard")])
+
+        msg = (
+            f"🏷 **Selected Sale Title:** `{sale_name}`\n\n"
+            f"💸 **STEP 2/4: CHOOSE DISCOUNT PERCENTAGE**\n"
+            f"━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\n"
+            f"Please tap the percentage discount you want to offer on all VIP packs:"
+        )
+        await update.message.reply_text(msg, reply_markup=InlineKeyboardMarkup(pct_buttons), parse_mode="Markdown")
+        return
 
     # 1. Edit Scheduled Announcement Content
     if user.id == PRIMARY_ADMIN_ID and context.user_data.get("awaiting_edit_annc_content"):

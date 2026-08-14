@@ -16,7 +16,8 @@ from app.database import (
     get_user_profile, get_db, release_db, sync_user_json_profile, toggle_user_ban_status,
     get_paid_users, admin_update_user_name, admin_delete_user_account, get_ist_date_str,
     get_pending_announcements_list, get_sent_announcements_list, get_announcement_by_id,
-    delete_scheduled_announcement, get_broadcast_deliveries, get_blocked_bot_users
+    delete_scheduled_announcement, get_broadcast_deliveries, get_blocked_bot_users,
+    create_flash_sale, get_active_flash_sale, stop_active_flash_sale, calculate_discounted_price
 )
 from app.pdf_generator import generate_student_pdf_report
 from app.stats import get_user_performance_summary, calculate_user_rank, calculate_user_percentile
@@ -24,6 +25,16 @@ from app.stats import get_user_performance_summary, calculate_user_rank, calcula
 logger = logging.getLogger(__name__)
 USERS_PER_PAGE = 8
 ADMIN_AUTH_SESSIONS = {}  # {user_id: auth_timestamp}
+
+DISCOUNT_OPTIONS = [5, 10, 15, 20, 25, 30, 40]
+DURATION_OPTIONS = [
+    ("1 Hour", 1, "h"),
+    ("6 Hours", 6, "h"),
+    ("12 Hours", 12, "h"),
+    ("24 Hours (1 Day)", 24, "h"),
+    ("3 Days", 3, "d"),
+    ("7 Days", 7, "d")
+]
 
 
 def clear_admin_user_data_states(context: ContextTypes.DEFAULT_TYPE):
@@ -40,7 +51,8 @@ def clear_admin_user_data_states(context: ContextTypes.DEFAULT_TYPE):
         "awaiting_admin_rec_email",
         "awaiting_edit_annc_content",
         "awaiting_edit_annc_time",
-        "awaiting_edit_live_broadcast"
+        "awaiting_edit_live_broadcast",
+        "awaiting_sale_name"
     ]
     for key in keys_to_clear:
         context.user_data.pop(key, None)
@@ -57,11 +69,6 @@ def get_admin_nav_buttons(target_uid: int = None):
 
 
 async def fast_concurrent_broadcast(bot, user_ids, text, reply_markup=None, parse_mode="Markdown", photo=None, video=None, media_type="text", annc_id=None):
-    """
-    High-Speed Parallel Broadcast Engine:
-    Delivers Text, Photos, or Videos concurrently in batches of 40 (< 3s total)
-    with sound notifications, automatic block detection, and real-time delivery tracking.
-    """
     from app.database import record_blocked_user, record_broadcast_delivery
 
     async def send_single(uid):
@@ -191,10 +198,10 @@ def update_admin_password_db(new_pass: str) -> bool:
         cursor.execute(
             """
             INSERT INTO admin_security (id, admin_id, password_hash, dob_recovery, email_recovery, updated_at)
-            VALUES (1, %s, %s, '09081999', 'hd533044@gmail.com', %s)
+            VALUES (%s, %s, %s, %s, %s, %s)
             ON CONFLICT (id) DO UPDATE SET password_hash = EXCLUDED.password_hash, updated_at = EXCLUDED.updated_at
             """,
-            (PRIMARY_ADMIN_ID, new_pass, now_str)
+            (1, PRIMARY_ADMIN_ID, new_pass, '09081999', 'hd533044@gmail.com', now_str)
         )
         conn.commit()
         cursor.close()
@@ -444,32 +451,39 @@ async def admin_portal_command(update: Update, context: ContextTypes.DEFAULT_TYP
     now_ts = int(time.time())
     m_status = "🟢 Active (Online)" if now_ts >= m_until else "🔴 PAUSED (Maintenance Mode)"
 
+    active_sale = get_active_flash_sale()
+    sale_btn_label = f"🔥 Sale Offers (🟢 {int(active_sale['discount_percent'])}% Live)" if active_sale else "⚡ Sale Offers & Discounts"
+
     keyboard = [
         [InlineKeyboardButton("📊 Quick Overview Pop-Up", callback_data="admin_popup_overview")],
         [InlineKeyboardButton(f"📩 Student Support Threads ({pending_students_count} Unread)", callback_data="admin_view_student_threads_0")],
         [
-            InlineKeyboardButton("🎟 Create Promo Code", callback_data="admin_create_promo"),
-            InlineKeyboardButton("📢 Schedule Announcement", callback_data="admin_schedule_annc")
+            InlineKeyboardButton(sale_btn_label, callback_data="admin_sale_dashboard"),
+            InlineKeyboardButton("🎟 Create Promo Code", callback_data="admin_create_promo")
         ],
         [
-            InlineKeyboardButton("📋 Manage Scheduled Posts", callback_data="admin_list_pending_annc_0"),
-            InlineKeyboardButton("📢 Live Sent Broadcasts", callback_data="admin_list_sent_annc_0")
+            InlineKeyboardButton("📢 Schedule Announcement", callback_data="admin_schedule_annc"),
+            InlineKeyboardButton("📋 Manage Scheduled Posts", callback_data="admin_list_pending_annc_0")
         ],
         [
-            InlineKeyboardButton(f"🛑 Blocked Users ({len(blocked_users)})", callback_data="admin_list_blocked_users_0"),
-            InlineKeyboardButton(f"⚡ Online (15m: {len(online_15m)})", callback_data="admin_live_users_menu")
+            InlineKeyboardButton("📢 Live Sent Broadcasts", callback_data="admin_list_sent_annc_0"),
+            InlineKeyboardButton(f"🛑 Blocked Users ({len(blocked_users)})", callback_data="admin_list_blocked_users_0")
         ],
         [
-            InlineKeyboardButton(f"💳 Paid VIP ({len(paid_users)})", callback_data="admin_paid_users_page_0"),
-            InlineKeyboardButton(f"🎁 Free Demo ({len(demo_users)})", callback_data="admin_demo_users_page_0")
+            InlineKeyboardButton(f"⚡ Online (15m: {len(online_15m)})", callback_data="admin_live_users_menu"),
+            InlineKeyboardButton(f"💳 Paid VIP ({len(paid_users)})", callback_data="admin_paid_users_page_0")
         ],
         [
-            InlineKeyboardButton("📄 PDF Generation Logs", callback_data="admin_pdf_logs"),
-            InlineKeyboardButton("👥 Student Directory", callback_data="admin_users_page_0")
+            InlineKeyboardButton(f"🎁 Free Demo ({len(demo_users)})", callback_data="admin_demo_users_page_0"),
+            InlineKeyboardButton("📄 PDF Generation Logs", callback_data="admin_pdf_logs")
         ],
-        [InlineKeyboardButton("🔍 Search Student", callback_data="admin_search_prompt"), InlineKeyboardButton("💰 Revenue Dashboard", callback_data="admin_financial_stats")],
-        [InlineKeyboardButton("⏱ Platform Time Telemetry", callback_data="admin_total_platform_usage"), InlineKeyboardButton("🎁 Gift Quota Boost to ALL", callback_data="admin_mass_grant_menu")],
-        [InlineKeyboardButton("📊 Command Usage Analytics", callback_data="admin_command_stats"), InlineKeyboardButton("📦 Export Ledgers (.zip)", callback_data="admin_export_zip")],
+        [
+            InlineKeyboardButton("👥 Student Directory", callback_data="admin_users_page_0"),
+            InlineKeyboardButton("🔍 Search Student", callback_data="admin_search_prompt")
+        ],
+        [InlineKeyboardButton("💰 Revenue Dashboard", callback_data="admin_financial_stats"), InlineKeyboardButton("⏱ Platform Time Telemetry", callback_data="admin_total_platform_usage")],
+        [InlineKeyboardButton("🎁 Gift Quota Boost to ALL", callback_data="admin_mass_grant_menu"), InlineKeyboardButton("📊 Command Usage Analytics", callback_data="admin_command_stats")],
+        [InlineKeyboardButton("📦 Export Ledgers (.zip)", callback_data="admin_export_zip")],
         [
             InlineKeyboardButton("⏸ Pause 5m", callback_data="admin_pause_5"), 
             InlineKeyboardButton("⏸ Pause 10m", callback_data="admin_pause_10"),
@@ -485,6 +499,8 @@ async def admin_portal_command(update: Update, context: ContextTypes.DEFAULT_TYP
         [InlineKeyboardButton("📢 Global Broadcast to ALL Users", callback_data="admin_broadcast")]
     ]
 
+    sale_summary_line = f"🔥 **Active Flash Sale:** `{active_sale['sale_name']} ({int(active_sale['discount_percent'])}% OFF)`" if active_sale else "🔥 **Flash Sale Status:** `🔴 Inactive (Normal Prices)`"
+
     msg = (
         f"👑 **MASTER ADMIN PORTAL — Himanshu Sir** 👑\n"
         f"━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\n"
@@ -495,7 +511,8 @@ async def admin_portal_command(update: Update, context: ContextTypes.DEFAULT_TYP
         f"⚡ **Online Users (15m):** `{len(online_15m)}`\n"
         f"⏱ **Total Platform Practice Time:** `{usage_stats['hours']} Hours`\n"
         f"📩 **Unread Support Queries:** `{pending_students_count}`\n"
-        f"⚡ **Bot System Status:** `{m_status}`\n\n"
+        f"⚡ **Bot System Status:** `{m_status}`\n"
+        f"{sale_summary_line}\n\n"
         f"Select an administrative action below:"
     )
 
@@ -702,9 +719,266 @@ async def admin_callback_handler(update: Update, context: ContextTypes.DEFAULT_T
     users = get_all_users()
 
     # ==============================================================
+    # ⚡ FLASH SALE & DISCOUNT OFFER WIZARD AND LIVE CONTROLS
+    # ==============================================================
+    if data == "admin_sale_dashboard":
+        await query.answer()
+        active_sale = get_active_flash_sale()
+
+        if active_sale:
+            now_dt = datetime.now(pytz.timezone("Asia/Kolkata")).replace(tzinfo=None)
+            diff_sec = max(0, int((active_sale['valid_until'] - now_dt).total_seconds()))
+            hrs_left = diff_sec // 3600
+            mins_left = (diff_sec % 3600) // 60
+            valid_until_str = active_sale['valid_until'].strftime("%d %b %Y, %I:%M %p IST")
+            pct = int(active_sale['discount_percent'])
+
+            table_lines = ["\n📊 **Calculated Discounted Pricing Matrix:**"]
+            for k, p in PLAN_TIERS.items():
+                if k == "FREE_DEMO": continue
+                disc_p = calculate_discounted_price(p['price'], pct)
+                table_lines.append(f"• **{p['name']}:** ~₹{p['price']}~ ➡️ **₹{disc_p}** (-₹{p['price']-disc_p})")
+
+            pricing_summary = "\n".join(table_lines)
+
+            msg = (
+                f"🔥 **FLASH SALE & OFFERS CONTROL PANEL** 🔥\n"
+                f"━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\n"
+                f"🟢 **Status:** `LIVE & ACTIVE`\n"
+                f"🏷 **Sale Name / Purpose:** `{active_sale['sale_name']}`\n"
+                f"💸 **Discount:** `{pct}% OFF` (Across all VIP Packs)\n"
+                f"⏳ **Time Remaining:** `{hrs_left}h {mins_left}m`\n"
+                f"📅 **Valid Until:** `{valid_until_str}`\n"
+                f"{pricing_summary}\n\n"
+                f"⚡ *Admin can reinstate original plan prices immediately anytime.*"
+            )
+
+            keyboard = [
+                [InlineKeyboardButton("🛑 Stop Sale & Reinstate Normal Prices", callback_data="admin_sale_stop_confirm")],
+                [InlineKeyboardButton("📢 Re-Broadcast Offer Announcement", callback_data="admin_sale_rebroadcast")],
+                [InlineKeyboardButton("👑 Main Admin Portal", callback_data="admin_home")]
+            ]
+        else:
+            msg = (
+                f"⚡ **FLASH SALE & DISCOUNT OFFERS ENGINE** ⚡\n"
+                f"━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\n"
+                f"🔴 **Current Status:** `No Active Sale (Normal Base Prices Live)`\n\n"
+                f"💡 Launch a pre-calculated flash discount (5% to 40%) with automatic Razorpay price recalculation, expiry timer, and one-click broadcast to all students.\n\n"
+                f"Tap **➕ Launch New Sale Offer** below to start the setup wizard:"
+            )
+            keyboard = [
+                [InlineKeyboardButton("➕ Launch New Sale Offer", callback_data="admin_sale_wizard_step1")],
+                [InlineKeyboardButton("👑 Main Admin Portal", callback_data="admin_home")]
+            ]
+
+        await query.edit_message_text(msg, reply_markup=InlineKeyboardMarkup(keyboard), parse_mode="Markdown")
+
+    elif data == "admin_sale_wizard_step1":
+        await query.answer()
+        context.user_data["awaiting_sale_name"] = True
+        cancel_btn = InlineKeyboardMarkup([[InlineKeyboardButton("❌ Cancel", callback_data="admin_sale_dashboard")]])
+        await query.edit_message_text(
+            "🏷 **STEP 1/4: NAME OF SALE / PURPOSE OF DISCOUNT**\n"
+            "━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\n"
+            "Please reply with the title/name for this sale offer:\n"
+            "*(Examples: `Monsoon Special Offer`, `Independence Day Mega Sale`, `BSF HCM Revision Discount`)*",
+            reply_markup=cancel_btn,
+            parse_mode="Markdown"
+        )
+
+    elif data.startswith("admin_sale_pct_"):
+        await query.answer()
+        pct = int(data.replace("admin_sale_pct_", ""))
+        context.user_data["sale_percent"] = pct
+        sale_name = context.user_data.get("sale_name", "Special Discount Offer")
+
+        duration_buttons = []
+        row = []
+        for label, val, unit in DURATION_OPTIONS:
+            cb_val = f"admin_sale_dur_{val}_{unit}"
+            row.append(InlineKeyboardButton(f"⏱ {label}", callback_data=cb_val))
+            if len(row) == 2:
+                duration_buttons.append(row)
+                row = []
+        if row:
+            duration_buttons.append(row)
+        duration_buttons.append([InlineKeyboardButton("❌ Cancel", callback_data="admin_sale_dashboard")])
+
+        msg = (
+            f"🏷 **Sale Name:** `{sale_name}`\n"
+            f"💸 **Discount:** `{pct}% OFF`\n\n"
+            f"⏳ **STEP 3/4: CHOOSE SALE DURATION / VALIDITY**\n"
+            f"━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\n"
+            f"Select how long this discounted pricing should remain active:"
+        )
+        await query.edit_message_text(msg, reply_markup=InlineKeyboardMarkup(duration_buttons), parse_mode="Markdown")
+
+    elif data.startswith("admin_sale_dur_"):
+        await query.answer()
+        parts = data.replace("admin_sale_dur_", "").split("_")
+        val = int(parts[0])
+        unit = parts[1]
+
+        ist = pytz.timezone("Asia/Kolkata")
+        now_dt = datetime.now(ist).replace(tzinfo=None)
+
+        if unit == "h":
+            end_dt = now_dt + timedelta(hours=val)
+            dur_label = f"{val} Hour(s)"
+        else:
+            end_dt = now_dt + timedelta(days=val)
+            dur_label = f"{val} Day(s)"
+
+        context.user_data["sale_end_dt"] = end_dt
+        context.user_data["sale_dur_label"] = dur_label
+
+        sale_name = context.user_data.get("sale_name", "Special Flash Sale")
+        pct = context.user_data.get("sale_percent", 20)
+
+        table_lines = ["\n📊 **Pre-calculated Price Drops for All VIP Packs:**"]
+        for k, p in PLAN_TIERS.items():
+            if k == "FREE_DEMO": continue
+            disc_p = calculate_discounted_price(p['price'], pct)
+            table_lines.append(f"• **{p['name']}:** ~₹{p['price']}~ ➡️ **₹{disc_p}** (-₹{p['price']-disc_p})")
+
+        pricing_summary = "\n".join(table_lines)
+        end_str = end_dt.strftime("%d %b %Y, %I:%M %p IST")
+
+        msg = (
+            f"🚀 **STEP 4/4: CONFIRM & LAUNCH SALE OFFER**\n"
+            f"━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\n"
+            f"🏷 **Sale Title:** `{sale_name}`\n"
+            f"💸 **Discount Tier:** `{pct}% OFF`\n"
+            f"⏳ **Validity Duration:** `{dur_label}`\n"
+            f"📅 **Offer Expiry Time:** `{end_str}`\n"
+            f"{pricing_summary}\n\n"
+            f"Choose how you want to launch this offer:"
+        )
+
+        confirm_keyboard = [
+            [InlineKeyboardButton("🚀 Launch & Push Announcement to ALL", callback_data="admin_sale_launch_broadcast")],
+            [InlineKeyboardButton("🤫 Launch Silently (No Global Broadcast)", callback_data="admin_sale_launch_silent")],
+            [InlineKeyboardButton("❌ Cancel", callback_data="admin_sale_dashboard")]
+        ]
+        await query.edit_message_text(msg, reply_markup=InlineKeyboardMarkup(confirm_keyboard), parse_mode="Markdown")
+
+    elif data in ("admin_sale_launch_broadcast", "admin_sale_launch_silent"):
+        await query.answer()
+        do_broadcast = (data == "admin_sale_launch_broadcast")
+        
+        sale_name = context.user_data.get("sale_name", "Special Flash Sale")
+        pct = context.user_data.get("sale_percent", 20)
+        end_dt = context.user_data.get("sale_end_dt", datetime.now(pytz.timezone("Asia/Kolkata")).replace(tzinfo=None) + timedelta(hours=24))
+        dur_label = context.user_data.get("sale_dur_label", "24 Hours")
+
+        sale_res = create_flash_sale(sale_name, pct, end_dt, user_id)
+        if "error" in sale_res:
+            await query.edit_message_text(f"❌ **Failed to launch sale:** {sale_res['error']}", reply_markup=InlineKeyboardMarkup([[InlineKeyboardButton("🔙 Back", callback_data="admin_sale_dashboard")]]))
+            return
+
+        end_str = end_dt.strftime("%d %b %Y, %I:%M %p IST")
+
+        if do_broadcast:
+            b_msg = (
+                f"🔥 **SPECIAL SALE ANNOUNCEMENT: {sale_name.upper()}!** 🔥\n"
+                f"━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\n"
+                f"🎉 **Himanshu Sir has unlocked a FLAT {pct}% DISCOUNT on ALL VIP Packs!**\n\n"
+                f"⚡ All practice question packs are now available at pre-calculated discounted prices.\n"
+                f"⏳ **Offer Validity:** `{dur_label}` (Ends: `{end_str}`)\n"
+                f"━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\n"
+                f"🚀 Tap **/plans** below to upgrade your daily quota at discounted prices now!"
+            )
+            btn = InlineKeyboardMarkup([[InlineKeyboardButton("💳 View Discounted Plans", callback_data="cmd_plans"), InlineKeyboardButton("🚀 Launch Quiz", callback_data="cmd_quiz")]])
+            
+            target_uids = [u['user_id'] for u in users if not u.get('is_banned')]
+            sent_count = await fast_concurrent_broadcast(context.bot, target_uids, b_msg, reply_markup=btn)
+            broadcast_status = f"✅ Broadcast delivered to `{sent_count}/{len(target_uids)}` students."
+        else:
+            broadcast_status = "🤫 Launched silently (no mass broadcast sent)."
+
+        msg = (
+            f"🎉 **FLASH SALE LAUNCHED SUCCESSFULLY!** 🎉\n"
+            f"━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\n"
+            f"🏷 **Sale Name:** `{sale_name}`\n"
+            f"💸 **Discount:** `{pct}% OFF`\n"
+            f"⏳ **Expires At:** `{end_str}`\n"
+            f"📢 **Broadcast:** {broadcast_status}\n\n"
+            f"Prices on **/plans** and Razorpay payment links are now actively discounted!"
+        )
+        keyboard = [
+            [InlineKeyboardButton("⚡ View Sale Control Panel", callback_data="admin_sale_dashboard")],
+            [InlineKeyboardButton("👑 Main Admin Portal", callback_data="admin_home")]
+        ]
+        await query.edit_message_text(msg, reply_markup=InlineKeyboardMarkup(keyboard), parse_mode="Markdown")
+
+    elif data == "admin_sale_stop_confirm":
+        await query.answer()
+        active_sale = get_active_flash_sale()
+        if not active_sale:
+            await query.edit_message_text("ℹ️ No active sale to stop.", reply_markup=InlineKeyboardMarkup([[InlineKeyboardButton("🔙 Back", callback_data="admin_sale_dashboard")]]))
+            return
+
+        confirm_btn = InlineKeyboardMarkup([
+            [InlineKeyboardButton("🛑 Yes, Stop Sale & Reset Normal Prices", callback_data="admin_sale_stop_execute")],
+            [InlineKeyboardButton("❌ Cancel", callback_data="admin_sale_dashboard")]
+        ])
+        await query.edit_message_text(
+            f"⚠️ **CONFIRM SALE TERMINATION** ⚠️\n"
+            f"━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\n"
+            f"Are you sure you want to stop **{active_sale['sale_name']}** ({int(active_sale['discount_percent'])}% OFF) right now?\n\n"
+            f"This will immediately reinstate original prices for all students on **/plans**.",
+            reply_markup=confirm_btn,
+            parse_mode="Markdown"
+        )
+
+    elif data == "admin_sale_stop_execute":
+        await query.answer()
+        stop_active_flash_sale()
+        nav = InlineKeyboardMarkup([
+            [InlineKeyboardButton("⚡ Flash Sale Panel", callback_data="admin_sale_dashboard")],
+            [InlineKeyboardButton("👑 Main Admin Portal", callback_data="admin_home")]
+        ])
+        await query.edit_message_text(
+            "🛑 **FLASH SALE STOPPED & REINSTATED!** 🛑\n\n"
+            "All plan prices and Razorpay payment links have been returned to their original base prices immediately.",
+            reply_markup=nav,
+            parse_mode="Markdown"
+        )
+
+    elif data == "admin_sale_rebroadcast":
+        await query.answer()
+        active_sale = get_active_flash_sale()
+        if not active_sale:
+            await query.edit_message_text("ℹ️ No active sale to broadcast.", reply_markup=InlineKeyboardMarkup([[InlineKeyboardButton("🔙 Back", callback_data="admin_sale_dashboard")]]))
+            return
+
+        now_dt = datetime.now(pytz.timezone("Asia/Kolkata")).replace(tzinfo=None)
+        diff_sec = max(0, int((active_sale['valid_until'] - now_dt).total_seconds()))
+        hrs_left = diff_sec // 3600
+        mins_left = (diff_sec % 3600) // 60
+        pct = int(active_sale['discount_percent'])
+
+        b_msg = (
+            f"⏰ **REMINDER: {active_sale['sale_name'].upper()} ENDING SOON!** 🔥\n"
+            f"━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\n"
+            f"🎉 **FLAT {pct}% DISCOUNT is live on ALL VIP Packs!**\n\n"
+            f"⏳ **Hurry, offer ends in:** `{hrs_left} Hours {mins_left} Mins`!\n"
+            f"━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\n"
+            f"🚀 Tap **/plans** below to upgrade your daily questions before the sale ends!"
+        )
+        btn = InlineKeyboardMarkup([[InlineKeyboardButton("💳 Grab Discounted Plan", callback_data="cmd_plans")]])
+        target_uids = [u['user_id'] for u in users if not u.get('is_banned')]
+        
+        await query.edit_message_text("⏳ **Re-broadcasting sale reminder to all students...**")
+        sent_count = await fast_concurrent_broadcast(context.bot, target_uids, b_msg, reply_markup=btn)
+
+        nav = InlineKeyboardMarkup([[InlineKeyboardButton("⚡ Return to Sale Panel", callback_data="admin_sale_dashboard")], [InlineKeyboardButton("👑 Main Admin Portal", callback_data="admin_home")]])
+        await query.edit_message_text(f"✅ **SALE REMINDER BROADCASTED!**\nDelivered to `{sent_count}/{len(target_uids)}` students.", reply_markup=nav, parse_mode="Markdown")
+
+    # ==============================================================
     # 🛑 BLOCKED / INACTIVE USERS AUDIT MODULE
     # ==============================================================
-    if data.startswith("admin_list_blocked_users_"):
+    elif data.startswith("admin_list_blocked_users_"):
         await query.answer()
         page = int(data.replace("admin_list_blocked_users_", ""))
         blocked = get_blocked_bot_users()
@@ -1125,7 +1399,6 @@ async def admin_callback_handler(update: Update, context: ContextTypes.DEFAULT_T
         back_btn = InlineKeyboardMarkup([[InlineKeyboardButton("🔙 Back to Admin Portal", callback_data="admin_home")]])
         await query.edit_message_text(f"✅ **GIFTED +{amount} SAME-DAY QS TO ALL USERS!**\nBroadcasted to {sent} active students.", reply_markup=back_btn, parse_mode="Markdown")
 
-    # Robust Callback Parsing for Resolved Archive View
     elif data.startswith("admin_view_student_threads_"):
         await query.answer()
         raw_param = data.replace("admin_view_student_threads_", "")

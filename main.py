@@ -26,7 +26,8 @@ from app.config import (
 )
 from app.database import (
     sync_user_json_profile, get_ist_timestamp_str, get_db, release_db, get_user_profile,
-    fetch_pending_announcements, update_announcement_status, get_all_users, record_broadcast_delivery
+    fetch_pending_announcements, update_announcement_status, get_all_users, record_broadcast_delivery,
+    get_active_flash_sale, calculate_discounted_price
 )
 
 logging.basicConfig(
@@ -51,7 +52,7 @@ SENT_EXPIRY_REMINDERS = set()
 LAST_QUIZ_BROADCAST_KEY = ""
 
 
-async def activate_user_subscription(user_id: int, plan_key: str, payment_id: str = "OFFICIAL_SUBSCRIBED"):
+async def activate_user_subscription(user_id: int, plan_key: str, payment_id: str = "OFFICIAL_SUBSCRIBED", amount_paid: float = None):
     """
     ACTIVATION ENGINE:
     1. Stacks daily question limit onto current paid_question_balance.
@@ -74,6 +75,8 @@ async def activate_user_subscription(user_id: int, plan_key: str, payment_id: st
     profile = get_user_profile(user_id) or {}
     current_bal = profile.get("paid_question_balance", 0) or 0
     new_bal = current_bal + plan["daily_limit"]
+
+    actual_charged_amount = amount_paid if amount_paid is not None else plan["price"]
 
     conn = None
     try:
@@ -101,7 +104,7 @@ async def activate_user_subscription(user_id: int, plan_key: str, payment_id: st
                 VALUES (%s, %s, %s, %s, %s, %s, %s, %s, %s)
                 ON CONFLICT (payment_id) DO NOTHING
                 """,
-                (user_id, payment_id, plan_key, plan["name"], plan["price"], plan["daily_limit"], plan["days"], payment_time_str, expiry_str)
+                (user_id, payment_id, plan_key, plan["name"], actual_charged_amount, plan["daily_limit"], plan["days"], payment_time_str, expiry_str)
             )
         except Exception as tx_err:
             logging.warning(f"[TX LOG FALLBACK] Fallback insertion without expiry_at: {tx_err}")
@@ -112,7 +115,7 @@ async def activate_user_subscription(user_id: int, plan_key: str, payment_id: st
                 VALUES (%s, %s, %s, %s, %s, %s, %s, %s)
                 ON CONFLICT (payment_id) DO NOTHING
                 """,
-                (user_id, payment_id, plan_key, plan["name"], plan["price"], plan["daily_limit"], plan["days"], payment_time_str)
+                (user_id, payment_id, plan_key, plan["name"], actual_charged_amount, plan["daily_limit"], plan["days"], payment_time_str)
             )
 
         conn.commit()
@@ -123,7 +126,7 @@ async def activate_user_subscription(user_id: int, plan_key: str, payment_id: st
         PROFILE_CACHE.pop(user_id, None)
         sync_user_json_profile(user_id)
         
-        logging.info(f"[SUCCESS] Activated and stacked plan {plan_key} for User ID: {user_id}. New Quota: {new_bal}")
+        logging.info(f"[SUCCESS] Activated and stacked plan {plan_key} for User ID: {user_id}. New Quota: {new_bal}, Paid: ₹{actual_charged_amount}")
         return True
     except Exception as e:
         if conn:
@@ -132,7 +135,7 @@ async def activate_user_subscription(user_id: int, plan_key: str, payment_id: st
         return False
 
 
-async def send_payment_invoice_telegram(user_id: int, plan_key: str, payment_id: str = "OFFICIAL_SUBSCRIBED"):
+async def send_payment_invoice_telegram(user_id: int, plan_key: str, payment_id: str = "OFFICIAL_SUBSCRIBED", amount_paid: float = None):
     """
     Pushes an instant, celebratory text invoice directly into the user's Telegram chat
     AND notifies Himanshu Sir in the Admin Dashboard with full purchase details!
@@ -152,6 +155,10 @@ async def send_payment_invoice_telegram(user_id: int, plan_key: str, payment_id:
     orig_payment_time = profile.get("payment_timestamp") or get_ist_timestamp_str()
     total_quota = profile.get("paid_question_balance", 0)
     expiry_date = profile.get("vip_pass_expiry", "N/A")
+
+    base_price = plan_info.get('price', 0)
+    final_amount = amount_paid if amount_paid is not None else base_price
+    discount_applied_str = f" (🔥 Discount Saved: ₹{base_price - final_amount})" if (base_price > final_amount and base_price > 0) else ""
 
     is_admin_grant = "ADMIN" in str(payment_id).upper()
 
@@ -176,7 +183,7 @@ async def send_payment_invoice_telegram(user_id: int, plan_key: str, payment_id:
             f"⏳ **New VIP Pass Expiry:** `{expiry_date}`\n\n"
             f"🧾 **OFFICIAL PAYMENT SUCCESS INVOICE**\n"
             f"• **Student ID:** `{sid}`\n"
-            f"• **Amount Paid:** ₹{plan_info.get('price', 0)} INR\n"
+            f"• **Amount Paid:** ₹{final_amount} INR{discount_applied_str}\n"
             f"• **Txn / Payment ID:** `{payment_id}`\n"
             f"• **Payment Timestamp:** `{orig_payment_time}`\n"
             f"• **Added Validity:** `{plan_info.get('days')} Days Access`\n"
@@ -210,7 +217,7 @@ async def send_payment_invoice_telegram(user_id: int, plan_key: str, payment_id:
             f"🪪 **Student ID:** `{sid}`\n"
             f"🆔 **Telegram ID:** `{user_id}`\n\n"
             f"📦 **Purchased Pack:** `{plan_name}`\n"
-            f"💰 **Amount Paid:** `₹{plan_info.get('price', 0)} INR`\n"
+            f"💰 **Amount Paid:** `₹{final_amount} INR`{discount_applied_str}\n"
             f"⚡ **New Stacked Quota:** `{total_quota} Qs/Day`\n"
             f"⏳ **VIP Pass Expiry:** `{expiry_date}`\n"
             f"🧾 **Payment ID:** `{payment_id}`\n"
@@ -473,6 +480,17 @@ async def scheduled_announcement_broadcast_worker():
             logging.error(f"[ANNOUNCEMENT WORKER EXCEPTION] {e}")
 
 
+async def scheduled_flash_sale_worker():
+    """Background worker that continuously monitors flash sales and auto-expires them."""
+    while True:
+        await asyncio.sleep(30)
+        try:
+            # get_active_flash_sale() automatically checks expiry and deactivates expired sales
+            await asyncio.to_thread(get_active_flash_sale)
+        except Exception as e:
+            logging.error(f"[FLASH SALE WORKER EXCEPTION] {e}")
+
+
 async def handle_ping(request):
     return web.Response(text="Bot Engine & Payment Gateway Active")
 
@@ -483,15 +501,17 @@ async def handle_razorpay_callback_get(request):
 
     raw_user_id = params.get("user_id") or params.get("notes[user_id]")
     plan_key = params.get("plan_key") or params.get("notes[plan_key]")
+    final_price_str = params.get("final_price") or params.get("notes[amount_paid]")
 
-    logging.info(f"[GET CALLBACK] Captured params: user_id={raw_user_id}, plan_key={plan_key}, payment_id={razorpay_payment_id}")
+    logging.info(f"[GET CALLBACK] Captured params: user_id={raw_user_id}, plan_key={plan_key}, payment_id={razorpay_payment_id}, final_price={final_price_str}")
 
     if raw_user_id and plan_key:
         try:
             uid = int(raw_user_id)
-            activated = await activate_user_subscription(uid, plan_key, razorpay_payment_id)
+            charged_amt = float(final_price_str) if final_price_str else None
+            activated = await activate_user_subscription(uid, plan_key, razorpay_payment_id, amount_paid=charged_amt)
             if activated:
-                await send_payment_invoice_telegram(uid, plan_key, razorpay_payment_id)
+                await send_payment_invoice_telegram(uid, plan_key, razorpay_payment_id, amount_paid=charged_amt)
         except Exception as e:
             logging.error(f"[GET CALLBACK EXCEPTION] {e}")
 
@@ -549,12 +569,18 @@ async def handle_razorpay_webhook(request):
             user_id = notes.get("user_id") or payload.get("notes", {}).get("user_id")
             plan_key = notes.get("plan_key") or payload.get("notes", {}).get("plan_key")
             payment_id = payload.get("payment_id") or payload.get("id") or "OFFICIAL_SUBSCRIBED"
+            
+            # Extract charged amount if available
+            raw_amount = payload.get("amount")
+            amount_paid = (float(raw_amount) / 100.0) if raw_amount else None
+            if not amount_paid and notes.get("amount_paid"):
+                amount_paid = float(notes["amount_paid"])
 
             if user_id and plan_key:
                 uid = int(user_id)
-                success = await activate_user_subscription(uid, plan_key, payment_id)
+                success = await activate_user_subscription(uid, plan_key, payment_id, amount_paid=amount_paid)
                 if success:
-                    await send_payment_invoice_telegram(uid, plan_key, payment_id)
+                    await send_payment_invoice_telegram(uid, plan_key, payment_id, amount_paid=amount_paid)
 
         return web.Response(status=200, text="Webhook Processed")
     except Exception as e:
@@ -591,6 +617,7 @@ async def run_bot():
     asyncio.create_task(scheduled_expiry_reminder_check())
     asyncio.create_task(scheduled_daily_quiz_reminder())
     asyncio.create_task(scheduled_announcement_broadcast_worker())
+    asyncio.create_task(scheduled_flash_sale_worker())
 
     stop_event = asyncio.Event()
     try:

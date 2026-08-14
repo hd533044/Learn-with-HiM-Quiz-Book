@@ -743,7 +743,7 @@ def create_promo_code(code: str, discount_type: str, discount_value: float, days
     cursor = conn.cursor(cursor_factory=RealDictCursor)
     try:
         clean_code = code.strip().upper()
-        valid_until = datetime.now() + timedelta(days=days_valid)
+        valid_until = datetime.now(IST) + timedelta(days=days_valid)
         cursor.execute("""
             INSERT INTO promo_codes (code, discount_type, discount_value, valid_until, created_by)
             VALUES (%s, %s, %s, %s, %s)
@@ -770,7 +770,7 @@ def apply_promo_code(user_id: int, code: str, original_price: float) -> dict:
         if not promo:
             return {"success": False, "reason": "INVALID_CODE"}
         
-        if promo['valid_until'] < datetime.now():
+        if promo['valid_until'] < datetime.now(IST):
             return {"success": False, "reason": "EXPIRED"}
         
         cursor.execute("SELECT id FROM promo_redemptions WHERE promo_id = %s AND user_id = %s", (promo['id'], user_id))
@@ -810,7 +810,7 @@ def record_promo_redemption(promo_id: int, user_id: int):
         release_db(conn)
 
 # ==========================================
-# 📢 SCHEDULED ANNOUNCEMENT DATABASE SERVICES
+# 📢 SCHEDULED ANNOUNCEMENT DATABASE SERVICES (IST FIXED)
 # ==========================================
 
 def schedule_announcement(message_text: str, media_file_id: str, media_type: str, scheduled_time: datetime, created_by: int) -> dict:
@@ -833,11 +833,13 @@ def fetch_pending_announcements() -> list:
     conn = get_db()
     cursor = conn.cursor(cursor_factory=RealDictCursor)
     try:
+        # Pass exact Python IST time directly to avoid UTC server clock issues
+        now_ist_str = datetime.now(IST).strftime("%Y-%m-%d %H:%M:%S")
         cursor.execute("""
             SELECT * FROM scheduled_announcements 
-            WHERE status = 'PENDING' AND scheduled_time <= NOW()
+            WHERE status = 'PENDING' AND scheduled_time <= %s
             ORDER BY scheduled_time ASC;
-        """)
+        """, (now_ist_str,))
         return [dict(r) for r in cursor.fetchall()]
     finally:
         cursor.close()

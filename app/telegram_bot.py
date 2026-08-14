@@ -718,7 +718,7 @@ async def unattemptedquestions_command(update: Update, context: ContextTypes.DEF
     asyncio.create_task(asyncio.to_thread(log_user_activity_time, user.id, 10))
 
     seen_ids = await asyncio.to_thread(get_seen_question_ids, user.id)
-    all_qs = await asyncio.to_thread(fetch_pyqs_for_quiz, 1000, set())
+    all_qs = await asyncio.to_thread(fetch_pyqs_for_quiz, 1000, set(), "en")
     total_bank = len(all_qs)
     seen_count = len(seen_ids)
     remaining_count = max(0, total_bank - seen_count)
@@ -1147,7 +1147,7 @@ async def finalize_promo_code(update: Update, context: ContextTypes.DEFAULT_TYPE
     return ConversationHandler.END
 
 # -------------------------------------------------------------
-# 📢 SCHEDULED ANNOUNCEMENT BOT HANDLERS
+# 📢 SCHEDULED ANNOUNCEMENT BOT HANDLERS (IST SYNCED)
 # -------------------------------------------------------------
 
 async def start_announcement_schedule(update: Update, context: ContextTypes.DEFAULT_TYPE):
@@ -1180,10 +1180,10 @@ async def receive_announcement_content(update: Update, context: ContextTypes.DEF
         context.user_data['annc_text'] = msg.text or ""
 
     await msg.reply_text(
-        "📅 **Enter Schedule Date & Time**\n\n"
+        "📅 **Enter Schedule Date & Time (IST)**\n\n"
         "Please type the exact publishing time in format:\n"
         "`YYYY-MM-DD HH:MM` (24-Hour Clock)\n"
-        "Example: `2026-08-15 14:30`",
+        "Example: `2026-08-14 14:30`",
         parse_mode="Markdown"
     )
     return ANNC_DATETIME
@@ -1192,11 +1192,15 @@ async def finalize_announcement_schedule(update: Update, context: ContextTypes.D
     dt_str = update.message.text.strip()
     try:
         scheduled_dt = datetime.strptime(dt_str, "%Y-%m-%d %H:%M")
-        if scheduled_dt <= datetime.now():
-            await update.message.reply_text("❌ Scheduled time must be in the future! Please enter a valid date and time:")
+        ist = pytz.timezone("Asia/Kolkata")
+        now_ist = datetime.now(ist).replace(tzinfo=None)
+        
+        # Check against IST current time strictly
+        if scheduled_dt <= now_ist:
+            await update.message.reply_text("❌ Scheduled time must be in the future! Please enter a valid future IST date and time:")
             return ANNC_DATETIME
     except ValueError:
-        await update.message.reply_text("❌ Invalid format! Use `YYYY-MM-DD HH:MM` (e.g., `2026-08-15 14:30`):")
+        await update.message.reply_text("❌ Invalid format! Use `YYYY-MM-DD HH:MM` (e.g., `2026-08-14 14:30`):")
         return ANNC_DATETIME
 
     txt = context.user_data['annc_text']
@@ -1209,7 +1213,7 @@ async def finalize_announcement_schedule(update: Update, context: ContextTypes.D
     await update.message.reply_text(
         f"✅ **ANNOUNCEMENT SCHEDULED!**\n\n"
         f"📌 **ID:** #{res['id']}\n"
-        f"⏰ **Publish Time:** {scheduled_dt.strftime('%Y-%m-%d %I:%M %p')}\n"
+        f"⏰ **Publish Time (IST):** {scheduled_dt.strftime('%Y-%m-%d %I:%M %p')}\n"
         f"📝 **Media Type:** {media_type.upper()}\n\n"
         f"The background scheduler will automatically broadcast this to all users at the exact scheduled time!",
         parse_mode="Markdown"

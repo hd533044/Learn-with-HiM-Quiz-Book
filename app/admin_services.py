@@ -11,6 +11,7 @@ IST = pytz.timezone("Asia/Kolkata")
 # ==========================================
 
 def create_promo_code(code: str, discount_type: str, discount_value: float, days_valid: int, created_by: int) -> dict:
+    """Creates a new promo code with admin-defined validity (1 to 7 days) and discount."""
     conn = get_db()
     cursor = conn.cursor(cursor_factory=RealDictCursor)
     try:
@@ -35,6 +36,7 @@ def create_promo_code(code: str, discount_type: str, discount_value: float, days
 
 
 def apply_promo_code(user_id: int, code: str, original_price: float) -> dict:
+    """Validates user promo code and calculates final discounted price."""
     conn = get_db()
     cursor = conn.cursor(cursor_factory=RealDictCursor)
     try:
@@ -48,16 +50,18 @@ def apply_promo_code(user_id: int, code: str, original_price: float) -> dict:
         if promo['valid_until'] < datetime.now(IST):
             return {"success": False, "reason": "EXPIRED"}
         
+        # Check if user already used this promo code
         cursor.execute("SELECT id FROM promo_redemptions WHERE promo_id = %s AND user_id = %s", (promo['id'], user_id))
         if cursor.fetchone():
             return {"success": False, "reason": "ALREADY_USED"}
         
+        # Calculate Discount
         disc_type = promo['discount_type']
         disc_val = float(promo['discount_value'])
         
         if disc_type == "PERCENT":
             discount_amount = round((original_price * disc_val) / 100.0, 2)
-        else:
+        else: # FLAT Amount
             discount_amount = disc_val
             
         final_price = max(0.0, round(original_price - discount_amount, 2))
@@ -75,6 +79,7 @@ def apply_promo_code(user_id: int, code: str, original_price: float) -> dict:
 
 
 def record_promo_redemption(promo_id: int, user_id: int):
+    """Marks a promo code as redeemed for a specific user after successful checkout."""
     conn = get_db()
     cursor = conn.cursor()
     try:
@@ -89,10 +94,11 @@ def record_promo_redemption(promo_id: int, user_id: int):
 
 
 # ==========================================
-# 📢 SCHEDULED ANNOUNCEMENT ENGINE (FIXED TIMEZONES)
+# 📢 SCHEDULED ANNOUNCEMENT ENGINE (IST TIME-SYNCED)
 # ==========================================
 
 def schedule_announcement(message_text: str, media_file_id: str, media_type: str, scheduled_time: datetime, created_by: int) -> dict:
+    """Saves a broadcast message to be published at an exact date & time."""
     conn = get_db()
     cursor = conn.cursor(cursor_factory=RealDictCursor)
     try:
@@ -111,14 +117,16 @@ def schedule_announcement(message_text: str, media_file_id: str, media_type: str
 
 
 def fetch_pending_announcements() -> list:
+    """Fetches announcements that are due for publication based on IST Time."""
     conn = get_db()
     cursor = conn.cursor(cursor_factory=RealDictCursor)
     try:
+        now_ist_str = datetime.now(IST).strftime("%Y-%m-%d %H:%M:%S")
         cursor.execute("""
             SELECT * FROM scheduled_announcements 
-            WHERE status = 'PENDING' AND scheduled_time <= (NOW() AT TIME ZONE 'Asia/Kolkata')
+            WHERE status = 'PENDING' AND scheduled_time <= %s
             ORDER BY scheduled_time ASC;
-        """)
+        """, (now_ist_str,))
         return [dict(r) for r in cursor.fetchall()]
     finally:
         cursor.close()
@@ -126,6 +134,7 @@ def fetch_pending_announcements() -> list:
 
 
 def update_announcement_status(announcement_id: int, status: str):
+    """Updates status to 'SENT' or 'FAILED' after broadcasting."""
     conn = get_db()
     cursor = conn.cursor()
     try:

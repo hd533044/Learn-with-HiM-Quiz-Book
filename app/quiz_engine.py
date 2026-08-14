@@ -135,7 +135,7 @@ async def launch_quiz_setup(update: Update, context: ContextTypes.DEFAULT_TYPE):
     ])
 
     msg_text = (
-        f"🌐 **LEARN WITH HIM QUIZ SETUP (STEP 1/3)** 🌐\n"
+        f"🌐 **QUIZ WITH HIM SETUP (STEP 1/3)** 🌐\n"
         f"━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\n"
         f"Please select your preferred language for this quiz session:"
     )
@@ -177,7 +177,7 @@ async def quiz_language_callback(update: Update, context: ContextTypes.DEFAULT_T
     lang_label = "🌐 English" if lang == "en" else "🇮🇳 हिंदी"
 
     msg_text = (
-        f"📚 **LEARN WITH HIM QUIZ SETUP (STEP 2/3)** 📚\n"
+        f"📚 **QUIZ WITH HIM SETUP (STEP 2/3)** 📚\n"
         f"━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\n"
         f"🌐 **Language:** `{lang_label}`\n"
         f"📊 **Daily Quota Used:** `{attempted_today}` / `{allowed_limit}` Qs\n"
@@ -229,7 +229,7 @@ async def quiz_count_callback(update: Update, context: ContextTypes.DEFAULT_TYPE
     lang_label = "🌐 English" if current_cache.get("language") == "en" else "🇮🇳 हिंदी"
 
     await query.edit_message_text(
-        f"⏱ **LEARN WITH HIM QUIZ SETUP (STEP 3/3)** ⏱\n"
+        f"⏱ **QUIZ WITH HIM SETUP (STEP 3/3)** ⏱\n"
         f"━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\n"
         f"🌐 **Language:** `{lang_label}`\n"
         f"📝 **Selected:** `{count} Questions` (Available: `{remaining_quota}`)\n\n"
@@ -239,7 +239,7 @@ async def quiz_count_callback(update: Update, context: ContextTypes.DEFAULT_TYPE
     )
 
 async def quiz_timer_callback(update: Update, context: ContextTypes.DEFAULT_TYPE):
-    """Launches Quiz Session using selected language and question parameters."""
+    """Launches Quiz Session using intelligent multi-tier question selection."""
     if not await check_quiz_maintenance(update): return
 
     query = update.callback_query
@@ -269,11 +269,11 @@ async def quiz_timer_callback(update: Update, context: ContextTypes.DEFAULT_TYPE
     if count > remaining_quota:
         count = max(1, remaining_quota)
 
-    seen_ids = await asyncio.to_thread(get_seen_question_ids, user_id)
-    questions = await asyncio.to_thread(fetch_pyqs_for_quiz, count, seen_ids, language)
+    # Intelligent tiered fetching (Unseen -> Wrong/Skipped -> 10-15 Day Spaced Repetition -> Full Shuffle)
+    questions = await asyncio.to_thread(fetch_pyqs_for_quiz, count, None, language, user_id)
 
     if not questions:
-        await query.edit_message_text("🎉 **CONGRATULATIONS!** You have completed all available questions in this language bank!", reply_markup=get_quizbook_nav_keyboard())
+        await query.edit_message_text("⚠️ No questions found in the question bank. Please contact administrator.", reply_markup=get_quizbook_nav_keyboard())
         return
 
     q_ids = [q["id"] for q in questions if q.get("id") is not None]

@@ -342,7 +342,7 @@ async def admininfo_command(update: Update, context: ContextTypes.DEFAULT_TYPE):
 
     msg = (
         "👋 **Hello & Welcome, Guyzzz!** ❤️\n\n"
-        "🎯 **Welcome to the Learn with HiM Quiz Book** — created by **Himanshu Sir** with one mission: "
+        "🎯 **Welcome to Quiz with HiM** — created by **Himanshu Sir** with one mission: "
         "smart revision through relevant questions in a fast & effective quiz format! 📚⚡\n\n"
         "💡 During his own preparation, Himanshu Sir noticed how difficult it was to find relevant questions + quick revision material. "
         "So, after lots of effort, he created this platform to make your preparation easier, faster & more exam-oriented! 🚀\n\n"
@@ -485,7 +485,7 @@ async def plans_command(update: Update, context: ContextTypes.DEFAULT_TYPE):
     ])
 
     msg = (
-        f"👑 **LEARN WITH HIM QUIZ BOOK — VIP MEMBERSHIP PACKS** 👑\n"
+        f"👑 **QUIZ WITH HIM — VIP MEMBERSHIP PACKS** 👑\n"
         f"━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\n"
         f"Select a pack below to pay securely and instantly unlock daily question limits:"
     )
@@ -1198,7 +1198,6 @@ async def finalize_announcement_schedule(update: Update, context: ContextTypes.D
         ist = pytz.timezone("Asia/Kolkata")
         now_ist = datetime.now(ist).replace(tzinfo=None)
         
-        # Check against IST current time strictly
         if scheduled_dt <= now_ist:
             await update.message.reply_text("❌ Scheduled time must be in the future! Please enter a valid future IST date and time:")
             return ANNC_DATETIME
@@ -1450,7 +1449,7 @@ async def handle_text_messages(update: Update, context: ContextTypes.DEFAULT_TYP
         if success:
             ADMIN_AUTH_SESSIONS[user.id] = time.time()
             await update.message.reply_text(
-                f"🎉 **ADMIN PASSWORD CHANGED & SAVED IN SUPABASE!** 🎉\n"
+                f"🎉 **ADMIN PASSWORD CHANGED & SAVED IN DATABASE!** 🎉\n"
                 f"━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\n"
                 f"🔑 **New Master Password:** `{text}`\n"
                 f"✨ Admin session authenticated for 30 minutes.",
@@ -1615,7 +1614,7 @@ async def handle_text_messages(update: Update, context: ContextTypes.DEFAULT_TYP
                 "🔓 **ACCOUNT UNLOCKED SUCCESSFULLY!** 🔓\n"
                 "━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\n"
                 "🎉 **Welcome back!** Your identity has been verified.\n\n"
-                "✨ Select an option below to continue practicing on **Learn with HiM Quiz Book**:",
+                "✨ Select an option below to continue practicing on **Quiz with HiM**:",
                 reply_markup=unlocked_menu_btn,
                 parse_mode="Markdown"
             )
@@ -1673,7 +1672,7 @@ async def handle_text_messages(update: Update, context: ContextTypes.DEFAULT_TYP
         await update.message.reply_text(f"🎉 **Feedback Received!** Thank you *{name}*:\n\n💬 *\"{text}\"*", reply_markup=ReplyKeyboardRemove(), parse_mode="Markdown")
         return
 
- # 4. Instant Broadcast with Fast Concurrent Delivery & Delivery Tracking
+    # 4. Instant Broadcast with Fast Concurrent Delivery & Delivery Tracking
     if context.user_data.get("awaiting_broadcast"):
         context.user_data["awaiting_broadcast"] = False
         users = await asyncio.to_thread(get_all_users)

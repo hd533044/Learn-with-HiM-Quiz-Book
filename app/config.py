@@ -49,7 +49,7 @@ PLAN_TIERS = {
 }
 
 WELCOME_CARD_TEXT = (
-    "💖 **WELCOME TO LEARN WITH HIM QUIZ BOOK** 💖\n"
+    "💖 **WELCOME TO QUIZ WITH HIM** 💖\n"
     "👑 **THE BEST-IN-CLASS QUIZ BOOK BY HIMANSHU SIR** 👑\n\n"
     "🎯 Sharpen your skills with high-quality, exam-focused quizzes designed to help you learn faster, practice smarter, and achieve your goals.\n"
     "✨ **Curated Questions** • ⚡ **Instant Results** • 📈 **Performance Tracking** • 🏆 **Daily Improvement**\n\n"

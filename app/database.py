@@ -646,12 +646,85 @@ def get_seen_question_ids(user_id):
     release_db(conn)
     return {str(r['question_id']) for r in rows}
 
+def get_user_question_intel(user_id: int) -> dict:
+    """
+    Intelligent telemetry fetcher for question repetition:
+    - Identifies question seen timestamps
+    - Identifies wrong & skipped/unattempted questions
+    - Identifies mature questions seen >= 12 days ago
+    """
+    conn = get_db()
+    cursor = conn.cursor(cursor_factory=RealDictCursor)
+    
+    cursor.execute("SELECT question_id, seen_at FROM seen_questions WHERE user_id = %s", (user_id,))
+    seen_rows = cursor.fetchall()
+    
+    cursor.execute("SELECT details_json FROM quiz_attempts WHERE user_id = %s ORDER BY id DESC LIMIT 50", (user_id,))
+    attempt_rows = cursor.fetchall()
+    cursor.close()
+    release_db(conn)
+
+    seen_timestamps = {}
+    now = datetime.now()
+    cutoff_days = 12
+
+    for r in seen_rows:
+        qid = str(r['question_id'])
+        s_at_str = r.get('seen_at', '') or ''
+        try:
+            clean_ts = s_at_str.replace(" IST", "").strip()
+            if " " in clean_ts:
+                dt = datetime.strptime(clean_ts, "%Y-%m-%d %H:%M:%S")
+            else:
+                dt = datetime.strptime(clean_ts, "%Y-%m-%d")
+        except Exception:
+            dt = now - timedelta(days=20)
+        seen_timestamps[qid] = dt
+
+    wrong_or_skipped_ids = set()
+    wrong_or_skipped_texts = set()
+
+    for a in attempt_rows:
+        raw_det = a.get("details_json")
+        if not raw_det:
+            continue
+        try:
+            det = json.loads(raw_det) if isinstance(raw_det, str) else raw_det
+            if isinstance(det, list):
+                for item in det:
+                    if isinstance(item, dict):
+                        st = str(item.get("status", "")).upper()
+                        if st in ("WRONG", "SKIPPED_TIMEOUT", "SKIPPED"):
+                            if item.get("question_id"):
+                                wrong_or_skipped_ids.add(str(item.get("question_id")))
+                            if item.get("question_text"):
+                                wrong_or_skipped_texts.add(str(item.get("question_text")).strip().lower())
+                            elif item.get("question"):
+                                wrong_or_skipped_texts.add(str(item.get("question")).strip().lower())
+        except Exception:
+            pass
+
+    return {
+        "seen_timestamps": seen_timestamps,
+        "wrong_or_skipped_ids": wrong_or_skipped_ids,
+        "wrong_or_skipped_texts": wrong_or_skipped_texts,
+        "cutoff_days": cutoff_days
+    }
+
 def mark_questions_as_seen(user_id, question_ids):
     conn = get_db()
     cursor = conn.cursor()
     now_str = get_ist_timestamp_str()
     for qid in question_ids:
-        cursor.execute("INSERT INTO seen_questions (user_id, question_id, seen_at) VALUES (%s, %s, %s) ON CONFLICT (user_id, question_id) DO NOTHING", (user_id, str(qid), now_str))
+        cursor.execute(
+            """
+            INSERT INTO seen_questions (user_id, question_id, seen_at) 
+            VALUES (%s, %s, %s) 
+            ON CONFLICT (user_id, question_id) 
+            DO UPDATE SET seen_at = EXCLUDED.seen_at
+            """,
+            (user_id, str(qid), now_str)
+        )
     conn.commit()
     cursor.close()
     release_db(conn)

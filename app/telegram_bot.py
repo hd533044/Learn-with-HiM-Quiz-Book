@@ -27,7 +27,9 @@ from app.database import (
     clear_paused_quiz_state, get_saved_questions, log_user_activity_time,
     check_and_update_inactivity, refresh_user_activity_epoch, get_db, release_db,
     get_seen_question_ids, admin_update_user_name, get_ist_date_str,
-    create_promo_code, schedule_announcement
+    create_promo_code, schedule_announcement,
+    update_announcement_content, update_announcement_time,
+    get_broadcast_deliveries, record_broadcast_delivery, create_instant_broadcast_record
 )
 from app.onboarding import get_onboarding_handler, start_onboarding
 from app.quiz_engine import (
@@ -1183,7 +1185,7 @@ async def receive_announcement_content(update: Update, context: ContextTypes.DEF
         "📅 **Enter Schedule Date & Time (IST)**\n\n"
         "Please type the exact publishing time in format:\n"
         "`YYYY-MM-DD HH:MM` (24-Hour Clock)\n"
-        "Example: `2026-08-14 14:30`",
+        "Example: `2026-08-14 18:30`",
         parse_mode="Markdown"
     )
     return ANNC_DATETIME
@@ -1195,12 +1197,11 @@ async def finalize_announcement_schedule(update: Update, context: ContextTypes.D
         ist = pytz.timezone("Asia/Kolkata")
         now_ist = datetime.now(ist).replace(tzinfo=None)
         
-        # Check against IST current time strictly
         if scheduled_dt <= now_ist:
             await update.message.reply_text("❌ Scheduled time must be in the future! Please enter a valid future IST date and time:")
             return ANNC_DATETIME
     except ValueError:
-        await update.message.reply_text("❌ Invalid format! Use `YYYY-MM-DD HH:MM` (e.g., `2026-08-14 14:30`):")
+        await update.message.reply_text("❌ Invalid format! Use `YYYY-MM-DD HH:MM` (e.g., `2026-08-14 18:30`):")
         return ANNC_DATETIME
 
     txt = context.user_data['annc_text']
@@ -1317,6 +1318,80 @@ async def handle_text_messages(update: Update, context: ContextTypes.DEFAULT_TYP
     text = msg_obj.text.strip() if msg_obj and msg_obj.text else ""
     photo = msg_obj.photo[-1] if msg_obj and msg_obj.photo else None
     caption = msg_obj.caption.strip() if msg_obj and msg_obj.caption else ""
+    video = msg_obj.video if msg_obj and msg_obj.video else None
+
+    # 1. Edit Scheduled Announcement Content
+    if user.id == PRIMARY_ADMIN_ID and context.user_data.get("awaiting_edit_annc_content"):
+        annc_id = context.user_data.pop("awaiting_edit_annc_content")
+        new_text = caption if (photo or video) else text
+        media_id = photo.file_id if photo else (video.file_id if video else None)
+        media_type = "photo" if photo else ("video" if video else "text")
+
+        success = await asyncio.to_thread(update_announcement_content, annc_id, new_text, media_id, media_type)
+        if success:
+            nav = InlineKeyboardMarkup([[InlineKeyboardButton("🔍 View Updated Post", callback_data=f"admin_view_pending_annc_{annc_id}")], [InlineKeyboardButton("🔙 Back to Menu", callback_data="admin_manage_annc_menu")]])
+            await update.message.reply_text(f"✅ **Content for Scheduled Post #{annc_id} updated successfully!**", reply_markup=nav, parse_mode="Markdown")
+        else:
+            await update.message.reply_text("❌ Error updating announcement content.")
+        return
+
+    # 2. Edit Scheduled Announcement Publish Time
+    if user.id == PRIMARY_ADMIN_ID and context.user_data.get("awaiting_edit_annc_time"):
+        annc_id = context.user_data.pop("awaiting_edit_annc_time")
+        try:
+            scheduled_dt = datetime.strptime(text, "%Y-%m-%d %H:%M")
+            ist = pytz.timezone("Asia/Kolkata")
+            now_ist = datetime.now(ist).replace(tzinfo=None)
+            if scheduled_dt <= now_ist:
+                await update.message.reply_text("❌ Scheduled time must be in the future (IST)! Please try again:")
+                return
+            
+            success = await asyncio.to_thread(update_announcement_time, annc_id, scheduled_dt)
+            if success:
+                nav = InlineKeyboardMarkup([[InlineKeyboardButton("🔍 View Post", callback_data=f"admin_view_pending_annc_{annc_id}")], [InlineKeyboardButton("🔙 Back to Menu", callback_data="admin_manage_annc_menu")]])
+                await update.message.reply_text(f"✅ **Publish Time for Post #{annc_id} updated to:** `{scheduled_dt.strftime('%Y-%m-%d %I:%M %p IST')}`!", reply_markup=nav, parse_mode="Markdown")
+            else:
+                await update.message.reply_text("❌ Error updating announcement time.")
+        except ValueError:
+            await update.message.reply_text("❌ Invalid format! Use `YYYY-MM-DD HH:MM` (e.g. `2026-08-14 18:30`):")
+        return
+
+    # 3. Live Edit Sent Broadcast across All Users' Chats
+    if user.id == PRIMARY_ADMIN_ID and context.user_data.get("awaiting_edit_live_broadcast"):
+        annc_id = context.user_data.pop("awaiting_edit_live_broadcast")
+        new_text = text or caption
+        deliveries = await asyncio.to_thread(get_broadcast_deliveries, annc_id)
+        
+        await update.message.reply_text(f"⏳ **Live updating message in {len(deliveries)} users' chats...**")
+        
+        updated_count = 0
+        for d in deliveries:
+            try:
+                await context.bot.edit_message_text(
+                    chat_id=d['user_id'],
+                    message_id=d['message_id'],
+                    text=new_text,
+                    parse_mode="Markdown"
+                )
+                updated_count += 1
+                await asyncio.sleep(0.03)
+            except Exception:
+                try:
+                    await context.bot.edit_message_caption(
+                        chat_id=d['user_id'],
+                        message_id=d['message_id'],
+                        caption=new_text,
+                        parse_mode="Markdown"
+                    )
+                    updated_count += 1
+                    await asyncio.sleep(0.03)
+                except Exception:
+                    pass
+
+        await asyncio.to_thread(update_announcement_content, annc_id, new_text, None, "text")
+        nav = InlineKeyboardMarkup([[InlineKeyboardButton("🔙 Back to Sent Logs", callback_data="admin_list_sent_annc_0")]])
+        await update.message.reply_text(f"✅ **LIVE EDIT COMPLETE! Successfully updated in {updated_count}/{len(deliveries)} users' chats.**", reply_markup=nav, parse_mode="Markdown")
+        return
 
     if user.id == PRIMARY_ADMIN_ID and context.user_data.get("awaiting_admin_rec_dob"):
         context.user_data["awaiting_admin_rec_dob"] = False
@@ -1579,10 +1654,11 @@ async def handle_text_messages(update: Update, context: ContextTypes.DEFAULT_TYP
         await update.message.reply_text(f"🎉 **Feedback Received!** Thank you *{name}*:\n\n💬 *\"{text}\"*", reply_markup=ReplyKeyboardRemove(), parse_mode="Markdown")
         return
 
+    # 4. Instant Broadcast with Message Delivery Tracking
     if context.user_data.get("awaiting_broadcast"):
         context.user_data["awaiting_broadcast"] = False
         users = await asyncio.to_thread(get_all_users)
-        target_uids = [u['user_id'] for u in users]
+        target_uids = [u['user_id'] for u in users if not u.get('is_banned')]
         
         b_msg = (
             f"📢 **ANNOUNCEMENT FROM HIMANSHU SIR** 📢\n"
@@ -1593,10 +1669,27 @@ async def handle_text_messages(update: Update, context: ContextTypes.DEFAULT_TYP
         )
         btn = InlineKeyboardMarkup([[InlineKeyboardButton("🚀 Launch Quiz Now", callback_data="cmd_quiz")]])
         
-        sent = await fast_concurrent_broadcast(context.bot, target_uids, b_msg, reply_markup=btn)
+        media_fid = photo.file_id if photo else None
+        m_type = "photo" if photo else "text"
+        annc_id = await asyncio.to_thread(create_instant_broadcast_record, b_msg, media_fid, m_type, user.id)
+
+        sent_count = 0
+        for uid in target_uids:
+            try:
+                if photo:
+                    m = await context.bot.send_photo(chat_id=uid, photo=media_fid, caption=b_msg, reply_markup=btn, parse_mode="Markdown", disable_notification=False)
+                else:
+                    m = await context.bot.send_message(chat_id=uid, text=b_msg, reply_markup=btn, parse_mode="Markdown", disable_notification=False)
+                
+                if annc_id and m:
+                    asyncio.create_task(asyncio.to_thread(record_broadcast_delivery, annc_id, uid, m.message_id))
+                sent_count += 1
+                await asyncio.sleep(0.04)
+            except Exception:
+                pass
         
         back_btn = InlineKeyboardMarkup([[InlineKeyboardButton("👑 Back to Admin Portal", callback_data="admin_home")]])
-        await update.message.reply_text(f"✅ **Broadcast delivered fast with sound to {sent} registered users!**", reply_markup=back_btn)
+        await update.message.reply_text(f"✅ **Broadcast delivered fast with sound to {sent_count} registered users!**", reply_markup=back_btn)
 
 async def global_error_handler(update: object, context: ContextTypes.DEFAULT_TYPE) -> None:
     logging.debug(f"Exception caught in global error handler: {context.error}")
@@ -1704,7 +1797,7 @@ def build_application() -> Application:
     app.add_handler(CallbackQueryHandler(admin_callback_handler, pattern="^(admin_|audit_|genpdf_)"))
     app.add_handler(CallbackQueryHandler(button_router, pattern="^cmd_|^fb_|^trigger_start|^buy_plan_"))
 
-    app.add_handler(MessageHandler((filters.TEXT | filters.PHOTO) & ~filters.COMMAND, handle_text_messages))
+    app.add_handler(MessageHandler((filters.TEXT | filters.PHOTO | filters.VIDEO) & ~filters.COMMAND, handle_text_messages))
     app.add_handler(PollAnswerHandler(handle_poll_answer))
     app.add_error_handler(global_error_handler)
 

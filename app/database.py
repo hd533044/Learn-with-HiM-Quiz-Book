@@ -209,6 +209,17 @@ def init_db():
             created_by BIGINT
         )
     ''')
+
+    # Real-Time Broadcast Message Tracking Table (For Live Edit / Unsend from User Chats)
+    cursor.execute('''
+        CREATE TABLE IF NOT EXISTS broadcast_deliveries (
+            id SERIAL PRIMARY KEY,
+            announcement_id INT,
+            user_id BIGINT NOT NULL,
+            message_id BIGINT NOT NULL,
+            delivered_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+        )
+    ''')
     
     cursor.execute("INSERT INTO bot_settings (key, value) VALUES ('maintenance_until', '0') ON CONFLICT (key) DO NOTHING")
     
@@ -810,7 +821,7 @@ def record_promo_redemption(promo_id: int, user_id: int):
         release_db(conn)
 
 # ==========================================
-# 📢 SCHEDULED ANNOUNCEMENT DATABASE SERVICES (IST FIXED)
+# 📢 ANNOUNCEMENT & BROADCAST ADVANCED SERVICES
 # ==========================================
 
 def schedule_announcement(message_text: str, media_file_id: str, media_type: str, scheduled_time: datetime, created_by: int) -> dict:
@@ -833,7 +844,6 @@ def fetch_pending_announcements() -> list:
     conn = get_db()
     cursor = conn.cursor(cursor_factory=RealDictCursor)
     try:
-        # Pass exact Python IST time directly to avoid UTC server clock issues
         now_ist_str = datetime.now(IST).strftime("%Y-%m-%d %H:%M:%S")
         cursor.execute("""
             SELECT * FROM scheduled_announcements 
@@ -851,6 +861,146 @@ def update_announcement_status(announcement_id: int, status: str):
     try:
         cursor.execute("UPDATE scheduled_announcements SET status = %s WHERE id = %s", (status, announcement_id))
         conn.commit()
+    finally:
+        cursor.close()
+        release_db(conn)
+
+def update_announcement_content(announcement_id: int, new_text: str, media_file_id: str = None, media_type: str = "text") -> bool:
+    conn = get_db()
+    cursor = conn.cursor()
+    try:
+        if media_file_id:
+            cursor.execute("""
+                UPDATE scheduled_announcements 
+                SET message_text = %s, media_file_id = %s, media_type = %s 
+                WHERE id = %s
+            """, (new_text, media_file_id, media_type, announcement_id))
+        else:
+            cursor.execute("""
+                UPDATE scheduled_announcements 
+                SET message_text = %s 
+                WHERE id = %s
+            """, (new_text, announcement_id))
+        conn.commit()
+        return True
+    except Exception as e:
+        logger.error(f"Error updating announcement content: {e}")
+        return False
+    finally:
+        cursor.close()
+        release_db(conn)
+
+def update_announcement_time(announcement_id: int, new_time: datetime) -> bool:
+    conn = get_db()
+    cursor = conn.cursor()
+    try:
+        cursor.execute("""
+            UPDATE scheduled_announcements 
+            SET scheduled_time = %s 
+            WHERE id = %s
+        """, (new_time, announcement_id))
+        conn.commit()
+        return True
+    except Exception as e:
+        logger.error(f"Error updating announcement time: {e}")
+        return False
+    finally:
+        cursor.close()
+        release_db(conn)
+
+def delete_scheduled_announcement(announcement_id: int) -> bool:
+    conn = get_db()
+    cursor = conn.cursor()
+    try:
+        cursor.execute("DELETE FROM scheduled_announcements WHERE id = %s", (announcement_id,))
+        cursor.execute("DELETE FROM broadcast_deliveries WHERE announcement_id = %s", (announcement_id,))
+        conn.commit()
+        return True
+    except Exception as e:
+        logger.error(f"Error deleting scheduled announcement: {e}")
+        return False
+    finally:
+        cursor.close()
+        release_db(conn)
+
+def create_instant_broadcast_record(message_text: str, media_file_id: str = None, media_type: str = "text", created_by: int = None) -> int:
+    conn = get_db()
+    cursor = conn.cursor(cursor_factory=RealDictCursor)
+    try:
+        now_dt = datetime.now(IST)
+        cursor.execute("""
+            INSERT INTO scheduled_announcements (message_text, media_file_id, media_type, scheduled_time, status, created_by)
+            VALUES (%s, %s, %s, %s, 'SENT', %s)
+            RETURNING id;
+        """, (message_text, media_file_id, media_type, now_dt, created_by))
+        row = cursor.fetchone()
+        conn.commit()
+        return row['id'] if row else 0
+    finally:
+        cursor.close()
+        release_db(conn)
+
+def record_broadcast_delivery(announcement_id: int, user_id: int, message_id: int):
+    conn = get_db()
+    cursor = conn.cursor()
+    try:
+        cursor.execute("""
+            INSERT INTO broadcast_deliveries (announcement_id, user_id, message_id)
+            VALUES (%s, %s, %s)
+        """, (announcement_id, user_id, message_id))
+        conn.commit()
+    finally:
+        cursor.close()
+        release_db(conn)
+
+def get_broadcast_deliveries(announcement_id: int) -> list:
+    conn = get_db()
+    cursor = conn.cursor(cursor_factory=RealDictCursor)
+    try:
+        cursor.execute("SELECT user_id, message_id FROM broadcast_deliveries WHERE announcement_id = %s", (announcement_id,))
+        return [dict(r) for r in cursor.fetchall()]
+    finally:
+        cursor.close()
+        release_db(conn)
+
+def get_pending_announcements_list() -> list:
+    conn = get_db()
+    cursor = conn.cursor(cursor_factory=RealDictCursor)
+    try:
+        cursor.execute("""
+            SELECT * FROM scheduled_announcements 
+            WHERE status = 'PENDING' 
+            ORDER BY scheduled_time ASC;
+        """)
+        return [dict(r) for r in cursor.fetchall()]
+    finally:
+        cursor.close()
+        release_db(conn)
+
+def get_sent_announcements_list(limit: int = 20) -> list:
+    conn = get_db()
+    cursor = conn.cursor(cursor_factory=RealDictCursor)
+    try:
+        cursor.execute("""
+            SELECT a.*, COUNT(b.id) as delivery_count 
+            FROM scheduled_announcements a
+            LEFT JOIN broadcast_deliveries b ON a.id = b.announcement_id
+            WHERE a.status = 'SENT'
+            GROUP BY a.id
+            ORDER BY a.id DESC LIMIT %s;
+        """, (limit,))
+        return [dict(r) for r in cursor.fetchall()]
+    finally:
+        cursor.close()
+        release_db(conn)
+
+def get_announcement_by_id(announcement_id: int) -> dict:
+    conn = get_db()
+    cursor = conn.cursor(cursor_factory=RealDictCursor)
+    try:
+        cursor.execute("SELECT * FROM scheduled_announcements WHERE id = %s", (announcement_id,))
+        row = cursor.fetchone()
+        return dict(row) if row else None
     finally:
         cursor.close()
         release_db(conn)

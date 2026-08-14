@@ -14,7 +14,9 @@ from app.config import PRIMARY_ADMIN_ID, USER_PROFILES_DIR, PLAN_TIERS
 from app.database import (
     get_all_users, set_maintenance_until, get_maintenance_until, 
     get_user_profile, get_db, release_db, sync_user_json_profile, toggle_user_ban_status,
-    get_paid_users, admin_update_user_name, admin_delete_user_account, get_ist_date_str
+    get_paid_users, admin_update_user_name, admin_delete_user_account, get_ist_date_str,
+    get_pending_announcements_list, get_sent_announcements_list, get_announcement_by_id,
+    delete_scheduled_announcement, get_broadcast_deliveries
 )
 from app.pdf_generator import generate_student_pdf_report
 from app.stats import get_user_performance_summary, calculate_user_rank, calculate_user_percentile
@@ -36,7 +38,10 @@ def clear_admin_user_data_states(context: ContextTypes.DEFAULT_TYPE):
         "awaiting_admin_password",
         "awaiting_admin_new_pass",
         "awaiting_admin_rec_dob",
-        "awaiting_admin_rec_email"
+        "awaiting_admin_rec_email",
+        "awaiting_edit_annc_content",
+        "awaiting_edit_annc_time",
+        "awaiting_edit_live_broadcast"
     ]
     for key in keys_to_clear:
         context.user_data.pop(key, None)
@@ -369,6 +374,10 @@ async def admin_portal_command(update: Update, context: ContextTypes.DEFAULT_TYP
             InlineKeyboardButton("📢 Schedule Announcement", callback_data="admin_schedule_annc")
         ],
         [
+            InlineKeyboardButton("📋 Manage Scheduled Posts", callback_data="admin_list_pending_annc_0"),
+            InlineKeyboardButton("📢 Live Sent Broadcasts", callback_data="admin_list_sent_annc_0")
+        ],
+        [
             InlineKeyboardButton(f"💳 Paid VIP ({len(paid_users)})", callback_data="admin_paid_users_page_0"),
             InlineKeyboardButton(f"🎁 Free Demo ({len(demo_users)})", callback_data="admin_demo_users_page_0")
         ],
@@ -610,7 +619,191 @@ async def admin_callback_handler(update: Update, context: ContextTypes.DEFAULT_T
     clear_admin_user_data_states(context)
     users = get_all_users()
 
-    if data == "admin_popup_overview":
+    # ==============================================================
+    # 📢 SCHEDULED ANNOUNCEMENTS MANAGEMENT (EDIT CONTENT / EDIT TIME / DELETE)
+    # ==============================================================
+    if data.startswith("admin_list_pending_annc_"):
+        await query.answer()
+        page = int(data.replace("admin_list_pending_annc_", ""))
+        pending = get_pending_announcements_list()
+        
+        if not pending:
+            nav = InlineKeyboardMarkup([
+                [InlineKeyboardButton("➕ Schedule New Announcement", callback_data="admin_schedule_annc")],
+                [InlineKeyboardButton("👑 Return to Admin Portal", callback_data="admin_home")]
+            ])
+            await query.edit_message_text("📋 **MANAGE SCHEDULED ANNOUNCEMENTS**\n\n🎉 No pending scheduled announcements found in database!", reply_markup=nav, parse_mode="Markdown")
+            return
+
+        total_p = len(pending)
+        total_pages = math.ceil(total_p / 6)
+        page = max(0, min(page, total_pages - 1))
+        page_items = pending[page * 6:(page + 1) * 6]
+
+        keyboard = []
+        for a in page_items:
+            m_dt = a['scheduled_time'].strftime("%d %b, %I:%M %p")
+            m_snip = (a['message_text'][:25] + "...") if a['message_text'] else f"[{a['media_type'].upper()}]"
+            btn_txt = f"⏰ [{m_dt}] {m_snip}"
+            keyboard.append([InlineKeyboardButton(btn_txt, callback_data=f"admin_view_pending_annc_{a['id']}")])
+
+        nav_row = []
+        if page > 0: nav_row.append(InlineKeyboardButton("◀️ Prev", callback_data=f"admin_list_pending_annc_{page - 1}"))
+        nav_row.append(InlineKeyboardButton(f"📄 {page + 1}/{total_pages}", callback_data="ignore"))
+        if page < total_pages - 1: nav_row.append(InlineKeyboardButton("Next ▶️", callback_data=f"admin_list_pending_annc_{page + 1}"))
+        keyboard.append(nav_row)
+        keyboard.append([InlineKeyboardButton("➕ Schedule New Post", callback_data="admin_schedule_annc"), InlineKeyboardButton("👑 Admin Portal", callback_data="admin_home")])
+
+        await query.edit_message_text(f"📋 **PENDING SCHEDULED ANNOUNCEMENTS ({total_p})**\nTap any post to Edit Content, Edit Time, or Delete:", reply_markup=InlineKeyboardMarkup(keyboard), parse_mode="Markdown")
+
+    elif data.startswith("admin_view_pending_annc_"):
+        await query.answer()
+        annc_id = int(data.replace("admin_view_pending_annc_", ""))
+        a = get_announcement_by_id(annc_id)
+        if not a:
+            await query.edit_message_text("⚠️ Announcement record not found.", reply_markup=InlineKeyboardMarkup([[InlineKeyboardButton("🔙 Back to List", callback_data="admin_list_pending_annc_0")]]))
+            return
+
+        scheduled_str = a['scheduled_time'].strftime("%d %b %Y, %I:%M %p IST")
+        txt_display = a['message_text'] or "*(No Text / Media Only)*"
+
+        msg = (
+            f"📌 **SCHEDULED POST INSPECTION (ID #{a['id']})**\n"
+            f"━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\n"
+            f"⏰ **Scheduled Time:** `{scheduled_str}`\n"
+            f"📝 **Media Type:** `{a['media_type'].upper()}`\n"
+            f"🚦 **Current Status:** `{a['status']}`\n\n"
+            f"📄 **Post Preview Text:**\n"
+            f"{txt_display}\n"
+            f"━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\n"
+            f"Select an action below:"
+        )
+
+        keyboard = [
+            [InlineKeyboardButton("✍️ Edit Post Content", callback_data=f"admin_edit_annc_content_prompt_{annc_id}")],
+            [InlineKeyboardButton("⏰ Edit Schedule Time", callback_data=f"admin_edit_annc_time_prompt_{annc_id}")],
+            [InlineKeyboardButton("🗑 Delete Post Permanently", callback_data=f"admin_del_pending_annc_{annc_id}")],
+            [InlineKeyboardButton("🔙 Back to Scheduled List", callback_data="admin_list_pending_annc_0")],
+            [InlineKeyboardButton("👑 Return to Admin Portal", callback_data="admin_home")]
+        ]
+        await query.edit_message_text(msg, reply_markup=InlineKeyboardMarkup(keyboard), parse_mode="Markdown")
+
+    elif data.startswith("admin_edit_annc_content_prompt_"):
+        await query.answer()
+        annc_id = int(data.replace("admin_edit_annc_content_prompt_", ""))
+        context.user_data["awaiting_edit_annc_content"] = annc_id
+        cancel_btn = InlineKeyboardMarkup([[InlineKeyboardButton("❌ Cancel Edit", callback_data=f"admin_view_pending_annc_{annc_id}")]])
+        await query.edit_message_text(f"✍️ **EDIT POST CONTENT (ID #{annc_id})**\n\nPlease reply with the new Message text, Photo with caption, or Video:", reply_markup=cancel_btn, parse_mode="Markdown")
+
+    elif data.startswith("admin_edit_annc_time_prompt_"):
+        await query.answer()
+        annc_id = int(data.replace("admin_edit_annc_time_prompt_", ""))
+        context.user_data["awaiting_edit_annc_time"] = annc_id
+        cancel_btn = InlineKeyboardMarkup([[InlineKeyboardButton("❌ Cancel Edit", callback_data=f"admin_view_pending_annc_{annc_id}")]])
+        await query.edit_message_text(
+            f"⏰ **EDIT SCHEDULE TIME (ID #{annc_id})**\n\n"
+            f"Please reply with the new publishing date and time (IST):\n"
+            f"Format: `YYYY-MM-DD HH:MM` (e.g., `2026-08-14 18:30`):",
+            reply_markup=cancel_btn,
+            parse_mode="Markdown"
+        )
+
+    elif data.startswith("admin_del_pending_annc_"):
+        await query.answer()
+        annc_id = int(data.replace("admin_del_pending_annc_", ""))
+        delete_scheduled_announcement(annc_id)
+        nav = InlineKeyboardMarkup([[InlineKeyboardButton("🔙 Back to Scheduled List", callback_data="admin_list_pending_annc_0")], [InlineKeyboardButton("👑 Admin Portal", callback_data="admin_home")]])
+        await query.edit_message_text(f"🗑 **SCHEDULED ANNOUNCEMENT #{annc_id} DELETED SUCCESSFULLY!**", reply_markup=nav, parse_mode="Markdown")
+
+    # ==============================================================
+    # 📢 LIVE BROADCASTS MANAGEMENT (LIVE EDIT / LIVE DELETE / UNSEND FROM USERS)
+    # ==============================================================
+    elif data.startswith("admin_list_sent_annc_"):
+        await query.answer()
+        page = int(data.replace("admin_list_sent_annc_", ""))
+        sent_posts = get_sent_announcements_list(30)
+        
+        if not sent_posts:
+            nav = InlineKeyboardMarkup([[InlineKeyboardButton("👑 Return to Admin Portal", callback_data="admin_home")]])
+            await query.edit_message_text("📢 **LIVE SENT BROADCASTS LOGS**\n\nNo broadcasts recorded in history yet.", reply_markup=nav, parse_mode="Markdown")
+            return
+
+        total_p = len(sent_posts)
+        total_pages = math.ceil(total_p / 6)
+        page = max(0, min(page, total_pages - 1))
+        page_items = sent_posts[page * 6:(page + 1) * 6]
+
+        keyboard = []
+        for a in page_items:
+            m_dt = a['scheduled_time'].strftime("%d %b, %I:%M %p")
+            m_snip = (a['message_text'][:20] + "...") if a['message_text'] else f"[{a['media_type'].upper()}]"
+            btn_txt = f"📡 [{m_dt}] {m_snip} ({a.get('delivery_count', 0)} users)"
+            keyboard.append([InlineKeyboardButton(btn_txt, callback_data=f"admin_view_sent_annc_{a['id']}")])
+
+        nav_row = []
+        if page > 0: nav_row.append(InlineKeyboardButton("◀️ Prev", callback_data=f"admin_list_sent_annc_{page - 1}"))
+        nav_row.append(InlineKeyboardButton(f"📄 {page + 1}/{total_pages}", callback_data="ignore"))
+        if page < total_pages - 1: nav_row.append(InlineKeyboardButton("Next ▶️", callback_data=f"admin_list_sent_annc_{page + 1}"))
+        keyboard.append(nav_row)
+        keyboard.append([InlineKeyboardButton("👑 Main Admin Portal", callback_data="admin_home")])
+
+        await query.edit_message_text(f"📢 **LIVE BROADCAST HISTORY ({total_p} Sent)**\nTap any broadcast to Live Edit in users' chats or Live Delete (Unsend):", reply_markup=InlineKeyboardMarkup(keyboard), parse_mode="Markdown")
+
+    elif data.startswith("admin_view_sent_annc_"):
+        await query.answer()
+        annc_id = int(data.replace("admin_view_sent_annc_", ""))
+        a = get_announcement_by_id(annc_id)
+        deliveries = get_broadcast_deliveries(annc_id)
+
+        sent_time_str = a['scheduled_time'].strftime("%d %b %Y, %I:%M %p IST") if a else "N/A"
+        msg = (
+            f"📡 **SENT BROADCAST LOG (ID #{annc_id})**\n"
+            f"━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\n"
+            f"⏰ **Sent At:** `{sent_time_str}`\n"
+            f"👥 **Delivered Chats:** `{len(deliveries)} Students`\n"
+            f"📝 **Media:** `{a.get('media_type', 'TEXT').upper()}`\n\n"
+            f"📄 **Message Content:**\n"
+            f"{a.get('message_text', 'N/A')}\n"
+            f"━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\n"
+            f"⚡ *Live actions will directly affect messages inside users' personal Telegram chats:*"
+        )
+
+        keyboard = [
+            [InlineKeyboardButton("✍️ Live Edit in Users' Chats", callback_data=f"admin_edit_sent_broadcast_prompt_{annc_id}")],
+            [InlineKeyboardButton("🗑 Live Unsend / Delete for ALL Users", callback_data=f"admin_delete_sent_broadcast_{annc_id}")],
+            [InlineKeyboardButton("🔙 Back to Sent History", callback_data="admin_list_sent_annc_0")],
+            [InlineKeyboardButton("👑 Return to Admin Portal", callback_data="admin_home")]
+        ]
+        await query.edit_message_text(msg, reply_markup=InlineKeyboardMarkup(keyboard), parse_mode="Markdown")
+
+    elif data.startswith("admin_edit_sent_broadcast_prompt_"):
+        await query.answer()
+        annc_id = int(data.replace("admin_edit_sent_broadcast_prompt_", ""))
+        context.user_data["awaiting_edit_live_broadcast"] = annc_id
+        cancel_btn = InlineKeyboardMarkup([[InlineKeyboardButton("❌ Cancel", callback_data=f"admin_view_sent_annc_{annc_id}")]])
+        await query.edit_message_text(f"✍️ **LIVE EDIT BROADCAST #{annc_id}**\n\nPlease reply with the updated text to edit across all recipients' chats in realtime:", reply_markup=cancel_btn, parse_mode="Markdown")
+
+    elif data.startswith("admin_delete_sent_broadcast_"):
+        await query.answer()
+        annc_id = int(data.replace("admin_delete_sent_broadcast_", ""))
+        deliveries = get_broadcast_deliveries(annc_id)
+        
+        await query.edit_message_text(f"⏳ **Live deleting message from {len(deliveries)} users' chats...**")
+        
+        deleted_count = 0
+        for d in deliveries:
+            try:
+                await context.bot.delete_message(chat_id=d['user_id'], message_id=d['message_id'])
+                deleted_count += 1
+                await asyncio.sleep(0.03)
+            except Exception:
+                pass
+
+        delete_scheduled_announcement(annc_id)
+        nav = InlineKeyboardMarkup([[InlineKeyboardButton("🔙 Back to Sent History", callback_data="admin_list_sent_annc_0")], [InlineKeyboardButton("👑 Admin Portal", callback_data="admin_home")]])
+        await query.edit_message_text(f"🗑 **LIVE UNSEND COMPLETE! Deleted message from {deleted_count}/{len(deliveries)} users' chats and removed from log.**", reply_markup=nav, parse_mode="Markdown")
+
+    elif data == "admin_popup_overview":
         conn = get_db()
         cursor = conn.cursor()
 

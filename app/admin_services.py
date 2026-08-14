@@ -1,19 +1,21 @@
 import psycopg2
 from psycopg2.extras import RealDictCursor
 from datetime import datetime, timedelta
+import pytz
 from app.database import get_db, release_db
+
+IST = pytz.timezone("Asia/Kolkata")
 
 # ==========================================
 # 🎟️ PROMO CODE ENGINE
 # ==========================================
 
 def create_promo_code(code: str, discount_type: str, discount_value: float, days_valid: int, created_by: int) -> dict:
-    """Creates a new promo code with admin-defined validity (1 to 7 days) and discount."""
     conn = get_db()
     cursor = conn.cursor(cursor_factory=RealDictCursor)
     try:
         clean_code = code.strip().upper()
-        valid_until = datetime.now() + timedelta(days=days_valid)
+        valid_until = datetime.now(IST) + timedelta(days=days_valid)
         
         cursor.execute("""
             INSERT INTO promo_codes (code, discount_type, discount_value, valid_until, created_by)
@@ -33,7 +35,6 @@ def create_promo_code(code: str, discount_type: str, discount_value: float, days
 
 
 def apply_promo_code(user_id: int, code: str, original_price: float) -> dict:
-    """Validates user promo code and calculates final discounted price."""
     conn = get_db()
     cursor = conn.cursor(cursor_factory=RealDictCursor)
     try:
@@ -44,21 +45,19 @@ def apply_promo_code(user_id: int, code: str, original_price: float) -> dict:
         if not promo:
             return {"success": False, "reason": "INVALID_CODE"}
         
-        if promo['valid_until'] < datetime.now():
+        if promo['valid_until'] < datetime.now(IST):
             return {"success": False, "reason": "EXPIRED"}
         
-        # Check if user already used this promo code
         cursor.execute("SELECT id FROM promo_redemptions WHERE promo_id = %s AND user_id = %s", (promo['id'], user_id))
         if cursor.fetchone():
             return {"success": False, "reason": "ALREADY_USED"}
         
-        # Calculate Discount
         disc_type = promo['discount_type']
         disc_val = float(promo['discount_value'])
         
         if disc_type == "PERCENT":
             discount_amount = round((original_price * disc_val) / 100.0, 2)
-        else: # FLAT Amount
+        else:
             discount_amount = disc_val
             
         final_price = max(0.0, round(original_price - discount_amount, 2))
@@ -76,7 +75,6 @@ def apply_promo_code(user_id: int, code: str, original_price: float) -> dict:
 
 
 def record_promo_redemption(promo_id: int, user_id: int):
-    """Marks a promo code as redeemed for a specific user after successful checkout."""
     conn = get_db()
     cursor = conn.cursor()
     try:
@@ -91,11 +89,10 @@ def record_promo_redemption(promo_id: int, user_id: int):
 
 
 # ==========================================
-# 📢 SCHEDULED ANNOUNCEMENT ENGINE
+# 📢 SCHEDULED ANNOUNCEMENT ENGINE (FIXED TIMEZONES)
 # ==========================================
 
 def schedule_announcement(message_text: str, media_file_id: str, media_type: str, scheduled_time: datetime, created_by: int) -> dict:
-    """Saves a broadcast message to be published at an exact date & time."""
     conn = get_db()
     cursor = conn.cursor(cursor_factory=RealDictCursor)
     try:
@@ -114,13 +111,12 @@ def schedule_announcement(message_text: str, media_file_id: str, media_type: str
 
 
 def fetch_pending_announcements() -> list:
-    """Fetches announcements that are due for publication."""
     conn = get_db()
     cursor = conn.cursor(cursor_factory=RealDictCursor)
     try:
         cursor.execute("""
             SELECT * FROM scheduled_announcements 
-            WHERE status = 'PENDING' AND scheduled_time <= NOW()
+            WHERE status = 'PENDING' AND scheduled_time <= (NOW() AT TIME ZONE 'Asia/Kolkata')
             ORDER BY scheduled_time ASC;
         """)
         return [dict(r) for r in cursor.fetchall()]
@@ -130,7 +126,6 @@ def fetch_pending_announcements() -> list:
 
 
 def update_announcement_status(announcement_id: int, status: str):
-    """Updates status to 'SENT' or 'FAILED' after broadcasting."""
     conn = get_db()
     cursor = conn.cursor()
     try:

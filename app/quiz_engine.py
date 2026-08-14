@@ -154,7 +154,9 @@ async def quiz_language_callback(update: Update, context: ContextTypes.DEFAULT_T
     user_id = query.from_user.id
     
     lang = query.data.replace("qlang_", "")
-    QUIZ_SETUP_CACHE[user_id] = {"language": lang}
+    if user_id not in QUIZ_SETUP_CACHE:
+        QUIZ_SETUP_CACHE[user_id] = {}
+    QUIZ_SETUP_CACHE[user_id]["language"] = lang
 
     profile = await asyncio.to_thread(get_user_profile, user_id)
     attempted_today = await asyncio.to_thread(get_today_attempts, user_id)
@@ -216,15 +218,15 @@ async def quiz_count_callback(update: Update, context: ContextTypes.DEFAULT_TYPE
     if count > remaining_quota:
         count = max(1, remaining_quota)
 
-    cache = QUIZ_SETUP_CACHE.get(user_id, {})
-    cache["count"] = count
-    QUIZ_SETUP_CACHE[user_id] = cache
+    current_cache = QUIZ_SETUP_CACHE.get(user_id, {})
+    current_cache["count"] = count
+    QUIZ_SETUP_CACHE[user_id] = current_cache
 
     timers = [12, 15, 18, 20, 25, 30]
     buttons = [InlineKeyboardButton(f"⏱ {t}s", callback_data=f"qtimer_{t}") for t in timers]
     keyboard = [buttons[:3], buttons[3:]]
 
-    lang_label = "🌐 English" if cache.get("language") == "en" else "🇮🇳 हिंदी"
+    lang_label = "🌐 English" if current_cache.get("language") == "en" else "🇮🇳 हिंदी"
 
     await query.edit_message_text(
         f"⏱ **LEARN WITH HIM QUIZ SETUP (STEP 3/3)** ⏱\n"

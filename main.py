@@ -439,9 +439,9 @@ async def scheduled_daily_quiz_reminder():
 
 
 async def scheduled_announcement_broadcast_worker():
-    """Background worker that polls and sends due scheduled announcements automatically."""
+    """Background worker that polls every 15s and delivers scheduled announcements."""
     while True:
-        await asyncio.sleep(30)
+        await asyncio.sleep(15)
         if not bot_app_instance:
             continue
 
@@ -449,12 +449,12 @@ async def scheduled_announcement_broadcast_worker():
             pending_list = await asyncio.to_thread(fetch_pending_announcements)
             for annc in pending_list:
                 annc_id = annc['id']
-                text = annc['message_text']
-                media_id = annc['media_file_id']
-                media_type = annc['media_type']
+                text = annc.get('message_text') or ""
+                media_id = annc.get('media_file_id')
+                media_type = annc.get('media_type', 'text')
                 
                 users = await asyncio.to_thread(get_all_users)
-                user_ids = [u['user_id'] for u in users]
+                user_ids = [u['user_id'] for u in users if not u.get('is_banned')]
                 
                 sent_count = 0
                 for uid in user_ids:
@@ -466,12 +466,12 @@ async def scheduled_announcement_broadcast_worker():
                         else:
                             await bot_app_instance.bot.send_message(chat_id=uid, text=text, parse_mode="Markdown")
                         sent_count += 1
-                        await asyncio.sleep(0.05)
+                        await asyncio.sleep(0.04) # Telegram rate-limit compliance
                     except Exception:
                         pass
                 
                 await asyncio.to_thread(update_announcement_status, annc_id, "SENT")
-                logging.info(f"[SCHEDULED ANNOUNCEMENT #{annc_id} PUBLISHED] Delivered to {sent_count} users.")
+                logging.info(f"[SCHEDULED ANNOUNCEMENT #{annc_id} DELIVERED] Broadcasted to {sent_count} users.")
                 
         except Exception as e:
             logging.error(f"[ANNOUNCEMENT WORKER EXCEPTION] {e}")
@@ -591,6 +591,7 @@ async def run_bot():
     await app.bot.delete_webhook(drop_pending_updates=True)
     await app.updater.start_polling(drop_pending_updates=True)
 
+    # Launch background tasks
     asyncio.create_task(scheduled_expiry_reminder_check())
     asyncio.create_task(scheduled_daily_quiz_reminder())
     asyncio.create_task(scheduled_announcement_broadcast_worker())

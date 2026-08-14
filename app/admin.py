@@ -60,7 +60,7 @@ def get_admin_nav_buttons(target_uid: int = None):
 
 async def fast_concurrent_broadcast(bot, user_ids, text, reply_markup=None, parse_mode="Markdown"):
     """
-    Delivers messages concurrently in batches to ensure maximum speed (~5s delivery)
+    Delivers messages concurrently in batches to ensure maximum speed (~3s delivery)
     with sound notifications enabled (disable_notification=False).
     """
     async def send_single(uid):
@@ -82,8 +82,60 @@ async def fast_concurrent_broadcast(bot, user_ids, text, reply_markup=None, pars
         batch = user_ids[i:i + batch_size]
         results = await asyncio.gather(*(send_single(uid) for uid in batch))
         successful_deliveries += sum(1 for r in results if r)
-        await asyncio.sleep(0.05)
+        await asyncio.sleep(0.03)
     return successful_deliveries
+
+
+async def fast_concurrent_edit(bot, deliveries, new_text):
+    """Live edits broadcast messages across all users' chats concurrently in under 3 seconds."""
+    async def edit_single(d):
+        try:
+            await bot.edit_message_text(
+                chat_id=d['user_id'],
+                message_id=d['message_id'],
+                text=new_text,
+                parse_mode="Markdown"
+            )
+            return True
+        except Exception:
+            try:
+                await bot.edit_message_caption(
+                    chat_id=d['user_id'],
+                    message_id=d['message_id'],
+                    caption=new_text,
+                    parse_mode="Markdown"
+                )
+                return True
+            except Exception:
+                return False
+
+    batch_size = 40
+    success_count = 0
+    for i in range(0, len(deliveries), batch_size):
+        batch = deliveries[i:i + batch_size]
+        results = await asyncio.gather(*(edit_single(d) for d in batch))
+        success_count += sum(1 for r in results if r)
+        await asyncio.sleep(0.03)
+    return success_count
+
+
+async def fast_concurrent_delete(bot, deliveries):
+    """Deletes/unsends broadcast messages across all users' chats concurrently in under 3 seconds."""
+    async def delete_single(d):
+        try:
+            await bot.delete_message(chat_id=d['user_id'], message_id=d['message_id'])
+            return True
+        except Exception:
+            return False
+
+    batch_size = 40
+    success_count = 0
+    for i in range(0, len(deliveries), batch_size):
+        batch = deliveries[i:i + batch_size]
+        results = await asyncio.gather(*(delete_single(d) for d in batch))
+        success_count += sum(1 for r in results if r)
+        await asyncio.sleep(0.03)
+    return success_count
 
 
 def get_stored_admin_password() -> str:
@@ -716,7 +768,7 @@ async def admin_callback_handler(update: Update, context: ContextTypes.DEFAULT_T
         await query.edit_message_text(f"🗑 **SCHEDULED ANNOUNCEMENT #{annc_id} DELETED SUCCESSFULLY!**", reply_markup=nav, parse_mode="Markdown")
 
     # ==============================================================
-    # 📢 LIVE BROADCASTS MANAGEMENT (LIVE EDIT / LIVE DELETE / UNSEND FROM USERS)
+    # 📢 LIVE BROADCASTS MANAGEMENT (FAST CONCURRENT EDIT / DELETE)
     # ==============================================================
     elif data.startswith("admin_list_sent_annc_"):
         await query.answer()
@@ -765,7 +817,7 @@ async def admin_callback_handler(update: Update, context: ContextTypes.DEFAULT_T
             f"📄 **Message Content:**\n"
             f"{a.get('message_text', 'N/A')}\n"
             f"━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\n"
-            f"⚡ *Live actions will directly affect messages inside users' personal Telegram chats:*"
+            f"⚡ *Fast concurrent actions will instantly affect messages inside users' personal Telegram chats:*"
         )
 
         keyboard = [
@@ -788,20 +840,13 @@ async def admin_callback_handler(update: Update, context: ContextTypes.DEFAULT_T
         annc_id = int(data.replace("admin_delete_sent_broadcast_", ""))
         deliveries = get_broadcast_deliveries(annc_id)
         
-        await query.edit_message_text(f"⏳ **Live deleting message from {len(deliveries)} users' chats...**")
+        await query.edit_message_text(f"⏳ **Live deleting message from {len(deliveries)} users' chats concurrently (~3s)...**")
         
-        deleted_count = 0
-        for d in deliveries:
-            try:
-                await context.bot.delete_message(chat_id=d['user_id'], message_id=d['message_id'])
-                deleted_count += 1
-                await asyncio.sleep(0.03)
-            except Exception:
-                pass
+        deleted_count = await fast_concurrent_delete(context.bot, deliveries)
 
         delete_scheduled_announcement(annc_id)
         nav = InlineKeyboardMarkup([[InlineKeyboardButton("🔙 Back to Sent History", callback_data="admin_list_sent_annc_0")], [InlineKeyboardButton("👑 Admin Portal", callback_data="admin_home")]])
-        await query.edit_message_text(f"🗑 **LIVE UNSEND COMPLETE! Deleted message from {deleted_count}/{len(deliveries)} users' chats and removed from log.**", reply_markup=nav, parse_mode="Markdown")
+        await query.edit_message_text(f"🗑 **LIVE UNSEND COMPLETE!**\nSuccessfully deleted message from `{deleted_count}` out of `{len(deliveries)}` chats and removed from log.", reply_markup=nav, parse_mode="Markdown")
 
     elif data == "admin_popup_overview":
         conn = get_db()

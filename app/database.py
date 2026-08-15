@@ -80,6 +80,115 @@ def infer_plan_key_from_amount(amount: float) -> str:
         pass
     return "LEARNWITHHIM"
 
+def recalculate_and_restore_user_plans(user_id: int) -> dict:
+    """
+    AUTOMATIC PAID PLAN PROTECTION & RESTORATION ENGINE:
+    1. Scans payment_transactions for all genuine paid plans (payment_id starting with 'pay_' and amount_paid > 0).
+    2. Automatically checks remaining validity for each paid transaction against current IST time.
+    3. Recalculates total legitimate stacked daily quota and sets furthest expiry date.
+    4. If active paid plans exist, updates users table with exact remaining days/quota so paid purchases can NEVER be lost or revoked.
+    5. If no active paid plan exists, resets quota safely to base tier (20 Qs/Day).
+    """
+    conn = get_db()
+    cursor = conn.cursor(cursor_factory=RealDictCursor)
+    try:
+        cursor.execute("""
+            SELECT * FROM payment_transactions 
+            WHERE user_id = %s 
+              AND payment_id LIKE 'pay_%%' 
+              AND amount_paid > 0 
+              AND plan_key != 'FREE_DEMO'
+            ORDER BY id ASC
+        """, (user_id,))
+        paid_txns = cursor.fetchall()
+
+        now_ist = datetime.now(IST)
+        active_paid_txns = []
+        total_paid_quota = 0
+        max_expiry_dt = None
+        latest_txn = None
+
+        for txn in paid_txns:
+            exp_str = txn.get("expiry_at")
+            exp_dt = None
+            if exp_str:
+                try:
+                    clean_exp = exp_str.replace(" IST", "").strip()
+                    exp_dt = datetime.strptime(clean_exp, "%Y-%m-%d %H:%M:%S")
+                    exp_dt = IST.localize(exp_dt) if exp_dt.tzinfo is None else exp_dt
+                except Exception:
+                    pass
+            
+            if not exp_dt:
+                c_str = txn.get("created_at", "")
+                v_days = txn.get("validity_days") or 30
+                try:
+                    c_dt = datetime.strptime(c_str.replace(" IST", "").strip(), "%d %b %Y, %I:%M %p")
+                    c_dt = IST.localize(c_dt) if c_dt.tzinfo is None else c_dt
+                    exp_dt = c_dt + timedelta(days=v_days)
+                except Exception:
+                    pass
+
+            if exp_dt and exp_dt > now_ist:
+                active_paid_txns.append(txn)
+                total_paid_quota += (txn.get("daily_quota") or 0)
+                if max_expiry_dt is None or exp_dt > max_expiry_dt:
+                    max_expiry_dt = exp_dt
+                latest_txn = txn
+
+        if active_paid_txns and max_expiry_dt:
+            expiry_str = max_expiry_dt.strftime("%Y-%m-%d %H:%M:%S IST")
+            final_quota = max(DAILY_QUESTION_LIMIT, total_paid_quota)
+            payment_id = latest_txn.get("payment_id")
+            payment_timestamp = latest_txn.get("created_at")
+
+            cursor.execute("""
+                UPDATE users 
+                SET paid_question_balance = %s,
+                    vip_pass_expiry = %s,
+                    payment_id = %s,
+                    payment_timestamp = %s,
+                    demo_used = 1
+                WHERE user_id = %s
+            """, (final_quota, expiry_str, payment_id, payment_timestamp, user_id))
+            conn.commit()
+
+            diff_sec = max(0, int((max_expiry_dt - now_ist).total_seconds()))
+            remaining_days = max(1, int(diff_sec // 86400))
+            return {
+                "has_paid_plan": True,
+                "active_count": len(active_paid_txns),
+                "quota": final_quota,
+                "expiry_str": expiry_str,
+                "remaining_days": remaining_days,
+                "transactions": active_paid_txns
+            }
+        else:
+            cursor.execute("""
+                UPDATE users 
+                SET paid_question_balance = %s,
+                    vip_pass_expiry = NULL,
+                    payment_id = NULL,
+                    payment_timestamp = NULL
+                WHERE user_id = %s
+            """, (DAILY_QUESTION_LIMIT, user_id))
+            conn.commit()
+            return {
+                "has_paid_plan": False,
+                "active_count": 0,
+                "quota": DAILY_QUESTION_LIMIT,
+                "expiry_str": None,
+                "remaining_days": 0,
+                "transactions": []
+            }
+    except Exception as e:
+        conn.rollback()
+        logger.error(f"[PLAN RESTORE ERROR] {e}")
+        return {"has_paid_plan": False, "error": str(e)}
+    finally:
+        cursor.close()
+        release_db(conn)
+
 def init_db():
     init_pool()
     conn = get_db()

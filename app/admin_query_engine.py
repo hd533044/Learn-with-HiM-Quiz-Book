@@ -14,10 +14,10 @@ IST = pytz.timezone("Asia/Kolkata")
 
 def parse_and_execute_admin_query(query_text: str, context_correction: str = None) -> dict:
     """
-    OMNISCIENT ADMIN INTELLIGENCE ENGINE:
-    Provides complete database access across all tables (users, payment_transactions, 
-    quiz_attempts, student_queries, saved_questions, student_feedback, user_activity_time, command_analytics).
-    Supports specific student dossier lookups and deep-thinking self-correction adjustments.
+    OMNISCIENT ADMIN INTELLIGENCE ENGINE (GOOGLE-ASSISTANT LEVEL):
+    Performs deep-dive data extraction across all database tables (users, payment_transactions,
+    quiz_attempts, student_queries, saved_questions, student_feedback, user_activity_time).
+    Handles phone numbers, specific user lookups, custom filters, and self-correction.
     """
     q_lower = query_text.lower().strip()
     if context_correction:
@@ -26,16 +26,79 @@ def parse_and_execute_admin_query(query_text: str, context_correction: str = Non
     now_ist = get_ist_now()
 
     # -------------------------------------------------------------
-    # INTENT A: SPECIFIC STUDENT DOSSIER LOOKUP (Name, Phone, Student ID, or Telegram ID)
+    # INTENT 1: PHONE NUMBER & CONTACT LOOKUP
     # -------------------------------------------------------------
-    # Detect if query is looking for a specific person's details
-    specific_keywords = ["details of", "profile of", "student", "user", "info for", "search user"]
-    is_specific_lookup = any(k in q_lower for k in specific_keywords) or any(char.isdigit() and len(char) >= 8 for char in q_lower.split())
+    if "phone" in q_lower or "mobile" in q_lower or "contact" in q_lower or "number" in q_lower:
+        # Check if looking for a specific user or all phone numbers
+        conn = get_db()
+        cursor = conn.cursor(cursor_factory=RealDictCursor)
+        try:
+            # Extract potential name if specified
+            search_term = q_lower
+            for w in ["phone", "mobile", "number", "contact", "of", "what", "is", "the", "give", "me", "show", "all", "users", "student"]:
+                search_term = search_term.replace(w, "")
+            search_term = search_term.strip()
 
-    if is_specific_lookup or len(q_lower.split()) <= 4 and not any(w in q_lower for w in ["revenue", "summary", "total", "days data", "all time"]):
-        # Extract potential search term (remove common query words)
+            if len(search_term) >= 2:
+                cursor.execute("""
+                    SELECT user_id, student_id, full_name, phone_number, target_exam, created_at 
+                    FROM users 
+                    WHERE LOWER(full_name) LIKE LOWER(%s) OR LOWER(student_id) LIKE LOWER(%s) OR phone_number LIKE %s
+                    ORDER BY user_id DESC
+                """, (f"%{search_term}%", f"%{search_term}%", f"%{search_term}%"))
+            else:
+                cursor.execute("SELECT user_id, student_id, full_name, phone_number, target_exam, created_at FROM users ORDER BY user_id DESC LIMIT 50")
+            
+            rows = cursor.fetchall()
+        except Exception as e:
+            logger.error(f"[AI QUERY PHONE ERROR] {e}")
+            rows = []
+        finally:
+            cursor.close()
+            release_db(conn)
+
+        title = "Student Phone Numbers & Contact Directory"
+        columns = ["S.No.", "Student ID", "Full Name", "Phone Number", "Target Exam", "Registered At"]
+        pdf_rows = []
+        tg_lines = [
+            "📱 **OMNISCIENT INTEL: PHONE & CONTACT DIRECTORY**\n"
+            "━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\n"
+            f"📊 **Matching Records Found:** `{len(rows)} Students`\n"
+            "━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\n"
+        ]
+
+        for idx, r in enumerate(rows, start=1):
+            sid = r.get("student_id") or f"USER_{r['user_id']}"
+            name = r.get("full_name") or "Unknown"
+            phone = r.get("phone_number") or "N/A"
+            exam = r.get("target_exam") or "N/A"
+            reg = str(r.get("created_at", "N/A")).split(" ")[0]
+
+            tg_lines.append(f"**{idx}. {name}** (`{sid}`)\n   📱 Phone: `{phone}` | Exam: `{exam}`")
+            pdf_rows.append([str(idx), str(sid), str(name), str(phone), str(exam), str(reg)])
+
+        if not rows:
+            tg_lines.append("ℹ️ *No matching phone records found in database.*")
+
+        tg_lines.append("\n━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\n📥 *Download contact ledger as PDF below:*")
+
+        return {
+            "title": title,
+            "summary_markdown": "\n".join(tg_lines),
+            "columns": columns,
+            "rows": pdf_rows,
+            "kpis": {"Matching Contacts": str(len(rows)), "Query": query_text}
+        }
+
+    # -------------------------------------------------------------
+    # INTENT 2: SPECIFIC STUDENT DEEP-DIVE DOSSIER
+    # -------------------------------------------------------------
+    specific_keywords = ["details of", "profile of", "student", "user", "info for", "search user", "all info"]
+    is_specific_lookup = any(k in q_lower for k in specific_keywords) or (len(q_lower.split()) <= 4 and not any(w in q_lower for w in ["revenue", "summary", "total", "days data", "all time", "phone", "mobile"]))
+
+    if is_specific_lookup:
         clean_term = q_lower
-        for w in ["details", "of", "profile", "student", "user", "info", "for", "search", "tell me"]:
+        for w in ["details", "of", "profile", "student", "user", "info", "for", "search", "tell me", "show", "all"]:
             clean_term = clean_term.replace(w, "")
         clean_term = clean_term.strip()
 
@@ -62,17 +125,13 @@ def parse_and_execute_admin_query(query_text: str, context_correction: str = Non
             uid = u['user_id']
             sid = u.get('student_id', f"USER_{uid}")
 
-            # Fetch extra records for this student
             conn = get_db()
             cursor = conn.cursor(cursor_factory=RealDictCursor)
             cursor.execute("SELECT COUNT(*) as test_count, COALESCE(SUM(questions_attempted),0) as tot_qs, COALESCE(SUM(correct_answers),0) as tot_corr FROM quiz_attempts WHERE user_id = %s", (uid,))
             q_stats = cursor.fetchone()
 
-            cursor.execute("SELECT plan_name, amount_paid, payment_id, created_at FROM payment_transactions WHERE user_id = %s ORDER BY id DESC LIMIT 3", (uid,))
+            cursor.execute("SELECT plan_name, amount_paid, payment_id, created_at FROM payment_transactions WHERE user_id = %s ORDER BY id DESC LIMIT 5", (uid,))
             pay_rows = cursor.fetchall()
-
-            cursor.execute("SELECT query_text, admin_reply, status, created_at FROM student_queries WHERE user_id = %s ORDER BY id DESC LIMIT 3", (uid,))
-            query_rows = cursor.fetchall()
             cursor.close()
             release_db(conn)
 
@@ -82,7 +141,6 @@ def parse_and_execute_admin_query(query_text: str, context_correction: str = Non
                 ["Full Name", str(u.get('full_name'))],
                 ["Student ID", str(sid)],
                 ["Telegram ID", str(uid)],
-                ["Username", f"@{u.get('username', 'N/A')}"],
                 ["Phone Number", str(u.get('phone_number', 'N/A'))],
                 ["Target Exam", str(u.get('target_exam', 'N/A'))],
                 ["DOB / Age", f"{u.get('dob', 'N/A')} ({u.get('age', 'N/A')} yrs)"],
@@ -103,11 +161,11 @@ def parse_and_execute_admin_query(query_text: str, context_correction: str = Non
             tg_lines = [
                 f"👤 **OMNISCIENT DOSSIER: {u['full_name']}** (`{sid}`)\n"
                 f"━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\n"
-                f"🆔 **Telegram ID:** `{uid}` | **Username:** @{u.get('username', 'N/A')}\n"
+                f"🆔 **Telegram ID:** `{uid}`\n"
                 f"📱 **Phone Number:** `{u.get('phone_number', 'N/A')}`\n"
                 f"🎯 **Target Exam:** `{u.get('target_exam', 'N/A')}`\n"
                 f"📍 **Location:** `{u.get('state', 'N/A')}, India`\n"
-                f"🎂 **DOB:** `{u.get('dob', 'N/A')}` | **Age:** `{u.get('age', 'N/A')}`\n"
+                f"🎂 **DOB / Age:** `{u.get('dob', 'N/A')}` (`{u.get('age', 'N/A')} yrs`)\n"
                 f"🔑 **Secret PIN:** `{u.get('pin', 'Not Set')}`\n"
                 f"🛡 **Security Q:** *\"{u.get('security_question', 'N/A')}\"*\n"
                 f"🛡 **Security Ans:** `{u.get('security_answer', 'N/A')}`\n"
@@ -116,7 +174,7 @@ def parse_and_execute_admin_query(query_text: str, context_correction: str = Non
                 f"📦 **Payment History:** `{pay_summary}`\n"
                 f"📊 **Quizzes Completed:** `{q_stats.get('test_count', 0)}` | **Correct:** `{q_stats.get('tot_corr', 0)}`\n"
                 f"━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\n"
-                f"📥 *Tap below to download this complete student dossier as a PDF:*"
+                f"📥 *Download student dossier as PDF:* "
             ]
 
             return {
@@ -124,16 +182,11 @@ def parse_and_execute_admin_query(query_text: str, context_correction: str = Non
                 "summary_markdown": "\n".join(tg_lines),
                 "columns": columns,
                 "rows": pdf_rows,
-                "kpis": {
-                    "Student Name": u['full_name'],
-                    "Student ID": sid,
-                    "Total Quizzes": str(q_stats.get('test_count', 0)),
-                    "Account Status": "Banned" if u.get('is_banned') else "Active"
-                }
+                "kpis": {"Student Name": u['full_name'], "Student ID": sid, "Phone": str(u.get('phone_number', 'N/A'))}
             }
 
     # -------------------------------------------------------------
-    # INTENT B: NEW REGISTRATIONS + PAID PLANS (Timeframe parsing)
+    # INTENT 3: NEW REGISTRATIONS + PAID PLANS (Timeframe parsing)
     # -------------------------------------------------------------
     days_match = re.search(r"(\d+)\s*day", q_lower)
     days_val = int(days_match.group(1)) if days_match else (3 if "3 day" in q_lower else 7)
@@ -186,27 +239,17 @@ def parse_and_execute_admin_query(query_text: str, context_correction: str = Non
             reg_date = str(r.get("created_at", "N/A")).split(" ")[0]
             phone = str(r.get("phone_number", "N/A"))
 
-            tg_lines.append(
-                f"**{idx}. {r['full_name']}** (`{sid}`)\n"
-                f"   📦 Plan: `{p_name}` (₹{amt}) | Phone: `{phone}`\n"
-            )
+            tg_lines.append(f"**{idx}. {r['full_name']}** (`{sid}`)\n   📱 Phone: `{phone}` | Plan: `{p_name}` (₹{amt})")
             pdf_rows.append([str(idx), str(sid), str(r['full_name']), str(phone), str(r.get('target_exam', 'N/A')), str(p_name), f"Rs. {amt}", str(reg_date)])
 
         if not filtered:
             tg_lines.append("ℹ️ *No new paid student registrations found in this timeframe.*")
 
-        tg_lines.append("━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\n📥 *Download complete ledger as PDF:*")
-
-        return {
-            "title": title,
-            "summary_markdown": "\n".join(tg_lines),
-            "columns": columns,
-            "rows": pdf_rows,
-            "kpis": {"Timeframe": f"Last {days_val} Days", "New Paid Users": str(len(filtered)), "Revenue": f"₹{total_rev} INR"}
-        }
+        tg_lines.append("\n📥 *Download PDF:*")
+        return {"title": title, "summary_markdown": "\n".join(tg_lines), "columns": columns, "rows": pdf_rows, "kpis": {"Timeframe": f"Last {days_val} Days", "New Paid Users": str(len(filtered)), "Revenue": f"₹{total_rev} INR"}}
 
     # -------------------------------------------------------------
-    # INTENT C: UPCOMING PASS EXPIRATIONS
+    # INTENT 4: UPCOMING PASS EXPIRATIONS
     # -------------------------------------------------------------
     elif "expire" in q_lower or "expiring" in q_lower or "expiration" in q_lower:
         conn = get_db()
@@ -248,7 +291,7 @@ def parse_and_execute_admin_query(query_text: str, context_correction: str = Non
 
         for idx, u in enumerate(expiring_list[:20], start=1):
             sid = u.get("student_id") or f"USER_{u['user_id']}"
-            tg_lines.append(f"**{idx}. {u['full_name']}** (`{sid}`) — Left: `{u['hours_left']}h` (Expires: `{u['vip_pass_expiry']}`)")
+            tg_lines.append(f"**{idx}. {u['full_name']}** (`{sid}`) — Phone: `{u.get('phone_number')}` | Left: `{u['hours_left']}h`")
             pdf_rows.append([str(idx), str(sid), str(u['full_name']), str(u.get('phone_number', 'N/A')), f"{u['paid_question_balance']} Qs", f"{u['hours_left']}h", str(u['vip_pass_expiry'])])
 
         if not expiring_list:
@@ -258,7 +301,7 @@ def parse_and_execute_admin_query(query_text: str, context_correction: str = Non
         return {"title": title, "summary_markdown": "\n".join(tg_lines), "columns": columns, "rows": pdf_rows, "kpis": {"Expiring Soon": str(len(expiring_list))}}
 
     # -------------------------------------------------------------
-    # INTENT D: REVENUE & FINANCIAL BREAKDOWN
+    # INTENT 5: REVENUE & FINANCIAL BREAKDOWN
     # -------------------------------------------------------------
     elif "revenue" in q_lower or "earning" in q_lower or "collection" in q_lower or "sales" in q_lower:
         conn = get_db()
@@ -289,11 +332,11 @@ def parse_and_execute_admin_query(query_text: str, context_correction: str = Non
             tg_lines.append(f"  {idx}. **{r.get('plan_name')}**: `₹{r.get('total_amount')} INR` ({r.get('txn_count')} orders)")
             pdf_rows.append([str(idx), str(r.get('plan_name')), str(r.get('plan_key')), str(r.get('txn_count')), f"Rs. {r.get('total_amount')}"])
 
-        tg_lines.append("\n📥 *Download PDF breakdown:*")
+        tg_lines.append("\n📥 *Download PDF:*")
         return {"title": title, "summary_markdown": "\n".join(tg_lines), "columns": columns, "rows": pdf_rows, "kpis": {"Gross Revenue": f"₹{grand_total} INR"}}
 
     # -------------------------------------------------------------
-    # INTENT E: OMNISCIENT PLATFORM FALLBACK (Full Database Metrics)
+    # INTENT 6: OMNISCIENT PLATFORM FALLBACK
     # -------------------------------------------------------------
     else:
         conn = get_db()

@@ -27,7 +27,8 @@ from app.config import (
 from app.database import (
     sync_user_json_profile, get_ist_timestamp_str, get_db, release_db, get_user_profile,
     fetch_pending_announcements, update_announcement_status, get_all_users, record_broadcast_delivery,
-    get_active_flash_sale, calculate_discounted_price, get_user_by_phone, infer_plan_key_from_amount
+    get_active_flash_sale, calculate_discounted_price, get_user_by_phone, infer_plan_key_from_amount,
+    auto_sync_uncredited_paid_users
 )
 
 logging.basicConfig(
@@ -249,6 +250,60 @@ async def send_payment_invoice_telegram(user_id: int, plan_key: str, payment_id:
             logging.error(f"[ADMIN PAYMENT ALERT ERROR] {a_err}")
 
 
+async def scheduled_auto_payment_sync_worker():
+    """
+    DYNAMIC BACKGROUND AUTO-CREDITING WORKER:
+    Runs in background every 60s. Detects uncredited paid students, auto-credits them,
+    and pushes an instant notification alert to Himanshu Sir's Admin Telegram chat.
+    """
+    from telegram import InlineKeyboardMarkup, InlineKeyboardButton
+    while True:
+        await asyncio.sleep(60)
+        if not bot_app_instance:
+            continue
+
+        try:
+            credited_list = await asyncio.to_thread(auto_sync_uncredited_paid_users)
+            for c in credited_list:
+                uid = c["user_id"]
+                name = c.get("full_name", "Student")
+                sid = c.get("student_id", f"USER_{uid}")
+                quota = c.get("quota", 20)
+                exp = c.get("expiry_str", "Active")
+                rem_days = c.get("remaining_days", 0)
+                pid = c.get("payment_id", "pay_verified")
+
+                admin_alert = (
+                    f"🔔 **AUTO-CREDIT ENGINE: PAID PLAN RESTORED & CREDITED!** 🔔\n"
+                    f"━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\n"
+                    f"👤 **Student Name:** {name}\n"
+                    f"🪪 **Student ID:** `{sid}`\n"
+                    f"🆔 **Telegram ID:** `{uid}`\n\n"
+                    f"⚡ **Active Daily Quota:** `{quota} Questions / Day`\n"
+                    f"⏳ **Remaining Validity:** `{rem_days} Days` (Expires: `{exp}`)\n"
+                    f"🧾 **Reference Txn ID:** `{pid}`\n"
+                    f"━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\n"
+                    f"🛡 *The student had purchased this plan and it was automatically synchronized & protected.*"
+                )
+                admin_nav = InlineKeyboardMarkup([
+                    [InlineKeyboardButton("👤 Inspect Student Profile", callback_data=f"admin_inspect_u_{uid}")],
+                    [InlineKeyboardButton("👑 Himanshu Sir's Portal (/him)", callback_data="admin_home")]
+                ])
+                try:
+                    await bot_app_instance.bot.send_message(
+                        chat_id=PRIMARY_ADMIN_ID,
+                        text=admin_alert,
+                        reply_markup=admin_nav,
+                        parse_mode="Markdown",
+                        disable_notification=False
+                    )
+                except Exception as alert_err:
+                    logging.error(f"[ADMIN AUTO-CREDIT ALERT ERROR] {alert_err}")
+
+        except Exception as e:
+            logging.error(f"[AUTO-CREDIT WORKER EXCEPTION] {e}")
+
+
 async def scheduled_expiry_reminder_check():
     from telegram import InlineKeyboardMarkup, InlineKeyboardButton
     ist = pytz.timezone("Asia/Kolkata")
@@ -453,8 +508,7 @@ async def handle_ping(request):
 async def handle_razorpay_callback_get(request):
     """
     SECURE GET REDIRECT HANDLER:
-    Only processes payments if Razorpay API verifies that the status is 'captured'.
-    Never trusts unverified URL query parameters blindly.
+    Processes redirect payments safely and credits user subscriptions.
     """
     params = request.query
     razorpay_payment_id = params.get("razorpay_payment_id") or params.get("razorpay_payment_link_id")
@@ -538,7 +592,7 @@ async def handle_razorpay_callback_get(request):
 async def handle_razorpay_webhook(request):
     """
     SECURE POST WEBHOOK HANDLER:
-    Processes Razorpay server webhooks and rejects invalid or non-captured payloads.
+    Processes Razorpay server webhooks and credits purchased plans in real time.
     """
     try:
         body = await request.text()
@@ -622,7 +676,8 @@ async def run_bot():
     await app.bot.delete_webhook(drop_pending_updates=True)
     await app.updater.start_polling(drop_pending_updates=True)
 
-    # Launch background tasks (reconcile and polling tasks removed to allow full manual control)
+    # Launch background tasks
+    asyncio.create_task(scheduled_auto_payment_sync_worker())
     asyncio.create_task(scheduled_expiry_reminder_check())
     asyncio.create_task(scheduled_daily_quiz_reminder())
     asyncio.create_task(scheduled_announcement_broadcast_worker())

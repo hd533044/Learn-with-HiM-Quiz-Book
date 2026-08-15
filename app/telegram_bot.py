@@ -343,6 +343,8 @@ async def strict_quiz_command_guard(update: Update, context: ContextTypes.DEFAUL
     user = update.effective_user
     asyncio.create_task(asyncio.to_thread(log_command_usage, user.id, "/quiz"))
     asyncio.create_task(asyncio.to_thread(log_user_activity_time, user.id, 10))
+    
+    PROFILE_CACHE.pop(user.id, None)
     profile = await fetch_user_profile_fast(user.id)
 
     attempted_today = await asyncio.to_thread(get_today_attempts, user.id)
@@ -1509,9 +1511,6 @@ async def handle_text_messages(update: Update, context: ContextTypes.DEFAULT_TYP
     caption = msg_obj.caption.strip() if msg_obj and msg_obj.caption else ""
     video = msg_obj.video if msg_obj and msg_obj.video else None
 
-    # ==============================================================
-    # 🧠 MASTER ADMIN INTELLIGENCE QUERY TEXT PROCESSOR
-    # ==============================================================
     if user.id == PRIMARY_ADMIN_ID and context.user_data.get("awaiting_admin_ai_query"):
         context.user_data["awaiting_admin_ai_query"] = False
         raw_query = text or caption

@@ -82,16 +82,20 @@ def infer_plan_key_from_amount(amount: float) -> str:
 
 def recalculate_and_restore_user_plans(user_id: int) -> dict:
     """
-    AUTOMATIC PAID PLAN PROTECTION & RESTORATION ENGINE:
+    IDEMPOTENT AUTO-CREDITING & DUPLICATION PREVENTION ENGINE:
     1. Scans payment_transactions for all genuine paid plans (payment_id starting with 'pay_' and amount_paid > 0).
-    2. Automatically checks remaining validity for each paid transaction against current IST time.
-    3. Recalculates total legitimate stacked daily quota and sets furthest expiry date.
-    4. If active paid plans exist, updates users table with exact remaining days/quota so paid purchases can NEVER be lost or revoked.
-    5. If no active paid plan exists, resets quota safely to base tier (20 Qs/Day).
+    2. Calculates the exact unexpired target daily limit and furthest expiration timestamp.
+    3. If the user already has this exact quota and expiry active, it makes NO CHANGES (prevents duplicate stacking).
+    4. If the plan was missing or reduced, it updates the user table and marks updated=True so Admin is notified.
     """
     conn = get_db()
     cursor = conn.cursor(cursor_factory=RealDictCursor)
     try:
+        cursor.execute("SELECT * FROM users WHERE user_id = %s", (user_id,))
+        user_curr = cursor.fetchone()
+        if not user_curr:
+            return {"updated": False, "has_paid_plan": False}
+
         cursor.execute("""
             SELECT * FROM payment_transactions 
             WHERE user_id = %s 
@@ -142,6 +146,24 @@ def recalculate_and_restore_user_plans(user_id: int) -> dict:
             payment_id = latest_txn.get("payment_id")
             payment_timestamp = latest_txn.get("created_at")
 
+            # Check if user already has this exact active state (Prevents duplicate crediting)
+            curr_quota = user_curr.get("paid_question_balance", 0)
+            curr_expiry = user_curr.get("vip_pass_expiry")
+            
+            if curr_quota == final_quota and curr_expiry == expiry_str:
+                diff_sec = max(0, int((max_expiry_dt - now_ist).total_seconds()))
+                return {
+                    "updated": False,
+                    "has_paid_plan": True,
+                    "active_count": len(active_paid_txns),
+                    "quota": final_quota,
+                    "expiry_str": expiry_str,
+                    "remaining_days": max(1, int(diff_sec // 86400)),
+                    "full_name": user_curr.get("full_name", "Student"),
+                    "student_id": user_curr.get("student_id", f"USER_{user_id}"),
+                    "payment_id": payment_id
+                }
+
             cursor.execute("""
                 UPDATE users 
                 SET paid_question_balance = %s,
@@ -156,38 +178,87 @@ def recalculate_and_restore_user_plans(user_id: int) -> dict:
             diff_sec = max(0, int((max_expiry_dt - now_ist).total_seconds()))
             remaining_days = max(1, int(diff_sec // 86400))
             return {
+                "updated": True,
                 "has_paid_plan": True,
                 "active_count": len(active_paid_txns),
                 "quota": final_quota,
                 "expiry_str": expiry_str,
                 "remaining_days": remaining_days,
-                "transactions": active_paid_txns
+                "full_name": user_curr.get("full_name", "Student"),
+                "student_id": user_curr.get("student_id", f"USER_{user_id}"),
+                "payment_id": payment_id
             }
         else:
-            cursor.execute("""
-                UPDATE users 
-                SET paid_question_balance = %s,
-                    vip_pass_expiry = NULL,
-                    payment_id = NULL,
-                    payment_timestamp = NULL
-                WHERE user_id = %s
-            """, (DAILY_QUESTION_LIMIT, user_id))
-            conn.commit()
+            # If no active paid plan and quota is currently set as paid, reset to base
+            if user_curr.get("paid_question_balance", 0) > DAILY_QUESTION_LIMIT:
+                cursor.execute("""
+                    UPDATE users 
+                    SET paid_question_balance = %s,
+                        vip_pass_expiry = NULL,
+                        payment_id = NULL,
+                        payment_timestamp = NULL
+                    WHERE user_id = %s
+                """, (DAILY_QUESTION_LIMIT, user_id))
+                conn.commit()
+                return {
+                    "updated": True,
+                    "has_paid_plan": False,
+                    "quota": DAILY_QUESTION_LIMIT,
+                    "expiry_str": None,
+                    "remaining_days": 0
+                }
             return {
+                "updated": False,
                 "has_paid_plan": False,
-                "active_count": 0,
                 "quota": DAILY_QUESTION_LIMIT,
                 "expiry_str": None,
-                "remaining_days": 0,
-                "transactions": []
+                "remaining_days": 0
             }
     except Exception as e:
         conn.rollback()
         logger.error(f"[PLAN RESTORE ERROR] {e}")
-        return {"has_paid_plan": False, "error": str(e)}
+        return {"updated": False, "has_paid_plan": False, "error": str(e)}
     finally:
         cursor.close()
         release_db(conn)
+
+def auto_sync_uncredited_paid_users() -> list:
+    """
+    GLOBAL AUTOMATIC CREDITING SYNC:
+    Scans all users in PostgreSQL who have valid paid transactions.
+    Returns a list of student records that were newly credited/restored.
+    """
+    conn = get_db()
+    cursor = conn.cursor(cursor_factory=RealDictCursor)
+    candidate_uids = []
+    try:
+        cursor.execute("""
+            SELECT DISTINCT pt.user_id 
+            FROM payment_transactions pt
+            INNER JOIN users u ON pt.user_id = u.user_id
+            WHERE pt.payment_id LIKE 'pay_%%' 
+              AND pt.amount_paid > 0 
+              AND pt.plan_key != 'FREE_DEMO'
+        """)
+        candidate_uids = [r['user_id'] for r in cursor.fetchall()]
+    except Exception as e:
+        logger.error(f"[AUTO SYNC FETCH CANDIDATES ERROR] {e}")
+    finally:
+        cursor.close()
+        release_db(conn)
+
+    credited_students = []
+    for uid in candidate_uids:
+        try:
+            res = recalculate_and_restore_user_plans(uid)
+            if res.get("updated") and res.get("has_paid_plan"):
+                sync_user_json_profile(uid)
+                res["user_id"] = uid
+                credited_students.append(res)
+        except Exception as err:
+            logger.error(f"[AUTO SYNC USER ERROR] {uid}: {err}")
+
+    return credited_students
 
 def init_db():
     init_pool()
@@ -829,7 +900,26 @@ def get_user_profile(user_id):
     row = cursor.fetchone()
     cursor.close()
     release_db(conn)
-    return dict(row) if row else None
+
+    if not row:
+        return None
+
+    u_dict = dict(row)
+
+    # Dynamic check: If user has paid records, auto-sync and credit if missing
+    if u_dict.get("paid_question_balance", 0) <= DAILY_QUESTION_LIMIT or not u_dict.get("vip_pass_expiry"):
+        restored = recalculate_and_restore_user_plans(user_id)
+        if restored.get("updated") and restored.get("has_paid_plan"):
+            conn = get_db()
+            cursor = conn.cursor(cursor_factory=RealDictCursor)
+            cursor.execute("SELECT * FROM users WHERE user_id = %s", (user_id,))
+            updated_row = cursor.fetchone()
+            cursor.close()
+            release_db(conn)
+            if updated_row:
+                return dict(updated_row)
+
+    return u_dict
 
 def get_all_users():
     conn = get_db()

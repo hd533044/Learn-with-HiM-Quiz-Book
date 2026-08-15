@@ -61,7 +61,6 @@ async def activate_user_subscription(user_id: int, plan_key: str, payment_id: st
     4. Logs transaction permanently into payment_transactions.
     5. Invalidates memory cache for instant synchronization.
     """
-    # 1. Strict Security Validation
     if not plan_key or plan_key not in PLAN_TIERS:
         logging.error(f"[SECURITY BLOCKED] Invalid/fake plan key attempted: '{plan_key}' for user {user_id}")
         return False
@@ -145,7 +144,6 @@ async def send_payment_invoice_telegram(user_id: int, plan_key: str, payment_id:
         logging.error("[TELEGRAM PUSH ERROR] bot_app_instance is uninitialized.")
         return
 
-    # Safety: Only send invoice if plan key exists in PLAN_TIERS
     if not plan_key or plan_key not in PLAN_TIERS:
         logging.error(f"[INVOICE BLOCKED] Attempted to send invoice for invalid plan '{plan_key}'")
         return
@@ -251,107 +249,6 @@ async def send_payment_invoice_telegram(user_id: int, plan_key: str, payment_id:
             logging.error(f"[ADMIN PAYMENT ALERT ERROR] {a_err}")
 
 
-async def reconcile_pending_captured_payments():
-    """
-    AUTO-RECONCILIATION SEED ENGINE:
-    Reconciles and credits all verified uncredited captured payments on startup.
-    """
-    logging.info("[RECONCILIATION] Running payment verification and credit check...")
-    
-    known_payments = [
-        {"phone": "9834232546", "payment_id": "pay_TPt8Ldi6v9lIUQe", "amount": 20.0, "plan_key": "LEARNWITHHIM"},
-        {"phone": "8340332353", "payment_id": "pay_TPt3EFpkHmZU2P", "amount": 20.0, "plan_key": "LEARNWITHHIM"},
-        {"phone": "8278245297", "payment_id": "pay_TPsQ4JHX80l1Ba", "amount": 32.0, "plan_key": "PLATINUM"},
-        {"phone": "7876637783", "payment_id": "pay_TPsLT9jjslekzW", "amount": 8.0, "plan_key": "SILVER"},
-        {"phone": "7876862018", "payment_id": "pay_TPuVDb4coWR1Dg", "amount": 20.0, "plan_key": "LEARNWITHHIM"},
-        {"phone": "8950968402", "payment_id": "pay_TPtv35Ivl6Bn6Z", "amount": 20.0, "plan_key": "LEARNWITHHIM"},
-        {"phone": "8082041843", "payment_id": "pay_TPtrmblyGsZJI6", "amount": 32.0, "plan_key": "PLATINUM"}
-    ]
-
-    for p in known_payments:
-        try:
-            conn = get_db()
-            cursor = conn.cursor()
-            cursor.execute("SELECT 1 FROM payment_transactions WHERE payment_id = %s", (p["payment_id"],))
-            already_recorded = cursor.fetchone()
-            cursor.close()
-            release_db(conn)
-
-            if not already_recorded:
-                user_match = get_user_by_phone(p["phone"])
-                if user_match:
-                    uid = user_match["user_id"]
-                    activated = await activate_user_subscription(uid, p["plan_key"], p["payment_id"], amount_paid=p["amount"])
-                    if activated:
-                        await send_payment_invoice_telegram(uid, p["plan_key"], p["payment_id"], amount_paid=p["amount"])
-                        logging.info(f"[RECONCILED & CREDITED] User {uid} ({user_match.get('full_name')}) for {p['payment_id']}")
-        except Exception as e:
-            logging.error(f"[RECONCILIATION ERROR] {e}")
-
-
-async def scheduled_razorpay_api_reconciliation_worker():
-    """
-    FAIL-SAFE DIRECT RAZORPAY API WORKER:
-    Polls Razorpay directly every 45s to fetch recent 'captured' payments.
-    Only credits genuine payments with status 'captured' and valid plan keys.
-    """
-    while True:
-        await asyncio.sleep(45)
-        if not razorpay_client or not bot_app_instance:
-            continue
-
-        try:
-            payments_res = await asyncio.to_thread(razorpay_client.payment.all, {"count": 50})
-            items = payments_res.get("items", []) if isinstance(payments_res, dict) else []
-
-            for p in items:
-                status = p.get("status")
-                payment_id = p.get("id")
-                if status != "captured" or not payment_id or not str(payment_id).startswith("pay_"):
-                    continue
-
-                conn = get_db()
-                cursor = conn.cursor()
-                cursor.execute("SELECT 1 FROM payment_transactions WHERE payment_id = %s", (payment_id,))
-                exists = cursor.fetchone()
-                cursor.close()
-                release_db(conn)
-
-                if exists:
-                    continue
-
-                amount_paid = float(p.get("amount", 0)) / 100.0
-                contact = p.get("contact", "")
-                notes = p.get("notes", {}) or {}
-                user_id = notes.get("user_id")
-                plan_key = notes.get("plan_key")
-
-                uid = None
-                if user_id and str(user_id).isdigit():
-                    uid = int(user_id)
-                elif contact:
-                    u_match = get_user_by_phone(contact)
-                    if u_match:
-                        uid = u_match["user_id"]
-
-                if not uid:
-                    continue
-
-                if not plan_key or plan_key not in PLAN_TIERS:
-                    plan_key = infer_plan_key_from_amount(amount_paid)
-
-                if plan_key not in PLAN_TIERS:
-                    continue
-
-                logging.info(f"[AUTO-POLL VERIFIED] Crediting valid payment {payment_id} for user {uid} (₹{amount_paid})")
-                activated = await activate_user_subscription(uid, plan_key, payment_id, amount_paid=amount_paid)
-                if activated:
-                    await send_payment_invoice_telegram(uid, plan_key, payment_id, amount_paid=amount_paid)
-
-        except Exception as e:
-            logging.error(f"[RAZORPAY API AUTO-RECONCILIATION ERROR] {e}")
-
-
 async def scheduled_expiry_reminder_check():
     from telegram import InlineKeyboardMarkup, InlineKeyboardButton
     ist = pytz.timezone("Asia/Kolkata")
@@ -376,7 +273,6 @@ async def scheduled_expiry_reminder_check():
                 uid = u['user_id']
                 name = u['full_name'] or "Student"
                 exp_str = u['vip_pass_expiry']
-                is_demo = bool(u.get('demo_used') and u.get('paid_question_balance', 0) <= 20)
 
                 if not exp_str:
                     continue
@@ -563,7 +459,6 @@ async def handle_razorpay_callback_get(request):
     params = request.query
     razorpay_payment_id = params.get("razorpay_payment_id") or params.get("razorpay_payment_link_id")
 
-    # If payment_id is missing or doesn't start with pay_, reject as invalid
     if not razorpay_payment_id or not str(razorpay_payment_id).startswith("pay_"):
         html_invalid = """
         <!DOCTYPE html>
@@ -583,7 +478,6 @@ async def handle_razorpay_callback_get(request):
     charged_amt = None
     is_verified = False
 
-    # Verify directly with Razorpay REST API
     if razorpay_client:
         try:
             p_data = await asyncio.to_thread(razorpay_client.payment.fetch, razorpay_payment_id)
@@ -599,7 +493,6 @@ async def handle_razorpay_callback_get(request):
         except Exception as e:
             logging.error(f"[CALLBACK REST VERIFY ERROR] {e}")
 
-    # Fallback to amount inference only if plan_key is missing/invalid
     if (not plan_key or plan_key not in PLAN_TIERS) and charged_amt:
         plan_key = infer_plan_key_from_amount(charged_amt)
 
@@ -681,7 +574,6 @@ async def handle_razorpay_webhook(request):
         if not amount_paid and notes.get("amount_paid"):
             amount_paid = float(notes["amount_paid"])
 
-        # Match student by phone number if user_id is absent
         if not user_id:
             contact = payment_entity.get("contact") or payment_link_entity.get("customer", {}).get("contact")
             if contact:
@@ -689,7 +581,6 @@ async def handle_razorpay_webhook(request):
                 if user_match:
                     user_id = user_match["user_id"]
 
-        # Validate/infer plan key strictly
         if not plan_key or plan_key not in PLAN_TIERS:
             if amount_paid:
                 plan_key = infer_plan_key_from_amount(amount_paid)
@@ -731,9 +622,7 @@ async def run_bot():
     await app.bot.delete_webhook(drop_pending_updates=True)
     await app.updater.start_polling(drop_pending_updates=True)
 
-    # Launch background tasks
-    asyncio.create_task(reconcile_pending_captured_payments())
-    asyncio.create_task(scheduled_razorpay_api_reconciliation_worker())
+    # Launch background tasks (reconcile and polling tasks removed to allow full manual control)
     asyncio.create_task(scheduled_expiry_reminder_check())
     asyncio.create_task(scheduled_daily_quiz_reminder())
     asyncio.create_task(scheduled_announcement_broadcast_worker())

@@ -1,495 +1,344 @@
-import os
 import re
+import os
 import json
 import logging
 from datetime import datetime, timedelta
 import pytz
-import xml.sax.saxutils as saxutils
-import unicodedata
 from psycopg2.extras import RealDictCursor
-
-from app.config import USER_PROFILES_DIR, BASE_DIR, PLAN_TIERS
-from app.database import get_db, release_db
+from app.database import get_db, release_db, get_ist_now
+from app.pdf_generator import generate_admin_query_dataset_pdf
 
 logger = logging.getLogger(__name__)
 IST = pytz.timezone("Asia/Kolkata")
 
-HAS_WEASYPRINT = False
-try:
-    import weasyprint
-    HAS_WEASYPRINT = True
-except ImportError:
-    HAS_WEASYPRINT = False
 
-
-def clean_html_val(text) -> str:
-    """Sanitizes text for safe HTML & PDF embedding."""
-    if text is None:
-        return "N/A"
-    val_str = str(text).strip()
-    if not val_str:
-        return "N/A"
-    normalized_str = unicodedata.normalize('NFC', val_str)
-    cleaned_spacing = " ".join(normalized_str.split())
-    return saxutils.escape(cleaned_spacing)
-
-
-def parse_and_execute_admin_query(query_text: str) -> dict:
+def parse_and_execute_admin_query(query_text: str, context_correction: str = None) -> dict:
     """
-    Parses natural language requests from Himanshu Sir and executes safe,
-    real-time multi-table SQL queries to provide accurate platform intelligence.
+    OMNISCIENT ADMIN INTELLIGENCE ENGINE:
+    Provides complete database access across all tables (users, payment_transactions, 
+    quiz_attempts, student_queries, saved_questions, student_feedback, user_activity_time, command_analytics).
+    Supports specific student dossier lookups and deep-thinking self-correction adjustments.
     """
-    clean_q = query_text.lower().strip()
-    now_ist = datetime.now(IST)
-    today_date_str = now_ist.strftime("%Y-%m-%d")
-    
-    conn = get_db()
-    cursor = conn.cursor(cursor_factory=RealDictCursor)
-    
-    try:
-        # -------------------------------------------------------------
-        # 1. NEW REGISTRATIONS WHO PURCHASED PAID PLANS (e.g. 3 Days / Custom Days)
-        # -------------------------------------------------------------
-        days_match = re.search(r'(\d+)\s*(?:day|days)', clean_q)
-        days_count = int(days_match.group(1)) if days_match else 3
+    q_lower = query_text.lower().strip()
+    if context_correction:
+        q_lower += f" (correction note: {context_correction.lower().strip()})"
 
-        if ("register" in clean_q or "new" in clean_q) and ("paid" in clean_q or "bought" in clean_q or "plan" in clean_q or "subscrib" in clean_q):
-            cutoff_dt = now_ist - timedelta(days=days_count)
-            cutoff_date_str = cutoff_dt.strftime("%Y-%m-%d")
+    now_ist = get_ist_now()
 
+    # -------------------------------------------------------------
+    # INTENT A: SPECIFIC STUDENT DOSSIER LOOKUP (Name, Phone, Student ID, or Telegram ID)
+    # -------------------------------------------------------------
+    # Detect if query is looking for a specific person's details
+    specific_keywords = ["details of", "profile of", "student", "user", "info for", "search user"]
+    is_specific_lookup = any(k in q_lower for k in specific_keywords) or any(char.isdigit() and len(char) >= 8 for char in q_lower.split())
+
+    if is_specific_lookup or len(q_lower.split()) <= 4 and not any(w in q_lower for w in ["revenue", "summary", "total", "days data", "all time"]):
+        # Extract potential search term (remove common query words)
+        clean_term = q_lower
+        for w in ["details", "of", "profile", "student", "user", "info", "for", "search", "tell me"]:
+            clean_term = clean_term.replace(w, "")
+        clean_term = clean_term.strip()
+
+        conn = get_db()
+        cursor = conn.cursor(cursor_factory=RealDictCursor)
+        try:
             cursor.execute("""
-                SELECT 
-                    u.user_id,
-                    u.student_id,
-                    u.full_name,
-                    u.phone_number,
-                    u.target_exam,
-                    u.state,
-                    u.created_at as registered_at,
-                    pt.payment_id,
-                    pt.plan_name,
-                    pt.amount_paid,
-                    pt.created_at as paid_at,
-                    u.paid_question_balance,
-                    u.vip_pass_expiry
-                FROM users u
-                INNER JOIN payment_transactions pt ON u.user_id = pt.user_id
-                WHERE pt.plan_key != 'FREE_DEMO' 
-                  AND pt.amount_paid > 0
-                  AND u.created_at >= %s
-                ORDER BY pt.id DESC;
-            """, (cutoff_date_str,))
-            rows = cursor.fetchall()
-            row_list = [dict(r) for r in rows] if rows else []
+                SELECT * FROM users 
+                WHERE LOWER(full_name) LIKE LOWER(%s) 
+                   OR LOWER(student_id) LIKE LOWER(%s) 
+                   OR phone_number LIKE %s 
+                   OR CAST(user_id AS TEXT) LIKE %s
+                LIMIT 5
+            """, (f"%{clean_term}%", f"%{clean_term}%", f"%{clean_term}%", f"%{clean_term}%"))
+            matched_users = cursor.fetchall()
+        except Exception:
+            matched_users = []
+        finally:
+            cursor.close()
+            release_db(conn)
 
-            total_rev = sum([float(r.get("amount_paid", 0)) for r in row_list])
-            unique_students = len(set([r["user_id"] for r in row_list]))
+        if matched_users:
+            u = matched_users[0]
+            uid = u['user_id']
+            sid = u.get('student_id', f"USER_{uid}")
 
-            summary_lines = [
-                f"🧠 **QUERY RESULTS: NEW REGISTRATIONS WITH PAID PLANS**",
-                f"━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━",
-                f"⏱ **Timeframe:** Last `{days_count} Days` (Since `{cutoff_date_str}`)",
-                f"👥 **New Paid Students Found:** `{unique_students}` Students",
-                f"🧾 **Total Transactions:** `{len(row_list)}`",
-                f"💰 **Revenue Generated:** `₹{total_rev} INR`\n",
-                f"📋 **STUDENT DATA BREAKDOWN:**"
+            # Fetch extra records for this student
+            conn = get_db()
+            cursor = conn.cursor(cursor_factory=RealDictCursor)
+            cursor.execute("SELECT COUNT(*) as test_count, COALESCE(SUM(questions_attempted),0) as tot_qs, COALESCE(SUM(correct_answers),0) as tot_corr FROM quiz_attempts WHERE user_id = %s", (uid,))
+            q_stats = cursor.fetchone()
+
+            cursor.execute("SELECT plan_name, amount_paid, payment_id, created_at FROM payment_transactions WHERE user_id = %s ORDER BY id DESC LIMIT 3", (uid,))
+            pay_rows = cursor.fetchall()
+
+            cursor.execute("SELECT query_text, admin_reply, status, created_at FROM student_queries WHERE user_id = %s ORDER BY id DESC LIMIT 3", (uid,))
+            query_rows = cursor.fetchall()
+            cursor.close()
+            release_db(conn)
+
+            title = f"Student Dossier: {u['full_name']} ({sid})"
+            columns = ["Data Field", "Student Record Value"]
+            pdf_rows = [
+                ["Full Name", str(u.get('full_name'))],
+                ["Student ID", str(sid)],
+                ["Telegram ID", str(uid)],
+                ["Username", f"@{u.get('username', 'N/A')}"],
+                ["Phone Number", str(u.get('phone_number', 'N/A'))],
+                ["Target Exam", str(u.get('target_exam', 'N/A'))],
+                ["DOB / Age", f"{u.get('dob', 'N/A')} ({u.get('age', 'N/A')} yrs)"],
+                ["State / Country", f"{u.get('state', 'N/A')}, {u.get('country', 'India')}"],
+                ["Secret PIN", str(u.get('pin', 'Not Set'))],
+                ["Security Q / A", f"{u.get('security_question', 'N/A')} -> {u.get('security_answer', 'N/A')}"],
+                ["Paid Question Balance", f"{u.get('paid_question_balance', 20)} Qs/Day"],
+                ["VIP Pass Expiry", str(u.get('vip_pass_expiry', 'N/A'))],
+                ["Account Status", "BANNED 🛑" if u.get('is_banned') else "ACTIVE 🟢"],
+                ["Total Quizzes Solved", str(q_stats.get('test_count', 0))],
+                ["Total Questions Attempted", str(q_stats.get('tot_qs', 0))],
+                ["Correct Answers", str(q_stats.get('tot_corr', 0))],
+                ["Registered At", str(u.get('created_at', 'N/A'))]
             ]
 
-            if row_list:
-                for idx, r in enumerate(row_list[:12], start=1):
-                    summary_lines.append(
-                        f"**{idx}. {r['full_name']}** (`{r['student_id']}`)\n"
-                        f"   📦 Plan: `{r['plan_name']}` (₹{r['amount_paid']}) | 🎯 `{r['target_exam']}`\n"
-                        f"   📅 Reg: `{r['registered_at']}` | Txn: `{r['payment_id']}`\n"
-                        f"   ⏳ Expiry: `{r['vip_pass_expiry'] or 'N/A'}`\n"
-                    )
-                if len(row_list) > 12:
-                    summary_lines.append(f"*(+ {len(row_list) - 12} more students included in the official PDF report)*")
-            else:
-                summary_lines.append("ℹ️ *No new users registered and purchased paid plans in the selected timeframe.*")
+            pay_summary = ", ".join([f"{p['plan_name']} (₹{p['amount_paid']})" for p in pay_rows]) if pay_rows else "None"
 
-            return {
-                "title": f"New Registrations with Paid Plans ({days_count} Days)",
-                "summary_markdown": "\n".join(summary_lines),
-                "columns": ["S.No.", "Student Name", "Student ID", "Target Exam", "Plan Name", "Amount Paid", "Registered At", "Txn ID"],
-                "rows": [
-                    [
-                        str(i),
-                        r["full_name"],
-                        r["student_id"] or f"USER_{r['user_id']}",
-                        r["target_exam"] or "N/A",
-                        r["plan_name"] or "VIP Plan",
-                        f"₹{r['amount_paid']}",
-                        str(r["registered_at"]).split(" ")[0],
-                        r["payment_id"]
-                    ] for i, r in enumerate(row_list, start=1)
-                ],
-                "total_records": len(row_list),
-                "total_revenue": total_rev
-            }
-
-        # -------------------------------------------------------------
-        # 2. UPCOMING / EXPIRING SUBSCRIPTION PASSES
-        # -------------------------------------------------------------
-        elif "expir" in clean_q or "upcoming" in clean_q or "renewal" in clean_q:
-            cursor.execute("""
-                SELECT user_id, student_id, full_name, phone_number, target_exam, paid_question_balance, vip_pass_expiry
-                FROM users 
-                WHERE vip_pass_expiry IS NOT NULL 
-                  AND is_banned = 0
-                ORDER BY vip_pass_expiry ASC;
-            """)
-            all_exp = cursor.fetchall()
-            upcoming_list = []
-            
-            for u in all_exp:
-                exp_str = u.get("vip_pass_expiry")
-                if not exp_str:
-                    continue
-                try:
-                    exp_dt = datetime.strptime(exp_str, "%Y-%m-%d %H:%M:%S IST")
-                    exp_dt = IST.localize(exp_dt) if exp_dt.tzinfo is None else exp_dt
-                    diff = (exp_dt - now_ist).total_seconds()
-                    if 0 < diff <= (days_count * 86400):
-                        hours_left = round(diff / 3600.0, 1)
-                        u_dict = dict(u)
-                        u_dict["hours_left"] = hours_left
-                        upcoming_list.append(u_dict)
-                except Exception:
-                    pass
-
-            summary_lines = [
-                f"🧠 **QUERY RESULTS: UPCOMING VIP PASS EXPIRATIONS**",
-                f"━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━",
-                f"⏳ **Horizon Window:** Next `{days_count} Days`",
-                f"👥 **Students Expiring Soon:** `{len(upcoming_list)}` Students\n",
-                f"📋 **EXPIRING STUDENT LEDGER:**"
-            ]
-
-            if upcoming_list:
-                for idx, r in enumerate(upcoming_list[:12], start=1):
-                    summary_lines.append(
-                        f"**{idx}. {r['full_name']}** (`{r['student_id']}`)\n"
-                        f"   ⏳ Expiry: `{r['vip_pass_expiry']}` ({r['hours_left']} hrs left)\n"
-                        f"   ⚡ Active Limit: `{r['paid_question_balance']} Qs/D` | 🎯 `{r['target_exam']}`\n"
-                    )
-                if len(upcoming_list) > 12:
-                    summary_lines.append(f"*(+ {len(upcoming_list) - 12} more students in PDF export)*")
-            else:
-                summary_lines.append("🎉 *No active VIP passes are scheduled to expire in this window.*")
-
-            return {
-                "title": f"Upcoming VIP Subscriptions Expiring (Next {days_count} Days)",
-                "summary_markdown": "\n".join(summary_lines),
-                "columns": ["S.No.", "Student Name", "Student ID", "Phone", "Target Exam", "Quota / Day", "Expiry Date (IST)", "Hours Left"],
-                "rows": [
-                    [
-                        str(i),
-                        r["full_name"],
-                        r["student_id"] or f"USER_{r['user_id']}",
-                        r.get("phone_number") or "N/A",
-                        r["target_exam"] or "N/A",
-                        f"{r['paid_question_balance']} Qs",
-                        r["vip_pass_expiry"],
-                        f"{r['hours_left']} hrs"
-                    ] for i, r in enumerate(upcoming_list, start=1)
-                ],
-                "total_records": len(upcoming_list)
-            }
-
-        # -------------------------------------------------------------
-        # 3. REVENUE & FINANCIAL BREAKDOWN BY PLAN TIERS
-        # -------------------------------------------------------------
-        elif "revenue" in clean_q or "earning" in clean_q or "collection" in clean_q or "payment" in clean_q:
-            cursor.execute("""
-                SELECT 
-                    plan_key,
-                    plan_name,
-                    COUNT(*) as purchase_count,
-                    COALESCE(SUM(amount_paid), 0) as total_collected,
-                    COALESCE(AVG(amount_paid), 0) as avg_price
-                FROM payment_transactions
-                WHERE plan_key != 'FREE_DEMO'
-                GROUP BY plan_key, plan_name
-                ORDER BY total_collected DESC;
-            """)
-            rev_rows = cursor.fetchall()
-            rev_list = [dict(r) for r in rev_rows] if rev_rows else []
-            gross_total = sum([float(r["total_collected"]) for r in rev_list])
-            total_purchases = sum([int(r["purchase_count"]) for r in rev_list])
-
-            summary_lines = [
-                f"🧠 **QUERY RESULTS: PLAN-WISE REVENUE BREAKDOWN**",
-                f"━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━",
-                f"💰 **Gross Platform Revenue:** `₹{gross_total} INR`",
-                f"🧾 **Total Subscriptions Sold:** `{total_purchases}` Purchases\n",
-                f"📊 **PLAN TIER ANALYTICS:**"
-            ]
-
-            for idx, r in enumerate(rev_list, start=1):
-                summary_lines.append(
-                    f"**{idx}. {r['plan_name']}** (`{r['plan_key']}`)\n"
-                    f"   • Total Revenue: `₹{r['total_collected']} INR`\n"
-                    f"   • Units Sold: `{r['purchase_count']}` | Avg Price: `₹{round(float(r['avg_price']), 2)}`\n"
-                )
-
-            return {
-                "title": "Platform Financial Revenue & Plan Tier Analysis",
-                "summary_markdown": "\n".join(summary_lines),
-                "columns": ["S.No.", "Plan Name", "Plan Code", "Purchases Count", "Total Revenue (INR)", "Avg Unit Price"],
-                "rows": [
-                    [
-                        str(i),
-                        r["plan_name"],
-                        r["plan_key"],
-                        str(r["purchase_count"]),
-                        f"₹{r['total_collected']}",
-                        f"₹{round(float(r['avg_price']), 2)}"
-                    ] for i, r in enumerate(rev_list, start=1)
-                ],
-                "total_records": len(rev_list),
-                "total_revenue": gross_total
-            }
-
-        # -------------------------------------------------------------
-        # 4. TARGET EXAM POPULATION & ACTIVE RATIO
-        # -------------------------------------------------------------
-        elif "exam" in clean_q or "target" in clean_q or "category" in clean_q:
-            cursor.execute("""
-                SELECT 
-                    COALESCE(target_exam, 'Unspecified') as exam_name,
-                    COUNT(*) as total_students,
-                    SUM(CASE WHEN paid_question_balance > 20 THEN 1 ELSE 0 END) as paid_students,
-                    SUM(CASE WHEN is_banned = 1 THEN 1 ELSE 0 END) as banned_students
-                FROM users
-                GROUP BY target_exam
-                ORDER BY total_students DESC;
-            """)
-            exam_rows = cursor.fetchall()
-            exam_list = [dict(r) for r in exam_rows] if exam_rows else []
-
-            summary_lines = [
-                f"🧠 **QUERY RESULTS: TARGET EXAM DISTRIBUTION**",
+            tg_lines = [
+                f"👤 **OMNISCIENT DOSSIER: {u['full_name']}** (`{sid}`)\n"
                 f"━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\n"
+                f"🆔 **Telegram ID:** `{uid}` | **Username:** @{u.get('username', 'N/A')}\n"
+                f"📱 **Phone Number:** `{u.get('phone_number', 'N/A')}`\n"
+                f"🎯 **Target Exam:** `{u.get('target_exam', 'N/A')}`\n"
+                f"📍 **Location:** `{u.get('state', 'N/A')}, India`\n"
+                f"🎂 **DOB:** `{u.get('dob', 'N/A')}` | **Age:** `{u.get('age', 'N/A')}`\n"
+                f"🔑 **Secret PIN:** `{u.get('pin', 'Not Set')}`\n"
+                f"🛡 **Security Q:** *\"{u.get('security_question', 'N/A')}\"*\n"
+                f"🛡 **Security Ans:** `{u.get('security_answer', 'N/A')}`\n"
+                f"💳 **Active Quota:** `{u.get('paid_question_balance', 20)} Qs/Day`\n"
+                f"⏳ **VIP Pass Expiry:** `{u.get('vip_pass_expiry', 'N/A')}`\n"
+                f"📦 **Payment History:** `{pay_summary}`\n"
+                f"📊 **Quizzes Completed:** `{q_stats.get('test_count', 0)}` | **Correct:** `{q_stats.get('tot_corr', 0)}`\n"
+                f"━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\n"
+                f"📥 *Tap below to download this complete student dossier as a PDF:*"
             ]
 
-            for idx, r in enumerate(exam_list, start=1):
-                pct_paid = round((r['paid_students'] / r['total_students']) * 100, 1) if r['total_students'] > 0 else 0.0
-                summary_lines.append(
-                    f"**{idx}. {r['exam_name']}**\n"
-                    f"   • Total Students: `{r['total_students']}`\n"
-                    f"   • VIP Paid: `{r['paid_students']}` ({pct_paid}% Conversion)\n"
-                )
-
             return {
-                "title": "Target Exam Distribution & Conversion Rates",
-                "summary_markdown": "\n".join(summary_lines),
-                "columns": ["S.No.", "Target Exam", "Total Aspirants", "Paid VIP Users", "Conversion %"],
-                "rows": [
-                    [
-                        str(i),
-                        r["exam_name"],
-                        str(r["total_students"]),
-                        str(r["paid_students"]),
-                        f"{round((r['paid_students'] / r['total_students']) * 100, 1) if r['total_students'] > 0 else 0.0}%"
-                    ] for i, r in enumerate(exam_list, start=1)
-                ],
-                "total_records": len(exam_list)
+                "title": title,
+                "summary_markdown": "\n".join(tg_lines),
+                "columns": columns,
+                "rows": pdf_rows,
+                "kpis": {
+                    "Student Name": u['full_name'],
+                    "Student ID": sid,
+                    "Total Quizzes": str(q_stats.get('test_count', 0)),
+                    "Account Status": "Banned" if u.get('is_banned') else "Active"
+                }
             }
 
-        # -------------------------------------------------------------
-        # 5. INACTIVE STUDENTS (0 Quizzes Attempted)
-        # -------------------------------------------------------------
-        elif "inactive" in clean_q or "zero" in clean_q or "unactive" in clean_q:
-            cursor.execute("""
-                SELECT u.user_id, u.student_id, u.full_name, u.phone_number, u.target_exam, u.created_at, u.last_active
-                FROM users u
-                LEFT JOIN quiz_attempts q ON u.user_id = q.user_id
-                WHERE q.id IS NULL AND u.is_banned = 0
-                ORDER BY u.created_at DESC;
-            """)
-            inact_rows = cursor.fetchall()
-            inact_list = [dict(r) for r in inact_rows] if inact_rows else []
+    # -------------------------------------------------------------
+    # INTENT B: NEW REGISTRATIONS + PAID PLANS (Timeframe parsing)
+    # -------------------------------------------------------------
+    days_match = re.search(r"(\d+)\s*day", q_lower)
+    days_val = int(days_match.group(1)) if days_match else (3 if "3 day" in q_lower else 7)
 
-            summary_lines = [
-                f"🧠 **QUERY RESULTS: REGISTERED BUT INACTIVE STUDENTS**",
-                f"━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━",
-                f"👥 **Total Inactive Students (0 Quizzes):** `{len(inact_list)}`\n",
-                f"📋 **STUDENT SAMPLING:**"
-            ]
-
-            for idx, r in enumerate(inact_list[:12], start=1):
-                summary_lines.append(
-                    f"**{idx}. {r['full_name']}** (`{r['student_id']}`)\n"
-                    f"   🎯 `{r['target_exam']}` | 📅 Registered: `{r['created_at']}`\n"
-                )
-
-            return {
-                "title": "Registered Inactive Students (Zero Quizzes)",
-                "summary_markdown": "\n".join(summary_lines),
-                "columns": ["S.No.", "Student Name", "Student ID", "Phone", "Target Exam", "Registered At", "Last Active"],
-                "rows": [
-                    [
-                        str(i),
-                        r["full_name"],
-                        r["student_id"] or f"USER_{r['user_id']}",
-                        r.get("phone_number") or "N/A",
-                        r["target_exam"] or "N/A",
-                        r["created_at"],
-                        r.get("last_active") or "Never"
-                    ] for i, r in enumerate(inact_list, start=1)
-                ],
-                "total_records": len(inact_list)
-            }
-
-        # -------------------------------------------------------------
-        # 6. UNIVERSAL FALLBACK: RECENT PLATFORM AUDIT & SUMMARY
-        # -------------------------------------------------------------
-        else:
-            cursor.execute("""
-                SELECT 
-                    u.user_id, u.student_id, u.full_name, u.target_exam, u.state,
-                    u.paid_question_balance, u.vip_pass_expiry, u.created_at
-                FROM users u
-                ORDER BY u.created_at DESC
-                LIMIT 50;
-            """)
-            gen_rows = cursor.fetchall()
-            gen_list = [dict(r) for r in gen_rows] if gen_rows else []
-
-            summary_lines = [
-                f"🧠 **QUERY RESULTS: RECENT PLATFORM AUDIT**",
-                f"━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━",
-                f"🔍 **Matched Context:** `{query_text}`",
-                f"👥 **Total Sampled Records:** `{len(gen_list)}`\n",
-                f"📋 **RECENT SCHOLARS:**"
-            ]
-
-            for idx, r in enumerate(gen_list[:10], start=1):
-                p_status = "💳 VIP" if r.get("paid_question_balance", 0) > 20 else "🎁 Free"
-                summary_lines.append(f"**{idx}. {r['full_name']}** (`{r['student_id']}`) — `{p_status}` | 🎯 `{r['target_exam']}`")
-
-            return {
-                "title": f"Platform Scholars Audit — {query_text[:30]}",
-                "summary_markdown": "\n".join(summary_lines),
-                "columns": ["S.No.", "Student Name", "Student ID", "Target Exam", "Location", "Quota / Day", "Registered At"],
-                "rows": [
-                    [
-                        str(i),
-                        r["full_name"],
-                        r["student_id"] or f"USER_{r['user_id']}",
-                        r["target_exam"] or "N/A",
-                        f"{r.get('state', 'N/A')}",
-                        f"{r['paid_question_balance']} Qs",
-                        r["created_at"]
-                    ] for i, r in enumerate(gen_list, start=1)
-                ],
-                "total_records": len(gen_list)
-            }
-
-    except Exception as e:
-        logger.error(f"[ADMIN QUERY ENGINE EXCEPTION] {e}")
-        return {
-            "title": "Error Processing Query",
-            "summary_markdown": f"⚠️ **Error Executing Database Query:** `{str(e)}`",
-            "columns": ["Status"],
-            "rows": [["Error"]],
-            "total_records": 0
-        }
-    finally:
+    if ("register" in q_lower or "joined" in q_lower or "new" in q_lower) and ("paid" in q_lower or "plan" in q_lower or "bought" in q_lower):
+        conn = get_db()
+        cursor = conn.cursor(cursor_factory=RealDictCursor)
+        cutoff_dt = now_ist - timedelta(days=days_val)
+        
+        cursor.execute("""
+            SELECT u.user_id, u.student_id, u.full_name, u.phone_number, u.target_exam, 
+                   u.created_at, u.paid_question_balance, u.vip_pass_expiry,
+                   pt.plan_name, pt.amount_paid, pt.payment_id, pt.created_at as paid_at
+            FROM users u
+            INNER JOIN payment_transactions pt ON u.user_id = pt.user_id
+            WHERE pt.plan_key != 'FREE_DEMO' AND pt.amount_paid > 0
+            ORDER BY pt.id DESC
+        """)
+        raw_rows = cursor.fetchall()
         cursor.close()
         release_db(conn)
 
+        filtered = []
+        for r in raw_rows:
+            dt_str = r.get("created_at") or ""
+            try:
+                dt = datetime.strptime(dt_str.replace(" IST", ""), "%Y-%m-%d %H:%M:%S")
+                dt = IST.localize(dt)
+                if dt >= cutoff_dt:
+                    filtered.append(r)
+            except Exception:
+                filtered.append(r)
 
-def generate_admin_intelligence_pdf(data_dict: dict) -> str:
-    """Generates a styled, branded PDF report document for the query results."""
-    title = clean_html_val(data_dict.get("title", "Admin Intelligence Report"))
-    columns = data_dict.get("columns", [])
-    rows = data_dict.get("rows", [])
-    total_records = data_dict.get("total_records", len(rows))
-    
-    now_str = datetime.now(IST).strftime("%d %b %Y, %I:%M %p IST")
-    filename = f"Admin_Report_{int(datetime.now().timestamp())}.pdf"
-    pdf_path = os.path.join(USER_PROFILES_DIR, filename)
+        total_rev = sum([float(r.get("amount_paid", 0) or 0) for r in filtered])
+        title = f"Newly Registered Students with Paid Plans (Last {days_val} Days)"
+        columns = ["S.No.", "Student ID", "Full Name", "Phone", "Target Exam", "Pack Name", "Amount", "Registered At"]
+        pdf_rows = []
+        tg_lines = [
+            f"🧠 **OMNISCIENT INTEL: NEW PAID STUDENTS ({days_val} DAYS)**\n"
+            f"━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\n"
+            f"📊 **Total New Paid Users:** `{len(filtered)}`\n"
+            f"💰 **Total Revenue Generated:** `₹{total_rev} INR`\n"
+            f"━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\n"
+        ]
 
-    logo_left_path = os.path.abspath(os.path.join(BASE_DIR, "assets", "logo.png"))
-    logo_right_path = os.path.abspath(os.path.join(BASE_DIR, "assets", "logohim.png"))
-    target_link = "https://t.me/learnwithhim"
+        for idx, r in enumerate(filtered, start=1):
+            sid = r.get("student_id") or f"USER_{r['user_id']}"
+            p_name = r.get("plan_name") or "VIP Pack"
+            amt = r.get("amount_paid", 0)
+            reg_date = str(r.get("created_at", "N/A")).split(" ")[0]
+            phone = str(r.get("phone_number", "N/A"))
 
-    left_logo = f'<a href="{target_link}"><img src="file://{logo_left_path}" style="width:55px; height:55px; object-fit:contain; border:none;"/></a>' if os.path.exists(logo_left_path) else '<b>Logo</b>'
-    right_logo = f'<a href="{target_link}"><img src="file://{logo_right_path}" style="width:55px; height:55px; object-fit:contain; border:none;"/></a>' if os.path.exists(logo_right_path) else '<b>@LearnwithHiM</b>'
+            tg_lines.append(
+                f"**{idx}. {r['full_name']}** (`{sid}`)\n"
+                f"   📦 Plan: `{p_name}` (₹{amt}) | Phone: `{phone}`\n"
+            )
+            pdf_rows.append([str(idx), str(sid), str(r['full_name']), str(phone), str(r.get('target_exam', 'N/A')), str(p_name), f"Rs. {amt}", str(reg_date)])
 
-    headers_html = "".join([f"<th style='padding:6px 8px; border:0.5px solid #CBD5E1; background-color:#E0F2FE; color:#0F172A; font-weight:bold; font-size:10px;'>{clean_html_val(col)}</th>" for col in columns])
-    
-    rows_html_list = []
-    for r in rows:
-        cells = "".join([f"<td style='padding:5px 7px; border:0.5px solid #CBD5E1; font-size:9.5px; word-break:break-word;'>{clean_html_val(c)}</td>" for c in r])
-        rows_html_list.append(f"<tr>{cells}</tr>")
-    
-    table_body = "".join(rows_html_list)
+        if not filtered:
+            tg_lines.append("ℹ️ *No new paid student registrations found in this timeframe.*")
 
-    html_content = f"""
-    <!DOCTYPE html>
-    <html>
-    <head>
-        <meta charset='utf-8'/>
-        <style>
-            @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+Devanagari:wght@400;600;700&display=swap');
-            @page {{ size: letter landscape; margin: 15mm 12mm 15mm 12mm; @bottom-right {{ content: 'Page ' counter(page); font-size: 8pt; font-family: 'Times New Roman', serif; color: #64748B; }} }}
-            body {{ font-family: 'Noto Sans Devanagari', 'Times New Roman', Helvetica, Arial, sans-serif; margin: 0; padding: 0; color: #334155; }}
-            .header-table {{ width: 100%; border-collapse: collapse; margin-bottom: 12px; }}
-            .title {{ text-align: center; color: #1E3A8A; font-size: 18px; font-weight: bold; font-family: 'Times New Roman', serif; }}
-            .sub-title {{ text-align: center; color: #16A34A; font-size: 11px; font-weight: bold; }}
-            .meta-box {{ background-color: #F8FAFC; border: 0.5px solid #CBD5E1; padding: 8px 12px; border-radius: 6px; margin-bottom: 12px; font-size: 10.5px; }}
-            .data-table {{ width: 100%; border-collapse: collapse; page-break-inside: auto; }}
-            .data-table thead {{ display: table-header-group; }}
-            .data-table tr {{ page-break-inside: avoid; }}
-            .watermark-container {{ position: fixed; top: 0; left: 0; width: 100%; height: 100%; z-index: -1000; overflow: hidden; pointer-events: none; }}
-            .wm-text {{ position: absolute; font-family: 'Times New Roman', serif; font-weight: bold; font-size: 24px; color: #94A3B8; opacity: 0.12; transform: rotate(25deg); }}
-        </style>
-    </head>
-    <body>
-        <div class='watermark-container'>
-            <div class='wm-text' style='top: 15%; left: 20%;'>Learn with HiM — Master Admin Intelligence</div>
-            <div class='wm-text' style='top: 45%; left: 40%;'>Learn with HiM — Master Admin Intelligence</div>
-            <div class='wm-text' style='top: 75%; left: 20%;'>Learn with HiM — Master Admin Intelligence</div>
-        </div>
+        tg_lines.append("━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\n📥 *Download complete ledger as PDF:*")
 
-        <table class='header-table'>
-            <tr>
-                <td style='width: 12%; text-align: left;'>{left_logo}</td>
-                <td>
-                    <div class='title'>Learn with HiM Quiz Book — Master Intelligence Portal</div>
-                    <div class='sub-title'>Official Administrative Intelligence Data Sheet</div>
-                </td>
-                <td style='width: 12%; text-align: right;'>{right_logo}</td>
-            </tr>
-        </table>
+        return {
+            "title": title,
+            "summary_markdown": "\n".join(tg_lines),
+            "columns": columns,
+            "rows": pdf_rows,
+            "kpis": {"Timeframe": f"Last {days_val} Days", "New Paid Users": str(len(filtered)), "Revenue": f"₹{total_rev} INR"}
+        }
 
-        <div class='meta-box'>
-            <b>Report Query:</b> {title} &nbsp;|&nbsp; 
-            <b>Generated At:</b> {now_str} &nbsp;|&nbsp; 
-            <b>Total Records Matched:</b> {total_records}
-        </div>
+    # -------------------------------------------------------------
+    # INTENT C: UPCOMING PASS EXPIRATIONS
+    # -------------------------------------------------------------
+    elif "expire" in q_lower or "expiring" in q_lower or "expiration" in q_lower:
+        conn = get_db()
+        cursor = conn.cursor(cursor_factory=RealDictCursor)
+        cursor.execute("""
+            SELECT user_id, student_id, full_name, phone_number, target_exam, paid_question_balance, vip_pass_expiry
+            FROM users
+            WHERE vip_pass_expiry IS NOT NULL AND is_banned = 0
+            ORDER BY vip_pass_expiry ASC
+        """)
+        raw_users = cursor.fetchall()
+        cursor.close()
+        release_db(conn)
 
-        <table class='data-table'>
-            <thead>
-                <tr>{headers_html}</tr>
-            </thead>
-            <tbody>
-                {table_body}
-            </tbody>
-        </table>
-    </body>
-    </html>
-    """
+        target_cutoff = now_ist + timedelta(days=days_val)
+        expiring_list = []
 
-    if HAS_WEASYPRINT:
-        try:
-            weasyprint.HTML(string=html_content).write_pdf(pdf_path)
-            if os.path.exists(pdf_path) and os.path.getsize(pdf_path) > 500:
-                return pdf_path
-        except Exception as e:
-            logger.error(f"[WEASYPRINT ADMIN PDF ERROR] {e}")
+        for u in raw_users:
+            exp_str = u.get("vip_pass_expiry", "")
+            try:
+                exp_dt = datetime.strptime(exp_str, "%Y-%m-%d %H:%M:%S IST")
+                exp_dt = IST.localize(exp_dt) if exp_dt.tzinfo is None else exp_dt
+                if now_ist <= exp_dt <= target_cutoff:
+                    hours_left = max(0.0, round((exp_dt - now_ist).total_seconds() / 3600.0, 1))
+                    u["hours_left"] = hours_left
+                    expiring_list.append(u)
+            except Exception:
+                pass
 
-    return None
+        title = f"VIP Subscriptions Expiring within Next {days_val} Days"
+        columns = ["S.No.", "Student ID", "Full Name", "Phone", "Daily Quota", "Hours Left", "Exact Expiry"]
+        pdf_rows = []
+        tg_lines = [
+            f"⏳ **OMNISCIENT INTEL: EXPIRING PASSES ({days_val} DAYS)**\n"
+            f"━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\n"
+            f"⚠️ **Expiring Soon:** `{len(expiring_list)} Aspirants`\n"
+            f"━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\n"
+        ]
+
+        for idx, u in enumerate(expiring_list[:20], start=1):
+            sid = u.get("student_id") or f"USER_{u['user_id']}"
+            tg_lines.append(f"**{idx}. {u['full_name']}** (`{sid}`) — Left: `{u['hours_left']}h` (Expires: `{u['vip_pass_expiry']}`)")
+            pdf_rows.append([str(idx), str(sid), str(u['full_name']), str(u.get('phone_number', 'N/A')), f"{u['paid_question_balance']} Qs", f"{u['hours_left']}h", str(u['vip_pass_expiry'])])
+
+        if not expiring_list:
+            tg_lines.append("🎉 *Zero subscriptions expiring in this window.*")
+
+        tg_lines.append("\n📥 *Download PDF below:*")
+        return {"title": title, "summary_markdown": "\n".join(tg_lines), "columns": columns, "rows": pdf_rows, "kpis": {"Expiring Soon": str(len(expiring_list))}}
+
+    # -------------------------------------------------------------
+    # INTENT D: REVENUE & FINANCIAL BREAKDOWN
+    # -------------------------------------------------------------
+    elif "revenue" in q_lower or "earning" in q_lower or "collection" in q_lower or "sales" in q_lower:
+        conn = get_db()
+        cursor = conn.cursor(cursor_factory=RealDictCursor)
+        cursor.execute("""
+            SELECT plan_name, plan_key, COUNT(*) as txn_count, SUM(amount_paid) as total_amount, AVG(amount_paid) as avg_price
+            FROM payment_transactions
+            WHERE plan_key != 'FREE_DEMO'
+            GROUP BY plan_name, plan_key
+            ORDER BY total_amount DESC
+        """)
+        rows = cursor.fetchall()
+        cursor.close()
+        release_db(conn)
+
+        grand_total = sum([float(r.get("total_amount", 0) or 0) for r in rows])
+        title = "Financial Revenue & Plan-wise Sales Performance"
+        columns = ["S.No.", "Plan Name", "Plan Code", "Purchases", "Total Revenue (INR)"]
+        pdf_rows = []
+        tg_lines = [
+            "💰 **OMNISCIENT INTEL: FINANCIAL REVENUE LEDGER**\n"
+            "━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\n"
+            f"📈 **Gross Revenue:** `₹{grand_total} INR`\n"
+            "━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\n"
+        ]
+
+        for idx, r in enumerate(rows, start=1):
+            tg_lines.append(f"  {idx}. **{r.get('plan_name')}**: `₹{r.get('total_amount')} INR` ({r.get('txn_count')} orders)")
+            pdf_rows.append([str(idx), str(r.get('plan_name')), str(r.get('plan_key')), str(r.get('txn_count')), f"Rs. {r.get('total_amount')}"])
+
+        tg_lines.append("\n📥 *Download PDF breakdown:*")
+        return {"title": title, "summary_markdown": "\n".join(tg_lines), "columns": columns, "rows": pdf_rows, "kpis": {"Gross Revenue": f"₹{grand_total} INR"}}
+
+    # -------------------------------------------------------------
+    # INTENT E: OMNISCIENT PLATFORM FALLBACK (Full Database Metrics)
+    # -------------------------------------------------------------
+    else:
+        conn = get_db()
+        cursor = conn.cursor(cursor_factory=RealDictCursor)
+        cursor.execute("SELECT COUNT(*) as total_users, COUNT(CASE WHEN paid_question_balance > 20 THEN 1 END) as paid_count FROM users")
+        u_stats = cursor.fetchone()
+
+        cursor.execute("SELECT SUM(amount_paid) as total_rev FROM payment_transactions WHERE plan_key != 'FREE_DEMO'")
+        rev_stats = cursor.fetchone()
+
+        cursor.execute("SELECT target_exam, COUNT(*) as count FROM users GROUP BY target_exam ORDER BY count DESC LIMIT 8")
+        top_exams = cursor.fetchall()
+        cursor.close()
+        release_db(conn)
+
+        total_u = u_stats.get("total_users", 0)
+        paid_u = u_stats.get("paid_count", 0)
+        tot_rev = float(rev_stats.get("total_rev", 0) or 0)
+
+        title = "Omniscient Platform Database Intelligence Summary"
+        columns = ["Rank", "Target Exam Category", "Student Count", "Share"]
+        pdf_rows = []
+        tg_lines = [
+            f"🧠 **OMNISCIENT ADMIN AI SEARCH RESULT**\n"
+            f"*(Query: \"{query_text}\")*\n"
+            f"━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\n"
+            f"👥 **Total Registered Scholars:** `{total_u}`\n"
+            f"💳 **VIP Active Paid Subscribers:** `{paid_u}`\n"
+            f"💰 **Gross Lifetime Revenue:** `₹{tot_rev} INR`\n"
+            f"━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\n"
+            f"🎯 **Top Target Exam Demographics:**\n"
+        ]
+
+        for idx, e in enumerate(top_exams, start=1):
+            pct = round((e['count'] / max(1, total_u)) * 100, 1)
+            tg_lines.append(f"  {idx}. **{e['target_exam']}**: `{e['count']} students` ({pct}%)")
+            pdf_rows.append([str(idx), str(e['target_exam']), str(e['count']), f"{pct}%"])
+
+        tg_lines.append("\n📥 *Download complete database report as PDF:*")
+        return {"title": title, "summary_markdown": "\n".join(tg_lines), "columns": columns, "rows": pdf_rows, "kpis": {"Total Users": str(total_u), "Revenue": f"₹{tot_rev} INR"}}
+
+
+def generate_admin_intelligence_pdf(query_result: dict) -> str:
+    title = query_result.get("title", "Master Admin Intelligence Report")
+    columns = query_result.get("columns", ["S.No.", "Item", "Value"])
+    rows = query_result.get("rows", [])
+    kpis = query_result.get("kpis", {})
+    return generate_admin_query_dataset_pdf(title, columns, rows, kpis)

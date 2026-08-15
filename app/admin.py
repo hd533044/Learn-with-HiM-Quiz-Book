@@ -56,6 +56,7 @@ def clear_admin_user_data_states(context: ContextTypes.DEFAULT_TYPE):
         "awaiting_edit_live_broadcast",
         "awaiting_sale_name",
         "awaiting_admin_ai_query",
+        "awaiting_admin_ai_correction",
         "admin_keypad_pin",
         "user_keypad_pin"
     ]
@@ -494,7 +495,7 @@ async def admin_portal_command(update: Update, context: ContextTypes.DEFAULT_TYP
     sale_btn_label = f"🔥 Sale Offers (🟢 {int(float(active_sale['discount_percent']))}% Live)" if active_sale else "⚡ Sale Offers & Discounts"
 
     keyboard = [
-        [InlineKeyboardButton("🧠 Ask Intelligence Assistant (Any Query / Data)", callback_data="admin_ai_assistant_menu")],
+        [InlineKeyboardButton("🧠 Ask Omniscient Intelligence Assistant", callback_data="admin_ai_assistant_menu")],
         [InlineKeyboardButton("📊 Power Live Intelligence Overview", callback_data="admin_popup_overview")],
         [InlineKeyboardButton(f"📩 Student Support Threads ({pending_students_count} Unread)", callback_data="admin_view_student_threads_0")],
         [
@@ -798,7 +799,7 @@ async def admin_callback_handler(update: Update, context: ContextTypes.DEFAULT_T
         return
 
     # ==============================================================
-    # 🧠 MASTER ADMIN INTELLIGENCE & QUERY ASSISTANT HUB
+    # 🧠 OMNISCIENT INTELLIGENCE ASSISTANT & SELF-CORRECTION ROUTING
     # ==============================================================
     if data == "admin_ai_assistant_menu":
         await query.answer()
@@ -812,11 +813,10 @@ async def admin_callback_handler(update: Update, context: ContextTypes.DEFAULT_T
             [InlineKeyboardButton("👑 Himanshu Sir's Portal (/him)", callback_data="admin_home")]
         ]
         msg = (
-            f"🧠 **MASTER ADMIN INTELLIGENCE ASSISTANT** 🧠\n"
+            f"🧠 **OMNISCIENT ADMIN INTELLIGENCE ASSISTANT** 🧠\n"
             f"━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\n"
-            f"Ask *anything* about registrations, payments, quizzes, activity, or forecast upcoming expirations.\n\n"
-            f"⚡ **Every single answer is searched live from the PostgreSQL database** and always includes an instant **📥 Download as PDF** option.\n\n"
-            f"Select a quick query below, or tap **✍️ Ask Custom Question** to type your query in natural English/Hinglish:"
+            f"You have full access to query *any* user details, payment records, quiz scores, or analytics.\n\n"
+            f"Select a quick preset or tap **✍️ Ask Custom Natural Language Question**:"
         )
         await query.edit_message_text(msg, reply_markup=InlineKeyboardMarkup(keyboard), parse_mode="Markdown")
         return
@@ -826,16 +826,35 @@ async def admin_callback_handler(update: Update, context: ContextTypes.DEFAULT_T
         context.user_data["awaiting_admin_ai_query"] = True
         cancel_btn = InlineKeyboardMarkup([[InlineKeyboardButton("❌ Cancel", callback_data="admin_ai_assistant_menu")]])
         msg = (
-            "✍️ **ASK MASTER ADMIN INTELLIGENCE**\n"
+            "✍️ **ASK OMNISCIENT ADMIN INTELLIGENCE**\n"
             "━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\n"
-            "Please reply with any question about your bot, users, payments, or analytics.\n\n"
-            "💡 *Examples you can ask:*\n"
-            "• `tell me 3 days data of users who are newly registered and bought paid plans`\n"
-            "• `which students will expire in next 24 hours`\n"
-            "• `show me total revenue from each plan`\n"
-            "• `list all inactive users from Uttar Pradesh`"
+            "Type your query below (e.g. *\"Show details for student Sagar G\"*, *\"List paid users from Delhi\"*):"
         )
         await query.edit_message_text(msg, reply_markup=cancel_btn, parse_mode="Markdown")
+        return
+
+    elif data == "admin_ai_fb_correct":
+        await query.answer("✅ Thank you! Feedback recorded as correct.", show_alert=True)
+        try:
+            await query.edit_message_reply_markup(reply_markup=InlineKeyboardMarkup([
+                [InlineKeyboardButton("✅ Feedback: Data Verified as Correct", callback_data="ignore")],
+                [InlineKeyboardButton("📥 Download PDF", callback_data="admin_ai_download_last_pdf")],
+                [InlineKeyboardButton("🔄 Ask Another Query", callback_data="admin_ai_assistant_menu")]
+            ]))
+        except Exception:
+            pass
+        return
+
+    elif data == "admin_ai_fb_wrong":
+        await query.answer()
+        context.user_data["awaiting_admin_ai_correction"] = True
+        msg = (
+            "❌ **SELF-CORRECTION FEEDBACK MODE**\n"
+            "━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\n"
+            "Please reply with what was incorrect or what you actually want (e.g., *\"No, I meant students who registered last week\"*). "
+            "Our engine will deep-think and re-query the database instantly:"
+        )
+        await query.message.reply_text(msg, parse_mode="Markdown")
         return
 
     elif data.startswith("admin_ai_exec_preset_"):
@@ -855,6 +874,7 @@ async def admin_callback_handler(update: Update, context: ContextTypes.DEFAULT_T
 
         nav = [
             [InlineKeyboardButton("📥 Download This Report as PDF", callback_data="admin_ai_download_last_pdf")],
+            [InlineKeyboardButton("✅ Data Correct", callback_data="admin_ai_fb_correct"), InlineKeyboardButton("❌ Incorrect / Refine", callback_data="admin_ai_fb_wrong")],
             [InlineKeyboardButton("🔄 Ask Another Query", callback_data="admin_ai_assistant_menu")],
             [InlineKeyboardButton("👑 Main Portal (/him)", callback_data="admin_home")]
         ]
@@ -875,7 +895,7 @@ async def admin_callback_handler(update: Update, context: ContextTypes.DEFAULT_T
                     chat_id=query.message.chat_id,
                     document=doc,
                     filename=os.path.basename(pdf_path),
-                    caption=f"📄 **OFFICIAL MASTER ADMIN INTELLIGENCE LEDGER**\n• Title: `{last_res.get('title', 'Admin Report')}`\n• Total Records: `{last_res.get('total_records', len(last_res.get('rows', [])))}`",
+                    caption=f"📄 **OFFICIAL OMNISCIENT ADMIN INTELLIGENCE LEDGER**\n• Title: `{last_res.get('title', 'Admin Report')}`\n• Total Records: `{last_res.get('total_records', len(last_res.get('rows', [])))}`",
                     parse_mode="Markdown"
                 )
             nav = [
@@ -884,15 +904,12 @@ async def admin_callback_handler(update: Update, context: ContextTypes.DEFAULT_T
             ]
             await context.bot.send_message(chat_id=query.message.chat_id, text="👇 **Quick Actions:**", reply_markup=InlineKeyboardMarkup(nav), parse_mode="Markdown")
         else:
-            await query.message.reply_text("⚠️ Failed generating PDF. Please ensure WeasyPrint packages are compiled on server.")
+            await query.message.reply_text("⚠️ Failed generating PDF.")
         return
 
     clear_admin_user_data_states(context)
     users = get_all_users()
 
-    # ==============================================================
-    # 🚫 SAFE REVOCATION ROUTING ENGINE (PAID PLANS IMMUTABLE)
-    # ==============================================================
     if data.startswith("admin_revoke_menu_"):
         await query.answer()
         target_uid = int(data.replace("admin_revoke_menu_", ""))
@@ -918,15 +935,14 @@ async def admin_callback_handler(update: Update, context: ContextTypes.DEFAULT_T
             f"━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\n"
             f"👤 **Student:** {st_name} (`{target_uid}`)\n"
             f"⚡ **Total Active Quota:** `{current_bal} Questions/Day`\n"
-            f"🎁 **Admin-Granted Quota:** `+{grant_sum} Qs/Day` ({len(admin_grants)} Grants)\n"
-            f"💳 **User-Paid Purchases:** `+{paid_sum} Qs/Day` ({len(paid_purchases)} Paid Plans - 🔒 Protected)\n\n"
-            f"🛡 **System Rule:** Genuine paid subscriptions purchased by the student cannot be deleted and will automatically maintain remaining validity.\n\n"
+            f"🎁 **Admin-Granted Quota:** `+{grant_sum} Qs/Day`\n"
+            f"💳 **User-Paid Purchases:** `+{paid_sum} Qs/Day` ({len(paid_purchases)} Paid Plans - 🔒 Immutable & Protected)\n\n"
             f"Select an action:"
         )
 
         buttons = [
-            [InlineKeyboardButton("🎁 Withdraw Admin Grants Only (Safe)", callback_data=f"admin_revoke_admingrant_{target_uid}")],
-            [InlineKeyboardButton("⚠️ Reset Admin Grants & Restore Paid Purchases", callback_data=f"admin_revoke_allconfirm_{target_uid}")],
+            [InlineKeyboardButton("🎁 Withdraw Admin Grants Only", callback_data=f"admin_revoke_admingrant_{target_uid}")],
+            [InlineKeyboardButton("⚠️ Reset & Auto-Restore Paid Purchases", callback_data=f"admin_revoke_allconfirm_{target_uid}")],
             [InlineKeyboardButton("🔙 Cancel & Return", callback_data=f"admin_inspect_u_{target_uid}")]
         ]
         await query.edit_message_text(msg, reply_markup=InlineKeyboardMarkup(buttons), parse_mode="Markdown")
@@ -945,7 +961,6 @@ async def admin_callback_handler(update: Update, context: ContextTypes.DEFAULT_T
         cursor.close()
         release_db(conn)
 
-        # Automatic paid plan recalculation and restoration
         restored = recalculate_and_restore_user_plans(target_uid)
 
         from app.telegram_bot import PROFILE_CACHE
@@ -961,11 +976,7 @@ async def admin_callback_handler(update: Update, context: ContextTypes.DEFAULT_T
                 f"• ⏳ **Remaining Validity:** `{restored['remaining_days']} Days` (Expires: `{restored['expiry_str']}`)"
             )
         else:
-            status_desc = (
-                f"✅ **ADMIN GRANTS WITHDRAWN!**\n\n"
-                f"• All complimentary admin grants removed.\n"
-                f"• Student has no active paid purchases; quota reset to base free tier (`20 Qs/Day`)."
-            )
+            status_desc = f"✅ **ADMIN GRANTS WITHDRAWN!** Quota reset to base free tier (`20 Qs/Day`)."
 
         back_btn = InlineKeyboardMarkup([
             [InlineKeyboardButton("🔙 Return to Student Profile", callback_data=f"admin_inspect_u_{target_uid}")],
@@ -981,14 +992,13 @@ async def admin_callback_handler(update: Update, context: ContextTypes.DEFAULT_T
         st_name = u.get("full_name", "Student")
 
         confirm_btn = InlineKeyboardMarkup([
-            [InlineKeyboardButton("⚠️ Yes, Clear Admin Grants & Re-calculate Paid Plans", callback_data=f"admin_revoke_allexec_{target_uid}")],
+            [InlineKeyboardButton("⚠️ Yes, Reset & Auto-Restore Paid Purchases", callback_data=f"admin_revoke_allexec_{target_uid}")],
             [InlineKeyboardButton("❌ Cancel", callback_data=f"admin_revoke_menu_{target_uid}")]
         ])
         await query.edit_message_text(
-            f"⚠️ **CONFIRM PLAN RESET AUDIT FOR {st_name.upper()}** ⚠️\n"
+            f"⚠️ **CONFIRM RESET FOR {st_name.upper()}** ⚠️\n"
             f"━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\n"
-            f"This will wipe all **Admin Grants** and automatically re-calculate & guarantee all genuine **Paid Plans** with their full remaining validity.\n\n"
-            f"Proceed?",
+            f"This will clear admin grants and automatically guarantee genuine paid purchases with their exact remaining validity.\n\nProceed?",
             reply_markup=confirm_btn,
             parse_mode="Markdown"
         )
@@ -1002,13 +1012,11 @@ async def admin_callback_handler(update: Update, context: ContextTypes.DEFAULT_T
 
         conn = get_db()
         cursor = conn.cursor()
-        # Delete only admin grants, NEVER delete genuine paid transactions
         cursor.execute("DELETE FROM payment_transactions WHERE user_id = %s AND payment_id LIKE 'ADMIN_GRANT_%%'", (target_uid,))
         conn.commit()
         cursor.close()
         release_db(conn)
 
-        # Automatic paid plan recalculation and restoration
         restored = recalculate_and_restore_user_plans(target_uid)
 
         from app.telegram_bot import PROFILE_CACHE

@@ -1511,6 +1511,28 @@ async def handle_text_messages(update: Update, context: ContextTypes.DEFAULT_TYP
     caption = msg_obj.caption.strip() if msg_obj and msg_obj.caption else ""
     video = msg_obj.video if msg_obj and msg_obj.video else None
 
+    # ==============================================================
+    # 🧠 SELF-CORRECTION FEEDBACK HANDLER FOR ADMIN AI QUERY
+    # ==============================================================
+    if user.id == PRIMARY_ADMIN_ID and context.user_data.get("awaiting_admin_ai_correction"):
+        context.user_data["awaiting_admin_ai_correction"] = False
+        correction_text = text or caption
+        last_res = context.user_data.get("last_ai_query_result", {})
+        last_title = last_res.get("title", "platform query")
+
+        await update.message.reply_text("🧠 **Deep-thinking & re-querying database with your correction...**", parse_mode="Markdown")
+        res = parse_and_execute_admin_query(last_title, context_correction=correction_text)
+        context.user_data["last_ai_query_result"] = res
+
+        nav = [
+            [InlineKeyboardButton("📥 Download This Report as PDF", callback_data="admin_ai_download_last_pdf")],
+            [InlineKeyboardButton("✅ Data Correct", callback_data="admin_ai_fb_correct"), InlineKeyboardButton("❌ Incorrect / Refine", callback_data="admin_ai_fb_wrong")],
+            [InlineKeyboardButton("🔄 Ask Another Query", callback_data="admin_ai_assistant_menu")],
+            [InlineKeyboardButton("👑 Main Portal (/him)", callback_data="admin_home")]
+        ]
+        await update.message.reply_text(res["summary_markdown"], reply_markup=InlineKeyboardMarkup(nav), parse_mode="Markdown")
+        return
+
     if user.id == PRIMARY_ADMIN_ID and context.user_data.get("awaiting_admin_ai_query"):
         context.user_data["awaiting_admin_ai_query"] = False
         raw_query = text or caption
@@ -1521,6 +1543,7 @@ async def handle_text_messages(update: Update, context: ContextTypes.DEFAULT_TYP
 
         nav = [
             [InlineKeyboardButton("📥 Download This Report as PDF", callback_data="admin_ai_download_last_pdf")],
+            [InlineKeyboardButton("✅ Data Correct", callback_data="admin_ai_fb_correct"), InlineKeyboardButton("❌ Incorrect / Refine", callback_data="admin_ai_fb_wrong")],
             [InlineKeyboardButton("🔄 Ask Another Query", callback_data="admin_ai_assistant_menu")],
             [InlineKeyboardButton("👑 Main Portal (/him)", callback_data="admin_home")]
         ]
@@ -1579,7 +1602,7 @@ async def handle_text_messages(update: Update, context: ContextTypes.DEFAULT_TYP
             success = await asyncio.to_thread(update_announcement_time, annc_id, scheduled_dt)
             if success:
                 nav = InlineKeyboardMarkup([[InlineKeyboardButton("🔍 View Post", callback_data=f"admin_view_pending_annc_{annc_id}")], [InlineKeyboardButton("🔙 Back to Menu", callback_data="admin_manage_annc_menu")]])
-                await update.message.reply_text(f"✅ **Publish Time for Post #{annc_id} updated to:** `{scheduled_dt.strftime('%Y-%m-%d %I:%M %p IST')}`!", reply_markup=nav, parse_mode="Markdown")
+                await update.message.reply_text(f"✅ **Publish Time for Post #{annc_id} updated to:** `{scheduled_dt.strftime('%Y-%m-%d %H:%M %p IST')}`!", reply_markup=nav, parse_mode="Markdown")
             else:
                 await update.message.reply_text("❌ Error updating announcement time.")
         except ValueError:

@@ -298,7 +298,7 @@ async def inactivity_guard(update: Update, context: ContextTypes.DEFAULT_TYPE) -
             f"🔒 **ACCOUNT LOCKED DUE TO INACTIVITY** 🔒\n"
             f"━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\n"
             f"You were inactive for `{diff_sec // 60} mins`.\n\n"
-            f"🔑 **PIN Status:** `[ ◯ ◯ ◯ ◯ ]`\n"
+            f"🔑 **PIN Status:** `[ _ _ _ _ ]`\n"
             f"👉 *Tap the visual keypad below to enter your secret 4-digit PIN:*"
         )
         markup = build_user_keypad_markup()
@@ -1363,7 +1363,7 @@ async def button_router(update: Update, context: ContextTypes.DEFAULT_TYPE):
     user = query.from_user
 
     # ==============================================================
-    # 🔑 USER VISUAL KEYPAD INTERACTION
+    # 🔑 ULTRA-FAST VISIBLE USER KEYPAD INTERACTION
     # ==============================================================
     if data.startswith("userkp_"):
         current_pin = context.user_data.get("user_keypad_pin", "")
@@ -1406,11 +1406,12 @@ async def button_router(update: Update, context: ContextTypes.DEFAULT_TYPE):
                 await query.answer("❌ Incorrect PIN! Try again.", show_alert=True)
                 current_pin = ""
 
-        masked = "".join(["⬤ " for _ in range(len(current_pin))]) + "".join(["◯ " for _ in range(max(0, 4 - len(current_pin)))])
+        # Format visible PIN representation: e.g. [ 5 3 _ _ ] or [ 5 3 3 0 ]
+        visible_display = " ".join([d for d in current_pin]) + " " + " ".join(["_" for _ in range(max(0, 4 - len(current_pin)))])
         msg = (
             f"🔒 **ACCOUNT LOCKED DUE TO INACTIVITY** 🔒\n"
             f"━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\n"
-            f"🔑 **PIN Status:** `[ {masked.strip()} ]`\n"
+            f"🔑 **PIN Status:** `[ {visible_display.strip()} ]`\n"
             f"👉 *Tap the visual keypad below to enter your secret 4-digit PIN:*"
         )
         try:

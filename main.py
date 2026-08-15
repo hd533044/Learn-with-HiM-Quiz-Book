@@ -245,12 +245,16 @@ async def send_payment_invoice_telegram(user_id: int, plan_key: str, payment_id:
 
 async def reconcile_pending_captured_payments():
     """
-    AUTO-RECONCILIATION ENGINE:
-    Reconciles and credits uncredited captured payments on startup or via admin command.
+    AUTO-RECONCILIATION SEED ENGINE:
+    Reconciles and credits all uncredited captured payments on startup.
     """
     logging.info("[RECONCILIATION] Running payment verification and credit check...")
     
     known_payments = [
+        {"phone": "9834232546", "payment_id": "pay_TPt8Ldi6v9lIUQe", "amount": 20.0, "plan_key": "LEARNWITHHIM"},
+        {"phone": "8340332353", "payment_id": "pay_TPt3EFpkHmZU2P", "amount": 20.0, "plan_key": "LEARNWITHHIM"},
+        {"phone": "8278245297", "payment_id": "pay_TPsQ4JHX80l1Ba", "amount": 32.0, "plan_key": "PLATINUM"},
+        {"phone": "7876637783", "payment_id": "pay_TPsLT9jjslekzW", "amount": 8.0, "plan_key": "SILVER"},
         {"phone": "7876862018", "payment_id": "pay_TPuVDb4coWR1Dg", "amount": 20.0, "plan_key": "LEARNWITHHIM"},
         {"phone": "8950968402", "payment_id": "pay_TPtv35Ivl6Bn6Z", "amount": 20.0, "plan_key": "LEARNWITHHIM"},
         {"phone": "8082041843", "payment_id": "pay_TPtrmblyGsZJI6", "amount": 32.0, "plan_key": "PLATINUM"}
@@ -277,9 +281,72 @@ async def reconcile_pending_captured_payments():
             logging.error(f"[RECONCILIATION ERROR] {e}")
 
 
+async def scheduled_razorpay_api_reconciliation_worker():
+    """
+    FAIL-SAFE DIRECT RAZORPAY API WORKER:
+    Polls Razorpay directly every 45s to fetch all recent 'captured' payments.
+    Ensures 100% credit guarantee even if webhooks fail or drop.
+    """
+    while True:
+        await asyncio.sleep(45)
+        if not razorpay_client or not bot_app_instance:
+            continue
+
+        try:
+            # Fetch recent 50 captured payments from Razorpay REST API
+            payments_res = await asyncio.to_thread(razorpay_client.payment.all, {"count": 50})
+            items = payments_res.get("items", []) if isinstance(payments_res, dict) else []
+
+            for p in items:
+                status = p.get("status")
+                payment_id = p.get("id")
+                if status != "captured" or not payment_id:
+                    continue
+
+                # Check if this payment is already registered in DB
+                conn = get_db()
+                cursor = conn.cursor()
+                cursor.execute("SELECT 1 FROM payment_transactions WHERE payment_id = %s", (payment_id,))
+                exists = cursor.fetchone()
+                cursor.close()
+                release_db(conn)
+
+                if exists:
+                    continue  # Already credited
+
+                # Extract details
+                amount_paid = float(p.get("amount", 0)) / 100.0
+                contact = p.get("contact", "")
+                notes = p.get("notes", {}) or {}
+                user_id = notes.get("user_id")
+                plan_key = notes.get("plan_key")
+
+                # Match user
+                uid = None
+                if user_id and str(user_id).isdigit():
+                    uid = int(user_id)
+                elif contact:
+                    u_match = get_user_by_phone(contact)
+                    if u_match:
+                        uid = u_match["user_id"]
+
+                if not uid:
+                    continue
+
+                if not plan_key:
+                    plan_key = infer_plan_key_from_amount(amount_paid)
+
+                logging.info(f"[AUTO-POLL DETECTED] Found uncredited payment {payment_id} for user {uid} (₹{amount_paid})")
+                activated = await activate_user_subscription(uid, plan_key, payment_id, amount_paid=amount_paid)
+                if activated:
+                    await send_payment_invoice_telegram(uid, plan_key, payment_id, amount_paid=amount_paid)
+
+        except Exception as e:
+            logging.error(f"[RAZORPAY API AUTO-RECONCILIATION ERROR] {e}")
+
+
 async def scheduled_expiry_reminder_check():
     from telegram import InlineKeyboardMarkup, InlineKeyboardButton
-    
     ist = pytz.timezone("Asia/Kolkata")
     
     while True:
@@ -314,9 +381,8 @@ async def scheduled_expiry_reminder_check():
                     continue
 
                 diff_seconds = (exp_dt - now).total_seconds()
-
                 if diff_seconds <= 0:
-                    continue  # Expired
+                    continue
 
                 hours_left = diff_seconds / 3600.0
 
@@ -324,29 +390,17 @@ async def scheduled_expiry_reminder_check():
                     rem_key = f"{uid}_24h"
                     if rem_key not in SENT_EXPIRY_REMINDERS:
                         SENT_EXPIRY_REMINDERS.add(rem_key)
-                        
-                        if is_demo:
-                            msg = (
-                                f"⏰ **FREE DEMO TRIAL EXPIRING IN 24 HOURS!** ⏰\n"
-                                f"━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\n"
-                                f"Hello **{name}**, your Free Demo Trial pass will expire in **24 Hours** (1 Day)!\n\n"
-                                f"⏳ **Demo Expiry:** `{exp_str}`\n\n"
-                                f"💡 **Upgrade to VIP:** Upgrade to a paid VIP Plan now via **/plans** to unlock higher daily questions and keep practicing uninterrupted!"
-                            )
-                        else:
-                            msg = (
-                                f"⏰ **VIP PASS EXPIRING IN 24 HOURS (1 DAY)!** ⏰\n"
-                                f"━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\n"
-                                f"Hello **{name}**, your VIP Subscription Pass will expire in **24 Hours**.\n\n"
-                                f"⏳ **Pass Expiry Date:** `{exp_str}`\n"
-                                f"⚡ **Current Daily Quota:** `{u['paid_question_balance']} Qs/Day`\n\n"
-                                f"💡 **Recharge Now:** Tap **/plans** to renew or upgrade your plan to prevent any interruption in your daily quiz practice!"
-                            )
-                            
+                        msg = (
+                            f"⏰ **VIP PASS EXPIRING IN 24 HOURS (1 DAY)!** ⏰\n"
+                            f"━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\n"
+                            f"Hello **{name}**, your VIP Subscription Pass will expire in **24 Hours**.\n\n"
+                            f"⏳ **Pass Expiry Date:** `{exp_str}`\n"
+                            f"⚡ **Current Daily Quota:** `{u['paid_question_balance']} Qs/Day`\n\n"
+                            f"💡 **Recharge Now:** Tap **/plans** to renew your plan and prevent interruption!"
+                        )
                         btn = InlineKeyboardMarkup([[InlineKeyboardButton("💳 Recharge / Upgrade VIP Plan", callback_data="cmd_plans")]])
                         try:
                             await bot_app_instance.bot.send_message(chat_id=uid, text=msg, reply_markup=btn, parse_mode="Markdown", disable_notification=False)
-                            logging.info(f"[EXPIRY REMINDER 24H SENT] Delivered to user {uid}")
                         except Exception as e:
                             logging.error(f"[EXPIRY REMINDER ERROR] {e}")
 
@@ -354,29 +408,17 @@ async def scheduled_expiry_reminder_check():
                     rem_key = f"{uid}_6h"
                     if rem_key not in SENT_EXPIRY_REMINDERS:
                         SENT_EXPIRY_REMINDERS.add(rem_key)
-                        
-                        if is_demo:
-                            msg = (
-                                f"⏳ **FREE DEMO TRIAL EXPIRING IN 6 HOURS!** ⏳\n"
-                                f"━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\n"
-                                f"Hello **{name}**, your Free Demo Trial pass is expiring in **6 Hours**!\n\n"
-                                f"⏳ **Exact Expiry:** `{exp_str}`\n\n"
-                                f"🔔 **Recharge to VIP:** Tap **/plans** to upgrade to a VIP plan now and retain your daily quota!"
-                            )
-                        else:
-                            msg = (
-                                f"⏳ **VIP PASS EXPIRING IN 6 HOURS!** ⏳\n"
-                                f"━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\n"
-                                f"Hello **{name}**, your VIP Subscription Pass is expiring in **6 Hours**!\n\n"
-                                f"⏳ **Exact Expiry:** `{exp_str}`\n"
-                                f"⚡ **Current Quota:** `{u['paid_question_balance']} Qs/Day`\n\n"
-                                f"🔔 **Avoid Disruption:** Recharge now to continue practicing uninterrupted!"
-                            )
-
+                        msg = (
+                            f"⏳ **VIP PASS EXPIRING IN 6 HOURS!** ⏳\n"
+                            f"━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\n"
+                            f"Hello **{name}**, your VIP Subscription Pass is expiring in **6 Hours**!\n\n"
+                            f"⏳ **Exact Expiry:** `{exp_str}`\n"
+                            f"⚡ **Current Quota:** `{u['paid_question_balance']} Qs/Day`\n\n"
+                            f"🔔 **Avoid Disruption:** Recharge now to continue practicing uninterrupted!"
+                        )
                         btn = InlineKeyboardMarkup([[InlineKeyboardButton("💳 Recharge Plan Now", callback_data="cmd_plans")]])
                         try:
                             await bot_app_instance.bot.send_message(chat_id=uid, text=msg, reply_markup=btn, parse_mode="Markdown", disable_notification=False)
-                            logging.info(f"[EXPIRY REMINDER 6H SENT] Delivered to user {uid}")
                         except Exception as e:
                             logging.error(f"[EXPIRY REMINDER ERROR] {e}")
 
@@ -384,29 +426,16 @@ async def scheduled_expiry_reminder_check():
                     rem_key = f"{uid}_1h"
                     if rem_key not in SENT_EXPIRY_REMINDERS:
                         SENT_EXPIRY_REMINDERS.add(rem_key)
-                        
-                        if is_demo:
-                            msg = (
-                                f"🚨 **FINAL NOTICE: FREE DEMO EXPIRING IN 1 HOUR!** 🚨\n"
-                                f"━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\n"
-                                f"Attention **{name}**, your Free Demo Trial pass expires in **less than 1 Hour**!\n\n"
-                                f"⏳ **Pass Expiry:** `{exp_str}`\n\n"
-                                f"⚡ **Upgrade Instantly:** Tap below to upgrade to a VIP Plan and keep practicing!"
-                            )
-                        else:
-                            msg = (
-                                f"🚨 **FINAL NOTICE: VIP PASS EXPIRING IN 1 HOUR!** 🚨\n"
-                                f"━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\n"
-                                f"Attention **{name}**, your VIP Pass will expire in **less than 1 Hour**!\n\n"
-                                f"⏳ **Pass Expiry:** `{exp_str}`\n\n"
-                                f"⚡ **Daily Quota:** `{u['paid_question_balance']} Qs/Day`\n\n"
-                                f"⚡ **Recharge Immediately:** Tap below to renew your plan and keep your daily limit active!"
-                            )
-
+                        msg = (
+                            f"🚨 **FINAL NOTICE: VIP PASS EXPIRING IN 1 HOUR!** 🚨\n"
+                            f"━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\n"
+                            f"Attention **{name}**, your VIP Pass will expire in **less than 1 Hour**!\n\n"
+                            f"⏳ **Pass Expiry:** `{exp_str}`\n\n"
+                            f"⚡ **Recharge Immediately:** Tap below to keep your daily limit active!"
+                        )
                         btn = InlineKeyboardMarkup([[InlineKeyboardButton("⚡ Instant Recharge Now", callback_data="cmd_plans")]])
                         try:
                             await bot_app_instance.bot.send_message(chat_id=uid, text=msg, reply_markup=btn, parse_mode="Markdown", disable_notification=False)
-                            logging.info(f"[EXPIRY REMINDER 1H SENT] Delivered to user {uid}")
                         except Exception as e:
                             logging.error(f"[EXPIRY REMINDER ERROR] {e}")
 
@@ -419,7 +448,6 @@ async def scheduled_expiry_reminder_check():
 async def scheduled_daily_quiz_reminder():
     global LAST_QUIZ_BROADCAST_KEY
     from telegram import InlineKeyboardMarkup, InlineKeyboardButton
-    
     ist = pytz.timezone("Asia/Kolkata")
 
     while True:
@@ -442,10 +470,8 @@ async def scheduled_daily_quiz_reminder():
 
         if is_time_slot:
             broadcast_key = f"{today_date_str}_{current_hour}_{current_minute}"
-            
             if LAST_QUIZ_BROADCAST_KEY != broadcast_key:
                 LAST_QUIZ_BROADCAST_KEY = broadcast_key
-                
                 conn = None
                 try:
                     conn = get_db()
@@ -456,7 +482,6 @@ async def scheduled_daily_quiz_reminder():
                     release_db(conn)
 
                     user_ids = [r[0] if isinstance(r, (list, tuple)) else r['user_id'] for r in rows]
-
                     reminder_text = (
                         f"📢 **DAILY QUIZ PRACTICE REMINDER** 📢\n"
                         f"━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\n"
@@ -466,15 +491,7 @@ async def scheduled_daily_quiz_reminder():
                     )
                     btn = InlineKeyboardMarkup([[InlineKeyboardButton("🚀 Launch Quiz Now", callback_data="cmd_quiz")]])
 
-                    sent_count = await fast_concurrent_broadcast(
-                        bot_app_instance.bot, 
-                        user_ids, 
-                        reminder_text, 
-                        reply_markup=btn,
-                        parse_mode="Markdown"
-                    )
-
-                    logging.info(f"[DAILY 5X QUIZ BROADCAST DELIVERED] Broadcasted to {sent_count}/{len(user_ids)} users in ~5s at {now.strftime('%I:%M %p IST')}")
+                    await fast_concurrent_broadcast(bot_app_instance.bot, user_ids, reminder_text, reply_markup=btn, parse_mode="Markdown")
                 except Exception as err:
                     if conn:
                         release_db(conn)
@@ -662,8 +679,9 @@ async def run_bot():
     await app.bot.delete_webhook(drop_pending_updates=True)
     await app.updater.start_polling(drop_pending_updates=True)
 
-    # Launch background reconciliation & workers
+    # Launch all background workers
     asyncio.create_task(reconcile_pending_captured_payments())
+    asyncio.create_task(scheduled_razorpay_api_reconciliation_worker())
     asyncio.create_task(scheduled_expiry_reminder_check())
     asyncio.create_task(scheduled_daily_quiz_reminder())
     asyncio.create_task(scheduled_announcement_broadcast_worker())

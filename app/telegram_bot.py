@@ -114,16 +114,9 @@ def log_pdf_generation_event(user_id: int, pdf_type: str):
         cursor = conn.cursor()
         cursor.execute(
             """
-            CREATE TABLE IF NOT EXISTS pdf_generation_logs (
-                id SERIAL PRIMARY KEY,
-                user_id BIGINT,
-                pdf_type TEXT,
-                generated_at TEXT
-            )
-            """
-        )
-        cursor.execute(
-            "INSERT INTO pdf_generation_logs (user_id, pdf_type, generated_at) VALUES (%s, %s, %s)",
+            INSERT INTO pdf_generation_logs (user_id, pdf_type, generated_at) 
+            VALUES (%s, %s, %s)
+            """,
             (user_id, pdf_type, now_str)
         )
         conn.commit()
@@ -204,7 +197,7 @@ def generate_razorpay_link_sync(user_id: int, plan_key: str) -> str:
     elif len(clean_phone) < 10:
         clean_phone = "9123456789"
 
-    base_render_url = (os.getenv("RENDER_EXTERNAL_URL") or "https://learn-with-him-quiz-book.onrender.com").rstrip("/")
+    base_render_url = (os.getenv("RENDER_EXTERNAL_URL") or RENDER_EXTERNAL_URL or "https://learnwithhimquiz.onrender.com").rstrip("/")
     callback_uri = f"{base_render_url}/razorpay-webhook?user_id={user_id}&plan_key={plan_key}&final_price={final_price}"
 
     desc = f"Subscription - {plan_key}"
@@ -1267,7 +1260,7 @@ async def finalize_promo_code(update: Update, context: ContextTypes.DEFAULT_TYPE
 
 
 # -------------------------------------------------------------
-# 📢 SCHEDULED ANNOUNCEMENT BOT HANDLERS (IST SYNCED + QUICK ACTIONS)
+# 📢 SCHEDULED ANNOUNCEMENT BOT HANDLERS
 # -------------------------------------------------------------
 
 async def start_announcement_schedule(update: Update, context: ContextTypes.DEFAULT_TYPE):
@@ -1370,7 +1363,7 @@ async def button_router(update: Update, context: ContextTypes.DEFAULT_TYPE):
     user = query.from_user
 
     # ==============================================================
-    # 🔑 USER OPTION A VISUAL KEYPAD INTERACTION
+    # 🔑 USER VISUAL KEYPAD INTERACTION
     # ==============================================================
     if data.startswith("userkp_"):
         current_pin = context.user_data.get("user_keypad_pin", "")
@@ -1413,7 +1406,6 @@ async def button_router(update: Update, context: ContextTypes.DEFAULT_TYPE):
                 await query.answer("❌ Incorrect PIN! Try again.", show_alert=True)
                 current_pin = ""
 
-        # Update PIN display indicator
         masked = "".join(["⬤ " for _ in range(len(current_pin))]) + "".join(["◯ " for _ in range(max(0, 4 - len(current_pin)))])
         msg = (
             f"🔒 **ACCOUNT LOCKED DUE TO INACTIVITY** 🔒\n"

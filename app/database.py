@@ -56,6 +56,33 @@ def calculate_discounted_price(original_price, discount_percent) -> int:
     except Exception:
         return int(original_price) if original_price else 1
 
+def infer_plan_key_from_amount(amount: float) -> str:
+    """Infers the plan key from the paid amount, accounting for standard prices and flash sales."""
+    try:
+        amt = float(amount)
+        if amt in (5.0, 4.0):
+            return "BRONZE"
+        elif amt in (10.0, 8.0, 9.0, 7.0):
+            return "SILVER"
+        elif amt in (15.0, 12.0, 11.0, 13.0):
+            return "GOLD"
+        elif amt in (20.0, 16.0, 17.0, 18.0):
+            # Check if this matches DIAMOND (base 20) or LEARNWITHHIM (discounted to 20 from 25)
+            if amt == 20.0:
+                return "LEARNWITHHIM"
+            return "DIAMOND"
+        elif amt in (25.0,):
+            return "LEARNWITHHIM"
+        elif amt in (40.0, 32.0, 30.0, 36.0):
+            return "PLATINUM"
+        elif amt in (50.0, 40.0, 45.0, 35.0):
+            return "RUBY"
+        elif amt in (80.0, 64.0, 60.0, 72.0):
+            return "MEGA"
+    except Exception:
+        pass
+    return "LEARNWITHHIM"
+
 def init_db():
     init_pool()
     conn = get_db()
@@ -88,7 +115,66 @@ def init_db():
             last_activity_epoch BIGINT DEFAULT 0,
             is_banned INTEGER DEFAULT 0,
             is_verified INTEGER DEFAULT 1,
+            payment_id TEXT,
+            payment_timestamp TEXT,
+            temporary_bonus_quota INTEGER DEFAULT 0,
+            gift_granted_date TEXT,
             created_at TEXT
+        )
+    ''')
+
+    # Safe Schema Migrations for Users Table
+    cursor.execute("ALTER TABLE users ADD COLUMN IF NOT EXISTS payment_id TEXT;")
+    cursor.execute("ALTER TABLE users ADD COLUMN IF NOT EXISTS payment_timestamp TEXT;")
+    cursor.execute("ALTER TABLE users ADD COLUMN IF NOT EXISTS bonus_quota INTEGER DEFAULT 0;")
+    cursor.execute("ALTER TABLE users ADD COLUMN IF NOT EXISTS temporary_bonus_quota INTEGER DEFAULT 0;")
+    cursor.execute("ALTER TABLE users ADD COLUMN IF NOT EXISTS gift_granted_date TEXT;")
+    cursor.execute("ALTER TABLE users ADD COLUMN IF NOT EXISTS paid_question_balance INTEGER DEFAULT 0;")
+    cursor.execute("ALTER TABLE users ADD COLUMN IF NOT EXISTS vip_pass_expiry TEXT;")
+    cursor.execute("ALTER TABLE users ADD COLUMN IF NOT EXISTS demo_used INTEGER DEFAULT 0;")
+
+    cursor.execute('''
+        CREATE TABLE IF NOT EXISTS payment_transactions (
+            id SERIAL PRIMARY KEY,
+            user_id BIGINT NOT NULL,
+            payment_id TEXT UNIQUE NOT NULL,
+            plan_key TEXT,
+            plan_name TEXT,
+            amount_paid NUMERIC(10, 2) DEFAULT 0.0,
+            daily_quota INTEGER DEFAULT 0,
+            validity_days INTEGER DEFAULT 0,
+            created_at TEXT,
+            expiry_at TEXT
+        )
+    ''')
+    cursor.execute("ALTER TABLE payment_transactions ADD COLUMN IF NOT EXISTS expiry_at TEXT;")
+
+    cursor.execute('''
+        CREATE TABLE IF NOT EXISTS admin_security (
+            id INT PRIMARY KEY,
+            admin_id BIGINT,
+            password_hash TEXT,
+            dob_recovery TEXT,
+            email_recovery TEXT,
+            updated_at TEXT
+        )
+    ''')
+
+    cursor.execute('''
+        CREATE TABLE IF NOT EXISTS command_analytics (
+            id SERIAL PRIMARY KEY,
+            user_id BIGINT,
+            command_name TEXT,
+            executed_at TEXT
+        )
+    ''')
+
+    cursor.execute('''
+        CREATE TABLE IF NOT EXISTS pdf_generation_logs (
+            id SERIAL PRIMARY KEY,
+            user_id BIGINT,
+            pdf_type TEXT,
+            generated_at TEXT
         )
     ''')
 
@@ -156,7 +242,6 @@ def init_db():
             replied_at TEXT
         )
     ''')
-
     cursor.execute("ALTER TABLE student_queries ADD COLUMN IF NOT EXISTS photo_file_id TEXT;")
 
     cursor.execute('''
@@ -292,6 +377,27 @@ def get_user_by_student_id(student_id: str):
     release_db(conn)
     return dict(row) if row else None
 
+def get_user_by_phone(phone_number: str):
+    """Matches a user by phone number using clean digit comparison."""
+    if not phone_number:
+        return None
+    clean_phone = "".join(filter(str.isdigit, str(phone_number)))
+    if len(clean_phone) > 10:
+        clean_phone = clean_phone[-10:]
+    if len(clean_phone) < 8:
+        return None
+
+    conn = get_db()
+    cursor = conn.cursor(cursor_factory=RealDictCursor)
+    cursor.execute(
+        "SELECT * FROM users WHERE REPLACE(REPLACE(REPLACE(phone_number, '+', ''), ' ', ''), '-', '') LIKE %s LIMIT 1",
+        (f"%{clean_phone}",)
+    )
+    row = cursor.fetchone()
+    cursor.close()
+    release_db(conn)
+    return dict(row) if row else None
+
 def update_user_pin(user_id: int, new_pin: str):
     conn = get_db()
     cursor = conn.cursor()
@@ -387,6 +493,7 @@ def admin_delete_user_account(user_id: int):
     sid = row['student_id'] if row and row['student_id'] else f"USER_{user_id}"
 
     cursor.execute("DELETE FROM users WHERE user_id = %s", (user_id,))
+    cursor.execute("DELETE FROM payment_transactions WHERE user_id = %s", (user_id,))
     cursor.execute("DELETE FROM quiz_attempts WHERE user_id = %s", (user_id,))
     cursor.execute("DELETE FROM seen_questions WHERE user_id = %s", (user_id,))
     cursor.execute("DELETE FROM saved_questions WHERE user_id = %s", (user_id,))

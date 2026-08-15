@@ -708,6 +708,8 @@ async def admin_execute_grant_callback(update: Update, context: ContextTypes.DEF
         f"⏳ **VIP Pass Expiry:** `{expiry_str}`\n"
         f"🧾 **Grant Reference ID:** `{payment_id}`\n"
         f"━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\n"
+        f"💖 **Thanku for showing the faith in the Quiz with HiM. I'll give my best to keep your faith alive and of course, you have joined India's 1st dynamic Quiz platform for your preparation.**\n"
+        f"━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\n"
         f"🚀 Tap **/quiz** below to launch your practice session now!"
     )
 
@@ -764,7 +766,6 @@ async def admin_callback_handler(update: Update, context: ContextTypes.DEFAULT_T
                 await query.answer("❌ Incorrect PIN! Try again.", show_alert=True)
                 current_pin = ""
 
-        # Update PIN display indicator
         masked = "".join(["⬤ " for _ in range(len(current_pin))]) + "".join(["◯ " for _ in range(max(0, 4 - len(current_pin)))])
         msg = (
             "🔒 **HIMANSHU'S MASTER ADMIN PORTAL IS LOCKED** 🔒\n"

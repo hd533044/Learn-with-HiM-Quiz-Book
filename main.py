@@ -252,16 +252,65 @@ async def send_payment_invoice_telegram(user_id: int, plan_key: str, payment_id:
 
 async def scheduled_auto_payment_sync_worker():
     """
-    DYNAMIC BACKGROUND AUTO-CREDITING WORKER:
-    Runs in background every 60s. Detects uncredited paid students, auto-credits them,
-    and pushes an instant notification alert to Himanshu Sir's Admin Telegram chat.
+    30-SECOND DYNAMIC AUTO-CREDITING & RESTORATION WORKER:
+    1. Pulls recent captured Razorpay payments directly to ensure zero delays.
+    2. Runs recalculate_and_restore_user_plans across database.
+    3. If any student had their plan missing/revoked, it instantly restores it, notifies that student in private chat,
+       and pushes an alert to Himanshu Sir's Admin Telegram.
+    4. Students with intact, active plans will NOT receive duplicate notices.
     """
     from telegram import InlineKeyboardMarkup, InlineKeyboardButton
+
     while True:
-        await asyncio.sleep(60)
+        await asyncio.sleep(30)
         if not bot_app_instance:
             continue
 
+        # 1. Direct Razorpay Quick Reconcile
+        if razorpay_client:
+            try:
+                p_res = await asyncio.to_thread(razorpay_client.payment.all, {"count": 30})
+                items = p_res.get("items", []) if isinstance(p_res, dict) else []
+                for p in items:
+                    if p.get("status") != "captured":
+                        continue
+                    p_id = p.get("id")
+                    if not p_id or not str(p_id).startswith("pay_"):
+                        continue
+
+                    conn = get_db()
+                    cursor = conn.cursor()
+                    cursor.execute("SELECT 1 FROM payment_transactions WHERE payment_id = %s", (p_id,))
+                    exists = cursor.fetchone()
+                    cursor.close()
+                    release_db(conn)
+
+                    if not exists:
+                        amount_paid = float(p.get("amount", 0)) / 100.0
+                        contact = p.get("contact", "")
+                        notes = p.get("notes", {}) or {}
+                        user_id = notes.get("user_id")
+                        plan_key = notes.get("plan_key")
+
+                        uid = None
+                        if user_id and str(user_id).isdigit():
+                            uid = int(user_id)
+                        elif contact:
+                            u_match = get_user_by_phone(contact)
+                            if u_match:
+                                uid = u_match["user_id"]
+
+                        if uid:
+                            if not plan_key or plan_key not in PLAN_TIERS:
+                                plan_key = infer_plan_key_from_amount(amount_paid)
+                            if plan_key in PLAN_TIERS:
+                                activated = await activate_user_subscription(uid, plan_key, p_id, amount_paid=amount_paid)
+                                if activated:
+                                    await send_payment_invoice_telegram(uid, plan_key, p_id, amount_paid=amount_paid)
+            except Exception as rzp_err:
+                logging.error(f"[30S RAZORPAY SYNC ERROR] {rzp_err}")
+
+        # 2. Database Auto-Restore Check for Missing/Revoked Paid Plans
         try:
             credited_list = await asyncio.to_thread(auto_sync_uncredited_paid_users)
             for c in credited_list:
@@ -273,17 +322,46 @@ async def scheduled_auto_payment_sync_worker():
                 rem_days = c.get("remaining_days", 0)
                 pid = c.get("payment_id", "pay_verified")
 
+                # Flush local cache
+                PROFILE_CACHE.pop(uid, None)
+
+                # Push Notification ONLY to the affected restored student
+                student_restore_msg = (
+                    f"🛡️ **PAID VIP SUBSCRIPTION AUTOMATICALLY RESTORED!** 🛡️\n"
+                    f"━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\n"
+                    f"Hello **{name}**, your genuine paid subscription has been verified and restored to your account!\n\n"
+                    f"⚡ **Active Daily Limit:** `{quota} Questions / Day`\n"
+                    f"⏳ **Remaining Validity:** `{rem_days} Days` (Expires: `{exp}`)\n"
+                    f"🧾 **Reference Payment ID:** `{pid}`\n"
+                    f"━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\n"
+                    f"🚀 Tap **/quiz** below to start practicing immediately!"
+                )
+                user_nav = InlineKeyboardMarkup([
+                    [InlineKeyboardButton("🚀 Launch Quiz Now", callback_data="cmd_quiz"), InlineKeyboardButton("💳 My Plan", callback_data="cmd_myplan")]
+                ])
+                try:
+                    await bot_app_instance.bot.send_message(
+                        chat_id=uid,
+                        text=student_restore_msg,
+                        reply_markup=user_nav,
+                        parse_mode="Markdown",
+                        disable_notification=False
+                    )
+                except Exception as u_err:
+                    logging.error(f"[STUDENT RESTORE NOTIFICATION ERROR] {u_err}")
+
+                # Push Alert to Himanshu Sir
                 admin_alert = (
-                    f"🔔 **AUTO-CREDIT ENGINE: PAID PLAN RESTORED & CREDITED!** 🔔\n"
+                    f"🔔 **30S AUTO-SYNC: PAID PLAN RESTORED FOR STUDENT!** 🔔\n"
                     f"━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\n"
                     f"👤 **Student Name:** {name}\n"
                     f"🪪 **Student ID:** `{sid}`\n"
                     f"🆔 **Telegram ID:** `{uid}`\n\n"
-                    f"⚡ **Active Daily Quota:** `{quota} Questions / Day`\n"
+                    f"⚡ **Restored Quota:** `{quota} Questions / Day`\n"
                     f"⏳ **Remaining Validity:** `{rem_days} Days` (Expires: `{exp}`)\n"
                     f"🧾 **Reference Txn ID:** `{pid}`\n"
                     f"━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\n"
-                    f"🛡 *The student had purchased this plan and it was automatically synchronized & protected.*"
+                    f"🛡️ *Detected uncredited/revoked active purchase and automatically re-credited it for remaining validity days.*"
                 )
                 admin_nav = InlineKeyboardMarkup([
                     [InlineKeyboardButton("👤 Inspect Student Profile", callback_data=f"admin_inspect_u_{uid}")],
@@ -301,7 +379,7 @@ async def scheduled_auto_payment_sync_worker():
                     logging.error(f"[ADMIN AUTO-CREDIT ALERT ERROR] {alert_err}")
 
         except Exception as e:
-            logging.error(f"[AUTO-CREDIT WORKER EXCEPTION] {e}")
+            logging.error(f"[AUTO-CREDIT 30S WORKER EXCEPTION] {e}")
 
 
 async def scheduled_expiry_reminder_check():
@@ -676,7 +754,7 @@ async def run_bot():
     await app.bot.delete_webhook(drop_pending_updates=True)
     await app.updater.start_polling(drop_pending_updates=True)
 
-    # Launch background tasks
+    # Launch background tasks (including 30-Second Auto-Restore & Sync Worker)
     asyncio.create_task(scheduled_auto_payment_sync_worker())
     asyncio.create_task(scheduled_expiry_reminder_check())
     asyncio.create_task(scheduled_daily_quiz_reminder())

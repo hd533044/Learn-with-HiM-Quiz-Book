@@ -86,7 +86,7 @@ def recalculate_and_restore_user_plans(user_id: int) -> dict:
     1. Scans payment_transactions for all genuine paid plans (payment_id starting with 'pay_' and amount_paid > 0).
     2. Calculates the exact unexpired target daily limit and furthest expiration timestamp.
     3. If the user already has this exact quota and expiry active, it makes NO CHANGES (prevents duplicate stacking).
-    4. If the plan was missing or reduced, it updates the user table and marks updated=True so Admin is notified.
+    4. If the plan was missing, revoked, or reduced, it updates the users table and sets updated=True.
     """
     conn = get_db()
     cursor = conn.cursor(cursor_factory=RealDictCursor)
@@ -145,23 +145,27 @@ def recalculate_and_restore_user_plans(user_id: int) -> dict:
             final_quota = max(DAILY_QUESTION_LIMIT, total_paid_quota)
             payment_id = latest_txn.get("payment_id")
             payment_timestamp = latest_txn.get("created_at")
+            plan_name = latest_txn.get("plan_name", "VIP Plan")
 
             # Check if user already has this exact active state (Prevents duplicate crediting)
             curr_quota = user_curr.get("paid_question_balance", 0)
             curr_expiry = user_curr.get("vip_pass_expiry")
             
+            diff_sec = max(0, int((max_expiry_dt - now_ist).total_seconds()))
+            remaining_days = max(1, int(diff_sec // 86400))
+
             if curr_quota == final_quota and curr_expiry == expiry_str:
-                diff_sec = max(0, int((max_expiry_dt - now_ist).total_seconds()))
                 return {
                     "updated": False,
                     "has_paid_plan": True,
                     "active_count": len(active_paid_txns),
                     "quota": final_quota,
                     "expiry_str": expiry_str,
-                    "remaining_days": max(1, int(diff_sec // 86400)),
+                    "remaining_days": remaining_days,
                     "full_name": user_curr.get("full_name", "Student"),
                     "student_id": user_curr.get("student_id", f"USER_{user_id}"),
-                    "payment_id": payment_id
+                    "payment_id": payment_id,
+                    "plan_name": plan_name
                 }
 
             cursor.execute("""
@@ -175,8 +179,6 @@ def recalculate_and_restore_user_plans(user_id: int) -> dict:
             """, (final_quota, expiry_str, payment_id, payment_timestamp, user_id))
             conn.commit()
 
-            diff_sec = max(0, int((max_expiry_dt - now_ist).total_seconds()))
-            remaining_days = max(1, int(diff_sec // 86400))
             return {
                 "updated": True,
                 "has_paid_plan": True,
@@ -186,27 +188,10 @@ def recalculate_and_restore_user_plans(user_id: int) -> dict:
                 "remaining_days": remaining_days,
                 "full_name": user_curr.get("full_name", "Student"),
                 "student_id": user_curr.get("student_id", f"USER_{user_id}"),
-                "payment_id": payment_id
+                "payment_id": payment_id,
+                "plan_name": plan_name
             }
         else:
-            # If no active paid plan and quota is currently set as paid, reset to base
-            if user_curr.get("paid_question_balance", 0) > DAILY_QUESTION_LIMIT:
-                cursor.execute("""
-                    UPDATE users 
-                    SET paid_question_balance = %s,
-                        vip_pass_expiry = NULL,
-                        payment_id = NULL,
-                        payment_timestamp = NULL
-                    WHERE user_id = %s
-                """, (DAILY_QUESTION_LIMIT, user_id))
-                conn.commit()
-                return {
-                    "updated": True,
-                    "has_paid_plan": False,
-                    "quota": DAILY_QUESTION_LIMIT,
-                    "expiry_str": None,
-                    "remaining_days": 0
-                }
             return {
                 "updated": False,
                 "has_paid_plan": False,
@@ -225,8 +210,7 @@ def recalculate_and_restore_user_plans(user_id: int) -> dict:
 def auto_sync_uncredited_paid_users() -> list:
     """
     GLOBAL AUTOMATIC CREDITING SYNC:
-    Scans all users in PostgreSQL who have valid paid transactions.
-    Returns a list of student records that were newly credited/restored.
+    Scans all users who have valid paid transactions and returns ONLY those who were newly updated/restored.
     """
     conn = get_db()
     cursor = conn.cursor(cursor_factory=RealDictCursor)

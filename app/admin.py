@@ -442,13 +442,13 @@ def get_pdf_generation_analytics():
 
 
 async def render_admin_lock_screen(update: Update, context: ContextTypes.DEFAULT_TYPE):
-    """Renders the Option A Visual Keypad Lock Screen for Himanshu Sir."""
+    """Renders the Option A Visual Keypad Lock Screen with visible PIN indicators."""
     context.user_data["admin_keypad_pin"] = ""
     msg = (
         "🔒 **HIMANSHU'S MASTER ADMIN PORTAL IS LOCKED** 🔒\n"
         "━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\n"
         "Session timed out due to 30 minutes of inactivity.\n\n"
-        "🔑 **PIN Status:** `[ ◯ ◯ ◯ ◯ ]`\n"
+        "🔑 **PIN Status:** `[ _ _ _ _ ]`\n"
         "👉 *Tap the visual keypad below to enter your secret PIN:*"
     )
     markup = build_admin_keypad_markup(0)
@@ -615,7 +615,7 @@ async def admin_view_user_payments_callback(update: Update, context: ContextType
         msg = msg[:3950] + "\n\n*(Truncated due to Telegram length limit)*"
 
     back_btn = InlineKeyboardMarkup([
-        [InlineKeyboardButton("👑 Grant Paid VIP Pack", callback_data=f"admin_grant_menu_{target_uid}"), InlineKeyboardButton("🚫 Revoke / Withdraw Plan", callback_data=f"admin_revoke_confirm_{target_uid}")],
+        [InlineKeyboardButton("👑 Grant Paid VIP Pack", callback_data=f"admin_grant_menu_{target_uid}"), InlineKeyboardButton("🚫 Revoke / Withdraw Plan", callback_data=f"admin_revoke_menu_{target_uid}")],
         [InlineKeyboardButton("🔙 Back to Student Profile", callback_data=f"admin_inspect_u_{target_uid}")],
         [InlineKeyboardButton("👑 Himanshu Sir's Portal (/him)", callback_data="admin_home")]
     ])
@@ -640,12 +640,12 @@ async def admin_grant_plan_menu_callback(update: Update, context: ContextTypes.D
         [InlineKeyboardButton("📦 Grant PLATINUM (₹40 - 300 Qs)", callback_data=f"admin_exec_grant_{target_uid}_PLATINUM")],
         [InlineKeyboardButton("📦 Grant RUBY (₹50 - 400 Qs)", callback_data=f"admin_exec_grant_{target_uid}_RUBY")],
         [InlineKeyboardButton("📦 Grant MEGA PACK (₹80 - 500 Qs)", callback_data=f"admin_exec_grant_{target_uid}_MEGA")],
-        [InlineKeyboardButton("🚫 Withdraw / Revoke Current Plan", callback_data=f"admin_revoke_confirm_{target_uid}")],
+        [InlineKeyboardButton("🚫 Withdraw / Revoke Plan", callback_data=f"admin_revoke_menu_{target_uid}")],
         [InlineKeyboardButton("🔙 Back to Student Profile", callback_data=f"admin_inspect_u_{target_uid}")],
         [InlineKeyboardButton("👑 Himanshu Sir's Portal (/him)", callback_data="admin_home")]
     ]
 
-    msg = f"👑 **GRANT OR MANAGE PAID PACK FOR {name}** 👑\nSelect a VIP plan to credit and stack, or withdraw an existing plan:"
+    msg = f"👑 **GRANT OR MANAGE PAID PACK FOR {name}** 👑\nSelect a VIP plan to credit, or withdraw plan:"
     await query.edit_message_text(msg, reply_markup=InlineKeyboardMarkup(keyboard), parse_mode="Markdown")
 
 
@@ -733,7 +733,7 @@ async def admin_callback_handler(update: Update, context: ContextTypes.DEFAULT_T
     data = query.data
 
     # ==============================================================
-    # 🔑 OPTION A: ADMIN VISUAL NUMERIC KEYPAD INTERACTION
+    # 🔑 ULTRA-FAST VISIBLE ADMIN KEYPAD
     # ==============================================================
     if data.startswith("adminkp_"):
         if user_id != PRIMARY_ADMIN_ID:
@@ -767,12 +767,12 @@ async def admin_callback_handler(update: Update, context: ContextTypes.DEFAULT_T
                 await query.answer("❌ Incorrect PIN! Try again.", show_alert=True)
                 current_pin = ""
 
-        masked = "".join(["⬤ " for _ in range(len(current_pin))]) + "".join(["◯ " for _ in range(max(0, 4 - len(current_pin)))])
+        visible_display = " ".join([d for d in current_pin]) + " " + " ".join(["_" for _ in range(max(0, 4 - len(current_pin)))])
         msg = (
             "🔒 **HIMANSHU'S MASTER ADMIN PORTAL IS LOCKED** 🔒\n"
             "━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\n"
             "Session timed out due to 30 minutes of inactivity.\n\n"
-            f"🔑 **PIN Status:** `[ {masked.strip()} ]`\n"
+            f"🔑 **PIN Status:** `[ {visible_display.strip()} ]`\n"
             "👉 *Tap the visual keypad below to enter your secret PIN:*"
         )
         try:
@@ -802,92 +802,100 @@ async def admin_callback_handler(update: Update, context: ContextTypes.DEFAULT_T
     users = get_all_users()
 
     # ==============================================================
-    # 🚫 REVOKE / WITHDRAW PAID PLAN MODULE
+    # 🚫 REVOCATION ROUTING ENGINE
     # ==============================================================
-    if data.startswith("admin_revoke_confirm_"):
+    if data.startswith("admin_revoke_menu_"):
         await query.answer()
-        target_uid = int(data.replace("admin_revoke_confirm_", ""))
+        target_uid = int(data.replace("admin_revoke_menu_", ""))
         u = get_user_profile(target_uid) or {}
         st_name = u.get("full_name", "Student")
         current_bal = u.get("paid_question_balance", 0)
-        curr_exp = u.get("vip_pass_expiry", "N/A")
 
-        confirm_btn = InlineKeyboardMarkup([
-            [InlineKeyboardButton("🚫 Yes, Withdraw Plan Now", callback_data=f"admin_revoke_exec_{target_uid}")],
-            [InlineKeyboardButton("❌ Cancel & Return", callback_data=f"admin_inspect_u_{target_uid}")]
-        ])
+        # Query all admin-granted records for this user
+        conn = get_db()
+        cursor = conn.cursor(cursor_factory=RealDictCursor)
+        cursor.execute("SELECT * FROM payment_transactions WHERE user_id = %s AND payment_id LIKE 'ADMIN_GRANT_%%'", (target_uid,))
+        admin_grants = cursor.fetchall()
+        cursor.close()
+        release_db(conn)
+
+        grant_sum = sum([g.get('daily_quota', 0) for g in admin_grants])
 
         msg = (
-            f"⚠️ **CONFIRM PAID PLAN WITHDRAWAL** ⚠️\n"
+            f"🚫 **PLAN WITHDRAWAL SELECTION FOR {st_name.upper()}** 🚫\n"
             f"━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\n"
-            f"Are you sure you want to withdraw/revoke the paid plan from **{st_name}** (`{target_uid}`)?\n\n"
-            f"📊 **Current Limit:** `{current_bal} Questions/Day`\n"
-            f"⏳ **Current Expiry:** `{curr_exp}`\n\n"
-            f"⚡ **Actions that will be executed:**\n"
-            f"• Reset daily question quota to standard `{DAILY_QUESTION_LIMIT} Qs/Day`.\n"
-            f"• Clear VIP pass expiration date.\n"
-            f"• Remove administrative grant records.\n"
-            f"• Immediately notify the student about this plan adjustment.\n\n"
-            f"👉 Tap below to confirm plan withdrawal:"
+            f"👤 **Student:** {st_name} (`{target_uid}`)\n"
+            f"⚡ **Total Current Quota:** `{current_bal} Questions/Day`\n"
+            f"🎁 **Admin-Granted Quota:** `+{grant_sum} Qs/Day` ({len(admin_grants)} Grant Txns)\n\n"
+            f"Select which revocation action to perform:"
         )
-        await query.edit_message_text(msg, reply_markup=confirm_btn, parse_mode="Markdown")
+
+        buttons = [
+            [InlineKeyboardButton("🎁 Withdraw Admin-Granted Plan Only (Safe)", callback_data=f"admin_revoke_admingrant_{target_uid}")],
+            [InlineKeyboardButton("⚠️ Emergency Full Reset (All Plans)", callback_data=f"admin_revoke_allconfirm_{target_uid}")],
+            [InlineKeyboardButton("🔙 Cancel & Return", callback_data=f"admin_inspect_u_{target_uid}")]
+        ]
+        await query.edit_message_text(msg, reply_markup=InlineKeyboardMarkup(buttons), parse_mode="Markdown")
         return
 
-    elif data.startswith("admin_revoke_exec_"):
+    elif data.startswith("admin_revoke_admingrant_"):
         await query.answer()
-        target_uid = int(data.replace("admin_revoke_exec_", ""))
+        target_uid = int(data.replace("admin_revoke_admingrant_", ""))
         u = get_user_profile(target_uid) or {}
         st_name = u.get("full_name", "Student")
 
-        conn = None
-        try:
-            conn = get_db()
-            cursor = conn.cursor()
-            cursor.execute(
-                """
-                UPDATE users 
-                SET paid_question_balance = %s, 
-                    vip_pass_expiry = NULL, 
-                    payment_id = NULL, 
-                    payment_timestamp = NULL 
-                WHERE user_id = %s
-                """,
-                (DAILY_QUESTION_LIMIT, target_uid)
-            )
-            # Remove admin grant records
-            cursor.execute(
-                "DELETE FROM payment_transactions WHERE user_id = %s AND (payment_id LIKE 'ADMIN_GRANT_%%' OR plan_key != 'FREE_DEMO')",
-                (target_uid,)
-            )
-            conn.commit()
+        conn = get_db()
+        cursor = conn.cursor(cursor_factory=RealDictCursor)
+        cursor.execute("SELECT * FROM payment_transactions WHERE user_id = %s AND payment_id LIKE 'ADMIN_GRANT_%%'", (target_uid,))
+        admin_grants = cursor.fetchall()
+
+        if not admin_grants:
             cursor.close()
             release_db(conn)
-
-            from app.telegram_bot import PROFILE_CACHE
-            PROFILE_CACHE.pop(target_uid, None)
-            sync_user_json_profile(target_uid)
-        except Exception as e:
-            if conn:
-                release_db(conn)
-            logger.error(f"[REVOKE PLAN ERROR] {e}")
-            await query.edit_message_text(f"⚠️ Error withdrawing plan: {e}", reply_markup=InlineKeyboardMarkup([[InlineKeyboardButton("🔙 Back", callback_data=f"admin_inspect_u_{target_uid}")]]))
+            await query.answer("ℹ️ No Admin-Granted plan found for this user!", show_alert=True)
             return
 
-        user_revoke_notice = (
-            f"⚠️ **NOTICE: SUBSCRIPTION PLAN ADJUSTED** ⚠️\n"
+        grant_sum = sum([g.get('daily_quota', 0) for g in admin_grants])
+        current_bal = u.get("paid_question_balance", 0)
+        new_bal = max(DAILY_QUESTION_LIMIT, current_bal - grant_sum)
+
+        # Delete admin grant records only
+        cursor.execute("DELETE FROM payment_transactions WHERE user_id = %s AND payment_id LIKE 'ADMIN_GRANT_%%'", (target_uid,))
+        
+        # Check if student still has genuine paid purchases
+        cursor.execute("SELECT * FROM payment_transactions WHERE user_id = %s AND plan_key != 'FREE_DEMO' ORDER BY id DESC LIMIT 1", (target_uid,))
+        latest_purchase = cursor.fetchone()
+
+        if latest_purchase:
+            cursor.execute(
+                "UPDATE users SET paid_question_balance = %s, vip_pass_expiry = %s, payment_id = %s, payment_timestamp = %s WHERE user_id = %s",
+                (new_bal, latest_purchase.get("expiry_at"), latest_purchase.get("payment_id"), latest_purchase.get("created_at"), target_uid)
+            )
+        else:
+            cursor.execute(
+                "UPDATE users SET paid_question_balance = %s, vip_pass_expiry = NULL, payment_id = NULL, payment_timestamp = NULL WHERE user_id = %s",
+                (DAILY_QUESTION_LIMIT, target_uid)
+            )
+
+        conn.commit()
+        cursor.close()
+        release_db(conn)
+
+        from app.telegram_bot import PROFILE_CACHE
+        PROFILE_CACHE.pop(target_uid, None)
+        sync_user_json_profile(target_uid)
+
+        user_notice = (
+            f"⚠️ **NOTICE: ADMIN VIP GRANT WITHDRAWN** ⚠️\n"
             f"━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\n"
-            f"Dear **{st_name}**, your VIP subscription plan has been adjusted/withdrawn by Himanshu Sir.\n\n"
-            f"⚡ **Updated Daily Limit:** `{DAILY_QUESTION_LIMIT} Questions / Day`\n"
-            f"⏳ **Pass Expiry:** None (Standard Free Tier)\n"
+            f"Dear **{st_name}**, the complimentary VIP pack previously granted by Himanshu Sir has been withdrawn.\n\n"
+            f"⚡ **Your Daily Limit is now:** `{new_bal} Questions / Day`\n"
             f"━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\n"
-            f"💡 If you have questions regarding this adjustment, please contact Himanshu Sir via **/askadmin**."
+            f"💡 *Any genuine subscription plans you purchased remain active and unaffected.*"
         )
         try:
-            user_btn = InlineKeyboardMarkup([
-                [InlineKeyboardButton("💬 Secret Message Admin", callback_data="cmd_askadmin")],
-                [InlineKeyboardButton("💳 View VIP Plans", callback_data="cmd_plans"), InlineKeyboardButton("🚀 Launch Quiz", callback_data="cmd_quiz")]
-            ])
-            await context.bot.send_message(chat_id=target_uid, text=user_revoke_notice, reply_markup=user_btn, parse_mode="Markdown", disable_notification=False)
+            user_btn = InlineKeyboardMarkup([[InlineKeyboardButton("💳 View Plans", callback_data="cmd_plans"), InlineKeyboardButton("🚀 Launch Quiz", callback_data="cmd_quiz")]])
+            await context.bot.send_message(chat_id=target_uid, text=user_notice, reply_markup=user_btn, parse_mode="Markdown", disable_notification=False)
         except Exception:
             pass
 
@@ -896,13 +904,61 @@ async def admin_callback_handler(update: Update, context: ContextTypes.DEFAULT_T
             [InlineKeyboardButton("👑 Himanshu Sir's Portal (/him)", callback_data="admin_home")]
         ])
         await query.edit_message_text(
-            f"🚫 **PAID PLAN WITHDRAWN SUCCESSFULLY!**\n\n"
-            f"• Student **{st_name}** (`{target_uid}`) reset to `{DAILY_QUESTION_LIMIT} Qs/Day`.\n"
-            f"• VIP Pass expiry and admin grants have been cleared.\n"
-            f"• Notification notice delivered to student's chat.",
+            f"✅ **ADMIN-GRANTED PLAN WITHDRAWN!**\n\n"
+            f"• Deducted `{grant_sum} Qs` granted by admin.\n"
+            f"• Student **{st_name}** (`{target_uid}`) quota adjusted to `{new_bal} Qs/Day`.\n"
+            f"• Student's genuine paid purchases were preserved untouched.",
             reply_markup=back_btn,
             parse_mode="Markdown"
         )
+        return
+
+    elif data.startswith("admin_revoke_allconfirm_"):
+        await query.answer()
+        target_uid = int(data.replace("admin_revoke_allconfirm_", ""))
+        u = get_user_profile(target_uid) or {}
+        st_name = u.get("full_name", "Student")
+
+        confirm_btn = InlineKeyboardMarkup([
+            [InlineKeyboardButton("⚠️ Yes, Reset ALL Plans to Free Tier", callback_data=f"admin_revoke_allexec_{target_uid}")],
+            [InlineKeyboardButton("❌ Cancel", callback_data=f"admin_revoke_menu_{target_uid}")]
+        ])
+        await query.edit_message_text(
+            f"⚠️ **CONFIRM FULL EMERGENCY RESET** ⚠️\n"
+            f"━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\n"
+            f"Are you sure you want to completely reset **{st_name}** (`{target_uid}`) to the Free Tier (`20 Qs/Day`)?\n\n"
+            f"This will remove ALL plan benefits and set quota to base level.",
+            reply_markup=confirm_btn,
+            parse_mode="Markdown"
+        )
+        return
+
+    elif data.startswith("admin_revoke_allexec_"):
+        await query.answer()
+        target_uid = int(data.replace("admin_revoke_allexec_", ""))
+        u = get_user_profile(target_uid) or {}
+        st_name = u.get("full_name", "Student")
+
+        conn = get_db()
+        cursor = conn.cursor()
+        cursor.execute(
+            "UPDATE users SET paid_question_balance = %s, vip_pass_expiry = NULL, payment_id = NULL, payment_timestamp = NULL WHERE user_id = %s",
+            (DAILY_QUESTION_LIMIT, target_uid)
+        )
+        cursor.execute("DELETE FROM payment_transactions WHERE user_id = %s AND (payment_id LIKE 'ADMIN_GRANT_%%' OR plan_key != 'FREE_DEMO')", (target_uid,))
+        conn.commit()
+        cursor.close()
+        release_db(conn)
+
+        from app.telegram_bot import PROFILE_CACHE
+        PROFILE_CACHE.pop(target_uid, None)
+        sync_user_json_profile(target_uid)
+
+        back_btn = InlineKeyboardMarkup([
+            [InlineKeyboardButton("🔙 Return to Student Profile", callback_data=f"admin_inspect_u_{target_uid}")],
+            [InlineKeyboardButton("👑 Himanshu Sir's Portal (/him)", callback_data="admin_home")]
+        ])
+        await query.edit_message_text(f"🛑 **ALL PLANS RESET TO FREE TIER (20 Qs/Day) FOR {st_name}!**", reply_markup=back_btn, parse_mode="Markdown")
         return
 
     # ==============================================================
@@ -1298,9 +1354,6 @@ async def admin_callback_handler(update: Update, context: ContextTypes.DEFAULT_T
         ])
         await query.edit_message_text(f"✅ **SALE REMINDER BROADCASTED!**\nDelivered to `{sent_count}/{len(target_uids)}` students.", reply_markup=nav, parse_mode="Markdown")
 
-    # ==============================================================
-    # 🛑 BLOCKED / INACTIVE USERS AUDIT MODULE
-    # ==============================================================
     elif data.startswith("admin_list_blocked_users_"):
         await query.answer()
         page = int(data.replace("admin_list_blocked_users_", ""))
@@ -1338,9 +1391,6 @@ async def admin_callback_handler(update: Update, context: ContextTypes.DEFAULT_T
             parse_mode="Markdown"
         )
 
-    # ==============================================================
-    # 📢 SCHEDULED ANNOUNCEMENTS MANAGEMENT
-    # ==============================================================
     elif data.startswith("admin_list_pending_annc_"):
         await query.answer()
         page = int(data.replace("admin_list_pending_annc_", ""))
@@ -1440,9 +1490,6 @@ async def admin_callback_handler(update: Update, context: ContextTypes.DEFAULT_T
         ])
         await query.edit_message_text(f"🗑 **SCHEDULED ANNOUNCEMENT #{annc_id} DELETED SUCCESSFULLY!**", reply_markup=nav, parse_mode="Markdown")
 
-    # ==============================================================
-    # 📢 LIVE BROADCASTS MANAGEMENT
-    # ==============================================================
     elif data.startswith("admin_list_sent_annc_"):
         await query.answer()
         page = int(data.replace("admin_list_sent_annc_", ""))
@@ -2264,7 +2311,7 @@ async def admin_callback_handler(update: Update, context: ContextTypes.DEFAULT_T
         keyboard = [
             [InlineKeyboardButton("📩 Direct Message Student", callback_data=f"admin_direct_msg_{target_uid}"), InlineKeyboardButton("⚠️ Issue Warning", callback_data=f"admin_issue_warning_prompt_{target_uid}")],
             [InlineKeyboardButton("💳 View Recent Payments", callback_data=f"admin_view_payments_{target_uid}"), InlineKeyboardButton("👑 Grant Paid Plan", callback_data=f"admin_grant_menu_{target_uid}")],
-            [InlineKeyboardButton("🚫 Revoke / Withdraw Plan", callback_data=f"admin_revoke_confirm_{target_uid}"), InlineKeyboardButton("🎁 Grant +20 Quota", callback_data=f"audit_grant_{target_uid}")],
+            [InlineKeyboardButton("🚫 Revoke / Withdraw Plan", callback_data=f"admin_revoke_menu_{target_uid}"), InlineKeyboardButton("🎁 Grant +20 Quota", callback_data=f"audit_grant_{target_uid}")],
             [InlineKeyboardButton("📋 Personal Details", callback_data=f"audit_personal_{target_uid}"), InlineKeyboardButton("🔑 PIN & Security Questions", callback_data=f"audit_pinsec_{target_uid}")],
             [InlineKeyboardButton("⏱ Time & Activity Log", callback_data=f"audit_activity_{target_uid}"), InlineKeyboardButton("📊 Overall Performance", callback_data=f"audit_perf_{target_uid}")],
             [InlineKeyboardButton("📅 Date-wise Quiz Summary", callback_data=f"audit_datesummary_{target_uid}"), InlineKeyboardButton("🎯 Attempted Questions", callback_data=f"audit_attempted_{target_uid}")],

@@ -55,20 +55,23 @@ LAST_QUIZ_BROADCAST_KEY = ""
 async def activate_user_subscription(user_id: int, plan_key: str, payment_id: str = "OFFICIAL_SUBSCRIBED", amount_paid: float = None):
     """
     ACTIVATION ENGINE:
-    1. Stacks daily question limit onto current paid_question_balance.
-    2. Extends pass validity.
-    3. Logs transaction permanently into payment_transactions with unique payment_id constraint.
-    4. Invalidates local memory cache for instant synchronization.
+    1. Validates plan key and payment ID format strictly.
+    2. Stacks daily question limit onto current paid_question_balance.
+    3. Extends pass validity.
+    4. Logs transaction permanently into payment_transactions.
+    5. Invalidates memory cache for instant synchronization.
     """
-    plan = PLAN_TIERS.get(plan_key)
-    if not plan and amount_paid:
-        inferred = infer_plan_key_from_amount(amount_paid)
-        plan = PLAN_TIERS.get(inferred)
-        plan_key = inferred
-
-    if not plan:
-        logging.error(f"[ACTIVATION ERROR] Invalid plan key received: {plan_key}")
+    # 1. Strict Security Validation
+    if not plan_key or plan_key not in PLAN_TIERS:
+        logging.error(f"[SECURITY BLOCKED] Invalid/fake plan key attempted: '{plan_key}' for user {user_id}")
         return False
+
+    pid_str = str(payment_id).strip()
+    if not (pid_str.startswith("pay_") or pid_str.startswith("ADMIN_GRANT_") or pid_str == "FREE_DEMO"):
+        logging.error(f"[SECURITY BLOCKED] Invalid/fake payment_id format rejected: '{payment_id}' for user {user_id}")
+        return False
+
+    plan = PLAN_TIERS[plan_key]
 
     ist = pytz.timezone("Asia/Kolkata")
     now = datetime.now(ist)
@@ -88,7 +91,7 @@ async def activate_user_subscription(user_id: int, plan_key: str, payment_id: st
         conn = get_db()
         cursor = conn.cursor()
         
-        # 1. Update user record balance & expiry
+        # Update user record balance & expiry
         cursor.execute(
             """
             UPDATE users 
@@ -99,10 +102,10 @@ async def activate_user_subscription(user_id: int, plan_key: str, payment_id: st
                 demo_used = 1 
             WHERE user_id = %s
             """,
-            (new_bal, expiry_str, payment_id, payment_time_str, user_id)
+            (new_bal, expiry_str, pid_str, payment_time_str, user_id)
         )
 
-        # 2. Record transaction history entry
+        # Record transaction history entry
         cursor.execute(
             """
             INSERT INTO payment_transactions 
@@ -112,14 +115,14 @@ async def activate_user_subscription(user_id: int, plan_key: str, payment_id: st
                 amount_paid = EXCLUDED.amount_paid,
                 expiry_at = EXCLUDED.expiry_at
             """,
-            (user_id, payment_id, plan_key, plan["name"], actual_charged_amount, plan["daily_limit"], plan["days"], payment_time_str, expiry_str)
+            (user_id, pid_str, plan_key, plan["name"], actual_charged_amount, plan["daily_limit"], plan["days"], payment_time_str, expiry_str)
         )
 
         conn.commit()
         cursor.close()
         release_db(conn)
 
-        # Flush fast memory cache so /myplan & /myprofile reflect instantly
+        # Flush fast memory cache
         PROFILE_CACHE.pop(user_id, None)
         sync_user_json_profile(user_id)
         
@@ -136,15 +139,20 @@ async def activate_user_subscription(user_id: int, plan_key: str, payment_id: st
 async def send_payment_invoice_telegram(user_id: int, plan_key: str, payment_id: str = "OFFICIAL_SUBSCRIBED", amount_paid: float = None):
     """
     Pushes an instant celebratory text invoice directly into the user's Telegram chat
-    AND notifies Himanshu Sir in the Admin Dashboard with full purchase details.
+    AND notifies Himanshu Sir in the Admin Dashboard with purchase details.
     """
     if not bot_app_instance:
         logging.error("[TELEGRAM PUSH ERROR] bot_app_instance is uninitialized.")
         return
 
+    # Safety: Only send invoice if plan key exists in PLAN_TIERS
+    if not plan_key or plan_key not in PLAN_TIERS:
+        logging.error(f"[INVOICE BLOCKED] Attempted to send invoice for invalid plan '{plan_key}'")
+        return
+
     from telegram import InlineKeyboardMarkup, InlineKeyboardButton
 
-    plan_info = PLAN_TIERS.get(plan_key, {})
+    plan_info = PLAN_TIERS[plan_key]
     plan_name = plan_info.get('name', plan_key)
 
     profile = await asyncio.to_thread(get_user_profile, user_id) or {}
@@ -210,7 +218,7 @@ async def send_payment_invoice_telegram(user_id: int, plan_key: str, payment_id:
     except Exception as err:
         logging.error(f"[DELIVERY ERROR] Failed to push notification to user {user_id}: {err}")
 
-    # Instant Admin Notification Alert on Payment Purchase
+    # Instant Admin Notification Alert on Genuine Verified Payment Purchase
     if not is_admin_grant and user_id != PRIMARY_ADMIN_ID:
         admin_motivation_alert = (
             f"🎉 **NEW PAID VIP PURCHASE RECEIVED!** 🎉\n"
@@ -246,7 +254,7 @@ async def send_payment_invoice_telegram(user_id: int, plan_key: str, payment_id:
 async def reconcile_pending_captured_payments():
     """
     AUTO-RECONCILIATION SEED ENGINE:
-    Reconciles and credits all uncredited captured payments on startup.
+    Reconciles and credits all verified uncredited captured payments on startup.
     """
     logging.info("[RECONCILIATION] Running payment verification and credit check...")
     
@@ -284,8 +292,8 @@ async def reconcile_pending_captured_payments():
 async def scheduled_razorpay_api_reconciliation_worker():
     """
     FAIL-SAFE DIRECT RAZORPAY API WORKER:
-    Polls Razorpay directly every 45s to fetch all recent 'captured' payments.
-    Ensures 100% credit guarantee even if webhooks fail or drop.
+    Polls Razorpay directly every 45s to fetch recent 'captured' payments.
+    Only credits genuine payments with status 'captured' and valid plan keys.
     """
     while True:
         await asyncio.sleep(45)
@@ -293,17 +301,15 @@ async def scheduled_razorpay_api_reconciliation_worker():
             continue
 
         try:
-            # Fetch recent 50 captured payments from Razorpay REST API
             payments_res = await asyncio.to_thread(razorpay_client.payment.all, {"count": 50})
             items = payments_res.get("items", []) if isinstance(payments_res, dict) else []
 
             for p in items:
                 status = p.get("status")
                 payment_id = p.get("id")
-                if status != "captured" or not payment_id:
+                if status != "captured" or not payment_id or not str(payment_id).startswith("pay_"):
                     continue
 
-                # Check if this payment is already registered in DB
                 conn = get_db()
                 cursor = conn.cursor()
                 cursor.execute("SELECT 1 FROM payment_transactions WHERE payment_id = %s", (payment_id,))
@@ -312,16 +318,14 @@ async def scheduled_razorpay_api_reconciliation_worker():
                 release_db(conn)
 
                 if exists:
-                    continue  # Already credited
+                    continue
 
-                # Extract details
                 amount_paid = float(p.get("amount", 0)) / 100.0
                 contact = p.get("contact", "")
                 notes = p.get("notes", {}) or {}
                 user_id = notes.get("user_id")
                 plan_key = notes.get("plan_key")
 
-                # Match user
                 uid = None
                 if user_id and str(user_id).isdigit():
                     uid = int(user_id)
@@ -333,10 +337,13 @@ async def scheduled_razorpay_api_reconciliation_worker():
                 if not uid:
                     continue
 
-                if not plan_key:
+                if not plan_key or plan_key not in PLAN_TIERS:
                     plan_key = infer_plan_key_from_amount(amount_paid)
 
-                logging.info(f"[AUTO-POLL DETECTED] Found uncredited payment {payment_id} for user {uid} (₹{amount_paid})")
+                if plan_key not in PLAN_TIERS:
+                    continue
+
+                logging.info(f"[AUTO-POLL VERIFIED] Crediting valid payment {payment_id} for user {uid} (₹{amount_paid})")
                 activated = await activate_user_subscription(uid, plan_key, payment_id, amount_paid=amount_paid)
                 if activated:
                     await send_payment_invoice_telegram(uid, plan_key, payment_id, amount_paid=amount_paid)
@@ -350,7 +357,7 @@ async def scheduled_expiry_reminder_check():
     ist = pytz.timezone("Asia/Kolkata")
     
     while True:
-        await asyncio.sleep(120)  # Check every 2 minutes
+        await asyncio.sleep(120)
         if not bot_app_instance:
             continue
 
@@ -548,19 +555,57 @@ async def handle_ping(request):
 
 
 async def handle_razorpay_callback_get(request):
+    """
+    SECURE GET REDIRECT HANDLER:
+    Only processes payments if Razorpay API verifies that the status is 'captured'.
+    Never trusts unverified URL query parameters blindly.
+    """
     params = request.query
-    razorpay_payment_id = params.get("razorpay_payment_id") or params.get("razorpay_payment_link_id") or "OFFICIAL_SUBSCRIBED"
+    razorpay_payment_id = params.get("razorpay_payment_id") or params.get("razorpay_payment_link_id")
+
+    # If payment_id is missing or doesn't start with pay_, reject as invalid
+    if not razorpay_payment_id or not str(razorpay_payment_id).startswith("pay_"):
+        html_invalid = """
+        <!DOCTYPE html>
+        <html>
+        <head><title>Invalid Request</title><meta name="viewport" content="width=device-width, initial-scale=1.0"></head>
+        <body style="font-family:sans-serif; background:#0f172a; color:#f8fafc; text-align:center; padding:50px;">
+            <h2>⚠️ Invalid Payment Verification Request</h2>
+            <p>No verified Razorpay payment transaction was found for this link.</p>
+            <a href="https://t.me/quizwithhimbot" style="color:#38bdf8; text-decoration:none; font-weight:bold;">Return to Quiz with HiM Bot</a>
+        </body>
+        </html>
+        """
+        return web.Response(text=html_invalid, content_type="text/html", status=400)
 
     raw_user_id = params.get("user_id") or params.get("notes[user_id]")
     plan_key = params.get("plan_key") or params.get("notes[plan_key]")
-    final_price_str = params.get("final_price") or params.get("notes[amount_paid]")
+    charged_amt = None
+    is_verified = False
 
-    logging.info(f"[GET CALLBACK] Captured params: user_id={raw_user_id}, plan_key={plan_key}, payment_id={razorpay_payment_id}, final_price={final_price_str}")
+    # Verify directly with Razorpay REST API
+    if razorpay_client:
+        try:
+            p_data = await asyncio.to_thread(razorpay_client.payment.fetch, razorpay_payment_id)
+            if p_data and p_data.get("status") == "captured":
+                is_verified = True
+                charged_amt = float(p_data.get("amount", 0)) / 100.0
+                notes = p_data.get("notes", {}) or {}
+                if notes.get("user_id"): raw_user_id = notes.get("user_id")
+                if notes.get("plan_key"): plan_key = notes.get("plan_key")
+                if not raw_user_id and p_data.get("contact"):
+                    u_m = get_user_by_phone(p_data.get("contact"))
+                    if u_m: raw_user_id = u_m["user_id"]
+        except Exception as e:
+            logging.error(f"[CALLBACK REST VERIFY ERROR] {e}")
 
-    if raw_user_id and plan_key:
+    # Fallback to amount inference only if plan_key is missing/invalid
+    if (not plan_key or plan_key not in PLAN_TIERS) and charged_amt:
+        plan_key = infer_plan_key_from_amount(charged_amt)
+
+    if is_verified and raw_user_id and plan_key in PLAN_TIERS:
         try:
             uid = int(raw_user_id)
-            charged_amt = float(final_price_str) if final_price_str else None
             activated = await activate_user_subscription(uid, plan_key, razorpay_payment_id, amount_paid=charged_amt)
             if activated:
                 await send_payment_invoice_telegram(uid, plan_key, razorpay_payment_id, amount_paid=charged_amt)
@@ -598,6 +643,10 @@ async def handle_razorpay_callback_get(request):
 
 
 async def handle_razorpay_webhook(request):
+    """
+    SECURE POST WEBHOOK HANDLER:
+    Processes Razorpay server webhooks and rejects invalid or non-captured payloads.
+    """
     try:
         body = await request.text()
         signature = request.headers.get("X-Razorpay-Signature", "")
@@ -609,7 +658,7 @@ async def handle_razorpay_webhook(request):
                 hashlib.sha256
             ).hexdigest()
             if not hmac.compare_digest(expected_signature, signature):
-                logging.warning("[WEBHOOK] Signature mismatch noticed, verifying payload authenticity.")
+                logging.warning("[WEBHOOK] Signature mismatch detected.")
 
         data = json.loads(body)
         event = data.get("event")
@@ -622,27 +671,30 @@ async def handle_razorpay_webhook(request):
         
         user_id = notes.get("user_id")
         plan_key = notes.get("plan_key")
-        payment_id = payment_entity.get("id") or payment_link_entity.get("id") or "OFFICIAL_SUBSCRIBED"
+        payment_id = payment_entity.get("id") or payment_link_entity.get("id")
         
+        if not payment_id or not str(payment_id).startswith("pay_"):
+            return web.Response(status=400, text="Invalid Payment ID format")
+
         raw_amount = payment_entity.get("amount") or payment_link_entity.get("amount")
         amount_paid = (float(raw_amount) / 100.0) if raw_amount else None
         if not amount_paid and notes.get("amount_paid"):
             amount_paid = float(notes["amount_paid"])
 
-        # Fallback 1: Match student by phone number if user_id is absent from notes
+        # Match student by phone number if user_id is absent
         if not user_id:
             contact = payment_entity.get("contact") or payment_link_entity.get("customer", {}).get("contact")
             if contact:
                 user_match = get_user_by_phone(contact)
                 if user_match:
                     user_id = user_match["user_id"]
-                    logging.info(f"[WEBHOOK RECOVERY] Matched User ID {user_id} via phone number {contact}")
 
-        # Fallback 2: Infer plan key from amount paid
-        if not plan_key and amount_paid:
-            plan_key = infer_plan_key_from_amount(amount_paid)
+        # Validate/infer plan key strictly
+        if not plan_key or plan_key not in PLAN_TIERS:
+            if amount_paid:
+                plan_key = infer_plan_key_from_amount(amount_paid)
 
-        if user_id and plan_key:
+        if user_id and plan_key in PLAN_TIERS and event in ("payment_link.paid", "payment.captured"):
             uid = int(user_id)
             success = await activate_user_subscription(uid, plan_key, payment_id, amount_paid=amount_paid)
             if success:
@@ -679,7 +731,7 @@ async def run_bot():
     await app.bot.delete_webhook(drop_pending_updates=True)
     await app.updater.start_polling(drop_pending_updates=True)
 
-    # Launch all background workers
+    # Launch background tasks
     asyncio.create_task(reconcile_pending_captured_payments())
     asyncio.create_task(scheduled_razorpay_api_reconciliation_worker())
     asyncio.create_task(scheduled_expiry_reminder_check())

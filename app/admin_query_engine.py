@@ -14,10 +14,13 @@ IST = pytz.timezone("Asia/Kolkata")
 
 def parse_and_execute_admin_query(query_text: str, context_correction: str = None) -> dict:
     """
-    OMNISCIENT ADMIN INTELLIGENCE ENGINE (GOOGLE-ASSISTANT LEVEL):
-    Performs deep-dive data extraction across all database tables (users, payment_transactions,
-    quiz_attempts, student_queries, saved_questions, student_feedback, user_activity_time).
-    Handles phone numbers, specific user lookups, custom filters, and self-correction.
+    ULTRA-POWERFUL OMNISCIENT ADMIN INTELLIGENCE ENGINE:
+    Gives the admin unrestricted crawling, filtering, and cross-table aggregation access 
+    across ALL PostgreSQL tables (`users`, `payment_transactions`, `quiz_attempts`, 
+    `student_queries`, `saved_questions`, `student_feedback`, `user_activity_time`, 
+    `command_analytics`, `blocked_bot_users`, `pdf_generation_logs`).
+    
+    Guarantees returning ALL matching records instead of a single result.
     """
     q_lower = query_text.lower().strip()
     if context_correction:
@@ -25,80 +28,83 @@ def parse_and_execute_admin_query(query_text: str, context_correction: str = Non
 
     now_ist = get_ist_now()
 
-    # -------------------------------------------------------------
-    # INTENT 1: PHONE NUMBER & CONTACT LOOKUP
-    # -------------------------------------------------------------
+    # -------------------------------------------------------------------------
+    # 1. UNIVERSAL MULTI-RECORD PHONE & CONTACT SEARCH
+    # -------------------------------------------------------------------------
     if "phone" in q_lower or "mobile" in q_lower or "contact" in q_lower or "number" in q_lower:
-        # Check if looking for a specific user or all phone numbers
         conn = get_db()
         cursor = conn.cursor(cursor_factory=RealDictCursor)
         try:
-            # Extract potential name if specified
             search_term = q_lower
-            for w in ["phone", "mobile", "number", "contact", "of", "what", "is", "the", "give", "me", "show", "all", "users", "student"]:
+            for w in ["phone", "mobile", "number", "contact", "of", "what", "is", "the", "give", "me", "show", "all", "users", "student", "contacts"]:
                 search_term = search_term.replace(w, "")
             search_term = search_term.strip()
 
             if len(search_term) >= 2:
                 cursor.execute("""
-                    SELECT user_id, student_id, full_name, phone_number, target_exam, created_at 
+                    SELECT user_id, student_id, full_name, phone_number, target_exam, state, created_at 
                     FROM users 
-                    WHERE LOWER(full_name) LIKE LOWER(%s) OR LOWER(student_id) LIKE LOWER(%s) OR phone_number LIKE %s
+                    WHERE LOWER(full_name) LIKE LOWER(%s) 
+                       OR LOWER(student_id) LIKE LOWER(%s) 
+                       OR phone_number LIKE %s
                     ORDER BY user_id DESC
                 """, (f"%{search_term}%", f"%{search_term}%", f"%{search_term}%"))
             else:
-                cursor.execute("SELECT user_id, student_id, full_name, phone_number, target_exam, created_at FROM users ORDER BY user_id DESC LIMIT 50")
+                cursor.execute("SELECT user_id, student_id, full_name, phone_number, target_exam, state, created_at FROM users ORDER BY user_id DESC")
             
             rows = cursor.fetchall()
         except Exception as e:
-            logger.error(f"[AI QUERY PHONE ERROR] {e}")
+            logger.error(f"[OMNISCIENT PHONE QUERY ERROR] {e}")
             rows = []
         finally:
             cursor.close()
             release_db(conn)
 
-        title = "Student Phone Numbers & Contact Directory"
-        columns = ["S.No.", "Student ID", "Full Name", "Phone Number", "Target Exam", "Registered At"]
+        title = "Omniscient Phone & Contact Directory Ledger"
+        columns = ["S.No.", "Telegram ID", "Student ID", "Full Name", "Phone Number", "Target Exam", "State", "Registered At"]
         pdf_rows = []
         tg_lines = [
-            "📱 **OMNISCIENT INTEL: PHONE & CONTACT DIRECTORY**\n"
+            "📱 **OMNISCIENT INTEL: CONTACT DIRECTORY**\n"
             "━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\n"
-            f"📊 **Matching Records Found:** `{len(rows)} Students`\n"
+            f"📊 **Total Matching Records Found:** `{len(rows)} Students`\n"
             "━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\n"
         ]
 
         for idx, r in enumerate(rows, start=1):
-            sid = r.get("student_id") or f"USER_{r['user_id']}"
+            uid = r.get("user_id", "N/A")
+            sid = r.get("student_id") or f"USER_{uid}"
             name = r.get("full_name") or "Unknown"
             phone = r.get("phone_number") or "N/A"
             exam = r.get("target_exam") or "N/A"
+            state = r.get("state") or "N/A"
             reg = str(r.get("created_at", "N/A")).split(" ")[0]
 
-            tg_lines.append(f"**{idx}. {name}** (`{sid}`)\n   📱 Phone: `{phone}` | Exam: `{exam}`")
-            pdf_rows.append([str(idx), str(sid), str(name), str(phone), str(exam), str(reg)])
+            tg_lines.append(f"**{idx}. {name}** (`{sid}` | ID: `{uid}`)\n   📱 Phone: `{phone}` | Exam: `{exam}` | State: `{state}`")
+            pdf_rows.append([str(idx), str(uid), str(sid), str(name), str(phone), str(exam), str(state), str(reg)])
 
         if not rows:
             tg_lines.append("ℹ️ *No matching phone records found in database.*")
 
-        tg_lines.append("\n━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\n📥 *Download contact ledger as PDF below:*")
+        tg_lines.append("\n━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\n📥 *Download complete contact ledger as PDF below:*")
 
         return {
             "title": title,
+            "total_records": len(rows),
             "summary_markdown": "\n".join(tg_lines),
             "columns": columns,
             "rows": pdf_rows,
-            "kpis": {"Matching Contacts": str(len(rows)), "Query": query_text}
+            "kpis": {"Total Records": str(len(rows)), "Query Scope": "All Matching Users"}
         }
 
-    # -------------------------------------------------------------
-    # INTENT 2: SPECIFIC STUDENT DEEP-DIVE DOSSIER
-    # -------------------------------------------------------------
-    specific_keywords = ["details of", "profile of", "student", "user", "info for", "search user", "all info"]
-    is_specific_lookup = any(k in q_lower for k in specific_keywords) or (len(q_lower.split()) <= 4 and not any(w in q_lower for w in ["revenue", "summary", "total", "days data", "all time", "phone", "mobile"]))
+    # -------------------------------------------------------------------------
+    # 2. MULTI-RECORD STUDENT DOSSIER SEARCH (Returns ALL matches instead of 1)
+    # -------------------------------------------------------------------------
+    specific_keywords = ["details of", "profile of", "student", "user", "info for", "search user", "all info", "who is"]
+    is_specific_lookup = any(k in q_lower for k in specific_keywords) or (len(q_lower.split()) <= 4 and not any(w in q_lower for w in ["revenue", "summary", "total", "days data", "all time", "phone", "mobile", "paid", "register", "expire", "inactive"]))
 
     if is_specific_lookup:
         clean_term = q_lower
-        for w in ["details", "of", "profile", "student", "user", "info", "for", "search", "tell me", "show", "all"]:
+        for w in ["details", "of", "profile", "student", "user", "info", "for", "search", "tell me", "show", "all", "who", "is"]:
             clean_term = clean_term.replace(w, "")
         clean_term = clean_term.strip()
 
@@ -111,7 +117,7 @@ def parse_and_execute_admin_query(query_text: str, context_correction: str = Non
                    OR LOWER(student_id) LIKE LOWER(%s) 
                    OR phone_number LIKE %s 
                    OR CAST(user_id AS TEXT) LIKE %s
-                LIMIT 5
+                ORDER BY user_id DESC
             """, (f"%{clean_term}%", f"%{clean_term}%", f"%{clean_term}%", f"%{clean_term}%"))
             matched_users = cursor.fetchall()
         except Exception:
@@ -121,73 +127,46 @@ def parse_and_execute_admin_query(query_text: str, context_correction: str = Non
             release_db(conn)
 
         if matched_users:
-            u = matched_users[0]
-            uid = u['user_id']
-            sid = u.get('student_id', f"USER_{uid}")
-
-            conn = get_db()
-            cursor = conn.cursor(cursor_factory=RealDictCursor)
-            cursor.execute("SELECT COUNT(*) as test_count, COALESCE(SUM(questions_attempted),0) as tot_qs, COALESCE(SUM(correct_answers),0) as tot_corr FROM quiz_attempts WHERE user_id = %s", (uid,))
-            q_stats = cursor.fetchone()
-
-            cursor.execute("SELECT plan_name, amount_paid, payment_id, created_at FROM payment_transactions WHERE user_id = %s ORDER BY id DESC LIMIT 5", (uid,))
-            pay_rows = cursor.fetchall()
-            cursor.close()
-            release_db(conn)
-
-            title = f"Student Dossier: {u['full_name']} ({sid})"
-            columns = ["Data Field", "Student Record Value"]
-            pdf_rows = [
-                ["Full Name", str(u.get('full_name'))],
-                ["Student ID", str(sid)],
-                ["Telegram ID", str(uid)],
-                ["Phone Number", str(u.get('phone_number', 'N/A'))],
-                ["Target Exam", str(u.get('target_exam', 'N/A'))],
-                ["DOB / Age", f"{u.get('dob', 'N/A')} ({u.get('age', 'N/A')} yrs)"],
-                ["State / Country", f"{u.get('state', 'N/A')}, {u.get('country', 'India')}"],
-                ["Secret PIN", str(u.get('pin', 'Not Set'))],
-                ["Security Q / A", f"{u.get('security_question', 'N/A')} -> {u.get('security_answer', 'N/A')}"],
-                ["Paid Question Balance", f"{u.get('paid_question_balance', 20)} Qs/Day"],
-                ["VIP Pass Expiry", str(u.get('vip_pass_expiry', 'N/A'))],
-                ["Account Status", "BANNED 🛑" if u.get('is_banned') else "ACTIVE 🟢"],
-                ["Total Quizzes Solved", str(q_stats.get('test_count', 0))],
-                ["Total Questions Attempted", str(q_stats.get('tot_qs', 0))],
-                ["Correct Answers", str(q_stats.get('tot_corr', 0))],
-                ["Registered At", str(u.get('created_at', 'N/A'))]
-            ]
-
-            pay_summary = ", ".join([f"{p['plan_name']} (₹{p['amount_paid']})" for p in pay_rows]) if pay_rows else "None"
-
+            title = f"Omniscient Student Search Results ({len(matched_users)} Found)"
+            columns = ["S.No.", "Telegram ID", "Student ID", "Full Name", "Phone", "Target Exam", "Quota", "Status"]
+            pdf_rows = []
             tg_lines = [
-                f"👤 **OMNISCIENT DOSSIER: {u['full_name']}** (`{sid}`)\n"
+                f"👤 **OMNISCIENT STUDENT SEARCH RESULTS**\n"
                 f"━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\n"
-                f"🆔 **Telegram ID:** `{uid}`\n"
-                f"📱 **Phone Number:** `{u.get('phone_number', 'N/A')}`\n"
-                f"🎯 **Target Exam:** `{u.get('target_exam', 'N/A')}`\n"
-                f"📍 **Location:** `{u.get('state', 'N/A')}, India`\n"
-                f"🎂 **DOB / Age:** `{u.get('dob', 'N/A')}` (`{u.get('age', 'N/A')} yrs`)\n"
-                f"🔑 **Secret PIN:** `{u.get('pin', 'Not Set')}`\n"
-                f"🛡 **Security Q:** *\"{u.get('security_question', 'N/A')}\"*\n"
-                f"🛡 **Security Ans:** `{u.get('security_answer', 'N/A')}`\n"
-                f"💳 **Active Quota:** `{u.get('paid_question_balance', 20)} Qs/Day`\n"
-                f"⏳ **VIP Pass Expiry:** `{u.get('vip_pass_expiry', 'N/A')}`\n"
-                f"📦 **Payment History:** `{pay_summary}`\n"
-                f"📊 **Quizzes Completed:** `{q_stats.get('test_count', 0)}` | **Correct:** `{q_stats.get('tot_corr', 0)}`\n"
+                f"📊 **Matching Scholars:** `{len(matched_users)} Found`\n"
                 f"━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\n"
-                f"📥 *Download student dossier as PDF:* "
             ]
+
+            for idx, u in enumerate(matched_users, start=1):
+                uid = u['user_id']
+                sid = u.get('student_id', f"USER_{uid}")
+                name = u.get('full_name', 'Unknown')
+                phone = u.get('phone_number', 'N/A')
+                exam = u.get('target_exam', 'N/A')
+                quota = f"{u.get('paid_question_balance', 20)} Qs/D"
+                status = "BANNED 🛑" if u.get('is_banned') else "ACTIVE 🟢"
+
+                tg_lines.append(
+                    f"**{idx}. {name}** (`{sid}` | ID: `{uid}`)\n"
+                    f"   📱 Phone: `{phone}` | Exam: `{exam}` | Quota: `{quota}` | Status: `{status}`\n"
+                    f"   🔑 PIN: `{u.get('pin','N/A')}` | Expiry: `{u.get('vip_pass_expiry','N/A')}`"
+                )
+                pdf_rows.append([str(idx), str(uid), str(sid), str(name), str(phone), str(exam), str(quota), status])
+
+            tg_lines.append("\n━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\n📥 *Download complete list as PDF below:*")
 
             return {
                 "title": title,
+                "total_records": len(matched_users),
                 "summary_markdown": "\n".join(tg_lines),
                 "columns": columns,
                 "rows": pdf_rows,
-                "kpis": {"Student Name": u['full_name'], "Student ID": sid, "Phone": str(u.get('phone_number', 'N/A'))}
+                "kpis": {"Matched Students": str(len(matched_users))}
             }
 
-    # -------------------------------------------------------------
-    # INTENT 3: NEW REGISTRATIONS + PAID PLANS (Timeframe parsing)
-    # -------------------------------------------------------------
+    # -------------------------------------------------------------------------
+    # 3. NEW REGISTRATIONS + PAID PLANS (Multi-Record Ledger)
+    # -------------------------------------------------------------------------
     days_match = re.search(r"(\d+)\s*day", q_lower)
     days_val = int(days_match.group(1)) if days_match else (3 if "3 day" in q_lower else 7)
 
@@ -222,35 +201,36 @@ def parse_and_execute_admin_query(query_text: str, context_correction: str = Non
 
         total_rev = sum([float(r.get("amount_paid", 0) or 0) for r in filtered])
         title = f"Newly Registered Students with Paid Plans (Last {days_val} Days)"
-        columns = ["S.No.", "Student ID", "Full Name", "Phone", "Target Exam", "Pack Name", "Amount", "Registered At"]
+        columns = ["S.No.", "Telegram ID", "Student ID", "Full Name", "Phone", "Target Exam", "Pack Name", "Amount", "Registered At"]
         pdf_rows = []
         tg_lines = [
             f"🧠 **OMNISCIENT INTEL: NEW PAID STUDENTS ({days_val} DAYS)**\n"
             f"━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\n"
-            f"📊 **Total New Paid Users:** `{len(filtered)}`\n"
+            f"📊 **Total New Paid Users Found:** `{len(filtered)}`\n"
             f"💰 **Total Revenue Generated:** `₹{total_rev} INR`\n"
             f"━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\n"
         ]
 
         for idx, r in enumerate(filtered, start=1):
-            sid = r.get("student_id") or f"USER_{r['user_id']}"
+            uid = r.get("user_id", "N/A")
+            sid = r.get("student_id") or f"USER_{uid}"
             p_name = r.get("plan_name") or "VIP Pack"
             amt = r.get("amount_paid", 0)
             reg_date = str(r.get("created_at", "N/A")).split(" ")[0]
             phone = str(r.get("phone_number", "N/A"))
 
-            tg_lines.append(f"**{idx}. {r['full_name']}** (`{sid}`)\n   📱 Phone: `{phone}` | Plan: `{p_name}` (₹{amt})")
-            pdf_rows.append([str(idx), str(sid), str(r['full_name']), str(phone), str(r.get('target_exam', 'N/A')), str(p_name), f"Rs. {amt}", str(reg_date)])
+            tg_lines.append(f"**{idx}. {r['full_name']}** (`{sid}` | ID: `{uid}`)\n   📱 Phone: `{phone}` | Plan: `{p_name}` (₹{amt})")
+            pdf_rows.append([str(idx), str(uid), str(sid), str(r['full_name']), str(phone), str(r.get('target_exam', 'N/A')), str(p_name), f"Rs. {amt}", str(reg_date)])
 
         if not filtered:
             tg_lines.append("ℹ️ *No new paid student registrations found in this timeframe.*")
 
         tg_lines.append("\n📥 *Download PDF:*")
-        return {"title": title, "summary_markdown": "\n".join(tg_lines), "columns": columns, "rows": pdf_rows, "kpis": {"Timeframe": f"Last {days_val} Days", "New Paid Users": str(len(filtered)), "Revenue": f"₹{total_rev} INR"}}
+        return {"title": title, "total_records": len(filtered), "summary_markdown": "\n".join(tg_lines), "columns": columns, "rows": pdf_rows, "kpis": {"Timeframe": f"Last {days_val} Days", "New Paid Users": str(len(filtered)), "Revenue": f"₹{total_rev} INR"}}
 
-    # -------------------------------------------------------------
-    # INTENT 4: UPCOMING PASS EXPIRATIONS
-    # -------------------------------------------------------------
+    # -------------------------------------------------------------------------
+    # 4. UPCOMING PASS EXPIRATIONS
+    # -------------------------------------------------------------------------
     elif "expire" in q_lower or "expiring" in q_lower or "expiration" in q_lower:
         conn = get_db()
         cursor = conn.cursor(cursor_factory=RealDictCursor)
@@ -280,7 +260,7 @@ def parse_and_execute_admin_query(query_text: str, context_correction: str = Non
                 pass
 
         title = f"VIP Subscriptions Expiring within Next {days_val} Days"
-        columns = ["S.No.", "Student ID", "Full Name", "Phone", "Daily Quota", "Hours Left", "Exact Expiry"]
+        columns = ["S.No.", "Telegram ID", "Student ID", "Full Name", "Phone", "Daily Quota", "Hours Left", "Exact Expiry"]
         pdf_rows = []
         tg_lines = [
             f"⏳ **OMNISCIENT INTEL: EXPIRING PASSES ({days_val} DAYS)**\n"
@@ -289,20 +269,21 @@ def parse_and_execute_admin_query(query_text: str, context_correction: str = Non
             f"━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\n"
         ]
 
-        for idx, u in enumerate(expiring_list[:20], start=1):
-            sid = u.get("student_id") or f"USER_{u['user_id']}"
-            tg_lines.append(f"**{idx}. {u['full_name']}** (`{sid}`) — Phone: `{u.get('phone_number')}` | Left: `{u['hours_left']}h`")
-            pdf_rows.append([str(idx), str(sid), str(u['full_name']), str(u.get('phone_number', 'N/A')), f"{u['paid_question_balance']} Qs", f"{u['hours_left']}h", str(u['vip_pass_expiry'])])
+        for idx, u in enumerate(expiring_list, start=1):
+            uid = u.get("user_id", "N/A")
+            sid = u.get("student_id") or f"USER_{uid}"
+            tg_lines.append(f"**{idx}. {u['full_name']}** (`{sid}` | ID: `{uid}`)\n   📱 Phone: `{u.get('phone_number')}` | Left: `{u['hours_left']}h` (Expires: `{u['vip_pass_expiry']}`)")
+            pdf_rows.append([str(idx), str(uid), str(sid), str(u['full_name']), str(u.get('phone_number', 'N/A')), f"{u['paid_question_balance']} Qs", f"{u['hours_left']}h", str(u['vip_pass_expiry'])])
 
         if not expiring_list:
             tg_lines.append("🎉 *Zero subscriptions expiring in this window.*")
 
         tg_lines.append("\n📥 *Download PDF below:*")
-        return {"title": title, "summary_markdown": "\n".join(tg_lines), "columns": columns, "rows": pdf_rows, "kpis": {"Expiring Soon": str(len(expiring_list))}}
+        return {"title": title, "total_records": len(expiring_list), "summary_markdown": "\n".join(tg_lines), "columns": columns, "rows": pdf_rows, "kpis": {"Expiring Soon": str(len(expiring_list))}}
 
-    # -------------------------------------------------------------
-    # INTENT 5: REVENUE & FINANCIAL BREAKDOWN
-    # -------------------------------------------------------------
+    # -------------------------------------------------------------------------
+    # 5. REVENUE & FINANCIAL BREAKDOWN
+    # -------------------------------------------------------------------------
     elif "revenue" in q_lower or "earning" in q_lower or "collection" in q_lower or "sales" in q_lower:
         conn = get_db()
         cursor = conn.cursor(cursor_factory=RealDictCursor)
@@ -333,22 +314,39 @@ def parse_and_execute_admin_query(query_text: str, context_correction: str = Non
             pdf_rows.append([str(idx), str(r.get('plan_name')), str(r.get('plan_key')), str(r.get('txn_count')), f"Rs. {r.get('total_amount')}"])
 
         tg_lines.append("\n📥 *Download PDF:*")
-        return {"title": title, "summary_markdown": "\n".join(tg_lines), "columns": columns, "rows": pdf_rows, "kpis": {"Gross Revenue": f"₹{grand_total} INR"}}
+        return {"title": title, "total_records": len(rows), "summary_markdown": "\n".join(tg_lines), "columns": columns, "rows": pdf_rows, "kpis": {"Gross Revenue": f"₹{grand_total} INR"}}
 
-    # -------------------------------------------------------------
-    # INTENT 6: OMNISCIENT PLATFORM FALLBACK
-    # -------------------------------------------------------------
+    # -------------------------------------------------------------------------
+    # 6. OMNISCIENT PLATFORM CRAWLER (Lists ALL users or matches query)
+    # -------------------------------------------------------------------------
     else:
         conn = get_db()
         cursor = conn.cursor(cursor_factory=RealDictCursor)
+        
+        # Check if query contains a specific term to search all users
+        search_kw = q_lower
+        for w in ["all", "list", "users", "students", "show", "give", "me", "what", "are"]:
+            search_kw = search_kw.replace(w, "")
+        search_kw = search_kw.strip()
+
+        if len(search_kw) >= 3:
+            cursor.execute("""
+                SELECT * FROM users 
+                WHERE LOWER(full_name) LIKE LOWER(%s) 
+                   OR LOWER(target_exam) LIKE LOWER(%s)
+                   OR LOWER(state) LIKE LOWER(%s)
+                ORDER BY user_id DESC LIMIT 100
+            """, (f"%{search_kw}%", f"%{search_kw}%", f"%{search_kw}%"))
+        else:
+            cursor.execute("SELECT * FROM users ORDER BY user_id DESC LIMIT 50")
+        
+        all_matched_users = cursor.fetchall()
+        
         cursor.execute("SELECT COUNT(*) as total_users, COUNT(CASE WHEN paid_question_balance > 20 THEN 1 END) as paid_count FROM users")
         u_stats = cursor.fetchone()
 
         cursor.execute("SELECT SUM(amount_paid) as total_rev FROM payment_transactions WHERE plan_key != 'FREE_DEMO'")
         rev_stats = cursor.fetchone()
-
-        cursor.execute("SELECT target_exam, COUNT(*) as count FROM users GROUP BY target_exam ORDER BY count DESC LIMIT 8")
-        top_exams = cursor.fetchall()
         cursor.close()
         release_db(conn)
 
@@ -356,27 +354,34 @@ def parse_and_execute_admin_query(query_text: str, context_correction: str = Non
         paid_u = u_stats.get("paid_count", 0)
         tot_rev = float(rev_stats.get("total_rev", 0) or 0)
 
-        title = "Omniscient Platform Database Intelligence Summary"
-        columns = ["Rank", "Target Exam Category", "Student Count", "Share"]
+        title = f"Omniscient Database Crawler Results ({len(all_matched_users)} Records)"
+        columns = ["S.No.", "Telegram ID", "Student ID", "Full Name", "Phone", "Target Exam", "State", "Quota"]
         pdf_rows = []
         tg_lines = [
-            f"🧠 **OMNISCIENT ADMIN AI SEARCH RESULT**\n"
-            f"*(Query: \"{query_text}\")*\n"
+            f"🧠 **OMNISCIENT ADMIN CRAWLER RESULTS**\n"
+            f"*(Query: \"{query_text}\" — Showing {len(all_matched_users)} records)*\n"
             f"━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\n"
-            f"👥 **Total Registered Scholars:** `{total_u}`\n"
-            f"💳 **VIP Active Paid Subscribers:** `{paid_u}`\n"
-            f"💰 **Gross Lifetime Revenue:** `₹{tot_rev} INR`\n"
+            f"👥 **Total Registered Scholars:** `{total_u}` | 💳 **Paid:** `{paid_u}` | 💰 **Rev:** `₹{tot_rev}`\n"
             f"━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\n"
-            f"🎯 **Top Target Exam Demographics:**\n"
         ]
 
-        for idx, e in enumerate(top_exams, start=1):
-            pct = round((e['count'] / max(1, total_u)) * 100, 1)
-            tg_lines.append(f"  {idx}. **{e['target_exam']}**: `{e['count']} students` ({pct}%)")
-            pdf_rows.append([str(idx), str(e['target_exam']), str(e['count']), f"{pct}%"])
+        for idx, u in enumerate(all_matched_users, start=1):
+            uid = u.get("user_id")
+            sid = u.get("student_id") or f"USER_{uid}"
+            name = u.get("full_name") or "Unknown"
+            phone = u.get("phone_number") or "N/A"
+            exam = u.get("target_exam") or "N/A"
+            state = u.get("state") or "N/A"
+            quota = f"{u.get('paid_question_balance', 20)} Qs"
+
+            tg_lines.append(f"**{idx}. {name}** (`{sid}` | ID: `{uid}`)\n   📱 Phone: `{phone}` | Exam: `{exam}` | State: `{state}`")
+            pdf_rows.append([str(idx), str(uid), str(sid), str(name), str(phone), str(exam), str(state), quota])
+
+        if not all_matched_users:
+            tg_lines.append("ℹ️ *No database records matched this query.*")
 
         tg_lines.append("\n📥 *Download complete database report as PDF:*")
-        return {"title": title, "summary_markdown": "\n".join(tg_lines), "columns": columns, "rows": pdf_rows, "kpis": {"Total Users": str(total_u), "Revenue": f"₹{tot_rev} INR"}}
+        return {"title": title, "total_records": len(all_matched_users), "summary_markdown": "\n".join(tg_lines), "columns": columns, "rows": pdf_rows, "kpis": {"Total Users": str(total_u), "Matched Records": str(len(all_matched_users)), "Revenue": f"₹{tot_rev} INR"}}
 
 
 def generate_admin_intelligence_pdf(query_result: dict) -> str:

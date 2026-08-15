@@ -1,5 +1,6 @@
 import os
 import json
+import logging
 import traceback
 import xml.sax.saxutils as saxutils
 import urllib.request
@@ -11,6 +12,8 @@ from psycopg2.extras import RealDictCursor
 from app.config import USER_PROFILES_DIR, BASE_DIR
 from app.database import get_user_profile, get_db, release_db
 from app.stats import calculate_user_rank, calculate_user_percentile
+
+logger = logging.getLogger(__name__)
 
 # Attempt WeasyPrint Import for Native Unicode Shaping & Perfect Hindi Rendering
 HAS_WEASYPRINT = False
@@ -60,11 +63,6 @@ def clean_str(text) -> str:
 
 
 def generate_html_report(user_profile: dict, attempts: list, saved_qs: list, rank: str, percentile: float, filter_mode: str) -> str:
-    """
-    Builds a pixel-perfect HTML document with Google Noto Sans Devanagari font CSS, clickable logos, 
-    enhanced analytics cover page, non-overlapping bar graphs with numerical values, serial numbers, 
-    timestamps as the last column, repeating table headers across pages (<thead>), and clickable footer links.
-    """
     now_date = datetime.now()
     one_month_ago = now_date - timedelta(days=30)
     one_month_ago_str = one_month_ago.strftime("%Y-%m-%d")
@@ -173,8 +171,6 @@ def generate_html_report(user_profile: dict, attempts: list, saved_qs: list, ran
         ".cover-page { page-break-after: always; }",
         ".analytics-container { width: 100%; margin-top: 12px; border-collapse: collapse; }",
         ".analytics-box { border: 0.5px solid #CBD5E1; background-color: #F8FAFC; padding: 12px; text-align: center; vertical-align: middle; }",
-        
-        # Position fixed repeats on EVERY SINGLE PAGE at bottom margin area
         ".pdf-footer { position: fixed; bottom: -15mm; left: 0; width: 100%; text-align: center; border-top: 0.5px solid #CBD5E1; padding-top: 6px; font-size: 8.5pt; font-family: 'Times New Roman', serif; white-space: nowrap; z-index: 1000; }",
         ".footer-link { color: #0284C7; font-weight: bold; text-decoration: underline; margin: 0 3px; display: inline-block; vertical-align: middle; }",
         ".footer-icon { width: 12px; height: 12px; vertical-align: middle; margin-right: 3px; display: inline-block; }",
@@ -195,7 +191,6 @@ def generate_html_report(user_profile: dict, attempts: list, saved_qs: list, ran
         "<div class='wm-text' style='top: 92%; left: 60%;'>Quiz with HiM</div>",
         "</div>",
         
-        # REPEATING HYPERLINKED FOOTER WITH EXACT SVG ICONS
         "<div class='pdf-footer'>",
         "<a href='https://instagram.com/Learnwithhimm' class='footer-link' target='_blank'><svg class='footer-icon' viewBox='0 0 24 24' fill='none' stroke='#0284C7' stroke-width='2.2' stroke-linecap='round' stroke-linejoin='round'><rect x='2' y='2' width='20' height='20' rx='5' ry='5'></rect><path d='M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z'></path><line x1='17.5' y1='6.5' x2='17.51' y2='6.5'></line></svg>Insta: @Learnwithhimm</a>",
         "<span class='pipe'>|</span>",
@@ -218,7 +213,6 @@ def generate_html_report(user_profile: dict, attempts: list, saved_qs: list, ran
         "<br/>",
         "<h2 style='text-align: center; color: #1E3A8A; font-family: \"Times New Roman\", serif; font-size: 20px; margin-bottom: 15px;'>OFFICIAL STUDENT INTRODUCTION & PROFILE REPORT</h2>",
         
-        # Profile Table
         "<table class='data-table prof-table' style='font-size: 12px;'>",
         f"<tr><td class='prof-label' style='padding: 7px;'>Student Name:</td><td style='padding: 7px;'>{full_name_clean}</td><td class='prof-label' style='padding: 7px;'>Student ID:</td><td style='padding: 7px;'>{sid_val}</td></tr>",
         f"<tr><td class='prof-label' style='padding: 7px;'>Target Exam:</td><td style='padding: 7px;'>{target_exam_clean}</td><td class='prof-label' style='padding: 7px;'>Location:</td><td style='padding: 7px;'>{location_clean}</td></tr>",
@@ -228,11 +222,9 @@ def generate_html_report(user_profile: dict, attempts: list, saved_qs: list, ran
         f"<tr><td class='prof-label' style='padding: 7px;'>Active Plan:</td><td style='padding: 7px;'>{user_plan}</td><td class='prof-label' style='padding: 7px;'>Overall Progress:</td><td style='padding: 7px;'>{user_progress}</td></tr>",
         "</table>",
 
-        # Analytics Section
         "<h3 style='font-size: 13px; margin-top: 18px;'>📈 PERFORMANCE & ANALYTICS OVERVIEW</h3>",
         "<table class='analytics-container'>",
         "<tr>",
-        # Box 1: Pie Charts
         f"<td class='analytics-box' style='width: 48%;'>"
         f"<div style='font-weight: bold; font-size: 12px; color: #1E3A8A; margin-bottom: 8px;'>Percentile & Accuracy Gauges</div>"
         f"<div style='display: inline-block; margin-right: 15px; text-align: center;'>"
@@ -254,21 +246,17 @@ def generate_html_report(user_profile: dict, attempts: list, saved_qs: list, ran
         f"<div style='font-size: 10.5px; color: #64748B; margin-top: 6px;'>Standing ahead of {percentile}% of aspirants with {acc}% accuracy</div>"
         f"</td>",
 
-        # Box 2: Bar Graph with Numerical Values on Bars
         f"<td class='analytics-box' style='width: 52%;'>"
         f"<div style='font-weight: bold; font-size: 12px; color: #1E3A8A; margin-bottom: 8px;'>Question Attempt Breakdown</div>"
         f"<svg width='220' height='130' viewBox='0 0 220 130'>"
         f"<line x1='20' y1='105' x2='205' y2='105' stroke='#CBD5E1' stroke-width='1'></line>"
         f"<line x1='20' y1='60' x2='205' y2='60' stroke='#E2E8F0' stroke-width='0.5' stroke-dasharray='3'></line>"
-        # Bar 1: Attempted
         f"<rect x='35' y='{105 - bar_h_q}' width='35' height='{bar_h_q}' fill='#38BDF8' rx='4'></rect>"
         f"<text x='52.5' y='{100 - bar_h_q}' text-anchor='middle' font-size='9.5' font-weight='bold' fill='#0F172A'>{total_qs}</text>"
         f"<text x='52.5' y='117' text-anchor='middle' font-size='9.5' font-weight='bold' fill='#334155'>Attempted</text>"
-        # Bar 2: Correct
         f"<rect x='95' y='{105 - bar_h_c}' width='35' height='{bar_h_c}' fill='#16A34A' rx='4'></rect>"
         f"<text x='112.5' y='{100 - bar_h_c}' text-anchor='middle' font-size='9.5' font-weight='bold' fill='#0F172A'>{total_correct}</text>"
         f"<text x='112.5' y='117' text-anchor='middle' font-size='9.5' font-weight='bold' fill='#334155'>Correct</text>"
-        # Bar 3: Wrong
         f"<rect x='155' y='{105 - bar_h_w}' width='35' height='{bar_h_w}' fill='#EF4444' rx='4'></rect>"
         f"<text x='172.5' y='{100 - bar_h_w}' text-anchor='middle' font-size='9.5' font-weight='bold' fill='#0F172A'>{total_wrong}</text>"
         f"<text x='172.5' y='117' text-anchor='middle' font-size='9.5' font-weight='bold' fill='#334155'>Wrong</text>"
@@ -314,7 +302,7 @@ def generate_html_report(user_profile: dict, attempts: list, saved_qs: list, ran
             html_lines.append(f"<tr><td style='text-align:center;'>{s_no}</td><td>{q_desc}</td><td>{clean_str(ans_txt)}</td><td>{saved_time}</td></tr>")
             s_no += 1
         
-        html_lines.append("tbody></table>")
+        html_lines.append("</tbody></table>")
     else:
         html_lines.append(f"<h3>ACADEMIC PERFORMANCE SUMMARY — {summary_title}</h3>")
         html_lines.append("<table class='data-table'>")
@@ -466,12 +454,109 @@ def generate_student_pdf_report(user_id: int, filter_mode: str = "last_1_month_d
                 weasyprint.HTML(string=html_content).write_pdf(pdf_path)
                 if os.path.exists(pdf_path) and os.path.getsize(pdf_path) > 500:
                     return pdf_path
-            except Exception as wp_err:
+            except Exception:
                 pass
 
-        return f"ERROR: WeasyPrint compilation failed. Please verify that your Aptfile and system packages are properly built on your server."
+        return f"ERROR: WeasyPrint compilation failed. Please verify that your system packages are properly built on your server."
 
-    except Exception as e:
+    except Exception:
         if conn:
             release_db(conn)
         return f"ERROR_DETAILS:\n{traceback.format_exc()}"
+
+
+def generate_admin_query_dataset_pdf(title: str, columns: list, rows: list, kpis: dict = None) -> str:
+    """
+    Dynamic PDF generator for administrative AI queries and data intelligence searches.
+    Generates a full-featured table ledger with executive KPI summary and branding.
+    """
+    now_dt = datetime.now()
+    now_str = now_dt.strftime("%d %b %Y, %I:%M %p IST")
+    safe_title = "".join([c if c.isalnum() else "_" for c in title])[:30]
+    filename = f"Admin_Query_{safe_title}_{int(now_dt.timestamp())}.pdf"
+    pdf_path = os.path.join(USER_PROFILES_DIR, filename)
+
+    logo_left_path = os.path.abspath(os.path.join(BASE_DIR, "assets", "logo.png"))
+    logo_right_path = os.path.abspath(os.path.join(BASE_DIR, "assets", "logohim.png"))
+    target_link = "https://t.me/learnwithhim"
+
+    left_logo_html = f'<a href="{target_link}" target="_blank"><img src="file://{logo_left_path}" style="width: 55px; height: 55px; object-fit: contain;" /></a>' if os.path.exists(logo_left_path) else f'<a href="{target_link}"><b>Logo</b></a>'
+    right_logo_html = f'<a href="{target_link}" target="_blank"><img src="file://{logo_right_path}" style="width: 55px; height: 55px; object-fit: contain;" /></a>' if os.path.exists(logo_right_path) else f'<a href="{target_link}"><b>@LearnwithHiM</b></a>'
+
+    kpi_cards_html = ""
+    if kpis:
+        kpi_cells = []
+        for k, v in kpis.items():
+            kpi_cells.append(f"<td style='padding: 8px; border: 0.5px solid #CBD5E1; background: #F8FAFC; text-align: center;'><div style='font-size: 10px; color: #64748B; text-transform: uppercase;'>{clean_str(k)}</div><div style='font-size: 13px; font-weight: bold; color: #0F172A;'>{clean_str(v)}</div></td>")
+        
+        kpi_cards_html = f"<table style='width: 100%; border-collapse: collapse; margin-bottom: 15px;'><tr>{''.join(kpi_cells)}</tr></table>"
+
+    headers_html = "".join([f"<th style='padding: 6px 8px; border: 0.5px solid #CBD5E1; background: #E0F2FE; color: #0F172A; font-weight: bold;'>{clean_str(c)}</th>" for c in columns])
+
+    body_rows_html = []
+    for r in rows:
+        cells = "".join([f"<td style='padding: 5px 8px; border: 0.5px solid #CBD5E1; vertical-align: middle;'>{clean_str(val)}</td>" for val in r])
+        body_rows_html.append(f"<tr>{cells}</tr>")
+
+    html_content = f"""
+    <!DOCTYPE html>
+    <html>
+    <head>
+    <meta charset='utf-8'/>
+    <style>
+    @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+Devanagari:wght@400;600;700&display=swap');
+    @page {{ size: letter; margin: 18mm 12mm 20mm 12mm; @bottom-right {{ content: 'Page ' counter(page); font-size: 8.5px; font-family: 'Times New Roman', serif; color: #64748B; }} }}
+    body {{ font-family: 'Noto Sans Devanagari', 'Times New Roman', Helvetica, Arial, sans-serif; margin: 0; padding: 0; color: #334155; font-size: 10.5px; line-height: 1.4; }}
+    .header-table {{ width: 100%; border-collapse: collapse; margin-bottom: 10px; }}
+    .header-title {{ text-align: center; color: #1E3A8A; font-size: 20px; font-weight: bold; font-family: 'Times New Roman', serif; }}
+    .sub-title {{ color: #16A34A; font-size: 11px; text-align: center; font-weight: bold; margin-top: 3px; font-family: 'Times New Roman', serif; }}
+    .data-table {{ width: 100%; border-collapse: collapse; page-break-inside: auto; margin-top: 10px; font-size: 10px; }}
+    .data-table thead {{ display: table-header-group; }}
+    .data-table tr {{ page-break-inside: avoid; page-break-after: auto; }}
+    .watermark-container {{ position: fixed; top: 0; left: 0; width: 100%; height: 100%; z-index: -1000; overflow: hidden; pointer-events: none; }}
+    .wm-text {{ position: absolute; font-family: 'Times New Roman', serif; font-weight: bold; font-size: 24px; color: #94A3B8; opacity: 0.12; transform: rotate(30deg); white-space: nowrap; }}
+    .pdf-footer {{ position: fixed; bottom: -12mm; left: 0; width: 100%; text-align: center; border-top: 0.5px solid #CBD5E1; padding-top: 5px; font-size: 8pt; font-family: 'Times New Roman', serif; }}
+    </style>
+    </head>
+    <body>
+    <div class='watermark-container'>
+        <div class='wm-text' style='top: 15%; left: 15%;'>Learn with HiM</div>
+        <div class='wm-text' style='top: 20%; left: 65%;'>Master Admin Portal</div>
+        <div class='wm-text' style='top: 50%; left: 20%;'>Quiz with HiM</div>
+        <div class='wm-text' style='top: 55%; left: 60%;'>Learn with HiM</div>
+        <div class='wm-text' style='top: 85%; left: 15%;'>Master Admin Intelligence</div>
+        <div class='wm-text' style='top: 88%; left: 65%;'>Quiz with HiM</div>
+    </div>
+
+    <table class='header-table'>
+        <tr>
+            <td style='width: 15%; text-align: left;'>{left_logo_html}</td>
+            <td class='header-title'>Learn with HiM — Master Admin Intelligence<div class='sub-title'>Confidential Database Report • Generated: {now_str}</div></td>
+            <td style='width: 15%; text-align: right;'>{right_logo_html}</td>
+        </tr>
+    </table>
+
+    <h2 style='color: #1E3A8A; font-family: \"Times New Roman\", serif; font-size: 15px; margin: 10px 0 8px 0;'>📋 {clean_str(title)}</h2>
+    {kpi_cards_html}
+
+    <table class='data-table'>
+        <thead><tr>{headers_html}</tr></thead>
+        <tbody>{''.join(body_rows_html)}</tbody>
+    </table>
+
+    <div class='pdf-footer'>
+        👑 Master Admin Database Ledger • Confidential Internal Documentation • Learn with HiM Platform
+    </div>
+    </body>
+    </html>
+    """
+
+    if HAS_WEASYPRINT:
+        try:
+            weasyprint.HTML(string=html_content).write_pdf(pdf_path)
+            if os.path.exists(pdf_path) and os.path.getsize(pdf_path) > 400:
+                return pdf_path
+        except Exception as e:
+            logger.error(f"[ADMIN QUERY PDF ERROR] {e}")
+
+    return ""

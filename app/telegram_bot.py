@@ -44,6 +44,7 @@ from app.admin import (
     get_stored_admin_password, update_admin_password_db, ADMIN_AUTH_SESSIONS,
     fast_concurrent_broadcast, clear_admin_user_data_states, DISCOUNT_OPTIONS
 )
+from app.admin_query_engine import parse_and_execute_admin_query, generate_admin_intelligence_pdf
 from app.pdf_generator import generate_student_pdf_report
 from app.pyq_fetcher import fetch_pyqs_for_quiz
 
@@ -1362,9 +1363,6 @@ async def button_router(update: Update, context: ContextTypes.DEFAULT_TYPE):
     data = query.data
     user = query.from_user
 
-    # ==============================================================
-    # 🔑 ULTRA-FAST VISIBLE USER KEYPAD INTERACTION
-    # ==============================================================
     if data.startswith("userkp_"):
         current_pin = context.user_data.get("user_keypad_pin", "")
 
@@ -1406,7 +1404,6 @@ async def button_router(update: Update, context: ContextTypes.DEFAULT_TYPE):
                 await query.answer("❌ Incorrect PIN! Try again.", show_alert=True)
                 current_pin = ""
 
-        # Format visible PIN representation: e.g. [ 5 3 _ _ ] or [ 5 3 3 0 ]
         visible_display = " ".join([d for d in current_pin]) + " " + " ".join(["_" for _ in range(max(0, 4 - len(current_pin)))])
         msg = (
             f"🔒 **ACCOUNT LOCKED DUE TO INACTIVITY** 🔒\n"
@@ -1511,6 +1508,25 @@ async def handle_text_messages(update: Update, context: ContextTypes.DEFAULT_TYP
     photo = msg_obj.photo[-1] if msg_obj and msg_obj.photo else None
     caption = msg_obj.caption.strip() if msg_obj and msg_obj.caption else ""
     video = msg_obj.video if msg_obj and msg_obj.video else None
+
+    # ==============================================================
+    # 🧠 MASTER ADMIN INTELLIGENCE QUERY TEXT PROCESSOR
+    # ==============================================================
+    if user.id == PRIMARY_ADMIN_ID and context.user_data.get("awaiting_admin_ai_query"):
+        context.user_data["awaiting_admin_ai_query"] = False
+        raw_query = text or caption
+        
+        await update.message.reply_text("🔍 **Searching Database & Crunching Analytics...**", parse_mode="Markdown")
+        res = parse_and_execute_admin_query(raw_query)
+        context.user_data["last_ai_query_result"] = res
+
+        nav = [
+            [InlineKeyboardButton("📥 Download This Report as PDF", callback_data="admin_ai_download_last_pdf")],
+            [InlineKeyboardButton("🔄 Ask Another Query", callback_data="admin_ai_assistant_menu")],
+            [InlineKeyboardButton("👑 Main Portal (/him)", callback_data="admin_home")]
+        ]
+        await update.message.reply_text(res["summary_markdown"], reply_markup=InlineKeyboardMarkup(nav), parse_mode="Markdown")
+        return
 
     if user.id == PRIMARY_ADMIN_ID and context.user_data.get("awaiting_sale_name"):
         context.user_data["awaiting_sale_name"] = False
@@ -1888,7 +1904,6 @@ async def post_init(application: Application):
     except Exception as e:
         logging.warning(f"Note on command purge: {e}")
 
-    # Standard Student Commands (Default Scope)
     allowed_commands = [
         BotCommand("quiz", "🚀 Start Computer Quiz"),
         BotCommand("myplan", "💵 Subscriptions"),
@@ -1916,7 +1931,6 @@ async def post_init(application: Application):
     await application.bot.set_my_commands(allowed_commands, scope=BotCommandScopeDefault())
     await application.bot.set_my_commands(allowed_commands, scope=BotCommandScopeAllPrivateChats())
 
-    # Exclusive Admin Commands (Pinned to Himanshu Sir's Telegram Chat Scope)
     try:
         admin_commands = [
             BotCommand("him", "👑 Open Master Admin Portal"),
@@ -1979,7 +1993,6 @@ def build_application() -> Application:
     app.add_handler(CommandHandler("help", help_command))
     app.add_handler(CommandHandler("invite", referral_command))
     
-    # Unified /him and /admin Handlers
     app.add_handler(CommandHandler("him", admin_portal_command))
     app.add_handler(CommandHandler("admin", admin_portal_command))
     app.add_handler(CommandHandler("admit", admin_portal_command))

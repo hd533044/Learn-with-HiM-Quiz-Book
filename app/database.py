@@ -44,7 +44,6 @@ def get_ist_timestamp_str():
     return get_ist_now().strftime("%Y-%m-%d %H:%M:%S IST")
 
 def calculate_discounted_price(original_price, discount_percent) -> int:
-    """Calculates discounted price safely with float conversion (minimum 1 INR)."""
     try:
         orig = float(original_price)
         disc = float(discount_percent)
@@ -57,7 +56,6 @@ def calculate_discounted_price(original_price, discount_percent) -> int:
         return int(original_price) if original_price else 1
 
 def infer_plan_key_from_amount(amount: float) -> str:
-    """Infers the plan key from the paid amount, accounting for standard prices and flash sales."""
     try:
         amt = float(amount)
         if amt in (5.0, 4.0):
@@ -67,7 +65,6 @@ def infer_plan_key_from_amount(amount: float) -> str:
         elif amt in (15.0, 12.0, 11.0, 13.0):
             return "GOLD"
         elif amt in (20.0, 16.0, 17.0, 18.0):
-            # Check if this matches DIAMOND (base 20) or LEARNWITHHIM (discounted to 20 from 25)
             if amt == 20.0:
                 return "LEARNWITHHIM"
             return "DIAMOND"
@@ -123,7 +120,6 @@ def init_db():
         )
     ''')
 
-    # Safe Schema Migrations for Users Table
     cursor.execute("ALTER TABLE users ADD COLUMN IF NOT EXISTS payment_id TEXT;")
     cursor.execute("ALTER TABLE users ADD COLUMN IF NOT EXISTS payment_timestamp TEXT;")
     cursor.execute("ALTER TABLE users ADD COLUMN IF NOT EXISTS bonus_quota INTEGER DEFAULT 0;")
@@ -378,7 +374,6 @@ def get_user_by_student_id(student_id: str):
     return dict(row) if row else None
 
 def get_user_by_phone(phone_number: str):
-    """Matches a user by phone number using clean digit comparison."""
     if not phone_number:
         return None
     clean_phone = "".join(filter(str.isdigit, str(phone_number)))
@@ -950,10 +945,6 @@ def clear_paused_quiz_state(user_id: int):
     cursor.close()
     release_db(conn)
 
-# ==========================================
-# ⚡ FLASH SALE & DISCOUNT OFFER SERVICES
-# ==========================================
-
 def create_flash_sale(sale_name: str, discount_percent: float, valid_until: datetime, created_by: int) -> dict:
     conn = get_db()
     cursor = conn.cursor(cursor_factory=RealDictCursor)
@@ -1021,10 +1012,6 @@ def stop_active_flash_sale() -> bool:
     finally:
         cursor.close()
         release_db(conn)
-
-# ==========================================
-# 🎟️ PROMO CODE GENERATOR DATABASE SERVICES
-# ==========================================
 
 def create_promo_code(code: str, discount_type: str, discount_value: float, days_valid: int, created_by: int) -> dict:
     conn = get_db()
@@ -1096,10 +1083,6 @@ def record_promo_redemption(promo_id: int, user_id: int):
     finally:
         cursor.close()
         release_db(conn)
-
-# ==========================================
-# 📢 ANNOUNCEMENT & BROADCAST ADVANCED SERVICES
-# ==========================================
 
 def schedule_announcement(message_text: str, media_file_id: str, media_type: str, scheduled_time: datetime, created_by: int) -> dict:
     conn = get_db()

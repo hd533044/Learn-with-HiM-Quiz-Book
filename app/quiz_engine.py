@@ -663,7 +663,10 @@ async def send_next_question(chat_id: int, user_id: int, context: ContextTypes.D
     session["current_question"] = q
     timer_sec = session["timer_sec"]
 
-    header_text = f"📖 [{session.get('topic_name', 'Quiz')}]\n\n{q['question']}"
+    current_num = session["current_index"] + 1
+    total_num = session["total"]
+    
+    header_text = f"📖 [{session.get('topic_name', 'Quiz')}] — ({current_num}/{total_num})\n\n{q['question']}"
     if len(header_text) > 300:
         header_text = header_text[:297] + "..."
 

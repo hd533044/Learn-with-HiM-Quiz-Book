@@ -211,23 +211,13 @@ async def mock_count_callback(update: Update, context: ContextTypes.DEFAULT_TYPE
     user_id = query.from_user.id
     count = int(query.data.replace("qmockcount_", ""))
     QUIZ_SETUP_CACHE[user_id]["count"] = count
+    
+    # HARDCODED: Automatically set global timer to 10 minutes
+    QUIZ_SETUP_CACHE[user_id]["total_time_mins"] = 10
 
     keyboard = InlineKeyboardMarkup([
-        [InlineKeyboardButton("⏱ 20 Minutes", callback_data="qmocktime_20"), InlineKeyboardButton("⏱ 25 Minutes", callback_data="qmocktime_25")],
-        [InlineKeyboardButton("⏱ 30 Minutes", callback_data="qmocktime_30")],
+        [InlineKeyboardButton("🌐 English", callback_data="qmocklang_en"), InlineKeyboardButton("🇮🇳 हिंदी", callback_data="qmocklang_hi")],
         [InlineKeyboardButton("🔙 Back", callback_data="qflow_MOCK")]
-    ])
-    await query.edit_message_text(f"⏱ **MOCK TIMER**\nTotal Questions: {count}\nSelect Total Time limit:", reply_markup=keyboard, parse_mode="Markdown")
-
-async def mock_time_callback(update: Update, context: ContextTypes.DEFAULT_TYPE):
-    query = update.callback_query
-    await query.answer()
-    user_id = query.from_user.id
-    mins = int(query.data.replace("qmocktime_", ""))
-    QUIZ_SETUP_CACHE[user_id]["total_time_mins"] = mins
-
-    keyboard = InlineKeyboardMarkup([
-        [InlineKeyboardButton("🌐 English", callback_data="qmocklang_en"), InlineKeyboardButton("🇮🇳 हिंदी", callback_data="qmocklang_hi")]
     ])
     await query.edit_message_text("🌐 **Select Language**:", reply_markup=keyboard, parse_mode="Markdown")
 
@@ -239,7 +229,7 @@ async def mock_lang_callback(update: Update, context: ContextTypes.DEFAULT_TYPE)
     setup = QUIZ_SETUP_CACHE.pop(user_id, {})
     
     count = setup.get("count", 40)
-    total_time_mins = setup.get("total_time_mins", 20)
+    total_time_mins = setup.get("total_time_mins", 10)
     timer_sec = (total_time_mins * 60) // count # Fallback parameter
 
     profile = await asyncio.to_thread(get_user_profile, user_id)
@@ -335,23 +325,13 @@ async def sect_count_callback(update: Update, context: ContextTypes.DEFAULT_TYPE
     user_id = query.from_user.id
     count = int(query.data.replace("qsectcount_", ""))
     QUIZ_SETUP_CACHE[user_id]["count"] = count
+    
+    # HARDCODED: Automatically set global timer to 10 minutes
+    QUIZ_SETUP_CACHE[user_id]["total_time_mins"] = 10
 
     keyboard = InlineKeyboardMarkup([
-        [InlineKeyboardButton("⏱ 10 Mins", callback_data="qsecttime_10"), InlineKeyboardButton("⏱ 12 Mins", callback_data="qsecttime_12")],
-        [InlineKeyboardButton("⏱ 15 Mins", callback_data="qsecttime_15"), InlineKeyboardButton("⏱ 20 Mins", callback_data="qsecttime_20")],
+        [InlineKeyboardButton("🌐 English", callback_data="qsectlang_en"), InlineKeyboardButton("🇮🇳 हिंदी", callback_data="qsectlang_hi")],
         [InlineKeyboardButton("🔙 Back", callback_data="cmd_quiz")]
-    ])
-    await query.edit_message_text("⏱ **Select Total Time limit:**", reply_markup=keyboard, parse_mode="Markdown")
-
-async def sect_time_callback(update: Update, context: ContextTypes.DEFAULT_TYPE):
-    query = update.callback_query
-    await query.answer()
-    user_id = query.from_user.id
-    mins = int(query.data.replace("qsecttime_", ""))
-    QUIZ_SETUP_CACHE[user_id]["total_time_mins"] = mins
-
-    keyboard = InlineKeyboardMarkup([
-        [InlineKeyboardButton("🌐 English", callback_data="qsectlang_en"), InlineKeyboardButton("🇮🇳 हिंदी", callback_data="qsectlang_hi")]
     ])
     await query.edit_message_text("🌐 **Select Language**:", reply_markup=keyboard, parse_mode="Markdown")
 
@@ -661,7 +641,7 @@ async def start_quiz_session(query, context, user_id, questions, timer_sec, quiz
         f"🌐 **Language:** `{lang_str}`\n"
         f"📖 **Mode:** `{quiz_mode.replace('_', ' ')}`\n"
         f"📌 **Title:** `{title}`\n"
-        f"⏱ **Timer Config:** `{'Global Timer Mode' if total_time_mins else str(timer_sec) + 's per question'}`\n\n"
+        f"⏱ **Timer Config:** `{'Global 10 Mins Timer' if total_time_mins else str(timer_sec) + 's per question'}`\n\n"
         f"⚡ Loading questions...",
         parse_mode="Markdown"
     )
@@ -918,7 +898,7 @@ async def send_next_question(chat_id: int, user_id: int, context: ContextTypes.D
     if session.get("global_remaining_sec") is not None:
         rem_sec = int(session["global_remaining_sec"])
         if rem_sec <= 0:
-            await context.bot.send_message(chat_id=chat_id, text="⏰ **TIME'S UP!** Your global quiz timer has expired.", parse_mode="Markdown")
+            await context.bot.send_message(chat_id=chat_id, text="⏰ **TIME'S UP!** Your global 10-minute quiz timer has expired.", parse_mode="Markdown")
             await finish_quiz_and_send_report(chat_id, user_id, context)
             return
         
@@ -1175,8 +1155,6 @@ async def quiz_extended_router(update: Update, context: ContextTypes.DEFAULT_TYP
         await quiz_flow_callback(update, context)
     elif data.startswith("qmockcount_"):
         await mock_count_callback(update, context)
-    elif data.startswith("qmocktime_"):
-        await mock_time_callback(update, context)
     elif data.startswith("qmocklang_"):
         await mock_lang_callback(update, context)
     elif data.startswith("qsectsubj_"):
@@ -1187,8 +1165,6 @@ async def quiz_extended_router(update: Update, context: ContextTypes.DEFAULT_TYP
         await top_proceed_callback(update, context)
     elif data.startswith("qsectcount_"):
         await sect_count_callback(update, context)
-    elif data.startswith("qsecttime_"):
-        await sect_time_callback(update, context)
     elif data.startswith("qsectlang_"):
         await sect_lang_callback(update, context)
     elif data.startswith("qsubj_"):

@@ -1,14 +1,15 @@
 import json
 import os
 import random
+import re
 import logging
-from datetime import datetime, timedelta
+from datetime import datetime
 from app.config import DATA_DIR, QUESTION_BANK_DIR, TOPICS_DIR
-from app.database import get_user_question_intel
+from app.database import get_db, release_db, reset_user_seen_questions_for_ids
 
 logger = logging.getLogger(__name__)
 
-# Official Clean Display Topic Names (NO question counts exposed to users)
+# Clean Display Topic Names (Zero question counts exposed)
 TOPIC_METADATA = {
     "Computer_Hardware_Architecture": {
         "en": "🖥️ Computer Basics & Architecture",
@@ -63,24 +64,27 @@ def is_hindi_text(text: str) -> bool:
         return False
     return any('\u0900' <= char <= '\u097F' for char in text)
 
+def clean_option_prefix(opt_text: str) -> str:
+    """Removes hardcoded prefixes like 'A. ', 'B) ' so option shuffling looks clean."""
+    return re.sub(r'^[A-Da-d1-4][\.\)]\s*', '', str(opt_text)).strip()
+
 def randomize_question_options(q: dict) -> dict:
     """
-    Shuffles question options in a purely randomized way while maintaining
-    the exact mapping of the correct answer index.
+    Shuffles options cleanly while maintaining the correct answer mapping.
     """
     opts = list(q.get("options", []))
     correct_idx = q.get("correct_option", 0)
     if not opts or correct_idx >= len(opts) or correct_idx < 0:
         return q
 
-    correct_answer_value = opts[correct_idx]
-    
-    # Randomize option order
-    shuffled_opts = list(opts)
+    clean_options = [clean_option_prefix(opt) for opt in opts]
+    correct_answer_value = clean_options[correct_idx]
+
+    shuffled_opts = list(clean_options)
     random.shuffle(shuffled_opts)
-    
+
     new_correct_idx = shuffled_opts.index(correct_answer_value)
-    
+
     new_q = dict(q)
     new_q["options"] = shuffled_opts
     new_q["correct_option"] = new_correct_idx
@@ -103,7 +107,7 @@ def verify_and_correct_question(q: dict) -> dict:
     detected_lang = "hi" if is_hindi_text(str(q_text)) else "en"
 
     return {
-        "id": q.get("id") if q.get("id") is not None else hash(str(q_text)),
+        "id": q.get("id") if q.get("id") is not None else str(hash(str(q_text))),
         "question": str(q_text).strip(),
         "options": clean_opts,
         "correct_option": correct_opt,
@@ -112,23 +116,43 @@ def verify_and_correct_question(q: dict) -> dict:
         "chapter": q.get("chapter", "Computer Awareness")
     }
 
+def get_user_seen_identifiers(user_id: int) -> tuple[set, set]:
+    """
+    Fetches all seen question IDs and question texts for this user.
+    """
+    if not user_id:
+        return set(), set()
+
+    seen_ids = set()
+    seen_texts = set()
+
+    conn = get_db()
+    cursor = conn.cursor()
+    try:
+        cursor.execute("SELECT question_id FROM seen_questions WHERE user_id = %s", (user_id,))
+        for row in cursor.fetchall():
+            seen_ids.add(str(row[0]))
+    except Exception as e:
+        logger.error(f"[FETCH SEEN IDS ERROR] {e}")
+    finally:
+        cursor.close()
+        release_db(conn)
+
+    return seen_ids, seen_texts
+
 def fetch_pyqs_for_quiz(needed_count: int = 20, seen_ids: set = None, language: str = "en", user_id: int = None, topic: str = "MIXED") -> list:
     """
-    Intelligent Tiered Spaced-Repetition Quiz Retrieval:
-    - Supports Specific Topic File loading or Mixed (All) loading.
-    - Tier 1: Fresh, unseen questions
-    - Tier 2: Previously wrong & unattempted/skipped questions
-    - Tier 3: Questions attempted > 10–15 days ago
-    - Tier 4: Total pool recycling with randomized option shuffling
-    Ensures quizzes never break or stop prematurely while user has quota.
+    STRICT NON-REPETITION EXHAUSTION CYCLING ENGINE:
+    1. Loads all questions belonging to the selected Topic or Mixed Bank.
+    2. Separates questions into UNSEEN vs SEEN for this student.
+    3. Serves ONLY UNSEEN questions first in randomized order.
+    4. If the student has exhausted the entire topic bank (0 unseen left),
+       it resets their seen history for that topic and serves a freshly randomized set.
     """
-    if seen_ids is None:
-        seen_ids = set()
-
     all_raw_questions = []
     lang_sub = "hi" if language == "hi" else "en"
 
-    # 1. Targeted Topic File Load
+    # 1. Load Topic-Specific File or Master Question Bank
     if topic and topic != "MIXED":
         topic_filename = f"{topic}_{lang_sub}.json"
         potential_topic_paths = [
@@ -150,37 +174,26 @@ def fetch_pyqs_for_quiz(needed_count: int = 20, seen_ids: set = None, language: 
                 except Exception as e:
                     logger.error(f"Error loading topic file {p}: {e}")
 
-        # Fallback if topic file not found: read general question bank and filter
+        # Fallback to master file if individual topic file is missing
         if not loaded_topic:
-            search_dirs = [
-                os.path.join(QUESTION_BANK_DIR, "hindi") if language == "hi" else QUESTION_BANK_DIR,
-                os.path.join(DATA_DIR, "hindi") if language == "hi" else DATA_DIR
-            ]
-            for search_dir in search_dirs:
-                if os.path.exists(search_dir):
-                    for root, _, files in os.walk(search_dir):
-                        for file in files:
-                            if file.endswith(".json") and not file.startswith("."):
-                                file_path = os.path.join(root, file)
-                                try:
-                                    with open(file_path, "r", encoding="utf-8") as f:
-                                        data = json.load(f)
-                                        if isinstance(data, list):
-                                            all_raw_questions.extend(data)
-                                except Exception:
-                                    pass
+            master_file_name = "all_questions_hindi.json" if language == "hi" else "all_questions_english.json"
+            master_p = os.path.join(QUESTION_BANK_DIR, "hindi" if language == "hi" else "", master_file_name)
+            if os.path.exists(master_p):
+                try:
+                    with open(master_p, "r", encoding="utf-8") as f:
+                        data = json.load(f)
+                        if isinstance(data, list):
+                            all_raw_questions.extend(data)
+                except Exception:
+                    pass
     else:
-        # 2. Mixed Practice Load (All Master Files / Question Banks)
+        # Load Entire 913-Question Master Bank for Mixed Practice
         master_file_name = "all_questions_hindi.json" if language == "hi" else "all_questions_english.json"
-        alt_master_name = "master_computer_questions_hi.json" if language == "hi" else "master_computer_questions_en.json"
-        
         master_candidates = [
             os.path.join(QUESTION_BANK_DIR, "hindi", master_file_name) if language == "hi" else os.path.join(QUESTION_BANK_DIR, master_file_name),
-            os.path.join(DATA_DIR, "hindi", master_file_name) if language == "hi" else os.path.join(DATA_DIR, master_file_name),
-            os.path.join(DATA_DIR, alt_master_name)
+            os.path.join(DATA_DIR, "hindi", master_file_name) if language == "hi" else os.path.join(DATA_DIR, master_file_name)
         ]
 
-        loaded_master = False
         for m_path in master_candidates:
             if os.path.exists(m_path):
                 try:
@@ -188,51 +201,24 @@ def fetch_pyqs_for_quiz(needed_count: int = 20, seen_ids: set = None, language: 
                         data = json.load(f)
                         if isinstance(data, list) and len(data) > 0:
                             all_raw_questions.extend(data)
-                            loaded_master = True
                             break
                 except Exception as e:
                     logger.error(f"Error loading master file {m_path}: {e}")
 
-        if not loaded_master:
-            # Recursive directory scan fallback
-            search_dirs = [
-                TOPICS_DIR,
-                QUESTION_BANK_DIR,
-                DATA_DIR
-            ]
-            seen_paths = set()
-            for search_dir in search_dirs:
-                if not os.path.exists(search_dir):
-                    continue
-                for root, _, files in os.walk(search_dir):
-                    for file in files:
-                        if file.endswith(".json") and not file.startswith("."):
-                            file_path = os.path.abspath(os.path.join(root, file))
-                            if file_path in seen_paths:
-                                continue
-                            seen_paths.add(file_path)
-                            try:
-                                with open(file_path, "r", encoding="utf-8") as f:
-                                    data = json.load(f)
-                                    if isinstance(data, list):
-                                        all_raw_questions.extend(data)
-                            except Exception as e:
-                                logger.error(f"Error reading JSON file {file_path}: {e}")
-
-    # 3. Filter by language barrier
+    # 2. Filter, Verify, and Deduplicate Question Bank
     verified_bank = []
-    seen_q_texts = set()
+    seen_unique_texts = set()
 
     for q in all_raw_questions:
         verified_q = verify_and_correct_question(q)
         if verified_q:
             q_lang = verified_q.get("language", "en")
             q_is_hindi = is_hindi_text(verified_q["question"])
-            norm_text = verified_q["question"].strip().lower()
+            norm_text = re.sub(r'\W+', '', verified_q["question"].lower())
 
-            if norm_text in seen_q_texts:
+            if norm_text in seen_unique_texts:
                 continue
-            seen_q_texts.add(norm_text)
+            seen_unique_texts.add(norm_text)
 
             if language == "hi":
                 if q_lang == "hi" or q_is_hindi:
@@ -244,81 +230,51 @@ def fetch_pyqs_for_quiz(needed_count: int = 20, seen_ids: set = None, language: 
     if not verified_bank:
         return []
 
-    # If no specific user telemetry available, return basic shuffled selection
-    if not user_id and not seen_ids:
-        random.shuffle(verified_bank)
-        return [randomize_question_options(q) for q in verified_bank[:needed_count]]
+    # 3. Retrieve User History for Non-Repetition
+    user_seen_ids, _ = get_user_seen_identifiers(user_id)
+    if seen_ids:
+        user_seen_ids.update({str(sid) for sid in seen_ids})
 
-    # 4. Gather User Telemetry for Multi-Tier Spaced Repetition
-    user_intel = get_user_question_intel(user_id) if user_id else {
-        "seen_timestamps": {str(sid): datetime.now() for sid in seen_ids},
-        "wrong_or_skipped_ids": set(),
-        "wrong_or_skipped_texts": set(),
-        "cutoff_days": 12
-    }
-
-    seen_timestamps = user_intel.get("seen_timestamps", {})
-    wrong_or_skipped_ids = user_intel.get("wrong_or_skipped_ids", set())
-    wrong_or_skipped_texts = user_intel.get("wrong_or_skipped_texts", set())
-    cutoff_days = user_intel.get("cutoff_days", 12)
-    now = datetime.now()
-
-    tier1_unseen = []
-    tier2_wrong_skipped = []
-    tier3_mature_repetition = []
-    tier4_recent_all = []
+    unseen_pool = []
+    seen_pool = []
+    all_topic_qids = []
 
     for q in verified_bank:
         qid_str = str(q.get("id"))
-        q_text_clean = str(q.get("question", "")).strip().lower()
+        all_topic_qids.append(qid_str)
 
-        is_seen = (qid_str in seen_timestamps) or (qid_str in seen_ids)
-        is_wrong_or_skipped = (qid_str in wrong_or_skipped_ids) or (q_text_clean in wrong_or_skipped_texts)
-
-        if not is_seen:
-            tier1_unseen.append(q)
-        elif is_wrong_or_skipped:
-            tier2_wrong_skipped.append(q)
+        if qid_str not in user_seen_ids:
+            unseen_pool.append(q)
         else:
-            seen_dt = seen_timestamps.get(qid_str)
-            if seen_dt and (now - seen_dt).days >= cutoff_days:
-                tier3_mature_repetition.append(q)
-            else:
-                tier4_recent_all.append(q)
+            seen_pool.append(q)
 
-    random.shuffle(tier1_unseen)
-    random.shuffle(tier2_wrong_skipped)
-    random.shuffle(tier3_mature_repetition)
-    random.shuffle(tier4_recent_all)
+    # 4. Strict Selection Logic
+    selected_questions = []
 
-    # 5. Assemble Question Pool Sequentially
-    selected_pool = []
+    if len(unseen_pool) >= needed_count:
+        # Case A: Sufficient unseen questions available
+        random.shuffle(unseen_pool)
+        selected_questions = unseen_pool[:needed_count]
 
-    # Fill from Tier 1 (Never seen)
-    selected_pool.extend(tier1_unseen[:needed_count])
+    elif 0 < len(unseen_pool) < needed_count:
+        # Case B: Partially exhausted topic -> serve remaining unseen + fill from seen, then reset seen history
+        selected_questions.extend(unseen_pool)
+        deficit = needed_count - len(selected_questions)
 
-    # Fill from Tier 2 (Wrong / Skipped Reinforcement)
-    if len(selected_pool) < needed_count:
-        deficit = needed_count - len(selected_pool)
-        selected_pool.extend([randomize_question_options(q) for q in tier2_wrong_skipped[:deficit]])
+        random.shuffle(seen_pool)
+        selected_questions.extend(seen_pool[:deficit])
 
-    # Fill from Tier 3 (10–15 Days Spaced Repetition)
-    if len(selected_pool) < needed_count:
-        deficit = needed_count - len(selected_pool)
-        selected_pool.extend([randomize_question_options(q) for q in tier3_mature_repetition[:deficit]])
+        if user_id:
+            reset_user_seen_questions_for_ids(user_id, all_topic_qids)
 
-    # Fill from Tier 4 (Full Pool Recycling with Randomized Options)
-    if len(selected_pool) < needed_count:
-        deficit = needed_count - len(selected_pool)
-        selected_pool.extend([randomize_question_options(q) for q in tier4_recent_all[:deficit]])
+    else:
+        # Case C: 100% of questions in this topic answered -> reset topic history & serve fresh random shuffle
+        if user_id:
+            reset_user_seen_questions_for_ids(user_id, all_topic_qids)
 
-    # If still below needed_count, cycle from the entire bank with randomized options
-    while len(selected_pool) < needed_count and len(selected_pool) < len(verified_bank):
-        rem = [q for q in verified_bank if q not in selected_pool]
-        if not rem:
-            break
-        selected_pool.append(randomize_question_options(random.choice(rem)))
+        random.shuffle(verified_bank)
+        selected_questions = verified_bank[:needed_count]
 
-    # Final overall shuffle of questions
-    random.shuffle(selected_pool)
-    return selected_pool[:needed_count]
+    # 5. Final Shuffle of Questions and Options
+    random.shuffle(selected_questions)
+    return [randomize_question_options(q) for q in selected_questions]

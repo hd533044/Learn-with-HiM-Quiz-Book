@@ -81,13 +81,6 @@ def infer_plan_key_from_amount(amount: float) -> str:
     return "LEARNWITHHIM"
 
 def recalculate_and_restore_user_plans(user_id: int) -> dict:
-    """
-    IDEMPOTENT AUTO-CREDITING & DUPLICATION PREVENTION ENGINE:
-    1. Scans payment_transactions for all genuine paid plans (payment_id starting with 'pay_' and amount_paid > 0).
-    2. Calculates the exact unexpired target daily limit and furthest expiration timestamp.
-    3. If the user already has this exact quota and expiry active, it makes NO CHANGES (prevents duplicate stacking).
-    4. If the plan was missing, revoked, or reduced, it updates the users table and sets updated=True.
-    """
     conn = get_db()
     cursor = conn.cursor(cursor_factory=RealDictCursor)
     try:
@@ -147,7 +140,6 @@ def recalculate_and_restore_user_plans(user_id: int) -> dict:
             payment_timestamp = latest_txn.get("created_at")
             plan_name = latest_txn.get("plan_name", "VIP Plan")
 
-            # Check if user already has this exact active state (Prevents duplicate crediting)
             curr_quota = user_curr.get("paid_question_balance", 0)
             curr_expiry = user_curr.get("vip_pass_expiry")
             
@@ -208,10 +200,6 @@ def recalculate_and_restore_user_plans(user_id: int) -> dict:
         release_db(conn)
 
 def auto_sync_uncredited_paid_users() -> list:
-    """
-    GLOBAL AUTOMATIC CREDITING SYNC:
-    Scans all users who have valid paid transactions and returns ONLY those who were newly updated/restored.
-    """
     conn = get_db()
     cursor = conn.cursor(cursor_factory=RealDictCursor)
     candidate_uids = []
@@ -890,7 +878,6 @@ def get_user_profile(user_id):
 
     u_dict = dict(row)
 
-    # Dynamic check: If user has paid records, auto-sync and credit if missing
     if u_dict.get("paid_question_balance", 0) <= DAILY_QUESTION_LIMIT or not u_dict.get("vip_pass_expiry"):
         restored = recalculate_and_restore_user_plans(user_id)
         if restored.get("updated") and restored.get("has_paid_plan"):
@@ -1029,6 +1016,28 @@ def mark_questions_as_seen(user_id, question_ids):
     conn.commit()
     cursor.close()
     release_db(conn)
+
+def reset_user_seen_questions_for_ids(user_id: int, question_ids: list):
+    """
+    Clears seen status for specific questions when a topic bank is 100% exhausted,
+    allowing the user to restart the topic in a fresh randomized cycle.
+    """
+    if not user_id or not question_ids:
+        return
+    conn = get_db()
+    cursor = conn.cursor()
+    try:
+        cursor.execute(
+            "DELETE FROM seen_questions WHERE user_id = %s AND question_id = ANY(%s)",
+            (user_id, [str(qid) for qid in question_ids])
+        )
+        conn.commit()
+    except Exception as e:
+        conn.rollback()
+        logger.error(f"[DATABASE ERROR] Failed resetting seen questions: {e}")
+    finally:
+        cursor.close()
+        release_db(conn)
 
 def save_question_to_db(user_id: int, q_text: str, options: list, correct_option: int, explanation: str):
     conn = get_db()

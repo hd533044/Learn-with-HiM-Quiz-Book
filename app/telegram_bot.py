@@ -61,7 +61,6 @@ ANNC_CONTENT, ANNC_DATETIME = range(104, 106)
 
 
 def build_user_keypad_markup() -> InlineKeyboardMarkup:
-    """Builds the visual numeric keypad for Student PIN unlock."""
     keyboard = [
         [
             InlineKeyboardButton("1", callback_data="userkp_digit_1"),
@@ -2110,10 +2109,11 @@ def build_application() -> Application:
     app.add_handler(CommandHandler("admin", admin_portal_command))
     app.add_handler(CommandHandler("admit", admin_portal_command))
 
-    # Quiz Flow Callbacks
-    app.add_handler(CallbackQueryHandler(quiz_language_callback, pattern="^qlang_"))
+    # Quiz Flow Callbacks (Ensuring qsubj_ is registered correctly)
+    app.add_handler(CallbackQueryHandler(quiz_subject_callback, pattern="^qsubj_"))
     app.add_handler(CallbackQueryHandler(quiz_mode_callback, pattern="^qmode_"))
     app.add_handler(CallbackQueryHandler(quiz_topic_callback, pattern="^qtopic_"))
+    app.add_handler(CallbackQueryHandler(quiz_language_callback, pattern="^qlang_"))
     app.add_handler(CallbackQueryHandler(quiz_count_callback, pattern="^qcount_"))
     app.add_handler(CallbackQueryHandler(quiz_timer_callback, pattern="^qtimer_"))
     app.add_handler(CallbackQueryHandler(user_pdf_callback_handler, pattern="^usergenpdf_"))

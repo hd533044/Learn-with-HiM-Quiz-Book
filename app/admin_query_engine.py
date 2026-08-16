@@ -56,7 +56,7 @@ INDIAN_FESTIVALS_CALENDAR = [
 
 
 def clean_text(text) -> str:
-    """Escapes Markdown formatting characters to guarantee zero Telegram parse errors."""
+    """Escapes Markdown formatting characters to prevent Telegram formatting errors."""
     if text is None:
         return "N/A"
     s = str(text)
@@ -65,8 +65,29 @@ def clean_text(text) -> str:
     return " ".join(s.split()).strip()
 
 
+def parse_date_safely(date_str: str) -> datetime:
+    """Extracts date objects from timestamps across database formats."""
+    if not date_str:
+        return None
+    clean_d = str(date_str).replace(" IST", "").strip()
+    formats = [
+        "%Y-%m-%d %H:%M:%S",
+        "%Y-%m-%d",
+        "%d %b %Y, %I:%M %p",
+        "%d-%m-%Y",
+        "%d/%m/%Y"
+    ]
+    for fmt in formats:
+        try:
+            dt = datetime.strptime(clean_d, fmt)
+            return IST.localize(dt) if dt.tzinfo is None else dt
+        except Exception:
+            continue
+    return None
+
+
 def execute_llm_nl2sql_fallback(query_text: str) -> str:
-    """Calls Grok or OpenAI API with strict read-only SELECT validation."""
+    """Calls Grok or OpenAI API with read-only SELECT validation."""
     api_key = os.getenv("GROK_API_KEY") or os.getenv("OPENAI_API_KEY")
     if not api_key:
         return None
@@ -86,7 +107,6 @@ def execute_llm_nl2sql_fallback(query_text: str) -> str:
     - user_activity_time (id SERIAL, user_id BIGINT, date_str TEXT, seconds_spent INT)
     - flash_sales (id SERIAL, sale_name TEXT, discount_percent NUMERIC, valid_from TIMESTAMP, valid_until TIMESTAMP, is_active BOOLEAN, created_at TIMESTAMP)
     - student_queries (id SERIAL, user_id BIGINT, student_name TEXT, query_text TEXT, photo_file_id TEXT, admin_reply TEXT, status TEXT, created_at TEXT, replied_at TEXT)
-    - saved_questions (id SERIAL, user_id BIGINT, question_text TEXT, options_json TEXT, correct_option INT, explanation TEXT, saved_at TEXT)
     """
 
     prompt = f"Convert this query into a single valid PostgreSQL SELECT statement. Output ONLY the raw SQL query without explanation or markdown backticks.\nQuery: {query_text}"
@@ -127,14 +147,269 @@ def parse_and_execute_admin_query(query_text: str, context_correction: str = Non
     now_ist = get_ist_now()
     today_date_str = get_ist_date_str()
     today_start = now_ist.replace(hour=0, minute=0, second=0, microsecond=0)
+    yesterday_date_str = (now_ist - timedelta(days=1)).strftime("%Y-%m-%d")
+    yesterday_start = today_start - timedelta(days=1)
 
     try:
-        # -------------------------------------------------------------------------
-        # 1. TOTAL / ALL PAID VIP USERS LIST
-        # -------------------------------------------------------------------------
-        if (("paid" in q_lower or "subscriber" in q_lower or "bought" in q_lower or "vip" in q_lower) and 
-            any(k in q_lower for k in ["total", "all", "list", "users", "students", "show", "who", "give me", "tell me"])) and "today" not in q_lower and "3 day" not in q_lower:
+        # =========================================================================
+        # 1. FESTIVAL & SALES PROMOTION STRATEGY FORECASTER
+        # =========================================================================
+        if any(k in q_lower for k in ["festival", "festivals", "sale offer", "sale timing", "when sale", "right time for sale", "calendar", "promo offer"]):
+            conn = get_db()
+            cursor = conn.cursor(cursor_factory=RealDictCursor)
+            cursor.execute("SELECT * FROM flash_sales ORDER BY id DESC LIMIT 5")
+            past_sales = cursor.fetchall()
+            cursor.close()
+            release_db(conn)
+
+            upcoming_festivals = []
+            for fest in INDIAN_FESTIVALS_CALENDAR:
+                fest_dt = datetime.strptime(fest["date"], "%Y-%m-%d")
+                fest_dt = IST.localize(fest_dt)
+                if fest_dt >= now_ist:
+                    days_left = (fest_dt.date() - now_ist.date()).days
+                    upcoming_festivals.append({
+                        "name": fest["name"],
+                        "date": fest["date"],
+                        "days_left": days_left,
+                        "suggested_sale": fest["suggested_sale"]
+                    })
+
+            title = "Omniscient Sales & Festival Strategy Intelligence"
+            columns = ["S.No.", "Upcoming Festival", "Date", "Countdown", "Recommended Strategy"]
+            pdf_rows = []
+            tg_lines = [
+                "🔥 **OMNISCIENT INTEL: SALES & FESTIVAL FORECASTER**\n"
+                "━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\n"
+                "📅 **RECENT BOT PROMOTIONS:**\n"
+            ]
+
+            if past_sales:
+                for ps in past_sales:
+                    st_icon = "🟢 LIVE" if ps.get("is_active") else "🔴 EXPIRED"
+                    pct = int(float(ps.get("discount_percent", 0)))
+                    tg_lines.append(f"• **{clean_text(ps['sale_name'])}** ({pct}% OFF) — `{st_icon}` | Valid: `{str(ps.get('valid_until', 'N/A'))[:16]}`")
+            else:
+                tg_lines.append("• *No past promotions recorded.*")
+
+            tg_lines.append("\n🎉 **UPCOMING FESTIVAL LAUNCH WINDOWS (2026–2027):**\n")
+            for idx, uf in enumerate(upcoming_festivals[:8], start=1):
+                tg_lines.append(f"**{idx}. {uf['name']}** (`{uf['date']}` — In `{uf['days_left']} Days`)\n   👉 *Strategy:* `{uf['suggested_sale']}`\n")
+                pdf_rows.append([str(idx), str(uf['name']), str(uf['date']), f"{uf['days_left']} Days Left", str(uf['suggested_sale'])])
+
+            tg_lines.append("━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\n📥 *Download complete festival promotion calendar as PDF below:*")
+
+            return {
+                "title": title,
+                "total_records": len(upcoming_festivals),
+                "summary_markdown": "\n".join(tg_lines),
+                "columns": columns,
+                "rows": pdf_rows,
+                "kpis": {"Logged Promotions": str(len(past_sales)), "Upcoming Opportunities": f"{len(upcoming_festivals)} Events"}
+            }
+
+        # =========================================================================
+        # 2. FINANCIAL REVENUE, TRANSACTIONS & PAYMENT COLLECTIONS
+        # =========================================================================
+        if any(k in q_lower for k in ["revenue", "earning", "income", "collection", "money earned", "sales stats", "transactions", "payment history", "txns"]):
+            conn = get_db()
+            cursor = conn.cursor(cursor_factory=RealDictCursor)
             
+            is_today = "today" in q_lower
+            is_yesterday = "yesterday" in q_lower
+            is_week = "week" in q_lower
+            is_month = "month" in q_lower
+
+            cursor.execute("""
+                SELECT pt.payment_id, pt.plan_name, pt.amount_paid, pt.daily_quota, pt.validity_days, pt.created_at, pt.expiry_at,
+                       u.user_id, u.student_id, u.full_name, u.phone_number, u.target_exam, u.state
+                FROM payment_transactions pt
+                LEFT JOIN users u ON pt.user_id = u.user_id
+                WHERE pt.plan_key != 'FREE_DEMO' AND pt.amount_paid > 0
+                ORDER BY pt.id DESC
+            """)
+            all_txns = cursor.fetchall()
+            cursor.close()
+            release_db(conn)
+
+            filtered_txns = []
+            gross_rev = 0.0
+            timeframe_label = "All-Time"
+
+            for t in all_txns:
+                amt = float(t.get("amount_paid", 0) or 0)
+                c_str = t.get("created_at", "")
+                t_dt = parse_date_safely(c_str)
+
+                if is_today:
+                    timeframe_label = f"Today ({today_date_str})"
+                    if (today_date_str in c_str) or (t_dt and t_dt >= today_start):
+                        filtered_txns.append(t)
+                        gross_rev += amt
+                elif is_yesterday:
+                    timeframe_label = f"Yesterday ({yesterday_date_str})"
+                    if (yesterday_date_str in c_str) or (t_dt and yesterday_start <= t_dt < today_start):
+                        filtered_txns.append(t)
+                        gross_rev += amt
+                elif is_week:
+                    timeframe_label = "This Week"
+                    week_start = today_start - timedelta(days=today_start.weekday())
+                    if t_dt and t_dt >= week_start:
+                        filtered_txns.append(t)
+                        gross_rev += amt
+                elif is_month:
+                    timeframe_label = "This Month"
+                    month_start = today_start.replace(day=1)
+                    if t_dt and t_dt >= month_start:
+                        filtered_txns.append(t)
+                        gross_rev += amt
+                else:
+                    filtered_txns.append(t)
+                    gross_rev += amt
+
+            title = f"Financial Revenue & Transactions Ledger ({timeframe_label})"
+            columns = ["S.No.", "Telegram ID", "Student ID", "Full Name", "Phone", "Target Exam", "Plan Name", "Amount (INR)", "Daily Quota", "Txn ID", "Paid Date"]
+            pdf_rows = []
+            tg_lines = [
+                f"💰 **OMNISCIENT INTEL: FINANCIAL REVENUE & TRANSACTIONS**\n"
+                f"━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\n"
+                f"📅 **Scope:** `{timeframe_label}`\n"
+                f"💵 **Total Revenue:** `₹{gross_rev} INR`\n"
+                f"🧾 **Total Verified Orders:** `{len(filtered_txns)}`\n"
+                f"━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\n"
+            ]
+
+            for idx, t in enumerate(filtered_txns, start=1):
+                uid = t.get("user_id", "N/A")
+                sid = clean_text(t.get("student_id") or f"USER_{uid}")
+                name = clean_text(t.get("full_name") or "Unknown")
+                phone = clean_text(t.get("phone_number") or "N/A")
+                plan = clean_text(t.get("plan_name") or "VIP Pack")
+                amt = t.get("amount_paid", 0)
+                pid = clean_text(t.get("payment_id") or "N/A")
+                pdate = clean_text(t.get("created_at") or "N/A")
+
+                if idx <= 20:
+                    tg_lines.append(
+                        f"**{idx}. {name}** (`{sid}` | ID: `{uid}`)\n"
+                        f"   💰 Plan: `{plan}` (₹{amt}) | 📱 Phone: `{phone}`\n"
+                        f"   🧾 Txn ID: `{pid}` | 📅 Date: `{pdate}`\n"
+                    )
+                pdf_rows.append([str(idx), str(uid), str(sid), name, str(phone), clean_text(t.get("target_exam")), plan, f"Rs. {amt}", str(t.get("daily_quota", 20)), str(pid), str(pdate)])
+
+            if len(filtered_txns) > 20:
+                tg_lines.append(f"*(+ {len(filtered_txns) - 20} more transactions in attached PDF report)*")
+
+            if not filtered_txns:
+                tg_lines.append(f"ℹ️ *No payment transactions recorded for {timeframe_label}.*")
+
+            tg_lines.append("\n━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\n📥 *Download full revenue report as PDF below:*")
+
+            return {
+                "title": title,
+                "total_records": len(filtered_txns),
+                "summary_markdown": "\n".join(tg_lines),
+                "columns": columns,
+                "rows": pdf_rows,
+                "kpis": {"Timeframe": timeframe_label, "Gross Revenue": f"₹{gross_rev} INR", "Total Orders": str(len(filtered_txns))}
+            }
+
+        # =========================================================================
+        # 3. DATE-SPECIFIC REGISTRATIONS (TODAY, YESTERDAY, THIS WEEK, THIS MONTH)
+        # =========================================================================
+        is_registration_query = any(k in q_lower for k in ["register", "registered", "joined", "new user", "new student", "signup", "onboarded", "users list", "students list", "user list"])
+        is_today = "today" in q_lower
+        is_yesterday = "yesterday" in q_lower
+        is_this_week = "this week" in q_lower or "past week" in q_lower
+        is_this_month = "this month" in q_lower
+
+        if is_registration_query and (is_today or is_yesterday or is_this_week or is_this_month):
+            conn = get_db()
+            cursor = conn.cursor(cursor_factory=RealDictCursor)
+            cursor.execute("SELECT * FROM users ORDER BY user_id DESC")
+            all_users = cursor.fetchall()
+            cursor.close()
+            release_db(conn)
+
+            matched_date_users = []
+            if is_today:
+                date_label = f"Today ({today_date_str})"
+                for u in all_users:
+                    c_str = str(u.get("created_at", ""))
+                    u_dt = parse_date_safely(c_str)
+                    if (today_date_str in c_str) or (u_dt and u_dt >= today_start):
+                        matched_date_users.append(u)
+            elif is_yesterday:
+                date_label = f"Yesterday ({yesterday_date_str})"
+                for u in all_users:
+                    c_str = str(u.get("created_at", ""))
+                    u_dt = parse_date_safely(c_str)
+                    if (yesterday_date_str in c_str) or (u_dt and yesterday_start <= u_dt < today_start):
+                        matched_date_users.append(u)
+            elif is_this_week:
+                date_label = "This Week"
+                week_start = today_start - timedelta(days=today_start.weekday())
+                for u in all_users:
+                    u_dt = parse_date_safely(u.get("created_at", ""))
+                    if u_dt and u_dt >= week_start:
+                        matched_date_users.append(u)
+            elif is_this_month:
+                date_label = "This Month"
+                month_start = today_start.replace(day=1)
+                for u in all_users:
+                    u_dt = parse_date_safely(u.get("created_at", ""))
+                    if u_dt and u_dt >= month_start:
+                        matched_date_users.append(u)
+
+            title = f"Student Registrations Report ({date_label})"
+            columns = ["S.No.", "Telegram ID", "Student ID", "Full Name", "Phone", "Target Exam", "State", "PIN", "Registered At"]
+            pdf_rows = []
+            tg_lines = [
+                f"👥 **OMNISCIENT INTEL: STUDENT REGISTRATIONS ({date_label.upper()})**\n"
+                f"━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\n"
+                f"📊 **Total New Students Registered:** `{len(matched_date_users)}`\n"
+                f"━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\n"
+            ]
+
+            for idx, u in enumerate(matched_date_users, start=1):
+                uid = u['user_id']
+                sid = clean_text(u.get('student_id') or f"USER_{uid}")
+                name = clean_text(u.get('full_name') or "Unknown")
+                phone = clean_text(u.get('phone_number') or "N/A")
+                exam = clean_text(u.get('target_exam') or "N/A")
+                state = clean_text(u.get('state') or "N/A")
+                pin = clean_text(u.get('pin') or "N/A")
+                ctime = clean_text(u.get('created_at') or "N/A")
+
+                if idx <= 20:
+                    tg_lines.append(
+                        f"**{idx}. {name}** (`{sid}` | ID: `{uid}`)\n"
+                        f"   📱 Phone: `{phone}` | 🎯 Exam: `{exam}` | 📍 State: `{state}`\n"
+                        f"   🔑 PIN: `{pin}` | ⏰ Joined: `{ctime}`\n"
+                    )
+                pdf_rows.append([str(idx), str(uid), str(sid), name, str(phone), str(exam), str(state), str(pin), str(ctime)])
+
+            if len(matched_date_users) > 20:
+                tg_lines.append(f"*(+ {len(matched_date_users) - 20} more students in attached PDF report)*")
+
+            if not matched_date_users:
+                tg_lines.append(f"ℹ️ *Zero student registrations recorded for {date_label}.*")
+
+            tg_lines.append("\n━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\n📥 *Download complete registration report as PDF below:*")
+
+            return {
+                "title": title,
+                "total_records": len(matched_date_users),
+                "summary_markdown": "\n".join(tg_lines),
+                "columns": columns,
+                "rows": pdf_rows,
+                "kpis": {"Timeframe": date_label, "New Registrations": f"{len(matched_date_users)} Students"}
+            }
+
+        # =========================================================================
+        # 4. TOTAL PAID VIP USERS & SUBSCRIBERS
+        # =========================================================================
+        if ("paid" in q_lower or "subscriber" in q_lower or "bought" in q_lower or "vip" in q_lower) and any(k in q_lower for k in ["total", "all", "list", "users", "students", "show", "give", "tell"]):
             conn = get_db()
             cursor = conn.cursor(cursor_factory=RealDictCursor)
             cursor.execute("""
@@ -204,171 +479,86 @@ def parse_and_execute_admin_query(query_text: str, context_correction: str = Non
                 "kpis": {"Total Paid Scholars": str(len(paid_students)), "Gross Revenue": f"₹{total_rev} INR"}
             }
 
-        # -------------------------------------------------------------------------
-        # 2. FESTIVAL & SALES STRATEGY FORECASTER
-        # -------------------------------------------------------------------------
-        if any(k in q_lower for k in ["festival", "festivals", "sale offer", "sale timing", "when sale", "right time for sale", "calendar"]):
+        # =========================================================================
+        # 5. PASS EXPIRATIONS, VALIDITY & DEMO ENDINGS
+        # =========================================================================
+        if any(k in q_lower for k in ["expire", "expiring", "expiration", "validity", "demo ending", "plan expired"]):
+            days_match = re.search(r"(\d+)\s*day", q_lower)
+            days_window = int(days_match.group(1)) if days_match else 3
+
             conn = get_db()
             cursor = conn.cursor(cursor_factory=RealDictCursor)
-            cursor.execute("SELECT * FROM flash_sales ORDER BY id DESC LIMIT 5")
-            past_sales = cursor.fetchall()
-            cursor.close()
-            release_db(conn)
-
-            upcoming_festivals = []
-            for fest in INDIAN_FESTIVALS_CALENDAR:
-                fest_dt = datetime.strptime(fest["date"], "%Y-%m-%d")
-                fest_dt = IST.localize(fest_dt)
-                if fest_dt >= now_ist:
-                    days_left = (fest_dt.date() - now_ist.date()).days
-                    upcoming_festivals.append({
-                        "name": fest["name"],
-                        "date": fest["date"],
-                        "days_left": days_left,
-                        "suggested_sale": fest["suggested_sale"]
-                    })
-
-            title = "Omniscient Sales & Festival Strategy Intelligence"
-            columns = ["S.No.", "Upcoming Festival", "Date", "Countdown", "Recommended Campaign Strategy"]
-            pdf_rows = []
-            tg_lines = [
-                "🔥 **OMNISCIENT INTEL: SALES & FESTIVAL FORECASTER**\n"
-                "━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\n"
-                "📅 **RECENT BOT PROMOTIONS:**\n"
-            ]
-
-            if past_sales:
-                for ps in past_sales:
-                    st_icon = "🟢 LIVE" if ps.get("is_active") else "🔴 EXPIRED"
-                    pct = int(float(ps.get("discount_percent", 0)))
-                    tg_lines.append(f"• **{clean_text(ps['sale_name'])}** ({pct}% OFF) — `{st_icon}` | Valid: `{str(ps.get('valid_until', 'N/A'))[:16]}`")
-            else:
-                tg_lines.append("• *No past sales recorded in system.*")
-
-            tg_lines.append("\n🎉 **UPCOMING FESTIVAL LAUNCH WINDOWS (2026–2027):**\n")
-            for idx, uf in enumerate(upcoming_festivals[:8], start=1):
-                tg_lines.append(f"**{idx}. {uf['name']}** (`{uf['date']}` — In `{uf['days_left']} Days`)\n   👉 *Strategy:* `{uf['suggested_sale']}`\n")
-                pdf_rows.append([str(idx), str(uf['name']), str(uf['date']), f"{uf['days_left']} Days Left", str(uf['suggested_sale'])])
-
-            tg_lines.append("━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\n📥 *Download complete festival promotion calendar as PDF below:*")
-
-            return {
-                "title": title,
-                "total_records": len(upcoming_festivals),
-                "summary_markdown": "\n".join(tg_lines),
-                "columns": columns,
-                "rows": pdf_rows,
-                "kpis": {"Logged Promotions": str(len(past_sales)), "Upcoming Opportunities": f"{len(upcoming_festivals)} Events"}
-            }
-
-        # -------------------------------------------------------------------------
-        # 3. FINANCIAL REVENUE, TRANSACTIONS & PAYMENT QUERIES
-        # -------------------------------------------------------------------------
-        if any(k in q_lower for k in ["revenue", "earning", "income", "collection", "money", "sales stats", "transactions", "payment history", "txn"]):
-            conn = get_db()
-            cursor = conn.cursor(cursor_factory=RealDictCursor)
-            
-            is_today = "today" in q_lower
-            is_week = "week" in q_lower
-            is_month = "month" in q_lower
-
             cursor.execute("""
-                SELECT pt.payment_id, pt.plan_name, pt.amount_paid, pt.daily_quota, pt.validity_days, pt.created_at, pt.expiry_at,
-                       u.user_id, u.student_id, u.full_name, u.phone_number, u.target_exam, u.state
-                FROM payment_transactions pt
-                LEFT JOIN users u ON pt.user_id = u.user_id
-                WHERE pt.plan_key != 'FREE_DEMO' AND pt.amount_paid > 0
-                ORDER BY pt.id DESC
+                SELECT user_id, student_id, full_name, phone_number, target_exam, paid_question_balance, vip_pass_expiry, payment_id
+                FROM users
+                WHERE vip_pass_expiry IS NOT NULL AND is_banned = 0
+                ORDER BY vip_pass_expiry ASC
             """)
-            all_txns = cursor.fetchall()
+            raw_users = cursor.fetchall()
             cursor.close()
             release_db(conn)
 
-            filtered_txns = []
-            gross_rev = 0.0
-            timeframe_label = "All-Time"
+            target_cutoff = now_ist + timedelta(days=days_window)
+            expiring_list = []
+            already_expired = []
 
-            for t in all_txns:
-                amt = float(t.get("amount_paid", 0) or 0)
-                c_str = t.get("created_at", "")
-                t_dt = None
-                try:
-                    t_dt = datetime.strptime(c_str, "%d %b %Y, %I:%M %p IST")
-                    t_dt = IST.localize(t_dt) if t_dt.tzinfo is None else t_dt
-                except Exception:
-                    pass
+            for u in raw_users:
+                exp_str = u.get("vip_pass_expiry", "")
+                exp_dt = parse_date_safely(exp_str)
+                if exp_dt:
+                    if exp_dt < now_ist:
+                        already_expired.append(u)
+                    elif now_ist <= exp_dt <= target_cutoff:
+                        hours_left = max(0.0, round((exp_dt - now_ist).total_seconds() / 3600.0, 1))
+                        u["hours_left"] = hours_left
+                        expiring_list.append(u)
 
-                if is_today:
-                    timeframe_label = f"Today ({today_date_str})"
-                    if t_dt and t_dt >= today_start:
-                        filtered_txns.append(t)
-                        gross_rev += amt
-                elif is_week:
-                    timeframe_label = "This Week"
-                    week_start = today_start - timedelta(days=today_start.weekday())
-                    if t_dt and t_dt >= week_start:
-                        filtered_txns.append(t)
-                        gross_rev += amt
-                elif is_month:
-                    timeframe_label = "This Month"
-                    month_start = today_start.replace(day=1)
-                    if t_dt and t_dt >= month_start:
-                        filtered_txns.append(t)
-                        gross_rev += amt
-                else:
-                    filtered_txns.append(t)
-                    gross_rev += amt
+            if "already" in q_lower or "total plan expired" in q_lower or "expired users" in q_lower:
+                selected_records = already_expired
+                header_lbl = f"VIP Plans Already Expired ({len(already_expired)} Total)"
+            else:
+                selected_records = expiring_list
+                header_lbl = f"VIP Plans Expiring in Next {days_window} Days ({len(expiring_list)} Total)"
 
-            title = f"Financial Revenue & Transactions Ledger ({timeframe_label})"
-            columns = ["S.No.", "Telegram ID", "Student ID", "Full Name", "Phone", "Target Exam", "Plan Name", "Amount (INR)", "Daily Quota", "Txn ID", "Paid Date"]
+            title = header_lbl
+            columns = ["S.No.", "Telegram ID", "Student ID", "Full Name", "Phone", "Target Exam", "Daily Quota", "Pass Expiry Date", "Txn ID"]
             pdf_rows = []
             tg_lines = [
-                f"💰 **OMNISCIENT INTEL: FINANCIAL REVENUE & TRANSACTIONS**\n"
+                f"⏳ **OMNISCIENT INTEL: VIP PASS EXPIRY AUDIT**\n"
                 f"━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\n"
-                f"📅 **Scope:** `{timeframe_label}`\n"
-                f"💵 **Total Revenue:** `₹{gross_rev} INR`\n"
-                f"🧾 **Total Verified Orders:** `{len(filtered_txns)}`\n"
+                f"⚠️ **{header_lbl}**\n"
                 f"━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\n"
             ]
 
-            for idx, t in enumerate(filtered_txns, start=1):
-                uid = t.get("user_id", "N/A")
-                sid = clean_text(t.get("student_id") or f"USER_{uid}")
-                name = clean_text(t.get("full_name") or "Unknown")
-                phone = clean_text(t.get("phone_number") or "N/A")
-                plan = clean_text(t.get("plan_name") or "VIP Pack")
-                amt = t.get("amount_paid", 0)
-                pid = clean_text(t.get("payment_id") or "N/A")
-                pdate = clean_text(t.get("created_at") or "N/A")
+            for idx, u in enumerate(selected_records, start=1):
+                uid = u.get("user_id", "N/A")
+                sid = clean_text(u.get("student_id") or f"USER_{uid}")
+                name = clean_text(u.get('full_name') or "Student")
+                phone = clean_text(u.get('phone_number') or "N/A")
+                exp_date = clean_text(u.get('vip_pass_expiry') or "N/A")
+                h_info = f"Left: `{u.get('hours_left')}h` | " if 'hours_left' in u else ""
 
                 if idx <= 20:
-                    tg_lines.append(
-                        f"**{idx}. {name}** (`{sid}` | ID: `{uid}`)\n"
-                        f"   💰 Plan: `{plan}` (₹{amt}) | 📱 Phone: `{phone}`\n"
-                        f"   🧾 Txn ID: `{pid}` | 📅 Date: `{pdate}`\n"
-                    )
-                pdf_rows.append([str(idx), str(uid), str(sid), name, str(phone), clean_text(t.get("target_exam")), plan, f"Rs. {amt}", str(t.get("daily_quota", 20)), str(pid), str(pdate)])
+                    tg_lines.append(f"**{idx}. {name}** (`{sid}` | ID: `{uid}`)\n   📱 Phone: `{phone}` | {h_info}Expires: `{exp_date}`\n   ⚡ Quota: `{u.get('paid_question_balance', 20)} Qs/Day`\n")
+                pdf_rows.append([str(idx), str(uid), str(sid), name, phone, clean_text(u.get('target_exam')), f"{u.get('paid_question_balance', 20)} Qs", exp_date, clean_text(u.get('payment_id', 'N/A'))])
 
-            if len(filtered_txns) > 20:
-                tg_lines.append(f"*(+ {len(filtered_txns) - 20} more transactions in attached PDF report)*")
+            if not selected_records:
+                tg_lines.append("🎉 *Zero subscriptions found matching this criteria.*")
 
-            if not filtered_txns:
-                tg_lines.append(f"ℹ️ *No payment transactions found for {timeframe_label}.*")
-
-            tg_lines.append("\n━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\n📥 *Download full revenue report as PDF below:*")
+            tg_lines.append("━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\n📥 *Download complete expiration audit as PDF below:*")
 
             return {
                 "title": title,
-                "total_records": len(filtered_txns),
+                "total_records": len(selected_records),
                 "summary_markdown": "\n".join(tg_lines),
                 "columns": columns,
                 "rows": pdf_rows,
-                "kpis": {"Timeframe": timeframe_label, "Gross Revenue": f"₹{gross_rev} INR", "Total Orders": str(len(filtered_txns))}
+                "kpis": {"Expiring Records": str(len(selected_records))}
             }
 
-        # -------------------------------------------------------------------------
-        # 4. ONLINE PATTERNS, HABITS & PRACTICE TIME TELEMETRY
-        # -------------------------------------------------------------------------
+        # =========================================================================
+        # 6. ONLINE PATTERNS, HABITS & PRACTICE TIME TELEMETRY
+        # =========================================================================
         if any(k in q_lower for k in ["online", "active users", "time spent", "practice time", "when comes", "patterns", "habits", "telemetry"]):
             conn = get_db()
             cursor = conn.cursor(cursor_factory=RealDictCursor)
@@ -421,89 +611,9 @@ def parse_and_execute_admin_query(query_text: str, context_correction: str = Non
                 "kpis": {"Scholars Tracked": str(len(rows))}
             }
 
-        # -------------------------------------------------------------------------
-        # 5. PASS EXPIRATIONS, VALIDITY & DEMO ENDINGS
-        # -------------------------------------------------------------------------
-        if any(k in q_lower for k in ["expire", "expiring", "expiration", "validity", "demo ending", "plan expired"]):
-            days_match = re.search(r"(\d+)\s*day", q_lower)
-            days_window = int(days_match.group(1)) if days_match else 3
-
-            conn = get_db()
-            cursor = conn.cursor(cursor_factory=RealDictCursor)
-            cursor.execute("""
-                SELECT user_id, student_id, full_name, phone_number, target_exam, paid_question_balance, vip_pass_expiry, payment_id
-                FROM users
-                WHERE vip_pass_expiry IS NOT NULL AND is_banned = 0
-                ORDER BY vip_pass_expiry ASC
-            """)
-            raw_users = cursor.fetchall()
-            cursor.close()
-            release_db(conn)
-
-            target_cutoff = now_ist + timedelta(days=days_window)
-            expiring_list = []
-            already_expired = []
-
-            for u in raw_users:
-                exp_str = u.get("vip_pass_expiry", "")
-                try:
-                    exp_dt = datetime.strptime(exp_str, "%Y-%m-%d %H:%M:%S IST")
-                    exp_dt = IST.localize(exp_dt) if exp_dt.tzinfo is None else exp_dt
-                    if exp_dt < now_ist:
-                        already_expired.append(u)
-                    elif now_ist <= exp_dt <= target_cutoff:
-                        hours_left = max(0.0, round((exp_dt - now_ist).total_seconds() / 3600.0, 1))
-                        u["hours_left"] = hours_left
-                        expiring_list.append(u)
-                except Exception:
-                    pass
-
-            if "already" in q_lower or "total plan expired" in q_lower or "expired users" in q_lower:
-                selected_records = already_expired
-                header_lbl = f"VIP Plans Already Expired ({len(already_expired)} Total)"
-            else:
-                selected_records = expiring_list
-                header_lbl = f"VIP Plans Expiring in Next {days_window} Days ({len(expiring_list)} Total)"
-
-            title = header_lbl
-            columns = ["S.No.", "Telegram ID", "Student ID", "Full Name", "Phone", "Target Exam", "Daily Quota", "Pass Expiry Date", "Txn ID"]
-            pdf_rows = []
-            tg_lines = [
-                f"⏳ **OMNISCIENT INTEL: VIP PASS EXPIRY AUDIT**\n"
-                f"━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\n"
-                f"⚠️ **{header_lbl}**\n"
-                f"━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\n"
-            ]
-
-            for idx, u in enumerate(selected_records, start=1):
-                uid = u.get("user_id", "N/A")
-                sid = clean_text(u.get("student_id") or f"USER_{uid}")
-                name = clean_text(u.get('full_name') or "Student")
-                phone = clean_text(u.get('phone_number') or "N/A")
-                exp_date = clean_text(u.get('vip_pass_expiry') or "N/A")
-                h_info = f"Left: `{u.get('hours_left')}h` | " if 'hours_left' in u else ""
-
-                if idx <= 20:
-                    tg_lines.append(f"**{idx}. {name}** (`{sid}` | ID: `{uid}`)\n   📱 Phone: `{phone}` | {h_info}Expires: `{exp_date}`\n   ⚡ Quota: `{u.get('paid_question_balance', 20)} Qs/Day`\n")
-                pdf_rows.append([str(idx), str(uid), str(sid), name, phone, clean_text(u.get('target_exam')), f"{u.get('paid_question_balance', 20)} Qs", exp_date, clean_text(u.get('payment_id', 'N/A'))])
-
-            if not selected_records:
-                tg_lines.append("🎉 *Zero subscriptions found matching this criteria.*")
-
-            tg_lines.append("━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\n📥 *Download complete expiration audit as PDF below:*")
-
-            return {
-                "title": title,
-                "total_records": len(selected_records),
-                "summary_markdown": "\n".join(tg_lines),
-                "columns": columns,
-                "rows": pdf_rows,
-                "kpis": {"Expiring Records": str(len(selected_records))}
-            }
-
-        # -------------------------------------------------------------------------
-        # 6. REVIEWS, DOUBTS & STUDENT FEEDBACK QUERIES
-        # -------------------------------------------------------------------------
+        # =========================================================================
+        # 7. STUDENT FEEDBACK & REVIEWS
+        # =========================================================================
         if any(k in q_lower for k in ["feedback", "review", "ratings", "reviews given", "what reviews"]):
             conn = get_db()
             cursor = conn.cursor(cursor_factory=RealDictCursor)
@@ -544,43 +654,44 @@ def parse_and_execute_admin_query(query_text: str, context_correction: str = Non
                 "kpis": {"Total Feedback": str(len(feedbacks))}
             }
 
-        # -------------------------------------------------------------------------
-        # 7. UNIVERSAL MULTI-DIMENSIONAL USER DATABASE SEARCH
+        # =========================================================================
+        # 8. UNIVERSAL MULTI-DIMENSIONAL USER DATABASE SEARCH
         # (Matches by State, Exam, Plan Tier, Status, Phone, Name, PIN, Dates)
-        # -------------------------------------------------------------------------
+        # =========================================================================
         conn = get_db()
         cursor = conn.cursor(cursor_factory=RealDictCursor)
         
+        # 1. State Filter
         matched_state = None
         for st in INDIAN_STATES:
             if st in q_lower:
                 matched_state = st
                 break
 
+        # 2. Exam Filter
         matched_exam = None
         for ek, ev in EXAM_KEYWORDS.items():
             if ek in q_lower:
                 matched_exam = ev
                 break
 
+        # 3. Plan Filter
         matched_plan = None
-        # Fixed syntax here: loop directly over items without inline walrus operator
         for pk, pv in PLAN_TIER_KEYWORDS.items():
             if pk in q_lower:
                 matched_plan = pv
                 break
 
-        days_match = re.search(r"(\d+)\s*day", q_lower)
-        days_filter = int(days_match.group(1)) if days_match else None
-
+        # 4. Status Filter
         filter_banned = None
         if "banned" in q_lower or "blocked" in q_lower:
             filter_banned = 1
         elif "active" in q_lower or "unbanned" in q_lower:
             filter_banned = 0
 
+        # 5. Paid vs Free Filter
         filter_paid_only = None
-        if any(k in q_lower for k in ["paid users", "vip users", "subscribers", "paid students", "who bought", "all paid", "total paid"]):
+        if any(k in q_lower for k in ["paid users", "vip users", "subscribers", "paid students", "who bought"]):
             filter_paid_only = True
         elif any(k in q_lower for k in ["free users", "demo users", "unpaid"]):
             filter_paid_only = False
@@ -609,11 +720,13 @@ def parse_and_execute_admin_query(query_text: str, context_correction: str = Non
             conditions.append("u.user_id IN (SELECT user_id FROM payment_transactions WHERE UPPER(plan_key) LIKE %s)")
             params.append(f"%{matched_plan}%")
 
+        # Specific Search Term Extraction (clean stop words)
         search_keywords = q_lower
-        for stopw in ["give", "me", "show", "tell", "details", "of", "list", "all", "total", "users", "students", "who", "is", "about", "student", "user", "info", "find", "search", "pin", "password", "security"]:
+        for stopw in ["give", "me", "show", "tell", "details", "of", "list", "all", "the", "total", "users", "students", "who", "is", "about", "student", "user", "info", "find", "search", "pin", "password", "security", "registered", "yesterday", "today", "tomorrow"]:
             search_keywords = re.sub(r'\b' + stopw + r'\b', '', search_keywords)
         search_keywords = search_keywords.strip()
 
+        # If a specific person/phone/ID term remains, add to WHERE clause
         if len(search_keywords) >= 2 and not (matched_state or matched_exam or matched_plan or filter_paid_only is not None):
             conditions.append("(LOWER(u.full_name) LIKE %s OR LOWER(u.student_id) LIKE %s OR u.phone_number LIKE %s OR CAST(u.user_id AS TEXT) LIKE %s)")
             p_term = f"%{search_keywords}%"

@@ -2,6 +2,7 @@ import asyncio
 import logging
 import time
 import os
+import json
 from telegram import Update, Poll, InlineKeyboardMarkup, InlineKeyboardButton
 from telegram.ext import ContextTypes
 from app.config import DAILY_QUESTION_LIMIT, PRIMARY_ADMIN_ID
@@ -9,9 +10,12 @@ from app.database import (
     get_today_attempts, mark_questions_as_seen, record_quiz_result, 
     get_ist_timestamp_str, get_user_profile, get_maintenance_until,
     save_paused_quiz_state, get_paused_quiz_state, clear_paused_quiz_state,
-    save_question_to_db, log_user_activity_time
+    save_question_to_db, log_user_activity_time, get_next_mock_number
 )
-from app.pyq_fetcher import fetch_pyqs_for_quiz, get_available_topics, COMPUTER_TOPIC_METADATA, GK_TOPIC_METADATA
+from app.pyq_fetcher import (
+    fetch_pyqs_for_quiz, get_available_topics, COMPUTER_TOPIC_METADATA, GK_TOPIC_METADATA,
+    fetch_full_mock_questions, fetch_multi_topic_questions
+)
 from app.stats import calculate_user_percentile, calculate_user_rank
 
 logger = logging.getLogger(__name__)
@@ -71,7 +75,7 @@ async def check_quiz_maintenance(update: Update) -> bool:
     return True
 
 async def launch_quiz_setup(update: Update, context: ContextTypes.DEFAULT_TYPE):
-    """Step 1: Subject Selection Panel (Computer Awareness vs General Knowledge) at the very beginning."""
+    """Step 1: Main Game Mode Selection Panel."""
     if not await check_quiz_maintenance(update): return
 
     user = update.effective_user
@@ -115,7 +119,7 @@ async def launch_quiz_setup(update: Update, context: ContextTypes.DEFAULT_TYPE):
         text = (
             f"⏸ **PAUSED QUIZ SESSION FOUND!** ⏸\n"
             f"━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\n"
-            f"📖 **Topic:** `{topic_disp}`\n"
+            f"📖 **Title:** `{topic_disp}`\n"
             f"📊 **Remaining Questions:** `{remaining_count}` Qs\n"
             f"⭐ **Current Score:** `{paused.get('score', 0.0)}`\n\n"
             f"Tap **▶️ Resume Paused Quiz** below to continue:"
@@ -130,61 +134,302 @@ async def launch_quiz_setup(update: Update, context: ContextTypes.DEFAULT_TYPE):
             await update.message.reply_text(text, reply_markup=keyboard, parse_mode="Markdown")
         return
 
-    subject_keyboard = InlineKeyboardMarkup([
-        [InlineKeyboardButton("🖥️ Computer Awareness", callback_data="qsubj_computer")],
-        [InlineKeyboardButton("🌍 General Knowledge (GK)", callback_data="qsubj_gk")]
+    mode_keyboard = InlineKeyboardMarkup([
+        [InlineKeyboardButton("🔀 Normal Quiz Mode", callback_data="qflow_NORMAL")],
+        [InlineKeyboardButton("🏆 Full Mock Mode", callback_data="qflow_MOCK")],
+        [InlineKeyboardButton("📚 Sectional Mode", callback_data="qflow_SECT")],
+        [InlineKeyboardButton("📑 Topic-Wise Sectional", callback_data="qflow_TOPSECT")]
     ])
 
     msg_text = (
-        f"📚 **QUIZ WITH HIM — SUBJECT SELECTION** 📚\n"
+        f"📚 **QUIZ WITH HIM — SELECT MODE** 📚\n"
         f"━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\n"
-        f"Please select your preferred **Subject** to begin:"
+        f"Please select your Quiz Mode to begin:"
     )
 
     if update.callback_query:
-        await update.callback_query.edit_message_text(msg_text, reply_markup=subject_keyboard, parse_mode="Markdown")
+        await update.callback_query.edit_message_text(msg_text, reply_markup=mode_keyboard, parse_mode="Markdown")
     else:
-        await update.message.reply_text(msg_text, reply_markup=subject_keyboard, parse_mode="Markdown")
+        await update.message.reply_text(msg_text, reply_markup=mode_keyboard, parse_mode="Markdown")
 
-async def quiz_subject_callback(update: Update, context: ContextTypes.DEFAULT_TYPE):
-    """Step 2: Select Practice Mode (Subject-Wise/Topic-Wise vs Mixed)."""
-    if not await check_quiz_maintenance(update): return
 
+# ==========================================
+# FLOW ROUTING FOR ALL MODES
+# ==========================================
+
+async def quiz_flow_callback(update: Update, context: ContextTypes.DEFAULT_TYPE):
     query = update.callback_query
     await query.answer()
     user_id = query.from_user.id
+    flow = query.data.replace("qflow_", "")
+
+    QUIZ_SETUP_CACHE[user_id] = {"flow": flow}
+
+    if flow == "NORMAL":
+        subject_keyboard = InlineKeyboardMarkup([
+            [InlineKeyboardButton("🖥️ Computer Awareness", callback_data="qsubj_computer")],
+            [InlineKeyboardButton("🌍 General Knowledge (GK)", callback_data="qsubj_gk")],
+            [InlineKeyboardButton("🔙 Back", callback_data="cmd_quiz")]
+        ])
+        await query.edit_message_text("📚 **NORMAL QUIZ MODE**\nSelect Subject:", reply_markup=subject_keyboard, parse_mode="Markdown")
+
+    elif flow == "MOCK":
+        profile = await asyncio.to_thread(get_user_profile, user_id)
+        paid_bal = profile.get("paid_question_balance", 0) or 0
+        if paid_bal <= 20 and user_id != PRIMARY_ADMIN_ID:
+            await query.edit_message_text(
+                "🛑 **PREMIUM FEATURE ONLY** 🛑\n\nFull Mock Mode is highly intensive and strictly reserved for VIP members. Free/Demo limits do not apply here.\n\nPlease upgrade your plan to unlock.",
+                reply_markup=InlineKeyboardMarkup([[InlineKeyboardButton("💳 View VIP Plans", callback_data="cmd_plans"), InlineKeyboardButton("🔙 Back", callback_data="cmd_quiz")]])
+            )
+            return
+        
+        keyboard = InlineKeyboardMarkup([
+            [InlineKeyboardButton("📝 20 of Each (40 Total)", callback_data="qmockcount_40")],
+            [InlineKeyboardButton("📝 25 of Each (50 Total)", callback_data="qmockcount_50")],
+            [InlineKeyboardButton("📝 30 of Each (60 Total)", callback_data="qmockcount_60")],
+            [InlineKeyboardButton("🔙 Back", callback_data="cmd_quiz")]
+        ])
+        await query.edit_message_text("🏆 **FULL MOCK MODE**\nIncludes equal mix of Computer & GK.\nSelect total number of questions:", reply_markup=keyboard)
+
+    elif flow in ["SECT", "TOPSECT"]:
+        subject_keyboard = InlineKeyboardMarkup([
+            [InlineKeyboardButton("🖥️ Computer Awareness", callback_data="qsectsubj_computer")],
+            [InlineKeyboardButton("🌍 General Knowledge (GK)", callback_data="qsectsubj_gk")],
+            [InlineKeyboardButton("🔙 Back", callback_data="cmd_quiz")]
+        ])
+        title = "SECTIONAL MODE" if flow == "SECT" else "TOPIC-WISE SECTIONAL"
+        await query.edit_message_text(f"📚 **{title}**\nSelect Subject:", reply_markup=subject_keyboard, parse_mode="Markdown")
+
+
+# ==========================================
+# FULL MOCK MODE HANDLERS
+# ==========================================
+
+async def mock_count_callback(update: Update, context: ContextTypes.DEFAULT_TYPE):
+    query = update.callback_query
+    await query.answer()
+    user_id = query.from_user.id
+    count = int(query.data.replace("qmockcount_", ""))
+    QUIZ_SETUP_CACHE[user_id]["count"] = count
+
+    keyboard = InlineKeyboardMarkup([
+        [InlineKeyboardButton("⏱ 20 Minutes", callback_data="qmocktime_20"), InlineKeyboardButton("⏱ 25 Minutes", callback_data="qmocktime_25")],
+        [InlineKeyboardButton("⏱ 30 Minutes", callback_data="qmocktime_30")],
+        [InlineKeyboardButton("🔙 Back", callback_data="qflow_MOCK")]
+    ])
+    await query.edit_message_text(f"⏱ **MOCK TIMER**\nTotal Questions: {count}\nSelect Total Time limit:", reply_markup=keyboard, parse_mode="Markdown")
+
+async def mock_time_callback(update: Update, context: ContextTypes.DEFAULT_TYPE):
+    query = update.callback_query
+    await query.answer()
+    user_id = query.from_user.id
+    mins = int(query.data.replace("qmocktime_", ""))
+    QUIZ_SETUP_CACHE[user_id]["total_time_mins"] = mins
+
+    keyboard = InlineKeyboardMarkup([
+        [InlineKeyboardButton("🌐 English", callback_data="qmocklang_en"), InlineKeyboardButton("🇮🇳 हिंदी", callback_data="qmocklang_hi")]
+    ])
+    await query.edit_message_text("🌐 **Select Language**:", reply_markup=keyboard, parse_mode="Markdown")
+
+async def mock_lang_callback(update: Update, context: ContextTypes.DEFAULT_TYPE):
+    query = update.callback_query
+    await query.answer()
+    user_id = query.from_user.id
+    lang = query.data.replace("qmocklang_", "")
+    setup = QUIZ_SETUP_CACHE.pop(user_id, {})
     
+    count = setup.get("count", 40)
+    total_time_mins = setup.get("total_time_mins", 20)
+    timer_sec = (total_time_mins * 60) // count
+
+    profile = await asyncio.to_thread(get_user_profile, user_id)
+    attempted_today = await asyncio.to_thread(get_today_attempts, user_id)
+    paid_bal = profile.get("paid_question_balance", 0) or 0 if profile else 0
+    allowed_limit = 10000 if user_id == PRIMARY_ADMIN_ID else max(DAILY_QUESTION_LIMIT, paid_bal) + (profile.get("bonus_quota", 0) if profile else 0)
+    remaining_quota = allowed_limit - attempted_today
+
+    if count > remaining_quota:
+        await query.edit_message_text(f"🛑 Insufficient limit! You only have {remaining_quota} questions left today.", reply_markup=get_quizbook_nav_keyboard(), parse_mode="Markdown")
+        return
+
+    questions = await asyncio.to_thread(fetch_full_mock_questions, count, lang, user_id)
+    mock_number = await asyncio.to_thread(get_next_mock_number, user_id, "MOCK")
+    
+    await start_quiz_session(query, context, user_id, questions, timer_sec, "MOCK", mock_number, "Mixed", "MOCK", f"Full Mock #{mock_number}", lang)
+
+
+# ==========================================
+# SECTIONAL & TOPIC-WISE SECTIONAL HANDLERS
+# ==========================================
+
+async def sect_subj_callback(update: Update, context: ContextTypes.DEFAULT_TYPE):
+    query = update.callback_query
+    await query.answer()
+    user_id = query.from_user.id
+    subj = query.data.replace("qsectsubj_", "")
+    QUIZ_SETUP_CACHE[user_id]["subject"] = subj
+
+    flow = QUIZ_SETUP_CACHE[user_id].get("flow")
+    if flow == "TOPSECT":
+        QUIZ_SETUP_CACHE[user_id]["selected_topics"] = []
+        await show_multi_topic_selection(query, user_id, subj)
+    else:
+        await show_sect_count_selection(query)
+
+async def show_multi_topic_selection(query, user_id, subj):
+    topics = get_available_topics(subj, "en")
+    selected = QUIZ_SETUP_CACHE[user_id].get("selected_topics", [])
+    
+    keyboard = []
+    for t_key, t_name in topics:
+        prefix = "✅ " if t_key in selected else "⬜ "
+        keyboard.append([InlineKeyboardButton(f"{prefix}{t_name}", callback_data=f"qtop_toggle_{t_key}")])
+    
+    if 2 <= len(selected) <= 4:
+        keyboard.append([InlineKeyboardButton("🚀 Proceed with Selection", callback_data="qtop_proceed")])
+    
+    keyboard.append([InlineKeyboardButton("🔙 Back", callback_data="qflow_TOPSECT")])
+    
+    await query.edit_message_text(
+        "📑 **TOPIC-WISE SECTIONAL**\nSelect at least 2 and max 4 topics:\n",
+        reply_markup=InlineKeyboardMarkup(keyboard),
+        parse_mode="Markdown"
+    )
+
+async def top_toggle_callback(update: Update, context: ContextTypes.DEFAULT_TYPE):
+    query = update.callback_query
+    await query.answer()
+    user_id = query.from_user.id
+    t_key = query.data.replace("qtop_toggle_", "")
+    
+    selected = QUIZ_SETUP_CACHE[user_id].get("selected_topics", [])
+    if t_key in selected:
+        selected.remove(t_key)
+    else:
+        if len(selected) < 4:
+            selected.append(t_key)
+        else:
+            await query.answer("Maximum 4 topics allowed!", show_alert=True)
+            return
+    
+    QUIZ_SETUP_CACHE[user_id]["selected_topics"] = selected
+    subj = QUIZ_SETUP_CACHE[user_id].get("subject", "computer")
+    await show_multi_topic_selection(query, user_id, subj)
+
+async def top_proceed_callback(update: Update, context: ContextTypes.DEFAULT_TYPE):
+    query = update.callback_query
+    await query.answer()
+    await show_sect_count_selection(query)
+
+async def show_sect_count_selection(query):
+    keyboard = InlineKeyboardMarkup([
+        [InlineKeyboardButton("📝 20 Qs", callback_data="qsectcount_20"), InlineKeyboardButton("📝 25 Qs", callback_data="qsectcount_25")],
+        [InlineKeyboardButton("📝 30 Qs", callback_data="qsectcount_30")],
+        [InlineKeyboardButton("🔙 Back", callback_data="cmd_quiz")]
+    ])
+    await query.edit_message_text("📚 **SECTIONAL CONFIG**\nSelect number of questions:", reply_markup=keyboard, parse_mode="Markdown")
+
+async def sect_count_callback(update: Update, context: ContextTypes.DEFAULT_TYPE):
+    query = update.callback_query
+    await query.answer()
+    user_id = query.from_user.id
+    count = int(query.data.replace("qsectcount_", ""))
+    QUIZ_SETUP_CACHE[user_id]["count"] = count
+
+    keyboard = InlineKeyboardMarkup([
+        [InlineKeyboardButton("⏱ 10 Mins", callback_data="qsecttime_10"), InlineKeyboardButton("⏱ 12 Mins", callback_data="qsecttime_12")],
+        [InlineKeyboardButton("⏱ 15 Mins", callback_data="qsecttime_15"), InlineKeyboardButton("⏱ 20 Mins", callback_data="qsecttime_20")],
+        [InlineKeyboardButton("🔙 Back", callback_data="cmd_quiz")]
+    ])
+    await query.edit_message_text("⏱ **Select Total Time limit:**", reply_markup=keyboard, parse_mode="Markdown")
+
+async def sect_time_callback(update: Update, context: ContextTypes.DEFAULT_TYPE):
+    query = update.callback_query
+    await query.answer()
+    user_id = query.from_user.id
+    mins = int(query.data.replace("qsecttime_", ""))
+    QUIZ_SETUP_CACHE[user_id]["total_time_mins"] = mins
+
+    keyboard = InlineKeyboardMarkup([
+        [InlineKeyboardButton("🌐 English", callback_data="qsectlang_en"), InlineKeyboardButton("🇮🇳 हिंदी", callback_data="qsectlang_hi")]
+    ])
+    await query.edit_message_text("🌐 **Select Language**:", reply_markup=keyboard, parse_mode="Markdown")
+
+async def sect_lang_callback(update: Update, context: ContextTypes.DEFAULT_TYPE):
+    query = update.callback_query
+    await query.answer()
+    user_id = query.from_user.id
+    lang = query.data.replace("qsectlang_", "")
+    
+    setup = QUIZ_SETUP_CACHE.pop(user_id, {})
+    flow = setup.get("flow")
+    count = setup.get("count", 20)
+    total_time_mins = setup.get("total_time_mins", 10)
+    subj = setup.get("subject", "computer")
+    timer_sec = (total_time_mins * 60) // count
+
+    profile = await asyncio.to_thread(get_user_profile, user_id)
+    attempted_today = await asyncio.to_thread(get_today_attempts, user_id)
+    paid_bal = profile.get("paid_question_balance", 0) or 0 if profile else 0
+    allowed_limit = 10000 if user_id == PRIMARY_ADMIN_ID else max(DAILY_QUESTION_LIMIT, paid_bal) + (profile.get("bonus_quota", 0) if profile else 0)
+    remaining_quota = allowed_limit - attempted_today
+
+    if count > remaining_quota:
+        await query.edit_message_text(f"🛑 Insufficient limit! You only have {remaining_quota} questions left today.", reply_markup=get_quizbook_nav_keyboard(), parse_mode="Markdown")
+        return
+
+    if flow == "TOPSECT":
+        selected_topics = setup.get("selected_topics", [])
+        questions = await asyncio.to_thread(fetch_multi_topic_questions, count, selected_topics, subj, lang, user_id)
+        quiz_mode = "TOPIC_SECTIONAL"
+        mock_number = await asyncio.to_thread(get_next_mock_number, user_id, "TOPIC_SECTIONAL")
+        topic_name = f"Topic-Wise Sectional #{mock_number}"
+        await start_quiz_session(query, context, user_id, questions, timer_sec, quiz_mode, mock_number, subj, "MULTI", topic_name, lang, selected_topics)
+    else:
+        questions = await asyncio.to_thread(fetch_pyqs_for_quiz, count, None, lang, user_id, "MIXED", subj)
+        quiz_mode = "SECTIONAL"
+        mock_number = await asyncio.to_thread(get_next_mock_number, user_id, "SECTIONAL")
+        topic_name = f"Sectional #{mock_number} ({subj.upper()})"
+        await start_quiz_session(query, context, user_id, questions, timer_sec, quiz_mode, mock_number, subj, "MIXED", topic_name, lang)
+
+
+# ==========================================
+# NORMAL FLOW HANDLERS
+# ==========================================
+
+async def quiz_subject_callback(update: Update, context: ContextTypes.DEFAULT_TYPE):
+    if not await check_quiz_maintenance(update): return
+    query = update.callback_query
+    await query.answer()
+    user_id = query.from_user.id
     subj = query.data.replace("qsubj_", "")
+    
     if user_id not in QUIZ_SETUP_CACHE:
         QUIZ_SETUP_CACHE[user_id] = {}
     QUIZ_SETUP_CACHE[user_id]["subject"] = subj
 
     subj_label = "General Knowledge (GK)" if subj == "gk" else "Computer Awareness"
-
     mode_keyboard = InlineKeyboardMarkup([
         [InlineKeyboardButton("📂 Subject-Wise / Topic-Wise Practice", callback_data="qmode_topic")],
         [InlineKeyboardButton("🔀 Mixed Practice Mock Test", callback_data="qmode_mixed")],
-        [InlineKeyboardButton("🔙 Back to Subjects", callback_data="cmd_quiz")]
+        [InlineKeyboardButton("🔙 Back to Subjects", callback_data="qflow_NORMAL")]
     ])
 
     msg_text = (
-        f"📚 **QUIZ WITH HIM SETUP** 📚\n"
+        f"📚 **NORMAL QUIZ SETUP** 📚\n"
         f"━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\n"
         f"📖 **Subject:** `{subj_label}`\n\n"
         f"Please select your practice mode:"
     )
-
     await query.edit_message_text(msg_text, reply_markup=mode_keyboard, parse_mode="Markdown")
 
 async def quiz_mode_callback(update: Update, context: ContextTypes.DEFAULT_TYPE):
-    """Step 3: Topic/Category Selection (if Subject-Wise) or proceed to Language Selection (if Mixed)."""
     if not await check_quiz_maintenance(update): return
-
     query = update.callback_query
     await query.answer()
     user_id = query.from_user.id
-    
     mode = query.data.replace("qmode_", "")
+    
     current_cache = QUIZ_SETUP_CACHE.get(user_id, {"subject": "computer"})
     current_cache["mode"] = mode
     subj = current_cache.get("subject", "computer")
@@ -203,29 +448,23 @@ async def quiz_mode_callback(update: Update, context: ContextTypes.DEFAULT_TYPE)
 
         keyboard.append([InlineKeyboardButton("🔙 Back", callback_data=f"qsubj_{subj}")])
 
-        header = "📂 **SELECT TOPIC / CATEGORY** 📂"
-        sub = "Tap a specific topic below for strict topic-wise practice:"
-
         msg_text = (
-            f"{header}\n"
+            f"📂 **SELECT TOPIC / CATEGORY** 📂\n"
             f"━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\n"
             f"📖 **Subject:** `{'General Knowledge (GK)' if subj=='gk' else 'Computer Awareness'}`\n\n"
-            f"{sub}"
+            f"Tap a specific topic below:"
         )
         await query.edit_message_text(msg_text, reply_markup=InlineKeyboardMarkup(keyboard), parse_mode="Markdown")
 
 async def quiz_topic_callback(update: Update, context: ContextTypes.DEFAULT_TYPE):
-    """Step 4: After Topic Selection, proceed to Language Selection."""
     if not await check_quiz_maintenance(update): return
-
     query = update.callback_query
     await query.answer()
     user_id = query.from_user.id
-    
     topic_key = query.data.replace("qtopic_", "")
+    
     current_cache = QUIZ_SETUP_CACHE.get(user_id, {"subject": "computer"})
     subj = current_cache.get("subject", "computer")
-    
     metadata = GK_TOPIC_METADATA if subj == "gk" else COMPUTER_TOPIC_METADATA
     t_info = metadata.get(topic_key, {})
     topic_display = t_info.get("en", topic_key.replace("_", " "))
@@ -237,7 +476,6 @@ async def quiz_topic_callback(update: Update, context: ContextTypes.DEFAULT_TYPE
     await show_language_selection(query, user_id)
 
 async def show_language_selection(query, user_id: int):
-    """Step 5: Language Selection (English or Hindi) asked last before count and timer."""
     current_cache = QUIZ_SETUP_CACHE.get(user_id, {})
     topic_name = current_cache.get("topic_name", "Practice Session")
     subj = current_cache.get("subject", "computer")
@@ -255,25 +493,18 @@ async def show_language_selection(query, user_id: int):
     await query.edit_message_text(msg_text, reply_markup=lang_keyboard, parse_mode="Markdown")
 
 async def quiz_language_callback(update: Update, context: ContextTypes.DEFAULT_TYPE):
-    """Step 6: After Language, proceed to Question Count Selection."""
     if not await check_quiz_maintenance(update): return
-
     query = update.callback_query
     await query.answer()
     user_id = query.from_user.id
-    
     lang = query.data.replace("qlang_", "")
+    
     current_cache = QUIZ_SETUP_CACHE.get(user_id, {})
     current_cache["language"] = lang
     QUIZ_SETUP_CACHE[user_id] = current_cache
 
-    await show_count_selection(query, user_id, lang)
-
-async def show_count_selection(query, user_id: int, lang: str):
-    """Step 7: Select Question Count."""
     profile = await asyncio.to_thread(get_user_profile, user_id)
     attempted_today = await asyncio.to_thread(get_today_attempts, user_id)
-    
     paid_bal = profile.get("paid_question_balance", 0) or 0 if profile else 0
     base_limit = max(DAILY_QUESTION_LIMIT, paid_bal)
     allowed_limit = 10000 if user_id == PRIMARY_ADMIN_ID else base_limit + (profile.get("bonus_quota", 0) if profile else 0)
@@ -288,12 +519,11 @@ async def show_count_selection(query, user_id: int, lang: str):
     keyboard = [buttons[:3], buttons[3:]]
 
     lang_label = "🌐 English" if lang == "en" else "🇮🇳 हिंदी"
-    setup_info = QUIZ_SETUP_CACHE.get(user_id, {})
-    topic_name = setup_info.get("topic_name", "Practice Session")
-    subj_label = "General Knowledge (GK)" if setup_info.get("subject") == "gk" else "Computer Awareness"
+    topic_name = current_cache.get("topic_name", "Practice Session")
+    subj_label = "General Knowledge (GK)" if current_cache.get("subject") == "gk" else "Computer Awareness"
 
     msg_text = (
-        f"📚 **QUIZ WITH HIM SETUP** 📚\n"
+        f"📚 **NORMAL QUIZ SETUP** 📚\n"
         f"━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\n"
         f"🌐 **Language:** `{lang_label}`\n"
         f"📖 **Subject:** `{subj_label}`\n"
@@ -305,27 +535,19 @@ async def show_count_selection(query, user_id: int, lang: str):
     await query.edit_message_text(msg_text, reply_markup=InlineKeyboardMarkup(keyboard), parse_mode="Markdown")
 
 async def quiz_count_callback(update: Update, context: ContextTypes.DEFAULT_TYPE):
-    """Step 8: Select Timer per Question."""
     if not await check_quiz_maintenance(update): return
-
     query = update.callback_query
     user_id = query.from_user.id
     asyncio.create_task(asyncio.to_thread(log_user_activity_time, user_id, 10))
     
     profile = await asyncio.to_thread(get_user_profile, user_id)
     attempted_today = await asyncio.to_thread(get_today_attempts, user_id)
-    
     paid_bal = profile.get("paid_question_balance", 0) or 0 if profile else 0
-    base_limit = max(DAILY_QUESTION_LIMIT, paid_bal)
-    allowed_limit = 10000 if user_id == PRIMARY_ADMIN_ID else base_limit + (profile.get("bonus_quota", 0) if profile else 0)
+    allowed_limit = 10000 if user_id == PRIMARY_ADMIN_ID else max(DAILY_QUESTION_LIMIT, paid_bal) + (profile.get("bonus_quota", 0) if profile else 0)
 
     if attempted_today >= allowed_limit:
         await query.answer("🛑 Daily Limit Exhausted!", show_alert=True)
-        await query.edit_message_text(
-            f"🛑 **DAILY FREE LIMIT EXHAUSTED!** 🛑\n\n"
-            f"You have reached your daily limit of `{allowed_limit}` questions for today.",
-            parse_mode="Markdown"
-        )
+        await query.edit_message_text("🛑 **DAILY FREE LIMIT EXHAUSTED!** 🛑", parse_mode="Markdown")
         return
 
     await query.answer()
@@ -347,7 +569,7 @@ async def quiz_count_callback(update: Update, context: ContextTypes.DEFAULT_TYPE
     topic_name = current_cache.get("topic_name", "Practice Session")
 
     await query.edit_message_text(
-        f"⏱ **QUIZ WITH HIM SETUP** ⏱\n"
+        f"⏱ **NORMAL QUIZ SETUP** ⏱\n"
         f"━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\n"
         f"🌐 **Language:** `{lang_label}`\n"
         f"📖 **Topic:** `{topic_name}`\n"
@@ -358,20 +580,15 @@ async def quiz_count_callback(update: Update, context: ContextTypes.DEFAULT_TYPE
     )
 
 async def quiz_timer_callback(update: Update, context: ContextTypes.DEFAULT_TYPE):
-    """Step 9: Launches Quiz Session with strict subject and topic isolation."""
     if not await check_quiz_maintenance(update): return
-
     query = update.callback_query
     user_id = query.from_user.id
-    chat_id = query.message.chat_id
     asyncio.create_task(asyncio.to_thread(log_user_activity_time, user_id, 15))
     
     profile = await asyncio.to_thread(get_user_profile, user_id)
     attempted_today = await asyncio.to_thread(get_today_attempts, user_id)
-    
     paid_bal = profile.get("paid_question_balance", 0) or 0 if profile else 0
-    base_limit = max(DAILY_QUESTION_LIMIT, paid_bal)
-    allowed_limit = 10000 if user_id == PRIMARY_ADMIN_ID else base_limit + (profile.get("bonus_quota", 0) if profile else 0)
+    allowed_limit = 10000 if user_id == PRIMARY_ADMIN_ID else max(DAILY_QUESTION_LIMIT, paid_bal) + (profile.get("bonus_quota", 0) if profile else 0)
 
     if attempted_today >= allowed_limit:
         await query.answer("🛑 Daily Limit Exhausted!", show_alert=True)
@@ -380,7 +597,8 @@ async def quiz_timer_callback(update: Update, context: ContextTypes.DEFAULT_TYPE
 
     await query.answer()
     timer_sec = int(query.data.replace("qtimer_", ""))
-    setup = QUIZ_SETUP_CACHE.pop(user_id, {"count": 20, "language": "en", "subject": "computer", "topic": "MIXED", "topic_name": "Mixed Practice"})
+    setup = QUIZ_SETUP_CACHE.pop(user_id, {})
+    
     count = setup.get("count", 20)
     language = setup.get("language", "en")
     subject = setup.get("subject", "computer")
@@ -391,13 +609,20 @@ async def quiz_timer_callback(update: Update, context: ContextTypes.DEFAULT_TYPE
     if count > remaining_quota:
         count = max(1, remaining_quota)
 
-    # Strictly isolated question fetch supporting subject ("gk" vs "computer") and topic
     questions = await asyncio.to_thread(fetch_pyqs_for_quiz, count, None, language, user_id, topic, subject)
+    await start_quiz_session(query, context, user_id, questions, timer_sec, "PRACTICE", 0, subject, topic, topic_name, language)
 
+
+# ==========================================
+# SHARED LAUNCH & EXECUTION FUNCTIONS
+# ==========================================
+
+async def start_quiz_session(query, context, user_id, questions, timer_sec, quiz_mode, mock_number, subject, topic, topic_name, language, selected_topics=None):
     if not questions:
-        await query.edit_message_text("⚠️ No questions found for this selection. Please try another topic or contact admin.", reply_markup=get_quizbook_nav_keyboard())
+        await query.edit_message_text("⚠️ No questions found. Try again or contact admin.", reply_markup=get_quizbook_nav_keyboard(), parse_mode="Markdown")
         return
-
+    
+    chat_id = query.message.chat_id
     q_ids = [q["id"] for q in questions if q.get("id") is not None]
     asyncio.create_task(asyncio.to_thread(mark_questions_as_seen, user_id, q_ids))
 
@@ -418,23 +643,27 @@ async def quiz_timer_callback(update: Update, context: ContextTypes.DEFAULT_TYPE
         "timer_sec": timer_sec,
         "is_paused": False,
         "start_time": get_ist_timestamp_str(),
-        "detailed_logs": []
+        "detailed_logs": [],
+        "quiz_mode": quiz_mode,
+        "mock_number": mock_number,
+        "selected_topics": selected_topics
     }
     ACTIVE_SESSIONS[user_id] = session
 
     lang_str = "🌐 English" if language == "en" else "🇮🇳 हिंदी"
-    subj_label = "General Knowledge (GK)" if subject == "gk" else "Computer Awareness"
+    title = f"{quiz_mode.replace('_', ' ').title()} #{mock_number}" if quiz_mode in ["MOCK", "SECTIONAL", "TOPIC_SECTIONAL"] else topic_name
 
     await query.edit_message_text(
         f"🚀 **QUIZ SESSION STARTED!** 🚀\n"
         f"━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\n"
-        f"🌐 **Language:** `{lang_str}` | 📖 **Subject:** `{subj_label}`\n"
-        f"📌 **Topic:** `{topic_name}`\n"
+        f"🌐 **Language:** `{lang_str}`\n"
+        f"📖 **Mode:** `{quiz_mode.replace('_', ' ')}`\n"
+        f"📌 **Title:** `{title}`\n"
         f"⏱ **Timer:** `{timer_sec}s per question`\n\n"
         f"⚡ Loading questions...",
         parse_mode="Markdown"
     )
-    await send_next_question(query.message.chat_id, user_id, context)
+    await send_next_question(chat_id, user_id, context)
 
 async def save_question_callback(update: Update, context: ContextTypes.DEFAULT_TYPE):
     query = update.callback_query
@@ -493,7 +722,10 @@ async def pause_quiz_command(update: Update, context: ContextTypes.DEFAULT_TYPE)
         "total": session["total"],
         "timer_sec": session["timer_sec"],
         "start_time": session["start_time"],
-        "detailed_logs": session.get("detailed_logs", [])
+        "detailed_logs": session.get("detailed_logs", []),
+        "quiz_mode": session.get("quiz_mode", "PRACTICE"),
+        "mock_number": session.get("mock_number", 0),
+        "selected_topics": session.get("selected_topics")
     }
     asyncio.create_task(asyncio.to_thread(save_paused_quiz_state, user_id, save_state))
     ACTIVE_SESSIONS.pop(user_id, None)
@@ -502,7 +734,7 @@ async def pause_quiz_command(update: Update, context: ContextTypes.DEFAULT_TYPE)
     msg = (
         f"⏸ **QUIZ PAUSED & SAVED** ⏸\n"
         f"━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\n"
-        f"📖 **Topic:** `{session.get('topic_name', 'Practice Session')}`\n"
+        f"📖 **Title:** `{session.get('topic_name', 'Practice Session')}`\n"
         f"📊 **Remaining Questions:** `{remaining_qs}` Qs\n"
         f"⭐ **Current Score:** `{session['score']}`\n\n"
         f"▶️ Tap **Resume Quiz Now** or type `/resume` anytime to continue!"
@@ -549,7 +781,10 @@ async def resume_quiz_command(update: Update, context: ContextTypes.DEFAULT_TYPE
         "timer_sec": paused["timer_sec"],
         "is_paused": False,
         "start_time": paused["start_time"],
-        "detailed_logs": paused.get("detailed_logs", [])
+        "detailed_logs": paused.get("detailed_logs", []),
+        "quiz_mode": paused.get("quiz_mode", "PRACTICE"),
+        "mock_number": paused.get("mock_number", 0),
+        "selected_topics": paused.get("selected_topics")
     }
     ACTIVE_SESSIONS[user_id] = session
 
@@ -595,41 +830,47 @@ async def stop_quiz_command(update: Update, context: ContextTypes.DEFAULT_TYPE):
         if update.callback_query:
             await update.callback_query.answer(msg, show_alert=True)
         else:
-            await update.message.reply_text(msg, reply_markup=get_quizbook_nav_keyboard())
+            await update.message.reply_text(msg, reply_markup=get_quizbook_nav_keyboard(), parse_mode="Markdown")
         return
 
     asyncio.create_task(asyncio.to_thread(clear_paused_quiz_state, user_id))
     if user_id in TIMER_TASKS and not TIMER_TASKS[user_id].done():
         TIMER_TASKS[user_id].cancel()
 
-    if session:
-        if session["current_index"] > 0:
-            asyncio.create_task(asyncio.to_thread(
-                record_quiz_result,
-                user_id,
-                session.get("topic", "computer_awareness_mock"),
-                session["score"],
-                session["current_index"],
-                session["correct"],
-                session["wrong"],
-                session["skipped"],
-                0,
-                session.get("detailed_logs", [])
-            ))
-    elif paused:
-        if paused.get("current_index", 0) > 0:
-            asyncio.create_task(asyncio.to_thread(
-                record_quiz_result,
-                user_id,
-                paused.get("topic", "computer_awareness_mock"),
-                paused["score"],
-                paused["current_index"],
-                paused["correct"],
-                paused["wrong"],
-                paused["skipped"],
-                0,
-                paused.get("detailed_logs", [])
-            ))
+    if session and session["current_index"] > 0:
+        asyncio.create_task(asyncio.to_thread(
+            record_quiz_result,
+            user_id=user_id,
+            quiz_id=session.get("topic", "mixed"),
+            score=session["score"],
+            total_questions=session["total"],
+            correct_count=session["correct"],
+            wrong_count=session["wrong"],
+            skipped_count=session["skipped"],
+            time_taken=0,
+            question_details=session.get("detailed_logs", []),
+            quiz_mode=session.get("quiz_mode", "PRACTICE"),
+            mock_number=session.get("mock_number", 0),
+            subject=session.get("subject", "computer"),
+            selected_topics=session.get("selected_topics")
+        ))
+    elif paused and paused.get("current_index", 0) > 0:
+        asyncio.create_task(asyncio.to_thread(
+            record_quiz_result,
+            user_id=user_id,
+            quiz_id=paused.get("topic", "mixed"),
+            score=paused["score"],
+            total_questions=paused["total"],
+            correct_count=paused["correct"],
+            wrong_count=paused["wrong"],
+            skipped_count=paused["skipped"],
+            time_taken=0,
+            question_details=paused.get("detailed_logs", []),
+            quiz_mode=paused.get("quiz_mode", "PRACTICE"),
+            mock_number=paused.get("mock_number", 0),
+            subject=paused.get("subject", "computer"),
+            selected_topics=paused.get("selected_topics")
+        ))
 
     msg = (
         f"🛑 **QUIZ STOPPED** 🛑\n"
@@ -666,7 +907,10 @@ async def send_next_question(chat_id: int, user_id: int, context: ContextTypes.D
     current_num = session["current_index"] + 1
     total_num = session["total"]
     
-    header_text = f"📖 [{session.get('topic_name', 'Quiz')}] — ({current_num}/{total_num})\n\n{q['question']}"
+    quiz_mode = session.get("quiz_mode", "PRACTICE")
+    title = f"{quiz_mode.replace('_', ' ').title()} #{session.get('mock_number', 0)}" if quiz_mode != "PRACTICE" else session.get('topic_name', 'Quiz')
+    
+    header_text = f"📖 [{title}] — ({current_num}/{total_num})\n\n{q['question']}"
     if len(header_text) > 300:
         header_text = header_text[:297] + "..."
 
@@ -802,7 +1046,9 @@ async def finish_quiz_and_send_report(chat_id: int, user_id: int, context: Conte
     score = session["score"]
     detailed_logs = session.get("detailed_logs", [])
     lang = session.get("language", "en")
-    topic_name = session.get("topic_name", "Practice Session")
+    
+    quiz_mode = session.get("quiz_mode", "PRACTICE")
+    title = f"{quiz_mode.replace('_', ' ').title()} #{session.get('mock_number', 0)}" if quiz_mode != "PRACTICE" else session.get('topic_name', 'Quiz')
 
     rank = await asyncio.to_thread(calculate_user_rank, user_id)
     percentile = await asyncio.to_thread(calculate_user_percentile, user_id)
@@ -812,7 +1058,7 @@ async def finish_quiz_and_send_report(chat_id: int, user_id: int, context: Conte
         f"🏆 **OFFICIAL QUIZ REPORT CARD** 🏆\n"
         f"📚 **Quiz with HiM by Himanshu Sir**\n"
         f"━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\n"
-        f"📖 **Topic:** `{topic_name}`\n"
+        f"📖 **Title:** `{title}`\n"
         f"🌐 **Language:** `{lang_label}`\n"
         f"📅 **Attempted At:** `{session['start_time']}`\n\n"
         f"📊 **PERFORMANCE BREAKDOWN:**\n"
@@ -862,13 +1108,53 @@ async def finish_quiz_and_send_report(chat_id: int, user_id: int, context: Conte
 
     asyncio.create_task(asyncio.to_thread(
         record_quiz_result,
-        user_id,
-        session.get("topic", "computer_awareness_mock"),
-        score,
-        total,
-        correct,
-        wrong,
-        skipped,
-        0,
-        detailed_logs
+        user_id=user_id,
+        quiz_id=session.get("topic", "mixed"),
+        score=score,
+        total_questions=total,
+        correct_count=correct,
+        wrong_count=wrong,
+        skipped_count=skipped,
+        time_taken=0,
+        question_details=detailed_logs,
+        quiz_mode=quiz_mode,
+        mock_number=session.get("mock_number", 0),
+        subject=session.get("subject", "computer"),
+        selected_topics=session.get("selected_topics")
     ))
+
+async def quiz_extended_router(update: Update, context: ContextTypes.DEFAULT_TYPE):
+    """Central Router for all new game modes."""
+    data = update.callback_query.data
+    if data.startswith("qflow_"):
+        await quiz_flow_callback(update, context)
+    elif data.startswith("qmockcount_"):
+        await mock_count_callback(update, context)
+    elif data.startswith("qmocktime_"):
+        await mock_time_callback(update, context)
+    elif data.startswith("qmocklang_"):
+        await mock_lang_callback(update, context)
+    elif data.startswith("qsectsubj_"):
+        await sect_subj_callback(update, context)
+    elif data.startswith("qtop_toggle_"):
+        await top_toggle_callback(update, context)
+    elif data == "qtop_proceed":
+        await top_proceed_callback(update, context)
+    elif data.startswith("qsectcount_"):
+        await sect_count_callback(update, context)
+    elif data.startswith("qsecttime_"):
+        await sect_time_callback(update, context)
+    elif data.startswith("qsectlang_"):
+        await sect_lang_callback(update, context)
+    elif data.startswith("qsubj_"):
+        await quiz_subject_callback(update, context)
+    elif data.startswith("qmode_"):
+        await quiz_mode_callback(update, context)
+    elif data.startswith("qtopic_"):
+        await quiz_topic_callback(update, context)
+    elif data.startswith("qlang_"):
+        await quiz_language_callback(update, context)
+    elif data.startswith("qcount_"):
+        await quiz_count_callback(update, context)
+    elif data.startswith("qtimer_"):
+        await quiz_timer_callback(update, context)

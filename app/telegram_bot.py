@@ -33,11 +33,14 @@ from app.database import (
     get_active_flash_sale, calculate_discounted_price
 )
 from app.onboarding import get_onboarding_handler, start_onboarding
+
+# === NEW EXTENDED QUIZ ROUTER IMPORT ===
 from app.quiz_engine import (
-    launch_quiz_setup, quiz_language_callback, quiz_subject_callback, quiz_mode_callback, quiz_topic_callback,
-    quiz_count_callback, quiz_timer_callback, handle_poll_answer,
-    pause_quiz_command, resume_quiz_command, stop_quiz_command, save_question_callback
+    launch_quiz_setup, handle_poll_answer,
+    pause_quiz_command, resume_quiz_command, stop_quiz_command, save_question_callback,
+    quiz_extended_router
 )
+
 from app.stats import get_overall_leaderboard, calculate_user_percentile, calculate_user_rank, get_user_performance_summary
 from app.admin import (
     admin_portal_command, admin_callback_handler, get_admin_nav_buttons,
@@ -653,7 +656,7 @@ async def handle_buy_plan_callback(update: Update, context: ContextTypes.DEFAULT
             await plans_command(update, context)
             return
 
-        from main import activate_user_subscription
+        from app.main import activate_user_subscription
         await activate_user_subscription(user_id, plan_key)
         await query.edit_message_text(
             f"🎉 **FREE DEMO TRIAL ACTIVATED!** 🎉\n\n"
@@ -1504,6 +1507,8 @@ async def button_router(update: Update, context: ContextTypes.DEFAULT_TYPE):
         if attempted_today >= allowed_limit:
             await query.answer("🛑 Daily Limit Exhausted!", show_alert=True)
             return
+        # Removed individual quiz callbacks, routing them to the new generalized extended_router below
+        from app.quiz_engine import launch_quiz_setup
         await launch_quiz_setup(update, context)
     elif data == "cmd_myplan":
         await myplan_command(update, context)
@@ -1533,6 +1538,7 @@ async def button_router(update: Update, context: ContextTypes.DEFAULT_TYPE):
         await save_question_callback(update, context)
     elif data == "cmd_start_fresh_quiz":
         await asyncio.to_thread(clear_paused_quiz_state, user.id)
+        from app.quiz_engine import launch_quiz_setup
         await launch_quiz_setup(update, context)
     elif data == "cmd_profile":
         await myprofile_command(update, context)
@@ -2109,19 +2115,17 @@ def build_application() -> Application:
     app.add_handler(CommandHandler("admin", admin_portal_command))
     app.add_handler(CommandHandler("admit", admin_portal_command))
 
-    # Quiz Flow Callbacks (Ensuring qsubj_ is registered correctly)
-    app.add_handler(CallbackQueryHandler(quiz_subject_callback, pattern="^qsubj_"))
-    app.add_handler(CallbackQueryHandler(quiz_mode_callback, pattern="^qmode_"))
-    app.add_handler(CallbackQueryHandler(quiz_topic_callback, pattern="^qtopic_"))
-    app.add_handler(CallbackQueryHandler(quiz_language_callback, pattern="^qlang_"))
-    app.add_handler(CallbackQueryHandler(quiz_count_callback, pattern="^qcount_"))
-    app.add_handler(CallbackQueryHandler(quiz_timer_callback, pattern="^qtimer_"))
+    # === NEW EXTENDED QUIZ ROUTER IMPLEMENTATION ===
+    app.add_handler(CallbackQueryHandler(quiz_extended_router, pattern="^(qflow_|qmock|qsect|qtop_|qsubj_|qmode_|qtopic_|qlang_|qcount_|qtimer_)"))
+    
     app.add_handler(CallbackQueryHandler(user_pdf_callback_handler, pattern="^usergenpdf_"))
     app.add_handler(CallbackQueryHandler(admin_view_user_payments_callback, pattern="^admin_view_payments_"))
     app.add_handler(CallbackQueryHandler(admin_grant_plan_menu_callback, pattern="^admin_grant_menu_"))
     app.add_handler(CallbackQueryHandler(admin_execute_grant_callback, pattern="^admin_exec_grant_"))
     
     app.add_handler(CallbackQueryHandler(admin_callback_handler, pattern="^(admin_|audit_|genpdf_|adminkp_)"))
+    
+    # Original Button router handling the rest of the inline commands
     app.add_handler(CallbackQueryHandler(button_router, pattern="^cmd_|^fb_|^trigger_start|^buy_plan_|^userkp_"))
 
     app.add_handler(MessageHandler((filters.TEXT | filters.PHOTO | filters.VIDEO) & ~filters.COMMAND, handle_text_messages))

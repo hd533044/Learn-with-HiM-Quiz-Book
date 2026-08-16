@@ -331,6 +331,10 @@ def init_db():
             id SERIAL PRIMARY KEY,
             user_id BIGINT,
             quiz_id TEXT DEFAULT 'computer_awareness_mock',
+            quiz_mode TEXT DEFAULT 'PRACTICE',
+            mock_number INTEGER DEFAULT 0,
+            subject TEXT,
+            selected_topics TEXT,
             questions_attempted INTEGER DEFAULT 0,
             total_questions INTEGER DEFAULT 0,
             correct_answers INTEGER DEFAULT 0,
@@ -344,6 +348,12 @@ def init_db():
             FOREIGN KEY (user_id) REFERENCES users (user_id) ON DELETE CASCADE
         )
     ''')
+
+    # Ensure dynamic columns for all Mock & Sectional Modes exist
+    cursor.execute("ALTER TABLE quiz_attempts ADD COLUMN IF NOT EXISTS quiz_mode TEXT DEFAULT 'PRACTICE';")
+    cursor.execute("ALTER TABLE quiz_attempts ADD COLUMN IF NOT EXISTS mock_number INTEGER DEFAULT 0;")
+    cursor.execute("ALTER TABLE quiz_attempts ADD COLUMN IF NOT EXISTS subject TEXT;")
+    cursor.execute("ALTER TABLE quiz_attempts ADD COLUMN IF NOT EXISTS selected_topics TEXT;")
 
     cursor.execute('''
         CREATE TABLE IF NOT EXISTS seen_questions (
@@ -489,6 +499,20 @@ def init_db():
     conn.commit()
     cursor.close()
     release_db(conn)
+
+def get_next_mock_number(user_id: int, quiz_mode: str) -> int:
+    conn = get_db()
+    cursor = conn.cursor()
+    try:
+        cursor.execute("SELECT COALESCE(MAX(mock_number), 0) + 1 FROM quiz_attempts WHERE user_id = %s AND quiz_mode = %s", (user_id, quiz_mode))
+        res = cursor.fetchone()
+        return res[0] if res else 1
+    except Exception as e:
+        logger.error(f"[GET NEXT MOCK NUMBER ERROR] {e}")
+        return 1
+    finally:
+        cursor.close()
+        release_db(conn)
 
 def generate_student_id(full_name: str, dob_str: str) -> str:
     clean_name = "".join(filter(str.isalpha, full_name))
@@ -700,6 +724,7 @@ def sync_user_json_profile(user_id: int):
     formatted_attempts = []
     datewise_quiz_summary = {}
     daily_questions_count = {}
+    mock_mode_counts = {}
 
     for a in attempts_rows:
         ad = dict(a)
@@ -713,6 +738,8 @@ def sync_user_json_profile(user_id: int):
 
         dt = ad.get("attempt_date", "Unknown")
         qs = ad.get("questions_attempted", 0)
+        mode = ad.get("quiz_mode", "PRACTICE")
+        mock_mode_counts[mode] = mock_mode_counts.get(mode, 0) + 1
 
         daily_questions_count[dt] = daily_questions_count.get(dt, 0) + qs
 
@@ -765,6 +792,7 @@ def sync_user_json_profile(user_id: int):
         },
         "academic_summary": {
             "total_quizzes_attempted": len(formatted_attempts),
+            "mock_mode_breakdown": mock_mode_counts,
             "total_questions_attempted": sum([a.get("questions_attempted", 0) for a in formatted_attempts]),
             "total_correct": sum([a.get("correct_answers", 0) for a in formatted_attempts]),
             "total_wrong": sum([a.get("wrong_answers", 0) for a in formatted_attempts]),
@@ -915,17 +943,18 @@ def get_today_attempts(user_id):
     release_db(conn)
     return row['total'] if row and row['total'] else 0
 
-def record_quiz_result(user_id, quiz_id="computer_awareness_mock", score=0.0, total_questions=0, correct_count=0, wrong_count=0, skipped_count=0, time_taken=0, question_details=None):
+def record_quiz_result(user_id, quiz_id="computer_awareness_mock", score=0.0, total_questions=0, correct_count=0, wrong_count=0, skipped_count=0, time_taken=0, question_details=None, quiz_mode="PRACTICE", mock_number=0, subject=None, selected_topics=None):
     conn = get_db()
     cursor = conn.cursor()
     today_date = get_ist_date_str()
     timestamp_str = get_ist_timestamp_str()
     details_str = json.dumps(question_details) if question_details else json.dumps([])
+    topics_str = json.dumps(selected_topics) if isinstance(selected_topics, list) else (str(selected_topics) if selected_topics else None)
     
     cursor.execute('''
-        INSERT INTO quiz_attempts (user_id, quiz_id, questions_attempted, total_questions, correct_answers, wrong_answers, skipped_count, score, time_taken, attempt_timestamp, attempt_date, details_json)
-        VALUES (%s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s)
-    ''', (user_id, quiz_id, total_questions, total_questions, correct_count, wrong_count, skipped_count, score, time_taken, timestamp_str, today_date, details_str))
+        INSERT INTO quiz_attempts (user_id, quiz_id, quiz_mode, mock_number, subject, selected_topics, questions_attempted, total_questions, correct_answers, wrong_answers, skipped_count, score, time_taken, attempt_timestamp, attempt_date, details_json)
+        VALUES (%s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s)
+    ''', (user_id, quiz_id, quiz_mode, mock_number, subject, topics_str, total_questions, total_questions, correct_count, wrong_count, skipped_count, score, time_taken, timestamp_str, today_date, details_str))
     conn.commit()
     cursor.close()
     release_db(conn)
@@ -939,65 +968,6 @@ def get_seen_question_ids(user_id):
     cursor.close()
     release_db(conn)
     return {str(r['question_id']) for r in rows}
-
-def get_user_question_intel(user_id: int) -> dict:
-    conn = get_db()
-    cursor = conn.cursor(cursor_factory=RealDictCursor)
-    
-    cursor.execute("SELECT question_id, seen_at FROM seen_questions WHERE user_id = %s", (user_id,))
-    seen_rows = cursor.fetchall()
-    
-    cursor.execute("SELECT details_json FROM quiz_attempts WHERE user_id = %s ORDER BY id DESC LIMIT 50", (user_id,))
-    attempt_rows = cursor.fetchall()
-    cursor.close()
-    release_db(conn)
-
-    seen_timestamps = {}
-    now = datetime.now()
-    cutoff_days = 12
-
-    for r in seen_rows:
-        qid = str(r['question_id'])
-        s_at_str = r.get('seen_at', '') or ''
-        try:
-            clean_ts = s_at_str.replace(" IST", "").strip()
-            if " " in clean_ts:
-                dt = datetime.strptime(clean_ts, "%Y-%m-%d %H:%M:%S")
-            else:
-                dt = datetime.strptime(clean_ts, "%Y-%m-%d")
-        except Exception:
-            dt = now - timedelta(days=20)
-        seen_timestamps[qid] = dt
-
-    wrong_or_skipped_ids = set()
-    wrong_or_skipped_texts = set()
-
-    for a in attempt_rows:
-        raw_det = a.get("details_json")
-        if not raw_det:
-            continue
-        try:
-            det = json.loads(raw_det) if isinstance(raw_det, str) else raw_det
-            if isinstance(det, list):
-                for item in det:
-                    if isinstance(item, dict):
-                        st = str(item.get("status", "")).upper()
-                        if st in ("WRONG", "SKIPPED_TIMEOUT", "SKIPPED"):
-                            if item.get("question_id"):
-                                wrong_or_skipped_ids.add(str(item.get("question_id")))
-                            if item.get("question_text"):
-                                wrong_or_skipped_texts.add(str(item.get("question_text")).strip().lower())
-                            elif item.get("question"):
-                                wrong_or_skipped_texts.add(str(item.get("question")).strip().lower())
-        except Exception:
-            pass
-
-    return {
-        "seen_timestamps": seen_timestamps,
-        "wrong_or_skipped_ids": wrong_or_skipped_ids,
-        "wrong_or_skipped_texts": wrong_or_skipped_texts,
-        "cutoff_days": cutoff_days
-    }
 
 def mark_questions_as_seen(user_id, question_ids):
     conn = get_db()
@@ -1018,7 +988,6 @@ def mark_questions_as_seen(user_id, question_ids):
     release_db(conn)
 
 def reset_user_seen_questions_for_ids(user_id: int, question_ids: list):
-    """Clears seen status for specific questions when a topic bank is 100% exhausted."""
     if not user_id or not question_ids:
         return
     conn = get_db()
@@ -1140,13 +1109,11 @@ def create_flash_sale(sale_name: str, discount_percent: float, valid_until: date
     try:
         now_dt = datetime.now(IST).replace(tzinfo=None)
         cursor.execute("UPDATE flash_sales SET is_active = FALSE WHERE is_active = TRUE;")
-        
         cursor.execute("""
             INSERT INTO flash_sales (sale_name, discount_percent, valid_from, valid_until, is_active, created_by)
             VALUES (%s, %s, %s, %s, TRUE, %s)
             RETURNING *;
         """, (sale_name.strip(), float(discount_percent), now_dt, valid_until, created_by))
-        
         row = cursor.fetchone()
         conn.commit()
         res = dict(row) if row else {}
@@ -1233,21 +1200,17 @@ def apply_promo_code(user_id: int, code: str, original_price: float) -> dict:
         promo = cursor.fetchone()
         if not promo:
             return {"success": False, "reason": "INVALID_CODE"}
-        
         if promo['valid_until'] < datetime.now(IST):
             return {"success": False, "reason": "EXPIRED"}
-        
         cursor.execute("SELECT id FROM promo_redemptions WHERE promo_id = %s AND user_id = %s", (promo['id'], user_id))
         if cursor.fetchone():
             return {"success": False, "reason": "ALREADY_USED"}
-        
         disc_type = promo['discount_type']
         disc_val = float(promo['discount_value'])
         if disc_type == "PERCENT":
             discount_amount = round((original_price * disc_val) / 100.0, 2)
         else:
             discount_amount = disc_val
-            
         final_price = max(0.0, round(original_price - discount_amount, 2))
         return {
             "success": True,

@@ -200,17 +200,11 @@ def get_user_seen_identifiers(user_id: int) -> set:
     return seen_ids
 
 def fetch_pyqs_for_quiz(needed_count: int = 20, seen_ids: set = None, language: str = "en", user_id: int = None, topic: str = "MIXED", subject: str = "computer") -> list:
-    """
-    STRICT SUBJECT, LANGUAGE & TOPIC ISOLATION ENGINE:
-    - If subject == "gk", loads from gk_questions_en.json or gk_questions_hi.json in data/question_bank/gk/.
-    - If topic is specific, strictly filters questions matching that category/chapter.
-    """
+    """STRICT SUBJECT, LANGUAGE & TOPIC ISOLATION ENGINE."""
     all_raw_questions = []
     lang_sub = "hi" if language == "hi" else "en"
 
-    # =========================================================
     # 1. GENERAL KNOWLEDGE (GK) MODE
-    # =========================================================
     if subject == "gk":
         gk_file_name = f"gk_questions_{lang_sub}.json"
         potential_gk_paths = [
@@ -230,9 +224,7 @@ def fetch_pyqs_for_quiz(needed_count: int = 20, seen_ids: set = None, language: 
                 except Exception as e:
                     logger.error(f"Error reading GK file {p}: {e}")
 
-    # =========================================================
     # 2. SHORTCUT KEYS MODE (COMPUTER)
-    # =========================================================
     elif topic == "SHORTCUTS":
         shortcut_file_name = f"shortcut_{lang_sub}.json"
         potential_shortcut_paths = [
@@ -252,9 +244,7 @@ def fetch_pyqs_for_quiz(needed_count: int = 20, seen_ids: set = None, language: 
                 except Exception as e:
                     logger.error(f"Error reading shortcut keys file {p}: {e}")
 
-    # =========================================================
     # 3. TOPIC-WISE MODE (COMPUTER)
-    # =========================================================
     elif topic and topic != "MIXED":
         topic_filename = f"{topic}_{lang_sub}.json"
         potential_topic_paths = [
@@ -274,9 +264,7 @@ def fetch_pyqs_for_quiz(needed_count: int = 20, seen_ids: set = None, language: 
                 except Exception as e:
                     logger.error(f"Error loading topic file {p}: {e}")
 
-    # =========================================================
     # 4. MIXED PRACTICE MODE (COMPUTER MASTER BANK)
-    # =========================================================
     else:
         master_file_name = "all_questions_hindi.json" if language == "hi" else "all_questions_english.json"
         master_candidates = [
@@ -295,9 +283,7 @@ def fetch_pyqs_for_quiz(needed_count: int = 20, seen_ids: set = None, language: 
                 except Exception as e:
                     logger.error(f"Error loading master file {m_path}: {e}")
 
-    # =========================================================
     # 5. STRICT CATEGORY FILTERING & LANGUAGE VERIFICATION
-    # =========================================================
     verified_bank = []
     seen_unique_texts = set()
 
@@ -310,7 +296,6 @@ def fetch_pyqs_for_quiz(needed_count: int = 20, seen_ids: set = None, language: 
         verified_q = verify_and_correct_question(q, force_lang=language)
         if verified_q:
             q_is_hindi = is_hindi_text(verified_q["question"])
-            
             if language == "hi" and not q_is_hindi:
                 continue
             if language == "en" and q_is_hindi:
@@ -326,9 +311,7 @@ def fetch_pyqs_for_quiz(needed_count: int = 20, seen_ids: set = None, language: 
         logger.warning(f"No questions verified for subject={subject}, topic={topic}, lang={language}")
         return []
 
-    # =========================================================
     # 6. NON-REPETITION & EXHAUSTION CYCLING
-    # =========================================================
     user_seen_ids = get_user_seen_identifiers(user_id)
     if seen_ids:
         user_seen_ids.update({str(sid) for sid in seen_ids})
@@ -369,3 +352,52 @@ def fetch_pyqs_for_quiz(needed_count: int = 20, seen_ids: set = None, language: 
 
     random.shuffle(selected_questions)
     return [randomize_question_options(q) for q in selected_questions]
+
+def fetch_multi_topic_questions(needed_count: int, topic_keys: list, subject: str = "computer", language: str = "en", user_id: int = None) -> list:
+    """Fetches unique, evenly distributed questions across 2 to 4 selected topics."""
+    if not topic_keys:
+        return []
+
+    num_topics = len(topic_keys)
+    base_per_topic = needed_count // num_topics
+    remainder = needed_count % num_topics
+
+    combined_questions = []
+    allocated_topics = list(topic_keys)
+    random.shuffle(allocated_topics)
+
+    seen_ids = get_user_seen_identifiers(user_id)
+
+    for i, t_key in enumerate(allocated_topics):
+        count_for_this = base_per_topic + (1 if i < remainder else 0)
+        if count_for_this <= 0:
+            continue
+        t_qs = fetch_pyqs_for_quiz(needed_count=count_for_this, seen_ids=seen_ids, language=language, user_id=user_id, topic=t_key, subject=subject)
+        for q in t_qs:
+            seen_ids.add(str(q.get("id")))
+        combined_questions.extend(t_qs)
+
+    if len(combined_questions) < needed_count:
+        deficit = needed_count - len(combined_questions)
+        extra_qs = fetch_pyqs_for_quiz(needed_count=deficit, seen_ids=seen_ids, language=language, user_id=user_id, topic="MIXED", subject=subject)
+        combined_questions.extend(extra_qs)
+
+    random.shuffle(combined_questions)
+    return combined_questions[:needed_count]
+
+def fetch_full_mock_questions(needed_count: int = 20, language: str = "en", user_id: int = None) -> list:
+    """Generates balanced questions split between Computer Awareness and General Knowledge."""
+    comp_count = needed_count // 2
+    gk_count = needed_count - comp_count
+
+    seen_ids = get_user_seen_identifiers(user_id)
+    comp_qs = fetch_pyqs_for_quiz(needed_count=comp_count, seen_ids=seen_ids, language=language, user_id=user_id, topic="MIXED", subject="computer")
+    
+    for q in comp_qs:
+        seen_ids.add(str(q.get("id")))
+
+    gk_qs = fetch_pyqs_for_quiz(needed_count=gk_count, seen_ids=seen_ids, language=language, user_id=user_id, topic="MIXED", subject="gk")
+
+    mock_pool = comp_qs + gk_qs
+    random.shuffle(mock_pool)
+    return mock_pool

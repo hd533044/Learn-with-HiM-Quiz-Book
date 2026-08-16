@@ -100,19 +100,17 @@ def extract_json_array_safely(text: str) -> List[Dict[str, Any]]:
 
 
 # ----------------------------------------------------------------------
-# 3. UNIVERSAL AI ENGINE (SUPPORTS GROQ & GROK)
+# 3. UNIVERSAL AI ENGINE (SUPPORTS GROQ, GROK & OPENAI)
 # ----------------------------------------------------------------------
 def parse_and_verify_questions(chunks: List[str], subject_tag: str, output_file_path: str) -> List[Dict[str, Any]]:
-    # Check all possible environment variable names
     api_key = (
         os.getenv("GROQ_API_KEY") or 
         os.getenv("GROK_API_KEY") or 
         os.getenv("OPENAI_API_KEY")
     )
     if not api_key:
-        raise ValueError("API Key not found! Please ensure GROQ_API_KEY or GROK_API_KEY is set in your .env file.")
+        raise ValueError("API Key not found! Please ensure GROQ_API_KEY, GROK_API_KEY, or OPENAI_API_KEY is set in your .env file.")
 
-    # Automatically configure endpoint & model based on key prefix
     if api_key.startswith("gsk_") or os.getenv("GROQ_API_KEY"):
         api_url = "https://api.groq.com/openai/v1/chat/completions"
         model_name = "llama-3.1-8b-instant"
@@ -130,12 +128,12 @@ TASK:
 Analyze the provided text containing theory concepts/notes and existing Multiple Choice Questions.
 
 INSTRUCTIONS:
-1. **From Theory Content:** Synthesize brand new, rigorous exam-standard Multiple Choice Questions testing core concepts.
-2. **From Existing Questions:** Extract, verify, and refine them. Correct any answer key errors.
-3. **General Rules for ALL Questions:**
+1. From Theory Content: Synthesize brand new, rigorous exam-standard Multiple Choice Questions testing core concepts.
+2. From Existing Questions: Extract, verify, and refine them. Correct any answer key errors.
+3. General Rules for ALL Questions:
    - Exactly 4 options per question: ["A. ...", "B. ...", "C. ...", "D. ..."].
    - 'correct_option' MUST be an integer index: 0 for A, 1 for B, 2 for C, 3 for D.
-   - For every single question, generate BOTH an English version ('en') and a Hindi version ('hi'). Both must point to the exact same correct option index.
+   - For every single question, generate BOTH an English version ('en') and a Hindi version ('hi') as separate objects in the array. Both must point to the exact same correct option index.
    - Provide a clear, verified explanation derived directly from the text.
    - Ignore watermarks, author names, promotional links, and noise.
 4. Output MUST be ONLY a valid JSON array of verified objects matching the schema without markdown backticks or commentary.
@@ -167,6 +165,22 @@ SCHEMA:
 
     total_chunks = len(chunks)
     print(f"[*] Processing {total_chunks} content batches via {model_name}...\n")
+
+    # Load existing file if present to avoid overwriting previous progress
+    if os.path.exists(output_file_path):
+        try:
+            with open(output_file_path, "r", encoding="utf-8") as f:
+                existing = json.load(f)
+                if isinstance(existing, list):
+                    all_verified_questions = existing
+                    for eq in existing:
+                        q_txt = eq.get("question", "")
+                        norm_key = re.sub(r"\W+", "", q_txt.lower())
+                        seen_hashes.add(hashlib.md5(norm_key.encode("utf-8")).hexdigest())
+                    count = len(existing) + 1
+                    print(f"[*] Loaded {len(existing)} existing questions from {output_file_path}")
+        except Exception:
+            pass
 
     for idx, chunk in enumerate(chunks, start=1):
         payload = {
@@ -214,6 +228,8 @@ SCHEMA:
                     print(f"  [✓ GENERATED/VERIFIED] Segment {idx}/{total_chunks} processed (+{new_verified} questions | Total: {len(all_verified_questions)})")
                     
                     if all_verified_questions:
+                        # Ensure output directory exists before saving
+                        os.makedirs(os.path.dirname(os.path.abspath(output_file_path)), exist_ok=True)
                         with open(output_file_path, "w", encoding="utf-8") as f:
                             json.dump(all_verified_questions, f, indent=4, ensure_ascii=False)
                     break
@@ -238,7 +254,7 @@ SCHEMA:
 # ----------------------------------------------------------------------
 # 4. MAIN WORKFLOW
 # ----------------------------------------------------------------------
-def process_and_save_pdf(pdf_path: str, output_filename: str = None, subject: str = "Computer Awareness"):
+def process_and_save_pdf(pdf_path: str, output_filename: str = None, subject: str = "General Knowledge"):
     if not os.path.exists(pdf_path):
         print(f"[!] PDF file not found at: {pdf_path}")
         return
@@ -248,10 +264,14 @@ def process_and_save_pdf(pdf_path: str, output_filename: str = None, subject: st
         safe_name = re.sub(r"\W+", "_", base_name).lower()
         output_filename = f"{safe_name}_extracted.json"
 
-    final_output_path = os.path.join(DATA_DIR, output_filename)
+    # If saving specifically for GK, you can pass output_filename as e.g. "question_bank/gk/gk_questions_en.json"
+    if "/" in output_filename or "\\" in output_filename:
+        final_output_path = os.path.join(DATA_DIR, output_filename)
+    else:
+        final_output_path = os.path.join(DATA_DIR, output_filename)
 
     print("=" * 60)
-    print(f"  QUIZ WITH HIM - THEORY & MCQ SYNTHESIS EXTRACTOR")
+    print(f"   QUIZ WITH HIM - THEORY & MCQ SYNTHESIS EXTRACTOR")
     print("=" * 60)
     
     valid_chunks = extract_clean_chunks_from_pdf(pdf_path)
@@ -262,17 +282,18 @@ def process_and_save_pdf(pdf_path: str, output_filename: str = None, subject: st
     questions = parse_and_verify_questions(valid_chunks, subject, final_output_path)
 
     print("\n" + "=" * 60)
-    print(f"  [SUCCESS] All {len(questions)} Questions Generated/Extracted & Verified!")
-    print(f"  [SAVED] JSON Path: {final_output_path}")
+    print(f"   [SUCCESS] All {len(questions)} Questions Generated/Extracted & Verified!")
+    print(f"   [SAVED] JSON Path: {final_output_path}")
     print("=" * 60)
 
 
 if __name__ == "__main__":
     import sys
     if len(sys.argv) < 2:
-        print("\nUsage: python tools/pdf_question_extractor.py <path_to_pdf> [subject_name]")
-        print("Example: python tools/pdf_question_extractor.py \"tools/Pinnacle Computer PYQs.pdf\" \"Computer Awareness\"\n")
+        print("\nUsage: python tools/pdf_question_extractor.py <path_to_pdf> [output_path_or_filename] [subject_name]")
+        print("Example: python tools/pdf_question_extractor.py \"Pinnacle GS Theory 2nd Edition (English Medium).pdf\" \"question_bank/gk/gk_questions_en.json\" \"General Knowledge\"\n")
     else:
         pdf_file = sys.argv[1]
-        subj = sys.argv[2] if len(sys.argv) > 2 else "Computer Awareness"
-        process_and_save_pdf(pdf_file, subject=subj)
+        out_file = sys.argv[2] if len(sys.argv) > 2 else None
+        subj = sys.argv[3] if len(sys.argv) > 3 else "General Knowledge"
+        process_and_save_pdf(pdf_file, output_filename=out_file, subject=subj)

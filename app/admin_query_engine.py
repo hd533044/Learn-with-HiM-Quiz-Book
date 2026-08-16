@@ -30,11 +30,18 @@ INDIAN_FESTIVALS_CALENDAR = [
 ]
 
 
+def escape_md(text) -> str:
+    """Escapes Markdown formatting characters to prevent entity parse errors."""
+    if text is None:
+        return "N/A"
+    s = str(text)
+    for c in ["*", "_", "`", "[", "]"]:
+        s = s.replace(c, " ")
+    return s.strip()
+
+
 def execute_llm_nl2sql_fallback(query_text: str) -> str:
-    """
-    Calls Grok API or OpenAI API (if GROK_API_KEY or OPENAI_API_KEY is configured in env)
-    to perform deep analytical reasoning and return safe, read-only SQL SELECT queries.
-    """
+    """Calls Grok / OpenAI API (if configured) with safe read-only SQL execution."""
     api_key = os.getenv("GROK_API_KEY") or os.getenv("OPENAI_API_KEY")
     if not api_key:
         return None
@@ -57,7 +64,7 @@ def execute_llm_nl2sql_fallback(query_text: str) -> str:
     - saved_questions (id SERIAL, user_id BIGINT, question_text TEXT, options_json TEXT, correct_option INT, explanation TEXT, saved_at TEXT)
     """
 
-    prompt = f"Convert the following admin natural language request into a single, valid PostgreSQL SELECT statement. Output ONLY the raw SQL query without any explanation, markdown formatting, or backticks.\nAdmin Request: {query_text}"
+    prompt = f"Convert the following admin request into a single valid PostgreSQL SELECT statement. Output ONLY raw SQL without markdown or backticks.\nAdmin Request: {query_text}"
 
     payload = {
         "model": "grok-beta" if os.getenv("GROK_API_KEY") else "gpt-4o-mini",
@@ -70,25 +77,23 @@ def execute_llm_nl2sql_fallback(query_text: str) -> str:
 
     try:
         req = urllib.request.Request(api_url, data=json.dumps(payload).encode("utf-8"), headers=headers, method="POST")
-        with urllib.request.urlopen(req, timeout=10) as response:
+        with urllib.request.urlopen(req, timeout=8) as response:
             res_data = json.loads(response.read().decode("utf-8"))
             sql_query = res_data["choices"][0]["message"]["content"].strip()
             sql_query = sql_query.replace("```sql", "").replace("```", "").strip()
             
-            # Security Sanity Check: ONLY allow SELECT
             forbidden = ["INSERT", "UPDATE", "DELETE", "DROP", "ALTER", "TRUNCATE", "GRANT", "REVOKE"]
             if sql_query.upper().startswith("SELECT") and not any(w in sql_query.upper() for w in forbidden):
                 return sql_query
     except Exception as err:
-        logger.error(f"[LLM NL2SQL QUERY ERROR] {err}")
+        logger.error(f"[LLM NL2SQL ERROR] {err}")
     return None
 
 
 def parse_and_execute_admin_query(query_text: str, context_correction: str = None) -> dict:
     """
     OMNISCIENT MASTER ADMIN INTELLIGENCE ENGINE:
-    Crawls, joins, aggregates, and computes across all database tables.
-    Returns complete multi-record datasets formatted for Telegram Markdown and PDF compilation.
+    Parses intent keywords across all database dimensions and compiles reports.
     """
     q_lower = query_text.lower().strip()
     if context_correction:
@@ -99,7 +104,82 @@ def parse_and_execute_admin_query(query_text: str, context_correction: str = Non
     today_start = now_ist.replace(hour=0, minute=0, second=0, microsecond=0)
 
     # -------------------------------------------------------------------------
-    # 1. TODAY'S REVENUE, PAYMENTS & TRANSACTIONS
+    # 1. TOTAL / ALL PAID USERS LIST
+    # -------------------------------------------------------------------------
+    if (("paid" in q_lower or "subscriber" in q_lower or "bought" in q_lower or "vip" in q_lower) and 
+        any(k in q_lower for k in ["total", "all", "list", "users", "students", "show", "who", "give me", "tell me"])) and "today" not in q_lower and "3 day" not in q_lower:
+        
+        conn = get_db()
+        cursor = conn.cursor(cursor_factory=RealDictCursor)
+        cursor.execute("""
+            SELECT DISTINCT ON (u.user_id)
+                   u.user_id, u.student_id, u.full_name, u.phone_number, u.target_exam, u.state,
+                   u.paid_question_balance, u.vip_pass_expiry, u.pin, u.payment_id,
+                   pt.plan_name, pt.amount_paid, pt.created_at as purchase_date
+            FROM users u
+            INNER JOIN payment_transactions pt ON u.user_id = pt.user_id
+            WHERE pt.plan_key != 'FREE_DEMO' AND pt.amount_paid > 0
+            ORDER BY u.user_id, pt.id DESC
+        """)
+        paid_students = cursor.fetchall()
+
+        cursor.execute("SELECT SUM(amount_paid) as total_rev, COUNT(*) as total_txns FROM payment_transactions WHERE plan_key != 'FREE_DEMO' AND amount_paid > 0")
+        rev_data = cursor.fetchone()
+        cursor.close()
+        release_db(conn)
+
+        total_rev = float(rev_data['total_rev'] or 0)
+        title = f"Total Paid VIP Subscribers Directory ({len(paid_students)} Students)"
+        columns = ["S.No.", "Telegram ID", "Student ID", "Full Name", "Phone", "Target Exam", "Active Plan", "Amount (INR)", "Daily Quota", "Pass Expiry", "Txn ID"]
+        pdf_rows = []
+        tg_lines = [
+            "💳 **OMNISCIENT INTEL: TOTAL PAID VIP SUBSCRIBERS**\n"
+            "━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\n"
+            f"👑 **Total Verified Paid Students:** `{len(paid_students)}`\n"
+            f"💰 **Total Gross Revenue Collected:** `₹{total_rev} INR`\n"
+            "━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\n"
+        ]
+
+        for idx, s in enumerate(paid_students, start=1):
+            uid = s['user_id']
+            sid = s.get('student_id') or f"USER_{uid}"
+            name = escape_md(s.get('full_name') or "Student")
+            phone = s.get('phone_number') or "N/A"
+            plan = s.get('plan_name') or "VIP Plan"
+            amt = s.get('amount_paid', 0)
+            quota = s.get('paid_question_balance', 20)
+            exp = s.get('vip_pass_expiry') or "Active"
+            pid = s.get('payment_id') or "N/A"
+            exam = s.get('target_exam') or "N/A"
+
+            if idx <= 25:
+                tg_lines.append(
+                    f"**{idx}. {name}** (`{sid}` | ID: `{uid}`)\n"
+                    f"   💳 Plan: `{plan}` (₹{amt}) | ⚡ Quota: `{quota} Qs/D`\n"
+                    f"   📱 Phone: `{phone}` | ⏳ Expiry: `{exp}`\n"
+                    f"   🧾 Txn ID: `{pid}`"
+                )
+            pdf_rows.append([str(idx), str(uid), str(sid), name, str(phone), str(exam), str(plan), f"Rs. {amt}", f"{quota} Qs/D", str(exp), str(pid)])
+
+        if len(paid_students) > 25:
+            tg_lines.append(f"\n*(+ {len(paid_students) - 25} more paid students in attached PDF ledger)*")
+
+        if not paid_students:
+            tg_lines.append("ℹ️ *No paid VIP subscribers recorded in the database yet.*")
+
+        tg_lines.append("\n━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\n📥 *Download complete paid subscriber ledger as PDF below:*")
+
+        return {
+            "title": title,
+            "total_records": len(paid_students),
+            "summary_markdown": "\n".join(tg_lines),
+            "columns": columns,
+            "rows": pdf_rows,
+            "kpis": {"Total Paid Scholars": str(len(paid_students)), "Gross Revenue": f"₹{total_rev} INR"}
+        }
+
+    # -------------------------------------------------------------------------
+    # 2. TODAY'S REVENUE, PAYMENTS & TRANSACTIONS
     # -------------------------------------------------------------------------
     if ("today" in q_lower and any(k in q_lower for k in ["revenue", "payment", "paid", "collection", "bought", "earn", "income", "money", "txn"])):
         conn = get_db()
@@ -145,20 +225,20 @@ def parse_and_execute_admin_query(query_text: str, context_correction: str = Non
         for idx, t in enumerate(today_txns, start=1):
             uid = t.get("user_id", "N/A")
             sid = t.get("student_id") or f"USER_{uid}"
-            name = t.get("full_name") or "Unknown"
+            name = escape_md(t.get("full_name") or "Unknown")
             phone = t.get("phone_number") or "N/A"
             plan = t.get("plan_name") or "VIP Plan"
             amt = t.get("amount_paid", 0)
             pid = t.get("payment_id") or "N/A"
             ctime = t.get("created_at") or "Today"
 
-            tg_lines.append(
-                f"**{idx}. {name}** (`{sid}` | ID: `{uid}`)\n"
-                f"   💰 Plan: `{plan}` (₹{amt}) | 📱 Phone: `{phone}`\n"
-                f"   🧾 Txn ID: `{pid}`\n"
-                f"   ⏰ Time: `{ctime}`"
-            )
-            pdf_rows.append([str(idx), str(uid), str(sid), str(name), str(phone), str(plan), f"Rs. {amt}", str(pid), str(ctime)])
+            if idx <= 25:
+                tg_lines.append(
+                    f"**{idx}. {name}** (`{sid}` | ID: `{uid}`)\n"
+                    f"   💰 Plan: `{plan}` (₹{amt}) | 📱 Phone: `{phone}`\n"
+                    f"   🧾 Txn ID: `{pid}` | ⏰ Time: `{ctime}`"
+                )
+            pdf_rows.append([str(idx), str(uid), str(sid), name, str(phone), str(plan), f"Rs. {amt}", str(pid), str(ctime)])
 
         if not today_txns:
             tg_lines.append("ℹ️ *No paid plan purchases recorded today yet.*")
@@ -175,7 +255,7 @@ def parse_and_execute_admin_query(query_text: str, context_correction: str = Non
         }
 
     # -------------------------------------------------------------------------
-    # 2. TODAY'S REGISTERED USERS LIST
+    # 3. TODAY'S REGISTERED USERS LIST
     # -------------------------------------------------------------------------
     if "today" in q_lower and any(k in q_lower for k in ["register", "registered", "joined", "new user", "new student", "signup"]):
         conn = get_db()
@@ -205,19 +285,20 @@ def parse_and_execute_admin_query(query_text: str, context_correction: str = Non
         for idx, u in enumerate(today_registered, start=1):
             uid = u['user_id']
             sid = u.get('student_id') or f"USER_{uid}"
-            name = u.get('full_name') or "Unknown"
+            name = escape_md(u.get('full_name') or "Unknown")
             phone = u.get('phone_number') or "N/A"
             exam = u.get('target_exam') or "N/A"
             state = u.get('state') or "N/A"
             pin = u.get('pin') or "N/A"
             ctime = u.get('created_at') or "Today"
 
-            tg_lines.append(
-                f"**{idx}. {name}** (`{sid}` | ID: `{uid}`)\n"
-                f"   📱 Phone: `{phone}` | 🎯 Exam: `{exam}` | 📍 State: `{state}`\n"
-                f"   🔑 PIN: `{pin}` | ⏰ Joined: `{ctime}`"
-            )
-            pdf_rows.append([str(idx), str(uid), str(sid), str(name), str(phone), str(exam), str(state), str(pin), str(ctime)])
+            if idx <= 25:
+                tg_lines.append(
+                    f"**{idx}. {name}** (`{sid}` | ID: `{uid}`)\n"
+                    f"   📱 Phone: `{phone}` | 🎯 Exam: `{exam}` | 📍 State: `{state}`\n"
+                    f"   🔑 PIN: `{pin}` | ⏰ Joined: `{ctime}`"
+                )
+            pdf_rows.append([str(idx), str(uid), str(sid), name, str(phone), str(exam), str(state), str(pin), str(ctime)])
 
         if not today_registered:
             tg_lines.append("ℹ️ *No new student registrations recorded today yet.*")
@@ -234,7 +315,7 @@ def parse_and_execute_admin_query(query_text: str, context_correction: str = Non
         }
 
     # -------------------------------------------------------------------------
-    # 3. SALE CALENDAR & FESTIVAL TIMING INTELLIGENCE
+    # 4. SALE CALENDAR & FESTIVAL TIMING INTELLIGENCE
     # -------------------------------------------------------------------------
     if any(k in q_lower for k in ["sale", "offer", "discount", "festival", "calendar", "right time", "when will", "festivals", "promo"]):
         conn = get_db()
@@ -270,7 +351,7 @@ def parse_and_execute_admin_query(query_text: str, context_correction: str = Non
             for ps in past_sales:
                 status_icon = "🟢 LIVE" if ps.get("is_active") else "🔴 EXPIRED"
                 pct = int(float(ps.get("discount_percent", 0)))
-                tg_lines.append(f"• **{ps['sale_name']}** ({pct}% OFF) — `{status_icon}` | Valid: `{str(ps.get('valid_until', 'N/A'))[:16]}`")
+                tg_lines.append(f"• **{escape_md(ps['sale_name'])}** ({pct}% OFF) — `{status_icon}` | Valid: `{str(ps.get('valid_until', 'N/A'))[:16]}`")
         else:
             tg_lines.append("• *No past sales recorded in system.*")
 
@@ -292,163 +373,7 @@ def parse_and_execute_admin_query(query_text: str, context_correction: str = Non
         }
 
     # -------------------------------------------------------------------------
-    # 4. QUIZ ATTEMPTS & PERFORMANCE ON SPECIFIC DATES OR INACTIVE USERS
-    # -------------------------------------------------------------------------
-    if any(k in q_lower for k in ["quiz attempt", "quizzes attempt", "quiz analysis", "performance", "score", "inactive", "accuracy", "attempts"]):
-        conn = get_db()
-        cursor = conn.cursor(cursor_factory=RealDictCursor)
-        
-        if "inactive" in q_lower or "zero" in q_lower or "0 quiz" in q_lower:
-            cursor.execute("""
-                SELECT u.user_id, u.student_id, u.full_name, u.phone_number, u.target_exam, u.state, u.created_at, u.last_active
-                FROM users u
-                WHERE u.user_id NOT IN (SELECT DISTINCT user_id FROM quiz_attempts)
-                ORDER BY u.user_id DESC LIMIT 50
-            """)
-            rows = cursor.fetchall()
-            cursor.close()
-            release_db(conn)
-
-            title = "Inactive Students Ledger (0 Quizzes Attempted)"
-            columns = ["S.No.", "Telegram ID", "Student ID", "Full Name", "Phone", "Target Exam", "State", "Registered At"]
-            pdf_rows = []
-            tg_lines = [
-                "📉 **OMNISCIENT INTEL: INACTIVE STUDENTS (0 QUIZZES)**\n"
-                "━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\n"
-                f"📊 **Found Inactive Students:** `{len(rows)}`\n"
-                "━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\n"
-            ]
-            for idx, r in enumerate(rows, start=1):
-                uid = r['user_id']
-                sid = r.get('student_id') or f"USER_{uid}"
-                name = r.get('full_name') or "Unknown"
-                phone = r.get('phone_number') or "N/A"
-                exam = r.get('target_exam') or "N/A"
-                state = r.get('state') or "N/A"
-                reg = str(r.get('created_at', 'N/A')).split(" ")[0]
-
-                tg_lines.append(f"**{idx}. {name}** (`{sid}` | ID: `{uid}`)\n   📱 Phone: `{phone}` | Exam: `{exam}` | State: `{state}`")
-                pdf_rows.append([str(idx), str(uid), str(sid), str(name), str(phone), str(exam), str(state), str(reg)])
-
-            return {
-                "title": title,
-                "total_records": len(rows),
-                "summary_markdown": "\n".join(tg_lines),
-                "columns": columns,
-                "rows": pdf_rows,
-                "kpis": {"Inactive Students": str(len(rows))}
-            }
-
-        # Date-wise or Top Performers Analysis
-        cursor.execute("""
-            SELECT u.user_id, u.student_id, u.full_name, u.phone_number, u.target_exam,
-                   COUNT(qa.id) as total_quizzes,
-                   COALESCE(SUM(qa.questions_attempted), 0) as total_qs,
-                   COALESCE(SUM(qa.correct_answers), 0) as total_correct,
-                   COALESCE(SUM(qa.wrong_answers), 0) as total_wrong,
-                   COALESCE(AVG(qa.score), 0.0) as avg_score
-            FROM users u
-            INNER JOIN quiz_attempts qa ON u.user_id = qa.user_id
-            GROUP BY u.user_id, u.student_id, u.full_name, u.phone_number, u.target_exam
-            ORDER BY total_qs DESC LIMIT 50
-        """)
-        rows = cursor.fetchall()
-        cursor.close()
-        release_db(conn)
-
-        title = "Student Quiz Performance & Academic Analysis Ledger"
-        columns = ["S.No.", "Telegram ID", "Student ID", "Full Name", "Phone", "Target Exam", "Quizzes", "Total Qs", "Correct", "Wrong", "Avg Score"]
-        pdf_rows = []
-        tg_lines = [
-            "🎯 **OMNISCIENT INTEL: QUIZ ATTEMPTS & PERFORMANCE**\n"
-            "━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\n"
-            f"📊 **Scholars Analyzed:** `{len(rows)}`\n"
-            "━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\n"
-        ]
-
-        for idx, r in enumerate(rows, start=1):
-            uid = r['user_id']
-            sid = r.get('student_id') or f"USER_{uid}"
-            name = r.get('full_name') or "Unknown"
-            phone = r.get('phone_number') or "N/A"
-            exam = r.get('target_exam') or "N/A"
-            qs = r.get('total_qs', 0)
-            corr = r.get('total_correct', 0)
-            wrong = r.get('total_wrong', 0)
-            score = round(float(r.get('avg_score', 0.0)), 2)
-
-            tg_lines.append(
-                f"**{idx}. {name}** (`{sid}` | ID: `{uid}`)\n"
-                f"   📚 Quizzes: `{r['total_quizzes']}` | Qs: `{qs}` | ✅ Corr: `{corr}` | ❌ Wrong: `{wrong}` | ⭐ Avg: `{score}`"
-            )
-            pdf_rows.append([str(idx), str(uid), str(sid), str(name), str(phone), str(exam), str(r['total_quizzes']), str(qs), str(corr), str(wrong), str(score)])
-
-        tg_lines.append("\n━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\n📥 *Download complete quiz analysis as PDF below:*")
-
-        return {
-            "title": title,
-            "total_records": len(rows),
-            "summary_markdown": "\n".join(tg_lines),
-            "columns": columns,
-            "rows": pdf_rows,
-            "kpis": {"Active Scholars": str(len(rows))}
-        }
-
-    # -------------------------------------------------------------------------
-    # 5. ONLINE TIME PATTERNS, HABITS & ENGAGEMENT TELEMETRY
-    # -------------------------------------------------------------------------
-    if any(k in q_lower for k in ["online", "active", "time spent", "practice time", "when comes", "patterns", "habits"]):
-        conn = get_db()
-        cursor = conn.cursor(cursor_factory=RealDictCursor)
-        cursor.execute("""
-            SELECT u.user_id, u.student_id, u.full_name, u.phone_number, u.last_active, u.target_exam,
-                   COALESCE(SUM(uat.seconds_spent), 0) as total_seconds,
-                   COUNT(DISTINCT qa.id) as total_attempts
-            FROM users u
-            LEFT JOIN user_activity_time uat ON u.user_id = uat.user_id
-            LEFT JOIN quiz_attempts qa ON u.user_id = qa.user_id
-            GROUP BY u.user_id, u.student_id, u.full_name, u.phone_number, u.last_active, u.target_exam
-            ORDER BY total_seconds DESC
-            LIMIT 50
-        """)
-        rows = cursor.fetchall()
-        cursor.close()
-        release_db(conn)
-
-        title = "Student Online Activity, Duration & Routine Patterns"
-        columns = ["S.No.", "Telegram ID", "Student ID", "Full Name", "Phone", "Last Active (IST)", "Total Practice Time", "Quizzes Solved"]
-        pdf_rows = []
-        tg_lines = [
-            "⏱ **OMNISCIENT INTEL: ONLINE PATTERNS & PRACTICE TIME**\n"
-            "━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\n"
-            f"📊 **Scholars Logged:** `{len(rows)}`\n"
-            "━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\n"
-        ]
-
-        for idx, r in enumerate(rows, start=1):
-            uid = r.get("user_id", "N/A")
-            sid = r.get("student_id") or f"USER_{uid}"
-            hrs = round(r["total_seconds"] / 3600.0, 2)
-            mins = round(r["total_seconds"] / 60.0, 1)
-            last_act = r.get("last_active") or "N/A"
-            phone = r.get("phone_number") or "N/A"
-
-            tg_lines.append(f"**{idx}. {r['full_name']}** (`{sid}` | ID: `{uid}`)\n   ⏱ Time: `{hrs} Hours` ({mins}m) | Quizzes: `{r['total_attempts']}`\n   🕒 Last Active: `{last_act}` | 📱 Phone: `{phone}`")
-            pdf_rows.append([str(idx), str(uid), str(sid), str(r['full_name']), str(phone), str(last_act), f"{hrs} hrs ({mins}m)", str(r['total_attempts'])])
-
-        tg_lines.append("\n━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\n📥 *Download complete online analytics as PDF below:*")
-
-        return {
-            "title": title,
-            "total_records": len(rows),
-            "summary_markdown": "\n".join(tg_lines),
-            "columns": columns,
-            "rows": pdf_rows,
-            "kpis": {"Active Records": str(len(rows)), "Analytics Scope": "Activity & Engagement"}
-        }
-
-    # -------------------------------------------------------------------------
-    # 6. NEW REGISTRATIONS + PAID PURCHASES (e.g. 3 Days Data, 7 Days Data)
+    # 5. NEW REGISTRATIONS + PAID PURCHASES (e.g. 3 Days Data, 7 Days Data)
     # -------------------------------------------------------------------------
     days_match = re.search(r"(\d+)\s*day", q_lower)
     days_val = int(days_match.group(1)) if days_match else (3 if "3 day" in q_lower else 7)
@@ -502,9 +427,11 @@ def parse_and_execute_admin_query(query_text: str, context_correction: str = Non
             pid = r.get("payment_id", "N/A")
             reg_date = str(r.get("created_at", "N/A")).split(" ")[0]
             phone = str(r.get("phone_number", "N/A"))
+            name = escape_md(r.get('full_name') or "Student")
 
-            tg_lines.append(f"**{idx}. {r['full_name']}** (`{sid}` | ID: `{uid}`)\n   📱 Phone: `{phone}` | Plan: `{p_name}` (₹{amt})\n   🧾 Txn ID: `{pid}`")
-            pdf_rows.append([str(idx), str(uid), str(sid), str(r['full_name']), str(phone), str(r.get('target_exam', 'N/A')), str(p_name), f"Rs. {amt}", str(pid), str(reg_date)])
+            if idx <= 25:
+                tg_lines.append(f"**{idx}. {name}** (`{sid}` | ID: `{uid}`)\n   📱 Phone: `{phone}` | Plan: `{p_name}` (₹{amt})\n   🧾 Txn ID: `{pid}`")
+            pdf_rows.append([str(idx), str(uid), str(sid), name, str(phone), str(r.get('target_exam', 'N/A')), str(p_name), f"Rs. {amt}", str(pid), str(reg_date)])
 
         if not filtered:
             tg_lines.append("ℹ️ *No new paid student registrations found in this timeframe.*")
@@ -521,7 +448,7 @@ def parse_and_execute_admin_query(query_text: str, context_correction: str = Non
         }
 
     # -------------------------------------------------------------------------
-    # 7. UPCOMING / RECENT PASS EXPIRATIONS & DEMO ENDING
+    # 6. UPCOMING / RECENT PASS EXPIRATIONS & DEMO ENDINGS
     # -------------------------------------------------------------------------
     if any(k in q_lower for k in ["expire", "expiring", "expiration", "validity", "demo ending", "plan expired"]):
         conn = get_db()
@@ -574,9 +501,11 @@ def parse_and_execute_admin_query(query_text: str, context_correction: str = Non
         for idx, u in enumerate(display_list, start=1):
             uid = u.get("user_id", "N/A")
             sid = u.get("student_id") or f"USER_{uid}"
+            name = escape_md(u.get('full_name') or "Student")
             h_info = f"Left: `{u.get('hours_left', 'Expired')}h` | " if 'hours_left' in u else ""
-            tg_lines.append(f"**{idx}. {u['full_name']}** (`{sid}` | ID: `{uid}`)\n   📱 Phone: `{u.get('phone_number')}` | {h_info}Expires: `{u['vip_pass_expiry']}`")
-            pdf_rows.append([str(idx), str(uid), str(sid), str(u['full_name']), str(u.get('phone_number', 'N/A')), f"{u['paid_question_balance']} Qs", str(u['vip_pass_expiry']), str(u.get('payment_id', 'N/A'))])
+            if idx <= 25:
+                tg_lines.append(f"**{idx}. {name}** (`{sid}` | ID: `{uid}`)\n   📱 Phone: `{u.get('phone_number')}` | {h_info}Expires: `{u['vip_pass_expiry']}`")
+            pdf_rows.append([str(idx), str(uid), str(sid), name, str(u.get('phone_number', 'N/A')), f"{u['paid_question_balance']} Qs", str(u['vip_pass_expiry']), str(u.get('payment_id', 'N/A'))])
 
         if not display_list:
             tg_lines.append("🎉 *Zero subscriptions found matching this condition.*")
@@ -593,52 +522,65 @@ def parse_and_execute_admin_query(query_text: str, context_correction: str = Non
         }
 
     # -------------------------------------------------------------------------
-    # 8. REVIEWS & STUDENT FEEDBACK SEARCH
+    # 7. ONLINE TIME PATTERNS, HABITS & ENGAGEMENT TELEMETRY
     # -------------------------------------------------------------------------
-    if any(k in q_lower for k in ["feedback", "review", "ratings", "what reviews"]):
+    if any(k in q_lower for k in ["online", "active", "time spent", "practice time", "when comes", "patterns", "habits"]):
         conn = get_db()
         cursor = conn.cursor(cursor_factory=RealDictCursor)
-        cursor.execute("SELECT * FROM student_feedback ORDER BY id DESC LIMIT 50")
-        fbs = cursor.fetchall()
+        cursor.execute("""
+            SELECT u.user_id, u.student_id, u.full_name, u.phone_number, u.last_active, u.target_exam,
+                   COALESCE(SUM(uat.seconds_spent), 0) as total_seconds,
+                   COUNT(DISTINCT qa.id) as total_attempts
+            FROM users u
+            LEFT JOIN user_activity_time uat ON u.user_id = uat.user_id
+            LEFT JOIN quiz_attempts qa ON u.user_id = qa.user_id
+            GROUP BY u.user_id, u.student_id, u.full_name, u.phone_number, u.last_active, u.target_exam
+            ORDER BY total_seconds DESC
+            LIMIT 50
+        """)
+        rows = cursor.fetchall()
         cursor.close()
         release_db(conn)
 
-        title = "Student Feedback & Platform Reviews Ledger"
-        columns = ["S.No.", "Telegram ID", "Student Name", "Feedback Text", "Submitted At"]
+        title = "Student Online Activity, Duration & Routine Patterns"
+        columns = ["S.No.", "Telegram ID", "Student ID", "Full Name", "Phone", "Last Active (IST)", "Total Practice Time", "Quizzes Solved"]
         pdf_rows = []
         tg_lines = [
-            "💬 **OMNISCIENT INTEL: STUDENT FEEDBACK & REVIEWS**\n"
+            "⏱ **OMNISCIENT INTEL: ONLINE PATTERNS & PRACTICE TIME**\n"
             "━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\n"
-            f"📊 **Total Reviews Found:** `{len(fbs)}`\n"
+            f"📊 **Scholars Logged:** `{len(rows)}`\n"
             "━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\n"
         ]
 
-        for idx, f in enumerate(fbs, start=1):
-            uid = f.get("user_id", "N/A")
-            name = f.get("full_name") or f"User {uid}"
-            fb_txt = f.get("feedback_text") or "N/A"
-            sub_at = f.get("submitted_at") or "N/A"
+        for idx, r in enumerate(rows, start=1):
+            uid = r.get("user_id", "N/A")
+            sid = r.get("student_id") or f"USER_{uid}"
+            name = escape_md(r.get('full_name') or "Student")
+            hrs = round(r["total_seconds"] / 3600.0, 2)
+            mins = round(r["total_seconds"] / 60.0, 1)
+            last_act = r.get("last_active") or "N/A"
+            phone = r.get("phone_number") or "N/A"
 
-            tg_lines.append(f"**{idx}. {name}** (ID: `{uid}`)\n   📅 Date: `{sub_at}`\n   💬 *\"{fb_txt}\"*\n")
-            pdf_rows.append([str(idx), str(uid), str(name), str(fb_txt), str(sub_at)])
+            if idx <= 25:
+                tg_lines.append(f"**{idx}. {name}** (`{sid}` | ID: `{uid}`)\n   ⏱ Time: `{hrs} Hours` ({mins}m) | Quizzes: `{r['total_attempts']}`\n   🕒 Last Active: `{last_act}` | 📱 Phone: `{phone}`")
+            pdf_rows.append([str(idx), str(uid), str(sid), name, str(phone), str(last_act), f"{hrs} hrs ({mins}m)", str(r['total_attempts'])])
 
-        if not fbs:
-            tg_lines.append("ℹ️ *No reviews found in database.*")
+        tg_lines.append("\n━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\n📥 *Download complete online analytics as PDF below:*")
 
         return {
             "title": title,
-            "total_records": len(fbs),
+            "total_records": len(rows),
             "summary_markdown": "\n".join(tg_lines),
             "columns": columns,
             "rows": pdf_rows,
-            "kpis": {"Total Reviews": str(len(fbs))}
+            "kpis": {"Active Records": str(len(rows)), "Analytics Scope": "Activity & Engagement"}
         }
 
     # -------------------------------------------------------------------------
-    # 9. STUDENT DOSSIER SEARCH (By Name, Student ID, Telegram ID, Phone Number)
+    # 8. SPECIFIC USER DOSSIER (BY NAME, STUDENT ID, USER ID, PHONE)
     # -------------------------------------------------------------------------
     clean_term = q_lower
-    for w in ["details", "of", "profile", "student", "user", "info", "for", "search", "tell me", "show", "all", "who", "is", "about", "everything"]:
+    for w in ["details", "of", "profile", "student", "user", "info", "for", "search", "tell me", "show", "all", "who", "is", "about", "everything", "pin", "password"]:
         clean_term = clean_term.replace(w, "")
     clean_term = clean_term.strip()
 
@@ -660,7 +602,7 @@ def parse_and_execute_admin_query(query_text: str, context_correction: str = Non
         cursor.close()
         release_db(conn)
 
-    if matched_users:
+    if matched_users and len(clean_term) >= 2:
         title = f"Omniscient Student Dossier Search ({len(matched_users)} Found)"
         columns = ["S.No.", "Telegram ID", "Student ID", "Full Name", "Phone", "Target Exam", "Daily Quota", "Pass Expiry", "PIN", "Sec Question", "Sec Answer", "Payment ID"]
         pdf_rows = []
@@ -674,26 +616,27 @@ def parse_and_execute_admin_query(query_text: str, context_correction: str = Non
         for idx, u in enumerate(matched_users, start=1):
             uid = u['user_id']
             sid = u.get('student_id', f"USER_{uid}")
-            name = u.get('full_name', 'Unknown')
+            name = escape_md(u.get('full_name', 'Unknown'))
             phone = u.get('phone_number', 'N/A')
             exam = u.get('target_exam', 'N/A')
             quota = f"{u.get('paid_question_balance', 20)} Qs/D"
             status = "BANNED 🛑" if u.get('is_banned') else "ACTIVE 🟢"
             exp = u.get('vip_pass_expiry', 'N/A')
             pin = u.get('pin', 'N/A')
-            sec_q = u.get('security_question', 'N/A')
-            sec_a = u.get('security_answer', 'N/A')
+            sec_q = escape_md(u.get('security_question', 'N/A'))
+            sec_a = escape_md(u.get('security_answer', 'N/A'))
             pid = u.get('payment_id', 'N/A')
             last_act = u.get('last_active', 'N/A')
 
-            tg_lines.append(
-                f"**{idx}. {name}** (`{sid}` | ID: `{uid}`)\n"
-                f"   📱 Phone: `{phone}` | 🎯 Exam: `{exam}` | ⚡ Quota: `{quota}`\n"
-                f"   ⏳ Expiry: `{exp}` | 🚦 Status: `{status}` | 🕒 Last Active: `{last_act}`\n"
-                f"   🔑 PIN: `{pin}` | 🧾 Txn ID: `{pid}`\n"
-                f"   ❓ Sec Q: *\"{sec_q}\"* | Ans: `{sec_a}`"
-            )
-            pdf_rows.append([str(idx), str(uid), str(sid), str(name), str(phone), str(exam), str(quota), str(exp), str(pin), str(sec_q), str(sec_a), str(pid)])
+            if idx <= 15:
+                tg_lines.append(
+                    f"**{idx}. {name}** (`{sid}` | ID: `{uid}`)\n"
+                    f"   📱 Phone: `{phone}` | 🎯 Exam: `{exam}` | ⚡ Quota: `{quota}`\n"
+                    f"   ⏳ Expiry: `{exp}` | 🚦 Status: `{status}` | 🕒 Last Active: `{last_act}`\n"
+                    f"   🔑 PIN: `{pin}` | 🧾 Txn ID: `{pid}`\n"
+                    f"   ❓ Sec Q: *\"{sec_q}\"* | Ans: `{sec_a}`"
+                )
+            pdf_rows.append([str(idx), str(uid), str(sid), name, str(phone), str(exam), str(quota), str(exp), str(pin), sec_q, sec_a, str(pid)])
 
         tg_lines.append("\n━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\n📥 *Download complete list as PDF below:*")
 
@@ -707,7 +650,7 @@ def parse_and_execute_admin_query(query_text: str, context_correction: str = Non
         }
 
     # -------------------------------------------------------------------------
-    # 10. LLM NL2SQL FALLBACK (For open-ended questions)
+    # 9. LLM NL2SQL FALLBACK (FOR OPEN-ENDED QUERIES)
     # -------------------------------------------------------------------------
     llm_sql = execute_llm_nl2sql_fallback(query_text)
     if llm_sql:
@@ -725,19 +668,19 @@ def parse_and_execute_admin_query(query_text: str, context_correction: str = Non
                 pdf_rows = []
                 tg_lines = [
                     f"🧠 **OMNISCIENT INTEL: CUSTOM QUERY RESULTS**\n"
-                    f"*(Query: \"{query_text}\")*\n"
+                    f"*(Query: \"{escape_md(query_text)}\")*\n"
                     f"━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\n"
                     f"📊 **Total Matching Records:** `{len(dynamic_rows)}`\n"
                     f"━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\n"
                 ]
-                for idx, dr in enumerate(dynamic_rows[:30], start=1):
+                for idx, dr in enumerate(dynamic_rows[:25], start=1):
                     row_vals = [str(v) for v in dr.values()]
                     pdf_rows.append([str(idx)] + row_vals)
-                    summary_item = " | ".join([f"**{k}:** `{v}`" for k, v in dr.items() if v is not None][:4])
+                    summary_item = " | ".join([f"**{escape_md(k)}:** `{escape_md(v)}`" for k, v in dr.items() if v is not None][:4])
                     tg_lines.append(f"**{idx}.** {summary_item}")
 
-                if len(dynamic_rows) > 30:
-                    tg_lines.append(f"\n*(+ {len(dynamic_rows) - 30} more records in full PDF ledger)*")
+                if len(dynamic_rows) > 25:
+                    tg_lines.append(f"\n*(+ {len(dynamic_rows) - 25} more records in full PDF ledger)*")
 
                 tg_lines.append("\n━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\n📥 *Download complete dynamic report as PDF below:*")
 
@@ -755,7 +698,7 @@ def parse_and_execute_admin_query(query_text: str, context_correction: str = Non
             logger.error(f"[DYNAMIC SQL EXEC ERROR] {e}")
 
     # -------------------------------------------------------------------------
-    # 11. OMNISCIENT PLATFORM CRAWLER (General Multi-Table Overview)
+    # 10. OMNISCIENT PLATFORM CRAWLER OVERVIEW (DEFAULT FALLBACK)
     # -------------------------------------------------------------------------
     conn = get_db()
     cursor = conn.cursor(cursor_factory=RealDictCursor)
@@ -784,7 +727,7 @@ def parse_and_execute_admin_query(query_text: str, context_correction: str = Non
     pdf_rows = []
     tg_lines = [
         f"🧠 **OMNISCIENT ADMIN CRAWLER RESULTS**\n"
-        f"*(Query: \"{query_text}\" — Showing {len(all_matched_users)} records)*\n"
+        f"*(Query: \"{escape_md(query_text)}\")*\n"
         f"━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\n"
         f"👥 **Total Registered Scholars:** `{total_u}` | 💳 **Paid:** `{paid_u}` | 💰 **Gross Revenue:** `₹{tot_rev} INR`\n"
         f"━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\n"
@@ -793,15 +736,16 @@ def parse_and_execute_admin_query(query_text: str, context_correction: str = Non
     for idx, u in enumerate(all_matched_users, start=1):
         uid = u.get("user_id")
         sid = u.get("student_id") or f"USER_{uid}"
-        name = u.get("full_name") or "Unknown"
+        name = escape_md(u.get("full_name") or "Unknown")
         phone = u.get("phone_number") or "N/A"
         exam = u.get("target_exam") or "N/A"
         state = u.get("state") or "N/A"
         quota = f"{u.get('paid_question_balance', 20)} Qs"
         pid = u.get("payment_id", "N/A")
 
-        tg_lines.append(f"**{idx}. {name}** (`{sid}` | ID: `{uid}`)\n   📱 Phone: `{phone}` | Exam: `{exam}` | State: `{state}` | Quota: `{quota}`")
-        pdf_rows.append([str(idx), str(uid), str(sid), str(name), str(phone), str(exam), str(state), quota, str(pid)])
+        if idx <= 25:
+            tg_lines.append(f"**{idx}. {name}** (`{sid}` | ID: `{uid}`)\n   📱 Phone: `{phone}` | Exam: `{exam}` | State: `{state}` | Quota: `{quota}`")
+        pdf_rows.append([str(idx), str(uid), str(sid), name, str(phone), str(exam), str(state), quota, str(pid)])
 
     tg_lines.append("\n━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\n📥 *Download complete database report as PDF below:*")
 

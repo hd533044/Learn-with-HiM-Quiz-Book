@@ -34,7 +34,7 @@ from app.database import (
 )
 from app.onboarding import get_onboarding_handler, start_onboarding
 from app.quiz_engine import (
-    launch_quiz_setup, quiz_language_callback, quiz_mode_callback, quiz_topic_callback,
+    launch_quiz_setup, quiz_language_callback, quiz_subject_callback, quiz_mode_callback, quiz_topic_callback,
     quiz_count_callback, quiz_timer_callback, handle_poll_answer,
     pause_quiz_command, resume_quiz_command, stop_quiz_command, save_question_callback
 )

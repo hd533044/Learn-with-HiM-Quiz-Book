@@ -1018,10 +1018,7 @@ def mark_questions_as_seen(user_id, question_ids):
     release_db(conn)
 
 def reset_user_seen_questions_for_ids(user_id: int, question_ids: list):
-    """
-    Clears seen status for specific questions when a topic bank is 100% exhausted,
-    allowing the user to restart the topic in a fresh randomized cycle.
-    """
+    """Clears seen status for specific questions when a topic bank is 100% exhausted."""
     if not user_id or not question_ids:
         return
     conn = get_db()

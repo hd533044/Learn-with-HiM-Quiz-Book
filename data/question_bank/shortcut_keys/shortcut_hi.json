@@ -1,0 +1,2602 @@
+[
+  {
+    "id": 1,
+    "category": "MS Word",
+    "question": "MS Word में चयनित पैराग्राफ पर डबल लाइन स्पेसिंग (Double Line Spacing) लागू करने के लिए किस शॉर्टकट कुंजी का उपयोग किया जाता है?",
+    "options": {
+      "A": "Ctrl + 1",
+      "B": "Ctrl + 2",
+      "C": "Ctrl + 5",
+      "D": "Alt + 2"
+    },
+    "correct_option": "B",
+    "explanation": "Ctrl + 2 डबल लाइन स्पेसिंग लागू करता है, Ctrl + 1 सिंगल स्पेसिंग तथा Ctrl + 5 1.5 लाइन स्पेसिंग लागू करता है।"
+  },
+  {
+    "id": 2,
+    "category": "MS Word",
+    "question": "MS Word में चयनित टेक्स्ट को सबस्क्रिप्ट (Subscript, जैसे H₂O) बनाने के लिए कीबोर्ड शॉर्टकट क्या है?",
+    "options": {
+      "A": "Ctrl + Shift + =",
+      "B": "Ctrl + =",
+      "C": "Alt + =",
+      "D": "Shift + Alt + ="
+    },
+    "correct_option": "B",
+    "explanation": "Ctrl + = सबस्क्रिप्ट (H₂O) लागू करता है, जबकि Ctrl + Shift + = सुपरस्क्रिप्ट (X²) लागू करता है।"
+  },
+  {
+    "id": 3,
+    "category": "MS Word",
+    "question": "MS Word में टेक्स्ट के केस (अपरकेस, लोअरकेस, सेंटेंस केस) को बदलने के लिए किस शॉर्टकट कुंजी का उपयोग किया जाता है?",
+    "options": {
+      "A": "Ctrl + F3",
+      "B": "Shift + F3",
+      "C": "Alt + F3",
+      "D": "Ctrl + Shift + C"
+    },
+    "correct_option": "B",
+    "explanation": "Shift + F3 चयनित टेक्स्ट को लोअरकेस, अपरकेस और टाइटल/सेंटेंस केस में बारी-बारी से टॉगल करता है।"
+  },
+  {
+    "id": 4,
+    "category": "MS Word",
+    "question": "MS Word में हैंगिंग इंडेंट (Hanging Indent) बनाने के लिए किस शॉर्टकट कुंजी का उपयोग किया जाता है?",
+    "options": {
+      "A": "Ctrl + H",
+      "B": "Ctrl + M",
+      "C": "Ctrl + T",
+      "D": "Ctrl + Shift + T"
+    },
+    "correct_option": "C",
+    "explanation": "Ctrl + T हैंगिंग इंडेंट बनाता है, और Ctrl + Shift + T हैंगिंग इंडेंट को हटाता है।"
+  },
+  {
+    "id": 5,
+    "category": "MS Word",
+    "question": "चयनित टेक्स्ट से सभी मैन्युअल कैरेक्टर फॉर्मेटिंग हटाकर डिफॉल्ट स्टाइल में रीसेट करने के लिए कौन सा शॉर्टकट है?",
+    "options": {
+      "A": "Ctrl + Shift + N",
+      "B": "Ctrl + Spacebar",
+      "C": "Ctrl + Q",
+      "D": "Ctrl + Alt + Spacebar"
+    },
+    "correct_option": "B",
+    "explanation": "Ctrl + Spacebar चयनित टेक्स्ट की कैरेक्टर फॉर्मेटिंग हटाता है, जबकि Ctrl + Q पैराग्राफ फॉर्मेटिंग हटाता है।"
+  },
+  {
+    "id": 6,
+    "category": "MS Word",
+    "question": "MS Word में कॉलम ब्रेक (Column Break) डालने के लिए शॉर्टकट कुंजी क्या है?",
+    "options": {
+      "A": "Ctrl + Enter",
+      "B": "Ctrl + Shift + Enter",
+      "C": "Shift + Enter",
+      "D": "Alt + Enter"
+    },
+    "correct_option": "B",
+    "explanation": "Ctrl + Shift + Enter कॉलम ब्रेक डालता है, Ctrl + Enter पेज ब्रेक डालता है और Shift + Enter लाइन ब्रेक डालता है।"
+  },
+  {
+    "id": 7,
+    "category": "MS Word",
+    "question": "MS Word में कौन सी फंक्शन कुंजी 'एक्सटेंड सिलेक्शन' (Extend Selection) मोड को सक्रिय करती है?",
+    "options": {
+      "A": "F2",
+      "B": "F4",
+      "C": "F8",
+      "D": "F12"
+    },
+    "correct_option": "C",
+    "explanation": "F8 कुंजी एक्सटेंड मोड चालू करती है: 2 बार दबाने पर शब्द, 3 बार पर वाक्य, 4 बार पर पैराग्राफ और 5 बार पर पूरा डॉक्यूमेंट सिलेक्ट होता है।"
+  },
+  {
+    "id": 8,
+    "category": "MS Word",
+    "question": "MS Word में वर्तमान दिनांक (Current Date Field) इन्सर्ट करने के लिए किस शॉर्टकट कुंजी का उपयोग किया जाता है?",
+    "options": {
+      "A": "Alt + Shift + D",
+      "B": "Ctrl + Shift + D",
+      "C": "Alt + Ctrl + D",
+      "D": "Ctrl + ;"
+    },
+    "correct_option": "A",
+    "explanation": "Alt + Shift + D वर्ड में वर्तमान दिनांक फील्ड जोड़ता है। Alt + Shift + T समय (Time) फील्ड जोड़ता है।"
+  },
+  {
+    "id": 9,
+    "category": "MS Word",
+    "question": "MS Word में पर्यायवाची शब्दों (Synonyms) की खोज के लिए 'थीसॉरस' (Thesaurus) खोलने की शॉर्टकट कुंजी क्या है?",
+    "options": {
+      "A": "F7",
+      "B": "Shift + F7",
+      "C": "Ctrl + F7",
+      "D": "Alt + F7"
+    },
+    "correct_option": "B",
+    "explanation": "Shift + F7 थीसॉरस पेन खोलता है। F7 स्पेलिंग और ग्रामर चेक डायलॉग बॉक्स खोलता है।"
+  },
+  {
+    "id": 10,
+    "category": "MS Word",
+    "question": "चयनित टेक्स्ट से केवल फॉर्मेटिंग कॉपी करने (फॉर्मेट पेंटर) के लिए किस शॉर्टकट का उपयोग किया जाता है?",
+    "options": {
+      "A": "Ctrl + Shift + F",
+      "B": "Ctrl + Shift + C",
+      "C": "Ctrl + Alt + C",
+      "D": "Alt + Shift + C"
+    },
+    "correct_option": "B",
+    "explanation": "Ctrl + Shift + C फॉर्मेटिंग कॉपी करता है, और Ctrl + Shift + V कॉपी की गई फॉर्मेटिंग को पेस्ट करता है।"
+  },
+  {
+    "id": 11,
+    "category": "MS Word",
+    "question": "Microsoft Word में 'फॉन्ट' (Font) डायलॉग बॉक्स खोलने के लिए कौन सा शॉर्टकट उपयोग किया जाता है?",
+    "options": {
+      "A": "Ctrl + F",
+      "B": "Ctrl + Shift + P",
+      "C": "Ctrl + D",
+      "D": "B और C दोनों"
+    },
+    "correct_option": "D",
+    "explanation": "Ctrl + D और Ctrl + Shift + P (तथा Ctrl + Shift + F) दोनों MS Word में फॉन्ट डायलॉग बॉक्स खोलते हैं।"
+  },
+  {
+    "id": 12,
+    "category": "MS Word",
+    "question": "MS Word में 'Ctrl + M' शॉर्टकट दबाने से क्या होता है?",
+    "options": {
+      "A": "नया डॉक्यूमेंट बनता है",
+      "B": "पैराग्राफ का लेफ्ट इंडेंट बढ़ता है",
+      "C": "मेल मर्ज फील्ड इन्सर्ट होता है",
+      "D": "मिडिल अलाइनमेंट लागू होता है"
+    },
+    "correct_option": "B",
+    "explanation": "Ctrl + M पैराग्राफ के लेफ्ट इंडेंट को बढ़ाता है। Ctrl + Shift + M लेफ्ट इंडेंट को घटाता है।"
+  },
+  {
+    "id": 13,
+    "category": "MS Word",
+    "question": "MS Word में एक्टिव डॉक्यूमेंट विंडो को दो भागों में विभाजित (Split) करने की शॉर्टकट कुंजी क्या है?",
+    "options": {
+      "A": "Ctrl + Alt + S",
+      "B": "Ctrl + Shift + S",
+      "C": "Alt + Shift + S",
+      "D": "Ctrl + Enter"
+    },
+    "correct_option": "A",
+    "explanation": "Ctrl + Alt + S डॉक्यूमेंट विंडो को दो अलग-अलग पेन में स्प्लिट (विभाजित) करता है या विभाजन को हटाता है।"
+  },
+  {
+    "id": 14,
+    "category": "MS Word",
+    "question": "MS Word में नॉन-ब्रेकिंग स्पेस (Non-Breaking Space) इन्सर्ट करने का शॉर्टकट क्या है?",
+    "options": {
+      "A": "Ctrl + Spacebar",
+      "B": "Ctrl + Shift + Spacebar",
+      "C": "Alt + Spacebar",
+      "D": "Shift + Enter"
+    },
+    "correct_option": "B",
+    "explanation": "Ctrl + Shift + Spacebar नॉन-ब्रेकिंग स्पेस बनाता है, जो दो शब्दों को लाइन के अंत में अलग-अलग होने से रोकता है।"
+  },
+  {
+    "id": 15,
+    "category": "MS Word",
+    "question": "MS Word में चयनित टेक्स्ट के फॉन्ट आकार को ठीक 1 पॉइंट घटाने के लिए कौन सा शॉर्टकट है?",
+    "options": {
+      "A": "Ctrl + [",
+      "B": "Ctrl + <",
+      "C": "Ctrl + Shift + [",
+      "D": "Alt + ["
+    },
+    "correct_option": "A",
+    "explanation": "Ctrl + [ फॉन्ट का आकार 1 pt घटाता है, तथा Ctrl + ] फॉन्ट का आकार 1 pt बढ़ाता है।"
+  },
+  {
+    "id": 16,
+    "category": "MS Excel",
+    "question": "Microsoft Excel में एक्टिव सेल को एडिट मोड (Edit Mode) में लाने के लिए कौन सी शॉर्टकट कुंजी का उपयोग किया जाता है?",
+    "options": {
+      "A": "F1",
+      "B": "F2",
+      "C": "F4",
+      "D": "F7"
+    },
+    "correct_option": "B",
+    "explanation": "F2 एक्टिव सेल को एडिट करता है और कर्सर को सेल सामग्री के अंत में रखता है।"
+  },
+  {
+    "id": 17,
+    "category": "MS Excel",
+    "question": "MS Excel में किसी सेल में वर्तमान स्थिर दिनांक (Current Date) इन्सर्ट करने की शॉर्टकट कुंजी क्या है?",
+    "options": {
+      "A": "Ctrl + ;",
+      "B": "Ctrl + Shift + ;",
+      "C": "Alt + Shift + D",
+      "D": "Ctrl + D"
+    },
+    "correct_option": "A",
+    "explanation": "Ctrl + ; वर्तमान दिनांक जोड़ता है, जबकि Ctrl + Shift + ; वर्तमान समय (Time) जोड़ता है।"
+  },
+  {
+    "id": 18,
+    "category": "MS Excel",
+    "question": "Excel वर्कशीट में पूरी पंक्ति (Entire Row) को सिलेक्ट करने के लिए किस शॉर्टकट कुंजी का उपयोग किया जाता है?",
+    "options": {
+      "A": "Ctrl + Spacebar",
+      "B": "Shift + Spacebar",
+      "C": "Alt + Spacebar",
+      "D": "Ctrl + Shift + Spacebar"
+    },
+    "correct_option": "B",
+    "explanation": "Shift + Spacebar पूरी पंक्ति (Row) का चयन करता है; Ctrl + Spacebar पूरे कॉलम (Column) का चयन करता है।"
+  },
+  {
+    "id": 19,
+    "category": "MS Excel",
+    "question": "MS Excel में 'AutoSum' फॉर्मूला (=SUM) अपने आप जोड़ने के लिए कौन सा शॉर्टकट दबाया जाता है?",
+    "options": {
+      "A": "Ctrl + S",
+      "B": "Alt + =",
+      "C": "Shift + F3",
+      "D": "Ctrl + Shift + T"
+    },
+    "correct_option": "B",
+    "explanation": "Alt + = ऑटोसम (AutoSum) फॉर्मूला जोड़कर आस-पास के सेल के मानों का योग स्वतः कर देता है।"
+  },
+  {
+    "id": 20,
+    "category": "MS Excel",
+    "question": "Excel फॉर्मूला बार में सेल रेफरेंस प्रकार (Relative, Absolute $A$1, Mixed) को बदलने के लिए कौन सी कुंजी दबाई जाती है?",
+    "options": {
+      "A": "F2",
+      "B": "F3",
+      "C": "F4",
+      "D": "F9"
+    },
+    "correct_option": "C",
+    "explanation": "F4 फॉर्मूला संपादन के दौरान एब्सोल्यूट ($A$1), मिक्स्ड ($A1, A$1) और रिलेटिव (A1) रेफरेंस के बीच टॉगल करता है।"
+  },
+  {
+    "id": 21,
+    "category": "MS Excel",
+    "question": "डेटा पैटर्न को पहचानकर स्वतः भरने वाले 'फ्लैश फिल' (Flash Fill) को सक्रिय करने का शॉर्टकट क्या है?",
+    "options": {
+      "A": "Ctrl + F",
+      "B": "Ctrl + E",
+      "C": "Ctrl + R",
+      "D": "Ctrl + Shift + F"
+    },
+    "correct_option": "B",
+    "explanation": "Ctrl + E फ्लैश फिल (Flash Fill) को ट्रिगर करता है, जिससे पैटर्न के आधार पर डेटा स्वतः भर जाता है।"
+  },
+  {
+    "id": 22,
+    "category": "MS Excel",
+    "question": "वर्कशीट में सेल वैल्यू और फॉर्मूला प्रदर्शन के बीच टॉगल करने की शॉर्टकट कुंजी क्या है?",
+    "options": {
+      "A": "Ctrl + Shift + ~",
+      "B": "Ctrl + ` (ग्रेव एक्सेंट)",
+      "C": "Alt + Shift + F",
+      "D": "Ctrl + F9"
+    },
+    "correct_option": "B",
+    "explanation": "Ctrl + ` (टिल्ड / ग्रेव एक्सेंट कुंजी) सेल में फॉर्मूला और उसके परिणामी मान के बीच दृश्य बदलता है।"
+  },
+  {
+    "id": 23,
+    "category": "MS Excel",
+    "question": "MS Excel में चयनित कॉलम को छिपाने (Hide Column) के लिए किस शॉर्टकट कुंजी का उपयोग किया जाता है?",
+    "options": {
+      "A": "Ctrl + 9",
+      "B": "Ctrl + 0",
+      "C": "Ctrl + Shift + 9",
+      "D": "Ctrl + H"
+    },
+    "correct_option": "B",
+    "explanation": "Ctrl + 0 चयनित कॉलम को छिपाता है, जबकि Ctrl + 9 चयनित पंक्तियों (Rows) को छिपाता है।"
+  },
+  {
+    "id": 24,
+    "category": "MS Excel",
+    "question": "Excel में चयनित डेटा से तुरंत एक नई अलग चार्ट शीट (Chart Sheet) बनाने की शॉर्टकट कुंजी क्या है?",
+    "options": {
+      "A": "F1",
+      "B": "F7",
+      "C": "F11",
+      "D": "Alt + F1"
+    },
+    "correct_option": "C",
+    "explanation": "F11 सीधे एक नई चार्ट शीट बनाता है। Alt + F1 उसी वर्तमान शीट पर एम्बेडेड चार्ट बनाता है।"
+  },
+  {
+    "id": 25,
+    "category": "MS Excel",
+    "question": "Excel में 'फॉर्मेट सेल्स' (Format Cells) डायलॉग बॉक्स खोलने का शॉर्टकट क्या है?",
+    "options": {
+      "A": "Ctrl + Shift + F",
+      "B": "Ctrl + 1",
+      "C": "Alt + 1",
+      "D": "Ctrl + F1"
+    },
+    "correct_option": "B",
+    "explanation": "Ctrl + 1 फॉर्मेट सेल्स डायलॉग बॉक्स खोलता है।"
+  },
+  {
+    "id": 26,
+    "category": "MS Excel",
+    "question": "वर्कबुक में एक नई वर्कशीट (New Worksheet) जोड़ने के लिए कौन सा कीबोर्ड शॉर्टकट है?",
+    "options": {
+      "A": "Shift + F11",
+      "B": "Ctrl + F11",
+      "C": "Alt + F11",
+      "D": "Ctrl + N"
+    },
+    "correct_option": "A",
+    "explanation": "Shift + F11 (या Alt + Shift + F1) एक नई वर्कशीट जोड़ता है। Alt + F11 वीबीए एडिटर खोलता है।"
+  },
+  {
+    "id": 27,
+    "category": "MS Excel",
+    "question": "MS Excel में 'जनरल' (General) नंबर फॉर्मेट लागू करने के लिए किस शॉर्टकट कुंजी का उपयोग किया जाता है?",
+    "options": {
+      "A": "Ctrl + Shift + 1",
+      "B": "Ctrl + Shift + ~",
+      "C": "Ctrl + Shift + @",
+      "D": "Ctrl + Shift + #"
+    },
+    "correct_option": "B",
+    "explanation": "Ctrl + Shift + ~ जनरल नंबर फॉर्मेट लागू करता है। Ctrl + Shift + $ करेंसी फॉर्मेट और Ctrl + Shift + % प्रतिशत फॉर्मेट लागू करता है।"
+  },
+  {
+    "id": 28,
+    "category": "MS Excel",
+    "question": "चयनित डेटा हेडर पर ऑटो-फ़िल्टर (AutoFilter) चालू या बंद करने का शॉर्टकट क्या है?",
+    "options": {
+      "A": "Ctrl + F",
+      "B": "Ctrl + Shift + L",
+      "C": "Alt + F + L",
+      "D": "Ctrl + Alt + A"
+    },
+    "correct_option": "B",
+    "explanation": "Ctrl + Shift + L डेटा हेडर पर फ़िल्टर को सक्षम या अक्षम करता है।"
+  },
+  {
+    "id": 29,
+    "category": "MS Excel",
+    "question": "चयनित सेल रेंज को आधिकारिक एक्सेल टेबल (Table) में बदलने का शॉर्टकट क्या है?",
+    "options": {
+      "A": "Ctrl + T",
+      "B": "Ctrl + L",
+      "C": "A और B दोनों",
+      "D": "Alt + T"
+    },
+    "correct_option": "C",
+    "explanation": "Ctrl + T और Ctrl + L दोनों एक्सेल में 'Create Table' डायलॉग बॉक्स खोलते हैं।"
+  },
+  {
+    "id": 30,
+    "category": "MS Excel",
+    "question": "ऊपर वाले सेल के मान और फॉर्मेट को नीचे वाले सेल में कॉपी (Fill Down) करने का शॉर्टकट क्या है?",
+    "options": {
+      "A": "Ctrl + U",
+      "B": "Ctrl + D",
+      "C": "Ctrl + R",
+      "D": "Alt + D"
+    },
+    "correct_option": "B",
+    "explanation": "Ctrl + D ऊपर वाले सेल को नीचे भरता है (Fill Down); Ctrl + R बाईं सेल को दाईं ओर भरता है (Fill Right)।"
+  },
+  {
+    "id": 31,
+    "category": "MS PowerPoint",
+    "question": "MS PowerPoint में पहली स्लाइड (शुरुआत) से स्लाइड शो शुरू करने की शॉर्टकट कुंजी क्या है?",
+    "options": {
+      "A": "F5",
+      "B": "Shift + F5",
+      "C": "Ctrl + F5",
+      "D": "Alt + F5"
+    },
+    "correct_option": "A",
+    "explanation": "F5 पहली स्लाइड से स्लाइड शो शुरू करता है। Shift + F5 वर्तमान सक्रिय स्लाइड से शो शुरू करता है।"
+  },
+  {
+    "id": 32,
+    "category": "MS PowerPoint",
+    "question": "वर्तमान प्रेजेंटेशन में एक नई स्लाइड (New Slide) डालने के लिए किस की-कॉम्बिनेशन का उपयोग किया जाता है?",
+    "options": {
+      "A": "Ctrl + N",
+      "B": "Ctrl + M",
+      "C": "Ctrl + Shift + N",
+      "D": "Alt + M"
+    },
+    "correct_option": "B",
+    "explanation": "Ctrl + M पावरपॉइंट में नई स्लाइड इन्सर्ट करता है। Ctrl + N पूरी नई प्रेजेंटेशन फाइल खोलता है।"
+  },
+  {
+    "id": 33,
+    "category": "MS PowerPoint",
+    "question": "पावरपॉइंट स्लाइड शो के दौरान स्क्रीन को पूरी तरह से ब्लैक (Black) करने के लिए कौन सी कुंजी दबाई जाती है?",
+    "options": {
+      "A": "Ctrl + B",
+      "B": "B",
+      "C": "Shift + B",
+      "D": "Alt + B"
+    },
+    "correct_option": "B",
+    "explanation": "'B' (या डॉट '.') दबाने से स्क्रीन ब्लैक हो जाती है; 'W' (या कॉमा ',') दबाने से स्क्रीन वाइट हो जाती है।"
+  },
+  {
+    "id": 34,
+    "category": "MS PowerPoint",
+    "question": "स्लाइड शो के दौरान माउस कर्सर को पेन टूल (Pen Tool) में बदलने की शॉर्टकट कुंजी क्या है?",
+    "options": {
+      "A": "Ctrl + A",
+      "B": "Ctrl + P",
+      "C": "Ctrl + E",
+      "D": "Ctrl + L"
+    },
+    "correct_option": "B",
+    "explanation": "Ctrl + P पेन टूल सक्रिय करता है, Ctrl + E इरेज़र सक्रिय करता है और Ctrl + A तीर कर्सर पर लौटता है।"
+  },
+  {
+    "id": 35,
+    "category": "MS PowerPoint",
+    "question": "MS PowerPoint में चयनित ऑब्जेक्ट्स या आकृतियों को ग्रुप (Group) करने का शॉर्टकट क्या है?",
+    "options": {
+      "A": "Ctrl + Shift + G",
+      "B": "Ctrl + G",
+      "C": "Alt + G",
+      "D": "Ctrl + Alt + G"
+    },
+    "correct_option": "B",
+    "explanation": "Ctrl + G चयनित आकृतियों को ग्रुप करता है। Ctrl + Shift + G उन्हें अनग्रुप (Ungroup) करता है।"
+  },
+  {
+    "id": 36,
+    "category": "MS PowerPoint",
+    "question": "पावरपॉइंट में चयनित आकृति, टेक्स्ट बॉक्स या स्लाइड को डुप्लीकेट (Duplicate) करने का शॉर्टकट क्या है?",
+    "options": {
+      "A": "Ctrl + D",
+      "B": "Ctrl + Shift + D",
+      "C": "Alt + D",
+      "D": "Ctrl + C + V"
+    },
+    "correct_option": "A",
+    "explanation": "Ctrl + D चयनित ऑब्जेक्ट या स्लाइड की तत्काल प्रतिलिपि (Duplicate) बनाता है।"
+  },
+  {
+    "id": 37,
+    "category": "MS PowerPoint",
+    "question": "स्लाइड शो के दौरान लेजर पॉइंटर (Laser Pointer) चालू करने की शॉर्टकट कुंजी क्या है?",
+    "options": {
+      "A": "Ctrl + L",
+      "B": "Ctrl + Left Mouse Click",
+      "C": "A और B दोनों",
+      "D": "Alt + L"
+    },
+    "correct_option": "C",
+    "explanation": "Ctrl + L और Ctrl के साथ बायां माउस बटन दबाकर रखने पर लेजर पॉइंटर सक्रिय होता है।"
+  },
+  {
+    "id": 38,
+    "category": "MS PowerPoint",
+    "question": "चल रहे स्लाइड शो को तुरंत समाप्त करने या बाहर निकलने के लिए कौन सी कुंजी दबाई जाती है?",
+    "options": {
+      "A": "Esc",
+      "B": "End",
+      "C": "Ctrl + Q",
+      "D": "Spacebar"
+    },
+    "correct_option": "A",
+    "explanation": "Esc कुंजी दबाने से स्लाइड शो समाप्त होकर सामान्य संपादन दृश्य में वापस आ जाता है।"
+  },
+  {
+    "id": 39,
+    "category": "Windows OS",
+    "question": "कौन सा विंडोज शॉर्टकट आपके कंप्यूटर को तुरंत लॉक (Lock PC) करता है?",
+    "options": {
+      "A": "Win + L",
+      "B": "Win + K",
+      "C": "Ctrl + Alt + L",
+      "D": "Win + Shift + L"
+    },
+    "correct_option": "A",
+    "explanation": "Windows key + L कंप्यूटर स्क्रीन को तुरंत लॉक कर देता है।"
+  },
+  {
+    "id": 40,
+    "category": "Windows OS",
+    "question": "विंडोज में पहले कॉपी किए गए कई आइटम देखने और पेस्ट करने के लिए 'क्लिपबोर्ड हिस्ट्री' कौन से शॉर्टकट से खुलती है?",
+    "options": {
+      "A": "Win + C",
+      "B": "Win + V",
+      "C": "Ctrl + Shift + V",
+      "D": "Alt + V"
+    },
+    "correct_option": "B",
+    "explanation": "Win + V विंडोज क्लिपबोर्ड हिस्ट्री खोलता है।"
+  },
+  {
+    "id": 41,
+    "category": "Windows OS",
+    "question": "Windows OS में फाइल एक्सप्लोरर (File Explorer) खोलने की शॉर्टकट कुंजी क्या है?",
+    "options": {
+      "A": "Win + F",
+      "B": "Win + E",
+      "C": "Ctrl + E",
+      "D": "Win + X"
+    },
+    "correct_option": "B",
+    "explanation": "Win + E फाइल एक्सप्लोरर खोलता है।"
+  },
+  {
+    "id": 42,
+    "category": "Windows OS",
+    "question": "बिना किसी मध्यवर्ती मेनू के सीधे टास्क मैनेजर (Task Manager) खोलने की शॉर्टकट कुंजी क्या है?",
+    "options": {
+      "A": "Ctrl + Alt + Del",
+      "B": "Ctrl + Shift + Esc",
+      "C": "Win + Shift + Esc",
+      "D": "Alt + Shift + Esc"
+    },
+    "correct_option": "B",
+    "explanation": "Ctrl + Shift + Esc सीधे टास्क मैनेजर खोलता है।"
+  },
+  {
+    "id": 43,
+    "category": "Windows OS",
+    "question": "स्क्रीन का कोई भाग क्रॉप या स्क्रीनशॉट लेने के लिए 'स्निपिंग टूल' (Snipping Tool) का शॉर्टकट क्या है?",
+    "options": {
+      "A": "Win + PrtScn",
+      "B": "Win + Shift + S",
+      "C": "Ctrl + Shift + S",
+      "D": "Alt + PrtScn"
+    },
+    "correct_option": "B",
+    "explanation": "Win + Shift + S स्निपिंग टूल ओवरले खोलता है जिससे स्क्रीनशॉट लिया जा सकता है।"
+  },
+  {
+    "id": 44,
+    "category": "Windows OS",
+    "question": "Windows 10/11 में एक नया वर्चुअल डेस्कटॉप (New Virtual Desktop) बनाने का शॉर्टकट क्या है?",
+    "options": {
+      "A": "Win + D",
+      "B": "Win + Ctrl + D",
+      "C": "Win + Tab + N",
+      "D": "Win + Shift + D"
+    },
+    "correct_option": "B",
+    "explanation": "Win + Ctrl + D नया वर्चुअल डेस्कटॉप बनाता है; Win + Ctrl + F4 सक्रिय वर्चुअल डेस्कटॉप को बंद करता है।"
+  },
+  {
+    "id": 45,
+    "category": "Windows OS",
+    "question": "किसी चयनित फाइल को रीसायकल बिन में भेजे बिना स्थायी रूप से हटाने (Permanent Delete) का शॉर्टकट क्या है?",
+    "options": {
+      "A": "Ctrl + Delete",
+      "B": "Shift + Delete",
+      "C": "Alt + Delete",
+      "D": "Win + Delete"
+    },
+    "correct_option": "B",
+    "explanation": "Shift + Delete फाइल को स्थायी रूप से मिटा देता है।"
+  },
+  {
+    "id": 46,
+    "category": "Windows OS",
+    "question": "विंडोज में पावर यूजर मेनू (Start बटन पर राइट क्लिक मेनू) खोलने का शॉर्टकट क्या है?",
+    "options": {
+      "A": "Win + X",
+      "B": "Win + P",
+      "C": "Win + Z",
+      "D": "Ctrl + Win + X"
+    },
+    "correct_option": "A",
+    "explanation": "Win + X पावर यूजर मेनू (डिवाइस मैनेजर, डिस्क मैनेजमेंट, टर्मिनल आदि) खोलता है।"
+  },
+  {
+    "id": 47,
+    "category": "Windows OS",
+    "question": "सभी खुली विंडो को तुरंत मिनिमाइज़ करके सीधे डेस्कटॉप दिखाने की शॉर्टकट कुंजी क्या है?",
+    "options": {
+      "A": "Win + D",
+      "B": "Win + M",
+      "C": "A और B दोनों",
+      "D": "Win + Down Arrow"
+    },
+    "correct_option": "C",
+    "explanation": "Win + D डेस्कटॉप दिखाता/छिपाता है, तथा Win + M सभी विंडो को मिनिमाइज़ करता है।"
+  },
+  {
+    "id": 48,
+    "category": "Windows OS",
+    "question": "Windows 10 और 11 में 'Win + I' शॉर्टकट कुंजी क्या खोलती है?",
+    "options": {
+      "A": "इंटरनेट सेटिंग्स",
+      "B": "विंडोज सेटिंग्स ऐप",
+      "C": "टास्क मैनेजर",
+      "D": "सिस्टम इन्फो"
+    },
+    "correct_option": "B",
+    "explanation": "Win + I मुख्य विंडोज सेटिंग्स (Settings) ऐप खोलता है।"
+  },
+  {
+    "id": 49,
+    "category": "Windows OS",
+    "question": "विंडोज में चयनित फाइल या फोल्डर का नाम बदलने (Rename) की शॉर्टकट कुंजी क्या है?",
+    "options": {
+      "A": "F1",
+      "B": "F2",
+      "C": "F3",
+      "D": "F5"
+    },
+    "correct_option": "B",
+    "explanation": "F2 चयनित फाइल या फोल्डर को रीनेम करने की अनुमति देता है।"
+  },
+  {
+    "id": 50,
+    "category": "Windows OS",
+    "question": "विंडोज में 'Run' कमांड डायलॉग बॉक्स खोलने की शॉर्टकट कुंजी क्या है?",
+    "options": {
+      "A": "Win + R",
+      "B": "Ctrl + R",
+      "C": "Alt + R",
+      "D": "Win + Shift + R"
+    },
+    "correct_option": "A",
+    "explanation": "Win + R 'Run' डायलॉग बॉक्स खोलता है।"
+  },
+  {
+    "id": 51,
+    "category": "Chrome",
+    "question": "Google Chrome में एक नई इनकॉग्निटो (निजी ब्राउज़िंग) विंडो खोलने की शॉर्टकट कुंजी क्या है?",
+    "options": {
+      "A": "Ctrl + N",
+      "B": "Ctrl + Shift + N",
+      "C": "Ctrl + Shift + P",
+      "D": "Alt + Shift + N"
+    },
+    "correct_option": "B",
+    "explanation": "Ctrl + Shift + N क्रोम में नई इनकॉग्निटो विंडो खोलता है।"
+  },
+  {
+    "id": 52,
+    "category": "Chrome",
+    "question": "Google Chrome में हाल ही में बंद किए गए टैब को दोबारा खोलने (Reopen Closed Tab) का शॉर्टकट क्या है?",
+    "options": {
+      "A": "Ctrl + Shift + T",
+      "B": "Ctrl + T",
+      "C": "Ctrl + Shift + W",
+      "D": "Ctrl + Z"
+    },
+    "correct_option": "A",
+    "explanation": "Ctrl + Shift + T बंद किए गए टैब को उसी क्रम में पुनः खोलता है।"
+  },
+  {
+    "id": 53,
+    "category": "Chrome",
+    "question": "Google Chrome के आंतरिक टास्क मैनेजर को खोलने की शॉर्टकट कुंजी क्या है?",
+    "options": {
+      "A": "Ctrl + Shift + Esc",
+      "B": "Shift + Esc",
+      "C": "Ctrl + Alt + Esc",
+      "D": "Alt + Esc"
+    },
+    "correct_option": "B",
+    "explanation": "Shift + Esc क्रोम का बिल्ट-इन टास्क मैनेजर खोलता है, जिससे प्रत्येक टैब और एक्सटेंशन का मेमोरी उपयोग देखा जा सकता है।"
+  },
+  {
+    "id": 54,
+    "category": "Chrome",
+    "question": "Google Chrome में कर्सर को सीधे एड्रेस बार (Omnibox) में ले जाने के लिए कौन सा शॉर्टकट है?",
+    "options": {
+      "A": "Ctrl + L",
+      "B": "Alt + D",
+      "C": "F6",
+      "D": "उपरोक्त सभी"
+    },
+    "correct_option": "D",
+    "explanation": "Ctrl + L, Alt + D, और F6 तीनों क्रोम के एड्रेस बार को हाइलाइट और सेलेक्ट करते हैं।"
+  },
+  {
+    "id": 55,
+    "category": "Chrome",
+    "question": "Google Chrome में डाउनलोड (Downloads) पेज खोलने का शॉर्टकट क्या है?",
+    "options": {
+      "A": "Ctrl + D",
+      "B": "Ctrl + J",
+      "C": "Ctrl + Shift + J",
+      "D": "Alt + J"
+    },
+    "correct_option": "B",
+    "explanation": "Ctrl + J डाउनलोड पेज खोलता है। Ctrl + D वर्तमान वेबपेज को बुकमार्क करता है।"
+  },
+  {
+    "id": 56,
+    "category": "Chrome",
+    "question": "Google Chrome में कैश्ड फाइलों को बायपास करके 'हार्ड रीलोड' (Hard Reload) करने का शॉर्टकट क्या है?",
+    "options": {
+      "A": "Ctrl + R",
+      "B": "F5",
+      "C": "Ctrl + F5",
+      "D": "Alt + F5"
+    },
+    "correct_option": "C",
+    "explanation": "Ctrl + F5 (या Ctrl + Shift + R) कैश्ड डेटा को अनदेखा करके वेबपेज को पूरी तरह से रीलोड करता है।"
+  },
+  {
+    "id": 57,
+    "category": "Chrome",
+    "question": "Google Chrome में 'क्लियर ब्राउज़िंग डेटा' (Clear Browsing Data) डायलॉग खोलने का शॉर्टकट क्या है?",
+    "options": {
+      "A": "Ctrl + Shift + Delete",
+      "B": "Ctrl + Alt + Delete",
+      "C": "Shift + Delete",
+      "D": "Ctrl + H + Delete"
+    },
+    "correct_option": "A",
+    "explanation": "Ctrl + Shift + Delete तुरंत ब्राउज़िंग हिस्ट्री और कैश साफ करने का विकल्प खोलता है।"
+  },
+  {
+    "id": 58,
+    "category": "Chrome",
+    "question": "Google Chrome में बुकमार्क बार (Bookmarks Bar) को दिखाने या छिपाने का शॉर्टकट क्या है?",
+    "options": {
+      "A": "Ctrl + B",
+      "B": "Ctrl + Shift + B",
+      "C": "Alt + B",
+      "D": "Ctrl + Alt + B"
+    },
+    "correct_option": "B",
+    "explanation": "Ctrl + Shift + B बुकमार्क बार को शो/हाइड करता है।"
+  },
+  {
+    "id": 59,
+    "category": "Chrome",
+    "question": "Google Chrome में अंतिम (सबसे दाईं ओर) टैब पर सीधे जाने का शॉर्टकट क्या है?",
+    "options": {
+      "A": "Ctrl + 9",
+      "B": "Ctrl + 0",
+      "C": "Ctrl + Tab",
+      "D": "Ctrl + End"
+    },
+    "correct_option": "A",
+    "explanation": "Ctrl + 1 से 8 तक क्रमानुसार पहले से आठवें टैब पर जाते हैं, जबकि Ctrl + 9 अंतिम टैब पर ले जाता है।"
+  },
+  {
+    "id": 60,
+    "category": "Chrome",
+    "question": "Google Chrome में डेवलपर टूल्स (Developer Tools) खोलने की शॉर्टकट कुंजी क्या है?",
+    "options": {
+      "A": "Ctrl + Shift + I",
+      "B": "F12",
+      "C": "Ctrl + Shift + J",
+      "D": "उपरोक्त सभी"
+    },
+    "correct_option": "D",
+    "explanation": "Ctrl + Shift + I, F12 और Ctrl + Shift + J (कंसोल) सभी डेवलपर टूल्स खोलते हैं।"
+  },
+  {
+    "id": 61,
+    "category": "General Computer",
+    "question": "विंडोज ऐप्स में किसी क्रिया को दोबारा करने या पिछले कमांड को दोहराने (Redo) का मानक शॉर्टकट क्या है?",
+    "options": {
+      "A": "Ctrl + Z",
+      "B": "Ctrl + Y",
+      "C": "Ctrl + Shift + Z",
+      "D": "B और C दोनों"
+    },
+    "correct_option": "D",
+    "explanation": "Ctrl + Y और Ctrl + Shift + Z दोनों सामान्यतः 'Redo' के लिए उपयोग किए जाते हैं।"
+  },
+  {
+    "id": 62,
+    "category": "General Computer",
+    "question": "कंप्यूटर बूटिंग के दौरान एडवांस्ड बूट ऑप्शन्स / सेफ मोड (Safe Mode) में जाने के लिए कौन सी कुंजी दबाई जाती है?",
+    "options": {
+      "A": "F2",
+      "B": "F8",
+      "C": "F10",
+      "D": "F12"
+    },
+    "correct_option": "B",
+    "explanation": "F8 बूट मेनू और सेफ मोड लोड करने के लिए मानक कुंजी है।"
+  },
+  {
+    "id": 63,
+    "category": "General Computer",
+    "question": "कीबोर्ड पर 'Print Screen' (PrtScn) कुंजी का प्राथमिक कार्य क्या है?",
+    "options": {
+      "A": "डॉक्यूमेंट को भौतिक प्रिंटर पर प्रिंट करता है",
+      "B": "पूरी स्क्रीन की छवि को क्लिपबोर्ड पर कैप्चर करता है",
+      "C": "प्रिंटर स्पूलर खोलता है",
+      "D": "डिस्प्ले ड्राइवर को रीसेट करता है"
+    },
+    "correct_option": "B",
+    "explanation": "Print Screen पूरी स्क्रीन का स्क्रीनशॉट क्लिपबोर्ड में कॉपी करता है।"
+  },
+  {
+    "id": 64,
+    "category": "General Computer",
+    "question": "Windows OS में वर्तमान में सक्रिय एप्लीकेशन विंडो को पूरी तरह बंद करने का शॉर्टकट क्या है?",
+    "options": {
+      "A": "Ctrl + W",
+      "B": "Alt + F4",
+      "C": "Shift + F4",
+      "D": "Ctrl + F4"
+    },
+    "correct_option": "B",
+    "explanation": "Alt + F4 सक्रिय प्रोग्राम विंडो को बंद करता है। सभी विंडो बंद होने पर यह शटडाउन डायलॉग खोलता है।"
+  },
+  {
+    "id": 65,
+    "category": "General Computer",
+    "question": "बिना माउस के किसी चयनित आइटम पर राइट-क्लिक (कॉन्टेक्स्ट मेनू) खोलने का शॉर्टकट क्या है?",
+    "options": {
+      "A": "Ctrl + F10",
+      "B": "Shift + F10",
+      "C": "Alt + F10",
+      "D": "Win + F10"
+    },
+    "correct_option": "B",
+    "explanation": "Shift + F10 चयनित आइटम का राइट-क्लिक कॉन्टेक्स्ट मेनू खोलता है।"
+  },
+  {
+    "id": 66,
+    "category": "MS Word",
+    "question": "MS Word में किसी टेक्स्ट पर हाइपरलिंक (Hyperlink) जोड़ने की शॉर्टकट कुंजी क्या है?",
+    "options": {
+      "A": "Ctrl + H",
+      "B": "Ctrl + K",
+      "C": "Ctrl + L",
+      "D": "Alt + K"
+    },
+    "correct_option": "B",
+    "explanation": "Ctrl + K 'Insert Hyperlink' डायलॉग बॉक्स खोलता है।"
+  },
+  {
+    "id": 67,
+    "category": "MS Word",
+    "question": "MS Word में चयनित टेक्स्ट को सेंटर अलाइन (Center Align) करने का शॉर्टकट क्या है?",
+    "options": {
+      "A": "Ctrl + C",
+      "B": "Ctrl + E",
+      "C": "Ctrl + J",
+      "D": "Ctrl + R"
+    },
+    "correct_option": "B",
+    "explanation": "Ctrl + E टेक्स्ट को सेंटर अलाइन करता है; Ctrl + L लेफ्ट, Ctrl + R राइट और Ctrl + J जस्टिफाई करता है।"
+  },
+  {
+    "id": 68,
+    "category": "MS Word",
+    "question": "MS Word में सीधे 'Save As' डायलॉग बॉक्स खोलने की शॉर्टकट कुंजी क्या है?",
+    "options": {
+      "A": "Ctrl + S",
+      "B": "Shift + F12",
+      "C": "F12",
+      "D": "Alt + S"
+    },
+    "correct_option": "C",
+    "explanation": "F12 सीधे 'Save As' डायलॉग बॉक्स खोलता है।"
+  },
+  {
+    "id": 69,
+    "category": "MS Word",
+    "question": "MS Word में कॉपीराइट का प्रतीक चिन्ह (©) बनाने का शॉर्टकट क्या है?",
+    "options": {
+      "A": "Ctrl + Alt + C",
+      "B": "Alt + Shift + C",
+      "C": "Ctrl + Shift + C",
+      "D": "Win + C"
+    },
+    "correct_option": "A",
+    "explanation": "Ctrl + Alt + C कॉपीराइट (©), Ctrl + Alt + R रजिस्टर्ड (®) तथा Ctrl + Alt + T ट्रेडमार्क (™) जोड़ता है।"
+  },
+  {
+    "id": 70,
+    "category": "MS Word",
+    "question": "MS Word में सभी फील्ड कोड को दिखाने या छिपाने (Toggle Field Codes) की शॉर्टकट कुंजी क्या है?",
+    "options": {
+      "A": "Alt + F9",
+      "B": "Shift + F9",
+      "C": "Ctrl + F9",
+      "D": "F9"
+    },
+    "correct_option": "A",
+    "explanation": "Alt + F9 पूरे डॉक्यूमेंट में सभी फील्ड कोड्स को उनके मान और कोड के बीच टॉगल करता है।"
+  },
+  {
+    "id": 71,
+    "category": "MS Excel",
+    "question": "MS Excel में सभी खुली हुई वर्कबुक्स की सभी वर्कशीट को दोबारा कैलकुलेट (Recalculate) करने का शॉर्टकट क्या है?",
+    "options": {
+      "A": "F5",
+      "B": "F9",
+      "C": "Shift + F9",
+      "D": "Ctrl + Alt + F9"
+    },
+    "correct_option": "B",
+    "explanation": "F9 सभी खुली वर्कबुक्स की सभी शीट्स को कैलकुलेट करता है; Shift + F9 केवल सक्रिय शीट को कैलकुलेट करता है।"
+  },
+  {
+    "id": 72,
+    "category": "MS Excel",
+    "question": "MS Excel में 'नेम मैनेजर' (Name Manager) डायलॉग बॉक्स खोलने का शॉर्टकट क्या है?",
+    "options": {
+      "A": "F3",
+      "B": "Ctrl + F3",
+      "C": "Shift + F3",
+      "D": "Alt + F3"
+    },
+    "correct_option": "B",
+    "explanation": "Ctrl + F3 नेम मैनेजर खोलता है। केवल F3 कुंजी 'Paste Name' डायलॉग खोलती है।"
+  },
+  {
+    "id": 73,
+    "category": "MS Excel",
+    "question": "Excel वर्कशीट में सबसे पहले सेल (A1) पर सीधे जाने की शॉर्टकट कुंजी क्या है?",
+    "options": {
+      "A": "Home",
+      "B": "Ctrl + Home",
+      "C": "Alt + Home",
+      "D": "Shift + Home"
+    },
+    "correct_option": "B",
+    "explanation": "Ctrl + Home कर्सर को सेल A1 पर ले जाता है। केवल Home कुंजी पंक्ति (Row) के पहले सेल में ले जाती है।"
+  },
+  {
+    "id": 74,
+    "category": "MS Excel",
+    "question": "MS Excel में किसी सेल में कमेंट या नोट (Comment/Note) डालने का शॉर्टकट क्या है?",
+    "options": {
+      "A": "Shift + F2",
+      "B": "Ctrl + F2",
+      "C": "Alt + F2",
+      "D": "Shift + F3"
+    },
+    "correct_option": "A",
+    "explanation": "Shift + F2 सेल कमेंट या नोट जोड़ने/संपादित करने के लिए उपयोग किया जाता है।"
+  },
+  {
+    "id": 75,
+    "category": "MS Excel",
+    "question": "Excel में चयनित सेल, पंक्ति (Row) या कॉलम (Column) को डिलीट करने का शॉर्टकट क्या है?",
+    "options": {
+      "A": "Ctrl + - (Minus)",
+      "B": "Ctrl + Shift + -",
+      "C": "Alt + Delete",
+      "D": "Shift + Delete"
+    },
+    "correct_option": "A",
+    "explanation": "Ctrl + - (माइनस) डिलीट डायलॉग बॉक्स खोलता है।"
+  },
+  {
+    "id": 76,
+    "category": "MS PowerPoint",
+    "question": "PowerPoint में पहले से ग्रुप की गई आकृतियों को अनग्रुप (Ungroup) करने का शॉर्टकट क्या है?",
+    "options": {
+      "A": "Ctrl + G",
+      "B": "Ctrl + Shift + G",
+      "C": "Alt + Shift + G",
+      "D": "Ctrl + U"
+    },
+    "correct_option": "B",
+    "explanation": "Ctrl + Shift + G ग्रुप किए गए ऑब्जेक्ट्स को अनग्रुप करता है।"
+  },
+  {
+    "id": 77,
+    "category": "MS PowerPoint",
+    "question": "पावरपॉइंट स्लाइड शो के दौरान सीधे किसी विशिष्ट स्लाइड नंबर (जैसे स्लाइड 5) पर कैसे जाया जाता है?",
+    "options": {
+      "A": "5 दबाकर Enter दबाएं",
+      "B": "Ctrl + 5",
+      "C": "Alt + 5",
+      "D": "Shift + 5"
+    },
+    "correct_option": "A",
+    "explanation": "स्लाइड शो के दौरान [स्लाइड नंबर] टाइप करके Enter दबाने पर सीधे उस स्लाइड पर पहुंच जाते हैं।"
+  },
+  {
+    "id": 78,
+    "category": "MS PowerPoint",
+    "question": "PowerPoint में बुलेट पॉइंट स्तर को आगे या पीछे (Promote/Demote) करने का शॉर्टकट क्या है?",
+    "options": {
+      "A": "Tab / Shift + Tab",
+      "B": "Alt + Shift + Left/Right Arrow",
+      "C": "A और B दोनों",
+      "D": "Ctrl + Tab"
+    },
+    "correct_option": "C",
+    "explanation": "Tab / Shift + Tab और Alt + Shift + Arrow दोनों आउटलाइन स्तर को बदलते हैं।"
+  },
+  {
+    "id": 79,
+    "category": "MS PowerPoint",
+    "question": "स्लाइड शो के दौरान माउस पॉइंटर को तुरंत छिपाने (Hide Pointer) का शॉर्टकट क्या है?",
+    "options": {
+      "A": "Ctrl + H",
+      "B": "Ctrl + M",
+      "C": "Ctrl + S",
+      "D": "H"
+    },
+    "correct_option": "A",
+    "explanation": "Ctrl + H स्लाइड शो के दौरान माउस पॉइंटर और नेविगेशन बटन को तुरंत छिपा देता है।"
+  },
+  {
+    "id": 80,
+    "category": "Windows OS",
+    "question": "विंडोज में बाहरी डिस्प्ले/प्रोजेक्टर मेनू (Project Menu) खोलने का शॉर्टकट क्या है?",
+    "options": {
+      "A": "Win + P",
+      "B": "Win + K",
+      "C": "Alt + P",
+      "D": "Ctrl + P"
+    },
+    "correct_option": "A",
+    "explanation": "Win + P प्रोजेक्ट फ्लाईआउट (डुप्लिकेट, एक्सटेंड, सेकंड स्क्रीन ओनली) मेनू खोलता है।"
+  },
+  {
+    "id": 81,
+    "category": "Windows OS",
+    "question": "Windows 10 और 11 में इमोजी और विशेष प्रतीक (Emoji Picker) खोलने का शॉर्टकट क्या है?",
+    "options": {
+      "A": "Win + . (डॉट)",
+      "B": "Win + ; (सेमीकोलन)",
+      "C": "A और B दोनों",
+      "D": "Alt + E"
+    },
+    "correct_option": "C",
+    "explanation": "Win + . और Win + ; दोनों विंडोज इमोजी तथा सिंबल पैनल खोलते हैं।"
+  },
+  {
+    "id": 82,
+    "category": "Windows OS",
+    "question": "विंडोज में वर्तमान एक्टिव विंडो को स्क्रीन के बाईं या दाईं ओर स्नैप (Snap Window) करने का शॉर्टकट क्या है?",
+    "options": {
+      "A": "Win + Left / Right Arrow",
+      "B": "Alt + Left / Right Arrow",
+      "C": "Ctrl + Left / Right Arrow",
+      "D": "Shift + Left / Right Arrow"
+    },
+    "correct_option": "A",
+    "explanation": "Win + बायां/दायां तीर विंडो को स्क्रीन के आधे भाग में स्नैप कर देता है।"
+  },
+  {
+    "id": 83,
+    "category": "Windows OS",
+    "question": "विंडोज में 'मैग्निफायर' (Magnifier / ज़ूम टूल) चालू करने का शॉर्टकट क्या है?",
+    "options": {
+      "A": "Win + + (प्लस)",
+      "B": "Win + M",
+      "C": "Ctrl + +",
+      "D": "Alt + +"
+    },
+    "correct_option": "A",
+    "explanation": "Win + Plus (+) मैग्निफायर खोलकर स्क्रीन को ज़ूम करता है; Win + Esc इसे बंद करता है।"
+  },
+  {
+    "id": 84,
+    "category": "Chrome",
+    "question": "Google Chrome में वर्तमान वेबपेज का HTML सोर्स कोड (Page Source) देखने का शॉर्टकट क्या है?",
+    "options": {
+      "A": "Ctrl + S",
+      "B": "Ctrl + U",
+      "C": "Ctrl + Shift + U",
+      "D": "Alt + U"
+    },
+    "correct_option": "B",
+    "explanation": "Ctrl + U नए टैब में वर्तमान वेबपेज का पूरा HTML सोर्स कोड खोलता है।"
+  },
+  {
+    "id": 85,
+    "category": "Chrome",
+    "question": "Google Chrome में वेबपेज के ज़ूम स्तर को वापस सामान्य 100% पर रीसेट करने का शॉर्टकट क्या है?",
+    "options": {
+      "A": "Ctrl + 0 (शून्य)",
+      "B": "Ctrl + 1",
+      "C": "Ctrl + Shift + 0",
+      "D": "Alt + 0"
+    },
+    "correct_option": "A",
+    "explanation": "Ctrl + 0 ज़ूम स्तर को 100% पर रीसेट करता है।"
+  },
+  {
+    "id": 86,
+    "category": "MS Word",
+    "question": "Microsoft Word में एंडनोट (Endnote) इन्सर्ट करने की शॉर्टकट कुंजी क्या है?",
+    "options": {
+      "A": "Alt + Ctrl + F",
+      "B": "Alt + Ctrl + D",
+      "C": "Ctrl + Shift + E",
+      "D": "Alt + Shift + D"
+    },
+    "correct_option": "B",
+    "explanation": "Alt + Ctrl + D एंडनोट जोड़ता है; Alt + Ctrl + F फुटनोट जोड़ता है।"
+  },
+  {
+    "id": 87,
+    "category": "MS Word",
+    "question": "MS Word में 'ट्रैक चेंजेज' (Track Changes) को चालू या बंद करने की शॉर्टकट कुंजी क्या है?",
+    "options": {
+      "A": "Ctrl + Shift + E",
+      "B": "Ctrl + Alt + T",
+      "C": "Shift + F11",
+      "D": "Ctrl + T"
+    },
+    "correct_option": "A",
+    "explanation": "Ctrl + Shift + E ट्रैक चेंजेज (दस्तावेज़ संशोधन ट्रैकिंग) को टॉगल करता है।"
+  },
+  {
+    "id": 88,
+    "category": "MS Word",
+    "question": "MS Word में 'Heading 1' स्टाइल लागू करने के लिए किस शॉर्टकट कुंजी का उपयोग किया जाता है?",
+    "options": {
+      "A": "Ctrl + 1",
+      "B": "Ctrl + Alt + 1",
+      "C": "Alt + 1",
+      "D": "Shift + Alt + 1"
+    },
+    "correct_option": "B",
+    "explanation": "Ctrl + Alt + 1 हेडिंग 1, Ctrl + Alt + 2 हेडिंग 2 और Ctrl + Alt + 3 हेडिंग 3 लागू करता है।"
+  },
+  {
+    "id": 89,
+    "category": "MS Word",
+    "question": "MS Word को पूरी तरह बंद किए बिना केवल वर्तमान खुली हुई फाइल/विंडो को बंद करने का शॉर्टकट क्या है?",
+    "options": {
+      "A": "Ctrl + W",
+      "B": "Ctrl + F4",
+      "C": "A और B दोनों",
+      "D": "Alt + F4"
+    },
+    "correct_option": "C",
+    "explanation": "Ctrl + W और Ctrl + F4 दोनों एक्टिव डॉक्यूमेंट विंडो को बंद करते हैं।"
+  },
+  {
+    "id": 90,
+    "category": "MS Excel",
+    "question": "MS Excel में लेगेसी ऐरे फॉर्मूला (Array Formula) दर्ज करने के लिए कौन सा की-कॉम्बिनेशन दबाया जाता है?",
+    "options": {
+      "A": "Ctrl + Enter",
+      "B": "Ctrl + Shift + Enter",
+      "C": "Alt + Enter",
+      "D": "Shift + Enter"
+    },
+    "correct_option": "B",
+    "explanation": "Ctrl + Shift + Enter (CSE) ऐरे फॉर्मूला दर्ज करता है, जो फॉर्मूले के चारों ओर { } ब्रैकेट लगाता है।"
+  },
+  {
+    "id": 91,
+    "category": "MS Excel",
+    "question": "Excel में एक ही सेल के अंदर नई लाइन (Line Break) शुरू करने का शॉर्टकट क्या है?",
+    "options": {
+      "A": "Enter",
+      "B": "Alt + Enter",
+      "C": "Ctrl + Enter",
+      "D": "Shift + Enter"
+    },
+    "correct_option": "B",
+    "explanation": "Alt + Enter एक ही सेल के अंदर लाइन ब्रेक जोड़ता है।"
+  },
+  {
+    "id": 92,
+    "category": "MS Excel",
+    "question": "चयनित सभी सेलों में एक साथ एक ही मान या फॉर्मूला भरने (Fill Selection) का शॉर्टकट क्या है?",
+    "options": {
+      "A": "Ctrl + Enter",
+      "B": "Shift + Enter",
+      "C": "Alt + Enter",
+      "D": "Ctrl + Shift + Enter"
+    },
+    "correct_option": "A",
+    "explanation": "टेक्स्ट लिखकर Ctrl + Enter दबाने से वह टेक्स्ट सभी चयनित सेलों में एक साथ भर जाता है।"
+  },
+  {
+    "id": 93,
+    "category": "MS Excel",
+    "question": "Excel वर्कबुक में अगली (Next) वर्कशीट पर जाने की शॉर्टकट कुंजी क्या है?",
+    "options": {
+      "A": "Ctrl + Page Down",
+      "B": "Ctrl + Page Up",
+      "C": "Alt + Page Down",
+      "D": "Shift + Tab"
+    },
+    "correct_option": "A",
+    "explanation": "Ctrl + Page Down अगली शीट पर ले जाता है; Ctrl + Page Up पिछली शीट पर ले जाता है।"
+  },
+  {
+    "id": 94,
+    "category": "MS PowerPoint",
+    "question": "PowerPoint में 'रिप्लेस' (Replace / टेक्स्ट बदलने) का डायलॉग बॉक्स खोलने की शॉर्टकट कुंजी क्या है?",
+    "options": {
+      "A": "Ctrl + R",
+      "B": "Ctrl + H",
+      "C": "Ctrl + F",
+      "D": "Ctrl + Shift + H"
+    },
+    "correct_option": "B",
+    "explanation": "Ctrl + H फाइंड एंड रिप्लेस डायलॉग बॉक्स खोलता है।"
+  },
+  {
+    "id": 95,
+    "category": "MS PowerPoint",
+    "question": "PowerPoint में चयनित टेक्स्ट को दाईं ओर अलाइन (Right Align) करने का शॉर्टकट क्या है?",
+    "options": {
+      "A": "Ctrl + L",
+      "B": "Ctrl + R",
+      "C": "Ctrl + E",
+      "D": "Ctrl + J"
+    },
+    "correct_option": "B",
+    "explanation": "Ctrl + R राइट अलाइन करता है; Ctrl + L लेफ्ट अलाइन करता है।"
+  },
+  {
+    "id": 96,
+    "category": "Windows OS",
+    "question": "Windows में सीधे सर्च बार (Windows Search) खोलने का शॉर्टकट क्या है?",
+    "options": {
+      "A": "Win + S",
+      "B": "Win + Q",
+      "C": "A और B दोनों",
+      "D": "Alt + S"
+    },
+    "correct_option": "C",
+    "explanation": "Win + S और Win + Q दोनों विंडोज सर्च बार खोलते हैं।"
+  },
+  {
+    "id": 97,
+    "category": "Windows OS",
+    "question": "विंडोज में खुली हुई एप्लीकेशनों के बीच उल्टे क्रम (Backward) में स्विच करने का शॉर्टकट क्या है?",
+    "options": {
+      "A": "Alt + Tab",
+      "B": "Alt + Shift + Tab",
+      "C": "Ctrl + Tab",
+      "D": "Win + Tab"
+    },
+    "correct_option": "B",
+    "explanation": "Alt + Shift + Tab खुली हुई विंडो में विपरीत दिशा में स्विच करता है।"
+  },
+  {
+    "id": 98,
+    "category": "Chrome",
+    "question": "Google Chrome में ब्राउज़िंग हिस्ट्री (History) पेज खोलने का शॉर्टकट क्या है?",
+    "options": {
+      "A": "Ctrl + H",
+      "B": "Ctrl + Shift + H",
+      "C": "Alt + H",
+      "D": "Ctrl + Y"
+    },
+    "correct_option": "A",
+    "explanation": "Ctrl + H क्रोम का इतिहास (History) टैब खोलता है।"
+  },
+  {
+    "id": 99,
+    "category": "Chrome",
+    "question": "Chrome में सभी खुले हुए टैब को एक साथ नए फोल्डर में बुकमार्क करने का शॉर्टकट क्या है?",
+    "options": {
+      "A": "Ctrl + D",
+      "B": "Ctrl + Shift + D",
+      "C": "Alt + Shift + D",
+      "D": "Ctrl + B"
+    },
+    "correct_option": "B",
+    "explanation": "Ctrl + Shift + D सभी सक्रिय खुले टैब्स को एक नए बुकमार्क फोल्डर में सेव करता है।"
+  },
+  {
+    "id": 100,
+    "category": "General Computer",
+    "question": "विंडोज में किसी चयनित फाइल या फोल्डर की प्रॉपर्टीज (Properties) देखने का शॉर्टकट क्या है?",
+    "options": {
+      "A": "Alt + Enter",
+      "B": "Alt + Double Click",
+      "C": "A और B दोनों",
+      "D": "Ctrl + Enter"
+    },
+    "correct_option": "C",
+    "explanation": "Alt + Enter और Alt के साथ डबल क्लिक दोनों फाइल/फोल्डर की प्रॉपर्टीज विंडो खोलते हैं।"
+  },
+  {
+    "id": 101,
+    "category": "MS Word",
+    "question": "MS Word में चयनित टेक्स्ट के नीचे डबल अंडरलाइन (Double Underline) लगाने की शॉर्टकट कुंजी क्या है?",
+    "options": {
+      "A": "Ctrl + U",
+      "B": "Ctrl + Shift + U",
+      "C": "Ctrl + Shift + D",
+      "D": "Alt + Shift + D"
+    },
+    "correct_option": "C",
+    "explanation": "Ctrl + Shift + D डबल अंडरलाइन लगाता है; Ctrl + U सिंगल अंडरलाइन लगाता है।"
+  },
+  {
+    "id": 102,
+    "category": "MS Word",
+    "question": "MS Word में केवल शब्दों को अंडरलाइन करने (बीच के स्पेस को छोडकर) का शॉर्टकट क्या है?",
+    "options": {
+      "A": "Ctrl + W",
+      "B": "Ctrl + Shift + W",
+      "C": "Alt + Shift + W",
+      "D": "Ctrl + Alt + W"
+    },
+    "correct_option": "B",
+    "explanation": "Ctrl + Shift + W केवल शब्दों को अंडरलाइन करता है, स्पेस को नहीं।"
+  },
+  {
+    "id": 103,
+    "category": "MS Word",
+    "question": "MS Word में चयनित टेक्स्ट को 'स्मॉल कैप्स' (Small Caps) में बदलने का शॉर्टकट क्या है?",
+    "options": {
+      "A": "Ctrl + Shift + K",
+      "B": "Ctrl + Shift + A",
+      "C": "Ctrl + Alt + K",
+      "D": "Alt + Shift + K"
+    },
+    "correct_option": "A",
+    "explanation": "Ctrl + Shift + K स्मॉल कैप्स लागू करता है।"
+  },
+  {
+    "id": 104,
+    "category": "MS Word",
+    "question": "MS Word में चयनित टेक्स्ट को 'ऑल कैप्स' (All Capitals) में बदलने का शॉर्टकट क्या है?",
+    "options": {
+      "A": "Ctrl + Shift + A",
+      "B": "Ctrl + Shift + C",
+      "C": "Shift + F3",
+      "D": "Alt + A"
+    },
+    "correct_option": "A",
+    "explanation": "Ctrl + Shift + A सभी अक्षरों को अपरकेस (All Caps) में बदलता है।"
+  },
+  {
+    "id": 105,
+    "category": "MS Word",
+    "question": "MS Word में चयनित पैराग्राफ पर डिफॉल्ट 'Normal' स्टाइल लागू करने का शॉर्टकट क्या है?",
+    "options": {
+      "A": "Ctrl + Shift + N",
+      "B": "Ctrl + N",
+      "C": "Alt + Ctrl + N",
+      "D": "Ctrl + Spacebar"
+    },
+    "correct_option": "A",
+    "explanation": "Ctrl + Shift + N नॉर्मल स्टाइल लागू करता है। Ctrl + N नया डॉक्यूमेंट खोलता है।"
+  },
+  {
+    "id": 106,
+    "category": "MS Word",
+    "question": "MS Word में नॉन-प्रिंटिंग कैरेक्टर (पैराग्राफ मार्क ¶ आदि) को दिखाने या छिपाने का शॉर्टकट क्या है?",
+    "options": {
+      "A": "Ctrl + Shift + 8",
+      "B": "Ctrl + *",
+      "C": "A और B दोनों",
+      "D": "Ctrl + Shift + *"
+    },
+    "correct_option": "C",
+    "explanation": "Ctrl + Shift + 8 (Ctrl + *) हिडन फॉर्मेटिंग सिंबल को शो/हाइड करता है।"
+  },
+  {
+    "id": 107,
+    "category": "MS Word",
+    "question": "MS Word में फुटनोट (Footnote) इन्सर्ट करने की शॉर्टकट कुंजी क्या है?",
+    "options": {
+      "A": "Alt + Ctrl + F",
+      "B": "Alt + Ctrl + D",
+      "C": "Ctrl + Shift + F",
+      "D": "Alt + Shift + F"
+    },
+    "correct_option": "A",
+    "explanation": "Alt + Ctrl + F पेज के निचले भाग में फुटनोट जोड़ता है।"
+  },
+  {
+    "id": 108,
+    "category": "MS Word",
+    "question": "MS Word में कर्सर के स्थान पर नया कमेंट (Comment) जोड़ने का शॉर्टकट क्या है?",
+    "options": {
+      "A": "Ctrl + Alt + M",
+      "B": "Alt + Ctrl + C",
+      "C": "Ctrl + Shift + M",
+      "D": "Alt + Shift + C"
+    },
+    "correct_option": "A",
+    "explanation": "Ctrl + Alt + M नया कमेंट जोड़ने के लिए उपयोग किया जाता है।"
+  },
+  {
+    "id": 109,
+    "category": "MS Word",
+    "question": "MS Word टेबल में चयनित पंक्ति को ऊपर या नीचे ले जाने का शॉर्टकट क्या है?",
+    "options": {
+      "A": "Alt + Shift + Up/Down Arrow",
+      "B": "Ctrl + Shift + Up/Down Arrow",
+      "C": "Ctrl + Alt + Up/Down Arrow",
+      "D": "Shift + Up/Down Arrow"
+    },
+    "correct_option": "A",
+    "explanation": "Alt + Shift + Up/Down तीर कुंजी टेबल की पंक्ति या पूरे पैराग्राफ को ऊपर/नीचे खिसकाती है।"
+  },
+  {
+    "id": 110,
+    "category": "MS Word",
+    "question": "MS Word में बिना नया पैराग्राफ बनाए सॉफ्ट लाइन ब्रेक (Soft Return) जोड़ने का शॉर्टकट क्या है?",
+    "options": {
+      "A": "Ctrl + Enter",
+      "B": "Shift + Enter",
+      "C": "Alt + Enter",
+      "D": "Ctrl + Shift + Enter"
+    },
+    "correct_option": "B",
+    "explanation": "Shift + Enter उसी पैराग्राफ में अगली लाइन शुरू करता है।"
+  },
+  {
+    "id": 111,
+    "category": "MS Word",
+    "question": "MS Word में पिछले एक्शन या फॉर्मेटिंग को दोहराने (Repeat Last Action) की शॉर्टकट कुंजी क्या है?",
+    "options": {
+      "A": "F4",
+      "B": "Ctrl + Y",
+      "C": "A और B दोनों",
+      "D": "F9"
+    },
+    "correct_option": "C",
+    "explanation": "F4 और Ctrl + Y दोनों अंतिम एक्शन को दोहराते हैं।"
+  },
+  {
+    "id": 112,
+    "category": "MS Word",
+    "question": "MS Word में रजिस्टर्ड ट्रेडमार्क प्रतीक (®) इन्सर्ट करने का शॉर्टकट क्या है?",
+    "options": {
+      "A": "Ctrl + Alt + R",
+      "B": "Alt + Shift + R",
+      "C": "Ctrl + Shift + R",
+      "D": "Alt + R"
+    },
+    "correct_option": "A",
+    "explanation": "Ctrl + Alt + R रजिस्टर्ड सिंबल (®) जोड़ता है।"
+  },
+  {
+    "id": 113,
+    "category": "MS Word",
+    "question": "MS Word में वर्तमान समय का फील्ड (Current Time Field) इन्सर्ट करने का शॉर्टकट क्या है?",
+    "options": {
+      "A": "Alt + Shift + T",
+      "B": "Ctrl + Shift + T",
+      "C": "Ctrl + ;",
+      "D": "Alt + Ctrl + T"
+    },
+    "correct_option": "A",
+    "explanation": "Alt + Shift + T टाइम फील्ड इन्सर्ट करता है।"
+  },
+  {
+    "id": 114,
+    "category": "MS Word",
+    "question": "MS Word में कर्सर के बाईं ओर के पूरे शब्द (Word) को एक साथ डिलीट करने का शॉर्टकट क्या है?",
+    "options": {
+      "A": "Ctrl + Backspace",
+      "B": "Ctrl + Delete",
+      "C": "Shift + Backspace",
+      "D": "Alt + Backspace"
+    },
+    "correct_option": "A",
+    "explanation": "Ctrl + Backspace बाईं ओर का पूरा शब्द हटाता है।"
+  },
+  {
+    "id": 115,
+    "category": "MS Word",
+    "question": "MS Word में कर्सर के दाईं ओर के पूरे शब्द (Word) को एक साथ डिलीट करने का शॉर्टकट क्या है?",
+    "options": {
+      "A": "Ctrl + Delete",
+      "B": "Ctrl + Backspace",
+      "C": "Shift + Delete",
+      "D": "Alt + Delete"
+    },
+    "correct_option": "A",
+    "explanation": "Ctrl + Delete दाईं ओर का पूरा शब्द हटाता है।"
+  },
+  {
+    "id": 116,
+    "category": "MS Word",
+    "question": "MS Word में चयनित फील्ड (जैसे इंडेक्स या गणना) को अपडेट (Update Field) करने की शॉर्टकट कुंजी क्या है?",
+    "options": {
+      "A": "F5",
+      "B": "F9",
+      "C": "Shift + F9",
+      "D": "Ctrl + F9"
+    },
+    "correct_option": "B",
+    "explanation": "F9 चयनित फील्ड को अपडेट करता है।"
+  },
+  {
+    "id": 117,
+    "category": "MS Word",
+    "question": "MS Word में खाली फील्ड कोड ब्रैकेट '{ }' इन्सर्ट करने का शॉर्टकट क्या है?",
+    "options": {
+      "A": "Ctrl + F9",
+      "B": "Alt + F9",
+      "C": "Shift + F9",
+      "D": "Ctrl + Shift + F9"
+    },
+    "correct_option": "A",
+    "explanation": "Ctrl + F9 विशेष फील्ड ब्रैकेट { } बनाता है।"
+  },
+  {
+    "id": 118,
+    "category": "MS Word",
+    "question": "MS Word में फील्ड को अनलिंक करके सादे टेक्स्ट में बदलने का शॉर्टकट क्या है?",
+    "options": {
+      "A": "Ctrl + Shift + F9",
+      "B": "Alt + F9",
+      "C": "Ctrl + F9",
+      "D": "Shift + F9"
+    },
+    "correct_option": "A",
+    "explanation": "Ctrl + Shift + F9 फील्ड को स्थायी सादे टेक्स्ट में बदल देता है।"
+  },
+  {
+    "id": 119,
+    "category": "MS Word",
+    "question": "MS Word में कर्सर को सीधे अगले पेज के शीर्ष पर ले जाने का शॉर्टकट क्या है?",
+    "options": {
+      "A": "Ctrl + Page Down",
+      "B": "Alt + Page Down",
+      "C": "Page Down",
+      "D": "Shift + Page Down"
+    },
+    "correct_option": "A",
+    "explanation": "Ctrl + Page Down अगले पेज के शीर्ष पर ले जाता है।"
+  },
+  {
+    "id": 120,
+    "category": "MS Word",
+    "question": "MS Word में प्रिंट प्रीव्यू स्क्रीन को बंद करके सामान्य एडिट व्यू में लौटने का शॉर्टकट क्या है?",
+    "options": {
+      "A": "Esc",
+      "B": "Ctrl + W",
+      "C": "Ctrl + F2",
+      "D": "Alt + Left Arrow"
+    },
+    "correct_option": "A",
+    "explanation": "Esc कुंजी प्रिंट प्रीव्यू को बंद करती है।"
+  },
+  {
+    "id": 121,
+    "category": "MS Excel",
+    "question": "MS Excel में 'Insert Cells / Rows / Columns' डायलॉग बॉक्स खोलने का शॉर्टकट क्या है?",
+    "options": {
+      "A": "Ctrl + Shift + + (प्लस)",
+      "B": "Ctrl + +",
+      "C": "Alt + I",
+      "D": "Ctrl + I"
+    },
+    "correct_option": "A",
+    "explanation": "Ctrl + Shift + + नई सेल, पंक्ति या कॉलम जोड़ने का मेनू खोलता है।"
+  },
+  {
+    "id": 122,
+    "category": "MS Excel",
+    "question": "MS Excel में दो दशमलव स्थानों के साथ 'करेंसी' (Currency) फॉर्मेट लागू करने का शॉर्टकट क्या है?",
+    "options": {
+      "A": "Ctrl + Shift + $",
+      "B": "Ctrl + Shift + %",
+      "C": "Ctrl + Shift + #",
+      "D": "Ctrl + Shift + @"
+    },
+    "correct_option": "A",
+    "explanation": "Ctrl + Shift + $ करेंसी फॉर्मेट लागू करता है।"
+  },
+  {
+    "id": 123,
+    "category": "MS Excel",
+    "question": "MS Excel में बिना दशमलव के 'प्रतिशत' (Percentage) फॉर्मेट लागू करने का शॉर्टकट क्या है?",
+    "options": {
+      "A": "Ctrl + Shift + %",
+      "B": "Ctrl + Shift + ^",
+      "C": "Ctrl + Shift + @",
+      "D": "Ctrl + %"
+    },
+    "correct_option": "A",
+    "explanation": "Ctrl + Shift + % प्रतिशत फॉर्मेट लागू करता है।"
+  },
+  {
+    "id": 124,
+    "category": "MS Excel",
+    "question": "MS Excel में 'दिनांक' (Date: dd-mmm-yy) फॉर्मेट लागू करने की शॉर्टकट कुंजी क्या है?",
+    "options": {
+      "A": "Ctrl + Shift + #",
+      "B": "Ctrl + Shift + @",
+      "C": "Ctrl + Shift + !",
+      "D": "Ctrl + Shift + $"
+    },
+    "correct_option": "A",
+    "explanation": "Ctrl + Shift + # डेट फॉर्मेट लागू करता है।"
+  },
+  {
+    "id": 125,
+    "category": "MS Excel",
+    "question": "MS Excel में 'समय' (Time: AM/PM) फॉर्मेट लागू करने की शॉर्टकट कुंजी क्या है?",
+    "options": {
+      "A": "Ctrl + Shift + @",
+      "B": "Ctrl + Shift + #",
+      "C": "Ctrl + Shift + ^",
+      "D": "Ctrl + Shift + !"
+    },
+    "correct_option": "A",
+    "explanation": "Ctrl + Shift + @ टाइम फॉर्मेट लागू करता है।"
+  },
+  {
+    "id": 126,
+    "category": "MS Excel",
+    "question": "MS Excel में 'वैज्ञानिक' (Scientific / घातांक) नंबर फॉर्मेट लागू करने का शॉर्टकट क्या है?",
+    "options": {
+      "A": "Ctrl + Shift + ^",
+      "B": "Ctrl + Shift + !",
+      "C": "Ctrl + Shift + ~",
+      "D": "Ctrl + Shift + &"
+    },
+    "correct_option": "A",
+    "explanation": "Ctrl + Shift + ^ साइंटिफिक नंबर फॉर्मेट लागू करता है।"
+  },
+  {
+    "id": 127,
+    "category": "MS Excel",
+    "question": "MS Excel में कॉमा और दो दशमलव स्थानों के साथ मानक 'नंबर' (Number) फॉर्मेट लागू करने का शॉर्टकट क्या है?",
+    "options": {
+      "A": "Ctrl + Shift + !",
+      "B": "Ctrl + Shift + $",
+      "C": "Ctrl + Shift + ~",
+      "D": "Ctrl + Shift + *"
+    },
+    "correct_option": "A",
+    "explanation": "Ctrl + Shift + ! मानक नंबर फॉर्मेट लागू करता है।"
+  },
+  {
+    "id": 128,
+    "category": "MS Excel",
+    "question": "MS Excel में 'Paste Special' डायलॉग बॉक्स खोलने की शॉर्टकट कुंजी क्या है?",
+    "options": {
+      "A": "Ctrl + Alt + V",
+      "B": "Ctrl + Shift + V",
+      "C": "Alt + E + S",
+      "D": "A और C दोनों"
+    },
+    "correct_option": "D",
+    "explanation": "Ctrl + Alt + V और Alt + E + S दोनों पेस्ट स्पेशल डायलॉग खोलते हैं।"
+  },
+  {
+    "id": 129,
+    "category": "MS Excel",
+    "question": "चयनित सेल पर आउटलाइन बॉर्डर (Outline Border) लगाने का शॉर्टकट क्या है?",
+    "options": {
+      "A": "Ctrl + Shift + &",
+      "B": "Ctrl + Shift + _",
+      "C": "Alt + B + O",
+      "D": "Ctrl + B"
+    },
+    "correct_option": "A",
+    "explanation": "Ctrl + Shift + & आउटलाइन बॉर्डर लगाता है।"
+  },
+  {
+    "id": 130,
+    "category": "MS Excel",
+    "question": "चयनित सेलों से सभी बॉर्डर हटाने (Remove All Borders) का शॉर्टकट क्या है?",
+    "options": {
+      "A": "Ctrl + Shift + _ (अंडरस्कोर)",
+      "B": "Ctrl + Shift + -",
+      "C": "Alt + B + N",
+      "D": "Ctrl + Alt + B"
+    },
+    "correct_option": "A",
+    "explanation": "Ctrl + Shift + _ सभी बॉर्डर हटा देता है।"
+  },
+  {
+    "id": 131,
+    "category": "MS Excel",
+    "question": "MS Excel में 'Insert Function' (फॉर्मूला विज़ार्ड) खोलने का शॉर्टकट क्या है?",
+    "options": {
+      "A": "Shift + F3",
+      "B": "Ctrl + F3",
+      "C": "Alt + F3",
+      "D": "F3"
+    },
+    "correct_option": "A",
+    "explanation": "Shift + F3 इन्सर्ट फंक्शन डायलॉग बॉक्स खोलता है।"
+  },
+  {
+    "id": 132,
+    "category": "MS Excel",
+    "question": "MS Excel में छिपी हुई पंक्तियों को अनहाइड (Unhide Rows) करने का शॉर्टकट क्या है?",
+    "options": {
+      "A": "Ctrl + Shift + 9",
+      "B": "Ctrl + Shift + 0",
+      "C": "Alt + Shift + 9",
+      "D": "Ctrl + 9"
+    },
+    "correct_option": "A",
+    "explanation": "Ctrl + Shift + 9 छिपी हुई पंक्तियों को वापस दिखाता है।"
+  },
+  {
+    "id": 133,
+    "category": "MS Excel",
+    "question": "MS Excel में छिपे हुए कॉलम को अनहाइड (Unhide Columns) करने का शॉर्टकट क्या है?",
+    "options": {
+      "A": "Ctrl + Shift + 0",
+      "B": "Ctrl + Shift + )",
+      "C": "A और B दोनों",
+      "D": "Ctrl + 0"
+    },
+    "correct_option": "C",
+    "explanation": "Ctrl + Shift + 0 छिपे हुए कॉलम को अनहाइड करता है।"
+  },
+  {
+    "id": 134,
+    "category": "MS Excel",
+    "question": "Excel वर्कशीट के अंतिम उपयोग किए गए सेल (Last Used Cell) पर जाने का शॉर्टकट क्या है?",
+    "options": {
+      "A": "Ctrl + End",
+      "B": "Ctrl + Down Arrow",
+      "C": "Alt + End",
+      "D": "Shift + End"
+    },
+    "correct_option": "A",
+    "explanation": "Ctrl + End वर्कशीट के सबसे निचले दाएं कोने वाले सेल पर ले जाता है।"
+  },
+  {
+    "id": 135,
+    "category": "MS Excel",
+    "question": "डेटा वैलिडेशन ड्रॉप-डाउन सूची को कीबोर्ड से खोलने का शॉर्टकट क्या है?",
+    "options": {
+      "A": "Alt + Down Arrow",
+      "B": "Ctrl + Down Arrow",
+      "C": "Shift + Down Arrow",
+      "D": "F4"
+    },
+    "correct_option": "A",
+    "explanation": "Alt + Down Arrow ड्रॉप-डाउन विकल्पों की सूची खोलता है।"
+  },
+  {
+    "id": 136,
+    "category": "MS Excel",
+    "question": "सक्रिय सेल के आस-पास के पूरे डेटा ब्लॉक (Current Region) को सिलेक्ट करने का शॉर्टकट क्या है?",
+    "options": {
+      "A": "Ctrl + Shift + * (या Ctrl + A)",
+      "B": "Ctrl + Spacebar",
+      "C": "Alt + A",
+      "D": "Shift + Spacebar"
+    },
+    "correct_option": "A",
+    "explanation": "Ctrl + Shift + * करंट रीजन डेटा ब्लॉक का चयन करता है।"
+  },
+  {
+    "id": 137,
+    "category": "MS Excel",
+    "question": "Excel वर्कशीट में दृश्य को एक स्क्रीन दाईं ओर (Screen Right) खिसकाने का शॉर्टकट क्या है?",
+    "options": {
+      "A": "Alt + Page Down",
+      "B": "Ctrl + Page Down",
+      "C": "Shift + Page Down",
+      "D": "Page Down"
+    },
+    "correct_option": "A",
+    "explanation": "Alt + Page Down स्क्रीन को दाईं ओर तथा Alt + Page Up बाईं ओर ले जाता है।"
+  },
+  {
+    "id": 138,
+    "category": "MS Excel",
+    "question": "MS Excel में फॉर्मूला बार को बड़ा या छोटा (Expand/Collapse Formula Bar) करने का शॉर्टकट क्या है?",
+    "options": {
+      "A": "Ctrl + Shift + U",
+      "B": "Alt + F1",
+      "C": "Ctrl + F1",
+      "D": "Shift + F1"
+    },
+    "correct_option": "A",
+    "explanation": "Ctrl + Shift + U फॉर्मूला बार का विस्तार करता है।"
+  },
+  {
+    "id": 139,
+    "category": "MS Excel",
+    "question": "बाईं ओर के सेल के मान को दाईं ओर भरने (Fill Right) का शॉर्टकट क्या है?",
+    "options": {
+      "A": "Ctrl + R",
+      "B": "Ctrl + D",
+      "C": "Alt + R",
+      "D": "Shift + R"
+    },
+    "correct_option": "A",
+    "explanation": "Ctrl + R चयनित सेलों में दाईं ओर मान भरता है।"
+  },
+  {
+    "id": 140,
+    "category": "MS Excel",
+    "question": "MS Excel में 'Go To' डायलॉग बॉक्स खोलने की शॉर्टकट कुंजी क्या है?",
+    "options": {
+      "A": "F5",
+      "B": "Ctrl + G",
+      "C": "A और B दोनों",
+      "D": "Alt + G"
+    },
+    "correct_option": "C",
+    "explanation": "F5 और Ctrl + G दोनों 'Go To' डायलॉग बॉक्स खोलते हैं।"
+  },
+  {
+    "id": 141,
+    "category": "MS PowerPoint",
+    "question": "PowerPoint में सीधे 'प्रेजेंटर व्यू' (Presenter View) में स्लाइड शो शुरू करने का शॉर्टकट क्या है?",
+    "options": {
+      "A": "Alt + F5",
+      "B": "Shift + F5",
+      "C": "Ctrl + F5",
+      "D": "Win + F5"
+    },
+    "correct_option": "A",
+    "explanation": "Alt + F5 स्लाइड शो को सीधे प्रेजेंटर व्यू में शुरू करता है।"
+  },
+  {
+    "id": 142,
+    "category": "MS PowerPoint",
+    "question": "स्लाइड शो के दौरान पेन या लेजर पॉइंटर को वापस सामान्य तीर कर्सर (Arrow Pointer) में बदलने का शॉर्टकट क्या है?",
+    "options": {
+      "A": "Ctrl + A",
+      "B": "Ctrl + U",
+      "C": "Ctrl + P",
+      "D": "Ctrl + Arrow"
+    },
+    "correct_option": "A",
+    "explanation": "Ctrl + A सामान्य तीर कर्सर को वापस लाता है।"
+  },
+  {
+    "id": 143,
+    "category": "MS PowerPoint",
+    "question": "स्लाइड शो के दौरान माउस पॉइंटर को हाइलाइटर (Highlighter) में बदलने का शॉर्टकट क्या है?",
+    "options": {
+      "A": "Ctrl + I",
+      "B": "Ctrl + H",
+      "C": "Ctrl + L",
+      "D": "Alt + I"
+    },
+    "correct_option": "A",
+    "explanation": "Ctrl + I स्लाइड शो के दौरान कर्सर को हाइलाइटर में बदल देता है।"
+  },
+  {
+    "id": 144,
+    "category": "MS PowerPoint",
+    "question": "स्लाइड शो के दौरान स्क्रीन पर की गई सभी इंक ड्रॉइंग/पेन निशानों को मिटाने के लिए कौन सी एकल कुंजी दबाई जाती है?",
+    "options": {
+      "A": "E",
+      "B": "Ctrl + E",
+      "C": "Delete",
+      "D": "Backspace"
+    },
+    "correct_option": "A",
+    "explanation": "'E' कुंजी दबाने से स्क्रीन पर बनाए गए सभी पेन/हाइलाइटर निशान मिट जाते हैं।"
+  },
+  {
+    "id": 145,
+    "category": "MS PowerPoint",
+    "question": "PowerPoint में ग्रिडलाइन्स (Gridlines) को दिखाने या छिपाने की शॉर्टकट कुंजी क्या है?",
+    "options": {
+      "A": "Shift + F9",
+      "B": "Alt + F9",
+      "C": "Ctrl + F9",
+      "D": "F9"
+    },
+    "correct_option": "A",
+    "explanation": "Shift + F9 ग्रिडलाइन्स को टॉगल करता है। Alt + F9 गाइडलाइन्स को टॉगल करता है।"
+  },
+  {
+    "id": 146,
+    "category": "MS PowerPoint",
+    "question": "PowerPoint में गाइड्स (Guides) को चालू या बंद करने का शॉर्टकट क्या है?",
+    "options": {
+      "A": "Alt + F9",
+      "B": "Shift + F9",
+      "C": "Ctrl + Shift + G",
+      "D": "Ctrl + G"
+    },
+    "correct_option": "A",
+    "explanation": "Alt + F9 गाइड्स को ऑन/ऑफ करता है।"
+  },
+  {
+    "id": 147,
+    "category": "MS PowerPoint",
+    "question": "MS PowerPoint में 'Font' डायलॉग बॉक्स खोलने का शॉर्टकट क्या है?",
+    "options": {
+      "A": "Ctrl + T",
+      "B": "Ctrl + Shift + F",
+      "C": "Ctrl + Shift + P",
+      "D": "उपरोक्त सभी"
+    },
+    "correct_option": "D",
+    "explanation": "Ctrl + T, Ctrl + Shift + F और Ctrl + Shift + P सभी पावरपॉइंट में फॉन्ट डायलॉग बॉक्स खोलते हैं।"
+  },
+  {
+    "id": 148,
+    "category": "MS PowerPoint",
+    "question": "स्लाइड शो के दौरान सभी स्लाइडों की सूची (All Slides Dialog) देखने का शॉर्टकट क्या है?",
+    "options": {
+      "A": "Ctrl + S",
+      "B": "Ctrl + G",
+      "C": "Shift + S",
+      "D": "Alt + S"
+    },
+    "correct_option": "A",
+    "explanation": "Ctrl + S शो के दौरान 'All Slides' सूची खोलता है।"
+  },
+  {
+    "id": 149,
+    "category": "MS PowerPoint",
+    "question": "PowerPoint में चयनित टेक्स्ट को बाईं ओर अलाइन (Left Align) करने का शॉर्टकट क्या है?",
+    "options": {
+      "A": "Ctrl + L",
+      "B": "Ctrl + E",
+      "C": "Ctrl + R",
+      "D": "Ctrl + J"
+    },
+    "correct_option": "A",
+    "explanation": "Ctrl + L टेक्स्ट को बाईं ओर अलाइन करता है।"
+  },
+  {
+    "id": 150,
+    "category": "MS PowerPoint",
+    "question": "PowerPoint में चयनित पैराग्राफ को जस्टिफाई (Justify) करने का शॉर्टकट क्या है?",
+    "options": {
+      "A": "Ctrl + J",
+      "B": "Ctrl + E",
+      "C": "Ctrl + H",
+      "D": "Alt + J"
+    },
+    "correct_option": "A",
+    "explanation": "Ctrl + J टेक्स्ट को दोनों किनारों पर समान रूप से संरेखित (Justify) करता है।"
+  },
+  {
+    "id": 151,
+    "category": "Windows OS",
+    "question": "Windows में 'क्विक सेटिंग्स' / 'एक्शन सेंटर' (Quick Settings / Action Center) खोलने का शॉर्टकट क्या है?",
+    "options": {
+      "A": "Win + A",
+      "B": "Win + C",
+      "C": "Win + Q",
+      "D": "Win + S"
+    },
+    "correct_option": "A",
+    "explanation": "Win + A वाई-फाई, ब्लूटूथ, साउंड आदि की क्विक सेटिंग्स खोलता है।"
+  },
+  {
+    "id": 152,
+    "category": "Windows OS",
+    "question": "Windows 11 में नोटिफिकेशन सेंटर और कैलेंडर खोलने का शॉर्टकट क्या है?",
+    "options": {
+      "A": "Win + N",
+      "B": "Win + C",
+      "C": "Win + Alt + D",
+      "D": "Win + K"
+    },
+    "correct_option": "A",
+    "explanation": "Win + N नोटिफिकेशन सेंटर और कैलेंडर पैनल खोलता है।"
+  },
+  {
+    "id": 153,
+    "category": "Windows OS",
+    "question": "विंडोज में वॉइस टाइपिंग / डिक्टेशन टूल (Voice Typing) खोलने का शॉर्टकट क्या है?",
+    "options": {
+      "A": "Win + H",
+      "B": "Win + V",
+      "C": "Ctrl + Shift + S",
+      "D": "Alt + H"
+    },
+    "correct_option": "A",
+    "explanation": "Win + H वॉइस टाइपिंग टूलबार शुरू करता है।"
+  },
+  {
+    "id": 154,
+    "category": "Windows OS",
+    "question": "वायरलेस डिस्प्ले और ऑडियो डिवाइस से कनेक्ट करने के लिए 'कास्ट' (Cast/Connect) मेनू का शॉर्टकट क्या है?",
+    "options": {
+      "A": "Win + K",
+      "B": "Win + P",
+      "C": "Win + C",
+      "D": "Ctrl + K"
+    },
+    "correct_option": "A",
+    "explanation": "Win + K कास्ट/कनेक्ट पैनल खोलता है।"
+  },
+  {
+    "id": 155,
+    "category": "Windows OS",
+    "question": "विंडोज में स्क्रीन रिकॉर्डिंग और गेमिंग विजेट्स के लिए 'Xbox Game Bar' खोलने का शॉर्टकट क्या है?",
+    "options": {
+      "A": "Win + G",
+      "B": "Win + X",
+      "C": "Ctrl + Shift + G",
+      "D": "Alt + G"
+    },
+    "correct_option": "A",
+    "explanation": "Win + G एक्सबॉक्स गेम बार खोलता है।"
+  },
+  {
+    "id": 156,
+    "category": "Windows OS",
+    "question": "Xbox Game Bar द्वारा स्क्रीन वीडियो रिकॉर्डिंग शुरू या बंद करने का शॉर्टकट क्या है?",
+    "options": {
+      "A": "Win + Alt + R",
+      "B": "Win + Shift + R",
+      "C": "Ctrl + Alt + R",
+      "D": "Win + R"
+    },
+    "correct_option": "A",
+    "explanation": "Win + Alt + R सीधे स्क्रीन वीडियो रिकॉर्डिंग को चालू/बंद करता है।"
+  },
+  {
+    "id": 157,
+    "category": "Windows OS",
+    "question": "विंडोज में वर्चुअल ऑन-स्क्रीन कीबोर्ड (On-Screen Keyboard) खोलने का शॉर्टकट क्या है?",
+    "options": {
+      "A": "Win + Ctrl + O",
+      "B": "Win + O",
+      "C": "Ctrl + Shift + O",
+      "D": "Alt + Shift + O"
+    },
+    "correct_option": "A",
+    "explanation": "Win + Ctrl + O ऑन-स्क्रीन कीबोर्ड खोलता है।"
+  },
+  {
+    "id": 158,
+    "category": "Windows OS",
+    "question": "स्क्रीन फ्रीज होने पर विंडोज ग्राफिक्स/वीडियो ड्राइवर को तुरंत रीस्टार्ट करने का आपातकालीन शॉर्टकट क्या है?",
+    "options": {
+      "A": "Win + Ctrl + Shift + B",
+      "B": "Ctrl + Alt + Shift + G",
+      "C": "Win + Alt + Del",
+      "D": "Win + Shift + D"
+    },
+    "correct_option": "A",
+    "explanation": "Win + Ctrl + Shift + B डिस्प्ले ड्राइवर को बीप साउंड के साथ तुरंत रीस्टार्ट करता है।"
+  },
+  {
+    "id": 159,
+    "category": "Windows OS",
+    "question": "मल्टी-मॉनिटर सेटअप में सक्रिय विंडो को दूसरे मॉनिटर पर भेजने का शॉर्टकट क्या है?",
+    "options": {
+      "A": "Win + Shift + Left / Right Arrow",
+      "B": "Alt + Shift + Left / Right Arrow",
+      "C": "Ctrl + Win + Left / Right Arrow",
+      "D": "Ctrl + Alt + Left / Right Arrow"
+    },
+    "correct_option": "A",
+    "explanation": "Win + Shift + Left/Right Arrow विंडो को सीधे दूसरे मॉनिटर पर भेजता है।"
+  },
+  {
+    "id": 160,
+    "category": "Windows OS",
+    "question": "विंडोज में 'Win + [1 से 9 तक कोई नंबर]' दबाने से क्या होता है?",
+    "options": {
+      "A": "उस नंबर के वर्चुअल डेस्कटॉप पर जाता है",
+      "B": "टास्कबार पर उस नंबर पर पिन की गई एप्लीकेशन को खोलता है",
+      "C": "वॉलपेपर बदलता है",
+      "D": "स्क्रीन ब्राइटनेस बदलता है"
+    },
+    "correct_option": "B",
+    "explanation": "Win + 1 से 9 टास्कबार पर पिन किए गए संबंधित ऐप को सीधे लॉन्च या फोकस करता है।"
+  },
+  {
+    "id": 161,
+    "category": "Windows OS",
+    "question": "Windows 11 में 'स्नैप लेआउट्स' (Snap Layouts) ग्रिड मेनू खोलने का शॉर्टकट क्या है?",
+    "options": {
+      "A": "Win + Z",
+      "B": "Win + S",
+      "C": "Alt + Spacebar",
+      "D": "Win + Tab"
+    },
+    "correct_option": "A",
+    "explanation": "Win + Z स्नैप लेआउट्स ग्रिड विकल्प खोलता है।"
+  },
+  {
+    "id": 162,
+    "category": "Windows OS",
+    "question": "Windows 10/11 में सक्रिय वर्चुअल डेस्कटॉप को बंद करने का शॉर्टकट क्या है?",
+    "options": {
+      "A": "Win + Ctrl + F4",
+      "B": "Win + F4",
+      "C": "Alt + F4",
+      "D": "Win + Ctrl + W"
+    },
+    "correct_option": "A",
+    "explanation": "Win + Ctrl + F4 वर्तमान वर्चुअल डेस्कटॉप को बंद करता है।"
+  },
+  {
+    "id": 163,
+    "category": "Windows OS",
+    "question": "बनाए गए वर्चुअल डेस्कटॉप के बीच दाएं या बाएं स्विच करने का शॉर्टकट क्या है?",
+    "options": {
+      "A": "Win + Ctrl + Left / Right Arrow",
+      "B": "Alt + Tab",
+      "C": "Ctrl + Left / Right Arrow",
+      "D": "Win + Shift + Tab"
+    },
+    "correct_option": "A",
+    "explanation": "Win + Ctrl + Left/Right Arrow अलग-अलग वर्चुअल डेस्कटॉप के बीच स्विच करता है।"
+  },
+  {
+    "id": 164,
+    "category": "Windows OS",
+    "question": "विंडोज में सीधे 'सिस्टम प्रॉपर्टीज / अबाउट' (System Properties) विंडो खोलने का शॉर्टकट क्या है?",
+    "options": {
+      "A": "Win + Pause / Break",
+      "B": "Win + S",
+      "C": "Ctrl + Shift + Pause",
+      "D": "Win + Shift + P"
+    },
+    "correct_option": "A",
+    "explanation": "Win + Pause/Break सिस्टम इन्फो/अबाउट स्क्रीन खोलता है।"
+  },
+  {
+    "id": 165,
+    "category": "Windows OS",
+    "question": "विंडोज फाइल एक्सप्लोरर में तुरंत एक 'नया फोल्डर' (New Folder) बनाने का शॉर्टकट क्या है?",
+    "options": {
+      "A": "Ctrl + Shift + N",
+      "B": "Ctrl + N",
+      "C": "Alt + Shift + N",
+      "D": "Win + Shift + N"
+    },
+    "correct_option": "A",
+    "explanation": "Ctrl + Shift + N तुरंत एक नया फोल्डर बनाता है।"
+  },
+  {
+    "id": 166,
+    "category": "Windows OS",
+    "question": "विंडोज में सक्रिय विंडो को मैक्सिमाइज़ (Maximize) करने का शॉर्टकट क्या है?",
+    "options": {
+      "A": "Win + Up Arrow",
+      "B": "Alt + F10",
+      "C": "A और B दोनों",
+      "D": "Win + M"
+    },
+    "correct_option": "C",
+    "explanation": "Win + Up Arrow और Alt + F10 दोनों विंडो को मैक्सिमाइज़ करते हैं।"
+  },
+  {
+    "id": 167,
+    "category": "Windows OS",
+    "question": "केवल वर्तमान सक्रिय (Foreground) विंडो का स्क्रीनशॉट क्लिपबोर्ड में लेने का शॉर्टकट क्या है?",
+    "options": {
+      "A": "Alt + PrtScn",
+      "B": "Ctrl + PrtScn",
+      "C": "Win + PrtScn",
+      "D": "Shift + PrtScn"
+    },
+    "correct_option": "A",
+    "explanation": "Alt + PrtScn केवल सक्रिय विंडो का स्क्रीनशॉट कॉपी करता है।"
+  },
+  {
+    "id": 168,
+    "category": "Windows OS",
+    "question": "Win + M द्वारा मिनिमाइज़ की गई सभी विंडो को वापस रिस्टोर (Restore) करने का शॉर्टकट क्या है?",
+    "options": {
+      "A": "Win + Shift + M",
+      "B": "Win + D",
+      "C": "Ctrl + Shift + M",
+      "D": "Alt + M"
+    },
+    "correct_option": "A",
+    "explanation": "Win + Shift + M सभी मिनिमाइज़ की गई विंडो को पहले जैसी स्थिति में रिस्टोर करता है।"
+  },
+  {
+    "id": 169,
+    "category": "Windows OS",
+    "question": "विंडोज में 'टास्क व्यू' (Task View) खोलने की शॉर्टकट कुंजी क्या है?",
+    "options": {
+      "A": "Win + Tab",
+      "B": "Alt + Tab",
+      "C": "Ctrl + Tab",
+      "D": "Win + T"
+    },
+    "correct_option": "A",
+    "explanation": "Win + Tab टास्क व्यू और वर्चुअल डेस्कटॉप इंटरफेस खोलता है।"
+  },
+  {
+    "id": 170,
+    "category": "Windows OS",
+    "question": "टास्कबार के पहले ऐप आइकन पर फोकस करने का शॉर्टकट क्या है?",
+    "options": {
+      "A": "Win + T",
+      "B": "Alt + T",
+      "C": "Ctrl + T",
+      "D": "Win + B"
+    },
+    "correct_option": "A",
+    "explanation": "Win + T टास्कबार के पहले आइकन को फोकस करता है।"
+  },
+  {
+    "id": 171,
+    "category": "Chrome",
+    "question": "Google Chrome में 'बुकमार्क मैनेजर' (Bookmark Manager) टैब खोलने का शॉर्टकट क्या है?",
+    "options": {
+      "A": "Ctrl + Shift + O",
+      "B": "Ctrl + Shift + B",
+      "C": "Ctrl + B",
+      "D": "Alt + B"
+    },
+    "correct_option": "A",
+    "explanation": "Ctrl + Shift + O बुकमार्क मैनेजर खोलता है।"
+  },
+  {
+    "id": 172,
+    "category": "Chrome",
+    "question": "Google Chrome में 'Ctrl + Shift + W' दबाने से क्या होता है?",
+    "options": {
+      "A": "वर्तमान एक्टिव टैब बंद होता है",
+      "B": "वर्तमान क्रोम विंडो अपने सभी खुले टैब्स सहित बंद हो जाती है",
+      "C": "इनकॉग्निटो विंडो खुलती है",
+      "D": "कैश साफ होता है"
+    },
+    "correct_option": "B",
+    "explanation": "Ctrl + Shift + W पूरी ब्राउज़र विंडो को उसके सभी टैब्स सहित बंद कर देता है।"
+  },
+  {
+    "id": 173,
+    "category": "Chrome",
+    "question": "Google Chrome में अगले टैब (Next Tab) पर जाने का शॉर्टकट क्या है?",
+    "options": {
+      "A": "Ctrl + Tab",
+      "B": "Ctrl + Page Down",
+      "C": "A और B दोनों",
+      "D": "Alt + Right Arrow"
+    },
+    "correct_option": "C",
+    "explanation": "Ctrl + Tab और Ctrl + Page Down दोनों अगले टैब पर स्विच करते हैं।"
+  },
+  {
+    "id": 174,
+    "category": "Chrome",
+    "question": "Google Chrome में पिछले टैब (Previous Tab) पर जाने का शॉर्टकट क्या है?",
+    "options": {
+      "A": "Ctrl + Shift + Tab",
+      "B": "Ctrl + Page Up",
+      "C": "A और B दोनों",
+      "D": "Alt + Left Arrow"
+    },
+    "correct_option": "C",
+    "explanation": "Ctrl + Shift + Tab और Ctrl + Page Up दोनों पिछले टैब पर ले जाते हैं।"
+  },
+  {
+    "id": 175,
+    "category": "Chrome",
+    "question": "एड्रेस बार में लिखे शब्द के आगे 'www.' और पीछे '.com' स्वतः जोड़ने का शॉर्टकट क्या है?",
+    "options": {
+      "A": "Ctrl + Enter",
+      "B": "Shift + Enter",
+      "C": "Alt + Enter",
+      "D": "Ctrl + Shift + Enter"
+    },
+    "correct_option": "A",
+    "explanation": "एड्रेस बार में कोई नाम लिखकर Ctrl + Enter दबाने पर वह www. .com में बदल जाता है।"
+  },
+  {
+    "id": 176,
+    "category": "Chrome",
+    "question": "एड्रेस बार में टाइप किए गए URL को नए बैकग्राउंड टैब में खोलने का शॉर्टकट क्या है?",
+    "options": {
+      "A": "Alt + Enter",
+      "B": "Ctrl + Enter",
+      "C": "Shift + Enter",
+      "D": "Ctrl + Shift + Enter"
+    },
+    "correct_option": "A",
+    "explanation": "Alt + Enter एड्रेस बार के यूआरएल को नए टैब में लोड करता है।"
+  },
+  {
+    "id": 177,
+    "category": "Chrome",
+    "question": "Google Chrome में पेज के अंदर टेक्स्ट खोजने (Find in Page) का शॉर्टकट क्या है?",
+    "options": {
+      "A": "Ctrl + F",
+      "B": "F3",
+      "C": "A और B दोनों",
+      "D": "Ctrl + H"
+    },
+    "correct_option": "C",
+    "explanation": "Ctrl + F और F3 दोनों सर्च बार खोलते हैं।"
+  },
+  {
+    "id": 178,
+    "category": "Chrome",
+    "question": "Google Chrome में वर्तमान वेबपेज के लोड होने को रोकने (Stop Loading) की कुंजी क्या है?",
+    "options": {
+      "A": "Esc",
+      "B": "Ctrl + .",
+      "C": "Alt + S",
+      "D": "Ctrl + E"
+    },
+    "correct_option": "A",
+    "explanation": "Esc कुंजी लोड हो रहे वेबपेज को रोकती है।"
+  },
+  {
+    "id": 179,
+    "category": "Chrome",
+    "question": "Chrome में वेबपेज को एक पूरी स्क्रीन नीचे स्क्रॉल (Scroll Down) करने का शॉर्टकट क्या है?",
+    "options": {
+      "A": "Spacebar",
+      "B": "Page Down",
+      "C": "A और B दोनों",
+      "D": "Down Arrow"
+    },
+    "correct_option": "C",
+    "explanation": "Spacebar और Page Down दोनों एक पूर्ण स्क्रीन नीचे स्क्रॉल करते हैं।"
+  },
+  {
+    "id": 180,
+    "category": "Chrome",
+    "question": "Chrome में वेबपेज को एक पूरी स्क्रीन ऊपर स्क्रॉल (Scroll Up) करने का शॉर्टकट क्या है?",
+    "options": {
+      "A": "Shift + Spacebar",
+      "B": "Page Up",
+      "C": "A और B दोनों",
+      "D": "Ctrl + Up Arrow"
+    },
+    "correct_option": "C",
+    "explanation": "Shift + Spacebar और Page Up दोनों एक पूर्ण स्क्रीन ऊपर स्क्रॉल करते हैं।"
+  },
+  {
+    "id": 181,
+    "category": "Chrome",
+    "question": "Google Chrome में वेबपेज के बिल्कुल शीर्ष (Top) पर जाने का शॉर्टकट क्या है?",
+    "options": {
+      "A": "Home",
+      "B": "Ctrl + Home",
+      "C": "A और B दोनों",
+      "D": "Alt + Up Arrow"
+    },
+    "correct_option": "C",
+    "explanation": "Home और Ctrl + Home दोनों सीधे वेबपेज के शीर्ष पर ले जाते हैं।"
+  },
+  {
+    "id": 182,
+    "category": "Chrome",
+    "question": "Google Chrome में वेबपेज के बिल्कुल निचले भाग (Bottom) पर जाने का शॉर्टकट क्या है?",
+    "options": {
+      "A": "End",
+      "B": "Ctrl + End",
+      "C": "A और B दोनों",
+      "D": "Alt + Down Arrow"
+    },
+    "correct_option": "C",
+    "explanation": "End और Ctrl + End दोनों सीधे वेबपेज के सबसे नीचे ले जाते हैं।"
+  },
+  {
+    "id": 183,
+    "category": "Chrome",
+    "question": "Google Chrome का मुख्य सेटिंग्स/थ्री-डॉट्स मेनू खोलने का शॉर्टकट क्या है?",
+    "options": {
+      "A": "Alt + F (या Alt + E)",
+      "B": "Ctrl + Shift + S",
+      "C": "Ctrl + ,",
+      "D": "Alt + S"
+    },
+    "correct_option": "A",
+    "explanation": "Alt + F या Alt + E मुख्य क्रोम मेनू खोलता है।"
+  },
+  {
+    "id": 184,
+    "category": "Chrome",
+    "question": "Google Chrome को फुल स्क्रीन मोड (Full Screen) में चालू या बंद करने की शॉर्टकट कुंजी क्या है?",
+    "options": {
+      "A": "F11",
+      "B": "Ctrl + F11",
+      "C": "Alt + Enter",
+      "D": "Shift + F11"
+    },
+    "correct_option": "A",
+    "explanation": "F11 फुल स्क्रीन मोड को ऑन/ऑफ करता है।"
+  },
+  {
+    "id": 185,
+    "category": "Chrome",
+    "question": "वर्तमान वेबपेज को प्रिंट करने का प्रीव्यू डायलॉग खोलने का शॉर्टकट क्या है?",
+    "options": {
+      "A": "Ctrl + P",
+      "B": "Ctrl + Shift + P",
+      "C": "Alt + P",
+      "D": "Shift + P"
+    },
+    "correct_option": "A",
+    "explanation": "Ctrl + P प्रिंट डायलॉग बॉक्स खोलता है।"
+  },
+  {
+    "id": 186,
+    "category": "General Computer",
+    "question": "वर्तमान कर्सर स्थिति से लेकर लाइन की शुरुआत तक के पूरे टेक्स्ट को सिलेक्ट करने का शॉर्टकट क्या है?",
+    "options": {
+      "A": "Shift + Home",
+      "B": "Ctrl + Shift + Home",
+      "C": "Alt + Home",
+      "D": "Shift + Up Arrow"
+    },
+    "correct_option": "A",
+    "explanation": "Shift + Home कर्सर से लेकर लाइन के प्रारंभ तक का चयन करता है।"
+  },
+  {
+    "id": 187,
+    "category": "General Computer",
+    "question": "वर्तमान कर्सर स्थिति से लेकर लाइन के अंत तक के पूरे टेक्स्ट को सिलेक्ट करने का शॉर्टकट क्या है?",
+    "options": {
+      "A": "Shift + End",
+      "B": "Ctrl + Shift + End",
+      "C": "Alt + End",
+      "D": "Shift + Right Arrow"
+    },
+    "correct_option": "A",
+    "explanation": "Shift + End कर्सर से लेकर लाइन के अंत तक का चयन करता है।"
+  },
+  {
+    "id": 188,
+    "category": "General Computer",
+    "question": "वर्तमान कर्सर स्थिति से लेकर पूरे डॉक्यूमेंट के प्रारंभ (Beginning) तक सिलेक्ट करने का शॉर्टकट क्या है?",
+    "options": {
+      "A": "Ctrl + Shift + Home",
+      "B": "Shift + Home",
+      "C": "Ctrl + Home",
+      "D": "Alt + Shift + Home"
+    },
+    "correct_option": "A",
+    "explanation": "Ctrl + Shift + Home कर्सर से लेकर डॉक्यूमेंट के शुरुआती बिंदु तक सिलेक्ट करता है।"
+  },
+  {
+    "id": 189,
+    "category": "General Computer",
+    "question": "वर्तमान कर्सर स्थिति से लेकर पूरे डॉक्यूमेंट के अंत (End) तक सिलेक्ट करने का शॉर्टकट क्या है?",
+    "options": {
+      "A": "Ctrl + Shift + End",
+      "B": "Shift + End",
+      "C": "Ctrl + End",
+      "D": "Alt + Shift + End"
+    },
+    "correct_option": "A",
+    "explanation": "Ctrl + Shift + End कर्सर से लेकर डॉक्यूमेंट के अंतिम बिंदु तक सिलेक्ट करता है।"
+  },
+  {
+    "id": 190,
+    "category": "General Computer",
+    "question": "लगभग सभी विंडोज सॉफ्टवेयर में 'हेल्प' (Help / सहायता) मेनू खोलने की सार्वभौमिक कुंजी क्या है?",
+    "options": {
+      "A": "F1",
+      "B": "F2",
+      "C": "F3",
+      "D": "F12"
+    },
+    "correct_option": "A",
+    "explanation": "F1 सहायता और हेल्प डॉक्यूमेंटेशन खोलने के लिए वैश्विक मानक है।"
+  },
+  {
+    "id": 191,
+    "category": "General Computer",
+    "question": "विंडोज में सिक्योरिटी ऑप्शन्स स्क्रीन (Lock, Switch User, Task Manager) खोलने का शॉर्टकट क्या है?",
+    "options": {
+      "A": "Ctrl + Alt + Delete",
+      "B": "Ctrl + Shift + Esc",
+      "C": "Win + L",
+      "D": "Alt + F4"
+    },
+    "correct_option": "A",
+    "explanation": "Ctrl + Alt + Delete विंडोज सुरक्षा स्क्रीन खोलता है।"
+  },
+  {
+    "id": 192,
+    "category": "General Computer",
+    "question": "कमांड प्रॉम्प्ट / टर्मिनल में चल रहे किसी कमांड प्रोसेस को जबरन रोकने (Interrupt/Abort) का शॉर्टकट क्या है?",
+    "options": {
+      "A": "Ctrl + C",
+      "B": "Ctrl + Break",
+      "C": "A और B दोनों",
+      "D": "Esc"
+    },
+    "correct_option": "C",
+    "explanation": "Ctrl + C और Ctrl + Break दोनों कमांड लाइन प्रोसेस को रोकने का सिग्नल भेजते हैं।"
+  },
+  {
+    "id": 193,
+    "category": "General Computer",
+    "question": "कंप्यूटर शुरू होते समय BIOS / UEFI सेटिंग्स में प्रवेश करने के लिए सामान्यतः कौन सी कुंजी दबाई जाती है?",
+    "options": {
+      "A": "F2 या Del",
+      "B": "F12",
+      "C": "F8",
+      "D": "Esc"
+    },
+    "correct_option": "A",
+    "explanation": "F2 और Delete (Del) BIOS/UEFI सेटअप में प्रवेश करने के लिए प्राथमिक कुंजियाँ हैं।"
+  },
+  {
+    "id": 194,
+    "category": "General Computer",
+    "question": "पीसी बूटिंग के दौरान 'Boot Device Selection Menu' (बूटेबल पेनड्राइव आदि चुनने) के लिए कौन सी कुंजी दबाई जाती है?",
+    "options": {
+      "A": "F12",
+      "B": "F2",
+      "C": "F1",
+      "D": "F5"
+    },
+    "correct_option": "A",
+    "explanation": "F12 बूट डिवाइस चुनने का मेनू खोलती है।"
+  },
+  {
+    "id": 195,
+    "category": "General Computer",
+    "question": "विंडोज में किसी चयनित ड्राइव, फाइल या फोल्डर की 'Properties' विंडो खोलने का शॉर्टकट क्या है?",
+    "options": {
+      "A": "Alt + Enter",
+      "B": "Ctrl + Shift + P",
+      "C": "Win + Enter",
+      "D": "Shift + Enter"
+    },
+    "correct_option": "A",
+    "explanation": "Alt + Enter चयनित आइटम की प्रॉपर्टीज खोलता है।"
+  },
+  {
+    "id": 196,
+    "category": "General Computer",
+    "question": "किसी डायलॉग बॉक्स के अंदर अलग-अलग टैब के बीच आगे या पीछे जाने का शॉर्टकट क्या है?",
+    "options": {
+      "A": "Ctrl + Tab / Ctrl + Shift + Tab",
+      "B": "Alt + Tab",
+      "C": "Shift + Enter",
+      "D": "Win + Tab"
+    },
+    "correct_option": "A",
+    "explanation": "Ctrl + Tab डायलॉग बॉक्स के अगले टैब में और Ctrl + Shift + Tab पिछले टैब में ले जाता है।"
+  },
+  {
+    "id": 197,
+    "category": "General Computer",
+    "question": "किसी फॉर्म या डायलॉग बॉक्स में विकल्पों के बीच विपरीत दिशा (पीछे) में नेविगेट करने का शॉर्टकट क्या है?",
+    "options": {
+      "A": "Shift + Tab",
+      "B": "Ctrl + Tab",
+      "C": "Alt + Tab",
+      "D": "Ctrl + Shift + Enter"
+    },
+    "correct_option": "A",
+    "explanation": "Tab अगले फील्ड/बटन पर जाता है; Shift + Tab पिछले फील्ड/बटन पर वापस जाता है।"
+  },
+  {
+    "id": 198,
+    "category": "General Computer",
+    "question": "खुले हुए पॉप-अप, ड्रॉप-डाउन मेनू को बंद करने या वर्तमान क्रिया को रद्द (Cancel) करने की कुंजी क्या है?",
+    "options": {
+      "A": "Esc",
+      "B": "Ctrl + Z",
+      "C": "Backspace",
+      "D": "Alt + F4"
+    },
+    "correct_option": "A",
+    "explanation": "Escape (Esc) कुंजी डायलॉग बॉक्स को रद्द करती है तथा मेनू बंद करती है।"
+  },
+  {
+    "id": 199,
+    "category": "General Computer",
+    "question": "बिना Windows लोगो कुंजी दबाए केवल कीबोर्ड से स्टार्ट मेनू (Start Menu) खोलने का शॉर्टकट क्या है?",
+    "options": {
+      "A": "Ctrl + Esc",
+      "B": "Alt + Esc",
+      "C": "Shift + Esc",
+      "D": "Alt + Spacebar"
+    },
+    "correct_option": "A",
+    "explanation": "Ctrl + Esc सीधे स्टार्ट मेनू खोलता है।"
+  },
+  {
+    "id": 200,
+    "category": "General Computer",
+    "question": "सक्रिय विंडो का सिस्टम मेनू (Restore, Move, Size, Minimize, Maximize, Close) खोलने का शॉर्टकट क्या है?",
+    "options": {
+      "A": "Alt + Spacebar",
+      "B": "Ctrl + Spacebar",
+      "C": "Shift + Spacebar",
+      "D": "Win + Spacebar"
+    },
+    "correct_option": "A",
+    "explanation": "Alt + Spacebar वर्तमान विंडो का टाइटल बार सिस्टम मेनू खोलता है।"
+  }
+]

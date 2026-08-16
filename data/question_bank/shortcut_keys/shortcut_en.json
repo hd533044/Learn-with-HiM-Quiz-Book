@@ -1,0 +1,2602 @@
+[
+  {
+    "id": 1,
+    "category": "MS Word",
+    "question": "Which shortcut key is used to apply double line spacing to the selected paragraph in MS Word?",
+    "options": {
+      "A": "Ctrl + 1",
+      "B": "Ctrl + 2",
+      "C": "Ctrl + 5",
+      "D": "Alt + 2"
+    },
+    "correct_option": "B",
+    "explanation": "Ctrl + 2 applies double line spacing, Ctrl + 1 sets single spacing, and Ctrl + 5 sets 1.5 line spacing."
+  },
+  {
+    "id": 2,
+    "category": "MS Word",
+    "question": "What is the keyboard shortcut to make selected text Subscript in MS Word?",
+    "options": {
+      "A": "Ctrl + Shift + =",
+      "B": "Ctrl + =",
+      "C": "Alt + =",
+      "D": "Shift + Alt + ="
+    },
+    "correct_option": "B",
+    "explanation": "Ctrl + = applies Subscript (e.g., H₂O), whereas Ctrl + Shift + = (or Ctrl + Shift + +) applies Superscript (e.g., X²)."
+  },
+  {
+    "id": 3,
+    "category": "MS Word",
+    "question": "Which key combination is used to toggle character case (Sentence case, UPPERCASE, lowercase) in MS Word?",
+    "options": {
+      "A": "Ctrl + F3",
+      "B": "Shift + F3",
+      "C": "Alt + F3",
+      "D": "Ctrl + Shift + C"
+    },
+    "correct_option": "B",
+    "explanation": "Shift + F3 cycles through lowercase, UPPERCASE, and Sentence/Title case for the selected text."
+  },
+  {
+    "id": 4,
+    "category": "MS Word",
+    "question": "Which shortcut key creates a Hanging Indent in MS Word?",
+    "options": {
+      "A": "Ctrl + H",
+      "B": "Ctrl + M",
+      "C": "Ctrl + T",
+      "D": "Ctrl + Shift + T"
+    },
+    "correct_option": "C",
+    "explanation": "Ctrl + T creates a hanging indent. To remove a hanging indent, press Ctrl + Shift + T."
+  },
+  {
+    "id": 5,
+    "category": "MS Word",
+    "question": "Which shortcut removes manual character formatting and resets selected text to the default style font?",
+    "options": {
+      "A": "Ctrl + Shift + N",
+      "B": "Ctrl + Spacebar",
+      "C": "Ctrl + Q",
+      "D": "Ctrl + Alt + Spacebar"
+    },
+    "correct_option": "B",
+    "explanation": "Ctrl + Spacebar removes manual character formatting, while Ctrl + Q removes paragraph-level formatting."
+  },
+  {
+    "id": 6,
+    "category": "MS Word",
+    "question": "What is the shortcut key to insert a Column Break in MS Word?",
+    "options": {
+      "A": "Ctrl + Enter",
+      "B": "Ctrl + Shift + Enter",
+      "C": "Shift + Enter",
+      "D": "Alt + Enter"
+    },
+    "correct_option": "B",
+    "explanation": "Ctrl + Shift + Enter inserts a column break, Ctrl + Enter inserts a page break, and Shift + Enter inserts a manual line break (soft return)."
+  },
+  {
+    "id": 7,
+    "category": "MS Word",
+    "question": "In MS Word, which functional key activates the 'Extend Selection' mode?",
+    "options": {
+      "A": "F2",
+      "B": "F4",
+      "C": "F8",
+      "D": "F12"
+    },
+    "correct_option": "C",
+    "explanation": "Pressing F8 enters Extend Mode: pressing it 2 times selects a word, 3 times a sentence, 4 times a paragraph, and 5 times the entire document."
+  },
+  {
+    "id": 8,
+    "category": "MS Word",
+    "question": "Which shortcut key is used to insert the current Date field in MS Word?",
+    "options": {
+      "A": "Alt + Shift + D",
+      "B": "Ctrl + Shift + D",
+      "C": "Alt + Ctrl + D",
+      "D": "Ctrl + ;"
+    },
+    "correct_option": "A",
+    "explanation": "Alt + Shift + D inserts the dynamic Date field in Word. Alt + Shift + T inserts the dynamic Time field."
+  },
+  {
+    "id": 9,
+    "category": "MS Word",
+    "question": "What shortcut key is used to open the 'Thesaurus' pane for looking up synonyms in MS Word?",
+    "options": {
+      "A": "F7",
+      "B": "Shift + F7",
+      "C": "Ctrl + F7",
+      "D": "Alt + F7"
+    },
+    "correct_option": "B",
+    "explanation": "Shift + F7 opens the Thesaurus. F7 starts the Spelling and Grammar check."
+  },
+  {
+    "id": 10,
+    "category": "MS Word",
+    "question": "Which shortcut is used to copy only formatting from selected text (Format Painter)?",
+    "options": {
+      "A": "Ctrl + Shift + F",
+      "B": "Ctrl + Shift + C",
+      "C": "Ctrl + Alt + C",
+      "D": "Alt + Shift + C"
+    },
+    "correct_option": "B",
+    "explanation": "Ctrl + Shift + C copies text formatting, and Ctrl + Shift + V pastes the copied formatting."
+  },
+  {
+    "id": 11,
+    "category": "MS Word",
+    "question": "Which shortcut key opens the 'Font' dialog box in Microsoft Word?",
+    "options": {
+      "A": "Ctrl + F",
+      "B": "Ctrl + Shift + P",
+      "C": "Ctrl + D",
+      "D": "Both B and C"
+    },
+    "correct_option": "D",
+    "explanation": "Both Ctrl + D and Ctrl + Shift + P (as well as Ctrl + Shift + F) open the Font dialog box in MS Word."
+  },
+  {
+    "id": 12,
+    "category": "MS Word",
+    "question": "What does pressing the shortcut 'Ctrl + M' do in MS Word?",
+    "options": {
+      "A": "Creates a new document",
+      "B": "Increases paragraph left indent",
+      "C": "Inserts a mail merge field",
+      "D": "Applies middle alignment"
+    },
+    "correct_option": "B",
+    "explanation": "Ctrl + M increases paragraph left indent. Ctrl + Shift + M decreases the left indent."
+  },
+  {
+    "id": 13,
+    "category": "MS Word",
+    "question": "Which shortcut key splits the active document window into two panes in MS Word?",
+    "options": {
+      "A": "Ctrl + Alt + S",
+      "B": "Ctrl + Shift + S",
+      "C": "Alt + Shift + S",
+      "D": "Ctrl + Enter"
+    },
+    "correct_option": "A",
+    "explanation": "Ctrl + Alt + S splits the document window or removes the split if already present."
+  },
+  {
+    "id": 14,
+    "category": "MS Word",
+    "question": "What shortcut key is used to insert a Non-Breaking Space in MS Word?",
+    "options": {
+      "A": "Ctrl + Spacebar",
+      "B": "Ctrl + Shift + Spacebar",
+      "C": "Alt + Spacebar",
+      "D": "Shift + Enter"
+    },
+    "correct_option": "B",
+    "explanation": "Ctrl + Shift + Spacebar creates a non-breaking space that prevents words from separating across line wraps."
+  },
+  {
+    "id": 15,
+    "category": "MS Word",
+    "question": "Which key combination decreases the selected text font size by exactly 1 point in MS Word?",
+    "options": {
+      "A": "Ctrl + [",
+      "B": "Ctrl + <",
+      "C": "Ctrl + Shift + [",
+      "D": "Alt + ["
+    },
+    "correct_option": "A",
+    "explanation": "Ctrl + [ decreases font size by 1 pt, and Ctrl + ] increases font size by 1 pt."
+  },
+  {
+    "id": 16,
+    "category": "MS Excel",
+    "question": "Which shortcut key enters the active cell's Edit Mode in Microsoft Excel?",
+    "options": {
+      "A": "F1",
+      "B": "F2",
+      "C": "F4",
+      "D": "F7"
+    },
+    "correct_option": "B",
+    "explanation": "F2 edits the active cell and places the insertion point at the end of the cell contents."
+  },
+  {
+    "id": 17,
+    "category": "MS Excel",
+    "question": "What is the keyboard shortcut to insert the current static Date into a cell in MS Excel?",
+    "options": {
+      "A": "Ctrl + ;",
+      "B": "Ctrl + Shift + ;",
+      "C": "Alt + Shift + D",
+      "D": "Ctrl + D"
+    },
+    "correct_option": "A",
+    "explanation": "Ctrl + ; inserts the current date, while Ctrl + Shift + ; (or Ctrl + Shift + :) inserts the current time."
+  },
+  {
+    "id": 18,
+    "category": "MS Excel",
+    "question": "Which shortcut key selects an Entire Row in an Excel worksheet?",
+    "options": {
+      "A": "Ctrl + Spacebar",
+      "B": "Shift + Spacebar",
+      "C": "Alt + Spacebar",
+      "D": "Ctrl + Shift + Spacebar"
+    },
+    "correct_option": "B",
+    "explanation": "Shift + Spacebar selects the entire row; Ctrl + Spacebar selects the entire column."
+  },
+  {
+    "id": 19,
+    "category": "MS Excel",
+    "question": "Which shortcut triggers the 'AutoSum' formula (=SUM) automatically in MS Excel?",
+    "options": {
+      "A": "Ctrl + S",
+      "B": "Alt + =",
+      "C": "Shift + F3",
+      "D": "Ctrl + Shift + T"
+    },
+    "correct_option": "B",
+    "explanation": "Alt + = automatically inserts the SUM function for contiguous data ranges above or to the left."
+  },
+  {
+    "id": 20,
+    "category": "MS Excel",
+    "question": "Which shortcut key cycles through cell reference types (Relative, Absolute $A$1, Mixed A$1, $A1) in Excel formula bar?",
+    "options": {
+      "A": "F2",
+      "B": "F3",
+      "C": "F4",
+      "D": "F9"
+    },
+    "correct_option": "C",
+    "explanation": "F4 toggles between absolute ($A$1), mixed ($A1, A$1), and relative (A1) references when editing a formula."
+  },
+  {
+    "id": 21,
+    "category": "MS Excel",
+    "question": "What is the shortcut key to invoke 'Flash Fill' in MS Excel to recognize patterns automatically?",
+    "options": {
+      "A": "Ctrl + F",
+      "B": "Ctrl + E",
+      "C": "Ctrl + R",
+      "D": "Ctrl + Shift + F"
+    },
+    "correct_option": "B",
+    "explanation": "Ctrl + E triggers Flash Fill, automatically populating data based on identified patterns."
+  },
+  {
+    "id": 22,
+    "category": "MS Excel",
+    "question": "Which shortcut toggles the display between cell values and formulas across the entire worksheet?",
+    "options": {
+      "A": "Ctrl + Shift + ~",
+      "B": "Ctrl + ` (grave accent)",
+      "C": "Alt + Shift + F",
+      "D": "Ctrl + F9"
+    },
+    "correct_option": "B",
+    "explanation": "Ctrl + ` (grave accent / tilde key) switches between displaying cell formulas and evaluated values."
+  },
+  {
+    "id": 23,
+    "category": "MS Excel",
+    "question": "What shortcut key is used to Hide the Selected Column(s) in MS Excel?",
+    "options": {
+      "A": "Ctrl + 9",
+      "B": "Ctrl + 0",
+      "C": "Ctrl + Shift + 9",
+      "D": "Ctrl + H"
+    },
+    "correct_option": "B",
+    "explanation": "Ctrl + 0 hides selected columns, whereas Ctrl + 9 hides selected rows."
+  },
+  {
+    "id": 24,
+    "category": "MS Excel",
+    "question": "Which keyboard shortcut creates a standalone Chart sheet instantly from selected data in Excel?",
+    "options": {
+      "A": "F1",
+      "B": "F7",
+      "C": "F11",
+      "D": "Alt + F1"
+    },
+    "correct_option": "C",
+    "explanation": "F11 creates a chart sheet instantly. Alt + F1 creates an embedded chart on the current worksheet."
+  },
+  {
+    "id": 25,
+    "category": "MS Excel",
+    "question": "What is the shortcut to open the 'Format Cells' dialog box in Excel?",
+    "options": {
+      "A": "Ctrl + Shift + F",
+      "B": "Ctrl + 1",
+      "C": "Alt + 1",
+      "D": "Ctrl + F1"
+    },
+    "correct_option": "B",
+    "explanation": "Ctrl + 1 opens the Format Cells dialog box with Number, Alignment, Font, Border, and Fill tabs."
+  },
+  {
+    "id": 26,
+    "category": "MS Excel",
+    "question": "Which key combination inserts a new worksheet into the current workbook?",
+    "options": {
+      "A": "Shift + F11",
+      "B": "Ctrl + F11",
+      "C": "Alt + F11",
+      "D": "Ctrl + N"
+    },
+    "correct_option": "A",
+    "explanation": "Shift + F11 (or Alt + Shift + F1) inserts a new worksheet. Alt + F11 opens the VBA Editor."
+  },
+  {
+    "id": 27,
+    "category": "MS Excel",
+    "question": "Which shortcut key combination applies the 'General' number format in MS Excel?",
+    "options": {
+      "A": "Ctrl + Shift + 1",
+      "B": "Ctrl + Shift + ~",
+      "C": "Ctrl + Shift + @",
+      "D": "Ctrl + Shift + #"
+    },
+    "correct_option": "B",
+    "explanation": "Ctrl + Shift + ~ applies the General number format. Ctrl + Shift + $ applies Currency, and Ctrl + Shift + % applies Percentage."
+  },
+  {
+    "id": 28,
+    "category": "MS Excel",
+    "question": "What shortcut key combination turns the AutoFilter on or off for the selected dataset?",
+    "options": {
+      "A": "Ctrl + F",
+      "B": "Ctrl + Shift + L",
+      "C": "Alt + F + L",
+      "D": "Ctrl + Alt + A"
+    },
+    "correct_option": "B",
+    "explanation": "Ctrl + Shift + L enables or disables filters on headers."
+  },
+  {
+    "id": 29,
+    "category": "MS Excel",
+    "question": "Which shortcut converts a selected range of cells into an official Excel Table?",
+    "options": {
+      "A": "Ctrl + T",
+      "B": "Ctrl + L",
+      "C": "Both A and B",
+      "D": "Alt + T"
+    },
+    "correct_option": "C",
+    "explanation": "Both Ctrl + T and Ctrl + L open the Create Table dialog box."
+  },
+  {
+    "id": 30,
+    "category": "MS Excel",
+    "question": "What shortcut fills the active cell with the content and format of the cell immediately above it?",
+    "options": {
+      "A": "Ctrl + U",
+      "B": "Ctrl + D",
+      "C": "Ctrl + R",
+      "D": "Alt + D"
+    },
+    "correct_option": "B",
+    "explanation": "Ctrl + D fills Down; Ctrl + R fills Right."
+  },
+  {
+    "id": 31,
+    "category": "MS PowerPoint",
+    "question": "Which shortcut key starts the Slide Show from the First Slide (beginning)?",
+    "options": {
+      "A": "F5",
+      "B": "Shift + F5",
+      "C": "Ctrl + F5",
+      "D": "Alt + F5"
+    },
+    "correct_option": "A",
+    "explanation": "F5 starts the presentation from Slide 1. Shift + F5 starts the show from the current active slide."
+  },
+  {
+    "id": 32,
+    "category": "MS PowerPoint",
+    "question": "Which key combination is used to insert a New Slide into the current presentation?",
+    "options": {
+      "A": "Ctrl + N",
+      "B": "Ctrl + M",
+      "C": "Ctrl + Shift + N",
+      "D": "Alt + M"
+    },
+    "correct_option": "B",
+    "explanation": "Ctrl + M inserts a new slide in PowerPoint. Ctrl + N opens an entirely new presentation file."
+  },
+  {
+    "id": 33,
+    "category": "MS PowerPoint",
+    "question": "During a PowerPoint Slide Show, which key turns the screen completely Black?",
+    "options": {
+      "A": "Ctrl + B",
+      "B": "B",
+      "C": "Shift + B",
+      "D": "Alt + B"
+    },
+    "correct_option": "B",
+    "explanation": "Pressing 'B' (or period '.') turns the screen black; pressing 'W' (or comma ',') turns the screen white during a slide show."
+  },
+  {
+    "id": 34,
+    "category": "MS PowerPoint",
+    "question": "Which shortcut switches the cursor to the Pen Tool during an active slide show?",
+    "options": {
+      "A": "Ctrl + A",
+      "B": "Ctrl + P",
+      "C": "Ctrl + E",
+      "D": "Ctrl + L"
+    },
+    "correct_option": "B",
+    "explanation": "Ctrl + P turns the mouse pointer into a pen tool, Ctrl + E activates the eraser, and Ctrl + A reverts to arrow pointer."
+  },
+  {
+    "id": 35,
+    "category": "MS PowerPoint",
+    "question": "What is the shortcut key to Group selected objects or shapes in MS PowerPoint?",
+    "options": {
+      "A": "Ctrl + Shift + G",
+      "B": "Ctrl + G",
+      "C": "Alt + G",
+      "D": "Ctrl + Alt + G"
+    },
+    "correct_option": "B",
+    "explanation": "Ctrl + G groups selected shapes/objects together. Ctrl + Shift + G ungroups them."
+  },
+  {
+    "id": 36,
+    "category": "MS PowerPoint",
+    "question": "Which shortcut key duplicates the selected shape, object, or slide in PowerPoint?",
+    "options": {
+      "A": "Ctrl + D",
+      "B": "Ctrl + Shift + D",
+      "C": "Alt + D",
+      "D": "Ctrl + C + V"
+    },
+    "correct_option": "A",
+    "explanation": "Ctrl + D creates an instant duplicate of selected slides or objects."
+  },
+  {
+    "id": 37,
+    "category": "MS PowerPoint",
+    "question": "During an ongoing Slide Show, which shortcut key opens the Laser Pointer?",
+    "options": {
+      "A": "Ctrl + L",
+      "B": "Ctrl + Left Mouse Click",
+      "C": "Both A and B",
+      "D": "Alt + L"
+    },
+    "correct_option": "C",
+    "explanation": "Both Ctrl + L and holding Ctrl while holding the primary mouse button activate the Laser Pointer during presentation mode."
+  },
+  {
+    "id": 38,
+    "category": "MS PowerPoint",
+    "question": "What key is pressed to immediately terminate or exit a PowerPoint slide show?",
+    "options": {
+      "A": "Esc",
+      "B": "End",
+      "C": "Ctrl + Q",
+      "D": "Spacebar"
+    },
+    "correct_option": "A",
+    "explanation": "Pressing Esc ends the running slide show and returns to the standard editing view."
+  },
+  {
+    "id": 39,
+    "category": "Windows OS",
+    "question": "Which Windows shortcut locks your PC immediately or allows quick account switching?",
+    "options": {
+      "A": "Win + L",
+      "B": "Win + K",
+      "C": "Ctrl + Alt + L",
+      "D": "Win + Shift + L"
+    },
+    "correct_option": "A",
+    "explanation": "Windows key + L instantly locks the computer workstation."
+  },
+  {
+    "id": 40,
+    "category": "Windows OS",
+    "question": "Which shortcut opens the Windows 'Clipboard History' to view and paste previously copied items?",
+    "options": {
+      "A": "Win + C",
+      "B": "Win + V",
+      "C": "Ctrl + Shift + V",
+      "D": "Alt + V"
+    },
+    "correct_option": "B",
+    "explanation": "Win + V launches the Windows Clipboard History (cloud/multiple clipboard buffer)."
+  },
+  {
+    "id": 41,
+    "category": "Windows OS",
+    "question": "What is the shortcut key to open File Explorer in Windows OS?",
+    "options": {
+      "A": "Win + F",
+      "B": "Win + E",
+      "C": "Ctrl + E",
+      "D": "Win + X"
+    },
+    "correct_option": "B",
+    "explanation": "Win + E opens Windows File Explorer. Win + F opens the Feedback Hub."
+  },
+  {
+    "id": 42,
+    "category": "Windows OS",
+    "question": "Which shortcut key directly opens Task Manager without passing through the security options menu?",
+    "options": {
+      "A": "Ctrl + Alt + Del",
+      "B": "Ctrl + Shift + Esc",
+      "C": "Win + Shift + Esc",
+      "D": "Alt + Shift + Esc"
+    },
+    "correct_option": "B",
+    "explanation": "Ctrl + Shift + Esc launches Task Manager directly. Ctrl + Alt + Delete opens the GINA/Security options screen."
+  },
+  {
+    "id": 43,
+    "category": "Windows OS",
+    "question": "Which Windows key shortcut opens the 'Snipping Tool' to take rectangular or freeform screen captures?",
+    "options": {
+      "A": "Win + PrtScn",
+      "B": "Win + Shift + S",
+      "C": "Ctrl + Shift + S",
+      "D": "Alt + PrtScn"
+    },
+    "correct_option": "B",
+    "explanation": "Win + Shift + S opens the Snipping Tool overlay. Win + PrtScn saves the full screenshot directly to Pictures\\Screenshots."
+  },
+  {
+    "id": 44,
+    "category": "Windows OS",
+    "question": "What is the shortcut key combination to create a New Virtual Desktop in Windows 10/11?",
+    "options": {
+      "A": "Win + D",
+      "B": "Win + Ctrl + D",
+      "C": "Win + Tab + N",
+      "D": "Win + Shift + D"
+    },
+    "correct_option": "B",
+    "explanation": "Win + Ctrl + D creates a new virtual desktop; Win + Ctrl + F4 closes the active virtual desktop."
+  },
+  {
+    "id": 45,
+    "category": "Windows OS",
+    "question": "Which shortcut key combination permanently deletes a selected file without sending it to the Recycle Bin?",
+    "options": {
+      "A": "Ctrl + Delete",
+      "B": "Shift + Delete",
+      "C": "Alt + Delete",
+      "D": "Win + Delete"
+    },
+    "correct_option": "B",
+    "explanation": "Shift + Delete bypasses the Recycle Bin and deletes the item permanently."
+  },
+  {
+    "id": 46,
+    "category": "Windows OS",
+    "question": "Which shortcut opens the Quick Link / Power User menu (equivalent to right-clicking the Start button) in Windows?",
+    "options": {
+      "A": "Win + X",
+      "B": "Win + P",
+      "C": "Win + Z",
+      "D": "Ctrl + Win + X"
+    },
+    "correct_option": "A",
+    "explanation": "Win + X opens the Power User menu (access to Device Manager, Disk Management, Terminal/PowerShell, etc.)."
+  },
+  {
+    "id": 47,
+    "category": "Windows OS",
+    "question": "Which shortcut minimizes all open windows and displays the Desktop immediately?",
+    "options": {
+      "A": "Win + D",
+      "B": "Win + M",
+      "C": "Both A and B",
+      "D": "Win + Down Arrow"
+    },
+    "correct_option": "C",
+    "explanation": "Win + D toggles Desktop view, and Win + M minimizes all open windows (Win + Shift + M restores them)."
+  },
+  {
+    "id": 48,
+    "category": "Windows OS",
+    "question": "What does the shortcut key 'Win + I' open in Windows 10 and 11?",
+    "options": {
+      "A": "Internet Settings",
+      "B": "Windows Settings App",
+      "C": "Task Manager",
+      "D": "System Information"
+    },
+    "correct_option": "B",
+    "explanation": "Win + I opens the main Windows Settings application."
+  },
+  {
+    "id": 49,
+    "category": "Windows OS",
+    "question": "Which shortcut key is used to Rename a selected file or folder in Windows File Explorer?",
+    "options": {
+      "A": "F1",
+      "B": "F2",
+      "C": "F3",
+      "D": "F5"
+    },
+    "correct_option": "B",
+    "explanation": "F2 highlights the filename of the selected item for editing/renaming."
+  },
+  {
+    "id": 50,
+    "category": "Windows OS",
+    "question": "Which shortcut opens the 'Run' command dialog box in Windows?",
+    "options": {
+      "A": "Win + R",
+      "B": "Ctrl + R",
+      "C": "Alt + R",
+      "D": "Win + Shift + R"
+    },
+    "correct_option": "A",
+    "explanation": "Win + R brings up the Run dialog box."
+  },
+  {
+    "id": 51,
+    "category": "Chrome",
+    "question": "Which shortcut key opens a new Incognito (private browsing) window in Google Chrome?",
+    "options": {
+      "A": "Ctrl + N",
+      "B": "Ctrl + Shift + N",
+      "C": "Ctrl + Shift + P",
+      "D": "Alt + Shift + N"
+    },
+    "correct_option": "B",
+    "explanation": "Ctrl + Shift + N opens an Incognito window in Chrome. (Ctrl + Shift + P opens Private window in Firefox/Edge)."
+  },
+  {
+    "id": 52,
+    "category": "Chrome",
+    "question": "What is the shortcut key to Reopen the most recently closed tab in Google Chrome?",
+    "options": {
+      "A": "Ctrl + Shift + T",
+      "B": "Ctrl + T",
+      "C": "Ctrl + Shift + W",
+      "D": "Ctrl + Z"
+    },
+    "correct_option": "A",
+    "explanation": "Ctrl + Shift + T restores closed tabs in the sequence they were closed."
+  },
+  {
+    "id": 53,
+    "category": "Chrome",
+    "question": "Which shortcut key combination opens Google Chrome's built-in Task Manager?",
+    "options": {
+      "A": "Ctrl + Shift + Esc",
+      "B": "Shift + Esc",
+      "C": "Ctrl + Alt + Esc",
+      "D": "Alt + Esc"
+    },
+    "correct_option": "B",
+    "explanation": "Shift + Esc launches Chrome's internal Task Manager showing memory/CPU usage per tab and extension."
+  },
+  {
+    "id": 54,
+    "category": "Chrome",
+    "question": "Which shortcut key moves the cursor focus directly to the Chrome Address Bar (Omnibox)?",
+    "options": {
+      "A": "Ctrl + L",
+      "B": "Alt + D",
+      "C": "F6",
+      "D": "All of the above"
+    },
+    "correct_option": "D",
+    "explanation": "Ctrl + L, Alt + D, and F6 all highlight and focus the Address Bar in Google Chrome."
+  },
+  {
+    "id": 55,
+    "category": "Chrome",
+    "question": "What shortcut key combination opens the Downloads page in Google Chrome?",
+    "options": {
+      "A": "Ctrl + D",
+      "B": "Ctrl + J",
+      "C": "Ctrl + Shift + J",
+      "D": "Alt + J"
+    },
+    "correct_option": "B",
+    "explanation": "Ctrl + J opens the Downloads management tab. Ctrl + D bookmarks the current webpage."
+  },
+  {
+    "id": 56,
+    "category": "Chrome",
+    "question": "Which shortcut performs a 'Hard Reload' (bypassing cached files) in Google Chrome?",
+    "options": {
+      "A": "Ctrl + R",
+      "B": "F5",
+      "C": "Ctrl + F5",
+      "D": "Alt + F5"
+    },
+    "correct_option": "C",
+    "explanation": "Ctrl + F5 (or Shift + F5, or Ctrl + Shift + R) forces a complete reload ignoring cached data."
+  },
+  {
+    "id": 57,
+    "category": "Chrome",
+    "question": "What is the shortcut key to open the 'Clear Browsing Data' dialog in Google Chrome?",
+    "options": {
+      "A": "Ctrl + Shift + Delete",
+      "B": "Ctrl + Alt + Delete",
+      "C": "Shift + Delete",
+      "D": "Ctrl + H + Delete"
+    },
+    "correct_option": "A",
+    "explanation": "Ctrl + Shift + Delete immediately opens the Clear Browsing Data dialog box."
+  },
+  {
+    "id": 58,
+    "category": "Chrome",
+    "question": "Which shortcut key toggles the visibility of the Bookmarks Bar in Google Chrome?",
+    "options": {
+      "A": "Ctrl + B",
+      "B": "Ctrl + Shift + B",
+      "C": "Alt + B",
+      "D": "Ctrl + Alt + B"
+    },
+    "correct_option": "B",
+    "explanation": "Ctrl + Shift + B shows or hides the Bookmarks bar below the address bar."
+  },
+  {
+    "id": 59,
+    "category": "Chrome",
+    "question": "Which shortcut key is used to switch to the last (rightmost) tab in Google Chrome?",
+    "options": {
+      "A": "Ctrl + 9",
+      "B": "Ctrl + 0",
+      "C": "Ctrl + Tab",
+      "D": "Ctrl + End"
+    },
+    "correct_option": "A",
+    "explanation": "Ctrl + 1 through Ctrl + 8 jumps to tabs 1 through 8. Ctrl + 9 jumps to the last tab regardless of count."
+  },
+  {
+    "id": 60,
+    "category": "Chrome",
+    "question": "What shortcut key combination opens the Developer Tools console in Google Chrome?",
+    "options": {
+      "A": "Ctrl + Shift + I",
+      "B": "F12",
+      "C": "Ctrl + Shift + J",
+      "D": "All of the above"
+    },
+    "correct_option": "D",
+    "explanation": "Ctrl + Shift + I and F12 open Developer Tools (Elements panel), while Ctrl + Shift + J opens directly to Console."
+  },
+  {
+    "id": 61,
+    "category": "General Computer",
+    "question": "Which key combination is globally used to Redo an action or repeat the last command in Windows applications?",
+    "options": {
+      "A": "Ctrl + Z",
+      "B": "Ctrl + Y",
+      "C": "Ctrl + Shift + Z",
+      "D": "Both B and C"
+    },
+    "correct_option": "D",
+    "explanation": "Both Ctrl + Y and Ctrl + Shift + Z serve as standard Redo shortcuts across modern software."
+  },
+  {
+    "id": 62,
+    "category": "General Computer",
+    "question": "Which key is universally pressed during system POST/startup to enter Advanced Boot Options / Safe Mode in older Windows?",
+    "options": {
+      "A": "F2",
+      "B": "F8",
+      "C": "F10",
+      "D": "F12"
+    },
+    "correct_option": "B",
+    "explanation": "F8 is historically the universal standard key for invoking the Windows Advanced Boot Menu / Safe Mode."
+  },
+  {
+    "id": 63,
+    "category": "General Computer",
+    "question": "What is the primary function of the 'Print Screen' (PrtScn / PrtSc) key?",
+    "options": {
+      "A": "Prints the active document to a physical printer",
+      "B": "Captures an image of the entire screen to the clipboard",
+      "C": "Opens the printer spooler settings",
+      "D": "Refreshes the display adapter"
+    },
+    "correct_option": "B",
+    "explanation": "PrtScn copies a bitmap snapshot of the entire visible screen to the system clipboard."
+  },
+  {
+    "id": 64,
+    "category": "General Computer",
+    "question": "Which shortcut combination closes the active application window completely across Windows OS?",
+    "options": {
+      "A": "Ctrl + W",
+      "B": "Alt + F4",
+      "C": "Shift + F4",
+      "D": "Ctrl + F4"
+    },
+    "correct_option": "B",
+    "explanation": "Alt + F4 closes the active window/application. If all windows are closed, it opens the Windows Shut Down dialog."
+  },
+  {
+    "id": 65,
+    "category": "General Computer",
+    "question": "Which key combination is used to open the context menu for a selected item without using a mouse?",
+    "options": {
+      "A": "Ctrl + F10",
+      "B": "Shift + F10",
+      "C": "Alt + F10",
+      "D": "Win + F10"
+    },
+    "correct_option": "B",
+    "explanation": "Shift + F10 simulates a right-click on the selected object."
+  },
+  {
+    "id": 66,
+    "category": "MS Word",
+    "question": "Which shortcut is used to insert a Hyperlink into a Word document?",
+    "options": {
+      "A": "Ctrl + H",
+      "B": "Ctrl + K",
+      "C": "Ctrl + L",
+      "D": "Alt + K"
+    },
+    "correct_option": "B",
+    "explanation": "Ctrl + K is the standard shortcut to open the Insert Hyperlink dialog box in Office and web apps."
+  },
+  {
+    "id": 67,
+    "category": "MS Word",
+    "question": "What is the shortcut to center-align the selected text in MS Word?",
+    "options": {
+      "A": "Ctrl + C",
+      "B": "Ctrl + E",
+      "C": "Ctrl + J",
+      "D": "Ctrl + R"
+    },
+    "correct_option": "B",
+    "explanation": "Ctrl + E aligns text to the Center; Ctrl + L is Left, Ctrl + R is Right, and Ctrl + J is Justify."
+  },
+  {
+    "id": 68,
+    "category": "MS Word",
+    "question": "Which shortcut key is used to display the 'Save As' dialog box in MS Word?",
+    "options": {
+      "A": "Ctrl + S",
+      "B": "Shift + F12",
+      "C": "F12",
+      "D": "Alt + S"
+    },
+    "correct_option": "C",
+    "explanation": "F12 directly opens the 'Save As' dialog box. Shift + F12 or Ctrl + S saves the existing file."
+  },
+  {
+    "id": 69,
+    "category": "MS Word",
+    "question": "What is the shortcut to insert the copyright symbol (©) in MS Word?",
+    "options": {
+      "A": "Ctrl + Alt + C",
+      "B": "Alt + Shift + C",
+      "C": "Ctrl + Shift + C",
+      "D": "Win + C"
+    },
+    "correct_option": "A",
+    "explanation": "Ctrl + Alt + C inserts the Copyright symbol (©). Ctrl + Alt + R inserts Registered (®), and Ctrl + Alt + T inserts Trademark (™)."
+  },
+  {
+    "id": 70,
+    "category": "MS Word",
+    "question": "Which shortcut toggles all field codes between show and hide in MS Word?",
+    "options": {
+      "A": "Alt + F9",
+      "B": "Shift + F9",
+      "C": "Ctrl + F9",
+      "D": "F9"
+    },
+    "correct_option": "A",
+    "explanation": "Alt + F9 toggles all field codes in the document; Shift + F9 toggles only the selected field code."
+  },
+  {
+    "id": 71,
+    "category": "MS Excel",
+    "question": "Which shortcut key calculates and recalculates all worksheets in all open workbooks in MS Excel?",
+    "options": {
+      "A": "F5",
+      "B": "F9",
+      "C": "Shift + F9",
+      "D": "Ctrl + Alt + F9"
+    },
+    "correct_option": "B",
+    "explanation": "F9 recalculates all sheets in all open workbooks; Shift + F9 calculates only the active sheet."
+  },
+  {
+    "id": 72,
+    "category": "MS Excel",
+    "question": "What is the shortcut to open the 'Name Manager' in MS Excel?",
+    "options": {
+      "A": "F3",
+      "B": "Ctrl + F3",
+      "C": "Shift + F3",
+      "D": "Alt + F3"
+    },
+    "correct_option": "B",
+    "explanation": "Ctrl + F3 opens Name Manager. F3 opens the 'Paste Name' dialog."
+  },
+  {
+    "id": 73,
+    "category": "MS Excel",
+    "question": "Which shortcut key moves to the very first cell (A1) in an Excel worksheet?",
+    "options": {
+      "A": "Home",
+      "B": "Ctrl + Home",
+      "C": "Alt + Home",
+      "D": "Shift + Home"
+    },
+    "correct_option": "B",
+    "explanation": "Ctrl + Home takes the cursor to cell A1. Home moves the cursor to the beginning of the current row."
+  },
+  {
+    "id": 74,
+    "category": "MS Excel",
+    "question": "What is the shortcut key to insert a comment / note in MS Excel?",
+    "options": {
+      "A": "Shift + F2",
+      "B": "Ctrl + F2",
+      "C": "Alt + F2",
+      "D": "Shift + F3"
+    },
+    "correct_option": "A",
+    "explanation": "Shift + F2 inserts or edits a cell note/comment."
+  },
+  {
+    "id": 75,
+    "category": "MS Excel",
+    "question": "Which key combination deletes the currently selected row or column in Excel?",
+    "options": {
+      "A": "Ctrl + - (Minus)",
+      "B": "Ctrl + Shift + -",
+      "C": "Alt + Delete",
+      "D": "Shift + Delete"
+    },
+    "correct_option": "A",
+    "explanation": "Ctrl + - (Minus) opens the Delete dialog or deletes selected cells/rows/columns immediately. Ctrl + Shift + Plus (+) inserts cells."
+  },
+  {
+    "id": 76,
+    "category": "MS PowerPoint",
+    "question": "Which shortcut key combination ungroups a previously grouped object in PowerPoint?",
+    "options": {
+      "A": "Ctrl + G",
+      "B": "Ctrl + Shift + G",
+      "C": "Alt + Shift + G",
+      "D": "Ctrl + U"
+    },
+    "correct_option": "B",
+    "explanation": "Ctrl + Shift + G ungroups shapes or objects."
+  },
+  {
+    "id": 77,
+    "category": "MS PowerPoint",
+    "question": "How do you jump to a specific slide number (e.g., slide 5) during a live PowerPoint presentation?",
+    "options": {
+      "A": "Press 5 + Enter",
+      "B": "Press Ctrl + 5",
+      "C": "Press Alt + 5",
+      "D": "Press Shift + 5"
+    },
+    "correct_option": "A",
+    "explanation": "Typing [Slide Number] followed by Enter navigates straight to that slide during a slideshow."
+  },
+  {
+    "id": 78,
+    "category": "MS PowerPoint",
+    "question": "What shortcut key promotes/demotes bullet points or changes paragraph levels in PowerPoint lists?",
+    "options": {
+      "A": "Tab / Shift + Tab",
+      "B": "Alt + Shift + Left/Right Arrow",
+      "C": "Both A and B",
+      "D": "Ctrl + Tab"
+    },
+    "correct_option": "C",
+    "explanation": "Both Tab / Shift + Tab and Alt + Shift + Left/Right Arrow indent and demote/promote outline levels."
+  },
+  {
+    "id": 79,
+    "category": "MS PowerPoint",
+    "question": "Which shortcut key hides the mouse pointer and playback controls immediately during a presentation?",
+    "options": {
+      "A": "Ctrl + H",
+      "B": "Ctrl + M",
+      "C": "Ctrl + S",
+      "D": "H"
+    },
+    "correct_option": "A",
+    "explanation": "Ctrl + H hides the cursor and presentation navigation buttons immediately."
+  },
+  {
+    "id": 80,
+    "category": "Windows OS",
+    "question": "Which key combination opens the Windows 'Project' menu to configure external displays/projectors?",
+    "options": {
+      "A": "Win + P",
+      "B": "Win + K",
+      "C": "Alt + P",
+      "D": "Ctrl + P"
+    },
+    "correct_option": "A",
+    "explanation": "Win + P opens the Project side flyout (PC screen only, Duplicate, Extend, Second screen only)."
+  },
+  {
+    "id": 81,
+    "category": "Windows OS",
+    "question": "Which shortcut opens the 'Emoji' and special symbols picker panel in Windows 10 and 11?",
+    "options": {
+      "A": "Win + . (Period)",
+      "B": "Win + ; (Semicolon)",
+      "C": "Both A and B",
+      "D": "Alt + E"
+    },
+    "correct_option": "C",
+    "explanation": "Both Win + . and Win + ; open the native Windows Emoji and Symbol insertion pop-up."
+  },
+  {
+    "id": 82,
+    "category": "Windows OS",
+    "question": "Which shortcut key combination snaps the active window to the left or right half of the screen?",
+    "options": {
+      "A": "Win + Left / Right Arrow",
+      "B": "Alt + Left / Right Arrow",
+      "C": "Ctrl + Left / Right Arrow",
+      "D": "Shift + Left / Right Arrow"
+    },
+    "correct_option": "A",
+    "explanation": "Win + Arrow keys snap and manage windows across grid/halves of monitors."
+  },
+  {
+    "id": 83,
+    "category": "Windows OS",
+    "question": "What is the shortcut key to open the Windows 'Accessibility Magnifier' utility?",
+    "options": {
+      "A": "Win + + (Plus sign)",
+      "B": "Win + M",
+      "C": "Ctrl + +",
+      "D": "Alt + +"
+    },
+    "correct_option": "A",
+    "explanation": "Win + Plus (+) turns on and zooms in with Magnifier; Win + Esc exits Magnifier."
+  },
+  {
+    "id": 84,
+    "category": "Chrome",
+    "question": "Which shortcut key is used to view the HTML Source Code of the current page in Google Chrome?",
+    "options": {
+      "A": "Ctrl + S",
+      "B": "Ctrl + U",
+      "C": "Ctrl + Shift + U",
+      "D": "Alt + U"
+    },
+    "correct_option": "B",
+    "explanation": "Ctrl + U opens the complete HTML source code view of the current web page in a new tab."
+  },
+  {
+    "id": 85,
+    "category": "Chrome",
+    "question": "What shortcut key zooms the webpage back to the default 100% reset level in Chrome?",
+    "options": {
+      "A": "Ctrl + 0 (Zero)",
+      "B": "Ctrl + 1",
+      "C": "Ctrl + Shift + 0",
+      "D": "Alt + 0"
+    },
+    "correct_option": "A",
+    "explanation": "Ctrl + 0 resets the page zoom level to standard 100%."
+  },
+  {
+    "id": 86,
+    "category": "MS Word",
+    "question": "What is the shortcut key to Insert an Endnote in Microsoft Word?",
+    "options": {
+      "A": "Alt + Ctrl + F",
+      "B": "Alt + Ctrl + D",
+      "C": "Ctrl + Shift + E",
+      "D": "Alt + Shift + D"
+    },
+    "correct_option": "B",
+    "explanation": "Alt + Ctrl + D inserts an Endnote; Alt + Ctrl + F inserts a Footnote."
+  },
+  {
+    "id": 87,
+    "category": "MS Word",
+    "question": "Which shortcut toggles 'Track Changes' on or off in MS Word?",
+    "options": {
+      "A": "Ctrl + Shift + E",
+      "B": "Ctrl + Alt + T",
+      "C": "Shift + F11",
+      "D": "Ctrl + T"
+    },
+    "correct_option": "A",
+    "explanation": "Ctrl + Shift + E turns revision tracking (Track Changes) on or off."
+  },
+  {
+    "id": 88,
+    "category": "MS Word",
+    "question": "What is the shortcut key combination to apply 'Heading 1' style in MS Word?",
+    "options": {
+      "A": "Ctrl + 1",
+      "B": "Ctrl + Alt + 1",
+      "C": "Alt + 1",
+      "D": "Shift + Alt + 1"
+    },
+    "correct_option": "B",
+    "explanation": "Ctrl + Alt + 1 applies Heading 1, Ctrl + Alt + 2 applies Heading 2, and Ctrl + Alt + 3 applies Heading 3."
+  },
+  {
+    "id": 89,
+    "category": "MS Word",
+    "question": "Which shortcut key combination closes the active document window without exiting Word entirely?",
+    "options": {
+      "A": "Ctrl + W",
+      "B": "Ctrl + F4",
+      "C": "Both A and B",
+      "D": "Alt + F4"
+    },
+    "correct_option": "C",
+    "explanation": "Both Ctrl + W and Ctrl + F4 close the active document window while keeping Word open."
+  },
+  {
+    "id": 90,
+    "category": "MS Excel",
+    "question": "Which key combination creates an array formula (Legacy dynamic array entry) in MS Excel?",
+    "options": {
+      "A": "Ctrl + Enter",
+      "B": "Ctrl + Shift + Enter",
+      "C": "Alt + Enter",
+      "D": "Shift + Enter"
+    },
+    "correct_option": "B",
+    "explanation": "Ctrl + Shift + Enter (CSE) enters a legacy array formula, enclosing it in curly braces { }."
+  },
+  {
+    "id": 91,
+    "category": "MS Excel",
+    "question": "What shortcut key inserts a new line (line break) inside the same cell in Excel?",
+    "options": {
+      "A": "Enter",
+      "B": "Alt + Enter",
+      "C": "Ctrl + Enter",
+      "D": "Shift + Enter"
+    },
+    "correct_option": "B",
+    "explanation": "Alt + Enter adds a line break within a single Excel cell."
+  },
+  {
+    "id": 92,
+    "category": "MS Excel",
+    "question": "Which shortcut fills the exact same data/formula across all selected cells at once?",
+    "options": {
+      "A": "Ctrl + Enter",
+      "B": "Shift + Enter",
+      "C": "Alt + Enter",
+      "D": "Ctrl + Shift + Enter"
+    },
+    "correct_option": "A",
+    "explanation": "Typing content and pressing Ctrl + Enter fills all currently selected cells with that content."
+  },
+  {
+    "id": 93,
+    "category": "MS Excel",
+    "question": "What is the shortcut key to navigate to the Next Worksheet in the workbook?",
+    "options": {
+      "A": "Ctrl + Page Down",
+      "B": "Ctrl + Page Up",
+      "C": "Alt + Page Down",
+      "D": "Shift + Tab"
+    },
+    "correct_option": "A",
+    "explanation": "Ctrl + Page Down moves to the sheet to the right; Ctrl + Page Up moves to the sheet to the left."
+  },
+  {
+    "id": 94,
+    "category": "MS PowerPoint",
+    "question": "Which shortcut key opens the PowerPoint 'Replace' dialog box?",
+    "options": {
+      "A": "Ctrl + R",
+      "B": "Ctrl + H",
+      "C": "Ctrl + F",
+      "D": "Ctrl + Shift + H"
+    },
+    "correct_option": "B",
+    "explanation": "Ctrl + H opens the Find and Replace dialog with the Replace tab active in PowerPoint and Word."
+  },
+  {
+    "id": 95,
+    "category": "MS PowerPoint",
+    "question": "Which shortcut key aligns selected text to the Right in PowerPoint?",
+    "options": {
+      "A": "Ctrl + L",
+      "B": "Ctrl + R",
+      "C": "Ctrl + E",
+      "D": "Ctrl + J"
+    },
+    "correct_option": "B",
+    "explanation": "Ctrl + R right-aligns selected text; Ctrl + L left-aligns."
+  },
+  {
+    "id": 96,
+    "category": "Windows OS",
+    "question": "Which key combination opens the Windows 'Search' bar directly from anywhere?",
+    "options": {
+      "A": "Win + S",
+      "B": "Win + Q",
+      "C": "Both A and B",
+      "D": "Alt + S"
+    },
+    "correct_option": "C",
+    "explanation": "Both Win + S and Win + Q open Windows Search immediately."
+  },
+  {
+    "id": 97,
+    "category": "Windows OS",
+    "question": "Which shortcut key combination cycles backward through open windows in Windows?",
+    "options": {
+      "A": "Alt + Tab",
+      "B": "Alt + Shift + Tab",
+      "C": "Ctrl + Tab",
+      "D": "Win + Tab"
+    },
+    "correct_option": "B",
+    "explanation": "Alt + Shift + Tab cycles through open windows in reverse order."
+  },
+  {
+    "id": 98,
+    "category": "Chrome",
+    "question": "What is the shortcut key to open the Chrome 'History' page directly?",
+    "options": {
+      "A": "Ctrl + H",
+      "B": "Ctrl + Shift + H",
+      "C": "Alt + H",
+      "D": "Ctrl + Y"
+    },
+    "correct_option": "A",
+    "explanation": "Ctrl + H opens the full browsing history tab in Google Chrome."
+  },
+  {
+    "id": 99,
+    "category": "Chrome",
+    "question": "Which shortcut key bookmarks all open tabs into a new folder in Google Chrome?",
+    "options": {
+      "A": "Ctrl + D",
+      "B": "Ctrl + Shift + D",
+      "C": "Alt + Shift + D",
+      "D": "Ctrl + B"
+    },
+    "correct_option": "B",
+    "explanation": "Ctrl + Shift + D saves all currently open tabs in the window as bookmarks in a new folder."
+  },
+  {
+    "id": 100,
+    "category": "General Computer",
+    "question": "Which key combination displays the Properties dialog for a selected file or folder in Windows?",
+    "options": {
+      "A": "Alt + Enter",
+      "B": "Alt + Double Click",
+      "C": "Both A and B",
+      "D": "Ctrl + Enter"
+    },
+    "correct_option": "C",
+    "explanation": "Both Alt + Enter and Alt + Double Click open the Properties sheet of the selected file/folder."
+  },
+  {
+    "id": 101,
+    "category": "MS Word",
+    "question": "Which keyboard shortcut is used to apply the 'Double Underline' formatting to selected text in MS Word?",
+    "options": {
+      "A": "Ctrl + U",
+      "B": "Ctrl + Shift + U",
+      "C": "Ctrl + Shift + D",
+      "D": "Alt + Shift + D"
+    },
+    "correct_option": "C",
+    "explanation": "Ctrl + Shift + D applies double underline. Ctrl + U applies single underline, and Ctrl + Shift + W underlines only words (not spaces)."
+  },
+  {
+    "id": 102,
+    "category": "MS Word",
+    "question": "What is the shortcut key to underline words only (excluding spaces between words) in MS Word?",
+    "options": {
+      "A": "Ctrl + W",
+      "B": "Ctrl + Shift + W",
+      "C": "Alt + Shift + W",
+      "D": "Ctrl + Alt + W"
+    },
+    "correct_option": "B",
+    "explanation": "Ctrl + Shift + W underlines individual words without underlining the spaces between them."
+  },
+  {
+    "id": 103,
+    "category": "MS Word",
+    "question": "Which shortcut key combination formats selected text into 'Small Capitals' (Small Caps) in MS Word?",
+    "options": {
+      "A": "Ctrl + Shift + K",
+      "B": "Ctrl + Shift + A",
+      "C": "Ctrl + Alt + K",
+      "D": "Alt + Shift + K"
+    },
+    "correct_option": "A",
+    "explanation": "Ctrl + Shift + K toggles Small Caps formatting. Ctrl + Shift + A changes text to All Caps."
+  },
+  {
+    "id": 104,
+    "category": "MS Word",
+    "question": "Which shortcut key is used to change selected text to 'All Capitals' (ALL CAPS) in MS Word?",
+    "options": {
+      "A": "Ctrl + Shift + A",
+      "B": "Ctrl + Shift + C",
+      "C": "Shift + F3",
+      "D": "Alt + A"
+    },
+    "correct_option": "A",
+    "explanation": "Ctrl + Shift + A formats text as All Caps, whereas Shift + F3 cycles through lowercase, UPPERCASE, and Sentence case."
+  },
+  {
+    "id": 105,
+    "category": "MS Word",
+    "question": "What is the shortcut key to apply the default 'Normal' style to a paragraph in MS Word?",
+    "options": {
+      "A": "Ctrl + Shift + N",
+      "B": "Ctrl + N",
+      "C": "Alt + Ctrl + N",
+      "D": "Ctrl + Spacebar"
+    },
+    "correct_option": "A",
+    "explanation": "Ctrl + Shift + N applies the Normal paragraph style. Ctrl + N opens a brand new blank document."
+  },
+  {
+    "id": 106,
+    "category": "MS Word",
+    "question": "Which shortcut key displays or hides non-printing formatting characters (like paragraph marks ¶, spaces, tabs) in MS Word?",
+    "options": {
+      "A": "Ctrl + Shift + 8",
+      "B": "Ctrl + *",
+      "C": "Both A and B",
+      "D": "Ctrl + Shift + *"
+    },
+    "correct_option": "C",
+    "explanation": "Ctrl + Shift + 8 (which corresponds to Ctrl + *) toggles the display of non-printing formatting marks (Show/Hide ¶)."
+  },
+  {
+    "id": 107,
+    "category": "MS Word",
+    "question": "What is the shortcut key to insert a Footnote in Microsoft Word?",
+    "options": {
+      "A": "Alt + Ctrl + F",
+      "B": "Alt + Ctrl + D",
+      "C": "Ctrl + Shift + F",
+      "D": "Alt + Shift + F"
+    },
+    "correct_option": "A",
+    "explanation": "Alt + Ctrl + F inserts a Footnote at the bottom of the page; Alt + Ctrl + D inserts an Endnote at the end of the document."
+  },
+  {
+    "id": 108,
+    "category": "MS Word",
+    "question": "Which shortcut key combination inserts a Comment at the cursor location in MS Word?",
+    "options": {
+      "A": "Ctrl + Alt + M",
+      "B": "Alt + Ctrl + C",
+      "C": "Ctrl + Shift + M",
+      "D": "Alt + Shift + C"
+    },
+    "correct_option": "A",
+    "explanation": "Ctrl + Alt + M inserts a new comment in Microsoft Word."
+  },
+  {
+    "id": 109,
+    "category": "MS Word",
+    "question": "Which shortcut key moves selected table rows up or down in an MS Word table?",
+    "options": {
+      "A": "Alt + Shift + Up/Down Arrow",
+      "B": "Ctrl + Shift + Up/Down Arrow",
+      "C": "Ctrl + Alt + Up/Down Arrow",
+      "D": "Shift + Up/Down Arrow"
+    },
+    "correct_option": "A",
+    "explanation": "Alt + Shift + Up/Down Arrow moves the selected table row or whole paragraph up or down in the document."
+  },
+  {
+    "id": 110,
+    "category": "MS Word",
+    "question": "What is the shortcut key to insert a manual soft line break (without creating a new paragraph) in MS Word?",
+    "options": {
+      "A": "Ctrl + Enter",
+      "B": "Shift + Enter",
+      "C": "Alt + Enter",
+      "D": "Ctrl + Shift + Enter"
+    },
+    "correct_option": "B",
+    "explanation": "Shift + Enter creates a soft line break (carriage return) within the same paragraph."
+  },
+  {
+    "id": 111,
+    "category": "MS Word",
+    "question": "Which shortcut key repeats or reapplies the last action or command in Microsoft Word?",
+    "options": {
+      "A": "F4",
+      "B": "Ctrl + Y",
+      "C": "Both A and B",
+      "D": "F9"
+    },
+    "correct_option": "C",
+    "explanation": "Both F4 and Ctrl + Y repeat the last action or formatting performed in MS Word."
+  },
+  {
+    "id": 112,
+    "category": "MS Word",
+    "question": "Which keyboard shortcut inserts the Registered Trademark symbol (®) in MS Word?",
+    "options": {
+      "A": "Ctrl + Alt + R",
+      "B": "Alt + Shift + R",
+      "C": "Ctrl + Shift + R",
+      "D": "Alt + R"
+    },
+    "correct_option": "A",
+    "explanation": "Ctrl + Alt + R inserts the Registered Trademark symbol (®)."
+  },
+  {
+    "id": 113,
+    "category": "MS Word",
+    "question": "Which shortcut key combination inserts the dynamic Time field in MS Word?",
+    "options": {
+      "A": "Alt + Shift + T",
+      "B": "Ctrl + Shift + T",
+      "C": "Ctrl + ;",
+      "D": "Alt + Ctrl + T"
+    },
+    "correct_option": "A",
+    "explanation": "Alt + Shift + T inserts the dynamic Time field; Alt + Shift + D inserts the Date field."
+  },
+  {
+    "id": 114,
+    "category": "MS Word",
+    "question": "Which key combination deletes one whole word to the left of the cursor in MS Word?",
+    "options": {
+      "A": "Ctrl + Backspace",
+      "B": "Ctrl + Delete",
+      "C": "Shift + Backspace",
+      "D": "Alt + Backspace"
+    },
+    "correct_option": "A",
+    "explanation": "Ctrl + Backspace deletes the word to the left of the cursor; Ctrl + Delete deletes the word to the right."
+  },
+  {
+    "id": 115,
+    "category": "MS Word",
+    "question": "Which shortcut key deletes one whole word to the right of the cursor in MS Word?",
+    "options": {
+      "A": "Ctrl + Delete",
+      "B": "Ctrl + Backspace",
+      "C": "Shift + Delete",
+      "D": "Alt + Delete"
+    },
+    "correct_option": "A",
+    "explanation": "Ctrl + Delete removes the entire word immediately to the right of the insertion cursor."
+  },
+  {
+    "id": 116,
+    "category": "MS Word",
+    "question": "What is the shortcut key to update selected fields (such as Table of Contents or Formulas) in MS Word?",
+    "options": {
+      "A": "F5",
+      "B": "F9",
+      "C": "Shift + F9",
+      "D": "Ctrl + F9"
+    },
+    "correct_option": "B",
+    "explanation": "F9 updates selected fields in MS Word (e.g., calculations, formulas, TOC entries)."
+  },
+  {
+    "id": 117,
+    "category": "MS Word",
+    "question": "Which shortcut key combination inserts an empty field code braces '{ }' in MS Word?",
+    "options": {
+      "A": "Ctrl + F9",
+      "B": "Alt + F9",
+      "C": "Shift + F9",
+      "D": "Ctrl + Shift + F9"
+    },
+    "correct_option": "A",
+    "explanation": "Ctrl + F9 creates special field code brackets { } used for custom formulas and mail merge fields."
+  },
+  {
+    "id": 118,
+    "category": "MS Word",
+    "question": "What is the shortcut key to unlink a field and convert it permanently into plain static text in MS Word?",
+    "options": {
+      "A": "Ctrl + Shift + F9",
+      "B": "Alt + F9",
+      "C": "Ctrl + F9",
+      "D": "Shift + F9"
+    },
+    "correct_option": "A",
+    "explanation": "Ctrl + Shift + F9 unlinks the field, replacing dynamic fields permanently with their current displayed text."
+  },
+  {
+    "id": 119,
+    "category": "MS Word",
+    "question": "Which shortcut key moves the cursor to the top of the next page in MS Word?",
+    "options": {
+      "A": "Ctrl + Page Down",
+      "B": "Alt + Page Down",
+      "C": "Page Down",
+      "D": "Shift + Page Down"
+    },
+    "correct_option": "A",
+    "explanation": "Ctrl + Page Down moves the cursor to the top of the next page, and Ctrl + Page Up moves to the previous page."
+  },
+  {
+    "id": 120,
+    "category": "MS Word",
+    "question": "What is the shortcut key to close the Print Preview screen and return to Normal Document View in MS Word?",
+    "options": {
+      "A": "Esc",
+      "B": "Ctrl + W",
+      "C": "Ctrl + F2",
+      "D": "Alt + Left Arrow"
+    },
+    "correct_option": "A",
+    "explanation": "Pressing Esc exits the Print Preview screen and returns to the normal editing view."
+  },
+  {
+    "id": 121,
+    "category": "MS Excel",
+    "question": "Which keyboard shortcut opens the 'Insert Cells / Rows / Columns' dialog box in MS Excel?",
+    "options": {
+      "A": "Ctrl + Shift + + (Plus)",
+      "B": "Ctrl + +",
+      "C": "Alt + I",
+      "D": "Ctrl + I"
+    },
+    "correct_option": "A",
+    "explanation": "Ctrl + Shift + + (or Ctrl + Plus on numeric keypad) opens the Insert dialog to add cells, rows, or columns."
+  },
+  {
+    "id": 122,
+    "category": "MS Excel",
+    "question": "What is the shortcut key combination to apply the 'Currency' format with two decimal places in MS Excel?",
+    "options": {
+      "A": "Ctrl + Shift + $ (or Ctrl + Shift + 4)",
+      "B": "Ctrl + Shift + %",
+      "C": "Ctrl + Shift + #",
+      "D": "Ctrl + Shift + @"
+    },
+    "correct_option": "A",
+    "explanation": "Ctrl + Shift + $ applies the Currency format with 2 decimal places and negative numbers in parentheses."
+  },
+  {
+    "id": 123,
+    "category": "MS Excel",
+    "question": "Which shortcut key combination formats numbers as a 'Percentage' with zero decimal places in MS Excel?",
+    "options": {
+      "A": "Ctrl + Shift + % (or Ctrl + Shift + 5)",
+      "B": "Ctrl + Shift + ^",
+      "C": "Ctrl + Shift + @",
+      "D": "Ctrl + %"
+    },
+    "correct_option": "A",
+    "explanation": "Ctrl + Shift + % formats the selected cells with Percentage style with no decimal places."
+  },
+  {
+    "id": 124,
+    "category": "MS Excel",
+    "question": "Which shortcut key applies the 'Date' format (day, month, year) in MS Excel?",
+    "options": {
+      "A": "Ctrl + Shift + # (or Ctrl + Shift + 3)",
+      "B": "Ctrl + Shift + @",
+      "C": "Ctrl + Shift + !",
+      "D": "Ctrl + Shift + $"
+    },
+    "correct_option": "A",
+    "explanation": "Ctrl + Shift + # applies the standard Date format (dd-mmm-yy)."
+  },
+  {
+    "id": 125,
+    "category": "MS Excel",
+    "question": "Which shortcut key applies the 'Time' format (hour, minute, AM/PM) in MS Excel?",
+    "options": {
+      "A": "Ctrl + Shift + @ (or Ctrl + Shift + 2)",
+      "B": "Ctrl + Shift + #",
+      "C": "Ctrl + Shift + ^",
+      "D": "Ctrl + Shift + !"
+    },
+    "correct_option": "A",
+    "explanation": "Ctrl + Shift + @ applies Time formatting with hour, minute, and AM or PM."
+  },
+  {
+    "id": 126,
+    "category": "MS Excel",
+    "question": "Which shortcut key applies the 'Scientific' (exponential) number format in MS Excel?",
+    "options": {
+      "A": "Ctrl + Shift + ^ (or Ctrl + Shift + 6)",
+      "B": "Ctrl + Shift + !",
+      "C": "Ctrl + Shift + ~",
+      "D": "Ctrl + Shift + &"
+    },
+    "correct_option": "A",
+    "explanation": "Ctrl + Shift + ^ applies the Scientific number format with two decimal places."
+  },
+  {
+    "id": 127,
+    "category": "MS Excel",
+    "question": "Which shortcut key applies the standard 'Number' format with two decimal places and a thousands separator in Excel?",
+    "options": {
+      "A": "Ctrl + Shift + ! (or Ctrl + Shift + 1)",
+      "B": "Ctrl + Shift + $",
+      "C": "Ctrl + Shift + ~",
+      "D": "Ctrl + Shift + *"
+    },
+    "correct_option": "A",
+    "explanation": "Ctrl + Shift + ! applies standard Number formatting with two decimal places and comma separators."
+  },
+  {
+    "id": 128,
+    "category": "MS Excel",
+    "question": "What is the shortcut key to open the 'Paste Special' dialog box in MS Excel?",
+    "options": {
+      "A": "Ctrl + Alt + V",
+      "B": "Ctrl + Shift + V",
+      "C": "Alt + E + S",
+      "D": "Both A and C"
+    },
+    "correct_option": "D",
+    "explanation": "Both Ctrl + Alt + V and the legacy shortcut Alt + E + S open the Paste Special dialog in Excel."
+  },
+  {
+    "id": 129,
+    "category": "MS Excel",
+    "question": "Which keyboard shortcut applies an outline border to the selected cells in MS Excel?",
+    "options": {
+      "A": "Ctrl + Shift + & (or Ctrl + Shift + 7)",
+      "B": "Ctrl + Shift + _",
+      "C": "Alt + B + O",
+      "D": "Ctrl + B"
+    },
+    "correct_option": "A",
+    "explanation": "Ctrl + Shift + & applies an outline border; Ctrl + Shift + _ removes all borders from the selected cells."
+  },
+  {
+    "id": 130,
+    "category": "MS Excel",
+    "question": "What shortcut key removes all borders from the selected cells in MS Excel?",
+    "options": {
+      "A": "Ctrl + Shift + _ (Underscore)",
+      "B": "Ctrl + Shift + -",
+      "C": "Alt + B + N",
+      "D": "Ctrl + Alt + B"
+    },
+    "correct_option": "A",
+    "explanation": "Ctrl + Shift + _ removes all borders from selected cells."
+  },
+  {
+    "id": 131,
+    "category": "MS Excel",
+    "question": "Which shortcut key opens the 'Insert Function' formula wizard dialog in MS Excel?",
+    "options": {
+      "A": "Shift + F3",
+      "B": "Ctrl + F3",
+      "C": "Alt + F3",
+      "D": "F3"
+    },
+    "correct_option": "A",
+    "explanation": "Shift + F3 opens the Insert Function dialog to search and select formulas."
+  },
+  {
+    "id": 132,
+    "category": "MS Excel",
+    "question": "What is the keyboard shortcut to Unhide any hidden rows within the selected range in MS Excel?",
+    "options": {
+      "A": "Ctrl + Shift + 9",
+      "B": "Ctrl + Shift + 0",
+      "C": "Alt + Shift + 9",
+      "D": "Ctrl + 9"
+    },
+    "correct_option": "A",
+    "explanation": "Ctrl + Shift + 9 unhides hidden rows within the selection. (Ctrl + 9 hides rows)."
+  },
+  {
+    "id": 133,
+    "category": "MS Excel",
+    "question": "What is the keyboard shortcut to Unhide any hidden columns in MS Excel?",
+    "options": {
+      "A": "Ctrl + Shift + 0",
+      "B": "Ctrl + Shift + )",
+      "C": "Both A and B",
+      "D": "Ctrl + 0"
+    },
+    "correct_option": "C",
+    "explanation": "Ctrl + Shift + 0 (or Ctrl + Shift + ')') unhides columns in modern Excel versions."
+  },
+  {
+    "id": 134,
+    "category": "MS Excel",
+    "question": "Which shortcut key moves the cursor to the Last Used Cell (bottom-right intersection) in an Excel worksheet?",
+    "options": {
+      "A": "Ctrl + End",
+      "B": "Ctrl + Down Arrow",
+      "C": "Alt + End",
+      "D": "Shift + End"
+    },
+    "correct_option": "A",
+    "explanation": "Ctrl + End moves the selection to the bottom-right used cell in the active worksheet."
+  },
+  {
+    "id": 135,
+    "category": "MS Excel",
+    "question": "Which shortcut key opens the drop-down list of values for a cell with Data Validation or text auto-complete in Excel?",
+    "options": {
+      "A": "Alt + Down Arrow",
+      "B": "Ctrl + Down Arrow",
+      "C": "Shift + Down Arrow",
+      "D": "F4"
+    },
+    "correct_option": "A",
+    "explanation": "Alt + Down Arrow displays the picklist / drop-down menu of available values for the active cell."
+  },
+  {
+    "id": 136,
+    "category": "MS Excel",
+    "question": "What is the shortcut to select all cells in the 'Current Region' surrounding the active cell in Excel?",
+    "options": {
+      "A": "Ctrl + Shift + * (or Ctrl + A)",
+      "B": "Ctrl + Spacebar",
+      "C": "Alt + A",
+      "D": "Shift + Spacebar"
+    },
+    "correct_option": "A",
+    "explanation": "Ctrl + Shift + * (or Ctrl + A inside a data block) selects the continuous range of data surrounding the active cell."
+  },
+  {
+    "id": 137,
+    "category": "MS Excel",
+    "question": "Which shortcut key moves the active cell focus one full screen to the right in an Excel worksheet?",
+    "options": {
+      "A": "Alt + Page Down",
+      "B": "Ctrl + Page Down",
+      "C": "Shift + Page Down",
+      "D": "Page Down"
+    },
+    "correct_option": "A",
+    "explanation": "Alt + Page Down moves the view one screen to the right horizontally; Alt + Page Up moves one screen to the left."
+  },
+  {
+    "id": 138,
+    "category": "MS Excel",
+    "question": "What is the shortcut key to expand or collapse the Formula Bar in MS Excel?",
+    "options": {
+      "A": "Ctrl + Shift + U",
+      "B": "Alt + F1",
+      "C": "Ctrl + F1",
+      "D": "Shift + F1"
+    },
+    "correct_option": "A",
+    "explanation": "Ctrl + Shift + U expands or collapses the formula bar to view long formulas."
+  },
+  {
+    "id": 139,
+    "category": "MS Excel",
+    "question": "Which shortcut key is used to fill the content of the active cell to the Right (Fill Right)?",
+    "options": {
+      "A": "Ctrl + R",
+      "B": "Ctrl + D",
+      "C": "Alt + R",
+      "D": "Shift + R"
+    },
+    "correct_option": "A",
+    "explanation": "Ctrl + R copies the formula or value from the leftmost cell of a selected range into the cells to the right."
+  },
+  {
+    "id": 140,
+    "category": "MS Excel",
+    "question": "Which shortcut key opens the standard 'Go To' dialog box in MS Excel?",
+    "options": {
+      "A": "F5",
+      "B": "Ctrl + G",
+      "C": "Both A and B",
+      "D": "Alt + G"
+    },
+    "correct_option": "C",
+    "explanation": "Both F5 and Ctrl + G display the Go To dialog box to jump to specific cell addresses or named ranges."
+  },
+  {
+    "id": 141,
+    "category": "MS PowerPoint",
+    "question": "Which shortcut key displays the 'Presenter View' when giving a presentation in PowerPoint?",
+    "options": {
+      "A": "Alt + F5",
+      "B": "Shift + F5",
+      "C": "Ctrl + F5",
+      "D": "Win + F5"
+    },
+    "correct_option": "A",
+    "explanation": "Alt + F5 launches the slide show directly in Presenter View on a single screen."
+  },
+  {
+    "id": 142,
+    "category": "MS PowerPoint",
+    "question": "During a PowerPoint Slide Show, which key changes the pointer to an Arrow pointer (default)?",
+    "options": {
+      "A": "Ctrl + A",
+      "B": "Ctrl + U",
+      "C": "Ctrl + P",
+      "D": "Ctrl + Arrow"
+    },
+    "correct_option": "A",
+    "explanation": "Ctrl + A converts the pen/laser pointer back into the standard Arrow cursor during a slide show."
+  },
+  {
+    "id": 143,
+    "category": "MS PowerPoint",
+    "question": "During a PowerPoint Slide Show, which shortcut key turns the mouse pointer into a 'Highlighter'?",
+    "options": {
+      "A": "Ctrl + I",
+      "B": "Ctrl + H",
+      "C": "Ctrl + L",
+      "D": "Alt + I"
+    },
+    "correct_option": "A",
+    "explanation": "Ctrl + I turns the pointer into a yellow highlighter during a slide show."
+  },
+  {
+    "id": 144,
+    "category": "MS PowerPoint",
+    "question": "During a Slide Show in PowerPoint, which single key is pressed to Erase all on-screen ink drawings?",
+    "options": {
+      "A": "E",
+      "B": "Ctrl + E",
+      "C": "Delete",
+      "D": "Backspace"
+    },
+    "correct_option": "A",
+    "explanation": "Pressing the 'E' key removes all pen and highlighter annotations drawn on the current slide."
+  },
+  {
+    "id": 145,
+    "category": "MS PowerPoint",
+    "question": "Which shortcut key combination turns the 'Gridlines' on or off in PowerPoint?",
+    "options": {
+      "A": "Shift + F9",
+      "B": "Alt + F9",
+      "C": "Ctrl + F9",
+      "D": "F9"
+    },
+    "correct_option": "A",
+    "explanation": "Shift + F9 toggles the alignment Gridlines on or off. Alt + F9 toggles the Drawing Guides."
+  },
+  {
+    "id": 146,
+    "category": "MS PowerPoint",
+    "question": "Which shortcut key toggles the display of 'Guides' in MS PowerPoint?",
+    "options": {
+      "A": "Alt + F9",
+      "B": "Shift + F9",
+      "C": "Ctrl + Shift + G",
+      "D": "Ctrl + G"
+    },
+    "correct_option": "A",
+    "explanation": "Alt + F9 turns visual Guide lines on or off in PowerPoint."
+  },
+  {
+    "id": 147,
+    "category": "MS PowerPoint",
+    "question": "Which shortcut key combination opens the 'Font' formatting dialog box in MS PowerPoint?",
+    "options": {
+      "A": "Ctrl + T",
+      "B": "Ctrl + Shift + F",
+      "C": "Ctrl + Shift + P",
+      "D": "All of the above"
+    },
+    "correct_option": "D",
+    "explanation": "Ctrl + T, Ctrl + Shift + F, and Ctrl + Shift + P all open the Font formatting dialog box in PowerPoint."
+  },
+  {
+    "id": 148,
+    "category": "MS PowerPoint",
+    "question": "During an ongoing Slide Show, which key combination displays the 'All Slides' selection grid to jump to any slide?",
+    "options": {
+      "A": "Ctrl + S",
+      "B": "Ctrl + G",
+      "C": "Shift + S",
+      "D": "Alt + S"
+    },
+    "correct_option": "A",
+    "explanation": "Ctrl + S opens the 'All Slides' dialog during a presentation, allowing the presenter to choose any slide by title."
+  },
+  {
+    "id": 149,
+    "category": "MS PowerPoint",
+    "question": "What is the shortcut key to Left-Align selected paragraph text in PowerPoint?",
+    "options": {
+      "A": "Ctrl + L",
+      "B": "Ctrl + E",
+      "C": "Ctrl + R",
+      "D": "Ctrl + J"
+    },
+    "correct_option": "A",
+    "explanation": "Ctrl + L aligns text to the left margin."
+  },
+  {
+    "id": 150,
+    "category": "MS PowerPoint",
+    "question": "What is the shortcut key to Justify selected paragraph text in PowerPoint?",
+    "options": {
+      "A": "Ctrl + J",
+      "B": "Ctrl + E",
+      "C": "Ctrl + H",
+      "D": "Alt + J"
+    },
+    "correct_option": "A",
+    "explanation": "Ctrl + J aligns text evenly along both left and right margins (Justify)."
+  },
+  {
+    "id": 151,
+    "category": "Windows OS",
+    "question": "Which shortcut key combination opens the 'Action Center' / 'Quick Settings' panel in Windows?",
+    "options": {
+      "A": "Win + A",
+      "B": "Win + C",
+      "C": "Win + Q",
+      "D": "Win + S"
+    },
+    "correct_option": "A",
+    "explanation": "Win + A opens Quick Settings (Wi-Fi, Bluetooth, Volume, Brightness) in Windows 11 / Action Center in Windows 10."
+  },
+  {
+    "id": 152,
+    "category": "Windows OS",
+    "question": "Which shortcut key opens the 'Notification Center' and Calendar flyout in Windows 11?",
+    "options": {
+      "A": "Win + N",
+      "B": "Win + C",
+      "C": "Win + Alt + D",
+      "D": "Win + K"
+    },
+    "correct_option": "A",
+    "explanation": "Win + N opens the Notification Center and Calendar overlay in Windows 11."
+  },
+  {
+    "id": 153,
+    "category": "Windows OS",
+    "question": "What shortcut key opens the Windows Speech Recognition / 'Voice Typing' dictation tool?",
+    "options": {
+      "A": "Win + H",
+      "B": "Win + V",
+      "C": "Ctrl + Shift + S",
+      "D": "Alt + H"
+    },
+    "correct_option": "A",
+    "explanation": "Win + H launches the Voice Typing / Dictation toolbar."
+  },
+  {
+    "id": 154,
+    "category": "Windows OS",
+    "question": "Which shortcut key opens the 'Cast' / 'Connect' flyout to connect to wireless displays and audio devices?",
+    "options": {
+      "A": "Win + K",
+      "B": "Win + P",
+      "C": "Win + C",
+      "D": "Ctrl + K"
+    },
+    "correct_option": "A",
+    "explanation": "Win + K opens the Connect / Cast flyout for Miracast wireless screens and Bluetooth audio."
+  },
+  {
+    "id": 155,
+    "category": "Windows OS",
+    "question": "Which keyboard shortcut opens the 'Xbox Game Bar' in Windows for screen recording and performance widgets?",
+    "options": {
+      "A": "Win + G",
+      "B": "Win + X",
+      "C": "Ctrl + Shift + G",
+      "D": "Alt + G"
+    },
+    "correct_option": "A",
+    "explanation": "Win + G launches the Xbox Game Bar overlay."
+  },
+  {
+    "id": 156,
+    "category": "Windows OS",
+    "question": "What is the shortcut key to start or stop screen video recording using the Xbox Game Bar in Windows?",
+    "options": {
+      "A": "Win + Alt + R",
+      "B": "Win + Shift + R",
+      "C": "Ctrl + Alt + R",
+      "D": "Win + R"
+    },
+    "correct_option": "A",
+    "explanation": "Win + Alt + R immediately begins or stops screen video recording."
+  },
+  {
+    "id": 157,
+    "category": "Windows OS",
+    "question": "Which shortcut key opens the virtual 'On-Screen Keyboard' (OSK) in Windows?",
+    "options": {
+      "A": "Win + Ctrl + O",
+      "B": "Win + O",
+      "C": "Ctrl + Shift + O",
+      "D": "Alt + Shift + O"
+    },
+    "correct_option": "A",
+    "explanation": "Win + Ctrl + O launches the accessibility On-Screen Keyboard application."
+  },
+  {
+    "id": 158,
+    "category": "Windows OS",
+    "question": "Which emergency shortcut combination restarts and resets the Graphics / Video Driver in Windows?",
+    "options": {
+      "A": "Win + Ctrl + Shift + B",
+      "B": "Ctrl + Alt + Shift + G",
+      "C": "Win + Alt + Del",
+      "D": "Win + Shift + D"
+    },
+    "correct_option": "A",
+    "explanation": "Win + Ctrl + Shift + B sends an emergency beep and restarts the GPU display driver to fix black/frozen screens."
+  },
+  {
+    "id": 159,
+    "category": "Windows OS",
+    "question": "Which shortcut key moves an active window to the monitor on the Left or Right in a multi-display setup?",
+    "options": {
+      "A": "Win + Shift + Left / Right Arrow",
+      "B": "Alt + Shift + Left / Right Arrow",
+      "C": "Ctrl + Win + Left / Right Arrow",
+      "D": "Ctrl + Alt + Left / Right Arrow"
+    },
+    "correct_option": "A",
+    "explanation": "Win + Shift + Left/Right Arrow jumps the active application window across physical monitors."
+  },
+  {
+    "id": 160,
+    "category": "Windows OS",
+    "question": "What happens when you press 'Win + [Number 1 to 9]' in Windows?",
+    "options": {
+      "A": "Switches to that specific Virtual Desktop",
+      "B": "Opens or switches to the pinned application in that position on the Taskbar",
+      "C": "Changes the desktop wallpaper index",
+      "D": "Adjusts display brightness"
+    },
+    "correct_option": "B",
+    "explanation": "Win + 1 through Win + 9 launches or focuses the app pinned in that numbered position on the taskbar."
+  },
+  {
+    "id": 161,
+    "category": "Windows OS",
+    "question": "Which shortcut key opens the 'Snap Layouts' menu on Windows 11 for the active window?",
+    "options": {
+      "A": "Win + Z",
+      "B": "Win + S",
+      "C": "Alt + Spacebar",
+      "D": "Win + Tab"
+    },
+    "correct_option": "A",
+    "explanation": "Win + Z opens the Snap Layouts pop-up box to organize multi-window grids."
+  },
+  {
+    "id": 162,
+    "category": "Windows OS",
+    "question": "What is the shortcut key to close the active Virtual Desktop in Windows 10/11?",
+    "options": {
+      "A": "Win + Ctrl + F4",
+      "B": "Win + F4",
+      "C": "Alt + F4",
+      "D": "Win + Ctrl + W"
+    },
+    "correct_option": "A",
+    "explanation": "Win + Ctrl + F4 closes the current virtual desktop and moves open apps to the adjacent desktop."
+  },
+  {
+    "id": 163,
+    "category": "Windows OS",
+    "question": "Which shortcut key switches between open Virtual Desktops to the left or right?",
+    "options": {
+      "A": "Win + Ctrl + Left / Right Arrow",
+      "B": "Alt + Tab",
+      "C": "Ctrl + Left / Right Arrow",
+      "D": "Win + Shift + Tab"
+    },
+    "correct_option": "A",
+    "explanation": "Win + Ctrl + Left/Right Arrow slides smoothly between created virtual desktops."
+  },
+  {
+    "id": 164,
+    "category": "Windows OS",
+    "question": "Which shortcut key opens the 'System Properties / About Settings' window directly in Windows?",
+    "options": {
+      "A": "Win + Pause / Break",
+      "B": "Win + S",
+      "C": "Ctrl + Shift + Pause",
+      "D": "Win + Shift + P"
+    },
+    "correct_option": "A",
+    "explanation": "Win + Pause/Break directly opens the About System Information screen."
+  },
+  {
+    "id": 165,
+    "category": "Windows OS",
+    "question": "Which keyboard shortcut creates a New Folder instantly in Windows File Explorer?",
+    "options": {
+      "A": "Ctrl + Shift + N",
+      "B": "Ctrl + N",
+      "C": "Alt + Shift + N",
+      "D": "Win + Shift + N"
+    },
+    "correct_option": "A",
+    "explanation": "Ctrl + Shift + N creates a 'New folder' in File Explorer and on the Desktop."
+  },
+  {
+    "id": 166,
+    "category": "Windows OS",
+    "question": "What is the shortcut key to Maximize the currently active window in Windows?",
+    "options": {
+      "A": "Win + Up Arrow",
+      "B": "Alt + F10",
+      "C": "Both A and B",
+      "D": "Win + M"
+    },
+    "correct_option": "C",
+    "explanation": "Both Win + Up Arrow and Alt + F10 maximize the active application window."
+  },
+  {
+    "id": 167,
+    "category": "Windows OS",
+    "question": "Which shortcut key captures an image of ONLY the currently active window to the clipboard?",
+    "options": {
+      "A": "Alt + PrtScn",
+      "B": "Ctrl + PrtScn",
+      "C": "Win + PrtScn",
+      "D": "Shift + PrtScn"
+    },
+    "correct_option": "A",
+    "explanation": "Alt + PrtScn copies a screenshot of solely the active foreground window to the clipboard."
+  },
+  {
+    "id": 168,
+    "category": "Windows OS",
+    "question": "What is the shortcut key to restore minimized windows after pressing Win + M?",
+    "options": {
+      "A": "Win + Shift + M",
+      "B": "Win + D",
+      "C": "Ctrl + Shift + M",
+      "D": "Alt + M"
+    },
+    "correct_option": "A",
+    "explanation": "Win + Shift + M restores all minimized windows back to their previous state."
+  },
+  {
+    "id": 169,
+    "category": "Windows OS",
+    "question": "Which shortcut key combination opens 'Task View' to see all active open windows and timeline in Windows?",
+    "options": {
+      "A": "Win + Tab",
+      "B": "Alt + Tab",
+      "C": "Ctrl + Tab",
+      "D": "Win + T"
+    },
+    "correct_option": "A",
+    "explanation": "Win + Tab opens the persistent Task View interface."
+  },
+  {
+    "id": 170,
+    "category": "Windows OS",
+    "question": "Which shortcut key sets focus to the first app icon on the Windows Taskbar?",
+    "options": {
+      "A": "Win + T",
+      "B": "Alt + T",
+      "C": "Ctrl + T",
+      "D": "Win + B"
+    },
+    "correct_option": "A",
+    "explanation": "Win + T sets focus on the taskbar icons, allowing navigation using arrow keys."
+  },
+  {
+    "id": 171,
+    "category": "Chrome",
+    "question": "Which shortcut key combination opens the 'Bookmark Manager' in Google Chrome?",
+    "options": {
+      "A": "Ctrl + Shift + O",
+      "B": "Ctrl + Shift + B",
+      "C": "Ctrl + B",
+      "D": "Alt + B"
+    },
+    "correct_option": "A",
+    "explanation": "Ctrl + Shift + O opens the Bookmark Manager tab. Ctrl + Shift + B toggles the bookmarks bar."
+  },
+  {
+    "id": 172,
+    "category": "Chrome",
+    "question": "What happens when you press 'Ctrl + Shift + W' in Google Chrome?",
+    "options": {
+      "A": "Closes the current active tab",
+      "B": "Closes the entire active Chrome browser window with all its tabs",
+      "C": "Opens a new incognito window",
+      "D": "Clears web cache"
+    },
+    "correct_option": "B",
+    "explanation": "Ctrl + Shift + W (or Alt + F4) closes the entire browser window and all open tabs inside it."
+  },
+  {
+    "id": 173,
+    "category": "Chrome",
+    "question": "Which shortcut key combination switches to the Next Tab to the right in Google Chrome?",
+    "options": {
+      "A": "Ctrl + Tab",
+      "B": "Ctrl + Page Down",
+      "C": "Both A and B",
+      "D": "Alt + Right Arrow"
+    },
+    "correct_option": "C",
+    "explanation": "Both Ctrl + Tab and Ctrl + Page Down navigate to the next tab to the right."
+  },
+  {
+    "id": 174,
+    "category": "Chrome",
+    "question": "Which shortcut key combination switches to the Previous Tab to the left in Google Chrome?",
+    "options": {
+      "A": "Ctrl + Shift + Tab",
+      "B": "Ctrl + Page Up",
+      "C": "Both A and B",
+      "D": "Alt + Left Arrow"
+    },
+    "correct_option": "C",
+    "explanation": "Both Ctrl + Shift + Tab and Ctrl + Page Up navigate to the adjacent tab to the left."
+  },
+  {
+    "id": 175,
+    "category": "Chrome",
+    "question": "What is the shortcut key to automatically add 'www.' to the front and '.com' to the end of a typed word in the address bar?",
+    "options": {
+      "A": "Ctrl + Enter",
+      "B": "Shift + Enter",
+      "C": "Alt + Enter",
+      "D": "Ctrl + Shift + Enter"
+    },
+    "correct_option": "A",
+    "explanation": "Typing a domain name (e.g. 'google') and pressing Ctrl + Enter autocompletes it to 'www.google.com'."
+  },
+  {
+    "id": 176,
+    "category": "Chrome",
+    "question": "What is the shortcut to open the web page currently typed in the Address Bar in a New Background Tab?",
+    "options": {
+      "A": "Alt + Enter",
+      "B": "Ctrl + Enter",
+      "C": "Shift + Enter",
+      "D": "Ctrl + Shift + Enter"
+    },
+    "correct_option": "A",
+    "explanation": "Pressing Alt + Enter while in the Address Bar opens the URL/search query in a new tab."
+  },
+  {
+    "id": 177,
+    "category": "Chrome",
+    "question": "Which shortcut key opens the 'Find in Page' search bar in Google Chrome?",
+    "options": {
+      "A": "Ctrl + F",
+      "B": "F3",
+      "C": "Both A and B",
+      "D": "Ctrl + H"
+    },
+    "correct_option": "C",
+    "explanation": "Both Ctrl + F and F3 open the in-page text search box."
+  },
+  {
+    "id": 178,
+    "category": "Chrome",
+    "question": "Which shortcut key combination stops the loading of the current webpage in Chrome?",
+    "options": {
+      "A": "Esc",
+      "B": "Ctrl + .",
+      "C": "Alt + S",
+      "D": "Ctrl + E"
+    },
+    "correct_option": "A",
+    "explanation": "Pressing Esc stops a web page that is currently loading."
+  },
+  {
+    "id": 179,
+    "category": "Chrome",
+    "question": "Which key combination scrolls down one full screen viewport on a webpage in Google Chrome?",
+    "options": {
+      "A": "Spacebar",
+      "B": "Page Down",
+      "C": "Both A and B",
+      "D": "Down Arrow"
+    },
+    "correct_option": "C",
+    "explanation": "Both Spacebar and Page Down scroll down one full screen viewport. Shift + Spacebar scrolls up one screen."
+  },
+  {
+    "id": 180,
+    "category": "Chrome",
+    "question": "What is the shortcut to scroll UP one full screen viewport on a webpage in Google Chrome?",
+    "options": {
+      "A": "Shift + Spacebar",
+      "B": "Page Up",
+      "C": "Both A and B",
+      "D": "Ctrl + Up Arrow"
+    },
+    "correct_option": "C",
+    "explanation": "Both Shift + Spacebar and Page Up scroll upward by one full screen viewport."
+  },
+  {
+    "id": 181,
+    "category": "Chrome",
+    "question": "Which shortcut key combination moves to the very top of a webpage in Google Chrome?",
+    "options": {
+      "A": "Home",
+      "B": "Ctrl + Home",
+      "C": "Both A and B",
+      "D": "Alt + Up Arrow"
+    },
+    "correct_option": "C",
+    "explanation": "Both Home and Ctrl + Home scroll directly to the very top of the webpage."
+  },
+  {
+    "id": 182,
+    "category": "Chrome",
+    "question": "Which shortcut key combination jumps to the very bottom of a webpage in Google Chrome?",
+    "options": {
+      "A": "End",
+      "B": "Ctrl + End",
+      "C": "Both A and B",
+      "D": "Alt + Down Arrow"
+    },
+    "correct_option": "C",
+    "explanation": "Both End and Ctrl + End scroll directly to the bottom of the webpage."
+  },
+  {
+    "id": 183,
+    "category": "Chrome",
+    "question": "Which shortcut key opens the Google Chrome Settings menu page directly?",
+    "options": {
+      "A": "Alt + F (or Alt + E)",
+      "B": "Ctrl + Shift + S",
+      "C": "Ctrl + , (Comma)",
+      "D": "Alt + S"
+    },
+    "correct_option": "A",
+    "explanation": "Alt + F or Alt + E opens the Chrome primary three-dots menu (Customize and control Google Chrome)."
+  },
+  {
+    "id": 184,
+    "category": "Chrome",
+    "question": "Which shortcut key combination toggles Google Chrome into Full Screen mode (hiding tabs and address bar)?",
+    "options": {
+      "A": "F11",
+      "B": "Ctrl + F11",
+      "C": "Alt + Enter",
+      "D": "Shift + F11"
+    },
+    "correct_option": "A",
+    "explanation": "F11 toggles Full Screen mode on or off across modern web browsers."
+  },
+  {
+    "id": 185,
+    "category": "Chrome",
+    "question": "What is the shortcut key to open the Print preview dialog for the current webpage in Chrome?",
+    "options": {
+      "A": "Ctrl + P",
+      "B": "Ctrl + Shift + P",
+      "C": "Alt + P",
+      "D": "Shift + P"
+    },
+    "correct_option": "A",
+    "explanation": "Ctrl + P opens the Print dialog. Ctrl + Shift + P opens the system system print dialog."
+  },
+  {
+    "id": 186,
+    "category": "General Computer",
+    "question": "Which key combination selects all items or text from the current cursor position to the beginning of the line?",
+    "options": {
+      "A": "Shift + Home",
+      "B": "Ctrl + Shift + Home",
+      "C": "Alt + Home",
+      "D": "Shift + Up Arrow"
+    },
+    "correct_option": "A",
+    "explanation": "Shift + Home selects text from cursor to the start of the line; Ctrl + Shift + Home selects to the beginning of the entire document."
+  },
+  {
+    "id": 187,
+    "category": "General Computer",
+    "question": "Which key combination selects all text from the cursor position to the end of the line?",
+    "options": {
+      "A": "Shift + End",
+      "B": "Ctrl + Shift + End",
+      "C": "Alt + End",
+      "D": "Shift + Right Arrow"
+    },
+    "correct_option": "A",
+    "explanation": "Shift + End selects text from the cursor to the end of current line; Ctrl + Shift + End selects to the end of document."
+  },
+  {
+    "id": 188,
+    "category": "General Computer",
+    "question": "Which shortcut key combination selects all text from the current cursor position to the very start of the document?",
+    "options": {
+      "A": "Ctrl + Shift + Home",
+      "B": "Shift + Home",
+      "C": "Ctrl + Home",
+      "D": "Alt + Shift + Home"
+    },
+    "correct_option": "A",
+    "explanation": "Ctrl + Shift + Home extends the selection from insertion point to the beginning of the document."
+  },
+  {
+    "id": 189,
+    "category": "General Computer",
+    "question": "Which shortcut key combination selects all text from the current cursor position to the very end of the document?",
+    "options": {
+      "A": "Ctrl + Shift + End",
+      "B": "Shift + End",
+      "C": "Ctrl + End",
+      "D": "Alt + Shift + End"
+    },
+    "correct_option": "A",
+    "explanation": "Ctrl + Shift + End extends selection from insertion point to the very end of the document."
+  },
+  {
+    "id": 190,
+    "category": "General Computer",
+    "question": "What is the universal shortcut key to invoke Context-Sensitive Help in almost all Windows applications?",
+    "options": {
+      "A": "F1",
+      "B": "F2",
+      "C": "F3",
+      "D": "F12"
+    },
+    "correct_option": "A",
+    "explanation": "F1 is the universal standard function key used to open Help documentation."
+  },
+  {
+    "id": 191,
+    "category": "General Computer",
+    "question": "Which shortcut key combination opens the Windows 'Lock Screen' menu options (Lock, Switch user, Sign out, Task Manager)?",
+    "options": {
+      "A": "Ctrl + Alt + Delete",
+      "B": "Ctrl + Shift + Esc",
+      "C": "Win + L",
+      "D": "Alt + F4"
+    },
+    "correct_option": "A",
+    "explanation": "Ctrl + Alt + Delete triggers the Windows security intercept screen."
+  },
+  {
+    "id": 192,
+    "category": "General Computer",
+    "question": "Which shortcut key is used in Command Prompt / Terminal to abort or interrupt the currently executing command (e.g. infinite ping)?",
+    "options": {
+      "A": "Ctrl + C",
+      "B": "Ctrl + Break",
+      "C": "Both A and B",
+      "D": "Esc"
+    },
+    "correct_option": "C",
+    "explanation": "Both Ctrl + C and Ctrl + Pause/Break send an interrupt signal (SIGINT) to terminate running batch/command processes."
+  },
+  {
+    "id": 193,
+    "category": "General Computer",
+    "question": "What is the shortcut key to enter the BIOS / UEFI firmware settings during computer startup on most motherboards (Dell/Lenovo/HP)?",
+    "options": {
+      "A": "F2 or Del",
+      "B": "F12",
+      "C": "F8",
+      "D": "Esc"
+    },
+    "correct_option": "A",
+    "explanation": "F2 and the Delete (Del) key are the standard universal keys to enter BIOS/UEFI Setup."
+  },
+  {
+    "id": 194,
+    "category": "General Computer",
+    "question": "Which key is universally pressed during PC boot-up to open the one-time 'Boot Device Selection Menu'?",
+    "options": {
+      "A": "F12",
+      "B": "F2",
+      "C": "F1",
+      "D": "F5"
+    },
+    "correct_option": "A",
+    "explanation": "F12 is the industry standard key to invoke the one-time Boot Device Selection Menu."
+  },
+  {
+    "id": 195,
+    "category": "General Computer",
+    "question": "What is the shortcut key to open the 'Properties' window of a selected drive or folder in Windows?",
+    "options": {
+      "A": "Alt + Enter",
+      "B": "Ctrl + Shift + P",
+      "C": "Win + Enter",
+      "D": "Shift + Enter"
+    },
+    "correct_option": "A",
+    "explanation": "Alt + Enter opens the system Properties window of the currently selected drive, file, or folder."
+  },
+  {
+    "id": 196,
+    "category": "General Computer",
+    "question": "Which key combination navigates through controls/tabs inside any Windows dialog box?",
+    "options": {
+      "A": "Ctrl + Tab / Ctrl + Shift + Tab",
+      "B": "Alt + Tab",
+      "C": "Shift + Enter",
+      "D": "Win + Tab"
+    },
+    "correct_option": "A",
+    "explanation": "Ctrl + Tab moves forward through tabs in a dialog box; Ctrl + Shift + Tab moves backward."
+  },
+  {
+    "id": 197,
+    "category": "General Computer",
+    "question": "Which shortcut key combination moves between interactive fields/options backwards in a form or dialog?",
+    "options": {
+      "A": "Shift + Tab",
+      "B": "Ctrl + Tab",
+      "C": "Alt + Tab",
+      "D": "Ctrl + Shift + Enter"
+    },
+    "correct_option": "A",
+    "explanation": "Tab moves to the next field/button; Shift + Tab moves back to the previous field/button."
+  },
+  {
+    "id": 198,
+    "category": "General Computer",
+    "question": "Which shortcut key closes an open drop-down menu, modal pop-up, or cancels the current operation?",
+    "options": {
+      "A": "Esc",
+      "B": "Ctrl + Z",
+      "C": "Backspace",
+      "D": "Alt + F4"
+    },
+    "correct_option": "A",
+    "explanation": "The Escape (Esc) key cancels dialogs, exits full screens, and closes context menus."
+  },
+  {
+    "id": 199,
+    "category": "General Computer",
+    "question": "What shortcut key combination displays the Start Menu in Windows without pressing the Windows logo key?",
+    "options": {
+      "A": "Ctrl + Esc",
+      "B": "Alt + Esc",
+      "C": "Shift + Esc",
+      "D": "Alt + Spacebar"
+    },
+    "correct_option": "A",
+    "explanation": "Ctrl + Esc opens the Start Menu (useful on keyboards lacking a dedicated Windows logo key)."
+  },
+  {
+    "id": 200,
+    "category": "General Computer",
+    "question": "Which shortcut key opens the window system menu (Restore, Move, Size, Minimize, Maximize, Close) for the active window?",
+    "options": {
+      "A": "Alt + Spacebar",
+      "B": "Ctrl + Spacebar",
+      "C": "Shift + Spacebar",
+      "D": "Win + Spacebar"
+    },
+    "correct_option": "A",
+    "explanation": "Alt + Spacebar opens the Title Bar System Menu of the active window."
+  }
+]

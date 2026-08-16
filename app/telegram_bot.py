@@ -48,6 +48,8 @@ from app.admin_query_engine import parse_and_execute_admin_query, generate_admin
 from app.pdf_generator import generate_student_pdf_report
 from app.pyq_fetcher import fetch_pyqs_for_quiz
 
+logger = logging.getLogger(__name__)
+
 NEGATIVE_WORDS = ["bad", "worst", "useless", "trash", "fake", "hate", "terrible", "waste", "horrible", "fraud", "stupid", "scam"]
 
 PROFILE_CACHE = {}
@@ -331,6 +333,69 @@ async def maintenance_guard(update: Update, context: ContextTypes.DEFAULT_TYPE) 
             await update.message.reply_text(msg, parse_mode="Markdown", reply_markup=ReplyKeyboardRemove())
         return False
     return True
+
+
+async def safe_send_admin_intelligence(bot, chat_id: int, text: str, reply_markup=None):
+    """
+    Safely delivers messages to Telegram.
+    Guarantees that length limits and Markdown parse errors never drop the response.
+    """
+    if len(text) > 3800:
+        text = text[:3750] + "\n\n*(List truncated for Telegram. Full dataset available in PDF export)*"
+    
+    try:
+        await bot.send_message(chat_id=chat_id, text=text, reply_markup=reply_markup, parse_mode="Markdown")
+    except Exception as md_err:
+        logging.warning(f"[MARKDOWN PARSE ERROR] Falling back to plain text delivery: {md_err}")
+        clean_text = text.replace("**", "").replace("`", "").replace("*", "").replace("━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━", "------------------------------")
+        try:
+            await bot.send_message(chat_id=chat_id, text=clean_text, reply_markup=reply_markup)
+        except Exception as fallback_err:
+            logging.error(f"[FATAL SEND ERROR] {fallback_err}")
+
+
+async def direct_admin_ask_command(update: Update, context: ContextTypes.DEFAULT_TYPE):
+    """Direct execution handler for /ask <query>, /ai <query>, and /query <query>."""
+    user = update.effective_user
+    if user.id != PRIMARY_ADMIN_ID:
+        return
+
+    raw_query = " ".join(context.args) if context.args else ""
+    if not raw_query:
+        await update.message.reply_text(
+            "✍️ **ASK ADMIN INTELLIGENCE ENGINE**\n"
+            "━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\n"
+            "Usage: `/ask <your query>`\n\n"
+            "Examples:\n"
+            "• `/ask give me total paid users list`\n"
+            "• `/ask today's revenue and transactions`\n"
+            "• `/ask details of student Sagar G`\n"
+            "• `/ask upcoming festival sales`",
+            parse_mode="Markdown"
+        )
+        return
+
+    status_msg = await update.message.reply_text("🔍 *Searching Database & Crunching Analytics...*", parse_mode="Markdown")
+    
+    try:
+        res = await asyncio.to_thread(parse_and_execute_admin_query, raw_query)
+        context.user_data["last_ai_query_result"] = res
+
+        nav = [
+            [InlineKeyboardButton("📥 Download Complete Report as PDF", callback_data="admin_ai_download_last_pdf")],
+            [InlineKeyboardButton("✅ Data Correct", callback_data="admin_ai_fb_correct"), InlineKeyboardButton("❌ Incorrect / Refine", callback_data="admin_ai_fb_wrong")],
+            [InlineKeyboardButton("🔄 Ask Another Query", callback_data="admin_ai_assistant_menu")],
+            [InlineKeyboardButton("👑 Main Portal (/him)", callback_data="admin_home")]
+        ]
+        
+        try:
+            await context.bot.delete_message(chat_id=update.effective_chat.id, message_id=status_msg.message_id)
+        except Exception:
+            pass
+
+        await safe_send_admin_intelligence(context.bot, update.effective_chat.id, res["summary_markdown"], reply_markup=InlineKeyboardMarkup(nav))
+    except Exception as e:
+        await update.message.reply_text(f"⚠️ Error processing query: {e}")
 
 
 async def strict_quiz_command_guard(update: Update, context: ContextTypes.DEFAULT_TYPE):
@@ -1520,34 +1585,57 @@ async def handle_text_messages(update: Update, context: ContextTypes.DEFAULT_TYP
         last_res = context.user_data.get("last_ai_query_result", {})
         last_title = last_res.get("title", "platform query")
 
-        await update.message.reply_text("🧠 **Deep-thinking & re-querying database with your correction...**", parse_mode="Markdown")
-        res = parse_and_execute_admin_query(last_title, context_correction=correction_text)
-        context.user_data["last_ai_query_result"] = res
+        status_msg = await update.message.reply_text("🧠 *Deep-thinking & re-querying database with your correction...*", parse_mode="Markdown")
+        
+        try:
+            res = await asyncio.to_thread(parse_and_execute_admin_query, last_title, context_correction=correction_text)
+            context.user_data["last_ai_query_result"] = res
 
-        nav = [
-            [InlineKeyboardButton("📥 Download This Report as PDF", callback_data="admin_ai_download_last_pdf")],
-            [InlineKeyboardButton("✅ Data Correct", callback_data="admin_ai_fb_correct"), InlineKeyboardButton("❌ Incorrect / Refine", callback_data="admin_ai_fb_wrong")],
-            [InlineKeyboardButton("🔄 Ask Another Query", callback_data="admin_ai_assistant_menu")],
-            [InlineKeyboardButton("👑 Main Portal (/him)", callback_data="admin_home")]
-        ]
-        await update.message.reply_text(res["summary_markdown"], reply_markup=InlineKeyboardMarkup(nav), parse_mode="Markdown")
+            nav = [
+                [InlineKeyboardButton("📥 Download Complete Report as PDF", callback_data="admin_ai_download_last_pdf")],
+                [InlineKeyboardButton("✅ Data Correct", callback_data="admin_ai_fb_correct"), InlineKeyboardButton("❌ Incorrect / Refine", callback_data="admin_ai_fb_wrong")],
+                [InlineKeyboardButton("🔄 Ask Another Query", callback_data="admin_ai_assistant_menu")],
+                [InlineKeyboardButton("👑 Main Portal (/him)", callback_data="admin_home")]
+            ]
+            
+            try:
+                await context.bot.delete_message(chat_id=update.effective_chat.id, message_id=status_msg.message_id)
+            except Exception:
+                pass
+
+            await safe_send_admin_intelligence(context.bot, update.effective_chat.id, res["summary_markdown"], reply_markup=InlineKeyboardMarkup(nav))
+        except Exception as e:
+            await update.message.reply_text(f"⚠️ Error running correction: {e}")
         return
 
+    # ==============================================================
+    # 🧠 OMNISCIENT ADMIN AI ASSISTANT QUERY EXECUTION
+    # ==============================================================
     if user.id == PRIMARY_ADMIN_ID and context.user_data.get("awaiting_admin_ai_query"):
         context.user_data["awaiting_admin_ai_query"] = False
         raw_query = text or caption
         
-        await update.message.reply_text("🔍 **Searching Database & Crunching Analytics...**", parse_mode="Markdown")
-        res = parse_and_execute_admin_query(raw_query)
-        context.user_data["last_ai_query_result"] = res
+        status_msg = await update.message.reply_text("🔍 *Searching Database & Crunching Analytics...*", parse_mode="Markdown")
+        
+        try:
+            res = await asyncio.to_thread(parse_and_execute_admin_query, raw_query)
+            context.user_data["last_ai_query_result"] = res
 
-        nav = [
-            [InlineKeyboardButton("📥 Download This Report as PDF", callback_data="admin_ai_download_last_pdf")],
-            [InlineKeyboardButton("✅ Data Correct", callback_data="admin_ai_fb_correct"), InlineKeyboardButton("❌ Incorrect / Refine", callback_data="admin_ai_fb_wrong")],
-            [InlineKeyboardButton("🔄 Ask Another Query", callback_data="admin_ai_assistant_menu")],
-            [InlineKeyboardButton("👑 Main Portal (/him)", callback_data="admin_home")]
-        ]
-        await update.message.reply_text(res["summary_markdown"], reply_markup=InlineKeyboardMarkup(nav), parse_mode="Markdown")
+            nav = [
+                [InlineKeyboardButton("📥 Download Complete Report as PDF", callback_data="admin_ai_download_last_pdf")],
+                [InlineKeyboardButton("✅ Data Correct", callback_data="admin_ai_fb_correct"), InlineKeyboardButton("❌ Incorrect / Refine", callback_data="admin_ai_fb_wrong")],
+                [InlineKeyboardButton("🔄 Ask Another Query", callback_data="admin_ai_assistant_menu")],
+                [InlineKeyboardButton("👑 Main Portal (/him)", callback_data="admin_home")]
+            ]
+            
+            try:
+                await context.bot.delete_message(chat_id=update.effective_chat.id, message_id=status_msg.message_id)
+            except Exception:
+                pass
+
+            await safe_send_admin_intelligence(context.bot, update.effective_chat.id, res["summary_markdown"], reply_markup=InlineKeyboardMarkup(nav))
+        except Exception as e:
+            await update.message.reply_text(f"⚠️ Error running query: {e}")
         return
 
     if user.id == PRIMARY_ADMIN_ID and context.user_data.get("awaiting_sale_name"):
@@ -1956,7 +2044,9 @@ async def post_init(application: Application):
     try:
         admin_commands = [
             BotCommand("him", "👑 Open Master Admin Portal"),
-            BotCommand("admin", "👑 Master Dashboard")
+            BotCommand("admin", "👑 Master Dashboard"),
+            BotCommand("ask", "🧠 Ask Admin AI Intelligence"),
+            BotCommand("ai", "🧠 Omniscient Query Engine")
         ] + allowed_commands
         await application.bot.set_my_commands(admin_commands, scope=BotCommandScopeChat(chat_id=PRIMARY_ADMIN_ID))
     except Exception as e:
@@ -1992,6 +2082,11 @@ def build_application() -> Application:
     app.add_handler(promo_conv_handler)
     app.add_handler(annc_conv_handler)
     
+    # Direct Admin Assistant Commands
+    app.add_handler(CommandHandler("ask", direct_admin_ask_command))
+    app.add_handler(CommandHandler("ai", direct_admin_ask_command))
+    app.add_handler(CommandHandler("query", direct_admin_ask_command))
+
     app.add_handler(CommandHandler("quiz", strict_quiz_command_guard))
     app.add_handler(CommandHandler("myplan", myplan_command))
     app.add_handler(CommandHandler("plans", plans_command))

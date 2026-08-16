@@ -240,7 +240,7 @@ async def mock_lang_callback(update: Update, context: ContextTypes.DEFAULT_TYPE)
     
     count = setup.get("count", 40)
     total_time_mins = setup.get("total_time_mins", 20)
-    timer_sec = (total_time_mins * 60) // count
+    timer_sec = (total_time_mins * 60) // count # Fallback parameter
 
     profile = await asyncio.to_thread(get_user_profile, user_id)
     attempted_today = await asyncio.to_thread(get_today_attempts, user_id)
@@ -255,7 +255,7 @@ async def mock_lang_callback(update: Update, context: ContextTypes.DEFAULT_TYPE)
     questions = await asyncio.to_thread(fetch_full_mock_questions, count, lang, user_id)
     mock_number = await asyncio.to_thread(get_next_mock_number, user_id, "MOCK")
     
-    await start_quiz_session(query, context, user_id, questions, timer_sec, "MOCK", mock_number, "Mixed", "MOCK", f"Full Mock #{mock_number}", lang)
+    await start_quiz_session(query, context, user_id, questions, timer_sec, "MOCK", mock_number, "Mixed", "MOCK", f"Full Mock #{mock_number}", lang, total_time_mins=total_time_mins)
 
 
 # ==========================================
@@ -366,7 +366,7 @@ async def sect_lang_callback(update: Update, context: ContextTypes.DEFAULT_TYPE)
     count = setup.get("count", 20)
     total_time_mins = setup.get("total_time_mins", 10)
     subj = setup.get("subject", "computer")
-    timer_sec = (total_time_mins * 60) // count
+    timer_sec = (total_time_mins * 60) // count # Fallback parameter
 
     profile = await asyncio.to_thread(get_user_profile, user_id)
     attempted_today = await asyncio.to_thread(get_today_attempts, user_id)
@@ -384,13 +384,13 @@ async def sect_lang_callback(update: Update, context: ContextTypes.DEFAULT_TYPE)
         quiz_mode = "TOPIC_SECTIONAL"
         mock_number = await asyncio.to_thread(get_next_mock_number, user_id, "TOPIC_SECTIONAL")
         topic_name = f"Topic-Wise Sectional #{mock_number}"
-        await start_quiz_session(query, context, user_id, questions, timer_sec, quiz_mode, mock_number, subj, "MULTI", topic_name, lang, selected_topics)
+        await start_quiz_session(query, context, user_id, questions, timer_sec, quiz_mode, mock_number, subj, "MULTI", topic_name, lang, selected_topics, total_time_mins=total_time_mins)
     else:
         questions = await asyncio.to_thread(fetch_pyqs_for_quiz, count, None, lang, user_id, "MIXED", subj)
         quiz_mode = "SECTIONAL"
         mock_number = await asyncio.to_thread(get_next_mock_number, user_id, "SECTIONAL")
         topic_name = f"Sectional #{mock_number} ({subj.upper()})"
-        await start_quiz_session(query, context, user_id, questions, timer_sec, quiz_mode, mock_number, subj, "MIXED", topic_name, lang)
+        await start_quiz_session(query, context, user_id, questions, timer_sec, quiz_mode, mock_number, subj, "MIXED", topic_name, lang, total_time_mins=total_time_mins)
 
 
 # ==========================================
@@ -617,7 +617,7 @@ async def quiz_timer_callback(update: Update, context: ContextTypes.DEFAULT_TYPE
 # SHARED LAUNCH & EXECUTION FUNCTIONS
 # ==========================================
 
-async def start_quiz_session(query, context, user_id, questions, timer_sec, quiz_mode, mock_number, subject, topic, topic_name, language, selected_topics=None):
+async def start_quiz_session(query, context, user_id, questions, timer_sec, quiz_mode, mock_number, subject, topic, topic_name, language, selected_topics=None, total_time_mins=None):
     if not questions:
         await query.edit_message_text("⚠️ No questions found. Try again or contact admin.", reply_markup=get_quizbook_nav_keyboard(), parse_mode="Markdown")
         return
@@ -646,7 +646,9 @@ async def start_quiz_session(query, context, user_id, questions, timer_sec, quiz
         "detailed_logs": [],
         "quiz_mode": quiz_mode,
         "mock_number": mock_number,
-        "selected_topics": selected_topics
+        "selected_topics": selected_topics,
+        "global_remaining_sec": (total_time_mins * 60) if total_time_mins else None,
+        "question_start_time": time.time()
     }
     ACTIVE_SESSIONS[user_id] = session
 
@@ -659,7 +661,7 @@ async def start_quiz_session(query, context, user_id, questions, timer_sec, quiz
         f"🌐 **Language:** `{lang_str}`\n"
         f"📖 **Mode:** `{quiz_mode.replace('_', ' ')}`\n"
         f"📌 **Title:** `{title}`\n"
-        f"⏱ **Timer:** `{timer_sec}s per question`\n\n"
+        f"⏱ **Timer Config:** `{'Global Timer Mode' if total_time_mins else str(timer_sec) + 's per question'}`\n\n"
         f"⚡ Loading questions...",
         parse_mode="Markdown"
     )
@@ -707,6 +709,11 @@ async def pause_quiz_command(update: Update, context: ContextTypes.DEFAULT_TYPE)
     if user_id in TIMER_TASKS and not TIMER_TASKS[user_id].done():
         TIMER_TASKS[user_id].cancel()
 
+    # Deduct the time spent on the current question if using Global Timer
+    if session.get("global_remaining_sec") is not None:
+        time_spent = time.time() - session.get("question_start_time", time.time())
+        session["global_remaining_sec"] = max(0, session["global_remaining_sec"] - time_spent)
+
     save_state = {
         "user_id": user_id,
         "questions": session["questions"],
@@ -725,7 +732,8 @@ async def pause_quiz_command(update: Update, context: ContextTypes.DEFAULT_TYPE)
         "detailed_logs": session.get("detailed_logs", []),
         "quiz_mode": session.get("quiz_mode", "PRACTICE"),
         "mock_number": session.get("mock_number", 0),
-        "selected_topics": session.get("selected_topics")
+        "selected_topics": session.get("selected_topics"),
+        "global_remaining_sec": session.get("global_remaining_sec")
     }
     asyncio.create_task(asyncio.to_thread(save_paused_quiz_state, user_id, save_state))
     ACTIVE_SESSIONS.pop(user_id, None)
@@ -784,7 +792,9 @@ async def resume_quiz_command(update: Update, context: ContextTypes.DEFAULT_TYPE
         "detailed_logs": paused.get("detailed_logs", []),
         "quiz_mode": paused.get("quiz_mode", "PRACTICE"),
         "mock_number": paused.get("mock_number", 0),
-        "selected_topics": paused.get("selected_topics")
+        "selected_topics": paused.get("selected_topics"),
+        "global_remaining_sec": paused.get("global_remaining_sec"),
+        "question_start_time": time.time()
     }
     ACTIVE_SESSIONS[user_id] = session
 
@@ -902,7 +912,26 @@ async def send_next_question(chat_id: int, user_id: int, context: ContextTypes.D
 
     q = session["questions"][session["current_index"]]
     session["current_question"] = q
-    timer_sec = session["timer_sec"]
+    
+    # Global Timer Logic Calculation
+    global_time_str = ""
+    if session.get("global_remaining_sec") is not None:
+        rem_sec = int(session["global_remaining_sec"])
+        if rem_sec <= 0:
+            await context.bot.send_message(chat_id=chat_id, text="⏰ **TIME'S UP!** Your global quiz timer has expired.", parse_mode="Markdown")
+            await finish_quiz_and_send_report(chat_id, user_id, context)
+            return
+        
+        m, s = divmod(rem_sec, 60)
+        global_time_str = f" | ⏳ {m:02d}:{s:02d} Left"
+        
+        # Max out open_period to remaining time, capped at 600s due to Telegram API limits
+        poll_timer_sec = min(rem_sec, 600)
+        poll_timer_sec = max(5, poll_timer_sec) # Telegram minimum is 5s
+    else:
+        poll_timer_sec = session["timer_sec"]
+
+    session["question_start_time"] = time.time()
 
     current_num = session["current_index"] + 1
     total_num = session["total"]
@@ -910,9 +939,13 @@ async def send_next_question(chat_id: int, user_id: int, context: ContextTypes.D
     quiz_mode = session.get("quiz_mode", "PRACTICE")
     title = f"{quiz_mode.replace('_', ' ').title()} #{session.get('mock_number', 0)}" if quiz_mode != "PRACTICE" else session.get('topic_name', 'Quiz')
     
-    header_text = f"📖 [{title}] — ({current_num}/{total_num})\n\n{q['question']}"
-    if len(header_text) > 300:
-        header_text = header_text[:297] + "..."
+    # Safe 300 character truncation preserving the Global Time string
+    base_header = f"📖 [{title}] — ({current_num}/{total_num}){global_time_str}\n\n"
+    avail_len = 300 - len(base_header)
+    q_text = q['question']
+    if len(q_text) > avail_len:
+        q_text = q_text[:max(0, avail_len-3)] + "..."
+    header_text = base_header + q_text
 
     clean_opts = [str(opt)[:97] for opt in q["options"]]
     expl_text = q.get("explanation") or "Quiz with HiM by Himanshu Sir"
@@ -931,7 +964,7 @@ async def send_next_question(chat_id: int, user_id: int, context: ContextTypes.D
             explanation=expl_text,
             explanation_parse_mode="Markdown",
             is_anonymous=False,
-            open_period=timer_sec
+            open_period=poll_timer_sec
         )
         
         poll_id = poll_msg.poll.id
@@ -953,7 +986,7 @@ async def send_next_question(chat_id: int, user_id: int, context: ContextTypes.D
         if user_id in TIMER_TASKS and not TIMER_TASKS[user_id].done():
             TIMER_TASKS[user_id].cancel()
 
-        TIMER_TASKS[user_id] = asyncio.create_task(auto_skip_task(chat_id, user_id, poll_id, session["current_index"], timer_sec, context))
+        TIMER_TASKS[user_id] = asyncio.create_task(auto_skip_task(chat_id, user_id, poll_id, session["current_index"], poll_timer_sec, context))
     except Exception as e:
         logger.error(f"Error sending poll: {e}")
         session["skipped"] += 1
@@ -966,6 +999,12 @@ async def auto_skip_task(chat_id: int, user_id: int, poll_id: str, expected_idx:
         data = POLL_MAP.pop(poll_id, None)
         session = ACTIVE_SESSIONS.get(user_id)
         if session and not session.get("is_paused") and session["current_index"] == expected_idx:
+            
+            # Global Timer Deduction on Skip/Timeout
+            if session.get("global_remaining_sec") is not None:
+                time_spent = time.time() - session.get("question_start_time", time.time())
+                session["global_remaining_sec"] -= time_spent
+            
             q = data.get("q_data", {})
             opts = q.get("options", [])
             c_idx = data.get("correct_id", 0)
@@ -1005,6 +1044,12 @@ async def handle_poll_answer(update: Update, context: ContextTypes.DEFAULT_TYPE)
 
     session = ACTIVE_SESSIONS.get(user_id)
     if session and not session.get("is_paused") and session["current_index"] == data["q_idx"]:
+        
+        # Global Timer Deduction on Answer
+        if session.get("global_remaining_sec") is not None:
+            time_spent = time.time() - session.get("question_start_time", time.time())
+            session["global_remaining_sec"] -= time_spent
+        
         selected = answer.option_ids[0] if answer.option_ids else -1
         correct_id = data["correct_id"]
         q = data.get("q_data", {})
@@ -1124,7 +1169,7 @@ async def finish_quiz_and_send_report(chat_id: int, user_id: int, context: Conte
     ))
 
 async def quiz_extended_router(update: Update, context: ContextTypes.DEFAULT_TYPE):
-    """Central Router for all new game modes."""
+    """Central Router for all quiz modes."""
     data = update.callback_query.data
     if data.startswith("qflow_"):
         await quiz_flow_callback(update, context)

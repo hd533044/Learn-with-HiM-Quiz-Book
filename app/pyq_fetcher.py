@@ -50,6 +50,10 @@ COMPUTER_TOPIC_METADATA = {
     "General_Computer_Awareness": {
         "en": "💡 General Computer Awareness",
         "hi": "💡 सामान्य कंप्यूटर जागरूकता"
+    },
+    "SHORTCUTS": {
+        "en": "⌨️ Computer Shortcut Keys",
+        "hi": "⌨️ कंप्यूटर शॉर्टकट कुंजियाँ"
     }
 }
 
@@ -200,9 +204,10 @@ def get_user_seen_identifiers(user_id: int) -> set:
     return seen_ids
 
 def fetch_pyqs_for_quiz(needed_count: int = 20, seen_ids: set = None, language: str = "en", user_id: int = None, topic: str = "MIXED", subject: str = "computer") -> list:
-    """STRICT SUBJECT, LANGUAGE & TOPIC ISOLATION ENGINE."""
+    """STRICT SUBJECT, LANGUAGE & TOPIC ISOLATION ENGINE WITH EXACT FOLDER MAPPING."""
     all_raw_questions = []
     lang_sub = "hi" if language == "hi" else "en"
+    loaded_from_specific_file = False
 
     # 1. GENERAL KNOWLEDGE (GK) MODE
     if subject == "gk":
@@ -228,9 +233,9 @@ def fetch_pyqs_for_quiz(needed_count: int = 20, seen_ids: set = None, language: 
     elif topic == "SHORTCUTS":
         shortcut_file_name = f"shortcut_{lang_sub}.json"
         potential_shortcut_paths = [
-            os.path.join(SHORTCUT_KEYS_DIR, shortcut_file_name),
-            os.path.join(QUESTION_BANK_DIR, "shortcut_keys", shortcut_file_name),
-            os.path.join(DATA_DIR, "question_bank", "shortcut_keys", shortcut_file_name)
+            os.path.join(QUESTION_BANK_DIR, "computer", "shortcut_keys", shortcut_file_name),
+            os.path.join(DATA_DIR, "question_bank", "computer", "shortcut_keys", shortcut_file_name),
+            os.path.join(BASE_DIR, "data", "question_bank", "computer", "shortcut_keys", shortcut_file_name)
         ]
 
         for p in potential_shortcut_paths:
@@ -240,6 +245,7 @@ def fetch_pyqs_for_quiz(needed_count: int = 20, seen_ids: set = None, language: 
                         data = json.load(f)
                         if isinstance(data, list):
                             all_raw_questions.extend(data)
+                            loaded_from_specific_file = True
                             break
                 except Exception as e:
                     logger.error(f"Error reading shortcut keys file {p}: {e}")
@@ -248,9 +254,9 @@ def fetch_pyqs_for_quiz(needed_count: int = 20, seen_ids: set = None, language: 
     elif topic and topic != "MIXED":
         topic_filename = f"{topic}_{lang_sub}.json"
         potential_topic_paths = [
-            os.path.join(TOPICS_DIR, lang_sub, topic_filename),
-            os.path.join(TOPICS_DIR, topic_filename),
-            os.path.join(DATA_DIR, "topics", lang_sub, topic_filename)
+            os.path.join(TOPICS_DIR, "computer", lang_sub, topic_filename),
+            os.path.join(DATA_DIR, "topics", "computer", lang_sub, topic_filename),
+            os.path.join(BASE_DIR, "data", "topics", "computer", lang_sub, topic_filename)
         ]
         
         for p in potential_topic_paths:
@@ -260,16 +266,18 @@ def fetch_pyqs_for_quiz(needed_count: int = 20, seen_ids: set = None, language: 
                         data = json.load(f)
                         if isinstance(data, list):
                             all_raw_questions.extend(data)
+                            loaded_from_specific_file = True
                             break
                 except Exception as e:
                     logger.error(f"Error loading topic file {p}: {e}")
 
-    # 4. MIXED PRACTICE MODE (COMPUTER MASTER BANK)
-    else:
+    # 4. MIXED PRACTICE MODE & MASTER BANK FALLBACK (COMPUTER)
+    if subject == "computer" and not loaded_from_specific_file:
         master_file_name = "all_questions_hindi.json" if language == "hi" else "all_questions_english.json"
         master_candidates = [
-            os.path.join(QUESTION_BANK_DIR, "hindi", master_file_name) if language == "hi" else os.path.join(QUESTION_BANK_DIR, master_file_name),
-            os.path.join(DATA_DIR, "hindi", master_file_name) if language == "hi" else os.path.join(DATA_DIR, master_file_name)
+            os.path.join(QUESTION_BANK_DIR, "computer", master_file_name),
+            os.path.join(DATA_DIR, "question_bank", "computer", master_file_name),
+            os.path.join(BASE_DIR, "data", "question_bank", "computer", master_file_name)
         ]
 
         for m_path in master_candidates:
@@ -288,9 +296,11 @@ def fetch_pyqs_for_quiz(needed_count: int = 20, seen_ids: set = None, language: 
     seen_unique_texts = set()
 
     for q in all_raw_questions:
-        if subject == "gk" and topic and topic != "MIXED":
-            cat = q.get("category", "").strip()
-            if cat != topic:
+        if not loaded_from_specific_file and topic and topic != "MIXED":
+            cat = str(q.get("category", "")).strip()
+            cat_clean = cat.replace("_", " ").lower()
+            topic_clean = topic.replace("_", " ").lower()
+            if cat_clean != topic_clean:
                 continue
 
         verified_q = verify_and_correct_question(q, force_lang=language)

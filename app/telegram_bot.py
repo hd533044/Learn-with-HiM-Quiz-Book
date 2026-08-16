@@ -34,7 +34,8 @@ from app.database import (
 )
 from app.onboarding import get_onboarding_handler, start_onboarding
 from app.quiz_engine import (
-    launch_quiz_setup, quiz_language_callback, quiz_count_callback, quiz_timer_callback, handle_poll_answer,
+    launch_quiz_setup, quiz_language_callback, quiz_mode_callback, quiz_topic_callback,
+    quiz_count_callback, quiz_timer_callback, handle_poll_answer,
     pause_quiz_command, resume_quiz_command, stop_quiz_command, save_question_callback
 )
 from app.stats import get_overall_leaderboard, calculate_user_percentile, calculate_user_rank, get_user_performance_summary
@@ -336,10 +337,6 @@ async def maintenance_guard(update: Update, context: ContextTypes.DEFAULT_TYPE) 
 
 
 async def safe_send_admin_intelligence(bot, chat_id: int, text: str, reply_markup=None):
-    """
-    Safely delivers messages to Telegram.
-    Guarantees that length limits and Markdown parse errors never drop the response.
-    """
     if len(text) > 3800:
         text = text[:3750] + "\n\n*(List truncated for Telegram. Full dataset available in PDF export)*"
     
@@ -355,7 +352,6 @@ async def safe_send_admin_intelligence(bot, chat_id: int, text: str, reply_marku
 
 
 async def direct_admin_ask_command(update: Update, context: ContextTypes.DEFAULT_TYPE):
-    """Direct execution handler for /ask <query>, /ai <query>, and /query <query>."""
     user = update.effective_user
     if user.id != PRIMARY_ADMIN_ID:
         return
@@ -2114,7 +2110,10 @@ def build_application() -> Application:
     app.add_handler(CommandHandler("admin", admin_portal_command))
     app.add_handler(CommandHandler("admit", admin_portal_command))
 
+    # Quiz Flow Callbacks
     app.add_handler(CallbackQueryHandler(quiz_language_callback, pattern="^qlang_"))
+    app.add_handler(CallbackQueryHandler(quiz_mode_callback, pattern="^qmode_"))
+    app.add_handler(CallbackQueryHandler(quiz_topic_callback, pattern="^qtopic_"))
     app.add_handler(CallbackQueryHandler(quiz_count_callback, pattern="^qcount_"))
     app.add_handler(CallbackQueryHandler(quiz_timer_callback, pattern="^qtimer_"))
     app.add_handler(CallbackQueryHandler(user_pdf_callback_handler, pattern="^usergenpdf_"))

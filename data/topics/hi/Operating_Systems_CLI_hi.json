@@ -1,0 +1,453 @@
+[
+    {
+        "id": 37,
+        "question": "Windows में स्क्रीनशॉट लेने की शॉर्टकट कुंजी क्या है?",
+        "options": [
+            "Win Keys + Pause break",
+            "Win Keys + Print Screen",
+            "Alt + Space + X",
+            "Alt + Tab"
+        ],
+        "correct_option": 1,
+        "explanation": "Windows में स्क्रीनशॉट लेने के लिए Win Key + Print Screen दबाया जाता है।",
+        "chapter": "Operating Systems CLI"
+    },
+    {
+        "id": 41,
+        "question": "Win Keys + M का क्या कार्य है?",
+        "options": [
+            "सभी एक्टिव विंडोज़ को मिनिमाइज़ करना",
+            "डेस्कटॉप दिखाना",
+            "माई कंप्यूटर खोलना",
+            "यूज़र मोड में स्विच करना"
+        ],
+        "correct_option": 0,
+        "explanation": "Win Key + M खुली हुई सभी विंडोज़ को मिनिमाइज़ कर देता है।",
+        "chapter": "Operating Systems CLI"
+    },
+    {
+        "id": 56,
+        "question": "Windows सिस्टम में Win Keys + L का क्या कार्य है?",
+        "options": [
+            "स्क्रीन को लॉक करना या यूज़र स्विच करना",
+            "सिस्टम कॉन्फ़िगरेशन खोलना",
+            "सभी एक्टिव विंडोज को मिनिमाइज़ करना",
+            "डेस्कटॉप दिखाना"
+        ],
+        "correct_option": 0,
+        "explanation": "Win Key + L का उपयोग पीसी लॉक करने हेतु होता है।",
+        "chapter": "Operating Systems CLI"
+    },
+    {
+        "id": 57,
+        "question": "Windows ऑपरेटिंग सिस्टम में Alt + Tab का क्या उद्देश्य है?",
+        "options": [
+            "खुले हुए एप्लिकेशन्स के बीच स्विच करना",
+            "विंडो को मैक्सिमाइज करना",
+            "विंडो को रीस्टोर करना",
+            "विंडो को मिनिमाइज़ करना"
+        ],
+        "correct_option": 0,
+        "explanation": "Alt + Tab खुली हुई विंडोज़/सॉफ्टवेयर्स में अदला-बदली करने के लिए दबाया जाता है।",
+        "chapter": "Operating Systems CLI"
+    },
+    {
+        "id": 58,
+        "question": "Windows में Win Keys + R का क्या कार्य है?",
+        "options": [
+            "रन डायलॉग बॉक्स (Run Dialogue Box) खोलना",
+            "सिस्टम कॉन्फ़िगरेशन खोलना",
+            "यूज़र मोड में स्विच करना",
+            "सभी एक्टिव विंडोज को मिनिमाइज़ करना"
+        ],
+        "correct_option": 0,
+        "explanation": "Win + R से 'Run Command' बॉक्स खुलता है।",
+        "chapter": "Operating Systems CLI"
+    },
+    {
+        "id": 60,
+        "question": "Windows सिस्टम में Win Keys + D का कार्य क्या है?",
+        "options": [
+            "डेस्कटॉप स्क्रीन दिखाना/छिपाना",
+            "माई कंप्यूटर खोलना",
+            "यूज़र मोड में स्विच करना",
+            "सभी एक्टिव विंडोज को मिनिमाइज़ करना"
+        ],
+        "correct_option": 0,
+        "explanation": "Win + D सीधे डेस्कटॉप स्क्रीन प्रदर्शित करता है।",
+        "chapter": "Operating Systems CLI"
+    },
+    {
+        "id": 61,
+        "question": "Windows सिस्टम में Alt + Space + X का क्या उपयोग है?",
+        "options": [
+            "विंडो को मैक्सिमाइज करना",
+            "विंडो को रीस्टोर करना",
+            "विंडो को मिनिमाइज़ करना",
+            "विंडो को बंद करना"
+        ],
+        "correct_option": 0,
+        "explanation": "Alt + Space + X विंडो को पूरी स्क्रीन पर मैक्सिमाइज कर देता है।",
+        "chapter": "Operating Systems CLI"
+    },
+    {
+        "id": 62,
+        "question": "Windows सिस्टम में Win Keys + Pause Break का कार्य क्या है?",
+        "options": [
+            "सिस्टम कॉन्फ़िगरेशन / सिस्टम प्रॉपर्टीज खोलना",
+            "यूज़र मोड में स्विच करना",
+            "सभी एक्टिव विंडोज को मिनिमाइज़ करना",
+            "डेस्कटॉप दिखाना"
+        ],
+        "correct_option": 0,
+        "explanation": "Win + Pause Break से सिस्टम प्रॉपर्टीज मेन्यू खुलता है।",
+        "chapter": "Operating Systems CLI"
+    },
+    {
+        "id": 63,
+        "question": "Windows सिस्टम में Alt + F4 का क्या कार्य होता है?",
+        "options": [
+            "सॉफ्टवेयर बंद करना या सिस्टम शटडाउन करना",
+            "सिस्टम कॉन्फ़िगरेशन खोलना",
+            "यूज़र मोड में स्विच करना",
+            "सभी एक्टिव विंडोज को मिनिमाइज़ करना"
+        ],
+        "correct_option": 0,
+        "explanation": "Alt + F4 एक्टिव प्रोग्राम को क्लोज़ करता है या शटडाउन विंडो खोलता है।",
+        "chapter": "Operating Systems CLI"
+    },
+    {
+        "id": 447,
+        "question": "विंडोज़ और पेन्स (Windows and Panes) को प्रबंधित करने के विकल्प किस टैब में हैं?",
+        "options": [
+            "Review टैब (Alt+R)",
+            "View टैब (Alt+W)",
+            "Ctrl+R",
+            "Ctrl+W"
+        ],
+        "correct_option": 1,
+        "explanation": "Freeze Panes, Split, New Window आदि विकल्प View टैब (Alt+W) में उपलब्ध हैं।",
+        "chapter": "Operating Systems CLI"
+    },
+    {
+        "id": 486,
+        "question": "CLI को और किस नाम से जाना जाता है?",
+        "options": [
+            "लाइन यूज़र इंटरफ़ेस",
+            "कमांड लैंग्वेज इंटरप्रेटर (Command Language Interpreter / CUI)",
+            "कैरेक्टर लाइन इंटरफ़ेस",
+            "कंट्रोल लाइन इंटरफ़ेस"
+        ],
+        "correct_option": 1,
+        "explanation": "CLI (Command Line Interface) को CUI (Console User Interface) या Command Language Interpreter भी कहते हैं।",
+        "chapter": "Operating Systems CLI"
+    },
+    {
+        "id": 487,
+        "question": "CLI का उपयोग करते समय यूज़र सिस्टम के साथ कैसे इंटरैक्ट करते हैं?",
+        "options": [
+            "टेक्स्ट कमांड टाइप करके",
+            "आइकॉन्स पर क्लिक करके",
+            "वॉइस कमांड से",
+            "इशारों (Gestures) से"
+        ],
+        "correct_option": 0,
+        "explanation": "CLI में यूजर कीबोर्ड से टेक्स्ट कमांड टाइप करके काम करते हैं।",
+        "chapter": "Operating Systems CLI"
+    },
+    {
+        "id": 494,
+        "question": "CLI किस प्रकार का इंटरफ़ेस है?",
+        "options": [
+            "कमांड लाइन इंटरफ़ेस (Command Line Interface)",
+            "ग्राफिकल यूज़र इंटरफ़ेस (GUI)",
+            "वॉइस यूज़र इंटरफ़ेस",
+            "गेस्चर यूज़र इंटरफ़ेस"
+        ],
+        "correct_option": 0,
+        "explanation": "CLI का अर्थ Command Line Interface है।",
+        "chapter": "Operating Systems CLI"
+    },
+    {
+        "id": 500,
+        "question": "CLI (Command Line Interface) का मुख्य उद्देश्य क्या है?",
+        "options": [
+            "उपयोगकर्ताओं को टेक्स्ट टाइप करके सिस्टम से जुड़ने की अनुमति देना",
+            "आइकॉन्स पर क्लिक करके काम करने देना",
+            "वॉइस कमांड से काम कराना",
+            "इशारों से काम कराना"
+        ],
+        "correct_option": 0,
+        "explanation": "CLI यूज़र को टेक्स्ट आधारित कमांड टाइप करके ऑपरेटिंग सिस्टम से इंटरैक्ट करने देता है।",
+        "chapter": "Operating Systems CLI"
+    },
+    {
+        "id": 538,
+        "question": "निम्नलिखित में से कौन सा सिस्टम सॉफ्टवेयर (System Software) का उदाहरण है?",
+        "options": [
+            "Microsoft Office",
+            "Google Chrome",
+            "Windows ऑपरेटिंग सिस्टम (Windows OS)",
+            "Adobe Photoshop"
+        ],
+        "correct_option": 2,
+        "explanation": "विंडोज ऑपरेटिंग सिस्टम एक सिस्टम सॉफ्टवेयर का उदाहरण है, जबकि बाकी एप्लीकेशन सॉफ्टवेयर हैं।",
+        "chapter": "Operating Systems CLI"
+    },
+    {
+        "question": "विंडोज़ में MS Paint फ़ाइलों को खोलने और सहेजने के लिए निम्नलिखित में से किस फ़ाइल प्रारूप का उपयोग करता है?",
+        "options": [
+            "A. .doc",
+            "B. .xls",
+            "C. .jpeg",
+            "D. .ppt"
+        ],
+        "correct_option": 2,
+        "explanation": "MS Paint विंडोज़ में फ़ाइलों को खोलने और सहेजने के लिए .jpeg फ़ाइल प्रारूप का उपयोग करता है।",
+        "verification_status": "VERIFIED_100%",
+        "subject": "Computer Awareness",
+        "language": "hi",
+        "id": "comp_hi_0008",
+        "chapter": "Operating Systems CLI"
+    },
+    {
+        "question": "WinZip का क्या कार्य है?",
+        "options": [
+            "A. यह बड़ी फ़ाइलों को छोटी फ़ाइल में संकुचित (compress) करता है।",
+            "B. यह एक एंटी-वायरस सॉफ़्टवेयर है।",
+            "C. यह एक फ़ाइल प्रबंधक है।",
+            "D. यह एक डेटा पुनर्प्राप्ति उपकरण है।"
+        ],
+        "correct_option": 0,
+        "explanation": "WinZip एक विंडोज़-आधारित प्रोग्राम है जो आपको फ़ाइलों को संपीड़ित (compress) करने और .zip प्रारूप में संपीड़ित फ़ाइलों को खोलने की अनुमति देता है।",
+        "verification_status": "VERIFIED_100%",
+        "subject": "Computer Awareness",
+        "language": "hi",
+        "id": "comp_hi_0035",
+        "chapter": "Operating Systems CLI"
+    },
+    {
+        "question": "उस पीढ़ी के नाम का चयन करें जिसमें पहली बार ऑपरेटिंग सिस्टम का उपयोग किया गया था:",
+        "options": [
+            "A. पहली पीढ़ी",
+            "B. तीसरी पीढ़ी",
+            "C. दूसरी पीढ़ी",
+            "D. चौथी पीढ़ी"
+        ],
+        "correct_option": 2,
+        "explanation": "ऑपरेटिंग सिस्टम का पहली बार उपयोग दूसरी पीढ़ी के कंप्यूटरों में किया गया था।",
+        "verification_status": "VERIFIED_100%",
+        "subject": "Computer Awareness",
+        "language": "hi",
+        "id": "comp_hi_0054",
+        "chapter": "Operating Systems CLI"
+    },
+    {
+        "question": "कंप्यूटर या अन्य उपकरण द्वारा चलाए जा सकने वाले सभी प्रोग्रामों और अनुप्रयोगों को कौन शामिल और प्रबंधित करता है?",
+        "options": [
+            "A. डेटा साइंस",
+            "B. ऑपरेटिंग सिस्टम",
+            "C. कंप्यूटर हार्डवेयर",
+            "D. कंप्यूटर सॉफ्टवेयर"
+        ],
+        "correct_option": 1,
+        "explanation": "एक ऑपरेटिंग सिस्टम कंप्यूटर पर सभी प्रोग्रामों और अनुप्रयोगों का प्रबंधन करता है।",
+        "verification_status": "VERIFIED_100%",
+        "subject": "Computer Awareness",
+        "language": "hi",
+        "id": "comp_hi_0080",
+        "chapter": "Operating Systems CLI"
+    },
+    {
+        "question": "उस स्थिति को क्या कहते हैं जब कोई कंप्यूटर किसी प्रोग्राम या सिस्टम के अनुत्तरदायी होने के कारण इनपुट लेना बंद कर देता है?",
+        "options": [
+            "A. बूटिंग (Booting)",
+            "B. हैंगिंग (Hanging)",
+            "C. इजेक्टिंग (Ejecting)",
+            "D. मूविंग (Moving)"
+        ],
+        "correct_option": 1,
+        "explanation": "हैंगिंग (Hanging) वह स्थिति है जहाँ कंप्यूटर इनपुट पर प्रतिक्रिया देना बंद कर देता है।",
+        "verification_status": "VERIFIED_100%",
+        "subject": "Computer Awareness",
+        "language": "hi",
+        "id": "comp_hi_0081",
+        "chapter": "Operating Systems CLI"
+    },
+    {
+        "question": "कंप्यूटर को चालू करने और सिस्टम को पावर अप करने की प्रक्रिया क्या कहलाती है?",
+        "options": [
+            "A. बूटिंग (Booting)",
+            "B. लोडिंग (Loading)",
+            "C. सेविंग (Saving)",
+            "D. निष्पादन (Execution)"
+        ],
+        "correct_option": 0,
+        "explanation": "बूटिंग कंप्यूटर को शुरू करने और ऑपरेटिंग सिस्टम को मेमोरी में लोड करने की प्रक्रिया है।",
+        "verification_status": "VERIFIED_100%",
+        "subject": "Computer Awareness",
+        "language": "hi",
+        "id": "comp_hi_0082",
+        "chapter": "Operating Systems CLI"
+    },
+    {
+        "question": "कंप्यूटर को बूट करने के लिए किसकी आवश्यकता होती है?",
+        "options": [
+            "A. कंपाइलर",
+            "B. असेंबलर",
+            "C. ऑपरेटिंग सिस्टम",
+            "D. ट्रांसलेटर"
+        ],
+        "correct_option": 2,
+        "explanation": "कंप्यूटर को सफलतापूर्वक बूट करने के लिए एक ऑपरेटिंग सिस्टम की आवश्यकता होती है।",
+        "verification_status": "VERIFIED_100%",
+        "subject": "Computer Awareness",
+        "language": "hi",
+        "id": "comp_hi_0086",
+        "chapter": "Operating Systems CLI"
+    },
+    {
+        "question": "कंप्यूटर ऑपरेटिंग सिस्टम का कौन सा भाग मानव या प्रोग्राम द्वारा दर्ज किए गए कमांड को समझता और निष्पादित करता है?",
+        "options": [
+            "A. डिवाइस प्रबंधन",
+            "B. नेटवर्किंग",
+            "C. कमांड इंटरप्रेटर",
+            "D. फ़ाइल प्रबंधक"
+        ],
+        "correct_option": 2,
+        "explanation": "कमांड इंटरप्रेटर (Command Interpreter) दर्ज किए गए कमांड को समझता और निष्पादित करता है।",
+        "verification_status": "VERIFIED_100%",
+        "subject": "Computer Awareness",
+        "language": "hi",
+        "id": "comp_hi_0087",
+        "chapter": "Operating Systems CLI"
+    },
+    {
+        "question": "_______ मूल रूप से कंप्यूटर को चालू करने की प्रक्रिया है।",
+        "options": [
+            "A. इजेक्टिंग",
+            "B. बूटिंग",
+            "C. हैंगिंग",
+            "D. उपरोक्त में से कोई नहीं"
+        ],
+        "correct_option": 1,
+        "explanation": "बूटिंग कंप्यूटर को शुरू करने और ओएस लोड करने की प्रक्रिया है।",
+        "verification_status": "VERIFIED_100%",
+        "subject": "Computer Awareness",
+        "language": "hi",
+        "id": "comp_hi_0090",
+        "chapter": "Operating Systems CLI"
+    },
+    {
+        "question": "MS-DOS किस प्रकार का ऑपरेटिंग सिस्टम है?",
+        "options": [
+            "A. मल्टीप्रोसेसिंग",
+            "B. मल्टीटास्किंग और सिंगल-यूज़र",
+            "C. एम्बेडेड",
+            "D. सिंगल-यूज़र और सिंगल-टास्क"
+        ],
+        "correct_option": 3,
+        "explanation": "MS-DOS एक सिंगल-यूज़र, सिंगल-टास्किंग और कमांड-लाइन आधारित ऑपरेटिंग सिस्टम है।",
+        "verification_status": "VERIFIED_100%",
+        "subject": "Computer Awareness",
+        "language": "hi",
+        "id": "comp_hi_0094",
+        "chapter": "Operating Systems CLI"
+    },
+    {
+        "question": "निम्नलिखित में से कौन सा ऑपरेटिंग सिस्टम कमांड लाइन यूजर इंटरफेस (CLI) ऑपरेटिंग सिस्टम है?",
+        "options": [
+            "A. Android",
+            "B. MS-DOS",
+            "C. MS-Windows",
+            "D. Linux GUI"
+        ],
+        "correct_option": 1,
+        "explanation": "MS-DOS एक कमांड लाइन इंटरफ़ेस ऑपरेटिंग सिस्टम है।",
+        "verification_status": "VERIFIED_100%",
+        "subject": "Computer Awareness",
+        "language": "hi",
+        "id": "comp_hi_0095",
+        "chapter": "Operating Systems CLI"
+    },
+    {
+        "question": "बिल गेट्स के अनुसार, विंडोज़ ओएस को मूल रूप से किस नाम से जारी करने की योजना बनाई गई थी?",
+        "options": [
+            "A. क्लिपबोर्ड व्यूअर",
+            "B. इंटरफ़ेस मैनेजर (Interface Manager)",
+            "C. कैलकुलेटर",
+            "D. कंट्रोल पैनल"
+        ],
+        "correct_option": 1,
+        "explanation": "विंडोज को मूल रूप से 'इंटरफ़ेस मैनेजर' नाम से लॉन्च करने की योजना थी।",
+        "verification_status": "VERIFIED_100%",
+        "subject": "Computer Awareness",
+        "language": "hi",
+        "id": "comp_hi_0139",
+        "chapter": "Operating Systems CLI"
+    },
+    {
+        "question": "कंप्यूटर में हटाई गई (deleted) फ़ाइलें कहाँ ले जाई जाती हैं?",
+        "options": [
+            "A. आउटबॉक्स",
+            "B. माई डॉक्यूमेंट्स",
+            "C. रीसायकल बिन (Recycle Bin)",
+            "D. इनबॉक्स"
+        ],
+        "correct_option": 2,
+        "explanation": "विंडोज में सामान्य रूप से डिलीट की गई फाइलें रीसायकल बिन में जाती हैं।",
+        "verification_status": "VERIFIED_100%",
+        "subject": "Computer Awareness",
+        "language": "hi",
+        "id": "comp_hi_0149",
+        "chapter": "Operating Systems CLI"
+    },
+    {
+        "question": "कंप्यूटर के संबंध में GUI का क्या अर्थ है?",
+        "options": [
+            "A. Group User Interface",
+            "B. Graphic Utility Interaction",
+            "C. Graphical User Interface",
+            "D. Graphical Utility Interface"
+        ],
+        "correct_option": 2,
+        "explanation": "GUI का पूर्ण रूप Graphical User Interface है जो विज़ुअल तत्वों के माध्यम से बातचीत की अनुमति देता है।",
+        "verification_status": "VERIFIED_100%",
+        "subject": "Computer Awareness",
+        "language": "hi",
+        "id": "comp_hi_0151",
+        "chapter": "Operating Systems CLI"
+    },
+    {
+        "question": "सिस्टम सॉफ्टवेयर का सबसे अच्छा उदाहरण क्या है?",
+        "options": [
+            "A. एप्लीकेशन सिस्टम",
+            "B. सॉफ्टवेयर सिस्टम",
+            "C. हार्डवेयर सिस्टम",
+            "D. ऑपरेटिंग सिस्टम (Operating System)"
+        ],
+        "correct_option": 3,
+        "explanation": "ऑपरेटिंग सिस्टम सिस्टम सॉफ्टवेयर का सबसे प्राथमिक उदाहरण है।",
+        "verification_status": "VERIFIED_100%",
+        "subject": "Computer Awareness",
+        "language": "hi",
+        "id": "comp_hi_0152",
+        "chapter": "Operating Systems CLI"
+    },
+    {
+        "question": "विंडोज में जब आप किसी आइटम को 'Delete' कुंजी से हटाते हैं, तो वह कहाँ जाता है?",
+        "options": [
+            "A. टास्कबार",
+            "B. स्टार्ट मेनू",
+            "C. कंट्रोल पैनल",
+            "D. रीसायकल बिन (Recycle Bin)"
+        ],
+        "correct_option": 3,
+        "explanation": "हटाए गए आइटम अस्थायी रूप से रीसायकल बिन में संग्रहीत होते हैं।",
+        "verification_status": "VERIFIED_100%",
+        "subject": "Computer Awareness",
+        "language": "hi",
+        "id": "comp_hi_0177",
+        "chapter": "Operating Systems CLI"
+    }
+]

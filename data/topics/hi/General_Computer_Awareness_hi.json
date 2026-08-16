@@ -1,0 +1,3059 @@
+[
+    {
+        "id": 38,
+        "question": "Win Keys + E शॉर्टकट का क्या कार्य है?",
+        "options": [
+            "माई कंप्यूटर / फ़ाइल एक्सप्लोरर खोलना",
+            "सिस्टम कॉन्फ़िगरेशन खोलना",
+            "यूज़र मोड में स्विच करना",
+            "सभी एक्टिव विंडोज को मिनिमाइज़ करना"
+        ],
+        "correct_option": 0,
+        "explanation": "Win Key + E दबाने पर File Explorer / My Computer खुलता है।",
+        "chapter": "General Computer Awareness"
+    },
+    {
+        "id": 39,
+        "question": "Alt + Space + X का उपयोग किस लिए किया जाता है?",
+        "options": [
+            "विंडो को मैक्सिमाइज (बड़ा) करने के लिए",
+            "विंडो को रीस्टोर करने के लिए",
+            "विंडो को मिनिमाइज़ करने के लिए",
+            "विंडो को बंद करने के लिए"
+        ],
+        "correct_option": 0,
+        "explanation": "Alt + Space + X शॉर्टकट एक्टिव विंडो को मैक्सिमाइज़ (Maximize) करता है।",
+        "chapter": "General Computer Awareness"
+    },
+    {
+        "id": 43,
+        "question": "Win Keys + R शॉर्टकट कुंजी का क्या कार्य है?",
+        "options": [
+            "रन डायलॉग बॉक्स (Run Dialogue Box) खोलना",
+            "सिस्टम कॉन्फ़िगरेशन खोलना",
+            "यूज़र मोड में स्विच करना",
+            "सभी एक्टिव विंडोज को मिनिमाइज़ करना"
+        ],
+        "correct_option": 0,
+        "explanation": "Win Key + R से 'Run' कमांड बॉक्स खुलता है।",
+        "chapter": "General Computer Awareness"
+    },
+    {
+        "id": 45,
+        "question": "Alt + F4 कुंजी संयोजन का क्या कार्य है?",
+        "options": [
+            "एक्टिव सॉफ्टवेयर को बंद करना या सिस्टम शटडाउन डायलॉग खोलना",
+            "सिस्टम कॉन्फ़िगरेशन खोलना",
+            "यूज़र मोड में स्विच करना",
+            "सभी एक्टिव विंडोज को मिनिमाइज़ करना"
+        ],
+        "correct_option": 0,
+        "explanation": "Alt + F4 वर्तमान विंडो/ऐप को क्लोज़ करता है अथवा शटडाउन मेन्यू लाता है।",
+        "chapter": "General Computer Awareness"
+    },
+    {
+        "id": 50,
+        "question": "Win Keys + D का क्या कार्य है?",
+        "options": [
+            "डेस्कटॉप को दिखाना या छिपाना",
+            "माई कंप्यूटर खोलना",
+            "यूज़र मोड में स्विच करना",
+            "सभी एक्टिव विंडोज को मिनिमाइज़ करना"
+        ],
+        "correct_option": 0,
+        "explanation": "Win Key + D दबाने से डेस्कटॉप सीधे स्क्रीन पर आ जाता है।",
+        "chapter": "General Computer Awareness"
+    },
+    {
+        "id": 51,
+        "question": "Alt + Space + R का क्या उपयोग है?",
+        "options": [
+            "मैक्सिमाइज की गई विंडो को रीस्टोर (सामान्य आकार) करना",
+            "विंडो को मैक्सिमाइज करना",
+            "विंडो को मिनिमाइज़ करना",
+            "विंडो को बंद करना"
+        ],
+        "correct_option": 0,
+        "explanation": "Alt + Space + R किसी मैक्सिमाइज्ड विंडो को उसके पहले वाले साइज़ में रीस्टोर करता है।",
+        "chapter": "General Computer Awareness"
+    },
+    {
+        "id": 52,
+        "question": "Win Keys + Pause Break का क्या कार्य है?",
+        "options": [
+            "सिस्टम प्रॉपर्टीज (System Properties) विंडो खोलना",
+            "यूज़र मोड में स्विच करना",
+            "सभी एक्टिव विंडोज को मिनिमाइज़ करना",
+            "डेस्कटॉप दिखाना"
+        ],
+        "correct_option": 0,
+        "explanation": "Win + Pause Break दबाने से Control Panel का System Properties पेज खुलता है।",
+        "chapter": "General Computer Awareness"
+    },
+    {
+        "id": 54,
+        "question": "Alt + Space + N का क्या कार्य है?",
+        "options": [
+            "विंडो को मिनिमाइज़ (Minimize) करना",
+            "विंडो को मैक्सिमाइज करना",
+            "विंडो को रीस्टोर करना",
+            "विंडो को बंद करना"
+        ],
+        "correct_option": 0,
+        "explanation": "Alt + Space + N शॉर्टकट एक्टिव विंडो को टास्कबार पर मिनिमाइज़ करता है।",
+        "chapter": "General Computer Awareness"
+    },
+    {
+        "id": 95,
+        "question": "कंप्यूटर लॉजिक में संख्या 27 और 6 पर OR लॉजिकल ऑपरेटर लागू करने पर क्या मान प्राप्त होता है?",
+        "options": [
+            "24",
+            "27",
+            "30",
+            "33"
+        ],
+        "correct_option": 0,
+        "explanation": "बिटवाइज़ (Bitwise) / लॉजिकल ऑपरेशन्स के संदर्भ में इसका परिणाम नियमानुसार 24 आता है।",
+        "chapter": "General Computer Awareness"
+    },
+    {
+        "id": 96,
+        "question": "कौन सा फ़ंक्शन टेक्स्ट मान में प्रत्येक शब्द के पहले अक्षर को कैपिटल (बड़ा) करता है?",
+        "options": [
+            "UPPER",
+            "LOWER",
+            "PROPER",
+            "CONCATENATE"
+        ],
+        "correct_option": 2,
+        "explanation": "PROPER फ़ंक्शन प्रत्येक शब्द के प्रथम अक्षर को Uppercase तथा अन्य अक्षरों को Lowercase बनाता है।",
+        "chapter": "General Computer Awareness"
+    },
+    {
+        "id": 104,
+        "question": "वर्कशीट को प्रिंट करने से पहले उसका प्रिंट पूर्वावलोकन (Print Preview) देखने का शॉर्टकट क्या है?",
+        "options": [
+            "Ctrl + F1",
+            "Ctrl + F2",
+            "Ctrl + F3",
+            "Ctrl + F4"
+        ],
+        "correct_option": 1,
+        "explanation": "Ctrl + F2 से प्रिंट प्रिव्यू स्क्रीन खुलती है।",
+        "chapter": "General Computer Awareness"
+    },
+    {
+        "id": 112,
+        "question": "एक से अधिक गैर-आसन्न वर्कशीट्स को चुनने का शॉर्टकट तरीका क्या है?",
+        "options": [
+            "Shift कुंजी दबाकर टैब पर क्लिक करना",
+            "Ctrl कुंजी दबाकर रखें और टैब्स पर क्लिक करें",
+            "Alt कुंजी दबाकर टैब पर क्लिक करना",
+            "Ctrl + Shift दबाकर टैब पर क्लिक करना"
+        ],
+        "correct_option": 1,
+        "explanation": "Ctrl दबाकर अलग-अलग शीट टैब सिलेक्ट किए जा सकते हैं।",
+        "chapter": "General Computer Awareness"
+    },
+    {
+        "id": 113,
+        "question": "PROPER फ़ंक्शन का क्या उपयोग है?",
+        "options": [
+            "टेक्स्ट को बड़े अक्षरों में बदलना",
+            "टेक्स्ट को छोटे अक्षरों में बदलना",
+            "प्रत्येक शब्द के पहले अक्षर को कैपिटल (बड़ा) करना",
+            "सभी अक्षरों को लोअरकेस करना"
+        ],
+        "correct_option": 2,
+        "explanation": "PROPER फ़ंक्शन हर शब्द के प्रथम अक्षर को बड़े अक्षर में बदलता है।",
+        "chapter": "General Computer Awareness"
+    },
+    {
+        "id": 114,
+        "question": "एक्टिव वर्कबुक को बंद करने का शॉर्टकट क्या है?",
+        "options": [
+            "Ctrl + F3",
+            "Ctrl + F4",
+            "Alt + F4",
+            "Ctrl + Shift + F4"
+        ],
+        "correct_option": 1,
+        "explanation": "Ctrl + F4 वर्तमान खुली वर्कबुक बंद करता है।",
+        "chapter": "General Computer Awareness"
+    },
+    {
+        "id": 115,
+        "question": "EXACT फ़ंक्शन का मुख्य कार्य क्या है?",
+        "options": [
+            "यह जांचना कि क्या दो टेक्स्ट स्ट्रिंग्स बिल्कुल एक समान हैं",
+            "यह जांचना कि क्या दो संख्याएं बिल्कुल समान हैं",
+            "दो तारीखों की तुलना करना",
+            "दो समय की तुलना करना"
+        ],
+        "correct_option": 0,
+        "explanation": "EXACT फ़ंक्शन दो टेक्स्ट की एकदम सटीक तुलना करता है।",
+        "chapter": "General Computer Awareness"
+    },
+    {
+        "id": 117,
+        "question": "CONCATENATE फ़ंक्शन का क्या कार्य है?",
+        "options": [
+            "अनेक टेक्स्ट आइटमों को मिलाकर एक सेल में करना",
+            "टेक्स्ट को कई सेल्स में विभाजित करना",
+            "टेक्स्ट को नंबर में बदलना",
+            "नंबर को टेक्स्ट में बदलना"
+        ],
+        "correct_option": 0,
+        "explanation": "CONCATENATE फ़ंक्शन अलग-अलग टेक्स्ट को जोड़ता है।",
+        "chapter": "General Computer Awareness"
+    },
+    {
+        "id": 120,
+        "question": "Alt + F1 कुंजी संयोजन का क्या उपयोग है?",
+        "options": [
+            "नई वर्कशीट बनाना",
+            "चयनित डेटा रेंज से एम्बेडेड चार्ट (Embedded Chart) बनाना",
+            "फ़ाइल ओपन बॉक्स खोलना",
+            "वर्कबुक को मिनिमाइज़ करना"
+        ],
+        "correct_option": 1,
+        "explanation": "Alt + F1 दबाने से चयनित डेटा के लिए वर्तमान शीट में ही चार्ट बन जाता है।",
+        "chapter": "General Computer Awareness"
+    },
+    {
+        "id": 123,
+        "question": "Ctrl + F9 का क्या उपयोग है?",
+        "options": [
+            "एक्टिव वर्कबुक विंडो को मिनिमाइज़ करना",
+            "वर्कबुक विंडो को मैक्सिमाइज करना",
+            "विंडो साइज़ रीस्टोर करना",
+            "चयनित विंडो बंद करना"
+        ],
+        "correct_option": 0,
+        "explanation": "Ctrl + F9 दबाने से एक्टिव वर्कबुक विंडो मिनिमाइज़ हो जाती है।",
+        "chapter": "General Computer Awareness"
+    },
+    {
+        "id": 124,
+        "question": "फ़ाइल ओपन (Open) डायलॉग बॉक्स प्रदर्शित करने का शॉर्टकट क्या है?",
+        "options": [
+            "Ctrl + F12",
+            "Alt + F1",
+            "Ctrl + F1",
+            "Alt + F2"
+        ],
+        "correct_option": 0,
+        "explanation": "Ctrl + F12 या Ctrl + O से फ़ाइल ओपन विंडो खुलती है।",
+        "chapter": "General Computer Awareness"
+    },
+    {
+        "id": 125,
+        "question": "Alt + Shift + F2 का क्या कार्य है?",
+        "options": [
+            "Save As (सेव एज) डायलॉग बॉक्स प्रदर्शित करना",
+            "Open डायलॉग बॉक्स प्रदर्शित करना",
+            "नई वर्कशीट बनाना",
+            "एक्सेल बंद करना"
+        ],
+        "correct_option": 0,
+        "explanation": "Alt + Shift + F2 दबाने पर Save As का विकल्प आता है।",
+        "chapter": "General Computer Awareness"
+    },
+    {
+        "id": 127,
+        "question": "विंडो को खिसकाने ('Move Window') कमांड को एक्टिवेट करने का शॉर्टकट क्या है?",
+        "options": [
+            "Ctrl + F6",
+            "Ctrl + F7",
+            "Ctrl + F8",
+            "Alt + F8"
+        ],
+        "correct_option": 1,
+        "explanation": "अप्रतिबंधित/रीस्टोर की गई वर्कबुक विंडो पर Ctrl + F7 दबाकर कीबोर्ड से विंडो मूव की जा सकती है।",
+        "chapter": "General Computer Awareness"
+    },
+    {
+        "id": 128,
+        "question": "Alt + F8 का क्या कार्य है?",
+        "options": [
+            "मैक्रो (Macro) डायलॉग बॉक्स प्रदर्शित करना",
+            "चार्ट शीट बनाना",
+            "Save As बॉक्स खोलना",
+            "एक्सेल बंद करना"
+        ],
+        "correct_option": 0,
+        "explanation": "Alt + F8 से मैक्रो डायलॉग बॉक्स खुलता है जहाँ से मैक्रो रन/क्रिएट किए जा सकते हैं।",
+        "chapter": "General Computer Awareness"
+    },
+    {
+        "id": 131,
+        "question": "Ctrl + F5 कुंजी का क्या कार्य है?",
+        "options": [
+            "एक्टिव वर्कबुक विंडो के आकार को रीस्टोर (Restore) करना",
+            "विंडो मिनिमाइज़ करना",
+            "विंडो मैक्सिमाइज करना",
+            "वर्कबुक बंद करना"
+        ],
+        "correct_option": 0,
+        "explanation": "Ctrl + F5 मैक्सिमाइज्ड वर्कबुक विंडो को सामान्य आकार (Restore Size) में लाता है।",
+        "chapter": "General Computer Awareness"
+    },
+    {
+        "id": 132,
+        "question": "Alt + F11 का क्या उपयोग है?",
+        "options": [
+            "विजुअल बेसिक एडिटर (VBA Editor) और एक्सेल विंडो के बीच स्विच करना",
+            "चार्ट शीट बनाना",
+            "Save As बॉक्स खोलना",
+            "एक्सेल बंद करना"
+        ],
+        "correct_option": 0,
+        "explanation": "Alt + F11 दबाने पर VBA (Visual Basic for Applications) विंडो खुलती है।",
+        "chapter": "General Computer Awareness"
+    },
+    {
+        "id": 133,
+        "question": "स्मार्ट टैग (Smart Tag) या ऑटो-करेक्ट मेन्यू प्रदर्शित करने का शॉर्टकट क्या है?",
+        "options": [
+            "Alt + Shift + F1",
+            "Alt + Shift + F2",
+            "Alt + Shift + F4",
+            "Alt + Shift + F10"
+        ],
+        "correct_option": 3,
+        "explanation": "Alt + Shift + F10 दबाने से स्मार्ट टैग्स का ड्रॉप-डाउन मेन्यू खुलता है।",
+        "chapter": "General Computer Awareness"
+    },
+    {
+        "id": 134,
+        "question": "Ctrl + F3 का क्या कार्य है?",
+        "options": [
+            "नेम मैनेजर (Name Manager) डायलॉग बॉक्स खोलना",
+            "मूव विंडो कमांड चालू करना",
+            "प्रिंट प्रिव्यू दिखाना",
+            "विंडो मिनिमाइज़ करना"
+        ],
+        "correct_option": 0,
+        "explanation": "Ctrl + F3 दबाने से Name Manager विंडो खुलती है।",
+        "chapter": "General Computer Awareness"
+    },
+    {
+        "id": 135,
+        "question": "Shift + F12 कुंजी का क्या उपयोग है?",
+        "options": [
+            "वर्तमान एक्टिव वर्कबुक को सेव (Save) करना",
+            "चार्ट बनाना",
+            "Save As बॉक्स खोलना",
+            "एक्सेल बंद करना"
+        ],
+        "correct_option": 0,
+        "explanation": "Shift + F12 दबाना 'Ctrl + S' की तरह ही फ़ाइल को सेव करता है।",
+        "chapter": "General Computer Awareness"
+    },
+    {
+        "id": 136,
+        "question": "एक्टिव वर्कबुक विंडो का आकार मैक्सिमाइज (Maximize) करने का शॉर्टकट क्या है?",
+        "options": [
+            "Ctrl + F9",
+            "Ctrl + F10",
+            "Ctrl + F12",
+            "Alt + F10"
+        ],
+        "correct_option": 1,
+        "explanation": "Ctrl + F10 दबाने से वर्तमान वर्कबुक विंडो मैक्सिमाइज हो जाती है।",
+        "chapter": "General Computer Awareness"
+    },
+    {
+        "id": 138,
+        "question": "Ctrl + F7 का क्या उपयोग है?",
+        "options": [
+            "रीसाइज़ विंडो कमांड चालू करना",
+            "मूव विंडो (Move Window) कमांड एक्टिवेट करना",
+            "विंडो साइज़ रीस्टोर करना",
+            "विंडो मिनिमाइज़ करना"
+        ],
+        "correct_option": 1,
+        "explanation": "Ctrl + F7 गैर-मैक्सिमाइज्ड विंडो को कीबोर्ड से हिलाने (Move) की अनुमति देता है।",
+        "chapter": "General Computer Awareness"
+    },
+    {
+        "id": 139,
+        "question": "मैक्रो (Macro) डायलॉग बॉक्स खोलने की शॉर्टकट कुंजी क्या है?",
+        "options": [
+            "Alt + F8",
+            "Alt + F11",
+            "Ctrl + F8",
+            "Alt + Shift + F8"
+        ],
+        "correct_option": 0,
+        "explanation": "Alt + F8 दबाने से मैक्रो लिस्ट/डायलॉग बॉक्स खुलता है।",
+        "chapter": "General Computer Awareness"
+    },
+    {
+        "id": 140,
+        "question": "Ctrl + F8 कुंजी का क्या कार्य है?",
+        "options": [
+            "रीसाइज़ विंडो (Resize Window) कमांड एक्टिवेट करना",
+            "मूव विंडो कमांड चालू करना",
+            "विंडो साइज़ रीस्टोर करना",
+            "विंडो मिनिमाइज़ करना"
+        ],
+        "correct_option": 0,
+        "explanation": "Ctrl + F8 दबाने पर गैर-मैक्सिमाइज्ड विंडो को कीबोर्ड एरो कीज़ द्वारा रीसाइज़ किया जा सकता है।",
+        "chapter": "General Computer Awareness"
+    },
+    {
+        "id": 141,
+        "question": "Alt + F2 का मुख्य उपयोग क्या है?",
+        "options": [
+            "Save As डायलॉग बॉक्स प्रदर्शित करना",
+            "चार्ट शीट बनाना",
+            "Open डायलॉग बॉक्स खोलना",
+            "एक्सेल बंद करना"
+        ],
+        "correct_option": 0,
+        "explanation": "Alt + F2 से Save As विंडो खुलती है।",
+        "chapter": "General Computer Awareness"
+    },
+    {
+        "id": 142,
+        "question": "हाइलाइट की गई डेटा रेंज का उपयोग करके एम्बेडेड चार्ट बनाने का शॉर्टकट क्या है?",
+        "options": [
+            "Alt + F1",
+            "Alt + F2",
+            "Ctrl + F1",
+            "Ctrl + F2"
+        ],
+        "correct_option": 0,
+        "explanation": "Alt + F1 से तुरंत वर्तमान वर्कशीट में एक चार्ट सम्मिलित हो जाता है।",
+        "chapter": "General Computer Awareness"
+    },
+    {
+        "id": 143,
+        "question": "Ctrl + F12 कुंजी का क्या कार्य है?",
+        "options": [
+            "Open डायलॉग बॉक्स प्रदर्शित करना",
+            "Save As डायलॉग बॉक्स प्रदर्शित करना",
+            "नई वर्कशीट बनाना",
+            "एक्सेल बंद करना"
+        ],
+        "correct_option": 0,
+        "explanation": "Ctrl + F12 दबाने पर ओपन फ़ाइल विंडो खुलती है।",
+        "chapter": "General Computer Awareness"
+    },
+    {
+        "id": 146,
+        "question": "वर्कबुक के अंतिम कार्य को दोहराने (Repeat/Redo) के लिए किस शॉर्टकट कुंजी का उपयोग किया जाता है?",
+        "options": [
+            "Ctrl + X",
+            "Ctrl + Y",
+            "Ctrl + Z",
+            "Shift + Enter"
+        ],
+        "correct_option": 1,
+        "explanation": "Ctrl + Y का उपयोग अंतिम एक्शन को रीटू (Redo/Repeat) करने के लिए होता है।",
+        "chapter": "General Computer Awareness"
+    },
+    {
+        "id": 148,
+        "question": "SUM() फ़ंक्शन (AutoSum) स्वतः डालने के लिए किस शॉर्टकट कुंजी का उपयोग किया जाता है?",
+        "options": [
+            "Alt + =",
+            "Alt + Enter",
+            "Ctrl + '",
+            "Ctrl + ;"
+        ],
+        "correct_option": 0,
+        "explanation": "Alt + = दबाने से ऑटो-सम (AutoSum) फ़ंक्शन इंसर्ट हो जाता है।",
+        "chapter": "General Computer Awareness"
+    },
+    {
+        "id": 154,
+        "question": "'Pick From List' ड्रॉप-डाउन सूची प्रदर्शित करने के लिए किस शॉर्टकट कुंजी का उपयोग किया जाता है?",
+        "options": [
+            "Alt + Down Arrow",
+            "Alt + Up Arrow",
+            "Ctrl + Down Arrow",
+            "Ctrl + Up Arrow"
+        ],
+        "correct_option": 0,
+        "explanation": "Alt + Down Arrow दबाने से कॉलम में उपलब्ध मानों की ड्रॉप-डाउन लिस्ट खुल जाती है।",
+        "chapter": "General Computer Awareness"
+    },
+    {
+        "id": 158,
+        "question": "चयन को क्लिपबोर्ड पर कट (Cut) करने के लिए किस शॉर्टकट कुंजी का उपयोग किया जाता है?",
+        "options": [
+            "Ctrl + X",
+            "Shift + Delete",
+            "Ctrl + C",
+            "Ctrl + V"
+        ],
+        "correct_option": 0,
+        "explanation": "Ctrl + X सिलेक्ट किए गए कंटेंट को कट करता है।",
+        "chapter": "General Computer Awareness"
+    },
+    {
+        "id": 165,
+        "question": "एक्टिव वर्कबुक में Ctrl + Z का क्या कार्य है?",
+        "options": [
+            "अंतिम कार्य को अनडू (Undo) करना",
+            "अंतिम कार्य को रीटू (Repeat) करना",
+            "चयन को क्लिपबोर्ड पर कट करना",
+            "चयन को हटाना"
+        ],
+        "correct_option": 0,
+        "explanation": "Ctrl + Z अंतिम क्रिया को निष्प्रभावी (Undo) करता है।",
+        "chapter": "General Computer Awareness"
+    },
+    {
+        "id": 166,
+        "question": "वर्कबुक में पिछली क्रिया/कार्य को अनडू करने के लिए कौन सी शॉर्टकट कुंजी उपयोग की जाती है?",
+        "options": [
+            "Ctrl + Z",
+            "Ctrl + Y",
+            "Ctrl + X",
+            "Ctrl + C"
+        ],
+        "correct_option": 0,
+        "explanation": "अनडू (Undo) का शॉर्टकट Ctrl + Z है।",
+        "chapter": "General Computer Awareness"
+    },
+    {
+        "id": 167,
+        "question": "एक्टिव वर्कबुक में Ctrl + Y का क्या कार्य है?",
+        "options": [
+            "अंतिम कार्य को दोहराना (Redo/Repeat)",
+            "अंतिम कार्य को अनडू करना",
+            "चयन को कट करना",
+            "चयन को हटाना"
+        ],
+        "correct_option": 0,
+        "explanation": "Ctrl + Y का उपयोग Redo करने के लिए किया जाता है।",
+        "chapter": "General Computer Awareness"
+    },
+    {
+        "id": 173,
+        "question": "कर्सर की स्थिति से लाइन के अंत तक का टेक्स्ट हटाने के लिए किस शॉर्टकट कुंजी का उपयोग होता है?",
+        "options": [
+            "Ctrl + Delete",
+            "Ctrl + Backspace",
+            "Delete",
+            "Backspace"
+        ],
+        "correct_option": 0,
+        "explanation": "Ctrl + Delete कर्सर के बाद से लेकर लाइन के अंत तक की सामग्री हटा देता है।",
+        "chapter": "General Computer Awareness"
+    },
+    {
+        "id": 183,
+        "question": "वर्कशीट में Page Down कुंजी का क्या कार्य है?",
+        "options": [
+            "एक स्क्रीन ऊपर की पंक्तियों पर जाना",
+            "एक स्क्रीन नीचे की पंक्तियों (Next screen down) पर जाना",
+            "बाईं ओर के कॉलम पर जाना",
+            "दाईं ओर के कॉलम पर जाना"
+        ],
+        "correct_option": 1,
+        "explanation": "Page Down दबाने से स्क्रीन एक पेज नीचे स्क्रॉल होती है।",
+        "chapter": "General Computer Awareness"
+    },
+    {
+        "id": 184,
+        "question": "वर्कशीट में Page Up कुंजी का क्या प्रभाव पड़ता है?",
+        "options": [
+            "एक स्क्रीन ऊपर की पंक्तियों (Previous screen up) पर जाना",
+            "एक स्क्रीन नीचे की पंक्तियों पर जाना",
+            "बाईं ओर की स्क्रीन पर जाना",
+            "दाईं ओर की स्क्रीन पर जाना"
+        ],
+        "correct_option": 0,
+        "explanation": "Page Up दबाने से स्क्रीन एक पेज ऊपर स्क्रॉल होती है।",
+        "chapter": "General Computer Awareness"
+    },
+    {
+        "id": 187,
+        "question": "वर्कशीट में Alt + Page Down का क्या कार्य है?",
+        "options": [
+            "कॉलम की एक स्क्रीन बाईं ओर जाना",
+            "कॉलम की एक स्क्रीन दाईं ओर (One screen right) जाना",
+            "एक स्क्रीन ऊपर जाना",
+            "एक स्क्रीन नीचे जाना"
+        ],
+        "correct_option": 1,
+        "explanation": "Alt + Page Down वर्कशीट को एक स्क्रीन दाईं तरफ (Right) स्क्रॉल करता है।",
+        "chapter": "General Computer Awareness"
+    },
+    {
+        "id": 188,
+        "question": "वर्कशीट में Alt + Page Up का क्या प्रभाव पड़ता है?",
+        "options": [
+            "कॉलम की एक स्क्रीन बाईं ओर (One screen left) जाना",
+            "कॉलम की एक स्क्रीन दाईं ओर जाना",
+            "एक स्क्रीन ऊपर जाना",
+            "एक स्क्रीन नीचे जाना"
+        ],
+        "correct_option": 0,
+        "explanation": "Alt + Page Up वर्कशीट को एक स्क्रीन बाईं तरफ (Left) स्क्रॉल करता है।",
+        "chapter": "General Computer Awareness"
+    },
+    {
+        "id": 191,
+        "question": "वर्कशीट में Ctrl + Up Arrow का क्या कार्य है?",
+        "options": [
+            "अंतिम रो पर जाना",
+            "वर्तमान डेटा क्षेत्र की ऊपरी सीमा (Top boundary) पर जाना",
+            "अंतिम कॉलम पर जाना",
+            "पहले कॉलम पर जाना"
+        ],
+        "correct_option": 1,
+        "explanation": "Ctrl + Up Arrow कर्सर को एक्टिव डेटा ब्लॉक के सबसे ऊपरी किनारे पर ले जाता है।",
+        "chapter": "General Computer Awareness"
+    },
+    {
+        "id": 192,
+        "question": "वर्कशीट में Ctrl + Down Arrow का क्या प्रभाव पड़ता है?",
+        "options": [
+            "पहली रो पर जाना",
+            "वर्तमान डेटा क्षेत्र की निचली सीमा (Bottom boundary) पर जाना",
+            "पहले कॉलम पर जाना",
+            "अंतिम कॉलम पर जाना"
+        ],
+        "correct_option": 1,
+        "explanation": "Ctrl + Down Arrow कर्सर को डेटा ब्लॉक के सबसे निचले किनारे पर ले जाता है।",
+        "chapter": "General Computer Awareness"
+    },
+    {
+        "id": 193,
+        "question": "वर्कशीट में Ctrl + Left Arrow का क्या कार्य है?",
+        "options": [
+            "अंतिम कॉलम पर जाना",
+            "वर्तमान डेटा क्षेत्र की बाईं सीमा (Left boundary) पर जाना",
+            "अंतिम रो पर जाना",
+            "पहली रो पर जाना"
+        ],
+        "correct_option": 1,
+        "explanation": "Ctrl + Left Arrow कर्सर को डेटा ब्लॉक के सबसे बाएं किनारे पर ले जाता है।",
+        "chapter": "General Computer Awareness"
+    },
+    {
+        "id": 194,
+        "question": "वर्कशीट में Ctrl + Right Arrow का क्या प्रभाव पड़ता है?",
+        "options": [
+            "पहले कॉलम पर जाना",
+            "वर्तमान डेटा क्षेत्र की दाईं सीमा (Right boundary) पर जाना",
+            "पहली रो पर जाना",
+            "अंतिम रो पर जाना"
+        ],
+        "correct_option": 1,
+        "explanation": "Ctrl + Right Arrow कर्सर को डेटा ब्लॉक के सबसे दाएं किनारे पर ले जाता है।",
+        "chapter": "General Computer Awareness"
+    },
+    {
+        "id": 203,
+        "question": "IMPS का प्राथमिक कार्य क्या है?",
+        "options": [
+            "इंटरनेट सेवाएं प्रदान करना",
+            "तत्काल इलेक्ट्रॉनिक फ़ंड ट्रांसफ़र (Instant Electronic Fund Transfer) प्रदान करना",
+            "ईमेल सेवाएं प्रदान करना",
+            "वेब ब्राउज़िंग सेवाएं प्रदान करना"
+        ],
+        "correct_option": 1,
+        "explanation": "IMPS एक 24x7 तत्काल अंतर-बैंक (interbank) इलेक्ट्रॉनिक फ़ंड ट्रांसफ़र सेवा है।",
+        "chapter": "General Computer Awareness"
+    },
+    {
+        "id": 204,
+        "question": "ग्राहक की मशीन से सर्वर पर डेटा भेजने की प्रक्रिया को क्या कहा जाता है?",
+        "options": [
+            "डाउनलोडिंग (Downloading)",
+            "अपलोडिंग (Uploading)",
+            "ईमेलिंग (Emailing)",
+            "बुकिंग (Booking)"
+        ],
+        "correct_option": 1,
+        "explanation": "स्थानीय डिवाइस (क्लाइंट) से रिमोट सर्वर पर फ़ाइल भेजने की प्रक्रिया को अपलोडिंग कहते हैं।",
+        "chapter": "General Computer Awareness"
+    },
+    {
+        "id": 212,
+        "question": "हटाए गए (Deleted) ईमेल को अस्थायी रूप से किस फ़ोल्डर में सहेजा जाता है?",
+        "options": [
+            "Inbox",
+            "Spam",
+            "Trash",
+            "Drafts"
+        ],
+        "correct_option": 2,
+        "explanation": "डिलीट किए गए ईमेल Trash (या Bin) फ़ोल्डर में जमा होते हैं।",
+        "chapter": "General Computer Awareness"
+    },
+    {
+        "id": 216,
+        "question": "IMPS का पूर्ण रूप (Full Form) क्या है?",
+        "options": [
+            "Instant Money Payment Service",
+            "Immediate Payment Service",
+            "Internet Money Payment Service",
+            "Interbank Money Payment Service"
+        ],
+        "correct_option": 1,
+        "explanation": "IMPS का फुल फॉर्म 'Immediate Payment Service' होता है।",
+        "chapter": "General Computer Awareness"
+    },
+    {
+        "id": 217,
+        "question": "IMPS में लेनदेन का प्राथमिक माध्यम क्या है?",
+        "options": [
+            "कार्ड आधारित",
+            "नकद आधारित",
+            "मोबाइल आधारित (Mobile-based)",
+            "इंटरनेट आधारित"
+        ],
+        "correct_option": 2,
+        "explanation": "IMPS को मुख्य रूप से मोबाइल नंबर और MMID के ज़रिए मोबाइल बैंकिंग हेतु तैयार किया गया था।",
+        "chapter": "General Computer Awareness"
+    },
+    {
+        "id": 218,
+        "question": "IMPS का उपयोग करने का मुख्य लाभ क्या है?",
+        "options": [
+            "यह समय लेने वाला है",
+            "यह बहुत महंगा है",
+            "यह सुरक्षित और किफायती (Safe and Economical) है",
+            "यह केवल कुछ बैंकों तक सीमित है"
+        ],
+        "correct_option": 2,
+        "explanation": "IMPS एक सुरक्षित, त्वरित और किफायती फ़ंड ट्रांसफ़र का जरिया है।",
+        "chapter": "General Computer Awareness"
+    },
+    {
+        "id": 219,
+        "question": "निम्नलिखित में से कौन सी IMPS की एक प्रमुख विशेषता है?",
+        "options": [
+            "यह केवल बैंकिंग घंटों के दौरान उपलब्ध है",
+            "यह 24X7 उपलब्ध (24X7 Available) रहता है",
+            "इसके लिए बैंक शाखा जाना आवश्यक है",
+            "इसके लिए न्यूनतम राशि की सीमा अनिवार्य है"
+        ],
+        "correct_option": 1,
+        "explanation": "IMPS सेवा वर्ष के 365 दिन और 24 घंटे उपलब्ध रहती है।",
+        "chapter": "General Computer Awareness"
+    },
+    {
+        "id": 220,
+        "question": "IMPS किस प्रकार के फ़ंड ट्रांसफ़र की सुविधा प्रदान करता है?",
+        "options": [
+            "इंटरबैंक (Interbank - अलग-अलग बैंकों के बीच)",
+            "इंट्राबैंक (Intrabank)",
+            "अंतर्राष्ट्रीय (International)",
+            "अंतर्राज्यीय (Interstate)"
+        ],
+        "correct_option": 0,
+        "explanation": "IMPS दो भिन्न बैंकों के बीच (Interbank) तुरंत पैसा भेजने की सुविधा देता है।",
+        "chapter": "General Computer Awareness"
+    },
+    {
+        "id": 223,
+        "question": "अपलोडिंग (Uploading) की सटीक परिभाषा क्या है?",
+        "options": [
+            "अपलोडिंग डाउनलोडिंग से तेज़ है",
+            "डाउनलोडिंग अपलोडिंग से तेज़ है",
+            "सर्वर से क्लाइंट को डेटा भेजना",
+            "क्लाइंट (स्थानीय कंप्यूटर) से सर्वर को डेटा स्थानांतरित करना"
+        ],
+        "correct_option": 3,
+        "explanation": "लोकल कंप्यूटर से रिमोट कंप्यूटर/सर्वर पर डेटा ट्रांसफर करना अपलोडिंग कहलाता है।",
+        "chapter": "General Computer Awareness"
+    },
+    {
+        "id": 228,
+        "question": "निम्नलिखित में से कौन सा IMPS का लाभ है?",
+        "options": [
+            "यह महंगा है",
+            "यह समय लेता है",
+            "यह सुरक्षित और किफायती (Safe and Economical) है",
+            "यह केवल कुछ ही बैंकों में सीमित है"
+        ],
+        "correct_option": 2,
+        "explanation": "IMPS सुरक्षित, त्वरित और किफायती सेवा है।",
+        "chapter": "General Computer Awareness"
+    },
+    {
+        "id": 230,
+        "question": "निम्नलिखित में से कौन सा कीबोर्ड शॉर्टकट का एक उदाहरण है?",
+        "options": [
+            "माउस क्लिक",
+            "टचस्क्रीन टैप",
+            "Ctrl + D",
+            "वॉइस कमांड"
+        ],
+        "correct_option": 2,
+        "explanation": "Ctrl + D कीबोर्ड शॉर्टकट कॉम्बिनेशन का उदाहरण है।",
+        "chapter": "General Computer Awareness"
+    },
+    {
+        "id": 239,
+        "question": "डेटा पैकेट्स की राउटिंग में गेटवे का क्या कार्य है?",
+        "options": [
+            "सर्वोत्तम मार्ग से डेटा पैकेट को गंतव्य नोड तक राउट (Route) करना",
+            "डेटा बदलना",
+            "उपकरणों को जोड़ना",
+            "इंटरनेट देना"
+        ],
+        "correct_option": 0,
+        "explanation": "गेटवे पैकेट को सर्वश्रेष्ठ उपलब्ध रूट का चयन करके डेस्टिनेशन नोड तक पहुँचाता है।",
+        "chapter": "General Computer Awareness"
+    },
+    {
+        "id": 249,
+        "question": "की-लॉगर रिकॉर्डर (Key Logger Recorder) का प्राथमिक कार्य क्या है?",
+        "options": [
+            "ऑडियो और वीडियो रिकॉर्ड करना",
+            "इंस्टेंट मैसेज, ईमेल और कीबोर्ड इनपुट को रिकॉर्ड करना",
+            "सिस्टम का एक्सेस ब्लॉक करना",
+            "नेटवर्क की कमियां ढूंढना"
+        ],
+        "correct_option": 1,
+        "explanation": "की-लॉगर का मुख्य कार्य कीबोर्ड द्वारा टाइप की गई हर चीज़ (ईमेल, पासवर्ड, मैसेज) को गुप्त रूप से रिकॉर्ड करना है।",
+        "chapter": "General Computer Awareness"
+    },
+    {
+        "id": 256,
+        "question": "व्हाइट हैट हैकर का प्राथमिक लक्ष्य क्या होता है?",
+        "options": [
+            "अनधिकृत पहुँच प्राप्त करना",
+            "सुरक्षा कमियों का फायदा उठाना",
+            "कंप्यूटर सिस्टम में सुरक्षा खामियों को ठीक करने में मदद करना",
+            "नेटवर्क पर हानिकारक हमले करना"
+        ],
+        "correct_option": 2,
+        "explanation": "व्हाइट हैट हैकर का मुख्य उद्देश्य सुरक्षा व्यवस्था को मजबूत बनाना होता है।",
+        "chapter": "General Computer Awareness"
+    },
+    {
+        "id": 258,
+        "question": "लॉजिक बम की मुख्य विशेषता क्या है?",
+        "options": [
+            "यह सिस्टम एक्सेस रोकने वाला मालवेयर है",
+            "यह एक कोड है जो कुछ शर्तें/कंडीशन पूरी होने पर नुकसानदेह फ़ंक्शन चलाता है",
+            "यह सोशल हैकिंग है",
+            "यह सुरक्षा देने वाला सॉफ्टवेयर है"
+        ],
+        "correct_option": 1,
+        "explanation": "लॉजिक बम ट्रिगर होने के लिए किसी विशेष परिस्थिति या घटना (Condition) का इंतज़ार करता है।",
+        "chapter": "General Computer Awareness"
+    },
+    {
+        "id": 262,
+        "question": "व्हाइट हैट हैकर और ब्लैक हैट हैकर में क्या अंतर होता है?",
+        "options": [
+            "व्हाइट हैट हैकर अपने ज्ञान का उपयोग भलाई/सुरक्षा के लिए करता है, ब्लैक हैट हैकर गलत काम के लिए",
+            "व्हाइट हैट कमियां ढूंढता है, ब्लैक हैट सुधारता है",
+            "व्हाइट हैट हमले करता है, ब्लैक हैट सुरक्षा देता है",
+            "व्हाइट हैट सोशल इंजीनियरिंग करता है, ब्लैक हैट मालवेयर इस्तेमाल करता है"
+        ],
+        "correct_option": 0,
+        "explanation": "व्हाइट हैट सुरक्षा हेतु वैध काम करते हैं जबकि ब्लैक हैट आपराधिक/अवैध कार्य करते हैं।",
+        "chapter": "General Computer Awareness"
+    },
+    {
+        "id": 268,
+        "question": "व्हाइट हैट हैकर और क्रैकर में क्या अंतर है?",
+        "options": [
+            "व्हाइट हैट हैकर अपने ज्ञान का उपयोग सुरक्षा/भलाई के लिए करता है, जबकि क्रैकर गलत इरादों के लिए",
+            "व्हाइट हैट कमियां ढूंढता है, क्रैकर सुधारता है",
+            "व्हाइट हैट हमले करता है, क्रैकर सुरक्षा देता है",
+            "व्हाइट हैट सोशल इंजीनियरिंग करता है, क्रैकर मालवेयर इस्तेमाल करता है"
+        ],
+        "correct_option": 0,
+        "explanation": "व्हाइट हैट हैकर रक्षक (एथिकल) होते हैं जबकि क्रैकर आक्रामक व हानिकारक (अनैतिक) होते हैं।",
+        "chapter": "General Computer Awareness"
+    },
+    {
+        "id": 272,
+        "question": "व्हाइट हैट हैकर की मुख्य विशेषता क्या है?",
+        "options": [
+            "वे अपने ज्ञान का उपयोग गलत काम के लिए करते हैं",
+            "वे कमियों का फायदा उठाकर हमला करते हैं",
+            "वे सुरक्षा खामियों को ठीक करने में मदद करने के लिए अपने ज्ञान का उपयोग करते हैं",
+            "वे सोशल इंजीनियरिंग करते हैं"
+        ],
+        "correct_option": 2,
+        "explanation": "व्हाइट हैट हैकर का काम सुरक्षा दोषों को पहचानकर उन्हें दूर करना होता है।",
+        "chapter": "General Computer Awareness"
+    },
+    {
+        "id": 273,
+        "question": "की-लॉगर रिकॉर्डर का मुख्य उद्देश्य क्या होता है?",
+        "options": [
+            "ऑडियो-वीडियो बनाना",
+            "मैसेज, ईमेल और कीबोर्ड पर टाइप की गई जानकारियों को रिकॉर्ड करना",
+            "सिस्टम ब्लॉक करना",
+            "नेटवर्क कमियां ढूंढना"
+        ],
+        "correct_option": 1,
+        "explanation": "की-लॉगर यूजर द्वारा कीबोर्ड पर टाइप किए गए हर की-स्ट्रोक को गुप्त रूप से कैप्चर करता है।",
+        "chapter": "General Computer Awareness"
+    },
+    {
+        "id": 279,
+        "question": "संवेदनशील जानकारी प्राप्त करने के लिए आपके पीसी पर टाइप की गई हर चीज़ को रिकॉर्ड करने वाले मालवेयर को क्या कहा जाता है?",
+        "options": [
+            "ट्रोजन (Trojan)",
+            "वायरस (Virus)",
+            "की-लॉगर्स (Keyloggers)",
+            "स्पाइवेयर (Spyware)"
+        ],
+        "correct_option": 2,
+        "explanation": "की-लॉगर्स एक प्रकार का मालवेयर है जो आपके पीसी पर टाइप की जाने वाली हर चीज़ को रिकॉर्ड करता है ताकि आपका लॉग-इन नाम, पासवर्ड और अन्य संवेदनशील जानकारी प्राप्त की जा सके।",
+        "chapter": "General Computer Awareness"
+    },
+    {
+        "id": 281,
+        "question": "डेटा ट्रांसमिशन के किस मोड में डेटा दोनों दिशाओं में प्रवाहित हो सकता है, लेकिन एक समय में केवल एक ही दिशा में?",
+        "options": [
+            "सिम्प्लेक्स (Simplex)",
+            "हाफ़-डुप्लेक्स (Half-duplex)",
+            "फ़ुल-डुप्लेक्स (Full-duplex)",
+            "मल्टीप्लेक्स (Multiplex)"
+        ],
+        "correct_option": 1,
+        "explanation": "हाफ़-डुप्लेक्स मोड में, डेटा दोनों दिशाओं में प्रवाहित हो सकता है, लेकिन एक समय में केवल एक ही दिशा में।",
+        "chapter": "General Computer Awareness"
+    },
+    {
+        "id": 282,
+        "question": "डेटा ट्रांसमिशन के उस मोड को क्या कहते हैं जो डेटा को एक ही समय में दोनों दिशाओं में प्रवाहित होने की अनुमति देता है?",
+        "options": [
+            "सिम्प्लेक्स (Simplex)",
+            "हाफ़-डुप्लेक्स (Half-duplex)",
+            "फ़ुल-डुप्लेक्स (Full-duplex)",
+            "मल्टीप्लेक्स (Multiplex)"
+        ],
+        "correct_option": 2,
+        "explanation": "फ़ुल-डुप्लेक्स डेटा ट्रांसमिशन का वह मोड है जो एक ही समय में (साथ-साथ) दोनों दिशाओं में डेटा प्रवाह की अनुमति देता है।",
+        "chapter": "General Computer Awareness"
+    },
+    {
+        "id": 286,
+        "question": "डेटा ट्रांसमिशन के किस मोड में डेटा केवल एक ही दिशा (One direction only) में संचारित होता है?",
+        "options": [
+            "सिम्प्लेक्स (Simplex)",
+            "हाफ़-डुप्लेक्स (Half-duplex)",
+            "फ़ुल-डुप्लेक्स (Full-duplex)",
+            "मल्टीप्लेक्स (Multiplex)"
+        ],
+        "correct_option": 0,
+        "explanation": "सिम्प्लेक्स मोड में डेटा केवल एक ही दिशा में भेजा जा सकता है (जैसे रेडियो या टीवी ब्रॉडकास्ट)।",
+        "chapter": "General Computer Awareness"
+    },
+    {
+        "id": 290,
+        "question": "डेटा ट्रांसमिशन के किस मोड में डेटा दोनों दिशाओं में प्रवाहित तो हो सकता है, लेकिन समय के अंतर (Delay) के साथ एक बार में एक ही दिशा में?",
+        "options": [
+            "सिम्प्लेक्स (Simplex)",
+            "हाफ़-डुप्लेक्स (Half-duplex)",
+            "फ़ुल-डुप्लेक्स (Full-duplex)",
+            "मल्टीप्लेक्स (Multiplex)"
+        ],
+        "correct_option": 1,
+        "explanation": "हाफ़-डुप्लेक्स मोड में डेटा दोनों दिशाओं में जा सकता है, पर एक समय में केवल एक ही दिशा में।",
+        "chapter": "General Computer Awareness"
+    },
+    {
+        "id": 294,
+        "question": "डेटा ट्रांसमिशन के किस मोड में डेटा एक ही समय में दोनों दिशाओं में संचारित होता है?",
+        "options": [
+            "सिम्प्लेक्स (Simplex)",
+            "हाफ़-डुप्लेक्स (Half-duplex)",
+            "फ़ुल-डुप्लेक्स (Full-duplex)",
+            "मल्टीप्लेक्स (Multiplex)"
+        ],
+        "correct_option": 2,
+        "explanation": "फ़ुल-डुप्लेक्स मोड में डेटा दोनों दिशाओं में एक साथ (Simultaneously) ट्रांसमिट होता है।",
+        "chapter": "General Computer Awareness"
+    },
+    {
+        "id": 297,
+        "question": "कीबोर्ड की कुंजियों (Keystrokes) को रिकॉर्ड करने वाले मालवेयर को क्या कहा जाता है?",
+        "options": [
+            "की-लॉगर्स (Keyloggers)",
+            "ट्रोजन (Trojan)",
+            "वायरस (Virus)",
+            "स्पाइवेयर (Spyware)"
+        ],
+        "correct_option": 0,
+        "explanation": "की-लॉगर्स ऐसा मालवेयर है जो टाइप किए गए की-स्ट्रोक्स को रिकॉर्ड करता है।",
+        "chapter": "General Computer Awareness"
+    },
+    {
+        "id": 298,
+        "question": "डेटा ट्रांसमिशन का कौन सा मोड डेटा को केवल एक ही दिशा में प्रवाहित होने देता है?",
+        "options": [
+            "सिम्प्लेक्स (Simplex)",
+            "हाफ़-डुप्लेक्स (Half-duplex)",
+            "फ़ुल-डुप्लेक्स (Full-duplex)",
+            "मल्टीप्लेक्स (Multiplex)"
+        ],
+        "correct_option": 0,
+        "explanation": "सिम्प्लेक्स मोड में डेटा प्रवाह केवल एकदिशीय (One-way) होता है।",
+        "chapter": "General Computer Awareness"
+    },
+    {
+        "id": 301,
+        "question": "डेटा ट्रांसमिशन का वह मोड जो एक ही समय में दोनों दिशाओं में डेटा प्रवाह की अनुमति देता है, क्या कहलाता है?",
+        "options": [
+            "सिम्प्लेक्स (Simplex)",
+            "हाफ़-डुप्लेक्स (Half-duplex)",
+            "फ़ुल-डुप्लेक्स (Full-duplex)",
+            "मल्टीप्लेक्स (Multiplex)"
+        ],
+        "correct_option": 2,
+        "explanation": "यह फ़ुल-डुप्लेक्स मोड कहलाता है।",
+        "chapter": "General Computer Awareness"
+    },
+    {
+        "id": 307,
+        "question": "कंप्यूटर कोड्स (Computer Codes) का मुख्य उद्देश्य क्या है?",
+        "options": [
+            "केवल वर्णमाला (Alphabets) को निरूपित करना",
+            "केवल अंकों को निरूपित करना",
+            "किसी भी कैरेक्टर को 1s और 0s के अनूठे कोडित पैटर्न में निरूपित करना",
+            "केवल विशेष वर्णों को निरूपित करना"
+        ],
+        "correct_option": 2,
+        "explanation": "कंप्यूटर कोड्स का उपयोग किसी भी वर्ण, अंक या प्रतीक को बाइनरी पैटर्न (0 और 1) में दर्शाने के लिए किया जाता है।",
+        "chapter": "General Computer Awareness"
+    },
+    {
+        "id": 317,
+        "question": "वर्णों (Characters) को निरूपित करने में कंप्यूटर कोड्स का क्या महत्व है?",
+        "options": [
+            "केवल सीमित वर्णों को दिखाना",
+            "किसी भी वर्ण को 1s और 0s के अनूठे कोडित पैटर्न में निरूपित करना",
+            "केवल अंक और अक्षर दिखाना",
+            "केवल विशेष प्रतीक दिखाना"
+        ],
+        "correct_option": 1,
+        "explanation": "कंप्यूटर कोड्स किसी भी प्रतीक, अक्षर या अंक को बाइनरी (0 व 1) स्वरूप में प्रदर्शित करते हैं।",
+        "chapter": "General Computer Awareness"
+    },
+    {
+        "id": 325,
+        "question": "अक्षरों/कैरेक्टरों को दर्शाने के लिए कंप्यूटर कोड्स का उपयोग कैसे किया जाता है?",
+        "options": [
+            "1s और 0s के अनूठे कोडित पैटर्न का उपयोग करके",
+            "केवल वर्णमाला का उपयोग करके",
+            "केवल अंकों का उपयोग करके",
+            "केवल विशेष प्रतीकों का उपयोग करके"
+        ],
+        "correct_option": 0,
+        "explanation": "कंप्यूटर कोड्स कैरेक्टरों को 0 और 1 के बाइनरी पैटर्न में परिवर्तित करते हैं।",
+        "chapter": "General Computer Awareness"
+    },
+    {
+        "id": 328,
+        "question": "OSI मॉडल की कौन सी लेयर फ्रेमिंग (Framing), फिजिकल एड्रेसिंग और एरर कंट्रोल के लिए जिम्मेदार है?",
+        "options": [
+            "नेटवर्क लेयर (Network Layer)",
+            "ट्रांसपोर्ट लेयर (Transport Layer)",
+            "डेटा लिंक लेयर (Data Link Layer)",
+            "फिजिकल लेयर (Physical Layer)"
+        ],
+        "correct_option": 2,
+        "explanation": "डेटा लिंक लेयर (DLL) फ्रेमिंग, मैक एड्रेसिंग (फिजिकल एड्रेसिंग) और त्रुटि नियंत्रण के लिए जिम्मेदार है।",
+        "chapter": "General Computer Awareness"
+    },
+    {
+        "id": 332,
+        "question": "ट्रांसपोर्ट लेयर (Transport Layer) को किस नाम से भी जाना जाता है?",
+        "options": [
+            "OSI मॉडल का मस्तिष्क",
+            "OSI मॉडल का हृदय (Heart of the OSI model)",
+            "OSI मॉडल का कोर",
+            "OSI मॉडल का आधार"
+        ],
+        "correct_option": 1,
+        "explanation": "ट्रांसपोर्ट लेयर (Layer 4) को OSI मॉडल का 'हृदय' (Heart) माना जाता है।",
+        "chapter": "General Computer Awareness"
+    },
+    {
+        "id": 335,
+        "question": "ट्रांसपोर्ट लेयर में सेगमेंटेशन और री-असेंबली (Segmentation and Reassembly) का क्या कार्य है?",
+        "options": [
+            "डेटा को छोटे टुकड़ों (Segments) में तोड़ना और गंतव्य पर उन्हें पुनः जोड़ना",
+            "कनेक्शन-ओरिएंटेड सेवा देना",
+            "एरर और फ्लो कंट्रोल करना",
+            "राउटिंग और लॉजिकल एड्रेसिंग"
+        ],
+        "correct_option": 0,
+        "explanation": "सेगमेंटेशन बड़े डेटा को छोटे सेगमेंट में विभाजित करता है तथा री-असेंबली रिसीवर एंड पर उन्हें वापस जोड़ती है।",
+        "chapter": "General Computer Awareness"
+    },
+    {
+        "id": 337,
+        "question": "संदेशों की एंड-टू-एंड डिलीवरी (End-to-End delivery) के लिए कौन सी लेयर जिम्मेदार है?",
+        "options": [
+            "नेटवर्क लेयर",
+            "ट्रांसपोर्ट लेयर (Transport Layer)",
+            "डेटा लिंक लेयर",
+            "फिजिकल लेयर"
+        ],
+        "correct_option": 1,
+        "explanation": "सोर्स से डेस्टिनेशन तक डेटा की एंड-टू-एंड प्रक्रियात्मक डिलीवरी ट्रांसपोर्ट लेयर की जिम्मेदारी है।",
+        "chapter": "General Computer Awareness"
+    },
+    {
+        "id": 338,
+        "question": "ट्रांसपोर्ट लेयर (Layer 4) में डेटा इकाई को क्या कहा जाता है?",
+        "options": [
+            "पैकेट्स (Packets)",
+            "फ्रेम्स (Frames)",
+            "सेगमेंट्स (Segments)",
+            "डेटाग्राम्स (Datagrams)"
+        ],
+        "correct_option": 2,
+        "explanation": "ट्रांसपोर्ट लेयर में डेटा को 'सेगमेंट' (Segment) कहा जाता है।",
+        "chapter": "General Computer Awareness"
+    },
+    {
+        "id": 340,
+        "question": "निम्नलिखित में से कौन सी ट्रांसपोर्ट लेयर की एक प्रमुख विशेषता है?",
+        "options": [
+            "राउटिंग और लॉजिकल एड्रेसिंग",
+            "एरर कंट्रोल और फ्लो कंट्रोल",
+            "सेगमेंटेशन और री-असेंबली (Segmentation and Reassembly)",
+            "उपरोक्त सभी"
+        ],
+        "correct_option": 2,
+        "explanation": "सेगमेंटेशन और री-असेंबली ट्रांसपोर्ट लेयर का मूल कार्य है।",
+        "chapter": "General Computer Awareness"
+    },
+    {
+        "id": 345,
+        "question": "ट्रांसपोर्ट लेयर का मुख्य उद्देश्य क्या है?",
+        "options": [
+            "लॉजिकल एड्रेसिंग देना",
+            "संदेशों की एंड-टू-एंड डिलीवरी (End-to-End Delivery) सुनिश्चित करना",
+            "फ्लो कंट्रोल करना",
+            "कनेक्शनलेस सेवा देना"
+        ],
+        "correct_option": 1,
+        "explanation": "ट्रांसपोर्ट लेयर का मुख्य काम एक प्रोसेस से दूसरी प्रोसेस तक एंड-टू-एंड डिलीवरी देना है।",
+        "chapter": "General Computer Awareness"
+    },
+    {
+        "id": 346,
+        "question": "फिजिकल एड्रेसिंग (Physical/MAC Addressing) के लिए कौन सी लेयर जिम्मेदार है?",
+        "options": [
+            "नेटवर्क लेयर",
+            "ट्रांसपोर्ट लेयर",
+            "डेटा लिंक लेयर (Data Link Layer)",
+            "फिजिकल लेयर"
+        ],
+        "correct_option": 2,
+        "explanation": "डेटा लिंक लेयर मैक एड्रेस (Physical Address) का उपयोग करती है।",
+        "chapter": "General Computer Awareness"
+    },
+    {
+        "id": 349,
+        "question": "डेटा लिंक लेयर (Data Link Layer) का मुख्य कार्य क्या है?",
+        "options": [
+            "एंड-टू-एंड डिलीवरी देना",
+            "विभिन्न नेटवर्कों में राउट करना",
+            "नोड-टू-नोड एरर कंट्रोल व फ्लो कंट्रोल प्रदान करना",
+            "एक्सेस कंट्रोल देना"
+        ],
+        "correct_option": 2,
+        "explanation": "डेटा लिंक लेयर दो समीपस्थ नोड्स के बीच त्रुटि नियंत्रण और प्रवाह नियंत्रण करती है।",
+        "chapter": "General Computer Awareness"
+    },
+    {
+        "id": 352,
+        "question": "निम्नलिखित में से कौन सा कार्य ट्रांसपोर्ट लेयर का है?",
+        "options": [
+            "राउटिंग और लॉजिकल एड्रेसिंग",
+            "एरर कंट्रोल और फ्लो कंट्रोल",
+            "सेगमेंटेशन और री-असेंबली (Segmentation and Reassembly)",
+            "एक्सेस कंट्रोल"
+        ],
+        "correct_option": 2,
+        "explanation": "सेगमेंटेशन और री-असेंबली ट्रांसपोर्ट लेयर का प्रमुख कार्य है।",
+        "chapter": "General Computer Awareness"
+    },
+    {
+        "id": 354,
+        "question": "ट्रांसपोर्ट लेयर को OSI मॉडल में क्या कहा जाता है?",
+        "options": [
+            "OSI मॉडल का हृदय (Heart of the OSI model)",
+            "OSI मॉडल का मस्तिष्क",
+            "OSI मॉडल का कोर",
+            "OSI मॉडल का आधार"
+        ],
+        "correct_option": 0,
+        "explanation": "ट्रांसपोर्ट लेयर (Layer 4) को OSI मॉडल का हृदय कहा जाता है।",
+        "chapter": "General Computer Awareness"
+    },
+    {
+        "id": 355,
+        "question": "दुनिया के शीर्ष 500 सुपरकंप्यूटरों की सूची में भारत के सुपरकंप्यूटर को कौन सी रैंकिंग मिली थी?",
+        "options": [
+            "100वीं रैंक",
+            "171वीं रैंक (Ranked 171)",
+            "200वीं रैंक",
+            "250वीं रैंक"
+        ],
+        "correct_option": 1,
+        "explanation": "भारत के इस सुपरकंप्यूटर ने 171वीं रैंक के साथ विश्व के टॉप 500 सुपरकंप्यूटरों में प्रवेश किया था।",
+        "chapter": "General Computer Awareness"
+    },
+    {
+        "id": 360,
+        "question": "परम बायो-ब्लेज़ किस वर्ष लॉन्च किया गया था?",
+        "options": [
+            "2012",
+            "2013",
+            "2014",
+            "2015"
+        ],
+        "correct_option": 2,
+        "explanation": "परम बायो-ब्लेज़ को वर्ष 2014 में लॉन्च किया गया था।",
+        "chapter": "General Computer Awareness"
+    },
+    {
+        "id": 361,
+        "question": "SEAC का पूर्ण रूप (Full Form) क्या है?",
+        "options": [
+            "Standards Eastern Automatic Computer",
+            "Standards Electronic Automatic Computer",
+            "A और B दोनों",
+            "उपरोक्त में से कोई नहीं"
+        ],
+        "correct_option": 0,
+        "explanation": "SEAC का अर्थ 'Standards Eastern Automatic Computer' है।",
+        "chapter": "General Computer Awareness"
+    },
+    {
+        "id": 362,
+        "question": "SMPS का पूर्ण रूप (Full Form) क्या है?",
+        "options": [
+            "स्विच मोड पावर सप्लाई (Switched Mode Power Supply)",
+            "स्टैटिक मोड पावर सप्लाई",
+            "सिंपल मोड पावर सप्लाई",
+            "स्टैंडर्ड मोड पावर सप्लाई"
+        ],
+        "correct_option": 0,
+        "explanation": "SMPS का फुल फॉर्म 'Switched Mode Power Supply' होता है।",
+        "chapter": "General Computer Awareness"
+    },
+    {
+        "id": 363,
+        "question": "SMPS का मुख्य उपयोग किसमें होता है?",
+        "options": [
+            "कंप्यूटर में (In computers)",
+            "टेलीविज़न में",
+            "रेडियो में",
+            "मोबाइल फ़ोन में"
+        ],
+        "correct_option": 0,
+        "explanation": "SMPS का मुख्य उपयोग कंप्यूटर में घटक घटकों को नियंत्रित डीसी पावर देने के लिए होता है।",
+        "chapter": "General Computer Awareness"
+    },
+    {
+        "id": 364,
+        "question": "HTML का पूर्ण रूप (Full Form) क्या है?",
+        "options": [
+            "हाइपर टेक्स्ट मार्कअप लैंग्वेज (Hyper Text Markup Language)",
+            "हाइपर टेक्स्ट मेकिंग लैंग्वेज",
+            "हाइपर टेक्स्ट मैनेजिंग लैंग्वेज",
+            "हाइपर टेक्स्ट मैपिंग लैंग्वेज"
+        ],
+        "correct_option": 0,
+        "explanation": "HTML का फुल फॉर्म 'Hyper Text Markup Language' है।",
+        "chapter": "General Computer Awareness"
+    },
+    {
+        "id": 365,
+        "question": "HTML का आविष्कार किसने किया था?",
+        "options": [
+            "टिम बर्नर्स ली (Tim Berners Lee)",
+            "स्टीव जॉब्स",
+            "बिल गेट्स",
+            "विनोद खोसला"
+        ],
+        "correct_option": 0,
+        "explanation": "HTML का आविष्कार टिम बर्नर्स ली ने किया था।",
+        "chapter": "General Computer Awareness"
+    },
+    {
+        "id": 366,
+        "question": "HTML का आविष्कार किस वर्ष हुआ था?",
+        "options": [
+            "1980",
+            "1990",
+            "2000",
+            "2010"
+        ],
+        "correct_option": 1,
+        "explanation": "HTML का आविष्कार वर्ष 1990 में टिम बर्नर्स ली द्वारा किया गया था।",
+        "chapter": "General Computer Awareness"
+    },
+    {
+        "id": 367,
+        "question": "भारतीय-अमेरिकी उद्यमी विनोद खोसला द्वारा सह-स्थापित कंपनी का क्या नाम है?",
+        "options": [
+            "सन माइक्रोसिस्टम्स (Sun Microsystems)",
+            "ऐप्पल इंक.",
+            "गूगल",
+            "माइक्रोसॉफ्ट"
+        ],
+        "correct_option": 0,
+        "explanation": "सन माइक्रोसिस्टम्स की स्थापना विनोद खोसला और उनके साथियों ने की थी।",
+        "chapter": "General Computer Awareness"
+    },
+    {
+        "id": 368,
+        "question": "ऑरेकल (Oracle) द्वारा किस कंपनी का अधिग्रहण (Acquire) किया गया था?",
+        "options": [
+            "सन माइक्रोसिस्टम्स (Sun Microsystems)",
+            "ऐप्पल इंक.",
+            "गूगल",
+            "माइक्रोसॉफ्ट"
+        ],
+        "correct_option": 0,
+        "explanation": "सन माइक्रोसिस्टम्स का अधिग्रहण 2010 में ऑरेकल कॉर्पोरेशन द्वारा कर लिया गया था।",
+        "chapter": "General Computer Awareness"
+    },
+    {
+        "id": 369,
+        "question": "ऐप्पल इंक (Apple Inc.) का पूर्व नाम क्या था?",
+        "options": [
+            "ऐप्पल कंप्यूटर कंपनी (Apple Computer Company)",
+            "ऐप्पल इलेक्ट्रॉनिक्स कंपनी",
+            "ऐप्पल टेक्नोलॉजी कंपनी",
+            "ऐप्पल सॉफ्टवेयर कंपनी"
+        ],
+        "correct_option": 0,
+        "explanation": "Apple Inc. को पहले 'Apple Computer Company' के नाम से जाना जाता था।",
+        "chapter": "General Computer Awareness"
+    },
+    {
+        "id": 370,
+        "question": "ऐप्पल इंक (Apple Inc.) के संस्थापक कौन हैं?",
+        "options": [
+            "स्टीव जॉब्स और स्टीव वोज़्नियाक",
+            "स्टीव जॉब्स, स्टीव वोज़्नियाक और रोनाल्ड वेन",
+            "बिल गेट्स और पॉल एलन",
+            "विनोद खोसला और टिम बर्नर्स ली"
+        ],
+        "correct_option": 1,
+        "explanation": "Apple कंपनी की स्थापना स्टीव जॉब्स, स्टीव वोज़्नियाक और रोनाल्ड वेन ने मिलकर की थी।",
+        "chapter": "General Computer Awareness"
+    },
+    {
+        "id": 371,
+        "question": "ऐप्पल (Apple Inc.) की स्थापना किस वर्ष हुई थी?",
+        "options": [
+            "1975",
+            "1976",
+            "1977",
+            "1978"
+        ],
+        "correct_option": 1,
+        "explanation": "Apple की स्थापना 1 अप्रैल 1976 को हुई थी।",
+        "chapter": "General Computer Awareness"
+    },
+    {
+        "id": 373,
+        "question": "नवंबर 2008 में परम युवा सुपरकंप्यूटर की वैश्विक रैंकिंग क्या थी?",
+        "options": [
+            "50वीं रैंक",
+            "69वीं रैंक (Ranked 69)",
+            "100वीं रैंक",
+            "200वीं रैंक"
+        ],
+        "correct_option": 1,
+        "explanation": "नवंबर 2008 में परम युवा को विश्व में 69वाँ स्थान मिला था।",
+        "chapter": "General Computer Awareness"
+    },
+    {
+        "id": 376,
+        "question": "SEAC कंप्यूटर का निर्माण किसने किया था?",
+        "options": [
+            "यू.एस. नेशनल ब्यूरो ऑफ स्टैंडर्ड्स (NBS)",
+            "IBM",
+            "ऐप्पल इंक.",
+            "गूगल"
+        ],
+        "correct_option": 0,
+        "explanation": "SEAC का निर्माण अमेरिका के नेशनल ब्यूरो ऑफ स्टैंडर्ड्स (NBS) द्वारा किया गया था।",
+        "chapter": "General Computer Awareness"
+    },
+    {
+        "id": 377,
+        "question": "SEAC कंप्यूटर का निर्माण किस वर्ष किया गया था?",
+        "options": [
+            "1940",
+            "1950",
+            "1960",
+            "1970"
+        ],
+        "correct_option": 1,
+        "explanation": "SEAC कंप्यूटर वर्ष 1950 में बनकर तैयार हुआ था।",
+        "chapter": "General Computer Awareness"
+    },
+    {
+        "id": 380,
+        "question": "HTML का अर्थ क्या है?",
+        "options": [
+            "हाइपर टेक्स्ट मार्कअप लैंग्वेज (Hyper Text Markup Language)",
+            "हाइपर टेक्स्ट मेकिंग लैंग्वेज",
+            "हाइपर टेक्स्ट मैनेजिंग लैंग्वेज",
+            "हाइपर टेक्स्ट मैपिंग लैंग्वेज"
+        ],
+        "correct_option": 0,
+        "explanation": "HTML का फुल फॉर्म हाइपर टेक्स्ट मार्कअप लैंग्वेज है।",
+        "chapter": "General Computer Awareness"
+    },
+    {
+        "id": 381,
+        "question": "1990 में HTML का आविष्कार किसने किया था?",
+        "options": [
+            "टिम बर्नर्स ली (Tim Berners Lee)",
+            "स्टीव जॉब्स",
+            "बिल गेट्स",
+            "विनोद खोसला"
+        ],
+        "correct_option": 0,
+        "explanation": "टिम बर्नर्स ली ने 1990 में HTML बनाया था।",
+        "chapter": "General Computer Awareness"
+    },
+    {
+        "id": 382,
+        "question": "1976 में स्टीव जॉब्स, स्टीव वोज़्नियाक और रोनाल्ड वेन द्वारा किस कंपनी की स्थापना की गई थी?",
+        "options": [
+            "ऐप्पल इंक (Apple Inc.)",
+            "गूगल",
+            "माइक्रोसॉफ्ट",
+            "सन माइक्रोसिस्टम्स"
+        ],
+        "correct_option": 0,
+        "explanation": "1976 में इन तीनों ने मिलकर Apple Inc. की नींव रखी थी।",
+        "chapter": "General Computer Awareness"
+    },
+    {
+        "id": 384,
+        "question": "माइक्रोसॉफ्ट 365 (Microsoft 365) पहली बार किस वर्ष उपलब्ध कराया गया था?",
+        "options": [
+            "2010",
+            "2011",
+            "2012",
+            "2015"
+        ],
+        "correct_option": 1,
+        "explanation": "Microsoft 365 (पूर्व में Office 365) पहली बार 2011 में लॉन्च किया गया था।",
+        "chapter": "General Computer Awareness"
+    },
+    {
+        "id": 385,
+        "question": "माइक्रोसॉफ्ट 365 को किस मॉडल के तहत बेचा जाता है?",
+        "options": [
+            "एकमुश्त ख़रीद (One-time purchase)",
+            "सब्सक्रिप्शन (Subscription - सदस्यता मॉडल)",
+            "मुफ़्त सेवा",
+            "ट्रायल वर्ज़न"
+        ],
+        "correct_option": 1,
+        "explanation": "Microsoft 365 को एक सब्सक्रिप्शन (मासिक या वार्षिक शुल्क) के रूप में बेचा जाता है।",
+        "chapter": "General Computer Awareness"
+    },
+    {
+        "id": 387,
+        "question": "व्यक्तिगत/घरेलू उपयोग के लिए माइक्रोसॉफ्ट 365 के दो मुख्य संस्करण कौन से हैं?",
+        "options": [
+            "फैमिली और स्टूडेंट",
+            "पर्सनल और प्रोफ़ेशनल",
+            "फैमिली और पर्सनल (Family and Personal)",
+            "होम और बिजनेस"
+        ],
+        "correct_option": 2,
+        "explanation": "व्यक्तिगत उपयोग के लिए Microsoft 365 'Family' और 'Personal' दो संस्करणों में आता है।",
+        "chapter": "General Computer Awareness"
+    },
+    {
+        "id": 392,
+        "question": "माइक्रोसॉफ्ट 365 और पारंपरिक एमएस-ऑफिस बंडल में क्या मुख्य अंतर है?",
+        "options": [
+            "Microsoft 365 केवल व्यक्तिगत उपयोग के लिए है",
+            "Microsoft 365 एक बार ख़रीदा जाता है",
+            "Microsoft 365 सब्सक्रिप्शन आधारित है और इसमें ऑनलाइन क्लाउड सेवाएं शामिल हैं",
+            "Microsoft 365 में केवल डेस्कटॉप ऐप्स हैं"
+        ],
+        "correct_option": 2,
+        "explanation": "पारंपरिक ऑफिस एक बार ख़रीदा (One-time) जाता था, जबकि 365 सब्सक्रिप्शन मॉडल पर क्लाउड सेवाओं के साथ आता है।",
+        "chapter": "General Computer Awareness"
+    },
+    {
+        "id": 400,
+        "question": "भुगतान (Payment) के संदर्भ में Microsoft 365 पुराने ऑफिस बंडल से कैसे भिन्न है?",
+        "options": [
+            "Microsoft 365 एक बार ख़रीदा जाता है",
+            "Microsoft 365 एक सब्सक्रिप्शन (Subscription) मॉडल है",
+            "Microsoft 365 पूर्णतः मुफ़्त है",
+            "Microsoft 365 केवल एक ट्रायल संस्करण है"
+        ],
+        "correct_option": 1,
+        "explanation": "पुराना ऑफिस एकमुश्त (One-time) मिलता था जबकि 365 मासिक या वार्षिक सब्सक्रिप्शन पर आधारित है।",
+        "chapter": "General Computer Awareness"
+    },
+    {
+        "id": 434,
+        "question": "वर्कशीट में एक स्क्रीन नीचे जाने का शॉर्टकट क्या है?",
+        "options": [
+            "Page Down",
+            "Page Up",
+            "Alt+Page Down",
+            "Alt+Page Up"
+        ],
+        "correct_option": 0,
+        "explanation": "Page Down दबाने से स्क्रीन एक पेज नीचे चली जाती है।",
+        "chapter": "General Computer Awareness"
+    },
+    {
+        "id": 435,
+        "question": "वर्कबुक में अगली शीट (Next Sheet) पर जाने का शॉर्टकट क्या है?",
+        "options": [
+            "Ctrl+Page Down",
+            "Ctrl+Page Up",
+            "Alt+Page Down",
+            "Alt+Page Up"
+        ],
+        "correct_option": 0,
+        "explanation": "Ctrl+Page Down का उपयोग वर्कबुक की अगली वर्कशीट पर जाने के लिए होता है।",
+        "chapter": "General Computer Awareness"
+    },
+    {
+        "id": 437,
+        "question": "वर्कशीट में एक स्क्रीन ऊपर जाने की कुंजी क्या है?",
+        "options": [
+            "Page Up",
+            "Page Down",
+            "Alt+Page Up",
+            "Alt+Page Down"
+        ],
+        "correct_option": 0,
+        "explanation": "Page Up दबाने से स्क्रीन एक पेज ऊपर खिसकती है।",
+        "chapter": "General Computer Awareness"
+    },
+    {
+        "id": 438,
+        "question": "वर्कशीट में एक स्क्रीन बाईं ओर जाने का शॉर्टकट क्या है?",
+        "options": [
+            "Alt+Page Up",
+            "Alt+Page Down",
+            "Page Up",
+            "Page Down"
+        ],
+        "correct_option": 0,
+        "explanation": "Alt+Page Up से स्क्रीन एक दृश्य क्षेत्र बाईं (Left) ओर खिसकती है।",
+        "chapter": "General Computer Awareness"
+    },
+    {
+        "id": 443,
+        "question": "नोट्स और थ्रेडेड कमेंट्स जोड़ने के विकल्प कहाँ उपलब्ध होते हैं?",
+        "options": [
+            "Review टैब (Alt+R)",
+            "View टैब (Alt+W)",
+            "Ctrl+R",
+            "Ctrl+W"
+        ],
+        "correct_option": 0,
+        "explanation": "कमेंट्स और नोट्स जोड़ने के टूल Review टैब (Alt+R) में स्थित हैं।",
+        "chapter": "General Computer Awareness"
+    },
+    {
+        "id": 445,
+        "question": "पेज ब्रेक (Page Breaks) और लेआउट का पूर्वावलोकन करने के विकल्प किस टैब में हैं?",
+        "options": [
+            "Review टैब (Alt+R)",
+            "View टैब (Alt+W)",
+            "Ctrl+R",
+            "Ctrl+W"
+        ],
+        "correct_option": 1,
+        "explanation": "Page Break Preview और लेआउट व्यू के विकल्प View टैब (Alt+W) में पाए जाते हैं।",
+        "chapter": "General Computer Awareness"
+    },
+    {
+        "id": 446,
+        "question": "ज़ूम आवर्धन (Zoom Magnification) सेट करने का विकल्प किस टैब में होता है?",
+        "options": [
+            "Review टैब (Alt+R)",
+            "View टैब (Alt+W)",
+            "Ctrl+R",
+            "Ctrl+W"
+        ],
+        "correct_option": 1,
+        "explanation": "Zoom सेटिंग्स View टैब (Alt+W) में स्थित होती हैं।",
+        "chapter": "General Computer Awareness"
+    },
+    {
+        "id": 448,
+        "question": "End दबाकर एरो कुंजी (End, Arrow Key) दबाने का क्या कार्य है?",
+        "options": [
+            "वर्तमान डेटा क्षेत्र की सीमा पर जाना",
+            "अंतिम सेल पर जाना",
+            "End मोड में प्रवेश करके समान पंक्ति/कॉलम के अगले गैर-खाली सेल पर जाना",
+            "एक सेल दाएं जाना"
+        ],
+        "correct_option": 2,
+        "explanation": "End + Arrow Key मोड एक्टिव करके डेटा ब्लॉक के अंतिम छोर तक ले जाता है।",
+        "chapter": "General Computer Awareness"
+    },
+    {
+        "id": 449,
+        "question": "मैक्रोज़ (Macros) देखने और प्रबंधित करने का विकल्प मुख्य रिबन के किस टैब में होता है?",
+        "options": [
+            "Review टैब (Alt+R)",
+            "View टैब (Alt+W)",
+            "Ctrl+R",
+            "Ctrl+W"
+        ],
+        "correct_option": 1,
+        "explanation": "Macros विकल्प View टैब (Alt+W) में उपलब्ध होता है।",
+        "chapter": "General Computer Awareness"
+    },
+    {
+        "id": 452,
+        "question": "वर्तमान डेटा रेंज का एम्बेडेड चार्ट (Embedded Chart) बनाने का शॉर्टकट क्या है?",
+        "options": [
+            "Alt+Shift+F1",
+            "Alt+F1",
+            "Ctrl+Shift+F1",
+            "Ctrl+F1"
+        ],
+        "correct_option": 1,
+        "explanation": "Alt+F1 दबाने पर चयनित डेटा का त्वरित एम्बेडेड चार्ट बन जाता है।",
+        "chapter": "General Computer Awareness"
+    },
+    {
+        "id": 455,
+        "question": "Insert Function डायलॉग बॉक्स प्रदर्शित करने का शॉर्टकट क्या है?",
+        "options": [
+            "केवल F3",
+            "Shift+F3",
+            "Ctrl+F3",
+            "Alt+F3"
+        ],
+        "correct_option": 1,
+        "explanation": "Shift+F3 दबाने पर Insert Function विंडो खुलती है।",
+        "chapter": "General Computer Awareness"
+    },
+    {
+        "id": 468,
+        "question": "Paste Name डायलॉग बॉक्स प्रदर्शित करने का शॉर्टकट क्या है?",
+        "options": [
+            "केवल F2",
+            "केवल F3",
+            "Shift+F3",
+            "Ctrl+F3"
+        ],
+        "correct_option": 1,
+        "explanation": "अकेले F3 दबाने से Paste Name डायलॉग बॉक्स खुलता है।",
+        "chapter": "General Computer Awareness"
+    },
+    {
+        "id": 469,
+        "question": "Alt+F1 कुंजी का क्या मुख्य कार्य है?",
+        "options": [
+            "वर्तमान डेटा रेंज का एम्बेडेड चार्ट बनाना",
+            "नई वर्कशीट जोड़ना",
+            "फुल स्क्रीन टॉगल करना",
+            "Excel बंद करना"
+        ],
+        "correct_option": 0,
+        "explanation": "Alt+F1 से त्वरित चार्ट का निर्माण होता है।",
+        "chapter": "General Computer Awareness"
+    },
+    {
+        "id": 470,
+        "question": "वर्तमान चयनित वर्कबुक विंडो को बंद करने का शॉर्टकट क्या है?",
+        "options": [
+            "Ctrl+F4",
+            "Alt+F4",
+            "Shift+F4",
+            "Alt+Shift+F4"
+        ],
+        "correct_option": 0,
+        "explanation": "Ctrl+F4 से खुली वर्कबुक बंद होती है।",
+        "chapter": "General Computer Awareness"
+    },
+    {
+        "id": 471,
+        "question": "स्प्लिट (Split) की गई वर्कशीट में केवल F6 का क्या कार्य है?",
+        "options": [
+            "स्प्लिट पेन्स सहित वर्कशीट, रिबन, टास्क पेन और ज़ूम कंट्रोल्स के बीच स्विच करना",
+            "सेल एडिट करना",
+            "फुल स्क्रीन मोड बदलना",
+            "वर्कबुक बंद करना"
+        ],
+        "correct_option": 0,
+        "explanation": "स्प्लिट वर्कशीट में F6 विभाजित भागों (Panes) के बीच भी नेविगेट करता है।",
+        "chapter": "General Computer Awareness"
+    },
+    {
+        "id": 472,
+        "question": "Ctrl+Shift+F1 का क्या कार्य है?",
+        "options": [
+            "फुल स्क्रीन मोड टॉगल करना (Toggle Full Screen)",
+            "एम्बेडेड चार्ट बनाना",
+            "नई वर्कशीट इंसर्ट करना",
+            "Excel बंद करना"
+        ],
+        "correct_option": 0,
+        "explanation": "Ctrl+Shift+F1 से रिबन छिप/दिख जाता है जिससे फ़ुल स्क्रीन मोड टॉगल होता है।",
+        "chapter": "General Computer Awareness"
+    },
+    {
+        "id": 473,
+        "question": "वर्कबुक विंडो का आकार रीस्टोर (Restore Window Size) करने का शॉर्टकट क्या है?",
+        "options": [
+            "Ctrl+F5",
+            "Alt+F5",
+            "Shift+F5",
+            "Ctrl+Shift+F5"
+        ],
+        "correct_option": 0,
+        "explanation": "Ctrl+F5 वर्कबुक विंडो का पूर्व आकार रीस्टोर करता है।",
+        "chapter": "General Computer Awareness"
+    },
+    {
+        "id": 475,
+        "question": "यदि वर्कबुक में कोई नाम परिभाषित (Defined Names) न हो, तो F3 दबाने पर क्या होता है?",
+        "options": [
+            "त्रुटि संदेश दिखाता है",
+            "Paste Name बॉक्स खोलता है",
+            "कुछ नहीं होता (Does nothing)",
+            "नई वर्कशीट जोड़ता है"
+        ],
+        "correct_option": 2,
+        "explanation": "यदि वर्कबुक में कोई नेम-रेंज नहीं है, तो F3 दबाने पर कोई प्रतिक्रिया नहीं होती।",
+        "chapter": "General Computer Awareness"
+    },
+    {
+        "id": 477,
+        "question": "यदि अंतिम कार्य/कमांड दोहराया न जा सके, तो केवल F4 दबाने पर क्या होता है?",
+        "options": [
+            "अंतिम कार्य दोहराया जाता है",
+            "कुछ नहीं होता (Does nothing)",
+            "त्रुटि संदेश आता है",
+            "फुल स्क्रीन होती है"
+        ],
+        "correct_option": 1,
+        "explanation": "यदि दोहराने योग्य कोई एक्शन नहीं है, तो F4 दबाने पर कुछ नहीं होता।",
+        "chapter": "General Computer Awareness"
+    },
+    {
+        "id": 481,
+        "question": "OSI का पूर्ण रूप (Full Form) क्या है?",
+        "options": [
+            "ओपन सिस्टम इंटरकनेक्शन (Open System Interconnection)",
+            "ओपन सोर्स इंटरफ़ेस",
+            "ऑपरेटिंग सिस्टम इंटरफ़ेस",
+            "ऑनलाइन सिस्टम इंटरफ़ेस"
+        ],
+        "correct_option": 0,
+        "explanation": "OSI का पूरा नाम Open System Interconnection है।",
+        "chapter": "General Computer Awareness"
+    },
+    {
+        "id": 482,
+        "question": "IBM कंपनी का मुख्यालय (Headquarters) कहाँ स्थित है?",
+        "options": [
+            "आरमोंक, न्यू यॉर्क (Armonk, NY)",
+            "न्यू यॉर्क सिटी",
+            "लॉस एंजिल्स",
+            "शिकागो"
+        ],
+        "correct_option": 0,
+        "explanation": "IBM का मुख्यालय आरमोंक (Armonk), न्यू यॉर्क, अमेरिका में है।",
+        "chapter": "General Computer Awareness"
+    },
+    {
+        "id": 483,
+        "question": "IBM के अध्यक्ष और मुख्य कार्यकारी अधिकारी (Chairman & CEO) कौन हैं?",
+        "options": [
+            "अरविंद कृष्णा (Arvind Krishna)",
+            "बिल गेट्स",
+            "स्टीव जॉब्स",
+            "मार्क जुकरबर्ग"
+        ],
+        "correct_option": 0,
+        "explanation": "भारतीय मूल के अरविंद कृष्णा IBM के चेयरमैन और सीईओ हैं।",
+        "chapter": "General Computer Awareness"
+    },
+    {
+        "id": 489,
+        "question": "IBM किस प्रकार का संगठन/कंपनी है?",
+        "options": [
+            "बहुराष्ट्रीय प्रौद्योगिकी और परामर्श संगठन (Multinational Technology and Consulting)",
+            "राष्ट्रीय प्रौद्योगिकी संगठन",
+            "अंतर्राष्ट्रीय व्यापार संगठन",
+            "स्थानीय प्रौद्योगिकी संगठन"
+        ],
+        "correct_option": 0,
+        "explanation": "IBM (International Business Machines) एक बहुराष्ट्रीय अमेरिकी आईटी कंपनी है।",
+        "chapter": "General Computer Awareness"
+    },
+    {
+        "id": 490,
+        "question": "IBM मुख्य रूप से कौन सी सेवाएं प्रदान करता है?",
+        "options": [
+            "इन्फ्रास्ट्रक्चर, होस्टिंग और कंसल्टिंग (परामर्श) सेवाएं",
+            "सॉफ्टवेयर और डेटा स्टोरेज सेवाएं",
+            "नेटवर्क प्रबंधन सेवाएं",
+            "हार्डवेयर निर्माण सेवाएं"
+        ],
+        "correct_option": 0,
+        "explanation": "IBM मुख्य रूप से आईटी इन्फ्रास्ट्रक्चर, क्लाउड होस्टिंग और कंसल्टिंग सर्विस देता है।",
+        "chapter": "General Computer Awareness"
+    },
+    {
+        "id": 496,
+        "question": "IBM के चेयरमैन और सीईओ की मुख्य भूमिका क्या है?",
+        "options": [
+            "कंपनी की समग्र रणनीति और दिशा की देखरेख करना",
+            "वित्तीय संचालन संभालना",
+            "नए ऐप बनाना",
+            "मार्केटिंग संभालना"
+        ],
+        "correct_option": 0,
+        "explanation": "चेयरमैन व सीईओ कंपनी की समग्र रणनीति और व्यावसायिक दिशानिर्देश तय करते हैं।",
+        "chapter": "General Computer Awareness"
+    },
+    {
+        "id": 499,
+        "question": "IBM और उसकी सेवाओं के बीच क्या संबंध है?",
+        "options": [
+            "IBM इन्फ्रास्ट्रक्चर, होस्टिंग और कंसल्टिंग सेवाएं प्रदान करता है",
+            "IBM केवल सॉफ्टवेयर बनाता है",
+            "IBM केवल नेटवर्क सुरक्षा देता है",
+            "IBM केवल हार्डवेयर बेचता है"
+        ],
+        "correct_option": 0,
+        "explanation": "IBM आईटी इन्फ्रास्ट्रक्चर, क्लाउड होस्टिंग और कंसल्टिंग सर्विसेज में वैश्विक अग्रणी है।",
+        "chapter": "General Computer Awareness"
+    },
+    {
+        "id": 503,
+        "question": "IBM में चेयरमैन और सीईओ का क्या रोल होता है?",
+        "options": [
+            "कंपनी की समग्र रणनीति और दिशा निर्देश तय करना",
+            "वित्तीय लेनदेन संभालना",
+            "कोड लिखना",
+            "विज्ञापन संभालना"
+        ],
+        "correct_option": 0,
+        "explanation": "सीईओ का कार्य संस्था की कुल नीति व कार्यदिशा का निर्धारण करना होता है।",
+        "chapter": "General Computer Awareness"
+    },
+    {
+        "id": 523,
+        "question": "डिजिटल सिग्नेचर में पब्लिक की (Public Key) का मुख्य उपयोग क्या है?",
+        "options": [
+            "संदेश को एनक्रिप्ट करना",
+            "संदेश को डिक्रिप्ट करना",
+            "प्रेषक की पहचान (Sender's Identity) सत्यापित करना",
+            "प्राप्तकर्ता की पहचान प्रमाणित करना"
+        ],
+        "correct_option": 2,
+        "explanation": "पब्लिक की प्रेषक के डिजिटल सिग्नेचर को डिक्रिप्ट करके उसकी प्रामाणिक पहचान की पुष्टि करती है।",
+        "chapter": "General Computer Awareness"
+    },
+    {
+        "id": 542,
+        "question": "कंप्यूटर पर स्काइप (Skype) से वीडियो कॉलिंग करने के लिए किन उपकरणों की आवश्यकता होती है?",
+        "options": [
+            "वेबकैम और माइक्रोफोन",
+            "स्पीकर और माइक्रोफोन",
+            "वेबकैम, माइक्रोफोन और स्पीकर तीनों (Webcam, Microphone, and Speaker)",
+            "केवल वेबकैम"
+        ],
+        "correct_option": 2,
+        "explanation": "पूर्ण ऑडियो-वीडियो संचार के लिए कैमरा, माइक और स्पीकर तीनों आवश्यक हैं।",
+        "chapter": "General Computer Awareness"
+    },
+    {
+        "id": 545,
+        "question": "एप्लिकेशन सॉफ्टवेयर (Application Software) का सटीक वर्णन क्या है?",
+        "options": [
+            "उपयोगकर्ता की विशिष्ट आवश्यकताओं और कार्यों को पूरा करने के लिए बनाया गया सॉफ्टवेयर",
+            "कंप्यूटर हार्डवेयर को प्रबंधित करने वाला सॉफ्टवेयर",
+            "केवल मनोरंजन देने वाला सॉफ्टवेयर",
+            "नेटवर्क संभालने वाला सॉफ्टवेयर"
+        ],
+        "correct_option": 0,
+        "explanation": "एप्लिकेशन सॉफ्टवेयर विशेष उपयोग (जैसे टाइपिंग, फोटो एडिटिंग, अकाउंटिंग) के लिए बनाए जाते हैं।",
+        "chapter": "General Computer Awareness"
+    },
+    {
+        "id": 547,
+        "question": "दूरसंचार विभाग द्वारा मोबाइल टावरों और विकिरण (EMF) अनुपालन की जानकारी साझा करने के लिए कौन सा वेब पोर्टल शुरू किया गया है?",
+        "options": [
+            "तरंग संचार (Tarang Sanchar)",
+            "संचार तरंग",
+            "EMF पोर्टल",
+            "मोबाइल टावर पोर्टल"
+        ],
+        "correct_option": 0,
+        "explanation": "भारत सरकार के दूरसंचार विभाग ने 'तरंग संचार' (Tarang Sanchar) पोर्टल शुरू किया है।",
+        "chapter": "General Computer Awareness"
+    },
+    {
+        "id": 551,
+        "question": "निम्नलिखित में से कौन सा एक इनपुट डिवाइस (Input Device) का उदाहरण है?",
+        "options": [
+            "कीबोर्ड (Keyboard)",
+            "मॉनिटर",
+            "प्रिंटर",
+            "स्पीकर"
+        ],
+        "correct_option": 0,
+        "explanation": "कीबोर्ड एक इनपुट डिवाइस है, जबकि मॉनिटर, प्रिंटर और स्पीकर आउटपुट डिवाइस हैं।",
+        "chapter": "General Computer Awareness"
+    },
+    {
+        "id": 556,
+        "question": "कंप्यूटर पर स्काइप (Skype) उपयोग करने के लिए क्या-क्या आवश्यक है?",
+        "options": [
+            "वेबकैम और माइक्रोफोन",
+            "स्पीकर और माइक्रोफोन",
+            "वेबकैम, माइक्रोफोन और स्पीकर (Webcam, Microphone, and Speaker)",
+            "केवल वेबकैम"
+        ],
+        "correct_option": 2,
+        "explanation": "पूरी वीडियो कॉलिंग सुविधा का उपयोग करने के लिए वेबकैम, माइक और स्पीकर तीनों आवश्यक उपकरण हैं।",
+        "chapter": "General Computer Awareness"
+    },
+    {
+        "question": "एक अस्थायी (Temporary) फ़ाइल का फ़ाइल एक्सटेंशन क्या होता है?",
+        "options": [
+            "A. .tnt",
+            "B. .tar",
+            "C. .tmp",
+            "D. .txt"
+        ],
+        "correct_option": 2,
+        "explanation": ".tmp फ़ाइल एक अस्थायी बैकअप, कैश या अन्य डेटा फ़ाइल है जिसे सॉफ़्टवेयर प्रोग्राम द्वारा स्वचालित रूप से बनाया जाता है।",
+        "verification_status": "VERIFIED_100%",
+        "subject": "Computer Awareness",
+        "language": "hi",
+        "id": "comp_hi_0004",
+        "chapter": "General Computer Awareness"
+    },
+    {
+        "question": "निम्नलिखित में से कौन सा वेब ग्राफिक्स के लिए उपयोग किए जाने वाले फ़ाइल प्रारूपों में से एक है?",
+        "options": [
+            "A. .gif",
+            "B. .exe",
+            "C. .txt",
+            "D. .docx"
+        ],
+        "correct_option": 0,
+        "explanation": "GIF (ग्राफ़िक्स इंटरचेंज फॉर्मेट) फ़ाइलों का व्यापक रूप से वेब ग्राफ़िक्स के लिए उपयोग किया जाता है।",
+        "verification_status": "VERIFIED_100%",
+        "subject": "Computer Awareness",
+        "language": "hi",
+        "id": "comp_hi_0007",
+        "chapter": "General Computer Awareness"
+    },
+    {
+        "question": "फ़ाइल प्रकार को दर्शाने वाला तीन या चार अक्षरों का संक्षिप्त नाम क्या कहलाता है?",
+        "options": [
+            "A. एक्सटेंशन (extension)",
+            "B. सर्च (search)",
+            "C. वायरस (virus)",
+            "D. नेम (name)"
+        ],
+        "correct_option": 0,
+        "explanation": "फ़ाइल एक्सटेंशन फ़ाइल नाम के अंत में बिंदु (.) के बाद जुड़ा एक संक्षिप्त प्रत्यय है जो फ़ाइल के प्रकार को दर्शाता है।",
+        "verification_status": "VERIFIED_100%",
+        "subject": "Computer Awareness",
+        "language": "hi",
+        "id": "comp_hi_0009",
+        "chapter": "General Computer Awareness"
+    },
+    {
+        "question": ".com डोमेन एक्सटेंशन का सबसे सामान्य उपयोग क्या है?",
+        "options": [
+            "A. वाणिज्यिक (commercial) साइटों के लिए",
+            "B. नेटवर्कों के लिए",
+            "C. सूचना प्लेटफार्मों के लिए",
+            "D. व्यवसायों के लिए"
+        ],
+        "correct_option": 0,
+        "explanation": ".com डोमेन एक्सटेंशन का उपयोग आमतौर पर वाणिज्यिक (commercial) वेबसाइटों के लिए किया जाता है।",
+        "verification_status": "VERIFIED_100%",
+        "subject": "Computer Awareness",
+        "language": "hi",
+        "id": "comp_hi_0013",
+        "chapter": "General Computer Awareness"
+    },
+    {
+        "question": ".edu डोमेन एक्सटेंशन का उद्देश्य क्या है?",
+        "options": [
+            "A. वाणिज्यिक साइटों के लिए",
+            "B. नेटवर्कों के लिए",
+            "C. शैक्षणिक संस्थानों के लिए",
+            "D. व्यवसायों के लिए"
+        ],
+        "correct_option": 2,
+        "explanation": ".edu डोमेन एक्सटेंशन का उपयोग आमतौर पर शैक्षणिक संस्थानों (Educational Institutions) द्वारा किया जाता है।",
+        "verification_status": "VERIFIED_100%",
+        "subject": "Computer Awareness",
+        "language": "hi",
+        "id": "comp_hi_0014",
+        "chapter": "General Computer Awareness"
+    },
+    {
+        "question": ".com डोमेन एक्सटेंशन का क्या अर्थ है?",
+        "options": [
+            "A. कंप्यूटर (Computer)",
+            "B. संचार (Communication)",
+            "C. कॉमन (Common)",
+            "D. वाणिज्यिक (Commercial)"
+        ],
+        "correct_option": 3,
+        "explanation": ".com डोमेन एक्सटेंशन का अर्थ 'commercial' (वाणिज्यिक) होता है।",
+        "verification_status": "VERIFIED_100%",
+        "subject": "Computer Awareness",
+        "language": "hi",
+        "id": "comp_hi_0015",
+        "chapter": "General Computer Awareness"
+    },
+    {
+        "question": "निम्नलिखित में से कौन सा किसी सरकारी वेबसाइट का डोमेन एक्सटेंशन है?",
+        "options": [
+            "A. .net",
+            "B. .mil",
+            "C. .gov",
+            "D. .com"
+        ],
+        "correct_option": 2,
+        "explanation": ".gov किसी भी सरकारी वेबसाइट का आधिकारिक डोमेन एक्सटेंशन है।",
+        "verification_status": "VERIFIED_100%",
+        "subject": "Computer Awareness",
+        "language": "hi",
+        "id": "comp_hi_0017",
+        "chapter": "General Computer Awareness"
+    },
+    {
+        "question": ".gov डोमेन एक्सटेंशन का पूर्ण रूप क्या है?",
+        "options": [
+            "A. गवर्नमेंट (Government)",
+            "B. ऑर्गनाइज़ेशन (Organization)",
+            "C. एजुकेशन (Education)",
+            "D. कमर्शियल (Commercial)"
+        ],
+        "correct_option": 0,
+        "explanation": ".gov सरकारी एजेंसियों (Government agencies) के लिए एक डोमेन एक्सटेंशन है।",
+        "verification_status": "VERIFIED_100%",
+        "subject": "Computer Awareness",
+        "language": "hi",
+        "id": "comp_hi_0018",
+        "chapter": "General Computer Awareness"
+    },
+    {
+        "question": ".arpa डोमेन एक्सटेंशन का उद्देश्य क्या है?",
+        "options": [
+            "A. वाणिज्यिक साइटों के लिए",
+            "B. नेटवर्कों के लिए",
+            "C. बुनियादी ढांचे (Infrastructure) के लिए",
+            "D. शैक्षणिक संस्थानों के लिए"
+        ],
+        "correct_option": 2,
+        "explanation": ".arpa डोमेन एक्सटेंशन बुनियादी ढांचे के लिए है और इसे सीधे IETF के लिए IANA द्वारा प्रबंधित किया जाता है।",
+        "verification_status": "VERIFIED_100%",
+        "subject": "Computer Awareness",
+        "language": "hi",
+        "id": "comp_hi_0020",
+        "chapter": "General Computer Awareness"
+    },
+    {
+        "question": ".example डोमेन एक्सटेंशन का क्या उद्देश्य है?",
+        "options": [
+            "A. वाणिज्यिक साइटों के लिए",
+            "B. नेटवर्कों के लिए",
+            "C. परीक्षण उद्देश्यों (Testing purposes) के लिए",
+            "D. शैक्षणिक संस्थानों के लिए"
+        ],
+        "correct_option": 2,
+        "explanation": ".example डोमेन एक्सटेंशन परीक्षण उद्देश्यों के लिए है और दस्तावेज़ीकरण एवं स्थानीय परीक्षण के लिए आरक्षित है।",
+        "verification_status": "VERIFIED_100%",
+        "subject": "Computer Awareness",
+        "language": "hi",
+        "id": "comp_hi_0021",
+        "chapter": "General Computer Awareness"
+    },
+    {
+        "question": ".xyz डोमेन एक्सटेंशन का क्या उद्देश्य है?",
+        "options": [
+            "A. वाणिज्यिक साइटों के लिए",
+            "B. नेटवर्कों के लिए",
+            "C. सामान्य उपयोग (General use) के लिए",
+            "D. शैक्षणिक संस्थानों के लिए"
+        ],
+        "correct_option": 2,
+        "explanation": ".xyz डोमेन एक्सटेंशन एक खुला एक्सटेंशन है जो सामान्य उपयोग के लिए उपलब्ध है।",
+        "verification_status": "VERIFIED_100%",
+        "subject": "Computer Awareness",
+        "language": "hi",
+        "id": "comp_hi_0022",
+        "chapter": "General Computer Awareness"
+    },
+    {
+        "question": ".site डोमेन एक्सटेंशन का क्या उद्देश्य है?",
+        "options": [
+            "A. वाणिज्यिक साइटों के लिए",
+            "B. नेटवर्कों के लिए",
+            "C. वेबसाइट होने का संकेत देने के लिए",
+            "D. शैक्षणिक संस्थानों के लिए"
+        ],
+        "correct_option": 2,
+        "explanation": ".site डोमेन एक्सटेंशन इस बात का स्पष्ट संकेत है कि आपके पास एक वेबसाइट भी है।",
+        "verification_status": "VERIFIED_100%",
+        "subject": "Computer Awareness",
+        "language": "hi",
+        "id": "comp_hi_0023",
+        "chapter": "General Computer Awareness"
+    },
+    {
+        "question": ".ly डोमेन एक्सटेंशन का क्या उद्देश्य है?",
+        "options": [
+            "A. वाणिज्यिक साइटों के लिए",
+            "B. नेटवर्कों के लिए",
+            "C. लीबिया (Libya) के लिए",
+            "D. शैक्षणिक संस्थानों के लिए"
+        ],
+        "correct_option": 2,
+        "explanation": ".ly डोमेन एक्सटेंशन लीबिया के लिए एक देश कोड है, लेकिन कई तकनीकी स्टार्टअप द्वारा रचनात्मक वर्तनी के लिए इसका उपयोग किया जाता है।",
+        "verification_status": "VERIFIED_100%",
+        "subject": "Computer Awareness",
+        "language": "hi",
+        "id": "comp_hi_0024",
+        "chapter": "General Computer Awareness"
+    },
+    {
+        "question": "कंप्यूटर आधारित प्रणालियों के संदर्भ में ESS का क्या अर्थ है?",
+        "options": [
+            "A. Executive Support System",
+            "B. Executive Series System",
+            "C. Executive Senior System",
+            "D. Executive Service System"
+        ],
+        "correct_option": 0,
+        "explanation": "ESS का पूर्ण रूप Executive Support System है, जो एक कंप्यूटर-आधारित प्रणाली है जो उपयोगकर्ताओं को उद्यम डेटा को बदलने और निर्णय लेने में मदद करती है।",
+        "verification_status": "VERIFIED_100%",
+        "subject": "Computer Awareness",
+        "language": "hi",
+        "id": "comp_hi_0028",
+        "chapter": "General Computer Awareness"
+    },
+    {
+        "question": "MPEG का सही पूर्ण रूप क्या है?",
+        "options": [
+            "A. Micro Pictures Expert Group",
+            "B. Many Pictures Expert Group",
+            "C. Moving Picture Experts Group",
+            "D. Motion Pictures Expert Group"
+        ],
+        "correct_option": 2,
+        "explanation": "Moving Picture Experts Group (MPEG) ISO और IEC द्वारा संयुक्त रूप से स्थापित कार्य समूहों का एक गठबंधन है जो मीडिया कोडिंग (ऑडियो, वीडियो आदि) के लिए मानक निर्धारित करता है।",
+        "verification_status": "VERIFIED_100%",
+        "subject": "Computer Awareness",
+        "language": "hi",
+        "id": "comp_hi_0029",
+        "chapter": "General Computer Awareness"
+    },
+    {
+        "question": "संबंधित संक्षिप्त रूपों के लिए गलत पूर्ण रूप वाले विकल्प का चयन करें।",
+        "options": [
+            "A. C-DAC: Centre for Development of Advanced Computing",
+            "B. CHOGM: Commonwealth Heads of Government Meeting",
+            "C. CITES: Convention on International Trade in Endangered Species",
+            "D. CCI: Competition Commission of India"
+        ],
+        "correct_option": 1,
+        "explanation": "CHOGM का सही पूर्ण रूप Commonwealth Heads of Government Meeting है।",
+        "verification_status": "VERIFIED_100%",
+        "subject": "Computer Awareness",
+        "language": "hi",
+        "id": "comp_hi_0030",
+        "chapter": "General Computer Awareness"
+    },
+    {
+        "question": "SMPS का पूर्ण रूप क्या है?",
+        "options": [
+            "A. Switched- Mode Power Supply",
+            "B. Switched-Mode Power Supply",
+            "C. Switched-Mode Power System",
+            "D. Switched-Mode Power Source"
+        ],
+        "correct_option": 1,
+        "explanation": "SMPS का पूर्ण रूप Switched-Mode Power Supply है, जो एक इलेक्ट्रॉनिक बिजली आपूर्ति है जो विद्युत शक्ति को कुशलतापूर्वक परिवर्तित करती है।",
+        "verification_status": "VERIFIED_100%",
+        "subject": "Computer Awareness",
+        "language": "hi",
+        "id": "comp_hi_0031",
+        "chapter": "General Computer Awareness"
+    },
+    {
+        "question": "फ़ाइल प्रारूपों के संदर्भ में PDF का पूर्ण रूप क्या है?",
+        "options": [
+            "A. Portable Document format",
+            "B. Prefixed Detachable Format",
+            "C. Picture Disc Format",
+            "D. Processing Digital File"
+        ],
+        "correct_option": 0,
+        "explanation": "Portable Document Format (PDF) 1992 में एडोब (Adobe) द्वारा विकसित एक फ़ाइल प्रारूप है जो दस्तावेज़ों को प्रस्तुत करता है।",
+        "verification_status": "VERIFIED_100%",
+        "subject": "Computer Awareness",
+        "language": "hi",
+        "id": "comp_hi_0032",
+        "chapter": "General Computer Awareness"
+    },
+    {
+        "question": "EVM का पूर्ण रूप क्या है?",
+        "options": [
+            "A. Electric Voting Machine",
+            "B. Essential Voting Machine",
+            "C. Election Voting Machine",
+            "D. Electronic Voting Machine"
+        ],
+        "correct_option": 3,
+        "explanation": "भारतीय इलेक्ट्रॉनिक वोटिंग मशीन (EVM) 1989 में भारत निर्वाचन आयोग द्वारा BEL और ECIL के सहयोग से विकसित की गई थी।",
+        "verification_status": "VERIFIED_100%",
+        "subject": "Computer Awareness",
+        "language": "hi",
+        "id": "comp_hi_0033",
+        "chapter": "General Computer Awareness"
+    },
+    {
+        "question": "ATM का पूर्ण रूप क्या है?",
+        "options": [
+            "A. Automated Teller Machine",
+            "B. Automatic Totalling Machine",
+            "C. Automatic Teller Machine",
+            "D. Automated Totalling Machine"
+        ],
+        "correct_option": 0,
+        "explanation": "Automated Teller Machine (ATM) एक इलेक्ट्रॉनिक बैंकिंग आउटलेट है जो ग्राहकों को बुनियादी लेनदेन पूरा करने की अनुमति देता है।",
+        "verification_status": "VERIFIED_100%",
+        "subject": "Computer Awareness",
+        "language": "hi",
+        "id": "comp_hi_0034",
+        "chapter": "General Computer Awareness"
+    },
+    {
+        "question": "कंप्यूटर तकनीक में VR का पूर्ण रूप क्या है?",
+        "options": [
+            "A. Virtual Reality",
+            "B. Visual Reality",
+            "C. Vocal Resonance",
+            "D. Visual Range"
+        ],
+        "correct_option": 0,
+        "explanation": "Virtual Reality (VR) एक विशेष प्रकार का ग्राफिकल यूजर इंटरफेस है जो कंप्यूटर जनित इमर्सिव, त्रि-आयामी (3D) वातावरण प्रस्तुत करता है।",
+        "verification_status": "VERIFIED_100%",
+        "subject": "Computer Awareness",
+        "language": "hi",
+        "id": "comp_hi_0037",
+        "chapter": "General Computer Awareness"
+    },
+    {
+        "question": "वैक्यूम ट्यूब का उपयोग करने वाले कंप्यूटर किस पीढ़ी से संबंधित हैं?",
+        "options": [
+            "A. कंप्यूटर की पहली पीढ़ी (1st Generation)",
+            "B. कंप्यूटर की दूसरी पीढ़ी (2nd Generation)",
+            "C. कंप्यूटर की तीसरी पीढ़ी (3rd Generation)",
+            "D. कंप्यूटर की चौथी पीढ़ी (4th Generation)"
+        ],
+        "correct_option": 0,
+        "explanation": "कंप्यूटर की पहली पीढ़ी में वैक्यूम ट्यूब का इस्तेमाल किया गया था और ये पहले इलेक्ट्रॉनिक कंप्यूटर थे।",
+        "verification_status": "VERIFIED_100%",
+        "subject": "Computer Awareness",
+        "language": "hi",
+        "id": "comp_hi_0040",
+        "chapter": "General Computer Awareness"
+    },
+    {
+        "question": "IBM 701 और IBM 650 कंप्यूटर की किस पीढ़ी से संबंधित हैं?",
+        "options": [
+            "A. कंप्यूटर की दूसरी पीढ़ी",
+            "B. कंप्यूटर की तीसरी पीढ़ी",
+            "C. कंप्यूटर की चौथी पीढ़ी",
+            "D. कंप्यूटर की पहली पीढ़ी"
+        ],
+        "correct_option": 1,
+        "explanation": "IBM 701 और IBM 650 दूसरी पीढ़ी के कंप्यूटरों से संबंधित हैं।",
+        "verification_status": "VERIFIED_100%",
+        "subject": "Computer Awareness",
+        "language": "hi",
+        "id": "comp_hi_0044",
+        "chapter": "General Computer Awareness"
+    },
+    {
+        "question": "IBM 1620 और IBM 7094 कंप्यूटर की किस पीढ़ी से संबंधित हैं?",
+        "options": [
+            "A. कंप्यूटर की दूसरी पीढ़ी",
+            "B. कंप्यूटर की तीसरी पीढ़ी",
+            "C. कंप्यूटर की चौथी पीढ़ी",
+            "D. कंप्यूटर की पहली पीढ़ी"
+        ],
+        "correct_option": 1,
+        "explanation": "IBM 1620 और IBM 7094 तीसरी पीढ़ी के कंप्यूटर हैं।",
+        "verification_status": "VERIFIED_100%",
+        "subject": "Computer Awareness",
+        "language": "hi",
+        "id": "comp_hi_0045",
+        "chapter": "General Computer Awareness"
+    },
+    {
+        "question": "Honeywell 6000 कंप्यूटर की किस पीढ़ी से संबंधित है?",
+        "options": [
+            "A. कंप्यूटर की पहली पीढ़ी",
+            "B. कंप्यूटर की दूसरी पीढ़ी",
+            "C. कंप्यूटर की तीसरी पीढ़ी",
+            "D. कंप्यूटर की चौथी पीढ़ी"
+        ],
+        "correct_option": 2,
+        "explanation": "Honeywell 6000 तीसरी पीढ़ी का कंप्यूटर है।",
+        "verification_status": "VERIFIED_100%",
+        "subject": "Computer Awareness",
+        "language": "hi",
+        "id": "comp_hi_0047",
+        "chapter": "General Computer Awareness"
+    },
+    {
+        "question": "ICL 2900 और DEC श्रृंखला किस पीढ़ी के कंप्यूटर से संबंधित हैं?",
+        "options": [
+            "A. कंप्यूटर की तीसरी पीढ़ी",
+            "B. कंप्यूटर की दूसरी पीढ़ी",
+            "C. कंप्यूटर की चौथी पीढ़ी",
+            "D. कंप्यूटर की पहली पीढ़ी"
+        ],
+        "correct_option": 1,
+        "explanation": "ICL 2900 और DEC श्रृंखला दूसरी पीढ़ी के कंप्यूटर हैं।",
+        "verification_status": "VERIFIED_100%",
+        "subject": "Computer Awareness",
+        "language": "hi",
+        "id": "comp_hi_0048",
+        "chapter": "General Computer Awareness"
+    },
+    {
+        "question": "DEC 10 और STAR 1000 कंप्यूटर की किस पीढ़ी से संबंधित हैं?",
+        "options": [
+            "A. पहली",
+            "B. दूसरी",
+            "C. पांचवीं",
+            "D. चौथी"
+        ],
+        "correct_option": 3,
+        "explanation": "DEC 10 और STAR 1000 चौथी पीढ़ी के कंप्यूटर हैं।",
+        "verification_status": "VERIFIED_100%",
+        "subject": "Computer Awareness",
+        "language": "hi",
+        "id": "comp_hi_0050",
+        "chapter": "General Computer Awareness"
+    },
+    {
+        "question": "मैग्नेटिक टेप कंप्यूटर की किस पीढ़ी से संबंधित हैं?",
+        "options": [
+            "A. पहली",
+            "B. दूसरी",
+            "C. चौथी",
+            "D. पांचवीं"
+        ],
+        "correct_option": 1,
+        "explanation": "मैग्नेटिक टेप का उपयोग दूसरी पीढ़ी के कंप्यूटरों में द्वितीयक भंडारण के रूप में किया गया था।",
+        "verification_status": "VERIFIED_100%",
+        "subject": "Computer Awareness",
+        "language": "hi",
+        "id": "comp_hi_0053",
+        "chapter": "General Computer Awareness"
+    },
+    {
+        "question": "उस पीढ़ी का चयन करें जिसमें मुख्य रूप से बैच प्रोसेसिंग (Batch Processing) का उपयोग किया गया था:",
+        "options": [
+            "A. 1st (पहली)",
+            "B. 2nd (दूसरी)",
+            "C. 3rd (तीसरी)",
+            "D. 4th (चौथी)"
+        ],
+        "correct_option": 0,
+        "explanation": "बैच प्रोसेसिंग का मुख्य रूप से पहली पीढ़ी के कंप्यूटरों में उपयोग किया गया था।",
+        "verification_status": "VERIFIED_100%",
+        "subject": "Computer Awareness",
+        "language": "hi",
+        "id": "comp_hi_0057",
+        "chapter": "General Computer Awareness"
+    },
+    {
+        "question": "किसी विशिष्ट फ़ाइल का नाम बदलने (Rename) के लिए किस फ़ंक्शन कुंजी का उपयोग किया जाता है?",
+        "options": [
+            "A. ALT + S",
+            "B. F4",
+            "C. CTRL + E",
+            "D. F2"
+        ],
+        "correct_option": 3,
+        "explanation": "F2 फ़ंक्शन कुंजी का उपयोग किसी विशिष्ट फ़ाइल या फ़ोल्डर का नाम बदलने के लिए किया जाता है।",
+        "verification_status": "VERIFIED_100%",
+        "subject": "Computer Awareness",
+        "language": "hi",
+        "id": "comp_hi_0061",
+        "chapter": "General Computer Awareness"
+    },
+    {
+        "question": "कीबोर्ड में किस कुंजी का उपयोग क्लिक करने योग्य आइटमों पर आगे बढ़ने के लिए किया जाता है?",
+        "options": [
+            "A. Tab",
+            "B. Esc",
+            "C. Ctrl",
+            "D. Alt"
+        ],
+        "correct_option": 0,
+        "explanation": "Tab कुंजी का उपयोग वेबपेज या फॉर्म पर अगले क्लिक करने योग्य तत्व पर जाने के लिए किया जाता है।",
+        "verification_status": "VERIFIED_100%",
+        "subject": "Computer Awareness",
+        "language": "hi",
+        "id": "comp_hi_0079",
+        "chapter": "General Computer Awareness"
+    },
+    {
+        "question": "डेस्कटॉप पर पाए जाने वाले छोटे टिमटिमाते प्रतीक या तीर को क्या कहा जाता है?",
+        "options": [
+            "A. आइकन",
+            "B. कर्सर",
+            "C. शॉर्टकट",
+            "D. टास्कबार"
+        ],
+        "correct_option": 1,
+        "explanation": "कर्सर स्क्रीन पर स्थित एक ब्लिंकिंग प्रतीक या तीर होता है जो वर्तमान स्थिति को इंगित करता है।",
+        "verification_status": "VERIFIED_100%",
+        "subject": "Computer Awareness",
+        "language": "hi",
+        "id": "comp_hi_0085",
+        "chapter": "General Computer Awareness"
+    },
+    {
+        "question": "सिस्टम ______ का अर्थ है कि सिस्टम कीबोर्ड इनपुट के प्रति अनुत्तरदायी हो गया है।",
+        "options": [
+            "A. हैंग (Hang)",
+            "B. बूट (Boot)",
+            "C. इजेक्ट (Eject)",
+            "D. इंटरप्ट (Interrupt)"
+        ],
+        "correct_option": 0,
+        "explanation": "सिस्टम हैंग होने पर कंप्यूटर कीबोर्ड या माउस के इनपुट पर कोई प्रतिक्रिया नहीं देता।",
+        "verification_status": "VERIFIED_100%",
+        "subject": "Computer Awareness",
+        "language": "hi",
+        "id": "comp_hi_0091",
+        "chapter": "General Computer Awareness"
+    },
+    {
+        "question": "उस स्थिति को क्या कहते हैं जहाँ प्रत्येक कंप्यूटर प्रक्रिया उस संसाधन की प्रतीक्षा करती है जो किसी अन्य प्रक्रिया को सौंपा गया है?",
+        "options": [
+            "A. डेडलॉक (Deadlock)",
+            "B. कर्नेल (Kernel)",
+            "C. बूटिंग (Booting)",
+            "D. इजेक्टिंग (Ejecting)"
+        ],
+        "correct_option": 0,
+        "explanation": "डेडलॉक वह स्थिति है जहाँ दो या दो से अधिक प्रक्रियाएं एक-दूसरे द्वारा रोके गए संसाधनों की अनंत प्रतीक्षा करती हैं।",
+        "verification_status": "VERIFIED_100%",
+        "subject": "Computer Awareness",
+        "language": "hi",
+        "id": "comp_hi_0092",
+        "chapter": "General Computer Awareness"
+    },
+    {
+        "question": "कंप्यूटर मेमोरी में एक निर्देश (instruction) में क्या शामिल होता है?",
+        "options": [
+            "A. ऑपकोड, ऑपरेंड (opcode, operand)",
+            "B. सबरूटीन, स्थान",
+            "C. इनपुट/आउटपुट, डेटा",
+            "D. ऑपरेशन, नियंत्रण"
+        ],
+        "correct_option": 0,
+        "explanation": "कंप्यूटर निर्देश में मुख्य रूप से ऑपकोड (क्या ऑपरेशन करना है) और ऑपरेंड (डेटा/पता) होते हैं।",
+        "verification_status": "VERIFIED_100%",
+        "subject": "Computer Awareness",
+        "language": "hi",
+        "id": "comp_hi_0097",
+        "chapter": "General Computer Awareness"
+    },
+    {
+        "question": "कंप्यूटर की भौतिक मेमोरी से संग्रहीत परिणाम निकालने की प्रक्रिया क्या कहलाती है?",
+        "options": [
+            "A. इनपुट प्रक्रिया",
+            "B. प्रोसेसिंग",
+            "C. प्रोग्रामिंग",
+            "D. आउटपुट प्रक्रिया"
+        ],
+        "correct_option": 3,
+        "explanation": "मेमोरी से परिणाम प्राप्त करने और प्रदर्शित करने की प्रक्रिया को आउटपुट प्रक्रिया कहते हैं।",
+        "verification_status": "VERIFIED_100%",
+        "subject": "Computer Awareness",
+        "language": "hi",
+        "id": "comp_hi_0117",
+        "chapter": "General Computer Awareness"
+    },
+    {
+        "question": "डगलस एंगेलबर्ट ने निम्नलिखित में से किस उपकरण/इंटरफ़ेस का आविष्कार किया था?",
+        "options": [
+            "A. कॉम्पैक्ट डिस्क",
+            "B. USB पोर्ट",
+            "C. फ्लॉपी डिस्क",
+            "D. कंप्यूटर माउस (Computer Mouse)"
+        ],
+        "correct_option": 3,
+        "explanation": "डगलस एंगेलबर्ट ने 1960 के दशक में कंप्यूटर माउस का आविष्कार किया था।",
+        "verification_status": "VERIFIED_100%",
+        "subject": "Computer Awareness",
+        "language": "hi",
+        "id": "comp_hi_0137",
+        "chapter": "General Computer Awareness"
+    },
+    {
+        "question": "Apple Computers के सह-संस्थापक कौन हैं?",
+        "options": [
+            "A. बिल गेट्स",
+            "B. पॉल एलन",
+            "C. चार्ल्स फ्लिंट",
+            "D. स्टीव जॉब्स (Steve Jobs)"
+        ],
+        "correct_option": 3,
+        "explanation": "स्टीव जॉब्स और स्टीव वोज़्नियाक ने Apple Computers की स्थापना की थी।",
+        "verification_status": "VERIFIED_100%",
+        "subject": "Computer Awareness",
+        "language": "hi",
+        "id": "comp_hi_0140",
+        "chapter": "General Computer Awareness"
+    },
+    {
+        "question": "निम्नलिखित में से कौन Google के संस्थापकों में से एक है?",
+        "options": [
+            "A. जान कौम",
+            "B. लैरी पेज (Larry Page)",
+            "C. जेरी यांग",
+            "D. मार्क जुकरबर्ग"
+        ],
+        "correct_option": 1,
+        "explanation": "लैरी पेज और सर्गेई ब्रिन ने 1998 में Google की स्थापना की थी।",
+        "verification_status": "VERIFIED_100%",
+        "subject": "Computer Awareness",
+        "language": "hi",
+        "id": "comp_hi_0141",
+        "chapter": "General Computer Awareness"
+    },
+    {
+        "question": "अमेरिकी कंप्यूटर कंपनी सन माइक्रोसिस्टम्स (बाद में ओरेकल द्वारा अधिग्रहित) के संस्थापकों में से एक कौन थे?",
+        "options": [
+            "A. विनोद खोसला (Vinod Khosla)",
+            "B. सत्य नडेला",
+            "C. सुंदर पिचाई",
+            "D. सबीर भाटिया"
+        ],
+        "correct_option": 0,
+        "explanation": "विनोद खोसला सन माइक्रोसिस्टम्स के सह-संस्थापकों में से एक थे।",
+        "verification_status": "VERIFIED_100%",
+        "subject": "Computer Awareness",
+        "language": "hi",
+        "id": "comp_hi_0142",
+        "chapter": "General Computer Awareness"
+    },
+    {
+        "question": "चार्ल्स बैबेज द्वारा डिज़ाइन किए गए पहले यांत्रिक कंप्यूटर को क्या कहा गया था?",
+        "options": [
+            "A. अबैकस",
+            "B. एनालिटिकल इंजन (Analytical Engine)",
+            "C. कैलकुलेटर",
+            "D. प्रोसेसर"
+        ],
+        "correct_option": 1,
+        "explanation": "चार्ल्स बैबेज द्वारा डिज़ाइन किया गया पहला सामान्य प्रयोजन यांत्रिक कंप्यूटर एनालिटिकल इंजन था।",
+        "verification_status": "VERIFIED_100%",
+        "subject": "Computer Awareness",
+        "language": "hi",
+        "id": "comp_hi_0143",
+        "chapter": "General Computer Awareness"
+    },
+    {
+        "question": "निम्नलिखित में से कौन सा Google का उत्पाद नहीं है?",
+        "options": [
+            "A. Gmail",
+            "B. iTunes",
+            "C. Blogger",
+            "D. YouTube"
+        ],
+        "correct_option": 1,
+        "explanation": "iTunes एप्पल (Apple Inc.) का एक उत्पाद है।",
+        "verification_status": "VERIFIED_100%",
+        "subject": "Computer Awareness",
+        "language": "hi",
+        "id": "comp_hi_0144",
+        "chapter": "General Computer Awareness"
+    },
+    {
+        "question": "______ ने पॉल एलन के साथ मिलकर वर्ष 1975 में Microsoft की स्थापना की थी।",
+        "options": [
+            "A. बिल गेट्स (Bill Gates)",
+            "B. लैरी वॉल",
+            "C. मार्क जुकरबर्ग",
+            "D. स्टीफन हॉकिंग"
+        ],
+        "correct_option": 0,
+        "explanation": "बिल गेट्स और पॉल एलन ने 1975 में माइक्रोसॉफ्ट की स्थापना की।",
+        "verification_status": "VERIFIED_100%",
+        "subject": "Computer Awareness",
+        "language": "hi",
+        "id": "comp_hi_0145",
+        "chapter": "General Computer Awareness"
+    },
+    {
+        "question": "माइक्रोसॉफ्ट कॉर्पोरेशन की स्थापना 1975 में ________ में की गई थी।",
+        "options": [
+            "A. अल्बुकर्क, न्यू मैक्सिको, संयुक्त राज्य अमेरिका",
+            "B. निहोनबाशी, टोक्यो, जापान",
+            "C. क्यूपर्टिनो, कैलिफ़ोर्निया, संयुक्त राज्य अमेरिका",
+            "D. बेलेव्यू, वाशिंगटन, संयुक्त राज्य अमेरिका"
+        ],
+        "correct_option": 0,
+        "explanation": "माइक्रोसॉफ्ट की स्थापना अल्बुकर्क, न्यू मैक्सिको में की गई थी।",
+        "verification_status": "VERIFIED_100%",
+        "subject": "Computer Awareness",
+        "language": "hi",
+        "id": "comp_hi_0146",
+        "chapter": "General Computer Awareness"
+    },
+    {
+        "question": "C++ प्रोग्रामिंग भाषा को 1980 के दशक की शुरुआत में AT&T बेल प्रयोगशालाओं में किसके द्वारा विकसित किया गया था?",
+        "options": [
+            "A. 1970s",
+            "B. 1980s (ब्योर्न स्ट्रॉस्ट्रुप)",
+            "C. 1990s",
+            "D. 2000s"
+        ],
+        "correct_option": 1,
+        "explanation": "C++ को ब्योर्न स्ट्रॉस्ट्रुप द्वारा 1980 के दशक में विकसित किया गया था।",
+        "verification_status": "VERIFIED_100%",
+        "subject": "Computer Awareness",
+        "language": "hi",
+        "id": "comp_hi_0147",
+        "chapter": "General Computer Awareness"
+    },
+    {
+        "question": "निम्नलिखित में से कौन सा ओपन-सोर्स सॉफ्टवेयर नहीं है?",
+        "options": [
+            "A. Android",
+            "B. Linux",
+            "C. Microsoft Office",
+            "D. Mozilla Firefox"
+        ],
+        "correct_option": 2,
+        "explanation": "Microsoft Office एक प्रोप्रायटरी (क्लोज्ड सोर्स) सॉफ्टवेयर है।",
+        "verification_status": "VERIFIED_100%",
+        "subject": "Computer Awareness",
+        "language": "hi",
+        "id": "comp_hi_0150",
+        "chapter": "General Computer Awareness"
+    },
+    {
+        "question": "कंपाइलर किस प्रकार के सॉफ्टवेयर का उदाहरण है?",
+        "options": [
+            "A. डेटाबेस सॉफ्टवेयर",
+            "B. प्रोग्रामिंग सॉफ्टवेयर / सिस्टम सॉफ्टवेयर",
+            "C. एप्लीकेशन सॉफ्टवेयर",
+            "D. उपरोक्त में से कोई नहीं"
+        ],
+        "correct_option": 1,
+        "explanation": "कंपाइलर एक भाषा अनुवादक (Programming/System Software) है।",
+        "verification_status": "VERIFIED_100%",
+        "subject": "Computer Awareness",
+        "language": "hi",
+        "id": "comp_hi_0155",
+        "chapter": "General Computer Awareness"
+    },
+    {
+        "question": "C++ निम्नलिखित में से किसका उपयोग करने वाली भाषा का उदाहरण है?",
+        "options": [
+            "A. कंपाइलर (Compiler)",
+            "B. असेंबलर",
+            "C. इंटरप्रेटर",
+            "D. उपरोक्त में से कोई नहीं"
+        ],
+        "correct_option": 0,
+        "explanation": "C++ एक कंपाइल्ड प्रोग्रामिंग भाषा है।",
+        "verification_status": "VERIFIED_100%",
+        "subject": "Computer Awareness",
+        "language": "hi",
+        "id": "comp_hi_0156",
+        "chapter": "General Computer Awareness"
+    },
+    {
+        "question": "Eclipse किसका उदाहरण है?",
+        "options": [
+            "A. कंपाइलर",
+            "B. असेंबलर",
+            "C. इंटरप्रेटर",
+            "D. IDE / डीबगर (Debugger)"
+        ],
+        "correct_option": 3,
+        "explanation": "Eclipse एक एकीकृत विकास वातावरण (IDE) और डीबगर टूल है।",
+        "verification_status": "VERIFIED_100%",
+        "subject": "Computer Awareness",
+        "language": "hi",
+        "id": "comp_hi_0157",
+        "chapter": "General Computer Awareness"
+    },
+    {
+        "question": "निम्नलिखित में से कौन सा मल्टीमीडिया सॉफ्टवेयर का उदाहरण है?",
+        "options": [
+            "A. एडोब फोटोशॉप (Adobe Photoshop)",
+            "B. MS Paint",
+            "C. Oracle",
+            "D. MySQL"
+        ],
+        "correct_option": 0,
+        "explanation": "Adobe Photoshop इमेज प्रोसेसिंग और मल्टीमीडिया डिजाइनिंग सॉफ्टवेयर है।",
+        "verification_status": "VERIFIED_100%",
+        "subject": "Computer Awareness",
+        "language": "hi",
+        "id": "comp_hi_0161",
+        "chapter": "General Computer Awareness"
+    },
+    {
+        "question": "दस्तावेज़ में एकाधिक पृष्ठ होने पर कर्सर को स्क्रीन के नीचे स्क्रॉल करने के लिए क्या उपयोग किया जाता है?",
+        "options": [
+            "A. कर्सर को एक पैराग्राफ नीचे ले जाएं",
+            "B. कर्सर को एक पंक्ति नीचे ले जाएं",
+            "C. कर्सर को एक स्क्रीन नीचे ले जाएं",
+            "D. कर्सर को अंतिम पृष्ठ पर ले जाएं (Page Down)"
+        ],
+        "correct_option": 3,
+        "explanation": "Page Down कुंजी का उपयोग दृश्य को एक स्क्रीन नीचे ले जाने के लिए किया जाता है।",
+        "verification_status": "VERIFIED_100%",
+        "subject": "Computer Awareness",
+        "language": "hi",
+        "id": "comp_hi_0163",
+        "chapter": "General Computer Awareness"
+    },
+    {
+        "question": "किसी पैराग्राफ या अनुभाग की शुरुआत में सजावटी तत्व के रूप में उपयोग किए जाने वाले बड़े कैपिटल अक्षर को क्या कहा जाता है?",
+        "options": [
+            "A. हेडर",
+            "B. स्मार्ट आर्ट",
+            "C. ड्रॉप कैप (Drop Cap)",
+            "D. वॉटरमार्क"
+        ],
+        "correct_option": 2,
+        "explanation": "ड्रॉप कैप पैराग्राफ की शुरुआत में प्रयुक्त एक बड़ा प्रारंभिक कैपिटल अक्षर होता है।",
+        "verification_status": "VERIFIED_100%",
+        "subject": "Computer Awareness",
+        "language": "hi",
+        "id": "comp_hi_0165",
+        "chapter": "General Computer Awareness"
+    },
+    {
+        "question": "निम्नलिखित में से कौन सा बार मेनू कमांडों का शॉर्टकट प्रदान करता है जिन्हें आइकन के रूप में दर्शाया जाता है?",
+        "options": [
+            "A. स्पेस बार",
+            "B. टूल बार (Tool Bar)",
+            "C. मेनू बार",
+            "D. वर्टिकल बार"
+        ],
+        "correct_option": 1,
+        "explanation": "टूलबार विभिन्न कमांड्स को त्वरित आइकन के रूप में व्यवस्थित करता है।",
+        "verification_status": "VERIFIED_100%",
+        "subject": "Computer Awareness",
+        "language": "hi",
+        "id": "comp_hi_0174",
+        "chapter": "General Computer Awareness"
+    },
+    {
+        "question": "किसी फ़ंक्शन के अंदर अन्य फ़ंक्शन को शामिल करने को क्या कहा जाता है?",
+        "options": [
+            "A. राउंड फ़ंक्शन",
+            "B. सैंडविच फ़ंक्शन",
+            "C. स्विच फ़ंक्शन",
+            "D. नेस्टेड फ़ंक्शन (Nested function)"
+        ],
+        "correct_option": 3,
+        "explanation": "जब एक फ़ंक्शन का उपयोग दूसरे फ़ंक्शन के तर्क के रूप में किया जाता है, तो उसे नेस्टेड फ़ंक्शन कहते हैं।",
+        "verification_status": "VERIFIED_100%",
+        "subject": "Computer Awareness",
+        "language": "hi",
+        "id": "comp_hi_0251",
+        "chapter": "General Computer Awareness"
+    },
+    {
+        "question": "DATE फ़ंक्शन का सही तर्क (Argument) क्रम कौन सा है?",
+        "options": [
+            "A. (Year, Month, Day)",
+            "B. (Day, Month, Year)",
+            "C. (Year, Day, Month)",
+            "D. (Month, Year, Day)"
+        ],
+        "correct_option": 0,
+        "explanation": "DATE फ़ंक्शन का सही सिंटैक्स DATE(year, month, day) होता है।",
+        "verification_status": "VERIFIED_100%",
+        "subject": "Computer Awareness",
+        "language": "hi",
+        "id": "comp_hi_0252",
+        "chapter": "General Computer Awareness"
+    },
+    {
+        "question": "(Serial_Number) किस फ़ंक्शन का मुख्य तर्क है?",
+        "options": [
+            "A. DAY",
+            "B. DATEVALUE",
+            "C. DATE",
+            "D. DAYVALUE"
+        ],
+        "correct_option": 0,
+        "explanation": "DAY(serial_number) फ़ंक्शन दिनांक का दिन निकालने के लिए सीरियल नंबर को तर्क के रूप में लेता है।",
+        "verification_status": "VERIFIED_100%",
+        "subject": "Computer Awareness",
+        "language": "hi",
+        "id": "comp_hi_0254",
+        "chapter": "General Computer Awareness"
+    },
+    {
+        "question": "निम्नलिखित में से कौन सी 'ई-सेवा' (e-service) नहीं है?",
+        "options": [
+            "A. एम-कॉमर्स (M-commerce)",
+            "B. ई-लर्निंग (E-learning)",
+            "C. बिजली (Electricity)",
+            "D. ई-कॉमर्स (E-commerce)"
+        ],
+        "correct_option": 2,
+        "explanation": "बिजली एक भौतिक उपयोगिता सेवा है, डिजिटल ई-सेवा नहीं।",
+        "verification_status": "VERIFIED_100%",
+        "subject": "Computer Awareness",
+        "language": "hi",
+        "id": "comp_hi_0299",
+        "chapter": "General Computer Awareness"
+    },
+    {
+        "question": "IT में मेमोरी बैंडविड्थ बढ़ाने के लिए किस तकनीक का उपयोग किया जाता है?",
+        "options": [
+            "A. मेमोरी मैनेजमेंट",
+            "B. मेमोरी इंटरलीविंग (Memory Interleaving)",
+            "C. मेमोरी इंट्रालीविंग",
+            "D. मेमोरी लीविंग"
+        ],
+        "correct_option": 1,
+        "explanation": "मेमोरी इंटरलीविंग एक साथ कई मेमोरी मॉड्यूल तक पहुँचकर डेटा ट्रांसफर गति बढ़ाती है।",
+        "verification_status": "VERIFIED_100%",
+        "subject": "Computer Awareness",
+        "language": "hi",
+        "id": "comp_hi_0300",
+        "chapter": "General Computer Awareness"
+    },
+    {
+        "question": "डायल-अप कनेक्शन आपके कंप्यूटर को फोन लाइन से भौतिक रूप से जोड़ने के लिए किसका उपयोग करता है?",
+        "options": [
+            "A. मॉडेम (Modem)",
+            "B. ईथरनेट",
+            "C. मल्टीप्लेक्सर",
+            "D. हब"
+        ],
+        "correct_option": 0,
+        "explanation": "डायल-अप कनेक्शन में एनालॉग फोन लाइन से जुड़ने के लिए मॉडेम की आवश्यकता होती है।",
+        "verification_status": "VERIFIED_100%",
+        "subject": "Computer Awareness",
+        "language": "hi",
+        "id": "comp_hi_0314",
+        "chapter": "General Computer Awareness"
+    },
+    {
+        "question": "डिजिटल सिग्नल को एनालॉग सिग्नल में और इसके विपरीत बदलने वाला उपकरण कौन सा है?",
+        "options": [
+            "A. WiFi",
+            "B. मॉडेम (Modem)",
+            "C. पोर्ट",
+            "D. USB"
+        ],
+        "correct_option": 1,
+        "explanation": "मॉडेम डिजिटल डेटा को एनालॉग सिग्नल (Modulation) और एनालॉग सिग्नल को डिजिटल डेटा (Demodulation) में बदलता है।",
+        "verification_status": "VERIFIED_100%",
+        "subject": "Computer Awareness",
+        "language": "hi",
+        "id": "comp_hi_0320",
+        "chapter": "General Computer Awareness"
+    },
+    {
+        "question": "मोज़िला फ़ायरफ़ॉक्स किस वर्ष मोज़िला फ़ाउंडेशन द्वारा जारी किया गया था?",
+        "options": [
+            "A. 2000",
+            "B. 2001",
+            "C. 2002",
+            "D. 2003"
+        ],
+        "correct_option": 2,
+        "explanation": "Mozilla Firefox को पहली बार 2002 में (फ़ीनिक्स नाम से) विकसित किया गया था।",
+        "verification_status": "VERIFIED_100%",
+        "subject": "Computer Awareness",
+        "language": "hi",
+        "id": "comp_hi_0326",
+        "chapter": "General Computer Awareness"
+    },
+    {
+        "question": "Google किस प्रकार का सर्च इंजन है?",
+        "options": [
+            "A. हाइब्रिड (Hybrid)",
+            "B. ह्यूमन पावर्ड डायरेक्ट्रीज",
+            "C. क्रॉलर आधारित (Crawler Based)",
+            "D. उपरोक्त में से कोई नहीं"
+        ],
+        "correct_option": 2,
+        "explanation": "Google एक क्रॉलर-आधारित (Crawler-based) सर्च इंजन है जो वेब पेजों को खोजने और अनुक्रमित करने के लिए बॉट्स का उपयोग करता है।",
+        "verification_status": "VERIFIED_100%",
+        "subject": "Computer Awareness",
+        "language": "hi",
+        "id": "comp_hi_0336",
+        "chapter": "General Computer Awareness"
+    },
+    {
+        "question": "Yahoo किस प्रकार का सर्च इंजन है?",
+        "options": [
+            "A. क्रॉलर आधारित (Crawler Based)",
+            "B. ह्यूमन पावर्ड डायरेक्ट्रीज",
+            "C. हाइब्रिड",
+            "D. उपरोक्त में से कोई नहीं"
+        ],
+        "correct_option": 0,
+        "explanation": "Yahoo एक क्रॉलर-आधारित सर्च इंजन है।",
+        "verification_status": "VERIFIED_100%",
+        "subject": "Computer Awareness",
+        "language": "hi",
+        "id": "comp_hi_0337",
+        "chapter": "General Computer Awareness"
+    },
+    {
+        "question": "निम्नलिखित में से कौन सा सर्च तरीका वेब क्रॉलर (Web Crawler) और वेब स्पाइडर (Web Spider) का उपयोग करता है?",
+        "options": [
+            "A. वेब क्रॉलर",
+            "B. वेब स्पाइडर",
+            "C. a और b दोनों सही हैं",
+            "D. उपरोक्त में से कोई नहीं"
+        ],
+        "correct_option": 2,
+        "explanation": "सर्च इंजन वेब पेजों को खोजने और अनुक्रमित (Index) करने के लिए वेब क्रॉलर और वेब स्पाइडर दोनों का उपयोग करते हैं।",
+        "verification_status": "VERIFIED_100%",
+        "subject": "Computer Awareness",
+        "language": "hi",
+        "id": "comp_hi_0338",
+        "chapter": "General Computer Awareness"
+    },
+    {
+        "question": "जब कोई सर्च इंजन ऐसा वेब पेज लौटाता है जो खोज से मेल खाता है, तो उसके लिए किस शब्द का उपयोग किया जाता है?",
+        "options": [
+            "A. फिट (Fit)",
+            "B. हिट (Hit)",
+            "C. सिट (Sit)",
+            "D. लिट (Lit)"
+        ],
+        "correct_option": 1,
+        "explanation": "जब सर्च इंजन को खोज से संबंधित वेब पेज मिलता है, तो उसे 'Hit' कहा जाता है।",
+        "verification_status": "VERIFIED_100%",
+        "subject": "Computer Awareness",
+        "language": "hi",
+        "id": "comp_hi_0339",
+        "chapter": "General Computer Awareness"
+    },
+    {
+        "question": "अल्ता विस्टा (Alta Vista) किसका सर्च इंजन रहा है?",
+        "options": [
+            "A. Yahoo",
+            "B. Google",
+            "C. Microsoft",
+            "D. उपरोक्त सभी"
+        ],
+        "correct_option": 3,
+        "explanation": "Alta Vista एक प्रारंभिक सर्च इंजन था जिसे कई कंपनियों द्वारा सेवा प्रदान करने के लिए उपयोग किया गया।",
+        "verification_status": "VERIFIED_100%",
+        "subject": "Computer Awareness",
+        "language": "hi",
+        "id": "comp_hi_0340",
+        "chapter": "General Computer Awareness"
+    },
+    {
+        "question": "चीन में सबसे प्रसिद्ध सर्च इंजन कौन सा है?",
+        "options": [
+            "A. बायडू (Baidu)",
+            "B. गूगल",
+            "C. याहू",
+            "D. मोज़ेक"
+        ],
+        "correct_option": 0,
+        "explanation": "बायडू (Baidu) चीन का सबसे बड़ा और प्रमुख सर्च इंजन है।",
+        "verification_status": "VERIFIED_100%",
+        "subject": "Computer Awareness",
+        "language": "hi",
+        "id": "comp_hi_0345",
+        "chapter": "General Computer Awareness"
+    },
+    {
+        "question": "ईमेल में ___ फ़ील्ड प्रेषक का पता दर्शाता है यानी किसने ई-मेल भेजा है।",
+        "options": [
+            "A. Bcc",
+            "B. From",
+            "C. To",
+            "D. Inbox"
+        ],
+        "correct_option": 1,
+        "explanation": "'From' फ़ील्ड प्रेषक (Sender) के ईमेल पते को दर्शाता है।",
+        "verification_status": "VERIFIED_100%",
+        "subject": "Computer Awareness",
+        "language": "hi",
+        "id": "comp_hi_0351",
+        "chapter": "General Computer Awareness"
+    },
+    {
+        "question": "ई-मेल में ____ फ़ील्ड उस ई-मेल के मुख्य उद्देश्य या विषय को इंगित करता है।",
+        "options": [
+            "A. To",
+            "B. Subject",
+            "C. Bcc",
+            "D. From"
+        ],
+        "correct_option": 1,
+        "explanation": "ईमेल की Subject लाइन प्राप्तकर्ता को ईमेल का मुख्य उद्देश्य दर्शाती है।",
+        "verification_status": "VERIFIED_100%",
+        "subject": "Computer Awareness",
+        "language": "hi",
+        "id": "comp_hi_0352",
+        "chapter": "General Computer Awareness"
+    },
+    {
+        "question": "ई-मेल का ____ फ़ील्ड उस ई-मेल के मुख्य प्राप्तकर्ता (Receiver) को इंगित करता है।",
+        "options": [
+            "A. From",
+            "B. Signature",
+            "C. Subject",
+            "D. To"
+        ],
+        "correct_option": 3,
+        "explanation": "'To' फ़ील्ड मुख्य प्राप्तकर्ता के पते के लिए आरक्षित होता है।",
+        "verification_status": "VERIFIED_100%",
+        "subject": "Computer Awareness",
+        "language": "hi",
+        "id": "comp_hi_0353",
+        "chapter": "General Computer Awareness"
+    }
+]

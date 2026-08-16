@@ -1,0 +1,222 @@
+[
+    {
+        "id": 342,
+        "question": "कौन सी लेयर एक्सेस कंट्रोल (Access Control / MAC) के लिए जिम्मेदार है?",
+        "options": [
+            "नेटवर्क लेयर",
+            "ट्रांसपोर्ट लेयर",
+            "डेटा लिंक लेयर (Data Link Layer)",
+            "फिजिकल लेयर"
+        ],
+        "correct_option": 2,
+        "explanation": "डेटा लिंक लेयर का सब-लेयर MAC (Media Access Control) एक्सेस कंट्रोल संभालता है।",
+        "chapter": "MS PowerPoint 365"
+    },
+    {
+        "id": 344,
+        "question": "निम्नलिखित में से कौन सा डेटा लिंक लेयर का एक कार्य है?",
+        "options": [
+            "राउटिंग",
+            "सेगमेंटेशन",
+            "एरर कंट्रोल",
+            "एक्सेस कंट्रोल (Access Control)"
+        ],
+        "correct_option": 3,
+        "explanation": "एक्सेस कंट्रोल (Media Access Control) डेटा लिंक लेयर का मुख्य कार्य है।",
+        "chapter": "MS PowerPoint 365"
+    },
+    {
+        "id": 390,
+        "question": "माइक्रोसॉफ्ट पावरपॉइंट (Microsoft PowerPoint) का मुख्य उद्देश्य क्या है?",
+        "options": [
+            "वर्ड प्रोसेसिंग",
+            "स्प्रेडशीट संपादन",
+            "प्रस्तुति/स्लाइड शो (Presentation) का निर्माण",
+            "डेटाबेस प्रबंधन"
+        ],
+        "correct_option": 2,
+        "explanation": "Microsoft PowerPoint एक प्रेजेंटेशन प्रोग्राम है।",
+        "chapter": "MS PowerPoint 365"
+    },
+    {
+        "id": 391,
+        "question": "माइक्रोसॉफ्ट वननोट (Microsoft OneNote) का उपयोग किस लिए किया जाता है?",
+        "options": [
+            "ईमेल क्लाइंट के रूप में",
+            "डेटाबेस प्रबंधन के लिए",
+            "नोट्स बनाने और साझा करने (Notetaking and note sharing) के लिए",
+            "डेस्कटॉप पब्लिशिंग के लिए"
+        ],
+        "correct_option": 2,
+        "explanation": "Microsoft OneNote नोट्स एकत्र करने, ड्राफ़्ट करने और दूसरों के साथ शेयर करने का एक नोट-टेकिंग टूल है।",
+        "chapter": "MS PowerPoint 365"
+    },
+    {
+        "id": 394,
+        "question": "माइक्रोसॉफ्ट 365 के नोट-टेकिंग (Notetaking) प्रोग्राम का क्या नाम है?",
+        "options": [
+            "Microsoft Word",
+            "Microsoft Excel",
+            "Microsoft OneNote",
+            "Microsoft PowerPoint"
+        ],
+        "correct_option": 2,
+        "explanation": "OneNote माइक्रोसॉफ्ट 365 का डिजिटल नोट-टेकिंग ऐप है।",
+        "chapter": "MS PowerPoint 365"
+    },
+    {
+        "id": 395,
+        "question": "OneNote का उपयोग करके अन्य यूज़र्स के साथ क्या-क्या शेयर किया जा सकता है?",
+        "options": [
+            "केवल हाथ से लिखे नोट्स",
+            "केवल टाइप किए गए नोट्स",
+            "हस्तलिखित व टाइप किए नोट्स, चित्र, स्क्रीन क्लिप्स और ऑडियो कमेंट्स",
+            "केवल ड्राइंग्स"
+        ],
+        "correct_option": 2,
+        "explanation": "OneNote में टेक्स्ट, हस्तलिखित नोट्स, इमेज, स्क्रीन क्लिप्स और ऑडियो टिप्पणियाँ सभी शेयर की जा सकती हैं।",
+        "chapter": "MS PowerPoint 365"
+    },
+    {
+        "id": 396,
+        "question": "माइक्रोसॉफ्ट एक्सेस (Microsoft Access) का प्राथमिक कार्य क्या है?",
+        "options": [
+            "वर्ड प्रोसेसिंग",
+            "स्प्रेडशीट संपादन",
+            "प्रस्तुति निर्माण",
+            "डेटाबेस प्रबंधन (Database Management)"
+        ],
+        "correct_option": 3,
+        "explanation": "Microsoft Access एक रिलेशनल डेटाबेस मैनेजमेंट सिस्टम (DBMS) है।",
+        "chapter": "MS PowerPoint 365"
+    },
+    {
+        "id": 397,
+        "question": "माइक्रोसॉफ्ट पब्लिशर (Microsoft Publisher) का मुख्य कार्य क्या है?",
+        "options": [
+            "वर्ड प्रोसेसिंग",
+            "स्प्रेडशीट संपादन",
+            "प्रस्तुति निर्माण",
+            "डेस्कटॉप पब्लिशिंग (Desktop Publishing - कार्ड/फ़्लायर्स/ब्रोशर डिज़ाइन)"
+        ],
+        "correct_option": 3,
+        "explanation": "Microsoft Publisher एक डेस्कटॉप पब्लिशिंग ऐप है।",
+        "chapter": "MS PowerPoint 365"
+    },
+    {
+        "id": 401,
+        "question": "माइक्रोसॉफ्ट 365 में प्रेजेंटेशन प्रोग्राम का क्या नाम है?",
+        "options": [
+            "Microsoft Word",
+            "Microsoft Excel",
+            "Microsoft PowerPoint",
+            "Microsoft Access"
+        ],
+        "correct_option": 2,
+        "explanation": "PowerPoint माइक्रोसॉफ्ट का प्रेजेंटेशन टूल है।",
+        "chapter": "MS PowerPoint 365"
+    },
+    {
+        "id": 402,
+        "question": "माइक्रोसॉफ्ट वननोट (Microsoft OneNote) का मुख्य उद्देश्य क्या है?",
+        "options": [
+            "ईमेल क्लाइंट",
+            "डेटाबेस प्रबंधन",
+            "डिजिटल नोट्स बनाना और शेयर करना (Notetaking and note sharing)",
+            "डेस्कटॉप पब्लिशिंग"
+        ],
+        "correct_option": 2,
+        "explanation": "OneNote का मुख्य कार्य विचार और नोट्स रिकॉर्ड व शेयर करना है।",
+        "chapter": "MS PowerPoint 365"
+    },
+    {
+        "id": 479,
+        "question": "CDMA का पूर्ण रूप (Full Form) क्या है?",
+        "options": [
+            "कोड डिवीज़न मल्टीपल एक्सेस (Code Division Multiple Access)",
+            "सेंट्रल डिवीज़न मल्टीपल एक्सेस",
+            "कमांड डिवीज़न मल्टीपल एक्सेस",
+            "कंट्रोल डिवीज़न मल्टीपल एक्सेस"
+        ],
+        "correct_option": 0,
+        "explanation": "CDMA का तात्पर्य 'Code Division Multiple Access' है, जो एक डिजिटल वायरलेस संचार तकनीक है।",
+        "chapter": "MS PowerPoint 365"
+    },
+    {
+        "id": 550,
+        "question": "PowerPoint में बिना माउस छुए कीबोर्ड द्वारा स्लाइड्स के बीच स्विच करने का तरीका क्या है?",
+        "options": [
+            "माउस का उपयोग करके",
+            "कीबोर्ड की दिशात्मक कुंजियों (Directional/Arrow Keys) का उपयोग करके",
+            "स्क्रॉल व्हील का उपयोग करके",
+            "टचपैड का उपयोग करके"
+        ],
+        "correct_option": 1,
+        "explanation": "स्लाइड शो या नॉर्मल व्यू में दिशात्मक एरो कीज़ (Up/Down Arrow या Page Up/Down) से स्लाइड्स बदली जा सकती हैं।",
+        "chapter": "MS PowerPoint 365"
+    },
+    {
+        "question": "MS-PowerPoint 365 में कौन सा फ़ाइल एक्सटेंशन एक मान्य फ़ाइल प्रारूप नहीं है?",
+        "options": [
+            "A. .pptm",
+            "B. .pwpt",
+            "C. .ppt",
+            "D. .pptx"
+        ],
+        "correct_option": 1,
+        "explanation": ".pwpt फ़ाइल एक्सटेंशन MS-PowerPoint 365 में मान्य फ़ाइल प्रारूप नहीं है।",
+        "verification_status": "VERIFIED_100%",
+        "subject": "Computer Awareness",
+        "language": "hi",
+        "id": "comp_hi_0003",
+        "chapter": "MS PowerPoint 365"
+    },
+    {
+        "question": "सूचना प्रौद्योगिकी (IT) में DASD का क्या अर्थ है?",
+        "options": [
+            "A. Direct Access Standard Device",
+            "B. Device for Access and Storage of Domain",
+            "C. Direct Access Storage Domain",
+            "D. Direct Access storage Device"
+        ],
+        "correct_option": 3,
+        "explanation": "DASD का पूर्ण रूप Direct Access Storage Device है, जो एक सेकेंडरी स्टोरेज डिवाइस है जिसमें प्रत्येक भौतिक रिकॉर्ड का एक अलग स्थान और पता होता है।",
+        "verification_status": "VERIFIED_100%",
+        "subject": "Computer Awareness",
+        "language": "hi",
+        "id": "comp_hi_0036",
+        "chapter": "MS PowerPoint 365"
+    },
+    {
+        "question": "कंप्यूटर में प्रयुक्त होने वाली उच्च गति मेमोरी का क्या नाम है:",
+        "options": [
+            "A. कैश",
+            "B. RAM",
+            "C. BIOS",
+            "D. हार्ड डिस्क"
+        ],
+        "correct_option": 1,
+        "explanation": "RAM (Random Access Memory) मुख्य उच्च-गति मेमोरी है।",
+        "verification_status": "VERIFIED_100%",
+        "subject": "Computer Awareness",
+        "language": "hi",
+        "id": "comp_hi_0123",
+        "chapter": "MS PowerPoint 365"
+    },
+    {
+        "question": "निम्नलिखित में से कौन सा डेटाबेस सॉफ्टवेयर का उदाहरण है?",
+        "options": [
+            "A. ओरेकल डेटाबेस",
+            "B. माइक्रोसॉफ्ट एक्सेस",
+            "C. MySQL",
+            "D. उपरोक्त सभी"
+        ],
+        "correct_option": 3,
+        "explanation": "Oracle, MS Access, और MySQL सभी रिलेशनल डेटाबेस मैनेजमेंट सिस्टम हैं।",
+        "verification_status": "VERIFIED_100%",
+        "subject": "Computer Awareness",
+        "language": "hi",
+        "id": "comp_hi_0160",
+        "chapter": "MS PowerPoint 365"
+    }
+]

@@ -1,0 +1,538 @@
+[
+    {
+        "id": 35,
+        "question": "What is the primary function of the main server in a small network?",
+        "options": [
+            "To manage files and process data",
+            "To provide internet connectivity",
+            "To connect to other client servers",
+            "To provide security to the network"
+        ],
+        "correct_option": 0,
+        "explanation": "The main server is responsible for managing files, processing data, and providing access to shared files.",
+        "chapter": "MS PowerPoint 365"
+    },
+    {
+        "id": 251,
+        "question": "What is the purpose of ransomware?",
+        "options": [
+            "To protect computer systems from hacking",
+            "To block access to a computer system until a sum of money is paid",
+            "To find and fix security flaws in computer systems",
+            "To record keyboard inputs"
+        ],
+        "correct_option": 1,
+        "explanation": "Ransomware is a type of malicious software designed to block access to a computer system until a sum of money is paid.",
+        "chapter": "MS PowerPoint 365"
+    },
+    {
+        "id": 260,
+        "question": "What is ransomware used for?",
+        "options": [
+            "To protect computer systems from hacking",
+            "To block access to a computer system until a sum of money is paid",
+            "To find and fix security flaws in computer systems",
+            "To record keyboard inputs"
+        ],
+        "correct_option": 1,
+        "explanation": "Ransomware is used to block access to a computer system until a sum of money is paid.",
+        "chapter": "MS PowerPoint 365"
+    },
+    {
+        "id": 265,
+        "question": "What is the purpose of ransomware in the context of hacking?",
+        "options": [
+            "To protect computer systems from hacking",
+            "To block access to a computer system until a sum of money is paid",
+            "To find and fix security flaws in computer systems",
+            "To record keyboard inputs"
+        ],
+        "correct_option": 1,
+        "explanation": "The purpose of ransomware in the context of hacking is to block access to a computer system until a sum of money is paid.",
+        "chapter": "MS PowerPoint 365"
+    },
+    {
+        "id": 267,
+        "question": "What is a key characteristic of ransomware?",
+        "options": [
+            "It is a type of malware that blocks access to a computer system",
+            "It is a piece of code that implements a malicious function after certain conditions are met",
+            "It is a type of hacking that uses social engineering",
+            "It is a type of software that protects against hacking"
+        ],
+        "correct_option": 0,
+        "explanation": "A key characteristic of ransomware is that it is a type of malware that blocks access to a computer system.",
+        "chapter": "MS PowerPoint 365"
+    },
+    {
+        "id": 269,
+        "question": "What is the definition of ransomware?",
+        "options": [
+            "A type of malware that blocks access to a computer system until a sum of money is paid",
+            "A piece of code that implements a malicious function after certain conditions are met",
+            "A type of software that protects against hacking",
+            "A type of social engineering"
+        ],
+        "correct_option": 0,
+        "explanation": "Ransomware is a type of malware that blocks access to a computer system until a sum of money is paid.",
+        "chapter": "MS PowerPoint 365"
+    },
+    {
+        "id": 275,
+        "question": "What is the primary goal of ransomware?",
+        "options": [
+            "To protect computer systems from hacking",
+            "To block access to a computer system until a sum of money is paid",
+            "To find and fix security flaws in computer systems",
+            "To record keyboard inputs"
+        ],
+        "correct_option": 1,
+        "explanation": "The primary goal of ransomware is to block access to a computer system until a sum of money is paid.",
+        "chapter": "MS PowerPoint 365"
+    },
+    {
+        "id": 280,
+        "question": "What type of cyber threat is Crypto Locker an example of?",
+        "options": [
+            "Phishing",
+            "Ransomware",
+            "Malware",
+            "Spyware"
+        ],
+        "correct_option": 1,
+        "explanation": "Crypto Locker is a form of Ransomware, which is a type of cyber threat that demands payment in exchange for restoring access to encrypted data.",
+        "chapter": "MS PowerPoint 365"
+    },
+    {
+        "id": 300,
+        "question": "Which of the following is a type of cyber threat that demands payment in exchange for restoring access to encrypted data?",
+        "options": [
+            "Virus",
+            "Trojan",
+            "Ransomware",
+            "Spyware"
+        ],
+        "correct_option": 2,
+        "explanation": "Ransomware is a type of cyber threat that demands payment in exchange for restoring access to encrypted data.",
+        "chapter": "MS PowerPoint 365"
+    },
+    {
+        "id": 342,
+        "question": "Which layer is responsible for accessing control?",
+        "options": [
+            "Network Layer",
+            "Transport Layer",
+            "Data Link Layer",
+            "Physical Layer"
+        ],
+        "correct_option": 2,
+        "explanation": "The Data Link Layer is responsible for access control.",
+        "chapter": "MS PowerPoint 365"
+    },
+    {
+        "id": 344,
+        "question": "Which of the following is a function of the Data Link Layer?",
+        "options": [
+            "Routing and logical addressing",
+            "Segmentation and reassembly",
+            "Error control and flow control",
+            "Access control"
+        ],
+        "correct_option": 3,
+        "explanation": "The Data Link Layer is responsible for access control.",
+        "chapter": "MS PowerPoint 365"
+    },
+    {
+        "id": 349,
+        "question": "What is the purpose of the Data Link Layer?",
+        "options": [
+            "To provide end-to-end delivery of messages",
+            "To route data between hosts in different networks",
+            "To perform error control and flow control",
+            "To provide access control"
+        ],
+        "correct_option": 2,
+        "explanation": "The Data Link Layer is responsible for providing access control.",
+        "chapter": "MS PowerPoint 365"
+    },
+    {
+        "id": 383,
+        "question": "What is the primary purpose of the disk rearrangement programme in Microsoft Windows?",
+        "options": [
+            "To increase data access speed",
+            "To decrease data access speed",
+            "To rearrange files for security purposes",
+            "To free up disk space"
+        ],
+        "correct_option": 0,
+        "explanation": "The programme is designed to increase data access speed by rearranging files to occupy contiguous storage locations.",
+        "chapter": "MS PowerPoint 365"
+    },
+    {
+        "id": 390,
+        "question": "What is the purpose of Microsoft PowerPoint?",
+        "options": [
+            "Word processing",
+            "Spreadsheet editing",
+            "Presentation creation",
+            "Database management"
+        ],
+        "correct_option": 2,
+        "explanation": "Microsoft PowerPoint is a presentation program.",
+        "chapter": "MS PowerPoint 365"
+    },
+    {
+        "id": 391,
+        "question": "What is Microsoft OneNote used for?",
+        "options": [
+            "Email client",
+            "Database management",
+            "Notetaking and note sharing",
+            "Desktop publishing"
+        ],
+        "correct_option": 2,
+        "explanation": "Microsoft OneNote is a notetaking program that gathers handwritten or typed notes, drawings, screen clippings, and audio commentaries, and allows notes to be shared with other OneNote users.",
+        "chapter": "MS PowerPoint 365"
+    },
+    {
+        "id": 394,
+        "question": "What is the name of the notetaking program in Microsoft 365?",
+        "options": [
+            "Microsoft Word",
+            "Microsoft Excel",
+            "Microsoft OneNote",
+            "Microsoft PowerPoint"
+        ],
+        "correct_option": 2,
+        "explanation": "Microsoft OneNote is the notetaking program in Microsoft 365.",
+        "chapter": "MS PowerPoint 365"
+    },
+    {
+        "id": 395,
+        "question": "What can be shared with other OneNote users?",
+        "options": [
+            "Only handwritten notes",
+            "Only typed notes",
+            "Notes, including handwritten or typed notes, drawings, screen clippings, and audio commentaries",
+            "Only drawings and screen clippings"
+        ],
+        "correct_option": 2,
+        "explanation": "Notes, including handwritten or typed notes, drawings, screen clippings, and audio commentaries, can be shared with other OneNote users.",
+        "chapter": "MS PowerPoint 365"
+    },
+    {
+        "id": 396,
+        "question": "What is the primary function of Microsoft Access?",
+        "options": [
+            "Word processing",
+            "Spreadsheet editing",
+            "Presentation creation",
+            "Database management"
+        ],
+        "correct_option": 3,
+        "explanation": "Microsoft Access is a database management system.",
+        "chapter": "MS PowerPoint 365"
+    },
+    {
+        "id": 397,
+        "question": "What is the primary function of Microsoft Publisher?",
+        "options": [
+            "Word processing",
+            "Spreadsheet editing",
+            "Presentation creation",
+            "Desktop publishing"
+        ],
+        "correct_option": 3,
+        "explanation": "Microsoft Publisher is a desktop publishing app.",
+        "chapter": "MS PowerPoint 365"
+    },
+    {
+        "id": 399,
+        "question": "What is the purpose of the disk rearrangement programme in Microsoft Windows?",
+        "options": [
+            "To increase data access speed by rearranging files",
+            "To decrease data access speed by rearranging files",
+            "To free up disk space by deleting files",
+            "To increase disk space by adding new files"
+        ],
+        "correct_option": 0,
+        "explanation": "The programme is designed to increase data access speed by rearranging files to occupy contiguous storage locations.",
+        "chapter": "MS PowerPoint 365"
+    },
+    {
+        "id": 401,
+        "question": "What is the name of the presentation program in Microsoft 365?",
+        "options": [
+            "Microsoft Word",
+            "Microsoft Excel",
+            "Microsoft PowerPoint",
+            "Microsoft Access"
+        ],
+        "correct_option": 2,
+        "explanation": "Microsoft PowerPoint is the presentation program in Microsoft 365.",
+        "chapter": "MS PowerPoint 365"
+    },
+    {
+        "id": 402,
+        "question": "What is the purpose of Microsoft OneNote?",
+        "options": [
+            "Email client",
+            "Database management",
+            "Notetaking and note sharing",
+            "Desktop publishing"
+        ],
+        "correct_option": 2,
+        "explanation": "Microsoft OneNote is a notetaking program that gathers handwritten or typed notes, drawings, screen clippings, and audio commentaries, and allows notes to be shared with other OneNote users.",
+        "chapter": "MS PowerPoint 365"
+    },
+    {
+        "id": 507,
+        "question": "Which of the following is an example of multi-factor authentication for PC security?",
+        "options": [
+            "Password only",
+            "Fingerprint scan",
+            "Username only",
+            "PIN only"
+        ],
+        "correct_option": 1,
+        "explanation": "A fingerprint scan is an example of multi-factor authentication, which requires a combination of two or more authentication factors to access a PC.",
+        "chapter": "MS PowerPoint 365"
+    },
+    {
+        "id": 543,
+        "question": "What type of computer security requires verifying the genuineness of the individuals or organisations that want to access a system?",
+        "options": [
+            "Authentication",
+            "Authorization",
+            "Encryption",
+            "Firewall"
+        ],
+        "correct_option": 0,
+        "explanation": "Authentication is the type of computer security that requires verifying the genuineness of the individuals or organisations that want to access a system.",
+        "chapter": "MS PowerPoint 365"
+    },
+    {
+        "question": "What is the file extension that is NOT a valid file format in MS-PowerPoint 365?",
+        "options": [
+            "A. .pptm",
+            "B. .pwpt",
+            "C. .ppt",
+            "D. .pptx"
+        ],
+        "correct_option": 1,
+        "explanation": "The .pwpt file extension is not a valid file format in MS-PowerPoint 365.",
+        "verification_status": "VERIFIED_100%",
+        "subject": "Computer Awareness",
+        "language": "en",
+        "id": "comp_en_0003",
+        "chapter": "MS PowerPoint 365"
+    },
+    {
+        "question": "In Information Technology, what does DASD stand for?",
+        "options": [
+            "A. Direct Access Standard Device",
+            "B. Device for Access and Storage of Domain",
+            "C. Direct Access Storage Domain",
+            "D. Direct Access storage Device"
+        ],
+        "correct_option": 3,
+        "explanation": "DASD stands for Direct Access storage Device, which is a secondary storage device in which each physical record has a discrete location and a unique address.",
+        "verification_status": "VERIFIED_100%",
+        "subject": "Computer Awareness",
+        "language": "en",
+        "id": "comp_en_0036",
+        "chapter": "MS PowerPoint 365"
+    },
+    {
+        "question": "What are the three constituents of a CPU in a computer?",
+        "options": [
+            "A. Control unit, ALU, keyboard",
+            "B. Control unit, ALU, memory",
+            "C. Monitor, memory, control unit",
+            "D. Monitor, ALU, memory"
+        ],
+        "correct_option": 1,
+        "explanation": "The CPU (Control Processing Unit) is made up of three main components, the control unit, the immediate access store, and the arithmetic and logic unit.",
+        "verification_status": "VERIFIED_100%",
+        "subject": "Computer Awareness",
+        "language": "en",
+        "id": "comp_en_0108",
+        "chapter": "MS PowerPoint 365"
+    },
+    {
+        "question": "What type of memory is a volatile memory?",
+        "options": [
+            "A. RAM",
+            "B. EPROM",
+            "C. ROM",
+            "D. PROM"
+        ],
+        "correct_option": 0,
+        "explanation": "RAM (Random Access Memory) is a volatile memory. It loses its data when the power is turned off.",
+        "verification_status": "VERIFIED_100%",
+        "subject": "Computer Awareness",
+        "language": "en",
+        "id": "comp_en_0115",
+        "chapter": "MS PowerPoint 365"
+    },
+    {
+        "question": "What is the fastest to read from and write to than the other kinds of storage in a computer?",
+        "options": [
+            "A. CD ROM",
+            "B. Floppy Disk",
+            "C. RAM",
+            "D. Hard Disk"
+        ],
+        "correct_option": 2,
+        "explanation": "RAM (Random Access Memory) is the fastest to read from and write to than the other kinds of storage in a computer.",
+        "verification_status": "VERIFIED_100%",
+        "subject": "Computer Awareness",
+        "language": "en",
+        "id": "comp_en_0121",
+        "chapter": "MS PowerPoint 365"
+    },
+    {
+        "question": "In a computer, what is the name of the high speed memory used :",
+        "options": [
+            "A. Cache",
+            "B. RAM",
+            "C. BIOS",
+            "D. Hard Disk"
+        ],
+        "correct_option": 1,
+        "explanation": "RAM (Random Access Memory) is the high speed memory used in a computer.",
+        "verification_status": "VERIFIED_100%",
+        "subject": "Computer Awareness",
+        "language": "en",
+        "id": "comp_en_0123",
+        "chapter": "MS PowerPoint 365"
+    },
+    {
+        "question": "____________ is the internal memory of the CPU for storing data, program, and program result.",
+        "options": [
+            "A. Read Only Memory (ROM)",
+            "B. Random Access Memory (RAM)",
+            "C. Flash Memory",
+            "D. Cache Memory"
+        ],
+        "correct_option": 1,
+        "explanation": "Random Access Memory (RAM) is the internal memory of the CPU for storing data, program, and program result.",
+        "verification_status": "VERIFIED_100%",
+        "subject": "Computer Awareness",
+        "language": "en",
+        "id": "comp_en_0125",
+        "chapter": "MS PowerPoint 365"
+    },
+    {
+        "question": "______ is a type of random access memory (RAM) that retains data bits in its memory as long as power is being supplied.",
+        "options": [
+            "A. Static RAM",
+            "B. Dynamic RAM",
+            "C. Flash Memory",
+            "D. Cache Memory"
+        ],
+        "correct_option": 0,
+        "explanation": "Static RAM is a type of random access memory (RAM) that retains data bits in its memory as long as power is being supplied.",
+        "verification_status": "VERIFIED_100%",
+        "subject": "Computer Awareness",
+        "language": "en",
+        "id": "comp_en_0126",
+        "chapter": "MS PowerPoint 365"
+    },
+    {
+        "question": "Which of the following is NOT a magnetic storage?",
+        "options": [
+            "A. Winchester disk",
+            "B. Floppy Drive",
+            "C. Hard Disk Drive",
+            "D. Solid-State Drive"
+        ],
+        "correct_option": 3,
+        "explanation": "Examples of magnetic storage include Hard Disk Drive, Floppy Disk, Magnetic Tape, Magnetic Drum, Zip Diskette, Magnetoresistive Random Access Memory (MRAM), Winchester Disks, etc.",
+        "verification_status": "VERIFIED_100%",
+        "subject": "Computer Awareness",
+        "language": "en",
+        "id": "comp_en_0132",
+        "chapter": "MS PowerPoint 365"
+    },
+    {
+        "question": "Which of the following is an example of database software?",
+        "options": [
+            "A. Oracle Database",
+            "B. Microsoft Access",
+            "C. Mysql",
+            "D. All of the above"
+        ],
+        "correct_option": 3,
+        "explanation": "Examples of database software are Oracle Database, Microsoft Access, and Mysql.",
+        "verification_status": "VERIFIED_100%",
+        "subject": "Computer Awareness",
+        "language": "en",
+        "id": "comp_en_0160",
+        "chapter": "MS PowerPoint 365"
+    },
+    {
+        "question": "A computer network that is used to controlled access from outside of an organization’s intranet is called",
+        "options": [
+            "A. Intranet",
+            "B. Websites",
+            "C. Extranet",
+            "D. ISP"
+        ],
+        "correct_option": 2,
+        "explanation": "A computer network that is used to controlled access from outside of an organization’s intranet is called an Extranet.",
+        "verification_status": "VERIFIED_100%",
+        "subject": "Computer Awareness",
+        "language": "en",
+        "id": "comp_en_0306",
+        "chapter": "MS PowerPoint 365"
+    },
+    {
+        "question": "The ______ provides high-speed internet access.",
+        "options": [
+            "A. dial-up",
+            "B. TCP",
+            "C. broadband",
+            "D. ISP"
+        ],
+        "correct_option": 2,
+        "explanation": "The broadband provides high-speed internet access.",
+        "verification_status": "VERIFIED_100%",
+        "subject": "Computer Awareness",
+        "language": "en",
+        "id": "comp_en_0317",
+        "chapter": "MS PowerPoint 365"
+    },
+    {
+        "question": "Which of the following is the slowest type of internet service?",
+        "options": [
+            "A. Dial - up",
+            "B. 3G and 4G",
+            "C. Digital r Line",
+            "D. Satellite"
+        ],
+        "correct_option": 0,
+        "explanation": "A dial-up connection uses a standard phone line and analog modem to access the Internet at data transfer rates (DTR) of up to 56 Kbps.",
+        "verification_status": "VERIFIED_100%",
+        "subject": "Computer Awareness",
+        "language": "en",
+        "id": "comp_en_0318",
+        "chapter": "MS PowerPoint 365"
+    },
+    {
+        "question": "What was the first browser to access files, graphics, and other documents on the World Wide Web?",
+        "options": [
+            "A. Lynx",
+            "B. Mosaic",
+            "C. Netscape",
+            "D. Internet Explorer"
+        ],
+        "correct_option": 0,
+        "explanation": "Lynx is a terminal-based web browser that was the first to access files, graphics, and other documents on the World Wide Web.",
+        "verification_status": "VERIFIED_100%",
+        "subject": "Computer Awareness",
+        "language": "en",
+        "id": "comp_en_0325",
+        "chapter": "MS PowerPoint 365"
+    }
+]

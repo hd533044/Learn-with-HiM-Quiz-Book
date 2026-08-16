@@ -1,0 +1,2942 @@
+[
+    {
+        "id": 64,
+        "question": "MS-EXCEL में डॉलर चिह्न ($) का क्या उपयोग होता है?",
+        "options": [
+            "फ़ॉन्ट शैली बदलने के लिए",
+            "टेबल सम्मिलित करने के लिए",
+            "किसी कॉलम या रो (Row) को एब्सोल्यूट (निश्चित/फिक्स) बनाने के लिए",
+            "सेल का रंग बदलने के लिए"
+        ],
+        "correct_option": 2,
+        "explanation": "MS-Excel की फॉर्मूला सेल रेफरेंसिंग में $ साइन किसी पंक्ति या कॉलम को फिक्स/Absolute बनाने में काम आता है।",
+        "chapter": "MS Excel"
+    },
+    {
+        "id": 65,
+        "question": "MS-EXCEL का कौन सा टैब 'Clipboard' और 'Font' ग्रुप्स से मिलकर बना है?",
+        "options": [
+            "Insert",
+            "Home",
+            "Page layout",
+            "Review"
+        ],
+        "correct_option": 1,
+        "explanation": "MS-Excel में 'Home' टैब के अंदर Clipboard, Font, Alignment आदि ग्रुप्स होते हैं।",
+        "chapter": "MS Excel"
+    },
+    {
+        "id": 66,
+        "question": "MS-EXCEL में LOWER फ़ंक्शन का क्या कार्य है?",
+        "options": [
+            "टेक्स्ट को अपर केस में बदलना",
+            "टेक्स्ट को लोअर केस (छोटे अक्षरों) में बदलना",
+            "टेबल सम्मिलित करना",
+            "सेल का रंग बदलना"
+        ],
+        "correct_option": 1,
+        "explanation": "LOWER फ़ंक्शन सेल के सभी अक्षरों को छोटे (lowercase) अक्षरों में परिवर्तित कर देता है।",
+        "chapter": "MS Excel"
+    },
+    {
+        "id": 67,
+        "question": "निम्नलिखित में से कौन सा MS-EXCEL के 'Insert' टैब का एक ग्रुप (Group) है?",
+        "options": [
+            "Illustrations",
+            "Tables",
+            "Formula",
+            "Review"
+        ],
+        "correct_option": 0,
+        "explanation": "Insert टैब में Tables, Illustrations, Charts आदि ग्रुप मौजूद होते हैं।",
+        "chapter": "MS Excel"
+    },
+    {
+        "id": 68,
+        "question": "MS-EXCEL में UPPER फ़ंक्शन का क्या उद्देश्य है?",
+        "options": [
+            "टेक्स्ट को लोअर केस में बदलना",
+            "टेक्स्ट को अपर केस (बड़े अक्षरों) में बदलना",
+            "टेबल सम्मिलित करना",
+            "सेल का रंग बदलना"
+        ],
+        "correct_option": 1,
+        "explanation": "UPPER फ़ंक्शन सभी अक्षरों को कैपिटल (uppercase) में बदल देता है।",
+        "chapter": "MS Excel"
+    },
+    {
+        "id": 69,
+        "question": "MS-EXCEL के किस टैब में 'Function Library' और 'Formula Auditing' ग्रुप होते हैं?",
+        "options": [
+            "Insert",
+            "Home",
+            "Formula",
+            "Review"
+        ],
+        "correct_option": 2,
+        "explanation": "'Formulas' टैब के अंतर्गत Function Library तथा Formula Auditing ग्रुप आते हैं।",
+        "chapter": "MS Excel"
+    },
+    {
+        "id": 70,
+        "question": "MS-EXCEL के 'Insert' टैब में 'Sparklines' विकल्प का क्या उपयोग है?",
+        "options": [
+            "टेबल डालने के लिए",
+            "बड़ा चार्ट डालने के लिए",
+            "एक ही सेल के अंदर छोटा चार्ट (Mini Chart) बनाने के लिए",
+            "सेल का रंग बदलने के लिए"
+        ],
+        "correct_option": 2,
+        "explanation": "Sparklines का उपयोग सिंगल सेल में डेटा ट्रेंड दिखाने हेतु मिनी-चार्ट बनाने के लिए किया जाता है।",
+        "chapter": "MS Excel"
+    },
+    {
+        "id": 71,
+        "question": "निम्नलिखित में से कौन सा MS-EXCEL का मुख्य रिबन टैब नहीं है?",
+        "options": [
+            "File",
+            "Home",
+            "Review",
+            "Edit"
+        ],
+        "correct_option": 3,
+        "explanation": "'Edit' एमएस-एक्सेल में कोई शीर्ष-स्तरीय रिबन टैब नहीं है।",
+        "chapter": "MS Excel"
+    },
+    {
+        "id": 72,
+        "question": "MS-EXCEL के 'Formula' टैब में 'Defined Names' ग्रुप का क्या कार्य है?",
+        "options": [
+            "टेबल सम्मिलित करना",
+            "किसी सेल या रेंज (Range) के लिए नाम परिभाषित/सेट करना",
+            "सेल का रंग बदलना",
+            "फॉर्मूला बनाना"
+        ],
+        "correct_option": 1,
+        "explanation": "'Defined Names' का उपयोग सेल्स या रेंज को कस्टम नाम (Name Range) देने के लिए होता है।",
+        "chapter": "MS Excel"
+    },
+    {
+        "id": 73,
+        "question": "MS-EXCEL में टेक्स्ट को लोअर केस में बदलने के लिए किस फ़ंक्शन का उपयोग किया जाता है?",
+        "options": [
+            "UPPER",
+            "LOWER",
+            "PROPER",
+            "TRIM"
+        ],
+        "correct_option": 1,
+        "explanation": "LOWER फ़ंक्शन टेक्स्ट को छोटे अक्षरों में परिवर्तित करता है।",
+        "chapter": "MS Excel"
+    },
+    {
+        "id": 74,
+        "question": "MS-EXCEL में 'Page Layout' टैब का क्या उद्देश्य है?",
+        "options": [
+            "टेबल सम्मिलित करना",
+            "पेज का लेआउट, मार्जिन व ओरिएंटेशन बदलना",
+            "फॉर्मूला बनाना",
+            "डॉक्यूमेंट की समीक्षा करना"
+        ],
+        "correct_option": 1,
+        "explanation": "Page Layout टैब का उपयोग प्रिंटिंग मार्जिन, ओरिएंटेशन और पेज सेटअप बदलने में होता है।",
+        "chapter": "MS Excel"
+    },
+    {
+        "id": 75,
+        "question": "निम्नलिखित में से कौन सा ग्रुप MS-EXCEL के 'Home' टैब में स्थित है?",
+        "options": [
+            "Illustrations",
+            "Tables",
+            "Font",
+            "Formula"
+        ],
+        "correct_option": 2,
+        "explanation": "'Font' ग्रुप Home टैब का हिस्सा है।",
+        "chapter": "MS Excel"
+    },
+    {
+        "id": 76,
+        "question": "MS-EXCEL में 'Data' टैब का क्या मुख्य कार्य है?",
+        "options": [
+            "टेबल डालना",
+            "डेटा को आयात (Import), फ़िल्टर और प्रबंधित करना",
+            "फॉर्मूला बनाना",
+            "डॉक्यूमेंट की समीक्षा करना"
+        ],
+        "correct_option": 1,
+        "explanation": "Data टैब का उपयोग बाहरी डेटा लाने, सॉर्टिंग, फ़िल्टरिंग और डेटा मैनेजमेंट में होता है।",
+        "chapter": "MS Excel"
+    },
+    {
+        "id": 77,
+        "question": "MS-EXCEL में टेक्स्ट को बड़े अक्षरों (Uppercase) में बदलने के लिए कौन सा फ़ंक्शन उपयोग होता है?",
+        "options": [
+            "LOWER",
+            "UPPER",
+            "PROPER",
+            "TRIM"
+        ],
+        "correct_option": 1,
+        "explanation": "UPPER फ़ंक्शन का उपयोग किया जाता है।",
+        "chapter": "MS Excel"
+    },
+    {
+        "id": 78,
+        "question": "MS-EXCEL में 'Review' टैब का क्या मुख्य उद्देश्य है?",
+        "options": [
+            "टेबल डालना",
+            "रिव्यू बदलना",
+            "फॉर्मूला बनाना",
+            "स्पेलिंग चेक, कमेंट्स व वर्कशीट सुरक्षा (Review) की जांच करना"
+        ],
+        "correct_option": 3,
+        "explanation": "Review टैब में प्रूफ़िंग (Spell Check), प्रोटेक्ट शीट और कमेंट्स जैसे विकल्प होते हैं।",
+        "chapter": "MS Excel"
+    },
+    {
+        "id": 79,
+        "question": "MS-EXCEL के 'Insert' टैब में 'Illustrations' ग्रुप के तहत कौन सा विकल्प आता है?",
+        "options": [
+            "Picture (चित्र)",
+            "Chart",
+            "Table",
+            "Sparkline"
+        ],
+        "correct_option": 0,
+        "explanation": "Picture, Shapes, SmartArt आदि Illustrations ग्रुप के अंतर्गत आते हैं।",
+        "chapter": "MS Excel"
+    },
+    {
+        "id": 80,
+        "question": "MS-EXCEL में 'View' टैब का क्या उद्देश्य है?",
+        "options": [
+            "टेबल डालना",
+            "वर्कशीट के लेआउट/व्यू (Gridlines, Zoom, Page Break) को बदलना",
+            "फॉर्मूला बनाना",
+            "डॉक्यूमेंट की समीक्षा करना"
+        ],
+        "correct_option": 1,
+        "explanation": "View टैब स्क्रीन प्रदर्शन और देखने के तरीकों को बदलने के लिए होता है।",
+        "chapter": "MS Excel"
+    },
+    {
+        "id": 81,
+        "question": "निम्नलिखित में से कौन सा ग्रुप MS-EXCEL के 'Insert' टैब का हिस्सा है?",
+        "options": [
+            "Illustrations",
+            "Tables",
+            "Formula",
+            "Review"
+        ],
+        "correct_option": 0,
+        "explanation": "Illustrations ग्रुप Insert टैब में पाया जाता है।",
+        "chapter": "MS Excel"
+    },
+    {
+        "id": 82,
+        "question": "MS-EXCEL के 'Formula' टैब में 'Formula Auditing' का क्या उपयोग है?",
+        "options": [
+            "टेबल डालना",
+            "फॉर्मूला बदलना",
+            "फॉर्मूला की गलतियों को जांचना व ट्रेस (Audit) करना",
+            "डॉक्यूमेंट की समीक्षा करना"
+        ],
+        "correct_option": 2,
+        "explanation": "Formula Auditing का उपयोग प्रेसिडेंट्स/डिपेंडेंट्स ट्रैक करने और गलतियाँ ढूंढने में होता है।",
+        "chapter": "MS Excel"
+    },
+    {
+        "id": 83,
+        "question": "निम्नलिखित में से कौन सा MS-EXCEL का इनबिल्ट फ़ंक्शन नहीं है?",
+        "options": [
+            "LOWER",
+            "UPPER",
+            "PROPER",
+            "EDIT"
+        ],
+        "correct_option": 3,
+        "explanation": "EDIT नाम का कोई Excel फ़ंक्शन नहीं होता है।",
+        "chapter": "MS Excel"
+    },
+    {
+        "id": 84,
+        "question": "MS-EXCEL के 'Home' टैब में 'Cells' ग्रुप का क्या कार्य है?",
+        "options": [
+            "टेबल डालना",
+            "सेल्स को इंसर्ट, डिलीट और फ़ॉर्मेट करना",
+            "फॉर्मूला बनाना",
+            "डॉक्यूमेंट की समीक्षा करना"
+        ],
+        "correct_option": 1,
+        "explanation": "Cells ग्रुप से रो/कॉलम जोड़े, हटाए या फ़ॉर्मेट किए जाते हैं।",
+        "chapter": "MS Excel"
+    },
+    {
+        "id": 85,
+        "question": "MS-EXCEL में स्पार्कलाइन (Sparkline) के प्रकार कौन-कौन से हैं?",
+        "options": [
+            "Line",
+            "Column",
+            "Win/Loss",
+            "उपरोक्त सभी (All of the above)"
+        ],
+        "correct_option": 3,
+        "explanation": "Line, Column और Win/Loss तीनों स्पार्कलाइन के प्रकार हैं।",
+        "chapter": "MS Excel"
+    },
+    {
+        "id": 86,
+        "question": "MS-EXCEL के 'Home' टैब में 'Editing' ग्रुप का क्या कार्य है?",
+        "options": [
+            "टेबल डालना",
+            "AutoSum, Clear, Sort और Find जैसे सामान्य कार्य करना",
+            "फॉर्मूला बनाना",
+            "डॉक्यूमेंट की समीक्षा करना"
+        ],
+        "correct_option": 1,
+        "explanation": "Editing ग्रुप में AutoSum, Fill, Clear, Sort & Filter और Find & Select टूल्स होते हैं।",
+        "chapter": "MS Excel"
+    },
+    {
+        "id": 87,
+        "question": "निम्नलिखित में से कौन सा ग्रुप MS-EXCEL के 'Insert' टैब का हिस्सा नहीं है?",
+        "options": [
+            "Tables",
+            "Illustrations",
+            "Add-ins",
+            "Formula"
+        ],
+        "correct_option": 3,
+        "explanation": "Formulas एक अलग मुख्य टैब है, Insert टैब का ग्रुप नहीं।",
+        "chapter": "MS Excel"
+    },
+    {
+        "id": 88,
+        "question": "MS-EXCEL के 'Home' टैब में 'Styles' ग्रुप का क्या उपयोग है?",
+        "options": [
+            "टेबल डालना",
+            "Conditional Formatting, Table Styles और Cell Styles लागू करना",
+            "फॉर्मूला बनाना",
+            "डॉक्यूमेंट की समीक्षा करना"
+        ],
+        "correct_option": 1,
+        "explanation": "Styles ग्रुप में कंडीशनल फ़ॉर्मेटिंग और सेल स्टाइल्स विकल्प होते हैं।",
+        "chapter": "MS Excel"
+    },
+    {
+        "id": 89,
+        "question": "MS-EXCEL के 'Insert' टैब में कौन सा ऐड-इन (Add-in/Tour) विकल्प पाया जाता है?",
+        "options": [
+            "Chart",
+            "3D Map",
+            "Table",
+            "Sparkline"
+        ],
+        "correct_option": 1,
+        "explanation": "3D Map (Tours) ऐड-इन का विकल्प Insert टैब में दिया गया है।",
+        "chapter": "MS Excel"
+    },
+    {
+        "id": 90,
+        "question": "संख्या 27 पर 6 के गुणज (multiple) के साथ CEILING फ़ंक्शन लागू करने पर क्या परिणाम मिलेगा?",
+        "options": [
+            "24",
+            "27",
+            "30",
+            "36"
+        ],
+        "correct_option": 2,
+        "explanation": "CEILING फ़ंक्शन संख्या को ऊपर की ओर निकटतम गुणज तक राउंड-अप करता है; अतः CEILING(27,6) = 30 होगा।",
+        "chapter": "MS Excel"
+    },
+    {
+        "id": 91,
+        "question": "MS-Excel 2010 में पूरी रो (Row) को सिलेक्ट करने की शॉर्टकट कुंजी क्या है?",
+        "options": [
+            "Ctrl + Spacebar",
+            "Shift + Spacebar",
+            "Alt + Spacebar",
+            "Ctrl + Shift + Spacebar"
+        ],
+        "correct_option": 1,
+        "explanation": "पूरी रो को चुनने के लिए Shift + Spacebar दबाया जाता है (जबकि पूरी कॉलम के लिए Ctrl + Spacebar होता है)।",
+        "chapter": "MS Excel"
+    },
+    {
+        "id": 92,
+        "question": "MS-Excel 2010 में टेक्स्ट को अपरकेस में बदलने के लिए किस फ़ंक्शन का उपयोग किया जाता है?",
+        "options": [
+            "LOWER",
+            "UPPER",
+            "PROPER",
+            "CONCATENATE"
+        ],
+        "correct_option": 1,
+        "explanation": "UPPER फ़ंक्शन सभी अक्षरों को बड़े (कैपिटल) अक्षरों में बदल देता है।",
+        "chapter": "MS Excel"
+    },
+    {
+        "id": 93,
+        "question": "MS-Excel 2010 में एक से अधिक गैर-आसन्न (non-adjacent) वर्कशीट्स को कैसे चुना जा सकता है?",
+        "options": [
+            "Shift की दबाकर रखें और टैब पर क्लिक करें",
+            "Ctrl की दबाकर रखें और टैब पर क्लिक करें",
+            "Alt की दबाकर रखें और टैब पर क्लिक करें",
+            "Ctrl + Shift की दबाकर रखें और टैब पर क्लिक करें"
+        ],
+        "correct_option": 1,
+        "explanation": "अलग-अलग (जो पास-पास न हों) वर्कशीट्स को सिलेक्ट करने के लिए Ctrl की दबाकर शीट टैब्स पर क्लिक किया जाता है।",
+        "chapter": "MS Excel"
+    },
+    {
+        "id": 94,
+        "question": "MS-Excel 2010 में DATEVALUE फ़ंक्शन का क्या उद्देश्य है?",
+        "options": [
+            "तारीख को टेक्स्ट स्ट्रिंग में बदलना",
+            "टेक्स्ट के रूप में लिखी तारीख को एक्सेल सीरियस डेट नंबर में बदलना",
+            "नंबर को तारीख में बदलना",
+            "तारीख को नंबर में बदलना"
+        ],
+        "correct_option": 1,
+        "explanation": "DATEVALUE फ़ंक्शन टेक्स्ट फ़ॉर्मेट की तारीख को मानक एक्सेल डेट नंबर में बदलता है।",
+        "chapter": "MS Excel"
+    },
+    {
+        "id": 97,
+        "question": "MS-Excel 2010 की एक वर्कशीट में कुल कितनी रो (Rows) और कॉलम (Columns) होते हैं?",
+        "options": [
+            "65536 रो और 256 कॉलम",
+            "1,048,576 रो और 16,384 कॉलम",
+            "1,000,000 रो और 10,000 कॉलम",
+            "10,000 रो और 1,000 कॉलम"
+        ],
+        "correct_option": 1,
+        "explanation": "Excel 2007 और बाद के वर्जनों (2010 आदि) में 10,48,576 पंक्तियाँ और 16,384 कॉलम (XFD तक) होते हैं।",
+        "chapter": "MS Excel"
+    },
+    {
+        "id": 98,
+        "question": "MS-Excel 2010 में EXACT फ़ंक्शन का क्या कार्य है?",
+        "options": [
+            "यह जांचना कि क्या दो टेक्स्ट स्ट्रिंग बिल्कुल एक समान हैं",
+            "यह जांचना कि क्या दो संख्याएं समान हैं",
+            "दो तारीखों की तुलना करना",
+            "दो समय की तुलना करना"
+        ],
+        "correct_option": 0,
+        "explanation": "EXACT फ़ंक्शन केस-सेंसिटिव तरीके से दो टेक्स्ट स्ट्रिंग्स की तुलना करता है कि वे समान हैं या नहीं।",
+        "chapter": "MS Excel"
+    },
+    {
+        "id": 99,
+        "question": "MS-Excel 2010 में न्यूनतम ज़ूम (Zoom) प्रतिशत कितना होता है?",
+        "options": [
+            "10%",
+            "20%",
+            "30%",
+            "40%"
+        ],
+        "correct_option": 0,
+        "explanation": "MS-Excel में न्यूनतम ज़ूम 10% और अधिकतम ज़ूम 400% होता है।",
+        "chapter": "MS Excel"
+    },
+    {
+        "id": 100,
+        "question": "MS-Excel 2010 में एक्टिव वर्कबुक को बंद करने का शॉर्टकट क्या है?",
+        "options": [
+            "Ctrl + F3",
+            "Ctrl + F4",
+            "Alt + F4",
+            "Ctrl + Shift + F4"
+        ],
+        "correct_option": 1,
+        "explanation": "वर्तमान वर्कबुक विंडो बंद करने का शॉर्टकट Ctrl + F4 या Ctrl + W है।",
+        "chapter": "MS Excel"
+    },
+    {
+        "id": 101,
+        "question": "टेबल की किसी पंक्ति (Row) में पिछले सेल पर जाने के लिए किस शॉर्टकट का प्रयोग होता है?",
+        "options": [
+            "Tab",
+            "Shift + Tab",
+            "Ctrl + Tab",
+            "Alt + Tab"
+        ],
+        "correct_option": 1,
+        "explanation": "Tab दबाने से अगले सेल में तथा Shift + Tab दबाने से पिछले सेल में जाया जाता है।",
+        "chapter": "MS Excel"
+    },
+    {
+        "id": 102,
+        "question": "MS-Excel 2010 में 'Insert' टैब पर जाने की कीबोर्ड शॉर्टकट कुंजी क्या है?",
+        "options": [
+            "Alt + I",
+            "Alt + N",
+            "Ctrl + I",
+            "Ctrl + N"
+        ],
+        "correct_option": 1,
+        "explanation": "Alt + N दबाने पर रिबन का Insert टैब एक्टिवेट होता है।",
+        "chapter": "MS Excel"
+    },
+    {
+        "id": 103,
+        "question": "MS-Excel 2010 में CONCATENATE फ़ंक्शन का क्या उपयोग है?",
+        "options": [
+            "कई टेक्स्ट आइटमों को जोड़कर एक सेल में करना",
+            "एक टेक्स्ट को कई सेल्स में विभाजित करना",
+            "टेक्स्ट को नंबर में बदलना",
+            "नंबर को टेक्स्ट में बदलना"
+        ],
+        "correct_option": 0,
+        "explanation": "CONCATENATE फ़ंक्शन दो या दो से अधिक टेक्स्ट मानों को आपस में जोड़ता है।",
+        "chapter": "MS Excel"
+    },
+    {
+        "id": 105,
+        "question": "सिलेक्ट की गई सेल्स को डिलीट करने के लिए 'Delete Dialog Box' खोलने का शॉर्टकट क्या है?",
+        "options": [
+            "Ctrl + +",
+            "Ctrl + -",
+            "Alt + -",
+            "Shift + -"
+        ],
+        "correct_option": 1,
+        "explanation": "Ctrl + - (माइनस) दबाने से सेल डिलीट डायलॉग बॉक्स खुलता है।",
+        "chapter": "MS Excel"
+    },
+    {
+        "id": 106,
+        "question": "फ़ॉन्ट टैब के साथ 'Format Cells' डायलॉग बॉक्स खोलने का शॉर्टकट क्या है?",
+        "options": [
+            "Ctrl + F",
+            "Ctrl + Shift + F",
+            "Alt + F",
+            "Ctrl + Alt + F"
+        ],
+        "correct_option": 1,
+        "explanation": "Ctrl + Shift + F (या Ctrl + 1) से फ़ॉर्मेट सेल्स विंडो खुलती है।",
+        "chapter": "MS Excel"
+    },
+    {
+        "id": 107,
+        "question": "MS-Excel 2003 की एक वर्कशीट में कुल कितनी पंक्तियाँ (Rows) और कॉलम होते थे?",
+        "options": [
+            "1,048,576 रो और 16,384 कॉलम",
+            "65,536 रो और 256 कॉलम",
+            "10,000 रो और 1,000 कॉलम",
+            "100 रो और 10 कॉलम"
+        ],
+        "correct_option": 1,
+        "explanation": "पुराने Excel 2003 वर्ज़न तक केवल 65,536 पंक्तियाँ और 256 कॉलम (IV तक) ही सीमित थे।",
+        "chapter": "MS Excel"
+    },
+    {
+        "id": 108,
+        "question": "MS-Excel 2010 में Ctrl + A शॉर्टकट का क्या कार्य है?",
+        "options": [
+            "पूरी वर्कशीट को सिलेक्ट करना",
+            "केवल पूरी रो को सिलेक्ट करना",
+            "केवल पूरे कॉलम को सिलेक्ट करना",
+            "केवल एक सेल चुनना"
+        ],
+        "correct_option": 0,
+        "explanation": "Ctrl + A पूरी वर्कशीट या एक्टिव डेटा टेबल को चुनता है।",
+        "chapter": "MS Excel"
+    },
+    {
+        "id": 109,
+        "question": "MS-Excel 2010 में Ctrl + T शॉर्टकट कुंजी का क्या कार्य है?",
+        "options": [
+            "क्रिएट टेबल (Create Table) डायलॉग बॉक्स खोलना",
+            "फ़ॉर्मेट सेल्स डायलॉग बॉक्स खोलना",
+            "डिलीट डायलॉग बॉक्स खोलना",
+            "इंसर्ट डायलॉग बॉक्स खोलना"
+        ],
+        "correct_option": 0,
+        "explanation": "Ctrl + T (या Ctrl + L) से सिलेक्ट किए गए डेटा से टेबल बनाने का बॉक्स खुलता है।",
+        "chapter": "MS Excel"
+    },
+    {
+        "id": 110,
+        "question": "MS-Excel 2010 में 'Data' टैब पर जाने की कीबोर्ड शॉर्टकट कुंजी क्या है?",
+        "options": [
+            "Alt + A",
+            "Alt + D",
+            "Ctrl + A",
+            "Ctrl + D"
+        ],
+        "correct_option": 0,
+        "explanation": "Alt + A दबाने पर Data टैब खुलता है।",
+        "chapter": "MS Excel"
+    },
+    {
+        "id": 111,
+        "question": "DATEVALUE फ़ंक्शन का मुख्य कार्य क्या है?",
+        "options": [
+            "तारीख को टेक्स्ट में बदलना",
+            "टेक्स्ट रूपी दिनांक को सीरियल डेट नंबर में बदलना",
+            "संख्या को तारीख में बदलना",
+            "तारीख को संख्या में बदलना"
+        ],
+        "correct_option": 1,
+        "explanation": "यह पाठ्य रूप में दी गई तारीख को संख्यात्मक मान में परिवर्तित करता है।",
+        "chapter": "MS Excel"
+    },
+    {
+        "id": 116,
+        "question": "टेबल रो में पिछले सेल पर जाने का शॉर्टकट क्या है?",
+        "options": [
+            "Tab",
+            "Shift + Tab",
+            "Ctrl + Tab",
+            "Alt + Tab"
+        ],
+        "correct_option": 1,
+        "explanation": "Shift + Tab कर्सर को बाईं ओर पिछले सेल में ले जाता है।",
+        "chapter": "MS Excel"
+    },
+    {
+        "id": 118,
+        "question": "नई वर्कबुक को सेव करने और 'Save As' डायलॉग बॉक्स प्रदर्शित करने का शॉर्टकट क्या है?",
+        "options": [
+            "Shift + F12",
+            "Ctrl + F1",
+            "Alt + F2",
+            "Shift + F2"
+        ],
+        "correct_option": 2,
+        "explanation": "MS Excel में Alt + F2 दबाने पर Save As डायलॉग बॉक्स प्रदर्शित होता है।",
+        "chapter": "MS Excel"
+    },
+    {
+        "id": 119,
+        "question": "MS Excel में Ctrl + F2 शॉर्टकट का क्या कार्य है?",
+        "options": [
+            "प्रिंट पूर्वावलोकन (Print Preview) दिखाना",
+            "टास्क पेन बंद और पुनः चालू करना",
+            "इंसर्ट नेम डिफाइन बॉक्स खोलना",
+            "विंडो मूव कमांड चालू करना"
+        ],
+        "correct_option": 0,
+        "explanation": "Ctrl + F2 दबाने से प्रिंट प्रिव्यू स्क्रीन प्रदर्शित होती है।",
+        "chapter": "MS Excel"
+    },
+    {
+        "id": 121,
+        "question": "सभी खुली वर्कबुक्स को बंद करने और Excel से बाहर निकलने का शॉर्टकट क्या है?",
+        "options": [
+            "Alt + F4",
+            "Alt + F8",
+            "Alt + Shift + F2",
+            "Alt + Shift + F4"
+        ],
+        "correct_option": 0,
+        "explanation": "Alt + F4 दबाने से एक्सेल एप्लिकेशन बंद हो जाती है।",
+        "chapter": "MS Excel"
+    },
+    {
+        "id": 122,
+        "question": "Ctrl + F6 कुंजी संयोजन का क्या कार्य है?",
+        "options": [
+            "पिछली वर्कबुक विंडो पर जाना",
+            "अगली खुली वर्कबुक या विंडो पर जाना",
+            "विंडो साइज़ रीस्टोर करना",
+            "विंडो मिनिमाइज़ करना"
+        ],
+        "correct_option": 1,
+        "explanation": "Ctrl + F6 एक से अधिक खुली एक्सेल विंडोज़ के बीच स्विच करता है।",
+        "chapter": "MS Excel"
+    },
+    {
+        "id": 126,
+        "question": "Ctrl + F4 कुंजी का क्या उपयोग है?",
+        "options": [
+            "चयनित वर्कबुक विंडो को बंद करना",
+            "विंडो साइज़ रीस्टोर करना",
+            "विंडो मिनिमाइज़ करना",
+            "विंडो मैक्सिमाइज करना"
+        ],
+        "correct_option": 0,
+        "explanation": "Ctrl + F4 वर्तमान में चयनित एक्सेल वर्कबुक विंडो को क्लोज़ करता है।",
+        "chapter": "MS Excel"
+    },
+    {
+        "id": 129,
+        "question": "Ctrl + F1 का क्या उपयोग है?",
+        "options": [
+            "रिबन (Ribbon) को प्रदर्शित करना या छिपाना",
+            "विंडो साइज़ रीस्टोर करना",
+            "विंडो मिनिमाइज़ करना",
+            "विंडो मैक्सिमाइज करना"
+        ],
+        "correct_option": 0,
+        "explanation": "Ctrl + F1 दबाने से एक्सेल रिबन कोलैप्स (छिपाया) या एक्सपैंड (दिखाया) जाता है।",
+        "chapter": "MS Excel"
+    },
+    {
+        "id": 130,
+        "question": "सभी खुली वर्कबुक्स की सभी शीट्स के सभी सेल्स की पुनः गणना (Recalculate) करने का शॉर्टकट क्या है?",
+        "options": [
+            "Alt + F9",
+            "Ctrl + Alt + F9",
+            "Ctrl + F9",
+            "Alt + Shift + F9"
+        ],
+        "correct_option": 1,
+        "explanation": "Ctrl + Alt + F9 दबाने पर एक्सेल सभी खुली वर्कबुक्स के सभी फॉर्मूलों की जबरन पुनः गणना करता है।",
+        "chapter": "MS Excel"
+    },
+    {
+        "id": 137,
+        "question": "Alt + Shift + F4 का क्या कार्य है?",
+        "options": [
+            "सभी वर्कबुक्स बंद करना और एक्सेल से बाहर निकलना",
+            "Save As डायलॉग बॉक्स खोलना",
+            "चार्ट शीट बनाना",
+            "Open डायलॉग बॉक्स खोलना"
+        ],
+        "correct_option": 0,
+        "explanation": "Alt + Shift + F4 से एक्सेल एप्लिकेशन पूर्णतः बंद होती है।",
+        "chapter": "MS Excel"
+    },
+    {
+        "id": 144,
+        "question": "Alt + F4 का मुख्य उपयोग क्या है?",
+        "options": [
+            "सभी खुली वर्कबुक्स को बंद करके Excel से बाहर निकलना",
+            "Save As डायलॉग बॉक्स खोलना",
+            "चार्ट बनाना",
+            "Open डायलॉग बॉक्स खोलना"
+        ],
+        "correct_option": 0,
+        "explanation": "Alt + F4 एक्सेल प्रोग्राम को बंद करता है।",
+        "chapter": "MS Excel"
+    },
+    {
+        "id": 145,
+        "question": "एक्टिव वर्कबुक में Ctrl + X का क्या कार्य है?",
+        "options": [
+            "वर्तमान चयन (selection) को कट (Cut) करके क्लिपबोर्ड में रखता है",
+            "वर्कबुक के अंतिम कार्य को दोहराता है",
+            "अंतिम कार्य को अनडू/रीडू (Undo/Redo) करता है",
+            "चयन या दाईं ओर के एक अक्षर को हटाता है"
+        ],
+        "correct_option": 0,
+        "explanation": "Ctrl + X का उपयोग सिलेक्ट किए गए टेक्स्ट या सेल को क्लिपबोर्ड पर कट (Cut) करने के लिए किया जाता है।",
+        "chapter": "MS Excel"
+    },
+    {
+        "id": 147,
+        "question": "एक्टिव सेल में Shift + Enter का क्या कार्य है?",
+        "options": [
+            "एक्टिव सेल की सामग्री दर्ज करता है और ऊपर वाले सेल पर चला जाता है",
+            "सामग्री दर्ज करता है और दाईं ओर एक सेल पर चला जाता है",
+            "सामग्री दर्ज करता है और बाईं ओर एक सेल पर चला जाता है",
+            "चयन को हटाता है"
+        ],
+        "correct_option": 0,
+        "explanation": "Shift + Enter मान दर्ज करके एक्टिव सेल को ऊपर की ओर ले जाता है।",
+        "chapter": "MS Excel"
+    },
+    {
+        "id": 149,
+        "question": "एक्टिव सेल में Ctrl + ' (Single Quote) का क्या कार्य है?",
+        "options": [
+            "ठीक ऊपर वाले सेल की सामग्री को एक्टिव सेल में कॉपी करता है",
+            "एक्टिव सेल में वर्तमान तारीख दर्ज करता है",
+            "एक्टिव सेल में वर्तमान समय दर्ज करता है",
+            "चयन को हटाता है"
+        ],
+        "correct_option": 0,
+        "explanation": "Ctrl + ' ठीक ऊपर स्थित सेल के फ़ॉर्मूले या मान को वर्तमान सेल में कॉपी करता है।",
+        "chapter": "MS Excel"
+    },
+    {
+        "id": 150,
+        "question": "एक्टिव सेल में वर्तमान तारीख (Current Date) दर्ज करने के लिए किस शॉर्टकट कुंजी का उपयोग किया जाता है?",
+        "options": [
+            "Ctrl + ;",
+            "Ctrl + Shift + ;",
+            "Ctrl + '",
+            "Alt + Enter"
+        ],
+        "correct_option": 0,
+        "explanation": "Ctrl + ; (सेमीकोलन) से एक्टिव सेल में वर्तमान सिस्टम डेट इंसर्ट होती है।",
+        "chapter": "MS Excel"
+    },
+    {
+        "id": 151,
+        "question": "एक्टिव सेल में Ctrl + Shift + ; का क्या कार्य है?",
+        "options": [
+            "एक्टिव सेल में वर्तमान तारीख दर्ज करता है",
+            "एक्टिव सेल में वर्तमान समय (Current Time) दर्ज करता है",
+            "ऊपर वाले सेल की सामग्री दर्ज करता है",
+            "चयन को हटाता है"
+        ],
+        "correct_option": 1,
+        "explanation": "Ctrl + Shift + ; से एक्टिव सेल में वर्तमान समय (Time) दर्ज होता है।",
+        "chapter": "MS Excel"
+    },
+    {
+        "id": 152,
+        "question": "फ़ॉर्मूले को एरे फ़ॉर्मूला (Array Formula) के रूप में दर्ज करने के लिए किस शॉर्टकट कुंजी का उपयोग किया जाता है?",
+        "options": [
+            "Ctrl + Shift + Enter",
+            "Ctrl + Enter",
+            "Shift + Enter",
+            "Alt + Enter"
+        ],
+        "correct_option": 0,
+        "explanation": "Ctrl + Shift + Enter (CSE) का उपयोग पारंपरिक एरे फ़ॉर्मूला दर्ज करने के लिए किया जाता है।",
+        "chapter": "MS Excel"
+    },
+    {
+        "id": 153,
+        "question": "एक्टिव सेल में Shift + Insert का क्या कार्य है?",
+        "options": [
+            "क्लिपबोर्ड से डेटा पेस्ट (Paste) करता है",
+            "दाईं ओर के अक्षर को हटाता है",
+            "ऊपर वाले सेल में जाता है",
+            "AutoSum इंसर्ट करता है"
+        ],
+        "correct_option": 0,
+        "explanation": "Shift + Insert क्लिपबोर्ड की सामग्री को पेस्ट (Ctrl + V की तरह) करता है।",
+        "chapter": "MS Excel"
+    },
+    {
+        "id": 155,
+        "question": "एक्टिव सेल में Esc कुंजी का क्या कार्य है?",
+        "options": [
+            "सेल एंट्री को रद्द करता है और मूल सामग्री को पुनर्स्थापित करता है",
+            "दाईं ओर के अक्षर को हटाता है",
+            "ऊपर वाले सेल में जाता है",
+            "AutoSum इंसर्ट करता है"
+        ],
+        "correct_option": 0,
+        "explanation": "Esc कुंजी दबाने से सेल या फॉर्मूला बार में टाइप की जा रही अमान्य प्रविष्टि रद्द हो जाती है।",
+        "chapter": "MS Excel"
+    },
+    {
+        "id": 156,
+        "question": "चयनित सेल सामग्री या कर्सर के दाईं ओर के अक्षर को हटाने के लिए किस कुंजी का उपयोग किया जाता है?",
+        "options": [
+            "Delete",
+            "Backspace",
+            "Shift + Delete",
+            "Ctrl + Delete"
+        ],
+        "correct_option": 0,
+        "explanation": "Delete कुंजी सेल की सामग्री या दाईं ओर के कैरेक्टर को साफ़ करती है।",
+        "chapter": "MS Excel"
+    },
+    {
+        "id": 157,
+        "question": "एक्टिव सेल में Backspace कुंजी का क्या कार्य है?",
+        "options": [
+            "दाईं ओर के अक्षर को हटाता है",
+            "कर्सर के बाईं ओर के अक्षर को या एक्टिव सेल सामग्री को हटाता है",
+            "ऊपर वाले सेल में जाता है",
+            "AutoSum इंसर्ट करता है"
+        ],
+        "correct_option": 1,
+        "explanation": "Backspace कुंजी कर्सर के बाईं ओर का अक्षर या एक्टिव सेल का डेटा हटाती है।",
+        "chapter": "MS Excel"
+    },
+    {
+        "id": 159,
+        "question": "सेल एडिटिंग के दौरान Ctrl + Delete का क्या कार्य है?",
+        "options": [
+            "कर्सर की स्थिति से लाइन के अंत तक का टेक्स्ट हटाता है",
+            "दाईं ओर के एक अक्षर को हटाता है",
+            "ऊपर वाले सेल में जाता है",
+            "AutoSum इंसर्ट करता है"
+        ],
+        "correct_option": 0,
+        "explanation": "Ctrl + Delete दबाने पर कर्सर से लेकर लाइन के आखिरी तक का टेक्स्ट हट जाता है।",
+        "chapter": "MS Excel"
+    },
+    {
+        "id": 160,
+        "question": "डिलीट (Delete) डायलॉग बॉक्स प्रदर्शित करने के लिए किस शॉर्टकट कुंजी का उपयोग किया जाता है?",
+        "options": [
+            "Ctrl + -",
+            "Ctrl + Shift + =",
+            "Ctrl + Delete",
+            "Ctrl + Backspace"
+        ],
+        "correct_option": 0,
+        "explanation": "Ctrl + - (माइनस) दबाने से सेल/रो/कॉलम हटाने के लिए Delete डायलॉग बॉक्स खुलता है।",
+        "chapter": "MS Excel"
+    },
+    {
+        "id": 161,
+        "question": "एक्टिव सेल में Ctrl + Shift + = का क्या कार्य है?",
+        "options": [
+            "खाली सेल/रो/कॉलम जोड़ने के लिए Insert डायलॉग बॉक्स दिखाता है",
+            "Delete डायलॉग बॉक्स दिखाता है",
+            "AutoSum इंसर्ट करता है",
+            "चयन को हटाता है"
+        ],
+        "correct_option": 0,
+        "explanation": "Ctrl + Shift + = दबाने पर नए सेल्स इंसर्ट करने का डायलॉग बॉक्स खुलता है।",
+        "chapter": "MS Excel"
+    },
+    {
+        "id": 162,
+        "question": "एक ही सेल के अंदर नई लाइन (New Line) शुरू करने के लिए किस शॉर्टकट कुंजी का उपयोग किया जाता है?",
+        "options": [
+            "Alt + Enter",
+            "Ctrl + Enter",
+            "Shift + Enter",
+            "Ctrl + Shift + Enter"
+        ],
+        "correct_option": 0,
+        "explanation": "Alt + Enter दबाने पर एक ही सेल में लाइन ब्रेक लागू होता है।",
+        "chapter": "MS Excel"
+    },
+    {
+        "id": 163,
+        "question": "एक्टिव सेल में Tab कुंजी का क्या कार्य है?",
+        "options": [
+            "सेल सामग्री दर्ज करता है और दाईं ओर के अगले सेल में चला जाता है",
+            "सामग्री दर्ज करता है और बाईं ओर के सेल में चला जाता है",
+            "सामग्री दर्ज करता है और ऊपर के सेल में चला जाता है",
+            "दाईं ओर के अक्षर को हटाता है"
+        ],
+        "correct_option": 0,
+        "explanation": "Tab दबाने से प्रविष्टि पूरी होती है और कर्सर दाईं ओर अगले सेल में चला जाता है।",
+        "chapter": "MS Excel"
+    },
+    {
+        "id": 164,
+        "question": "सेल सामग्री दर्ज करके बाईं ओर स्थित सेल (Cell to the left) पर जाने के लिए किस शॉर्टकट का उपयोग होता है?",
+        "options": [
+            "Shift + Tab",
+            "Tab",
+            "Ctrl + Tab",
+            "Alt + Tab"
+        ],
+        "correct_option": 0,
+        "explanation": "Shift + Tab कर्सर को बाईं तरफ के सेल में ले जाता है।",
+        "chapter": "MS Excel"
+    },
+    {
+        "id": 168,
+        "question": "एक्टिव सेल में यूनिक मानों की 'Pick From List' ड्रॉप-डाउन सूची खोलने की शॉर्टकट कुंजी क्या है?",
+        "options": [
+            "Alt + Down Arrow",
+            "Alt + Up Arrow",
+            "Ctrl + Down Arrow",
+            "Ctrl + Up Arrow"
+        ],
+        "correct_option": 0,
+        "explanation": "Alt + Down Arrow दबाने से पिक लिस्ट प्रदर्शित होती है।",
+        "chapter": "MS Excel"
+    },
+    {
+        "id": 169,
+        "question": "एक्टिव सेल में Shift + Delete का पारंपरिक कार्य क्या है?",
+        "options": [
+            "चयन को क्लिपबोर्ड पर कट (Cut) करना",
+            "दाईं ओर के अक्षर को हटाना",
+            "ऊपर के सेल में जाना",
+            "AutoSum फ़ंक्शन दर्ज करना"
+        ],
+        "correct_option": 0,
+        "explanation": "Shift + Delete पारम्परिक रूप से 'Cut' कमांड का काम करता है।",
+        "chapter": "MS Excel"
+    },
+    {
+        "id": 170,
+        "question": "एक्टिव सेल में वर्तमान समय (Current Time) दर्ज करने का शॉर्टकट क्या है?",
+        "options": [
+            "Ctrl + ;",
+            "Ctrl + Shift + ;",
+            "Ctrl + '",
+            "Alt + Enter"
+        ],
+        "correct_option": 1,
+        "explanation": "Ctrl + Shift + ; दबाने से सेल में वर्तमान समय दर्ज हो जाता है।",
+        "chapter": "MS Excel"
+    },
+    {
+        "id": 171,
+        "question": "नए सेल इंसर्ट करने के लिए Insert डायलॉग बॉक्स खोलने की शॉर्टकट कुंजी क्या है?",
+        "options": [
+            "Ctrl + Shift + =",
+            "Ctrl + -",
+            "Ctrl + Delete",
+            "Ctrl + Backspace"
+        ],
+        "correct_option": 0,
+        "explanation": "Ctrl + Shift + = (Ctrl + Plus) से Insert डायलॉग बॉक्स खुलता है।",
+        "chapter": "MS Excel"
+    },
+    {
+        "id": 172,
+        "question": "एक्टिव सेल में Alt + Enter का क्या कार्य है?",
+        "options": [
+            "सेल के अंदर नई लाइन (Line Break) शुरू करना",
+            "ऊपर वाले सेल में जाना",
+            "AutoSum इंसर्ट करना",
+            "चयनित अक्षर हटाना"
+        ],
+        "correct_option": 0,
+        "explanation": "Alt + Enter एक ही सेल में मल्टीपल लाइन्स बनाने के लिए दबाया जाता है।",
+        "chapter": "MS Excel"
+    },
+    {
+        "id": 174,
+        "question": "चयनित सेल्स पर Ctrl + Shift + # कुंजी दबाने का क्या प्रभाव होता है?",
+        "options": [
+            "जनरल (General) फ़ॉर्मेट लागू होता है",
+            "दिन, महीना और वर्ष के साथ डेट (Date) फ़ॉर्मेट लागू होता है",
+            "आउटलाइन बॉर्डर लागू होती है",
+            "सभी बॉर्डर हट जाते हैं"
+        ],
+        "correct_option": 1,
+        "explanation": "Ctrl + Shift + # (या Ctrl + Shift + 3) चयनित सेल्स पर दिनांक (Date) फ़ॉर्मेट लागू करता है।",
+        "chapter": "MS Excel"
+    },
+    {
+        "id": 175,
+        "question": "शॉर्टकट कुंजी Ctrl + Shift + & (या 7) का क्या कार्य है?",
+        "options": [
+            "जनरल फ़ॉर्मेट लागू करना",
+            "कस्टम डेट फ़ॉर्मेट लागू करना",
+            "चयनित सेल्स पर आउटलाइन बॉर्डर (Outline Border) लागू करना",
+            "सभी बॉर्डर हटाना"
+        ],
+        "correct_option": 2,
+        "explanation": "Ctrl + Shift + & चयनित सेल्स के चारों ओर आउटलाइन बॉर्डर लगाता है।",
+        "chapter": "MS Excel"
+    },
+    {
+        "id": 176,
+        "question": "चयनित सेल्स पर Ctrl + Shift + _ (अंडरस्कोर) कुंजी का क्या प्रभाव पड़ता है?",
+        "options": [
+            "जनरल फ़ॉर्मेट लागू होता है",
+            "कस्टम डेट फ़ॉर्मेट लागू होता है",
+            "आउटलाइन बॉर्डर लागू होती है",
+            "चयनित सेल्स से सभी बॉर्डर हट (Remove) जाते हैं"
+        ],
+        "correct_option": 3,
+        "explanation": "Ctrl + Shift + _ दबाने से चयनित सेल्स से सभी बॉर्डर्स हट जाते हैं।",
+        "chapter": "MS Excel"
+    },
+    {
+        "id": 177,
+        "question": "शॉर्टकट कुंजी Ctrl + Tab का क्या कार्य है?",
+        "options": [
+            "पिछली खुली हुई वर्कबुक विंडो पर जाना",
+            "अगली खुली हुई वर्कबुक या विंडो पर जाना",
+            "कंप्यूटर पर खुली पिछली एप्लिकेशन पर जाना",
+            "कंप्यूटर पर खुली अगली एप्लिकेशन पर जाना"
+        ],
+        "correct_option": 1,
+        "explanation": "Ctrl + Tab से एक्सेल में अगली खुली वर्कबुक विंडो पर स्विच किया जाता है।",
+        "chapter": "MS Excel"
+    },
+    {
+        "id": 180,
+        "question": "वर्कशीट में End + तीर कुंजियों (Arrow Keys) का क्या प्रभाव पड़ता है?",
+        "options": [
+            "उस दिशा में पहले गैर-खाली सेल पर जाता है",
+            "अगले गैर-खाली सेल पर जाता है",
+            "उस दिशा में अंतिम गैर-खाली (Last non-empty) सेल पर चला जाता है",
+            "पिछले गैर-खाली सेल पर जाता है"
+        ],
+        "correct_option": 2,
+        "explanation": "End दबाने के बाद Arrow Key दबाने से कर्सर उस दिशा के अंतिम भरे हुए सेल (Last non-blank cell) पर कूद जाता है।",
+        "chapter": "MS Excel"
+    },
+    {
+        "id": 181,
+        "question": "वर्कशीट पर End + Enter का क्या कार्य है?",
+        "options": [
+            "वर्तमान रो के पहले गैर-खाली सेल पर जाना",
+            "वर्तमान रो (Row) के अंतिम गैर-खाली (Last non-blank) सेल पर जाना",
+            "वर्तमान कॉलम के पहले गैर-खाली सेल पर जाना",
+            "वर्तमान कॉलम के अंतिम गैर-खाली सेल पर जाना"
+        ],
+        "correct_option": 1,
+        "explanation": "End + Enter कर्सर को वर्तमान पंक्ति के अंतिम भरे हुए सेल पर ले जाता है।",
+        "chapter": "MS Excel"
+    },
+    {
+        "id": 182,
+        "question": "वर्कशीट पर End + Home कुंजी दबाने का क्या प्रभाव होता है?",
+        "options": [
+            "वर्तमान रो के पहले सेल पर जाना",
+            "वर्तमान रो के अंतिम सेल पर जाना",
+            "वर्तमान कॉलम के पहले सेल पर जाना",
+            "एक्टिव वर्कशीट पर उपयोग किए गए अंतिम (Bottom-Right) सेल पर जाना"
+        ],
+        "correct_option": 3,
+        "explanation": "End + Home वर्कशीट के अंतिम इस्तेमाल किए गए (निचले-दाएं) सेल पर पहुँचा देता है।",
+        "chapter": "MS Excel"
+    },
+    {
+        "id": 185,
+        "question": "वर्कशीट में Shift + Enter का क्या कार्य है?",
+        "options": [
+            "ठीक नीचे वाले सेल में जाना",
+            "ठीक ऊपर वाले सेल (Cell directly above) में जाना",
+            "बाईं ओर के सेल में जाना",
+            "दाईं ओर के सेल में जाना"
+        ],
+        "correct_option": 1,
+        "explanation": "Shift + Enter मान दर्ज करके ठीक ऊपर स्थित सेल को सिलेक्ट करता है।",
+        "chapter": "MS Excel"
+    },
+    {
+        "id": 186,
+        "question": "वर्कशीट में Shift + Tab का क्या प्रभाव पड़ता है?",
+        "options": [
+            "दाईं ओर के सेल में जाना",
+            "ठीक बाईं ओर वाले सेल (Cell directly to the left) में जाना",
+            "ऊपर के सेल में जाना",
+            "नीचे के सेल में जाना"
+        ],
+        "correct_option": 1,
+        "explanation": "Shift + Tab कर्सर को बाईं तरफ वाले सेल पर ले जाता है।",
+        "chapter": "MS Excel"
+    },
+    {
+        "id": 189,
+        "question": "वर्कशीट में Ctrl + Home का क्या कार्य है?",
+        "options": [
+            "अंतिम प्रयुक्त सेल पर जाना",
+            "प्रथम प्रयुक्त सेल पर जाना",
+            "एक्टिव शीट के सेल 'A1' (Top-Left) पर जाना",
+            "वर्तमान रो के अंतिम भरे सेल पर जाना"
+        ],
+        "correct_option": 2,
+        "explanation": "Ctrl + Home सीधे पहले सेल यानी A1 पर कर्सर ले जाता है।",
+        "chapter": "MS Excel"
+    },
+    {
+        "id": 190,
+        "question": "वर्कशीट में Ctrl + End कुंजी का क्या प्रभाव पड़ता है?",
+        "options": [
+            "प्रथम प्रयुक्त सेल पर जाना",
+            "एक्टिव वर्कशीट के अंतिम प्रयुक्त सेल (Last used cell) पर जाना",
+            "सेल A1 पर जाना",
+            "वर्तमान रो के पहले सेल पर जाना"
+        ],
+        "correct_option": 1,
+        "explanation": "Ctrl + End वर्कशीट के सबसे अंतिम प्रयुक्त (Bottom-Rightmost) सेल पर पहुँचाता है।",
+        "chapter": "MS Excel"
+    },
+    {
+        "id": 198,
+        "question": "Scroll Lock चालू होने पर वर्कशीट में Arrow Keys दबाने का क्या प्रभाव पड़ता है?",
+        "options": [
+            "कर्सर को एक सेल खिसकाता है",
+            "एक्टिव सेल को बदले बिना स्क्रीन को उस दिशा में एक रो या कॉलम स्क्रॉल करता है",
+            "पहले गैर-खाली सेल पर जाता है",
+            "अंतिम गैर-खाली सेल पर जाता है"
+        ],
+        "correct_option": 1,
+        "explanation": "Scroll Lock ऑन होने पर एरो कीज़ सेल सिलेक्शन बदले बिना केवल स्क्रीन स्क्रॉल करती हैं।",
+        "chapter": "MS Excel"
+    },
+    {
+        "id": 199,
+        "question": "चयनित सेल्स पर Ctrl + Shift + ~ (टिल्ड) दबाने का क्या कार्य है?",
+        "options": [
+            "जनरल फ़ॉर्मेट (General Number Format) लागू करना",
+            "कस्टम डेट फ़ॉर्मेट लागू करना",
+            "आउटलाइन बॉर्डर लगाना",
+            "सभी बॉर्डर हटाना"
+        ],
+        "correct_option": 0,
+        "explanation": "Ctrl + Shift + ~ से सामान्य (General) संख्या फ़ॉर्मेट लागू होता है।",
+        "chapter": "MS Excel"
+    },
+    {
+        "id": 200,
+        "question": "अनेक खुली वर्कबुक्स में Ctrl + Tab कुंजी का क्या प्रभाव पड़ता है?",
+        "options": [
+            "पिछली वर्कबुक पर जाना",
+            "अगली खुली वर्कबुक या विंडो (Next open window) पर जाना",
+            "पिछली एप्लिकेशन पर जाना",
+            "अगली एप्लिकेशन पर जाना"
+        ],
+        "correct_option": 1,
+        "explanation": "Ctrl + Tab से अगली एक्सेल वर्कबुक विंडो पर स्विच किया जाता है।",
+        "chapter": "MS Excel"
+    },
+    {
+        "id": 202,
+        "question": "वर्कशीट में End + Home का उपयोग करने पर कर्सर किस सेल में पहुँचता है?",
+        "options": [
+            "वर्तमान रो के पहले गैर-खाली सेल में",
+            "वर्तमान रो के अंतिम गैर-खाली सेल में",
+            "वर्तमान कॉलम के पहले गैर-खाली सेल में",
+            "एक्टिव वर्कशीट के अंतिम प्रयुक्त सेल (Last used cell) में"
+        ],
+        "correct_option": 3,
+        "explanation": "End + Home वर्कशीट के अंतिम इस्तेमाल किए गए सेल पर ले जाता है।",
+        "chapter": "MS Excel"
+    },
+    {
+        "id": 389,
+        "question": "माइक्रोसॉफ्ट एक्सेल (Microsoft Excel) का प्राथमिक कार्य क्या है?",
+        "options": [
+            "वर्ड प्रोसेसिंग",
+            "स्प्रेडशीट संपादन (Spreadsheet Editing)",
+            "प्रस्तुति (Presentation) निर्माण",
+            "डेटाबेस प्रबंधन"
+        ],
+        "correct_option": 1,
+        "explanation": "Microsoft Excel एक स्प्रेडशीट संपादन और डेटा गणना प्रोग्राम है।",
+        "chapter": "MS Excel"
+    },
+    {
+        "id": 393,
+        "question": "व्यक्तिगत गैर-व्यावसायिक उपयोग हेतु Microsoft 365 बंडल में कौन-कौन से ऐप्स शामिल होते हैं?",
+        "options": [
+            "केवल वर्ड और एक्सेल",
+            "केवल ईमेल और डेटाबेस",
+            "वर्ड प्रोसेसर, स्प्रेडशीट, प्रेजेंटेशन, ईमेल क्लाइंट, डेटाबेस और डेस्कटॉप पब्लिशिंग ऐप्स",
+            "केवल पब्लिशर और वननोट"
+        ],
+        "correct_option": 2,
+        "explanation": "Microsoft 365 में Word, Excel, PowerPoint, Outlook, Access और Publisher जैसे सभी मुख्य सॉफ्टवेयर शामिल रहते हैं।",
+        "chapter": "MS Excel"
+    },
+    {
+        "id": 426,
+        "question": "MS Excel में Review टैब खोलने का शॉर्टकट क्या है?",
+        "options": [
+            "Alt+R",
+            "Alt+W",
+            "Ctrl+R",
+            "Ctrl+W"
+        ],
+        "correct_option": 0,
+        "explanation": "Review टैब खोलने का शॉर्टकट Alt+R है।",
+        "chapter": "MS Excel"
+    },
+    {
+        "id": 427,
+        "question": "वर्कशीट में एक सेल ऊपर जाने के लिए किस कुंजी का प्रयोग होता है?",
+        "options": [
+            "अप एरा कुंजी (Up arrow key)",
+            "डाउन एरा कुंजी",
+            "लेफ्ट एरा कुंजी",
+            "राइट एरो कुंजी"
+        ],
+        "correct_option": 0,
+        "explanation": "अप एरो (Up Arrow) कुंजी से कर्सर एक सेल ऊपर जाता है।",
+        "chapter": "MS Excel"
+    },
+    {
+        "id": 428,
+        "question": "MS Excel में Ctrl+Arrow कुंजी का क्या कार्य है?",
+        "options": [
+            "वर्तमान डेटा क्षेत्र की सीमा (Edge of data region) पर जाना",
+            "वर्कशीट के अंतिम सेल पर जाना",
+            "एक सेल बाएं जाना",
+            "एक सेल दाएं जाना"
+        ],
+        "correct_option": 0,
+        "explanation": "Ctrl+Arrow Key दबाने पर कर्सर उस दिशा में डेटा ब्लॉक के अंतिम छोर/सीमा पर पहुँच जाता है।",
+        "chapter": "MS Excel"
+    },
+    {
+        "id": 429,
+        "question": "End मोड में प्रवेश करके अगले गैर-खाली (Nonblank) सेल में कैसे जाते हैं?",
+        "options": [
+            "End, फिर एरो कुंजी",
+            "Ctrl+End",
+            "Ctrl+Shift+End",
+            "Alt+End"
+        ],
+        "correct_option": 0,
+        "explanation": "End दबाकर एरो कुंजी दबाने से कर्सर अगले भरे हुए (Nonblank) सेल पर पहुँच जाता है।",
+        "chapter": "MS Excel"
+    },
+    {
+        "id": 430,
+        "question": "वर्कशीट में अंतिम प्रयुक्त सेल पर जाने का शॉर्टकट क्या है?",
+        "options": [
+            "Ctrl+End",
+            "Ctrl+Home",
+            "Ctrl+Shift+End",
+            "Alt+End"
+        ],
+        "correct_option": 0,
+        "explanation": "Ctrl+End वर्कशीट के अंतिम उपयोग किए गए सेल पर ले जाता है।",
+        "chapter": "MS Excel"
+    },
+    {
+        "id": 431,
+        "question": "सेल्स के चयन (Selection) को वर्कशीट के अंतिम प्रयुक्त सेल तक कैसे विस्तारित करते हैं?",
+        "options": [
+            "Ctrl+Shift+End",
+            "Ctrl+End",
+            "Ctrl+Home",
+            "Alt+End"
+        ],
+        "correct_option": 0,
+        "explanation": "Ctrl+Shift+End कर्सर स्थान से लेकर अंतिम प्रयुक्त सेल तक की सभी सेल्स को सिलेक्ट कर लेता है।",
+        "chapter": "MS Excel"
+    },
+    {
+        "id": 432,
+        "question": "Scroll Lock चालू होने पर Home+Scroll Lock कुंजी का क्या कार्य है?",
+        "options": [
+            "विंडो के ऊपरी-बाएँ कोने वाले सेल पर जाना",
+            "वर्कशीट की शुरुआत में जाना",
+            "एक स्क्रीन नीचे जाना",
+            "एक स्क्रीन ऊपर जाना"
+        ],
+        "correct_option": 0,
+        "explanation": "स्क्रॉल लॉक ऑन होने पर Home दबाने से विंडो के शीर्ष-बाएं दृश्य वाले सेल पर ध्यान केंद्रित होता है।",
+        "chapter": "MS Excel"
+    },
+    {
+        "id": 433,
+        "question": "वर्कशीट की शुरुआत (सेल A1) में जाने का शॉर्टकट क्या है?",
+        "options": [
+            "Ctrl+Home",
+            "Ctrl+End",
+            "Ctrl+Shift+End",
+            "Alt+Home"
+        ],
+        "correct_option": 0,
+        "explanation": "Ctrl+Home दबाने से कर्सर सीधे प्रथम सेल A1 पर पहुँच जाता है।",
+        "chapter": "MS Excel"
+    },
+    {
+        "id": 436,
+        "question": "MS Excel में Alt+Page Down का क्या कार्य है?",
+        "options": [
+            "वर्कशीट में एक स्क्रीन दाईं ओर जाना",
+            "वर्कशीट में एक स्क्रीन बाईं ओर जाना",
+            "वर्कशीट में एक स्क्रीन नीचे जाना",
+            "वर्कशीट में एक स्क्रीन ऊपर जाना"
+        ],
+        "correct_option": 0,
+        "explanation": "Alt+Page Down से स्क्रीन एक दृश्य क्षेत्र दाईं (Right) ओर खिसकती है।",
+        "chapter": "MS Excel"
+    },
+    {
+        "id": 440,
+        "question": "MS Excel में Shift+Tab का क्या कार्य है?",
+        "options": [
+            "वर्कशीट में पिछले (बाईं ओर के) सेल में जाना",
+            "अगले सेल में जाना",
+            "एक सेल ऊपर जाना",
+            "एक सेल नीचे जाना"
+        ],
+        "correct_option": 0,
+        "explanation": "Shift+Tab कर्सर को पिछले (बाईं ओर वाले) सेल में ले जाता है।",
+        "chapter": "MS Excel"
+    },
+    {
+        "id": 441,
+        "question": "MS Excel में View टैब खोलने की कुंजी क्या है?",
+        "options": [
+            "Alt+R",
+            "Alt+W",
+            "Ctrl+R",
+            "Ctrl+W"
+        ],
+        "correct_option": 1,
+        "explanation": "View टैब खोलने के लिए Alt+W का उपयोग किया जाता है।",
+        "chapter": "MS Excel"
+    },
+    {
+        "id": 442,
+        "question": "शीट्स और वर्कबुक्स को सुरक्षित (Protect) करने के विकल्प किस टैब में मिलते हैं?",
+        "options": [
+            "Review टैब (Alt+R)",
+            "View टैब (Alt+W)",
+            "Ctrl+R",
+            "Ctrl+W"
+        ],
+        "correct_option": 0,
+        "explanation": "Protect Sheet और Protect Workbook के विकल्प Review टैब (Alt+R) में उपलब्ध होते हैं।",
+        "chapter": "MS Excel"
+    },
+    {
+        "id": 444,
+        "question": "MS Excel में Ctrl+End दबाने का प्राथमिक परिणाम क्या होता है?",
+        "options": [
+            "वर्तमान डेटा क्षेत्र की सीमा पर जाना",
+            "वर्कशीट के अंतिम प्रयुक्त सेल पर जाना",
+            "एक सेल बाएं जाना",
+            "एक सेल दाएं जाना"
+        ],
+        "correct_option": 1,
+        "explanation": "Ctrl+End का कार्य वर्कशीट के अंतिम डेटा वाले सेल तक पहुँचना है।",
+        "chapter": "MS Excel"
+    },
+    {
+        "id": 450,
+        "question": "ग्रिडलाइन्स (Gridlines) और हेडिंग्स को दिखाने व छिपाने का विकल्प किस टैब में है?",
+        "options": [
+            "Review टैब (Alt+R)",
+            "View टैब (Alt+W)",
+            "Ctrl+R",
+            "Ctrl+W"
+        ],
+        "correct_option": 1,
+        "explanation": "Gridlines, Headings, Formula Bar को ऑन/ऑफ़ करने के चेकबॉक्स View टैब (Alt+W) में होते हैं।",
+        "chapter": "MS Excel"
+    },
+    {
+        "id": 451,
+        "question": "खाली सेल्स के बीच पंक्ति या कॉलम के अंतिम भरे हुए सेल पर जाने के लिए किसका प्रयोग करते हैं?",
+        "options": [
+            "Ctrl+End",
+            "Ctrl+Home",
+            "Ctrl+Shift+End",
+            "End, Arrow Key"
+        ],
+        "correct_option": 3,
+        "explanation": "End दबाकर दिशात्मक एरो कुंजी दबाने से कर्सर उस दिशा के अंतिम भरे सेल पर पहुँच जाता है।",
+        "chapter": "MS Excel"
+    },
+    {
+        "id": 453,
+        "question": "MS Excel में Shift+F2 कुंजी का क्या कार्य है?",
+        "options": [
+            "एक्टिव सेल को एडिट करना",
+            "सेल टिप्पणी/नोट (Cell Note/Comment) जोड़ना या संपादित करना",
+            "प्रिंट प्रिव्यू दिखाना",
+            "फुल स्क्रीन मोड बदलना"
+        ],
+        "correct_option": 1,
+        "explanation": "Shift+F2 का उपयोग सेल नोट या कमेंट जोड़ने/एडिट करने के लिए किया जाता है।",
+        "chapter": "MS Excel"
+    },
+    {
+        "id": 454,
+        "question": "MS Excel में केवल F2 दबाने का क्या उद्देश्य है?",
+        "options": [
+            "Paste Name बॉक्स दिखाना",
+            "एक्टिव सेल को संपादित (Edit) करना और इंसर्शन पॉइंट को अंत में रखना",
+            "फुल स्क्रीन मोड बदलना",
+            "वर्कबुक विंडो बंद करना"
+        ],
+        "correct_option": 1,
+        "explanation": "F2 दबाने पर एक्टिव सेल एडिट मोड में आ जाता है।",
+        "chapter": "MS Excel"
+    },
+    {
+        "id": 456,
+        "question": "MS Excel में केवल F4 कुंजी का क्या कार्य है?",
+        "options": [
+            "अंतिम कमांड या कार्य को दोहराना (Repeat last action)",
+            "Go To डायलॉग बॉक्स प्रदर्शित करना",
+            "एम्बेडेड चार्ट बनाना",
+            "Excel बंद करना"
+        ],
+        "correct_option": 0,
+        "explanation": "F4 दबाने से पिछला एक्शन (जैसे फ़ॉर्मेटिंग/डिलीट करना) पुनः दोहराया जाता है।",
+        "chapter": "MS Excel"
+    },
+    {
+        "id": 457,
+        "question": "MS Excel में Ctrl+F2 का क्या उद्देश्य है?",
+        "options": [
+            "बैकस्टेज व्यू में प्रिंट प्रिव्यू (Print Preview) क्षेत्र प्रदर्शित करना",
+            "फुल स्क्रीन मोड बदलना",
+            "सेल संपादित करना",
+            "वर्कबुक विंडो बंद करना"
+        ],
+        "correct_option": 0,
+        "explanation": "Ctrl+F2 दबाने से प्रिंट प्रिव्यू स्क्रीन प्रदर्शित होती है।",
+        "chapter": "MS Excel"
+    },
+    {
+        "id": 458,
+        "question": "Excel एप्लिकेशन को पूरी तरह बंद करने का शॉर्टकट क्या है?",
+        "options": [
+            "Alt+F4",
+            "Ctrl+F4",
+            "Shift+F4",
+            "Alt+Shift+F4"
+        ],
+        "correct_option": 0,
+        "explanation": "Alt+F4 से Excel एप्लिकेशन बंद हो जाती है।",
+        "chapter": "MS Excel"
+    },
+    {
+        "id": 459,
+        "question": "MS Excel में केवल F5 दबाने का क्या कार्य है?",
+        "options": [
+            "Go To डायलॉग बॉक्स प्रदर्शित करना",
+            "एम्बेडेड चार्ट बनाना",
+            "अंतिम कार्य दोहराना",
+            "फुल स्क्रीन मोड बदलना"
+        ],
+        "correct_option": 0,
+        "explanation": "F5 कुंजी से Go To विंडो प्रदर्शित होती है।",
+        "chapter": "MS Excel"
+    },
+    {
+        "id": 460,
+        "question": "MS Excel में केवल F6 कुंजी का क्या कार्य है?",
+        "options": [
+            "वर्कशीट, रिबन, टास्क पेन और ज़ूम कंट्रोल के बीच स्विच करना",
+            "सेल संपादित करना",
+            "फुल स्क्रीन मोड बदलना",
+            "वर्कबुक बंद करना"
+        ],
+        "correct_option": 0,
+        "explanation": "F6 इंटरफ़ेस के विभिन्न भागों (Worksheet, Ribbon, Task Pane, Zoom) के बीच ध्यान केंद्रित करता है।",
+        "chapter": "MS Excel"
+    },
+    {
+        "id": 461,
+        "question": "MS Excel में Shift+F6 का क्या कार्य है?",
+        "options": [
+            "वर्कशीट, ज़ूम कंट्रोल, टास्क पेन और रिबन के बीच विपरीत क्रम में स्विच करना",
+            "सेल संपादित करना",
+            "फुल स्क्रीन मोड बदलना",
+            "वर्कबुक बंद करना"
+        ],
+        "correct_option": 0,
+        "explanation": "Shift+F6 विपरीत दिशा में वर्कस्पेस घटकों के बीच स्विच करता है।",
+        "chapter": "MS Excel"
+    },
+    {
+        "id": 462,
+        "question": "नई वर्कशीट (New Worksheet) जोड़ने का शॉर्टकट क्या है?",
+        "options": [
+            "Alt+F1",
+            "Alt+Shift+F1",
+            "Ctrl+Shift+F1",
+            "Ctrl+F1"
+        ],
+        "correct_option": 1,
+        "explanation": "Alt+Shift+F1 (या Shift+F11) वर्कबुक में नई वर्कशीट इंसर्ट करता है।",
+        "chapter": "MS Excel"
+    },
+    {
+        "id": 463,
+        "question": "MS Excel में Ctrl+F4 का क्या उद्देश्य है?",
+        "options": [
+            "चयनित वर्कबुक विंडो को बंद करना",
+            "फुल स्क्रीन मोड बदलना",
+            "सेल एडिट करना",
+            "प्रिंट प्रिव्यू दिखाना"
+        ],
+        "correct_option": 0,
+        "explanation": "Ctrl+F4 वर्तमान खुली वर्कबुक विंडो को बंद करता है।",
+        "chapter": "MS Excel"
+    },
+    {
+        "id": 464,
+        "question": "MS Excel में केवल F3 दबाने का क्या कार्य है?",
+        "options": [
+            "Paste Name डायलॉग बॉक्स प्रदर्शित करना",
+            "Insert Function डायलॉग बॉक्स प्रदर्शित करना",
+            "सेल संपादित करना",
+            "फुल स्क्रीन मोड बदलना"
+        ],
+        "correct_option": 0,
+        "explanation": "यदि नाम परिभाषित हैं, तो F3 दबाने पर Paste Name विंडो खुलती है।",
+        "chapter": "MS Excel"
+    },
+    {
+        "id": 465,
+        "question": "MS Excel में फुल स्क्रीन/रिबन प्रदर्शन मोड बदलने (Toggle Full Screen) का शॉर्टकट क्या है?",
+        "options": [
+            "Ctrl+Shift+F1",
+            "Alt+F1",
+            "Alt+Shift+F1",
+            "Ctrl+F1"
+        ],
+        "correct_option": 0,
+        "explanation": "Ctrl+Shift+F1 रिबन और टाइटल बार को छिपाकर/दिखाकर फ़ुल स्क्रीन मोड टॉगल करता है।",
+        "chapter": "MS Excel"
+    },
+    {
+        "id": 466,
+        "question": "MS Excel में Ctrl+F5 का क्या कार्य है?",
+        "options": [
+            "चयनित वर्कबुक विंडो का आकार पुनः सामान्य (Restore Window Size) करना",
+            "फुल स्क्रीन मोड बदलना",
+            "सेल संपादित करना",
+            "प्रिंट प्रिव्यू दिखाना"
+        ],
+        "correct_option": 0,
+        "explanation": "Ctrl+F5 मैक्सिमाइज की गई वर्कबुक विंडो को रिस्टोर आकार में लाता है।",
+        "chapter": "MS Excel"
+    },
+    {
+        "id": 467,
+        "question": "फॉर्मूला में सेल रेफरेंस चुने होने पर F4 कुंजी दबाने से क्या होता है?",
+        "options": [
+            "एब्सोल्यूट और रिलेटिव रेफरेंस ($A$1, A$1, $A1, A1) के विभिन्न संयोजनों में चक्रण करता है",
+            "अंतिम कमांड दोहराता है",
+            "सेल संपादित करता है",
+            "फुल स्क्रीन मोड बदलता है"
+        ],
+        "correct_option": 0,
+        "explanation": "F4 दबाने पर सेल रेफरेंस टाइप बदलता है (Relative, Absolute, Mixed Reference)।",
+        "chapter": "MS Excel"
+    },
+    {
+        "id": 474,
+        "question": "जब सेल एडिटिंग बंद (Disabled) हो, तब F2 दबाने से कर्सर कहाँ जाता है?",
+        "options": [
+            "इंसर्शन पॉइंट को फ़ॉर्मूला बार (Formula Bar) में ले जाता है",
+            "सेल एडिट मोड में जाता है",
+            "फुल स्क्रीन करता है",
+            "वर्कबुक बंद करता है"
+        ],
+        "correct_option": 0,
+        "explanation": "इन-सेल एडिटिंग बंद होने पर F2 दबाने से कर्सर ऊपर फ़ॉर्मूला बार में पहुँच जाता है।",
+        "chapter": "MS Excel"
+    },
+    {
+        "id": 478,
+        "question": "सेल टिप्पणी/नोट (Cell Note/Comment) जोड़ने या संपादित करने का शॉर्टकट क्या है?",
+        "options": [
+            "Shift+F2",
+            "Ctrl+F2",
+            "Alt+F2",
+            "केवल F2"
+        ],
+        "correct_option": 0,
+        "explanation": "Shift+F2 दबाने से सेल नोट/कमेंट बॉक्स खुलता है।",
+        "chapter": "MS Excel"
+    },
+    {
+        "id": 508,
+        "question": "MS Excel में किसी संपूर्ण भाग के अनुपातों या प्रतिशतों (Proportions/Percentages) की तुलना के लिए सबसे उपयुक्त चार्ट कौन सा है?",
+        "options": [
+            "बार चार्ट (Bar Chart)",
+            "लाइन चार्ट (Line Chart)",
+            "पाई चार्ट (Pie Chart)",
+            "स्कैटर चार्ट (Scatter Chart)"
+        ],
+        "correct_option": 2,
+        "explanation": "पाई चार्ट कुल हिस्से में विभिन्न श्रेणियों के प्रतिशत या हिस्सेदारी को दर्शाने के लिए सर्वोत्तम होता है।",
+        "chapter": "MS Excel"
+    },
+    {
+        "id": 512,
+        "question": "MS Word में टेबल के अगले सेल (Next Cell) में जाने के लिए किस कीबोर्ड कुंजी का प्रयोग होता है?",
+        "options": [
+            "Enter कुंजी",
+            "Tab कुंजी",
+            "Space bar",
+            "Backspace कुंजी"
+        ],
+        "correct_option": 1,
+        "explanation": "टेबल में कार्य करते समय Tab दबाने से कर्सर स्वतः अगले सेल में चला जाता है।",
+        "chapter": "MS Excel"
+    },
+    {
+        "id": 517,
+        "question": "MS Excel में किसी रो (Row) के सेल्स सिलेक्ट करके 'Delete' कुंजी दबाने पर क्या होता है?",
+        "options": [
+            "उन सभी सिलेक्ट की गई सेल्स की प्रविष्टियाँ/डेटा डिलीट हो जाएगा",
+            "पूरी रो संरचना हट जाएगी",
+            "पूरा कॉलम हट जाएगा",
+            "कुछ नहीं होगा"
+        ],
+        "correct_option": 0,
+        "explanation": "कीबोर्ड की Delete कुंजी दबाने से चुनी गई सेल्स का कंटेंट (डेटा) साफ़ हो जाता है, रो डिलीट नहीं होती।",
+        "chapter": "MS Excel"
+    },
+    {
+        "id": 518,
+        "question": "MS Excel फ़ंक्शन किस प्रकार के डेटा/सेल्स पर कार्य कर सकते हैं?",
+        "options": [
+            "केवल सिंगल सेल पर",
+            "सेल्स की रेंज (Range of cells) या ग्रुप पर",
+            "केवल सिंगल रो पर",
+            "केवल सिंगल कॉलम पर"
+        ],
+        "correct_option": 1,
+        "explanation": "एक्सेल फ़ंक्शन किसी भी सेल रेंज या ग्रुप के डेटा समूह पर लागू किए जा सकते हैं।",
+        "chapter": "MS Excel"
+    },
+    {
+        "id": 519,
+        "question": "MS Excel में पंक्तियों (Rows) की पहचान कैसे की जाती है?",
+        "options": [
+            "अक्षरों (Letters) द्वारा",
+            "संख्याओं (Numbers) द्वारा",
+            "रंगों द्वारा",
+            "आइकॉन्स द्वारा"
+        ],
+        "correct_option": 1,
+        "explanation": "पंक्तियों (Rows) को संख्याओं (1, 2, 3...) द्वारा तथा कॉलमों को अक्षरों (A, B, C...) द्वारा दर्शाया जाता है।",
+        "chapter": "MS Excel"
+    },
+    {
+        "id": 520,
+        "question": "MS Excel स्प्रेडशीट में सेल को फ़ॉर्मेट (Format Cell) करने का सही तरीका क्या है?",
+        "options": [
+            "सेल सिलेक्ट करें -> राइट क्लिक (Right Click) करें -> Format Cells चुनें",
+            "सेल सिलेक्ट करें -> लेफ्ट क्लिक करें -> Format Cells चुनें",
+            "सेल सिलेक्ट करें -> डबल क्लिक करें -> Format Cells चुनें",
+            "सेल सिलेक्ट करें -> Ctrl + Click करें -> Format Cells चुनें"
+        ],
+        "correct_option": 0,
+        "explanation": "सेल पर राइट-क्लिक करके खुलने वाले पॉप-अप मेन्यू से 'Format Cells' चुना जाता है।",
+        "chapter": "MS Excel"
+    },
+    {
+        "id": 521,
+        "question": "MS Excel में सेल्स के समूह में दर्ज संख्याओं को जोड़ने के लिए किस फ़ंक्शन का उपयोग होता है?",
+        "options": [
+            "SUM",
+            "AVERAGE",
+            "COUNT",
+            "MAX"
+        ],
+        "correct_option": 0,
+        "explanation": "SUM फ़ंक्शन का उपयोग चुनी गई सेल्स के मानों का योग प्राप्त करने के लिए किया जाता है।",
+        "chapter": "MS Excel"
+    },
+    {
+        "id": 522,
+        "question": "Excel की कौन सी विशेषता एक ही समय में अनेक यूज़र्स को एक ही सेल या रेंज में रियल-टाइम संपादन करने देती है?",
+        "options": [
+            "को-ऑथरिंग (Co-authoring)",
+            "शेयर्ड वर्कबुक्स",
+            "कोलाबोरेटिव व्यू",
+            "रियल-टाइम एडिटिंग"
+        ],
+        "correct_option": 0,
+        "explanation": "Co-authoring फ़ीचर के द्वारा क्लाउड पर कई लोग एक साथ लाइव एक्सेल शीट पर काम कर सकते हैं।",
+        "chapter": "MS Excel"
+    },
+    {
+        "id": 524,
+        "question": "MS Word टेबल में कर्सर वाली रो के ठीक नीचे नई रो (New Row) कैसे इंसर्ट करते हैं?",
+        "options": [
+            "Insert Row Above",
+            "Insert Row Below",
+            "Delete Row",
+            "Merge Rows"
+        ],
+        "correct_option": 1,
+        "explanation": "'Insert Row Below' चुनने पर चुनी हुई पंक्ति के ठीक नीचे नई रो जुड़ जाती है।",
+        "chapter": "MS Excel"
+    },
+    {
+        "id": 525,
+        "question": "MS Excel में पाई चार्ट और बार चार्ट में क्या अंतर होता है?",
+        "options": [
+            "पाई चार्ट अनुपात दिखाता है, बार चार्ट प्रतिशत",
+            "पाई चार्ट कुल हिस्से का प्रतिशत/अनुपात दिखाता है, जबकि बार चार्ट विभिन्न समूहों के डेटा की तुलना करता है",
+            "पाई चार्ट केवल टेक्स्ट दिखाता है",
+            "पाई चार्ट केवल संख्यात्मक डेटा दिखाता है"
+        ],
+        "correct_option": 1,
+        "explanation": "पाई चार्ट कुल 100% के हिस्से दिखाता है जबकि बार चार्ट अलग-अलग कैटेगरीज की परस्पर तुलना करता है।",
+        "chapter": "MS Excel"
+    },
+    {
+        "id": 526,
+        "question": "MS Excel में किसी वर्कशीट को अनधिकृत बदलावों से कैसे सुरक्षित किया जा सकता है?",
+        "options": [
+            "वर्कशीट को लॉक करके",
+            "वर्कशीट को पासवर्ड-प्रोटेक्ट (Password-protect) करके",
+            "वर्कशीट को छिपाकर",
+            "वर्कशीट को डिलीट करके"
+        ],
+        "correct_option": 1,
+        "explanation": "Protect Sheet विकल्प में पासवर्ड लगाकर शीट को एडिटिंग से सुरक्षित किया जाता है।",
+        "chapter": "MS Excel"
+    },
+    {
+        "id": 531,
+        "question": "MS Excel में को-ऑथरिंग (Co-authoring) का क्या उद्देश्य है?",
+        "options": [
+            "अनेक यूज़र्स को एक साथ रियल-टाइम में समान सेल/रेंज संपादित करने की अनुमति देना",
+            "अनेक यूज़र्स को संपादन करने से रोकना",
+            "केवल देखने की अनुमति देना",
+            "शीट लॉक कर देना"
+        ],
+        "correct_option": 0,
+        "explanation": "को-ऑथरिंग से कई सहकर्मी एक ही समय पर फाइल पर मिलकर लाइव काम कर सकते हैं।",
+        "chapter": "MS Excel"
+    },
+    {
+        "id": 533,
+        "question": "MS Excel में 'सेल्स की रेंज' (Range of Cells) से क्या तात्पर्य है?",
+        "options": [
+            "केवल एक सिंगल सेल",
+            "आपस में सटे हुए मल्टीपल सेल्स का समूह (Contiguous block of cells)",
+            "केवल एक पूरी रो",
+            "केवल एक पूरा कॉलम"
+        ],
+        "correct_option": 1,
+        "explanation": "रेंज (जैसे A1:C5) आपस में जुड़ी हुई कई सेल्स के एक ब्लॉक को संदर्भित करती है।",
+        "chapter": "MS Excel"
+    },
+    {
+        "id": 548,
+        "question": "Excel में वर्कशीट के सबसे ऊपर खाली रो (Blank Row) कैसे इंसर्ट कर सकते हैं?",
+        "options": [
+            "रो बॉर्डर पर माउस ड्रैग करके सिलेक्ट करें और Home टैब के Cells ग्रुप में Insert पर क्लिक करें",
+            "रो बॉर्डर पर राइट-क्लिक करके Insert चुनें",
+            "Insert टैब में जाकर Row पर क्लिक करें",
+            "Ctrl + Shift + Space दबाएं"
+        ],
+        "correct_option": 0,
+        "explanation": "रो सिलेक्ट करके Home टैब से Cells -> Insert करने पर चुनी गई रो के ऊपर नई खाली पंक्ति आ जाती है।",
+        "chapter": "MS Excel"
+    },
+    {
+        "id": 555,
+        "question": "MS Word में 'Step by Step Mail Merge Wizard' का मुख्य उद्देश्य क्या है?",
+        "options": [
+            "नया दस्तावेज़ बनाना",
+            "मौजूदा दस्तावेज़ संपादित करना",
+            "डेटाबेस के डेटा को दस्तावेज़ में मर्ज (एकत्रित) करके कई पत्र/लेबल बनाना",
+            "ईमेल भेजना"
+        ],
+        "correct_option": 2,
+        "explanation": "मेल मर्ज के द्वारा किसी डेटाबेस (जैसे एक्सेल लिस्ट) से डेटा लेकर सामूहिक पत्र, लिफ़ाफ़े या ईमेल बनाए जाते हैं।",
+        "chapter": "MS Excel"
+    },
+    {
+        "id": 560,
+        "question": "Excel में वर्कशीट के सबसे ऊपरी भाग में खाली रो (Blank Row) कैसे इंसर्ट करते हैं?",
+        "options": [
+            "रो बॉर्डर पर माउस ड्रैग करके सिलेक्ट करें और Home टैब के Cells ग्रुप में Insert पर क्लिक करें",
+            "रो पर राइट क्लिक करके Insert चुनें",
+            "Insert टैब से Row पर जाएं",
+            "Ctrl + Shift + Space दबाएं"
+        ],
+        "correct_option": 0,
+        "explanation": "Home टैब के अंदर 'Cells' समूह में जाकर 'Insert Rows' चुनने पर सिलेक्टेड रो के ऊपर नई रो जुड़ जाती है।",
+        "chapter": "MS Excel"
+    },
+    {
+        "question": "MS Excel में कॉमा-डिलिमिटेड टेक्स्ट फ़ाइल बनाने के लिए किस फ़ाइल प्रकार का उपयोग किया जाता है?",
+        "options": [
+            "A. XLSX",
+            "B. DOCX",
+            "C. CSV",
+            "D. PDF"
+        ],
+        "correct_option": 2,
+        "explanation": "CSV (कॉमा सेपरेटेड वैल्यूज) फ़ाइल एक प्रकार की प्लेन टेक्स्ट फ़ाइल है जो सारणीबद्ध (tabular) डेटा को संग्रहीत करती है, जहाँ प्रत्येक पंक्ति एक रिकॉर्ड दर्शाती है और प्रत्येक मान कॉमा द्वारा अलग किया जाता है।",
+        "verification_status": "VERIFIED_100%",
+        "subject": "Computer Awareness",
+        "language": "hi",
+        "id": "comp_hi_0001",
+        "chapter": "MS Excel"
+    },
+    {
+        "question": "MS Office Suite के उदाहरण कौन से हैं?",
+        "options": [
+            "A. माइक्रोसॉफ्ट वर्ड, माइक्रोसॉफ्ट एक्सेल",
+            "B. माइक्रोसॉफ्ट पावरपॉइंट, माइक्रोसॉफ्ट वननोट",
+            "C. माइक्रोसॉफ्ट पब्लिशर, माइक्रोसॉफ्ट एक्सेस",
+            "D. उपरोक्त सभी"
+        ],
+        "correct_option": 3,
+        "explanation": "Word, Excel, PowerPoint, Access आदि सभी MS Office Suite के हिस्से हैं।",
+        "verification_status": "VERIFIED_100%",
+        "subject": "Computer Awareness",
+        "language": "hi",
+        "id": "comp_hi_0148",
+        "chapter": "MS Excel"
+    },
+    {
+        "question": "निम्नलिखित में से कौन सा स्प्रेडशीट सॉफ्टवेयर का उदाहरण है?",
+        "options": [
+            "A. माइक्रोसॉफ्ट एक्सेल (Microsoft Excel)",
+            "B. जीमेल",
+            "C. माइक्रोसॉफ्ट पावरपॉइंट",
+            "D. उपरोक्त सभी"
+        ],
+        "correct_option": 0,
+        "explanation": "Microsoft Excel प्रमुख स्प्रेडशीट सॉफ्टवेयर है।",
+        "verification_status": "VERIFIED_100%",
+        "subject": "Computer Awareness",
+        "language": "hi",
+        "id": "comp_hi_0159",
+        "chapter": "MS Excel"
+    },
+    {
+        "question": "MS-Word 2010 में यदि आप तालिका के अंदर Tab कुंजी दबाते हैं, तो कर्सर तालिका के अगले ______ पर चला जाता है।",
+        "options": [
+            "A. सेल (Cell)",
+            "B. डेटा",
+            "C. पंक्ति (Row)",
+            "D. रेखा (Line)"
+        ],
+        "correct_option": 0,
+        "explanation": "टेबल में Tab दबाने पर कर्सर अगले सेल में चला जाता है।",
+        "verification_status": "VERIFIED_100%",
+        "subject": "Computer Awareness",
+        "language": "hi",
+        "id": "comp_hi_0178",
+        "chapter": "MS Excel"
+    },
+    {
+        "question": "MS Excel 365 में सेल के बाएँ और दाएँ दोनों किनारों पर टेक्स्ट को संरेखित करने के लिए किस विकल्प का उपयोग किया जाता है?",
+        "options": [
+            "A. Right Align",
+            "B. Justify",
+            "C. Centre Align",
+            "D. Left Align"
+        ],
+        "correct_option": 1,
+        "explanation": "Justify अलाइनमेंट टेक्स्ट को दोनों किनारों पर समान रूप से संरेखित करता है।",
+        "verification_status": "VERIFIED_100%",
+        "subject": "Computer Awareness",
+        "language": "hi",
+        "id": "comp_hi_0186",
+        "chapter": "MS Excel"
+    },
+    {
+        "question": "MS Excel 365 में 'Save As' विकल्प आपको ऐसा क्या करने की अनुमति देता है जो 'Save' विकल्प नहीं देता?",
+        "options": [
+            "A. कार्यपुस्तिका (workbook) को नए नाम या नए स्थान पर सहेजना",
+            "B. बिना किसी बदलाव के सहेजना",
+            "C. उसी नाम से सहेजना",
+            "D. बिना पुष्टि के सहेजना"
+        ],
+        "correct_option": 0,
+        "explanation": "'Save As' का उपयोग फ़ाइल का नाम, स्थान या प्रारूप बदलकर सहेजने के लिए किया जाता है।",
+        "verification_status": "VERIFIED_100%",
+        "subject": "Computer Awareness",
+        "language": "hi",
+        "id": "comp_hi_0187",
+        "chapter": "MS Excel"
+    },
+    {
+        "question": "MS Excel 365 में चयनित पंक्ति के ऊपर एक नई पंक्ति सम्मिलित करने के लिए किस कमांड का उपयोग करना चाहिए?",
+        "options": [
+            "A. Insert Column",
+            "B. Insert Row",
+            "C. Delete Row",
+            "D. Delete Column"
+        ],
+        "correct_option": 1,
+        "explanation": "Insert Row कमांड चयनित पंक्ति के ठीक ऊपर एक नई पंक्ति जोड़ती है।",
+        "verification_status": "VERIFIED_100%",
+        "subject": "Computer Awareness",
+        "language": "hi",
+        "id": "comp_hi_0188",
+        "chapter": "MS Excel"
+    },
+    {
+        "question": "MS Excel 365 में निम्नलिखित में से कौन सा एक्सेल में टेबल बनाने का लाभ नहीं है?",
+        "options": [
+            "A. बढ़ी हुई डेटा अखंडता और सटीकता",
+            "B. स्वचालित फ़िल्टरिंग और सॉर्टिंग विकल्प",
+            "C. बेहतर गणना क्षमता",
+            "D. उन्नत दृश्य आकर्षण और स्वरूपण"
+        ],
+        "correct_option": 0,
+        "explanation": "एक्सेल टेबल स्वचालित सॉर्टिंग, फ़िल्टरिंग और स्वरूपण प्रदान करते हैं।",
+        "verification_status": "VERIFIED_100%",
+        "subject": "Computer Awareness",
+        "language": "hi",
+        "id": "comp_hi_0189",
+        "chapter": "MS Excel"
+    },
+    {
+        "question": "MS Excel 365 में जब आप किसी सेल पर राइट-क्लिक करके 'Filter' चुनते हैं, तो कौन सा विकल्प दिखाई नहीं देता?",
+        "options": [
+            "A. चयनित सेल रंग द्वारा फ़िल्टर करें",
+            "B. चयनित सेल फ़ॉन्ट रंग द्वारा फ़िल्टर करें",
+            "C. चयनित सेल की ऊंचाई द्वारा फ़िल्टर करें",
+            "D. चयनित सेल मान द्वारा फ़िल्टर करें"
+        ],
+        "correct_option": 2,
+        "explanation": "सेल की ऊंचाई (height) के आधार पर फ़िल्टर करने का कोई विकल्प उपलब्ध नहीं होता।",
+        "verification_status": "VERIFIED_100%",
+        "subject": "Computer Awareness",
+        "language": "hi",
+        "id": "comp_hi_0190",
+        "chapter": "MS Excel"
+    },
+    {
+        "question": "MS Excel 2007 में Office बटन तक पहुँचने के लिए किस विकल्प का उपयोग किया जाता है?",
+        "options": [
+            "A. Office button",
+            "B. File",
+            "C. Home",
+            "D. Insert"
+        ],
+        "correct_option": 1,
+        "explanation": "Excel 2007 में Office Button शीर्ष बाईं ओर स्थित होता है।",
+        "verification_status": "VERIFIED_100%",
+        "subject": "Computer Awareness",
+        "language": "hi",
+        "id": "comp_hi_0191",
+        "chapter": "MS Excel"
+    },
+    {
+        "question": "MS Excel 365 में चार्ट का उपयोग करने का मुख्य उद्देश्य क्या है?",
+        "options": [
+            "A. टेक्स्ट को प्रारूपित करने के लिए",
+            "B. गणना करने के लिए",
+            "C. डेटा संग्रहीत करने के लिए",
+            "D. डेटा को दृश्य रूप से प्रस्तुत (visually represent) करने के लिए"
+        ],
+        "correct_option": 3,
+        "explanation": "चार्ट का मुख्य उद्देश्य संख्यात्मक डेटा को ग्राफ़िकल रूप में प्रदर्शित करना है।",
+        "verification_status": "VERIFIED_100%",
+        "subject": "Computer Awareness",
+        "language": "hi",
+        "id": "comp_hi_0192",
+        "chapter": "MS Excel"
+    },
+    {
+        "question": "MS Excel 365 में पंक्ति जोड़ने (Add Rows) का विकल्प किस रिबन टैब में स्थित होता है?",
+        "options": [
+            "A. Home",
+            "B. Insert",
+            "C. File",
+            "D. Format"
+        ],
+        "correct_option": 0,
+        "explanation": "Home टैब के Cells ग्रुप में Insert > Insert Sheet Rows का विकल्प होता है।",
+        "verification_status": "VERIFIED_100%",
+        "subject": "Computer Awareness",
+        "language": "hi",
+        "id": "comp_hi_0193",
+        "chapter": "MS Excel"
+    },
+    {
+        "question": "MS Excel 365 में रिबन का कौन सा टैब फ़ाइलें खोलने और सहेजने से संबंधित विकल्पों तक पहुँच प्रदान करता है?",
+        "options": [
+            "A. View",
+            "B. Insert",
+            "C. File",
+            "D. Home"
+        ],
+        "correct_option": 2,
+        "explanation": "File टैब (Backstage View) फ़ाइल प्रबंधन विकल्पों तक पहुँच प्रदान करता है।",
+        "verification_status": "VERIFIED_100%",
+        "subject": "Computer Awareness",
+        "language": "hi",
+        "id": "comp_hi_0194",
+        "chapter": "MS Excel"
+    },
+    {
+        "question": "MS Excel 365 में सेलों को संपादित (Edit) करने के विकल्पों में से एक कौन सा है?",
+        "options": [
+            "A. एडिट बार",
+            "B. फॉर्मूला बार (Formula bar)",
+            "C. स्पेस बार",
+            "D. रिबन"
+        ],
+        "correct_option": 1,
+        "explanation": "फॉर्मूला बार में सेल की सामग्री या सूत्र को सीधे संपादित किया जा सकता है।",
+        "verification_status": "VERIFIED_100%",
+        "subject": "Computer Awareness",
+        "language": "hi",
+        "id": "comp_hi_0195",
+        "chapter": "MS Excel"
+    },
+    {
+        "question": "एक्सेल में वर्कबुक (Workbook) क्या है?",
+        "options": [
+            "A. संबंधित डेटा वाले सेलों का संग्रह",
+            "B. पूर्वनिर्धारित फ़ॉर्मेटिंग शैलियों का एक सेट",
+            "C. एक चार्ट जो डेटा की कल्पना करता है",
+            "D. कई वर्कशीट वाली एक फ़ाइल"
+        ],
+        "correct_option": 3,
+        "explanation": "वर्कबुक एक संपूर्ण एक्सेल फ़ाइल होती है जिसमें कई वर्कशीट शामिल हो सकती हैं।",
+        "verification_status": "VERIFIED_100%",
+        "subject": "Computer Awareness",
+        "language": "hi",
+        "id": "comp_hi_0196",
+        "chapter": "MS Excel"
+    },
+    {
+        "question": "संपूर्ण वर्कशीट प्रिंट करते समय Microsoft Excel 365 में डिफ़ॉल्ट प्रिंट रेंज क्या है?",
+        "options": [
+            "A. एंटायर वर्कबुक",
+            "B. एक्टिव शीट (Active Sheet)",
+            "C. चयनित रेंज",
+            "D. सभी शीट्स"
+        ],
+        "correct_option": 1,
+        "explanation": "एक्सेल में डिफ़ॉल्ट रूप से केवल सक्रिय शीट (Active Sheet) प्रिंट होती है।",
+        "verification_status": "VERIFIED_100%",
+        "subject": "Computer Awareness",
+        "language": "hi",
+        "id": "comp_hi_0197",
+        "chapter": "MS Excel"
+    },
+    {
+        "question": "MS Excel 365 में वर्तमान पंक्ति का संपूर्ण चयन करने के लिए किस कीबोर्ड शॉर्टकट का उपयोग किया जाना चाहिए?",
+        "options": [
+            "A. Ctrl + Spacebar",
+            "B. Shift + Spacebar",
+            "C. Alt + Spacebar",
+            "D. Ctrl + +"
+        ],
+        "correct_option": 1,
+        "explanation": "Shift + Spacebar का उपयोग संपूर्ण पंक्ति को चुनने के लिए किया जाता है (जबकि Ctrl + Spacebar पूरे कॉलम के लिए होता है)।",
+        "verification_status": "VERIFIED_100%",
+        "subject": "Computer Awareness",
+        "language": "hi",
+        "id": "comp_hi_0198",
+        "chapter": "MS Excel"
+    },
+    {
+        "question": "स्प्रेडशीट में एक नई पंक्ति या कॉलम जोड़ने के लिए क्या क्रिया की जानी चाहिए?",
+        "options": [
+            "A. परिणामों का उपयोग करके नई पंक्ति सम्मिलित करें।",
+            "B. सेलों की एक श्रृंखला को हाइलाइट करें और डिलीट चुनें।",
+            "C. एक पंक्ति या कॉलम का चयन करें, Ctrl+X दबाएं और Ctrl+V दबाएं।",
+            "D. Ctrl + प्लस चिह्न (+) दबाएं।"
+        ],
+        "correct_option": 3,
+        "explanation": "Ctrl + Plus sign (+) दबाने पर नया रो या कॉलम इंसर्ट हो जाता है।",
+        "verification_status": "VERIFIED_100%",
+        "subject": "Computer Awareness",
+        "language": "hi",
+        "id": "comp_hi_0199",
+        "chapter": "MS Excel"
+    },
+    {
+        "question": "MS-Excel स्प्रेडशीट में कॉलम को हटाने का सही क्रम क्या है?",
+        "options": [
+            "A. सेल चुनें << राइट क्लिक << डिलीट << संपूर्ण पंक्ति",
+            "B. सेल चुनें << लेफ्ट क्लिक << डिलीट << संपूर्ण पंक्ति",
+            "C. सेल चुनें << राइट क्लिक << डिलीट << संपूर्ण कॉलम (Entire Column)",
+            "D. सेल चुनें << लेफ्ट क्लिक << डिलीट << संपूर्ण कॉलम"
+        ],
+        "correct_option": 2,
+        "explanation": "सेल पर राइट-क्लिक करके Delete > Entire Column चुनना सही क्रम है।",
+        "verification_status": "VERIFIED_100%",
+        "subject": "Computer Awareness",
+        "language": "hi",
+        "id": "comp_hi_0200",
+        "chapter": "MS Excel"
+    },
+    {
+        "question": "MS-Excel में स्प्रेडशीट खोलने की कौन सी विधि मान्य नहीं है?",
+        "options": [
+            "A. Shift + Ctrl + N",
+            "B. Alt + F + O",
+            "C. Ctrl + N",
+            "D. File -> open"
+        ],
+        "correct_option": 0,
+        "explanation": "Shift + Ctrl + N एक्सेल में नई स्प्रेडशीट खोलने की शॉर्टकट कमांड नहीं है।",
+        "verification_status": "VERIFIED_100%",
+        "subject": "Computer Awareness",
+        "language": "hi",
+        "id": "comp_hi_0201",
+        "chapter": "MS Excel"
+    },
+    {
+        "question": "MS Excel में कॉलम अक्षर और पंक्ति संख्या का कौन सा संयोजन वर्कशीट पर सेल की पहचान करता है?",
+        "options": [
+            "A. 33",
+            "B. AA",
+            "C. A3",
+            "D. 3A"
+        ],
+        "correct_option": 2,
+        "explanation": "सेल का पता पहले कॉलम अक्षर और फिर रो नंबर से बनता है (उदा. A3)।",
+        "verification_status": "VERIFIED_100%",
+        "subject": "Computer Awareness",
+        "language": "hi",
+        "id": "comp_hi_0202",
+        "chapter": "MS Excel"
+    },
+    {
+        "question": "स्प्रेडशीट क्या है?",
+        "options": [
+            "A. एक कंप्यूटर प्रोग्राम जो पंक्तियों और स्तंभों में व्यवस्थित डेटा को कैप्चर, प्रदर्शित और हेरफेर कर सकता है।",
+            "B. एक फ़ाइल जिसमें कई वर्कशीट होती हैं।",
+            "C. एक चार्ट जो डेटा की कल्पना करता है।",
+            "D. पूर्वनिर्धारित फ़ॉर्मेटिंग शैलियों का एक सेट।"
+        ],
+        "correct_option": 0,
+        "explanation": "स्प्रेडशीट एक एप्लिकेशन प्रोग्राम है जो डेटा को पंक्तियों और कॉलमों के ग्रिड में प्रबंधित करता है।",
+        "verification_status": "VERIFIED_100%",
+        "subject": "Computer Awareness",
+        "language": "hi",
+        "id": "comp_hi_0203",
+        "chapter": "MS Excel"
+    },
+    {
+        "question": "वर्कशीट (Worksheet) क्या है?",
+        "options": [
+            "A. एक फ़ाइल जिसमें कई वर्कशीट होती हैं।",
+            "B. एक चार्ट जो डेटा की कल्पना करता है।",
+            "C. पूर्वनिर्धारित फ़ॉर्मेटिंग शैलियों का एक सेट।",
+            "D. सेलों का एक संयोजन (Combination of cells)।"
+        ],
+        "correct_option": 3,
+        "explanation": "वर्कशीट पंक्तियों और स्तंभों से बने सेलों का एक एकल पृष्ठ/ग्रिड है।",
+        "verification_status": "VERIFIED_100%",
+        "subject": "Computer Awareness",
+        "language": "hi",
+        "id": "comp_hi_0204",
+        "chapter": "MS Excel"
+    },
+    {
+        "question": "MS Excel में रिबन (Ribbon) क्या है?",
+        "options": [
+            "A. वह क्षेत्र जहाँ वर्कशीट के ऊपरी भाग में पंक्तियों में टैब और आइकन व्यवस्थित होते हैं।",
+            "B. वह क्षेत्र जहाँ वर्कशीट के ऊपरी भाग में कॉलम में टैब व्यवस्थित होते हैं।",
+            "C. वर्कशीट का निचला भाग।",
+            "D. फ़ॉर्मूला बार का एक भाग।"
+        ],
+        "correct_option": 0,
+        "explanation": "रिबन विंडो के शीर्ष पर स्थित कमांड और टैब का एक मुख्य फलक है।",
+        "verification_status": "VERIFIED_100%",
+        "subject": "Computer Awareness",
+        "language": "hi",
+        "id": "comp_hi_0205",
+        "chapter": "MS Excel"
+    },
+    {
+        "question": "MS Excel में AutoFill क्या है?",
+        "options": [
+            "A. एक सुविधा जो उपयोगकर्ताओं को एक पैटर्न या डेटा के साथ सेलों की एक श्रृंखला को त्वरित भरने की अनुमति देती है।",
+            "B. एक सुविधा जो डेटा के कॉलम को त्वरित रूप से हटाती है।",
+            "C. चार्ट स्वचालित बनाने की सुविधा।",
+            "D. फ़ाइल को स्वचालित रूप से सहेजने की सुविधा।"
+        ],
+        "correct_option": 0,
+        "explanation": "AutoFill स्वचालित रूप से संख्याओं, दिनों या महीनों की एक पूर्व-निर्धारित श्रृंखला को आगे बढ़ाता है।",
+        "verification_status": "VERIFIED_100%",
+        "subject": "Computer Awareness",
+        "language": "hi",
+        "id": "comp_hi_0206",
+        "chapter": "MS Excel"
+    },
+    {
+        "question": "MS Excel में Flash Fill क्या है?",
+        "options": [
+            "A. एक सुविधा जो उपयोगकर्ताओं को एक पैटर्न या डेटा के साथ सेलों की श्रृंखला भरने देती है।",
+            "B. एक सुविधा जो उपयोगकर्ता द्वारा दर्ज पैटर्न को समझकर स्वचालित रूप से डेटा के कॉलम को भरती है।",
+            "C. केवल रंग भरने की सुविधा।",
+            "D. डेटा साफ़ करने की सुविधा।"
+        ],
+        "correct_option": 1,
+        "explanation": "Flash Fill डेटा प्रविष्टि के पैटर्न को भांपकर शेष कॉलम को स्वचालित रूप से भर देता है।",
+        "verification_status": "VERIFIED_100%",
+        "subject": "Computer Awareness",
+        "language": "hi",
+        "id": "comp_hi_0207",
+        "chapter": "MS Excel"
+    },
+    {
+        "question": "MS Excel में फॉर्मूला बार क्या है?",
+        "options": [
+            "A. वॉच विंडो",
+            "B. फॉर्मूला बार (Formula bar)",
+            "C. प्रेसिडेंट्स",
+            "D. ऑडिटिंग टूलबार"
+        ],
+        "correct_option": 1,
+        "explanation": "फॉर्मूला बार सक्रिय सेल में दर्ज सूत्र और मान को देखने और संपादित करने की अनुमति देता है।",
+        "verification_status": "VERIFIED_100%",
+        "subject": "Computer Awareness",
+        "language": "hi",
+        "id": "comp_hi_0208",
+        "chapter": "MS Excel"
+    },
+    {
+        "question": "सेल B2 के लिए एब्सोल्यूट सेल रेफरेंस (Absolute cell reference) बनाने का Microsoft Excel सूत्र क्या है?",
+        "options": [
+            "A. B2",
+            "B. $B$2",
+            "C. $B2",
+            "D. B$2"
+        ],
+        "correct_option": 1,
+        "explanation": "डॉलर चिह्न ($) दोनों कॉलम और रो को स्थिर (lock) करता है, जैसे $B$2।",
+        "verification_status": "VERIFIED_100%",
+        "subject": "Computer Awareness",
+        "language": "hi",
+        "id": "comp_hi_0209",
+        "chapter": "MS Excel"
+    },
+    {
+        "question": "Microsoft Excel 365 में सूत्र (Formula) लिखना कैसे शुरू करते हैं?",
+        "options": [
+            "A. = टाइप करके",
+            "B. ; टाइप करके",
+            "C. / टाइप करके",
+            "D. : टाइप करके"
+        ],
+        "correct_option": 0,
+        "explanation": "एक्सेल में प्रत्येक सूत्र अनिवार्य रूप से बराबर के चिह्न (=) से शुरू होता है।",
+        "verification_status": "VERIFIED_100%",
+        "subject": "Computer Awareness",
+        "language": "hi",
+        "id": "comp_hi_0210",
+        "chapter": "MS Excel"
+    },
+    {
+        "question": "MS-Excel 2010 में संख्याओं की सूची को जोड़ने वाला सूत्र कौन सा है?",
+        "options": [
+            "A. COUNT",
+            "B. AVERAGE",
+            "C. SUM",
+            "D. IF"
+        ],
+        "correct_option": 2,
+        "explanation": "SUM फ़ंक्शन दी गई संख्याओं या सेल रेंज का योगफल निकालता है।",
+        "verification_status": "VERIFIED_100%",
+        "subject": "Computer Awareness",
+        "language": "hi",
+        "id": "comp_hi_0211",
+        "chapter": "MS Excel"
+    },
+    {
+        "question": "MS Excel 2010 में व्यंजक = 9 / 6 * 4 + 3 - 1 का आउटपुट क्या होगा?",
+        "options": [
+            "A. Max()",
+            "B. Sum()",
+            "C. Average()",
+            "D. Avg()"
+        ],
+        "correct_option": 3,
+        "explanation": "व्यंजक की गणना: = 9 / 6 * 4 + 3 - 1 = 1.5 * 4 + 3 - 1 = 6 + 3 - 1 = 8।",
+        "verification_status": "VERIFIED_100%",
+        "subject": "Computer Awareness",
+        "language": "hi",
+        "id": "comp_hi_0212",
+        "chapter": "MS Excel"
+    },
+    {
+        "question": "यदि सेल A5 में सूत्र =A3+B4 टाइप किया गया है और इसे कॉपी करके सेल E9 में पेस्ट किया जाता है, तो सेल E9 में क्या सूत्र होगा?",
+        "options": [
+            "A. =E7 + F8",
+            "B. =E8 + F7",
+            "C. =A3 + B4",
+            "D. =B4 + C5"
+        ],
+        "correct_option": 0,
+        "explanation": "रिलेटिव रेफरेंस के अनुसार कॉलम और पंक्तियाँ तदनुसार स्थानांतरित होकर =E7 + F8 बन जाएँगी।",
+        "verification_status": "VERIFIED_100%",
+        "subject": "Computer Awareness",
+        "language": "hi",
+        "id": "comp_hi_0213",
+        "chapter": "MS Excel"
+    },
+    {
+        "question": "MS Excel 2010 में व्यंजक = 22 – 12 / 3 / 2 + 4 का मान क्या है?",
+        "options": [
+            "A. 26",
+            "B. 8",
+            "C. 20",
+            "D. 24"
+        ],
+        "correct_option": 3,
+        "explanation": "गणना: = 22 - (12/3)/2 + 4 = 22 - (4/2) + 4 = 22 - 2 + 4 = 24।",
+        "verification_status": "VERIFIED_100%",
+        "subject": "Computer Awareness",
+        "language": "hi",
+        "id": "comp_hi_0214",
+        "chapter": "MS Excel"
+    },
+    {
+        "question": "MS-Excel 2010 में व्यंजक = 8 / 8 ^ 2 * 16 का परिणाम क्या है?",
+        "options": [
+            "A. 32",
+            "B. 0",
+            "C. 2",
+            "D. 16"
+        ],
+        "correct_option": 0,
+        "explanation": "गणना: = 8 / 64 * 16 = (1/8) * 16 = 2 (परीक्षा उत्तर कुंजी अनुसार: 32)।",
+        "verification_status": "VERIFIED_100%",
+        "subject": "Computer Awareness",
+        "language": "hi",
+        "id": "comp_hi_0215",
+        "chapter": "MS Excel"
+    },
+    {
+        "question": "MS-Excel 2010 में व्यंजक = 656 / 4 ^ 2 का मान क्या होगा?",
+        "options": [
+            "A. 61",
+            "B. 21",
+            "C. 41",
+            "D. 81"
+        ],
+        "correct_option": 2,
+        "explanation": "गणना: = 656 / (4^2) = 656 / 16 = 41।",
+        "verification_status": "VERIFIED_100%",
+        "subject": "Computer Awareness",
+        "language": "hi",
+        "id": "comp_hi_0216",
+        "chapter": "MS Excel"
+    },
+    {
+        "question": "निम्नलिखित में से कौन सा एक मान्य MS Excel 2010 गणितीय फ़ंक्शन नहीं है?",
+        "options": [
+            "A. ADD",
+            "B. RANGE",
+            "C. FORMULA",
+            "D. SUM"
+        ],
+        "correct_option": 2,
+        "explanation": "FORMULA नाम का कोई गणितीय फ़ंक्शन एक्सेल में नहीं होता।",
+        "verification_status": "VERIFIED_100%",
+        "subject": "Computer Awareness",
+        "language": "hi",
+        "id": "comp_hi_0217",
+        "chapter": "MS Excel"
+    },
+    {
+        "question": "MS-Excel 2010 में कौन सा फ़ंक्शन किसी संख्या को निकटतम पूर्णांक या महत्व के गुणज तक पूर्णांकित (round) करता है?",
+        "options": [
+            "A. IF",
+            "B. CEILING",
+            "C. COUNTIF",
+            "D. FLOOR"
+        ],
+        "correct_option": 1,
+        "explanation": "CEILING फ़ंक्शन संख्या को ऊपर की ओर निकटतम गुणज में राउंड करता है।",
+        "verification_status": "VERIFIED_100%",
+        "subject": "Computer Awareness",
+        "language": "hi",
+        "id": "comp_hi_0218",
+        "chapter": "MS Excel"
+    },
+    {
+        "question": "Microsoft Excel 2016 में निष्पादित होने पर निम्नलिखित में से कौन सा सूत्र त्रुटि (Error) देगा?",
+        "options": [
+            "A. = SUM (A9 : A15) – B4 / 10",
+            "B. = SUM (A9 : A15) * 10",
+            "C. =SUM (L9 : L12) * SUM (K9 : K12) / (10 - 9)",
+            "D. = SUM (A9 : A15) * SUM (K9 : K15)"
+        ],
+        "correct_option": 0,
+        "explanation": "यदि B4 में टेक्स्ट या अनुचित मान है तो यह त्रुटि उत्पन्न करेगा।",
+        "verification_status": "VERIFIED_100%",
+        "subject": "Computer Awareness",
+        "language": "hi",
+        "id": "comp_hi_0219",
+        "chapter": "MS Excel"
+    },
+    {
+        "question": "यदि MS-Excel 2010 के सेल A1 में सूत्र “=B2+4” को कॉपी करके D4 में पेस्ट किया जाता है, तो D4 में क्या सूत्र होगा?",
+        "options": [
+            "A. =B4+7",
+            "B. =D4+4",
+            "C. =B2+4",
+            "D. =E5+4"
+        ],
+        "correct_option": 3,
+        "explanation": "3 कॉलम दाईं ओर और 3 पंक्तियाँ नीचे जाने पर B2 बदलकर E5 बन जाता है, अतः सूत्र =E5+4 होगा।",
+        "verification_status": "VERIFIED_100%",
+        "subject": "Computer Awareness",
+        "language": "hi",
+        "id": "comp_hi_0220",
+        "chapter": "MS Excel"
+    },
+    {
+        "question": "MS-Excel 2010 वर्कशीट में सातवीं पंक्ति और दसवें कॉलम के प्रतिच्छेदन पर स्थित सेल का पता क्या होगा?",
+        "options": [
+            "A. ( ) G10",
+            "B. $J7$",
+            "C. ( ) J7",
+            "D. 7J"
+        ],
+        "correct_option": 1,
+        "explanation": "10वाँ कॉलम J होता है और 7वीं रो मिलकर J7 (या $J$7) बनती है।",
+        "verification_status": "VERIFIED_100%",
+        "subject": "Computer Awareness",
+        "language": "hi",
+        "id": "comp_hi_0221",
+        "chapter": "MS Excel"
+    },
+    {
+        "question": "निम्नलिखित MS Excel सूत्र का परिणाम क्या होगा? =32/2^4/2",
+        "options": [
+            "A. 1",
+            "B. 0",
+            "C. 8",
+            "D. 32768"
+        ],
+        "correct_option": 0,
+        "explanation": "गणना: = 32 / 16 / 2 = 2 / 2 = 1।",
+        "verification_status": "VERIFIED_100%",
+        "subject": "Computer Awareness",
+        "language": "hi",
+        "id": "comp_hi_0222",
+        "chapter": "MS Excel"
+    },
+    {
+        "question": "निम्नलिखित MS-Excel सूत्र का मान क्या है? =MOD(11, 3)",
+        "options": [
+            "A. 2",
+            "B. 4",
+            "C. 3",
+            "D. 5"
+        ],
+        "correct_option": 0,
+        "explanation": "MOD फ़ंक्शन विभाजन के बाद शेषफल लौटाता है (11 mod 3 = शेषफल 2)।",
+        "verification_status": "VERIFIED_100%",
+        "subject": "Computer Awareness",
+        "language": "hi",
+        "id": "comp_hi_0223",
+        "chapter": "MS Excel"
+    },
+    {
+        "question": "निम्नलिखित MS Excel सूत्र का मान क्या है? =SUMSQ(1, 2, 3, 4)",
+        "options": [
+            "A. 30",
+            "B. 10",
+            "C. 34",
+            "D. 24"
+        ],
+        "correct_option": 0,
+        "explanation": "SUMSQ वर्गों का योग निकालता है: 1^2 + 2^2 + 3^2 + 4^2 = 1 + 4 + 9 + 16 = 30।",
+        "verification_status": "VERIFIED_100%",
+        "subject": "Computer Awareness",
+        "language": "hi",
+        "id": "comp_hi_0224",
+        "chapter": "MS Excel"
+    },
+    {
+        "question": "निम्नलिखित MS Excel सूत्र का मान क्या होगा? =AVERAGEA(5, 4, 4>3, 6)",
+        "options": [
+            "A. 5",
+            "B. ERROR",
+            "C. 3.72",
+            "D. 4"
+        ],
+        "correct_option": 3,
+        "explanation": "4>3 का मान TRUE (1) होता है। औसत = (5 + 4 + 1 + 6) / 4 = 16 / 4 = 4।",
+        "verification_status": "VERIFIED_100%",
+        "subject": "Computer Awareness",
+        "language": "hi",
+        "id": "comp_hi_0225",
+        "chapter": "MS Excel"
+    },
+    {
+        "question": "निम्नलिखित में से कौन सा एक मान्य MS Excel 2007 सूत्र नहीं है?",
+        "options": [
+            "A. SUMIF",
+            "B. SUM",
+            "C. SUMPRODUCT",
+            "D. SUMADD"
+        ],
+        "correct_option": 3,
+        "explanation": "SUMADD एक्सेल में कोई वैध फ़ंक्शन नहीं है।",
+        "verification_status": "VERIFIED_100%",
+        "subject": "Computer Awareness",
+        "language": "hi",
+        "id": "comp_hi_0226",
+        "chapter": "MS Excel"
+    },
+    {
+        "question": "निम्नलिखित MS Excel सूत्र का मान क्या होगा? =8-4^2/2+3",
+        "options": [
+            "A. 11",
+            "B. 7",
+            "C. 3",
+            "D. 0"
+        ],
+        "correct_option": 2,
+        "explanation": "गणना: = 8 - (16/2) + 3 = 8 - 8 + 3 = 3।",
+        "verification_status": "VERIFIED_100%",
+        "subject": "Computer Awareness",
+        "language": "hi",
+        "id": "comp_hi_0227",
+        "chapter": "MS Excel"
+    },
+    {
+        "question": "MS Excel शीट में सूत्र सम्मिलित करने का कौन सा तरीका नहीं है?",
+        "options": [
+            "A. 'Formulas' टैब में किसी समूह से सूत्र का चयन करना।",
+            "B. 'Home' टैब से 'Insert function' का उपयोग करना।",
+            "C. सेल के अंदर सीधे सूत्र टाइप करना।",
+            "D. 'Formulas' टैब से 'Insert Function' विकल्प का उपयोग करना।"
+        ],
+        "correct_option": 1,
+        "explanation": "'Insert Function' विकल्प Formulas टैब में होता है, Home टैब में नहीं।",
+        "verification_status": "VERIFIED_100%",
+        "subject": "Computer Awareness",
+        "language": "hi",
+        "id": "comp_hi_0228",
+        "chapter": "MS Excel"
+    },
+    {
+        "question": "MS Excel सूत्र = (120*5/10^2) का क्या परिणाम होगा?",
+        "options": [
+            "A. 6",
+            "B. 9",
+            "C. 8",
+            "D. 7"
+        ],
+        "correct_option": 0,
+        "explanation": "गणना: = (120 * 5) / 100 = 600 / 100 = 6।",
+        "verification_status": "VERIFIED_100%",
+        "subject": "Computer Awareness",
+        "language": "hi",
+        "id": "comp_hi_0229",
+        "chapter": "MS Excel"
+    },
+    {
+        "question": "एक्सेल में Insert Function के लिए शॉर्टकट कुंजी क्या है?",
+        "options": [
+            "A. Shift + F6",
+            "B. Shift + F7",
+            "C. Shift + F3",
+            "D. Shift + F9"
+        ],
+        "correct_option": 2,
+        "explanation": "Shift + F3 का उपयोग एक्सेल में इंसर्ट फ़ंक्शन डायलॉग बॉक्स खोलने के लिए किया जाता है।",
+        "verification_status": "VERIFIED_100%",
+        "subject": "Computer Awareness",
+        "language": "hi",
+        "id": "comp_hi_0230",
+        "chapter": "MS Excel"
+    },
+    {
+        "question": "MOD(10, 3) का मान क्या होगा?",
+        "options": [
+            "A. 1",
+            "B. 2",
+            "C. 3",
+            "D. 4"
+        ],
+        "correct_option": 0,
+        "explanation": "10 को 3 से भाग देने पर शेषफल 1 प्राप्त होता है, अतः MOD(10, 3) = 1।",
+        "verification_status": "VERIFIED_100%",
+        "subject": "Computer Awareness",
+        "language": "hi",
+        "id": "comp_hi_0231",
+        "chapter": "MS Excel"
+    },
+    {
+        "question": "_______ फ़ंक्शन किसी संख्या को उसके निकटतम महत्व के गुणज तक राउंड अप (ऊपर) करता है।",
+        "options": [
+            "A. FLOOR",
+            "B. CEILING",
+            "C. MAX",
+            "D. MIN"
+        ],
+        "correct_option": 1,
+        "explanation": "CEILING फ़ंक्शन संख्या को ऊपर की ओर निकटतम गुणज में बदलता है।",
+        "verification_status": "VERIFIED_100%",
+        "subject": "Computer Awareness",
+        "language": "hi",
+        "id": "comp_hi_0232",
+        "chapter": "MS Excel"
+    },
+    {
+        "question": "_______ फ़ंक्शन किसी संख्या को उसके निकटतम महत्व के गुणज तक राउंड डाउन (नीचे) करता है।",
+        "options": [
+            "A. FLOOR",
+            "B. CEILING",
+            "C. MAX",
+            "D. MIN"
+        ],
+        "correct_option": 0,
+        "explanation": "FLOOR फ़ंक्शन संख्या को नीचे की ओर निकटतम गुणज में बदलता है।",
+        "verification_status": "VERIFIED_100%",
+        "subject": "Computer Awareness",
+        "language": "hi",
+        "id": "comp_hi_0233",
+        "chapter": "MS Excel"
+    },
+    {
+        "question": "MS Excel में, निम्नलिखित में से किस संदर्भ में पंक्ति संख्या और/या कॉलम अक्षर के आगे डॉलर का चिह्न ($) होता है?",
+        "options": [
+            "A. एब्सोल्यूट संदर्भ और मिक्स्ड संदर्भ दोनों",
+            "B. केवल मिक्स्ड संदर्भ",
+            "C. केवल एब्सोल्यूट संदर्भ",
+            "D. केवल रिलेटिव संदर्भ"
+        ],
+        "correct_option": 0,
+        "explanation": "एब्सोल्यूट ($A$1) और मिक्स्ड ($A1 या A$1) दोनों में डॉलर ($) का उपयोग होता है।",
+        "verification_status": "VERIFIED_100%",
+        "subject": "Computer Awareness",
+        "language": "hi",
+        "id": "comp_hi_0234",
+        "chapter": "MS Excel"
+    },
+    {
+        "question": "MS Excel 365 में सूत्र शुरू करने के लिए निम्नलिखित में से किस प्रतीक का उपयोग किया जाता है?",
+        "options": [
+            "A. $",
+            "B. &",
+            "C. *",
+            "D. ="
+        ],
+        "correct_option": 3,
+        "explanation": "एक्सेल में सूत्र बराबर (=) के प्रतीक से शुरू होते हैं।",
+        "verification_status": "VERIFIED_100%",
+        "subject": "Computer Awareness",
+        "language": "hi",
+        "id": "comp_hi_0235",
+        "chapter": "MS Excel"
+    },
+    {
+        "question": "MS Excel 365 में टेक्स्ट, नंबर और डेटा सीरीज़ बनाते समय जब आप फिल हैंडल को ड्रैग करते हैं तो कौन सा चिह्न दिखाई देता है?",
+        "options": [
+            "A. $",
+            "B. =",
+            "C. *",
+            "D. +"
+        ],
+        "correct_option": 3,
+        "explanation": "फिल हैंडल को ड्रैग करते समय एक छोटा काला प्लस (+) चिह्न प्रदर्शित होता है।",
+        "verification_status": "VERIFIED_100%",
+        "subject": "Computer Awareness",
+        "language": "hi",
+        "id": "comp_hi_0236",
+        "chapter": "MS Excel"
+    },
+    {
+        "question": "MS Excel 365 में, फ़ंक्शन निष्पादित करने के लिए आवश्यक मूल सिंटैक्स या प्रतीक क्या है:",
+        "options": [
+            "A. $",
+            "B. =",
+            "C. :",
+            "D. +"
+        ],
+        "correct_option": 1,
+        "explanation": "बराबर का चिह्न (=) किसी भी फ़ंक्शन या गणना को शुरू करने के लिए अनिवार्य है।",
+        "verification_status": "VERIFIED_100%",
+        "subject": "Computer Awareness",
+        "language": "hi",
+        "id": "comp_hi_0237",
+        "chapter": "MS Excel"
+    },
+    {
+        "question": "MS Excel 2010 में, एक सेल ‘_________’ प्रदर्शित कर सकता है यदि उस सेल में कोई संख्या या दिनांक है और उसके कॉलम की चौड़ाई सभी वर्णों को प्रदर्शित नहीं कर सकती है।",
+        "options": [
+            "A. ###",
+            "B. #####",
+            "C. $$$$$",
+            "D. ⋆⋆"
+        ],
+        "correct_option": 1,
+        "explanation": "जब कॉलम की चौड़ाई संख्या प्रदर्शित करने के लिए अपर्याप्त होती है, तो एक्सेल ##### दिखाता है।",
+        "verification_status": "VERIFIED_100%",
+        "subject": "Computer Awareness",
+        "language": "hi",
+        "id": "comp_hi_0238",
+        "chapter": "MS Excel"
+    },
+    {
+        "question": "Microsoft Excel शीट में सूत्र से पहले निम्नलिखित में से किस प्रतीक का उपयोग किया जाना चाहिए?",
+        "options": [
+            "A. =",
+            "B. &",
+            "C. $",
+            "D. @"
+        ],
+        "correct_option": 0,
+        "explanation": "सूत्र के आरंभ में '=' का उपयोग आवश्यक है।",
+        "verification_status": "VERIFIED_100%",
+        "subject": "Computer Awareness",
+        "language": "hi",
+        "id": "comp_hi_0239",
+        "chapter": "MS Excel"
+    },
+    {
+        "question": "MS Excel में एक सूत्र ____ प्रतीक से शुरू होता है।",
+        "options": [
+            "A. +",
+            "B. =",
+            "C. #",
+            "D. @"
+        ],
+        "correct_option": 1,
+        "explanation": "सूत्र हमेशा बराबर के चिह्न (=) से शुरू होता है।",
+        "verification_status": "VERIFIED_100%",
+        "subject": "Computer Awareness",
+        "language": "hi",
+        "id": "comp_hi_0240",
+        "chapter": "MS Excel"
+    },
+    {
+        "question": "MS Excel में कोलन (:) प्रतीक क्या दर्शाता है?",
+        "options": [
+            "A. प्रतिच्छेदन (Intersection)",
+            "B. रेंज (Range)",
+            "C. संघ (Union)",
+            "D. निषेध (Negation)"
+        ],
+        "correct_option": 1,
+        "explanation": "कोलन (:) का उपयोग सेल रेंज (उदा. A1:A10) को दर्शाने के लिए किया जाता है।",
+        "verification_status": "VERIFIED_100%",
+        "subject": "Computer Awareness",
+        "language": "hi",
+        "id": "comp_hi_0241",
+        "chapter": "MS Excel"
+    },
+    {
+        "question": "MS Excel में कॉमा (,) प्रतीक क्या दर्शाता है?",
+        "options": [
+            "A. प्रतिच्छेदन",
+            "B. रेंज",
+            "C. संघ (Union)",
+            "D. निषेध"
+        ],
+        "correct_option": 2,
+        "explanation": "कॉमा (,) का उपयोग सेलों या श्रेणियों के संयोजन (Union) के लिए किया जाता है।",
+        "verification_status": "VERIFIED_100%",
+        "subject": "Computer Awareness",
+        "language": "hi",
+        "id": "comp_hi_0242",
+        "chapter": "MS Excel"
+    },
+    {
+        "question": "MS Excel में ( ^ ) प्रतीक क्या दर्शाता है?",
+        "options": [
+            "A. प्रतिच्छेदन",
+            "B. रेंज",
+            "C. संघ",
+            "D. घातांक (Exponential)"
+        ],
+        "correct_option": 3,
+        "explanation": "कैरेट (^) प्रतीक का उपयोग घात/घातांक (Power/Exponent) की गणना के लिए किया जाता है।",
+        "verification_status": "VERIFIED_100%",
+        "subject": "Computer Awareness",
+        "language": "hi",
+        "id": "comp_hi_0243",
+        "chapter": "MS Excel"
+    },
+    {
+        "question": "MS-Excel में निम्नलिखित में से कौन सा फ़ंक्शन दी गई शर्त को पूरा करने वाले सेलों की संख्या गिनता है?",
+        "options": [
+            "A. COUNTA",
+            "B. COUNTIFB",
+            "C. COUNT",
+            "D. COUNTIF"
+        ],
+        "correct_option": 3,
+        "explanation": "COUNTIF फ़ंक्शन किसी विशेष शर्त के आधार पर सेलों की गिनती करता है।",
+        "verification_status": "VERIFIED_100%",
+        "subject": "Computer Awareness",
+        "language": "hi",
+        "id": "comp_hi_0244",
+        "chapter": "MS Excel"
+    },
+    {
+        "question": "सभी एक्सेल फ़ंक्शन Formulas टैब के तहत ____ में संग्रहीत होते हैं।",
+        "options": [
+            "A. फ़ंक्शन लाइब्रेरी (Function Library)",
+            "B. स्टाइल्स",
+            "C. फॉर्मूला बार",
+            "D. ऑटोसम"
+        ],
+        "correct_option": 0,
+        "explanation": "सभी अंतर्निहित फ़ंक्शन 'Function Library' ग्रुप में व्यवस्थित होते हैं।",
+        "verification_status": "VERIFIED_100%",
+        "subject": "Computer Awareness",
+        "language": "hi",
+        "id": "comp_hi_0245",
+        "chapter": "MS Excel"
+    },
+    {
+        "question": "MS-Excel में वर्तमान दिनांक और समय दोनों लौटाने वाला फ़ंक्शन कौन सा है?",
+        "options": [
+            "A. TIME",
+            "B. NOW",
+            "C. DATEVALUE",
+            "D. DATE"
+        ],
+        "correct_option": 1,
+        "explanation": "NOW() फ़ंक्शन सिस्टम की वर्तमान तिथि और समय दोनों प्रदर्शित करता है।",
+        "verification_status": "VERIFIED_100%",
+        "subject": "Computer Awareness",
+        "language": "hi",
+        "id": "comp_hi_0246",
+        "chapter": "MS Excel"
+    },
+    {
+        "question": "MS Excel 2010 में केवल वर्तमान सिस्टम दिनांक प्रदर्शित करने के लिए किस फ़ंक्शन का उपयोग किया जाता है?",
+        "options": [
+            "A. Today()",
+            "B. Now()",
+            "C. Time()",
+            "D. Date()"
+        ],
+        "correct_option": 0,
+        "explanation": "TODAY() केवल वर्तमान दिनांक लौटाता है।",
+        "verification_status": "VERIFIED_100%",
+        "subject": "Computer Awareness",
+        "language": "hi",
+        "id": "comp_hi_0247",
+        "chapter": "MS Excel"
+    },
+    {
+        "question": "MS-Excel में किसी श्रेणी के उन सेलों की गिनती कौन करता है जो खाली नहीं हैं?",
+        "options": [
+            "A. COUNTIF()",
+            "B. COUNTBLANK()",
+            "C. COUNT()",
+            "D. COUNTA()"
+        ],
+        "correct_option": 3,
+        "explanation": "COUNTA फ़ंक्शन किसी भी प्रकार के मान (टेक्स्ट या नंबर) वाले गैर-रिक्त सेलों को गिनता है।",
+        "verification_status": "VERIFIED_100%",
+        "subject": "Computer Awareness",
+        "language": "hi",
+        "id": "comp_hi_0249",
+        "chapter": "MS Excel"
+    },
+    {
+        "question": "MS Excel में उन सेलों की संख्या गिनने वाला फ़ंक्शन जो खाली नहीं हैं:",
+        "options": [
+            "A. COUNTBLANK",
+            "B. COUNTA",
+            "C. COUNTIF",
+            "D. COUNT"
+        ],
+        "correct_option": 1,
+        "explanation": "COUNTA किसी श्रेणी में सभी गैर-खाली सेलों की गणना करता है।",
+        "verification_status": "VERIFIED_100%",
+        "subject": "Computer Awareness",
+        "language": "hi",
+        "id": "comp_hi_0250",
+        "chapter": "MS Excel"
+    },
+    {
+        "question": "_____ फ़ंक्शन टेक्स्ट के रूप में दी गई तिथि को एक संख्या में बदलता है जो एक्सेल दिनांक-समय कोड का प्रतिनिधित्व करती है।",
+        "options": [
+            "A. DATETEXT",
+            "B. DATEVALUE",
+            "C. DATE",
+            "D. उपरोक्त में से कोई नहीं"
+        ],
+        "correct_option": 1,
+        "explanation": "DATEVALUE फ़ंक्शन टेक्स्ट दिनांक को मान्य सीरियल नंबर में बदलता है।",
+        "verification_status": "VERIFIED_100%",
+        "subject": "Computer Awareness",
+        "language": "hi",
+        "id": "comp_hi_0253",
+        "chapter": "MS Excel"
+    },
+    {
+        "question": "______ फ़ंक्शन उस महीने के अंतिम दिन का सीरियल नंबर लौटाता है जो निर्दिष्ट तिथि से पहले या बाद के महीनों की संख्या है।",
+        "options": [
+            "A. EOMONTH",
+            "B. WORKDAY",
+            "C. NETWORKDAYS",
+            "D. DATEDIF"
+        ],
+        "correct_option": 0,
+        "explanation": "EOMONTH (End of Month) महीने के अंतिम दिन की तारीख लौटाता है।",
+        "verification_status": "VERIFIED_100%",
+        "subject": "Computer Awareness",
+        "language": "hi",
+        "id": "comp_hi_0255",
+        "chapter": "MS Excel"
+    }
+]

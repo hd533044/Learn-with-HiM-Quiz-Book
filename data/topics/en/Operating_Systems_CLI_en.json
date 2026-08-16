@@ -1,0 +1,627 @@
+[
+    {
+        "id": 36,
+        "question": "What is the purpose of a mobile operating system?",
+        "options": [
+            "To manage files and process data",
+            "To provide security to the network",
+            "To help small devices like smartphones work efficiently",
+            "To connect to other client servers"
+        ],
+        "correct_option": 2,
+        "explanation": "Mobile operating systems are designed to help small devices like smartphones work efficiently.",
+        "chapter": "Operating Systems CLI"
+    },
+    {
+        "id": 37,
+        "question": "What is the shortcut to capture a screenshot in Windows?",
+        "options": [
+            "Win Keys + Pause break",
+            "Win Keys + Print Screen",
+            "Alt + Space + X",
+            "Alt + Tab"
+        ],
+        "correct_option": 1,
+        "explanation": "The shortcut to capture a screenshot in Windows is Win Keys + Print Screen.",
+        "chapter": "Operating Systems CLI"
+    },
+    {
+        "id": 41,
+        "question": "What is the function of Win Keys + M?",
+        "options": [
+            "To minimize all active windows",
+            "To show the Desktop",
+            "To open My Computer",
+            "To switch to user mode"
+        ],
+        "correct_option": 0,
+        "explanation": "The function of Win Keys + M is to minimize all active windows.",
+        "chapter": "Operating Systems CLI"
+    },
+    {
+        "id": 50,
+        "question": "What is the function of Win Keys + D?",
+        "options": [
+            "To show the Desktop",
+            "To open My Computer",
+            "To switch to user mode",
+            "To minimize all active windows"
+        ],
+        "correct_option": 0,
+        "explanation": "The function of Win Keys + D is to show or hide the Desktop.",
+        "chapter": "Operating Systems CLI"
+    },
+    {
+        "id": 53,
+        "question": "What is the purpose of a mobile operating system in a small device?",
+        "options": [
+            "To manage files and process data",
+            "To provide internet connectivity",
+            "To help the device work efficiently",
+            "To provide security to the network"
+        ],
+        "correct_option": 2,
+        "explanation": "The purpose of a mobile operating system in a small device is to help the device work efficiently.",
+        "chapter": "Operating Systems CLI"
+    },
+    {
+        "id": 58,
+        "question": "What is the function of Win Keys + R in a Windows system?",
+        "options": [
+            "To open Run Dialogue Box",
+            "To open System Configuration",
+            "To switch to user mode",
+            "To minimize all active windows"
+        ],
+        "correct_option": 0,
+        "explanation": "The function of Win Keys + R is to open Run Dialogue Box.",
+        "chapter": "Operating Systems CLI"
+    },
+    {
+        "id": 60,
+        "question": "What is the function of Win Keys + D in a Windows system?",
+        "options": [
+            "To show the Desktop",
+            "To open My Computer",
+            "To switch to user mode",
+            "To minimize all active windows"
+        ],
+        "correct_option": 0,
+        "explanation": "The function of Win Keys + D is to show the Desktop.",
+        "chapter": "Operating Systems CLI"
+    },
+    {
+        "id": 61,
+        "question": "What is the purpose of Alt + Space + X in a Windows system?",
+        "options": [
+            "To maximize a window",
+            "To restore a window",
+            "To minimize a window",
+            "To close a window"
+        ],
+        "correct_option": 0,
+        "explanation": "The purpose of Alt + Space + X is to maximize a window.",
+        "chapter": "Operating Systems CLI"
+    },
+    {
+        "id": 62,
+        "question": "What is the function of Win Keys + Pause break in a Windows system?",
+        "options": [
+            "To open System Configuration",
+            "To switch to user mode",
+            "To minimize all active windows",
+            "To show the Desktop"
+        ],
+        "correct_option": 0,
+        "explanation": "The function of Win Keys + Pause break is to open System Configuration.",
+        "chapter": "Operating Systems CLI"
+    },
+    {
+        "id": 63,
+        "question": "What is the function of Alt + F4 in a Windows system?",
+        "options": [
+            "To close the software or system shut down",
+            "To open System Configuration",
+            "To switch to user mode",
+            "To minimize all active windows"
+        ],
+        "correct_option": 0,
+        "explanation": "The function of Alt + F4 is to close the software or system shut down.",
+        "chapter": "Operating Systems CLI"
+    },
+    {
+        "id": 138,
+        "question": "What is the purpose of using Ctrl + F7?",
+        "options": [
+            "Activates the Resize window command",
+            "Activates the Move window command",
+            "Restores the size of the active workbook or window",
+            "Minimizes the size of the active workbook or window"
+        ],
+        "correct_option": 1,
+        "explanation": "Ctrl + F7 activates the Move window command for windows that are not maximized.",
+        "chapter": "Operating Systems CLI"
+    },
+    {
+        "id": 140,
+        "question": "What is the function of Ctrl + F8?",
+        "options": [
+            "Activates the Resize window command",
+            "Activates the Move window command",
+            "Restores the size of the active workbook or window",
+            "Minimizes the size of the active workbook or window"
+        ],
+        "correct_option": 0,
+        "explanation": "Ctrl + F8 activates the Resize window command on non-maximized windows.",
+        "chapter": "Operating Systems CLI"
+    },
+    {
+        "id": 178,
+        "question": "What is the effect of using the keyboard shortcut Alt + Tab on the computer?",
+        "options": [
+            "Moves to the previous open workbook or window",
+            "Moves to the next open workbook or window",
+            "Moves to the previous application open on your computer",
+            "Moves to the next application open on your computer"
+        ],
+        "correct_option": 3,
+        "explanation": "Alt + Tab switches between open applications in Windows.",
+        "chapter": "Operating Systems CLI"
+    },
+    {
+        "id": 201,
+        "question": "What is the function of the keyboard shortcut Alt + Tab on multiple open applications?",
+        "options": [
+            "Moves to the previous open workbook or window",
+            "Moves to the next open workbook or window",
+            "Moves to the previous application open on your computer",
+            "Moves to the next application open on your computer"
+        ],
+        "correct_option": 3,
+        "explanation": "Alt + Tab switches to the next open application in Windows.",
+        "chapter": "Operating Systems CLI"
+    },
+    {
+        "id": 392,
+        "question": "What is the difference between Microsoft 365 and the old-fashioned bundle?",
+        "options": [
+            "Microsoft 365 is only available for personal use",
+            "Microsoft 365 is sold as a one-time purchase",
+            "Microsoft 365 is sold as a subscription and combines online services",
+            "Microsoft 365 only includes desktop apps"
+        ],
+        "correct_option": 2,
+        "explanation": "Microsoft 365 differs from the old-fashioned bundle in that it is sold as a subscription and combines a suite of online services with traditional desktop apps.",
+        "chapter": "Operating Systems CLI"
+    },
+    {
+        "id": 447,
+        "question": "How to manage windows and panes?",
+        "options": [
+            "Alt+R",
+            "Alt+W",
+            "Ctrl+R",
+            "Ctrl+W"
+        ],
+        "correct_option": 1,
+        "explanation": "The option to manage windows and panes is found in the View tab, which can be opened using Alt+W.",
+        "chapter": "Operating Systems CLI"
+    },
+    {
+        "id": 486,
+        "question": "What is CLI also known as?",
+        "options": [
+            "Line User Interface",
+            "Command Language Interpreter",
+            "Character Line Interface",
+            "Control Line Interface"
+        ],
+        "correct_option": 1,
+        "explanation": "CLI stands for Command Line Interface and is also commonly referred to as Command Language Interpreter or Console User Interface (CUI).",
+        "chapter": "Operating Systems CLI"
+    },
+    {
+        "id": 487,
+        "question": "How do users interact with a system using CLI?",
+        "options": [
+            "By typing text",
+            "By clicking icons",
+            "By voice commands",
+            "By gestures"
+        ],
+        "correct_option": 0,
+        "explanation": "Users interact with a system by typing text using CLI.",
+        "chapter": "Operating Systems CLI"
+    },
+    {
+        "id": 494,
+        "question": "What type of interface is CLI?",
+        "options": [
+            "Command Line Interface",
+            "Graphical User Interface",
+            "Voice User Interface",
+            "Gesture User Interface"
+        ],
+        "correct_option": 0,
+        "explanation": "CLI is a type of command line interface.",
+        "chapter": "Operating Systems CLI"
+    },
+    {
+        "id": 500,
+        "question": "What is the purpose of CLI?",
+        "options": [
+            "To allow users to interact with a system by typing text",
+            "To allow users to interact with a system by clicking icons",
+            "To allow users to interact with a system by voice commands",
+            "To allow users to interact with a system by gestures"
+        ],
+        "correct_option": 0,
+        "explanation": "CLI allows users to interact with a system by typing text.",
+        "chapter": "Operating Systems CLI"
+    },
+    {
+        "id": 538,
+        "question": "What is an example of system software?",
+        "options": [
+            "Microsoft Office",
+            "Google Chrome",
+            "Windows operating system",
+            "Adobe Photoshop"
+        ],
+        "correct_option": 2,
+        "explanation": "The Windows operating system is an example of system software.",
+        "chapter": "Operating Systems CLI"
+    },
+    {
+        "question": "Which of the following file formats does MS Paint use to open and save files in Windows?",
+        "options": [
+            "A. .doc",
+            "B. .xls",
+            "C. .jpeg",
+            "D. .ppt"
+        ],
+        "correct_option": 2,
+        "explanation": "MS Paint uses .jpeg file formats to open and save files in Windows.",
+        "verification_status": "VERIFIED_100%",
+        "subject": "Computer Awareness",
+        "language": "en",
+        "id": "comp_en_0008",
+        "chapter": "Operating Systems CLI"
+    },
+    {
+        "question": "What is the function of WinZip?",
+        "options": [
+            "A. It compresses large files into a smaller file.",
+            "B. It is an anti-virus software.",
+            "C. It is a file manager.",
+            "D. It is a data recovery tool."
+        ],
+        "correct_option": 0,
+        "explanation": "WinZip is a Windows-based program that allows you to compress files and to open compressed files in .zip format.",
+        "verification_status": "VERIFIED_100%",
+        "subject": "Computer Awareness",
+        "language": "en",
+        "id": "comp_en_0035",
+        "chapter": "Operating Systems CLI"
+    },
+    {
+        "question": "What contains and manages all the programs and applications that a computer or other device is able to run?",
+        "options": [
+            "A. Data Science",
+            "B. Operating system",
+            "C. Computer hardware",
+            "D. Computer software"
+        ],
+        "correct_option": 1,
+        "explanation": "An operating system contains and manages all the programs and applications that a computer or other device is able to run.",
+        "verification_status": "VERIFIED_100%",
+        "subject": "Computer Awareness",
+        "language": "en",
+        "id": "comp_en_0080",
+        "chapter": "Operating Systems CLI"
+    },
+    {
+        "question": "What do you call an event where a computer becomes unresponsive due to either a program or the system itself becoming unresponsive and no longer taking input?",
+        "options": [
+            "A. Booting",
+            "B. Hanging",
+            "C. Ejecting",
+            "D. Moving"
+        ],
+        "correct_option": 1,
+        "explanation": "Hanging is an event where a computer becomes unresponsive due to either a program or the system itself becoming unresponsive and no longer taking input.",
+        "verification_status": "VERIFIED_100%",
+        "subject": "Computer Awareness",
+        "language": "en",
+        "id": "comp_en_0081",
+        "chapter": "Operating Systems CLI"
+    },
+    {
+        "question": "What is the process of turning on a computer and powering up the system?",
+        "options": [
+            "A. Booting",
+            "B. Loading",
+            "C. Saving",
+            "D. Execution"
+        ],
+        "correct_option": 0,
+        "explanation": "Booting is the process of turning on a computer and powering up the system.",
+        "verification_status": "VERIFIED_100%",
+        "subject": "Computer Awareness",
+        "language": "en",
+        "id": "comp_en_0082",
+        "chapter": "Operating Systems CLI"
+    },
+    {
+        "question": "Which of the following options defines Operating System?",
+        "options": [
+            "A. It is a software that is used to convert source program instructions to set programs.",
+            "B. It is a set of programs that control the way a computer works and runs other programs",
+            "C. It is a software that is used to convert source program instructions to set programs.",
+            "D. It is a set of programs that control the way a computer works and runs other programs"
+        ],
+        "correct_option": 1,
+        "explanation": "An operating system is a set of programs that control the way a computer works and runs other programs.",
+        "verification_status": "VERIFIED_100%",
+        "subject": "Computer Awareness",
+        "language": "en",
+        "id": "comp_en_0083",
+        "chapter": "Operating Systems CLI"
+    },
+    {
+        "question": "A/an ______ is an interface between the user and hardware.",
+        "options": [
+            "A. memory",
+            "B. command",
+            "C. screen",
+            "D. operating system"
+        ],
+        "correct_option": 3,
+        "explanation": "An operating system is an interface between the user and hardware.",
+        "verification_status": "VERIFIED_100%",
+        "subject": "Computer Awareness",
+        "language": "en",
+        "id": "comp_en_0084",
+        "chapter": "Operating Systems CLI"
+    },
+    {
+        "question": "From the following options, identify the name of the user interface element that is found on desktops of a small blinking symbol or an arrow.",
+        "options": [
+            "A. Icons",
+            "B. Cursor",
+            "C. Shortcut",
+            "D. Taskbar"
+        ],
+        "correct_option": 1,
+        "explanation": "A cursor is a small blinking symbol or an arrow found on desktops.",
+        "verification_status": "VERIFIED_100%",
+        "subject": "Computer Awareness",
+        "language": "en",
+        "id": "comp_en_0085",
+        "chapter": "Operating Systems CLI"
+    },
+    {
+        "question": "A/an ______ is required for booting a computer.",
+        "options": [
+            "A. Compiler",
+            "B. Assembler",
+            "C. Operating System",
+            "D. Translator"
+        ],
+        "correct_option": 2,
+        "explanation": "An operating system is required for booting a computer.",
+        "verification_status": "VERIFIED_100%",
+        "subject": "Computer Awareness",
+        "language": "en",
+        "id": "comp_en_0086",
+        "chapter": "Operating Systems CLI"
+    },
+    {
+        "question": "A ______ is the part of a computer operating system that understands and executes commands that are entered interactively by a human being or from a program.",
+        "options": [
+            "A. Device Management",
+            "B. Networking",
+            "C. Command Interpreter",
+            "D. File manager"
+        ],
+        "correct_option": 2,
+        "explanation": "A command interpreter is the part of a computer operating system that understands and executes commands that are entered interactively by a human being or from a program.",
+        "verification_status": "VERIFIED_100%",
+        "subject": "Computer Awareness",
+        "language": "en",
+        "id": "comp_en_0087",
+        "chapter": "Operating Systems CLI"
+    },
+    {
+        "question": "The operating system (OS) manages all of the ______ and ______ on the computer.",
+        "options": [
+            "A. Data and Device",
+            "B. Data and Hardware",
+            "C. Software and Hardware",
+            "D. Software and Device"
+        ],
+        "correct_option": 2,
+        "explanation": "The operating system (OS) manages all of the software and hardware on the computer.",
+        "verification_status": "VERIFIED_100%",
+        "subject": "Computer Awareness",
+        "language": "en",
+        "id": "comp_en_0089",
+        "chapter": "Operating Systems CLI"
+    },
+    {
+        "question": "_______ is basically the process of starting the computer.",
+        "options": [
+            "A. Ejecting",
+            "B. Booting",
+            "C. Hanging",
+            "D. None of the above"
+        ],
+        "correct_option": 1,
+        "explanation": "Booting is basically the process of starting the computer.",
+        "verification_status": "VERIFIED_100%",
+        "subject": "Computer Awareness",
+        "language": "en",
+        "id": "comp_en_0090",
+        "chapter": "Operating Systems CLI"
+    },
+    {
+        "question": "What is a situation where each of the computer processes waits for a resource which is being assigned to some other process?",
+        "options": [
+            "A. Deadlock",
+            "B. Kernel",
+            "C. Booting",
+            "D. Ejecting"
+        ],
+        "correct_option": 0,
+        "explanation": "A deadlock is a situation where each of the computer processes waits for a resource which is being assigned to some other process.",
+        "verification_status": "VERIFIED_100%",
+        "subject": "Computer Awareness",
+        "language": "en",
+        "id": "comp_en_0092",
+        "chapter": "Operating Systems CLI"
+    },
+    {
+        "question": "What type of operating system is MS-DOS?",
+        "options": [
+            "A. Multiprocessing",
+            "B. Multitasking and single-user",
+            "C. Embedded",
+            "D. Single-user and single-task"
+        ],
+        "correct_option": 3,
+        "explanation": "MS-DOS is a command-driven interface, single-tasking operating system.",
+        "verification_status": "VERIFIED_100%",
+        "subject": "Computer Awareness",
+        "language": "en",
+        "id": "comp_en_0094",
+        "chapter": "Operating Systems CLI"
+    },
+    {
+        "question": "Which of the following operating system is a command line user interface operating system?",
+        "options": [
+            "A. Android",
+            "B. MS-DOS",
+            "C. MS-Windows",
+            "D. Linux"
+        ],
+        "correct_option": 1,
+        "explanation": "MS-DOS is a command line user interface operating system.",
+        "verification_status": "VERIFIED_100%",
+        "subject": "Computer Awareness",
+        "language": "en",
+        "id": "comp_en_0095",
+        "chapter": "Operating Systems CLI"
+    },
+    {
+        "question": "If Bill Gates had his way, Windows OS was planned to be released under the name:",
+        "options": [
+            "A. Clipboard Viewer",
+            "B. Interface Manager",
+            "C. Calculator",
+            "D. Control panel"
+        ],
+        "correct_option": 1,
+        "explanation": "If Bill Gates had his way, Windows OS was planned to be released under the name Interface Manager.",
+        "verification_status": "VERIFIED_100%",
+        "subject": "Computer Awareness",
+        "language": "en",
+        "id": "comp_en_0139",
+        "chapter": "Operating Systems CLI"
+    },
+    {
+        "question": "In Computers, files when deleted are moved to..",
+        "options": [
+            "A. Outbox",
+            "B. My documents",
+            "C. Recycle Bin",
+            "D. Inbox"
+        ],
+        "correct_option": 2,
+        "explanation": "In Computers, files when deleted are moved to the Recycle Bin.",
+        "verification_status": "VERIFIED_100%",
+        "subject": "Computer Awareness",
+        "language": "en",
+        "id": "comp_en_0149",
+        "chapter": "Operating Systems CLI"
+    },
+    {
+        "question": "Which among the following is NOT open-source software?",
+        "options": [
+            "A. Android",
+            "B. Linux",
+            "C. Microsoft Office",
+            "D. Mozilla Firefox"
+        ],
+        "correct_option": 2,
+        "explanation": "Microsoft Office is an office suite of desktop applications, servers, and services for the Microsoft Windows and Mac operating systems. There are open-source software applications for a variety of different uses such as office automation, web design, content management, operating systems, and communications.",
+        "verification_status": "VERIFIED_100%",
+        "subject": "Computer Awareness",
+        "language": "en",
+        "id": "comp_en_0150",
+        "chapter": "Operating Systems CLI"
+    },
+    {
+        "question": "What does GUI stand for with respect to a computer?",
+        "options": [
+            "A. Group User Interface",
+            "B. Graphic Utility Interaction",
+            "C. Graphical User Interface",
+            "D. Graphical Utility Interface"
+        ],
+        "correct_option": 2,
+        "explanation": "Graphical User Interface (GUI), a computer program that enables a person to communicate with a computer through the use of symbols, visual metaphors, and pointing devices.",
+        "verification_status": "VERIFIED_100%",
+        "subject": "Computer Awareness",
+        "language": "en",
+        "id": "comp_en_0151",
+        "chapter": "Operating Systems CLI"
+    },
+    {
+        "question": "What is the best example of system software?",
+        "options": [
+            "A. Application System",
+            "B. Software System",
+            "C. Hardware System",
+            "D. Operating System"
+        ],
+        "correct_option": 3,
+        "explanation": "The best example of system software is the Operating System, it manages all the other computer programs.",
+        "verification_status": "VERIFIED_100%",
+        "subject": "Computer Awareness",
+        "language": "en",
+        "id": "comp_en_0152",
+        "chapter": "Operating Systems CLI"
+    },
+    {
+        "question": "What is used to move the cursor to the last page when the document contains multiple pages?",
+        "options": [
+            "A. move the cursor one paragraph down.",
+            "B. move the cursor one line down.",
+            "C. move the cursor one screen down.",
+            "D. move the cursor to the last page."
+        ],
+        "correct_option": 3,
+        "explanation": "The Page Down Key is used to move the cursor by scrolling the document view down by one screen.",
+        "verification_status": "VERIFIED_100%",
+        "subject": "Computer Awareness",
+        "language": "en",
+        "id": "comp_en_0163",
+        "chapter": "Operating Systems CLI"
+    },
+    {
+        "question": "In Windows OS, when you delete an item from any of the drives by making use of the 'Delete' key or even by simply right-clicking and selecting the 'Delete' option, the item is moved to?",
+        "options": [
+            "A. Taskbar",
+            "B. Start menu",
+            "C. Control Panel",
+            "D. Recycle Bin"
+        ],
+        "correct_option": 3,
+        "explanation": "Recycle Bin is a place where deleted items are temporarily stored in Windows unless they are permanently deleted.",
+        "verification_status": "VERIFIED_100%",
+        "subject": "Computer Awareness",
+        "language": "en",
+        "id": "comp_en_0177",
+        "chapter": "Operating Systems CLI"
+    }
+]

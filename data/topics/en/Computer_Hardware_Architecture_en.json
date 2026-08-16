@@ -1,0 +1,1272 @@
+[
+    {
+        "id": 3,
+        "question": "What is the primary function of a Serial Port?",
+        "options": [
+            "Used for scanners and printers",
+            "Used for external modems and older computer mouse",
+            "Used for connecting camcorders and video equipment",
+            "Used for connecting external hard disks and keyboards"
+        ],
+        "correct_option": 1,
+        "explanation": "Serial Port is used for external modems and older computer mouse.",
+        "chapter": "Computer Hardware Architecture"
+    },
+    {
+        "id": 4,
+        "question": "How many versions of Serial Port are available?",
+        "options": [
+            "1 version- 9pin",
+            "2 versions- 9pin, 25pin",
+            "3 versions- 9pin, 25pin, 50pin",
+            "4 versions- 9pin, 25pin, 50pin, 100pin"
+        ],
+        "correct_option": 1,
+        "explanation": "There are two versions of Serial Port available: 9pin and 25pin.",
+        "chapter": "Computer Hardware Architecture"
+    },
+    {
+        "id": 5,
+        "question": "What is the data transfer speed of a Serial Port?",
+        "options": [
+            "12 megabits per second",
+            "115 kilobits per second",
+            "400 megabits per second",
+            "800 megabits per second"
+        ],
+        "correct_option": 1,
+        "explanation": "The data transfer speed of a Serial Port is 115 kilobits per second.",
+        "chapter": "Computer Hardware Architecture"
+    },
+    {
+        "id": 6,
+        "question": "What type of data transmission is supported by a Serial Port?",
+        "options": [
+            "Multiple data streams at a time",
+            "Single stream of data at a time",
+            "Both multiple and single data streams",
+            "None of the above"
+        ],
+        "correct_option": 1,
+        "explanation": "A Serial Port transmits a single stream of data at a time.",
+        "chapter": "Computer Hardware Architecture"
+    },
+    {
+        "id": 7,
+        "question": "What is the primary function of a Parallel Port?",
+        "options": [
+            "Used for external modems and older computer mouse",
+            "Used for scanners and printers",
+            "Used for connecting camcorders and video equipment",
+            "Used for connecting external hard disks and keyboards"
+        ],
+        "correct_option": 1,
+        "explanation": "Parallel Port is used for scanners and printers.",
+        "chapter": "Computer Hardware Architecture"
+    },
+    {
+        "id": 8,
+        "question": "How many pins are available in a Parallel Port?",
+        "options": [
+            "9 pin",
+            "25 pin",
+            "50 pin",
+            "100 pin"
+        ],
+        "correct_option": 1,
+        "explanation": "A Parallel Port has 25 pins.",
+        "chapter": "Computer Hardware Architecture"
+    },
+    {
+        "id": 9,
+        "question": "What type of data transmission is supported by a Parallel Port?",
+        "options": [
+            "Single stream of data at a time",
+            "Multiple data streams at a time",
+            "Both multiple and single data streams",
+            "None of the above"
+        ],
+        "correct_option": 1,
+        "explanation": "A Parallel Port transmits multiple data streams at a time.",
+        "chapter": "Computer Hardware Architecture"
+    },
+    {
+        "id": 10,
+        "question": "What is the primary function of a Universal Serial Bus (USB) Port?",
+        "options": [
+            "Used for external modems and older computer mouse",
+            "Used for scanners and printers",
+            "Used for connecting all kinds of external USB devices",
+            "Used for connecting camcorders and video equipment"
+        ],
+        "correct_option": 2,
+        "explanation": "A Universal Serial Bus (USB) Port is used for connecting all kinds of external USB devices.",
+        "chapter": "Computer Hardware Architecture"
+    },
+    {
+        "id": 11,
+        "question": "What is the data transfer speed of a Universal Serial Bus (USB) Port?",
+        "options": [
+            "12 kilobits per second",
+            "12 megabits per second",
+            "400 megabits per second",
+            "800 megabits per second"
+        ],
+        "correct_option": 1,
+        "explanation": "The data transfer speed of a USB 1.1 Port is 12 megabits per second.",
+        "chapter": "Computer Hardware Architecture"
+    },
+    {
+        "id": 12,
+        "question": "What type of devices can be connected to a Universal Serial Bus (USB) Port?",
+        "options": [
+            "Only external hard disks and keyboards",
+            "Only scanners and printers",
+            "All kinds of external USB devices",
+            "Only camcorders and video equipment"
+        ],
+        "correct_option": 2,
+        "explanation": "A Universal Serial Bus (USB) Port can connect all kinds of external USB devices.",
+        "chapter": "Computer Hardware Architecture"
+    },
+    {
+        "id": 13,
+        "question": "What is the primary function of a Firewire Port?",
+        "options": [
+            "Used for external modems and older computer mouse",
+            "Used for scanners and printers",
+            "Used for connecting camcorders and video equipment",
+            "Used for connecting external hard disks and keyboards"
+        ],
+        "correct_option": 2,
+        "explanation": "A Firewire Port is used for connecting camcorders and video equipment.",
+        "chapter": "Computer Hardware Architecture"
+    },
+    {
+        "id": 14,
+        "question": "What is the data transfer speed of a Firewire Port?",
+        "options": [
+            "12 megabits per second",
+            "115 kilobits per second",
+            "400 to 800 megabits per second",
+            "1 gigabit per second"
+        ],
+        "correct_option": 2,
+        "explanation": "The data transfer speed of a Firewire Port is 400 to 800 megabits per second.",
+        "chapter": "Computer Hardware Architecture"
+    },
+    {
+        "id": 15,
+        "question": "Which port is used for transferring large amounts of data at a very fast speed?",
+        "options": [
+            "Serial Port",
+            "Parallel Port",
+            "Universal Serial Bus (USB) Port",
+            "Firewire Port"
+        ],
+        "correct_option": 3,
+        "explanation": "A Firewire Port is used for transferring large amounts of data at a very fast speed.",
+        "chapter": "Computer Hardware Architecture"
+    },
+    {
+        "id": 16,
+        "question": "Which of the following ports supports single stream data transmission?",
+        "options": [
+            "Parallel Port",
+            "Universal Serial Bus (USB) Port",
+            "Firewire Port",
+            "Serial Port"
+        ],
+        "correct_option": 3,
+        "explanation": "A Serial Port supports single stream data transmission.",
+        "chapter": "Computer Hardware Architecture"
+    },
+    {
+        "id": 17,
+        "question": "Which of the following ports has a data transfer speed of 115 kilobits per second?",
+        "options": [
+            "Parallel Port",
+            "Universal Serial Bus (USB) Port",
+            "Firewire Port",
+            "Serial Port"
+        ],
+        "correct_option": 3,
+        "explanation": "A Serial Port has a data transfer speed of 115 kilobits per second.",
+        "chapter": "Computer Hardware Architecture"
+    },
+    {
+        "id": 18,
+        "question": "Which port is used for connecting external hard disks and keyboards?",
+        "options": [
+            "Serial Port",
+            "Parallel Port",
+            "Universal Serial Bus (USB) Port",
+            "Firewire Port"
+        ],
+        "correct_option": 2,
+        "explanation": "A Universal Serial Bus (USB) Port is used for connecting external hard disks and keyboards.",
+        "chapter": "Computer Hardware Architecture"
+    },
+    {
+        "id": 19,
+        "question": "Which of the following ports has 25 pins?",
+        "options": [
+            "Serial Port",
+            "Parallel Port",
+            "Universal Serial Bus (USB) Port",
+            "Firewire Port"
+        ],
+        "correct_option": 1,
+        "explanation": "A Parallel Port has 25 pins.",
+        "chapter": "Computer Hardware Architecture"
+    },
+    {
+        "id": 20,
+        "question": "Which port is used for scanners and printers?",
+        "options": [
+            "Serial Port",
+            "Parallel Port",
+            "Universal Serial Bus (USB) Port",
+            "Firewire Port"
+        ],
+        "correct_option": 1,
+        "explanation": "A Parallel Port is used for scanners and printers.",
+        "chapter": "Computer Hardware Architecture"
+    },
+    {
+        "id": 21,
+        "question": "Which of the following ports supports multiple data streams at a time?",
+        "options": [
+            "Serial Port",
+            "Parallel Port",
+            "Universal Serial Bus (USB) Port",
+            "Firewire Port"
+        ],
+        "correct_option": 1,
+        "explanation": "A Parallel Port supports multiple data streams at a time.",
+        "chapter": "Computer Hardware Architecture"
+    },
+    {
+        "id": 22,
+        "question": "Which port has a data transfer speed of 12 megabits per second?",
+        "options": [
+            "Serial Port",
+            "Parallel Port",
+            "Universal Serial Bus (USB) Port",
+            "Firewire Port"
+        ],
+        "correct_option": 2,
+        "explanation": "A Universal Serial Bus (USB) Port has a data transfer speed of 12 megabits per second.",
+        "chapter": "Computer Hardware Architecture"
+    },
+    {
+        "id": 23,
+        "question": "Which of the following ports is used for external modems and older computer mouse?",
+        "options": [
+            "Parallel Port",
+            "Universal Serial Bus (USB) Port",
+            "Firewire Port",
+            "Serial Port"
+        ],
+        "correct_option": 3,
+        "explanation": "A Serial Port is used for external modems and older computer mouse.",
+        "chapter": "Computer Hardware Architecture"
+    },
+    {
+        "id": 24,
+        "question": "Which port has 9 pins and 25 pins versions?",
+        "options": [
+            "Parallel Port",
+            "Universal Serial Bus (USB) Port",
+            "Firewire Port",
+            "Serial Port"
+        ],
+        "correct_option": 3,
+        "explanation": "A Serial Port has 9 pins and 25 pins versions.",
+        "chapter": "Computer Hardware Architecture"
+    },
+    {
+        "id": 25,
+        "question": "Which of the following ports is used for connecting camcorders and video equipment?",
+        "options": [
+            "Serial Port",
+            "Parallel Port",
+            "Universal Serial Bus (USB) Port",
+            "Firewire Port"
+        ],
+        "correct_option": 3,
+        "explanation": "A Firewire Port is used for connecting camcorders and video equipment.",
+        "chapter": "Computer Hardware Architecture"
+    },
+    {
+        "id": 26,
+        "question": "Which port has a data transfer speed of 400 to 800 megabits per second?",
+        "options": [
+            "Serial Port",
+            "Parallel Port",
+            "Universal Serial Bus (USB) Port",
+            "Firewire Port"
+        ],
+        "correct_option": 3,
+        "explanation": "A Firewire Port has a data transfer speed of 400 to 800 megabits per second.",
+        "chapter": "Computer Hardware Architecture"
+    },
+    {
+        "id": 27,
+        "question": "Which of the following ports supports single stream data transmission and has a data transfer speed of 115 kilobits per second?",
+        "options": [
+            "Parallel Port",
+            "Universal Serial Bus (USB) Port",
+            "Firewire Port",
+            "Serial Port"
+        ],
+        "correct_option": 3,
+        "explanation": "A Serial Port supports single stream data transmission and has a data transfer speed of 115 kilobits per second.",
+        "chapter": "Computer Hardware Architecture"
+    },
+    {
+        "id": 28,
+        "question": "Which port is used for connecting all kinds of external USB devices and has a data transfer speed of 12 megabits per second?",
+        "options": [
+            "Serial Port",
+            "Parallel Port",
+            "Universal Serial Bus (USB) Port",
+            "Firewire Port"
+        ],
+        "correct_option": 2,
+        "explanation": "A Universal Serial Bus (USB) Port is used for connecting all kinds of external USB devices and has a data transfer speed of 12 megabits per second.",
+        "chapter": "Computer Hardware Architecture"
+    },
+    {
+        "id": 29,
+        "question": "Which of the following ports has 25 pins and is used for scanners and printers?",
+        "options": [
+            "Serial Port",
+            "Parallel Port",
+            "Universal Serial Bus (USB) Port",
+            "Firewire Port"
+        ],
+        "correct_option": 1,
+        "explanation": "A Parallel Port has 25 pins and is used for scanners and printers.",
+        "chapter": "Computer Hardware Architecture"
+    },
+    {
+        "id": 30,
+        "question": "Which port is used for transferring large amounts of data at a very fast speed and has a data transfer speed of 400 to 800 megabits per second?",
+        "options": [
+            "Serial Port",
+            "Parallel Port",
+            "Universal Serial Bus (USB) Port",
+            "Firewire Port"
+        ],
+        "correct_option": 3,
+        "explanation": "A Firewire Port is used for transferring large amounts of data at a very fast speed and has a data transfer speed of 400 to 800 megabits per second.",
+        "chapter": "Computer Hardware Architecture"
+    },
+    {
+        "id": 31,
+        "question": "Which of the following ports supports multiple data streams at a time and has 25 pins?",
+        "options": [
+            "Serial Port",
+            "Parallel Port",
+            "Universal Serial Bus (USB) Port",
+            "Firewire Port"
+        ],
+        "correct_option": 1,
+        "explanation": "A Parallel Port supports multiple data streams at a time and has 25 pins.",
+        "chapter": "Computer Hardware Architecture"
+    },
+    {
+        "id": 32,
+        "question": "Which port is used for external modems and older computer mouse and has 9 pins and 25 pins versions?",
+        "options": [
+            "Parallel Port",
+            "Universal Serial Bus (USB) Port",
+            "Firewire Port",
+            "Serial Port"
+        ],
+        "correct_option": 3,
+        "explanation": "A Serial Port is used for external modems and older computer mouse and has 9 pins and 25 pins versions.",
+        "chapter": "Computer Hardware Architecture"
+    },
+    {
+        "id": 33,
+        "question": "Which of the following ports has a data transfer speed of 12 megabits per second and is used for connecting all kinds of external USB devices?",
+        "options": [
+            "Serial Port",
+            "Parallel Port",
+            "Universal Serial Bus (USB) Port",
+            "Firewire Port"
+        ],
+        "correct_option": 2,
+        "explanation": "A Universal Serial Bus (USB) Port has a data transfer speed of 12 megabits per second and is used for connecting all kinds of external USB devices.",
+        "chapter": "Computer Hardware Architecture"
+    },
+    {
+        "id": 34,
+        "question": "Which port is used for connecting camcorders and video equipment and has a data transfer speed of 400 to 800 megabits per second?",
+        "options": [
+            "Serial Port",
+            "Parallel Port",
+            "Universal Serial Bus (USB) Port",
+            "Firewire Port"
+        ],
+        "correct_option": 3,
+        "explanation": "A Firewire Port is used for connecting camcorders and video equipment and has a data transfer speed of 400 to 800 megabits per second.",
+        "chapter": "Computer Hardware Architecture"
+    },
+    {
+        "id": 355,
+        "question": "What is the ranking of the supercomputer that entered the top 500 list of supercomputers of the world?",
+        "options": [
+            "Ranked 100",
+            "Ranked 171",
+            "Ranked 200",
+            "Ranked 250"
+        ],
+        "correct_option": 1,
+        "explanation": "The supercomputer entered the top 500 list of supercomputers of the world with a ranking of 171.",
+        "chapter": "Computer Hardware Architecture"
+    },
+    {
+        "id": 356,
+        "question": "What is the teraflop capacity of the Param Yuva supercomputer?",
+        "options": [
+            "10 teraflop",
+            "20 teraflop",
+            "54 teraflop",
+            "100 teraflop"
+        ],
+        "correct_option": 2,
+        "explanation": "The Param Yuva supercomputer has a capacity of 54 teraflops.",
+        "chapter": "Computer Hardware Architecture"
+    },
+    {
+        "id": 357,
+        "question": "In what year was the Param Yuva II supercomputer launched?",
+        "options": [
+            "2008",
+            "2010",
+            "2012",
+            "2013"
+        ],
+        "correct_option": 3,
+        "explanation": "The Param Yuva II supercomputer was launched in 2013.",
+        "chapter": "Computer Hardware Architecture"
+    },
+    {
+        "id": 358,
+        "question": "What is the capacity of the Param Biochrome HPC cluster?",
+        "options": [
+            "1 teraflop",
+            "5 teraflops",
+            "10 teraflops",
+            "20 teraflops"
+        ],
+        "correct_option": 1,
+        "explanation": "The Param Biochrome HPC cluster has a capacity of 5 teraflops.",
+        "chapter": "Computer Hardware Architecture"
+    },
+    {
+        "id": 359,
+        "question": "What is the supercomputing power of the Param Bio-blaze?",
+        "options": [
+            "5 TF",
+            "10 TF",
+            "10.65 TF",
+            "20 TF"
+        ],
+        "correct_option": 2,
+        "explanation": "The Param Bio-blaze has a supercomputing power of 10.65 TF.",
+        "chapter": "Computer Hardware Architecture"
+    },
+    {
+        "id": 360,
+        "question": "In what year was the Param Bio-blaze launched?",
+        "options": [
+            "2012",
+            "2013",
+            "2014",
+            "2015"
+        ],
+        "correct_option": 2,
+        "explanation": "The Param Bio-blaze was launched in 2014.",
+        "chapter": "Computer Hardware Architecture"
+    },
+    {
+        "id": 372,
+        "question": "What is the teraflop capacity of the Param Yuva II supercomputer?",
+        "options": [
+            "100 teraflop",
+            "200 teraflop",
+            "529 teraflop",
+            "1000 teraflop"
+        ],
+        "correct_option": 2,
+        "explanation": "The Param Yuva II supercomputer has a capacity of 529 teraflops.",
+        "chapter": "Computer Hardware Architecture"
+    },
+    {
+        "id": 373,
+        "question": "What is the ranking of the Param Yuva supercomputer in November 2008?",
+        "options": [
+            "Ranked 50",
+            "Ranked 69",
+            "Ranked 100",
+            "Ranked 200"
+        ],
+        "correct_option": 1,
+        "explanation": "The Param Yuva supercomputer was ranked 69 in November 2008.",
+        "chapter": "Computer Hardware Architecture"
+    },
+    {
+        "id": 374,
+        "question": "What is the ranking of the Param Yuva II supercomputer?",
+        "options": [
+            "Ranked 50",
+            "Ranked 69",
+            "Ranked 100",
+            "Ranked 200"
+        ],
+        "correct_option": 1,
+        "explanation": "The Param Yuva II supercomputer was ranked 69.",
+        "chapter": "Computer Hardware Architecture"
+    },
+    {
+        "id": 375,
+        "question": "What type of computer is SEAC?",
+        "options": [
+            "First generation",
+            "Second generation",
+            "Third generation",
+            "Fourth generation"
+        ],
+        "correct_option": 0,
+        "explanation": "SEAC is a first-generation computer.",
+        "chapter": "Computer Hardware Architecture"
+    },
+    {
+        "id": 378,
+        "question": "What is the supercomputing power of the Param Bio-blaze in TF?",
+        "options": [
+            "5 TF",
+            "10 TF",
+            "10.65 TF",
+            "20 TF"
+        ],
+        "correct_option": 2,
+        "explanation": "The Param Bio-blaze has a supercomputing power of 10.65 TF.",
+        "chapter": "Computer Hardware Architecture"
+    },
+    {
+        "id": 379,
+        "question": "What is the capacity of the Param Biochrome HPC cluster in teraflops?",
+        "options": [
+            "1 teraflop",
+            "5 teraflops",
+            "10 teraflops",
+            "20 teraflops"
+        ],
+        "correct_option": 1,
+        "explanation": "The Param Biochrome HPC cluster has a capacity of 5 teraflops.",
+        "chapter": "Computer Hardware Architecture"
+    },
+    {
+        "id": 544,
+        "question": "What was the first programmable general-purpose computer in the world?",
+        "options": [
+            "ENIAC",
+            "UNIVAC",
+            "Apple I",
+            "IBM PC"
+        ],
+        "correct_option": 0,
+        "explanation": "ENIAC was the first programmable general-purpose computer in the world.",
+        "chapter": "Computer Hardware Architecture"
+    },
+    {
+        "id": 558,
+        "question": "What was the first general-purpose electronic computer?",
+        "options": [
+            "ENIAC",
+            "UNIVAC",
+            "Apple I",
+            "IBM PC"
+        ],
+        "correct_option": 0,
+        "explanation": "ENIAC was the first general-purpose electronic computer.",
+        "chapter": "Computer Hardware Architecture"
+    },
+    {
+        "question": "Which generations of computer?",
+        "options": [
+            "A. 1st Generations of Computers",
+            "B. 2nd Generations of Computers",
+            "C. 3rd Generations of Computers",
+            "D. 4th Generations of Computers"
+        ],
+        "correct_option": 0,
+        "explanation": "The first generation of computers used vacuum tubes and were the first electronic computers.",
+        "verification_status": "VERIFIED_100%",
+        "subject": "Computer Awareness",
+        "language": "en",
+        "id": "comp_en_0040",
+        "chapter": "Computer Hardware Architecture"
+    },
+    {
+        "question": "What is the full form of ENIAC?",
+        "options": [
+            "A. Electronic Numerical Integrator and Calculator",
+            "B. Elementary Numerical Integrator and Calculator",
+            "C. Elementary Non-numerical Integrator and Calculator",
+            "D. Electronic Non-numerical Integrator and Calculator"
+        ],
+        "correct_option": 0,
+        "explanation": "ENIAC stands for Electronic Numerical Integrator and Calculator.",
+        "verification_status": "VERIFIED_100%",
+        "subject": "Computer Awareness",
+        "language": "en",
+        "id": "comp_en_0041",
+        "chapter": "Computer Hardware Architecture"
+    },
+    {
+        "question": "What is the full form of EDVAC?",
+        "options": [
+            "A. Elementary Discrete Variable Automatic Computer",
+            "B. Electronic Discrete Variable Automatic Computer",
+            "C. Electrical Discrete Variable Automatic Computer",
+            "D. Electrical Discrete Value Automatic Computer"
+        ],
+        "correct_option": 1,
+        "explanation": "EDVAC stands for Electronic Discrete Variable Automatic Computer.",
+        "verification_status": "VERIFIED_100%",
+        "subject": "Computer Awareness",
+        "language": "en",
+        "id": "comp_en_0042",
+        "chapter": "Computer Hardware Architecture"
+    },
+    {
+        "question": "ENIAC, EDVAC belongs to which generations of computers?",
+        "options": [
+            "A. 2nd Generations of Computers",
+            "B. 1st Generations of Computers",
+            "C. 4th Generations of Computers",
+            "D. 5th Generations of Computers"
+        ],
+        "correct_option": 1,
+        "explanation": "ENIAC and EDVAC are first-generation computers.",
+        "verification_status": "VERIFIED_100%",
+        "subject": "Computer Awareness",
+        "language": "en",
+        "id": "comp_en_0043",
+        "chapter": "Computer Hardware Architecture"
+    },
+    {
+        "question": "IBM 701, IBM 650 belong to which generations of computers?",
+        "options": [
+            "A. 2nd Generations of Computers",
+            "B. 3rd Generations of Computers",
+            "C. 4th Generations of Computers",
+            "D. 1st Generations of Computers"
+        ],
+        "correct_option": 1,
+        "explanation": "IBM 701 and IBM 650 are second-generation computers.",
+        "verification_status": "VERIFIED_100%",
+        "subject": "Computer Awareness",
+        "language": "en",
+        "id": "comp_en_0044",
+        "chapter": "Computer Hardware Architecture"
+    },
+    {
+        "question": "IBM 1620, IBM 7094 belongs to which generations of computers?",
+        "options": [
+            "A. 2nd Generations of Computers",
+            "B. 3rd Generations of Computers",
+            "C. 4th Generations of Computers",
+            "D. 1st Generations of Computers"
+        ],
+        "correct_option": 1,
+        "explanation": "IBM 1620 and IBM 7094 are third-generation computers.",
+        "verification_status": "VERIFIED_100%",
+        "subject": "Computer Awareness",
+        "language": "en",
+        "id": "comp_en_0045",
+        "chapter": "Computer Hardware Architecture"
+    },
+    {
+        "question": "UNIVAC 1108 belongs to the 2nd Generations of computers. What is the full form of UNIVAC?",
+        "options": [
+            "A. Universal Automatic Computer",
+            "B. Universal Automation Computer",
+            "C. Universal Artificial Computer",
+            "D. Unique Automatic Computer"
+        ],
+        "correct_option": 0,
+        "explanation": "UNIVAC stands for Universal Automatic Computer.",
+        "verification_status": "VERIFIED_100%",
+        "subject": "Computer Awareness",
+        "language": "en",
+        "id": "comp_en_0046",
+        "chapter": "Computer Hardware Architecture"
+    },
+    {
+        "question": "Honeywell 6000 belongs to which generations of computers?",
+        "options": [
+            "A. 1st Generations of Computers",
+            "B. 2nd Generations of Computers",
+            "C. 3rd Generations of Computers",
+            "D. 4th Generations of Computers"
+        ],
+        "correct_option": 2,
+        "explanation": "Honeywell 6000 is a third-generation computer.",
+        "verification_status": "VERIFIED_100%",
+        "subject": "Computer Awareness",
+        "language": "en",
+        "id": "comp_en_0047",
+        "chapter": "Computer Hardware Architecture"
+    },
+    {
+        "question": "ICL 2900 and DEC series belong to which generations of computers?",
+        "options": [
+            "A. 3rd Generations of Computers",
+            "B. 2nd Generations of Computers",
+            "C. 4th Generations of Computers",
+            "D. 1st Generations of Computers"
+        ],
+        "correct_option": 1,
+        "explanation": "ICL 2900 and DEC series are second-generation computers.",
+        "verification_status": "VERIFIED_100%",
+        "subject": "Computer Awareness",
+        "language": "en",
+        "id": "comp_en_0048",
+        "chapter": "Computer Hardware Architecture"
+    },
+    {
+        "question": "The ___ generation computers were made using very large scale integration technology.",
+        "options": [
+            "A. first",
+            "B. second",
+            "C. fourth",
+            "D. fifth"
+        ],
+        "correct_option": 2,
+        "explanation": "Fourth-generation computers used very large scale integration (VLSI) technology.",
+        "verification_status": "VERIFIED_100%",
+        "subject": "Computer Awareness",
+        "language": "en",
+        "id": "comp_en_0049",
+        "chapter": "Computer Hardware Architecture"
+    },
+    {
+        "question": "DEC 10 and STAR 1000 belong to which generations of computers?",
+        "options": [
+            "A. first",
+            "B. Second",
+            "C. fifth",
+            "D. fourth"
+        ],
+        "correct_option": 3,
+        "explanation": "DEC 10 and STAR 1000 are fourth-generation computers.",
+        "verification_status": "VERIFIED_100%",
+        "subject": "Computer Awareness",
+        "language": "en",
+        "id": "comp_en_0050",
+        "chapter": "Computer Hardware Architecture"
+    },
+    {
+        "question": "Param 1000 belongs to which generations of computers?",
+        "options": [
+            "A. First",
+            "B. Second",
+            "C. Fifth",
+            "D. Fourth"
+        ],
+        "correct_option": 3,
+        "explanation": "Param 1000 is a fifth-generation computer.",
+        "verification_status": "VERIFIED_100%",
+        "subject": "Computer Awareness",
+        "language": "en",
+        "id": "comp_en_0051",
+        "chapter": "Computer Hardware Architecture"
+    },
+    {
+        "question": "_____ generation is based on parallel processing hardware and AI software.",
+        "options": [
+            "A. First",
+            "B. Second",
+            "C. Fourth",
+            "D. Fifth"
+        ],
+        "correct_option": 3,
+        "explanation": "Fourth-generation computers are based on parallel processing hardware and AI software.",
+        "verification_status": "VERIFIED_100%",
+        "subject": "Computer Awareness",
+        "language": "en",
+        "id": "comp_en_0052",
+        "chapter": "Computer Hardware Architecture"
+    },
+    {
+        "question": "Magnetic Tapes belong to which generations of computers?",
+        "options": [
+            "A. First",
+            "B. Second",
+            "C. Fourth",
+            "D. Fifth"
+        ],
+        "correct_option": 1,
+        "explanation": "Magnetic tapes are used in second-generation computers.",
+        "verification_status": "VERIFIED_100%",
+        "subject": "Computer Awareness",
+        "language": "en",
+        "id": "comp_en_0053",
+        "chapter": "Computer Hardware Architecture"
+    },
+    {
+        "question": "Select the name of generation in which the Operating system is used the first time;",
+        "options": [
+            "A. First Generation",
+            "B. Third Generation",
+            "C. Second Generation",
+            "D. Fourth Generation"
+        ],
+        "correct_option": 2,
+        "explanation": "The operating system was first used in second-generation computers.",
+        "verification_status": "VERIFIED_100%",
+        "subject": "Computer Awareness",
+        "language": "en",
+        "id": "comp_en_0054",
+        "chapter": "Computer Hardware Architecture"
+    },
+    {
+        "question": "ULSI is the abbreviation of ;",
+        "options": [
+            "A. Ultra Lower Scale Integration",
+            "B. Under Lower Scale Integration",
+            "C. Ultra Large Scale Integration",
+            "D. Under Large Scale Integration"
+        ],
+        "correct_option": 2,
+        "explanation": "ULSI stands for Ultra Large Scale Integration.",
+        "verification_status": "VERIFIED_100%",
+        "subject": "Computer Awareness",
+        "language": "en",
+        "id": "comp_en_0055",
+        "chapter": "Computer Hardware Architecture"
+    },
+    {
+        "question": "Select the name of the generation that used CD ROM for the first time;",
+        "options": [
+            "A. First Generation",
+            "B. Second Generation",
+            "C. Fourth Generation",
+            "D. Fifth Generation computer"
+        ],
+        "correct_option": 2,
+        "explanation": "CD ROM was first used in fourth-generation computers.",
+        "verification_status": "VERIFIED_100%",
+        "subject": "Computer Awareness",
+        "language": "en",
+        "id": "comp_en_0056",
+        "chapter": "Computer Hardware Architecture"
+    },
+    {
+        "question": "Select the generation in which Batch processing was mainly used;",
+        "options": [
+            "A. 1st",
+            "B. 2nd",
+            "C. 3rd",
+            "D. 4th"
+        ],
+        "correct_option": 0,
+        "explanation": "Batch processing was mainly used in first-generation computers.",
+        "verification_status": "VERIFIED_100%",
+        "subject": "Computer Awareness",
+        "language": "en",
+        "id": "comp_en_0057",
+        "chapter": "Computer Hardware Architecture"
+    },
+    {
+        "question": "_________ management is a process of managing the data storage devices that are not directly accessible by the CPU.",
+        "options": [
+            "A. Process Management",
+            "B. File",
+            "C. Secondary Storage",
+            "D. Device"
+        ],
+        "correct_option": 2,
+        "explanation": "Secondary storage management is a process of managing the data storage devices that are not directly accessible by the CPU.",
+        "verification_status": "VERIFIED_100%",
+        "subject": "Computer Awareness",
+        "language": "en",
+        "id": "comp_en_0088",
+        "chapter": "Computer Hardware Architecture"
+    },
+    {
+        "question": "What is placed between the Central Processing Unit (CPU) and primary memory known as?",
+        "options": [
+            "A. Read Only Memory",
+            "B. Virtual Memory",
+            "C. Cache Memory",
+            "D. Secondary Memory"
+        ],
+        "correct_option": 2,
+        "explanation": "Cache memory is a high-speed semiconductor memory that can speed up the CPU.",
+        "verification_status": "VERIFIED_100%",
+        "subject": "Computer Awareness",
+        "language": "en",
+        "id": "comp_en_0098",
+        "chapter": "Computer Hardware Architecture"
+    },
+    {
+        "question": "What does MAR stand for in computer registers?",
+        "options": [
+            "A. Main Access Register",
+            "B. Memory Access Register",
+            "C. Memory Address Register",
+            "D. Main Address Register"
+        ],
+        "correct_option": 2,
+        "explanation": "MAR stands for Memory Address Register in computer registers.",
+        "verification_status": "VERIFIED_100%",
+        "subject": "Computer Awareness",
+        "language": "en",
+        "id": "comp_en_0099",
+        "chapter": "Computer Hardware Architecture"
+    },
+    {
+        "question": "What unit is responsible for controlling or directing the operations of the processor?",
+        "options": [
+            "A. Memory",
+            "B. Arithmetic Logic Unit",
+            "C. Control",
+            "D. Data"
+        ],
+        "correct_option": 2,
+        "explanation": "The control unit is responsible for controlling or directing the operations of the processor.",
+        "verification_status": "VERIFIED_100%",
+        "subject": "Computer Awareness",
+        "language": "en",
+        "id": "comp_en_0100",
+        "chapter": "Computer Hardware Architecture"
+    },
+    {
+        "question": "What is the key circuit board holding the essential processing parts of a computer?",
+        "options": [
+            "A. Firmware",
+            "B. Central Processing Unit",
+            "C. Random Access Memory",
+            "D. Motherboard"
+        ],
+        "correct_option": 3,
+        "explanation": "The motherboard is the key circuit board holding the essential processing parts of a computer.",
+        "verification_status": "VERIFIED_100%",
+        "subject": "Computer Awareness",
+        "language": "en",
+        "id": "comp_en_0101",
+        "chapter": "Computer Hardware Architecture"
+    },
+    {
+        "question": "What is the odd one out in the Central Processing Unit (CPU) of a computer?",
+        "options": [
+            "A. Arithmetic Logic Unit",
+            "B. Control Unit",
+            "C. Output Unit",
+            "D. Input Unit"
+        ],
+        "correct_option": 2,
+        "explanation": "The Output Unit is the odd one out in the Central Processing Unit (CPU) of a computer.",
+        "verification_status": "VERIFIED_100%",
+        "subject": "Computer Awareness",
+        "language": "en",
+        "id": "comp_en_0102",
+        "chapter": "Computer Hardware Architecture"
+    },
+    {
+        "question": "What is a high-speed device used in CPU to store data temporarily during processing?",
+        "options": [
+            "A. Arithmetic and Logic Unit (ALU)",
+            "B. Auxiliary Memory",
+            "C. Control Unit",
+            "D. Registers"
+        ],
+        "correct_option": 3,
+        "explanation": "Registers are a high-speed device used in CPU to store data temporarily during processing.",
+        "verification_status": "VERIFIED_100%",
+        "subject": "Computer Awareness",
+        "language": "en",
+        "id": "comp_en_0103",
+        "chapter": "Computer Hardware Architecture"
+    },
+    {
+        "question": "What is the memory unit that communicates directly with the CPU?",
+        "options": [
+            "A. Main Memory",
+            "B. Secondary Memory",
+            "C. Cache Memory",
+            "D. Auxiliary Memory"
+        ],
+        "correct_option": 2,
+        "explanation": "Cache memory is the memory unit that communicates directly with the CPU.",
+        "verification_status": "VERIFIED_100%",
+        "subject": "Computer Awareness",
+        "language": "en",
+        "id": "comp_en_0104",
+        "chapter": "Computer Hardware Architecture"
+    },
+    {
+        "question": "Which is called the brain of any computer system?",
+        "options": [
+            "A. Monitor",
+            "B. ALU",
+            "C. CPU",
+            "D. UPS"
+        ],
+        "correct_option": 2,
+        "explanation": "The Central Processing Unit (CPU) is called the brain of any computer system. It is the electronic circuitry that executes instructions comprising a computer program.",
+        "verification_status": "VERIFIED_100%",
+        "subject": "Computer Awareness",
+        "language": "en",
+        "id": "comp_en_0105",
+        "chapter": "Computer Hardware Architecture"
+    },
+    {
+        "question": "Which of the following is a single chip-based device that is a complete processor in itself and is capable of performing arithmetic and logical operations?",
+        "options": [
+            "A. Operating System",
+            "B. Modem",
+            "C. Microprocessor",
+            "D. Multiprocessing"
+        ],
+        "correct_option": 2,
+        "explanation": "A microprocessor is a single chip-based device that is a complete processor in itself and is capable of performing arithmetic and logical operations.",
+        "verification_status": "VERIFIED_100%",
+        "subject": "Computer Awareness",
+        "language": "en",
+        "id": "comp_en_0106",
+        "chapter": "Computer Hardware Architecture"
+    },
+    {
+        "question": "Where is the cache memory located?",
+        "options": [
+            "A. CPU",
+            "B. RAM",
+            "C. CU",
+            "D. Monitor"
+        ],
+        "correct_option": 0,
+        "explanation": "The cache memory is located in the CPU. It is sometimes called CPU (Central Processing Unit) memory because it is typically integrated into the CPU chip or placed on a separate chip that has a separate bus interconnect with the CPU.",
+        "verification_status": "VERIFIED_100%",
+        "subject": "Computer Awareness",
+        "language": "en",
+        "id": "comp_en_0107",
+        "chapter": "Computer Hardware Architecture"
+    },
+    {
+        "question": "The CPU is called the:",
+        "options": [
+            "A. brain of the computer",
+            "B. backbone of the computer",
+            "C. heart of the computer",
+            "D. lung of the computer"
+        ],
+        "correct_option": 0,
+        "explanation": "The Central Processing Unit (CPU) is called the brain of a computer.",
+        "verification_status": "VERIFIED_100%",
+        "subject": "Computer Awareness",
+        "language": "en",
+        "id": "comp_en_0109",
+        "chapter": "Computer Hardware Architecture"
+    },
+    {
+        "question": "The speed of a CPU can be measured in ________.",
+        "options": [
+            "A. horsepower",
+            "B. Bits per second (Bps)",
+            "C. Megahertz (MHz)",
+            "D. Lux"
+        ],
+        "correct_option": 2,
+        "explanation": "The speed of a CPU can be measured in Megahertz (MHz).",
+        "verification_status": "VERIFIED_100%",
+        "subject": "Computer Awareness",
+        "language": "en",
+        "id": "comp_en_0110",
+        "chapter": "Computer Hardware Architecture"
+    },
+    {
+        "question": "Which of the following are the two components of the CPU of a computer?",
+        "options": [
+            "A. Control unit and Bus components",
+            "B. Control unit and ALU",
+            "C. Control unit, ALU, registers, cache, buses, clock",
+            "D. Control unit, ALU, memory"
+        ],
+        "correct_option": 2,
+        "explanation": "The CPU performs basic arithmetic, logic, controlling, and input/output (I/O) operations specified by the instructions in the program.",
+        "verification_status": "VERIFIED_100%",
+        "subject": "Computer Awareness",
+        "language": "en",
+        "id": "comp_en_0111",
+        "chapter": "Computer Hardware Architecture"
+    },
+    {
+        "question": "Which part of the computer is called its brain?",
+        "options": [
+            "A. Monitor",
+            "B. CPU",
+            "C. Hard Disc",
+            "D. ROM"
+        ],
+        "correct_option": 1,
+        "explanation": "The CPU is the part of a computer that is called its brain. It is the electronic circuitry that executes instructions comprising a computer program.",
+        "verification_status": "VERIFIED_100%",
+        "subject": "Computer Awareness",
+        "language": "en",
+        "id": "comp_en_0112",
+        "chapter": "Computer Hardware Architecture"
+    },
+    {
+        "question": "Intel core i9 is a type of __________.",
+        "options": [
+            "A. motherboard",
+            "B. processor",
+            "C. hard disc",
+            "D. antivirus"
+        ],
+        "correct_option": 1,
+        "explanation": "Intel Core i9 is a type of processor.",
+        "verification_status": "VERIFIED_100%",
+        "subject": "Computer Awareness",
+        "language": "en",
+        "id": "comp_en_0113",
+        "chapter": "Computer Hardware Architecture"
+    },
+    {
+        "question": "Intel core i9 किस प्रकार का है?",
+        "options": [
+            "A. मदरबोर्ड",
+            "B. प्रोसेसर",
+            "C. हार्ड डिस्क",
+            "D. एंटीवायरस"
+        ],
+        "correct_option": 1,
+        "explanation": "इंटेल कोर i9 एक प्रकार का प्रोसेसर है।",
+        "verification_status": "VERIFIED_100%",
+        "subject": "Computer Awareness",
+        "language": "hi",
+        "id": "comp_hi_0114",
+        "chapter": "Computer Hardware Architecture"
+    },
+    {
+        "question": "__________ is a segment of computer memory that can be accessed directly by the processor.",
+        "options": [
+            "A. Secondary Memory",
+            "B. Primary Memory",
+            "C. Flash Memory",
+            "D. Cache Memory"
+        ],
+        "correct_option": 1,
+        "explanation": "Primary Memory is a segment of computer memory that can be accessed directly by the processor.",
+        "verification_status": "VERIFIED_100%",
+        "subject": "Computer Awareness",
+        "language": "en",
+        "id": "comp_en_0124",
+        "chapter": "Computer Hardware Architecture"
+    },
+    {
+        "question": "Which type of storage device is a hard disk?",
+        "options": [
+            "A. Secondary",
+            "B. Tertiary",
+            "C. Off - line",
+            "D. Primary"
+        ],
+        "correct_option": 0,
+        "explanation": "The hard drive is the secondary storage standard in modern computing. It is usually installed internally in a computer, attached directly to the disk controller of the computer's motherboard.",
+        "verification_status": "VERIFIED_100%",
+        "subject": "Computer Awareness",
+        "language": "en",
+        "id": "comp_en_0131",
+        "chapter": "Computer Hardware Architecture"
+    },
+    {
+        "question": "The name of the 1st electronic digital computer of the world is:",
+        "options": [
+            "A. PARAM",
+            "B. PROLOG",
+            "C. UNIVAC",
+            "D. ENIAC"
+        ],
+        "correct_option": 3,
+        "explanation": "ENIAC, in full Electronic Numerical Integrator and Computer, the first programmable general-purpose electronic digital computer, built during World War II by the United States.",
+        "verification_status": "VERIFIED_100%",
+        "subject": "Computer Awareness",
+        "language": "en",
+        "id": "comp_en_0135",
+        "chapter": "Computer Hardware Architecture"
+    },
+    {
+        "question": "The first computer created by JW Mauchly and J Presper Eckert with NO mechanical parts is:",
+        "options": [
+            "A. Mark II",
+            "B. EDVAC",
+            "C. Mark I",
+            "D. ENIAC"
+        ],
+        "correct_option": 3,
+        "explanation": "ENIAC, in full Electronic Numerical Integrator and Computer, was the first computer created by JW Mauchly and J Presper Eckert with NO mechanical parts during World War II.",
+        "verification_status": "VERIFIED_100%",
+        "subject": "Computer Awareness",
+        "language": "en",
+        "id": "comp_en_0136",
+        "chapter": "Computer Hardware Architecture"
+    },
+    {
+        "question": "The first mechanical computer designed by Charles Babbage was called:",
+        "options": [
+            "A. Abacus",
+            "B. Analytical Engine",
+            "C. Calculator",
+            "D. Processor"
+        ],
+        "correct_option": 1,
+        "explanation": "The first mechanical computer designed by Charles Babbage was called the Analytical Engine.",
+        "verification_status": "VERIFIED_100%",
+        "subject": "Computer Awareness",
+        "language": "en",
+        "id": "comp_en_0143",
+        "chapter": "Computer Hardware Architecture"
+    },
+    {
+        "question": "Which of the following is an example of a device driver?",
+        "options": [
+            "A. Google Chrome",
+            "B. Mozilla Firefox",
+            "C. Keyboard",
+            "D. Microsoft Edge"
+        ],
+        "correct_option": 2,
+        "explanation": "A device driver is a program that takes basic computer instructions and converts them into a pattern of bits that the computer's processor can use to perform its basic operations.",
+        "verification_status": "VERIFIED_100%",
+        "subject": "Computer Awareness",
+        "language": "en",
+        "id": "comp_en_0153",
+        "chapter": "Computer Hardware Architecture"
+    },
+    {
+        "question": "An __ is a program that takes basic computer instructions and converts them into a pattern of bits that the computer's processor can use to perform its basic operations.",
+        "options": [
+            "A. Compiler",
+            "B. Assembler",
+            "C. Interpreter",
+            "D. None of the above"
+        ],
+        "correct_option": 1,
+        "explanation": "An Assembler is a program that takes basic computer instructions and converts them into a pattern of bits that the computer's processor can use to perform its basic operations.",
+        "verification_status": "VERIFIED_100%",
+        "subject": "Computer Awareness",
+        "language": "en",
+        "id": "comp_en_0154",
+        "chapter": "Computer Hardware Architecture"
+    }
+]

@@ -1,0 +1,1009 @@
+[
+    {
+        "id": 207,
+        "question": "वेब ब्राउज़र पर वर्तमान वेब पेज को बुकमार्क (Bookmark) करने का शॉर्टकट क्या है?",
+        "options": [
+            "Ctrl + C",
+            "Ctrl + D",
+            "Ctrl + V",
+            "Ctrl + A"
+        ],
+        "correct_option": 1,
+        "explanation": "Ctrl + D से एक्टिव पेज बुकमार्क सूची में जुड़ जाता है।",
+        "chapter": "MS Word"
+    },
+    {
+        "id": 388,
+        "question": "माइक्रोसॉफ्ट 365 में दस्तावेज़ों (Documents) को एडिट और फ़ॉर्मेट करने के लिए किस एप्लिकेशन का उपयोग होता है?",
+        "options": [
+            "Excel",
+            "PowerPoint",
+            "Word",
+            "Access"
+        ],
+        "correct_option": 2,
+        "explanation": "Microsoft Word एक वर्ड प्रोसेसिंग प्रोग्राम है जिसका उपयोग डॉक्यूमेंट्स बनाने/एडिट करने के लिए होता है।",
+        "chapter": "MS Word"
+    },
+    {
+        "id": 403,
+        "question": "माइक्रोसॉफ्ट 365 के वर्ड प्रोसेसिंग एप्लिकेशन (Word Processing Application) का नाम क्या है?",
+        "options": [
+            "Microsoft Excel",
+            "Microsoft PowerPoint",
+            "Microsoft Word",
+            "Microsoft Access"
+        ],
+        "correct_option": 2,
+        "explanation": "Microsoft Word माइक्रोसॉफ्ट का प्रमुख वर्ड प्रोसेसर है।",
+        "chapter": "MS Word"
+    },
+    {
+        "id": 404,
+        "question": "MS Word में Ctrl+F4 का क्या कार्य है?",
+        "options": [
+            "वर्तमान दस्तावेज़ (Current Document) को बंद करता है",
+            "MS Word को बंद करता है",
+            "Go To डायलॉग बॉक्स प्रदर्शित करता है",
+            "दस्तावेज़ विंडो के आकार को पुनर्स्थापित (Restore) करता है"
+        ],
+        "correct_option": 0,
+        "explanation": "Ctrl+F4 का उपयोग MS Word में वर्तमान खुले दस्तावेज़ को बंद करने के लिए किया जाता है।",
+        "chapter": "MS Word"
+    },
+    {
+        "id": 405,
+        "question": "MS Word में केवल F5 दबाने पर क्या होता है?",
+        "options": [
+            "Bookmark डायलॉग बॉक्स प्रदर्शित होता है",
+            "कर्सर को अंतिम परिवर्तन (Last Change) पर ले जाता है",
+            "Go To डायलॉग बॉक्स प्रदर्शित करता है",
+            "दस्तावेज़ विंडो आकार को पुनर्स्थापित करता है"
+        ],
+        "correct_option": 2,
+        "explanation": "MS Word में अकेले F5 दबाने पर Go To डायलॉग बॉक्स खुलता है।",
+        "chapter": "MS Word"
+    },
+    {
+        "id": 406,
+        "question": "MS Word में डॉक्यूमेंट, टास्क पेन, स्टेटस बार और रिबन के बीच स्विच कैसे करते हैं?",
+        "options": [
+            "F5 दबाकर",
+            "Shift+F5 दबाकर",
+            "F6 दबाकर",
+            "Ctrl+Shift+F5 दबाकर"
+        ],
+        "correct_option": 2,
+        "explanation": "F6 का उपयोग दस्तावेज़, टास्क पेन, स्टेटस बार और रिबन के बीच स्विच करने के लिए किया जाता है।",
+        "chapter": "MS Word"
+    },
+    {
+        "id": 407,
+        "question": "MS Word में Shift+F6 का क्या कार्य है?",
+        "options": [
+            "अगली दस्तावेज़ विंडो पर स्विच करता है",
+            "दस्तावेज़, रिबन, स्टेटस बार और टास्क पेन के बीच विपरीत क्रम में स्विच करता है",
+            "कर्सर को अंतिम परिवर्तन पर ले जाता है",
+            "Bookmark डायलॉग बॉक्स प्रदर्शित करता है"
+        ],
+        "correct_option": 1,
+        "explanation": "Shift+F6 दस्तावेज़, रिबन, स्टेटस बार और टास्क पेन के बीच विपरीत दिशा में स्विच करता है।",
+        "chapter": "MS Word"
+    },
+    {
+        "id": 408,
+        "question": "MS Word में किसी खुले डायलॉग बॉक्स से वापस मुख्य दस्तावेज़ में कैसे जाते हैं?",
+        "options": [
+            "Alt+F4",
+            "Alt+F6",
+            "Ctrl+Shift+F5",
+            "Shift+F6"
+        ],
+        "correct_option": 1,
+        "explanation": "Alt+F6 दबाने से फ़ोकस खुले हुए डायलॉग बॉक्स से वापस मुख्य दस्तावेज़ में स्थानांतरित होता है।",
+        "chapter": "MS Word"
+    },
+    {
+        "id": 409,
+        "question": "MS Word में Ctrl+Shift+F5 दबाने पर क्या होता है?",
+        "options": [
+            "Bookmark डायलॉग बॉक्स प्रदर्शित होता है",
+            "पिछली दस्तावेज़ विंडो पर स्विच होता है",
+            "कर्सर अंतिम परिवर्तन पर जाता है",
+            "दस्तावेज़ विंडो आकार पुनर्स्थापित होता है"
+        ],
+        "correct_option": 0,
+        "explanation": "Ctrl+Shift+F5 दबाने से Bookmark डायलॉग बॉक्स प्रदर्शित होता है।",
+        "chapter": "MS Word"
+    },
+    {
+        "id": 410,
+        "question": "MS Word में Alt+F4 का क्या कार्य है?",
+        "options": [
+            "वर्तमान दस्तावेज़ को बंद करता है",
+            "MS Word एप्लिकेशन को पूरी तरह बंद करता है",
+            "Go To डायलॉग बॉक्स प्रदर्शित करता है",
+            "दस्तावेज़ विंडो का आकार पुनर्स्थापित करता है"
+        ],
+        "correct_option": 1,
+        "explanation": "Alt+F4 कुंजी का उपयोग MS Word एप्लिकेशन को बंद करने के लिए किया जाता है।",
+        "chapter": "MS Word"
+    },
+    {
+        "id": 411,
+        "question": "MS Word में एक से अधिक दस्तावेज़ खुले होने पर अगली दस्तावेज़ विंडो में कैसे स्विच करते हैं?",
+        "options": [
+            "Ctrl+F6 दबाकर",
+            "Ctrl+Shift+F6 दबाकर",
+            "Shift+F6 दबाकर",
+            "F6 दबाकर"
+        ],
+        "correct_option": 0,
+        "explanation": "Ctrl+F6 का उपयोग अगली खुली दस्तावेज़ विंडो पर स्विच करने के लिए किया जाता है।",
+        "chapter": "MS Word"
+    },
+    {
+        "id": 412,
+        "question": "MS Word में Shift+F5 दबाने पर क्या होता है?",
+        "options": [
+            "कर्सर अंतिम बार किए गए संशोधन/परिवर्तन (Last Change) पर चला जाता है",
+            "Go To डायलॉग बॉक्स प्रदर्शित होता है",
+            "Bookmark डायलॉग बॉक्स प्रदर्शित होता है",
+            "दस्तावेज़ विंडो आकार पुनर्स्थापित होता है"
+        ],
+        "correct_option": 0,
+        "explanation": "Shift+F5 दबाने पर कर्सर दस्तावेज़ में अंतिम बार किए गए बदलाव के स्थान पर पहुँच जाता है।",
+        "chapter": "MS Word"
+    },
+    {
+        "id": 414,
+        "question": "MS Word में दस्तावेज़ विंडो का आकार पुनर्स्थापित (Restore) कैसे करते हैं?",
+        "options": [
+            "Alt+F4 दबाकर",
+            "Alt+F5 दबाकर",
+            "Ctrl+Shift+F5 दबाकर",
+            "Shift+F6 दबाकर"
+        ],
+        "correct_option": 1,
+        "explanation": "Alt+F5 का उपयोग दस्तावेज़ विंडो के आकार को पुनर्स्थापित (Restore Window Size) करने के लिए किया जाता है।",
+        "chapter": "MS Word"
+    },
+    {
+        "id": 415,
+        "question": "MS Word में Ctrl+Shift+F6 दबाने पर क्या होता है?",
+        "options": [
+            "अगली दस्तावेज़ विंडो पर स्विच होता है",
+            "पिछली दस्तावेज़ विंडो (Previous Document Window) पर स्विच होता है",
+            "कर्सर अंतिम परिवर्तन पर जाता है",
+            "Bookmark डायलॉग बॉक्स प्रदर्शित होता है"
+        ],
+        "correct_option": 1,
+        "explanation": "Ctrl+Shift+F6 का उपयोग खुली हुई पिछली दस्तावेज़ विंडो में स्विच करने के लिए होता है।",
+        "chapter": "MS Word"
+    },
+    {
+        "id": 416,
+        "question": "MS Word में Go To डायलॉग बॉक्स कैसे प्रदर्शित किया जाता है?",
+        "options": [
+            "F5 दबाकर",
+            "Shift+F5 दबाकर",
+            "Ctrl+Shift+F5 दबाकर",
+            "Alt+F5 दबाकर"
+        ],
+        "correct_option": 0,
+        "explanation": "F5 कुंजी अकेले दबाने पर Go To डायलॉग बॉक्स खुलता है।",
+        "chapter": "MS Word"
+    },
+    {
+        "id": 417,
+        "question": "MS Word में Alt+F5 दबाने पर क्या होता है?",
+        "options": [
+            "दस्तावेज़ विंडो का आकार पुनर्स्थापित (Restore) होता है",
+            "खुले डायलॉग बॉक्स से दस्तावेज़ में वापस जाता है",
+            "MS Word बंद होता है",
+            "Go To डायलॉग बॉक्स खुलता है"
+        ],
+        "correct_option": 0,
+        "explanation": "Alt+F5 विंडो के आकार को रिस्टोर करता है।",
+        "chapter": "MS Word"
+    },
+    {
+        "id": 418,
+        "question": "MS Word में कर्सर को अंतिम संपादन स्थान (Last Change) पर कैसे ले जाते हैं?",
+        "options": [
+            "F5 दबाकर",
+            "Shift+F5 दबाकर",
+            "Ctrl+Shift+F5 दबाकर",
+            "Alt+F5 दबाकर"
+        ],
+        "correct_option": 1,
+        "explanation": "Shift+F5 दबाने से कर्सर अंतिम संशोधन स्थान पर पहुँचता है।",
+        "chapter": "MS Word"
+    },
+    {
+        "id": 419,
+        "question": "MS Word में Ctrl+F6 दबाने पर क्या होता है?",
+        "options": [
+            "अगली दस्तावेज़ विंडो (Next Document Window) पर स्विच होता है",
+            "पिछली दस्तावेज़ विंडो पर स्विच होता है",
+            "कर्सर अंतिम परिवर्तन पर जाता है",
+            "Bookmark डायलॉग बॉक्स प्रदर्शित होता है"
+        ],
+        "correct_option": 0,
+        "explanation": "Ctrl+F6 अगली खुली दस्तावेज़ विंडो पर जाने के लिए उपयोग होता है।",
+        "chapter": "MS Word"
+    },
+    {
+        "id": 420,
+        "question": "MS Word में Bookmark डायलॉग बॉक्स कैसे प्रदर्शित करते हैं?",
+        "options": [
+            "F5 दबाकर",
+            "Shift+F5 दबाकर",
+            "Ctrl+Shift+F5 दबाकर",
+            "Alt+F5 दबाकर"
+        ],
+        "correct_option": 2,
+        "explanation": "Ctrl+Shift+F5 से Bookmark डायलॉग बॉक्स खुलता है।",
+        "chapter": "MS Word"
+    },
+    {
+        "id": 421,
+        "question": "MS Word में F6 दबाने पर क्या होता है?",
+        "options": [
+            "दस्तावेज़, टास्क पेन, स्टेटस बार और रिबन के बीच स्विच होता है",
+            "अगली दस्तावेज़ विंडो पर स्विच होता है",
+            "कर्सर अंतिम परिवर्तन पर जाता है",
+            "Bookmark डायलॉग बॉक्स खुलता है"
+        ],
+        "correct_option": 0,
+        "explanation": "F6 इंटरफ़ेस के विभिन्न पैनलों (Document, Task Pane, Status Bar, Ribbon) के बीच स्विच करता है।",
+        "chapter": "MS Word"
+    },
+    {
+        "id": 422,
+        "question": "MS Word में Ctrl+Shift+F6 का क्या कार्य है?",
+        "options": [
+            "अगली दस्तावेज़ विंडो पर स्विच करना",
+            "पिछली दस्तावेज़ विंडो (Previous Document Window) पर स्विच करना",
+            "कर्सर को अंतिम परिवर्तन पर ले जाना",
+            "Bookmark डायलॉग बॉक्स प्रदर्शित करना"
+        ],
+        "correct_option": 1,
+        "explanation": "Ctrl+Shift+F6 का कार्य पिछली दस्तावेज़ विंडो पर स्विच करना है।",
+        "chapter": "MS Word"
+    },
+    {
+        "id": 423,
+        "question": "MS Word में वर्तमान दस्तावेज़ को कैसे बंद करते हैं?",
+        "options": [
+            "Ctrl+F4 दबाकर",
+            "Alt+F4 दबाकर",
+            "F5 दबाकर",
+            "Shift+F5 दबाकर"
+        ],
+        "correct_option": 0,
+        "explanation": "Ctrl+F4 केवल वर्तमान एक्टिव दस्तावेज़ को बंद करता है।",
+        "chapter": "MS Word"
+    },
+    {
+        "id": 424,
+        "question": "MS Word में F5 कुंजी का प्राथमिक कार्य क्या है?",
+        "options": [
+            "Go To डायलॉग बॉक्स प्रदर्शित करना",
+            "कर्सर को अंतिम परिवर्तन पर ले जाना",
+            "Bookmark डायलॉग बॉक्स प्रदर्शित करना",
+            "विंडो आकार रिस्टोर करना"
+        ],
+        "correct_option": 0,
+        "explanation": "F5 कुंजी से Go To डायलॉग बॉक्स खुलता है।",
+        "chapter": "MS Word"
+    },
+    {
+        "id": 425,
+        "question": "MS Word में दस्तावेज़, रिबन, स्टेटस बार और टास्क पेन के बीच विपरीत क्रम में स्विच कैसे करते हैं?",
+        "options": [
+            "F6 दबाकर",
+            "Shift+F6 दबाकर",
+            "Ctrl+F6 दबाकर",
+            "Ctrl+Shift+F6 दबाकर"
+        ],
+        "correct_option": 1,
+        "explanation": "Shift+F6 विपरीत दिशा में पैनलों के बीच स्विच करता है।",
+        "chapter": "MS Word"
+    },
+    {
+        "id": 509,
+        "question": "MS Word की कौन सी विशेषता आपको यह दिखाती है कि प्रिंट होने पर दस्तावेज़ का लेआउट कैसा दिखेगा?",
+        "options": [
+            "प्रिंट प्रिव्यू (Print Preview)",
+            "पेज लेआउट",
+            "डॉक्यूमेंट व्यू",
+            "प्रिंट लेआउट"
+        ],
+        "correct_option": 0,
+        "explanation": "Print Preview की मदद से हम छपने से पूर्व दस्तावेज़ का सटीक लेआउट देख सकते हैं।",
+        "chapter": "MS Word"
+    },
+    {
+        "id": 510,
+        "question": "MS Word टेबल में मौजूदा कॉलमों को दाईं ओर खिसकाते हुए नया कॉलम कैसे इंसर्ट करते हैं?",
+        "options": [
+            "Insert Column to the Left",
+            "Insert Column to the Right",
+            "Delete Column",
+            "Merge Columns"
+        ],
+        "correct_option": 1,
+        "explanation": "'Insert Column to the Right' चुनने पर वर्तमान कॉलम के दाईं तरफ नया कॉलम जुड़ जाता है।",
+        "chapter": "MS Word"
+    },
+    {
+        "id": 511,
+        "question": "MS Word में नया खाली दस्तावेज़ बनाने का सही चरण कौन सा है?",
+        "options": [
+            "File Tab -> Open",
+            "File Tab -> Save",
+            "File Tab -> New",
+            "File Tab -> Print"
+        ],
+        "correct_option": 2,
+        "explanation": "नया डॉक्यूमेंट बनाने के लिए File Tab पर जाकर 'New' विकल्प चुनना होता है।",
+        "chapter": "MS Word"
+    },
+    {
+        "id": 513,
+        "question": "MS Word में वर्तमान दस्तावेज़ को सेव करने के लिए पारंपरिक रूप से किस आइकन का प्रयोग होता है?",
+        "options": [
+            "फ़्लॉपी डिस्क आइकन (Floppy disk icon)",
+            "प्रिंटर आइकन",
+            "सेव आइकन",
+            "एडिट आइकन"
+        ],
+        "correct_option": 0,
+        "explanation": "क्विक एक्सेस टूलबार पर बना फ़्लॉपी डिस्क का प्रतीक दस्तावेज़ सुरक्षित (Save) करने के काम आता है।",
+        "chapter": "MS Word"
+    },
+    {
+        "id": 514,
+        "question": "MS Word में कौन सा विकल्प चयनित टेक्स्ट को मूल स्थान से हटाते हुए क्लिपबोर्ड में कॉपी करता है?",
+        "options": [
+            "Copy",
+            "Cut",
+            "Paste",
+            "Delete"
+        ],
+        "correct_option": 1,
+        "explanation": "Cut (Ctrl+X) विकल्प सिलेक्टेड टेक्स्ट को मूल जगह से हटाकर क्लिपबोर्ड में रख लेता है।",
+        "chapter": "MS Word"
+    },
+    {
+        "id": 516,
+        "question": "MS Word में मूल टेक्स्ट सामग्री को बनाए रखते हुए सभी फ़ॉर्मेटिंग हटाने का कौन सा विकल्प है?",
+        "options": [
+            "क्लियर फ़ॉर्मेटिंग (Clear Formatting)",
+            "Bold",
+            "Italic",
+            "Underline"
+        ],
+        "correct_option": 0,
+        "explanation": "Clear Formatting बटन चुनने पर सारा स्टाइल और कलर हट जाता है तथा टेक्स्ट डिफ़ॉल्ट रूप में आ जाता है।",
+        "chapter": "MS Word"
+    },
+    {
+        "id": 528,
+        "question": "MS Word में चयनित टेक्स्ट से सभी फ़ॉर्मेटिंग को तुरंत कैसे हटाया जाता है?",
+        "options": [
+            "क्लियर फ़ॉर्मेटिंग (Clear Formatting)",
+            "Bold",
+            "Italic",
+            "Underline"
+        ],
+        "correct_option": 0,
+        "explanation": "Clear Formatting बटन से चयनित टेक्स्ट की सभी शैलियाँ हटकर डिफ़ॉल्ट फ़ॉन्ट बन जाती हैं।",
+        "chapter": "MS Word"
+    },
+    {
+        "id": 530,
+        "question": "MS Word टेबल में कर्सर के दाईं तरफ नया कॉलम कैसे इंसर्ट करते हैं?",
+        "options": [
+            "Insert Column to the Left",
+            "Insert Column to the Right",
+            "Delete Column",
+            "Merge Columns"
+        ],
+        "correct_option": 1,
+        "explanation": "'Insert Column to the Right' चुनने से दाईं ओर नया कॉलम जुड़ता है।",
+        "chapter": "MS Word"
+    },
+    {
+        "id": 532,
+        "question": "MS Word में किसी दस्तावेज़ को तुरंत सेव (Quick Save) करने की कुंजी क्या है?",
+        "options": [
+            "फ़्लॉपी आइकन पर क्लिक करना",
+            "Ctrl + S दबाना",
+            "File -> Save करना",
+            "उपरोक्त सभी सही हैं"
+        ],
+        "correct_option": 1,
+        "explanation": "कीबोर्ड शॉर्टकट Ctrl + S से दस्तावेज़ को तुरंत सुरक्षित किया जाता है।",
+        "chapter": "MS Word"
+    },
+    {
+        "id": 534,
+        "question": "MS Word दस्तावेज़ में टेक्स्ट का डिफ़ॉल्ट अलाइनमेंट (Default Alignment) क्या होता है?",
+        "options": [
+            "Center",
+            "Left (बायाँ)",
+            "Right",
+            "Justify"
+        ],
+        "correct_option": 1,
+        "explanation": "MS Word में टेक्स्ट डिफ़ॉल्ट रूप से बाईं ओर (Left Aligned) संरेखित होता है।",
+        "chapter": "MS Word"
+    },
+    {
+        "id": 535,
+        "question": "MS Word विंडो में 'Save' बटन आमतौर पर कहाँ स्थित होता है?",
+        "options": [
+            "शीर्ष दाएँ कोने में",
+            "शीर्ष बाएँ कोने में (Top left corner - Quick Access Toolbar पर)",
+            "निचले बाएँ कोने में",
+            "निचले दाएँ कोने में"
+        ],
+        "correct_option": 1,
+        "explanation": "सेव बटन ऊपरी-बाएं कोने में क्विक एक्सेस टूलबार पर स्थित होता है।",
+        "chapter": "MS Word"
+    },
+    {
+        "id": 536,
+        "question": "MS Word फ़ाइल को सहेजते समय कौन सा फ़ाइल फ़ॉर्मेट कम मेमोरी स्थान घेरता है?",
+        "options": [
+            ".doc",
+            ".docx",
+            ".pdf",
+            ".txt"
+        ],
+        "correct_option": 1,
+        "explanation": "OpenXML आधारित .docx फ़ॉर्मेट कंप्रेस्ड संरचना के कारण कम डिस्क स्पेस लेता है।",
+        "chapter": "MS Word"
+    },
+    {
+        "id": 537,
+        "question": "MS Word में स्पेलिंग व ग्रामर चेक से विशिष्ट शब्दों या अनुभागों को बाहर रखने की कौन सी सुविधा है?",
+        "options": [
+            "एक्सक्लूजन डिक्शनरी (Exclusion Dictionary)",
+            "स्पेलिंग एंड ग्रामर",
+            "प्रूफ़िंग",
+            "ऑटो-करेक्ट"
+        ],
+        "correct_option": 0,
+        "explanation": "Exclusion Dictionary से विशिष्ट अपवाद शब्दों को जांच प्रक्रिया से बाहर किया जा सकता है।",
+        "chapter": "MS Word"
+    },
+    {
+        "id": 539,
+        "question": "MS Word में 'Step by Step Mail Merge Wizard' तक पहुँचने के लिए किस टैब पर क्लिक करना होता है?",
+        "options": [
+            "Home टैब",
+            "Mailings टैब",
+            "Review टैब",
+            "View टैब"
+        ],
+        "correct_option": 1,
+        "explanation": "मेल मर्ज से संबंधित सभी विकल्प 'Mailings' टैब के अंदर स्थित होते हैं।",
+        "chapter": "MS Word"
+    },
+    {
+        "id": 540,
+        "question": "MS Word टेबल में नेविगेट करने के लिए एरो कीज़ और माउस के अलावा और कौन सा तरीका है?",
+        "options": [
+            "'Tab' कुंजी दबाना",
+            "'Enter' कुंजी दबाना या माउस के स्क्रॉल व्हील का उपयोग करना",
+            "'Space' कुंजी दबाना",
+            "'Backspace' कुंजी दबाना"
+        ],
+        "correct_option": 1,
+        "explanation": "माउस स्क्रॉल या Enter/Tab कुंजियों के प्रयोग से भी टेबल में विचरण किया जा सकता है।",
+        "chapter": "MS Word"
+    },
+    {
+        "id": 541,
+        "question": "MS Word में 'Help' विंडो खोलने का सबसे तेज़ तरीका क्या है?",
+        "options": [
+            "F2 दबाना",
+            "F5 दबाना",
+            "F1 दबाना",
+            "Ctrl + F1 दबाना"
+        ],
+        "correct_option": 2,
+        "explanation": "F1 कुंजी दबाने से तुरंत हेल्प सहायिका विंडो खुलती है।",
+        "chapter": "MS Word"
+    },
+    {
+        "id": 552,
+        "question": "MS Word में नया खाली दस्तावेज़ (New Blank Document) खोलने का कीबोर्ड शॉर्टकट क्या है?",
+        "options": [
+            "Ctrl + O",
+            "Ctrl + N",
+            "Ctrl + S",
+            "Ctrl + P"
+        ],
+        "correct_option": 1,
+        "explanation": "Ctrl + N शॉर्टकट का प्रयोग नया दस्तावेज़ खोलने के लिए किया जाता है।",
+        "chapter": "MS Word"
+    },
+    {
+        "id": 553,
+        "question": "MS Word में 'Exclusion Dictionary' का क्या उद्देश्य है?",
+        "options": [
+            "वर्तनी और व्याकरण जांच (Spelling and Grammar Check) से विशिष्ट शब्दों/अनुभागों को बाहर रखना",
+            "विशिष्ट शब्दों को अनिवार्य रूप से शामिल करना",
+            "सभी त्रुटियों को अनदेखा करना",
+            "सभी गलतियों पर लाल रेखा लगाना"
+        ],
+        "correct_option": 0,
+        "explanation": "Exclusion Dictionary विशिष्ट शब्दों को स्पेल-चेकर की मानक सूची से अपवाद मानकर बाहर रखती है।",
+        "chapter": "MS Word"
+    },
+    {
+        "id": 554,
+        "question": "सिस्टम सॉफ्टवेयर और एप्लिकेशन सॉफ्टवेयर के बीच क्या मुख्य अंतर है?",
+        "options": [
+            "सिस्टम सॉफ्टवेयर विशिष्ट कार्य करता है, एप्लिकेशन सॉफ्टवेयर हार्डवेयर संभालता है",
+            "सिस्टम सॉफ्टवेयर कंप्यूटर हार्डवेयर का प्रबंधन करता है, जबकि एप्लिकेशन सॉफ्टवेयर उपयोगकर्ता के विशिष्ट कार्य करता है",
+            "सिस्टम सॉफ्टवेयर मनोरंजन के लिए है, एप्लिकेशन सॉफ्टवेयर नेटवर्क के लिए",
+            "कोई अंतर नहीं है"
+        ],
+        "correct_option": 1,
+        "explanation": "सिस्टम सॉफ्टवेयर (जैसे OS) कंप्यूटर संचालन संभालता है, जबकि एप्लिकेशन सॉफ्टवेयर (जैसे MS Word) यूज़र के विशिष्ट काम करता है।",
+        "chapter": "MS Word"
+    },
+    {
+        "question": "MS-Word 365 में कौन सा फ़ाइल एक्सटेंशन एक मान्य फ़ाइल प्रारूप नहीं है?",
+        "options": [
+            "A. .docx",
+            "B. .docm",
+            "C. .dcp",
+            "D. .dotx"
+        ],
+        "correct_option": 2,
+        "explanation": ".dcp फ़ाइल एक्सटेंशन MS-Word 365 में मान्य फ़ाइल प्रारूप नहीं है।",
+        "verification_status": "VERIFIED_100%",
+        "subject": "Computer Awareness",
+        "language": "hi",
+        "id": "comp_hi_0002",
+        "chapter": "MS Word"
+    },
+    {
+        "question": "किस प्रकार की फ़ाइल का एक्सटेंशन .docm होता है?",
+        "options": [
+            "A. वर्ड प्रोसेसिंग डेटा",
+            "B. पोर्टेबल डॉक्यूमेंट फॉर्मेट",
+            "C. इमेज फ़ाइल",
+            "D. ऑडियो फ़ाइल"
+        ],
+        "correct_option": 0,
+        "explanation": ".docm फ़ाइल का उपयोग वर्ड प्रोसेसिंग डेटा को संग्रहीत करने के लिए किया जाता है।",
+        "verification_status": "VERIFIED_100%",
+        "subject": "Computer Awareness",
+        "language": "hi",
+        "id": "comp_hi_0005",
+        "chapter": "MS Word"
+    },
+    {
+        "question": "Microsoft Word 2010 में फंक्शनल की F7 का क्या उपयोग है?",
+        "options": [
+            "A. इसका उपयोग हेल्प विंडो खोलने के लिए किया जाता है।",
+            "B. इसका उपयोग वर्तनी जांच (Spell-check) और व्याकरण जांच के लिए किया जाता है।",
+            "C. इसका उपयोग फ़ाइलों और फ़ोल्डरों का नाम बदलने के लिए किया जाता है।",
+            "D. इसका उपयोग खोज कुंजी के रूप में किया जाता है।"
+        ],
+        "correct_option": 1,
+        "explanation": "F7 कुंजी का उपयोग स्पेलिंग और ग्रामर चेक करने के लिए किया जाता है।",
+        "verification_status": "VERIFIED_100%",
+        "subject": "Computer Awareness",
+        "language": "hi",
+        "id": "comp_hi_0058",
+        "chapter": "MS Word"
+    },
+    {
+        "question": "MS-Word में UNDO ऑपरेशन करने के लिए निम्नलिखित में से किस कीबोर्ड शॉर्टकट का उपयोग किया जाता है?",
+        "options": [
+            "A. Ctrl + Z",
+            "B. Alt + U",
+            "C. Ctrl + U",
+            "D. Alt + Z"
+        ],
+        "correct_option": 0,
+        "explanation": "Ctrl + Z का उपयोग अंतिम क्रिया को पूर्ववत (Undo) करने के लिए किया जाता है।",
+        "verification_status": "VERIFIED_100%",
+        "subject": "Computer Awareness",
+        "language": "hi",
+        "id": "comp_hi_0059",
+        "chapter": "MS Word"
+    },
+    {
+        "question": "यदि आप MS Word में Ctrl + A कुंजियाँ दबा रहे हैं, तो आप क्या करने का प्रयास कर रहे हैं?",
+        "options": [
+            "A. विंडो बंद करना",
+            "B. फ़ाइल में सभी टेक्स्ट को कॉपी करना",
+            "C. टेक्स्ट पेस्ट करना",
+            "D. फ़ाइल में सभी टेक्स्ट का चयन (Select All) करना"
+        ],
+        "correct_option": 3,
+        "explanation": "MS Word में Ctrl + A कुंजियों का उपयोग दस्तावेज़ के सभी टेक्स्ट का चयन करने के लिए किया जाता है।",
+        "verification_status": "VERIFIED_100%",
+        "subject": "Computer Awareness",
+        "language": "hi",
+        "id": "comp_hi_0062",
+        "chapter": "MS Word"
+    },
+    {
+        "question": "Microsoft Word में ‘Paste Special’ डायलॉग बॉक्स खोलने की शॉर्टकट कुंजी क्या है?",
+        "options": [
+            "A. Ctrl + Alt + C",
+            "B. Alt + E + S",
+            "C. Ctrl + Alt + P",
+            "D. Ctrl + V"
+        ],
+        "correct_option": 1,
+        "explanation": "Alt + E + S माइक्रोसॉफ्ट वर्ड में ‘Paste Special’ डायलॉग बॉक्स खोलने की शॉर्टकट कुंजी है।",
+        "verification_status": "VERIFIED_100%",
+        "subject": "Computer Awareness",
+        "language": "hi",
+        "id": "comp_hi_0063",
+        "chapter": "MS Word"
+    },
+    {
+        "question": "वर्ड प्रोसेसिंग सॉफ्टवेयर के उदाहरण कौन से हैं?",
+        "options": [
+            "A. माइक्रोसॉफ्ट वर्ड",
+            "B. जीमेल",
+            "C. माइक्रोसॉफ्ट पावरपॉइंट",
+            "D. उपरोक्त सभी"
+        ],
+        "correct_option": 3,
+        "explanation": "वर्ड प्रोसेसिंग सॉफ्टवेयर पाठ संपादन की सुविधा प्रदान करते हैं।",
+        "verification_status": "VERIFIED_100%",
+        "subject": "Computer Awareness",
+        "language": "hi",
+        "id": "comp_hi_0158",
+        "chapter": "MS Word"
+    },
+    {
+        "question": "समय और प्रयास कम करने के लिए MS-Word 2010 में समान टेक्स्ट को बार-बार टाइप करने के स्थान पर क्या उपयोग किया जा सकता है?",
+        "options": [
+            "A. copy + undo",
+            "B. paste + undo",
+            "C. copy + paste",
+            "D. cut + copy"
+        ],
+        "correct_option": 2,
+        "explanation": "Copy + Paste कमांड टेक्स्ट को दोहराने की प्रक्रिया को आसान बनाते हैं।",
+        "verification_status": "VERIFIED_100%",
+        "subject": "Computer Awareness",
+        "language": "hi",
+        "id": "comp_hi_0164",
+        "chapter": "MS Word"
+    },
+    {
+        "question": "MS-Word 2010 में एक तालिका (Table) में अधिकतम कितने कॉलम हो सकते हैं?",
+        "options": [
+            "A. 62",
+            "B. 61",
+            "C. 64",
+            "D. 63"
+        ],
+        "correct_option": 3,
+        "explanation": "MS Word टेबल में अधिकतम 63 कॉलम हो सकते हैं।",
+        "verification_status": "VERIFIED_100%",
+        "subject": "Computer Awareness",
+        "language": "hi",
+        "id": "comp_hi_0166",
+        "chapter": "MS Word"
+    },
+    {
+        "question": "MS-Word 2010 में निम्नलिखित में से कौन सा पूर्व-कॉन्फ़िगर वॉटरमार्क नहीं है?",
+        "options": [
+            "A. धूसर क्षैतिज पाठ के साथ 'CONFIDENTIAL'",
+            "B. धूसर लंबवत पाठ के साथ 'DO NOT COPY'",
+            "C. धूसर लंबवत पाठ के साथ 'CONFIDENTIAL'",
+            "D. धूसर क्षैतिज पाठ के साथ 'CONFIDENTIAL'"
+        ],
+        "correct_option": 1,
+        "explanation": "'DO NOT COPY' आमतौर पर तिरछे (diagonal) या क्षैतिज रूप में उपलब्ध होता है।",
+        "verification_status": "VERIFIED_100%",
+        "subject": "Computer Awareness",
+        "language": "hi",
+        "id": "comp_hi_0167",
+        "chapter": "MS Word"
+    },
+    {
+        "question": "MS-Word 2010 दस्तावेज़ में डिफ़ॉल्ट फ़ॉन्ट फेस क्या है?",
+        "options": [
+            "A. Times New Roman",
+            "B. Italic",
+            "C. Calibri",
+            "D. Arial"
+        ],
+        "correct_option": 2,
+        "explanation": "Word 2010 में डिफ़ॉल्ट फ़ॉन्ट Calibri 11pt होता है।",
+        "verification_status": "VERIFIED_100%",
+        "subject": "Computer Awareness",
+        "language": "hi",
+        "id": "comp_hi_0168",
+        "chapter": "MS Word"
+    },
+    {
+        "question": "MS-Word 2010 में रूलर (Ruler) के बारे में निम्नलिखित में से कौन सा कथन गलत है?",
+        "options": [
+            "A. यह एक पंक्ति के इंडेंटेशन को बदलने में मदद करता है",
+            "B. यह टैब सेट करने में मदद करता है",
+            "C. यह दस्तावेज़ पृष्ठों के मार्जिन को नियंत्रित करने में मदद करता है",
+            "D. यह फ़ॉन्ट शैलियों के माप इकाई को बदलने में मदद करता है"
+        ],
+        "correct_option": 3,
+        "explanation": "रूलर का उपयोग मार्जिन और इंडेंटेशन के लिए होता है, फ़ॉन्ट शैलियों को बदलने के लिए नहीं।",
+        "verification_status": "VERIFIED_100%",
+        "subject": "Computer Awareness",
+        "language": "hi",
+        "id": "comp_hi_0169",
+        "chapter": "MS Word"
+    },
+    {
+        "question": "यदि MS Word 2007 में 'Examination' शब्द पर TOGGLE CASE लागू किया जाता है, तो क्या परिणाम होगा?",
+        "options": [
+            "A. examination",
+            "B. Examination",
+            "C. EXAMINATION",
+            "D. eXAMINATION"
+        ],
+        "correct_option": 3,
+        "explanation": "टॉगल केस बड़े अक्षरों को छोटे और छोटे अक्षरों को बड़े में बदल देता है (E -> e, xamination -> XAMINATION)।",
+        "verification_status": "VERIFIED_100%",
+        "subject": "Computer Awareness",
+        "language": "hi",
+        "id": "comp_hi_0170",
+        "chapter": "MS Word"
+    },
+    {
+        "question": "MS-Word 2010 में निम्नलिखित में से कौन सा ऑपरेशन क्लिपबोर्ड से सामग्री को आपके दस्तावेज़ में जोड़ता है?",
+        "options": [
+            "A. हाइफनेशन",
+            "B. पेस्ट (Paste)",
+            "C. कॉपी (Copy)",
+            "D. फॉर्मेट पेंटर"
+        ],
+        "correct_option": 1,
+        "explanation": "पेस्ट (Ctrl + V) कमांड क्लिपबोर्ड की सामग्री को दस्तावेज़ में सम्मिलित करता है।",
+        "verification_status": "VERIFIED_100%",
+        "subject": "Computer Awareness",
+        "language": "hi",
+        "id": "comp_hi_0171",
+        "chapter": "MS Word"
+    },
+    {
+        "question": "MS-Word 2010 में तालिका में किसी पंक्ति के नीचे नई पंक्ति जोड़ने के लिए किस विकल्प का उपयोग किया जाता है?",
+        "options": [
+            "A. Insert Columns to the Right",
+            "B. Insert Columns to the Left",
+            "C. Insert Rows Below",
+            "D. Insert Rows Above"
+        ],
+        "correct_option": 2,
+        "explanation": "Insert Rows Below का उपयोग वर्तमान पंक्ति के ठीक नीचे नई पंक्ति जोड़ने के लिए किया जाता है।",
+        "verification_status": "VERIFIED_100%",
+        "subject": "Computer Awareness",
+        "language": "hi",
+        "id": "comp_hi_0172",
+        "chapter": "MS Word"
+    },
+    {
+        "question": "MS-Word 2016 में 'Paragraph' सेटिंग विंडो में निम्नलिखित में से कौन सा विकल्प मान्य नहीं है?",
+        "options": [
+            "A. Spacing",
+            "B. Indentation",
+            "C. Effects",
+            "D. Pagination"
+        ],
+        "correct_option": 2,
+        "explanation": "Effects फ़ॉन्ट डायलॉग बॉक्स या पेज लेआउट में होते हैं, पैराग्राफ सेटिंग में नहीं।",
+        "verification_status": "VERIFIED_100%",
+        "subject": "Computer Awareness",
+        "language": "hi",
+        "id": "comp_hi_0173",
+        "chapter": "MS Word"
+    },
+    {
+        "question": "MS Word 365 रिबन के किस टैब में Spelling and Grammar का विकल्प होता है?",
+        "options": [
+            "A. रिव्यू (Review)",
+            "B. लेआउट (Layout)",
+            "C. इन्सर्ट (Insert)",
+            "D. एडिट (Edit)"
+        ],
+        "correct_option": 0,
+        "explanation": "Review टैब में प्रूफ़िंग ग्रुप के अंतर्गत स्पेलिंग और ग्रामर का विकल्प होता है।",
+        "verification_status": "VERIFIED_100%",
+        "subject": "Computer Awareness",
+        "language": "hi",
+        "id": "comp_hi_0175",
+        "chapter": "MS Word"
+    },
+    {
+        "question": "MS Office 365 में Page Setup डायलॉग बॉक्स निम्नलिखित में से किस टैब के अंतर्गत पाया जा सकता है?",
+        "options": [
+            "A. Home",
+            "B. Draw",
+            "C. Layout",
+            "D. Insert"
+        ],
+        "correct_option": 2,
+        "explanation": "Layout टैब के तहत मार्जिन, ओरिएंटेशन और साइज सेट करने के विकल्प मिलते हैं।",
+        "verification_status": "VERIFIED_100%",
+        "subject": "Computer Awareness",
+        "language": "hi",
+        "id": "comp_hi_0176",
+        "chapter": "MS Word"
+    },
+    {
+        "question": "MS-Word 2010 में, ______ एक छोटा कस्टमाइज़ेबल टूलबार है जो Save, Undo, Redo जैसे अक्सर उपयोग किए जाने वाले कमांड प्रदर्शित करता है।",
+        "options": [
+            "A. रिबन",
+            "B. क्विक एक्सेस टूलबार (Quick Access Toolbar)",
+            "C. टाइटल बार",
+            "D. फ़ाइल टैब"
+        ],
+        "correct_option": 1,
+        "explanation": "क्विक एक्सेस टूलबार उपयोगकर्ताओं को त्वरित कमांड तक त्वरित पहुँच प्रदान करता है।",
+        "verification_status": "VERIFIED_100%",
+        "subject": "Computer Awareness",
+        "language": "hi",
+        "id": "comp_hi_0179",
+        "chapter": "MS Word"
+    },
+    {
+        "question": "MS-Word 2010 में दस्तावेज़ खोलने पर डिफ़ॉल्ट रूप से दिखाई देने वाला टैब कौन सा है?",
+        "options": [
+            "A. लेआउट",
+            "B. रिव्यू",
+            "C. इन्सर्ट",
+            "D. होम (Home)"
+        ],
+        "correct_option": 3,
+        "explanation": "Home टैब एमएस वर्ड में डिफ़ॉल्ट सक्रिय टैब होता है।",
+        "verification_status": "VERIFIED_100%",
+        "subject": "Computer Awareness",
+        "language": "hi",
+        "id": "comp_hi_0180",
+        "chapter": "MS Word"
+    },
+    {
+        "question": "MS-Word 2007 में निम्नलिखित में से कौन सा मेनू बार का विकल्प नहीं है?",
+        "options": [
+            "A. Window",
+            "B. Help",
+            "C. File (Office Button replaced it)",
+            "D. Edit"
+        ],
+        "correct_option": 2,
+        "explanation": "Word 2007 में क्लासिक File मेनू को Office Button से बदल दिया गया था।",
+        "verification_status": "VERIFIED_100%",
+        "subject": "Computer Awareness",
+        "language": "hi",
+        "id": "comp_hi_0181",
+        "chapter": "MS Word"
+    },
+    {
+        "question": "MS-Word 2007 में Page Setup विकल्प आमतौर पर किस मेनू टैब के अंतर्गत उपलब्ध होते हैं?",
+        "options": [
+            "A. Review",
+            "B. Page Layout",
+            "C. Home",
+            "D. Insert"
+        ],
+        "correct_option": 1,
+        "explanation": "Page Layout टैब में पेज सेटअप विकल्प होते हैं।",
+        "verification_status": "VERIFIED_100%",
+        "subject": "Computer Awareness",
+        "language": "hi",
+        "id": "comp_hi_0182",
+        "chapter": "MS Word"
+    },
+    {
+        "question": "MS Word 2016 के Home मेनू में 'Editing' कमांड समूह के हिस्से के रूप में निम्नलिखित में से क्या दिखाई देता है?",
+        "options": [
+            "A. Font color",
+            "B. Change case",
+            "C. Replace",
+            "D. Format Painter"
+        ],
+        "correct_option": 2,
+        "explanation": "Editing समूह में Find, Replace, और Select विकल्प शामिल हैं।",
+        "verification_status": "VERIFIED_100%",
+        "subject": "Computer Awareness",
+        "language": "hi",
+        "id": "comp_hi_0183",
+        "chapter": "MS Word"
+    },
+    {
+        "question": "MS Word 2016 के Home मेनू के तहत 'Clipboard' समूह में कौन सा विकल्प नहीं आता है?",
+        "options": [
+            "A. Cut",
+            "B. Show/Hide",
+            "C. Format Painter",
+            "D. Paste"
+        ],
+        "correct_option": 1,
+        "explanation": "Show/Hide विकल्प Paragraph समूह का हिस्सा है, Clipboard का नहीं।",
+        "verification_status": "VERIFIED_100%",
+        "subject": "Computer Awareness",
+        "language": "hi",
+        "id": "comp_hi_0184",
+        "chapter": "MS Word"
+    },
+    {
+        "question": "MS Word 2016 के Home मेनू के 'Paragraph' कमांड ग्रुप में कौन सा विकल्प नहीं आता है?",
+        "options": [
+            "A. Numbering",
+            "B. Bullets",
+            "C. Multilevel list",
+            "D. Change case"
+        ],
+        "correct_option": 3,
+        "explanation": "Change Case विकल्प Font कमांड ग्रुप के अंतर्गत आता है।",
+        "verification_status": "VERIFIED_100%",
+        "subject": "Computer Awareness",
+        "language": "hi",
+        "id": "comp_hi_0185",
+        "chapter": "MS Word"
+    },
+    {
+        "question": "इंटरनेट संसाधनों (वेबपेज, चित्र, फ़ाइलें) का विशाल डेटाबेस जो वेब पर जानकारी खोजने में मदद करता है:",
+        "options": [
+            "A. सर्च इंजन (Search engine)",
+            "B. वेब ब्राउज़र",
+            "C. वेबसाइट",
+            "D. वेब सर्वर"
+        ],
+        "correct_option": 0,
+        "explanation": "सर्च इंजन (जैसे Google, Bing) कीवर्ड के आधार पर इंटरनेट पर जानकारी ढूंढता है।",
+        "verification_status": "VERIFIED_100%",
+        "subject": "Computer Awareness",
+        "language": "hi",
+        "id": "comp_hi_0333",
+        "chapter": "MS Word"
+    },
+    {
+        "question": "सर्च इंजन URLs के साथ कीवर्ड के भारी ____ को प्रबंधित करते हैं।",
+        "options": [
+            "A. मशीन",
+            "B. नेटवर्क",
+            "C. डेटाबेस (Databases)",
+            "D. घटक"
+        ],
+        "correct_option": 2,
+        "explanation": "सर्च इंजन कीवर्ड और संबंधित URL का विशाल डेटाबेस प्रबंधित करते हैं।",
+        "verification_status": "VERIFIED_100%",
+        "subject": "Computer Awareness",
+        "language": "hi",
+        "id": "comp_hi_0343",
+        "chapter": "MS Word"
+    },
+    {
+        "question": "सर्च इंजन किसके भारी डेटाबेस का प्रबंधन करते हैं?",
+        "options": [
+            "A. URLs",
+            "B. वेब पेज",
+            "C. कीवर्ड",
+            "D. ये सभी (All of these)"
+        ],
+        "correct_option": 3,
+        "explanation": "सर्च इंजन URLs, वेब पेजों और कीवर्ड सभी का एक विशाल डेटाबेस बनाए रखते हैं।",
+        "verification_status": "VERIFIED_100%",
+        "subject": "Computer Awareness",
+        "language": "hi",
+        "id": "comp_hi_0346",
+        "chapter": "MS Word"
+    }
+]

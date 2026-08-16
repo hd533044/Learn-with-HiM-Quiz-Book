@@ -1,0 +1,313 @@
+[
+    {
+        "id": 383,
+        "question": "माइक्रोसॉफ्ट विंडोज में डिस्क डिफ्रेग्मेंटर/रीअरेंजमेंट (Disk Rearrangement) प्रोग्राम का प्राथमिक उद्देश्य क्या है?",
+        "options": [
+            "डेटा एक्सेस गति (Data access speed) बढ़ाना",
+            "डेटा एक्सेस गति घटाना",
+            "सुरक्षा के लिए फ़ाइलों को व्यवस्थित करना",
+            "डिस्क स्पेस खाली करना"
+        ],
+        "correct_option": 0,
+        "explanation": "यह प्रोग्राम फ़ाइलों को लगातार स्टोरेज स्थानों में पुनर्व्यवस्थित करके डेटा तक पहुँचने की गति (Speed) बढ़ाता है।",
+        "chapter": "Memory Storage"
+    },
+    {
+        "id": 386,
+        "question": "माइक्रोसॉफ्ट 365 ऑनलाइन सेवाओं के समूह में क्या शामिल है?",
+        "options": [
+            "केवल डेस्कटॉप ऐप्स",
+            "केवल ऑनलाइन सेवाएं",
+            "बिजनेस-क्लास ईमेल, क्लाउड फ़ाइल स्टोरेज और सुरक्षित संचार टूल",
+            "केवल वर्ड प्रोसेसर और स्प्रेडशीट प्रोग्राम"
+        ],
+        "correct_option": 2,
+        "explanation": "Microsoft 365 पारंपरिक ऐप्स के साथ-साथ बिजनेस ईमेल, क्लाउड स्टोरेज और सुरक्षित संचार सुविधाएं प्रदान करता है।",
+        "chapter": "Memory Storage"
+    },
+    {
+        "id": 399,
+        "question": "विंडोज में डिस्क डिफ्रेग्मेंटर (Disk Rearrangement) का उद्देश्य क्या है?",
+        "options": [
+            "फ़ाइलों को पुनर्व्यवस्थित करके डेटा एक्सेस स्पीड बढ़ाना",
+            "फ़ाइलों को पुनर्व्यवस्थित करके स्पीड घटाना",
+            "फ़ाइलें डिलीट करके जगह खाली करना",
+            "नई फ़ाइलें जोड़कर स्थान बढ़ाना"
+        ],
+        "correct_option": 0,
+        "explanation": "यह विखंडित (Fragmented) फ़ाइलों को एक स्थान पर लाकर डिस्क रीड/राइट स्पीड को तेज़ करता है।",
+        "chapter": "Memory Storage"
+    },
+    {
+        "question": "उस पीढ़ी का चयन करें जिसने पहली बार CD ROM का उपयोग किया था:",
+        "options": [
+            "A. पहली पीढ़ी",
+            "B. दूसरी पीढ़ी",
+            "C. चौथी पीढ़ी",
+            "D. पांचवीं पीढ़ी का कंप्यूटर"
+        ],
+        "correct_option": 2,
+        "explanation": "CD ROM का पहली बार उपयोग चौथी पीढ़ी के कंप्यूटरों में किया गया था।",
+        "verification_status": "VERIFIED_100%",
+        "subject": "Computer Awareness",
+        "language": "hi",
+        "id": "comp_hi_0056",
+        "chapter": "Memory Storage"
+    },
+    {
+        "question": "किस प्रकार की मेमोरी वोलेटाइल (अस्थिर) मेमोरी होती है?",
+        "options": [
+            "A. RAM",
+            "B. EPROM",
+            "C. ROM",
+            "D. PROM"
+        ],
+        "correct_option": 0,
+        "explanation": "RAM (रैंडम एक्सेस मेमोरी) एक वोलेटाइल मेमोरी है; बिजली बंद होने पर इसका डेटा नष्ट हो जाता है।",
+        "verification_status": "VERIFIED_100%",
+        "subject": "Computer Awareness",
+        "language": "hi",
+        "id": "comp_hi_0115",
+        "chapter": "Memory Storage"
+    },
+    {
+        "question": "किस प्रकार की मेमोरी कंप्यूटर के बंद होने पर भी संग्रहीत जानकारी को बनाए रख सकती है?",
+        "options": [
+            "A. गैर-वोलेटाइल (Non-volatile)",
+            "B. अप्रॉसेस्ड",
+            "C. आंतरायिक संचालित",
+            "D. पावर्ड"
+        ],
+        "correct_option": 0,
+        "explanation": "नॉन-वोलेटाइल मेमोरी बिजली बंद होने पर भी डेटा को सुरक्षित रखती है (उदा. ROM, HDD)।",
+        "verification_status": "VERIFIED_100%",
+        "subject": "Computer Awareness",
+        "language": "hi",
+        "id": "comp_hi_0116",
+        "chapter": "Memory Storage"
+    },
+    {
+        "question": "निम्नलिखित में से कौन सा कंप्यूटर सिस्टम में सहायक (auxiliary) मेमोरी का हिस्सा नहीं है?",
+        "options": [
+            "A. फ्लॉपी",
+            "B. मैग्नेटिक टेप",
+            "C. PROM",
+            "D. CD-ROM"
+        ],
+        "correct_option": 2,
+        "explanation": "PROM (प्रोग्रामेबल रीड-ओनली मेमोरी) प्राथमिक/आंतरिक सेमीकंडक्टर मेमोरी का हिस्सा है, सहायक मेमोरी का नहीं।",
+        "verification_status": "VERIFIED_100%",
+        "subject": "Computer Awareness",
+        "language": "hi",
+        "id": "comp_hi_0118",
+        "chapter": "Memory Storage"
+    },
+    {
+        "question": "PROM या प्रोग्रामेबल रीड-ओनली मेमोरी क्या है?",
+        "options": [
+            "A. एक कंप्यूटर मेमोरी चिप जिसे बनाने के बाद एक बार प्रोग्राम किया जा सकता है।",
+            "B. डिजिटल मेमोरी का एक प्रकार जहां प्रत्येक बिट की सेटिंग फ्यूज द्वारा लॉक होती है।",
+            "C. एक बार लिखी जाने वाली अस्थायी चिप।",
+            "D. एक कंप्यूटर मेमोरी चिप जिसे निर्माण के बाद केवल एक बार प्रोग्राम किया जा सकता है और लिखी गई जानकारी स्थायी होती है जिसे मिटाया नहीं जा सकता।"
+        ],
+        "correct_option": 3,
+        "explanation": "PROM को उपयोगकर्ता द्वारा केवल एक बार लिखा (प्रोग्राम) जा सकता है और यह स्थायी रहता है।",
+        "verification_status": "VERIFIED_100%",
+        "subject": "Computer Awareness",
+        "language": "hi",
+        "id": "comp_hi_0119",
+        "chapter": "Memory Storage"
+    },
+    {
+        "question": "निम्नलिखित में से कौन सा मेमोरी का एक प्रकार है और RAM के समान तीव्र है?",
+        "options": [
+            "A. हाइपरटेक्स्ट लिंक",
+            "B. ROM",
+            "C. कैश (Cache)",
+            "D. I Beam"
+        ],
+        "correct_option": 2,
+        "explanation": "कैश मेमोरी रैम के समान सेमीकंडक्टर मेमोरी है लेकिन उससे कहीं अधिक तेज़ होती है।",
+        "verification_status": "VERIFIED_100%",
+        "subject": "Computer Awareness",
+        "language": "hi",
+        "id": "comp_hi_0120",
+        "chapter": "Memory Storage"
+    },
+    {
+        "question": "कंप्यूटर में अन्य प्रकार के स्टोरेज की तुलना में पढ़ने और लिखने में सबसे तेज़ कौन सा है?",
+        "options": [
+            "A. CD ROM",
+            "B. फ्लॉपी डिस्क",
+            "C. RAM",
+            "D. हार्ड डिस्क"
+        ],
+        "correct_option": 2,
+        "explanation": "दिए गए विकल्पों में RAM सबसे तेज़ प्राथमिक स्टोरेज है।",
+        "verification_status": "VERIFIED_100%",
+        "subject": "Computer Awareness",
+        "language": "hi",
+        "id": "comp_hi_0121",
+        "chapter": "Memory Storage"
+    },
+    {
+        "question": "IT में, एसोसिएटिव मेमोरी (Associative Memory) को क्या कहा जाता है?",
+        "options": [
+            "A. वर्चुअल मेमोरी",
+            "B. कैश मेमोरी",
+            "C. कंटेंट एड्रेसेबल मेमोरी (CAM)",
+            "D. मेन मेमोरी"
+        ],
+        "correct_option": 2,
+        "explanation": "एसोसिएटिव मेमोरी को कंटेंट एड्रेसेबल मेमोरी (CAM) भी कहा जाता है।",
+        "verification_status": "VERIFIED_100%",
+        "subject": "Computer Awareness",
+        "language": "hi",
+        "id": "comp_hi_0122",
+        "chapter": "Memory Storage"
+    },
+    {
+        "question": "______ एक प्रकार की रैंडम एक्सेस मेमोरी (RAM) है जो बिजली की आपूर्ति रहने तक अपने मेमोरी में डेटा बिट्स को बनाए रखती है।",
+        "options": [
+            "A. स्टेटिक रैम (Static RAM)",
+            "B. डायनेमिक रैम (Dynamic RAM)",
+            "C. फ्लैश मेमोरी",
+            "D. कैश मेमोरी"
+        ],
+        "correct_option": 0,
+        "explanation": "SRAM को समय-समय पर रीफ्रेश करने की आवश्यकता नहीं होती जब तक बिजली उपलब्ध है।",
+        "verification_status": "VERIFIED_100%",
+        "subject": "Computer Awareness",
+        "language": "hi",
+        "id": "comp_hi_0126",
+        "chapter": "Memory Storage"
+    },
+    {
+        "question": "एक सेकंड में कई बार किस मेमोरी को रीफ्रेश करना आवश्यक होता है?",
+        "options": [
+            "A. स्टेटिक रैम (SRAM)",
+            "B. डायनेमिक रैम (DRAM)",
+            "C. EPROM",
+            "D. PROM"
+        ],
+        "correct_option": 1,
+        "explanation": "Dynamic RAM (DRAM) में कैपेसिटर होते हैं जो चार्ज खो देते हैं, इसलिए इसे प्रति सेकंड कई बार रीफ्रेश करना पड़ता है।",
+        "verification_status": "VERIFIED_100%",
+        "subject": "Computer Awareness",
+        "language": "hi",
+        "id": "comp_hi_0127",
+        "chapter": "Memory Storage"
+    },
+    {
+        "question": "सेकेंडरी मेमोरी के बारे में निम्नलिखित में से कौन सा कथन गलत है?",
+        "options": [
+            "A. इसे बैकअप मेमोरी के रूप में जाना जाता है।",
+            "B. इसका उपयोग डेटा संग्रहीत करने के लिए किया जाता है।",
+            "C. यह एक वोलेटाइल (अस्थिर) मेमोरी है।",
+            "D. ये चुंबकीय और ऑप्टिकल मेमोरी होती हैं।"
+        ],
+        "correct_option": 2,
+        "explanation": "सेकेंडरी मेमोरी गैर-वाष्पशील (Non-volatile) और स्थायी होती है, वोलेटाइल नहीं।",
+        "verification_status": "VERIFIED_100%",
+        "subject": "Computer Awareness",
+        "language": "hi",
+        "id": "comp_hi_0128",
+        "chapter": "Memory Storage"
+    },
+    {
+        "question": "निम्नलिखित में से किसे 'इलेक्ट्रॉनिक डिस्क' के रूप में भी जाना जाता है?",
+        "options": [
+            "A. USB स्टिक",
+            "B. नेटवर्क स्टोरेज सर्वर",
+            "C. सॉलिड - स्टेट ड्राइव (SSD)",
+            "D. USB हार्ड ड्राइव"
+        ],
+        "correct_option": 2,
+        "explanation": "सॉलिड-स्टेट ड्राइव (SSD) को इलेक्ट्रॉनिक डिस्क भी कहा जाता है क्योंकि इसमें कोई घूमने वाले यांत्रिक भाग नहीं होते।",
+        "verification_status": "VERIFIED_100%",
+        "subject": "Computer Awareness",
+        "language": "hi",
+        "id": "comp_hi_0129",
+        "chapter": "Memory Storage"
+    },
+    {
+        "question": "निम्नलिखित में से कौन सा कथन गलत है?",
+        "options": [
+            "A. एक चुंबकीय टेप में लंबवत कॉलम होते हैं जिन्हें फ्रेम कहा जाता है।",
+            "B. चुंबकीय टेप में क्षैतिज पंक्तियाँ होती हैं जिन्हें चैनल या ट्रैक कहा जाता है।",
+            "C. चुंबकीय टेप ड्राइवर ऐसे डेटा के भंडारण के लिए उपयुक्त नहीं हैं जिन्हें यादृच्छिक रूप से (randomly) एक्सेस करने की आवश्यकता होती है।",
+            "D. चुंबकीय टेप में कोई एड्रेसिंग नहीं होती है।"
+        ],
+        "correct_option": 2,
+        "explanation": "चुंबकीय टेप अनुक्रमिक (sequential) एक्सेस स्टोरेज माध्यम है, यादृच्छिक (random) एक्सेस के लिए उपयुक्त नहीं है।",
+        "verification_status": "VERIFIED_100%",
+        "subject": "Computer Awareness",
+        "language": "hi",
+        "id": "comp_hi_0130",
+        "chapter": "Memory Storage"
+    },
+    {
+        "question": "हार्ड डिस्क किस प्रकार का स्टोरेज डिवाइस है?",
+        "options": [
+            "A. सेकेंडरी (Secondary)",
+            "B. टर्शियरी (Tertiary)",
+            "C. ऑफ़-लाइन (Off-line)",
+            "D. प्राइमरी (Primary)"
+        ],
+        "correct_option": 0,
+        "explanation": "हार्ड डिस्क ड्राइव कंप्यूटर की मुख्य सेकेंडरी स्टोरेज डिवाइस है।",
+        "verification_status": "VERIFIED_100%",
+        "subject": "Computer Awareness",
+        "language": "hi",
+        "id": "comp_hi_0131",
+        "chapter": "Memory Storage"
+    },
+    {
+        "question": "निम्नलिखित में से कौन सा चुंबकीय भंडारण (Magnetic Storage) नहीं है?",
+        "options": [
+            "A. विंचेस्टर डिस्क",
+            "B. फ्लॉपी ड्राइव",
+            "C. हार्ड डिस्क ड्राइव",
+            "D. सॉलिड-स्टेट ड्राइव (SSD)"
+        ],
+        "correct_option": 3,
+        "explanation": "SSD फ्लैश मेमोरी (सेमीकंडक्टर) आधारित स्टोरेज है, चुंबकीय नहीं।",
+        "verification_status": "VERIFIED_100%",
+        "subject": "Computer Awareness",
+        "language": "hi",
+        "id": "comp_hi_0132",
+        "chapter": "Memory Storage"
+    },
+    {
+        "question": "पर्सनल कंप्यूटर में निम्नलिखित में से कौन सा प्राथमिक भंडारण (Primary Storage) उपकरण है?",
+        "options": [
+            "A. हार्ड डिस्क",
+            "B. कॉम्पैक्ट डिस्क",
+            "C. पेन ड्राइव",
+            "D. रैंडम - एक्सेस मेमोरी (RAM)"
+        ],
+        "correct_option": 3,
+        "explanation": "RAM प्राथमिक स्टोरेज उपकरण है जिसका उपयोग सक्रिय प्रोग्रामों के डेटा को रखने के लिए किया जाता है।",
+        "verification_status": "VERIFIED_100%",
+        "subject": "Computer Awareness",
+        "language": "hi",
+        "id": "comp_hi_0133",
+        "chapter": "Memory Storage"
+    },
+    {
+        "question": "निम्नलिखित में से कौन सा सेकेंडरी मेमोरी का उदाहरण नहीं है?",
+        "options": [
+            "A. हार्ड डिस्क ड्राइव",
+            "B. कॉम्पैक्ट डिस्क",
+            "C. पेन ड्राइव",
+            "D. रैंडम - एक्सेस मेमोरी (RAM)"
+        ],
+        "correct_option": 3,
+        "explanation": "RAM मुख्य प्राथमिक मेमोरी है, सेकेंडरी नहीं।",
+        "verification_status": "VERIFIED_100%",
+        "subject": "Computer Awareness",
+        "language": "hi",
+        "id": "comp_hi_0134",
+        "chapter": "Memory Storage"
+    }
+]

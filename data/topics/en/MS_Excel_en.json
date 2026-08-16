@@ -1,0 +1,3137 @@
+[
+    {
+        "id": 64,
+        "question": "What is the purpose of the dollar sign in MS-EXCEL?",
+        "options": [
+            "To change the font style",
+            "To insert a table",
+            "To make a column or row absolute",
+            "To change the cell color"
+        ],
+        "correct_option": 2,
+        "explanation": "The dollar sign is used to make a column or row absolute in MS-EXCEL.",
+        "chapter": "MS Excel"
+    },
+    {
+        "id": 65,
+        "question": "Which tab in MS-EXCEL contains the 'Clipboard' and 'Font' groups?",
+        "options": [
+            "Insert",
+            "Home",
+            "Page layout",
+            "Review"
+        ],
+        "correct_option": 1,
+        "explanation": "The 'Home' tab in MS-EXCEL contains the 'Clipboard' and 'Font' groups.",
+        "chapter": "MS Excel"
+    },
+    {
+        "id": 66,
+        "question": "What is the function of the LOWER function in MS-EXCEL?",
+        "options": [
+            "To convert text to upper case",
+            "To convert text to lower case",
+            "To insert a table",
+            "To change the cell color"
+        ],
+        "correct_option": 1,
+        "explanation": "The LOWER function in MS-EXCEL converts all characters in a supplied text string to lower case.",
+        "chapter": "MS Excel"
+    },
+    {
+        "id": 67,
+        "question": "Which of the following is a group in the 'Insert' tab in MS-EXCEL?",
+        "options": [
+            "Illustrations",
+            "Tables",
+            "Formula",
+            "Review"
+        ],
+        "correct_option": 0,
+        "explanation": "The 'Illustrations' group is one of the groups in the 'Insert' tab in MS-EXCEL.",
+        "chapter": "MS Excel"
+    },
+    {
+        "id": 68,
+        "question": "What is the purpose of the UPPER function in MS-EXCEL?",
+        "options": [
+            "To convert text to lower case",
+            "To convert text to upper case",
+            "To insert a table",
+            "To change the cell color"
+        ],
+        "correct_option": 1,
+        "explanation": "The UPPER function in MS-EXCEL converts all characters in a supplied text string to upper case.",
+        "chapter": "MS Excel"
+    },
+    {
+        "id": 69,
+        "question": "Which tab in MS-EXCEL contains the 'Function Library' and 'Formula Auditing' groups?",
+        "options": [
+            "Insert",
+            "Home",
+            "Formula",
+            "Review"
+        ],
+        "correct_option": 2,
+        "explanation": "The 'Formula' tab in MS-EXCEL contains the 'Function Library' and 'Formula Auditing' groups.",
+        "chapter": "MS Excel"
+    },
+    {
+        "id": 70,
+        "question": "What is the purpose of the 'Sparklines' option in the 'Insert' tab in MS-EXCEL?",
+        "options": [
+            "To insert a table",
+            "To insert a chart",
+            "To create a mini chart in a cell",
+            "To change the cell color"
+        ],
+        "correct_option": 2,
+        "explanation": "The 'Sparklines' option in the 'Insert' tab in MS-EXCEL is used to create a mini chart in a cell.",
+        "chapter": "MS Excel"
+    },
+    {
+        "id": 71,
+        "question": "Which of the following is not a tab in MS-EXCEL?",
+        "options": [
+            "File",
+            "Home",
+            "Review",
+            "Edit"
+        ],
+        "correct_option": 3,
+        "explanation": "The 'Edit' tab is not a top-level ribbon tab in MS-EXCEL.",
+        "chapter": "MS Excel"
+    },
+    {
+        "id": 72,
+        "question": "What is the purpose of the 'Defined Names' group in the 'Formula' tab in MS-EXCEL?",
+        "options": [
+            "To insert a table",
+            "To define a name for a cell or range",
+            "To change the cell color",
+            "To create a formula"
+        ],
+        "correct_option": 1,
+        "explanation": "The 'Defined Names' group in the 'Formula' tab in MS-EXCEL is used to define a name for a cell or range.",
+        "chapter": "MS Excel"
+    },
+    {
+        "id": 73,
+        "question": "Which of the following functions is used to convert text to lower case in MS-EXCEL?",
+        "options": [
+            "UPPER",
+            "LOWER",
+            "PROPER",
+            "TRIM"
+        ],
+        "correct_option": 1,
+        "explanation": "The LOWER function in MS-EXCEL is used to convert text to lower case.",
+        "chapter": "MS Excel"
+    },
+    {
+        "id": 74,
+        "question": "What is the purpose of the 'Page Layout' tab in MS-EXCEL?",
+        "options": [
+            "To insert a table",
+            "To change the page layout",
+            "To create a formula",
+            "To review the document"
+        ],
+        "correct_option": 1,
+        "explanation": "The 'Page Layout' tab in MS-EXCEL is used to change the page layout.",
+        "chapter": "MS Excel"
+    },
+    {
+        "id": 75,
+        "question": "Which of the following groups is in the 'Home' tab in MS-EXCEL?",
+        "options": [
+            "Illustrations",
+            "Tables",
+            "Font",
+            "Formula"
+        ],
+        "correct_option": 2,
+        "explanation": "The 'Font' group is one of the groups in the 'Home' tab in MS-EXCEL.",
+        "chapter": "MS Excel"
+    },
+    {
+        "id": 76,
+        "question": "What is the purpose of the 'Data' tab in MS-EXCEL?",
+        "options": [
+            "To insert a table",
+            "To manage and manipulate data",
+            "To create a formula",
+            "To review the document"
+        ],
+        "correct_option": 1,
+        "explanation": "The 'Data' tab in MS-EXCEL is used to manage, import, filter, and manipulate data.",
+        "chapter": "MS Excel"
+    },
+    {
+        "id": 77,
+        "question": "Which of the following functions is used to convert text to upper case in MS-EXCEL?",
+        "options": [
+            "LOWER",
+            "UPPER",
+            "PROPER",
+            "TRIM"
+        ],
+        "correct_option": 1,
+        "explanation": "The UPPER function in MS-EXCEL is used to convert text to upper case.",
+        "chapter": "MS Excel"
+    },
+    {
+        "id": 78,
+        "question": "What is the purpose of the 'Review' tab in MS-EXCEL?",
+        "options": [
+            "To insert a table",
+            "To change the review",
+            "To create a formula",
+            "To review the document"
+        ],
+        "correct_option": 3,
+        "explanation": "The 'Review' tab in MS-EXCEL is used to review the document.",
+        "chapter": "MS Excel"
+    },
+    {
+        "id": 79,
+        "question": "Which of the following is a type of illustration in the 'Insert' tab in MS-EXCEL?",
+        "options": [
+            "Picture",
+            "Chart",
+            "Table",
+            "Sparkline"
+        ],
+        "correct_option": 0,
+        "explanation": "The 'Picture' is a type of illustration in the 'Insert' tab in MS-EXCEL.",
+        "chapter": "MS Excel"
+    },
+    {
+        "id": 80,
+        "question": "What is the purpose of the 'View' tab in MS-EXCEL?",
+        "options": [
+            "To insert a table",
+            "To change the view",
+            "To create a formula",
+            "To review the document"
+        ],
+        "correct_option": 1,
+        "explanation": "The 'View' tab in MS-EXCEL is used to change the view.",
+        "chapter": "MS Excel"
+    },
+    {
+        "id": 81,
+        "question": "Which of the following groups is in the 'Insert' tab in MS-EXCEL?",
+        "options": [
+            "Illustrations",
+            "Tables",
+            "Formula",
+            "Review"
+        ],
+        "correct_option": 0,
+        "explanation": "The 'Illustrations' group is one of the groups in the 'Insert' tab in MS-EXCEL.",
+        "chapter": "MS Excel"
+    },
+    {
+        "id": 82,
+        "question": "What is the purpose of the 'Formula Auditing' group in the 'Formula' tab in MS-EXCEL?",
+        "options": [
+            "To insert a table",
+            "To change the formula",
+            "To audit the formula",
+            "To review the document"
+        ],
+        "correct_option": 2,
+        "explanation": "The 'Formula Auditing' group in the 'Formula' tab in MS-EXCEL is used to audit the formula.",
+        "chapter": "MS Excel"
+    },
+    {
+        "id": 83,
+        "question": "Which of the following is not a function in MS-EXCEL?",
+        "options": [
+            "LOWER",
+            "UPPER",
+            "PROPER",
+            "EDIT"
+        ],
+        "correct_option": 3,
+        "explanation": "The 'EDIT' function is not a built-in function in MS-EXCEL.",
+        "chapter": "MS Excel"
+    },
+    {
+        "id": 84,
+        "question": "What is the purpose of the 'Cells' group in the 'Home' tab in MS-EXCEL?",
+        "options": [
+            "To insert a table",
+            "To insert, delete, and format cells",
+            "To create a formula",
+            "To review the document"
+        ],
+        "correct_option": 1,
+        "explanation": "The 'Cells' group in the 'Home' tab in MS-EXCEL is used to manage cells.",
+        "chapter": "MS Excel"
+    },
+    {
+        "id": 85,
+        "question": "Which of the following is a type of sparkline in MS-EXCEL?",
+        "options": [
+            "Line",
+            "Column",
+            "Win/Loss",
+            "All of the above"
+        ],
+        "correct_option": 3,
+        "explanation": "Line, Column, and Win/Loss are all types of sparklines in MS-EXCEL.",
+        "chapter": "MS Excel"
+    },
+    {
+        "id": 86,
+        "question": "What is the purpose of the 'Editing' group in the 'Home' tab in MS-EXCEL?",
+        "options": [
+            "To insert a table",
+            "To perform common tasks like AutoSum, Clear, Sort, and Find",
+            "To create a formula",
+            "To review the document"
+        ],
+        "correct_option": 1,
+        "explanation": "The 'Editing' group in the 'Home' tab provides access to tools like AutoSum, Fill, Clear, Sort & Filter, and Find & Select.",
+        "chapter": "MS Excel"
+    },
+    {
+        "id": 87,
+        "question": "Which of the following is not a group in the 'Insert' tab in MS-EXCEL?",
+        "options": [
+            "Tables",
+            "Illustrations",
+            "Add-ins",
+            "Formula"
+        ],
+        "correct_option": 3,
+        "explanation": "Formula is a separate main tab on the ribbon, not a group under Insert.",
+        "chapter": "MS Excel"
+    },
+    {
+        "id": 88,
+        "question": "What is the purpose of the 'Style' group in the 'Home' tab in MS-EXCEL?",
+        "options": [
+            "To insert a table",
+            "To format cells using conditional formatting, table styles, and cell styles",
+            "To create a formula",
+            "To review the document"
+        ],
+        "correct_option": 1,
+        "explanation": "The 'Style' group contains Conditional Formatting, Format as Table, and Cell Styles.",
+        "chapter": "MS Excel"
+    },
+    {
+        "id": 89,
+        "question": "Which of the following is a type of add-in option in the 'Insert' tab in MS-EXCEL?",
+        "options": [
+            "Chart",
+            "3D Map",
+            "Table",
+            "Sparkline"
+        ],
+        "correct_option": 1,
+        "explanation": "3D Map is located under the Tours/Add-ins section on the Insert ribbon.",
+        "chapter": "MS Excel"
+    },
+    {
+        "id": 90,
+        "question": "What is the result of the CEILING function when applied to the number 27 with a multiple of 6?",
+        "options": [
+            "24",
+            "27",
+            "30",
+            "36"
+        ],
+        "correct_option": 2,
+        "explanation": "The CEILING function rounds a number up to the nearest multiple, so CEILING(27,6) = 30.",
+        "chapter": "MS Excel"
+    },
+    {
+        "id": 91,
+        "question": "What is the shortcut to select an entire row in MS-Excel 2010?",
+        "options": [
+            "Ctrl + Spacebar",
+            "Shift + Spacebar",
+            "Alt + Spacebar",
+            "Ctrl + Shift + Spacebar"
+        ],
+        "correct_option": 1,
+        "explanation": "The shortcut to select a row is Shift + Spacebar.",
+        "chapter": "MS Excel"
+    },
+    {
+        "id": 92,
+        "question": "Which function is used to convert text to uppercase in MS-Excel 2010?",
+        "options": [
+            "LOWER",
+            "UPPER",
+            "PROPER",
+            "CONCATENATE"
+        ],
+        "correct_option": 1,
+        "explanation": "The UPPER function is used to change all characters of the text to uppercase.",
+        "chapter": "MS Excel"
+    },
+    {
+        "id": 93,
+        "question": "How can you select multiple non-adjacent worksheets in MS-Excel 2010?",
+        "options": [
+            "Hold down the Shift key and click the tabs",
+            "Hold down the Ctrl key and click the tabs",
+            "Hold down the Alt key and click the tabs",
+            "Hold down the Ctrl + Shift keys and click the tabs"
+        ],
+        "correct_option": 1,
+        "explanation": "To select one or more non-adjacent worksheets, hold down the Ctrl key and click the tabs of the other sheets.",
+        "chapter": "MS Excel"
+    },
+    {
+        "id": 94,
+        "question": "What is the purpose of the DATEVALUE function in MS-Excel 2010?",
+        "options": [
+            "To convert a date to a text string",
+            "To convert a text string to a date",
+            "To convert a number to a date",
+            "To convert a date to a number"
+        ],
+        "correct_option": 1,
+        "explanation": "The DATEVALUE function converts a date stored as text into a serial number that Excel recognizes as a date.",
+        "chapter": "MS Excel"
+    },
+    {
+        "id": 97,
+        "question": "How many rows and columns are there in a worksheet of MS-Excel 2010?",
+        "options": [
+            "65536 rows and 256 columns",
+            "1,048,576 rows and 16,384 columns",
+            "1,000,000 rows and 10,000 columns",
+            "10,000 rows and 1,000 columns"
+        ],
+        "correct_option": 1,
+        "explanation": "There are 1,048,576 rows and 16,384 columns in a worksheet of MS-Excel 2010.",
+        "chapter": "MS Excel"
+    },
+    {
+        "id": 98,
+        "question": "What is the purpose of the EXACT function in MS-Excel 2010?",
+        "options": [
+            "To check if two strings are exactly the same",
+            "To check if two numbers are exactly the same",
+            "To compare two dates",
+            "To compare two times"
+        ],
+        "correct_option": 0,
+        "explanation": "The EXACT function checks whether two strings are exactly the same.",
+        "chapter": "MS Excel"
+    },
+    {
+        "id": 99,
+        "question": "What is the minimum zoom percentage in MS-Excel 2010?",
+        "options": [
+            "10%",
+            "20%",
+            "30%",
+            "40%"
+        ],
+        "correct_option": 0,
+        "explanation": "The minimum zoom percentage in MS-Excel 2010 is 10%.",
+        "chapter": "MS Excel"
+    },
+    {
+        "id": 100,
+        "question": "What is the shortcut to close a workbook in MS-Excel 2010?",
+        "options": [
+            "Ctrl + F3",
+            "Ctrl + F4",
+            "Alt + F4",
+            "Ctrl + Shift + F4"
+        ],
+        "correct_option": 1,
+        "explanation": "The shortcut to close a workbook is Ctrl + F4.",
+        "chapter": "MS Excel"
+    },
+    {
+        "id": 101,
+        "question": "Which shortcut is used to move to the previous cell in a row of the table?",
+        "options": [
+            "Tab",
+            "Shift + Tab",
+            "Ctrl + Tab",
+            "Alt + Tab"
+        ],
+        "correct_option": 1,
+        "explanation": "Shift + Tab moves focus to the previous cell in a table row.",
+        "chapter": "MS Excel"
+    },
+    {
+        "id": 102,
+        "question": "What is the shortcut to go to the Insert tab in MS-Excel 2010?",
+        "options": [
+            "Alt + I",
+            "Alt + N",
+            "Ctrl + I",
+            "Ctrl + N"
+        ],
+        "correct_option": 1,
+        "explanation": "The shortcut to go to the Insert tab is Alt + N.",
+        "chapter": "MS Excel"
+    },
+    {
+        "id": 103,
+        "question": "What is the purpose of the CONCATENATE function in MS-Excel 2010?",
+        "options": [
+            "To join several text items into one text item cell",
+            "To split a text item into several cells",
+            "To convert a text item to a number",
+            "To convert a number to a text item"
+        ],
+        "correct_option": 0,
+        "explanation": "The CONCATENATE function joins several text items into one cell.",
+        "chapter": "MS Excel"
+    },
+    {
+        "id": 104,
+        "question": "What is the shortcut to preview the worksheet before printing?",
+        "options": [
+            "Ctrl + F1",
+            "Ctrl + F2",
+            "Ctrl + F3",
+            "Ctrl + F4"
+        ],
+        "correct_option": 1,
+        "explanation": "The shortcut to preview the worksheet before printing is Ctrl + F2.",
+        "chapter": "MS Excel"
+    },
+    {
+        "id": 107,
+        "question": "How many rows and columns are there in a worksheet of MS-Excel 2003?",
+        "options": [
+            "1,048,576 rows and 16,384 columns",
+            "65536 rows and 256 columns",
+            "10,000 rows and 1,000 columns",
+            "100 rows and 10 columns"
+        ],
+        "correct_option": 1,
+        "explanation": "There are 65,536 rows and 256 columns in an MS-Excel 2003 worksheet.",
+        "chapter": "MS Excel"
+    },
+    {
+        "id": 108,
+        "question": "What is the purpose of the Ctrl + A shortcut in MS-Excel 2010?",
+        "options": [
+            "To select the entire worksheet",
+            "To select the entire row",
+            "To select the entire column",
+            "To select a cell"
+        ],
+        "correct_option": 0,
+        "explanation": "The Ctrl + A shortcut is used to select all cells/entire worksheet.",
+        "chapter": "MS Excel"
+    },
+    {
+        "id": 109,
+        "question": "What is the purpose of the Ctrl + T shortcut in MS-Excel 2010?",
+        "options": [
+            "To display the Create Table dialog box",
+            "To display the Format Cells dialog box",
+            "To display the Delete dialog box",
+            "To display the Insert dialog box"
+        ],
+        "correct_option": 0,
+        "explanation": "The Ctrl + T shortcut displays the Create Table dialog box.",
+        "chapter": "MS Excel"
+    },
+    {
+        "id": 110,
+        "question": "What is the shortcut to go to the Data tab in MS-Excel 2010?",
+        "options": [
+            "Alt + A",
+            "Alt + D",
+            "Ctrl + A",
+            "Ctrl + D"
+        ],
+        "correct_option": 0,
+        "explanation": "The shortcut to go to the Data tab is Alt + A.",
+        "chapter": "MS Excel"
+    },
+    {
+        "id": 111,
+        "question": "What is the purpose of the DATEVALUE function?",
+        "options": [
+            "To convert a date to a text string",
+            "To convert a text string to a date",
+            "To convert a number to a date",
+            "To convert a date to a number"
+        ],
+        "correct_option": 1,
+        "explanation": "The DATEVALUE function converts a date stored as text into a serial number.",
+        "chapter": "MS Excel"
+    },
+    {
+        "id": 114,
+        "question": "What is the shortcut to close a workbook?",
+        "options": [
+            "Ctrl + F3",
+            "Ctrl + F4",
+            "Alt + F4",
+            "Ctrl + Shift + F4"
+        ],
+        "correct_option": 1,
+        "explanation": "The shortcut to close a active workbook is Ctrl + F4.",
+        "chapter": "MS Excel"
+    },
+    {
+        "id": 116,
+        "question": "What is the shortcut to move to the previous cell in a row of the table?",
+        "options": [
+            "Tab",
+            "Shift + Tab",
+            "Ctrl + Tab",
+            "Alt + Tab"
+        ],
+        "correct_option": 1,
+        "explanation": "Shift + Tab moves focus to the previous cell.",
+        "chapter": "MS Excel"
+    },
+    {
+        "id": 118,
+        "question": "What is the shortcut to save a new workbook and display the Save As dialog box?",
+        "options": [
+            "Shift + F12",
+            "Ctrl + F1",
+            "Alt + F2",
+            "Shift + F2"
+        ],
+        "correct_option": 2,
+        "explanation": "Alt + F2 displays the File Save As dialog box in Microsoft Excel.",
+        "chapter": "MS Excel"
+    },
+    {
+        "id": 119,
+        "question": "What is the function of Ctrl + F2?",
+        "options": [
+            "Print Preview",
+            "Closes and reopens the current task pane",
+            "Displays the Insert Name Define dialog box",
+            "Activates the Move window command"
+        ],
+        "correct_option": 0,
+        "explanation": "Ctrl + F2 displays the Print Preview window in Microsoft Excel.",
+        "chapter": "MS Excel"
+    },
+    {
+        "id": 121,
+        "question": "What is the shortcut to close all workbooks and exit Excel?",
+        "options": [
+            "Alt + F4",
+            "Alt + F8",
+            "Alt + Shift + F2",
+            "Alt + Shift + F4"
+        ],
+        "correct_option": 0,
+        "explanation": "Alt + F4 closes all open workbooks and exits the Excel application.",
+        "chapter": "MS Excel"
+    },
+    {
+        "id": 122,
+        "question": "What is the function of Ctrl + F6?",
+        "options": [
+            "Moves to the previous open workbook or window",
+            "Moves to the next open workbook or window",
+            "Restores the size of the active workbook or window",
+            "Minimizes the size of the active workbook or window"
+        ],
+        "correct_option": 1,
+        "explanation": "Ctrl + F6 switches to the next open workbook or window.",
+        "chapter": "MS Excel"
+    },
+    {
+        "id": 123,
+        "question": "What is the purpose of using Ctrl + F9?",
+        "options": [
+            "Minimizes the size of the active workbook or window",
+            "Maximizes the size of the active workbook or window",
+            "Restores the size of the active workbook or window",
+            "Closes the selected workbook window"
+        ],
+        "correct_option": 0,
+        "explanation": "Ctrl + F9 minimizes a workbook window to an icon.",
+        "chapter": "MS Excel"
+    },
+    {
+        "id": 126,
+        "question": "What is the purpose of using Ctrl + F4?",
+        "options": [
+            "Closes the selected workbook window",
+            "Restores the size of the active workbook or window",
+            "Minimizes the size of the active workbook or window",
+            "Maximizes the size of the active workbook or window"
+        ],
+        "correct_option": 0,
+        "explanation": "Ctrl + F4 closes the currently selected workbook window.",
+        "chapter": "MS Excel"
+    },
+    {
+        "id": 127,
+        "question": "What is the shortcut to activate the Move window command?",
+        "options": [
+            "Ctrl + F6",
+            "Ctrl + F7",
+            "Ctrl + F8",
+            "Alt + F8"
+        ],
+        "correct_option": 1,
+        "explanation": "Ctrl + F7 performs the Move command on the workbook window when it is not maximized.",
+        "chapter": "MS Excel"
+    },
+    {
+        "id": 129,
+        "question": "What is the purpose of using Ctrl + F1?",
+        "options": [
+            "Displays or hides the Ribbon",
+            "Restores the size of the active workbook or window",
+            "Minimizes the size of the active workbook or window",
+            "Maximizes the size of the active workbook or window"
+        ],
+        "correct_option": 0,
+        "explanation": "Ctrl + F1 displays or hides the Ribbon in Microsoft Excel.",
+        "chapter": "MS Excel"
+    },
+    {
+        "id": 131,
+        "question": "What is the function of Ctrl + F5?",
+        "options": [
+            "Restores the size of the active workbook or window",
+            "Minimizes the size of the active workbook or window",
+            "Maximizes the size of the active workbook or window",
+            "Closes the selected workbook window"
+        ],
+        "correct_option": 0,
+        "explanation": "Ctrl + F5 restores the window size of the selected workbook window.",
+        "chapter": "MS Excel"
+    },
+    {
+        "id": 134,
+        "question": "What is the function of Ctrl + F3?",
+        "options": [
+            "Displays the Name Manager dialog box",
+            "Activates the Move window command",
+            "Displays the Print Preview",
+            "Minimizes the size of the active workbook or window"
+        ],
+        "correct_option": 0,
+        "explanation": "Ctrl + F3 opens the Excel Name Manager dialog box.",
+        "chapter": "MS Excel"
+    },
+    {
+        "id": 135,
+        "question": "What is the purpose of using Shift + F12?",
+        "options": [
+            "Saves the active workbook",
+            "Creates a chart on a chart sheet using the highlighted range",
+            "Displays the Save As dialog box",
+            "Closes all workbooks and exits Excel"
+        ],
+        "correct_option": 0,
+        "explanation": "Shift + F12 performs a Save operation on the current active workbook.",
+        "chapter": "MS Excel"
+    },
+    {
+        "id": 136,
+        "question": "What is the shortcut to maximize the size of the active workbook or window?",
+        "options": [
+            "Ctrl + F9",
+            "Ctrl + F10",
+            "Ctrl + F12",
+            "Alt + F10"
+        ],
+        "correct_option": 1,
+        "explanation": "Ctrl + F10 maximizes or restores the selected workbook window.",
+        "chapter": "MS Excel"
+    },
+    {
+        "id": 144,
+        "question": "What is the purpose of using Alt + F4?",
+        "options": [
+            "Closes all workbooks and exits Excel",
+            "Displays the Save As dialog box",
+            "Creates a chart on a chart sheet using the highlighted range",
+            "Displays the Open dialog box"
+        ],
+        "correct_option": 0,
+        "explanation": "Alt + F4 exits Microsoft Excel and prompts to save unsaved files.",
+        "chapter": "MS Excel"
+    },
+    {
+        "id": 145,
+        "question": "What is the function of Ctrl + X in the active workbook?",
+        "options": [
+            "Cuts the current selection to the clipboard",
+            "Repeats the last workbook action",
+            "Undo/Redo the last workbook action",
+            "Deletes the selection or one character to the right"
+        ],
+        "correct_option": 0,
+        "explanation": "Ctrl + X is used to cut the current selection to the clipboard.",
+        "chapter": "MS Excel"
+    },
+    {
+        "id": 146,
+        "question": "Which shortcut key is used to repeat the last workbook action?",
+        "options": [
+            "Ctrl + X",
+            "Ctrl + Y",
+            "Ctrl + Z",
+            "Shift + Enter"
+        ],
+        "correct_option": 1,
+        "explanation": "Ctrl + Y is used to repeat (redo) the last workbook action.",
+        "chapter": "MS Excel"
+    },
+    {
+        "id": 147,
+        "question": "What is the function of Shift + Enter in the active cell?",
+        "options": [
+            "Enters the contents of the active cell and moves to the cell above",
+            "Enters the contents of the active cell and moves one cell to the right",
+            "Enters the contents of the active cell and moves one cell to the left",
+            "Deletes the selection or one character to the right"
+        ],
+        "correct_option": 0,
+        "explanation": "Shift + Enter enters the contents of the active cell and moves selection to the cell above.",
+        "chapter": "MS Excel"
+    },
+    {
+        "id": 148,
+        "question": "Which shortcut key is used to enter the SUM() function?",
+        "options": [
+            "Alt + =",
+            "Alt + Enter",
+            "Ctrl + '",
+            "Ctrl + ;"
+        ],
+        "correct_option": 0,
+        "explanation": "Alt + = automatically inserts the AutoSum formula.",
+        "chapter": "MS Excel"
+    },
+    {
+        "id": 149,
+        "question": "What is the function of Ctrl + ' in the active cell?",
+        "options": [
+            "Enters the contents from the cell directly above into the active cell",
+            "Enters the current date into the active cell",
+            "Enters the current time into the active cell",
+            "Deletes the selection or one character to the right"
+        ],
+        "correct_option": 0,
+        "explanation": "Ctrl + ' copies the formula or value from the cell directly above the active cell.",
+        "chapter": "MS Excel"
+    },
+    {
+        "id": 150,
+        "question": "Which shortcut key is used to enter the current date into the active cell?",
+        "options": [
+            "Ctrl + ;",
+            "Ctrl + Shift + ;",
+            "Ctrl + '",
+            "Alt + Enter"
+        ],
+        "correct_option": 0,
+        "explanation": "Ctrl + ; inserts the current system date into the active cell.",
+        "chapter": "MS Excel"
+    },
+    {
+        "id": 151,
+        "question": "What is the function of Ctrl + Shift + ; in the active cell?",
+        "options": [
+            "Enters the current date into the active cell",
+            "Enters the current time into the active cell",
+            "Enters the contents from the cell directly above into the active cell",
+            "Deletes the selection or one character to the right"
+        ],
+        "correct_option": 1,
+        "explanation": "Ctrl + Shift + ; inserts the current system time into the active cell.",
+        "chapter": "MS Excel"
+    },
+    {
+        "id": 152,
+        "question": "Which shortcut key is used to enter the formula as an Array Formula?",
+        "options": [
+            "Ctrl + Shift + Enter",
+            "Ctrl + Enter",
+            "Shift + Enter",
+            "Alt + Enter"
+        ],
+        "correct_option": 0,
+        "explanation": "Ctrl + Shift + Enter enters a formula as a legacy Array Formula.",
+        "chapter": "MS Excel"
+    },
+    {
+        "id": 153,
+        "question": "What is the function of Shift + Insert in the active cell?",
+        "options": [
+            "Enters the data from the clipboard",
+            "Deletes the selection or one character to the right",
+            "Enters the contents of the active cell and moves to the cell above",
+            "Enters the SUM() function (AutoSum)"
+        ],
+        "correct_option": 0,
+        "explanation": "Shift + Insert pastes data from the clipboard.",
+        "chapter": "MS Excel"
+    },
+    {
+        "id": 154,
+        "question": "Which shortcut key is used to display the Pick From List drop-down list?",
+        "options": [
+            "Alt + Down Arrow",
+            "Alt + Up Arrow",
+            "Ctrl + Down Arrow",
+            "Ctrl + Up Arrow"
+        ],
+        "correct_option": 0,
+        "explanation": "Alt + Down Arrow displays the Pick From List drop-down menu in Excel.",
+        "chapter": "MS Excel"
+    },
+    {
+        "id": 155,
+        "question": "What is the function of Esc in the active cell?",
+        "options": [
+            "Cancels the cell entry and restores the original contents",
+            "Deletes the selection or one character to the right",
+            "Enters the contents of the active cell and moves to the cell above",
+            "Enters the SUM() function (AutoSum)"
+        ],
+        "correct_option": 0,
+        "explanation": "Esc cancels an entry in the cell or formula bar.",
+        "chapter": "MS Excel"
+    },
+    {
+        "id": 156,
+        "question": "Which shortcut key is used to delete the selection or one character to the right?",
+        "options": [
+            "Delete",
+            "Backspace",
+            "Shift + Delete",
+            "Ctrl + Delete"
+        ],
+        "correct_option": 0,
+        "explanation": "Delete clears cell contents or deletes characters to the right of the cursor.",
+        "chapter": "MS Excel"
+    },
+    {
+        "id": 157,
+        "question": "What is the function of Backspace in the active cell?",
+        "options": [
+            "Deletes the selection or one character to the right",
+            "Deletes the selection or one character to the left",
+            "Enters the contents of the active cell and moves to the cell above",
+            "Enters the SUM() function (AutoSum)"
+        ],
+        "correct_option": 1,
+        "explanation": "Backspace clears the active cell or deletes characters to the left of the cursor.",
+        "chapter": "MS Excel"
+    },
+    {
+        "id": 159,
+        "question": "What is the function of Ctrl + Delete in the active cell?",
+        "options": [
+            "Deletes text to the end of the line",
+            "Deletes the selection or one character to the right",
+            "Enters the contents of the active cell and moves to the cell above",
+            "Enters the SUM() function (AutoSum)"
+        ],
+        "correct_option": 0,
+        "explanation": "Ctrl + Delete deletes text from the cursor position to the end of the line.",
+        "chapter": "MS Excel"
+    },
+    {
+        "id": 161,
+        "question": "What is the function of Ctrl + Shift + = in the active cell?",
+        "options": [
+            "Displays the Insert dialog box to insert blank cells",
+            "Displays the Delete dialog box",
+            "Enters the SUM() function (AutoSum)",
+            "Deletes the selection or one character to the right"
+        ],
+        "correct_option": 0,
+        "explanation": "Ctrl + Shift + = displays the Insert dialog box to insert new cells, rows, or columns.",
+        "chapter": "MS Excel"
+    },
+    {
+        "id": 162,
+        "question": "Which shortcut key is used to enter a new line into a cell?",
+        "options": [
+            "Alt + Enter",
+            "Ctrl + Enter",
+            "Shift + Enter",
+            "Ctrl + Shift + Enter"
+        ],
+        "correct_option": 0,
+        "explanation": "Alt + Enter starts a new line within the same cell.",
+        "chapter": "MS Excel"
+    },
+    {
+        "id": 163,
+        "question": "What is the function of Tab in the active cell?",
+        "options": [
+            "Enters the contents of the active cell and moves one cell to the right",
+            "Enters the contents of the active cell and moves one cell to the left",
+            "Enters the contents of the active cell and moves to the cell above",
+            "Deletes the selection or one character to the right"
+        ],
+        "correct_option": 0,
+        "explanation": "Tab completes cell entry and moves focus one cell to the right.",
+        "chapter": "MS Excel"
+    },
+    {
+        "id": 164,
+        "question": "Which shortcut key is used to enter the contents of the active cell and move one cell to the left?",
+        "options": [
+            "Shift + Tab",
+            "Tab",
+            "Ctrl + Tab",
+            "Alt + Tab"
+        ],
+        "correct_option": 0,
+        "explanation": "Shift + Tab completes entry and shifts active selection one cell to the left.",
+        "chapter": "MS Excel"
+    },
+    {
+        "id": 165,
+        "question": "What is the function of Ctrl + Z in the active workbook?",
+        "options": [
+            "Undo the last workbook action",
+            "Repeat the last workbook action",
+            "Cut the current selection to the clipboard",
+            "Delete the selection or one character to the right"
+        ],
+        "correct_option": 0,
+        "explanation": "Ctrl + Z reverses/undoes the last action.",
+        "chapter": "MS Excel"
+    },
+    {
+        "id": 166,
+        "question": "Which shortcut key is used to undo the last action in the active workbook?",
+        "options": [
+            "Ctrl + Z",
+            "Ctrl + Y",
+            "Ctrl + X",
+            "Ctrl + C"
+        ],
+        "correct_option": 0,
+        "explanation": "Ctrl + Z undoes the most recent action.",
+        "chapter": "MS Excel"
+    },
+    {
+        "id": 167,
+        "question": "What is the function of Ctrl + Y in the active workbook?",
+        "options": [
+            "Repeats the last workbook action",
+            "Undo/Redo the last workbook action",
+            "Cut the current selection to the clipboard",
+            "Delete the selection or one character to the right"
+        ],
+        "correct_option": 0,
+        "explanation": "Ctrl + Y redoes or repeats the last command.",
+        "chapter": "MS Excel"
+    },
+    {
+        "id": 168,
+        "question": "Which shortcut key is used to display the Pick From List drop-down list in the active cell?",
+        "options": [
+            "Alt + Down Arrow",
+            "Alt + Up Arrow",
+            "Ctrl + Down Arrow",
+            "Ctrl + Up Arrow"
+        ],
+        "correct_option": 0,
+        "explanation": "Alt + Down Arrow opens the drop-down list of unique values in the current column.",
+        "chapter": "MS Excel"
+    },
+    {
+        "id": 169,
+        "question": "What is the function of Shift + Delete in the active cell?",
+        "options": [
+            "Cuts the selection to the clipboard",
+            "Deletes the selection or one character to the right",
+            "Enters the contents of the active cell and moves to the cell above",
+            "Enters the SUM() function (AutoSum)"
+        ],
+        "correct_option": 0,
+        "explanation": "Shift + Delete acts as a legacy cut command to place selection on the clipboard.",
+        "chapter": "MS Excel"
+    },
+    {
+        "id": 170,
+        "question": "Which shortcut key is used to enter the current time into the active cell?",
+        "options": [
+            "Ctrl + ;",
+            "Ctrl + Shift + ;",
+            "Ctrl + '",
+            "Alt + Enter"
+        ],
+        "correct_option": 1,
+        "explanation": "Ctrl + Shift + ; enters the current time into the selected cell.",
+        "chapter": "MS Excel"
+    },
+    {
+        "id": 172,
+        "question": "What is the function of Alt + Enter in the active cell?",
+        "options": [
+            "Enters a new line into a cell",
+            "Enters the contents of the active cell and moves to the cell above",
+            "Enters the SUM() function (AutoSum)",
+            "Deletes the selection or one character to the right"
+        ],
+        "correct_option": 0,
+        "explanation": "Alt + Enter adds line breaks within an individual cell.",
+        "chapter": "MS Excel"
+    },
+    {
+        "id": 177,
+        "question": "What is the function of the keyboard shortcut Ctrl + Tab?",
+        "options": [
+            "Moves to the previous open workbook or window",
+            "Moves to the next open workbook or window",
+            "Moves to the previous application open on your computer",
+            "Moves to the next application open on your computer"
+        ],
+        "correct_option": 1,
+        "explanation": "The keyboard shortcut Ctrl + Tab switches to the next tab or workbook window.",
+        "chapter": "MS Excel"
+    },
+    {
+        "id": 180,
+        "question": "What is the effect of using the keyboard shortcut End + Arrow Keys on a worksheet?",
+        "options": [
+            "Moves to the first non-empty cell in that direction",
+            "Moves to the next non-empty cell in that direction",
+            "Moves to the last non-empty cell in that direction",
+            "Moves to the previous non-empty cell in that direction"
+        ],
+        "correct_option": 2,
+        "explanation": "Pressing End followed by an arrow key jumps to the last non-blank cell in the same column or row as the active cell.",
+        "chapter": "MS Excel"
+    },
+    {
+        "id": 181,
+        "question": "What is the function of the keyboard shortcut End + Enter on a worksheet?",
+        "options": [
+            "Moves to the first cell in the current row that is not blank",
+            "Moves to the last cell in the current row that is not blank",
+            "Moves to the first cell in the current column that is not blank",
+            "Moves to the last cell in the current column that is not blank"
+        ],
+        "correct_option": 1,
+        "explanation": "The key sequence End + Enter moves to the last non-blank cell in the current row.",
+        "chapter": "MS Excel"
+    },
+    {
+        "id": 182,
+        "question": "What is the effect of using the keyboard shortcut End + Home on a worksheet?",
+        "options": [
+            "Moves to the first cell in the current row that is not blank",
+            "Moves to the last cell in the current row that is not blank",
+            "Moves to the first cell in the current column that is not blank",
+            "Moves to the last used cell on the active worksheet"
+        ],
+        "correct_option": 3,
+        "explanation": "End + Home jumps to the last cell used on the worksheet in the bottom-right region.",
+        "chapter": "MS Excel"
+    },
+    {
+        "id": 183,
+        "question": "What is the function of the keyboard shortcut Page Down on a worksheet?",
+        "options": [
+            "Moves to the previous screen of rows up",
+            "Moves to the next screen of rows down",
+            "Moves to the previous screen of columns to the left",
+            "Moves to the next screen of columns to the right"
+        ],
+        "correct_option": 1,
+        "explanation": "Page Down scrolls down one screen of rows on the worksheet.",
+        "chapter": "MS Excel"
+    },
+    {
+        "id": 184,
+        "question": "What is the effect of using the keyboard shortcut Page Up on a worksheet?",
+        "options": [
+            "Moves to the previous screen of rows up",
+            "Moves to the next screen of rows down",
+            "Moves to the previous screen of columns to the left",
+            "Moves to the next screen of columns to the right"
+        ],
+        "correct_option": 0,
+        "explanation": "Page Up scrolls up one screen of rows on the worksheet.",
+        "chapter": "MS Excel"
+    },
+    {
+        "id": 185,
+        "question": "What is the function of the keyboard shortcut Shift + Enter on a worksheet?",
+        "options": [
+            "Moves to the cell directly below",
+            "Moves to the cell directly above",
+            "Moves to the cell directly to the left",
+            "Moves to the cell directly to the right"
+        ],
+        "correct_option": 1,
+        "explanation": "Shift + Enter completes cell entry and selects the cell above.",
+        "chapter": "MS Excel"
+    },
+    {
+        "id": 186,
+        "question": "What is the effect of using the keyboard shortcut Shift + Tab on a worksheet?",
+        "options": [
+            "Moves to the cell directly to the right",
+            "Moves to the cell directly to the left",
+            "Moves to the cell directly above",
+            "Moves to the cell directly below"
+        ],
+        "correct_option": 1,
+        "explanation": "Shift + Tab completes cell entry and selects the cell to the left.",
+        "chapter": "MS Excel"
+    },
+    {
+        "id": 187,
+        "question": "What is the function of the keyboard shortcut Alt + Page Down on a worksheet?",
+        "options": [
+            "Moves one screen of columns to the left",
+            "Moves one screen of columns to the right",
+            "Moves one screen of rows up",
+            "Moves one screen of rows down"
+        ],
+        "correct_option": 1,
+        "explanation": "Alt + Page Down moves one screen to the right in the worksheet.",
+        "chapter": "MS Excel"
+    },
+    {
+        "id": 188,
+        "question": "What is the effect of using the keyboard shortcut Alt + Page Up on a worksheet?",
+        "options": [
+            "Moves one screen of columns to the left",
+            "Moves one screen of columns to the right",
+            "Moves one screen of rows up",
+            "Moves one screen of rows down"
+        ],
+        "correct_option": 0,
+        "explanation": "Alt + Page Up moves one screen to the left in the worksheet.",
+        "chapter": "MS Excel"
+    },
+    {
+        "id": 189,
+        "question": "What is the function of the keyboard shortcut Ctrl + Home on a worksheet?",
+        "options": [
+            "Moves to the last used cell on the active worksheet",
+            "Moves to the first used cell on the active worksheet",
+            "Moves to cell 'A1' on the active sheet",
+            "Moves to the last cell in the current row that is not blank"
+        ],
+        "correct_option": 2,
+        "explanation": "Ctrl + Home jumps to cell A1 or the top-leftmost available cell.",
+        "chapter": "MS Excel"
+    },
+    {
+        "id": 190,
+        "question": "What is the effect of using the keyboard shortcut Ctrl + End on a worksheet?",
+        "options": [
+            "Moves to the first used cell on the active worksheet",
+            "Moves to the last used cell on the active worksheet",
+            "Moves to cell 'A1' on the active sheet",
+            "Moves to the first cell in the current row that is not blank"
+        ],
+        "correct_option": 1,
+        "explanation": "Ctrl + End moves to the bottom-rightmost cell with contents or formatting.",
+        "chapter": "MS Excel"
+    },
+    {
+        "id": 191,
+        "question": "What is the function of the keyboard shortcut Ctrl + Up Arrow on a worksheet?",
+        "options": [
+            "Moves to the last row in the current region",
+            "Moves to the top boundary of the current data region",
+            "Moves to the last column in the current region",
+            "Moves to the first column in the current region"
+        ],
+        "correct_option": 1,
+        "explanation": "Ctrl + Up Arrow moves to the top edge of the active data block.",
+        "chapter": "MS Excel"
+    },
+    {
+        "id": 192,
+        "question": "What is the effect of using the keyboard shortcut Ctrl + Down Arrow on a worksheet?",
+        "options": [
+            "Moves to the first row in the current region",
+            "Moves to the bottom boundary of the current data region",
+            "Moves to the first column in the current region",
+            "Moves to the last column in the current region"
+        ],
+        "correct_option": 1,
+        "explanation": "Ctrl + Down Arrow moves to the bottom edge of the active data block.",
+        "chapter": "MS Excel"
+    },
+    {
+        "id": 193,
+        "question": "What is the function of the keyboard shortcut Ctrl + Left Arrow on a worksheet?",
+        "options": [
+            "Moves to the last column in the current region",
+            "Moves to the left boundary of the current data region",
+            "Moves to the last row in the current region",
+            "Moves to the first row in the current region"
+        ],
+        "correct_option": 1,
+        "explanation": "Ctrl + Left Arrow moves to the leftmost cell in the current region.",
+        "chapter": "MS Excel"
+    },
+    {
+        "id": 194,
+        "question": "What is the effect of using the keyboard shortcut Ctrl + Right Arrow on a worksheet?",
+        "options": [
+            "Moves to the first column in the current region",
+            "Moves to the right boundary of the current data region",
+            "Moves to the first row in the current region",
+            "Moves to the last row in the current region"
+        ],
+        "correct_option": 1,
+        "explanation": "Ctrl + Right Arrow moves to the rightmost cell in the current region.",
+        "chapter": "MS Excel"
+    },
+    {
+        "id": 195,
+        "question": "What is the function of the keyboard shortcut Ctrl + Page Up on a worksheet?",
+        "options": [
+            "Moves to the next worksheet in the workbook",
+            "Moves to the previous worksheet in the workbook",
+            "Moves to the next open workbook or window",
+            "Moves to the previous open workbook or window"
+        ],
+        "correct_option": 1,
+        "explanation": "Ctrl + Page Up switches to the previous worksheet tab.",
+        "chapter": "MS Excel"
+    },
+    {
+        "id": 196,
+        "question": "What is the effect of using the keyboard shortcut Ctrl + Page Down on a worksheet?",
+        "options": [
+            "Moves to the previous worksheet in the workbook",
+            "Moves to the next worksheet in the workbook",
+            "Moves to the previous open workbook or window",
+            "Moves to the next open workbook or window"
+        ],
+        "correct_option": 1,
+        "explanation": "Ctrl + Page Down switches to the next worksheet tab.",
+        "chapter": "MS Excel"
+    },
+    {
+        "id": 197,
+        "question": "What is the function of the keyboard shortcut Ctrl + Shift + Tab on a worksheet?",
+        "options": [
+            "Moves to the next open workbook or window",
+            "Moves to the previous open workbook or window",
+            "Moves to the next application open on your computer",
+            "Moves to the previous application open on your computer"
+        ],
+        "correct_option": 1,
+        "explanation": "Ctrl + Shift + Tab moves backward to the previous open workbook/window.",
+        "chapter": "MS Excel"
+    },
+    {
+        "id": 198,
+        "question": "What is the effect of using the keyboard shortcut Scroll Lock + Arrow Keys on a worksheet?",
+        "options": [
+            "Moves the cell cursor one cell in the corresponding direction",
+            "Scrolls the screen one row or column in that direction without changing active cell",
+            "Moves to the first non-empty cell in that direction",
+            "Moves to the last non-empty cell in that direction"
+        ],
+        "correct_option": 1,
+        "explanation": "When Scroll Lock is enabled, arrow keys scroll the worksheet view rather than moving cell selection.",
+        "chapter": "MS Excel"
+    },
+    {
+        "id": 200,
+        "question": "What is the effect of using the keyboard shortcut Ctrl + Tab on multiple open workbooks?",
+        "options": [
+            "Moves to the previous open workbook or window",
+            "Moves to the next open workbook or window",
+            "Moves to the previous application open on your computer",
+            "Moves to the next application open on your computer"
+        ],
+        "correct_option": 1,
+        "explanation": "Ctrl + Tab switches to the next open workbook window.",
+        "chapter": "MS Excel"
+    },
+    {
+        "id": 202,
+        "question": "What is the effect of using the keyboard shortcut End + Home on a worksheet to move to a specific cell?",
+        "options": [
+            "Moves to the first cell in the current row that is not blank",
+            "Moves to the last cell in the current row that is not blank",
+            "Moves to the first cell in the current column that is not blank",
+            "Moves to the last used cell on the active worksheet"
+        ],
+        "correct_option": 3,
+        "explanation": "End + Home jumps directly to the last active cell on the worksheet.",
+        "chapter": "MS Excel"
+    },
+    {
+        "id": 389,
+        "question": "What is the primary function of Microsoft Excel?",
+        "options": [
+            "Word processing",
+            "Spreadsheet editing",
+            "Presentation creation",
+            "Database management"
+        ],
+        "correct_option": 1,
+        "explanation": "Microsoft Excel is a spreadsheet editor.",
+        "chapter": "MS Excel"
+    },
+    {
+        "id": 427,
+        "question": "How to move one cell up in a worksheet?",
+        "options": [
+            "Up arrow key",
+            "Down arrow key",
+            "Left arrow key",
+            "Right arrow key"
+        ],
+        "correct_option": 0,
+        "explanation": "The up arrow key is used to move one cell up in a worksheet.",
+        "chapter": "MS Excel"
+    },
+    {
+        "id": 428,
+        "question": "What is the function of Ctrl+Arrow key?",
+        "options": [
+            "Move to the edge of the current data region",
+            "Move to the last cell on a worksheet",
+            "Move one cell left in a worksheet",
+            "Move one cell right in a worksheet"
+        ],
+        "correct_option": 0,
+        "explanation": "Ctrl+Arrow key is used to move to the edge of the current data region in a worksheet.",
+        "chapter": "MS Excel"
+    },
+    {
+        "id": 429,
+        "question": "How to enter the End mode and move to the next nonblank cell?",
+        "options": [
+            "End, Arrow key",
+            "Ctrl+End",
+            "Ctrl+Shift+End",
+            "Alt+End"
+        ],
+        "correct_option": 0,
+        "explanation": "End, Arrow key is used to enter the End mode and move to the next nonblank cell.",
+        "chapter": "MS Excel"
+    },
+    {
+        "id": 430,
+        "question": "What is the shortcut to move to the last cell on a worksheet?",
+        "options": [
+            "Ctrl+End",
+            "Ctrl+Home",
+            "Ctrl+Shift+End",
+            "Alt+End"
+        ],
+        "correct_option": 0,
+        "explanation": "The shortcut to move to the last cell on a worksheet is Ctrl+End.",
+        "chapter": "MS Excel"
+    },
+    {
+        "id": 431,
+        "question": "How to extend the selection of cells to the last used cell on the worksheet?",
+        "options": [
+            "Ctrl+Shift+End",
+            "Ctrl+End",
+            "Ctrl+Home",
+            "Alt+End"
+        ],
+        "correct_option": 0,
+        "explanation": "Ctrl+Shift+End is used to extend the selection of cells to the last used cell on the worksheet.",
+        "chapter": "MS Excel"
+    },
+    {
+        "id": 432,
+        "question": "What is the function of Home+Scroll lock?",
+        "options": [
+            "Move to the cell in the upper-left corner of the window",
+            "Move to the beginning of a worksheet",
+            "Move one screen down in a worksheet",
+            "Move one screen up in a worksheet"
+        ],
+        "correct_option": 0,
+        "explanation": "Home+Scroll lock is used to move to the cell in the upper-left corner of the window when Scroll lock is turned on.",
+        "chapter": "MS Excel"
+    },
+    {
+        "id": 433,
+        "question": "How to move to the beginning of a worksheet?",
+        "options": [
+            "Ctrl+Home",
+            "Ctrl+End",
+            "Ctrl+Shift+End",
+            "Alt+Home"
+        ],
+        "correct_option": 0,
+        "explanation": "The shortcut to move to the beginning of a worksheet is Ctrl+Home.",
+        "chapter": "MS Excel"
+    },
+    {
+        "id": 434,
+        "question": "What is the shortcut to move one screen down in a worksheet?",
+        "options": [
+            "Page down",
+            "Page up",
+            "Alt+Page down",
+            "Alt+Page up"
+        ],
+        "correct_option": 0,
+        "explanation": "The shortcut to move one screen down in a worksheet is Page down.",
+        "chapter": "MS Excel"
+    },
+    {
+        "id": 435,
+        "question": "How to move to the next sheet in a workbook?",
+        "options": [
+            "Ctrl+Page down",
+            "Ctrl+Page up",
+            "Alt+Page down",
+            "Alt+Page up"
+        ],
+        "correct_option": 0,
+        "explanation": "The shortcut to move to the next sheet in a workbook is Ctrl+Page down.",
+        "chapter": "MS Excel"
+    },
+    {
+        "id": 436,
+        "question": "What is the function of Alt+Page down?",
+        "options": [
+            "Move one screen to the right in a worksheet",
+            "Move one screen to the left in a worksheet",
+            "Move one screen down in a worksheet",
+            "Move one screen up in a worksheet"
+        ],
+        "correct_option": 0,
+        "explanation": "Alt+Page down is used to move one screen to the right in a worksheet.",
+        "chapter": "MS Excel"
+    },
+    {
+        "id": 437,
+        "question": "How to move one screen up in a worksheet?",
+        "options": [
+            "Page up",
+            "Page down",
+            "Alt+Page up",
+            "Alt+Page down"
+        ],
+        "correct_option": 0,
+        "explanation": "The shortcut to move one screen up in a worksheet is Page up.",
+        "chapter": "MS Excel"
+    },
+    {
+        "id": 438,
+        "question": "What is the shortcut to move one screen to the left in a worksheet?",
+        "options": [
+            "Alt+Page up",
+            "Alt+Page down",
+            "Page up",
+            "Page down"
+        ],
+        "correct_option": 0,
+        "explanation": "The shortcut to move one screen to the left in a worksheet is Alt+Page up.",
+        "chapter": "MS Excel"
+    },
+    {
+        "id": 439,
+        "question": "How to move to the previous sheet in a workbook?",
+        "options": [
+            "Ctrl+Page up",
+            "Ctrl+Page down",
+            "Alt+Page up",
+            "Alt+Page down"
+        ],
+        "correct_option": 0,
+        "explanation": "The shortcut to move to the previous sheet in a workbook is Ctrl+Page up.",
+        "chapter": "MS Excel"
+    },
+    {
+        "id": 440,
+        "question": "What is the function of Shift+Tab?",
+        "options": [
+            "Move to the previous cell in a worksheet",
+            "Move to the next cell in a worksheet",
+            "Move one cell up in a worksheet",
+            "Move one cell down in a worksheet"
+        ],
+        "correct_option": 0,
+        "explanation": "Shift+Tab is used to move to the previous cell in a worksheet or the previous option in a dialog box.",
+        "chapter": "MS Excel"
+    },
+    {
+        "id": 444,
+        "question": "What is the function of Ctrl+End, Arrow key?",
+        "options": [
+            "Move to the edge of the current data region",
+            "Move to the last cell on a worksheet",
+            "Move one cell left in a worksheet",
+            "Move one cell right in a worksheet"
+        ],
+        "correct_option": 1,
+        "explanation": "Ctrl+End is used to move to the last cell on a worksheet, and adding an arrow key will move to the last cell in the row or column.",
+        "chapter": "MS Excel"
+    },
+    {
+        "id": 448,
+        "question": "What is the function of End, Arrow key?",
+        "options": [
+            "Move to the edge of the current data region",
+            "Move to the last cell on a worksheet",
+            "Enter the End mode and move to the next nonblank cell",
+            "Move one cell right in a worksheet"
+        ],
+        "correct_option": 2,
+        "explanation": "End, Arrow key is used to enter the End mode and move to the next nonblank cell in the same column or row as the active cell.",
+        "chapter": "MS Excel"
+    },
+    {
+        "id": 451,
+        "question": "How to move to the last cell in the row or column?",
+        "options": [
+            "Ctrl+End",
+            "Ctrl+Home",
+            "Ctrl+Shift+End",
+            "End, Arrow key"
+        ],
+        "correct_option": 3,
+        "explanation": "End, Arrow key is used to move to the last cell in the row or column if the cells are blank.",
+        "chapter": "MS Excel"
+    },
+    {
+        "id": 453,
+        "question": "What is the function of Shift+F2?",
+        "options": [
+            "Edit the active cell",
+            "Add or edit a cell note",
+            "Display the print preview area",
+            "Toggle full screen mode"
+        ],
+        "correct_option": 1,
+        "explanation": "Shift+F2 adds or edits a cell note.",
+        "chapter": "MS Excel"
+    },
+    {
+        "id": 454,
+        "question": "What is the purpose of F2 alone?",
+        "options": [
+            "Display the Paste Name dialog box",
+            "Edit the active cell and put the insertion point at the end of its contents",
+            "Toggle full screen mode",
+            "Close the selected workbook window"
+        ],
+        "correct_option": 1,
+        "explanation": "F2 alone edits the active cell and put the insertion point at the end of its contents.",
+        "chapter": "MS Excel"
+    },
+    {
+        "id": 458,
+        "question": "What is the shortcut to close Excel?",
+        "options": [
+            "Alt+F4",
+            "Ctrl+F4",
+            "Shift+F4",
+            "Alt+Shift+F4"
+        ],
+        "correct_option": 0,
+        "explanation": "Alt+F4 closes Excel.",
+        "chapter": "MS Excel"
+    },
+    {
+        "id": 460,
+        "question": "What is the purpose of F6 alone?",
+        "options": [
+            "Switches between the worksheet, ribbon, task pane, and Zoom controls",
+            "Edit the active cell",
+            "Toggle full screen mode",
+            "Close the selected workbook window"
+        ],
+        "correct_option": 0,
+        "explanation": "F6 alone switches between the worksheet, ribbon, task pane, and Zoom controls.",
+        "chapter": "MS Excel"
+    },
+    {
+        "id": 461,
+        "question": "What is the function of Shift+F6?",
+        "options": [
+            "Switches between the worksheet, Zoom controls, task pane, and ribbon",
+            "Edit the active cell",
+            "Toggle full screen mode",
+            "Close the selected workbook window"
+        ],
+        "correct_option": 0,
+        "explanation": "Shift+F6 switches between the worksheet, Zoom controls, task pane, and ribbon.",
+        "chapter": "MS Excel"
+    },
+    {
+        "id": 462,
+        "question": "What is the shortcut to insert a new worksheet?",
+        "options": [
+            "Alt+F1",
+            "Alt+Shift+F1",
+            "Ctrl+Shift+F1",
+            "Ctrl+F1"
+        ],
+        "correct_option": 1,
+        "explanation": "Alt+Shift+F1 inserts a new worksheet.",
+        "chapter": "MS Excel"
+    },
+    {
+        "id": 463,
+        "question": "What is the purpose of Ctrl+F4?",
+        "options": [
+            "Closes the selected workbook window",
+            "Toggle full screen mode",
+            "Edit the active cell",
+            "Display the print preview area"
+        ],
+        "correct_option": 0,
+        "explanation": "Ctrl+F4 closes the selected workbook window.",
+        "chapter": "MS Excel"
+    },
+    {
+        "id": 466,
+        "question": "What is the purpose of Ctrl+F5?",
+        "options": [
+            "Restores the window size of the selected workbook window",
+            "Toggle full screen mode",
+            "Edit the active cell",
+            "Display the print preview area"
+        ],
+        "correct_option": 0,
+        "explanation": "Ctrl+F5 restores the window size of the selected workbook window.",
+        "chapter": "MS Excel"
+    },
+    {
+        "id": 467,
+        "question": "What is the function of F4 when a cell reference or range is selected in a formula?",
+        "options": [
+            "Cycles through all the various combinations of absolute and relative references",
+            "Repeats the last command or action",
+            "Edit the active cell",
+            "Toggle full screen mode"
+        ],
+        "correct_option": 0,
+        "explanation": "F4 cycles through all the various combinations of absolute and relative references when a cell reference or range is selected in a formula.",
+        "chapter": "MS Excel"
+    },
+    {
+        "id": 470,
+        "question": "What is the shortcut to close the selected workbook window?",
+        "options": [
+            "Ctrl+F4",
+            "Alt+F4",
+            "Shift+F4",
+            "Alt+Shift+F4"
+        ],
+        "correct_option": 0,
+        "explanation": "Ctrl+F4 closes the selected workbook window.",
+        "chapter": "MS Excel"
+    },
+    {
+        "id": 471,
+        "question": "What is the purpose of F6 alone in a worksheet that has been split?",
+        "options": [
+            "Switches between the worksheet, ribbon, task pane, and Zoom controls, including split panes",
+            "Edit the active cell",
+            "Toggle full screen mode",
+            "Close the selected workbook window"
+        ],
+        "correct_option": 0,
+        "explanation": "F6 alone switches between the worksheet, ribbon, task pane, and Zoom controls, including split panes in a worksheet that has been split.",
+        "chapter": "MS Excel"
+    },
+    {
+        "id": 473,
+        "question": "What is the shortcut to restore the window size of the selected workbook window?",
+        "options": [
+            "Ctrl+F5",
+            "Alt+F5",
+            "Shift+F5",
+            "Ctrl+Shift+F5"
+        ],
+        "correct_option": 0,
+        "explanation": "Ctrl+F5 restores the window size of the selected workbook window.",
+        "chapter": "MS Excel"
+    },
+    {
+        "id": 474,
+        "question": "What is the purpose of F2 alone when editing is turned off for the cell?",
+        "options": [
+            "Move the insertion point into the formula bar",
+            "Edit the active cell",
+            "Toggle full screen mode",
+            "Close the selected workbook window"
+        ],
+        "correct_option": 0,
+        "explanation": "F2 alone moves the insertion point into the formula bar when editing is turned off for the cell.",
+        "chapter": "MS Excel"
+    },
+    {
+        "id": 475,
+        "question": "What is the function of F3 alone if names have not been defined in the workbook?",
+        "options": [
+            "Displays an error message",
+            "Displays the Paste Name dialog box",
+            "Does nothing",
+            "Inserts a new worksheet"
+        ],
+        "correct_option": 2,
+        "explanation": "F3 alone does nothing if names have not been defined in the workbook.",
+        "chapter": "MS Excel"
+    },
+    {
+        "id": 476,
+        "question": "What is the shortcut to switch between the worksheet, Zoom controls, task pane, and ribbon?",
+        "options": [
+            "F6 alone",
+            "Shift+F6",
+            "Ctrl+F6",
+            "Alt+F6"
+        ],
+        "correct_option": 1,
+        "explanation": "Shift+F6 switches between the worksheet, Zoom controls, task pane, and ribbon.",
+        "chapter": "MS Excel"
+    },
+    {
+        "id": 478,
+        "question": "What is the shortcut to add or edit a cell note?",
+        "options": [
+            "Shift+F2",
+            "Ctrl+F2",
+            "Alt+F2",
+            "F2 alone"
+        ],
+        "correct_option": 0,
+        "explanation": "Shift+F2 adds or edits a cell note.",
+        "chapter": "MS Excel"
+    },
+    {
+        "id": 508,
+        "question": "What type of chart is best suited for comparing proportions or percentages of a whole in Microsoft Excel?",
+        "options": [
+            "Bar chart",
+            "Line chart",
+            "Pie chart",
+            "Scatter chart"
+        ],
+        "correct_option": 2,
+        "explanation": "A pie chart is best suited for comparing proportions or percentages of a whole, as it visually represents how different categories contribute to the whole.",
+        "chapter": "MS Excel"
+    },
+    {
+        "id": 512,
+        "question": "Which keyboard key is used to jump the cursor to the next cell of the table in MS Word?",
+        "options": [
+            "Enter key",
+            "Tab key",
+            "Space bar",
+            "Backspace key"
+        ],
+        "correct_option": 1,
+        "explanation": "The Tab key is used to jump the cursor to the next cell of the table in MS Word, allowing you to navigate through the table quickly.",
+        "chapter": "MS Excel"
+    },
+    {
+        "id": 517,
+        "question": "What happens when you select the cell contents of a particular row in MS-Excel and then click the Delete button?",
+        "options": [
+            "Entries in all the selected cells will be deleted",
+            "Entries in the selected row will be deleted",
+            "Entries in the selected column will be deleted",
+            "Nothing will happen"
+        ],
+        "correct_option": 0,
+        "explanation": "When you select the cell contents of a particular row in MS-Excel and then click the Delete button, entries in all the selected cells will be deleted.",
+        "chapter": "MS Excel"
+    },
+    {
+        "id": 518,
+        "question": "What type of data can MS Excel functions operate on?",
+        "options": [
+            "Single cell",
+            "Range of cells or groups of cells",
+            "Single row",
+            "Single column"
+        ],
+        "correct_option": 1,
+        "explanation": "MS Excel functions can operate on a range of cells or groups of cells, allowing you to perform calculations and analysis on large datasets.",
+        "chapter": "MS Excel"
+    },
+    {
+        "id": 519,
+        "question": "How are rows identified in MS-Excel?",
+        "options": [
+            "Letters",
+            "Numbers",
+            "Colors",
+            "Icons"
+        ],
+        "correct_option": 1,
+        "explanation": "Rows in MS-Excel are identified by numbers, with each row assigned a unique number starting from 1.",
+        "chapter": "MS Excel"
+    },
+    {
+        "id": 520,
+        "question": "What steps are used to format a cell in an MS Excel Spreadsheet?",
+        "options": [
+            "Select cell -> Right Click -> Format Cell",
+            "Select cell -> Left Click -> Format Cell",
+            "Select cell -> Double Click -> Format Cell",
+            "Select cell -> Ctrl + Click -> Format Cell"
+        ],
+        "correct_option": 0,
+        "explanation": "To format a cell in an MS Excel Spreadsheet, you need to select the cell, right-click on it, and then select Format Cell from the context menu.",
+        "chapter": "MS Excel"
+    },
+    {
+        "id": 521,
+        "question": "Which MS Excel function can be used to sum up the numbers entered in a group of cells?",
+        "options": [
+            "SUM",
+            "AVERAGE",
+            "COUNT",
+            "MAX"
+        ],
+        "correct_option": 0,
+        "explanation": "The SUM function in MS Excel can be used to sum up the numbers entered in a group of cells, allowing you to calculate totals and subtotals.",
+        "chapter": "MS Excel"
+    },
+    {
+        "id": 522,
+        "question": "Which Excel feature allows you to simultaneously edit the same cell or range of cells with multiple users in real-time?",
+        "options": [
+            "Co-authoring",
+            "Shared Workbooks",
+            "Collaboration",
+            "Real-time Editing"
+        ],
+        "correct_option": 0,
+        "explanation": "Co-authoring is an Excel feature that allows you to simultaneously edit the same cell or range of cells with multiple users in real-time, enabling real-time collaboration and teamwork.",
+        "chapter": "MS Excel"
+    },
+    {
+        "id": 524,
+        "question": "How can you quickly insert a new row in a table in MS Word?",
+        "options": [
+            "Insert Row Above",
+            "Insert Row Below",
+            "Delete Row",
+            "Merge Rows"
+        ],
+        "correct_option": 1,
+        "explanation": "To quickly insert a new row in a table in MS Word, you can use the Insert Row Below option, which adds a new row below the current row.",
+        "chapter": "MS Excel"
+    },
+    {
+        "id": 525,
+        "question": "What is the difference between a pie chart and a bar chart in MS Excel?",
+        "options": [
+            "A pie chart shows proportions, while a bar chart shows percentages",
+            "A pie chart shows percentages, while a bar chart shows proportions",
+            "A pie chart shows categorical data, while a bar chart shows numerical data",
+            "A pie chart shows numerical data, while a bar chart shows categorical data"
+        ],
+        "correct_option": 1,
+        "explanation": "A pie chart is used to show proportions or percentages of a whole, while a bar chart is used to compare categorical data across different groups.",
+        "chapter": "MS Excel"
+    },
+    {
+        "id": 526,
+        "question": "How can you protect a worksheet in MS Excel from unauthorized changes?",
+        "options": [
+            "Lock the worksheet",
+            "Password-protect the worksheet",
+            "Hide the worksheet",
+            "Delete the worksheet"
+        ],
+        "correct_option": 1,
+        "explanation": "To protect a worksheet in MS Excel from unauthorized changes, you can password-protect the worksheet, which requires a password to make any changes to the worksheet.",
+        "chapter": "MS Excel"
+    },
+    {
+        "id": 531,
+        "question": "What is the purpose of using co-authoring in MS Excel?",
+        "options": [
+            "To allow multiple users to edit the same cell or range of cells in real-time",
+            "To prevent multiple users from editing the same cell or range of cells",
+            "To allow multiple users to view the same cell or range of cells",
+            "To prevent multiple users from viewing the same cell or range of cells"
+        ],
+        "correct_option": 0,
+        "explanation": "The purpose of using co-authoring in MS Excel is to allow multiple users to edit the same cell or range of cells in real-time, enabling real-time collaboration and teamwork.",
+        "chapter": "MS Excel"
+    },
+    {
+        "id": 533,
+        "question": "What is the difference between a range of cells and a group of cells in MS Excel?",
+        "options": [
+            "A range of cells refers to a single cell, while a group of cells refers to multiple cells",
+            "A range of cells refers to multiple cells, while a group of cells refers to a single cell",
+            "A range of cells refers to a row, while a group of cells refers to a column",
+            "A range of cells refers to a column, while a group of cells refers to a row"
+        ],
+        "correct_option": 1,
+        "explanation": "A range of cells refers to multiple cells, while a group of cells can also refer to multiple cells, but a range of cells is a more specific term used in MS Excel to refer to a contiguous block of cells.",
+        "chapter": "MS Excel"
+    },
+    {
+        "id": 548,
+        "question": "How can you insert a blank row at the top of a worksheet?",
+        "options": [
+            "Drag the mouse on the row border to select the row and click Insert in the Cells group on the Home tab",
+            "Right-click on the row border and select Insert",
+            "Go to the Insert tab and click on Row",
+            "Press Ctrl + Shift + Space"
+        ],
+        "correct_option": 0,
+        "explanation": "You can insert a blank row at the top of a worksheet by dragging the mouse on the row border to select the row and clicking Insert in the Cells group on the Home tab.",
+        "chapter": "MS Excel"
+    },
+    {
+        "id": 560,
+        "question": "How can you insert a blank row at the top of a worksheet in Excel?",
+        "options": [
+            "Drag the mouse on the row border to select the row and click Insert in the Cells group on the Home tab",
+            "Right-click on the row border and select Insert",
+            "Go to the Insert tab and click on Row",
+            "Press Ctrl + Shift + Space"
+        ],
+        "correct_option": 0,
+        "explanation": "You can insert a blank row at the top of a worksheet in Excel by dragging the mouse on the row border to select the row and clicking Insert in the Cells group on the Home tab.",
+        "chapter": "MS Excel"
+    },
+    {
+        "question": "What is the file type used in MS Excel that produces a comma-delimited text file?",
+        "options": [
+            "A. XLSX",
+            "B. DOCX",
+            "C. CSV",
+            "D. PDF"
+        ],
+        "correct_option": 2,
+        "explanation": "A CSV (Comma Separated Values) file is a type of plain text file that stores tabular data, where each line represents a record and each value is separated by a comma.",
+        "verification_status": "VERIFIED_100%",
+        "subject": "Computer Awareness",
+        "language": "en",
+        "id": "comp_en_0001",
+        "chapter": "MS Excel"
+    },
+    {
+        "question": "What are examples of MS Office Suite?",
+        "options": [
+            "A. Microsoft Word, Microsoft Excel",
+            "B. Microsoft PowerPoint, Microsoft OneNote",
+            "C. Microsoft Publisher, Microsoft Access",
+            "D. All of the above"
+        ],
+        "correct_option": 3,
+        "explanation": "Examples of MS Office Suite are Microsoft Word, Microsoft Excel, Microsoft PowerPoint, Microsoft OneNote, Microsoft Publisher, Microsoft Access, and Skype for Business.",
+        "verification_status": "VERIFIED_100%",
+        "subject": "Computer Awareness",
+        "language": "en",
+        "id": "comp_en_0148",
+        "chapter": "MS Excel"
+    },
+    {
+        "question": "Which of the following is an example of spreadsheet software?",
+        "options": [
+            "A. Microsoft Excel",
+            "B. Gmail",
+            "C. Microsoft PowerPoint",
+            "D. All of the above"
+        ],
+        "correct_option": 0,
+        "explanation": "Microsoft Excel is an example of spreadsheet software.",
+        "verification_status": "VERIFIED_100%",
+        "subject": "Computer Awareness",
+        "language": "en",
+        "id": "comp_en_0159",
+        "chapter": "MS Excel"
+    },
+    {
+        "question": "After finishing the table in MS-Word 2010, in case you want to insert a new row at the bottom of a particular row in a table, which of the following options can be used?",
+        "options": [
+            "A. Insert Columns to the Right",
+            "B. Insert Columns to the Left",
+            "C. Insert Rows Below",
+            "D. Insert Rows Above"
+        ],
+        "correct_option": 2,
+        "explanation": "Click Insert BELOW in the Rows and Columns group to add a row below the cell.",
+        "verification_status": "VERIFIED_100%",
+        "subject": "Computer Awareness",
+        "language": "en",
+        "id": "comp_en_0172",
+        "chapter": "MS Excel"
+    },
+    {
+        "question": "In MS-Word 2010, if you press the Tab key within a table, the cursor moves to the next ______ of the table.",
+        "options": [
+            "A. Cell",
+            "B. Data",
+            "C. Row",
+            "D. Line"
+        ],
+        "correct_option": 0,
+        "explanation": "The tab key is one of the most important keys on a keyboard. It is used to move the cursor to the next field or option in a dialog box, or to move to the next cell in a spreadsheet.",
+        "verification_status": "VERIFIED_100%",
+        "subject": "Computer Awareness",
+        "language": "en",
+        "id": "comp_en_0178",
+        "chapter": "MS Excel"
+    },
+    {
+        "question": "In MS Excel 365, which alignment option is used to align the text to both the left and right sides of the cell, creating a neat and justified appearance?",
+        "options": [
+            "A. Right Align",
+            "B. Justify",
+            "C. Centre Align",
+            "D. Left Align"
+        ],
+        "correct_option": 1,
+        "explanation": "Justify alignment is used to align the text to both the left and right sides of the cell, creating a neat and justified appearance.",
+        "verification_status": "VERIFIED_100%",
+        "subject": "Computer Awareness",
+        "language": "en",
+        "id": "comp_en_0186",
+        "chapter": "MS Excel"
+    },
+    {
+        "question": "In MS Excel 365, what does the 'Save As' option allow you to do that the regular 'Save' option does not?",
+        "options": [
+            "A. Save the workbook with a new name or location",
+            "B. Save the workbook without any changes",
+            "C. Save the workbook with the same name",
+            "D. Save the workbook without confirmation"
+        ],
+        "correct_option": 0,
+        "explanation": "The 'Save As' option allows you to choose a different file format, create different versions with changes or backups, and create a new copy of the file, preserving the original version.",
+        "verification_status": "VERIFIED_100%",
+        "subject": "Computer Awareness",
+        "language": "en",
+        "id": "comp_en_0187",
+        "chapter": "MS Excel"
+    },
+    {
+        "question": "In MS Excel 365, to insert a new row above the selected row, which command should you use?",
+        "options": [
+            "A. Insert Column",
+            "B. Insert Row",
+            "C. Delete Row",
+            "D. Delete Column"
+        ],
+        "correct_option": 1,
+        "explanation": "To insert a new row above the selected row, you should use the 'Insert Row' command.",
+        "verification_status": "VERIFIED_100%",
+        "subject": "Computer Awareness",
+        "language": "en",
+        "id": "comp_en_0188",
+        "chapter": "MS Excel"
+    },
+    {
+        "question": "In MS Excel 365, which of the following options is not an advantage of creating tables in Microsoft Excel?",
+        "options": [
+            "A. Increased data integrity and accuracy",
+            "B. Automatic filtering and sorting options",
+            "C. Better calculation ability",
+            "D. Enhanced visual appeal and formatting"
+        ],
+        "correct_option": 0,
+        "explanation": "The Layout tab includes a selection tool for cells, rows, columns, and the entire table, as well as tools to delete or insert rows and columns, merge or divide cells, and set cell alignment and margin settings.",
+        "verification_status": "VERIFIED_100%",
+        "subject": "Computer Awareness",
+        "language": "en",
+        "id": "comp_en_0189",
+        "chapter": "MS Excel"
+    },
+    {
+        "question": "In MS Excel 365, when you right-click on a cell and select 'Filter,' which of the following options is NOT visible?",
+        "options": [
+            "A. Filter by selected cell colour",
+            "B. Filter by selected cell font",
+            "C. Filter by selected cell height",
+            "D. Filter by selected cell values"
+        ],
+        "correct_option": 2,
+        "explanation": "Filter by selected cell height is not visible when you right-click on a cell and select 'Filter'.",
+        "verification_status": "VERIFIED_100%",
+        "subject": "Computer Awareness",
+        "language": "en",
+        "id": "comp_en_0190",
+        "chapter": "MS Excel"
+    },
+    {
+        "question": "In MS Excel 2007, which option is used to access the Office button?",
+        "options": [
+            "A. Office button",
+            "B. File",
+            "C. Home",
+            "D. Insert"
+        ],
+        "correct_option": 1,
+        "explanation": "The Office button is used to access the Office button in MS Excel 2007.",
+        "verification_status": "VERIFIED_100%",
+        "subject": "Computer Awareness",
+        "language": "en",
+        "id": "comp_en_0191",
+        "chapter": "MS Excel"
+    },
+    {
+        "question": "In MS Excel 365, what is the main purpose of using a chart in MS Excel?",
+        "options": [
+            "A. To format text",
+            "B. To perform calculations",
+            "C. To store data",
+            "D. To visually represent data"
+        ],
+        "correct_option": 3,
+        "explanation": "The main purpose of using a chart in MS Excel is to visually represent data.",
+        "verification_status": "VERIFIED_100%",
+        "subject": "Computer Awareness",
+        "language": "en",
+        "id": "comp_en_0192",
+        "chapter": "MS Excel"
+    },
+    {
+        "question": "In MS Excel 365, in which of the following Ribbon tabs does the add rows option reside?",
+        "options": [
+            "A. Home",
+            "B. Insert",
+            "C. File",
+            "D. Format"
+        ],
+        "correct_option": 0,
+        "explanation": "The add rows option resides in the Home tab.",
+        "verification_status": "VERIFIED_100%",
+        "subject": "Computer Awareness",
+        "language": "en",
+        "id": "comp_en_0193",
+        "chapter": "MS Excel"
+    },
+    {
+        "question": "In MS Excel 365, which tab on the Microsoft Excel ribbon allows you to access options related to opening and saving files?",
+        "options": [
+            "A. View",
+            "B. Insert",
+            "C. File",
+            "D. Home"
+        ],
+        "correct_option": 2,
+        "explanation": "The File tab allows you to access options related to opening and saving files.",
+        "verification_status": "VERIFIED_100%",
+        "subject": "Computer Awareness",
+        "language": "en",
+        "id": "comp_en_0194",
+        "chapter": "MS Excel"
+    },
+    {
+        "question": "In MS Excel 365, which of the following is one of the options to edit cells in MS-Excel?",
+        "options": [
+            "A. Edit bar",
+            "B. Formula bar",
+            "C. Space bar",
+            "D. Ribbon"
+        ],
+        "correct_option": 1,
+        "explanation": "The Formula bar is one of the options to edit cells in MS-Excel.",
+        "verification_status": "VERIFIED_100%",
+        "subject": "Computer Awareness",
+        "language": "en",
+        "id": "comp_en_0195",
+        "chapter": "MS Excel"
+    },
+    {
+        "question": "What is a workbook in Excel?",
+        "options": [
+            "A. A collection of cells with related data",
+            "B. A set of predefined formatting styles",
+            "C. A chart that visualises data",
+            "D. A file containing multiple worksheets"
+        ],
+        "correct_option": 3,
+        "explanation": "A workbook in Excel is a file that contains multiple worksheets.",
+        "verification_status": "VERIFIED_100%",
+        "subject": "Computer Awareness",
+        "language": "en",
+        "id": "comp_en_0196",
+        "chapter": "MS Excel"
+    },
+    {
+        "question": "What is the default print range in Microsoft Excel 365, when printing an entire worksheet?",
+        "options": [
+            "A. Entire Workbook",
+            "B. Active Sheet",
+            "C. Selected Range",
+            "D. All Sheets"
+        ],
+        "correct_option": 1,
+        "explanation": "The default print range in Microsoft Excel 365 is the active sheet.",
+        "verification_status": "VERIFIED_100%",
+        "subject": "Computer Awareness",
+        "language": "en",
+        "id": "comp_en_0197",
+        "chapter": "MS Excel"
+    },
+    {
+        "question": "Which keyboard shortcut combination should be used to select an entire row above the current row in MS Excel 365?",
+        "options": [
+            "A. Ctrl + Spacebar",
+            "B. Shift + Spacebar",
+            "C. Alt + Spacebar",
+            "D. Ctrl + +"
+        ],
+        "correct_option": 1,
+        "explanation": "The correct keyboard shortcut combination to select an entire row above the current row is Shift + Spacebar.",
+        "verification_status": "VERIFIED_100%",
+        "subject": "Computer Awareness",
+        "language": "en",
+        "id": "comp_en_0198",
+        "chapter": "MS Excel"
+    },
+    {
+        "question": "What action should be taken to add a new row or column in a spreadsheet?",
+        "options": [
+            "A. Insert a new row or column using the results.",
+            "B. Highlight a range of cells, right-click, and choose 'Delete' from the context menu to create space for the new row or column.",
+            "C. Select a row or column, press the 'Ctrl+X' keyboard shortcut to cut it, and then press 'Ctrl+V' to paste it in the desired location.",
+            "D. Press Ctrl + Plus sign (+)."
+        ],
+        "correct_option": 3,
+        "explanation": "To add a new row or column in a spreadsheet, select a row or column, press the 'Ctrl+X' keyboard shortcut to cut it, and then press 'Ctrl+V' to paste it in the desired location.",
+        "verification_status": "VERIFIED_100%",
+        "subject": "Computer Awareness",
+        "language": "en",
+        "id": "comp_en_0199",
+        "chapter": "MS Excel"
+    },
+    {
+        "question": "What is the correct sequence for deleting a column in an MS-Excel spreadsheet?",
+        "options": [
+            "A. Select the cell<<Right click<<Delete<<Entire Row",
+            "B. Select the cell<<Left click<<Delete<<Entire Row",
+            "C. Select the cell<<Right click<<Delete<<Entire Column",
+            "D. Select the cell<<Left click<<Delete<<Entire Column"
+        ],
+        "correct_option": 2,
+        "explanation": "The correct sequence for deleting a column in an MS-Excel spreadsheet is Select the cell<<Right click<<Delete<<Entire Column.",
+        "verification_status": "VERIFIED_100%",
+        "subject": "Computer Awareness",
+        "language": "en",
+        "id": "comp_en_0200",
+        "chapter": "MS Excel"
+    },
+    {
+        "question": "Which of the following is NOT a method to open a spreadsheet in MS-Excel?",
+        "options": [
+            "A. Shift + Ctrl + N",
+            "B. Alt + F + O",
+            "C. Ctrl + N",
+            "D. File -> open"
+        ],
+        "correct_option": 0,
+        "explanation": "Shift + Ctrl + N is not a method to open a spreadsheet in MS-Excel.",
+        "verification_status": "VERIFIED_100%",
+        "subject": "Computer Awareness",
+        "language": "en",
+        "id": "comp_en_0201",
+        "chapter": "MS Excel"
+    },
+    {
+        "question": "Which combination of a column letter and a row number identifies a cell on a worksheet in MS Excel?",
+        "options": [
+            "A. 33",
+            "B. AA",
+            "C. A3",
+            "D. 3A"
+        ],
+        "correct_option": 2,
+        "explanation": "The combination of a column letter and a row number that identifies a cell on a worksheet in MS Excel is A3.",
+        "verification_status": "VERIFIED_100%",
+        "subject": "Computer Awareness",
+        "language": "en",
+        "id": "comp_en_0202",
+        "chapter": "MS Excel"
+    },
+    {
+        "question": "What is a worksheet?",
+        "options": [
+            "A. A file that contains multiple worksheets.",
+            "B. A chart that visualises data.",
+            "C. A set of predefined formatting styles.",
+            "D. A combination of cells."
+        ],
+        "correct_option": 3,
+        "explanation": "A worksheet is a combination of cells.",
+        "verification_status": "VERIFIED_100%",
+        "subject": "Computer Awareness",
+        "language": "en",
+        "id": "comp_en_0204",
+        "chapter": "MS Excel"
+    },
+    {
+        "question": "What is the Ribbon in MS Excel?",
+        "options": [
+            "A. The area where tabs and icons are arranged in rows in the upper portion of the worksheet.",
+            "B. The area where tabs and icons are arranged in columns in the upper portion of the worksheet.",
+            "C. The area where tabs and icons are arranged in rows in the lower portion of the worksheet.",
+            "D. The area where tabs and icons are arranged in columns in the lower portion of the worksheet."
+        ],
+        "correct_option": 0,
+        "explanation": "The Ribbon in MS Excel is the area where tabs and icons are arranged in rows in the upper portion of the worksheet.",
+        "verification_status": "VERIFIED_100%",
+        "subject": "Computer Awareness",
+        "language": "en",
+        "id": "comp_en_0205",
+        "chapter": "MS Excel"
+    },
+    {
+        "question": "What is AutoFill in MS Excel?",
+        "options": [
+            "A. A feature that allows users to quickly fill in a series of cells with a pattern or data.",
+            "B. A feature that allows users to quickly fill in a column of data based on another column of data.",
+            "C. A feature that allows users to quickly fill in a row of data based on another row of data.",
+            "D. A feature that allows users to quickly fill in a chart with data."
+        ],
+        "correct_option": 0,
+        "explanation": "AutoFill in MS Excel is a feature that allows users to quickly fill in a series of cells with a pattern or data.",
+        "verification_status": "VERIFIED_100%",
+        "subject": "Computer Awareness",
+        "language": "en",
+        "id": "comp_en_0206",
+        "chapter": "MS Excel"
+    },
+    {
+        "question": "What is Flash Fill in MS Excel?",
+        "options": [
+            "A. A feature that allows users to quickly fill in a series of cells with a pattern or data.",
+            "B. A feature that allows users to quickly fill in a column of data based on another column of data.",
+            "C. A feature that allows users to quickly fill in a row of data based on another row of data.",
+            "D. A feature that allows users to quickly fill in a chart with data."
+        ],
+        "correct_option": 1,
+        "explanation": "Flash Fill in MS Excel is a feature that allows users to quickly fill in a column of data based on another column of data.",
+        "verification_status": "VERIFIED_100%",
+        "subject": "Computer Awareness",
+        "language": "en",
+        "id": "comp_en_0207",
+        "chapter": "MS Excel"
+    },
+    {
+        "question": "What is the formula bar in MS Excel?",
+        "options": [
+            "A. Watch window",
+            "B. Formula bar",
+            "C. Precedents",
+            "D. Auditing toolbar"
+        ],
+        "correct_option": 1,
+        "explanation": "The formula bar makes it convenient to inspect, audit, or confirm formula calculations and results in large worksheets.",
+        "verification_status": "VERIFIED_100%",
+        "subject": "Computer Awareness",
+        "language": "en",
+        "id": "comp_en_0208",
+        "chapter": "MS Excel"
+    },
+    {
+        "question": "What is the Microsoft Excel formula to create an absolute cell reference for cell B2?",
+        "options": [
+            "A. B2",
+            "B. $B$2",
+            "C. $B2",
+            "D. B$2"
+        ],
+        "correct_option": 1,
+        "explanation": "Absolute cell reference is a method of writing a formula in a spreadsheet document so that copying that formula to another cell does not change the cell its formula references.",
+        "verification_status": "VERIFIED_100%",
+        "subject": "Computer Awareness",
+        "language": "en",
+        "id": "comp_en_0209",
+        "chapter": "MS Excel"
+    },
+    {
+        "question": "How do you start to write a formula in Microsoft Excel 365?",
+        "options": [
+            "A. By typing =",
+            "B. By typing ;",
+            "C. By typing /",
+            "D. By typing :"
+        ],
+        "correct_option": 0,
+        "explanation": "Symbols of Excel formulas: Range (:), Intersection (< space >), Union (,), Concatenation (&), Not equal to (<>)",
+        "verification_status": "VERIFIED_100%",
+        "subject": "Computer Awareness",
+        "language": "en",
+        "id": "comp_en_0210",
+        "chapter": "MS Excel"
+    },
+    {
+        "question": "What is the SUM formula in MS-Excel 2010?",
+        "options": [
+            "A. COUNT",
+            "B. AVERAGE",
+            "C. SUM",
+            "D. IF"
+        ],
+        "correct_option": 2,
+        "explanation": "This function returns the sum of a supplied list of numbers.",
+        "verification_status": "VERIFIED_100%",
+        "subject": "Computer Awareness",
+        "language": "en",
+        "id": "comp_en_0211",
+        "chapter": "MS Excel"
+    },
+    {
+        "question": "What is the output of the expression = 9 / 6 * 4 + 3 - 1 in MS Excel 2010?",
+        "options": [
+            "A. Max()",
+            "B. Sum()",
+            "C. Average()",
+            "D. Avg()"
+        ],
+        "correct_option": 3,
+        "explanation": "The correct answer is not provided in the given text, but the expression can be evaluated as follows: = 9 / 6 * 4 + 3 - 1 = 1.5 * 4 + 3 - 1 = 6 + 3 - 1 = 8",
+        "verification_status": "VERIFIED_100%",
+        "subject": "Computer Awareness",
+        "language": "en",
+        "id": "comp_en_0212",
+        "chapter": "MS Excel"
+    },
+    {
+        "question": "What will be the formula in cell E9 if the formula =A3+B4 is typed in cell A5 and copied and pasted into cell E9?",
+        "options": [
+            "A. =E7 + F8",
+            "B. =E8 + F7",
+            "C. =A3 + B4",
+            "D. =B4 + C5"
+        ],
+        "correct_option": 0,
+        "explanation": "When the formula =A3+B4 is copied and pasted into cell E9, the relative references A3 and B4 will be adjusted to E7 and F8, respectively.",
+        "verification_status": "VERIFIED_100%",
+        "subject": "Computer Awareness",
+        "language": "en",
+        "id": "comp_en_0213",
+        "chapter": "MS Excel"
+    },
+    {
+        "question": "What is the value of the expression = 22 – 12 / 3 / 2 + 4 in MS Excel 2010?",
+        "options": [
+            "A. 26",
+            "B. 8",
+            "C. 20",
+            "D. 24"
+        ],
+        "correct_option": 3,
+        "explanation": "The expression can be evaluated as follows: = 22 – 12 / 3 / 2 + 4 = 22 – 2 + 4 = 24",
+        "verification_status": "VERIFIED_100%",
+        "subject": "Computer Awareness",
+        "language": "en",
+        "id": "comp_en_0214",
+        "chapter": "MS Excel"
+    },
+    {
+        "question": "What is the result of the expression = 8 / 8 ^ 2 * 16 in MS-Excel 2010?",
+        "options": [
+            "A. 32",
+            "B. 0",
+            "C. 2",
+            "D. 16"
+        ],
+        "correct_option": 0,
+        "explanation": "The expression can be evaluated as follows: = 8 / 8 ^ 2 * 16 = 8 / 64 * 16 = 1/8 * 16 = 2",
+        "verification_status": "VERIFIED_100%",
+        "subject": "Computer Awareness",
+        "language": "en",
+        "id": "comp_en_0215",
+        "chapter": "MS Excel"
+    },
+    {
+        "question": "What will be the value of the expression = 6 5 6 / 4 ^ 2 in MS-Excel 2010?",
+        "options": [
+            "A. 61",
+            "B. 21",
+            "C. 41",
+            "D. 81"
+        ],
+        "correct_option": 2,
+        "explanation": "The expression can be evaluated as follows: = 6 5 6 / 4 ^ 2 = 656 / 16 = 41",
+        "verification_status": "VERIFIED_100%",
+        "subject": "Computer Awareness",
+        "language": "en",
+        "id": "comp_en_0216",
+        "chapter": "MS Excel"
+    },
+    {
+        "question": "Which of the following is NOT a valid MS Excel 2010 Math function?",
+        "options": [
+            "A. ADD",
+            "B. RANGE",
+            "C. FORMULA",
+            "D. SUM"
+        ],
+        "correct_option": 2,
+        "explanation": "The function FORMULA is not a valid MS Excel 2010 Math function.",
+        "verification_status": "VERIFIED_100%",
+        "subject": "Computer Awareness",
+        "language": "en",
+        "id": "comp_en_0217",
+        "chapter": "MS Excel"
+    },
+    {
+        "question": "Which function in MS-Excel 2010 rounds a number to the nearest integer or to the nearest multiple of significance?",
+        "options": [
+            "A. IF",
+            "B. CEILING",
+            "C. COUNTIF",
+            "D. FLOOR"
+        ],
+        "correct_option": 1,
+        "explanation": "Ceiling is used to return a number rounded up, away from zero, to the nearest multiple of significance.",
+        "verification_status": "VERIFIED_100%",
+        "subject": "Computer Awareness",
+        "language": "en",
+        "id": "comp_en_0218",
+        "chapter": "MS Excel"
+    },
+    {
+        "question": "Which of the following formulas, when executed, will give an error in Microsoft Excel 2016?",
+        "options": [
+            "A. = SUM (A9 : A15) – B4 / 10",
+            "B. = SUM (A9 : A15) * 10",
+            "C. =SUM (L9 : L12) * SUM (K9 : K12) / (10 - 9)",
+            "D. = SUM (A9 : A15) * SUM (K9 : K15)"
+        ],
+        "correct_option": 0,
+        "explanation": "The formula = SUM (A9 : A15) – B4 / 10 will give an error in Microsoft Excel 2016 because it attempts to divide by zero.",
+        "verification_status": "VERIFIED_100%",
+        "subject": "Computer Awareness",
+        "language": "en",
+        "id": "comp_en_0219",
+        "chapter": "MS Excel"
+    },
+    {
+        "question": "What will be the formula in D4 if the formula “=B2+4” in cell A1 of MS-Excel 2010 is copied and pasted in D4?",
+        "options": [
+            "A. =B4+7",
+            "B. =D4+4",
+            "C. =B2+4",
+            "D. =E5+4"
+        ],
+        "correct_option": 3,
+        "explanation": "When the formula =B2+4 is copied and pasted into cell D4, the relative reference B2 will be adjusted to E5.",
+        "verification_status": "VERIFIED_100%",
+        "subject": "Computer Awareness",
+        "language": "en",
+        "id": "comp_en_0220",
+        "chapter": "MS Excel"
+    },
+    {
+        "question": "What will be the address of a cell that lies at the intersection of the seventh row and tenth column in an MS-Excel 2010 worksheet?",
+        "options": [
+            "A. ( ) G10",
+            "B. $J7$",
+            "C. ( ) J7",
+            "D. 7J"
+        ],
+        "correct_option": 1,
+        "explanation": "The address of a cell that lies at the intersection of the seventh row and tenth column in an MS-Excel 2010 worksheet is $J$7.",
+        "verification_status": "VERIFIED_100%",
+        "subject": "Computer Awareness",
+        "language": "en",
+        "id": "comp_en_0221",
+        "chapter": "MS Excel"
+    },
+    {
+        "question": "What will be the result of the following MS Excel formula? =32/2^4/2",
+        "options": [
+            "A. 1",
+            "B. 0",
+            "C. 8",
+            "D. 32768"
+        ],
+        "correct_option": 0,
+        "explanation": "The formula =32/2^4/2 can be evaluated as follows: 32/2^4 = 32/16 = 2, and then 2/2 = 1.",
+        "verification_status": "VERIFIED_100%",
+        "subject": "Computer Awareness",
+        "language": "en",
+        "id": "comp_en_0222",
+        "chapter": "MS Excel"
+    },
+    {
+        "question": "What is the value of the following MS-Excel formula? =MOD(11, 3)",
+        "options": [
+            "A. 2",
+            "B. 4",
+            "C. 3",
+            "D. 5"
+        ],
+        "correct_option": 0,
+        "explanation": "The MOD function returns the remainder of two numbers after division. For example, MOD(11,3) = 2.",
+        "verification_status": "VERIFIED_100%",
+        "subject": "Computer Awareness",
+        "language": "en",
+        "id": "comp_en_0223",
+        "chapter": "MS Excel"
+    },
+    {
+        "question": "What is the value of the following MS Excel formula? =SUMSQ(1, 2, 3, 4)",
+        "options": [
+            "A. 30",
+            "B. 10",
+            "C. 34",
+            "D. 24"
+        ],
+        "correct_option": 0,
+        "explanation": "The SUMSQ function returns the sum of squares of a supplied set of values. SUMSQ(1, 2, 3, 4) = 1^2 + 2^2 + 3^2 + 4^2 = 1 + 4 + 9 + 16 = 30.",
+        "verification_status": "VERIFIED_100%",
+        "subject": "Computer Awareness",
+        "language": "en",
+        "id": "comp_en_0224",
+        "chapter": "MS Excel"
+    },
+    {
+        "question": "What will be the value of the following MS Excel formula? =AVERAGEA(5, 4, 4>3, 6)",
+        "options": [
+            "A. 5",
+            "B. ERROR",
+            "C. 3.72",
+            "D. 4"
+        ],
+        "correct_option": 3,
+        "explanation": "The AVERAGE function calculates the average (arithmetic mean) of supplied numbers. AVERAGE can handle up to 255 individual arguments, which can include numbers, cell references, ranges, arrays, and constants. AVERAGE(5, 4, 4>3, 6) = (5 + 4 + 1 + 6) / 4 = 16 / 4 = 4.",
+        "verification_status": "VERIFIED_100%",
+        "subject": "Computer Awareness",
+        "language": "en",
+        "id": "comp_en_0225",
+        "chapter": "MS Excel"
+    },
+    {
+        "question": "Which of the following is NOT a valid MS Excel 2007 formula?",
+        "options": [
+            "A. SUMIF",
+            "B. SUM",
+            "C. SUMPRODUCT",
+            "D. SUMADD"
+        ],
+        "correct_option": 3,
+        "explanation": "SUMADD is not a valid MS Excel 2007 formula. The Excel SUMIF function returns the sum of cells that meet a single condition. Criteria can be applied to dates, numbers, and text.",
+        "verification_status": "VERIFIED_100%",
+        "subject": "Computer Awareness",
+        "language": "en",
+        "id": "comp_en_0226",
+        "chapter": "MS Excel"
+    },
+    {
+        "question": "What will be the value of the following MS Excel formula? =8-4^2/2+3",
+        "options": [
+            "A. 11",
+            "B. 7",
+            "C. 3",
+            "D. 0"
+        ],
+        "correct_option": 2,
+        "explanation": "The value of 8-4^2/2+3 is 8 - 16/2 + 3 = 8 - 8 + 3 = 3.",
+        "verification_status": "VERIFIED_100%",
+        "subject": "Computer Awareness",
+        "language": "en",
+        "id": "comp_en_0227",
+        "chapter": "MS Excel"
+    },
+    {
+        "question": "Which of the following is NOT a way to insert a formula in an MS Excel sheet?",
+        "options": [
+            "A. Selecting a Formula from one of the groups in the 'Formulas' tab.",
+            "B. Using 'Insert function' from the 'Home' tab.",
+            "C. Typing a formula inside the cell.",
+            "D. Using the 'Insert Function' option from the 'Formulas' tab."
+        ],
+        "correct_option": 1,
+        "explanation": "Using 'Insert function' from the 'Home' tab is not the way to insert formulas in Excel.",
+        "verification_status": "VERIFIED_100%",
+        "subject": "Computer Awareness",
+        "language": "en",
+        "id": "comp_en_0228",
+        "chapter": "MS Excel"
+    },
+    {
+        "question": "What will be the result of MS Excel Formula = (120*5/10^2)?",
+        "options": [
+            "A. 6",
+            "B. 9",
+            "C. 8",
+            "D. 7"
+        ],
+        "correct_option": 0,
+        "explanation": "The result of MS Excel Formula = (120*5/10^2) is 6. (120*5/10^2) = (120*5/10*10) = 600/100 = 6.",
+        "verification_status": "VERIFIED_100%",
+        "subject": "Computer Awareness",
+        "language": "en",
+        "id": "comp_en_0229",
+        "chapter": "MS Excel"
+    },
+    {
+        "question": "What will be the value of MOD(10, 3)?",
+        "options": [
+            "A. 1",
+            "B. 2",
+            "C. 3",
+            "D. 4"
+        ],
+        "correct_option": 0,
+        "explanation": "The value of MOD(10, 3) is 1 because 10 divided by 3 leaves a remainder of 1.",
+        "verification_status": "VERIFIED_100%",
+        "subject": "Computer Awareness",
+        "language": "en",
+        "id": "comp_en_0231",
+        "chapter": "MS Excel"
+    },
+    {
+        "question": "The _______ function rounds up a number up to its nearest multiple of significance.",
+        "options": [
+            "A. FLOOR",
+            "B. CEILING",
+            "C. MAX",
+            "D. MIN"
+        ],
+        "correct_option": 1,
+        "explanation": "The CEILING function rounds up a number up to its nearest multiple of significance.",
+        "verification_status": "VERIFIED_100%",
+        "subject": "Computer Awareness",
+        "language": "en",
+        "id": "comp_en_0232",
+        "chapter": "MS Excel"
+    },
+    {
+        "question": "The _______ function rounds a number down to its nearest multiple of significance.",
+        "options": [
+            "A. FLOOR",
+            "B. CEILING",
+            "C. MAX",
+            "D. MIN"
+        ],
+        "correct_option": 0,
+        "explanation": "The FLOOR function rounds a number down to its nearest multiple of significance.",
+        "verification_status": "VERIFIED_100%",
+        "subject": "Computer Awareness",
+        "language": "en",
+        "id": "comp_en_0233",
+        "chapter": "MS Excel"
+    },
+    {
+        "question": "In MS Excel, which of the following symbols have a dollar sign ($) in front of the row number and/or column letter?",
+        "options": [
+            "A. Both absolute reference and mixed reference",
+            "B. Only mixed reference",
+            "C. Only absolute reference",
+            "D. Only relative reference"
+        ],
+        "correct_option": 0,
+        "explanation": "Cell reference is the address or name of a cell or a range of cells. Relative reference is the default cell reference in Excel. It is simply the combination of column name and row number without any dollar ($) sign.",
+        "verification_status": "VERIFIED_100%",
+        "subject": "Computer Awareness",
+        "language": "en",
+        "id": "comp_en_0234",
+        "chapter": "MS Excel"
+    },
+    {
+        "question": "Which of the following symbols is used to start a formula in MS Excel 365?",
+        "options": [
+            "A. $",
+            "B. &",
+            "C. *",
+            "D. ="
+        ],
+        "correct_option": 3,
+        "explanation": "The equal to (=) symbol is used to start a formula in MS Excel.",
+        "verification_status": "VERIFIED_100%",
+        "subject": "Computer Awareness",
+        "language": "en",
+        "id": "comp_en_0235",
+        "chapter": "MS Excel"
+    },
+    {
+        "question": "Which of the following signs appears when you drag the fill handle while creating text, number, and data series in MS Excel 365?",
+        "options": [
+            "A. $",
+            "B. =",
+            "C. *",
+            "D. +"
+        ],
+        "correct_option": 3,
+        "explanation": "A formula always begins with an equal sign (=).",
+        "verification_status": "VERIFIED_100%",
+        "subject": "Computer Awareness",
+        "language": "en",
+        "id": "comp_en_0236",
+        "chapter": "MS Excel"
+    },
+    {
+        "question": "In MS Excel 365, the basic syntax or symbol required to execute a function in MS-Excel is:",
+        "options": [
+            "A. $",
+            "B. =",
+            "C. :",
+            "D. +"
+        ],
+        "correct_option": 1,
+        "explanation": "The equal to (=) symbol is used to start a formula in MS Excel.",
+        "verification_status": "VERIFIED_100%",
+        "subject": "Computer Awareness",
+        "language": "en",
+        "id": "comp_en_0237",
+        "chapter": "MS Excel"
+    },
+    {
+        "question": "In MS Excel 2010, a cell may display ‘_________’ if that cell contains a number or a date and the width of its column cannot display all the characters that its format requires.",
+        "options": [
+            "A. ###",
+            "B. #####",
+            "C. $$$$$",
+            "D. ⋆⋆"
+        ],
+        "correct_option": 1,
+        "explanation": "Microsoft Excel might show ##### in cells when a column isn't wide enough to show all of the cell contents.",
+        "verification_status": "VERIFIED_100%",
+        "subject": "Computer Awareness",
+        "language": "en",
+        "id": "comp_en_0238",
+        "chapter": "MS Excel"
+    },
+    {
+        "question": "Which of the following symbols must be used before a formula in a Microsoft Excel sheet?",
+        "options": [
+            "A. =",
+            "B. &",
+            "C. $",
+            "D. @"
+        ],
+        "correct_option": 0,
+        "explanation": "'=' must be used before a formula in a Microsoft Excel sheet.",
+        "verification_status": "VERIFIED_100%",
+        "subject": "Computer Awareness",
+        "language": "en",
+        "id": "comp_en_0239",
+        "chapter": "MS Excel"
+    },
+    {
+        "question": "A formula in MS Excel starts with a ____ symbol.",
+        "options": [
+            "A. +",
+            "B. =",
+            "C. #",
+            "D. @"
+        ],
+        "correct_option": 1,
+        "explanation": "A formula always begins with an equal sign (=).",
+        "verification_status": "VERIFIED_100%",
+        "subject": "Computer Awareness",
+        "language": "en",
+        "id": "comp_en_0240",
+        "chapter": "MS Excel"
+    },
+    {
+        "question": "Colon (:) symbol in MS Excel represents?",
+        "options": [
+            "A. Intersection",
+            "B. Range",
+            "C. Union",
+            "D. Negation"
+        ],
+        "correct_option": 1,
+        "explanation": "The colon (:) symbol in MS Excel represents a cell range (e.g., A1:A10).",
+        "verification_status": "VERIFIED_100%",
+        "subject": "Computer Awareness",
+        "language": "en",
+        "id": "comp_en_0241",
+        "chapter": "MS Excel"
+    },
+    {
+        "question": "Comma(,) symbol in MS Excel represents?",
+        "options": [
+            "A. Intersection",
+            "B. Range",
+            "C. Union",
+            "D. Negation"
+        ],
+        "correct_option": 2,
+        "explanation": "The comma(,) symbol in MS Excel represents a union.",
+        "verification_status": "VERIFIED_100%",
+        "subject": "Computer Awareness",
+        "language": "en",
+        "id": "comp_en_0242",
+        "chapter": "MS Excel"
+    },
+    {
+        "question": " (^ ) symbol in MS Excel represents?",
+        "options": [
+            "A. Intersection",
+            "B. Range",
+            "C. Union",
+            "D. Exponential"
+        ],
+        "correct_option": 3,
+        "explanation": "The (^) symbol in MS Excel represents an exponential.",
+        "verification_status": "VERIFIED_100%",
+        "subject": "Computer Awareness",
+        "language": "en",
+        "id": "comp_en_0243",
+        "chapter": "MS Excel"
+    },
+    {
+        "question": "Which of the following functions in MS-Excel counts the number of cells within a range that meet the given condition?",
+        "options": [
+            "A. COUNTA",
+            "B. COUNTIFB",
+            "C. COUNT",
+            "D. COUNTIF"
+        ],
+        "correct_option": 3,
+        "explanation": "The COUNTIF function is an Excel function to count cells in a range that meet a single condition.",
+        "verification_status": "VERIFIED_100%",
+        "subject": "Computer Awareness",
+        "language": "en",
+        "id": "comp_en_0244",
+        "chapter": "MS Excel"
+    },
+    {
+        "question": "All the Excel functions are stored ____ under the Formulas tab.",
+        "options": [
+            "A. Function Library",
+            "B. Styles",
+            "C. Formula bar",
+            "D. AutoSum"
+        ],
+        "correct_option": 0,
+        "explanation": "All the Excel functions are stored in the function library under the Formulas tab.",
+        "verification_status": "VERIFIED_100%",
+        "subject": "Computer Awareness",
+        "language": "en",
+        "id": "comp_en_0245",
+        "chapter": "MS Excel"
+    },
+    {
+        "question": "Which of the following functions returns the current date and time in MS-Excel?",
+        "options": [
+            "A. TIME",
+            "B. NOW",
+            "C. DATEVALUE",
+            "D. DATE"
+        ],
+        "correct_option": 1,
+        "explanation": "The NOW function is useful when you need to display the current date and time on a worksheet or calculate a value based on the current date and time.",
+        "verification_status": "VERIFIED_100%",
+        "subject": "Computer Awareness",
+        "language": "en",
+        "id": "comp_en_0246",
+        "chapter": "MS Excel"
+    },
+    {
+        "question": "Which of the following functions is used to display only the current system date in MS Excel 2010?",
+        "options": [
+            "A. Today()",
+            "B. Now()",
+            "C. Time()",
+            "D. Date()"
+        ],
+        "correct_option": 0,
+        "explanation": "The TODAY function returns the current date, and will continually update each time the worksheet is updated.",
+        "verification_status": "VERIFIED_100%",
+        "subject": "Computer Awareness",
+        "language": "en",
+        "id": "comp_en_0247",
+        "chapter": "MS Excel"
+    },
+    {
+        "question": "Which of the following MS-Excel functions count the number of cells in a range that are not empty?",
+        "options": [
+            "A. COUNTIF()",
+            "B. COUNTBLANK()",
+            "C. COUNT()",
+            "D. COUNTA()"
+        ],
+        "correct_option": 3,
+        "explanation": "The COUNT function counts cells that contain numbers.",
+        "verification_status": "VERIFIED_100%",
+        "subject": "Computer Awareness",
+        "language": "en",
+        "id": "comp_en_0249",
+        "chapter": "MS Excel"
+    },
+    {
+        "question": "Which of the following functions in MS Excel counts the number of cells in a range that is not empty?",
+        "options": [
+            "A. COUNTBLANK",
+            "B. COUNTA",
+            "C. COUNTIF",
+            "D. COUNT"
+        ],
+        "correct_option": 1,
+        "explanation": "The COUNTA function counts cells containing any type of information, including error values and empty text (\"\").",
+        "verification_status": "VERIFIED_100%",
+        "subject": "Computer Awareness",
+        "language": "en",
+        "id": "comp_en_0250",
+        "chapter": "MS Excel"
+    },
+    {
+        "question": "What is the function inside another function called?",
+        "options": [
+            "A. Round function",
+            "B. Sandwich function",
+            "C. Switch function",
+            "D. Nested function"
+        ],
+        "correct_option": 3,
+        "explanation": "When you insert a function as one of the arguments within another function in Excel, it's called a nesting function.",
+        "verification_status": "VERIFIED_100%",
+        "subject": "Computer Awareness",
+        "language": "en",
+        "id": "comp_en_0251",
+        "chapter": "MS Excel"
+    },
+    {
+        "question": "_____ function converts a date in the form of text to a number that represents the date in MS Excel date-time code.",
+        "options": [
+            "A. DATETEXT",
+            "B. DATEVALUE",
+            "C. DATE",
+            "D. None of the above"
+        ],
+        "correct_option": 1,
+        "explanation": "The DATEVALUE function converts a date represented as a text string into a valid Excel date.",
+        "verification_status": "VERIFIED_100%",
+        "subject": "Computer Awareness",
+        "language": "en",
+        "id": "comp_en_0253",
+        "chapter": "MS Excel"
+    },
+    {
+        "question": "______ function returns the serial number of the date which is the indicated number of months before or after the",
+        "options": [
+            "A. EOMONTH",
+            "B. WORKDAY",
+            "C. NETWORKDAYS",
+            "D. DATEDIF"
+        ],
+        "correct_option": 0,
+        "explanation": "The EOMONTH function returns the serial number of the last day of the month that is the indicated number of months before or after the date.",
+        "verification_status": "VERIFIED_100%",
+        "subject": "Computer Awareness",
+        "language": "en",
+        "id": "comp_en_0255",
+        "chapter": "MS Excel"
+    }
+]

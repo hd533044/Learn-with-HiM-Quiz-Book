@@ -1,5 +1,6 @@
 {
     "python.analysis.diagnosticSeverityOverrides": {
         "reportMissingImports": "none"
-    }
+    },
+    "Codegeex.RepoIndex": true
 }

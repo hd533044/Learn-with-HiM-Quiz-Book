@@ -8,10 +8,12 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 DATA_DIR = os.path.join(BASE_DIR, "data")
 USER_PROFILES_DIR = os.path.join(DATA_DIR, "user_profiles")
 QUESTION_BANK_DIR = os.path.join(DATA_DIR, "question_bank")
+TOPICS_DIR = os.path.join(DATA_DIR, "topics")
 
 os.makedirs(DATA_DIR, exist_ok=True)
 os.makedirs(USER_PROFILES_DIR, exist_ok=True)
 os.makedirs(QUESTION_BANK_DIR, exist_ok=True)
+os.makedirs(TOPICS_DIR, exist_ok=True)
 
 BOT_TOKEN = os.getenv("BOT_TOKEN", "").strip()
 if not BOT_TOKEN:

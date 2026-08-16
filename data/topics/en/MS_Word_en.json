@@ -1,0 +1,1042 @@
+[
+    {
+        "id": 96,
+        "question": "Which function capitalizes the first letter of each word in a text value?",
+        "options": [
+            "UPPER",
+            "LOWER",
+            "PROPER",
+            "CONCATENATE"
+        ],
+        "correct_option": 2,
+        "explanation": "The PROPER function capitalizes the first letter in each word of a text value.",
+        "chapter": "MS Word"
+    },
+    {
+        "id": 113,
+        "question": "What is the purpose of the PROPER function?",
+        "options": [
+            "To convert text to uppercase",
+            "To convert text to lowercase",
+            "To capitalize the first letter of each word",
+            "To make all letters lowercase"
+        ],
+        "correct_option": 2,
+        "explanation": "The PROPER function capitalizes the first letter in each word.",
+        "chapter": "MS Word"
+    },
+    {
+        "id": 158,
+        "question": "Which shortcut key is used to cut the selection to the clipboard?",
+        "options": [
+            "Ctrl + X",
+            "Shift + Delete",
+            "Ctrl + C",
+            "Ctrl + V"
+        ],
+        "correct_option": 0,
+        "explanation": "Ctrl + X cuts the selected cells or text.",
+        "chapter": "MS Word"
+    },
+    {
+        "id": 207,
+        "question": "What keyboard shortcut is used to bookmark the current webpage on the web browser?",
+        "options": [
+            "Ctrl + C",
+            "Ctrl + D",
+            "Ctrl + V",
+            "Ctrl + A"
+        ],
+        "correct_option": 1,
+        "explanation": "Ctrl + D saves the active webpage to the browser bookmarks.",
+        "chapter": "MS Word"
+    },
+    {
+        "id": 388,
+        "question": "What application is used for editing documents in Microsoft 365?",
+        "options": [
+            "Excel",
+            "PowerPoint",
+            "Word",
+            "Access"
+        ],
+        "correct_option": 2,
+        "explanation": "Microsoft Word is a word processing application for editing documents.",
+        "chapter": "MS Word"
+    },
+    {
+        "id": 393,
+        "question": "What is included in Microsoft 365 for personal, non-commercial use?",
+        "options": [
+            "Only word processor and spreadsheet programme",
+            "Only email client and database management system",
+            "Word processor, spreadsheet programme, presentation programme, email client, database management system, and desktop publishing app",
+            "Only desktop publishing app and notetaking program"
+        ],
+        "correct_option": 2,
+        "explanation": "Microsoft 365 for personal, non-commercial use includes a word processor, spreadsheet programme, presentation programme, email client, database management system, and desktop publishing app.",
+        "chapter": "MS Word"
+    },
+    {
+        "id": 403,
+        "question": "What is the name of the word processing application in Microsoft 365?",
+        "options": [
+            "Microsoft Excel",
+            "Microsoft PowerPoint",
+            "Microsoft Word",
+            "Microsoft Access"
+        ],
+        "correct_option": 2,
+        "explanation": "Microsoft Word is the word processing application in Microsoft 365.",
+        "chapter": "MS Word"
+    },
+    {
+        "id": 404,
+        "question": "What is the function of Ctrl+F4 in Word?",
+        "options": [
+            "Closes the current document",
+            "Closes Word",
+            "Displays the Go To dialog box",
+            "Restores the document window size"
+        ],
+        "correct_option": 0,
+        "explanation": "Ctrl+F4 is used to close the current document in Word.",
+        "chapter": "MS Word"
+    },
+    {
+        "id": 405,
+        "question": "What happens when you press F5 alone in Word?",
+        "options": [
+            "Displays the Bookmark dialog box",
+            "Moves the cursor to the last change",
+            "Displays the Go To dialog box",
+            "Restores the document window size"
+        ],
+        "correct_option": 2,
+        "explanation": "F5 alone displays the Go To dialog box in Word.",
+        "chapter": "MS Word"
+    },
+    {
+        "id": 406,
+        "question": "How do you switch between the document, task pane, status bar, and ribbon in Word?",
+        "options": [
+            "Press F5",
+            "Press Shift+F5",
+            "Press F6",
+            "Press Ctrl+Shift+F5"
+        ],
+        "correct_option": 2,
+        "explanation": "F6 alone is used to switch between the document, task pane, status bar, and ribbon in Word.",
+        "chapter": "MS Word"
+    },
+    {
+        "id": 407,
+        "question": "What is the function of Shift+F6 in Word?",
+        "options": [
+            "Switches to the next document window",
+            "Switches between the document, ribbon, status bar, and task pane",
+            "Moves the cursor to the last change",
+            "Displays the Bookmark dialog box"
+        ],
+        "correct_option": 1,
+        "explanation": "Shift+F6 switches between the document, ribbon, status bar, and task pane in Word.",
+        "chapter": "MS Word"
+    },
+    {
+        "id": 408,
+        "question": "How do you move from an open dialog box back to the document in Word?",
+        "options": [
+            "Alt+F4",
+            "Alt+F6",
+            "Ctrl+Shift+F5",
+            "Shift+F6"
+        ],
+        "correct_option": 1,
+        "explanation": "Pressing Alt+F6 moves focus from an open dialog box back to the main document in Microsoft Word (for dialog boxes that support this functionality).",
+        "chapter": "MS Word"
+    },
+    {
+        "id": 409,
+        "question": "What happens when you press Ctrl+Shift+F5 in Word?",
+        "options": [
+            "Displays the Bookmark dialog box",
+            "Switches to the previous document window",
+            "Moves the cursor to the last change",
+            "Restores the document window size"
+        ],
+        "correct_option": 0,
+        "explanation": "Ctrl+Shift+F5 displays the Bookmark dialog box in Word.",
+        "chapter": "MS Word"
+    },
+    {
+        "id": 410,
+        "question": "What is the function of Alt+F4 in Word?",
+        "options": [
+            "Closes the current document",
+            "Closes Word",
+            "Displays the Go To dialog box",
+            "Restores the document window size"
+        ],
+        "correct_option": 1,
+        "explanation": "Alt+F4 is used to close Word.",
+        "chapter": "MS Word"
+    },
+    {
+        "id": 411,
+        "question": "How do you switch to the next document window when more than one document is open in Word?",
+        "options": [
+            "Press Ctrl+F6",
+            "Press Ctrl+Shift+F6",
+            "Press Shift+F6",
+            "Press F6"
+        ],
+        "correct_option": 0,
+        "explanation": "Ctrl+F6 is used to switch to the next document window when more than one document is open in Word.",
+        "chapter": "MS Word"
+    },
+    {
+        "id": 412,
+        "question": "What happens when you press Shift+F5 in Word?",
+        "options": [
+            "Moves the cursor to the last change",
+            "Displays the Go To dialog box",
+            "Displays the Bookmark dialog box",
+            "Restores the document window size"
+        ],
+        "correct_option": 0,
+        "explanation": "Shift+F5 moves the cursor to the last change in Word.",
+        "chapter": "MS Word"
+    },
+    {
+        "id": 413,
+        "question": "What is the function of F6 in a document that has been split in Word?",
+        "options": [
+            "Switches between the document, task pane, status bar, and ribbon, excluding split panes",
+            "Switches between the document, task pane, status bar, and ribbon, including split panes",
+            "Switches to the next document window",
+            "Moves the cursor to the last change"
+        ],
+        "correct_option": 1,
+        "explanation": "F6 switches between the document, task pane, status bar, and ribbon, including split panes in a document that has been split.",
+        "chapter": "MS Word"
+    },
+    {
+        "id": 414,
+        "question": "How do you restore the document window size in Word?",
+        "options": [
+            "Press Alt+F4",
+            "Press Alt+F5",
+            "Press Ctrl+Shift+F5",
+            "Press Shift+F6"
+        ],
+        "correct_option": 1,
+        "explanation": "Alt+F5 is used to restore the document window size in Word.",
+        "chapter": "MS Word"
+    },
+    {
+        "id": 415,
+        "question": "What happens when you press Ctrl+Shift+F6 in Word?",
+        "options": [
+            "Switches to the next document window",
+            "Switches to the previous document window",
+            "Moves the cursor to the last change",
+            "Displays the Bookmark dialog box"
+        ],
+        "correct_option": 1,
+        "explanation": "Ctrl+Shift+F6 switches to the previous document window when more than one document is open in Word.",
+        "chapter": "MS Word"
+    },
+    {
+        "id": 416,
+        "question": "How do you display the Go To dialog box in Word?",
+        "options": [
+            "Press F5",
+            "Press Shift+F5",
+            "Press Ctrl+Shift+F5",
+            "Press Alt+F5"
+        ],
+        "correct_option": 0,
+        "explanation": "F5 alone displays the Go To dialog box in Word.",
+        "chapter": "MS Word"
+    },
+    {
+        "id": 417,
+        "question": "What happens when you press Alt+F5 in Word?",
+        "options": [
+            "Restores the document window size",
+            "Moves from an open dialog box back to the document",
+            "Closes Word",
+            "Displays the Go To dialog box"
+        ],
+        "correct_option": 0,
+        "explanation": "Alt+F5 restores the document window size in Word.",
+        "chapter": "MS Word"
+    },
+    {
+        "id": 418,
+        "question": "How do you move the cursor to the last change in Word?",
+        "options": [
+            "Press F5",
+            "Press Shift+F5",
+            "Press Ctrl+Shift+F5",
+            "Press Alt+F5"
+        ],
+        "correct_option": 1,
+        "explanation": "Shift+F5 moves the cursor to the last change in Word.",
+        "chapter": "MS Word"
+    },
+    {
+        "id": 419,
+        "question": "What happens when you press Ctrl+F6 in Word?",
+        "options": [
+            "Switches to the next document window",
+            "Switches to the previous document window",
+            "Moves the cursor to the last change",
+            "Displays the Bookmark dialog box"
+        ],
+        "correct_option": 0,
+        "explanation": "Ctrl+F6 switches to the next document window when more than one document is open in Word.",
+        "chapter": "MS Word"
+    },
+    {
+        "id": 420,
+        "question": "How do you display the Bookmark dialog box in Word?",
+        "options": [
+            "Press F5",
+            "Press Shift+F5",
+            "Press Ctrl+Shift+F5",
+            "Press Alt+F5"
+        ],
+        "correct_option": 2,
+        "explanation": "Ctrl+Shift+F5 displays the Bookmark dialog box in Word.",
+        "chapter": "MS Word"
+    },
+    {
+        "id": 421,
+        "question": "What happens when you press F6 in Word?",
+        "options": [
+            "Switches between the document, task pane, status bar, and ribbon",
+            "Switches to the next document window",
+            "Moves the cursor to the last change",
+            "Displays the Bookmark dialog box"
+        ],
+        "correct_option": 0,
+        "explanation": "F6 switches between the document, task pane, status bar, and ribbon in Word.",
+        "chapter": "MS Word"
+    },
+    {
+        "id": 422,
+        "question": "What is the function of Ctrl+Shift+F6 in Word?",
+        "options": [
+            "Switches to the next document window",
+            "Switches to the previous document window",
+            "Moves the cursor to the last change",
+            "Displays the Bookmark dialog box"
+        ],
+        "correct_option": 1,
+        "explanation": "Ctrl+Shift+F6 switches to the previous document window when more than one document is open in Word.",
+        "chapter": "MS Word"
+    },
+    {
+        "id": 423,
+        "question": "How do you close the current document in Word?",
+        "options": [
+            "Press Ctrl+F4",
+            "Press Alt+F4",
+            "Press F5",
+            "Press Shift+F5"
+        ],
+        "correct_option": 0,
+        "explanation": "Ctrl+F4 is used to close the current document in Word.",
+        "chapter": "MS Word"
+    },
+    {
+        "id": 424,
+        "question": "What is the function of F5 in Word?",
+        "options": [
+            "Displays the Go To dialog box",
+            "Moves the cursor to the last change",
+            "Displays the Bookmark dialog box",
+            "Restores the document window size"
+        ],
+        "correct_option": 0,
+        "explanation": "F5 alone displays the Go To dialog box in Word.",
+        "chapter": "MS Word"
+    },
+    {
+        "id": 425,
+        "question": "How do you switch between the document, ribbon, status bar, and task pane in Word?",
+        "options": [
+            "Press F6",
+            "Press Shift+F6",
+            "Press Ctrl+F6",
+            "Press Ctrl+Shift+F6"
+        ],
+        "correct_option": 1,
+        "explanation": "Shift+F6 switches between the document, ribbon, status bar, and task pane in Word.",
+        "chapter": "MS Word"
+    },
+    {
+        "id": 509,
+        "question": "What feature in MS Word allows you to see a document's layout and formatting as it will appear when printed?",
+        "options": [
+            "Print Preview",
+            "Page Layout",
+            "Document View",
+            "Print Layout"
+        ],
+        "correct_option": 0,
+        "explanation": "Print Preview allows you to see a document's layout and formatting as it will appear when printed, helping you identify any formatting issues before printing.",
+        "chapter": "MS Word"
+    },
+    {
+        "id": 510,
+        "question": "How can you insert a new column in a table while shifting existing columns to the right in MS Word?",
+        "options": [
+            "Insert Column to the Left",
+            "Insert Column to the Right",
+            "Delete Column",
+            "Merge Columns"
+        ],
+        "correct_option": 1,
+        "explanation": "Insert Column to the Right allows you to insert a new column in a table while simultaneously shifting the existing columns to the right.",
+        "chapter": "MS Word"
+    },
+    {
+        "id": 511,
+        "question": "What is the correct step to create a new MS Word document?",
+        "options": [
+            "File Tab -> Open",
+            "File Tab -> Save",
+            "File Tab -> New",
+            "File Tab -> Print"
+        ],
+        "correct_option": 2,
+        "explanation": "The correct step to create a new MS Word document is to click on the File Tab and select New.",
+        "chapter": "MS Word"
+    },
+    {
+        "id": 513,
+        "question": "Which icon is commonly used to save the current document in MS Word?",
+        "options": [
+            "The floppy disk icon",
+            "The printer icon",
+            "The save icon",
+            "The edit icon"
+        ],
+        "correct_option": 0,
+        "explanation": "The floppy disk icon is commonly used to save the current document in MS Word, although the save icon is also used in modern versions of MS Word.",
+        "chapter": "MS Word"
+    },
+    {
+        "id": 514,
+        "question": "What option allows you to copy the selected text or object to the Clipboard while removing it from its original location in MS Word?",
+        "options": [
+            "Copy",
+            "Cut",
+            "Paste",
+            "Delete"
+        ],
+        "correct_option": 1,
+        "explanation": "The Cut option allows you to copy the selected text or object to the Clipboard while simultaneously removing it from its original location in MS Word.",
+        "chapter": "MS Word"
+    },
+    {
+        "id": 516,
+        "question": "What option allows you to quickly remove all formatting from selected text while retaining the underlying text content in MS Word?",
+        "options": [
+            "Clear Formatting",
+            "Bold",
+            "Italic",
+            "Underline"
+        ],
+        "correct_option": 0,
+        "explanation": "The Clear Formatting option allows you to quickly remove all formatting from selected text while retaining the underlying text content in MS Word, returning the text to its default formatting.",
+        "chapter": "MS Word"
+    },
+    {
+        "id": 528,
+        "question": "How can you quickly remove all formatting from a selected text in MS Word?",
+        "options": [
+            "Clear Formatting",
+            "Bold",
+            "Italic",
+            "Underline"
+        ],
+        "correct_option": 0,
+        "explanation": "To quickly remove all formatting from a selected text in MS Word, you can use the Clear Formatting option, which returns the text to its default formatting.",
+        "chapter": "MS Word"
+    },
+    {
+        "id": 530,
+        "question": "How can you insert a new column in a table in MS Word?",
+        "options": [
+            "Insert Column to the Left",
+            "Insert Column to the Right",
+            "Delete Column",
+            "Merge Columns"
+        ],
+        "correct_option": 1,
+        "explanation": "To insert a new column in a table in MS Word, you can use the Insert Column to the Right option, which adds a new column to the right of the current column.",
+        "chapter": "MS Word"
+    },
+    {
+        "id": 532,
+        "question": "How can you quickly save a document in MS Word?",
+        "options": [
+            "Click on the floppy disk icon",
+            "Press Ctrl + S",
+            "Click on the File Tab and select Save",
+            "Click on the Edit menu and select Save"
+        ],
+        "correct_option": 1,
+        "explanation": "To quickly save a document in MS Word, you can press Ctrl + S, which saves the document with its current file name and location.",
+        "chapter": "MS Word"
+    },
+    {
+        "id": 534,
+        "question": "What is the default alignment of text in a Microsoft Word document?",
+        "options": [
+            "Center",
+            "Left",
+            "Right",
+            "Justify"
+        ],
+        "correct_option": 1,
+        "explanation": "The default alignment of text in a Microsoft Word document is left.",
+        "chapter": "MS Word"
+    },
+    {
+        "id": 535,
+        "question": "Where is the Save button typically located in Microsoft Word?",
+        "options": [
+            "Top right corner of a Word window",
+            "Top left corner of a Word window",
+            "Bottom left corner of a Word window",
+            "Bottom right corner of a Word window"
+        ],
+        "correct_option": 1,
+        "explanation": "The Save button is typically located in the top left corner of a Word window.",
+        "chapter": "MS Word"
+    },
+    {
+        "id": 536,
+        "question": "Which file format occupies less memory when saving an MS-Word file?",
+        "options": [
+            ".doc",
+            ".docx",
+            ".pdf",
+            ".txt"
+        ],
+        "correct_option": 1,
+        "explanation": "The .docx file format occupies less memory when saving an MS-Word file.",
+        "chapter": "MS Word"
+    },
+    {
+        "id": 537,
+        "question": "What option allows you to exclude specific sections or types of text from the spelling and grammar check in Microsoft Word?",
+        "options": [
+            "Exclusion Dictionary",
+            "Spelling and Grammar",
+            "Proofing",
+            "AutoCorrect"
+        ],
+        "correct_option": 0,
+        "explanation": "The Exclusion Dictionary option allows you to exclude specific sections or types of text from the spelling and grammar check.",
+        "chapter": "MS Word"
+    },
+    {
+        "id": 539,
+        "question": "How can you access the Step by Step Mail Merge Wizard in Microsoft Word?",
+        "options": [
+            "Clicking on the Home tab",
+            "Clicking on the Mailings tab",
+            "Clicking on the Review tab",
+            "Clicking on the View tab"
+        ],
+        "correct_option": 1,
+        "explanation": "You can access the Step by Step Mail Merge Wizard by clicking on the Mailings tab.",
+        "chapter": "MS Word"
+    },
+    {
+        "id": 540,
+        "question": "What other method can be used to move around a table in Microsoft Word, in addition to using the arrow keys and mouse clicks?",
+        "options": [
+            "Pressing the 'Tab' key",
+            "Pressing the 'Enter' key or using the scroll wheel",
+            "Pressing the 'Space' key",
+            "Pressing the 'Backspace' key"
+        ],
+        "correct_option": 1,
+        "explanation": "In addition to using the arrow keys and mouse clicks, you can move around a table in Microsoft Word by pressing the 'Enter' key or using the scroll wheel.",
+        "chapter": "MS Word"
+    },
+    {
+        "id": 541,
+        "question": "What is the fastest way to open the Help window in Microsoft Word?",
+        "options": [
+            "Press F2",
+            "Press F5",
+            "Press F1",
+            "Press Ctrl + F1"
+        ],
+        "correct_option": 2,
+        "explanation": "The fastest way to open the Help window in Microsoft Word is to press F1.",
+        "chapter": "MS Word"
+    },
+    {
+        "id": 552,
+        "question": "What is the keyboard shortcut for opening a blank new document in MS-Word?",
+        "options": [
+            "Ctrl + O",
+            "Ctrl + N",
+            "Ctrl + S",
+            "Ctrl + P"
+        ],
+        "correct_option": 1,
+        "explanation": "The keyboard shortcut for opening a blank new document in MS-Word is Ctrl + N.",
+        "chapter": "MS Word"
+    },
+    {
+        "id": 553,
+        "question": "What is the purpose of the Exclusion Dictionary in Microsoft Word?",
+        "options": [
+            "To exclude specific sections or types of text from the spelling and grammar check",
+            "To include specific sections or types of text in the spelling and grammar check",
+            "To ignore all spelling and grammar errors",
+            "To flag all spelling and grammar errors"
+        ],
+        "correct_option": 0,
+        "explanation": "The Exclusion Dictionary is used to exclude specific sections or types of text from the spelling and grammar check in Microsoft Word.",
+        "chapter": "MS Word"
+    },
+    {
+        "id": 555,
+        "question": "What is the purpose of the Step by Step Mail Merge Wizard in Microsoft Word?",
+        "options": [
+            "To create a new document",
+            "To edit an existing document",
+            "To merge data from a database into a document",
+            "To send an email"
+        ],
+        "correct_option": 2,
+        "explanation": "The Step by Step Mail Merge Wizard is used to merge data from a database into a document in Microsoft Word.",
+        "chapter": "MS Word"
+    },
+    {
+        "question": "What is the file extension that is NOT a valid file format in MS-Word 365?",
+        "options": [
+            "A. .docx",
+            "B. .docm",
+            "C. .dcp",
+            "D. .dotx"
+        ],
+        "correct_option": 2,
+        "explanation": "The .dcp file extension is not a valid file format in MS-Word 365.",
+        "verification_status": "VERIFIED_100%",
+        "subject": "Computer Awareness",
+        "language": "en",
+        "id": "comp_en_0002",
+        "chapter": "MS Word"
+    },
+    {
+        "question": "What type of file has the extension .docm?",
+        "options": [
+            "A. Word processing data",
+            "B. Portable Document Format",
+            "C. Image file",
+            "D. Audio file"
+        ],
+        "correct_option": 0,
+        "explanation": "A .docm file is used to store word processing data.",
+        "verification_status": "VERIFIED_100%",
+        "subject": "Computer Awareness",
+        "language": "en",
+        "id": "comp_en_0005",
+        "chapter": "MS Word"
+    },
+    {
+        "question": "What is the use of the functional key F7 in Microsoft Word 2010?",
+        "options": [
+            "A. It is used to open the Help window.",
+            "B. It is used to run spell-check and grammar check.",
+            "C. It is used for renaming files and folders",
+            "D. It is used as a search key."
+        ],
+        "correct_option": 1,
+        "explanation": "F7 key is most often used to run spell-check and grammar check.",
+        "verification_status": "VERIFIED_100%",
+        "subject": "Computer Awareness",
+        "language": "en",
+        "id": "comp_en_0058",
+        "chapter": "MS Word"
+    },
+    {
+        "question": "Which of the following keyboard shortcuts is used to perform UNDO operation in MS-Word?",
+        "options": [
+            "A. Ctrl + Z",
+            "B. Alt + U",
+            "C. Ctrl + U",
+            "D. Alt + Z"
+        ],
+        "correct_option": 0,
+        "explanation": "Ctrl + Z is used to reverse more than one action.",
+        "verification_status": "VERIFIED_100%",
+        "subject": "Computer Awareness",
+        "language": "en",
+        "id": "comp_en_0059",
+        "chapter": "MS Word"
+    },
+    {
+        "question": "If you are Ctrl + A keys in MS Word, what are you trying to do?",
+        "options": [
+            "A. Close the window",
+            "B. Copy all the text in the file",
+            "C. Paste text",
+            "D. Select all text in the file"
+        ],
+        "correct_option": 3,
+        "explanation": "Ctrl + A keys in MS Word select all text in the file.",
+        "verification_status": "VERIFIED_100%",
+        "subject": "Computer Awareness",
+        "language": "en",
+        "id": "comp_en_0062",
+        "chapter": "MS Word"
+    },
+    {
+        "question": "What is the shortcut key to open ‘Paste Special’ dialogue box in Microsoft Word?",
+        "options": [
+            "A. Ctrl + Alt + C",
+            "B. Alt + E + S",
+            "C. Ctrl + Alt + P",
+            "D. Ctrl + V"
+        ],
+        "correct_option": 1,
+        "explanation": "Alt + E + S is the shortcut key to open the ‘Paste Special’ dialogue box in Microsoft Word.",
+        "verification_status": "VERIFIED_100%",
+        "subject": "Computer Awareness",
+        "language": "en",
+        "id": "comp_en_0063",
+        "chapter": "MS Word"
+    },
+    {
+        "question": "Which shortcut command is used to Save your current web page as a bookmark in Google Chrome?",
+        "options": [
+            "A. Ctrl + d",
+            "B. Ctrl + h",
+            "C. Ctrl + k",
+            "D. Ctrl + u"
+        ],
+        "correct_option": 0,
+        "explanation": "Ctrl + d is used to Save your current web page as a bookmark in Google Chrome.",
+        "verification_status": "VERIFIED_100%",
+        "subject": "Computer Awareness",
+        "language": "en",
+        "id": "comp_en_0071",
+        "chapter": "MS Word"
+    },
+    {
+        "question": "What are examples of word processing software?",
+        "options": [
+            "A. Microsoft Word",
+            "B. Gmail",
+            "C. Microsoft PowerPoint",
+            "D. All of the above"
+        ],
+        "correct_option": 3,
+        "explanation": "Examples of word processing software are Microsoft Word, Gmail, and Google Docs.",
+        "verification_status": "VERIFIED_100%",
+        "subject": "Computer Awareness",
+        "language": "en",
+        "id": "comp_en_0158",
+        "chapter": "MS Word"
+    },
+    {
+        "question": "What can be used instead of retyping the same text in MS-Word 2010 to reduce time and effort?",
+        "options": [
+            "A. copy + undo",
+            "B. paste + undo",
+            "C. copy + paste",
+            "D. cut + copy"
+        ],
+        "correct_option": 2,
+        "explanation": "Copy and paste enables simple data replication.",
+        "verification_status": "VERIFIED_100%",
+        "subject": "Computer Awareness",
+        "language": "en",
+        "id": "comp_en_0164",
+        "chapter": "MS Word"
+    },
+    {
+        "question": "What is a large capital letter used as a decorative element at the beginning of a paragraph or section referred to?",
+        "options": [
+            "A. Header",
+            "B. Smart Art",
+            "C. Drop Cap",
+            "D. Watermark"
+        ],
+        "correct_option": 2,
+        "explanation": "A drop cap is a large capital letter used as a decorative element at the beginning of a paragraph or section.",
+        "verification_status": "VERIFIED_100%",
+        "subject": "Computer Awareness",
+        "language": "en",
+        "id": "comp_en_0165",
+        "chapter": "MS Word"
+    },
+    {
+        "question": "How many columns can a table in MS-Word 2010 have?",
+        "options": [
+            "A. 62",
+            "B. 61",
+            "C. 64",
+            "D. 63"
+        ],
+        "correct_option": 3,
+        "explanation": "A Word table can contain as many as 63 columns but the number of rows is unlimited.",
+        "verification_status": "VERIFIED_100%",
+        "subject": "Computer Awareness",
+        "language": "en",
+        "id": "comp_en_0166",
+        "chapter": "MS Word"
+    },
+    {
+        "question": "Which of the following is not a preconfigured watermark in MS-Word 2010?",
+        "options": [
+            "A. 'CONFIDENTIAL' watermark with gray horizontal text.",
+            "B. 'DO NOT COPY' watermark with gray vertical text.",
+            "C. 'CONFIDENTIAL' watermark with gray vertical text.",
+            "D. 'CONFIDENTIAL' watermark with gray horizontal text."
+        ],
+        "correct_option": 1,
+        "explanation": "The correct answer is 'DO NOT COPY' watermark with gray vertical text.",
+        "verification_status": "VERIFIED_100%",
+        "subject": "Computer Awareness",
+        "language": "en",
+        "id": "comp_en_0167",
+        "chapter": "MS Word"
+    },
+    {
+        "question": "What is the default font face in an MS-Word 2010 document?",
+        "options": [
+            "A. Times New Roman",
+            "B. Italic",
+            "C. Calibri",
+            "D. Arial"
+        ],
+        "correct_option": 2,
+        "explanation": "The default font style and size in Microsoft Word 2010 is Calibri 11.",
+        "verification_status": "VERIFIED_100%",
+        "subject": "Computer Awareness",
+        "language": "en",
+        "id": "comp_en_0168",
+        "chapter": "MS Word"
+    },
+    {
+        "question": "Which of the following statements is incorrect about Ruler in MS-Word 2010?",
+        "options": [
+            "A. It helps to change a line's indentation",
+            "B. It helps to set tabs",
+            "C. It helps to control the margins of document pages.",
+            "D. It helps to change font styles measurements unit and gives you an idea about the size of the document."
+        ],
+        "correct_option": 3,
+        "explanation": "The correct answer is 'It helps to control the margins of document pages.'",
+        "verification_status": "VERIFIED_100%",
+        "subject": "Computer Awareness",
+        "language": "en",
+        "id": "comp_en_0169",
+        "chapter": "MS Word"
+    },
+    {
+        "question": "What will be the result if TOGGLE CASE is applied to the word 'Examination' in MS Word 2007?",
+        "options": [
+            "A. examination",
+            "B. Examination",
+            "C. EXAMINATION",
+            "D. eXAMINATION"
+        ],
+        "correct_option": 3,
+        "explanation": "Toggle case - To shift between two case views (for example, to shift between Capitalize Each Word and the opposite, cAPITALIZE eACH wORD), click TOGGLE CASE.",
+        "verification_status": "VERIFIED_100%",
+        "subject": "Computer Awareness",
+        "language": "en",
+        "id": "comp_en_0170",
+        "chapter": "MS Word"
+    },
+    {
+        "question": "Which of the following operations adds content from the clipboard to your document in MS-Word 2010?",
+        "options": [
+            "A. Hyphenation",
+            "B. Paste",
+            "C. Copy",
+            "D. Format painter"
+        ],
+        "correct_option": 1,
+        "explanation": "The Paste primary command moves or copies lines from a clipboard into an edit session.",
+        "verification_status": "VERIFIED_100%",
+        "subject": "Computer Awareness",
+        "language": "en",
+        "id": "comp_en_0171",
+        "chapter": "MS Word"
+    },
+    {
+        "question": "Which of the following is not a valid option in the 'paragraph' setting window in MS-Word 2016?",
+        "options": [
+            "A. Spacing",
+            "B. Indentation",
+            "C. Effects",
+            "D. Pagination"
+        ],
+        "correct_option": 2,
+        "explanation": "Effects are present in the page layout menu.",
+        "verification_status": "VERIFIED_100%",
+        "subject": "Computer Awareness",
+        "language": "en",
+        "id": "comp_en_0173",
+        "chapter": "MS Word"
+    },
+    {
+        "question": "Which of the following tabs in the MS Word 365, ribbon has the Spelling and Grammar option?",
+        "options": [
+            "A. Review",
+            "B. Layout",
+            "C. Insert",
+            "D. Edit"
+        ],
+        "correct_option": 0,
+        "explanation": "In MS Word 365, the Review tab has the Spelling and Grammar option.",
+        "verification_status": "VERIFIED_100%",
+        "subject": "Computer Awareness",
+        "language": "en",
+        "id": "comp_en_0175",
+        "chapter": "MS Word"
+    },
+    {
+        "question": "In MS Office 365, the Page Setup dialog box can be found under which of the following tabs?",
+        "options": [
+            "A. Home",
+            "B. Draw",
+            "C. Layout",
+            "D. Insert"
+        ],
+        "correct_option": 2,
+        "explanation": "Menus under the Layout tab - Page setup (Margins, Orientation, Size), Paragraph (Indent, Spacing), Page Background (Page Colour).",
+        "verification_status": "VERIFIED_100%",
+        "subject": "Computer Awareness",
+        "language": "en",
+        "id": "comp_en_0176",
+        "chapter": "MS Word"
+    },
+    {
+        "question": "In MS-Word 2010, the ______ is a small, customizable toolbar that displays frequently used commands like Save, Undo, Redo, etc.",
+        "options": [
+            "A. Ribbon",
+            "B. Quick Access toolbar",
+            "C. Title bar",
+            "D. File tab"
+        ],
+        "correct_option": 1,
+        "explanation": "Quick Access toolbar - It is a customizable toolbar that comes with a set of independent commands. It gives you quick access to commonly used commands such as Save, Undo, Redo, etc.",
+        "verification_status": "VERIFIED_100%",
+        "subject": "Computer Awareness",
+        "language": "en",
+        "id": "comp_en_0179",
+        "chapter": "MS Word"
+    },
+    {
+        "question": "The ______ tab in MS-Word 2010 is the default tab which appears when you open the document.",
+        "options": [
+            "A. Layout",
+            "B. Review",
+            "C. Insert",
+            "D. Home"
+        ],
+        "correct_option": 3,
+        "explanation": "The Home tab is the default tab in Microsoft Word. The Home Tab contains the most frequently used commands in Word.",
+        "verification_status": "VERIFIED_100%",
+        "subject": "Computer Awareness",
+        "language": "en",
+        "id": "comp_en_0180",
+        "chapter": "MS Word"
+    },
+    {
+        "question": "Which of the following is not an option of Menu bar in MS-Word 2007?",
+        "options": [
+            "A. Window",
+            "B. Help",
+            "C. File",
+            "D. Edit"
+        ],
+        "correct_option": 2,
+        "explanation": "You use the menu to give instructions to the software.",
+        "verification_status": "VERIFIED_100%",
+        "subject": "Computer Awareness",
+        "language": "en",
+        "id": "comp_en_0181",
+        "chapter": "MS Word"
+    },
+    {
+        "question": "Under which of the following menu tabs are Page Setup options usually available in MS-Word 2007?",
+        "options": [
+            "A. Review",
+            "B. Page Layout",
+            "C. Home",
+            "D. Insert"
+        ],
+        "correct_option": 1,
+        "explanation": "Page Setup options usually available in Page layout. Options under page layout - You can set margins, apply themes, control of page orientation and size, add sections and line breaks, display line numbers, and set paragraph indentation and lines.",
+        "verification_status": "VERIFIED_100%",
+        "subject": "Computer Awareness",
+        "language": "en",
+        "id": "comp_en_0182",
+        "chapter": "MS Word"
+    },
+    {
+        "question": "Which of the following appears as a part of the 'Editing' command group within the Home menu in recent versions of MS Word, such as Word 2016?",
+        "options": [
+            "A. Font color",
+            "B. Change case",
+            "C. Replace",
+            "D. Format Painter"
+        ],
+        "correct_option": 2,
+        "explanation": "Replace appears as a part of the 'Editing' command group within the Home menu in recent versions of MS Word, such as Word 2016.",
+        "verification_status": "VERIFIED_100%",
+        "subject": "Computer Awareness",
+        "language": "en",
+        "id": "comp_en_0183",
+        "chapter": "MS Word"
+    },
+    {
+        "question": "Which of the following does NOT appear as a part of the 'Clipboard' command group under the Home menu in recent versions of MS Word, such as Word 2016?",
+        "options": [
+            "A. Cut",
+            "B. Show/Hide",
+            "C. Format Painter",
+            "D. Paste"
+        ],
+        "correct_option": 1,
+        "explanation": "Show/Hide does not appear as a part of the 'Clipboard' command group under the Home menu in recent versions of MS Word, such as Word 2016.",
+        "verification_status": "VERIFIED_100%",
+        "subject": "Computer Awareness",
+        "language": "en",
+        "id": "comp_en_0184",
+        "chapter": "MS Word"
+    },
+    {
+        "question": "Which of the following does NOT appear as a part of the 'Paragraph' command group within the Home menu in recent versions of MS Word, such as Word 2016?",
+        "options": [
+            "A. Numbering",
+            "B. Bullets",
+            "C. Multilevel list",
+            "D. Change case"
+        ],
+        "correct_option": 3,
+        "explanation": "Change case does NOT appear as a part of the 'Paragraph' command group within the Home menu in recent versions of MS Word, such as Word 2016.",
+        "verification_status": "VERIFIED_100%",
+        "subject": "Computer Awareness",
+        "language": "en",
+        "id": "comp_en_0185",
+        "chapter": "MS Word"
+    }
+]

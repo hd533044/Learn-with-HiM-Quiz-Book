@@ -1,0 +1,2247 @@
+[
+    {
+        "id": 38,
+        "question": "What is the function of Win Keys + E?",
+        "options": [
+            "To open My Computer",
+            "To open System Configuration",
+            "To switch to user mode",
+            "To minimize all active windows"
+        ],
+        "correct_option": 0,
+        "explanation": "The function of Win Keys + E is to open File Explorer / My Computer.",
+        "chapter": "General Computer Awareness"
+    },
+    {
+        "id": 39,
+        "question": "What is the purpose of Alt + Space + X?",
+        "options": [
+            "To maximize a window",
+            "To restore a window",
+            "To minimize a window",
+            "To close a window"
+        ],
+        "correct_option": 0,
+        "explanation": "The purpose of Alt + Space + X is to maximize a window.",
+        "chapter": "General Computer Awareness"
+    },
+    {
+        "id": 43,
+        "question": "What is the function of Win Keys + R?",
+        "options": [
+            "To open Run Dialogue Box",
+            "To open System Configuration",
+            "To switch to user mode",
+            "To minimize all active windows"
+        ],
+        "correct_option": 0,
+        "explanation": "The function of Win Keys + R is to open Run Dialogue Box.",
+        "chapter": "General Computer Awareness"
+    },
+    {
+        "id": 45,
+        "question": "What is the function of Alt + F4?",
+        "options": [
+            "To close the software or system shut down",
+            "To open System Configuration",
+            "To switch to user mode",
+            "To minimize all active windows"
+        ],
+        "correct_option": 0,
+        "explanation": "The function of Alt + F4 is to close the active window or trigger the shut down dialog.",
+        "chapter": "General Computer Awareness"
+    },
+    {
+        "id": 51,
+        "question": "What is the purpose of Alt + Space + R?",
+        "options": [
+            "To restore a window",
+            "To maximize a window",
+            "To minimize a window",
+            "To close a window"
+        ],
+        "correct_option": 0,
+        "explanation": "The purpose of Alt + Space + R is to restore a maximized window.",
+        "chapter": "General Computer Awareness"
+    },
+    {
+        "id": 52,
+        "question": "What is the function of Win Keys + Pause break?",
+        "options": [
+            "To open System Configuration / System Properties",
+            "To switch to user mode",
+            "To minimize all active windows",
+            "To show the Desktop"
+        ],
+        "correct_option": 0,
+        "explanation": "The function of Win Keys + Pause break is to open System Properties.",
+        "chapter": "General Computer Awareness"
+    },
+    {
+        "id": 54,
+        "question": "What is the function of Alt + Space + N?",
+        "options": [
+            "To minimize a window",
+            "To maximize a window",
+            "To restore a window",
+            "To close a window"
+        ],
+        "correct_option": 0,
+        "explanation": "The function of Alt + Space + N is to minimize a window.",
+        "chapter": "General Computer Awareness"
+    },
+    {
+        "id": 95,
+        "question": "What is the result of the OR function when applied to the numbers 27 and 6?",
+        "options": [
+            "24",
+            "27",
+            "30",
+            "33"
+        ],
+        "correct_option": 0,
+        "explanation": "In computer/bitwise logic contexts, bitwise OR between 27 and 6 evaluates accordingly.",
+        "chapter": "General Computer Awareness"
+    },
+    {
+        "id": 105,
+        "question": "What is the shortcut to open the Delete dialog box to delete selected cells?",
+        "options": [
+            "Ctrl + +",
+            "Ctrl + -",
+            "Alt + -",
+            "Shift + -"
+        ],
+        "correct_option": 1,
+        "explanation": "The shortcut to open the Delete dialog box is Ctrl + -.",
+        "chapter": "General Computer Awareness"
+    },
+    {
+        "id": 106,
+        "question": "What is the shortcut to open the Format Cells dialog box?",
+        "options": [
+            "Ctrl + F",
+            "Ctrl + Shift + F",
+            "Alt + F",
+            "Ctrl + Alt + F"
+        ],
+        "correct_option": 1,
+        "explanation": "The shortcut to open the Format Cells dialog box with the Font tab selected is Ctrl + Shift + F (or Ctrl + 1).",
+        "chapter": "General Computer Awareness"
+    },
+    {
+        "id": 112,
+        "question": "What is the shortcut to select multiple non-adjacent worksheets?",
+        "options": [
+            "Hold down the Shift key and click the tabs",
+            "Hold down the Ctrl key and click the tabs",
+            "Hold down the Alt key and click the tabs",
+            "Hold down the Ctrl + Shift keys and click the tabs"
+        ],
+        "correct_option": 1,
+        "explanation": "Hold down Ctrl and click tabs to select non-adjacent sheets.",
+        "chapter": "General Computer Awareness"
+    },
+    {
+        "id": 115,
+        "question": "What is the purpose of the EXACT function?",
+        "options": [
+            "To check if two strings are exactly the same",
+            "To check if two numbers are exactly the same",
+            "To compare two dates",
+            "To compare two times"
+        ],
+        "correct_option": 0,
+        "explanation": "The EXACT function checks whether two strings are identical.",
+        "chapter": "General Computer Awareness"
+    },
+    {
+        "id": 117,
+        "question": "What is the purpose of the CONCATENATE function?",
+        "options": [
+            "To join several text items into one text item cell",
+            "To split a text item into several cells",
+            "To convert a text item to a number",
+            "To convert a number to a text item"
+        ],
+        "correct_option": 0,
+        "explanation": "The CONCATENATE function joins several text items together.",
+        "chapter": "General Computer Awareness"
+    },
+    {
+        "id": 120,
+        "question": "What is the purpose of using Alt + F1?",
+        "options": [
+            "Creates a new worksheet",
+            "Creates an embedded chart using the highlighted range",
+            "Displays the File Open dialog box",
+            "Minimizes the size of the active workbook or window"
+        ],
+        "correct_option": 1,
+        "explanation": "Alt + F1 creates an embedded chart of the data in the current range.",
+        "chapter": "General Computer Awareness"
+    },
+    {
+        "id": 124,
+        "question": "What is the shortcut to display the Open dialog box?",
+        "options": [
+            "Ctrl + F12",
+            "Alt + F1",
+            "Ctrl + F1",
+            "Alt + F2"
+        ],
+        "correct_option": 0,
+        "explanation": "Ctrl + F12 displays the Open dialog box.",
+        "chapter": "General Computer Awareness"
+    },
+    {
+        "id": 125,
+        "question": "What is the function of Alt + Shift + F2?",
+        "options": [
+            "Displays the Save As dialog box",
+            "Displays the Open dialog box",
+            "Creates a new worksheet",
+            "Closes all workbooks and exits Excel"
+        ],
+        "correct_option": 0,
+        "explanation": "Alt + Shift + F2 acts as a shortcut to display the Save As dialog box.",
+        "chapter": "General Computer Awareness"
+    },
+    {
+        "id": 128,
+        "question": "What is the function of Alt + F8?",
+        "options": [
+            "Displays the Macro dialog box",
+            "Creates a chart on a chart sheet using the highlighted range",
+            "Displays the Save As dialog box",
+            "Closes all workbooks and exits Excel"
+        ],
+        "correct_option": 0,
+        "explanation": "Alt + F8 opens the Macro dialog box to create, run, or delete a macro.",
+        "chapter": "General Computer Awareness"
+    },
+    {
+        "id": 130,
+        "question": "What is the shortcut to calculate all cells on all worksheets in all workbooks?",
+        "options": [
+            "Alt + F9",
+            "Alt + Ctrl + F9",
+            "Ctrl + F9",
+            "Alt + Shift + F9"
+        ],
+        "correct_option": 1,
+        "explanation": "Ctrl + Alt + F9 calculates all worksheets in all open workbooks, regardless of whether they have changed.",
+        "chapter": "General Computer Awareness"
+    },
+    {
+        "id": 132,
+        "question": "What is the purpose of using Alt + F11?",
+        "options": [
+            "Toggles between the Visual Basic Editor window and the Excel window",
+            "Creates a chart on a chart sheet using the highlighted range",
+            "Displays the Save As dialog box",
+            "Closes all workbooks and exits Excel"
+        ],
+        "correct_option": 0,
+        "explanation": "Alt + F11 opens the Microsoft Visual Basic for Applications Editor.",
+        "chapter": "General Computer Awareness"
+    },
+    {
+        "id": 133,
+        "question": "What is the shortcut to display the drop-down menu for the corresponding smart tag?",
+        "options": [
+            "Alt + Shift + F1",
+            "Alt + Shift + F2",
+            "Alt + Shift + F4",
+            "Alt + Shift + F10"
+        ],
+        "correct_option": 3,
+        "explanation": "Alt + Shift + F10 displays the menu or message for a Smart Tag or AutoCorrect action.",
+        "chapter": "General Computer Awareness"
+    },
+    {
+        "id": 137,
+        "question": "What is the function of Alt + Shift + F4?",
+        "options": [
+            "Closes all workbooks and exits Excel",
+            "Displays the Save As dialog box",
+            "Creates a chart on a chart sheet using the highlighted range",
+            "Displays the Open dialog box"
+        ],
+        "correct_option": 0,
+        "explanation": "Alt + Shift + F4 closes all workbooks and exits the application.",
+        "chapter": "General Computer Awareness"
+    },
+    {
+        "id": 139,
+        "question": "What is the shortcut to display the Macro dialog box?",
+        "options": [
+            "Alt + F8",
+            "Alt + F11",
+            "Ctrl + F8",
+            "Alt + Shift + F8"
+        ],
+        "correct_option": 0,
+        "explanation": "Alt + F8 opens the Macro dialog box.",
+        "chapter": "General Computer Awareness"
+    },
+    {
+        "id": 141,
+        "question": "What is the purpose of using Alt + F2?",
+        "options": [
+            "Displays the Save As dialog box",
+            "Creates a chart on a chart sheet using the highlighted range",
+            "Displays the Open dialog box",
+            "Closes all workbooks and exits Excel"
+        ],
+        "correct_option": 0,
+        "explanation": "Alt + F2 opens the Save As dialog box.",
+        "chapter": "General Computer Awareness"
+    },
+    {
+        "id": 142,
+        "question": "What is the shortcut to create a chart on a chart sheet using the highlighted range?",
+        "options": [
+            "Alt + F1",
+            "Alt + F2",
+            "Ctrl + F1",
+            "Ctrl + F2"
+        ],
+        "correct_option": 0,
+        "explanation": "Alt + F1 creates an embedded chart of the data in the current range.",
+        "chapter": "General Computer Awareness"
+    },
+    {
+        "id": 143,
+        "question": "What is the function of Ctrl + F12?",
+        "options": [
+            "Displays the Open dialog box",
+            "Displays the Save As dialog box",
+            "Creates a new worksheet",
+            "Closes all workbooks and exits Excel"
+        ],
+        "correct_option": 0,
+        "explanation": "Ctrl + F12 displays the File Open dialog box.",
+        "chapter": "General Computer Awareness"
+    },
+    {
+        "id": 160,
+        "question": "Which shortcut key is used to display the Delete dialog box?",
+        "options": [
+            "Ctrl + -",
+            "Ctrl + Shift + =",
+            "Ctrl + Delete",
+            "Ctrl + Backspace"
+        ],
+        "correct_option": 0,
+        "explanation": "Ctrl + - displays the Delete dialog box to delete selected cells, rows, or columns.",
+        "chapter": "General Computer Awareness"
+    },
+    {
+        "id": 171,
+        "question": "Which shortcut key is used to display the Insert dialog box for inserting cells?",
+        "options": [
+            "Ctrl + Shift + =",
+            "Ctrl + -",
+            "Ctrl + Delete",
+            "Ctrl + Backspace"
+        ],
+        "correct_option": 0,
+        "explanation": "Ctrl + Shift + = opens the Insert dialog box.",
+        "chapter": "General Computer Awareness"
+    },
+    {
+        "id": 173,
+        "question": "Which shortcut key is used to delete text to the end of the line?",
+        "options": [
+            "Ctrl + Delete",
+            "Ctrl + Backspace",
+            "Delete",
+            "Backspace"
+        ],
+        "correct_option": 0,
+        "explanation": "Ctrl + Delete deletes text from the insertion point to the end of the line.",
+        "chapter": "General Computer Awareness"
+    },
+    {
+        "id": 174,
+        "question": "What is the effect of using the keyboard shortcut Ctrl + Shift + # on a selection?",
+        "options": [
+            "Applies the General format to the selection",
+            "Applies the Date format (day, month, and year) to the selection",
+            "Applies the outline border to the selection",
+            "Removes all the borders from the selection"
+        ],
+        "correct_option": 1,
+        "explanation": "The keyboard shortcut Ctrl + Shift + # applies the Date format with the day, month, and year to the selection.",
+        "chapter": "General Computer Awareness"
+    },
+    {
+        "id": 175,
+        "question": "What is the function of the keyboard shortcut Ctrl + Shift + & (or 7)?",
+        "options": [
+            "Applies the General format to the selection",
+            "Applies the Custom Date format 'DD-MM-YY' to the selection",
+            "Applies the outline border to the selection",
+            "Removes all the borders from the selection"
+        ],
+        "correct_option": 2,
+        "explanation": "The keyboard shortcut Ctrl + Shift + & applies an outline border to the selected cells.",
+        "chapter": "General Computer Awareness"
+    },
+    {
+        "id": 176,
+        "question": "What is the effect of using the keyboard shortcut Ctrl + Shift + _ (underline) on a selection?",
+        "options": [
+            "Applies the General format to the selection",
+            "Applies the Custom Date format 'DD-MM-YY' to the selection",
+            "Applies the outline border to the selection",
+            "Removes all the borders from the selection"
+        ],
+        "correct_option": 3,
+        "explanation": "The keyboard shortcut Ctrl + Shift + _ removes all borders from the selected cells.",
+        "chapter": "General Computer Awareness"
+    },
+    {
+        "id": 179,
+        "question": "What is the function of the keyboard shortcut Alt + Shift + Tab?",
+        "options": [
+            "Moves to the previous open workbook or window",
+            "Moves to the next open workbook or window",
+            "Moves to the previous application open on your computer",
+            "Moves to the next application open on your computer"
+        ],
+        "correct_option": 2,
+        "explanation": "Alt + Shift + Tab switches backward through active open applications.",
+        "chapter": "General Computer Awareness"
+    },
+    {
+        "id": 199,
+        "question": "What is the function of the keyboard shortcut Ctrl + Shift + ~ on a selection?",
+        "options": [
+            "Applies the General format to the selection",
+            "Applies the Custom Date format 'DD-MM-YY' to the selection",
+            "Applies the outline border to the selection",
+            "Removes all the borders from the selection"
+        ],
+        "correct_option": 0,
+        "explanation": "The keyboard shortcut Ctrl + Shift + ~ applies the General number format.",
+        "chapter": "General Computer Awareness"
+    },
+    {
+        "id": 203,
+        "question": "What is the primary function of IMPS?",
+        "options": [
+            "To provide internet services",
+            "To offer instant electronic fund transfer",
+            "To provide email services",
+            "To provide web browsing services"
+        ],
+        "correct_option": 1,
+        "explanation": "IMPS offers an instant, 24x7, interbank electronic fund transfer service through mobile and electronic banking.",
+        "chapter": "General Computer Awareness"
+    },
+    {
+        "id": 204,
+        "question": "What is the term for transferring data from the customer's machine to the server?",
+        "options": [
+            "Downloading",
+            "Uploading",
+            "Emailing",
+            "Booking"
+        ],
+        "correct_option": 1,
+        "explanation": "Uploading is the process of transmitting data from a local machine/client to a remote server.",
+        "chapter": "General Computer Awareness"
+    },
+    {
+        "id": 212,
+        "question": "Which folder is used to store deleted emails?",
+        "options": [
+            "Inbox",
+            "Spam",
+            "Trash",
+            "Drafts"
+        ],
+        "correct_option": 2,
+        "explanation": "The Trash folder holds deleted emails for 30 days before permanent deletion.",
+        "chapter": "General Computer Awareness"
+    },
+    {
+        "id": 216,
+        "question": "What does IMPS stand for?",
+        "options": [
+            "Instant Money Payment Service",
+            "Immediate Payment Service",
+            "Internet Money Payment Service",
+            "Interbank Money Payment Service"
+        ],
+        "correct_option": 1,
+        "explanation": "IMPS stands for Immediate Payment Service.",
+        "chapter": "General Computer Awareness"
+    },
+    {
+        "id": 217,
+        "question": "What is the primary mode of transaction in IMPS?",
+        "options": [
+            "Card-based",
+            "Cash-based",
+            "Mobile-based",
+            "Internet-based"
+        ],
+        "correct_option": 2,
+        "explanation": "IMPS was built primarily around mobile devices using MMID and phone numbers.",
+        "chapter": "General Computer Awareness"
+    },
+    {
+        "id": 218,
+        "question": "What is the benefit of using IMPS?",
+        "options": [
+            "It is time-consuming",
+            "It is expensive",
+            "It is safe and economical",
+            "It is limited to certain banks"
+        ],
+        "correct_option": 2,
+        "explanation": "IMPS is real-time, secure, cost-effective, and operational 24x7.",
+        "chapter": "General Computer Awareness"
+    },
+    {
+        "id": 219,
+        "question": "Which of the following is a feature of IMPS?",
+        "options": [
+            "It is available only during banking hours",
+            "It is available 24X7",
+            "It requires a physical visit to the bank",
+            "It requires a minimum transaction amount"
+        ],
+        "correct_option": 1,
+        "explanation": "IMPS operates 24/7, including weekends and public holidays.",
+        "chapter": "General Computer Awareness"
+    },
+    {
+        "id": 220,
+        "question": "What type of fund transfer does IMPS facilitate?",
+        "options": [
+            "Interbank",
+            "Intrabank",
+            "International",
+            "Interstate"
+        ],
+        "correct_option": 0,
+        "explanation": "IMPS facilitates instant interbank electronic fund transfers.",
+        "chapter": "General Computer Awareness"
+    },
+    {
+        "id": 223,
+        "question": "What is the definition of uploading?",
+        "options": [
+            "Uploading is faster than downloading",
+            "Downloading is faster than uploading",
+            "Uploading is transferring data from server to client",
+            "Uploading is transferring data from client to server"
+        ],
+        "correct_option": 3,
+        "explanation": "Uploading refers specifically to transmitting data from a local client machine to a remote system/server.",
+        "chapter": "General Computer Awareness"
+    },
+    {
+        "id": 228,
+        "question": "Which of the following is a benefit of using IMPS?",
+        "options": [
+            "It is expensive",
+            "It is time-consuming",
+            "It is safe and economical",
+            "It is limited to certain banks"
+        ],
+        "correct_option": 2,
+        "explanation": "IMPS is instant, safe, and economical.",
+        "chapter": "General Computer Awareness"
+    },
+    {
+        "id": 230,
+        "question": "Which of the following is an example of a keyboard shortcut?",
+        "options": [
+            "Mouse click",
+            "Touchscreen tap",
+            "Ctrl + D",
+            "Voice command"
+        ],
+        "correct_option": 2,
+        "explanation": "Ctrl + D is a keyboard shortcut combination.",
+        "chapter": "General Computer Awareness"
+    },
+    {
+        "id": 249,
+        "question": "What is the primary function of a key logger recorder?",
+        "options": [
+            "To record audio and video",
+            "To record instant messages, e-mail, and keyboard inputs",
+            "To block access to a computer system",
+            "To find loopholes in computer networks"
+        ],
+        "correct_option": 1,
+        "explanation": "A key logger recorder is designed to record instant messages, e-mail, and any information typed using the keyboard.",
+        "chapter": "General Computer Awareness"
+    },
+    {
+        "id": 259,
+        "question": "What is the purpose of a key logger recorder in the context of hacking?",
+        "options": [
+            "To record audio and video",
+            "To record instant messages, e-mail, and keyboard inputs",
+            "To block access to a computer system",
+            "To find loopholes in computer networks"
+        ],
+        "correct_option": 1,
+        "explanation": "The purpose of a key logger recorder in the context of hacking is to record instant messages, e-mail, and keyboard inputs.",
+        "chapter": "General Computer Awareness"
+    },
+    {
+        "id": 273,
+        "question": "What is the purpose of a key logger recorder?",
+        "options": [
+            "To record audio and video",
+            "To record instant messages, e-mail, and keyboard inputs",
+            "To block access to a computer system",
+            "To find loopholes in computer networks"
+        ],
+        "correct_option": 1,
+        "explanation": "The purpose of a key logger recorder is to record instant messages, e-mail, and keyboard inputs.",
+        "chapter": "General Computer Awareness"
+    },
+    {
+        "id": 292,
+        "question": "Which of the following is a type of cyber threat?",
+        "options": [
+            "Virus",
+            "Trojan",
+            "Ransomware",
+            "All of the above"
+        ],
+        "correct_option": 3,
+        "explanation": "All of the above options are types of cyber threats.",
+        "chapter": "General Computer Awareness"
+    },
+    {
+        "id": 296,
+        "question": "Which of the following is an example of a networking device?",
+        "options": [
+            "Switch",
+            "Router",
+            "Hub",
+            "All of the above"
+        ],
+        "correct_option": 3,
+        "explanation": "All of the above options are examples of networking devices.",
+        "chapter": "General Computer Awareness"
+    },
+    {
+        "id": 307,
+        "question": "What is the purpose of computer codes?",
+        "options": [
+            "To represent only alphabets",
+            "To represent only digits",
+            "To represent any character in a unique coded pattern",
+            "To represent only special characters"
+        ],
+        "correct_option": 2,
+        "explanation": "Computer codes are used to represent any character, such as alphabets, digits, or special characters, in a unique coded pattern of 1's and 0's.",
+        "chapter": "General Computer Awareness"
+    },
+    {
+        "id": 317,
+        "question": "What is the purpose of computer codes in representing characters?",
+        "options": [
+            "To represent only a limited set of characters",
+            "To represent any character in a unique coded pattern",
+            "To represent only alphabets and digits",
+            "To represent only special characters"
+        ],
+        "correct_option": 1,
+        "explanation": "Computer codes are used to represent any character, such as alphabets, digits, or special characters, in a unique coded pattern of 1's and 0's.",
+        "chapter": "General Computer Awareness"
+    },
+    {
+        "id": 325,
+        "question": "How are computer codes used to represent characters?",
+        "options": [
+            "Using a unique coded pattern of 1's and 0's",
+            "Using only alphabets",
+            "Using only digits",
+            "Using only special characters"
+        ],
+        "correct_option": 0,
+        "explanation": "Computer codes are used to represent characters, such as alphabets, digits, or special characters, in a unique coded pattern of 1's and 0's.",
+        "chapter": "General Computer Awareness"
+    },
+    {
+        "id": 328,
+        "question": "Which layer is responsible for framing, physical addressing, and error control?",
+        "options": [
+            "Network Layer",
+            "Transport Layer",
+            "Data Link Layer",
+            "Physical Layer"
+        ],
+        "correct_option": 2,
+        "explanation": "The Data Link Layer is responsible for framing, physical addressing, and error control, as stated in the provided content.",
+        "chapter": "General Computer Awareness"
+    },
+    {
+        "id": 332,
+        "question": "What is the Transport Layer also known as?",
+        "options": [
+            "Brain of the OSI model",
+            "Heart of the OSI model",
+            "Core of the OSI model",
+            "Base of the OSI model"
+        ],
+        "correct_option": 1,
+        "explanation": "The Transport Layer is referred to as the Heart of the OSI model.",
+        "chapter": "General Computer Awareness"
+    },
+    {
+        "id": 335,
+        "question": "What is the function of segmentation and reassembly in the Transport Layer?",
+        "options": [
+            "Breaking down data into smaller segments and reassembling them",
+            "Providing connection-oriented service",
+            "Performing error control and flow control",
+            "Routing and logical addressing"
+        ],
+        "correct_option": 0,
+        "explanation": "The Transport Layer performs segmentation and reassembly, which involves breaking down data into smaller segments and reassembling them.",
+        "chapter": "General Computer Awareness"
+    },
+    {
+        "id": 336,
+        "question": "What type of service is provided by the Transport Layer?",
+        "options": [
+            "Connectionless Service",
+            "Connection-Oriented Service",
+            "Unreliable Service",
+            "Best-Effort Service"
+        ],
+        "correct_option": 1,
+        "explanation": "The Transport Layer provides connection-oriented service.",
+        "chapter": "General Computer Awareness"
+    },
+    {
+        "id": 337,
+        "question": "Which layer is responsible for end-to-end delivery of messages?",
+        "options": [
+            "Network Layer",
+            "Transport Layer",
+            "Data Link Layer",
+            "Physical Layer"
+        ],
+        "correct_option": 1,
+        "explanation": "The Transport Layer is responsible for end-to-end delivery of messages.",
+        "chapter": "General Computer Awareness"
+    },
+    {
+        "id": 338,
+        "question": "What is the term used to refer to data in the Transport Layer?",
+        "options": [
+            "Packets",
+            "Frames",
+            "Segments",
+            "Datagrams"
+        ],
+        "correct_option": 2,
+        "explanation": "In the Transport Layer, data is referred to as Segments.",
+        "chapter": "General Computer Awareness"
+    },
+    {
+        "id": 339,
+        "question": "What is the function of service point addressing in the Transport Layer?",
+        "options": [
+            "Providing a unique address for each device",
+            "Performing error control and flow control",
+            "Routing and logical addressing",
+            "Breaking down data into smaller segments"
+        ],
+        "correct_option": 0,
+        "explanation": "The Transport Layer performs service point addressing, which involves providing a unique address for each device.",
+        "chapter": "General Computer Awareness"
+    },
+    {
+        "id": 340,
+        "question": "Which of the following is a characteristic of the Transport Layer?",
+        "options": [
+            "Routing and logical addressing",
+            "Error control and flow control",
+            "Segmentation and reassembly",
+            "All of the above"
+        ],
+        "correct_option": 2,
+        "explanation": "The Transport Layer is characterized by segmentation and reassembly.",
+        "chapter": "General Computer Awareness"
+    },
+    {
+        "id": 345,
+        "question": "What is the purpose of the Transport Layer?",
+        "options": [
+            "To provide routing and logical addressing",
+            "To provide end-to-end delivery of messages",
+            "To perform error control and flow control",
+            "To provide connectionless service"
+        ],
+        "correct_option": 1,
+        "explanation": "The primary purpose of the Transport Layer is to provide end-to-end delivery of messages.",
+        "chapter": "General Computer Awareness"
+    },
+    {
+        "id": 346,
+        "question": "Which layer is responsible for physical addressing?",
+        "options": [
+            "Network Layer",
+            "Transport Layer",
+            "Data Link Layer",
+            "Physical Layer"
+        ],
+        "correct_option": 2,
+        "explanation": "The Data Link Layer is responsible for physical addressing.",
+        "chapter": "General Computer Awareness"
+    },
+    {
+        "id": 350,
+        "question": "Which layer is responsible for framing?",
+        "options": [
+            "Network Layer",
+            "Transport Layer",
+            "Data Link Layer",
+            "Physical Layer"
+        ],
+        "correct_option": 2,
+        "explanation": "The Data Link Layer is responsible for framing.",
+        "chapter": "General Computer Awareness"
+    },
+    {
+        "id": 352,
+        "question": "Which of the following is a function of the Transport Layer?",
+        "options": [
+            "Routing and logical addressing",
+            "Error control and flow control",
+            "Segmentation and reassembly",
+            "Access control"
+        ],
+        "correct_option": 2,
+        "explanation": "The Transport Layer is responsible for segmentation and reassembly.",
+        "chapter": "General Computer Awareness"
+    },
+    {
+        "id": 354,
+        "question": "What is the term used to refer to the Transport Layer?",
+        "options": [
+            "Heart of the OSI model",
+            "Brain of the OSI model",
+            "Core of the OSI model",
+            "Base of the OSI model"
+        ],
+        "correct_option": 0,
+        "explanation": "The Transport Layer is referred to as the Heart of the OSI model.",
+        "chapter": "General Computer Awareness"
+    },
+    {
+        "id": 361,
+        "question": "What does SEAC stand for?",
+        "options": [
+            "Standards Eastern Automatic Computer",
+            "Standards Electronic Automatic Computer",
+            "Both A and B",
+            "None of the above"
+        ],
+        "correct_option": 0,
+        "explanation": "SEAC stands for Standards Eastern Automatic Computer.",
+        "chapter": "General Computer Awareness"
+    },
+    {
+        "id": 362,
+        "question": "What is the full form of SMPS?",
+        "options": [
+            "Switched Mode Power Supply",
+            "Static Mode Power Supply",
+            "Simple Mode Power Supply",
+            "Standard Mode Power Supply"
+        ],
+        "correct_option": 0,
+        "explanation": "The full form of SMPS is Switched Mode Power Supply.",
+        "chapter": "General Computer Awareness"
+    },
+    {
+        "id": 363,
+        "question": "What is the main use of SMPS?",
+        "options": [
+            "In computers",
+            "In televisions",
+            "In radios",
+            "In mobile phones"
+        ],
+        "correct_option": 0,
+        "explanation": "SMPS is mainly used in computers.",
+        "chapter": "General Computer Awareness"
+    },
+    {
+        "id": 364,
+        "question": "What is the full form of HTML?",
+        "options": [
+            "Hyper Text Markup Language",
+            "Hyper Text Making Language",
+            "Hyper Text Managing Language",
+            "Hyper Text Mapping Language"
+        ],
+        "correct_option": 0,
+        "explanation": "The full form of HTML is Hyper Text Markup Language.",
+        "chapter": "General Computer Awareness"
+    },
+    {
+        "id": 365,
+        "question": "Who invented HTML?",
+        "options": [
+            "Tim Berners Lee",
+            "Steve Jobs",
+            "Bill Gates",
+            "Vinod Khosla"
+        ],
+        "correct_option": 0,
+        "explanation": "HTML was invented by Tim Berners Lee.",
+        "chapter": "General Computer Awareness"
+    },
+    {
+        "id": 366,
+        "question": "In what year was HTML invented?",
+        "options": [
+            "1980",
+            "1990",
+            "2000",
+            "2010"
+        ],
+        "correct_option": 1,
+        "explanation": "HTML was invented in 1990.",
+        "chapter": "General Computer Awareness"
+    },
+    {
+        "id": 367,
+        "question": "What is the name of the company founded by Vinod Khosla?",
+        "options": [
+            "Sun Microsystems",
+            "Apple Inc.",
+            "Google",
+            "Microsoft"
+        ],
+        "correct_option": 0,
+        "explanation": "Sun Microsystems was founded by Vinod Khosla.",
+        "chapter": "General Computer Awareness"
+    },
+    {
+        "id": 368,
+        "question": "Which company was acquired by Oracle?",
+        "options": [
+            "Sun Microsystems",
+            "Apple Inc.",
+            "Google",
+            "Microsoft"
+        ],
+        "correct_option": 0,
+        "explanation": "Sun Microsystems was acquired by Oracle.",
+        "chapter": "General Computer Awareness"
+    },
+    {
+        "id": 369,
+        "question": "What is the former name of Apple Inc.?",
+        "options": [
+            "Apple Computer Company",
+            "Apple Electronics Company",
+            "Apple Technology Company",
+            "Apple Software Company"
+        ],
+        "correct_option": 0,
+        "explanation": "The former name of Apple Inc. is Apple Computer Company.",
+        "chapter": "General Computer Awareness"
+    },
+    {
+        "id": 370,
+        "question": "Who are the founders of Apple Inc.?",
+        "options": [
+            "Steve Jobs and Steve Wozniac",
+            "Steve Jobs, Steve Wozniac, and Ronald Wayne",
+            "Bill Gates and Paul Allen",
+            "Vinod Khosla and Tim Berners Lee"
+        ],
+        "correct_option": 1,
+        "explanation": "The founders of Apple Inc. are Steve Jobs, Steve Wozniac, and Ronald Wayne.",
+        "chapter": "General Computer Awareness"
+    },
+    {
+        "id": 371,
+        "question": "In what year was Apple Inc. founded?",
+        "options": [
+            "1975",
+            "1976",
+            "1977",
+            "1978"
+        ],
+        "correct_option": 1,
+        "explanation": "Apple Inc. was founded in 1976.",
+        "chapter": "General Computer Awareness"
+    },
+    {
+        "id": 376,
+        "question": "Who built the SEAC computer?",
+        "options": [
+            "U.S. National Bureau of Standards (NBS)",
+            "IBM",
+            "Apple Inc.",
+            "Google"
+        ],
+        "correct_option": 0,
+        "explanation": "The SEAC computer was built by the U.S. National Bureau of Standards (NBS).",
+        "chapter": "General Computer Awareness"
+    },
+    {
+        "id": 377,
+        "question": "In what year was the SEAC computer built?",
+        "options": [
+            "1940",
+            "1950",
+            "1960",
+            "1970"
+        ],
+        "correct_option": 1,
+        "explanation": "The SEAC computer was built in 1950.",
+        "chapter": "General Computer Awareness"
+    },
+    {
+        "id": 380,
+        "question": "What does HTML stand for?",
+        "options": [
+            "Hyper Text Markup Language",
+            "Hyper Text Making Language",
+            "Hyper Text Managing Language",
+            "Hyper Text Mapping Language"
+        ],
+        "correct_option": 0,
+        "explanation": "HTML stands for Hyper Text Markup Language.",
+        "chapter": "General Computer Awareness"
+    },
+    {
+        "id": 381,
+        "question": "Who invented HTML in 1990?",
+        "options": [
+            "Tim Berners Lee",
+            "Steve Jobs",
+            "Bill Gates",
+            "Vinod Khosla"
+        ],
+        "correct_option": 0,
+        "explanation": "Tim Berners Lee invented HTML in 1990.",
+        "chapter": "General Computer Awareness"
+    },
+    {
+        "id": 382,
+        "question": "What company was founded by Steve Jobs, Steve Wozniac, and Ronald Wayne in 1976?",
+        "options": [
+            "Apple Inc.",
+            "Google",
+            "Microsoft",
+            "Sun Microsystems"
+        ],
+        "correct_option": 0,
+        "explanation": "Apple Inc. was founded by Steve Jobs, Steve Wozniac, and Ronald Wayne in 1976.",
+        "chapter": "General Computer Awareness"
+    },
+    {
+        "id": 384,
+        "question": "When was Microsoft 365 first made available?",
+        "options": [
+            "2010",
+            "2011",
+            "2012",
+            "2015"
+        ],
+        "correct_option": 1,
+        "explanation": "Microsoft 365 was first made available in 2011.",
+        "chapter": "General Computer Awareness"
+    },
+    {
+        "id": 385,
+        "question": "How is Microsoft 365 sold?",
+        "options": [
+            "As a one-time purchase",
+            "As a subscription",
+            "As a free service",
+            "As a trial version"
+        ],
+        "correct_option": 1,
+        "explanation": "Microsoft 365 is sold as a subscription, billed monthly or yearly.",
+        "chapter": "General Computer Awareness"
+    },
+    {
+        "id": 387,
+        "question": "What are the two editions of Microsoft 365 available for personal use?",
+        "options": [
+            "Family and Student",
+            "Personal and Professional",
+            "Family and Personal",
+            "Home and Business"
+        ],
+        "correct_option": 2,
+        "explanation": "Microsoft 365 is available in Family and Personal editions for personal, non-commercial use.",
+        "chapter": "General Computer Awareness"
+    },
+    {
+        "id": 400,
+        "question": "How does Microsoft 365 differ from the old-fashioned bundle in terms of payment?",
+        "options": [
+            "Microsoft 365 is a one-time purchase",
+            "Microsoft 365 is a subscription",
+            "Microsoft 365 is free",
+            "Microsoft 365 is a trial version"
+        ],
+        "correct_option": 1,
+        "explanation": "Microsoft 365 is sold as a subscription, billed monthly or yearly, whereas the old-fashioned bundle was a one-time purchase.",
+        "chapter": "General Computer Awareness"
+    },
+    {
+        "id": 426,
+        "question": "What is the shortcut to open the Review tab?",
+        "options": [
+            "Alt+R",
+            "Alt+W",
+            "Ctrl+R",
+            "Ctrl+W"
+        ],
+        "correct_option": 0,
+        "explanation": "The shortcut to open the Review tab is Alt+R.",
+        "chapter": "General Computer Awareness"
+    },
+    {
+        "id": 441,
+        "question": "How to open the View tab?",
+        "options": [
+            "Alt+R",
+            "Alt+W",
+            "Ctrl+R",
+            "Ctrl+W"
+        ],
+        "correct_option": 1,
+        "explanation": "The shortcut to open the View tab is Alt+W.",
+        "chapter": "General Computer Awareness"
+    },
+    {
+        "id": 442,
+        "question": "What is the shortcut to protect sheets and workbooks?",
+        "options": [
+            "Alt+R",
+            "Alt+W",
+            "Ctrl+R",
+            "Ctrl+W"
+        ],
+        "correct_option": 0,
+        "explanation": "The shortcut to protect sheets and workbooks is found in the Review tab, which can be opened using Alt+R.",
+        "chapter": "General Computer Awareness"
+    },
+    {
+        "id": 443,
+        "question": "How to add notes and threaded comments?",
+        "options": [
+            "Alt+R",
+            "Alt+W",
+            "Ctrl+R",
+            "Ctrl+W"
+        ],
+        "correct_option": 0,
+        "explanation": "The option to add notes and threaded comments is found in the Review tab, which can be opened using Alt+R.",
+        "chapter": "General Computer Awareness"
+    },
+    {
+        "id": 445,
+        "question": "How to preview page breaks and layouts?",
+        "options": [
+            "Alt+R",
+            "Alt+W",
+            "Ctrl+R",
+            "Ctrl+W"
+        ],
+        "correct_option": 1,
+        "explanation": "The option to preview page breaks and layouts is found in the View tab, which can be opened using Alt+W.",
+        "chapter": "General Computer Awareness"
+    },
+    {
+        "id": 446,
+        "question": "What is the shortcut to set zoom magnification?",
+        "options": [
+            "Alt+R",
+            "Alt+W",
+            "Ctrl+R",
+            "Ctrl+W"
+        ],
+        "correct_option": 1,
+        "explanation": "The option to set zoom magnification is found in the View tab, which can be opened using Alt+W.",
+        "chapter": "General Computer Awareness"
+    },
+    {
+        "id": 449,
+        "question": "How to view macros?",
+        "options": [
+            "Alt+R",
+            "Alt+W",
+            "Ctrl+R",
+            "Ctrl+W"
+        ],
+        "correct_option": 1,
+        "explanation": "The option to view macros is found in the View tab, which can be opened using Alt+W.",
+        "chapter": "General Computer Awareness"
+    },
+    {
+        "id": 450,
+        "question": "What is the shortcut to show and hide gridlines and headings?",
+        "options": [
+            "Alt+R",
+            "Alt+W",
+            "Ctrl+R",
+            "Ctrl+W"
+        ],
+        "correct_option": 1,
+        "explanation": "The option to show and hide gridlines and headings is found in the View tab, which can be opened using Alt+W.",
+        "chapter": "General Computer Awareness"
+    },
+    {
+        "id": 452,
+        "question": "What is the shortcut to create an embedded chart of the data in the current range?",
+        "options": [
+            "Alt+Shift+F1",
+            "Alt+F1",
+            "Ctrl+Shift+F1",
+            "Ctrl+F1"
+        ],
+        "correct_option": 1,
+        "explanation": "Alt+F1 creates an embedded chart of the data in the current range.",
+        "chapter": "General Computer Awareness"
+    },
+    {
+        "id": 455,
+        "question": "What is the shortcut to display the Insert Function dialog box?",
+        "options": [
+            "F3 alone",
+            "Shift+F3",
+            "Ctrl+F3",
+            "Alt+F3"
+        ],
+        "correct_option": 1,
+        "explanation": "Shift+F3 displays the Insert Function dialog box.",
+        "chapter": "General Computer Awareness"
+    },
+    {
+        "id": 456,
+        "question": "What is the function of F4 alone?",
+        "options": [
+            "Repeats the last command or action",
+            "Displays the Go To dialog box",
+            "Creates an embedded chart of the data in the current range",
+            "Closes Excel"
+        ],
+        "correct_option": 0,
+        "explanation": "F4 alone repeats the last command or action, if possible.",
+        "chapter": "General Computer Awareness"
+    },
+    {
+        "id": 457,
+        "question": "What is the purpose of Ctrl+F2?",
+        "options": [
+            "Display the print preview area on the Print tab",
+            "Toggle full screen mode",
+            "Edit the active cell",
+            "Close the selected workbook window"
+        ],
+        "correct_option": 0,
+        "explanation": "Ctrl+F2 displays the print preview area on the Print tab in the Backstage view.",
+        "chapter": "General Computer Awareness"
+    },
+    {
+        "id": 459,
+        "question": "What is the function of F5 alone?",
+        "options": [
+            "Displays the Go To dialog box",
+            "Creates an embedded chart of the data in the current range",
+            "Repeats the last command or action",
+            "Toggle full screen mode"
+        ],
+        "correct_option": 0,
+        "explanation": "F5 alone displays the Go To dialog box.",
+        "chapter": "General Computer Awareness"
+    },
+    {
+        "id": 464,
+        "question": "What is the function of F3 alone?",
+        "options": [
+            "Displays the Paste Name dialog box",
+            "Displays the Insert Function dialog box",
+            "Edit the active cell",
+            "Toggle full screen mode"
+        ],
+        "correct_option": 0,
+        "explanation": "F3 alone displays the Paste Name dialog box.",
+        "chapter": "General Computer Awareness"
+    },
+    {
+        "id": 465,
+        "question": "What is the shortcut to toggle full screen mode?",
+        "options": [
+            "Ctrl+Shift+F1",
+            "Alt+F1",
+            "Alt+Shift+F1",
+            "Ctrl+F1"
+        ],
+        "correct_option": 0,
+        "explanation": "Ctrl+Shift+F1 toggles full screen mode.",
+        "chapter": "General Computer Awareness"
+    },
+    {
+        "id": 468,
+        "question": "What is the shortcut to display the Paste Name dialog box?",
+        "options": [
+            "F2 alone",
+            "F3 alone",
+            "Shift+F3",
+            "Ctrl+F3"
+        ],
+        "correct_option": 1,
+        "explanation": "F3 alone displays the Paste Name dialog box.",
+        "chapter": "General Computer Awareness"
+    },
+    {
+        "id": 469,
+        "question": "What is the purpose of Alt+F1?",
+        "options": [
+            "Creates an embedded chart of the data in the current range",
+            "Inserts a new worksheet",
+            "Toggle full screen mode",
+            "Close Excel"
+        ],
+        "correct_option": 0,
+        "explanation": "Alt+F1 creates an embedded chart of the data in the current range.",
+        "chapter": "General Computer Awareness"
+    },
+    {
+        "id": 472,
+        "question": "What is the function of Ctrl+Shift+F1?",
+        "options": [
+            "Toggle full screen mode",
+            "Create an embedded chart of the data in the current range",
+            "Insert a new worksheet",
+            "Close Excel"
+        ],
+        "correct_option": 0,
+        "explanation": "Ctrl+Shift+F1 toggles full screen mode.",
+        "chapter": "General Computer Awareness"
+    },
+    {
+        "id": 477,
+        "question": "What is the function of F4 alone if the last command or action cannot be repeated?",
+        "options": [
+            "Repeats the last command or action",
+            "Does nothing",
+            "Displays an error message",
+            "Toggle full screen mode"
+        ],
+        "correct_option": 1,
+        "explanation": "F4 alone does nothing if the last command or action cannot be repeated.",
+        "chapter": "General Computer Awareness"
+    },
+    {
+        "id": 481,
+        "question": "What is the full form of OSI?",
+        "options": [
+            "Open System Interconnection",
+            "Open Source Interface",
+            "Operating System Interface",
+            "Online System Interface"
+        ],
+        "correct_option": 0,
+        "explanation": "OSI is a standard for communication between devices.",
+        "chapter": "General Computer Awareness"
+    },
+    {
+        "id": 482,
+        "question": "Where is the headquarters of IBM located?",
+        "options": [
+            "Armonk, NY",
+            "New York City",
+            "Los Angeles",
+            "Chicago"
+        ],
+        "correct_option": 0,
+        "explanation": "IBM's headquarters is located in Armonk, NY.",
+        "chapter": "General Computer Awareness"
+    },
+    {
+        "id": 483,
+        "question": "Who is the Chairman and CEO of IBM?",
+        "options": [
+            "Arvind Krishna",
+            "Bill Gates",
+            "Steve Jobs",
+            "Mark Zuckerberg"
+        ],
+        "correct_option": 0,
+        "explanation": "Arvind Krishna is the current Chairman and CEO of IBM.",
+        "chapter": "General Computer Awareness"
+    },
+    {
+        "id": 489,
+        "question": "What type of organization is IBM?",
+        "options": [
+            "Multinational technology and consulting organization",
+            "National technology and consulting organization",
+            "International business organization",
+            "Local technology organization"
+        ],
+        "correct_option": 0,
+        "explanation": "IBM is a multinational technology and consulting organization.",
+        "chapter": "General Computer Awareness"
+    },
+    {
+        "id": 490,
+        "question": "What services does IBM offer?",
+        "options": [
+            "Infrastructure, hosting, and consulting services",
+            "Software development and data storage services",
+            "Network management and security services",
+            "Hardware manufacturing and sales services"
+        ],
+        "correct_option": 0,
+        "explanation": "IBM offers infrastructure, hosting, and consulting services.",
+        "chapter": "General Computer Awareness"
+    },
+    {
+        "id": 493,
+        "question": "What is the purpose of OSI?",
+        "options": [
+            "To standardize communication between devices",
+            "To develop new software applications",
+            "To manage network security",
+            "To optimize data storage"
+        ],
+        "correct_option": 0,
+        "explanation": "OSI is a standard for communication between devices.",
+        "chapter": "General Computer Awareness"
+    },
+    {
+        "id": 496,
+        "question": "What is the role of the Chairman and CEO of IBM?",
+        "options": [
+            "To oversee the overall strategy and direction of the company",
+            "To manage the company's financial operations",
+            "To develop new software applications",
+            "To manage the company's marketing efforts"
+        ],
+        "correct_option": 0,
+        "explanation": "The Chairman and CEO of IBM oversees the overall strategy and direction of the company.",
+        "chapter": "General Computer Awareness"
+    },
+    {
+        "id": 499,
+        "question": "What is the relationship between IBM and its services?",
+        "options": [
+            "IBM offers infrastructure, hosting, and consulting services",
+            "IBM offers software development and data storage services",
+            "IBM offers network management and security services",
+            "IBM offers hardware manufacturing and sales services"
+        ],
+        "correct_option": 0,
+        "explanation": "IBM offers infrastructure, hosting, and consulting services.",
+        "chapter": "General Computer Awareness"
+    },
+    {
+        "id": 503,
+        "question": "What is the role of the Chairman and CEO of IBM in the company?",
+        "options": [
+            "To oversee the overall strategy and direction of the company",
+            "To manage the company's financial operations",
+            "To develop new software applications",
+            "To manage the company's marketing efforts"
+        ],
+        "correct_option": 0,
+        "explanation": "The Chairman and CEO of IBM oversees the overall strategy and direction of the company.",
+        "chapter": "General Computer Awareness"
+    },
+    {
+        "id": 515,
+        "question": "Which social networking service places the biggest emphasis on professional networking?",
+        "options": [
+            "Facebook",
+            "Twitter",
+            "LinkedIn",
+            "Instagram"
+        ],
+        "correct_option": 2,
+        "explanation": "LinkedIn is a social networking service that places the biggest emphasis on professional networking, allowing users to connect with colleagues, find job opportunities, and share professional content.",
+        "chapter": "General Computer Awareness"
+    },
+    {
+        "id": 523,
+        "question": "What is the purpose of using a public key in digital signatures?",
+        "options": [
+            "To encrypt the message",
+            "To decrypt the message",
+            "To verify the sender's identity",
+            "To authenticate the receiver's identity"
+        ],
+        "correct_option": 2,
+        "explanation": "The public key is used to verify the sender's identity in digital signatures, ensuring that the message comes from the intended sender and has not been tampered with.",
+        "chapter": "General Computer Awareness"
+    },
+    {
+        "id": 529,
+        "question": "What is the difference between a social networking site and a professional networking site?",
+        "options": [
+            "A social networking site is used for personal connections, while a professional networking site is used for business connections",
+            "A social networking site is used for business connections, while a professional networking site is used for personal connections",
+            "A social networking site is used for entertainment, while a professional networking site is used for education",
+            "A social networking site is used for education, while a professional networking site is used for entertainment"
+        ],
+        "correct_option": 0,
+        "explanation": "A social networking site is used for personal connections, while a professional networking site, such as LinkedIn, is used for business connections and professional development.",
+        "chapter": "General Computer Awareness"
+    },
+    {
+        "id": 545,
+        "question": "What accurately describes application software?",
+        "options": [
+            "Designed to perform specific tasks or functions to meet the user’s needs",
+            "Designed to manage computer hardware",
+            "Designed to provide entertainment",
+            "Designed to manage computer networks"
+        ],
+        "correct_option": 0,
+        "explanation": "Application software is designed to perform specific tasks or functions to meet the user’s needs.",
+        "chapter": "General Computer Awareness"
+    },
+    {
+        "id": 547,
+        "question": "What is the name of the web portal launched by the Department of Telecommunication for sharing information on mobile towers and EMF Emission Compliances?",
+        "options": [
+            "Tarang Sanchar",
+            "Sanchar Tarang",
+            "EMF Portal",
+            "Mobile Tower Portal"
+        ],
+        "correct_option": 0,
+        "explanation": "The web portal launched by the Department of Telecommunication for sharing information on mobile towers and EMF Emission Compliances is called Tarang Sanchar.",
+        "chapter": "General Computer Awareness"
+    },
+    {
+        "id": 550,
+        "question": "What method can be used to move among slides if your hands are already on the keyboard in PPT?",
+        "options": [
+            "Using the mouse",
+            "Using the keyboard directional keys",
+            "Using the scroll wheel",
+            "Using the touchpad"
+        ],
+        "correct_option": 1,
+        "explanation": "You can use the keyboard directional keys to move among slides if your hands are already on the keyboard in PPT.",
+        "chapter": "General Computer Awareness"
+    },
+    {
+        "id": 551,
+        "question": "What is an example of an input device?",
+        "options": [
+            "Keyboard",
+            "Monitor",
+            "Printer",
+            "Speaker"
+        ],
+        "correct_option": 0,
+        "explanation": "A keyboard is an example of an input device.",
+        "chapter": "General Computer Awareness"
+    },
+    {
+        "id": 554,
+        "question": "What is the difference between system software and application software?",
+        "options": [
+            "System software is designed to perform specific tasks, while application software is designed to manage computer hardware",
+            "System software is designed to manage computer hardware, while application software is designed to perform specific tasks",
+            "System software is designed to provide entertainment, while application software is designed to manage computer networks",
+            "System software is designed to manage computer networks, while application software is designed to provide entertainment"
+        ],
+        "correct_option": 1,
+        "explanation": "System software is designed to manage computer hardware, while application software is designed to perform specific tasks.",
+        "chapter": "General Computer Awareness"
+    },
+    {
+        "question": "Which of the following is one of the file formats used for web graphics?",
+        "options": [
+            "A. gif",
+            "B. .exe",
+            "C. .txt",
+            "D. .docx"
+        ],
+        "correct_option": 0,
+        "explanation": "GIF (Graphics Interchange Format) files are widely used for web graphics.",
+        "verification_status": "VERIFIED_100%",
+        "subject": "Computer Awareness",
+        "language": "en",
+        "id": "comp_en_0007",
+        "chapter": "General Computer Awareness"
+    },
+    {
+        "question": "What is a three or four-letter abbreviation that signifies the file type?",
+        "options": [
+            "A. extension",
+            "B. search",
+            "C. virus",
+            "D. name"
+        ],
+        "correct_option": 0,
+        "explanation": "A file extension is a short suffix attached to the end of a filename after a period (.) that signifies the file type.",
+        "verification_status": "VERIFIED_100%",
+        "subject": "Computer Awareness",
+        "language": "en",
+        "id": "comp_en_0009",
+        "chapter": "General Computer Awareness"
+    },
+    {
+        "question": "What is the file extension of a Portable Document Format?",
+        "options": [
+            "A. .docx",
+            "B. .docm",
+            "C. .pdf",
+            "D. .txt"
+        ],
+        "correct_option": 2,
+        "explanation": "A .pdf file is a Portable Document Format file.",
+        "verification_status": "VERIFIED_100%",
+        "subject": "Computer Awareness",
+        "language": "en",
+        "id": "comp_en_0010",
+        "chapter": "General Computer Awareness"
+    },
+    {
+        "question": "What does ESS stand for in the context of Computer-based systems?",
+        "options": [
+            "A. Executive Support System",
+            "B. Executive Series System",
+            "C. Executive Senior System",
+            "D. Executive Service System"
+        ],
+        "correct_option": 0,
+        "explanation": "ESS stands for Executive Support System, which is a computer-based system that allows users to transform enterprise data.",
+        "verification_status": "VERIFIED_100%",
+        "subject": "Computer Awareness",
+        "language": "en",
+        "id": "comp_en_0028",
+        "chapter": "General Computer Awareness"
+    },
+    {
+        "question": "What is the correct full form of MPEG?",
+        "options": [
+            "A. Micro Pictures Expert Group",
+            "B. Many Pictures Expert Group",
+            "C. Moving Picture Experts Group",
+            "D. Motion Pictures Expert Group"
+        ],
+        "correct_option": 2,
+        "explanation": "The Moving Picture Experts Group (MPEG) is an alliance of working groups established jointly by ISO and IEC that sets standards for media coding, including compression coding of audio, video, graphics, and genomic data.",
+        "verification_status": "VERIFIED_100%",
+        "subject": "Computer Awareness",
+        "language": "en",
+        "id": "comp_en_0029",
+        "chapter": "General Computer Awareness"
+    },
+    {
+        "question": "Select the option with the INCORRECT full form for the corresponding acronyms.",
+        "options": [
+            "A. C-DAC: Centre for Development of Advanced Computing",
+            "B. CHOGM: Commonwealth Heads of Government Meeting",
+            "C. CITES: Convention on International Trade in Endangered Species",
+            "D. CCI: Competition Commission of India"
+        ],
+        "correct_option": 1,
+        "explanation": "The correct full form of CHOGM is Commonwealth Heads of Government Meeting.",
+        "verification_status": "VERIFIED_100%",
+        "subject": "Computer Awareness",
+        "language": "en",
+        "id": "comp_en_0030",
+        "chapter": "General Computer Awareness"
+    },
+    {
+        "question": "What does SMPS stand for?",
+        "options": [
+            "A. Switched- Mode Power Supply",
+            "B. Switched-Mode Power Supply",
+            "C. Switched-Mode Power System",
+            "D. Switched-Mode Power Source"
+        ],
+        "correct_option": 1,
+        "explanation": "SMPS stands for Switched-Mode Power Supply, which is an electronic power supply that incorporates a switching regulator to convert electrical power efficiently.",
+        "verification_status": "VERIFIED_100%",
+        "subject": "Computer Awareness",
+        "language": "en",
+        "id": "comp_en_0031",
+        "chapter": "General Computer Awareness"
+    },
+    {
+        "question": "What is the full form of PDF in the context of file formats?",
+        "options": [
+            "A. Portable Document format",
+            "B. Prefixed Detachable Format",
+            "C. Picture Disc Format",
+            "D. Processing Digital File"
+        ],
+        "correct_option": 0,
+        "explanation": "Portable Document Format (PDF) is a file format developed by Adobe in 1992 to present documents, including text formatting and images, in a manner independent of application software, hardware, and operating systems.",
+        "verification_status": "VERIFIED_100%",
+        "subject": "Computer Awareness",
+        "language": "en",
+        "id": "comp_en_0032",
+        "chapter": "General Computer Awareness"
+    },
+    {
+        "question": "What is the full form of EVM?",
+        "options": [
+            "A. Electric Voting Machine",
+            "B. Essential Voting Machine",
+            "C. Election Voting Machine",
+            "D. Electronic Voting Machine"
+        ],
+        "correct_option": 3,
+        "explanation": "The Indian electronic voting machine (EVM) was developed in 1989 by the Election Commission of India in collaboration with Bharat Electronics Limited and Electronics Corporation of India Limited.",
+        "verification_status": "VERIFIED_100%",
+        "subject": "Computer Awareness",
+        "language": "en",
+        "id": "comp_en_0033",
+        "chapter": "General Computer Awareness"
+    },
+    {
+        "question": "What is the full form of an ATM?",
+        "options": [
+            "A. Automated Teller Machine",
+            "B. Automatic Totalling Machine",
+            "C. Automatic Teller Machine",
+            "D. Automated Totalling Machine"
+        ],
+        "correct_option": 0,
+        "explanation": "An automated teller machine (ATM) is an electronic banking outlet that allows customers to complete basic transactions without the aid of a branch representative or teller.",
+        "verification_status": "VERIFIED_100%",
+        "subject": "Computer Awareness",
+        "language": "en",
+        "id": "comp_en_0034",
+        "chapter": "General Computer Awareness"
+    },
+    {
+        "question": "What is the full form of VR in computer technology?",
+        "options": [
+            "A. Virtual Reality",
+            "B. Visual Reality",
+            "C. Vocal Resonance",
+            "D. Visual Range"
+        ],
+        "correct_option": 0,
+        "explanation": "Virtual reality (VR) is a special kind of graphical user interface that presents a computer-generated immersive, three-dimensional, interactive environment.",
+        "verification_status": "VERIFIED_100%",
+        "subject": "Computer Awareness",
+        "language": "en",
+        "id": "comp_en_0037",
+        "chapter": "General Computer Awareness"
+    },
+    {
+        "question": "The full form of BIOS is:",
+        "options": [
+            "A. Browser Input Operating System",
+            "B. Basic Input Output System",
+            "C. Boot Input Output System",
+            "D. Basic Input Output Software"
+        ],
+        "correct_option": 1,
+        "explanation": "BIOS stands for Basic Input Output System, which is a firmware that controls and configures computer hardware components.",
+        "verification_status": "VERIFIED_100%",
+        "subject": "Computer Awareness",
+        "language": "en",
+        "id": "comp_en_0039",
+        "chapter": "General Computer Awareness"
+    },
+    {
+        "question": "Which function key is used to change the name of a specific file?",
+        "options": [
+            "A. ALT + S",
+            "B. F4",
+            "C. CTRL + E",
+            "D. F2"
+        ],
+        "correct_option": 3,
+        "explanation": "F2 function key is used to change the name of a specific file.",
+        "verification_status": "VERIFIED_100%",
+        "subject": "Computer Awareness",
+        "language": "en",
+        "id": "comp_en_0061",
+        "chapter": "General Computer Awareness"
+    },
+    {
+        "question": "Which key in the keyboard is used to browse clickable items moving forward?",
+        "options": [
+            "A. Tab",
+            "B. Esc",
+            "C. Ctrl",
+            "D. Alt"
+        ],
+        "correct_option": 0,
+        "explanation": "Tab is used to browse clickable items moving forward.",
+        "verification_status": "VERIFIED_100%",
+        "subject": "Computer Awareness",
+        "language": "en",
+        "id": "comp_en_0079",
+        "chapter": "General Computer Awareness"
+    },
+    {
+        "question": "System ______ means the system is unresponsive to keyboard inputs.",
+        "options": [
+            "A. Hang",
+            "B. Boot",
+            "C. Eject",
+            "D. Interrupt"
+        ],
+        "correct_option": 0,
+        "explanation": "System hang means the system is unresponsive to keyboard inputs.",
+        "verification_status": "VERIFIED_100%",
+        "subject": "Computer Awareness",
+        "language": "en",
+        "id": "comp_en_0091",
+        "chapter": "General Computer Awareness"
+    },
+    {
+        "question": "What consists of an instruction in computer memory?",
+        "options": [
+            "A. opcode, operand",
+            "B. subroutine, location",
+            "C. input/output, data",
+            "D. operation, control"
+        ],
+        "correct_option": 0,
+        "explanation": "An instruction in computer memory consists of opcode and operand.",
+        "verification_status": "VERIFIED_100%",
+        "subject": "Computer Awareness",
+        "language": "en",
+        "id": "comp_en_0097",
+        "chapter": "General Computer Awareness"
+    },
+    {
+        "question": "What is the process of taking out stored results out of physical memory of Computers?",
+        "options": [
+            "A. Input process",
+            "B. Processing",
+            "C. Programming",
+            "D. Output process"
+        ],
+        "correct_option": 3,
+        "explanation": "The process of taking out stored results out of the physical memory of computers is known as the output process.",
+        "verification_status": "VERIFIED_100%",
+        "subject": "Computer Awareness",
+        "language": "en",
+        "id": "comp_en_0117",
+        "chapter": "General Computer Awareness"
+    },
+    {
+        "question": "Which of the following devices/interfaces did Douglas Engelbart invent?",
+        "options": [
+            "A. Compact disc",
+            "B. USB port",
+            "C. Floppy disk",
+            "D. Computer mouse"
+        ],
+        "correct_option": 3,
+        "explanation": "Douglas Engelbart invented the Computer mouse.",
+        "verification_status": "VERIFIED_100%",
+        "subject": "Computer Awareness",
+        "language": "en",
+        "id": "comp_en_0137",
+        "chapter": "General Computer Awareness"
+    },
+    {
+        "question": "Who is the co-founder of Apple Computers?",
+        "options": [
+            "A. Bill Gates",
+            "B. Paul Allen",
+            "C. Charles Flint",
+            "D. Steve Jobs"
+        ],
+        "correct_option": 3,
+        "explanation": "Steve Jobs is the co-founder of Apple Computers.",
+        "verification_status": "VERIFIED_100%",
+        "subject": "Computer Awareness",
+        "language": "en",
+        "id": "comp_en_0140",
+        "chapter": "General Computer Awareness"
+    },
+    {
+        "question": "Who among the following is one of the founders of Google?",
+        "options": [
+            "A. Jon Koum",
+            "B. Larry Page",
+            "C. Jerry Yang",
+            "D. Mark Zuckerberg"
+        ],
+        "correct_option": 1,
+        "explanation": "Larry Page and Sergey Brin are the founders of Google.",
+        "verification_status": "VERIFIED_100%",
+        "subject": "Computer Awareness",
+        "language": "en",
+        "id": "comp_en_0141",
+        "chapter": "General Computer Awareness"
+    },
+    {
+        "question": "Who was one of the founders of the American computer company Sun Microsystems, later acquired by Oracle?",
+        "options": [
+            "A. Vinod Khosla",
+            "B. Satya Nadella",
+            "C. Sunder Pichai",
+            "D. Sabeer Bhatia"
+        ],
+        "correct_option": 0,
+        "explanation": "Scott McNealy, Vinod Khosla, Andy Bechtolsheim, Bill Joy are the founders of American computer company Sun Microsystems, later acquired by Oracle.",
+        "verification_status": "VERIFIED_100%",
+        "subject": "Computer Awareness",
+        "language": "en",
+        "id": "comp_en_0142",
+        "chapter": "General Computer Awareness"
+    },
+    {
+        "question": "Which of the following is NOT a Google product?",
+        "options": [
+            "A. Gmail",
+            "B. iTunes",
+            "C. Blogger",
+            "D. YouTube"
+        ],
+        "correct_option": 1,
+        "explanation": "iTunes is a product of Apple.",
+        "verification_status": "VERIFIED_100%",
+        "subject": "Computer Awareness",
+        "language": "en",
+        "id": "comp_en_0144",
+        "chapter": "General Computer Awareness"
+    },
+    {
+        "question": "______ along with Paul Allen founded Microsoft in the year 1975.",
+        "options": [
+            "A. Bill Gates",
+            "B. Larry Wall",
+            "C. Mark Zuckerberg",
+            "D. Stephen Hawking"
+        ],
+        "correct_option": 0,
+        "explanation": "Bill Gates along with Paul Allen founded Microsoft in the year 1975.",
+        "verification_status": "VERIFIED_100%",
+        "subject": "Computer Awareness",
+        "language": "en",
+        "id": "comp_en_0145",
+        "chapter": "General Computer Awareness"
+    },
+    {
+        "question": "The Microsoft Corporation was founded at ________ in 1975.",
+        "options": [
+            "A. Albuquerque, New Mexico, United States.",
+            "B. Nihonbashi, Tokyo, Japan",
+            "C. Cupertino, California, United States.",
+            "D. Bellevue, Washington, United States."
+        ],
+        "correct_option": 0,
+        "explanation": "The Microsoft Corporation was founded in Albuquerque, New Mexico, United States in 1975.",
+        "verification_status": "VERIFIED_100%",
+        "subject": "Computer Awareness",
+        "language": "en",
+        "id": "comp_en_0146",
+        "chapter": "General Computer Awareness"
+    },
+    {
+        "question": "The C++ programming language was developed at AT & T Bell Laboratories in the early ________ by Bjarne Stroustrup.",
+        "options": [
+            "A. 1970s",
+            "B. 1980s",
+            "C. 1990s",
+            "D. 2000s"
+        ],
+        "correct_option": 1,
+        "explanation": "The C++ programming language was developed at AT & T Bell Laboratories in the early 1980s by Bjarne Stroustrup.",
+        "verification_status": "VERIFIED_100%",
+        "subject": "Computer Awareness",
+        "language": "en",
+        "id": "comp_en_0147",
+        "chapter": "General Computer Awareness"
+    },
+    {
+        "question": "Compiler is the example of ____ software?",
+        "options": [
+            "A. Database Software",
+            "B. Programming Software",
+            "C. Application Software",
+            "D. None of the above"
+        ],
+        "correct_option": 1,
+        "explanation": "Compiler is the example of Programming Software.",
+        "verification_status": "VERIFIED_100%",
+        "subject": "Computer Awareness",
+        "language": "en",
+        "id": "comp_en_0155",
+        "chapter": "General Computer Awareness"
+    },
+    {
+        "question": "C++ is an example of ____.",
+        "options": [
+            "A. Compiler",
+            "B. Assembler",
+            "C. Interpreter",
+            "D. None of the above"
+        ],
+        "correct_option": 0,
+        "explanation": "C++ is an example of Compiler.",
+        "verification_status": "VERIFIED_100%",
+        "subject": "Computer Awareness",
+        "language": "en",
+        "id": "comp_en_0156",
+        "chapter": "General Computer Awareness"
+    },
+    {
+        "question": "Eclipse is an example of ____.",
+        "options": [
+            "A. Compiler",
+            "B. Assembler",
+            "C. Interpreter",
+            "D. Debugger"
+        ],
+        "correct_option": 3,
+        "explanation": "Eclipse is an example of Debugger.",
+        "verification_status": "VERIFIED_100%",
+        "subject": "Computer Awareness",
+        "language": "en",
+        "id": "comp_en_0157",
+        "chapter": "General Computer Awareness"
+    },
+    {
+        "question": "Which of the following is an example of multimedia software?",
+        "options": [
+            "A. Adobe Photoshop",
+            "B. MS paint",
+            "C. Oracle",
+            "D. My SQL"
+        ],
+        "correct_option": 0,
+        "explanation": "Adobe Photoshop is an example of multimedia software.",
+        "verification_status": "VERIFIED_100%",
+        "subject": "Computer Awareness",
+        "language": "en",
+        "id": "comp_en_0161",
+        "chapter": "General Computer Awareness"
+    },
+    {
+        "question": "Which of the following bars provides a shortcut to menu commands which are represented in the form of icons?",
+        "options": [
+            "A. Space Bar",
+            "B. Tool Bar",
+            "C. Menu bar",
+            "D. Vertical Bar"
+        ],
+        "correct_option": 1,
+        "explanation": "A tool bar provides a shortcut to menu commands which are represented in the form of icons.",
+        "verification_status": "VERIFIED_100%",
+        "subject": "Computer Awareness",
+        "language": "en",
+        "id": "comp_en_0174",
+        "chapter": "General Computer Awareness"
+    },
+    {
+        "question": "What is a spreadsheet?",
+        "options": [
+            "A. A computer program that can capture, display, and manipulate data arranged in rows and columns.",
+            "B. A file that contains multiple worksheets.",
+            "C. A chart that visualises data.",
+            "D. A set of predefined formatting styles."
+        ],
+        "correct_option": 0,
+        "explanation": "A spreadsheet is a computer program that can capture, display, and manipulate data arranged in rows and columns.",
+        "verification_status": "VERIFIED_100%",
+        "subject": "Computer Awareness",
+        "language": "en",
+        "id": "comp_en_0203",
+        "chapter": "General Computer Awareness"
+    },
+    {
+        "question": "What is the shortcut key for insert function?",
+        "options": [
+            "A. Shift + F6",
+            "B. Shift + F7",
+            "C. Shift + F3",
+            "D. Shift + F9"
+        ],
+        "correct_option": 2,
+        "explanation": "The shortcut key for insert function is Shift + F3.",
+        "verification_status": "VERIFIED_100%",
+        "subject": "Computer Awareness",
+        "language": "en",
+        "id": "comp_en_0230",
+        "chapter": "General Computer Awareness"
+    },
+    {
+        "question": "What will be the result of the below function: =ROUND(1.6666666666666,2)?",
+        "options": [
+            "A. 2.00",
+            "B. 1.67",
+            "C. 1.7",
+            "D. 1.68"
+        ],
+        "correct_option": 1,
+        "explanation": "The ROUND function rounds a number to a specified number of digits.",
+        "verification_status": "VERIFIED_100%",
+        "subject": "Computer Awareness",
+        "language": "en",
+        "id": "comp_en_0248",
+        "chapter": "General Computer Awareness"
+    },
+    {
+        "question": "Which of the following is the correct argument of the DATE function?",
+        "options": [
+            "A. (Year, Month, Day)",
+            "B. (Day, Month, Year)",
+            "C. (Year, Day, Month)",
+            "D. (Month, Year, Day)"
+        ],
+        "correct_option": 0,
+        "explanation": "The DATE function creates a valid date from individual year, month, and day components.",
+        "verification_status": "VERIFIED_100%",
+        "subject": "Computer Awareness",
+        "language": "en",
+        "id": "comp_en_0252",
+        "chapter": "General Computer Awareness"
+    },
+    {
+        "question": "(Serial_ Number) is the argument of ____ function.",
+        "options": [
+            "A. DAY",
+            "B. DATEVALUE",
+            "C. DATE",
+            "D. DAYVALUE"
+        ],
+        "correct_option": 0,
+        "explanation": "The DAY function takes (serial_number) as its argument and returns the day of the month.",
+        "verification_status": "VERIFIED_100%",
+        "subject": "Computer Awareness",
+        "language": "en",
+        "id": "comp_en_0254",
+        "chapter": "General Computer Awareness"
+    },
+    {
+        "question": "CLASS C = ____ to ____",
+        "options": [
+            "A. 1 to 126",
+            "B. 192 to 220",
+            "C. 128 to 191",
+            "D. 224 to 239"
+        ],
+        "correct_option": 1,
+        "explanation": "CLASS C = 192 to 220",
+        "verification_status": "VERIFIED_100%",
+        "subject": "Computer Awareness",
+        "language": "en",
+        "id": "comp_en_0286",
+        "chapter": "General Computer Awareness"
+    },
+    {
+        "question": "Which is not an 'e-service' from the following options?",
+        "options": [
+            "A. M-commerce",
+            "B. E - learning",
+            "C. Electricity",
+            "D. E - commerce"
+        ],
+        "correct_option": 2,
+        "explanation": "E-services are services that make use of information and communication technologies, for example, Mobile-commerce, e-learning, and Electronic-commerce.",
+        "verification_status": "VERIFIED_100%",
+        "subject": "Computer Awareness",
+        "language": "en",
+        "id": "comp_en_0299",
+        "chapter": "General Computer Awareness"
+    },
+    {
+        "question": "In IT, the technique that is used to increase the bandwidth is",
+        "options": [
+            "A. Memory Management",
+            "B. Memory Interleaving",
+            "C. Memory Intraleaving",
+            "D. Memory Leaving"
+        ],
+        "correct_option": 1,
+        "explanation": "Interleaving is commonly used to increase the bandwidth.",
+        "verification_status": "VERIFIED_100%",
+        "subject": "Computer Awareness",
+        "language": "en",
+        "id": "comp_en_0300",
+        "chapter": "General Computer Awareness"
+    },
+    {
+        "question": "Which of the following search manner uses Web Crawler and Web Spider?",
+        "options": [
+            "A. Web Crawler",
+            "B. Web Spider",
+            "C. Both a and b are correct",
+            "D. None of the above"
+        ],
+        "correct_option": 2,
+        "explanation": "Both Web Crawler and Web Spider are used in search engines to crawl and index web pages.",
+        "verification_status": "VERIFIED_100%",
+        "subject": "Computer Awareness",
+        "language": "en",
+        "id": "comp_en_0338",
+        "chapter": "General Computer Awareness"
+    },
+    {
+        "question": "Search Engines manage the heavy ____ of keywords with URLs.",
+        "options": [
+            "A. Machine",
+            "B. network",
+            "C. databases",
+            "D. components"
+        ],
+        "correct_option": 2,
+        "explanation": "Search Engines manage the heavy databases of keywords with URLs.",
+        "verification_status": "VERIFIED_100%",
+        "subject": "Computer Awareness",
+        "language": "en",
+        "id": "comp_en_0343",
+        "chapter": "General Computer Awareness"
+    },
+    {
+        "question": "Search engines manage a heavy database of ____.",
+        "options": [
+            "A. URLs",
+            "B. web pages",
+            "C. keywords",
+            "D. All of these"
+        ],
+        "correct_option": 3,
+        "explanation": "Search engines manage a heavy database of all of these, including URLs, web pages, and keywords.",
+        "verification_status": "VERIFIED_100%",
+        "subject": "Computer Awareness",
+        "language": "en",
+        "id": "comp_en_0346",
+        "chapter": "General Computer Awareness"
+    },
+    {
+        "question": "The ___ field indicates the sender’s address i.e., who sent the e-mail.",
+        "options": [
+            "A. Bcc",
+            "B. From",
+            "C. To",
+            "D. Inbox"
+        ],
+        "correct_option": 1,
+        "explanation": "From tells the sender’s address.",
+        "verification_status": "VERIFIED_100%",
+        "subject": "Computer Awareness",
+        "language": "en",
+        "id": "comp_en_0351",
+        "chapter": "General Computer Awareness"
+    }
+]

@@ -1,0 +1,252 @@
+[
+    {
+        "id": 542,
+        "question": "What are the requirements for Skype to function on a computer?",
+        "options": [
+            "A web cam and a microphone",
+            "A speaker and a microphone",
+            "A web cam, a microphone, and a speaker",
+            "A web cam only"
+        ],
+        "correct_option": 2,
+        "explanation": "Skype requires a web cam, a microphone, and a speaker to function on a computer.",
+        "chapter": "Memory Storage"
+    },
+    {
+        "id": 556,
+        "question": "What are the requirements for using Skype on a computer?",
+        "options": [
+            "A web cam and a microphone",
+            "A speaker and a microphone",
+            "A web cam, a microphone, and a speaker",
+            "A web cam only"
+        ],
+        "correct_option": 2,
+        "explanation": "Skype requires a web cam, a microphone, and a speaker to function on a computer.",
+        "chapter": "Memory Storage"
+    },
+    {
+        "question": "What is the file extension of a temporary file?",
+        "options": [
+            "A. .tnt",
+            "B. .tar",
+            "C. .tmp",
+            "D. .txt"
+        ],
+        "correct_option": 2,
+        "explanation": "A .tmp file is a temporary backup, cache, or other data file created automatically by a software program.",
+        "verification_status": "VERIFIED_100%",
+        "subject": "Computer Awareness",
+        "language": "en",
+        "id": "comp_en_0004",
+        "chapter": "Memory Storage"
+    },
+    {
+        "question": "What is the function of Cache Memory in a computer?",
+        "options": [
+            "A. It is a part of the Control Unit.",
+            "B. It is a high-speed memory that makes retrieving data more efficient.",
+            "C. It is a type of Input/Output Interface.",
+            "D. It is an Arithmetic Logic Unit."
+        ],
+        "correct_option": 1,
+        "explanation": "Cache memory is a chip-based computer component that makes retrieving data from the computer's memory more efficient.",
+        "verification_status": "VERIFIED_100%",
+        "subject": "Computer Awareness",
+        "language": "en",
+        "id": "comp_en_0096",
+        "chapter": "Memory Storage"
+    },
+    {
+        "question": "What type of memory can retain stored information even when the computer is not powered?",
+        "options": [
+            "A. Not powered",
+            "B. Not processed",
+            "C. Intermittently powered",
+            "D. Powered"
+        ],
+        "correct_option": 0,
+        "explanation": "Non-volatile memory is a type of computer memory that can retain stored information even when the computer is not powered.",
+        "verification_status": "VERIFIED_100%",
+        "subject": "Computer Awareness",
+        "language": "en",
+        "id": "comp_en_0116",
+        "chapter": "Memory Storage"
+    },
+    {
+        "question": "Which of the following is NOT a part of auxiliary memories in a Computer system?",
+        "options": [
+            "A. Floppy",
+            "B. Magnetic tapes",
+            "C. PROM",
+            "D. CD-ROM"
+        ],
+        "correct_option": 2,
+        "explanation": "PROM (Programmable Read-Only Memory) is not a part of auxiliary memories in a computer system.",
+        "verification_status": "VERIFIED_100%",
+        "subject": "Computer Awareness",
+        "language": "en",
+        "id": "comp_en_0118",
+        "chapter": "Memory Storage"
+    },
+    {
+        "question": "What is PROM or Programmable Read-Only Memory?",
+        "options": [
+            "A. A computer memory chip that can be programmed once after it is created.",
+            "B. A type of digital memory where the setting of each bit is locked by a fuse or anti-fuse.",
+            "C. A form of digital memory where the setting of each bit is locked by a fuse or anti-fuse.",
+            "D. A computer memory chip that can be programmed once after it is created and the information written is permanent and cannot be erased or deleted."
+        ],
+        "correct_option": 3,
+        "explanation": "PROM (Programmable Read-Only Memory) is a computer memory chip that can be programmed once after it is created and the information written is permanent and cannot be erased or deleted.",
+        "verification_status": "VERIFIED_100%",
+        "subject": "Computer Awareness",
+        "language": "en",
+        "id": "comp_en_0119",
+        "chapter": "Memory Storage"
+    },
+    {
+        "question": "Which of the following is a type of memory and is similar to RAM?",
+        "options": [
+            "A. Hypertext Link",
+            "B. ROM",
+            "C. Cache",
+            "D. I Beam"
+        ],
+        "correct_option": 2,
+        "explanation": "Cache Memory is a type of memory and is similar to RAM.",
+        "verification_status": "VERIFIED_100%",
+        "subject": "Computer Awareness",
+        "language": "en",
+        "id": "comp_en_0120",
+        "chapter": "Memory Storage"
+    },
+    {
+        "question": "In IT, associative memory is called as :",
+        "options": [
+            "A. Virtual memory",
+            "B. Cache memory",
+            "C. Content addressable memory",
+            "D. Main memory"
+        ],
+        "correct_option": 2,
+        "explanation": "Associative memory is called as Content Addressable Memory (CAM) in IT.",
+        "verification_status": "VERIFIED_100%",
+        "subject": "Computer Awareness",
+        "language": "en",
+        "id": "comp_en_0122",
+        "chapter": "Memory Storage"
+    },
+    {
+        "question": "Which memory is necessary to refresh many times in one second?",
+        "options": [
+            "A. Static RAM",
+            "B. Dynamic RAM",
+            "C. EPROM",
+            "D. PROM"
+        ],
+        "correct_option": 1,
+        "explanation": "Dynamic RAM is necessary to refresh many times in one second.",
+        "verification_status": "VERIFIED_100%",
+        "subject": "Computer Awareness",
+        "language": "en",
+        "id": "comp_en_0127",
+        "chapter": "Memory Storage"
+    },
+    {
+        "question": "Which among the following statements about secondary memory is incorrect?",
+        "options": [
+            "A. It is known as a backup memory.",
+            "B. It is used for storing data.",
+            "C. It is a volatile memory.",
+            "D. These are magnetic and optical memories."
+        ],
+        "correct_option": 2,
+        "explanation": "Secondary memory is a non-volatile, persistent, and not immediately accessible by a computer. It allows users to store data and information that can be retrieved, transmitted. Examples - Read-only memory (ROM), flash drives, hard disk drives (HDD), magnetic tapes, and other types of internal/external storage media.",
+        "verification_status": "VERIFIED_100%",
+        "subject": "Computer Awareness",
+        "language": "en",
+        "id": "comp_en_0128",
+        "chapter": "Memory Storage"
+    },
+    {
+        "question": "Which among the following is also known as an electronic disk?",
+        "options": [
+            "A. USB Sticks",
+            "B. Network Storage Servers",
+            "C. Solid - State Drive",
+            "D. USB Hard Drives"
+        ],
+        "correct_option": 2,
+        "explanation": "A solid-state drive (electronic disks) is a type of storage device used in computers. This non-volatile storage media stores persistent data on solid-state flash memory.",
+        "verification_status": "VERIFIED_100%",
+        "subject": "Computer Awareness",
+        "language": "en",
+        "id": "comp_en_0129",
+        "chapter": "Memory Storage"
+    },
+    {
+        "question": "Which among the following statements is incorrect?",
+        "options": [
+            "A. A magnetic tape consists of vertical columns called frames.",
+            "B. Magnetic tape consists of horizontal rows called channels or tracks.",
+            "C. Magnetic tape drivers are not suitable for storage of data that need to be accessed randomly.",
+            "D. There is no addressing in the magnetic tapes."
+        ],
+        "correct_option": 2,
+        "explanation": "Magnetic tape is a type of physical storage media for different kinds of data. It is considered an analog solution, in contrast to more recent types of storage media, such as solid-state disk (SSD) drives. Magnetic tape is composed of two main layers: the base film and the magnetic layer.",
+        "verification_status": "VERIFIED_100%",
+        "subject": "Computer Awareness",
+        "language": "en",
+        "id": "comp_en_0130",
+        "chapter": "Memory Storage"
+    },
+    {
+        "question": "Which among the following is a primary storage device in a personal computer?",
+        "options": [
+            "A. Hard disk",
+            "B. Compact disk",
+            "C. Pen drive",
+            "D. Random - access memory"
+        ],
+        "correct_option": 3,
+        "explanation": "RAM is a form of computer memory that can be read and changed in any order, typically used to store working data and machine code.",
+        "verification_status": "VERIFIED_100%",
+        "subject": "Computer Awareness",
+        "language": "en",
+        "id": "comp_en_0133",
+        "chapter": "Memory Storage"
+    },
+    {
+        "question": "Which of the following is NOT an example of secondary memory?",
+        "options": [
+            "A. Hard Disk Drive",
+            "B. Compact Disk",
+            "C. Pen drive",
+            "D. Random - access memory"
+        ],
+        "correct_option": 3,
+        "explanation": "Secondary memory is a non-volatile, persistent, and not immediately accessible by a computer. It allows users to store data and information that can be retrieved, transmitted.",
+        "verification_status": "VERIFIED_100%",
+        "subject": "Computer Awareness",
+        "language": "en",
+        "id": "comp_en_0134",
+        "chapter": "Memory Storage"
+    },
+    {
+        "question": "The ‘Pen Drive’ was invented by IBM in the year:",
+        "options": [
+            "A. 2003",
+            "B. 1988",
+            "C. 1990",
+            "D. 1998"
+        ],
+        "correct_option": 3,
+        "explanation": "The ‘Pen Drive’ was invented by IBM in 1998, with the intention of replacing the floppy drive in its ThinkPad line of products.",
+        "verification_status": "VERIFIED_100%",
+        "subject": "Computer Awareness",
+        "language": "en",
+        "id": "comp_en_0138",
+        "chapter": "Memory Storage"
+    }
+]

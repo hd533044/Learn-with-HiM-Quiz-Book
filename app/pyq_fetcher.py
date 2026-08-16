@@ -3,10 +3,59 @@ import os
 import random
 import logging
 from datetime import datetime, timedelta
-from app.config import DATA_DIR, QUESTION_BANK_DIR
+from app.config import DATA_DIR, QUESTION_BANK_DIR, TOPICS_DIR
 from app.database import get_user_question_intel
 
 logger = logging.getLogger(__name__)
+
+# Official Clean Display Topic Names (NO question counts exposed to users)
+TOPIC_METADATA = {
+    "Computer_Hardware_Architecture": {
+        "en": "🖥️ Computer Basics & Architecture",
+        "hi": "🖥️ कंप्यूटर की मूल बातें और आर्किटेक्चर"
+    },
+    "Memory_Storage": {
+        "en": "💾 Memory & Storage Devices",
+        "hi": "💾 मेमोरी और स्टोरेज डिवाइस"
+    },
+    "Operating_Systems_CLI": {
+        "en": "⚙️ Operating Systems & CLI",
+        "hi": "⚙️ ऑपरेटिंग सिस्टम और CLI"
+    },
+    "MS_Word": {
+        "en": "📝 Microsoft Word",
+        "hi": "📝 माइक्रोसॉफ्ट वर्ड"
+    },
+    "MS_Excel": {
+        "en": "📊 Microsoft Excel",
+        "hi": "📊 माइक्रोसॉफ्ट एक्सेल"
+    },
+    "MS_PowerPoint_365": {
+        "en": "📽️ PowerPoint & OneNote",
+        "hi": "📽️ पावरपॉइंट और वननोट"
+    },
+    "Networking_Internet": {
+        "en": "🌐 Networking & Internet",
+        "hi": "🌐 नेटवर्किंग और इंटरनेट"
+    },
+    "Cybersecurity_Malware": {
+        "en": "🛡️ Cybersecurity & Malware",
+        "hi": "🛡️ साइबर सुरक्षा और मैलवेयर"
+    },
+    "Number_Systems": {
+        "en": "🔢 Number Systems & Codes",
+        "hi": "🔢 संख्या प्रणाली और कंप्यूटर कोड्स"
+    },
+    "General_Computer_Awareness": {
+        "en": "💡 General Computer Awareness",
+        "hi": "💡 सामान्य कंप्यूटर जागरूकता"
+    }
+}
+
+def get_available_topics(language: str = "en") -> list:
+    """Returns list of tuples (topic_key, clean_display_name)."""
+    lang_key = "hi" if language == "hi" else "en"
+    return [(k, v.get(lang_key, v["en"])) for k, v in TOPIC_METADATA.items()]
 
 def is_hindi_text(text: str) -> bool:
     """Detects if text contains Devanagari (Hindi) Unicode characters."""
@@ -59,12 +108,14 @@ def verify_and_correct_question(q: dict) -> dict:
         "options": clean_opts,
         "correct_option": correct_opt,
         "explanation": str(expl).strip(),
-        "language": q.get("language", detected_lang)
+        "language": q.get("language", detected_lang),
+        "chapter": q.get("chapter", "Computer Awareness")
     }
 
-def fetch_pyqs_for_quiz(needed_count: int = 20, seen_ids: set = None, language: str = "en", user_id: int = None) -> list:
+def fetch_pyqs_for_quiz(needed_count: int = 20, seen_ids: set = None, language: str = "en", user_id: int = None, topic: str = "MIXED") -> list:
     """
     Intelligent Tiered Spaced-Repetition Quiz Retrieval:
+    - Supports Specific Topic File loading or Mixed (All) loading.
     - Tier 1: Fresh, unseen questions
     - Tier 2: Previously wrong & unattempted/skipped questions
     - Tier 3: Questions attempted > 10–15 days ago
@@ -75,40 +126,113 @@ def fetch_pyqs_for_quiz(needed_count: int = 20, seen_ids: set = None, language: 
         seen_ids = set()
 
     all_raw_questions = []
+    lang_sub = "hi" if language == "hi" else "en"
 
-    search_dirs = [
-        QUESTION_BANK_DIR,
-        DATA_DIR,
-        os.path.join(QUESTION_BANK_DIR, "hindi"),
-        os.path.join(DATA_DIR, "question_bank", "hindi")
-    ]
+    # 1. Targeted Topic File Load
+    if topic and topic != "MIXED":
+        topic_filename = f"{topic}_{lang_sub}.json"
+        potential_topic_paths = [
+            os.path.join(TOPICS_DIR, lang_sub, topic_filename),
+            os.path.join(TOPICS_DIR, topic_filename),
+            os.path.join(DATA_DIR, "topics", lang_sub, topic_filename)
+        ]
+        
+        loaded_topic = False
+        for p in potential_topic_paths:
+            if os.path.exists(p):
+                try:
+                    with open(p, "r", encoding="utf-8") as f:
+                        data = json.load(f)
+                        if isinstance(data, list):
+                            all_raw_questions.extend(data)
+                            loaded_topic = True
+                            break
+                except Exception as e:
+                    logger.error(f"Error loading topic file {p}: {e}")
 
-    seen_paths = set()
-    for search_dir in search_dirs:
-        if not os.path.exists(search_dir):
-            continue
-        for root, _, files in os.walk(search_dir):
-            for file in files:
-                if file.endswith(".json") and not file.startswith("."):
-                    file_path = os.path.abspath(os.path.join(root, file))
-                    if file_path in seen_paths:
-                        continue
-                    seen_paths.add(file_path)
-                    try:
-                        with open(file_path, "r", encoding="utf-8") as f:
-                            data = json.load(f)
-                            if isinstance(data, list):
-                                all_raw_questions.extend(data)
-                    except Exception as e:
-                        logger.error(f"Error reading JSON file {file_path}: {e}")
+        # Fallback if topic file not found: read general question bank and filter
+        if not loaded_topic:
+            search_dirs = [
+                os.path.join(QUESTION_BANK_DIR, "hindi") if language == "hi" else QUESTION_BANK_DIR,
+                os.path.join(DATA_DIR, "hindi") if language == "hi" else DATA_DIR
+            ]
+            for search_dir in search_dirs:
+                if os.path.exists(search_dir):
+                    for root, _, files in os.walk(search_dir):
+                        for file in files:
+                            if file.endswith(".json") and not file.startswith("."):
+                                file_path = os.path.join(root, file)
+                                try:
+                                    with open(file_path, "r", encoding="utf-8") as f:
+                                        data = json.load(f)
+                                        if isinstance(data, list):
+                                            all_raw_questions.extend(data)
+                                except Exception:
+                                    pass
+    else:
+        # 2. Mixed Practice Load (All Master Files / Question Banks)
+        master_file_name = "all_questions_hindi.json" if language == "hi" else "all_questions_english.json"
+        alt_master_name = "master_computer_questions_hi.json" if language == "hi" else "master_computer_questions_en.json"
+        
+        master_candidates = [
+            os.path.join(QUESTION_BANK_DIR, "hindi", master_file_name) if language == "hi" else os.path.join(QUESTION_BANK_DIR, master_file_name),
+            os.path.join(DATA_DIR, "hindi", master_file_name) if language == "hi" else os.path.join(DATA_DIR, master_file_name),
+            os.path.join(DATA_DIR, alt_master_name)
+        ]
 
-    # 1. Filter by language barrier
+        loaded_master = False
+        for m_path in master_candidates:
+            if os.path.exists(m_path):
+                try:
+                    with open(m_path, "r", encoding="utf-8") as f:
+                        data = json.load(f)
+                        if isinstance(data, list) and len(data) > 0:
+                            all_raw_questions.extend(data)
+                            loaded_master = True
+                            break
+                except Exception as e:
+                    logger.error(f"Error loading master file {m_path}: {e}")
+
+        if not loaded_master:
+            # Recursive directory scan fallback
+            search_dirs = [
+                TOPICS_DIR,
+                QUESTION_BANK_DIR,
+                DATA_DIR
+            ]
+            seen_paths = set()
+            for search_dir in search_dirs:
+                if not os.path.exists(search_dir):
+                    continue
+                for root, _, files in os.walk(search_dir):
+                    for file in files:
+                        if file.endswith(".json") and not file.startswith("."):
+                            file_path = os.path.abspath(os.path.join(root, file))
+                            if file_path in seen_paths:
+                                continue
+                            seen_paths.add(file_path)
+                            try:
+                                with open(file_path, "r", encoding="utf-8") as f:
+                                    data = json.load(f)
+                                    if isinstance(data, list):
+                                        all_raw_questions.extend(data)
+                            except Exception as e:
+                                logger.error(f"Error reading JSON file {file_path}: {e}")
+
+    # 3. Filter by language barrier
     verified_bank = []
+    seen_q_texts = set()
+
     for q in all_raw_questions:
         verified_q = verify_and_correct_question(q)
         if verified_q:
             q_lang = verified_q.get("language", "en")
             q_is_hindi = is_hindi_text(verified_q["question"])
+            norm_text = verified_q["question"].strip().lower()
+
+            if norm_text in seen_q_texts:
+                continue
+            seen_q_texts.add(norm_text)
 
             if language == "hi":
                 if q_lang == "hi" or q_is_hindi:
@@ -125,7 +249,7 @@ def fetch_pyqs_for_quiz(needed_count: int = 20, seen_ids: set = None, language: 
         random.shuffle(verified_bank)
         return [randomize_question_options(q) for q in verified_bank[:needed_count]]
 
-    # 2. Gather User Telemetry for Multi-Tier Spaced Repetition
+    # 4. Gather User Telemetry for Multi-Tier Spaced Repetition
     user_intel = get_user_question_intel(user_id) if user_id else {
         "seen_timestamps": {str(sid): datetime.now() for sid in seen_ids},
         "wrong_or_skipped_ids": set(),
@@ -167,7 +291,7 @@ def fetch_pyqs_for_quiz(needed_count: int = 20, seen_ids: set = None, language: 
     random.shuffle(tier3_mature_repetition)
     random.shuffle(tier4_recent_all)
 
-    # 3. Assemble Question Pool Sequentially
+    # 5. Assemble Question Pool Sequentially
     selected_pool = []
 
     # Fill from Tier 1 (Never seen)

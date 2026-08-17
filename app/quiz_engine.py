@@ -16,7 +16,7 @@ from app.pyq_fetcher import (
     fetch_pyqs_for_quiz, get_available_topics, COMPUTER_TOPIC_METADATA, GK_TOPIC_METADATA,
     fetch_full_mock_questions, fetch_multi_topic_questions
 )
-from app.stats import calculate_user_percentile, calculate_user_rank
+from app.stats import calculate_user_percentile, calculate_user_rank, get_quiz_performance_trend
 
 logger = logging.getLogger(__name__)
 
@@ -1075,8 +1075,16 @@ async def finish_quiz_and_send_report(chat_id: int, user_id: int, context: Conte
     quiz_mode = session.get("quiz_mode", "PRACTICE")
     title = f"{quiz_mode.replace('_', ' ').title()} #{session.get('mock_number', 0)}" if quiz_mode != "PRACTICE" else session.get('topic_name', 'Quiz')
 
+    # Calculate Current Quiz Accuracy %
+    current_acc = round((correct / total) * 100.0, 2) if total > 0 else 0.0
+
+    # Calculate Normalized Real Rank & Percentile
     rank = await asyncio.to_thread(calculate_user_rank, user_id)
     percentile = await asyncio.to_thread(calculate_user_percentile, user_id)
+    
+    # Calculate Previous Quizzes Performance Trend & Analytics
+    trend_info = await asyncio.to_thread(get_quiz_performance_trend, user_id, current_acc)
+
     lang_label = "🌐 English" if lang == "en" else "🇮🇳 हिंदी"
 
     report_card = (
@@ -1086,14 +1094,19 @@ async def finish_quiz_and_send_report(chat_id: int, user_id: int, context: Conte
         f"📖 **Title:** `{title}`\n"
         f"🌐 **Language:** `{lang_label}`\n"
         f"📅 **Attempted At:** `{session['start_time']}`\n\n"
-        f"📊 **PERFORMANCE BREAKDOWN:**\n"
+        f"📊 **CURRENT QUIZ PERFORMANCE:**\n"
+        f"• **Questions Attempted:** `{total}` Qs\n"
         f"• **Correct Answers:** `{correct}` ✅\n"
         f"• **Wrong Answers:** `{wrong}` ❌\n"
         f"• **Skipped Questions:** `{skipped}` ⏭\n"
-        f"• **Final Score:** `{score}` ⭐\n\n"
-        f"🏆 **RANKING & PERCENTILE:**\n"
-        f"• **Global Rank:** `{rank}` 🥇\n"
-        f"• **Overall Percentile:** `{percentile}%` 📊\n"
+        f"• **Current Accuracy:** `{current_acc}%` ⭐\n\n"
+        f"📈 **HISTORICAL TREND COMPARISON:**\n"
+        f"• **Status:** `{trend_info['trend_label']}`\n"
+        f"• **Previous Avg Score:** `{trend_info['historical_avg']}%`\n"
+        f"• **Analysis:** {trend_info['trend_desc']}\n\n"
+        f"🎖️ **NORMALIZED GLOBAL STANDING:**\n"
+        f"• **Global Rank:** `{rank}` 🥇 *(Unbiased Accuracy Metric)*\n"
+        f"• **Overall Percentile:** `{percentile}%` 📊 *(Normalized across all peers)*\n"
         f"━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\n"
         f"👇 **INLINE QUIZ BOOK NAVIGATION:**"
     )

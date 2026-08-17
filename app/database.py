@@ -236,7 +236,16 @@ def init_db():
     init_pool()
     conn = get_db()
     cursor = conn.cursor()
-    
+    cursor.execute('''
+        CREATE TABLE IF NOT EXISTS deleted_blocked_users (
+            user_id BIGINT PRIMARY KEY,
+            student_id TEXT,
+            full_name TEXT,
+            phone_number TEXT,
+            target_exam TEXT,
+            deleted_at TEXT
+        )
+    ''')
     cursor.execute('''
         CREATE TABLE IF NOT EXISTS users (
             user_id BIGINT PRIMARY KEY,

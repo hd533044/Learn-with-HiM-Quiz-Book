@@ -10,7 +10,8 @@ import pytz
 from telegram import (
     Update, InlineKeyboardMarkup, InlineKeyboardButton, 
     BotCommand, BotCommandScopeDefault, BotCommandScopeAllPrivateChats, 
-    BotCommandScopeAllGroupChats, BotCommandScopeChat, ReplyKeyboardRemove
+    BotCommandScopeAllGroupChats, BotCommandScopeChat, ReplyKeyboardRemove,
+    WebAppInfo
 )
 from telegram.ext import (
     Application, CommandHandler, CallbackQueryHandler, PollAnswerHandler, 
@@ -58,6 +59,9 @@ NEGATIVE_WORDS = ["bad", "worst", "useless", "trash", "fake", "hate", "terrible"
 
 PROFILE_CACHE = {}
 CACHE_TTL = 30 
+
+# The URL of your hosted Mini App Frontend (e.g. on Vercel or Netlify)
+MINI_APP_URL = os.getenv("MINI_APP_URL", "https://quizwithhim.vercel.app")
 
 PROMO_NAME, PROMO_TYPE, PROMO_VALUE, PROMO_DAYS = range(100, 104)
 ANNC_CONTENT, ANNC_DATETIME = range(104, 106)
@@ -429,6 +433,7 @@ async def strict_quiz_command_guard(update: Update, context: ContextTypes.DEFAUL
         await update.message.reply_text(limit_msg, reply_markup=keyboard, parse_mode="Markdown")
         return
 
+    from app.quiz_engine import launch_quiz_setup
     await launch_quiz_setup(update, context)
 
 
@@ -956,6 +961,22 @@ async def user_pdf_callback_handler(update: Update, context: ContextTypes.DEFAUL
         await query.edit_message_text("⚠️ **Failed to generate PDF file.**", reply_markup=nav, parse_mode="Markdown")
 
 
+# ==============================================================
+# 📱 TELEGRAM MINI APP COMMANDS & BUTTONS
+# ==============================================================
+async def miniapp_command(update: Update, context: ContextTypes.DEFAULT_TYPE):
+    """Command to specifically launch the Mini App."""
+    if not await check_user_registration(update): return
+    
+    msg = (
+        f"📱 **QUIZ WITH HIM • MINI APP PORTAL** 📱\n"
+        f"━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\n"
+        f"Experience a visually stunning, smooth, and interactive way to track your progress and attempt quizzes!\n\n"
+        f"👇 Tap the button below to launch the Mini App:"
+    )
+    btn = InlineKeyboardMarkup([[InlineKeyboardButton("📱 Open Mini App", web_app=WebAppInfo(url=MINI_APP_URL))]])
+    await send_response(update, msg, reply_markup=btn)
+
 async def help_command(update: Update, context: ContextTypes.DEFAULT_TYPE):
     if not await maintenance_guard(update, context): return
     if not await check_user_registration(update): return
@@ -967,6 +988,7 @@ async def help_command(update: Update, context: ContextTypes.DEFAULT_TYPE):
     msg = (
         "🤖 **QUIZ WITH HIM — COMMAND DIRECTORY** 🤖\n"
         "━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\n"
+        "• **/app** — 📱 Launch the Interactive Mini App Dashboard\n"
         "• **/quiz** — 🚀 Launch Computer Quiz\n"
         "• **/myplan** — 💵 Subscription Status & Packs Breakdown\n"
         "• **/plans** — 💳 VIP Payment Plans & Pricing\n"
@@ -993,6 +1015,7 @@ async def help_command(update: Update, context: ContextTypes.DEFAULT_TYPE):
     )
 
     buttons = [
+        [InlineKeyboardButton("📱 Open Mini App Dashboard", web_app=WebAppInfo(url=MINI_APP_URL))],
         [InlineKeyboardButton("🚀 Launch Quiz (/quiz)", callback_data="cmd_quiz"), InlineKeyboardButton("💳 My Current Plan (/myplan)", callback_data="cmd_myplan")],
         [InlineKeyboardButton("💳 VIP Plans (/plans)", callback_data="cmd_plans"), InlineKeyboardButton("📄 PDF Reports (/pdfreport)", callback_data="cmd_pdfreport")],
         [InlineKeyboardButton("💾 Bookmarks (/savedquestions)", callback_data="cmd_savedquestions"), InlineKeyboardButton("❌ Wrong Qs (/wrongquestions)", callback_data="cmd_wrongquestions")],
@@ -1096,6 +1119,7 @@ async def myprofile_command(update: Update, context: ContextTypes.DEFAULT_TYPE):
     )
 
     buttons = [
+        [InlineKeyboardButton("📱 Open Interactive Mini App", web_app=WebAppInfo(url=MINI_APP_URL))],
         [InlineKeyboardButton("🚀 Launch Quiz", callback_data="cmd_quiz"), InlineKeyboardButton("📄 PDF Report Center", callback_data="cmd_pdfreport")],
         [InlineKeyboardButton("💳 My Plan", callback_data="cmd_myplan"), InlineKeyboardButton("💳 VIP Plans", callback_data="cmd_plans")],
         [InlineKeyboardButton("💾 Bookmarks", callback_data="cmd_savedquestions"), InlineKeyboardButton("✏️ Edit Profile", callback_data="cmd_editprofile")],
@@ -1507,7 +1531,7 @@ async def button_router(update: Update, context: ContextTypes.DEFAULT_TYPE):
         if attempted_today >= allowed_limit:
             await query.answer("🛑 Daily Limit Exhausted!", show_alert=True)
             return
-        # Removed individual quiz callbacks, routing them to the new generalized extended_router below
+        
         from app.quiz_engine import launch_quiz_setup
         await launch_quiz_setup(update, context)
     elif data == "cmd_myplan":
@@ -2016,6 +2040,7 @@ async def post_init(application: Application):
         logging.warning(f"Note on command purge: {e}")
 
     allowed_commands = [
+        BotCommand("app", "📱 Open Interactive Mini App"),
         BotCommand("quiz", "🚀 Start Computer Quiz"),
         BotCommand("myplan", "💵 Subscriptions"),
         BotCommand("plans", "💳 VIP Payment Plans"),
@@ -2088,6 +2113,7 @@ def build_application() -> Application:
     app.add_handler(CommandHandler("ai", direct_admin_ask_command))
     app.add_handler(CommandHandler("query", direct_admin_ask_command))
 
+    app.add_handler(CommandHandler(["app", "miniapp"], miniapp_command))
     app.add_handler(CommandHandler("quiz", strict_quiz_command_guard))
     app.add_handler(CommandHandler("myplan", myplan_command))
     app.add_handler(CommandHandler("plans", plans_command))

@@ -9,3 +9,15 @@ razorpay>=1.4.1
 Postgres>=2.9.1
 playwright
 weasyprint>=60.0
+python-telegram-bot[job-queue]>=20.7
+python-dotenv>=1.0.0
+pytz>=2023.3
+groq>=0.4.2
+aiohttp>=3.9.1
+httpx>=0.26.0
+reportlab>=4.0.9
+razorpay>=1.4.1
+psycopg2-binary>=2.9.9
+pypdf>=3.17.0
+pdfplumber>=0.10.3
+pillow>=10.2.0

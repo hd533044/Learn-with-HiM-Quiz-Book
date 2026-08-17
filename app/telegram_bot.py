@@ -717,18 +717,18 @@ async def pdfreport_command(update: Update, context: ContextTypes.DEFAULT_TYPE):
     asyncio.create_task(asyncio.to_thread(log_user_activity_time, user.id, 10))
 
     buttons = InlineKeyboardMarkup([
-        [InlineKeyboardButton("📋 1. Last 1 Month Full Data Report", callback_data="usergenpdf_last_1_month_data")],
-        [InlineKeyboardButton("📊 2. Last 1 Month Quiz Summary Report (No Qs)", callback_data="usergenpdf_last_1_month_quiz")],
-        [InlineKeyboardButton("📜 3. All Months Full Data Report", callback_data="usergenpdf_all_months_data")],
-        [InlineKeyboardButton("📈 4. All Months Quiz Summary Report (No Qs)", callback_data="usergenpdf_all_months_quiz")],
-        [InlineKeyboardButton("💾 5. Saved Questions PDF Report", callback_data="usergenpdf_saved_questions_only")],
+        [InlineKeyboardButton("🖥️ Computer Awareness", callback_data="pdfsubj_computer")],
+        [InlineKeyboardButton("🌍 General Knowledge (GK)", callback_data="pdfsubj_gk")],
+        [InlineKeyboardButton("📚 All Subjects", callback_data="pdfsubj_all")],
+        [InlineKeyboardButton("💾 Saved / Bookmarked Questions", callback_data="pdfsubj_saved")],
         [InlineKeyboardButton("👤 Back to Profile", callback_data="cmd_profile")]
     ])
 
     msg = (
         f"📄 **STUDENT PDF REPORT CENTER** 📄\n"
         f"━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\n"
-        f"✨ Select your preferred report format below to instantly generate and download your personal academic PDF report card:"
+        f"✨ Welcome to the advanced report generation center.\n"
+        f"Please select the **Subject** for your report:"
     )
 
     if update.callback_query:
@@ -736,6 +736,104 @@ async def pdfreport_command(update: Update, context: ContextTypes.DEFAULT_TYPE):
         await update.callback_query.edit_message_text(msg, reply_markup=buttons, parse_mode="Markdown")
     else:
         await update.message.reply_text(msg, reply_markup=buttons, parse_mode="Markdown")
+
+
+async def pdf_step_handler(update: Update, context: ContextTypes.DEFAULT_TYPE):
+    if not await maintenance_guard(update, context): return
+    if not await check_user_registration(update): return
+
+    query = update.callback_query
+    user_id = query.from_user.id
+    data = query.data
+
+    if data.startswith("pdfsubj_"):
+        subject = data.replace("pdfsubj_", "")
+        if subject == "saved":
+            buttons = [
+                [InlineKeyboardButton("📅 Today's Saved Qs", callback_data=f"pdftime_{subject}_saved_today")],
+                [InlineKeyboardButton("📅 Last 3 Days", callback_data=f"pdftime_{subject}_saved_3days")],
+                [InlineKeyboardButton("📅 Last 1 Month", callback_data=f"pdftime_{subject}_saved_month")],
+                [InlineKeyboardButton("📅 All Time", callback_data=f"pdftime_{subject}_saved_all")],
+                [InlineKeyboardButton("🔙 Back to Subjects", callback_data="cmd_pdfreport")]
+            ]
+            msg = "💾 **SAVED QUESTIONS REPORT**\n━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\n📅 Please select the timeframe:"
+        else:
+            buttons = [
+                [InlineKeyboardButton("📋 Full Questions Report", callback_data=f"pdftype_{subject}_full")],
+                [InlineKeyboardButton("📊 Summary Report (No Qs)", callback_data=f"pdftype_{subject}_summary")],
+                [InlineKeyboardButton("🔙 Back to Subjects", callback_data="cmd_pdfreport")]
+            ]
+            subj_name = "Computer Awareness" if subject == "computer" else "General Knowledge (GK)" if subject == "gk" else "All Subjects"
+            msg = f"📄 **{subj_name.upper()} REPORT**\n━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\n📝 Select the report type:"
+        await query.edit_message_text(msg, reply_markup=InlineKeyboardMarkup(buttons), parse_mode="Markdown")
+        return
+
+    elif data.startswith("pdftype_"):
+        parts = data.split("_")
+        subject = parts[1]
+        rtype = parts[2]
+        buttons = [
+            [InlineKeyboardButton("📅 Today's Report", callback_data=f"pdftime_{subject}_{rtype}_today")],
+            [InlineKeyboardButton("📅 Last 3 Days", callback_data=f"pdftime_{subject}_{rtype}_3days")],
+            [InlineKeyboardButton("📅 Last 1 Month", callback_data=f"pdftime_{subject}_{rtype}_month")],
+            [InlineKeyboardButton("📅 All Time", callback_data=f"pdftime_{subject}_{rtype}_all")],
+            [InlineKeyboardButton("🔙 Back", callback_data=f"pdfsubj_{subject}")]
+        ]
+        await query.edit_message_text("📅 **SELECT TIMEFRAME**\n━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\nSelect the time period for your report:", reply_markup=InlineKeyboardMarkup(buttons), parse_mode="Markdown")
+        return
+
+    elif data.startswith("pdftime_"):
+        parts = data.split("_")
+        subject = parts[1]
+        rtype = parts[2]
+        timeframe = parts[3]
+        
+        await query.answer()
+        await query.edit_message_text("⏳ **Generating Your Custom PDF Report Card...**\nFormatting telemetry, tables, and compiling layout...", parse_mode="Markdown")
+
+        asyncio.create_task(asyncio.to_thread(log_pdf_generation_event, user_id, f"{subject}_{rtype}_{timeframe}"))
+
+        pdf_file = await asyncio.to_thread(generate_student_pdf_report, user_id, None, subject, rtype, timeframe)
+        profile = await fetch_user_profile_fast(user_id)
+        student_name = profile.get("full_name", "Student") if profile else "Student"
+        sid = profile.get("student_id", f"USER_{user_id}") if profile else f"USER_{user_id}"
+
+        if pdf_file == "NO_ATTEMPTS":
+            nav = InlineKeyboardMarkup([[InlineKeyboardButton("📄 Back to PDF Center", callback_data="cmd_pdfreport")]])
+            await query.edit_message_text("ℹ️ **NO QUIZ ATTEMPTS FOUND!**\n\nYou have not attempted any quizzes matching these filters.", reply_markup=nav, parse_mode="Markdown")
+        elif pdf_file == "NO_SAVED_QUESTIONS":
+            nav = InlineKeyboardMarkup([[InlineKeyboardButton("📄 Back to PDF Center", callback_data="cmd_pdfreport")]])
+            await query.edit_message_text("ℹ️ **NO SAVED QUESTIONS FOUND!**\n\nYou haven't bookmarked any questions matching these filters.", reply_markup=nav, parse_mode="Markdown")
+        elif pdf_file and pdf_file.startswith("ERROR_DETAILS:"):
+            nav = InlineKeyboardMarkup([[InlineKeyboardButton("📄 Back to PDF Center", callback_data="cmd_pdfreport")]])
+            await query.edit_message_text(f"⚠️ **PDF Generation Error:**\n\n`{pdf_file}`", reply_markup=nav, parse_mode="Markdown")
+        elif pdf_file and os.path.exists(pdf_file):
+            caption = (
+                f"📄 **OFFICIAL STUDENT PDF ACADEMIC REPORT**\n"
+                f"━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\n"
+                f"👤 **Student:** {student_name}\n"
+                f"🪪 **Student ID:** `{sid}`\n"
+                f"📚 **Subject:** `{subject.upper()}`\n"
+                f"📊 **Type:** `{rtype.upper()}`\n"
+                f"📅 **Timeframe:** `{timeframe.upper()}`\n"
+                f"🏷 **Watermark:** `@LearnwithHiM`"
+            )
+            with open(pdf_file, "rb") as doc:
+                await context.bot.send_document(
+                    chat_id=query.message.chat_id,
+                    document=doc,
+                    filename=os.path.basename(pdf_file),
+                    caption=caption,
+                    parse_mode="Markdown"
+                )
+            nav = InlineKeyboardMarkup([
+                [InlineKeyboardButton("📄 Export Another PDF", callback_data="cmd_pdfreport")],
+                [InlineKeyboardButton("👤 My Profile", callback_data="cmd_profile")]
+            ])
+            await context.bot.send_message(chat_id=query.message.chat_id, text="👇 **Quick Navigation:**", reply_markup=nav, parse_mode="Markdown")
+        else:
+            nav = InlineKeyboardMarkup([[InlineKeyboardButton("📄 Back to PDF Center", callback_data="cmd_pdfreport")]])
+            await query.edit_message_text("⚠️ **Failed to generate PDF file.**", reply_markup=nav, parse_mode="Markdown")
 
 
 async def wrongquestions_command(update: Update, context: ContextTypes.DEFAULT_TYPE):
@@ -904,64 +1002,6 @@ async def unattemptedquestions_command(update: Update, context: ContextTypes.DEF
     await send_response(update, msg, reply_markup=nav)
 
 
-async def user_pdf_callback_handler(update: Update, context: ContextTypes.DEFAULT_TYPE):
-    if not await maintenance_guard(update, context): return
-    if not await check_user_registration(update): return
-
-    query = update.callback_query
-    user_id = query.from_user.id
-    data = query.data
-
-    if not data.startswith("usergenpdf_"):
-        return
-
-    filter_mode = data.replace("usergenpdf_", "")
-    await query.answer()
-    await query.edit_message_text("⏳ **Generating Your Custom PDF Report Card...**\nFormatting telemetry, tables, and compiling layout...", parse_mode="Markdown")
-
-    asyncio.create_task(asyncio.to_thread(log_pdf_generation_event, user_id, filter_mode))
-
-    pdf_file = await asyncio.to_thread(generate_student_pdf_report, user_id, filter_mode)
-    profile = await fetch_user_profile_fast(user_id)
-    student_name = profile.get("full_name", "Student") if profile else "Student"
-    sid = profile.get("student_id", f"USER_{user_id}") if profile else f"USER_{user_id}"
-
-    if pdf_file == "NO_ATTEMPTS":
-        nav = InlineKeyboardMarkup([[InlineKeyboardButton("📄 Back to PDF Center", callback_data="cmd_pdfreport")]])
-        await query.edit_message_text("ℹ️ **NO QUIZ ATTEMPTS FOUND!**\n\nYou have not attempted any quizzes in the selected timeframe yet.", reply_markup=nav, parse_mode="Markdown")
-    elif pdf_file == "NO_SAVED_QUESTIONS":
-        nav = InlineKeyboardMarkup([[InlineKeyboardButton("📄 Back to PDF Center", callback_data="cmd_pdfreport")]])
-        await query.edit_message_text("ℹ️ **NO SAVED QUESTIONS FOUND!**\n\nYou haven't bookmarked any questions yet during your quizzes.", reply_markup=nav, parse_mode="Markdown")
-    elif pdf_file and pdf_file.startswith("ERROR_DETAILS:"):
-        nav = InlineKeyboardMarkup([[InlineKeyboardButton("📄 Back to PDF Center", callback_data="cmd_pdfreport")]])
-        await query.edit_message_text(f"⚠️ **PDF Generation Error:**\n\n`{pdf_file}`", reply_markup=nav, parse_mode="Markdown")
-    elif pdf_file and os.path.exists(pdf_file):
-        caption = (
-            f"📄 **OFFICIAL STUDENT PDF ACADEMIC REPORT**\n"
-            f"━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\n"
-            f"👤 **Student:** {student_name}\n"
-            f"🪪 **Student ID:** `{sid}`\n"
-            f"📊 **Report Module:** `{filter_mode.replace('_', ' ').title()}`\n"
-            f"🏷 **Watermark:** `@LearnwithHiM`"
-        )
-        with open(pdf_file, "rb") as doc:
-            await context.bot.send_document(
-                chat_id=query.message.chat_id,
-                document=doc,
-                filename=os.path.basename(pdf_file),
-                caption=caption,
-                parse_mode="Markdown"
-            )
-        nav = InlineKeyboardMarkup([
-            [InlineKeyboardButton("📄 Export Another PDF", callback_data="cmd_pdfreport")],
-            [InlineKeyboardButton("👤 My Profile", callback_data="cmd_profile")]
-        ])
-        await context.bot.send_message(chat_id=query.message.chat_id, text="👇 **Quick Navigation:**", reply_markup=nav, parse_mode="Markdown")
-    else:
-        nav = InlineKeyboardMarkup([[InlineKeyboardButton("📄 Back to PDF Center", callback_data="cmd_pdfreport")]])
-        await query.edit_message_text("⚠️ **Failed to generate PDF file.**", reply_markup=nav, parse_mode="Markdown")
-
-
 async def editprofile_command(update: Update, context: ContextTypes.DEFAULT_TYPE):
     if not await maintenance_guard(update, context): return
     if not await check_user_registration(update): return
@@ -1065,7 +1105,7 @@ async def saved_questions_command(update: Update, context: ContextTypes.DEFAULT_
 
     msg = "\n".join(lines)
     buttons = [
-        [InlineKeyboardButton("📄 Export Saved Qs to PDF", callback_data="usergenpdf_saved_questions_only")],
+        [InlineKeyboardButton("📄 Export Saved Qs to PDF", callback_data="pdfsubj_saved")],
         [InlineKeyboardButton("🚀 Launch Quiz", callback_data="cmd_quiz")]
     ]
     await send_response(update, msg, reply_markup=InlineKeyboardMarkup(buttons))
@@ -2135,7 +2175,7 @@ def build_application() -> Application:
     # Extended Quiz Flow Router
     app.add_handler(CallbackQueryHandler(quiz_extended_router, pattern="^(qflow_|qmock|qsect|qtop_|qsubj_|qmode_|qtopic_|qlang_|qcount_|qtimer_)"))
     
-    app.add_handler(CallbackQueryHandler(user_pdf_callback_handler, pattern="^usergenpdf_"))
+    app.add_handler(CallbackQueryHandler(pdf_step_handler, pattern="^(pdfsubj_|pdftype_|pdftime_)"))
     app.add_handler(CallbackQueryHandler(admin_view_user_payments_callback, pattern="^admin_view_payments_"))
     app.add_handler(CallbackQueryHandler(admin_grant_plan_menu_callback, pattern="^admin_grant_menu_"))
     app.add_handler(CallbackQueryHandler(admin_execute_grant_callback, pattern="^admin_exec_grant_"))

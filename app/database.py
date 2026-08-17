@@ -358,7 +358,6 @@ def init_db():
         )
     ''')
 
-    # Ensure dynamic columns for all Mock & Sectional Modes exist
     cursor.execute("ALTER TABLE quiz_attempts ADD COLUMN IF NOT EXISTS quiz_mode TEXT DEFAULT 'PRACTICE';")
     cursor.execute("ALTER TABLE quiz_attempts ADD COLUMN IF NOT EXISTS mock_number INTEGER DEFAULT 0;")
     cursor.execute("ALTER TABLE quiz_attempts ADD COLUMN IF NOT EXISTS subject TEXT;")

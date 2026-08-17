@@ -54,14 +54,6 @@ LAST_QUIZ_BROADCAST_KEY = ""
 
 
 async def activate_user_subscription(user_id: int, plan_key: str, payment_id: str = "OFFICIAL_SUBSCRIBED", amount_paid: float = None):
-    """
-    ACTIVATION ENGINE:
-    1. Validates plan key and payment ID format strictly.
-    2. Stacks daily question limit onto current paid_question_balance.
-    3. Extends pass validity.
-    4. Logs transaction permanently into payment_transactions.
-    5. Invalidates memory cache for instant synchronization.
-    """
     if not plan_key or plan_key not in PLAN_TIERS:
         logging.error(f"[SECURITY BLOCKED] Invalid/fake plan key attempted: '{plan_key}' for user {user_id}")
         return False
@@ -91,7 +83,6 @@ async def activate_user_subscription(user_id: int, plan_key: str, payment_id: st
         conn = get_db()
         cursor = conn.cursor()
         
-        # Update user record balance & expiry
         cursor.execute(
             """
             UPDATE users 
@@ -105,7 +96,6 @@ async def activate_user_subscription(user_id: int, plan_key: str, payment_id: st
             (new_bal, expiry_str, pid_str, payment_time_str, user_id)
         )
 
-        # Record transaction history entry
         cursor.execute(
             """
             INSERT INTO payment_transactions 
@@ -122,7 +112,6 @@ async def activate_user_subscription(user_id: int, plan_key: str, payment_id: st
         cursor.close()
         release_db(conn)
 
-        # Flush fast memory cache
         PROFILE_CACHE.pop(user_id, None)
         sync_user_json_profile(user_id)
         
@@ -137,10 +126,6 @@ async def activate_user_subscription(user_id: int, plan_key: str, payment_id: st
 
 
 async def send_payment_invoice_telegram(user_id: int, plan_key: str, payment_id: str = "OFFICIAL_SUBSCRIBED", amount_paid: float = None):
-    """
-    Pushes an instant celebratory text invoice directly into the user's Telegram chat
-    AND notifies Himanshu Sir in the Admin Dashboard with purchase details.
-    """
     if not bot_app_instance:
         logging.error("[TELEGRAM PUSH ERROR] bot_app_instance is uninitialized.")
         return
@@ -154,7 +139,7 @@ async def send_payment_invoice_telegram(user_id: int, plan_key: str, payment_id:
     plan_info = PLAN_TIERS[plan_key]
     plan_name = plan_info.get('name', plan_key)
 
-    profile = await asyncio.to_thread(get_user_profile, user_id) or {}
+    profile = await asyncio.tothread(get_user_profile, user_id) or {}
     student_name = profile.get("full_name", "Student")
     sid = profile.get("student_id", f"USER_{user_id}")
     orig_payment_time = profile.get("payment_timestamp") or get_ist_timestamp_str()
@@ -217,7 +202,6 @@ async def send_payment_invoice_telegram(user_id: int, plan_key: str, payment_id:
     except Exception as err:
         logging.error(f"[DELIVERY ERROR] Failed to push notification to user {user_id}: {err}")
 
-    # Instant Admin Notification Alert on Genuine Verified Payment Purchase
     if not is_admin_grant and user_id != PRIMARY_ADMIN_ID:
         admin_motivation_alert = (
             f"🎉 **NEW PAID VIP PURCHASE RECEIVED!** 🎉\n"
@@ -251,14 +235,6 @@ async def send_payment_invoice_telegram(user_id: int, plan_key: str, payment_id:
 
 
 async def scheduled_auto_payment_sync_worker():
-    """
-    30-SECOND DYNAMIC AUTO-CREDITING & RESTORATION WORKER:
-    1. Pulls recent captured Razorpay payments directly to ensure zero delays.
-    2. Runs recalculate_and_restore_user_plans across database.
-    3. If any student had their plan missing/revoked, it instantly restores it, notifies that student in private chat,
-       and pushes an alert to Himanshu Sir's Admin Telegram.
-    4. Students with intact, active plans will NOT receive duplicate notices.
-    """
     from telegram import InlineKeyboardMarkup, InlineKeyboardButton
 
     while True:
@@ -266,7 +242,6 @@ async def scheduled_auto_payment_sync_worker():
         if not bot_app_instance:
             continue
 
-        # 1. Direct Razorpay Quick Reconcile
         if razorpay_client:
             try:
                 p_res = await asyncio.to_thread(razorpay_client.payment.all, {"count": 30})
@@ -310,7 +285,6 @@ async def scheduled_auto_payment_sync_worker():
             except Exception as rzp_err:
                 logging.error(f"[30S RAZORPAY SYNC ERROR] {rzp_err}")
 
-        # 2. Database Auto-Restore Check for Missing/Revoked Paid Plans
         try:
             credited_list = await asyncio.to_thread(auto_sync_uncredited_paid_users)
             for c in credited_list:
@@ -322,10 +296,8 @@ async def scheduled_auto_payment_sync_worker():
                 rem_days = c.get("remaining_days", 0)
                 pid = c.get("payment_id", "pay_verified")
 
-                # Flush local cache
                 PROFILE_CACHE.pop(uid, None)
 
-                # Push Notification ONLY to the affected restored student
                 student_restore_msg = (
                     f"🛡️ **PAID VIP SUBSCRIPTION AUTOMATICALLY RESTORED!** 🛡️\n"
                     f"━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\n"
@@ -350,7 +322,6 @@ async def scheduled_auto_payment_sync_worker():
                 except Exception as u_err:
                     logging.error(f"[STUDENT RESTORE NOTIFICATION ERROR] {u_err}")
 
-                # Push Alert to Himanshu Sir
                 admin_alert = (
                     f"🔔 **30S AUTO-SYNC: PAID PLAN RESTORED FOR STUDENT!** 🔔\n"
                     f"━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\n"
@@ -535,7 +506,6 @@ async def scheduled_daily_quiz_reminder():
 
 
 async def scheduled_announcement_broadcast_worker():
-    """Background worker that polls every 15s and delivers scheduled announcements concurrently in ~3s."""
     while True:
         await asyncio.sleep(15)
         if not bot_app_instance:
@@ -570,7 +540,6 @@ async def scheduled_announcement_broadcast_worker():
 
 
 async def scheduled_flash_sale_worker():
-    """Background worker that continuously monitors flash sales and auto-expires them."""
     while True:
         await asyncio.sleep(30)
         try:
@@ -584,10 +553,6 @@ async def handle_ping(request):
 
 
 async def handle_razorpay_callback_get(request):
-    """
-    SECURE GET REDIRECT HANDLER:
-    Processes redirect payments safely and credits user subscriptions.
-    """
     params = request.query
     razorpay_payment_id = params.get("razorpay_payment_id") or params.get("razorpay_payment_link_id")
 
@@ -668,10 +633,6 @@ async def handle_razorpay_callback_get(request):
 
 
 async def handle_razorpay_webhook(request):
-    """
-    SECURE POST WEBHOOK HANDLER:
-    Processes Razorpay server webhooks and credits purchased plans in real time.
-    """
     try:
         body = await request.text()
         signature = request.headers.get("X-Razorpay-Signature", "")
@@ -754,7 +715,6 @@ async def run_bot():
     await app.bot.delete_webhook(drop_pending_updates=True)
     await app.updater.start_polling(drop_pending_updates=True)
 
-    # Launch background tasks (including 30-Second Auto-Restore & Sync Worker)
     asyncio.create_task(scheduled_auto_payment_sync_worker())
     asyncio.create_task(scheduled_expiry_reminder_check())
     asyncio.create_task(scheduled_daily_quiz_reminder())

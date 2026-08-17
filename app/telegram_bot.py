@@ -1303,7 +1303,7 @@ async def finalize_announcement_schedule(update: Update, context: ContextTypes.D
         ],
         [
             InlineKeyboardButton("📋 Manage All Scheduled Posts", callback_data="admin_list_pending_annc_0"),
-            InlineKeyboardButton("👑 Admin Portal", callback_data="admin_home")
+            InlineKeyboardButton("🔙 Back to Comms Menu", callback_data="admin_menu_comms")
         ]
     ]
 
@@ -1321,7 +1321,7 @@ async def finalize_announcement_schedule(update: Update, context: ContextTypes.D
 
 
 async def cancel_admin_action(update: Update, context: ContextTypes.DEFAULT_TYPE):
-    await update.message.reply_text("Action canceled.")
+    await update.message.reply_text("Action canceled.", reply_markup=ReplyKeyboardRemove())
     return ConversationHandler.END
 
 
@@ -1409,7 +1409,7 @@ async def button_router(update: Update, context: ContextTypes.DEFAULT_TYPE):
         if attempted_today >= allowed_limit:
             await query.answer("🛑 Daily Limit Exhausted!", show_alert=True)
             return
-        # Removed individual quiz callbacks, routing them to the new generalized extended_router below
+        
         from app.quiz_engine import launch_quiz_setup
         await launch_quiz_setup(update, context)
     elif data == "cmd_myplan":

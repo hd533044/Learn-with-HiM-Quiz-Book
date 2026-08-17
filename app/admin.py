@@ -42,6 +42,7 @@ DURATION_OPTIONS = [
 def clear_admin_user_data_states(context: ContextTypes.DEFAULT_TYPE):
     keys_to_clear = [
         "awaiting_broadcast",
+        "broadcast_target",
         "awaiting_admin_direct_msg_uid",
         "awaiting_admin_reply_qid",
         "awaiting_admin_warning_msg_uid",
@@ -462,7 +463,7 @@ async def admin_portal_command(update: Update, context: ContextTypes.DEFAULT_TYP
     active_sale = get_active_flash_sale()
     sale_summary_line = f"🔥 **Active Flash Sale:** `{active_sale['sale_name']} ({int(float(active_sale['discount_percent']))}% OFF)`" if active_sale else "🔥 **Flash Sale Status:** `🔴 Inactive (Normal Prices)`"
 
-    # MAIN SUB-MENU CATEGORIES
+    # MAIN SUB-MENU CATEGORIES (CLEAN AND ELEGANT)
     keyboard = [
         [InlineKeyboardButton("📊 Intelligence & Analytics", callback_data="admin_menu_analytics")],
         [InlineKeyboardButton(f"👥 Student Management ({pending_students_count} 📩)", callback_data="admin_menu_students")],
@@ -475,8 +476,6 @@ async def admin_portal_command(update: Update, context: ContextTypes.DEFAULT_TYP
         f"👑 **MASTER ADMIN PORTAL — Himanshu Sir (/him)** 👑\n"
         f"━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\n"
         f"📊 **Total Registered Students:** `{len(users)}`\n"
-        f"💎 **Actual Paid VIP Subscribers:** `{len(paid_users)}`\n"
-        f"🎁 **Free Demo Users:** `{len(demo_users)}`\n"
         f"🛑 **Blocked / Inactive Users:** `{len(blocked_users)}`\n"
         f"⚡ **Online Users (15m):** `{len(online_15m)}`\n"
         f"⏱ **Total Platform Practice Time:** `{usage_stats['hours']} Hours`\n"
@@ -487,18 +486,18 @@ async def admin_portal_command(update: Update, context: ContextTypes.DEFAULT_TYP
     )
 
     if update.callback_query:
-        await update.callback_query.answer()
-        await update.callback_query.edit_message_text(msg, reply_markup=InlineKeyboardMarkup(keyboard), parse_mode="Markdown")
+        try:
+            await update.callback_query.answer()
+            await update.callback_query.edit_message_text(msg, reply_markup=InlineKeyboardMarkup(keyboard), parse_mode="Markdown")
+        except Exception:
+            await update.callback_query.message.reply_text(msg, reply_markup=InlineKeyboardMarkup(keyboard), parse_mode="Markdown")
     else:
         await update.message.reply_text(msg, reply_markup=InlineKeyboardMarkup(keyboard), parse_mode="Markdown")
 
 
 async def admin_view_user_payments_callback(update: Update, context: ContextTypes.DEFAULT_TYPE):
     query = update.callback_query
-    if query.from_user.id != PRIMARY_ADMIN_ID:
-        await query.answer("Unauthorized!", show_alert=True)
-        return
-
+    if query.from_user.id != PRIMARY_ADMIN_ID: return
     await query.answer()
     target_uid = int(query.data.replace("admin_view_payments_", ""))
 
@@ -511,8 +510,7 @@ async def admin_view_user_payments_callback(update: Update, context: ContextType
         cursor.close()
         release_db(conn)
     except Exception:
-        if conn:
-            release_db(conn)
+        if conn: release_db(conn)
         rows = []
 
     profile = get_user_profile(target_uid) or {}
@@ -529,27 +527,22 @@ async def admin_view_user_payments_callback(update: Update, context: ContextType
 
     if rows:
         for idx, r in enumerate(rows, start=1):
-            created_time = r.get('created_at') or 'N/A'
-            p_exp = r.get('expiry_at') or 'Active'
             lines.append(
                 f"**{idx}. Plan:** `{r.get('plan_name', 'VIP PACK')}` (₹{r.get('amount_paid', 0)})\n"
                 f"    🆔 Txn ID: `{r.get('payment_id', 'N/A')}`\n"
-                f"    ⚡ Quota: `+{r.get('daily_quota', 0)} Qs` | Days: `{r.get('validity_days', 0)}`\n"
-                f"    📅 Date: `{created_time}`\n"
-                f"    ⏳ Expiry: `{p_exp}`\n"
+                f"    📅 Date: `{r.get('created_at') or 'N/A'}`\n"
+                f"    ⏳ Expiry: `{r.get('expiry_at') or 'Active'}`\n"
                 f"    ──────────────────────────"
             )
     else:
         lines.append("ℹ️ *No payment transactions recorded for this user yet.*")
 
     msg = "\n".join(lines)
-    if len(msg) > 4000:
-        msg = msg[:3950] + "\n\n*(Truncated due to Telegram length limit)*"
+    if len(msg) > 4000: msg = msg[:3950] + "\n\n*(Truncated)*"
 
     back_btn = InlineKeyboardMarkup([
         [InlineKeyboardButton("👑 Grant Paid VIP Pack", callback_data=f"admin_grant_menu_{target_uid}"), InlineKeyboardButton("🚫 Revoke / Withdraw Plan", callback_data=f"admin_revoke_menu_{target_uid}")],
-        [InlineKeyboardButton("🔙 Back to Student Profile", callback_data=f"admin_inspect_u_{target_uid}")],
-        [InlineKeyboardButton("👑 Himanshu Sir's Portal (/him)", callback_data="admin_home")]
+        [InlineKeyboardButton("🔙 Back to Student Profile", callback_data=f"admin_inspect_u_{target_uid}")]
     ])
     await query.edit_message_text(msg, reply_markup=back_btn, parse_mode="Markdown")
 
@@ -573,8 +566,7 @@ async def admin_grant_plan_menu_callback(update: Update, context: ContextTypes.D
         [InlineKeyboardButton("📦 Grant RUBY (₹50 - 400 Qs)", callback_data=f"admin_exec_grant_{target_uid}_RUBY")],
         [InlineKeyboardButton("📦 Grant MEGA PACK (₹80 - 500 Qs)", callback_data=f"admin_exec_grant_{target_uid}_MEGA")],
         [InlineKeyboardButton("🚫 Withdraw / Revoke Plan", callback_data=f"admin_revoke_menu_{target_uid}")],
-        [InlineKeyboardButton("🔙 Back to Student Profile", callback_data=f"admin_inspect_u_{target_uid}")],
-        [InlineKeyboardButton("👑 Himanshu Sir's Portal (/him)", callback_data="admin_home")]
+        [InlineKeyboardButton("🔙 Back to Student Profile", callback_data=f"admin_inspect_u_{target_uid}")]
     ]
 
     msg = f"👑 **GRANT OR MANAGE PAID PACK FOR {name}** 👑\nSelect a VIP plan to credit, or withdraw plan:"
@@ -641,8 +633,6 @@ async def admin_execute_grant_callback(update: Update, context: ContextTypes.DEF
         f"⏳ **VIP Pass Expiry:** `{expiry_str}`\n"
         f"🧾 **Grant Reference ID:** `{payment_id}`\n"
         f"━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\n"
-        f"💖 **Thanku for showing the faith in the Quiz with HiM. I'll give my best to keep your faith alive and of course, you have joined India's 1st dynamic Quiz platform for your preparation.**\n"
-        f"━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\n"
         f"🚀 Tap **/quiz** below to launch your practice session now!"
     )
 
@@ -652,10 +642,7 @@ async def admin_execute_grant_callback(update: Update, context: ContextTypes.DEF
     except Exception:
         pass
 
-    back_btn = InlineKeyboardMarkup([
-        [InlineKeyboardButton("🔙 Back to Student Profile", callback_data=f"admin_inspect_u_{target_uid}")],
-        [InlineKeyboardButton("👑 Himanshu Sir's Portal (/him)", callback_data="admin_home")]
-    ])
+    back_btn = InlineKeyboardMarkup([[InlineKeyboardButton("🔙 Back to Student Profile", callback_data=f"admin_inspect_u_{target_uid}")]])
     await query.edit_message_text(f"✅ **PLAN GRANTED & BROADCASTED!**\nGranted `{plan['name']}` to user `{target_uid}`.", reply_markup=back_btn, parse_mode="Markdown")
 
 
@@ -682,9 +669,14 @@ async def admin_callback_handler(update: Update, context: ContextTypes.DEFAULT_T
         return
 
     # ==============================================================
-    # 🗂️ CATEGORIZED SUB-MENU NAVIGATION
+    # 🗂️ MAIN MENU ROUTING (FIXED AND CATEGORIZED)
     # ==============================================================
-    if data == "admin_menu_analytics":
+    if data == "admin_home":
+        await query.answer()
+        await admin_portal_command(update, context)
+        return
+
+    elif data == "admin_menu_analytics":
         await query.answer()
         keyboard = [
             [InlineKeyboardButton("🧠 Ask Omniscient Intelligence Assistant", callback_data="admin_ai_assistant_menu")],
@@ -716,7 +708,7 @@ async def admin_callback_handler(update: Update, context: ContextTypes.DEFAULT_T
         active_sale = get_active_flash_sale()
         sale_btn_label = f"🔥 Flash Sale Config (🟢 {int(float(active_sale['discount_percent']))}% Live)" if active_sale else "⚡ Launch Flash Sale"
         keyboard = [
-            [InlineKeyboardButton("📢 Global Broadcast to ALL", callback_data="admin_broadcast")],
+            [InlineKeyboardButton("📢 Global Targeted Broadcast", callback_data="admin_broadcast_menu")],
             [InlineKeyboardButton("📢 Schedule Announcement", callback_data="admin_schedule_annc"), InlineKeyboardButton("📋 Scheduled Posts", callback_data="admin_list_pending_annc_0")],
             [InlineKeyboardButton("📢 Live Sent Broadcasts", callback_data="admin_list_sent_annc_0"), InlineKeyboardButton(sale_btn_label, callback_data="admin_sale_dashboard")],
             [InlineKeyboardButton("🎁 Gift Quota Boost to ALL", callback_data="admin_mass_grant_menu")],
@@ -746,6 +738,48 @@ async def admin_callback_handler(update: Update, context: ContextTypes.DEFAULT_T
         ]
         msg = "⏸ **PAUSE BOT SERVICES**\n━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\nSelect maintenance duration. Services will automatically resume after the timer ends:"
         await query.edit_message_text(msg, reply_markup=InlineKeyboardMarkup(keyboard), parse_mode="Markdown")
+        return
+
+    # ==============================================================
+    # 📢 TARGETED BROADCAST MENU
+    # ==============================================================
+    elif data == "admin_broadcast_menu":
+        await query.answer()
+        keyboard = [
+            [InlineKeyboardButton("📢 All Registered Users", callback_data="admin_bc_target_all")],
+            [InlineKeyboardButton("💳 Active Paid VIP Only", callback_data="admin_bc_target_paid")],
+            [InlineKeyboardButton("🔴 Expired Paid VIP Only", callback_data="admin_bc_target_expiredpaid")],
+            [InlineKeyboardButton("🎁 Active Free Demo Only", callback_data="admin_bc_target_activedemo")],
+            [InlineKeyboardButton("⚠️ Expired Free Demo Only", callback_data="admin_bc_target_expireddemo")],
+            [InlineKeyboardButton("🔙 Back to Comms Menu", callback_data="admin_menu_comms")]
+        ]
+        msg = "📢 **SELECT BROADCAST TARGET AUDIENCE**\n━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\nChoose which segment of students should receive this message:"
+        await query.edit_message_text(msg, reply_markup=InlineKeyboardMarkup(keyboard), parse_mode="Markdown")
+        return
+
+    elif data.startswith("admin_bc_target_"):
+        await query.answer()
+        target = data.replace("admin_bc_target_", "")
+        context.user_data["broadcast_target"] = target
+        context.user_data["awaiting_broadcast"] = True
+        
+        target_labels = {
+            "all": "ALL REGISTERED USERS",
+            "paid": "ACTIVE PAID VIP USERS",
+            "expiredpaid": "EXPIRED PAID VIP USERS",
+            "activedemo": "ACTIVE FREE DEMO USERS",
+            "expireddemo": "EXPIRED FREE DEMO USERS"
+        }
+        
+        cancel_btn = InlineKeyboardMarkup([[InlineKeyboardButton("❌ Cancel Broadcast & Return", callback_data="admin_menu_comms")]])
+        await query.edit_message_text(
+            f"📢 **COMPOSE TARGETED BROADCAST**\n"
+            f"━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\n"
+            f"🎯 **Audience Segment:** `{target_labels.get(target)}`\n\n"
+            f"Send the message text, photo, or video you wish to instantly broadcast to this segment:", 
+            reply_markup=cancel_btn, 
+            parse_mode="Markdown"
+        )
         return
 
     # ==============================================================
@@ -826,7 +860,7 @@ async def admin_callback_handler(update: Update, context: ContextTypes.DEFAULT_T
             [InlineKeyboardButton("📥 Download This Report as PDF", callback_data="admin_ai_download_last_pdf")],
             [InlineKeyboardButton("✅ Data Correct", callback_data="admin_ai_fb_correct"), InlineKeyboardButton("❌ Incorrect / Refine", callback_data="admin_ai_fb_wrong")],
             [InlineKeyboardButton("🔄 Ask Another Query", callback_data="admin_ai_assistant_menu")],
-            [InlineKeyboardButton("👑 Main Portal (/him)", callback_data="admin_home")]
+            [InlineKeyboardButton("🔙 Back to Analytics Menu", callback_data="admin_menu_analytics")]
         ]
         await query.edit_message_text(res["summary_markdown"], reply_markup=InlineKeyboardMarkup(nav), parse_mode="Markdown")
         return
@@ -850,7 +884,7 @@ async def admin_callback_handler(update: Update, context: ContextTypes.DEFAULT_T
                 )
             nav = [
                 [InlineKeyboardButton("🧠 Ask Another Intelligence Query", callback_data="admin_ai_assistant_menu")],
-                [InlineKeyboardButton("👑 Himanshu Sir's Portal (/him)", callback_data="admin_home")]
+                [InlineKeyboardButton("🔙 Back to Analytics Menu", callback_data="admin_menu_analytics")]
             ]
             await context.bot.send_message(chat_id=query.message.chat_id, text="👇 **Quick Actions:**", reply_markup=InlineKeyboardMarkup(nav), parse_mode="Markdown")
         else:
@@ -971,7 +1005,6 @@ async def admin_callback_handler(update: Update, context: ContextTypes.DEFAULT_T
         
         keyboard.append(nav_row)
         keyboard.append([InlineKeyboardButton("🔙 Back to Segments", callback_data="admin_adv_segments_menu")])
-        keyboard.append([InlineKeyboardButton("👑 Himanshu Sir's Portal", callback_data="admin_home")])
 
         titles = {
             "paidactive": "🟢 ACTIVE PAID VIP STUDENTS",
@@ -998,7 +1031,7 @@ async def admin_callback_handler(update: Update, context: ContextTypes.DEFAULT_T
         await query.answer()
         blocked = get_blocked_bot_users()
         if not blocked:
-            await query.edit_message_text("🗑️ No blocked users found in the database to wipe.", reply_markup=InlineKeyboardMarkup([[InlineKeyboardButton("🔙 Back", callback_data="admin_menu_students")]]))
+            await query.edit_message_text("🗑️ No blocked users found in the database to wipe.", reply_markup=InlineKeyboardMarkup([[InlineKeyboardButton("🔙 Back to Student Menu", callback_data="admin_menu_students")]]))
             return
 
         confirm_btn = InlineKeyboardMarkup([
@@ -1055,6 +1088,7 @@ async def admin_callback_handler(update: Update, context: ContextTypes.DEFAULT_T
                 cursor.execute("DELETE FROM users WHERE user_id = %s", (uid,))
                 deleted_count += 1
                 
+                # Erase JSON to fully clear bot session presence locally
                 sid = u.get("student_id") or f"USER_{uid}"
                 json_path = os.path.join(USER_PROFILES_DIR, f"{sid}.json")
                 if os.path.exists(json_path):
@@ -1150,8 +1184,7 @@ async def admin_callback_handler(update: Update, context: ContextTypes.DEFAULT_T
             status_desc = f"✅ **ADMIN GRANTS WITHDRAWN!** Quota reset to base free tier (`20 Qs/Day`)."
 
         back_btn = InlineKeyboardMarkup([
-            [InlineKeyboardButton("🔙 Return to Student Profile", callback_data=f"admin_inspect_u_{target_uid}")],
-            [InlineKeyboardButton("👑 Himanshu Sir's Portal (/him)", callback_data="admin_home")]
+            [InlineKeyboardButton("🔙 Return to Student Profile", callback_data=f"admin_inspect_u_{target_uid}")]
         ])
         await query.edit_message_text(status_desc, reply_markup=back_btn, parse_mode="Markdown")
         return
@@ -1206,8 +1239,7 @@ async def admin_callback_handler(update: Update, context: ContextTypes.DEFAULT_T
             msg_res = f"🛑 **ALL ADMIN GRANTS CLEARED! Student set to Base Free Tier (20 Qs/Day).**"
 
         back_btn = InlineKeyboardMarkup([
-            [InlineKeyboardButton("🔙 Return to Student Profile", callback_data=f"admin_inspect_u_{target_uid}")],
-            [InlineKeyboardButton("👑 Himanshu Sir's Portal (/him)", callback_data="admin_home")]
+            [InlineKeyboardButton("🔙 Return to Student Profile", callback_data=f"admin_inspect_u_{target_uid}")]
         ])
         await query.edit_message_text(msg_res, reply_markup=back_btn, parse_mode="Markdown")
         return
@@ -1374,7 +1406,7 @@ async def admin_callback_handler(update: Update, context: ContextTypes.DEFAULT_T
             keyboard = [
                 [InlineKeyboardButton("🛑 Stop Sale & Reinstate Normal Prices", callback_data="admin_sale_stop_confirm")],
                 [InlineKeyboardButton("📢 Re-Broadcast Offer Announcement", callback_data="admin_sale_rebroadcast")],
-                [InlineKeyboardButton("🔙 Back to Menu", callback_data="admin_menu_comms")]
+                [InlineKeyboardButton("🔙 Back to Comms Menu", callback_data="admin_menu_comms")]
             ]
         else:
             msg = (
@@ -1386,7 +1418,7 @@ async def admin_callback_handler(update: Update, context: ContextTypes.DEFAULT_T
             )
             keyboard = [
                 [InlineKeyboardButton("➕ Launch New Sale Offer", callback_data="admin_sale_wizard_step1")],
-                [InlineKeyboardButton("🔙 Back to Menu", callback_data="admin_menu_comms")]
+                [InlineKeyboardButton("🔙 Back to Comms Menu", callback_data="admin_menu_comms")]
             ]
 
         await query.edit_message_text(msg, reply_markup=InlineKeyboardMarkup(keyboard), parse_mode="Markdown")
@@ -1524,8 +1556,7 @@ async def admin_callback_handler(update: Update, context: ContextTypes.DEFAULT_T
             f"Prices on **/plans** and Razorpay payment links are now actively discounted!"
         )
         keyboard = [
-            [InlineKeyboardButton("⚡ View Sale Control Panel", callback_data="admin_sale_dashboard")],
-            [InlineKeyboardButton("👑 Himanshu Sir's Portal (/him)", callback_data="admin_home")]
+            [InlineKeyboardButton("⚡ View Sale Control Panel", callback_data="admin_sale_dashboard")]
         ]
         await query.edit_message_text(msg, reply_markup=InlineKeyboardMarkup(keyboard), parse_mode="Markdown")
 
@@ -1553,8 +1584,7 @@ async def admin_callback_handler(update: Update, context: ContextTypes.DEFAULT_T
         await query.answer()
         stop_active_flash_sale()
         nav = InlineKeyboardMarkup([
-            [InlineKeyboardButton("⚡ Flash Sale Panel", callback_data="admin_sale_dashboard")],
-            [InlineKeyboardButton("👑 Himanshu Sir's Portal (/him)", callback_data="admin_home")]
+            [InlineKeyboardButton("⚡ Flash Sale Panel", callback_data="admin_sale_dashboard")]
         ])
         await query.edit_message_text(
             "🛑 **FLASH SALE STOPPED & REINSTATED!** 🛑\n\n"
@@ -1594,8 +1624,7 @@ async def admin_callback_handler(update: Update, context: ContextTypes.DEFAULT_T
         sent_count = await fast_concurrent_broadcast(context.bot, target_uids, b_msg, reply_markup=btn)
 
         nav = InlineKeyboardMarkup([
-            [InlineKeyboardButton("⚡ Return to Sale Panel", callback_data="admin_sale_dashboard")],
-            [InlineKeyboardButton("👑 Himanshu Sir's Portal (/him)", callback_data="admin_home")]
+            [InlineKeyboardButton("⚡ Return to Sale Panel", callback_data="admin_sale_dashboard")]
         ])
         await query.edit_message_text(f"✅ **SALE REMINDER BROADCASTED!**\nDelivered to `{sent_count}/{len(target_uids)}` students.", reply_markup=nav, parse_mode="Markdown")
 
@@ -1628,7 +1657,6 @@ async def admin_callback_handler(update: Update, context: ContextTypes.DEFAULT_T
         if page < total_pages - 1: nav_row.append(InlineKeyboardButton("Next ▶️", callback_data=f"admin_list_blocked_users_{page + 1}"))
         keyboard.append(nav_row)
         
-        # Adding Wipe Button on Blocked Users page
         keyboard.append([InlineKeyboardButton("🗑️ Wipe All Blocked Users (Archive & Clean)", callback_data="admin_wipe_blocked_users_confirm")])
         keyboard.append([InlineKeyboardButton("🔙 Back to Student Menu", callback_data="admin_menu_students")])
 
@@ -2227,7 +2255,7 @@ async def admin_callback_handler(update: Update, context: ContextTypes.DEFAULT_T
         else:
             lines.append("ℹ️ *No command execution metrics logged yet.*")
 
-        back_btn = InlineKeyboardMarkup([[InlineKeyboardButton("🔙 Back to Analytics", callback_data="admin_menu_analytics")]])
+        back_btn = InlineKeyboardMarkup([[InlineKeyboardButton("🔙 Back to Analytics Menu", callback_data="admin_menu_analytics")]])
         await query.edit_message_text("\n".join(lines), reply_markup=back_btn, parse_mode="Markdown")
 
     elif data.startswith("audit_grant_"):
@@ -2925,9 +2953,3 @@ async def admin_callback_handler(update: Update, context: ContextTypes.DEFAULT_T
                 )
         else:
             await query.message.reply_text("⚠️ JSON file not found on disk.")
-
-    elif data == "admin_broadcast":
-        await query.answer()
-        context.user_data["awaiting_broadcast"] = True
-        cancel_btn = InlineKeyboardMarkup([[InlineKeyboardButton("❌ Cancel Broadcast & Return", callback_data="admin_menu_comms")]])
-        await query.edit_message_text("📢 **GLOBAL BROADCAST CENTER**\n\nSend the message text or photo you wish to broadcast to ALL registered users:", reply_markup=cancel_btn, parse_mode="Markdown")

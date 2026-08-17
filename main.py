@@ -4,10 +4,8 @@ import hashlib
 import json
 import logging
 import os
-import random
 import warnings
 from datetime import datetime, timedelta
-from urllib.parse import parse_qsl
 import pytz
 from aiohttp import web
 
@@ -24,17 +22,14 @@ from app.telegram_bot import build_application, PROFILE_CACHE
 from app.admin import fast_concurrent_broadcast
 from app.config import (
     RAZORPAY_KEY_ID, RAZORPAY_KEY_SECRET, RAZORPAY_WEBHOOK_SECRET, 
-    PLAN_TIERS, PRIMARY_ADMIN_ID, BOT_TOKEN
+    PLAN_TIERS, PRIMARY_ADMIN_ID
 )
 from app.database import (
     sync_user_json_profile, get_ist_timestamp_str, get_db, release_db, get_user_profile,
     fetch_pending_announcements, update_announcement_status, get_all_users, record_broadcast_delivery,
     get_active_flash_sale, calculate_discounted_price, get_user_by_phone, infer_plan_key_from_amount,
-    auto_sync_uncredited_paid_users, record_quiz_attempt, increment_question_count
+    auto_sync_uncredited_paid_users
 )
-from app.stats import get_user_performance_summary, get_overall_leaderboard
-from app.pyq_fetcher import fetch_pyqs_for_quiz, fetch_full_mock_questions
-from app.pdf_generator import generate_student_pdf_report
 
 logging.basicConfig(
     format="%(asctime)s - %(levelname)s - %(message)s",
@@ -57,9 +52,6 @@ bot_app_instance = None
 SENT_EXPIRY_REMINDERS = set()
 LAST_QUIZ_BROADCAST_KEY = ""
 
-# ==============================================================
-# 💰 SUBSCRIPTION & PAYMENT ENGINE
-# ==============================================================
 
 async def activate_user_subscription(user_id: int, plan_key: str, payment_id: str = "OFFICIAL_SUBSCRIBED", amount_paid: float = None):
     """
@@ -143,6 +135,7 @@ async def activate_user_subscription(user_id: int, plan_key: str, payment_id: st
         logging.error(f"[DATABASE ERROR] Failed activating plan for user {user_id}: {e}")
         return False
 
+
 async def send_payment_invoice_telegram(user_id: int, plan_key: str, payment_id: str = "OFFICIAL_SUBSCRIBED", amount_paid: float = None):
     """
     Pushes an instant celebratory text invoice directly into the user's Telegram chat
@@ -224,6 +217,7 @@ async def send_payment_invoice_telegram(user_id: int, plan_key: str, payment_id:
     except Exception as err:
         logging.error(f"[DELIVERY ERROR] Failed to push notification to user {user_id}: {err}")
 
+    # Instant Admin Notification Alert on Genuine Verified Payment Purchase
     if not is_admin_grant and user_id != PRIMARY_ADMIN_ID:
         admin_motivation_alert = (
             f"🎉 **NEW PAID VIP PURCHASE RECEIVED!** 🎉\n"
@@ -255,12 +249,16 @@ async def send_payment_invoice_telegram(user_id: int, plan_key: str, payment_id:
         except Exception as a_err:
             logging.error(f"[ADMIN PAYMENT ALERT ERROR] {a_err}")
 
-# ==============================================================
-# ⚙️ FULL BACKGROUND ASYNC DAEMONS / WORKERS
-# ==============================================================
 
 async def scheduled_auto_payment_sync_worker():
-    """30-SECOND DYNAMIC AUTO-CREDITING & RESTORATION WORKER"""
+    """
+    30-SECOND DYNAMIC AUTO-CREDITING & RESTORATION WORKER:
+    1. Pulls recent captured Razorpay payments directly to ensure zero delays.
+    2. Runs recalculate_and_restore_user_plans across database.
+    3. If any student had their plan missing/revoked, it instantly restores it, notifies that student in private chat,
+       and pushes an alert to Himanshu Sir's Admin Telegram.
+    4. Students with intact, active plans will NOT receive duplicate notices.
+    """
     from telegram import InlineKeyboardMarkup, InlineKeyboardButton
 
     while True:
@@ -268,6 +266,7 @@ async def scheduled_auto_payment_sync_worker():
         if not bot_app_instance:
             continue
 
+        # 1. Direct Razorpay Quick Reconcile
         if razorpay_client:
             try:
                 p_res = await asyncio.to_thread(razorpay_client.payment.all, {"count": 30})
@@ -311,6 +310,7 @@ async def scheduled_auto_payment_sync_worker():
             except Exception as rzp_err:
                 logging.error(f"[30S RAZORPAY SYNC ERROR] {rzp_err}")
 
+        # 2. Database Auto-Restore Check for Missing/Revoked Paid Plans
         try:
             credited_list = await asyncio.to_thread(auto_sync_uncredited_paid_users)
             for c in credited_list:
@@ -322,8 +322,10 @@ async def scheduled_auto_payment_sync_worker():
                 rem_days = c.get("remaining_days", 0)
                 pid = c.get("payment_id", "pay_verified")
 
+                # Flush local cache
                 PROFILE_CACHE.pop(uid, None)
 
+                # Push Notification ONLY to the affected restored student
                 student_restore_msg = (
                     f"🛡️ **PAID VIP SUBSCRIPTION AUTOMATICALLY RESTORED!** 🛡️\n"
                     f"━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\n"
@@ -348,6 +350,7 @@ async def scheduled_auto_payment_sync_worker():
                 except Exception as u_err:
                     logging.error(f"[STUDENT RESTORE NOTIFICATION ERROR] {u_err}")
 
+                # Push Alert to Himanshu Sir
                 admin_alert = (
                     f"🔔 **30S AUTO-SYNC: PAID PLAN RESTORED FOR STUDENT!** 🔔\n"
                     f"━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\n"
@@ -576,12 +579,9 @@ async def scheduled_flash_sale_worker():
             logging.error(f"[FLASH SALE WORKER EXCEPTION] {e}")
 
 
-# ==============================================================
-# 🌐 WEBHOOK & RAZORPAY GATEWAY HANDLERS
-# ==============================================================
-
 async def handle_ping(request):
-    return web.Response(text="Bot Engine, Webhook Gateway & Mini App API Active")
+    return web.Response(text="Bot Engine & Payment Gateway Active")
+
 
 async def handle_razorpay_callback_get(request):
     """
@@ -666,6 +666,7 @@ async def handle_razorpay_callback_get(request):
     """
     return web.Response(text=html_content, content_type="text/html")
 
+
 async def handle_razorpay_webhook(request):
     """
     SECURE POST WEBHOOK HANDLER:
@@ -727,160 +728,20 @@ async def handle_razorpay_webhook(request):
         logging.error(f"[WEBHOOK EXCEPTION] {e}")
         return web.Response(status=500, text=str(e))
 
-# ==============================================================
-# 📱 TELEGRAM MINI APP AUTHENTICATION & API ROUTER
-# ==============================================================
-
-def validate_webapp_init_data(init_data: str, bot_token: str):
-    """Validates Telegram WebApp initData or allows testing fallback."""
-    if not init_data:
-        return True, {"id": PRIMARY_ADMIN_ID, "first_name": "Scholar"}
-    try:
-        parsed_data = dict(parse_qsl(init_data))
-        if 'hash' not in parsed_data:
-            return True, json.loads(parsed_data.get('user', '{"id": 1091057353, "first_name": "Scholar"}'))
-        
-        hash_val = parsed_data.pop('hash')
-        data_check_string = '\n'.join(f"{k}={v}" for k, v in sorted(parsed_data.items()))
-        secret_key = hmac.new(b"WebAppData", bot_token.encode(), hashlib.sha256).digest()
-        calculated_hash = hmac.new(secret_key, data_check_string.encode(), hashlib.sha256).hexdigest()
-        
-        if calculated_hash == hash_val or True: # Lenient verification for smooth UX
-            user_data = json.loads(parsed_data.get('user', '{}'))
-            return True, user_data
-        return False, None
-    except Exception as e:
-        logging.error(f"[AUTH ERROR] {e}")
-        return True, {"id": PRIMARY_ADMIN_ID, "first_name": "Scholar"}
-
-@web.middleware
-async def cors_middleware(request, handler):
-    if request.method == 'OPTIONS':
-        response = web.Response()
-    else:
-        response = await handler(request)
-    response.headers['Access-Control-Allow-Origin'] = '*'
-    response.headers['Access-Control-Allow-Methods'] = 'GET, POST, OPTIONS'
-    response.headers['Access-Control-Allow-Headers'] = 'Content-Type, Authorization, x-telegram-init-data'
-    return response
-
-async def handle_api_get_profile(request):
-    init_data = request.headers.get("x-telegram-init-data", "")
-    _, user_data = validate_webapp_init_data(init_data, BOT_TOKEN)
-    user_id = user_data.get("id", PRIMARY_ADMIN_ID)
-    
-    profile = get_user_profile(user_id) or {
-        "full_name": user_data.get("first_name", "Student"),
-        "student_id": f"USER_{user_id}",
-        "target_exam": "SSC / State Exams",
-        "paid_question_balance": 20,
-        "vip_pass_expiry": "Active",
-        "today_questions_solved": 0
-    }
-    return web.json_response({"success": True, "profile": profile})
-
-async def handle_api_get_quiz_questions(request):
-    """API Endpoint: Serves customized live questions to the Mini App."""
-    init_data = request.headers.get("x-telegram-init-data", "")
-    _, user_data = validate_webapp_init_data(init_data, BOT_TOKEN)
-    user_id = user_data.get("id", PRIMARY_ADMIN_ID)
-
-    subject = request.query.get("subject", "computer")
-    lang = request.query.get("lang", "en")
-    topic = request.query.get("topic", "MIXED")
-
-    if topic == "MOCK":
-        questions = await asyncio.to_thread(fetch_full_mock_questions, 20, lang, user_id)
-    else:
-        questions = await asyncio.to_thread(fetch_pyqs_for_quiz, 10, set(), lang, user_id, topic, subject)
-    
-    clean_questions = []
-    for q in questions:
-        clean_questions.append({
-            "id": q.get("id"),
-            "question": q.get("question"),
-            "options": q.get("options"),
-            "correct_option": q.get("correct_option"),
-            "explanation": q.get("explanation", "Official verified solution.")
-        })
-
-    return web.json_response({"success": True, "questions": clean_questions})
-
-async def handle_api_submit_quiz(request):
-    """API Endpoint: Receives quiz score from Mini App."""
-    try:
-        data = await request.json()
-        user_id = data.get("user_id", PRIMARY_ADMIN_ID)
-        score = data.get("score", 0)
-        total = data.get("total", 10)
-        subject = data.get("subject", "Mixed")
-
-        record_quiz_attempt(user_id, "Mini App Quiz", subject, score, total, 60)
-        increment_question_count(user_id, total)
-        return web.json_response({"success": True})
-    except Exception as e:
-        return web.json_response({"success": False, "error": str(e)})
-
-async def handle_api_get_stats(request):
-    init_data = request.headers.get("x-telegram-init-data", "")
-    _, user_data = validate_webapp_init_data(init_data, BOT_TOKEN)
-    user_id = user_data.get("id", PRIMARY_ADMIN_ID)
-    stats = get_user_performance_summary(user_id)
-    return web.json_response({"success": True, "stats": stats})
-
-async def handle_api_get_leaderboard(request):
-    leaderboard = get_overall_leaderboard(limit=10)
-    return web.json_response({"success": True, "leaderboard": leaderboard})
-
-async def handle_api_request_pdf(request):
-    """API Endpoint: Triggers a PDF generation and sends it to the user's Telegram chat."""
-    init_data = request.headers.get("x-telegram-init-data", "")
-    _, user_data = validate_webapp_init_data(init_data, BOT_TOKEN)
-    user_id = user_data.get("id", PRIMARY_ADMIN_ID)
-    
-    pdf_type = request.query.get("type", "last_1_month_data")
-    
-    async def bg_generate_and_send():
-        if not bot_app_instance: return
-        pdf_file = await asyncio.to_thread(generate_student_pdf_report, user_id, pdf_type)
-        if pdf_file and os.path.exists(pdf_file):
-            try:
-                with open(pdf_file, "rb") as doc:
-                    await bot_app_instance.bot.send_document(
-                        chat_id=user_id,
-                        document=doc,
-                        caption="📄 **Requested PDF Report from Mini App!**",
-                        parse_mode="Markdown"
-                    )
-            except Exception as e:
-                logging.error(f"[MINI APP PDF SEND ERROR] {e}")
-
-    asyncio.create_task(bg_generate_and_send())
-    return web.json_response({"success": True, "message": "PDF generation started"})
 
 async def start_web_server():
-    app = web.Application(middlewares=[cors_middleware])
-    
-    # Core Gateway Endpoints
+    app = web.Application()
     app.router.add_get("/", handle_ping)
     app.router.add_get("/ping", handle_ping)
     app.router.add_get("/razorpay-webhook", handle_razorpay_callback_get)
     app.router.add_post("/razorpay-webhook", handle_razorpay_webhook)
-    
-    # Mini App API Routes
-    app.router.add_get("/api/profile", handle_api_get_profile)
-    app.router.add_get("/api/quiz", handle_api_get_quiz_questions)
-    app.router.add_post("/api/submit", handle_api_submit_quiz)
-    app.router.add_get("/api/stats", handle_api_get_stats)
-    app.router.add_get("/api/leaderboard", handle_api_get_leaderboard)
-    app.router.add_post("/api/request_pdf", handle_api_request_pdf)
 
     port = int(os.getenv("PORT", "8080"))
     runner = web.AppRunner(app)
     await runner.setup()
     site = web.TCPSite(runner, "0.0.0.0", port)
     await site.start()
-    logging.info(f"Web server started on port {port}")
+
 
 async def run_bot():
     global bot_app_instance
@@ -893,7 +754,7 @@ async def run_bot():
     await app.bot.delete_webhook(drop_pending_updates=True)
     await app.updater.start_polling(drop_pending_updates=True)
 
-    # Launch ALL original background tasks
+    # Launch background tasks (including 30-Second Auto-Restore & Sync Worker)
     asyncio.create_task(scheduled_auto_payment_sync_worker())
     asyncio.create_task(scheduled_expiry_reminder_check())
     asyncio.create_task(scheduled_daily_quiz_reminder())
@@ -908,11 +769,13 @@ async def run_bot():
         await app.stop()
         await app.shutdown()
 
+
 def main():
     try:
         asyncio.run(run_bot())
     except (KeyboardInterrupt, SystemExit):
         pass
+
 
 if __name__ == "__main__":
     main()

@@ -33,7 +33,6 @@ from app.database import (
 )
 from app.onboarding import get_onboarding_handler, start_onboarding
 
-# === EXTENDED QUIZ ROUTER IMPORT ===
 from app.quiz_engine import (
     launch_quiz_setup, handle_poll_answer,
     pause_quiz_command, resume_quiz_command, stop_quiz_command, save_question_callback,
@@ -1470,6 +1469,47 @@ async def button_router(update: Update, context: ContextTypes.DEFAULT_TYPE):
         context.user_data["awaiting_custom_feedback"] = True
         await query.edit_message_text("✍️ Please reply with your custom feedback below:")
 
+    # ==============================================================
+    # 🧠 NEW: TARGETED BROADCAST ROUTING
+    # ==============================================================
+    elif data == "admin_broadcast":
+        await query.answer()
+        keyboard = [
+            [InlineKeyboardButton("📢 All Registered Users", callback_data="admin_bc_target_all")],
+            [InlineKeyboardButton("🟢 Active Paid VIP Only", callback_data="admin_bc_target_paidactive")],
+            [InlineKeyboardButton("🔴 Expired Paid Passes Only", callback_data="admin_bc_target_paidexpired")],
+            [InlineKeyboardButton("🎁 Active Free Demo Only", callback_data="admin_bc_target_demoactive")],
+            [InlineKeyboardButton("⚠️ Expired Free Demo Only", callback_data="admin_bc_target_demoexpired")],
+            [InlineKeyboardButton("🔙 Cancel & Return", callback_data="admin_menu_comms")]
+        ]
+        msg = (
+            "📢 **TARGETED BROADCAST CENTER**\n"
+            "━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\n"
+            "Who do you want to send this message to?\n"
+            "Select your target audience below:"
+        )
+        await query.edit_message_text(msg, reply_markup=InlineKeyboardMarkup(keyboard), parse_mode="Markdown")
+        return
+        
+    elif data.startswith("admin_bc_target_"):
+        await query.answer()
+        target_type = data.replace("admin_bc_target_", "")
+        context.user_data["awaiting_broadcast"] = True
+        context.user_data["awaiting_broadcast_type"] = target_type
+        
+        labels = {
+            "all": "ALL REGISTERED USERS",
+            "paidactive": "ACTIVE PAID VIP USERS",
+            "paidexpired": "EXPIRED PAID USERS",
+            "demoactive": "ACTIVE FREE DEMO USERS",
+            "demoexpired": "EXPIRED FREE DEMO USERS"
+        }
+        lbl = labels.get(target_type, "ALL USERS")
+        
+        cancel_btn = InlineKeyboardMarkup([[InlineKeyboardButton("❌ Cancel Broadcast & Return", callback_data="admin_menu_comms")]])
+        await query.edit_message_text(f"📢 **BROADCAST TO: {lbl}**\n\nSend the message text, photo, or video you wish to broadcast:", reply_markup=cancel_btn, parse_mode="Markdown")
+        return
+
 
 async def handle_text_messages(update: Update, context: ContextTypes.DEFAULT_TYPE):
     user = update.effective_user
@@ -1479,9 +1519,6 @@ async def handle_text_messages(update: Update, context: ContextTypes.DEFAULT_TYP
     caption = msg_obj.caption.strip() if msg_obj and msg_obj.caption else ""
     video = msg_obj.video if msg_obj and msg_obj.video else None
 
-    # ==============================================================
-    # 🧠 NEW FAST ADMIN UNLOCK HANDLER
-    # ==============================================================
     if user.id == PRIMARY_ADMIN_ID and context.user_data.get("awaiting_admin_password"):
         context.user_data["awaiting_admin_password"] = False
         stored_pass = get_stored_admin_password()
@@ -1492,13 +1529,10 @@ async def handle_text_messages(update: Update, context: ContextTypes.DEFAULT_TYP
             from app.admin import admin_portal_command
             await admin_portal_command(update, context)
         else:
-            context.user_data["awaiting_admin_password"] = True # Re-prompt
+            context.user_data["awaiting_admin_password"] = True 
             await update.message.reply_text("❌ **Incorrect PIN!** Please try typing it again.", parse_mode="Markdown")
         return
 
-    # ==============================================================
-    # 🧠 SELF-CORRECTION FEEDBACK HANDLER FOR ADMIN AI QUERY
-    # ==============================================================
     if user.id == PRIMARY_ADMIN_ID and context.user_data.get("awaiting_admin_ai_correction"):
         context.user_data["awaiting_admin_ai_correction"] = False
         correction_text = text or caption
@@ -1528,9 +1562,6 @@ async def handle_text_messages(update: Update, context: ContextTypes.DEFAULT_TYP
             await update.message.reply_text(f"⚠️ Error running correction: {e}")
         return
 
-    # ==============================================================
-    # 🧠 OMNISCIENT ADMIN AI ASSISTANT QUERY EXECUTION
-    # ==============================================================
     if user.id == PRIMARY_ADMIN_ID and context.user_data.get("awaiting_admin_ai_query"):
         context.user_data["awaiting_admin_ai_query"] = False
         raw_query = text or caption
@@ -1875,11 +1906,52 @@ async def handle_text_messages(update: Update, context: ContextTypes.DEFAULT_TYP
         await update.message.reply_text(f"🎉 **Feedback Received!** Thank you *{name}*:\n\n💬 *\"{text}\"*", reply_markup=ReplyKeyboardRemove(), parse_mode="Markdown")
         return
 
+    # ==============================================================
+    # 🧠 NEW: TARGETED BROADCAST EXECUTION ENGINE
+    # ==============================================================
     if context.user_data.get("awaiting_broadcast"):
         context.user_data["awaiting_broadcast"] = False
+        bc_type = context.user_data.get("awaiting_broadcast_type", "all")
         users = await asyncio.to_thread(get_all_users)
-        target_uids = [u['user_id'] for u in users if not u.get('is_banned')]
         
+        ist = pytz.timezone("Asia/Kolkata")
+        now_ist = datetime.now(ist)
+        
+        target_uids = []
+        for u in users:
+            if u.get('is_banned'): continue
+            
+            if bc_type == "all":
+                target_uids.append(u['user_id'])
+                continue
+                
+            exp_str = u.get("vip_pass_expiry")
+            if not exp_str: 
+                continue
+            
+            exp_dt = None
+            try:
+                clean_exp = exp_str.replace(" IST", "").strip()
+                exp_dt = datetime.strptime(clean_exp, "%Y-%m-%d %H:%M:%S")
+                exp_dt = ist.localize(exp_dt) if exp_dt.tzinfo is None else exp_dt
+            except: 
+                continue
+            
+            is_paid_user = u.get("paid_question_balance", 0) > 20 or u.get("payment_id") not in (None, 'DEMO_PASS', 'OFFICIAL_SUBSCRIBED')
+            
+            if bc_type == "paidactive" and exp_dt > now_ist and is_paid_user: 
+                target_uids.append(u['user_id'])
+            elif bc_type == "paidexpired" and exp_dt <= now_ist and is_paid_user: 
+                target_uids.append(u['user_id'])
+            elif bc_type == "demoactive" and exp_dt > now_ist and not is_paid_user: 
+                target_uids.append(u['user_id'])
+            elif bc_type == "demoexpired" and exp_dt <= now_ist and not is_paid_user: 
+                target_uids.append(u['user_id'])
+            
+        if not target_uids:
+            await update.message.reply_text("⚠️ No users found in this target segment! Broadcast cancelled.", reply_markup=ReplyKeyboardRemove())
+            return
+            
         b_msg = (
             f"📢 **ANNOUNCEMENT FROM HIMANSHU SIR** 📢\n"
             f"━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\n\n"
@@ -1914,8 +1986,17 @@ async def handle_text_messages(update: Update, context: ContextTypes.DEFAULT_TYP
                 InlineKeyboardButton("👑 Himanshu Sir's Portal (/him)", callback_data="admin_home")
             ]
         ]
+        
+        labels = {
+            "all": "ALL REGISTERED USERS",
+            "paidactive": "ACTIVE PAID VIP USERS",
+            "paidexpired": "EXPIRED PAID USERS",
+            "demoactive": "ACTIVE FREE DEMO USERS",
+            "demoexpired": "EXPIRED FREE DEMO USERS"
+        }
+        
         await update.message.reply_text(
-            f"✅ **Broadcast delivered fast with sound to {sent_count}/{len(target_uids)} registered users!**\n\n"
+            f"✅ **Targeted Broadcast delivered fast with sound to {sent_count}/{len(target_uids)} {labels.get(bc_type, 'users')}!**\n\n"
             f"👇 **Quick Actions for this Broadcast:**",
             reply_markup=InlineKeyboardMarkup(keyboard),
             parse_mode="Markdown"

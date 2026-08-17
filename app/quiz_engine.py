@@ -16,6 +16,7 @@ from app.pyq_fetcher import (
     fetch_pyqs_for_quiz, get_available_topics, COMPUTER_TOPIC_METADATA, GK_TOPIC_METADATA,
     fetch_full_mock_questions, fetch_multi_topic_questions
 )
+# Fixed Import: Added get_quiz_performance_trend
 from app.stats import calculate_user_percentile, calculate_user_rank, get_quiz_performance_trend
 
 logger = logging.getLogger(__name__)
@@ -152,7 +153,6 @@ async def launch_quiz_setup(update: Update, context: ContextTypes.DEFAULT_TYPE):
     else:
         await update.message.reply_text(msg_text, reply_markup=mode_keyboard, parse_mode="Markdown")
 
-
 # ==========================================
 # FLOW ROUTING FOR ALL MODES
 # ==========================================
@@ -200,7 +200,6 @@ async def quiz_flow_callback(update: Update, context: ContextTypes.DEFAULT_TYPE)
         title = "SECTIONAL MODE" if flow == "SECT" else "TOPIC-WISE SECTIONAL"
         await query.edit_message_text(f"📚 **{title}**\nSelect Subject:", reply_markup=subject_keyboard, parse_mode="Markdown")
 
-
 # ==========================================
 # FULL MOCK MODE HANDLERS
 # ==========================================
@@ -246,7 +245,6 @@ async def mock_lang_callback(update: Update, context: ContextTypes.DEFAULT_TYPE)
     mock_number = await asyncio.to_thread(get_next_mock_number, user_id, "MOCK")
     
     await start_quiz_session(query, context, user_id, questions, timer_sec, "MOCK", mock_number, "Mixed", "MOCK", f"Full Mock #{mock_number}", lang, total_time_mins=total_time_mins)
-
 
 # ==========================================
 # SECTIONAL & TOPIC-WISE SECTIONAL HANDLERS
@@ -371,7 +369,6 @@ async def sect_lang_callback(update: Update, context: ContextTypes.DEFAULT_TYPE)
         mock_number = await asyncio.to_thread(get_next_mock_number, user_id, "SECTIONAL")
         topic_name = f"Sectional #{mock_number} ({subj.upper()})"
         await start_quiz_session(query, context, user_id, questions, timer_sec, quiz_mode, mock_number, subj, "MIXED", topic_name, lang, total_time_mins=total_time_mins)
-
 
 # ==========================================
 # NORMAL FLOW HANDLERS
@@ -591,7 +588,6 @@ async def quiz_timer_callback(update: Update, context: ContextTypes.DEFAULT_TYPE
 
     questions = await asyncio.to_thread(fetch_pyqs_for_quiz, count, None, language, user_id, topic, subject)
     await start_quiz_session(query, context, user_id, questions, timer_sec, "PRACTICE", 0, subject, topic, topic_name, language)
-
 
 # ==========================================
 # SHARED LAUNCH & EXECUTION FUNCTIONS

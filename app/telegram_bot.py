@@ -27,14 +27,13 @@ from app.database import (
     clear_paused_quiz_state, get_saved_questions, log_user_activity_time,
     check_and_update_inactivity, refresh_user_activity_epoch, get_db, release_db,
     get_seen_question_ids, admin_update_user_name, get_ist_date_str,
-    create_promo_code, schedule_announcement,
-    update_announcement_content, update_announcement_time,
+    schedule_announcement, update_announcement_content, update_announcement_time,
     get_broadcast_deliveries, record_broadcast_delivery, create_instant_broadcast_record,
     get_active_flash_sale, calculate_discounted_price
 )
 from app.onboarding import get_onboarding_handler, start_onboarding
 
-# === NEW EXTENDED QUIZ ROUTER IMPORT ===
+# === EXTENDED QUIZ ROUTER IMPORT ===
 from app.quiz_engine import (
     launch_quiz_setup, handle_poll_answer,
     pause_quiz_command, resume_quiz_command, stop_quiz_command, save_question_callback,
@@ -59,7 +58,6 @@ NEGATIVE_WORDS = ["bad", "worst", "useless", "trash", "fake", "hate", "terrible"
 PROFILE_CACHE = {}
 CACHE_TTL = 30 
 
-PROMO_NAME, PROMO_TYPE, PROMO_VALUE, PROMO_DAYS = range(100, 104)
 ANNC_CONTENT, ANNC_DATETIME = range(104, 106)
 
 
@@ -1230,102 +1228,6 @@ async def referral_command(update: Update, context: ContextTypes.DEFAULT_TYPE):
 
 
 # -------------------------------------------------------------
-# 🎟️ PROMO CODE GENERATOR BOT HANDLERS
-# -------------------------------------------------------------
-
-async def start_promo_creation(update: Update, context: ContextTypes.DEFAULT_TYPE):
-    query = update.callback_query
-    await query.answer()
-
-    if query.from_user.id != PRIMARY_ADMIN_ID:
-        await query.message.reply_text("🛑 Access restricted to Primary Admin.")
-        return ConversationHandler.END
-
-    await query.edit_message_text(
-        "🎟 **PROMO CODE GENERATOR**\n\n"
-        "Please type the custom Promo Code Name (e.g., `HIM50`, `OFFER2026`, `SPECIAL10`):",
-        parse_mode="Markdown"
-    )
-    return PROMO_NAME
-
-
-async def set_promo_name(update: Update, context: ContextTypes.DEFAULT_TYPE):
-    code_name = update.message.text.strip().upper()
-    context.user_data['promo_name'] = code_name
-    
-    keyboard = [
-        [InlineKeyboardButton("Percentage Discount (%)", callback_data="TYPE_PERCENT")],
-        [InlineKeyboardButton("Flat Amount Discount (₹)", callback_data="TYPE_FLAT")]
-    ]
-    await update.message.reply_text(
-        f"Selected Promo Code: `{code_name}`\n\nSelect the discount type:",
-        reply_markup=InlineKeyboardMarkup(keyboard),
-        parse_mode="Markdown"
-    )
-    return PROMO_TYPE
-
-
-async def set_promo_type(update: Update, context: ContextTypes.DEFAULT_TYPE):
-    query = update.callback_query
-    await query.answer()
-    disc_type = "PERCENT" if query.data == "TYPE_PERCENT" else "FLAT"
-    context.user_data['promo_type'] = disc_type
-    
-    unit = "%" if disc_type == "PERCENT" else "₹"
-    await query.edit_message_text(f"Type the discount value to waive off (in {unit}):")
-    return PROMO_VALUE
-
-
-async def set_promo_value(update: Update, context: ContextTypes.DEFAULT_TYPE):
-    try:
-        val = float(update.message.text.strip())
-        context.user_data['promo_value'] = val
-    except ValueError:
-        await update.message.reply_text("❌ Invalid number! Please enter a valid numerical value:")
-        return PROMO_VALUE
-
-    keyboard = [
-        [InlineKeyboardButton("1 Day", callback_data="DAYS_1"), InlineKeyboardButton("2 Days", callback_data="DAYS_2")],
-        [InlineKeyboardButton("3 Days", callback_data="DAYS_3"), InlineKeyboardButton("5 Days", callback_data="DAYS_5")],
-        [InlineKeyboardButton("7 Days (Max)", callback_data="DAYS_7")]
-    ]
-    await update.message.reply_text(
-        "Select the **Validity Duration** for this Promo Code:",
-        reply_markup=InlineKeyboardMarkup(keyboard),
-        parse_mode="Markdown"
-    )
-    return PROMO_DAYS
-
-
-async def finalize_promo_code(update: Update, context: ContextTypes.DEFAULT_TYPE):
-    query = update.callback_query
-    await query.answer()
-    days = int(query.data.replace("DAYS_", ""))
-    
-    code = context.user_data['promo_name']
-    disc_type = context.user_data['promo_type']
-    disc_val = context.user_data['promo_value']
-    admin_id = query.from_user.id
-    
-    res = await asyncio.to_thread(create_promo_code, code, disc_type, disc_val, days, admin_id)
-    
-    if "error" in res:
-        await query.edit_message_text("❌ **Error:** A promo code with this name already exists!")
-    else:
-        unit = "%" if disc_type == "PERCENT" else "₹"
-        exp_date = res['valid_until'].strftime("%Y-%m-%d %H:%M:%S IST")
-        await query.edit_message_text(
-            f"✅ **PROMO CODE CREATED SUCCESSFULLY!** 🎉\n\n"
-            f"🎟 **Code:** `{code}`\n"
-            f"💰 **Discount:** {disc_val}{unit} OFF\n"
-            f"⏳ **Validity:** {days} Days (Expires: {exp_date})\n\n"
-            f"Users can now redeem this during checkout!",
-            parse_mode="Markdown"
-        )
-    return ConversationHandler.END
-
-
-# -------------------------------------------------------------
 # 📢 SCHEDULED ANNOUNCEMENT BOT HANDLERS
 # -------------------------------------------------------------
 
@@ -1578,6 +1480,23 @@ async def handle_text_messages(update: Update, context: ContextTypes.DEFAULT_TYP
     video = msg_obj.video if msg_obj and msg_obj.video else None
 
     # ==============================================================
+    # 🧠 NEW FAST ADMIN UNLOCK HANDLER
+    # ==============================================================
+    if user.id == PRIMARY_ADMIN_ID and context.user_data.get("awaiting_admin_password"):
+        context.user_data["awaiting_admin_password"] = False
+        stored_pass = get_stored_admin_password()
+        
+        if text.strip() == stored_pass:
+            ADMIN_AUTH_SESSIONS[user.id] = time.time()
+            await update.message.reply_text("🔓 **Master Admin Access Granted!**", parse_mode="Markdown")
+            from app.admin import admin_portal_command
+            await admin_portal_command(update, context)
+        else:
+            context.user_data["awaiting_admin_password"] = True # Re-prompt
+            await update.message.reply_text("❌ **Incorrect PIN!** Please try typing it again.", parse_mode="Markdown")
+        return
+
+    # ==============================================================
     # 🧠 SELF-CORRECTION FEEDBACK HANDLER FOR ADMIN AI QUERY
     # ==============================================================
     if user.id == PRIMARY_ADMIN_ID and context.user_data.get("awaiting_admin_ai_correction"):
@@ -1672,7 +1591,7 @@ async def handle_text_messages(update: Update, context: ContextTypes.DEFAULT_TYP
 
         success = await asyncio.to_thread(update_announcement_content, annc_id, new_text, media_id, media_type)
         if success:
-            nav = InlineKeyboardMarkup([[InlineKeyboardButton("🔍 View Updated Post", callback_data=f"admin_view_pending_annc_{annc_id}")], [InlineKeyboardButton("🔙 Back to Menu", callback_data="admin_manage_annc_menu")]])
+            nav = InlineKeyboardMarkup([[InlineKeyboardButton("🔍 View Updated Post", callback_data=f"admin_view_pending_annc_{annc_id}")], [InlineKeyboardButton("🔙 Back to Menu", callback_data="admin_menu_comms")]])
             await update.message.reply_text(f"✅ **Content for Scheduled Post #{annc_id} updated successfully!**", reply_markup=nav, parse_mode="Markdown")
         else:
             await update.message.reply_text("❌ Error updating announcement content.")
@@ -1690,7 +1609,7 @@ async def handle_text_messages(update: Update, context: ContextTypes.DEFAULT_TYP
             
             success = await asyncio.to_thread(update_announcement_time, annc_id, scheduled_dt)
             if success:
-                nav = InlineKeyboardMarkup([[InlineKeyboardButton("🔍 View Post", callback_data=f"admin_view_pending_annc_{annc_id}")], [InlineKeyboardButton("🔙 Back to Menu", callback_data="admin_manage_annc_menu")]])
+                nav = InlineKeyboardMarkup([[InlineKeyboardButton("🔍 View Post", callback_data=f"admin_view_pending_annc_{annc_id}")], [InlineKeyboardButton("🔙 Back to Menu", callback_data="admin_menu_comms")]])
                 await update.message.reply_text(f"✅ **Publish Time for Post #{annc_id} updated to:** `{scheduled_dt.strftime('%Y-%m-%d %H:%M %p IST')}`!", reply_markup=nav, parse_mode="Markdown")
             else:
                 await update.message.reply_text("❌ Error updating announcement time.")
@@ -2060,17 +1979,7 @@ def build_application() -> Application:
 
     app.add_handler(get_onboarding_handler())
 
-    promo_conv_handler = ConversationHandler(
-        entry_points=[CallbackQueryHandler(start_promo_creation, pattern="^admin_create_promo$")],
-        states={
-            PROMO_NAME: [MessageHandler(filters.TEXT & ~filters.COMMAND, set_promo_name)],
-            PROMO_TYPE: [CallbackQueryHandler(set_promo_type, pattern="^TYPE_")],
-            PROMO_VALUE: [MessageHandler(filters.TEXT & ~filters.COMMAND, set_promo_value)],
-            PROMO_DAYS: [CallbackQueryHandler(finalize_promo_code, pattern="^DAYS_")],
-        },
-        fallbacks=[CommandHandler("cancel", cancel_admin_action)]
-    )
-
+    # Only Scheduled Announcement Handler remains (Promo completely removed)
     annc_conv_handler = ConversationHandler(
         entry_points=[CallbackQueryHandler(start_announcement_schedule, pattern="^admin_schedule_annc$")],
         states={
@@ -2080,7 +1989,6 @@ def build_application() -> Application:
         fallbacks=[CommandHandler("cancel", cancel_admin_action)]
     )
 
-    app.add_handler(promo_conv_handler)
     app.add_handler(annc_conv_handler)
     
     # Direct Admin Assistant Commands
@@ -2115,7 +2023,7 @@ def build_application() -> Application:
     app.add_handler(CommandHandler("admin", admin_portal_command))
     app.add_handler(CommandHandler("admit", admin_portal_command))
 
-    # === NEW EXTENDED QUIZ ROUTER IMPLEMENTATION ===
+    # === EXTENDED QUIZ ROUTER IMPLEMENTATION ===
     app.add_handler(CallbackQueryHandler(quiz_extended_router, pattern="^(qflow_|qmock|qsect|qtop_|qsubj_|qmode_|qtopic_|qlang_|qcount_|qtimer_)"))
     
     app.add_handler(CallbackQueryHandler(user_pdf_callback_handler, pattern="^usergenpdf_"))

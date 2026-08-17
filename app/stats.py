@@ -29,7 +29,6 @@ def get_overall_leaderboard(limit: int = 10):
     release_db(conn)
     return [dict(r) for r in rows]
 
-
 def calculate_user_percentile(user_id: int) -> float:
     """
     Fair Normalized Percentile Calculation:
@@ -72,7 +71,6 @@ def calculate_user_percentile(user_id: int) -> float:
     percentile = (below / (total_users - 1)) * 100.0
     return round(percentile, 2)
 
-
 def calculate_user_rank(user_id: int) -> str:
     """
     Calculates user rank based strictly on normalized performance accuracy.
@@ -111,7 +109,6 @@ def calculate_user_rank(user_id: int) -> str:
     badge = " 🥇" if pos == 1 else " 🥈" if pos == 2 else " 🥉" if pos == 3 else ""
     return f"#{pos}{badge}"
 
-
 def get_user_performance_summary(user_id: int):
     conn = get_db()
     cursor = conn.cursor(cursor_factory=RealDictCursor)
@@ -133,7 +130,6 @@ def get_user_performance_summary(user_id: int):
     cursor.close()
     release_db(conn)
     return dict(row) if row else {}
-
 
 def get_quiz_performance_trend(user_id: int, current_quiz_acc: float) -> dict:
     """

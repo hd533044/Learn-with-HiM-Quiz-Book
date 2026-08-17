@@ -130,7 +130,7 @@ def log_pdf_generation_event(user_id: int, pdf_type: str):
             release_db(conn)
 
 
-def get_cached_profile(user_id):
+def get_cached_profile(user_id: int):
     now = time.time()
     if user_id in PROFILE_CACHE:
         prof, timestamp = PROFILE_CACHE[user_id]
@@ -139,11 +139,11 @@ def get_cached_profile(user_id):
     return None
 
 
-def set_cached_profile(user_id, profile):
+def set_cached_profile(user_id: int, profile: dict):
     PROFILE_CACHE[user_id] = (profile, time.time())
 
 
-async def fetch_user_profile_fast(user_id):
+async def fetch_user_profile_fast(user_id: int):
     cached = get_cached_profile(user_id)
     if cached is not None:
         return cached
@@ -320,6 +320,10 @@ async def inactivity_guard(update: Update, context: ContextTypes.DEFAULT_TYPE) -
 async def maintenance_guard(update: Update, context: ContextTypes.DEFAULT_TYPE) -> bool:
     if not await inactivity_guard(update, context):
         return False
+
+    user = update.effective_user
+    if user and user.id == PRIMARY_ADMIN_ID:
+        return True
 
     m_until = await asyncio.to_thread(get_maintenance_until)
     if int(time.time()) < m_until:
@@ -653,8 +657,13 @@ async def handle_buy_plan_callback(update: Update, context: ContextTypes.DEFAULT
             await plans_command(update, context)
             return
 
-        from app.main import activate_user_subscription
-        await activate_user_subscription(user_id, plan_key)
+        try:
+            from app.main import activate_user_subscription
+            await activate_user_subscription(user_id, plan_key)
+        except Exception:
+            from app.database import activate_user_subscription
+            await asyncio.to_thread(activate_user_subscription, user_id, plan_key)
+
         await query.edit_message_text(
             f"🎉 **FREE DEMO TRIAL ACTIVATED!** 🎉\n\n"
             f"🎁 **Duration:** 2 Days Access\n"
@@ -951,6 +960,15 @@ async def user_pdf_callback_handler(update: Update, context: ContextTypes.DEFAUL
     else:
         nav = InlineKeyboardMarkup([[InlineKeyboardButton("📄 Back to PDF Center", callback_data="cmd_pdfreport")]])
         await query.edit_message_text("⚠️ **Failed to generate PDF file.**", reply_markup=nav, parse_mode="Markdown")
+
+
+async def editprofile_command(update: Update, context: ContextTypes.DEFAULT_TYPE):
+    if not await maintenance_guard(update, context): return
+    if not await check_user_registration(update): return
+    user = update.effective_user
+    asyncio.create_task(asyncio.to_thread(log_command_usage, user.id, "/editprofile"))
+    asyncio.create_task(asyncio.to_thread(log_user_activity_time, user.id, 10))
+    await start_onboarding(update, context)
 
 
 async def help_command(update: Update, context: ContextTypes.DEFAULT_TYPE):
@@ -1383,6 +1401,21 @@ async def button_router(update: Update, context: ContextTypes.DEFAULT_TYPE):
             pass
         return
 
+    if data == "login_forgot_pin":
+        await query.answer()
+        msg = (
+            "🔑 **FORGOT PIN / SECURITY RECOVERY** 🔑\n"
+            "━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\n"
+            "If you forgot your 4-digit security PIN, please contact **Himanshu Sir** directly:\n\n"
+            "👉 Use **/askadmin** to send a secret recovery request to Admin.\n"
+            "Include your registered Name, Student ID, and Phone Number."
+        )
+        markup = InlineKeyboardMarkup([
+            [InlineKeyboardButton("💬 Secret Message Admin (/askadmin)", callback_data="cmd_askadmin")]
+        ])
+        await query.edit_message_text(msg, reply_markup=markup, parse_mode="Markdown")
+        return
+
     if not await maintenance_guard(update, context): return
 
     asyncio.create_task(asyncio.to_thread(log_user_activity_time, user.id, 5))
@@ -1409,7 +1442,6 @@ async def button_router(update: Update, context: ContextTypes.DEFAULT_TYPE):
             await query.answer("🛑 Daily Limit Exhausted!", show_alert=True)
             return
         
-        from app.quiz_engine import launch_quiz_setup
         await launch_quiz_setup(update, context)
     elif data == "cmd_myplan":
         await myplan_command(update, context)
@@ -1439,10 +1471,11 @@ async def button_router(update: Update, context: ContextTypes.DEFAULT_TYPE):
         await save_question_callback(update, context)
     elif data == "cmd_start_fresh_quiz":
         await asyncio.to_thread(clear_paused_quiz_state, user.id)
-        from app.quiz_engine import launch_quiz_setup
         await launch_quiz_setup(update, context)
     elif data == "cmd_profile":
         await myprofile_command(update, context)
+    elif data == "cmd_editprofile":
+        await editprofile_command(update, context)
     elif data == "cmd_toppers":
         await toppers_command(update, context)
     elif data == "cmd_wholestate":
@@ -1469,9 +1502,7 @@ async def button_router(update: Update, context: ContextTypes.DEFAULT_TYPE):
         context.user_data["awaiting_custom_feedback"] = True
         await query.edit_message_text("✍️ Please reply with your custom feedback below:")
 
-    # ==============================================================
-    # 🧠 NEW: TARGETED BROADCAST ROUTING
-    # ==============================================================
+    # TARGETED BROADCAST ROUTING
     elif data == "admin_broadcast":
         await query.answer()
         keyboard = [
@@ -1526,7 +1557,6 @@ async def handle_text_messages(update: Update, context: ContextTypes.DEFAULT_TYP
         if text.strip() == stored_pass:
             ADMIN_AUTH_SESSIONS[user.id] = time.time()
             await update.message.reply_text("🔓 **Master Admin Access Granted!**", parse_mode="Markdown")
-            from app.admin import admin_portal_command
             await admin_portal_command(update, context)
         else:
             context.user_data["awaiting_admin_password"] = True 
@@ -1906,9 +1936,7 @@ async def handle_text_messages(update: Update, context: ContextTypes.DEFAULT_TYP
         await update.message.reply_text(f"🎉 **Feedback Received!** Thank you *{name}*:\n\n💬 *\"{text}\"*", reply_markup=ReplyKeyboardRemove(), parse_mode="Markdown")
         return
 
-    # ==============================================================
-    # 🧠 NEW: TARGETED BROADCAST EXECUTION ENGINE
-    # ==============================================================
+    # TARGETED BROADCAST EXECUTION ENGINE
     if context.user_data.get("awaiting_broadcast"):
         context.user_data["awaiting_broadcast"] = False
         bc_type = context.user_data.get("awaiting_broadcast_type", "all")
@@ -1934,7 +1962,7 @@ async def handle_text_messages(update: Update, context: ContextTypes.DEFAULT_TYP
                 clean_exp = exp_str.replace(" IST", "").strip()
                 exp_dt = datetime.strptime(clean_exp, "%Y-%m-%d %H:%M:%S")
                 exp_dt = ist.localize(exp_dt) if exp_dt.tzinfo is None else exp_dt
-            except: 
+            except Exception: 
                 continue
             
             is_paid_user = u.get("paid_question_balance", 0) > 20 or u.get("payment_id") not in (None, 'DEMO_PASS', 'OFFICIAL_SUBSCRIBED')
@@ -2060,7 +2088,6 @@ def build_application() -> Application:
 
     app.add_handler(get_onboarding_handler())
 
-    # Only Scheduled Announcement Handler remains (Promo completely removed)
     annc_conv_handler = ConversationHandler(
         entry_points=[CallbackQueryHandler(start_announcement_schedule, pattern="^admin_schedule_annc$")],
         states={
@@ -2091,6 +2118,7 @@ def build_application() -> Application:
     app.add_handler(CommandHandler("attemptedquestions", attemptedquestions_command))
     app.add_handler(CommandHandler("unattemptedquestions", unattemptedquestions_command))
     app.add_handler(CommandHandler("myprofile", myprofile_command))
+    app.add_handler(CommandHandler("editprofile", editprofile_command))
     app.add_handler(CommandHandler("mywholestate", wholestate_command))
     app.add_handler(CommandHandler("toppername", toppers_command))
     app.add_handler(CommandHandler("toppersname", toppers_command))
@@ -2104,7 +2132,7 @@ def build_application() -> Application:
     app.add_handler(CommandHandler("admin", admin_portal_command))
     app.add_handler(CommandHandler("admit", admin_portal_command))
 
-    # === EXTENDED QUIZ ROUTER IMPLEMENTATION ===
+    # Extended Quiz Flow Router
     app.add_handler(CallbackQueryHandler(quiz_extended_router, pattern="^(qflow_|qmock|qsect|qtop_|qsubj_|qmode_|qtopic_|qlang_|qcount_|qtimer_)"))
     
     app.add_handler(CallbackQueryHandler(user_pdf_callback_handler, pattern="^usergenpdf_"))
@@ -2114,8 +2142,8 @@ def build_application() -> Application:
     
     app.add_handler(CallbackQueryHandler(admin_callback_handler, pattern="^(admin_|audit_|genpdf_|adminkp_)"))
     
-    # Original Button router handling the rest of the inline commands
-    app.add_handler(CallbackQueryHandler(button_router, pattern="^cmd_|^fb_|^trigger_start|^buy_plan_|^userkp_"))
+    # Button router handling inline commands and security keypad
+    app.add_handler(CallbackQueryHandler(button_router, pattern="^cmd_|^fb_|^trigger_start|^buy_plan_|^userkp_|^login_"))
 
     app.add_handler(MessageHandler((filters.TEXT | filters.PHOTO | filters.VIDEO) & ~filters.COMMAND, handle_text_messages))
     app.add_handler(PollAnswerHandler(handle_poll_answer))

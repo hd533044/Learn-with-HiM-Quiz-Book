@@ -458,8 +458,17 @@ async def admin_portal_command(update: Update, context: ContextTypes.DEFAULT_TYP
         return
 
     users = get_all_users()
-    paid_users = get_strict_paid_users()
-    demo_users = get_strict_demo_users()
+    
+    # EXACT CALCULATION TO MATCH TOTAL REGISTERED
+    paid_count = 0
+    demo_count = 0
+    for u in users:
+        is_paid = u.get("paid_question_balance", 0) > 20 or u.get("payment_id") not in (None, 'DEMO_PASS', 'OFFICIAL_SUBSCRIBED')
+        if is_paid:
+            paid_count += 1
+        else:
+            demo_count += 1
+
     online_15m = get_currently_online_users(15)
     blocked_users = get_blocked_bot_users()
     pending_students_count = get_unique_students_with_queries_count()
@@ -485,8 +494,8 @@ async def admin_portal_command(update: Update, context: ContextTypes.DEFAULT_TYP
         f"👑 **MASTER ADMIN PORTAL — Himanshu Sir (/him)** 👑\n"
         f"━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\n"
         f"📊 **Total Registered Students:** `{len(users)}`\n"
-        f"🟢 **Active Paid VIP Users:** `{len(paid_users)}`\n"
-        f"🎁 **Active Free Demo Users:** `{len(demo_users)}`\n"
+        f"🟢 **Paid VIP Users:** `{paid_count}`\n"
+        f"🎁 **Free / Demo Users:** `{demo_count}`\n"
         f"⚡ **Online Users (15m):** `{len(online_15m)}`\n"
         f"⏱ **Total Platform Practice Time:** `{usage_stats['hours']} Hours`\n"
         f"📩 **Unread Support Queries:** `{pending_students_count}`\n"
@@ -503,7 +512,6 @@ async def admin_portal_command(update: Update, context: ContextTypes.DEFAULT_TYP
             await update.callback_query.message.reply_text(msg, reply_markup=InlineKeyboardMarkup(keyboard), parse_mode="Markdown")
     else:
         await update.message.reply_text(msg, reply_markup=InlineKeyboardMarkup(keyboard), parse_mode="Markdown")
-
 
 async def admin_view_user_payments_callback(update: Update, context: ContextTypes.DEFAULT_TYPE):
     query = update.callback_query

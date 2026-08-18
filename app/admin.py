@@ -74,7 +74,7 @@ def get_admin_nav_buttons(target_uid: int = None):
     ])
 
 
-async def fast_concurrent_broadcast(bot, user_ids, text, reply_markup=None, parse_mode="Markdown", photo=None, video=None, media_type="text", annc_id=None):
+async def fast_concurrent_broadcast(bot, user_ids, text, reply_markup=None, parse_mode="Markdown", photo=None, video=None, voice=None, media_type="text", annc_id=None):
     from app.database import record_blocked_user, record_broadcast_delivery
 
     async def send_single(uid):
@@ -93,6 +93,15 @@ async def fast_concurrent_broadcast(bot, user_ids, text, reply_markup=None, pars
                 m = await bot.send_video(
                     chat_id=uid,
                     video=video,
+                    caption=text,
+                    reply_markup=reply_markup,
+                    parse_mode=parse_mode,
+                    disable_notification=False
+                )
+            elif media_type == "voice" and voice:
+                m = await bot.send_voice(
+                    chat_id=uid,
+                    voice=voice,
                     caption=text,
                     reply_markup=reply_markup,
                     parse_mode=parse_mode,
@@ -776,7 +785,7 @@ async def admin_callback_handler(update: Update, context: ContextTypes.DEFAULT_T
             f"📢 **COMPOSE TARGETED BROADCAST**\n"
             f"━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\n"
             f"🎯 **Audience Segment:** `{target_labels.get(target)}`\n\n"
-            f"Send the message text, photo, or video you wish to instantly broadcast to this segment:", 
+            f"Send the message text, photo, video, or voice note you wish to instantly broadcast to this segment:", 
             reply_markup=cancel_btn, 
             parse_mode="Markdown"
         )
@@ -1740,7 +1749,7 @@ async def admin_callback_handler(update: Update, context: ContextTypes.DEFAULT_T
         annc_id = int(data.replace("admin_edit_annc_content_prompt_", ""))
         context.user_data["awaiting_edit_annc_content"] = annc_id
         cancel_btn = InlineKeyboardMarkup([[InlineKeyboardButton("❌ Cancel Edit", callback_data=f"admin_view_pending_annc_{annc_id}")]])
-        await query.edit_message_text(f"✍️ **EDIT POST CONTENT (ID #{annc_id})**\n\nPlease reply with the new Message text, Photo with caption, or Video:", reply_markup=cancel_btn, parse_mode="Markdown")
+        await query.edit_message_text(f"✍️ **EDIT POST CONTENT (ID #{annc_id})**\n\nPlease reply with the new Message text, Photo, Voice Note, or Video:", reply_markup=cancel_btn, parse_mode="Markdown")
 
     elif data.startswith("admin_edit_annc_time_prompt_"):
         await query.answer()
@@ -2125,20 +2134,47 @@ async def admin_callback_handler(update: Update, context: ContextTypes.DEFAULT_T
             )
 
             if q["status"] == "PENDING":
-                keyboard.append([
+                row_actions = [
                     InlineKeyboardButton(f"✍️ Reply #{q['id']}", callback_data=f"admin_reply_prompt_{q['id']}"),
-                    InlineKeyboardButton(f"🙈 Ignore #{q['id']}", callback_data=f"admin_ignore_query_{q['id']}_{target_uid}"),
-                    InlineKeyboardButton(f"🗑 Delete #{q['id']}", callback_data=f"admin_delete_query_{q['id']}_{target_uid}")
-                ])
+                    InlineKeyboardButton(f"🙈 Ignore", callback_data=f"admin_ignore_query_{q['id']}_{target_uid}"),
+                    InlineKeyboardButton(f"🗑 Delete", callback_data=f"admin_delete_query_{q['id']}_{target_uid}")
+                ]
+                keyboard.append(row_actions)
+            
+            if q.get("photo_file_id"):
+                keyboard.append([InlineKeyboardButton(f"🖼 View Image Attached (Query #{q['id']})", callback_data=f"admin_view_qimg_{q['id']}")])
 
         msg = "\n".join(lines)
         if len(msg) > 3900:
             msg = msg[:3850] + "\n\n*(Truncated)*"
 
-        keyboard.append([InlineKeyboardButton("✉️ Direct Message Student (Text/Photo)", callback_data=f"admin_direct_msg_{target_uid}")])
+        keyboard.append([InlineKeyboardButton("✉️ Direct Message Student (Text/Photo/Voice)", callback_data=f"admin_direct_msg_{target_uid}")])
         keyboard.append([InlineKeyboardButton("🔙 Back to Support Threads", callback_data="admin_view_student_threads_0")])
 
         await query.edit_message_text(msg, reply_markup=InlineKeyboardMarkup(keyboard), parse_mode="Markdown")
+
+    elif data.startswith("admin_view_qimg_"):
+        await query.answer()
+        qid = int(data.replace("admin_view_qimg_", ""))
+        conn = get_db()
+        cursor = conn.cursor(cursor_factory=RealDictCursor)
+        cursor.execute("SELECT * FROM student_queries WHERE id = %s", (qid,))
+        q_data = cursor.fetchone()
+        cursor.close()
+        release_db(conn)
+
+        if q_data and q_data.get("photo_file_id"):
+            nav = InlineKeyboardMarkup([[InlineKeyboardButton("🔙 Back to Thread", callback_data=f"admin_student_thread_{q_data['user_id']}")]])
+            await context.bot.send_photo(
+                chat_id=query.message.chat_id,
+                photo=q_data["photo_file_id"],
+                caption=f"📸 **Image Attachment for Query #{qid}**\n👤 **From:** {q_data['student_name']}",
+                reply_markup=nav,
+                parse_mode="Markdown"
+            )
+        else:
+            await query.message.reply_text("⚠️ Image not found in database.", parse_mode="Markdown")
+        return
 
     elif data.startswith("admin_ignore_query_"):
         parts = data.replace("admin_ignore_query_", "").split("_")
@@ -2179,7 +2215,7 @@ async def admin_callback_handler(update: Update, context: ContextTypes.DEFAULT_T
         cancel_btn = InlineKeyboardMarkup([
             [InlineKeyboardButton("❌ Cancel Reply & Return", callback_data="admin_view_student_threads_0")]
         ])
-        await query.edit_message_text(f"✍️ **SECRET REPLY TO QUERY #{qid}**\n\nPlease reply with text or **upload an Image/Photo** to send to this student:", reply_markup=cancel_btn, parse_mode="Markdown")
+        await query.edit_message_text(f"✍️ **SECRET REPLY TO QUERY #{qid}**\n\nPlease reply with text, **upload an Image/Photo**, or send a **Voice Note** to send to this student:", reply_markup=cancel_btn, parse_mode="Markdown")
 
     elif data.startswith("admin_direct_msg_"):
         await query.answer()
@@ -2191,7 +2227,7 @@ async def admin_callback_handler(update: Update, context: ContextTypes.DEFAULT_T
         msg = (
             f"✉️ **DIRECT MESSAGE TO STUDENT (`{target_uid}`)**\n"
             f"━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\n"
-            f"Please reply with text or **upload an Image/Photo** to send directly to this student.\n\n"
+            f"Please reply with text, **upload an Image/Photo**, or send a **Voice Note** to send directly to this student.\n\n"
             f"🔒 *Will be delivered into the student's personal chat.*"
         )
         await query.edit_message_text(msg, reply_markup=cancel_btn, parse_mode="Markdown")
@@ -2305,7 +2341,7 @@ async def admin_callback_handler(update: Update, context: ContextTypes.DEFAULT_T
         msg = (
             f"⚠️ **ISSUE WARNING TO STUDENT (`{target_uid}`)** ⚠️\n"
             f"━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\n"
-            f"Please reply with the exact warning reason/message to send to this student.\n\n"
+            f"Please reply with the exact warning reason/message or send a Voice Note to send to this student.\n\n"
             f"🔔 *This official warning notice will be delivered instantly to the user's chat.*"
         )
         await query.edit_message_text(msg, reply_markup=cancel_btn, parse_mode="Markdown")

@@ -1547,10 +1547,10 @@ async def button_router(update: Update, context: ContextTypes.DEFAULT_TYPE):
         await query.answer()
         keyboard = [
             [InlineKeyboardButton("📢 All Registered Users", callback_data="admin_bc_target_all")],
-            [InlineKeyboardButton("🟢 Active Paid VIP Only", callback_data="admin_bc_target_paidactive")],
-            [InlineKeyboardButton("🔴 Expired Paid Passes Only", callback_data="admin_bc_target_paidexpired")],
-            [InlineKeyboardButton("🎁 Active Free Demo Only", callback_data="admin_bc_target_demoactive")],
-            [InlineKeyboardButton("⚠️ Expired Free Demo Only", callback_data="admin_bc_target_demoexpired")],
+            [InlineKeyboardButton("🟢 Active Paid VIP Only", callback_data="admin_bc_target_paid")],
+            [InlineKeyboardButton("🔴 Expired Paid Passes Only", callback_data="admin_bc_target_expiredpaid")],
+            [InlineKeyboardButton("🎁 Active Free Demo Only", callback_data="admin_bc_target_activedemo")],
+            [InlineKeyboardButton("⚠️ Expired Free Demo Only", callback_data="admin_bc_target_expireddemo")],
             [InlineKeyboardButton("🔙 Cancel & Return", callback_data="admin_menu_comms")]
         ]
         msg = (
@@ -1570,10 +1570,10 @@ async def button_router(update: Update, context: ContextTypes.DEFAULT_TYPE):
         
         labels = {
             "all": "ALL REGISTERED USERS",
-            "paidactive": "ACTIVE PAID VIP USERS",
-            "paidexpired": "EXPIRED PAID USERS",
-            "demoactive": "ACTIVE FREE DEMO USERS",
-            "demoexpired": "EXPIRED FREE DEMO USERS"
+            "paid": "ACTIVE PAID VIP USERS",
+            "expiredpaid": "EXPIRED PAID USERS",
+            "activedemo": "ACTIVE FREE DEMO USERS",
+            "expireddemo": "EXPIRED FREE DEMO USERS"
         }
         lbl = labels.get(target_type, "ALL USERS")
         
@@ -1979,7 +1979,8 @@ async def handle_text_messages(update: Update, context: ContextTypes.DEFAULT_TYP
     # TARGETED BROADCAST EXECUTION ENGINE
     if context.user_data.get("awaiting_broadcast"):
         context.user_data["awaiting_broadcast"] = False
-        bc_type = context.user_data.get("awaiting_broadcast_type", "all")
+        # Fetching the proper target group from the admin selections
+        bc_type = context.user_data.get("broadcast_target", "all")
         users = await asyncio.to_thread(get_all_users)
         
         ist = pytz.timezone("Asia/Kolkata")
@@ -2007,13 +2008,13 @@ async def handle_text_messages(update: Update, context: ContextTypes.DEFAULT_TYP
             
             is_paid_user = u.get("paid_question_balance", 0) > 20 or u.get("payment_id") not in (None, 'DEMO_PASS', 'OFFICIAL_SUBSCRIBED')
             
-            if bc_type == "paidactive" and exp_dt > now_ist and is_paid_user: 
+            if bc_type == "paid" and exp_dt > now_ist and is_paid_user: 
                 target_uids.append(u['user_id'])
-            elif bc_type == "paidexpired" and exp_dt <= now_ist and is_paid_user: 
+            elif bc_type == "expiredpaid" and exp_dt <= now_ist and is_paid_user: 
                 target_uids.append(u['user_id'])
-            elif bc_type == "demoactive" and exp_dt > now_ist and not is_paid_user: 
+            elif bc_type == "activedemo" and exp_dt > now_ist and not is_paid_user: 
                 target_uids.append(u['user_id'])
-            elif bc_type == "demoexpired" and exp_dt <= now_ist and not is_paid_user: 
+            elif bc_type == "expireddemo" and exp_dt <= now_ist and not is_paid_user: 
                 target_uids.append(u['user_id'])
             
         if not target_uids:
@@ -2057,10 +2058,10 @@ async def handle_text_messages(update: Update, context: ContextTypes.DEFAULT_TYP
         
         labels = {
             "all": "ALL REGISTERED USERS",
-            "paidactive": "ACTIVE PAID VIP USERS",
-            "paidexpired": "EXPIRED PAID USERS",
-            "demoactive": "ACTIVE FREE DEMO USERS",
-            "demoexpired": "EXPIRED FREE DEMO USERS"
+            "paid": "ACTIVE PAID VIP USERS",
+            "expiredpaid": "EXPIRED PAID USERS",
+            "activedemo": "ACTIVE FREE DEMO USERS",
+            "expireddemo": "EXPIRED FREE DEMO USERS"
         }
         
         await update.message.reply_text(

@@ -362,35 +362,30 @@ async def direct_admin_ask_command(update: Update, context: ContextTypes.DEFAULT
     raw_query = " ".join(context.args) if context.args else ""
     if not raw_query:
         await update.message.reply_text(
-            "🧠 **ADMIN INTELLIGENCE ASSISTANT**\n"
+            "✍️ **ASK ADMIN INTELLIGENCE ENGINE**\n"
             "━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\n"
             "Usage: `/ask <your query>`\n\n"
             "Examples:\n"
-            "• `/ask weather in Mumbai`\n"
-            "• `/ask ongoing defence vacancies`\n"
-            "• `/ask form guide for BSF HCM`\n"
-            "• `/ask top 20 news`\n"
-            "• `/ask details of student <name/id>`",
+            "• `/ask give me total paid users list`\n"
+            "• `/ask today's revenue and transactions`\n"
+            "• `/ask details of student Sagar G`\n"
+            "• `/ask upcoming festival sales`",
             parse_mode="Markdown"
         )
         return
 
-    status_msg = await update.message.reply_text("🔍 *Searching Database & Gathering Intelligence...*", parse_mode="Markdown")
+    status_msg = await update.message.reply_text("🔍 *Searching Database & Crunching Analytics...*", parse_mode="Markdown")
     
     try:
         res = await asyncio.to_thread(parse_and_execute_admin_query, raw_query)
         context.user_data["last_ai_query_result"] = res
 
-        nav = []
-        if any(k in raw_query.lower() for k in ["vacancy", "vacancies", "job", "recruitment"]):
-            nav.append([InlineKeyboardButton("📢 Broadcast Vacancy Alert to All", callback_data="admin_bc_target_all")])
-
-        nav.extend([
+        nav = [
             [InlineKeyboardButton("📥 Download Complete Report as PDF", callback_data="admin_ai_download_last_pdf")],
             [InlineKeyboardButton("✅ Data Correct", callback_data="admin_ai_fb_correct"), InlineKeyboardButton("❌ Incorrect / Refine", callback_data="admin_ai_fb_wrong")],
             [InlineKeyboardButton("🔄 Ask Another Query", callback_data="admin_ai_assistant_menu")],
             [InlineKeyboardButton("👑 Main Portal (/him)", callback_data="admin_home")]
-        ])
+        ]
         
         try:
             await context.bot.delete_message(chat_id=update.effective_chat.id, message_id=status_msg.message_id)
@@ -1571,7 +1566,7 @@ async def button_router(update: Update, context: ContextTypes.DEFAULT_TYPE):
         await query.answer()
         target_type = data.replace("admin_bc_target_", "")
         context.user_data["awaiting_broadcast"] = True
-        context.user_data["broadcast_target"] = target_type
+        context.user_data["awaiting_broadcast_type"] = target_type
         
         labels = {
             "all": "ALL REGISTERED USERS",
@@ -1641,22 +1636,18 @@ async def handle_text_messages(update: Update, context: ContextTypes.DEFAULT_TYP
         context.user_data["awaiting_admin_ai_query"] = False
         raw_query = text or caption
         
-        status_msg = await update.message.reply_text("🔍 *Searching Database & Gathering Intelligence...*", parse_mode="Markdown")
+        status_msg = await update.message.reply_text("🔍 *Searching Database & Crunching Analytics...*", parse_mode="Markdown")
         
         try:
             res = await asyncio.to_thread(parse_and_execute_admin_query, raw_query)
             context.user_data["last_ai_query_result"] = res
 
-            nav = []
-            if any(k in raw_query.lower() for k in ["vacancy", "vacancies", "job", "recruitment"]):
-                nav.append([InlineKeyboardButton("📢 Broadcast Vacancy Alert to All", callback_data="admin_bc_target_all")])
-
-            nav.extend([
+            nav = [
                 [InlineKeyboardButton("📥 Download Complete Report as PDF", callback_data="admin_ai_download_last_pdf")],
                 [InlineKeyboardButton("✅ Data Correct", callback_data="admin_ai_fb_correct"), InlineKeyboardButton("❌ Incorrect / Refine", callback_data="admin_ai_fb_wrong")],
                 [InlineKeyboardButton("🔄 Ask Another Query", callback_data="admin_ai_assistant_menu")],
                 [InlineKeyboardButton("👑 Main Portal (/him)", callback_data="admin_home")]
-            ])
+            ]
             
             try:
                 await context.bot.delete_message(chat_id=update.effective_chat.id, message_id=status_msg.message_id)
@@ -1988,6 +1979,7 @@ async def handle_text_messages(update: Update, context: ContextTypes.DEFAULT_TYP
     # TARGETED BROADCAST EXECUTION ENGINE
     if context.user_data.get("awaiting_broadcast"):
         context.user_data["awaiting_broadcast"] = False
+        # Fetching the proper target group from the admin selections
         bc_type = context.user_data.get("broadcast_target", "all")
         users = await asyncio.to_thread(get_all_users)
         

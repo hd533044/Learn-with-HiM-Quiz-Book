@@ -396,6 +396,25 @@ def init_db():
     ''')
 
     cursor.execute('''
+        CREATE TABLE IF NOT EXISTS platform_likes (
+            id SERIAL PRIMARY KEY,
+            user_id BIGINT UNIQUE NOT NULL,
+            liked_at TEXT
+        )
+    ''')
+
+    cursor.execute('''
+        CREATE TABLE IF NOT EXISTS community_comments (
+            id SERIAL PRIMARY KEY,
+            user_id BIGINT NOT NULL,
+            student_id TEXT,
+            student_name TEXT,
+            comment_text TEXT NOT NULL,
+            created_at TEXT
+        )
+    ''')
+
+    cursor.execute('''
         CREATE TABLE IF NOT EXISTS student_queries (
             id SERIAL PRIMARY KEY,
             user_id BIGINT,
@@ -517,6 +536,116 @@ def init_db():
     conn.commit()
     cursor.close()
     release_db(conn)
+
+def toggle_platform_like(user_id: int) -> tuple[bool, int]:
+    """Toggles platform like for a user and returns (is_now_liked, total_likes_count)."""
+    conn = get_db()
+    cursor = conn.cursor()
+    try:
+        cursor.execute("SELECT 1 FROM platform_likes WHERE user_id = %s", (user_id,))
+        exists = cursor.fetchone()
+        now_str = get_ist_timestamp_str()
+        
+        if exists:
+            cursor.execute("DELETE FROM platform_likes WHERE user_id = %s", (user_id,))
+            is_now_liked = False
+        else:
+            cursor.execute("INSERT INTO platform_likes (user_id, liked_at) VALUES (%s, %s) ON CONFLICT (user_id) DO NOTHING", (user_id, now_str))
+            is_now_liked = True
+            
+        conn.commit()
+        cursor.execute("SELECT COUNT(*) FROM platform_likes")
+        total_likes = cursor.fetchone()[0]
+        return is_now_liked, total_likes
+    except Exception as e:
+        conn.rollback()
+        logger.error(f"[PLATFORM LIKE TOGGLE ERROR] {e}")
+        return False, 0
+    finally:
+        cursor.close()
+        release_db(conn)
+
+def get_total_platform_likes() -> int:
+    conn = get_db()
+    cursor = conn.cursor()
+    try:
+        cursor.execute("SELECT COUNT(*) FROM platform_likes")
+        res = cursor.fetchone()
+        return res[0] if res else 0
+    except Exception as e:
+        logger.error(f"[GET TOTAL LIKES ERROR] {e}")
+        return 0
+    finally:
+        cursor.close()
+        release_db(conn)
+
+def save_community_comment(user_id: int, student_id: str, student_name: str, comment_text: str) -> bool:
+    conn = get_db()
+    cursor = conn.cursor()
+    try:
+        now_str = get_ist_timestamp_str()
+        cursor.execute(
+            """
+            INSERT INTO community_comments (user_id, student_id, student_name, comment_text, created_at)
+            VALUES (%s, %s, %s, %s, %s)
+            """,
+            (user_id, student_id, student_name, comment_text, now_str)
+        )
+        conn.commit()
+        return True
+    except Exception as e:
+        conn.rollback()
+        logger.error(f"[SAVE COMMUNITY COMMENT ERROR] {e}")
+        return False
+    finally:
+        cursor.close()
+        release_db(conn)
+
+def get_community_comments_count() -> int:
+    conn = get_db()
+    cursor = conn.cursor()
+    try:
+        cursor.execute("SELECT COUNT(*) FROM community_comments")
+        res = cursor.fetchone()
+        return res[0] if res else 0
+    except Exception as e:
+        logger.error(f"[GET COMMUNITY COUNT ERROR] {e}")
+        return 0
+    finally:
+        cursor.close()
+        release_db(conn)
+
+def get_paginated_community_comments(page: int = 0, limit: int = 5) -> list:
+    conn = get_db()
+    cursor = conn.cursor(cursor_factory=RealDictCursor)
+    offset = max(0, page * limit)
+    try:
+        cursor.execute(
+            "SELECT student_name, student_id, comment_text, created_at FROM community_comments ORDER BY id DESC LIMIT %s OFFSET %s",
+            (limit, offset)
+        )
+        rows = cursor.fetchall()
+        return [dict(r) for r in rows] if rows else []
+    except Exception as e:
+        logger.error(f"[GET PAGINATED COMMUNITY COMMENTS ERROR] {e}")
+        return []
+    finally:
+        cursor.close()
+        release_db(conn)
+
+def get_total_registered_users_count() -> int:
+    conn = get_db()
+    cursor = conn.cursor()
+    try:
+        cursor.execute("SELECT COUNT(*) FROM users WHERE is_banned = 0 AND is_verified = 1")
+        res = cursor.fetchone()
+        return res[0] if res else 0
+    except Exception as e:
+        logger.error(f"[GET TOTAL REGISTERED USERS ERROR] {e}")
+        return 0
+    finally:
+        cursor.close()
+        release_db(conn)
 
 def get_next_mock_number(user_id: int, quiz_mode: str) -> int:
     conn = get_db()
@@ -708,6 +837,8 @@ def archive_and_wipe_user(user_id: int) -> bool:
             cursor.execute("DELETE FROM seen_questions WHERE user_id = %s", (user_id,))
             cursor.execute("DELETE FROM saved_questions WHERE user_id = %s", (user_id,))
             cursor.execute("DELETE FROM student_feedback WHERE user_id = %s", (user_id,))
+            cursor.execute("DELETE FROM platform_likes WHERE user_id = %s", (user_id,))
+            cursor.execute("DELETE FROM community_comments WHERE user_id = %s", (user_id,))
             cursor.execute("DELETE FROM paused_quizzes WHERE user_id = %s", (user_id,))
             cursor.execute("DELETE FROM user_activity_time WHERE user_id = %s", (user_id,))
             cursor.execute("DELETE FROM student_queries WHERE user_id = %s", (user_id,))
@@ -841,7 +972,7 @@ def sync_user_json_profile(user_id: int):
         "registration_info": user_dict,
         "bot_engagement_metrics": {
             "last_login_timestamp": user_dict.get("last_active") or user_dict.get("created_at"),
-            "total_time_spent_overall": f"{total_time_spent_overall := total_time_seconds} seconds ({round(total_time_seconds/60, 2)} mins)",
+            "total_time_spent_overall": f"{total_time_seconds} seconds ({round(total_time_seconds/60, 2)} mins)",
             "daily_spent_time_breakdown": activity_log,
             "questions_attempted_per_day": daily_questions_count
         },

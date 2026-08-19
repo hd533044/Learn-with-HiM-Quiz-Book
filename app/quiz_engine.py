@@ -10,13 +10,13 @@ from app.database import (
     get_today_attempts, mark_questions_as_seen, record_quiz_result, 
     get_ist_timestamp_str, get_user_profile, get_maintenance_until,
     save_paused_quiz_state, get_paused_quiz_state, clear_paused_quiz_state,
-    save_question_to_db, log_user_activity_time, get_next_mock_number
+    save_question_to_db, log_user_activity_time, get_next_mock_number,
+    get_total_platform_likes
 )
 from app.pyq_fetcher import (
     fetch_pyqs_for_quiz, get_available_topics, COMPUTER_TOPIC_METADATA, GK_TOPIC_METADATA,
     fetch_full_mock_questions, fetch_multi_topic_questions
 )
-# Fixed Import: Added get_quiz_performance_trend
 from app.stats import calculate_user_percentile, calculate_user_rank, get_quiz_performance_trend
 
 logger = logging.getLogger(__name__)
@@ -211,7 +211,6 @@ async def mock_count_callback(update: Update, context: ContextTypes.DEFAULT_TYPE
     count = int(query.data.replace("qmockcount_", ""))
     QUIZ_SETUP_CACHE[user_id]["count"] = count
     
-    # HARDCODED: Automatically set global timer to 10 minutes
     QUIZ_SETUP_CACHE[user_id]["total_time_mins"] = 10
 
     keyboard = InlineKeyboardMarkup([
@@ -229,7 +228,7 @@ async def mock_lang_callback(update: Update, context: ContextTypes.DEFAULT_TYPE)
     
     count = setup.get("count", 40)
     total_time_mins = setup.get("total_time_mins", 10)
-    timer_sec = (total_time_mins * 60) // count # Fallback parameter
+    timer_sec = (total_time_mins * 60) // count
 
     profile = await asyncio.to_thread(get_user_profile, user_id)
     attempted_today = await asyncio.to_thread(get_today_attempts, user_id)
@@ -324,7 +323,6 @@ async def sect_count_callback(update: Update, context: ContextTypes.DEFAULT_TYPE
     count = int(query.data.replace("qsectcount_", ""))
     QUIZ_SETUP_CACHE[user_id]["count"] = count
     
-    # HARDCODED: Automatically set global timer to 10 minutes
     QUIZ_SETUP_CACHE[user_id]["total_time_mins"] = 10
 
     keyboard = InlineKeyboardMarkup([
@@ -344,7 +342,7 @@ async def sect_lang_callback(update: Update, context: ContextTypes.DEFAULT_TYPE)
     count = setup.get("count", 20)
     total_time_mins = setup.get("total_time_mins", 10)
     subj = setup.get("subject", "computer")
-    timer_sec = (total_time_mins * 60) // count # Fallback parameter
+    timer_sec = (total_time_mins * 60) // count
 
     profile = await asyncio.to_thread(get_user_profile, user_id)
     attempted_today = await asyncio.to_thread(get_today_attempts, user_id)
@@ -685,7 +683,6 @@ async def pause_quiz_command(update: Update, context: ContextTypes.DEFAULT_TYPE)
     if user_id in TIMER_TASKS and not TIMER_TASKS[user_id].done():
         TIMER_TASKS[user_id].cancel()
 
-    # Deduct the time spent on the current question if using Global Timer
     if session.get("global_remaining_sec") is not None:
         time_spent = time.time() - session.get("question_start_time", time.time())
         session["global_remaining_sec"] = max(0, session["global_remaining_sec"] - time_spent)
@@ -889,7 +886,6 @@ async def send_next_question(chat_id: int, user_id: int, context: ContextTypes.D
     q = session["questions"][session["current_index"]]
     session["current_question"] = q
     
-    # Global Timer Logic Calculation
     global_time_str = ""
     if session.get("global_remaining_sec") is not None:
         rem_sec = int(session["global_remaining_sec"])
@@ -901,9 +897,8 @@ async def send_next_question(chat_id: int, user_id: int, context: ContextTypes.D
         m, s = divmod(rem_sec, 60)
         global_time_str = f" | ⏳ {m:02d}:{s:02d} Left"
         
-        # Max out open_period to remaining time, capped at 600s due to Telegram API limits
         poll_timer_sec = min(rem_sec, 600)
-        poll_timer_sec = max(5, poll_timer_sec) # Telegram minimum is 5s
+        poll_timer_sec = max(5, poll_timer_sec)
     else:
         poll_timer_sec = session["timer_sec"]
 
@@ -915,7 +910,6 @@ async def send_next_question(chat_id: int, user_id: int, context: ContextTypes.D
     quiz_mode = session.get("quiz_mode", "PRACTICE")
     title = f"{quiz_mode.replace('_', ' ').title()} #{session.get('mock_number', 0)}" if quiz_mode != "PRACTICE" else session.get('topic_name', 'Quiz')
     
-    # Safe 300 character truncation preserving the Global Time string
     base_header = f"📖 [{title}] — ({current_num}/{total_num}){global_time_str}\n\n"
     avail_len = 300 - len(base_header)
     q_text = q['question']
@@ -976,7 +970,6 @@ async def auto_skip_task(chat_id: int, user_id: int, poll_id: str, expected_idx:
         session = ACTIVE_SESSIONS.get(user_id)
         if session and not session.get("is_paused") and session["current_index"] == expected_idx:
             
-            # Global Timer Deduction on Skip/Timeout
             if session.get("global_remaining_sec") is not None:
                 time_spent = time.time() - session.get("question_start_time", time.time())
                 session["global_remaining_sec"] -= time_spent
@@ -1021,7 +1014,6 @@ async def handle_poll_answer(update: Update, context: ContextTypes.DEFAULT_TYPE)
     session = ACTIVE_SESSIONS.get(user_id)
     if session and not session.get("is_paused") and session["current_index"] == data["q_idx"]:
         
-        # Global Timer Deduction on Answer
         if session.get("global_remaining_sec") is not None:
             time_spent = time.time() - session.get("question_start_time", time.time())
             session["global_remaining_sec"] -= time_spent
@@ -1071,15 +1063,12 @@ async def finish_quiz_and_send_report(chat_id: int, user_id: int, context: Conte
     quiz_mode = session.get("quiz_mode", "PRACTICE")
     title = f"{quiz_mode.replace('_', ' ').title()} #{session.get('mock_number', 0)}" if quiz_mode != "PRACTICE" else session.get('topic_name', 'Quiz')
 
-    # Calculate Current Quiz Accuracy %
     current_acc = round((correct / total) * 100.0, 2) if total > 0 else 0.0
 
-    # Calculate Normalized Real Rank & Percentile
     rank = await asyncio.to_thread(calculate_user_rank, user_id)
     percentile = await asyncio.to_thread(calculate_user_percentile, user_id)
-    
-    # Calculate Previous Quizzes Performance Trend & Analytics
     trend_info = await asyncio.to_thread(get_quiz_performance_trend, user_id, current_acc)
+    total_likes = await asyncio.to_thread(get_total_platform_likes)
 
     lang_label = "🌐 English" if lang == "en" else "🇮🇳 हिंदी"
 
@@ -1104,31 +1093,38 @@ async def finish_quiz_and_send_report(chat_id: int, user_id: int, context: Conte
         f"• **Global Rank:** `{rank}` 🥇 *(Unbiased Accuracy Metric)*\n"
         f"• **Overall Percentile:** `{percentile}%` 📊 *(Normalized across all peers)*\n"
         f"━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\n"
-        f"👇 **INLINE QUIZ BOOK NAVIGATION:**"
+        f"❤️ **Community Feedback & Engagement:**\n"
+        f"• Did you like this quiz? Tap **❤️ Like ({total_likes})** below!\n"
+        f"• Share your experience & motivation via **💬 Post a Comment**."
     )
 
     end_quiz_buttons = [
         [
-            InlineKeyboardButton("📄 Export PDF Report", callback_data="cmd_pdfreport"),
-            InlineKeyboardButton("💾 Saved Questions", callback_data="cmd_savedquestions")
+            InlineKeyboardButton(f"❤️ Like ({total_likes})", callback_data="cmd_like_platform"),
+            InlineKeyboardButton("💬 Post a Comment", callback_data="comm_add_prompt")
         ],
         [
-            InlineKeyboardButton("❌ Wrong Questions", callback_data="cmd_wrong_qs"),
-            InlineKeyboardButton("⏭ Skipped Questions", callback_data="cmd_unattempted_qs")
+            InlineKeyboardButton("🌐 Community Feed", callback_data="cmd_community"),
+            InlineKeyboardButton("📄 Export PDF Report", callback_data="cmd_pdfreport")
         ],
         [
-            InlineKeyboardButton("🎯 Attempted Questions", callback_data="cmd_attempted_qs"),
-            InlineKeyboardButton("🏆 Leaderboard (/toppername)", callback_data="cmd_toppers")
+            InlineKeyboardButton("💾 Saved Questions", callback_data="cmd_savedquestions"),
+            InlineKeyboardButton("❌ Wrong Questions", callback_data="cmd_wrong_qs")
         ],
         [
-            InlineKeyboardButton("📊 Analytics (/mywholestate)", callback_data="cmd_wholestate"),
-            InlineKeyboardButton("💬 Leave Feedback", callback_data="cmd_feedback")
+            InlineKeyboardButton("⏭ Skipped Questions", callback_data="cmd_unattempted_qs"),
+            InlineKeyboardButton("🎯 Attempted Questions", callback_data="cmd_attempted_qs")
         ],
         [
-            InlineKeyboardButton("💳 VIP Plans", callback_data="cmd_plans"),
-            InlineKeyboardButton("📢 Telegram Channel", url="https://t.me/Learnwithhim")
+            InlineKeyboardButton("🏆 Leaderboard (/toppername)", callback_data="cmd_toppers"),
+            InlineKeyboardButton("📊 Analytics (/mywholestate)", callback_data="cmd_wholestate")
         ],
         [
+            InlineKeyboardButton("💬 Leave Feedback", callback_data="cmd_feedback"),
+            InlineKeyboardButton("💳 VIP Plans", callback_data="cmd_plans")
+        ],
+        [
+            InlineKeyboardButton("📢 Telegram Channel", url="https://t.me/Learnwithhim"),
             InlineKeyboardButton("🚀 Attempt Another Quiz", callback_data="cmd_quiz")
         ]
     ]

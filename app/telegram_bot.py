@@ -27,6 +27,8 @@ from app.database import (
     init_db, get_maintenance_until, get_user_profile, 
     get_all_users, get_today_attempts, save_student_feedback, get_all_student_feedbacks,
     get_student_feedbacks_count, get_paginated_student_feedbacks, archive_and_wipe_user,
+    get_total_registered_users_count, toggle_platform_like, get_total_platform_likes,
+    save_community_comment, get_community_comments_count, get_paginated_community_comments,
     clear_paused_quiz_state, get_saved_questions, log_user_activity_time,
     check_and_update_inactivity, refresh_user_activity_epoch, get_db, release_db,
     get_seen_question_ids, admin_update_user_name, get_ist_date_str,
@@ -55,11 +57,17 @@ from app.pyq_fetcher import fetch_pyqs_for_quiz
 
 logger = logging.getLogger(__name__)
 
-NEGATIVE_WORDS = ["bad", "worst", "useless", "trash", "fake", "hate", "terrible", "waste", "horrible", "fraud", "stupid", "scam"]
+PROFANE_WORDS = [
+    "bad", "worst", "useless", "trash", "fake", "hate", "terrible", "waste", "horrible", "fraud", 
+    "stupid", "scam", "idiot", "nonsense", "harsh", "abuse", "gali", "chutiya", "madarchod", 
+    "bhenchod", "saala", "kutta", "harami", "bakwas", "cheater", "chor", "fuck", "shit", "bitch", 
+    "asshole", "bastard", "crap", "bloody", "dick", "pussy"
+]
 
 PROFILE_CACHE = {}
 CACHE_TTL = 30 
 FEEDBACKS_PER_PAGE = 5
+COMMUNITY_PER_PAGE = 5
 
 ANNC_CONTENT, ANNC_DATETIME = range(104, 106)
 
@@ -1042,6 +1050,7 @@ async def help_command(update: Update, context: ContextTypes.DEFAULT_TYPE):
         "• **/editprofile** — ✏️ Edit Profile Details\n"
         "• **/mywholestate** — 📊 View Performance & Rank\n"
         "• **/toppername** — 🏆 Global Leaderboard\n"
+        "• **/community** — 💬 Student Discussion & Community Feed\n"
         "• **/feedback** — 💬 Submit Platform Review/Feedback\n"
         "• **/reviews** — 📖 View All Student Reviews\n"
         "• **/invite** — 🤝 Invite Friends (+10 Quota Boost)\n"
@@ -1056,8 +1065,8 @@ async def help_command(update: Update, context: ContextTypes.DEFAULT_TYPE):
     buttons = [
         [InlineKeyboardButton("🚀 Launch Quiz (/quiz)", callback_data="cmd_quiz"), InlineKeyboardButton("💳 My Current Plan (/myplan)", callback_data="cmd_myplan")],
         [InlineKeyboardButton("💳 VIP Plans (/plans)", callback_data="cmd_plans"), InlineKeyboardButton("📄 PDF Reports (/pdfreport)", callback_data="cmd_pdfreport")],
-        [InlineKeyboardButton("💾 Bookmarks (/savedquestions)", callback_data="cmd_savedquestions"), InlineKeyboardButton("❌ Wrong Qs (/wrongquestions)", callback_data="cmd_wrongquestions")],
-        [InlineKeyboardButton("🎯 Attempted Qs (/attemptedquestions)", callback_data="cmd_attemptedquestions"), InlineKeyboardButton("⏭️ Unattempted Qs (/unattemptedquestions)", callback_data="cmd_unattemptedquestions")],
+        [InlineKeyboardButton("💬 Community Feed (/community)", callback_data="cmd_community"), InlineKeyboardButton("💾 Bookmarks (/savedquestions)", callback_data="cmd_savedquestions")],
+        [InlineKeyboardButton("❌ Wrong Qs (/wrongquestions)", callback_data="cmd_wrongquestions"), InlineKeyboardButton("🎯 Attempted Qs (/attemptedquestions)", callback_data="cmd_attemptedquestions")],
         [InlineKeyboardButton("👤 My Profile (/myprofile)", callback_data="cmd_profile"), InlineKeyboardButton("👨‍🏫 About Himanshu Sir (/admininfo)", callback_data="cmd_admininfo")],
         [InlineKeyboardButton("📊 My Rank (/mywholestate)", callback_data="cmd_wholestate"), InlineKeyboardButton("🏆 Leaderboard (/toppername)", callback_data="cmd_toppers")],
         [InlineKeyboardButton("💬 Submit Feedback (/feedback)", callback_data="cmd_feedback"), InlineKeyboardButton("📖 Reviews (/reviews)", callback_data="cmd_viewfeedbacks")],
@@ -1136,6 +1145,9 @@ async def myprofile_command(update: Update, context: ContextTypes.DEFAULT_TYPE):
     remaining = max(0, allowed_limit - today_used)
     student_id = profile.get("student_id", f"USER_{user.id}")
     expiry = profile.get("vip_pass_expiry") or "N/A"
+    
+    total_users = await asyncio.to_thread(get_total_registered_users_count)
+    total_likes = await asyncio.to_thread(get_total_platform_likes)
 
     msg = (
         f"👤 **STUDENT PROFILE CARD** 👤\n"
@@ -1148,6 +1160,9 @@ async def myprofile_command(update: Update, context: ContextTypes.DEFAULT_TYPE):
         f"• **DOB / Gender:** `{profile.get('dob', 'N/A')}` / `{profile['gender']}` 🎂\n"
         f"• **Location:** `{profile.get('state', 'N/A')}, India` 📍\n"
         f"• **Phone:** `{profile['phone_number']}` 📱 *(Private)*\n\n"
+        f"🌟 **COMMUNITY IMPACT & SCALE:**\n"
+        f"• **Platform Registered Students:** `{total_users}` Scholars 👥\n"
+        f"• **Total Platform Likes:** `{total_likes}` ❤️\n\n"
         f"📊 **DAILY QUOTA & SUBSCRIPTION:**\n"
         f"• **Used Today:** `{today_used}` / `{allowed_limit}` Qs 🖥\n"
         f"• **Remaining Today:** `{remaining}` Qs ⚡\n"
@@ -1158,7 +1173,7 @@ async def myprofile_command(update: Update, context: ContextTypes.DEFAULT_TYPE):
 
     buttons = [
         [InlineKeyboardButton("🚀 Launch Quiz", callback_data="cmd_quiz"), InlineKeyboardButton("📄 PDF Report Center", callback_data="cmd_pdfreport")],
-        [InlineKeyboardButton("💳 My Plan", callback_data="cmd_myplan"), InlineKeyboardButton("💳 VIP Plans", callback_data="cmd_plans")],
+        [InlineKeyboardButton("💳 My Plan", callback_data="cmd_myplan"), InlineKeyboardButton("💬 Community Feed", callback_data="cmd_community")],
         [InlineKeyboardButton("💾 Bookmarks", callback_data="cmd_savedquestions"), InlineKeyboardButton("✏️ Edit Profile", callback_data="cmd_editprofile")],
         [InlineKeyboardButton("🤝 Invite Friends", callback_data="cmd_referral"), InlineKeyboardButton("💬 Secret Message Admin", callback_data="cmd_askadmin")]
     ]
@@ -1301,6 +1316,75 @@ async def viewfeedbacks_command(update: Update, context: ContextTypes.DEFAULT_TY
     asyncio.create_task(asyncio.to_thread(log_command_usage, user.id, "/reviews"))
     asyncio.create_task(asyncio.to_thread(log_user_activity_time, user.id, 10))
     await render_reviews_page(update, context, page=0)
+
+
+async def render_community_page(update: Update, context: ContextTypes.DEFAULT_TYPE, page: int = 0):
+    total_count = await asyncio.to_thread(get_community_comments_count)
+    total_users = await asyncio.to_thread(get_total_registered_users_count)
+    total_likes = await asyncio.to_thread(get_total_platform_likes)
+
+    header = (
+        f"🌐 **QUIZ WITH HIM — STUDENT COMMUNITY FEED** 🌐\n"
+        f"━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\n"
+        f"👥 **Total Registered Scholars:** `{total_users}` Students\n"
+        f"❤️ **Platform Community Likes:** `{total_likes}`\n"
+        f"💬 **Total Community Posts:** `{total_count}`\n"
+        f"━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\n"
+    )
+
+    if total_count == 0:
+        msg = f"{header}\n*No community comments posted yet. Share your study tips, thoughts, and motivation with your fellow scholars below!*"
+        btn = InlineKeyboardMarkup([
+            [InlineKeyboardButton("✍️ Post a Comment", callback_data="comm_add_prompt")],
+            [InlineKeyboardButton("🚀 Launch Quiz", callback_data="cmd_quiz")]
+        ])
+        await send_response(update, msg, reply_markup=btn)
+        return
+
+    total_pages = max(1, math.ceil(total_count / COMMUNITY_PER_PAGE))
+    page = max(0, min(page, total_pages - 1))
+
+    comments = await asyncio.to_thread(get_paginated_community_comments, page, COMMUNITY_PER_PAGE)
+
+    lines = [header, f"📄 **Page:** `{page + 1}` of `{total_pages}`\n"]
+
+    start_idx = page * COMMUNITY_PER_PAGE + 1
+    for idx, c in enumerate(comments, start=start_idx):
+        st_name = c.get('student_name', 'Scholar')
+        sid = c.get('student_id', '')
+        dt_str = c.get('created_at', 'N/A')
+        lines.append(f"**{idx}. {st_name}** (`{sid}`) `[{dt_str}]`:\n 💬 *\"{c['comment_text']}\"*\n")
+
+    keyboard = []
+    nav_row = []
+    if page > 0:
+        nav_row.append(InlineKeyboardButton("◀️ Prev", callback_data=f"comm_page_{page - 1}"))
+    nav_row.append(InlineKeyboardButton(f"📄 {page + 1}/{total_pages}", callback_data="ignore"))
+    if page < total_pages - 1:
+        nav_row.append(InlineKeyboardButton("Next ▶️", callback_data=f"comm_page_{page + 1}"))
+    
+    if nav_row:
+        keyboard.append(nav_row)
+
+    keyboard.append([
+        InlineKeyboardButton("✍️ Post a Comment", callback_data="comm_add_prompt"),
+        InlineKeyboardButton("❤️ Like Platform", callback_data="cmd_like_platform")
+    ])
+    keyboard.append([
+        InlineKeyboardButton("🚀 Launch Quiz", callback_data="cmd_quiz")
+    ])
+
+    await send_response(update, "\n".join(lines), reply_markup=InlineKeyboardMarkup(keyboard))
+
+
+async def community_command(update: Update, context: ContextTypes.DEFAULT_TYPE):
+    if not await maintenance_guard(update, context): return
+    if not await check_user_registration(update): return
+
+    user = update.effective_user
+    asyncio.create_task(asyncio.to_thread(log_command_usage, user.id, "/community"))
+    asyncio.create_task(asyncio.to_thread(log_user_activity_time, user.id, 10))
+    await render_community_page(update, context, page=0)
 
 
 async def referral_command(update: Update, context: ContextTypes.DEFAULT_TYPE):
@@ -1507,6 +1591,35 @@ async def button_router(update: Update, context: ContextTypes.DEFAULT_TYPE):
         await render_reviews_page(update, context, page=page_no)
         return
 
+    if data.startswith("comm_page_"):
+        await query.answer()
+        page_no = int(data.replace("comm_page_", ""))
+        await render_community_page(update, context, page=page_no)
+        return
+
+    if data == "cmd_like_platform":
+        is_liked, total_likes = await asyncio.to_thread(toggle_platform_like, user.id)
+        if is_liked:
+            await query.answer(f"❤️ Liked! Total Platform Likes: {total_likes}", show_alert=True)
+        else:
+            await query.answer(f"🤍 Like removed! Total Likes: {total_likes}", show_alert=True)
+        return
+
+    if data == "comm_add_prompt":
+        await query.answer()
+        context.user_data["awaiting_community_comment"] = True
+        cancel_btn = InlineKeyboardMarkup([[InlineKeyboardButton("❌ Cancel", callback_data="cmd_community")]])
+        await query.edit_message_text(
+            "💬 **WRITE COMMUNITY POST / COMMENT** 💬\n"
+            "━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\n"
+            "Share your exam preparation tips, motivation, or thoughts with fellow students!\n\n"
+            "⚠️ *Note: Strict moderation enabled. Harsh, abusive, or offensive language is not allowed.*\n\n"
+            "👉 Please reply with your comment below:",
+            reply_markup=cancel_btn,
+            parse_mode="Markdown"
+        )
+        return
+
     if data.startswith("userkp_"):
         current_pin = context.user_data.get("user_keypad_pin", "")
 
@@ -1532,7 +1645,8 @@ async def button_router(update: Update, context: ContextTypes.DEFAULT_TYPE):
 
                 unlocked_menu_btn = InlineKeyboardMarkup([
                     [InlineKeyboardButton("🚀 Launch Quiz Now", callback_data="cmd_quiz"), InlineKeyboardButton("👤 My Profile", callback_data="cmd_profile")],
-                    [InlineKeyboardButton("💳 My Plan", callback_data="cmd_myplan"), InlineKeyboardButton("❓ Help & Support", callback_data="cmd_help")]
+                    [InlineKeyboardButton("💬 Community Feed", callback_data="cmd_community"), InlineKeyboardButton("💳 My Plan", callback_data="cmd_myplan")],
+                    [InlineKeyboardButton("❓ Help & Support", callback_data="cmd_help")]
                 ])
                 await query.edit_message_text(
                     f"🔓 **ACCOUNT UNLOCKED SUCCESSFULLY!** 🔓\n"
@@ -1590,6 +1704,8 @@ async def button_router(update: Update, context: ContextTypes.DEFAULT_TYPE):
         await askadmin_command(update, context)
     elif data == "cmd_admininfo":
         await admininfo_command(update, context)
+    elif data == "cmd_community":
+        await render_community_page(update, context, page=0)
     elif data == "cmd_quiz":
         profile = await fetch_user_profile_fast(user.id)
         attempted_today = await asyncio.to_thread(get_today_attempts, user.id)
@@ -1959,6 +2075,38 @@ async def handle_text_messages(update: Update, context: ContextTypes.DEFAULT_TYP
                 await update.message.reply_text(f"⚠️ Reply saved, but failed sending message to user: {e}", reply_markup=get_admin_nav_buttons(student_uid), parse_mode="Markdown")
         return
 
+    # Community Comment Submission
+    if context.user_data.get("awaiting_community_comment"):
+        context.user_data["awaiting_community_comment"] = False
+        
+        # Moderation check
+        lower_input = text.lower()
+        if any(bad in lower_input for bad in PROFANE_WORDS):
+            await update.message.reply_text(
+                "⚠️ **COMMENT REJECTED BY CONTENT FILTER!** ⚠️\n\n"
+                "Offensive, abusive, or harsh language is strictly prohibited in our community.\n"
+                "Please keep discussion respectful and educational.",
+                reply_markup=ReplyKeyboardRemove()
+            )
+            return
+
+        profile = await fetch_user_profile_fast(user.id) or {}
+        st_name = profile.get("full_name", user.full_name)
+        sid = profile.get("student_id", f"USER_{user.id}")
+
+        await asyncio.to_thread(save_community_comment, user.id, sid, st_name, text)
+        
+        await update.message.reply_text(
+            f"🎉 **COMMUNITY POST PUBLISHED!** 🎉\n\n"
+            f"Thank you, **{st_name}**! Your comment is now live for all students to see.",
+            reply_markup=InlineKeyboardMarkup([
+                [InlineKeyboardButton("🌐 View Community Feed", callback_data="cmd_community")],
+                [InlineKeyboardButton("🚀 Launch Quiz", callback_data="cmd_quiz")]
+            ]),
+            parse_mode="Markdown"
+        )
+        return
+
     # Student Sending Query (Supports Voice Notes / Photos / Videos / Audio / Documents / Text)
     if context.user_data.get("awaiting_user_query"):
         context.user_data["awaiting_user_query"] = False
@@ -2058,7 +2206,7 @@ async def handle_text_messages(update: Update, context: ContextTypes.DEFAULT_TYP
     if context.user_data.get("awaiting_custom_feedback"):
         context.user_data["awaiting_custom_feedback"] = False
         
-        if any(bad_word in text.lower() for bad_word in NEGATIVE_WORDS):
+        if any(bad_word in text.lower() for bad_word in PROFANE_WORDS):
             await update.message.reply_text("🙏 Thank you for your feedback! We are working hard to improve your learning experience.", reply_markup=ReplyKeyboardRemove())
             return
 
@@ -2184,6 +2332,7 @@ async def post_init(application: Application):
         BotCommand("quiz", "🚀 Start Computer Quiz"),
         BotCommand("myplan", "💵 Subscriptions"),
         BotCommand("plans", "💳 VIP Payment Plans"),
+        BotCommand("community", "💬 Student Community Feed"),
         BotCommand("askadmin", "💬 Secret Communication with Admin"),
         BotCommand("admininfo", "👨‍🏫 About Himanshu Sir & Channels"),
         BotCommand("pdfreport", "📄 Export Academic PDF Report"),
@@ -2243,6 +2392,7 @@ def build_application() -> Application:
     app.add_handler(CommandHandler("quiz", strict_quiz_command_guard))
     app.add_handler(CommandHandler("myplan", myplan_command))
     app.add_handler(CommandHandler("plans", plans_command))
+    app.add_handler(CommandHandler("community", community_command))
     app.add_handler(CommandHandler("askadmin", askadmin_command))
     app.add_handler(CommandHandler("admininfo", admininfo_command))
     app.add_handler(CommandHandler("pause", pause_quiz_command))
@@ -2277,7 +2427,7 @@ def build_application() -> Application:
     
     app.add_handler(CallbackQueryHandler(admin_callback_handler, pattern="^(admin_|audit_|genpdf_|adminkp_)"))
     
-    app.add_handler(CallbackQueryHandler(button_router, pattern="^cmd_|^fb_|^trigger_start|^buy_plan_|^userkp_|^login_|^reviews_page_"))
+    app.add_handler(CallbackQueryHandler(button_router, pattern="^cmd_|^fb_|^comm_|^trigger_start|^buy_plan_|^userkp_|^login_|^reviews_page_"))
 
     # Real-time event detection when a user blocks or stops the bot
     app.add_handler(ChatMemberHandler(track_chat_member_updates, ChatMemberHandler.MY_CHAT_MEMBER))

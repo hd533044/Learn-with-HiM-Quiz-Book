@@ -2,8 +2,12 @@ import re
 import logging
 import warnings
 import calendar
+import time
 from datetime import datetime
-from telegram import Update, InlineKeyboardMarkup, InlineKeyboardButton, ReplyKeyboardMarkup, KeyboardButton, ReplyKeyboardRemove
+from telegram import (
+    Update, InlineKeyboardMarkup, InlineKeyboardButton, 
+    ReplyKeyboardMarkup, KeyboardButton, ReplyKeyboardRemove
+)
 from telegram.warnings import PTBUserWarning
 from telegram.ext import (
     ConversationHandler, 
@@ -16,9 +20,9 @@ from telegram.ext import (
 from app.config import WELCOME_CARD_TEXT, PRIMARY_ADMIN_ID
 from app.database import (
     save_user_profile, get_user_profile, can_user_edit_profile, 
-    get_maintenance_until, generate_student_id, update_user_pin
+    get_maintenance_until, generate_student_id, update_user_pin,
+    get_total_registered_users_count, get_total_platform_likes
 )
-import time
 
 warnings.filterwarnings("ignore", category=PTBUserWarning)
 
@@ -111,6 +115,9 @@ async def start_onboarding(update: Update, context: ContextTypes.DEFAULT_TYPE):
 
     context.user_data["awaiting_other_exam"] = False
 
+    total_users = get_total_registered_users_count()
+    total_likes = get_total_platform_likes()
+
     profile = get_user_profile(user.id)
     if profile and profile.get("is_verified") and not context.user_data.get("is_editing_profile"):
         student_id = profile.get("student_id", "N/A")
@@ -120,11 +127,15 @@ async def start_onboarding(update: Update, context: ContextTypes.DEFAULT_TYPE):
             f"🪪 **Student ID:** `{student_id}`\n"
             f"🎯 **Target Exam:** `{profile['target_exam']}`\n"
             f"📍 **Location:** `{profile.get('state', 'N/A')}, India` 🇮🇳\n\n"
+            f"🌟 **COMMUNITY SCALE & SOCIAL PROOF:**\n"
+            f"• 👥 **Practicing Scholars:** `{total_users}` Students\n"
+            f"• ❤️ **Platform Community Likes:** `{total_likes}`\n\n"
             f"🚀 **Select an option below to start practicing:**",
             reply_markup=InlineKeyboardMarkup([
                 [InlineKeyboardButton("🚀 Launch Quiz", callback_data="cmd_quiz"), InlineKeyboardButton("👤 Profile Card", callback_data="cmd_profile")],
-                [InlineKeyboardButton("💳 My Plan", callback_data="cmd_myplan"), InlineKeyboardButton("🥇 Toppers Leaderboard", callback_data="cmd_toppers")],
-                [InlineKeyboardButton("📊 My Analytics", callback_data="cmd_wholestate"), InlineKeyboardButton("💳 VIP Plans", callback_data="cmd_plans")]
+                [InlineKeyboardButton("💬 Community Feed", callback_data="cmd_community"), InlineKeyboardButton("💳 My Plan", callback_data="cmd_myplan")],
+                [InlineKeyboardButton("🥇 Toppers Leaderboard", callback_data="cmd_toppers"), InlineKeyboardButton("📊 My Analytics", callback_data="cmd_wholestate")],
+                [InlineKeyboardButton("💳 VIP Plans", callback_data="cmd_plans")]
             ]),
             parse_mode="Markdown"
         )
@@ -132,6 +143,10 @@ async def start_onboarding(update: Update, context: ContextTypes.DEFAULT_TYPE):
 
     await update.effective_message.reply_text(
         f"{WELCOME_CARD_TEXT}\n\n"
+        f"━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\n"
+        f"🌟 **COMMUNITY PROOF & SCALE:**\n"
+        f"👥 **{total_users}+ Registered Scholars Already Practicing**\n"
+        f"❤️ **{total_likes}+ Platform Community Likes**\n"
         f"━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\n"
         f"📝 **STUDENT REGISTRATION (STEP 1/7)** 📝\n\n"
         f"👤 Please reply with your **Full Name** (at least 4 alphabetic letters) to generate your Official Student ID:",
@@ -408,12 +423,18 @@ async def sec_ans_step(update: Update, context: ContextTypes.DEFAULT_TYPE):
         referred_by=context.user_data.get("referred_by")
     )
 
+    total_users = get_total_registered_users_count()
+    total_likes = get_total_platform_likes()
+
     demo_msg = (
         f"🎉 **STUDENT REGISTRATION COMPLETE!** 🎉\n"
         f"━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\n"
         f"🪪 **OFFICIAL STUDENT ID:** `{student_id}`\n"
         f"🔑 **SECRET PIN:** `{context.user_data.get('pin')}`\n"
         f"🎂 **REGISTERED DOB:** `{dob_str}`\n\n"
+        f"🌟 **COMMUNITY IMPACT & SCALE:**\n"
+        f"• **Active Scholars on Platform:** `{total_users}` Students 👥\n"
+        f"• **Platform Community Likes:** `{total_likes}` ❤️\n\n"
         f"🎁 **FREE DEMO PLAN ACTIVATED BY DEFAULT!**\n"
         f"• **Quota:** `20 Questions / Day`\n"
         f"• **Validity:** `2 Days Access`\n"
@@ -432,7 +453,7 @@ async def sec_ans_step(update: Update, context: ContextTypes.DEFAULT_TYPE):
         text="👇 **QUICK NAVIGATION** 👇",
         reply_markup=InlineKeyboardMarkup([
             [InlineKeyboardButton("🚀 Launch Quiz", callback_data="cmd_quiz"), InlineKeyboardButton("👤 Profile Card", callback_data="cmd_profile")],
-            [InlineKeyboardButton("💳 My Current Plan", callback_data="cmd_myplan"), InlineKeyboardButton("💳 VIP Plans", callback_data="cmd_plans")]
+            [InlineKeyboardButton("💬 Community Feed", callback_data="cmd_community"), InlineKeyboardButton("💳 VIP Plans", callback_data="cmd_plans")]
         ])
     )
     return ConversationHandler.END
@@ -687,7 +708,6 @@ async def rec_dob_day_callback(update: Update, context: ContextTypes.DEFAULT_TYP
     )
     return RESET_PIN
 
-# Feature 4: Interactive Navigation Menu on Account PIN Unlock
 async def reset_pin_step(update: Update, context: ContextTypes.DEFAULT_TYPE):
     new_pin = update.message.text.strip()
     if not new_pin.isdigit() or len(new_pin) != 4:
@@ -704,7 +724,7 @@ async def reset_pin_step(update: Update, context: ContextTypes.DEFAULT_TYPE):
 
     unlocked_menu_btn = InlineKeyboardMarkup([
         [InlineKeyboardButton("🚀 Launch Quiz Now", callback_data="cmd_quiz"), InlineKeyboardButton("👤 My Profile", callback_data="cmd_profile")],
-        [InlineKeyboardButton("💳 My Plan", callback_data="cmd_myplan"), InlineKeyboardButton("❓ Help & Support", callback_data="cmd_help")]
+        [InlineKeyboardButton("💬 Community Feed", callback_data="cmd_community"), InlineKeyboardButton("💳 My Plan", callback_data="cmd_myplan")]
     ])
 
     await update.message.reply_text(

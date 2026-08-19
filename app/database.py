@@ -674,33 +674,70 @@ def admin_update_user_name(user_id: int, new_name: str):
     release_db(conn)
     sync_user_json_profile(user_id)
 
-def admin_delete_user_account(user_id: int):
+def archive_and_wipe_user(user_id: int) -> bool:
+    """
+    Moves user's record to deleted_blocked_users archive, wipes them from active DB
+    and local JSON profiles, which automatically decreases the registered users count.
+    """
     conn = get_db()
     cursor = conn.cursor(cursor_factory=RealDictCursor)
-    cursor.execute("SELECT student_id FROM users WHERE user_id = %s", (user_id,))
-    row = cursor.fetchone()
-    sid = row['student_id'] if row and row['student_id'] else f"USER_{user_id}"
+    try:
+        cursor.execute("SELECT * FROM users WHERE user_id = %s", (user_id,))
+        u = cursor.fetchone()
+        now_str = get_ist_timestamp_str()
 
-    cursor.execute("DELETE FROM users WHERE user_id = %s", (user_id,))
-    cursor.execute("DELETE FROM payment_transactions WHERE user_id = %s", (user_id,))
-    cursor.execute("DELETE FROM quiz_attempts WHERE user_id = %s", (user_id,))
-    cursor.execute("DELETE FROM seen_questions WHERE user_id = %s", (user_id,))
-    cursor.execute("DELETE FROM saved_questions WHERE user_id = %s", (user_id,))
-    cursor.execute("DELETE FROM student_feedback WHERE user_id = %s", (user_id,))
-    cursor.execute("DELETE FROM paused_quizzes WHERE user_id = %s", (user_id,))
-    cursor.execute("DELETE FROM user_activity_time WHERE user_id = %s", (user_id,))
-    cursor.execute("DELETE FROM student_queries WHERE user_id = %s", (user_id,))
-    cursor.execute("DELETE FROM blocked_bot_users WHERE user_id = %s", (user_id,))
-    conn.commit()
-    cursor.close()
-    release_db(conn)
+        if u:
+            cursor.execute('''
+                CREATE TABLE IF NOT EXISTS deleted_blocked_users (
+                    user_id BIGINT PRIMARY KEY,
+                    student_id TEXT,
+                    full_name TEXT,
+                    phone_number TEXT,
+                    target_exam TEXT,
+                    deleted_at TEXT
+                )
+            ''')
+            cursor.execute("""
+                INSERT INTO deleted_blocked_users (user_id, student_id, full_name, phone_number, target_exam, deleted_at)
+                VALUES (%s, %s, %s, %s, %s, %s)
+                ON CONFLICT (user_id) DO UPDATE SET deleted_at = EXCLUDED.deleted_at
+            """, (u['user_id'], u['student_id'], u['full_name'], u['phone_number'], u['target_exam'], now_str))
 
-    json_path = os.path.join(USER_PROFILES_DIR, f"{sid}.json")
-    if os.path.exists(json_path):
-        try:
-            os.remove(json_path)
-        except Exception as e:
-            logger.error(f"Error removing JSON profile on deletion: {e}")
+            cursor.execute("DELETE FROM payment_transactions WHERE user_id = %s", (user_id,))
+            cursor.execute("DELETE FROM quiz_attempts WHERE user_id = %s", (user_id,))
+            cursor.execute("DELETE FROM seen_questions WHERE user_id = %s", (user_id,))
+            cursor.execute("DELETE FROM saved_questions WHERE user_id = %s", (user_id,))
+            cursor.execute("DELETE FROM student_feedback WHERE user_id = %s", (user_id,))
+            cursor.execute("DELETE FROM paused_quizzes WHERE user_id = %s", (user_id,))
+            cursor.execute("DELETE FROM user_activity_time WHERE user_id = %s", (user_id,))
+            cursor.execute("DELETE FROM student_queries WHERE user_id = %s", (user_id,))
+            cursor.execute("DELETE FROM users WHERE user_id = %s", (user_id,))
+
+            sid = u.get("student_id") or f"USER_{user_id}"
+            json_path = os.path.join(USER_PROFILES_DIR, f"{sid}.json")
+            if os.path.exists(json_path):
+                try:
+                    os.remove(json_path)
+                except Exception:
+                    pass
+
+        cursor.execute("DELETE FROM blocked_bot_users WHERE user_id = %s", (user_id,))
+        conn.commit()
+        return True
+    except Exception as e:
+        conn.rollback()
+        logger.error(f"[AUTO ARCHIVE WIPE ERROR] {user_id}: {e}")
+        return False
+    finally:
+        cursor.close()
+        release_db(conn)
+
+def record_blocked_user(user_id: int):
+    """Automatically archives and wipes any user that blocked the bot."""
+    archive_and_wipe_user(user_id)
+
+def admin_delete_user_account(user_id: int):
+    archive_and_wipe_user(user_id)
 
 def get_paid_users():
     conn = get_db()
@@ -804,7 +841,7 @@ def sync_user_json_profile(user_id: int):
         "registration_info": user_dict,
         "bot_engagement_metrics": {
             "last_login_timestamp": user_dict.get("last_active") or user_dict.get("created_at"),
-            "total_time_spent_overall": f"{total_time_seconds} seconds ({round(total_time_seconds/60, 2)} mins)",
+            "total_time_spent_overall": f"{total_time_spent_overall := total_time_seconds} seconds ({round(total_time_seconds/60, 2)} mins)",
             "daily_spent_time_breakdown": activity_log,
             "questions_attempted_per_day": daily_questions_count
         },
@@ -1495,24 +1532,6 @@ def get_announcement_by_id(announcement_id: int) -> dict:
     except Exception as e:
         logger.error(f"Error getting announcement by ID: {e}")
         return None
-    finally:
-        cursor.close()
-        release_db(conn)
-
-def record_blocked_user(user_id: int):
-    conn = get_db()
-    cursor = conn.cursor()
-    try:
-        now_str = get_ist_timestamp_str()
-        cursor.execute("""
-            INSERT INTO blocked_bot_users (user_id, blocked_at)
-            VALUES (%s, %s)
-            ON CONFLICT (user_id) DO NOTHING;
-        """, (user_id, now_str))
-        conn.commit()
-    except Exception as e:
-        conn.rollback()
-        logger.error(f"Error recording blocked user: {e}")
     finally:
         cursor.close()
         release_db(conn)

@@ -11,11 +11,12 @@ import pytz
 from telegram import (
     Update, InlineKeyboardMarkup, InlineKeyboardButton, 
     BotCommand, BotCommandScopeDefault, BotCommandScopeAllPrivateChats, 
-    BotCommandScopeAllGroupChats, BotCommandScopeChat, ReplyKeyboardRemove
+    BotCommandScopeAllGroupChats, BotCommandScopeChat, ReplyKeyboardRemove,
+    ChatMember, ChatMemberUpdated
 )
 from telegram.ext import (
     Application, CommandHandler, CallbackQueryHandler, PollAnswerHandler, 
-    MessageHandler, filters, ContextTypes, ConversationHandler
+    MessageHandler, ChatMemberHandler, filters, ContextTypes, ConversationHandler
 )
 from psycopg2.extras import RealDictCursor
 from app.config import (
@@ -25,7 +26,7 @@ from app.config import (
 from app.database import (
     init_db, get_maintenance_until, get_user_profile, 
     get_all_users, get_today_attempts, save_student_feedback, get_all_student_feedbacks,
-    get_student_feedbacks_count, get_paginated_student_feedbacks,
+    get_student_feedbacks_count, get_paginated_student_feedbacks, archive_and_wipe_user,
     clear_paused_quiz_state, get_saved_questions, log_user_activity_time,
     check_and_update_inactivity, refresh_user_activity_epoch, get_db, release_db,
     get_seen_question_ids, admin_update_user_name, get_ist_date_str,
@@ -1436,6 +1437,65 @@ async def cancel_admin_action(update: Update, context: ContextTypes.DEFAULT_TYPE
     return ConversationHandler.END
 
 
+async def track_chat_member_updates(update: Update, context: ContextTypes.DEFAULT_TYPE):
+    """
+    Automatically tracks when a user blocks/stops or leaves the bot in real-time,
+    archives their profile to `deleted_blocked_users`, permanently wipes them
+    from the active database, decreases registered users count, and alerts the Admin.
+    """
+    result = update.my_chat_member
+    if not result:
+        return
+
+    was_member = result.old_chat_member.status in [ChatMember.MEMBER, ChatMember.ADMINISTRATOR, ChatMember.RESTRICTED]
+    is_member = result.new_chat_member.status in [ChatMember.MEMBER, ChatMember.ADMINISTRATOR]
+
+    # User blocked or stopped the bot
+    if was_member and not is_member:
+        user_id = result.chat.id
+        logger.info(f"[USER BLOCKED BOT] Real-time event detected for user ID: {user_id}")
+        
+        # Retrieve user profile before wiping
+        u_profile = await fetch_user_profile_fast(user_id) or {}
+        st_name = u_profile.get("full_name", result.from_user.full_name or "Student")
+        st_id = u_profile.get("student_id", f"USER_{user_id}")
+        phone = u_profile.get("phone_number", "N/A")
+        exam = u_profile.get("target_exam", "N/A")
+
+        PROFILE_CACHE.pop(user_id, None)
+        await asyncio.to_thread(archive_and_wipe_user, user_id)
+
+        # Notify Admin in real-time
+        now_str = datetime.now(pytz.timezone("Asia/Kolkata")).strftime("%d %b %Y, %I:%M %p IST")
+        admin_alert = (
+            f"🛑 **STUDENT BLOCKED BOT & AUTO-ARCHIVED** 🛑\n"
+            f"━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\n"
+            f"👤 **Student Name:** {st_name}\n"
+            f"🪪 **Student ID:** `{st_id}`\n"
+            f"🆔 **Telegram ID:** `{user_id}`\n"
+            f"📱 **Phone:** `{phone}`\n"
+            f"🎯 **Target Exam:** `{exam}`\n"
+            f"⏰ **Time:** `{now_str}`\n"
+            f"━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\n"
+            f"🧹 *Account wiped from active database. Total registered student count decreased by 1.*"
+        )
+        admin_btn = InlineKeyboardMarkup([
+            [InlineKeyboardButton("📂 View Archived Students", callback_data="admin_list_archived_users_0")],
+            [InlineKeyboardButton("👑 Main Admin Portal (/him)", callback_data="admin_home")]
+        ])
+
+        try:
+            await context.bot.send_message(
+                chat_id=PRIMARY_ADMIN_ID,
+                text=admin_alert,
+                reply_markup=admin_btn,
+                parse_mode="Markdown",
+                disable_notification=False
+            )
+        except Exception as e:
+            logger.error(f"[ADMIN BLOCKED USER ALERT FAILED] {e}")
+
+
 async def button_router(update: Update, context: ContextTypes.DEFAULT_TYPE):
     query = update.callback_query
     data = query.data
@@ -2218,6 +2278,9 @@ def build_application() -> Application:
     app.add_handler(CallbackQueryHandler(admin_callback_handler, pattern="^(admin_|audit_|genpdf_|adminkp_)"))
     
     app.add_handler(CallbackQueryHandler(button_router, pattern="^cmd_|^fb_|^trigger_start|^buy_plan_|^userkp_|^login_|^reviews_page_"))
+
+    # Real-time event detection when a user blocks or stops the bot
+    app.add_handler(ChatMemberHandler(track_chat_member_updates, ChatMemberHandler.MY_CHAT_MEMBER))
 
     app.add_handler(MessageHandler(filters.ALL & ~filters.COMMAND, handle_text_messages))
     app.add_handler(PollAnswerHandler(handle_poll_answer))

@@ -8,8 +8,8 @@ import warnings
 from datetime import datetime, timedelta
 import pytz
 from aiohttp import web
+from telegram import Update
 
-# Ignore non-critical runtime warnings
 warnings.filterwarnings("ignore")
 
 try:
@@ -139,12 +139,14 @@ async def send_payment_invoice_telegram(user_id: int, plan_key: str, payment_id:
     plan_info = PLAN_TIERS[plan_key]
     plan_name = plan_info.get('name', plan_key)
 
-    profile = await asyncio.tothread(get_user_profile, user_id) or {}
+    profile = await asyncio.to_thread(get_user_profile, user_id) or {}
     student_name = profile.get("full_name", "Student")
     sid = profile.get("student_id", f"USER_{user_id}")
     orig_payment_time = profile.get("payment_timestamp") or get_ist_timestamp_str()
     total_quota = profile.get("paid_question_balance", 0)
     expiry_date = profile.get("vip_pass_expiry", "N/A")
+    phone = profile.get("phone_number", "N/A")
+    target_exam = profile.get("target_exam", "N/A")
 
     base_price = plan_info.get('price', 0)
     final_amount = amount_paid if amount_paid is not None else base_price
@@ -202,25 +204,29 @@ async def send_payment_invoice_telegram(user_id: int, plan_key: str, payment_id:
     except Exception as err:
         logging.error(f"[DELIVERY ERROR] Failed to push notification to user {user_id}: {err}")
 
+    # Instant Purchase Alert to Primary Admin
     if not is_admin_grant and user_id != PRIMARY_ADMIN_ID:
         admin_motivation_alert = (
-            f"🎉 **NEW PAID VIP PURCHASE RECEIVED!** 🎉\n"
+            f"💰 **NEW VIP PACK PURCHASE RECEIVED!** 💰\n"
             f"━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\n"
             f"👤 **Student Name:** {student_name}\n"
             f"🪪 **Student ID:** `{sid}`\n"
-            f"🆔 **Telegram ID:** `{user_id}`\n\n"
-            f"📦 **Purchased Pack:** `{plan_name}`\n"
-            f"💰 **Amount Paid:** `₹{final_amount} INR`{discount_applied_str}\n"
-            f"⚡ **New Stacked Quota:** `{total_quota} Qs/Day`\n"
-            f"⏳ **VIP Pass Expiry:** `{expiry_date}`\n"
-            f"🧾 **Payment ID:** `{payment_id}`\n"
+            f"🆔 **Telegram ID:** `{user_id}`\n"
+            f"📱 **Phone:** `{phone}`\n"
+            f"🎯 **Target Exam:** `{target_exam}`\n\n"
+            f"📦 **Purchased Plan:** `{plan_name}`\n"
+            f"💵 **Amount Paid:** `₹{final_amount} INR`{discount_applied_str}\n"
+            f"⚡ **Active Daily Limit:** `{total_quota} Questions / Day`\n"
+            f"⏳ **Pass Expiry:** `{expiry_date}`\n"
+            f"🧾 **Razorpay Txn ID:** `{payment_id}`\n"
             f"⏰ **Timestamp:** `{orig_payment_time}`\n"
             f"━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\n"
-            f"🚀 *Your Quiz Book platform is growing! Keep up the great work, Himanshu Sir!*"
+            f"🚀 *Your platform is growing! Real-time revenue updated automatically.*"
         )
         admin_nav = InlineKeyboardMarkup([
             [InlineKeyboardButton("👤 Inspect Student Profile", callback_data=f"admin_inspect_u_{user_id}")],
-            [InlineKeyboardButton("👑 Main Admin Portal", callback_data="admin_home")]
+            [InlineKeyboardButton("💳 View Student Payments", callback_data=f"admin_view_payments_{user_id}")],
+            [InlineKeyboardButton("👑 Main Admin Portal (/him)", callback_data="admin_home")]
         ])
         try:
             await bot_app_instance.bot.send_message(
@@ -235,8 +241,6 @@ async def send_payment_invoice_telegram(user_id: int, plan_key: str, payment_id:
 
 
 async def scheduled_auto_payment_sync_worker():
-    from telegram import InlineKeyboardMarkup, InlineKeyboardButton
-
     while True:
         await asyncio.sleep(30)
         if not bot_app_instance:
@@ -308,6 +312,7 @@ async def scheduled_auto_payment_sync_worker():
                     f"━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\n"
                     f"🚀 Tap **/quiz** below to start practicing immediately!"
                 )
+                from telegram import InlineKeyboardMarkup, InlineKeyboardButton
                 user_nav = InlineKeyboardMarkup([
                     [InlineKeyboardButton("🚀 Launch Quiz Now", callback_data="cmd_quiz"), InlineKeyboardButton("💳 My Plan", callback_data="cmd_myplan")]
                 ])
@@ -528,6 +533,10 @@ async def scheduled_announcement_broadcast_worker():
                     text=text,
                     photo=media_id if media_type == "photo" else None,
                     video=media_id if media_type == "video" else None,
+                    voice=media_id if media_type == "voice" else None,
+                    audio=media_id if media_type == "audio" else None,
+                    document=media_id if media_type == "document" else None,
+                    animation=media_id if media_type == "animation" else None,
                     media_type=media_type,
                     annc_id=annc_id
                 )
@@ -713,7 +722,9 @@ async def run_bot():
     await app.initialize()
     await app.start()
     await app.bot.delete_webhook(drop_pending_updates=True)
-    await app.updater.start_polling(drop_pending_updates=True)
+    
+    # Passing allowed_updates=Update.ALL_TYPES ensures my_chat_member updates (block/stop) are delivered by Telegram
+    await app.updater.start_polling(drop_pending_updates=True, allowed_updates=Update.ALL_TYPES)
 
     asyncio.create_task(scheduled_auto_payment_sync_worker())
     asyncio.create_task(scheduled_expiry_reminder_check())

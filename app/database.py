@@ -395,11 +395,14 @@ def init_db():
         )
     ''')
 
+    # Supports 1 like per unique quiz attempt/session per user; cannot be unliked
     cursor.execute('''
         CREATE TABLE IF NOT EXISTS platform_likes (
             id SERIAL PRIMARY KEY,
-            user_id BIGINT UNIQUE NOT NULL,
-            liked_at TEXT
+            user_id BIGINT NOT NULL,
+            quiz_attempt_id BIGINT,
+            liked_at TEXT,
+            UNIQUE(user_id, quiz_attempt_id)
         )
     ''')
 
@@ -537,29 +540,36 @@ def init_db():
     cursor.close()
     release_db(conn)
 
-def toggle_platform_like(user_id: int) -> tuple[bool, int]:
-    """Toggles platform like for a user and returns (is_now_liked, total_likes_count)."""
+def record_quiz_like(user_id: int, quiz_attempt_id: int = 0) -> tuple[bool, int]:
+    """
+    Records 1 like per unique quiz attempt for a user.
+    Once given, it cannot be removed.
+    Returns (is_newly_liked, total_likes_count).
+    """
     conn = get_db()
     cursor = conn.cursor()
     try:
-        cursor.execute("SELECT 1 FROM platform_likes WHERE user_id = %s", (user_id,))
-        exists = cursor.fetchone()
         now_str = get_ist_timestamp_str()
-        
-        if exists:
-            cursor.execute("DELETE FROM platform_likes WHERE user_id = %s", (user_id,))
-            is_now_liked = False
-        else:
-            cursor.execute("INSERT INTO platform_likes (user_id, liked_at) VALUES (%s, %s) ON CONFLICT (user_id) DO NOTHING", (user_id, now_str))
-            is_now_liked = True
-            
+        cursor.execute(
+            """
+            INSERT INTO platform_likes (user_id, quiz_attempt_id, liked_at)
+            VALUES (%s, %s, %s)
+            ON CONFLICT (user_id, quiz_attempt_id) DO NOTHING
+            RETURNING id;
+            """,
+            (user_id, quiz_attempt_id, now_str)
+        )
+        row = cursor.fetchone()
         conn.commit()
+        
+        is_newly_liked = (row is not None)
+
         cursor.execute("SELECT COUNT(*) FROM platform_likes")
         total_likes = cursor.fetchone()[0]
-        return is_now_liked, total_likes
+        return is_newly_liked, total_likes
     except Exception as e:
         conn.rollback()
-        logger.error(f"[PLATFORM LIKE TOGGLE ERROR] {e}")
+        logger.error(f"[RECORD QUIZ LIKE ERROR] {e}")
         return False, 0
     finally:
         cursor.close()
@@ -864,7 +874,6 @@ def archive_and_wipe_user(user_id: int) -> bool:
         release_db(conn)
 
 def record_blocked_user(user_id: int):
-    """Automatically archives and wipes any user that blocked the bot."""
     archive_and_wipe_user(user_id)
 
 def admin_delete_user_account(user_id: int):
@@ -1129,7 +1138,7 @@ def get_today_attempts(user_id):
     release_db(conn)
     return row['total'] if row and row['total'] else 0
 
-def record_quiz_result(user_id, quiz_id="computer_awareness_mock", score=0.0, total_questions=0, correct_count=0, wrong_count=0, skipped_count=0, time_taken=0, question_details=None, quiz_mode="PRACTICE", mock_number=0, subject=None, selected_topics=None):
+def record_quiz_result(user_id, quiz_id="computer_awareness_mock", score=0.0, total_questions=0, correct_count=0, wrong_count=0, skipped_count=0, time_taken=0, question_details=None, quiz_mode="PRACTICE", mock_number=0, subject=None, selected_topics=None) -> int:
     conn = get_db()
     cursor = conn.cursor()
     today_date = get_ist_date_str()
@@ -1140,11 +1149,15 @@ def record_quiz_result(user_id, quiz_id="computer_awareness_mock", score=0.0, to
     cursor.execute('''
         INSERT INTO quiz_attempts (user_id, quiz_id, quiz_mode, mock_number, subject, selected_topics, questions_attempted, total_questions, correct_answers, wrong_answers, skipped_count, score, time_taken, attempt_timestamp, attempt_date, details_json)
         VALUES (%s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s)
+        RETURNING id;
     ''', (user_id, quiz_id, quiz_mode, mock_number, subject, topics_str, total_questions, total_questions, correct_count, wrong_count, skipped_count, score, time_taken, timestamp_str, today_date, details_str))
+    res = cursor.fetchone()
+    attempt_id = res[0] if res else 0
     conn.commit()
     cursor.close()
     release_db(conn)
     sync_user_json_profile(user_id)
+    return attempt_id
 
 def get_seen_question_ids(user_id):
     conn = get_db()

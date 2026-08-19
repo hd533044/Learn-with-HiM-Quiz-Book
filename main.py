@@ -204,7 +204,6 @@ async def send_payment_invoice_telegram(user_id: int, plan_key: str, payment_id:
     except Exception as err:
         logging.error(f"[DELIVERY ERROR] Failed to push notification to user {user_id}: {err}")
 
-    # Instant Purchase Alert to Primary Admin
     if not is_admin_grant and user_id != PRIMARY_ADMIN_ID:
         admin_motivation_alert = (
             f"💰 **NEW VIP PACK PURCHASE RECEIVED!** 💰\n"
@@ -722,8 +721,6 @@ async def run_bot():
     await app.initialize()
     await app.start()
     await app.bot.delete_webhook(drop_pending_updates=True)
-    
-    # Passing allowed_updates=Update.ALL_TYPES ensures my_chat_member updates (block/stop) are delivered by Telegram
     await app.updater.start_polling(drop_pending_updates=True, allowed_updates=Update.ALL_TYPES)
 
     asyncio.create_task(scheduled_auto_payment_sync_worker())

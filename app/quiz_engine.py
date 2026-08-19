@@ -1063,6 +1063,24 @@ async def finish_quiz_and_send_report(chat_id: int, user_id: int, context: Conte
     quiz_mode = session.get("quiz_mode", "PRACTICE")
     title = f"{quiz_mode.replace('_', ' ').title()} #{session.get('mock_number', 0)}" if quiz_mode != "PRACTICE" else session.get('topic_name', 'Quiz')
 
+    # Save attempt synchronously to get unique attempt_id for 1-like-per-quiz rule
+    attempt_id = await asyncio.to_thread(
+        record_quiz_result,
+        user_id=user_id,
+        quiz_id=session.get("topic", "mixed"),
+        score=score,
+        total_questions=total,
+        correct_count=correct,
+        wrong_count=wrong,
+        skipped_count=skipped,
+        time_taken=0,
+        question_details=detailed_logs,
+        quiz_mode=quiz_mode,
+        mock_number=session.get("mock_number", 0),
+        subject=session.get("subject", "computer"),
+        selected_topics=session.get("selected_topics")
+    )
+
     current_acc = round((correct / total) * 100.0, 2) if total > 0 else 0.0
 
     rank = await asyncio.to_thread(calculate_user_rank, user_id)
@@ -1094,13 +1112,13 @@ async def finish_quiz_and_send_report(chat_id: int, user_id: int, context: Conte
         f"• **Overall Percentile:** `{percentile}%` 📊 *(Normalized across all peers)*\n"
         f"━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\n"
         f"❤️ **Community Feedback & Engagement:**\n"
-        f"• Did you like this quiz? Tap **❤️ Like ({total_likes})** below!\n"
-        f"• Share your experience & motivation via **💬 Post a Comment**."
+        f"• Tap **❤️ Like ({total_likes})** below to support this quiz!\n"
+        f"• Share tips & feedback via **💬 Post a Comment**."
     )
 
     end_quiz_buttons = [
         [
-            InlineKeyboardButton(f"❤️ Like ({total_likes})", callback_data="cmd_like_platform"),
+            InlineKeyboardButton(f"❤️ Like ({total_likes})", callback_data=f"cmd_like_quiz_{attempt_id}"),
             InlineKeyboardButton("💬 Post a Comment", callback_data="comm_add_prompt")
         ],
         [
@@ -1135,23 +1153,6 @@ async def finish_quiz_and_send_report(chat_id: int, user_id: int, context: Conte
         reply_markup=InlineKeyboardMarkup(end_quiz_buttons), 
         parse_mode="Markdown"
     )
-
-    asyncio.create_task(asyncio.to_thread(
-        record_quiz_result,
-        user_id=user_id,
-        quiz_id=session.get("topic", "mixed"),
-        score=score,
-        total_questions=total,
-        correct_count=correct,
-        wrong_count=wrong,
-        skipped_count=skipped,
-        time_taken=0,
-        question_details=detailed_logs,
-        quiz_mode=quiz_mode,
-        mock_number=session.get("mock_number", 0),
-        subject=session.get("subject", "computer"),
-        selected_topics=session.get("selected_topics")
-    ))
 
 async def quiz_extended_router(update: Update, context: ContextTypes.DEFAULT_TYPE):
     """Central Router for all quiz modes."""

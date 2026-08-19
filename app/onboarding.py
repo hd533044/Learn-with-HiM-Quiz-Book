@@ -4,10 +4,7 @@ import warnings
 import calendar
 import time
 from datetime import datetime
-from telegram import (
-    Update, InlineKeyboardMarkup, InlineKeyboardButton, 
-    ReplyKeyboardMarkup, KeyboardButton, ReplyKeyboardRemove
-)
+from telegram import Update, InlineKeyboardMarkup, InlineKeyboardButton, ReplyKeyboardMarkup, KeyboardButton, ReplyKeyboardRemove
 from telegram.warnings import PTBUserWarning
 from telegram.ext import (
     ConversationHandler, 
@@ -724,7 +721,8 @@ async def reset_pin_step(update: Update, context: ContextTypes.DEFAULT_TYPE):
 
     unlocked_menu_btn = InlineKeyboardMarkup([
         [InlineKeyboardButton("🚀 Launch Quiz Now", callback_data="cmd_quiz"), InlineKeyboardButton("👤 My Profile", callback_data="cmd_profile")],
-        [InlineKeyboardButton("💬 Community Feed", callback_data="cmd_community"), InlineKeyboardButton("💳 My Plan", callback_data="cmd_myplan")]
+        [InlineKeyboardButton("💬 Community Feed", callback_data="cmd_community"), InlineKeyboardButton("💳 My Plan", callback_data="cmd_myplan")],
+        [InlineKeyboardButton("❓ Help & Support", callback_data="cmd_help")]
     ])
 
     await update.message.reply_text(

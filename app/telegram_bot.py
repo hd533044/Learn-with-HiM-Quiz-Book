@@ -484,7 +484,7 @@ async def admininfo_command(update: Update, context: ContextTypes.DEFAULT_TYPE):
         "📲 **Join Our Community:**\n"
         "🔹 **Telegram:** https://t.me/learnwithhim\n"
         "🔹 **Instagram:** https://instagram.com/learnwithhimm\n"
-        "🔹 **YouTube:** https://youtube.com/learnwithhim\n"
+        "🔹 **YouTube:** https://youtube.com/@learnwithhim\n"
         "🔹 **WhatsApp Channel:** https://whatsapp.com/channel/0029Vb8KetR3LdQbsQTxrG3e\n\n"
         "💬 **Have a query?**\n"
         "👉 Click **/askadmin** to ask your question!\n\n"

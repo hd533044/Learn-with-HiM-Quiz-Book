@@ -5,6 +5,7 @@ import os
 import urllib.request
 import base64
 import asyncio
+import math
 from datetime import datetime, timedelta
 import pytz
 from telegram import (
@@ -24,6 +25,7 @@ from app.config import (
 from app.database import (
     init_db, get_maintenance_until, get_user_profile, 
     get_all_users, get_today_attempts, save_student_feedback, get_all_student_feedbacks,
+    get_student_feedbacks_count, get_paginated_student_feedbacks,
     clear_paused_quiz_state, get_saved_questions, log_user_activity_time,
     check_and_update_inactivity, refresh_user_activity_epoch, get_db, release_db,
     get_seen_question_ids, admin_update_user_name, get_ist_date_str,
@@ -56,6 +58,7 @@ NEGATIVE_WORDS = ["bad", "worst", "useless", "trash", "fake", "hate", "terrible"
 
 PROFILE_CACHE = {}
 CACHE_TTL = 30 
+FEEDBACKS_PER_PAGE = 5
 
 ANNC_CONTENT, ANNC_DATETIME = range(104, 106)
 
@@ -441,10 +444,12 @@ async def askadmin_command(update: Update, context: ContextTypes.DEFAULT_TYPE):
 
     context.user_data["awaiting_user_query"] = True
     msg = (
-        "💬 **SECRET COMMUNICATION WITH HIMANSHU SIR** 💬\n"
+        "💬 **DIRECT COMMUNICATION WITH HIMANSHU SIR** 💬\n"
         "━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\n"
-        "Please reply with your question or **upload an Image/Photo** below.\n\n"
-        "🔒 Your message will be sent directly to Himanshu Sir's Admin Dashboard."
+        "Please send your question or query below:\n\n"
+        "🎙️ **Record & Send a Voice Note** *(Describe your problem in voice!)*\n"
+        "📝 **Text Message / Photo / Video / Audio / PDF**\n\n"
+        "🔒 Your query will be delivered directly to Himanshu Sir's Admin Dashboard."
     )
     if update.callback_query:
         await update.callback_query.answer()
@@ -477,10 +482,10 @@ async def admininfo_command(update: Update, context: ContextTypes.DEFAULT_TYPE):
         "✅ **DDA JSA** — 1×\n\n"
         "🎯 **His goal:** Give students relevant, to-the-point & exam-focused content — nothing unnecessary! 💯\n\n"
         "📲 **Join Our Community:**\n"
-        "🔹 **Telegram:** [t.me/learnwithhim](https://t.me/learnwithhim)\n"
-        "🔹 **Instagram:** [instagram.com/learnwithhimm](https://instagram.com/learnwithhimm)\n"
-        "🔹 **YouTube:** [youtube.com/learnwithhim](https://youtube.com/learnwithhim)\n"
-        "🔹 **WhatsApp Channel:** [whatsapp.com/channel/0029Vb8KetR3LdQbsQTxrG3e](https://whatsapp.com/channel/0029Vb8KetR3LdQbsQTxrG3e)\n\n"
+        "🔹 **Telegram:** https://t.me/learnwithhim\n"
+        "🔹 **Instagram:** https://instagram.com/learnwithhimm\n"
+        "🔹 **YouTube:** https://youtube.com/learnwithhim\n"
+        "🔹 **WhatsApp Channel:** https://whatsapp.com/channel/0029Vb8KetR3LdQbsQTxrG3e\n\n"
         "💬 **Have a query?**\n"
         "👉 Click **/askadmin** to ask your question!\n\n"
         "❤️ **Study Smart • Revise Fast • Score Better** 🚀"
@@ -1025,7 +1030,7 @@ async def help_command(update: Update, context: ContextTypes.DEFAULT_TYPE):
         "• **/quiz** — 🚀 Launch Computer Quiz\n"
         "• **/myplan** — 💵 Subscription Status & Packs Breakdown\n"
         "• **/plans** — 💳 VIP Payment Plans & Pricing\n"
-        "• **/askadmin** — 💬 Secret Communication with Himanshu Sir\n"
+        "• **/askadmin** — 💬 Direct Communication with Himanshu Sir\n"
         "• **/admininfo** — 👨‍🏫 About Himanshu Sir & Community Links\n"
         "• **/pdfreport** — 📄 Export Custom Academic PDF Reports\n"
         "• **/wrongquestions** — ❌ View Today's Wrong Questions Log\n"
@@ -1243,6 +1248,50 @@ async def feedback_command(update: Update, context: ContextTypes.DEFAULT_TYPE):
     await send_response(update, msg, reply_markup=InlineKeyboardMarkup(keyboard))
 
 
+async def render_reviews_page(update: Update, context: ContextTypes.DEFAULT_TYPE, page: int = 0):
+    total_count = await asyncio.to_thread(get_student_feedbacks_count)
+    if total_count == 0:
+        msg = "📖 **STUDENT REVIEWS & FEEDBACK BOARD** 📖\n━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\n\nNo student reviews submitted yet. Be the first to leave feedback using /feedback!"
+        btn = InlineKeyboardMarkup([[InlineKeyboardButton("💬 Submit Feedback", callback_data="cmd_feedback")]])
+        await send_response(update, msg, reply_markup=btn)
+        return
+
+    total_pages = max(1, math.ceil(total_count / FEEDBACKS_PER_PAGE))
+    page = max(0, min(page, total_pages - 1))
+
+    feedbacks = await asyncio.to_thread(get_paginated_student_feedbacks, page, FEEDBACKS_PER_PAGE)
+
+    lines = [
+        f"📖 **STUDENT REVIEWS & FEEDBACK BOARD** 📖",
+        f"━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━",
+        f"🌟 **Total Student Reviews:** `{total_count}`",
+        f"📄 **Page:** `{page + 1}` of `{total_pages}`\n"
+    ]
+
+    start_idx = page * FEEDBACKS_PER_PAGE + 1
+    for idx, fb in enumerate(feedbacks, start=start_idx):
+        dt_str = fb.get('submitted_at', 'N/A')
+        lines.append(f"**{idx}. {fb['full_name']}** `[{dt_str}]`:\n 💬 *\"{fb['feedback_text']}\"*\n")
+
+    keyboard = []
+    nav_row = []
+    if page > 0:
+        nav_row.append(InlineKeyboardButton("◀️ Prev", callback_data=f"reviews_page_{page - 1}"))
+    nav_row.append(InlineKeyboardButton(f"📄 {page + 1}/{total_pages}", callback_data="ignore"))
+    if page < total_pages - 1:
+        nav_row.append(InlineKeyboardButton("Next ▶️", callback_data=f"reviews_page_{page + 1}"))
+    
+    if nav_row:
+        keyboard.append(nav_row)
+
+    keyboard.append([
+        InlineKeyboardButton("💬 Submit Review", callback_data="cmd_feedback"),
+        InlineKeyboardButton("🚀 Launch Quiz", callback_data="cmd_quiz")
+    ])
+
+    await send_response(update, "\n".join(lines), reply_markup=InlineKeyboardMarkup(keyboard))
+
+
 async def viewfeedbacks_command(update: Update, context: ContextTypes.DEFAULT_TYPE):
     if not await maintenance_guard(update, context): return
     if not await check_user_registration(update): return
@@ -1250,18 +1299,7 @@ async def viewfeedbacks_command(update: Update, context: ContextTypes.DEFAULT_TY
     user = update.effective_user
     asyncio.create_task(asyncio.to_thread(log_command_usage, user.id, "/reviews"))
     asyncio.create_task(asyncio.to_thread(log_user_activity_time, user.id, 10))
-    feedbacks = await asyncio.to_thread(get_all_student_feedbacks, 15)
-
-    if not feedbacks:
-        await send_response(update, "📖 No student reviews submitted yet. Be the first to leave feedback using /feedback!")
-        return
-
-    lines = ["📖 **STUDENT REVIEWS & FEEDBACK BOARD** 📖\n━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\n"]
-    for idx, fb in enumerate(feedbacks, start=1):
-        dt_str = fb.get('submitted_at', 'N/A')
-        lines.append(f"**{idx}. {fb['full_name']}** `[{dt_str}]`:\n 💬 *\"{fb['feedback_text']}\"*\n")
-
-    await send_response(update, "\n".join(lines))
+    await render_reviews_page(update, context, page=0)
 
 
 async def referral_command(update: Update, context: ContextTypes.DEFAULT_TYPE):
@@ -1298,7 +1336,7 @@ async def start_announcement_schedule(update: Update, context: ContextTypes.DEFA
 
     await query.edit_message_text(
         "📢 **SCHEDULED ANNOUNCEMENT SYSTEM**\n\n"
-        "Send the Announcement Post now (Text, Photo, or Video with Caption):"
+        "Send the Announcement Post now (Text, Photo, Video, Audio, or Voice with Caption):"
     )
     return ANNC_CONTENT
 
@@ -1312,6 +1350,22 @@ async def receive_announcement_content(update: Update, context: ContextTypes.DEF
     elif msg.video:
         context.user_data['annc_media_id'] = msg.video.file_id
         context.user_data['annc_media_type'] = "video"
+        context.user_data['annc_text'] = msg.caption or ""
+    elif msg.voice:
+        context.user_data['annc_media_id'] = msg.voice.file_id
+        context.user_data['annc_media_type'] = "voice"
+        context.user_data['annc_text'] = msg.caption or ""
+    elif msg.audio:
+        context.user_data['annc_media_id'] = msg.audio.file_id
+        context.user_data['annc_media_type'] = "audio"
+        context.user_data['annc_text'] = msg.caption or ""
+    elif msg.document:
+        context.user_data['annc_media_id'] = msg.document.file_id
+        context.user_data['annc_media_type'] = "document"
+        context.user_data['annc_text'] = msg.caption or ""
+    elif msg.animation:
+        context.user_data['annc_media_id'] = msg.animation.file_id
+        context.user_data['annc_media_type'] = "animation"
         context.user_data['annc_text'] = msg.caption or ""
     else:
         context.user_data['annc_media_id'] = None
@@ -1386,6 +1440,12 @@ async def button_router(update: Update, context: ContextTypes.DEFAULT_TYPE):
     query = update.callback_query
     data = query.data
     user = query.from_user
+
+    if data.startswith("reviews_page_"):
+        await query.answer()
+        page_no = int(data.replace("reviews_page_", ""))
+        await render_reviews_page(update, context, page=page_no)
+        return
 
     if data.startswith("userkp_"):
         current_pin = context.user_data.get("user_keypad_pin", "")
@@ -1525,7 +1585,7 @@ async def button_router(update: Update, context: ContextTypes.DEFAULT_TYPE):
     elif data == "cmd_feedback":
         await feedback_command(update, context)
     elif data == "cmd_viewfeedbacks":
-        await viewfeedbacks_command(update, context)
+        await render_reviews_page(update, context, page=0)
     elif data.startswith("fb_p"):
         presets = {
             "fb_p1": "10/10 Quality Quizzes!",
@@ -1542,53 +1602,21 @@ async def button_router(update: Update, context: ContextTypes.DEFAULT_TYPE):
         context.user_data["awaiting_custom_feedback"] = True
         await query.edit_message_text("✍️ Please reply with your custom feedback below:")
 
-    # TARGETED BROADCAST ROUTING
-    elif data == "admin_broadcast":
-        await query.answer()
-        keyboard = [
-            [InlineKeyboardButton("📢 All Registered Users", callback_data="admin_bc_target_all")],
-            [InlineKeyboardButton("🟢 Active Paid VIP Only", callback_data="admin_bc_target_paid")],
-            [InlineKeyboardButton("🔴 Expired Paid Passes Only", callback_data="admin_bc_target_expiredpaid")],
-            [InlineKeyboardButton("🎁 Active Free Demo Only", callback_data="admin_bc_target_activedemo")],
-            [InlineKeyboardButton("⚠️ Expired Free Demo Only", callback_data="admin_bc_target_expireddemo")],
-            [InlineKeyboardButton("🔙 Cancel & Return", callback_data="admin_menu_comms")]
-        ]
-        msg = (
-            "📢 **TARGETED BROADCAST CENTER**\n"
-            "━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\n"
-            "Who do you want to send this message to?\n"
-            "Select your target audience below:"
-        )
-        await query.edit_message_text(msg, reply_markup=InlineKeyboardMarkup(keyboard), parse_mode="Markdown")
-        return
-        
-    elif data.startswith("admin_bc_target_"):
-        await query.answer()
-        target_type = data.replace("admin_bc_target_", "")
-        context.user_data["awaiting_broadcast"] = True
-        context.user_data["awaiting_broadcast_type"] = target_type
-        
-        labels = {
-            "all": "ALL REGISTERED USERS",
-            "paid": "ACTIVE PAID VIP USERS",
-            "expiredpaid": "EXPIRED PAID USERS",
-            "activedemo": "ACTIVE FREE DEMO USERS",
-            "expireddemo": "EXPIRED FREE DEMO USERS"
-        }
-        lbl = labels.get(target_type, "ALL USERS")
-        
-        cancel_btn = InlineKeyboardMarkup([[InlineKeyboardButton("❌ Cancel Broadcast & Return", callback_data="admin_menu_comms")]])
-        await query.edit_message_text(f"📢 **BROADCAST TO: {lbl}**\n\nSend the message text, photo, or video you wish to broadcast:", reply_markup=cancel_btn, parse_mode="Markdown")
-        return
-
 
 async def handle_text_messages(update: Update, context: ContextTypes.DEFAULT_TYPE):
     user = update.effective_user
     msg_obj = update.message
-    text = msg_obj.text.strip() if msg_obj and msg_obj.text else ""
-    photo = msg_obj.photo[-1] if msg_obj and msg_obj.photo else None
-    caption = msg_obj.caption.strip() if msg_obj and msg_obj.caption else ""
-    video = msg_obj.video if msg_obj and msg_obj.video else None
+    if not msg_obj:
+        return
+
+    text = msg_obj.text.strip() if msg_obj.text else ""
+    photo = msg_obj.photo[-1] if msg_obj.photo else None
+    video = msg_obj.video if msg_obj.video else None
+    voice = msg_obj.voice if msg_obj.voice else None
+    audio = msg_obj.audio if msg_obj.audio else None
+    doc = msg_obj.document if msg_obj.document else None
+    anim = msg_obj.animation if msg_obj.animation else None
+    caption = msg_obj.caption.strip() if msg_obj.caption else ""
 
     if user.id == PRIMARY_ADMIN_ID and context.user_data.get("awaiting_admin_password"):
         context.user_data["awaiting_admin_password"] = False
@@ -1686,9 +1714,9 @@ async def handle_text_messages(update: Update, context: ContextTypes.DEFAULT_TYP
 
     if user.id == PRIMARY_ADMIN_ID and context.user_data.get("awaiting_edit_annc_content"):
         annc_id = context.user_data.pop("awaiting_edit_annc_content")
-        new_text = caption if (photo or video) else text
-        media_id = photo.file_id if photo else (video.file_id if video else None)
-        media_type = "photo" if photo else ("video" if video else "text")
+        new_text = caption if (photo or video or voice or audio or doc or anim) else text
+        media_id = photo.file_id if photo else (video.file_id if video else (voice.file_id if voice else (audio.file_id if audio else (doc.file_id if doc else (anim.file_id if anim else None)))))
+        media_type = "photo" if photo else ("video" if video else ("voice" if voice else ("audio" if audio else ("document" if doc else ("animation" if anim else "text")))))
 
         success = await asyncio.to_thread(update_announcement_content, annc_id, new_text, media_id, media_type)
         if success:
@@ -1754,70 +1782,31 @@ async def handle_text_messages(update: Update, context: ContextTypes.DEFAULT_TYP
         await update.message.reply_text(f"✅ **LIVE EDIT COMPLETE! Successfully updated in {updated_count}/{len(deliveries)} users' chats.**", reply_markup=nav, parse_mode="Markdown")
         return
 
-    if user.id == PRIMARY_ADMIN_ID and context.user_data.get("awaiting_admin_rec_dob"):
-        context.user_data["awaiting_admin_rec_dob"] = False
-        if text.replace("-", "").replace("/", "") == "09081999":
-            context.user_data["awaiting_admin_rec_email"] = True
-            await update.message.reply_text(
-                "✅ **DOB VERIFIED! (STEP 2/2)**\n"
-                "━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\n"
-                "Please reply with Himanshu Sir's recovery Email Address:",
-                parse_mode="Markdown"
-            )
-        else:
-            await update.message.reply_text("❌ **INCORRECT DOB!** Recovery attempt failed.", parse_mode="Markdown")
-        return
-
-    if user.id == PRIMARY_ADMIN_ID and context.user_data.get("awaiting_admin_rec_email"):
-        context.user_data["awaiting_admin_rec_email"] = False
-        if text.lower() == "hd533044@gmail.com":
-            context.user_data["awaiting_admin_new_pass"] = True
-            await update.message.reply_text(
-                "🎉 **RECOVERY CREDENTIALS VERIFIED!** 🎉\n"
-                "━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\n"
-                "Please reply with your new Master Admin PIN now:",
-                parse_mode="Markdown"
-            )
-        else:
-            await update.message.reply_text("❌ **INCORRECT RECOVERY EMAIL!** Recovery attempt failed.", parse_mode="Markdown")
-        return
-
-    if user.id == PRIMARY_ADMIN_ID and context.user_data.get("awaiting_admin_new_pass"):
-        context.user_data["awaiting_admin_new_pass"] = False
-        if len(text) < 4:
-            await update.message.reply_text("⚠️ PIN must be at least 4 characters long.")
-            return
-
-        success = update_admin_password_db(text)
-        if success:
-            ADMIN_AUTH_SESSIONS[user.id] = time.time()
-            await update.message.reply_text(
-                f"🎉 **ADMIN MASTER PIN CHANGED & SAVED IN DATABASE!** 🎉\n"
-                f"━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\n"
-                f"🔑 **New Master PIN:** `{text}`\n"
-                f"✨ Admin session authenticated for 30 minutes.",
-                reply_markup=get_admin_nav_buttons(),
-                parse_mode="Markdown"
-            )
-        else:
-            await update.message.reply_text("⚠️ Error saving new PIN in database. Please try again.")
-        return
-
     if user.id == PRIMARY_ADMIN_ID and context.user_data.get("awaiting_admin_warning_msg_uid"):
         target_student_id = context.user_data.pop("awaiting_admin_warning_msg_uid")
         warning_notice = (
             f"⚠️ **OFFICIAL ADMINISTRATIVE WARNING** ⚠️\n"
             f"━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\n"
             f"Dear Student, an official warning has been issued to your account by Himanshu Sir.\n\n"
-            f"📝 **Reason / Message:**\n`{text or caption}`\n"
+            f"📝 **Message / Notice:**\n`{text or caption or '[Media Attached]'}`\n"
             f"⏰ **Timestamp:** `{datetime.now(pytz.timezone('Asia/Kolkata')).strftime('%d %b %Y, %I:%M %p IST')}`\n"
             f"━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\n"
             f"Please ensure full compliance with platform rules to prevent account suspension."
         )
         try:
             btn = InlineKeyboardMarkup([[InlineKeyboardButton("🚀 Return to Quiz Practice", callback_data="cmd_quiz")]])
-            if photo:
+            if voice:
+                await context.bot.send_voice(chat_id=target_student_id, voice=voice.file_id, caption=warning_notice, reply_markup=btn, parse_mode="Markdown", disable_notification=False)
+            elif photo:
                 await context.bot.send_photo(chat_id=target_student_id, photo=photo.file_id, caption=warning_notice, reply_markup=btn, parse_mode="Markdown", disable_notification=False)
+            elif video:
+                await context.bot.send_video(chat_id=target_student_id, video=video.file_id, caption=warning_notice, reply_markup=btn, parse_mode="Markdown", disable_notification=False)
+            elif audio:
+                await context.bot.send_audio(chat_id=target_student_id, audio=audio.file_id, caption=warning_notice, reply_markup=btn, parse_mode="Markdown", disable_notification=False)
+            elif doc:
+                await context.bot.send_document(chat_id=target_student_id, document=doc.file_id, caption=warning_notice, reply_markup=btn, parse_mode="Markdown", disable_notification=False)
+            elif anim:
+                await context.bot.send_animation(chat_id=target_student_id, animation=anim.file_id, caption=warning_notice, reply_markup=btn, parse_mode="Markdown", disable_notification=False)
             else:
                 await context.bot.send_message(chat_id=target_student_id, text=warning_notice, reply_markup=btn, parse_mode="Markdown", disable_notification=False)
             
@@ -1826,10 +1815,11 @@ async def handle_text_messages(update: Update, context: ContextTypes.DEFAULT_TYP
             await update.message.reply_text(f"❌ **Failed to deliver warning message:** {e}", reply_markup=get_admin_nav_buttons(target_student_id), parse_mode="Markdown")
         return
 
+    # Direct Message From Admin (Supports Voice / Video / Audio / PDF / GIF / Photo / Text)
     if user.id == PRIMARY_ADMIN_ID and context.user_data.get("awaiting_admin_direct_msg_uid"):
         target_student_id = context.user_data.pop("awaiting_admin_direct_msg_uid")
-        outbound_text = text or caption
-        outbound_msg = (
+        outbound_text = text or caption or ""
+        header_text = (
             f"📩 **OFFICIAL MESSAGE FROM HIMANSHU SIR / ADMIN**\n"
             f"━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\n"
             f"{outbound_text}\n"
@@ -1838,22 +1828,33 @@ async def handle_text_messages(update: Update, context: ContextTypes.DEFAULT_TYP
         )
         try:
             btn = InlineKeyboardMarkup([[InlineKeyboardButton("💬 Reply Back to Admin", callback_data="cmd_askadmin")]])
-            if photo:
-                await context.bot.send_photo(chat_id=target_student_id, photo=photo.file_id, caption=outbound_msg, reply_markup=btn, parse_mode="Markdown", disable_notification=False)
+            if voice:
+                await context.bot.send_voice(chat_id=target_student_id, voice=voice.file_id, caption=header_text, reply_markup=btn, parse_mode="Markdown", disable_notification=False)
+            elif video:
+                await context.bot.send_video(chat_id=target_student_id, video=video.file_id, caption=header_text, reply_markup=btn, parse_mode="Markdown", disable_notification=False)
+            elif audio:
+                await context.bot.send_audio(chat_id=target_student_id, audio=audio.file_id, caption=header_text, reply_markup=btn, parse_mode="Markdown", disable_notification=False)
+            elif doc:
+                await context.bot.send_document(chat_id=target_student_id, document=doc.file_id, caption=header_text, reply_markup=btn, parse_mode="Markdown", disable_notification=False)
+            elif anim:
+                await context.bot.send_animation(chat_id=target_student_id, animation=anim.file_id, caption=header_text, reply_markup=btn, parse_mode="Markdown", disable_notification=False)
+            elif photo:
+                await context.bot.send_photo(chat_id=target_student_id, photo=photo.file_id, caption=header_text, reply_markup=btn, parse_mode="Markdown", disable_notification=False)
             else:
-                await context.bot.send_message(chat_id=target_student_id, text=outbound_msg, reply_markup=btn, parse_mode="Markdown", disable_notification=False)
+                await context.bot.send_message(chat_id=target_student_id, text=header_text, reply_markup=btn, parse_mode="Markdown", disable_notification=False)
             
             await update.message.reply_text(f"✅ **Direct Message successfully sent to Student (`{target_student_id}`)!**", reply_markup=get_admin_nav_buttons(target_student_id), parse_mode="Markdown")
         except Exception as e:
             await update.message.reply_text(f"❌ **Failed to deliver direct message:** {e}", reply_markup=get_admin_nav_buttons(target_student_id), parse_mode="Markdown")
         return
 
+    # Admin Secret Reply to Query (Supports Voice / Video / Audio / PDF / GIF / Photo / Text)
     if user.id == PRIMARY_ADMIN_ID and context.user_data.get("awaiting_admin_reply_qid"):
         qid = context.user_data.pop("awaiting_admin_reply_qid")
         ist = pytz.timezone("Asia/Kolkata")
         now_str = datetime.now(ist).strftime("%Y-%m-%d %I:%M %p IST")
 
-        reply_content = text or caption or "[Photo Attachment]"
+        reply_content = text or caption or ("[Voice Note]" if voice else ("[Audio]" if audio else ("[Video]" if video else ("[Document]" if doc else ("[Animation]" if anim else "[Photo Attachment]")))))
 
         conn = get_db()
         cursor = conn.cursor(cursor_factory=RealDictCursor)
@@ -1871,14 +1872,24 @@ async def handle_text_messages(update: Update, context: ContextTypes.DEFAULT_TYP
             user_msg = (
                 f"💬 **SECRET RESPONSE FROM HIMANSHU SIR!** 💬\n"
                 f"━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\n"
-                f"❓ **Your Question:**\n*\"{row['query_text'] or 'Image Query'}\"*\n\n"
+                f"❓ **Your Question:**\n*\"{row['query_text'] or 'Media Query'}\"*\n\n"
                 f"👨‍🏫 **Himanshu Sir's Reply:**\n`{reply_content}`\n"
                 f"━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\n"
                 f"🔒 *Confidential communication between you and Admin.*"
             )
             try:
                 btn = InlineKeyboardMarkup([[InlineKeyboardButton("💬 Reply Back to Admin", callback_data="cmd_askadmin")]])
-                if photo:
+                if voice:
+                    await context.bot.send_voice(chat_id=student_uid, voice=voice.file_id, caption=user_msg, reply_markup=btn, parse_mode="Markdown", disable_notification=False)
+                elif video:
+                    await context.bot.send_video(chat_id=student_uid, video=video.file_id, caption=user_msg, reply_markup=btn, parse_mode="Markdown", disable_notification=False)
+                elif audio:
+                    await context.bot.send_audio(chat_id=student_uid, audio=audio.file_id, caption=user_msg, reply_markup=btn, parse_mode="Markdown", disable_notification=False)
+                elif doc:
+                    await context.bot.send_document(chat_id=student_uid, document=doc.file_id, caption=user_msg, reply_markup=btn, parse_mode="Markdown", disable_notification=False)
+                elif anim:
+                    await context.bot.send_animation(chat_id=student_uid, animation=anim.file_id, caption=user_msg, reply_markup=btn, parse_mode="Markdown", disable_notification=False)
+                elif photo:
                     await context.bot.send_photo(chat_id=student_uid, photo=photo.file_id, caption=user_msg, reply_markup=btn, parse_mode="Markdown", disable_notification=False)
                 else:
                     await context.bot.send_message(chat_id=student_uid, text=user_msg, reply_markup=btn, parse_mode="Markdown", disable_notification=False)
@@ -1888,6 +1899,7 @@ async def handle_text_messages(update: Update, context: ContextTypes.DEFAULT_TYP
                 await update.message.reply_text(f"⚠️ Reply saved, but failed sending message to user: {e}", reply_markup=get_admin_nav_buttons(student_uid), parse_mode="Markdown")
         return
 
+    # Student Sending Query (Supports Voice Notes / Photos / Videos / Audio / Documents / Text)
     if context.user_data.get("awaiting_user_query"):
         context.user_data["awaiting_user_query"] = False
         ist = pytz.timezone("Asia/Kolkata")
@@ -1895,14 +1907,25 @@ async def handle_text_messages(update: Update, context: ContextTypes.DEFAULT_TYP
         profile = get_user_profile(user.id) or {}
         name = profile.get("full_name", user.full_name)
 
-        query_text_val = text or caption or "Attached Photo Query"
+        query_text_val = text or caption or ("🎙️ [Voice Note Query]" if voice else ("📷 [Photo Query]" if photo else ("🎬 [Video Query]" if video else ("🎵 [Audio Query]" if audio else ("📄 [Document Query]" if doc else "Media Query")))))
+        
         photo_fid = photo.file_id if photo else None
+        voice_fid = voice.file_id if voice else None
+        video_fid = video.file_id if video else None
+        audio_fid = audio.file_id if audio else None
+        doc_fid = doc.file_id if doc else None
+        
+        media_type = "voice" if voice else ("photo" if photo else ("video" if video else ("audio" if audio else ("document" if doc else "text"))))
 
         conn = get_db()
         cursor = conn.cursor()
         cursor.execute(
-            "INSERT INTO student_queries (user_id, student_name, query_text, photo_file_id, created_at) VALUES (%s, %s, %s, %s, %s)",
-            (user.id, name, query_text_val, photo_fid, now_str)
+            """
+            INSERT INTO student_queries 
+            (user_id, student_name, query_text, photo_file_id, voice_file_id, video_file_id, audio_file_id, doc_file_id, media_type, created_at) 
+            VALUES (%s, %s, %s, %s, %s, %s, %s, %s, %s, %s)
+            """,
+            (user.id, name, query_text_val, photo_fid, voice_fid, video_fid, audio_fid, doc_fid, media_type, now_str)
         )
         conn.commit()
         cursor.close()
@@ -1916,8 +1939,17 @@ async def handle_text_messages(update: Update, context: ContextTypes.DEFAULT_TYP
                 f"Type /him or tap Student Support Threads to inspect and reply."
             )
             btn = InlineKeyboardMarkup([[InlineKeyboardButton("📩 Inspect Support Threads", callback_data="admin_view_student_threads_0")]])
-            if photo_fid:
+            
+            if voice_fid:
+                await context.bot.send_voice(chat_id=PRIMARY_ADMIN_ID, voice=voice_fid, caption=admin_notice, reply_markup=btn, parse_mode="Markdown", disable_notification=False)
+            elif photo_fid:
                 await context.bot.send_photo(chat_id=PRIMARY_ADMIN_ID, photo=photo_fid, caption=admin_notice, reply_markup=btn, parse_mode="Markdown", disable_notification=False)
+            elif video_fid:
+                await context.bot.send_video(chat_id=PRIMARY_ADMIN_ID, video=video_fid, caption=admin_notice, reply_markup=btn, parse_mode="Markdown", disable_notification=False)
+            elif audio_fid:
+                await context.bot.send_audio(chat_id=PRIMARY_ADMIN_ID, audio=audio_fid, caption=admin_notice, reply_markup=btn, parse_mode="Markdown", disable_notification=False)
+            elif doc_fid:
+                await context.bot.send_document(chat_id=PRIMARY_ADMIN_ID, document=doc_fid, caption=admin_notice, reply_markup=btn, parse_mode="Markdown", disable_notification=False)
             else:
                 await context.bot.send_message(chat_id=PRIMARY_ADMIN_ID, text=admin_notice, reply_markup=btn, parse_mode="Markdown", disable_notification=False)
         except Exception:
@@ -1925,7 +1957,7 @@ async def handle_text_messages(update: Update, context: ContextTypes.DEFAULT_TYP
 
         await update.message.reply_text(
             "✅ **QUERY SENT TO HIMANSHU SIR!**\n\n"
-            "Himanshu Sir has received your message/photo in his Admin Dashboard and will reply to you shortly.",
+            "Himanshu Sir has received your message/voice note in his Admin Dashboard and will reply to you shortly.",
             reply_markup=ReplyKeyboardRemove(),
             parse_mode="Markdown"
         )
@@ -1976,10 +2008,9 @@ async def handle_text_messages(update: Update, context: ContextTypes.DEFAULT_TYP
         await update.message.reply_text(f"🎉 **Feedback Received!** Thank you *{name}*:\n\n💬 *\"{text}\"*", reply_markup=ReplyKeyboardRemove(), parse_mode="Markdown")
         return
 
-    # TARGETED BROADCAST EXECUTION ENGINE
+    # Broadcast Execution Engine (Supports All Media Types)
     if context.user_data.get("awaiting_broadcast"):
         context.user_data["awaiting_broadcast"] = False
-        # Fetching the proper target group from the admin selections
         bc_type = context.user_data.get("broadcast_target", "all")
         users = await asyncio.to_thread(get_all_users)
         
@@ -2030,8 +2061,9 @@ async def handle_text_messages(update: Update, context: ContextTypes.DEFAULT_TYP
         )
         btn = InlineKeyboardMarkup([[InlineKeyboardButton("🚀 Launch Quiz Now", callback_data="cmd_quiz")]])
         
-        media_fid = photo.file_id if photo else (video.file_id if video else None)
-        m_type = "photo" if photo else ("video" if video else "text")
+        media_fid = photo.file_id if photo else (video.file_id if video else (voice.file_id if voice else (audio.file_id if audio else (doc.file_id if doc else (anim.file_id if anim else None)))))
+        m_type = "photo" if photo else ("video" if video else ("voice" if voice else ("audio" if audio else ("document" if doc else ("animation" if anim else "text")))))
+        
         annc_id = await asyncio.to_thread(create_instant_broadcast_record, b_msg, media_fid, m_type, user.id)
 
         sent_count = await fast_concurrent_broadcast(
@@ -2041,6 +2073,10 @@ async def handle_text_messages(update: Update, context: ContextTypes.DEFAULT_TYP
             reply_markup=btn,
             photo=media_fid if m_type == "photo" else None,
             video=media_fid if m_type == "video" else None,
+            voice=media_fid if m_type == "voice" else None,
+            audio=media_fid if m_type == "audio" else None,
+            document=media_fid if m_type == "document" else None,
+            animation=media_fid if m_type == "animation" else None,
             media_type=m_type,
             annc_id=annc_id
         )
@@ -2140,7 +2176,6 @@ def build_application() -> Application:
 
     app.add_handler(annc_conv_handler)
     
-    # Direct Admin Assistant Commands
     app.add_handler(CommandHandler("ask", direct_admin_ask_command))
     app.add_handler(CommandHandler("ai", direct_admin_ask_command))
     app.add_handler(CommandHandler("query", direct_admin_ask_command))
@@ -2173,7 +2208,6 @@ def build_application() -> Application:
     app.add_handler(CommandHandler("admin", admin_portal_command))
     app.add_handler(CommandHandler("admit", admin_portal_command))
 
-    # Extended Quiz Flow Router
     app.add_handler(CallbackQueryHandler(quiz_extended_router, pattern="^(qflow_|qmock|qsect|qtop_|qsubj_|qmode_|qtopic_|qlang_|qcount_|qtimer_)"))
     
     app.add_handler(CallbackQueryHandler(pdf_step_handler, pattern="^(pdfsubj_|pdftype_|pdftime_)"))
@@ -2183,10 +2217,9 @@ def build_application() -> Application:
     
     app.add_handler(CallbackQueryHandler(admin_callback_handler, pattern="^(admin_|audit_|genpdf_|adminkp_)"))
     
-    # Button router handling inline commands and security keypad
-    app.add_handler(CallbackQueryHandler(button_router, pattern="^cmd_|^fb_|^trigger_start|^buy_plan_|^userkp_|^login_"))
+    app.add_handler(CallbackQueryHandler(button_router, pattern="^cmd_|^fb_|^trigger_start|^buy_plan_|^userkp_|^login_|^reviews_page_"))
 
-    app.add_handler(MessageHandler((filters.TEXT | filters.PHOTO | filters.VIDEO) & ~filters.COMMAND, handle_text_messages))
+    app.add_handler(MessageHandler(filters.ALL & ~filters.COMMAND, handle_text_messages))
     app.add_handler(PollAnswerHandler(handle_poll_answer))
     app.add_error_handler(global_error_handler)
 

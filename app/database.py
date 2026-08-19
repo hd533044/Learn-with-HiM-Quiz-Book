@@ -402,6 +402,11 @@ def init_db():
             student_name TEXT,
             query_text TEXT,
             photo_file_id TEXT,
+            voice_file_id TEXT,
+            video_file_id TEXT,
+            audio_file_id TEXT,
+            doc_file_id TEXT,
+            media_type TEXT DEFAULT 'text',
             admin_reply TEXT,
             status TEXT DEFAULT 'PENDING',
             created_at TEXT,
@@ -409,6 +414,11 @@ def init_db():
         )
     ''')
     cursor.execute("ALTER TABLE student_queries ADD COLUMN IF NOT EXISTS photo_file_id TEXT;")
+    cursor.execute("ALTER TABLE student_queries ADD COLUMN IF NOT EXISTS voice_file_id TEXT;")
+    cursor.execute("ALTER TABLE student_queries ADD COLUMN IF NOT EXISTS video_file_id TEXT;")
+    cursor.execute("ALTER TABLE student_queries ADD COLUMN IF NOT EXISTS audio_file_id TEXT;")
+    cursor.execute("ALTER TABLE student_queries ADD COLUMN IF NOT EXISTS doc_file_id TEXT;")
+    cursor.execute("ALTER TABLE student_queries ADD COLUMN IF NOT EXISTS media_type TEXT DEFAULT 'text';")
 
     cursor.execute('''
         CREATE TABLE IF NOT EXISTS bot_settings (
@@ -1061,6 +1071,38 @@ def get_all_student_feedbacks(limit: int = 15):
     cursor.close()
     release_db(conn)
     return [dict(r) for r in rows]
+
+def get_student_feedbacks_count() -> int:
+    conn = get_db()
+    cursor = conn.cursor()
+    try:
+        cursor.execute("SELECT COUNT(*) FROM student_feedback")
+        res = cursor.fetchone()
+        return res[0] if res else 0
+    except Exception as e:
+        logger.error(f"[GET FEEDBACKS COUNT ERROR] {e}")
+        return 0
+    finally:
+        cursor.close()
+        release_db(conn)
+
+def get_paginated_student_feedbacks(page: int = 0, limit: int = 5) -> list:
+    conn = get_db()
+    cursor = conn.cursor(cursor_factory=RealDictCursor)
+    offset = max(0, page * limit)
+    try:
+        cursor.execute(
+            "SELECT full_name, feedback_text, submitted_at FROM student_feedback ORDER BY id DESC LIMIT %s OFFSET %s",
+            (limit, offset)
+        )
+        rows = cursor.fetchall()
+        return [dict(r) for r in rows] if rows else []
+    except Exception as e:
+        logger.error(f"[GET PAGINATED FEEDBACKS ERROR] {e}")
+        return []
+    finally:
+        cursor.close()
+        release_db(conn)
 
 def set_maintenance_until(epoch_timestamp: int):
     conn = get_db()

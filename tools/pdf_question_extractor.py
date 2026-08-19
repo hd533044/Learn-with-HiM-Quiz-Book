@@ -27,15 +27,16 @@ if os.path.exists(env_path):
 
 
 # ----------------------------------------------------------------------
-# 1. COMPREHENSIVE PDF EXTRACTION (THEORY + QUESTIONS)
+# 1. COMPREHENSIVE PDF EXTRACTION (NOISE & PROMO STRIPPING)
 # ----------------------------------------------------------------------
 def extract_clean_chunks_from_pdf(pdf_path: str, margin_cut_pct: float = 0.08) -> List[str]:
+    print(f"[*] Opening PDF document at: {pdf_path}")
     doc = fitz.open(pdf_path)
     valid_chunks = []
     current_chunk = []
     current_char_len = 0
 
-    print(f"[*] Reading and scanning {len(doc)} pages (Theory & Questions) in '{os.path.basename(pdf_path)}'...")
+    print(f"[*] Reading and scanning {len(doc)} pages in '{os.path.basename(pdf_path)}'...")
 
     for page_num in range(len(doc)):
         page = doc[page_num]
@@ -49,8 +50,10 @@ def extract_clean_chunks_from_pdf(pdf_path: str, margin_cut_pct: float = 0.08) -
         )
         
         page_text = page.get_text("text", clip=crop_box)
+        
+        # Strip out all promotional text, author names, brands, watermarks
         cleaned_page = re.sub(
-            r"(https?://\S+|t\.me/\S+|www\.\S+|telegram|subscribe|join channel|whatsapp group|author\s*:\s*\S+)",
+            r"(https?://\S+|t\.me/\S+|www\.\S+|telegram|subscribe|join channel|whatsapp group|nikhil gupta|sp bakshi|arihant|gupta edutech|blackbook|all rights reserved)",
             "", 
             page_text, 
             flags=re.IGNORECASE
@@ -69,6 +72,7 @@ def extract_clean_chunks_from_pdf(pdf_path: str, margin_cut_pct: float = 0.08) -
         valid_chunks.append("\n\n".join(current_chunk))
 
     doc.close()
+    print(f"[*] Extracted {len(valid_chunks)} valid text chunks from PDF.")
     return valid_chunks
 
 
@@ -100,54 +104,54 @@ def extract_json_array_safely(text: str) -> List[Dict[str, Any]]:
 
 
 # ----------------------------------------------------------------------
-# 3. UNIVERSAL AI ENGINE (SUPPORTS GROQ, GROK & OPENAI)
+# 3. AI GENERATION ENGINE WITH ACTIVE MODEL FALLBACKS
 # ----------------------------------------------------------------------
 def parse_and_verify_questions(chunks: List[str], subject_tag: str, output_file_path: str) -> List[Dict[str, Any]]:
-    api_key = (
-        os.getenv("GROQ_API_KEY") or 
-        os.getenv("GROK_API_KEY") or 
-        os.getenv("OPENAI_API_KEY")
-    )
-    if not api_key:
-        raise ValueError("API Key not found! Please ensure GROQ_API_KEY, GROK_API_KEY, or OPENAI_API_KEY is set in your .env file.")
-
-    if api_key.startswith("gsk_") or os.getenv("GROQ_API_KEY"):
+    groq_key = os.getenv("GROQ_API_KEY", "").strip()
+    openai_key = os.getenv("OPENAI_API_KEY", "").strip()
+    
+    if groq_key and not groq_key.startswith("sk-"):
+        api_key = groq_key
         api_url = "https://api.groq.com/openai/v1/chat/completions"
-        model_name = "llama-3.1-8b-instant"
-    elif api_key.startswith("xai-"):
-        api_url = "https://api.x.ai/v1/chat/completions"
-        model_name = "grok-2"
-    else:
+        candidate_models = [
+            "meta-llama/llama-4-scout-17b-16e-instruct",
+            "openai/gpt-oss-20b",
+            "openai/gpt-oss-120b",
+            "qwen/qwen3-32b"
+        ]
+        print("[*] Using Groq AI Engine with active models")
+    elif openai_key or (groq_key and groq_key.startswith("sk-")):
+        api_key = openai_key if openai_key else groq_key
         api_url = "https://api.openai.com/v1/chat/completions"
-        model_name = "gpt-4o-mini"
+        candidate_models = ["gpt-4o-mini"]
+        print("[*] Using OpenAI AI Engine (gpt-4o-mini)")
+    else:
+        raise ValueError("API Key not found! Please ensure a valid GROQ_API_KEY or OPENAI_API_KEY is set in your .env file.")
 
     system_prompt = """
-You are an elite Senior Exam Question Architect, Subject Matter Expert, and Quiz Generator.
+You are an elite English Quiz Bank Architect and Exam Content Creator.
 
 TASK:
-Analyze the provided text containing theory concepts/notes and existing Multiple Choice Questions.
+Analyze the provided text fragment from competitive English exam books and generate multiple-choice questions (MCQs).
 
-INSTRUCTIONS:
-1. From Theory Content: Synthesize brand new, rigorous exam-standard Multiple Choice Questions testing core concepts.
-2. From Existing Questions: Extract, verify, and refine them. Correct any answer key errors.
-3. General Rules for ALL Questions:
-   - Exactly 4 options per question: ["A. ...", "B. ...", "C. ...", "D. ..."].
-   - 'correct_option' MUST be an integer index: 0 for A, 1 for B, 2 for C, 3 for D.
-   - For every single question, generate BOTH an English version ('en') and a Hindi version ('hi') as separate objects in the array. Both must point to the exact same correct option index.
-   - Provide a clear, verified explanation derived directly from the text.
-   - Ignore watermarks, author names, promotional links, and noise.
-4. Output MUST be ONLY a valid JSON array of verified objects matching the schema without markdown backticks or commentary.
+STRICT RULES:
+1. NO promotional tags, brand names, watermarks, or author names anywhere. Ensure 100% factual accuracy.
+2. Exactly 4 options per question: ["A. ...", "B. ...", "C. ...", "D. ..."].
+3. 'correct_option' MUST be an integer index: 0 for A, 1 for B, 2 for C, 3 for D.
+4. DETAILED EXPLANATIONS ARE MANDATORY: The explanation column must explicitly explain why the correct option is right AND briefly state why the other options are wrong or mean something else.
+5. TAGGING SYSTEM: Include a robust tag array (e.g., ["vocab", "synonym", "pyq", "ssc_cgl", "hard"]).
+6. Output MUST be ONLY a valid JSON array matching the schema below without markdown backticks or commentary.
 
 SCHEMA:
 [
   {
-    "question": "Question text in specified language",
+    "question": "Question or word text",
     "options": ["A. ...", "B. ...", "C. ...", "D. ..."],
     "correct_option": 0,
-    "explanation": "Factually verified explanation.",
-    "verification_status": "VERIFIED_100%",
-    "subject": "Subject Name",
-    "language": "en"
+    "explanation": "Option X is correct because... B means..., C means..., D means...",
+    "tags": ["vocab", "pyq", "ssc_cgl"],
+    "difficulty": "medium",
+    "subject": "English"
   }
 ]
 """
@@ -155,18 +159,16 @@ SCHEMA:
     headers = {
         "Authorization": f"Bearer {api_key.strip()}",
         "Content-Type": "application/json",
-        "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64)"
+        "User-Agent": "Mozilla/5.0"
     }
 
     seen_hashes = set()
     all_verified_questions = []
-    prefix = "".join([c for c in subject_tag.lower() if c.isalnum()])[:4] or "quiz"
     count = 1
 
     total_chunks = len(chunks)
-    print(f"[*] Processing {total_chunks} content batches via {model_name}...\n")
+    print(f"[*] Processing {total_chunks} content batches...\n")
 
-    # Load existing file if present to avoid overwriting previous progress
     if os.path.exists(output_file_path):
         try:
             with open(output_file_path, "r", encoding="utf-8") as f:
@@ -184,68 +186,76 @@ SCHEMA:
 
     for idx, chunk in enumerate(chunks, start=1):
         payload = {
-            "model": model_name,
             "messages": [
                 {"role": "system", "content": system_prompt},
                 {"role": "user", "content": f"Subject: {subject_tag}\n\nRaw Text Segment ({idx}/{total_chunks}):\n{chunk}"}
             ],
-            "temperature": 0.0
+            "temperature": 0.1
         }
 
-        for attempt in range(4):
-            req = urllib.request.Request(api_url, data=json.dumps(payload).encode("utf-8"), headers=headers, method="POST")
-            try:
-                with urllib.request.urlopen(req, timeout=60) as response:
-                    res_data = json.loads(response.read().decode("utf-8"))
-                    raw_content = res_data["choices"][0]["message"]["content"]
-                    
-                    parsed_qs = extract_json_array_safely(raw_content)
+        success = False
+        for model_name in candidate_models:
+            payload["model"] = model_name
+            
+            for attempt in range(2):
+                req = urllib.request.Request(api_url, data=json.dumps(payload).encode("utf-8"), headers=headers, method="POST")
+                try:
+                    with urllib.request.urlopen(req, timeout=60) as response:
+                        res_data = json.loads(response.read().decode("utf-8"))
+                        raw_content = res_data["choices"][0]["message"]["content"]
+                        
+                        parsed_qs = extract_json_array_safely(raw_content)
 
-                    new_verified = 0
-                    for q in parsed_qs:
-                        q_text = q.get("question", "").strip()
-                        opts = q.get("options", [])
-                        corr = q.get("correct_option")
+                        new_verified = 0
+                        for q in parsed_qs:
+                            q_text = q.get("question", "").strip()
+                            opts = q.get("options", [])
+                            corr = q.get("correct_option")
 
-                        if not q_text or len(opts) != 4 or corr not in (0, 1, 2, 3):
-                            continue
+                            if not q_text or len(opts) != 4 or corr not in (0, 1, 2, 3):
+                                continue
 
-                        norm_key = re.sub(r"\W+", "", q_text.lower())
-                        q_hash = hashlib.md5(norm_key.encode("utf-8")).hexdigest()
+                            norm_key = re.sub(r"\W+", "", q_text.lower())
+                            q_hash = hashlib.md5(norm_key.encode("utf-8")).hexdigest()
 
-                        if q_hash in seen_hashes:
-                            continue
+                            if q_hash in seen_hashes:
+                                continue
 
-                        seen_hashes.add(q_hash)
-                        q["id"] = f"{prefix}_{q.get('language', 'en')}_{count:04d}"
-                        q["subject"] = subject_tag
-                        q["verification_status"] = "VERIFIED_100%"
+                            seen_hashes.add(q_hash)
+                            q["id"] = f"eng_{count:05d}"
 
-                        all_verified_questions.append(q)
-                        count += 1
-                        new_verified += 1
+                            all_verified_questions.append(q)
+                            count += 1
+                            new_verified += 1
 
-                    print(f"  [✓ GENERATED/VERIFIED] Segment {idx}/{total_chunks} processed (+{new_verified} questions | Total: {len(all_verified_questions)})")
-                    
-                    if all_verified_questions:
-                        # Ensure output directory exists before saving
-                        os.makedirs(os.path.dirname(os.path.abspath(output_file_path)), exist_ok=True)
-                        with open(output_file_path, "w", encoding="utf-8") as f:
-                            json.dump(all_verified_questions, f, indent=4, ensure_ascii=False)
-                    break
+                        print(f"  [✓ MODEL: {model_name}] Segment {idx}/{total_chunks} processed (+{new_verified} questions | Total: {len(all_verified_questions)})")
+                        
+                        if all_verified_questions:
+                            os.makedirs(os.path.dirname(os.path.abspath(output_file_path)), exist_ok=True)
+                            with open(output_file_path, "w", encoding="utf-8") as f:
+                                json.dump(all_verified_questions, f, indent=4, ensure_ascii=False)
+                        success = True
+                        break
 
-            except urllib.error.HTTPError as http_err:
-                err_body = http_err.read().decode("utf-8", errors="ignore")
-                if http_err.code == 429:
-                    print(f"  [⏳] Rate limit hit on segment {idx}. Waiting 6s...")
-                    time.sleep(6)
-                else:
-                    print(f"  [-] HTTP {http_err.code} on segment {idx}: {err_body[:120]}")
-                    break
-            except Exception as e:
-                print(f"  [-] Segment {idx} error: {e}")
-                time.sleep(2)
+                except urllib.error.HTTPError as http_err:
+                    err_body = http_err.read().decode("utf-8", errors="ignore")
+                    if http_err.code == 404 and "model_not_found" in err_body:
+                        break  # Try next model in fallback list
+                    elif http_err.code == 429:
+                        print("  [⏳] Rate limit hit. Waiting 8 seconds...")
+                        time.sleep(8)
+                    else:
+                        print(f"  [-] HTTP Error {http_err.code} on segment {idx}: {err_body[:100]}")
+                        time.sleep(2)
+                except Exception as e:
+                    print(f"  [-] Segment {idx} error: {e}")
+                    time.sleep(2)
 
+            if success:
+                break
+
+        if not success:
+            print(f"  [!] Skipping segment {idx} after trying all active models.")
         time.sleep(1.0)
 
     return all_verified_questions
@@ -254,24 +264,16 @@ SCHEMA:
 # ----------------------------------------------------------------------
 # 4. MAIN WORKFLOW
 # ----------------------------------------------------------------------
-def process_and_save_pdf(pdf_path: str, output_filename: str = None, subject: str = "General Knowledge"):
+def process_and_save_pdf(pdf_path: str, output_filename: str = "english_questions.json", subject: str = "English Vocabulary & Grammar"):
+    print(f"[*] Checking path: {pdf_path}")
     if not os.path.exists(pdf_path):
-        print(f"[!] PDF file not found at: {pdf_path}")
+        print(f"[!] ERROR: PDF file not found at absolute path: {os.path.abspath(pdf_path)}")
         return
 
-    if not output_filename:
-        base_name = os.path.splitext(os.path.basename(pdf_path))[0]
-        safe_name = re.sub(r"\W+", "_", base_name).lower()
-        output_filename = f"{safe_name}_extracted.json"
-
-    # If saving specifically for GK, you can pass output_filename as e.g. "question_bank/gk/gk_questions_en.json"
-    if "/" in output_filename or "\\" in output_filename:
-        final_output_path = os.path.join(DATA_DIR, output_filename)
-    else:
-        final_output_path = os.path.join(DATA_DIR, output_filename)
+    final_output_path = os.path.join(DATA_DIR, "english", output_filename)
 
     print("=" * 60)
-    print(f"   QUIZ WITH HIM - THEORY & MCQ SYNTHESIS EXTRACTOR")
+    print(f"   ENGLISH EXAM MASTER QUESTION BANK GENERATOR")
     print("=" * 60)
     
     valid_chunks = extract_clean_chunks_from_pdf(pdf_path)
@@ -282,7 +284,7 @@ def process_and_save_pdf(pdf_path: str, output_filename: str = None, subject: st
     questions = parse_and_verify_questions(valid_chunks, subject, final_output_path)
 
     print("\n" + "=" * 60)
-    print(f"   [SUCCESS] All {len(questions)} Questions Generated/Extracted & Verified!")
+    print(f"   [SUCCESS] All {len(questions)} Questions Generated & Saved!")
     print(f"   [SAVED] JSON Path: {final_output_path}")
     print("=" * 60)
 
@@ -290,10 +292,21 @@ def process_and_save_pdf(pdf_path: str, output_filename: str = None, subject: st
 if __name__ == "__main__":
     import sys
     if len(sys.argv) < 2:
-        print("\nUsage: python tools/pdf_question_extractor.py <path_to_pdf> [output_path_or_filename] [subject_name]")
-        print("Example: python tools/pdf_question_extractor.py \"Pinnacle GS Theory 2nd Edition (English Medium).pdf\" \"question_bank/gk/gk_questions_en.json\" \"General Knowledge\"\n")
+        print("\nUsage: python tools/pdf_question_extractor.py <pdf_filename_or_path> [output_json_filename] [subject]")
+        print("Example: python tools/pdf_question_extractor.py \"data/PDF 1.pdf\" \"english_questions.json\" \"English Grammar\"\n")
     else:
-        pdf_file = sys.argv[1]
-        out_file = sys.argv[2] if len(sys.argv) > 2 else None
-        subj = sys.argv[3] if len(sys.argv) > 3 else "General Knowledge"
-        process_and_save_pdf(pdf_file, output_filename=out_file, subject=subj)
+        pdf_arg = sys.argv[1]
+        
+        if os.path.exists(pdf_arg):
+            pdf_file_path = pdf_arg
+        elif os.path.exists(os.path.join(DATA_DIR, pdf_arg)):
+            pdf_file_path = os.path.join(DATA_DIR, pdf_arg)
+        elif os.path.exists(os.path.join(BASE_DIR, pdf_arg)):
+            pdf_file_path = os.path.join(BASE_DIR, pdf_arg)
+        else:
+            pdf_file_path = pdf_arg
+
+        out_file = sys.argv[2] if len(sys.argv) > 2 else "english_questions.json"
+        subj = sys.argv[3] if len(sys.argv) > 3 else "English Vocabulary & Grammar"
+        
+        process_and_save_pdf(pdf_file_path, output_filename=out_file, subject=subj)

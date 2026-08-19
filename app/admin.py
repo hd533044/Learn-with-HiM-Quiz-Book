@@ -74,7 +74,11 @@ def get_admin_nav_buttons(target_uid: int = None):
     ])
 
 
-async def fast_concurrent_broadcast(bot, user_ids, text, reply_markup=None, parse_mode="Markdown", photo=None, video=None, voice=None, media_type="text", annc_id=None):
+async def fast_concurrent_broadcast(
+    bot, user_ids, text, reply_markup=None, parse_mode="Markdown", 
+    photo=None, video=None, voice=None, audio=None, document=None, animation=None, 
+    media_type="text", annc_id=None
+):
     from app.database import record_blocked_user, record_broadcast_delivery
 
     async def send_single(uid):
@@ -102,6 +106,33 @@ async def fast_concurrent_broadcast(bot, user_ids, text, reply_markup=None, pars
                 m = await bot.send_voice(
                     chat_id=uid,
                     voice=voice,
+                    caption=text,
+                    reply_markup=reply_markup,
+                    parse_mode=parse_mode,
+                    disable_notification=False
+                )
+            elif media_type == "audio" and audio:
+                m = await bot.send_audio(
+                    chat_id=uid,
+                    audio=audio,
+                    caption=text,
+                    reply_markup=reply_markup,
+                    parse_mode=parse_mode,
+                    disable_notification=False
+                )
+            elif media_type == "document" and document:
+                m = await bot.send_document(
+                    chat_id=uid,
+                    document=document,
+                    caption=text,
+                    reply_markup=reply_markup,
+                    parse_mode=parse_mode,
+                    disable_notification=False
+                )
+            elif media_type == "animation" and animation:
+                m = await bot.send_animation(
+                    chat_id=uid,
+                    animation=animation,
                     caption=text,
                     reply_markup=reply_markup,
                     parse_mode=parse_mode,
@@ -459,7 +490,6 @@ async def admin_portal_command(update: Update, context: ContextTypes.DEFAULT_TYP
 
     users = get_all_users()
     
-    # EXACT CALCULATION TO MATCH TOTAL REGISTERED
     paid_count = 0
     demo_count = 0
     for u in users:
@@ -470,7 +500,6 @@ async def admin_portal_command(update: Update, context: ContextTypes.DEFAULT_TYP
             demo_count += 1
 
     online_15m = get_currently_online_users(15)
-    blocked_users = get_blocked_bot_users()
     pending_students_count = get_unique_students_with_queries_count()
     usage_stats = get_platform_usage_summary()
 
@@ -481,7 +510,6 @@ async def admin_portal_command(update: Update, context: ContextTypes.DEFAULT_TYP
     active_sale = get_active_flash_sale()
     sale_summary_line = f"🔥 **Active Flash Sale:** `{active_sale['sale_name']} ({int(float(active_sale['discount_percent']))}% OFF)`" if active_sale else "🔥 **Flash Sale Status:** `🔴 Inactive (Normal Prices)`"
 
-    # MAIN SUB-MENU CATEGORIES (CLEAN AND ELEGANT)
     keyboard = [
         [InlineKeyboardButton("📊 Intelligence & Analytics", callback_data="admin_menu_analytics")],
         [InlineKeyboardButton(f"👥 Student Management ({pending_students_count} 📩)", callback_data="admin_menu_students")],
@@ -512,6 +540,7 @@ async def admin_portal_command(update: Update, context: ContextTypes.DEFAULT_TYP
             await update.callback_query.message.reply_text(msg, reply_markup=InlineKeyboardMarkup(keyboard), parse_mode="Markdown")
     else:
         await update.message.reply_text(msg, reply_markup=InlineKeyboardMarkup(keyboard), parse_mode="Markdown")
+
 
 async def admin_view_user_payments_callback(update: Update, context: ContextTypes.DEFAULT_TYPE):
     query = update.callback_query
@@ -687,7 +716,7 @@ async def admin_callback_handler(update: Update, context: ContextTypes.DEFAULT_T
         return
 
     # ==============================================================
-    # 🗂️ MAIN MENU ROUTING (FIXED AND CATEGORIZED)
+    # 🗂️ MAIN MENU ROUTING
     # ==============================================================
     if data == "admin_home":
         await query.answer()
@@ -794,7 +823,7 @@ async def admin_callback_handler(update: Update, context: ContextTypes.DEFAULT_T
             f"📢 **COMPOSE TARGETED BROADCAST**\n"
             f"━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\n"
             f"🎯 **Audience Segment:** `{target_labels.get(target)}`\n\n"
-            f"Send the message text, photo, video, or voice note you wish to instantly broadcast to this segment:", 
+            f"Send the message text, photo, video, audio, PDF document, or voice note you wish to instantly broadcast to this segment:", 
             reply_markup=cancel_btn, 
             parse_mode="Markdown"
         )
@@ -1106,7 +1135,6 @@ async def admin_callback_handler(update: Update, context: ContextTypes.DEFAULT_T
                 cursor.execute("DELETE FROM users WHERE user_id = %s", (uid,))
                 deleted_count += 1
                 
-                # Erase JSON to fully clear bot session presence locally
                 sid = u.get("student_id") or f"USER_{uid}"
                 json_path = os.path.join(USER_PROFILES_DIR, f"{sid}.json")
                 if os.path.exists(json_path):
@@ -1158,7 +1186,7 @@ async def admin_callback_handler(update: Update, context: ContextTypes.DEFAULT_T
         for a in page_items:
             name = a.get('full_name') or f"User {a['user_id']}"
             sid = a.get('student_id') or 'N/A'
-            d_time = a.get('deleted_at', 'N/A').split(" ")[0]  # Just showing the date to save space
+            d_time = a.get('deleted_at', 'N/A').split(" ")[0]
             btn_txt = f"📂 {name} ({sid}) — {d_time}"
             keyboard.append([InlineKeyboardButton(btn_txt, callback_data=f"admin_inspect_arch_u_{a['user_id']}")])
 
@@ -1849,7 +1877,7 @@ async def admin_callback_handler(update: Update, context: ContextTypes.DEFAULT_T
         annc_id = int(data.replace("admin_edit_annc_content_prompt_", ""))
         context.user_data["awaiting_edit_annc_content"] = annc_id
         cancel_btn = InlineKeyboardMarkup([[InlineKeyboardButton("❌ Cancel Edit", callback_data=f"admin_view_pending_annc_{annc_id}")]])
-        await query.edit_message_text(f"✍️ **EDIT POST CONTENT (ID #{annc_id})**\n\nPlease reply with the new Message text, Photo, Voice Note, or Video:", reply_markup=cancel_btn, parse_mode="Markdown")
+        await query.edit_message_text(f"✍️ **EDIT POST CONTENT (ID #{annc_id})**\n\nPlease reply with the new Message text, Photo, Voice Note, Video, Audio, or PDF:", reply_markup=cancel_btn, parse_mode="Markdown")
 
     elif data.startswith("admin_edit_annc_time_prompt_"):
         await query.answer()
@@ -2223,12 +2251,19 @@ async def admin_callback_handler(update: Update, context: ContextTypes.DEFAULT_T
         keyboard = []
         for q in queries:
             reply_status = f"`{q['admin_reply']}`" if q["admin_reply"] else "*(Not Replied Yet)*"
-            photo_badge = " 📷 [Image Attached]" if q.get("photo_file_id") else ""
+            
+            media_badge = ""
+            if q.get("voice_file_id"): media_badge = " 🎙️ [Voice Note]"
+            elif q.get("photo_file_id"): media_badge = " 📷 [Image]"
+            elif q.get("video_file_id"): media_badge = " 🎬 [Video]"
+            elif q.get("audio_file_id"): media_badge = " 🎵 [Audio]"
+            elif q.get("doc_file_id"): media_badge = " 📄 [Document/PDF]"
+            
             status_flag = "🔴 UNREAD" if q["status"] == "PENDING" else "🟢 RESOLVED"
 
             lines.append(
-                f"🏷 **Query ID #{q['id']}** `[{q['created_at']}]` — {status_flag}{photo_badge}\n"
-                f"❓ *\"{q['query_text'] or 'Image Query'}\"*\n"
+                f"🏷 **Query ID #{q['id']}** `[{q['created_at']}]` — {status_flag}{media_badge}\n"
+                f"❓ *\"{q['query_text'] or 'Media Query'}\"*\n"
                 f"👨‍🏫 **Admin Reply:** {reply_status}\n"
                 f"──────────────────────────────"
             )
@@ -2241,17 +2276,48 @@ async def admin_callback_handler(update: Update, context: ContextTypes.DEFAULT_T
                 ]
                 keyboard.append(row_actions)
             
-            if q.get("photo_file_id"):
-                keyboard.append([InlineKeyboardButton(f"🖼 View Image Attached (Query #{q['id']})", callback_data=f"admin_view_qimg_{q['id']}")])
+            if q.get("voice_file_id"):
+                keyboard.append([InlineKeyboardButton(f"🎙️ Listen Voice Note (#{q['id']})", callback_data=f"admin_view_qvoice_{q['id']}")])
+            elif q.get("photo_file_id"):
+                keyboard.append([InlineKeyboardButton(f"🖼 View Image (#{q['id']})", callback_data=f"admin_view_qimg_{q['id']}")])
+            elif q.get("video_file_id"):
+                keyboard.append([InlineKeyboardButton(f"🎬 Watch Video (#{q['id']})", callback_data=f"admin_view_qvideo_{q['id']}")])
+            elif q.get("audio_file_id"):
+                keyboard.append([InlineKeyboardButton(f"🎵 Play Audio (#{q['id']})", callback_data=f"admin_view_qaudio_{q['id']}")])
+            elif q.get("doc_file_id"):
+                keyboard.append([InlineKeyboardButton(f"📄 Download Document (#{q['id']})", callback_data=f"admin_view_qdoc_{q['id']}")])
 
         msg = "\n".join(lines)
         if len(msg) > 3900:
             msg = msg[:3850] + "\n\n*(Truncated)*"
 
-        keyboard.append([InlineKeyboardButton("✉️ Direct Message Student (Text/Photo/Voice)", callback_data=f"admin_direct_msg_{target_uid}")])
+        keyboard.append([InlineKeyboardButton("✉️ Direct Message (Text/Voice/Photo/PDF)", callback_data=f"admin_direct_msg_{target_uid}")])
         keyboard.append([InlineKeyboardButton("🔙 Back to Support Threads", callback_data="admin_view_student_threads_0")])
 
         await query.edit_message_text(msg, reply_markup=InlineKeyboardMarkup(keyboard), parse_mode="Markdown")
+
+    elif data.startswith("admin_view_qvoice_"):
+        await query.answer()
+        qid = int(data.replace("admin_view_qvoice_", ""))
+        conn = get_db()
+        cursor = conn.cursor(cursor_factory=RealDictCursor)
+        cursor.execute("SELECT * FROM student_queries WHERE id = %s", (qid,))
+        q_data = cursor.fetchone()
+        cursor.close()
+        release_db(conn)
+
+        if q_data and q_data.get("voice_file_id"):
+            nav = InlineKeyboardMarkup([[InlineKeyboardButton("🔙 Back to Thread", callback_data=f"admin_student_thread_{q_data['user_id']}")]])
+            await context.bot.send_voice(
+                chat_id=query.message.chat_id,
+                voice=q_data["voice_file_id"],
+                caption=f"🎙️ **Voice Note for Query #{qid}**\n👤 **From:** {q_data['student_name']}",
+                reply_markup=nav,
+                parse_mode="Markdown"
+            )
+        else:
+            await query.message.reply_text("⚠️ Voice file not found in database.", parse_mode="Markdown")
+        return
 
     elif data.startswith("admin_view_qimg_"):
         await query.answer()
@@ -2274,6 +2340,75 @@ async def admin_callback_handler(update: Update, context: ContextTypes.DEFAULT_T
             )
         else:
             await query.message.reply_text("⚠️ Image not found in database.", parse_mode="Markdown")
+        return
+
+    elif data.startswith("admin_view_qvideo_"):
+        await query.answer()
+        qid = int(data.replace("admin_view_qvideo_", ""))
+        conn = get_db()
+        cursor = conn.cursor(cursor_factory=RealDictCursor)
+        cursor.execute("SELECT * FROM student_queries WHERE id = %s", (qid,))
+        q_data = cursor.fetchone()
+        cursor.close()
+        release_db(conn)
+
+        if q_data and q_data.get("video_file_id"):
+            nav = InlineKeyboardMarkup([[InlineKeyboardButton("🔙 Back to Thread", callback_data=f"admin_student_thread_{q_data['user_id']}")]])
+            await context.bot.send_video(
+                chat_id=query.message.chat_id,
+                video=q_data["video_file_id"],
+                caption=f"🎬 **Video Attachment for Query #{qid}**\n👤 **From:** {q_data['student_name']}",
+                reply_markup=nav,
+                parse_mode="Markdown"
+            )
+        else:
+            await query.message.reply_text("⚠️ Video not found in database.", parse_mode="Markdown")
+        return
+
+    elif data.startswith("admin_view_qaudio_"):
+        await query.answer()
+        qid = int(data.replace("admin_view_qaudio_", ""))
+        conn = get_db()
+        cursor = conn.cursor(cursor_factory=RealDictCursor)
+        cursor.execute("SELECT * FROM student_queries WHERE id = %s", (qid,))
+        q_data = cursor.fetchone()
+        cursor.close()
+        release_db(conn)
+
+        if q_data and q_data.get("audio_file_id"):
+            nav = InlineKeyboardMarkup([[InlineKeyboardButton("🔙 Back to Thread", callback_data=f"admin_student_thread_{q_data['user_id']}")]])
+            await context.bot.send_audio(
+                chat_id=query.message.chat_id,
+                audio=q_data["audio_file_id"],
+                caption=f"🎵 **Audio Attachment for Query #{qid}**\n👤 **From:** {q_data['student_name']}",
+                reply_markup=nav,
+                parse_mode="Markdown"
+            )
+        else:
+            await query.message.reply_text("⚠️ Audio not found in database.", parse_mode="Markdown")
+        return
+
+    elif data.startswith("admin_view_qdoc_"):
+        await query.answer()
+        qid = int(data.replace("admin_view_qdoc_", ""))
+        conn = get_db()
+        cursor = conn.cursor(cursor_factory=RealDictCursor)
+        cursor.execute("SELECT * FROM student_queries WHERE id = %s", (qid,))
+        q_data = cursor.fetchone()
+        cursor.close()
+        release_db(conn)
+
+        if q_data and q_data.get("doc_file_id"):
+            nav = InlineKeyboardMarkup([[InlineKeyboardButton("🔙 Back to Thread", callback_data=f"admin_student_thread_{q_data['user_id']}")]])
+            await context.bot.send_document(
+                chat_id=query.message.chat_id,
+                document=q_data["doc_file_id"],
+                caption=f"📄 **Document/PDF for Query #{qid}**\n👤 **From:** {q_data['student_name']}",
+                reply_markup=nav,
+                parse_mode="Markdown"
+            )
+        else:
+            await query.message.reply_text("⚠️ Document not found in database.", parse_mode="Markdown")
         return
 
     elif data.startswith("admin_ignore_query_"):
@@ -2315,7 +2450,7 @@ async def admin_callback_handler(update: Update, context: ContextTypes.DEFAULT_T
         cancel_btn = InlineKeyboardMarkup([
             [InlineKeyboardButton("❌ Cancel Reply & Return", callback_data="admin_view_student_threads_0")]
         ])
-        await query.edit_message_text(f"✍️ **SECRET REPLY TO QUERY #{qid}**\n\nPlease reply with text, **upload an Image/Photo**, or send a **Voice Note** to send to this student:", reply_markup=cancel_btn, parse_mode="Markdown")
+        await query.edit_message_text(f"✍️ **SECRET REPLY TO QUERY #{qid}**\n\nPlease reply with text, a **Voice Note**, an **Image/Photo**, **Video**, **Audio**, **GIF**, or **PDF/Document** to send to this student:", reply_markup=cancel_btn, parse_mode="Markdown")
 
     elif data.startswith("admin_direct_msg_"):
         await query.answer()
@@ -2327,7 +2462,7 @@ async def admin_callback_handler(update: Update, context: ContextTypes.DEFAULT_T
         msg = (
             f"✉️ **DIRECT MESSAGE TO STUDENT (`{target_uid}`)**\n"
             f"━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\n"
-            f"Please reply with text, **upload an Image/Photo**, or send a **Voice Note** to send directly to this student.\n\n"
+            f"Please reply with text, a **Voice Note**, **Photo/Image**, **Video**, **Audio**, **GIF**, or **PDF/Document** to send directly to this student.\n\n"
             f"🔒 *Will be delivered into the student's personal chat.*"
         )
         await query.edit_message_text(msg, reply_markup=cancel_btn, parse_mode="Markdown")
@@ -2441,7 +2576,7 @@ async def admin_callback_handler(update: Update, context: ContextTypes.DEFAULT_T
         msg = (
             f"⚠️ **ISSUE WARNING TO STUDENT (`{target_uid}`)** ⚠️\n"
             f"━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\n"
-            f"Please reply with the exact warning reason/message or send a Voice Note to send to this student.\n\n"
+            f"Please reply with the exact warning reason/message, send a Voice Note, or attach media to send to this student.\n\n"
             f"🔔 *This official warning notice will be delivered instantly to the user's chat.*"
         )
         await query.edit_message_text(msg, reply_markup=cancel_btn, parse_mode="Markdown")

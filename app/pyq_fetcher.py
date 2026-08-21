@@ -190,50 +190,6 @@ def get_english_base_dir() -> str:
     return candidates[0]
 
 
-def fetch_rc_or_cloze_passage_questions(topic_key: str) -> list:
-    """Loads one complete passage (RC or Cloze Test) with its exact set of questions."""
-    base_eng = get_english_base_dir()
-    subfolder = "READING COMPREHENSION" if topic_key == "eng_comp_rc" else "CLOZE TEST"
-    folder_path = os.path.join(base_eng, "comprehension", subfolder)
-    
-    files = []
-    if os.path.exists(folder_path):
-        for root, _, filenames in os.walk(folder_path):
-            for f in filenames:
-                if f.endswith(".json"):
-                    files.append(os.path.join(root, f))
-    
-    if not files:
-        return []
-    
-    chosen_file = random.choice(files)
-    try:
-        with open(chosen_file, "r", encoding="utf-8") as f:
-            content = json.load(f)
-            passages = content if isinstance(content, list) else [content]
-            valid_passages = [p for p in passages if isinstance(p, dict) and (p.get("questions") or p.get("data") or p.get("items"))]
-            if not valid_passages:
-                return []
-            
-            chosen_passage_obj = random.choice(valid_passages)
-            passage_text = chosen_passage_obj.get("passage") or chosen_passage_obj.get("passage_text") or chosen_passage_obj.get("context") or ""
-            sub_qs = chosen_passage_obj.get("questions") or chosen_passage_obj.get("data") or chosen_passage_obj.get("items")
-            
-            verified_qs = []
-            for sub in sub_qs:
-                if isinstance(sub, dict):
-                    if passage_text and not sub.get("passage"):
-                        sub["passage"] = passage_text
-                    sub.setdefault("category", os.path.splitext(os.path.basename(chosen_file))[0])
-                    verified_q = verify_and_correct_question(sub)
-                    if verified_q:
-                        verified_qs.append(verified_q)
-            return verified_qs
-    except Exception as e:
-        logger.error(f"Error loading passage file {chosen_file}: {e}")
-        return []
-
-
 def load_english_questions(topic_key: str = "MIXED") -> list:
     base_eng = get_english_base_dir()
     if not os.path.exists(base_eng):
@@ -254,8 +210,12 @@ def load_english_questions(topic_key: str = "MIXED") -> list:
                             out.append(os.path.join(root, f))
         return out
 
-    if topic_key == "eng_comp_para_jumbles":
+    if topic_key == "eng_comp_cloze_test":
+        target_files = scan_dir(os.path.join(base_eng, "comprehension", "CLOZE TEST"))
+    elif topic_key == "eng_comp_para_jumbles":
         target_files = scan_dir(os.path.join(base_eng, "comprehension", "PARA JUMBLES"))
+    elif topic_key == "eng_comp_rc":
+        target_files = scan_dir(os.path.join(base_eng, "comprehension", "READING COMPREHENSION"))
     elif topic_key == "eng_vocab_homonyms":
         target_files = scan_dir(os.path.join(base_eng, "vocab", "HOMONYMS"))
     elif topic_key == "eng_vocab_idioms":
@@ -283,6 +243,7 @@ def load_english_questions(topic_key: str = "MIXED") -> list:
             with open(fp, "r", encoding="utf-8") as f:
                 data = json.load(f)
                 category_name = os.path.splitext(os.path.basename(fp))[0]
+                
                 if isinstance(data, list):
                     for item in data:
                         if isinstance(item, dict):
@@ -316,7 +277,44 @@ def load_english_questions(topic_key: str = "MIXED") -> list:
     return all_loaded
 
 
+def fetch_rc_or_cloze_passage_questions(topic_key: str) -> list:
+    """Bulletproof loader for RC & Cloze Test passage question sets."""
+    raw_items = load_english_questions(topic_key)
+    if not raw_items:
+        return []
+
+    verified = []
+    for item in raw_items:
+        v = verify_and_correct_question(item)
+        if v:
+            verified.append(v)
+
+    if verified:
+        # Group by passage text if available to keep passage sets together, or take first 5
+        passages_map = {}
+        for q in verified:
+            p_text = q.get("passage") or "default"
+            passages_map.setdefault(p_text, []).append(q)
+        
+        # Pick one random passage group that has at least 3-5 questions
+        groups = [g for g in passages_map.values() if len(g) >= 3]
+        if not groups:
+            groups = list(passages_map.values())
+        
+        if groups:
+            chosen_group = random.choice(groups)
+            random.shuffle(chosen_group)
+            return chosen_group[:5]
+
+    return []
+
+
 def fetch_pyqs_for_quiz(needed_count: int = 20, seen_ids: set = None, language: str = "en", user_id: int = None, topic: str = "MIXED", subject: str = "computer") -> list:
+    if subject == "english" and topic in ["eng_comp_rc", "eng_comp_cloze_test"]:
+        passage_qs = fetch_rc_or_cloze_passage_questions(topic)
+        if passage_qs:
+            return passage_qs
+
     all_raw_questions = []
     lang_sub = "hi" if language == "hi" else "en"
     loaded_from_specific_file = False
